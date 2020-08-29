@@ -4,7 +4,7 @@
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>0</x>
+      <x>50</x>
       <y>0</y>
       <w>200</w>
       <h>890</h>
@@ -17,7 +17,7 @@ valign=top
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>340</x>
+      <x>390</x>
       <y>0</y>
       <w>350</w>
       <h>890</h>
@@ -30,7 +30,7 @@ valign=top
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>50</y>
       <w>20</w>
       <h>20</h>
@@ -41,19 +41,20 @@ valign=top
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>220</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>出荷
-bg=yellow</panel_attributes>
+bg=yellow
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>190</y>
       <w>30</w>
       <h>50</h>
@@ -64,7 +65,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>850</y>
       <w>20</w>
       <h>20</h>
@@ -75,19 +76,20 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>280</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>納品書発行
-bg=cyan</panel_attributes>
+bg=cyan
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>250</y>
       <w>30</w>
       <h>50</h>
@@ -98,31 +100,33 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>470</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>出荷
-bg=yellow</panel_attributes>
+bg=yellow
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>530</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>納品書発行
-bg=cyan</panel_attributes>
+bg=cyan
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>30</x>
+      <x>80</x>
       <y>290</y>
       <w>40</w>
       <h>410</h>
@@ -133,7 +137,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>500</y>
       <w>30</w>
       <h>50</h>
@@ -144,20 +148,21 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>710</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>月末締請求書
 発行
-bg=blue</panel_attributes>
+bg=blue
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>560</y>
       <w>30</w>
       <h>140</h>
@@ -168,7 +173,7 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>740</y>
       <w>30</w>
       <h>60</h>
@@ -179,7 +184,7 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>380</x>
+      <x>430</x>
       <y>350</y>
       <w>100</w>
       <h>40</h>
@@ -191,7 +196,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
+      <x>490</x>
       <y>290</y>
       <w>160</w>
       <h>60</h>
@@ -203,7 +208,7 @@ lt=&lt;-</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>380</x>
+      <x>430</x>
       <y>600</y>
       <w>100</w>
       <h>40</h>
@@ -215,19 +220,20 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>780</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>入金
-bg=pink</panel_attributes>
+bg=pink
+type=receiver</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>810</y>
       <w>30</w>
       <h>60</h>
@@ -238,32 +244,34 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>380</x>
+      <x>430</x>
       <y>710</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>月末締請求書
 受領
-bg=blue</panel_attributes>
+bg=blue
+type=receiver</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>380</x>
+      <x>430</x>
       <y>780</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>支払
-bg=pink</panel_attributes>
+bg=pink
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
+      <x>470</x>
       <y>740</y>
       <w>30</w>
       <h>60</h>
@@ -274,7 +282,7 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>190</x>
       <y>540</y>
       <w>100</w>
       <h>30</h>
@@ -285,7 +293,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>220</x>
+      <x>270</x>
       <y>710</y>
       <w>100</w>
       <h>40</h>
@@ -297,7 +305,7 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>220</x>
+      <x>270</x>
       <y>280</y>
       <w>100</w>
       <h>40</h>
@@ -309,7 +317,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>220</x>
+      <x>270</x>
       <y>530</y>
       <w>100</w>
       <h>40</h>
@@ -321,7 +329,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>190</x>
       <y>290</y>
       <w>100</w>
       <h>30</h>
@@ -332,7 +340,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>360</x>
       <y>290</y>
       <w>120</w>
       <h>60</h>
@@ -343,7 +351,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>360</x>
       <y>540</y>
       <w>120</w>
       <h>60</h>
@@ -354,7 +362,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>190</x>
       <y>720</y>
       <w>100</w>
       <h>30</h>
@@ -365,7 +373,7 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>360</x>
       <y>720</y>
       <w>90</w>
       <h>30</h>
@@ -376,31 +384,33 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>220</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>検品
-bg=yellow</panel_attributes>
+bg=yellow
+type=receiver</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>470</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>検品
-bg=yellow</panel_attributes>
+bg=yellow
+type=receiver</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
+      <x>490</x>
       <y>540</y>
       <w>160</w>
       <h>60</h>
@@ -412,7 +422,7 @@ lt=&lt;-</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>100</y>
       <w>100</w>
       <h>40</h>
@@ -424,7 +434,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>50</y>
       <w>30</w>
       <h>70</h>
@@ -435,7 +445,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>100</y>
       <w>100</w>
       <h>40</h>
@@ -447,7 +457,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>360</x>
       <y>110</y>
       <w>260</w>
       <h>30</h>
@@ -458,7 +468,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>520</x>
+      <x>570</x>
       <y>40</y>
       <w>160</w>
       <h>840</h>
@@ -471,7 +481,7 @@ valign=top
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>350</x>
+      <x>400</x>
       <y>40</y>
       <w>160</w>
       <h>840</h>
@@ -484,7 +494,7 @@ valign=top
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>220</x>
+      <x>270</x>
       <y>100</y>
       <w>100</w>
       <h>40</h>
@@ -496,7 +506,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>190</x>
       <y>110</y>
       <w>100</w>
       <h>30</h>
@@ -507,7 +517,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>380</x>
+      <x>430</x>
       <y>320</y>
       <w>100</w>
       <h>20</h>
@@ -522,7 +532,7 @@ is passed}</panel_attributes>
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>380</x>
+      <x>430</x>
       <y>570</y>
       <w>100</w>
       <h>20</h>
@@ -537,7 +547,7 @@ is passed}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
+      <x>470</x>
       <y>320</y>
       <w>30</w>
       <h>50</h>
@@ -548,7 +558,7 @@ is passed}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
+      <x>470</x>
       <y>570</y>
       <w>30</w>
       <h>50</h>
@@ -559,7 +569,7 @@ is passed}</panel_attributes>
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>360</x>
+      <x>410</x>
       <y>670</y>
       <w>140</w>
       <h>20</h>
@@ -571,7 +581,7 @@ is passed}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
+      <x>520</x>
       <y>360</y>
       <w>40</w>
       <h>340</h>
@@ -582,7 +592,7 @@ is passed}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
+      <x>470</x>
       <y>630</y>
       <w>30</w>
       <h>70</h>
@@ -593,7 +603,7 @@ is passed}</panel_attributes>
   <element>
     <id>UMLSyncBarHorizontal</id>
     <coordinates>
-      <x>30</x>
+      <x>80</x>
       <y>670</y>
       <w>140</w>
       <h>20</h>
@@ -605,7 +615,7 @@ is passed}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>670</y>
       <w>30</w>
       <h>60</h>
@@ -616,7 +626,7 @@ is passed}</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>420</x>
+      <x>470</x>
       <y>670</y>
       <w>30</w>
       <h>60</h>
@@ -627,7 +637,7 @@ is passed}</panel_attributes>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>220</x>
+      <x>270</x>
       <y>160</y>
       <w>100</w>
       <h>40</h>
@@ -639,31 +649,33 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>160</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>受注
-bg=pink</panel_attributes>
+bg=pink
+type=receiver</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>160</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>発注
-bg=pink</panel_attributes>
+bg=pink
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>360</x>
       <y>170</y>
       <w>260</w>
       <h>30</h>
@@ -674,7 +686,7 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>190</x>
       <y>170</y>
       <w>100</w>
       <h>30</h>
@@ -685,19 +697,20 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>50</x>
+      <x>100</x>
       <y>410</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>受注
-bg=pink</panel_attributes>
+bg=pink
+type=receiver</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>220</x>
+      <x>270</x>
       <y>410</y>
       <w>100</w>
       <h>40</h>
@@ -709,19 +722,20 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>410</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>発注
-bg=pink</panel_attributes>
+bg=pink
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>360</x>
       <y>420</y>
       <w>260</w>
       <h>30</h>
@@ -732,7 +746,7 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>140</x>
       <y>440</y>
       <w>30</w>
       <h>50</h>
@@ -743,7 +757,7 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
+      <x>190</x>
       <y>420</y>
       <w>100</w>
       <h>30</h>
@@ -754,7 +768,7 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>230</x>
+      <x>280</x>
       <y>620</y>
       <w>80</w>
       <h>80</h>
@@ -772,7 +786,7 @@ lw=2.5</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>580</x>
+      <x>630</x>
       <y>530</y>
       <w>40</w>
       <h>40</h>
@@ -784,7 +798,7 @@ type=decision</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
+      <x>640</x>
       <y>500</y>
       <w>30</w>
       <h>50</h>
@@ -795,31 +809,33 @@ type=decision</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>600</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>返品
-bg=yellow</panel_attributes>
+bg=yellow
+type=sender</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
+      <x>640</x>
       <y>560</y>
       <w>80</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>[不合格]
-lt=&lt;-</panel_attributes>
+lt=&lt;-
+</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>580</x>
+      <x>630</x>
       <y>280</y>
       <w>40</w>
       <h>40</h>
@@ -830,7 +846,7 @@ lt=&lt;-</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
+      <x>640</x>
       <y>250</y>
       <w>30</w>
       <h>50</h>
@@ -841,7 +857,7 @@ lt=&lt;-</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
+      <x>640</x>
       <y>310</y>
       <w>80</w>
       <h>60</h>
@@ -853,13 +869,37 @@ lt=&lt;-</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>550</x>
+      <x>600</x>
       <y>350</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>返品
-bg=yellow</panel_attributes>
+bg=yellow
+type=sender</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLTimer</id>
+    <coordinates>
+      <x>190</x>
+      <y>580</y>
+      <w>60</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>月末
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>170</x>
+      <y>590</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0;30.0;10.0</additional_attributes>
   </element>
 </diagram>
