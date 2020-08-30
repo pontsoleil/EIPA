@@ -2,6 +2,17 @@
 <diagram program="umlet" version="14.3.0">
   <zoom_level>10</zoom_level>
   <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>490</x>
+      <y>10</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>電子債権サービス</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>UMLUseCase</id>
     <coordinates>
       <x>370</x>
@@ -49,8 +60,8 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>140</x>
-      <y>410</y>
+      <x>130</x>
+      <y>400</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
@@ -60,8 +71,8 @@ bg=cyan</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>90</x>
-      <y>510</y>
+      <x>220</x>
+      <y>130</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
@@ -82,13 +93,13 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
-      <y>260</y>
-      <w>50</w>
-      <h>270</h>
+      <x>180</x>
+      <y>190</y>
+      <w>100</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>30.0;10.0;10.0;250.0</additional_attributes>
+    <additional_attributes>10.0;30.0;80.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -106,11 +117,11 @@ bg=cyan</panel_attributes>
     <coordinates>
       <x>150</x>
       <y>260</y>
-      <w>40</w>
-      <h>170</h>
+      <w>30</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
@@ -291,13 +302,13 @@ bg=cyan</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
+      <x>190</x>
       <y>410</y>
-      <w>210</w>
-      <h>60</h>
+      <w>220</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>190.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>200.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>UMLActor</id>
@@ -400,6 +411,42 @@ bg=cyan</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>340</x>
+      <y>10</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>電子債権サービス
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>300</x>
+      <y>100</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>電子債権発行
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>480</x>
+      <y>140</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>電子債権担保融資
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <id>UMLActor</id>
     <coordinates>
       <x>130</x>
@@ -409,5 +456,82 @@ bg=cyan</panel_attributes>
     </coordinates>
     <panel_attributes>売手</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>650</x>
+      <y>40</y>
+      <w>80</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>金融機関</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>40</y>
+      <w>70</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>40</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>130</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;40.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>150</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;30.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>60</y>
+      <w>140</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;60.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>90</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;70.0;70.0;10.0</additional_attributes>
   </element>
 </diagram>
