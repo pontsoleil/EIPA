@@ -1,2 +1,60 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLActor</id><coordinates><x>80</x><y>100</y><w>60</w><h>110</h></coordinates><panel_attributes>売手</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>220</x><y>110</y><w>120</w><h>40</h></coordinates><panel_attributes>購買ー支払い
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>420</x><y>100</y><w>60</w><h>110</h></coordinates><panel_attributes>顧客</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>50</x>
+      <y>100</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>売手（税理士）</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>220</x>
+      <y>110</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>税理士顧問契約
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>390</x>
+      <y>100</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>顧客（顧問先）</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>120</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>120</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+</diagram>
