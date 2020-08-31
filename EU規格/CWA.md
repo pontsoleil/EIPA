@@ -97,7 +97,7 @@ For reference purposes this and related documents categorise different approache
 
 The following diagram illustrates the relative considerations for ensuring authenticity and integrity for each of these classes.  
 
-![Authenticity & Integrity Compliance](図/cwa1.png)  
+![Authenticity & Integrity](図/cwa1.png)  
 
 次の図に、これらの各クラスの信頼性と整合性を確保するための相対的な考慮事項を示す。  
 
@@ -169,7 +169,7 @@ Figure 1 represents the process model without involving Service Providers; Figur
 
 ![Process Model](図/cwa2.png)  
 
-![Process Model with Service Provider involvement](図/cwa3.png)  
+![with Service Provider](図/cwa3.png)  
 
 図1は、サービスプロバイダーを含まないプロセスモデルを表す。 図2は、サービスプロバイダー（またはプロバイダー）の概念をモデルに導入したもの。 図のラベルは、コンプライアンスマトリックスとインタラクティブユーザーインターフェイスで参照される。  
 
@@ -191,6 +191,7 @@ In order to meet the high level objectives specified in section 4.1 above throug
     i）販売インボイスを準備するとき  
 
         a) Continuity and consistency between the information used in an invoice and its source (e.g. sales orders, delivery notes, contracts).  
+
         a）電子インボイスで使用される情報とそのソース（たとえば、注文書、納品書、契約書）との間の継続性と一貫性。  
 
     ii) When creating the sales invoice.  
@@ -198,6 +199,7 @@ In order to meet the high level objectives specified in section 4.1 above throug
 
         a) Ensure that the authenticity of the invoice will be verifiable by the customer  
         b) Ensure that the integrity of the invoice will be verifiable by the customer and supplier  
+
         a）電子インボイスの真正性が顧客によって検証可能であることを確認する  
         b）電子インボイスの完全性が顧客と売手によって検証可能であることを確認する  
 
@@ -205,7 +207,8 @@ In order to meet the high level objectives specified in section 4.1 above throug
     iii）電子インボイスを送信するとき、または利用可能にするとき
 
         a) Authenticity of the invoice remains verifiable upon receipt
-        b) Integrity of the invoice remains verifiable upon receipt
+        b) Integrity of the invoice remains verifiable upon receipt  
+
         a）電子インボイスの真正性は受領時に検証可能なままとする
         b）電子インボイスの完全性は受領時に検証可能なままとする
 
@@ -214,7 +217,8 @@ In order to meet the high level objectives specified in section 4.1 above throug
 
         a) Continuity between all steps of the process concerned with handling a received invoice
         b) Authenticity of the invoice is verified and maintained
-        c) Integrity of the invoice verified and maintained
+        c) Integrity of the invoice verified and maintained  
+
         a）受け取った電子インボイスの処理に関連するプロセスのすべてのステップ間の継続性
         b）電子インボイスの真正性が検証され、維持されている
         c）検証および維持された電子インボイスの完全性
@@ -225,7 +229,8 @@ In order to meet the high level objectives specified in section 4.1 above throug
         a) Data continuity between invoice creation or receipt and its storage
         b) Verifiable authenticity of the invoice ensured throughout storage period
         c) Verifiable integrity of the invoice ensured throughout storage period
-        d) An invoice must be presentable in a legible form.
+        d) An invoice must be presentable in a legible form.  
+
         a）電子インボイス作成または受領とその保管の間のデータの継続性
         b）保管期間全体にわたって保証される電子インボイスの検証可能な真正性
         c）保管期間を通じて保証される電子インボイスの検証可能な完全性
@@ -234,7 +239,8 @@ In order to meet the high level objectives specified in section 4.1 above throug
     vi) Across the invoicing process
     vi）電子インボイス プロセス全体
 
-        a) Invoices are handled in accordance with applicable law throughout every stage of their life cycle
+        a) Invoices are handled in accordance with applicable law throughout every stage of their life cycle  
+
         a）電子インボイスは、ライフサイクルのすべての段階を通して法令に従って処理される
 
 ### 3.2.2 (On and Off) Boarding steps ( 3.2.2（オンおよびオフ）搭乗ステップ )
