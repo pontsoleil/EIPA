@@ -1,3 +1,4 @@
+# 参考
 [消費税の仕入税額控除制度における適格請求書等保存方式に関するＱ＆Ａ ](https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/pdf/qa/01-01.pdf)  
 平成 30 年６月（令和元年７月改訂）国税庁消費税軽減税率制度対応室  
 
