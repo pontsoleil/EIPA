@@ -31,6 +31,5 @@ EU規格制定の前のCWA 16460が基本の考え方を整理するため翻訳
 拙い翻訳の途中ですが、下記をご一読ください。  
 [CWA 16460　翻訳中](https://github.com/pontsoleil/EIPA/blob/master/EU%E8%A6%8F%E6%A0%BC/CWA_16460.md)  
 紙の帳簿の山と電子インボイスを突き合わせて、という状態になると収集がつきません。  
-<p text-align="right">三分一信之
-  XBRL Japan 顧問
-</p>
+<span text-align="right">三分一信之</p>
+<span text-align="right">XBRL Japan 顧問</p>
