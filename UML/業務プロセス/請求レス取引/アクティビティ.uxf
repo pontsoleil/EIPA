@@ -1,4 +1,6 @@
-<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>// Uncomment the following line to change the fontsize and font:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
 // fontsize=14
 // fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -17,75 +19,1010 @@
 //
 // Select "Custom Elements &gt; New..." to create new element types
 //////////////////////////////////////////////////////////////////////////////////////////////
-// This text will be stored with each diagram;  use it for notes.</help_text><element><id>UMLObject</id><coordinates><x>10</x><y>0</y><w>400</w><h>1040</h></coordinates><panel_attributes>納入業者
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>21</x>
+      <y>0</y>
+      <w>280</w>
+      <h>728</h>
+    </coordinates>
+    <panel_attributes>納入業者（中小企業）
 valign=top
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>550</x><y>0</y><w>470</w><h>1040</h></coordinates><panel_attributes>顧客
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>504</x>
+      <y>0</y>
+      <w>315</w>
+      <h>728</h>
+    </coordinates>
+    <panel_attributes>顧客(大企業)
 valign=top
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>330</x><y>50</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>160</x><y>220</y><w>100</w><h>40</h></coordinates><panel_attributes>出荷
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>245</x>
+      <y>35</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>126</x>
+      <y>154</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>出荷
 bg=yellow
-type=sender</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>160</y><w>110</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;30;90;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>330</x><y>1000</y><w>20</w><h>20</h></coordinates><panel_attributes>type=final</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>160</x><y>280</y><w>100</w><h>40</h></coordinates><panel_attributes>納品書発行
-bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>250</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>160</x><y>470</y><w>100</w><h>40</h></coordinates><panel_attributes>出荷
+type=sender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>112</y>
+      <w>77</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;30.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>245</x>
+      <y>700</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>126</x>
+      <y>196</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>納品書発行
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>175</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>126</x>
+      <y>329</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>出荷
 bg=yellow
-type=sender</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>160</x><y>530</y><w>100</w><h>40</h></coordinates><panel_attributes>納品書発行
-bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>500</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>290</x><y>860</y><w>100</w><h>40</h></coordinates><panel_attributes>支払い通知書
+type=sender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>126</x>
+      <y>371</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>納品書発行
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>350</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>217</x>
+      <y>602</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>支払い通知書
 受領
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>890</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>370</y><w>100</w><h>40</h></coordinates><panel_attributes>検収
-bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>310</y><w>160</w><h>60</h></coordinates><panel_attributes>[合格]
-lt=&lt;-</panel_attributes><additional_attributes>10;40;20;20;140;20;140;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>620</y><w>100</w><h>40</h></coordinates><panel_attributes>検収
-bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>290</x><y>940</y><w>100</w><h>40</h></coordinates><panel_attributes>入金
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>623</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>259</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>検収
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>217</y>
+      <w>112</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>[合格]
+lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;20.0;20.0;140.0;20.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>434</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>検収
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>217</x>
+      <y>658</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>入金
 bg=pink
-type=receiver</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>970</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>860</y><w>100</w><h>40</h></coordinates><panel_attributes>支払い通知書
+type=receiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>245</x>
+      <y>679</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>602</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>支払い通知書
 発行
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>940</y><w>100</w><h>40</h></coordinates><panel_attributes>支払
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>658</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>支払
 bg=pink
-type=sender</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>540</y><w>200</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>180;10;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>430</x><y>860</y><w>100</w><h>40</h></coordinates><panel_attributes>支払い通知書
-bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>430</x><y>280</y><w>100</w><h>40</h></coordinates><panel_attributes>納品書
-bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>430</x><y>530</y><w>100</w><h>40</h></coordinates><panel_attributes>納品書
-bg=cyan</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>290</y><w>200</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>180;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>310</y><w>160</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;40;130;20;10;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>560</y><w>160</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;40;130;20;10;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>870</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>870</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>730</x><y>220</y><w>100</w><h>40</h></coordinates><panel_attributes>受入検査
+type=sender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>378</y>
+      <w>140</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>329</x>
+      <y>602</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>支払い通知書</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>315</x>
+      <y>196</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>納品書
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>315</x>
+      <y>371</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>納品書
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>203</y>
+      <w>140</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>217</y>
+      <w>210</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>280.0;40.0;270.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>392</y>
+      <w>217</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>290.0;40.0;280.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>609</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>609</y>
+      <w>147</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>630</x>
+      <y>154</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>受入検査
 bg=yellow
-type=receiver</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>730</x><y>470</y><w>100</w><h>40</h></coordinates><panel_attributes>受入検査
+type=receiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>630</x>
+      <y>329</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>受入検査
 bg=yellow
-type=receiver</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>560</y><w>160</w><h>60</h></coordinates><panel_attributes>[合格]
-lt=&lt;-</panel_attributes><additional_attributes>10;40;20;20;140;20;140;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>290</x><y>90</y><w>100</w><h>40</h></coordinates><panel_attributes>契約締結
-bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>60</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>90</y><w>100</w><h>40</h></coordinates><panel_attributes>契約締結
-bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>100</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>710</x><y>30</y><w>140</w><h>1000</h></coordinates><panel_attributes>現業部門
+type=receiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>392</y>
+      <w>112</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>[合格]
+lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;20.0;140.0;20.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>217</x>
+      <y>63</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>契約締結
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>245</x>
+      <y>42</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>63</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>契約締結
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>70</y>
+      <w>147</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>616</x>
+      <y>21</y>
+      <w>98</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>現業部門
 valign=top
 lt=..
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>560</x><y>30</y><w>140</w><h>1000</h></coordinates><panel_attributes>購買部門
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>511</x>
+      <y>21</y>
+      <w>98</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>購買部門
 valign=top
 lt=..
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>430</x><y>90</y><w>100</w><h>40</h></coordinates><panel_attributes>契約書
-bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>100</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>UMLSyncBarHorizontal</id><coordinates><x>580</x><y>340</y><w>100</w><h>20</h></coordinates><panel_attributes>{joinSpec=
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>329</x>
+      <y>63</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>契約書</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>483</x>
+      <y>98</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>525</x>
+      <y>238</y>
+      <w>70</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>{joinSpec=
 date is on or 
 after July 1st
 and the exam 
-is passed}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLSyncBarHorizontal</id><coordinates><x>580</x><y>590</y><w>100</w><h>20</h></coordinates><panel_attributes>{joinSpec=
+is passed}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>525</x>
+      <y>413</y>
+      <w>70</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>{joinSpec=
 date is on or 
 after July 1st
 and the exam 
-is passed}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>590</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLSyncBarHorizontal</id><coordinates><x>570</x><y>820</y><w>120</w><h>20</h></coordinates><panel_attributes>lw=5
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>380</y><w>50</w><h>470</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;450;30;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>650</y><w>30</w><h>200</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>820</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLObject</id><coordinates><x>430</x><y>150</y><w>100</w><h>40</h></coordinates><panel_attributes>発注書
-bg=pink</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>290</x><y>150</y><w>100</w><h>40</h></coordinates><panel_attributes>受注
-bg=pink</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>150</y><w>100</w><h>40</h></coordinates><panel_attributes>発注
-bg=pink</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>160</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>160</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>290</x><y>390</y><w>100</w><h>40</h></coordinates><panel_attributes>不合格品対応
-bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>430</x><y>390</y><w>100</w><h>40</h></coordinates><panel_attributes>不合格連絡書
-bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>290</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;120;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>400</y><w>110</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;10;40;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>400</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>760</x><y>530</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=white
-type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>500</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>570</x><y>530</y><w>100</w><h>40</h></coordinates><panel_attributes>返品
-bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>530</y><w>120</w><h>50</h></coordinates><panel_attributes>[不合格]
+is passed}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>413</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>518</x>
+      <y>574</y>
+      <w>84</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lw=5
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>266</y>
+      <w>28</w>
+      <h>329</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;450.0;20.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>455</y>
+      <w>21</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>574</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>315</x>
+      <y>105</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>発注書
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>217</x>
+      <y>105</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>受注
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>105</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>発注
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>112</y>
+      <w>161</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>483</x>
+      <y>112</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>217</x>
+      <y>273</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>不合格品対応
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>315</x>
+      <y>273</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>不合格連絡書</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>203</y>
+      <w>161</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>154</x>
+      <y>280</y>
+      <w>77</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;40.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>483</x>
+      <y>280</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>651</x>
+      <y>371</y>
+      <w>28</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>bg=white
+type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>350</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>371</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>返品
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>371</y>
+      <w>77</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>[不合格]
 lt=&lt;-
-</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>760</x><y>280</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>250</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>280</y><w>110</w><h>40</h></coordinates><panel_attributes>[不合格]
-lt=&lt;-</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>280</y><w>100</w><h>40</h></coordinates><panel_attributes>返品
-bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLTimer</id><coordinates><x>560</x><y>700</y><w>60</w><h>80</h></coordinates><panel_attributes>月末
-bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>710</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;120;40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>400</y><w>70</w><h>170</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;20;150;50;150</additional_attributes></element><element><id>UMLObject</id><coordinates><x>20</x><y>30</y><w>120</w><h>1000</h></coordinates><panel_attributes>経理部門
+</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>651</x>
+      <y>196</y>
+      <w>28</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>175</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>196</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>[不合格]
+lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>525</x>
+      <y>196</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>返品
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLTimer</id>
+    <coordinates>
+      <x>511</x>
+      <y>490</y>
+      <w>42</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>月末
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>525</x>
+      <y>497</y>
+      <w>42</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;120.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>294</y>
+      <w>161</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;130.0;210.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>28</x>
+      <y>21</y>
+      <w>84</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>経理部門
 valign=top
 lt=..
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>280</x><y>30</y><w>120</w><h>1000</h></coordinates><panel_attributes>営業部門
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>210</x>
+      <y>21</y>
+      <w>84</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>営業部門
 valign=top
 lt=..
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>150</x><y>30</y><w>120</w><h>1000</h></coordinates><panel_attributes>現業部門
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>119</x>
+      <y>21</y>
+      <w>84</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>現業部門
 valign=top
 lt=..
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLObject</id><coordinates><x>860</x><y>30</y><w>150</w><h>1000</h></coordinates><panel_attributes>経理部門
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>721</x>
+      <y>21</y>
+      <w>91</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>経理部門
 valign=top
-lt=..</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>950</y><w>220</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;..</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>480</y><w>500</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;..</panel_attributes><additional_attributes>480;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>230</y><w>500</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;..</panel_attributes><additional_attributes>480;10;10;10</additional_attributes></element><element><id>UMLFrame</id><coordinates><x>0</x><y>140</y><w>1030</w><h>540</h></coordinates><panel_attributes>　　複数回
-lt=.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>340</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>620</x><y>50</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>60</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>620</x><y>1000</y><w>20</w><h>20</h></coordinates><panel_attributes>type=final</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>970</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;10;10</additional_attributes></element></diagram>
+lt=..</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>665</y>
+      <w>259</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;..</panel_attributes>
+    <additional_attributes>10.0;10.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>336</y>
+      <w>455</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;..</panel_attributes>
+    <additional_attributes>630.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>161</y>
+      <w>455</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;..</panel_attributes>
+    <additional_attributes>630.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>14</x>
+      <y>98</y>
+      <w>812</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>　　複数回
+lt=.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>238</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>553</x>
+      <y>35</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>42</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>553</x>
+      <y>700</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>679</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>406</x>
+      <y>105</y>
+      <w>84</w>
+      <h>329</h>
+    </coordinates>
+    <panel_attributes>EDI
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>112</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>70</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>280</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+</diagram>
