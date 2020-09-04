@@ -1,1 +1,3 @@
 After delivery and before the invoice is issued, the Seller waits for a receiving advice from the Receiver, in which the Receiver acknowledges that the goods and services have been received and if there are any issues with the delivery. The Seller bases the invoice on information contained in the receiving advice. The invoice may refer to one despatch advice, one receiving advice and may also refer to only one purchase order.  
+
+配送後、電子インボイスが発行される前に、売り手は受領担当者からの受領通知書の受け取りを待つ。受領担当者は、商品とサービスが受け取られたこと、および配送に問題がないかどうかを確認する。 売り手は、受領通知書に含まれる情報に基づいて電子インボイスを作成する。 電子インボイスは、1つの発送通知書と1つの受信通知書を参照する場合があり、1つの発注書のみを参照する場合もある。
