@@ -1,8 +1,8 @@
 # Business process requirements supported
 | # | Process |  |
 | ---- | ---- | ---- |
-| [P1](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P%201)契約に基づく注文書に対する配送についてのインボイス) | Invoicing of deliveries of goods and services against purchase orders, based on a contract | 契約に基づく、注文書に対する配送についてのインボイス |
-| P2 | Invoicing deliveries of goods and services based on a contract | 注文書が不要な契約に基づく定期的な配送についてのインボイス |
+| [P 1](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P%201)契約に基づく注文書に対する配送についてのインボイス) | Invoicing of deliveries of goods and services against purchase orders, based on a contract | 契約に基づく、注文書に対する配送についてのインボイス |
+| [P 2](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P%202)注文書が不要な契約に基づく定期的な配送についてのインボイス) | Invoicing deliveries of goods and services based on a contract | 注文書が不要な契約に基づく定期的な配送についてのインボイス |
 | P3 | Invoicing the delivery of an incidental purchase order | 偶発的な注文書に対する配送についてのインボイス |
 | P4 | Pre-payment | 前払い |
 | P5 | Spot payment | 即金払い |
