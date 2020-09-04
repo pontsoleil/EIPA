@@ -1,0 +1,1 @@
+After receipt of the purchase order the Seller sends a despatch advice in advance of the delivery. The despatch advice specifies one delivery. In the invoice a reference is made to the relevant despatch advice. The invoice content should reflect the content of despatch advice which it refers to. An invoice may only refer to one purchase order and one despatch advice.  

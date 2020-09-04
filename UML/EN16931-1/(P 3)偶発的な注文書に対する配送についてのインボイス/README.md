@@ -1,0 +1,1 @@
+In this process, a separate contract does not exist. Purchase orders are placed over the telephone, using internet or over the counter. The purchase order serves as the contract and triggers the delivery. Each delivery results in an invoice. The purchase order may be confirmed by the Seller (not shown in the diagram).  
