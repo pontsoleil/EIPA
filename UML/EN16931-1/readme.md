@@ -12,4 +12,4 @@
 | [P 9](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P%209)クレジットノート（払戻通知書）または負のインボイス) | Credit notes or invoices with negative amounts, issued for a variety of reasons including the return of empty packaging | クレジットノート（払戻通知書）または負の請求書 |
 | [P10](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P10)修正インボイス) | Corrective invoicing (cancellation/correction of an invoice) | 修正インボイス |
 | [P11](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P11)2部分的および最終的なインボイス) | Partial and final invoicing | 部分的および最終的なインボイス |
-| [P12](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P12)自己発行インボイス) | Self billing | 自己発行インボイス |
+| [P12](https://github.com/pontsoleil/EIPA/tree/master/UML/EN16931-1/(P12)自己請求インボイス) | Self billing | 自己請求インボイス |

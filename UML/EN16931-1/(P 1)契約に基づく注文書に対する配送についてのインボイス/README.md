@@ -1,15 +1,15 @@
 In this process the Buyer and the Seller conclude a formal contract (or there is an assumed contract by legal definition) in which the terms and conditions are stated under which goods and services will be delivered and are paid for. The Buyer orders the goods and services, stating the specifications for goods and services, the quantities and the place and time of delivery. The Seller delivers the ordered goods and services to the Receiver as specified on the purchase order. This delivery is then invoiced by the Seller to the Buyer. Finally, the Buyer pays the Payee.  
 
-このプロセスでは、買い手と売り手が正式な契約を締結する（または法的定義により想定される契約がある）。その中には、商品およびサービスの配送と支払いの条件が記載されている。 買い手は、商品とサービスの仕様、数量、配達場所と時間を明記して商品とサービスを注文する。 売り手は、注文書で指定されたとおりに、注文された商品とサービスを買い手に配達する。 この配達は、売り手から買い手に請求される。 最後に、買い手は入金担当者に支払います。  
-
 A purchase order is sent by the Buyer as a single document. Depending on the contract between the Seller and the Buyer the purchase order may be confirmed by the Seller or even be the subject of negotiation between Buyer and Seller (not shown in the diagram). The resulting purchase order then may result in one or more deliveries (e.g. regular monthly or periodic supply with multiple deliveries under one PO). Each delivery results in an invoice. An invoice may only refer to one delivery and one purchase order.  
-
-注文書は買い手から単一の電子インボイスとして送信される。 売り手と買い手との間の契約によっては、購入注文が売り手によって確認されるか、買い手と売り手の間の交渉の対象になる場合がある（図には表示していない）。 結果として得られる注文書は、1つまたは複数の配達（たとえば、1つの注文書の下での複数の配達による定期的な月次または定期的な提供）となる可能性がある。 納品ごとに電子インボイスが作成される。 電子インボイスは、1つの配送と1つの注文書のみを参照できる。  
 
 The delivery may include the pick-up and return of returnable packaging from previous deliveries and, for which a payment (deposit) had previously been made by the Buyer and had been received by the Seller. Depending on the agreement between the Seller and Buyer, this deposit may need to be reimbursed to the Buyer using the invoice to account for reimbursement. The invoice may therefore contain lines with a negative amount.   Alternatively, credit notes may be used instead.  
 
-配達には、以前の配達からの返却可能な梱包の集荷と返却が含まれる場合がある。その場合、支払い（預り金）は以前に買い手が行い、売り手が受け取っている。 売り手と買い手との間の合意によっては、この預り金は、償還を説明するための電子インボイスを使用して買い手に払戻される必要がある場合がある。 したがって、電子インボイスには負の金額の行が含まれる場合がある。 あるいは、代わりにクレジットノートを使用することもできる。  
-
 In a number of national and legal environments, descriptions of products, names and addresses of parties, and locations are obligatory in the electronic messages. Therefore, textual representation of these objects is included in the core invoice model. In other jurisdictions, the Buyer and the Seller may agree on one or more identification schemes for products, locations, parties and other objects. These schemes remove the need for textual based descriptions and names and addresses of the objects identified. These schemes are usual agreed in advance of the Purchase to Pay process and there are various mechanism used for this. This process is called Master Data Synchronisation. In the core invoice model it is assumed that a Master Data Synchronisation process has not been implemented.  
+
+このプロセスでは、買い手と売り手が正式な契約を締結する（または法的定義により想定される契約がある）。その中には、商品およびサービスの配送と支払いの条件が記載されている。 買い手は、商品とサービスの仕様、数量、配達場所と時間を明記して商品とサービスを注文する。 売り手は、注文書で指定されたとおりに、注文された商品とサービスを買い手に配達する。 この配達は、売り手から買い手に請求される。 最後に、買い手は入金担当者に支払います。  
+
+注文書は買い手から単一の電子インボイスとして送信される。 売り手と買い手との間の契約によっては、購入注文が売り手によって確認されるか、買い手と売り手の間の交渉の対象になる場合がある（図には表示していない）。 結果として得られる注文書は、1つまたは複数の配達（たとえば、1つの注文書の下での複数の配達による定期的な月次または定期的な提供）となる可能性がある。 納品ごとに電子インボイスが作成される。 電子インボイスは、1つの配送と1つの注文書のみを参照できる。  
+
+配達には、以前の配達からの返却可能な梱包の集荷と返却が含まれる場合がある。その場合、支払い（預り金）は以前に買い手が行い、売り手が受け取っている。 売り手と買い手との間の合意によっては、この預り金は、償還を説明するための電子インボイスを使用して買い手に払戻される必要がある場合がある。 したがって、電子インボイスには負の金額の行が含まれる場合がある。 あるいは、代わりにクレジットノートを使用することもできる。  
 
 多くの国内および法的環境では、製品の説明、当事者の名前と住所、および場所は電子インボイスで必須項目である。 したがって、これらの項目のテキスト表現は、「コア電子インボイスモデル」に含まれている。 他の管轄区域では、買い手と売り手は、製品、場所、組織、およびその他の項目を識別する1つ以上の識別スキーマに同意する場合がある。 これらのスキーマにより、テキストベースの説明、識別された項目の名前とアドレスは、必ずしも必要ではない。 これらのスキーマは通常、購入から支払いのプロセスに先立って合意されており、これにはさまざまなメカニズムが使用される。 このプロセスは、マスターデータの同期と呼ばれる。 「コア電子インボイスモデル」では、マスターデータ同期プロセスが実装されていないことが前提となっている。  
