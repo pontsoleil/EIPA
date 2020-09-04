@@ -1,1 +1,3 @@
 In this process the contract directly triggers the delivery. There is no requirement for a purchase order. This scenario is common in the delivery of utilities, but also in delivery of, e.g. food services to offices, schools and hospitals. Invoices are issued to cover a fixed period of time (which can be different per invoice line) and there are continuously instances of the goods and service being delivered. An invoice may only refer to one contract.  
+
+このプロセスでは、契約が直接配信を引き起こす。 注文書はなくても良い。 このシナリオは、オフィス、学校、病院への食品サービスなどユーティリティの提供の際に一般的である。 電子インボイスは一定の期間（電子インボイスの明細ごとに異なる場合がある）をカバーするように発行され、提供される商品とサービスが継続的に具体的に存在する。電子インボイスは1つの契約のみを参照できる。  
