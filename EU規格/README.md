@@ -1,6 +1,7 @@
 # 規格制定の歴史
 ![年表](図/history.png)
 ![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+[クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/)
 # 資料
 | 翻訳資料 | ファイル名
 | ---- | ----
