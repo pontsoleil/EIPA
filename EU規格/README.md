@@ -3,7 +3,7 @@
 ![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 [クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/deed.ja)
 # 資料
-| 資料 | ファイル名
+| 資料 | ファイル / URL
 | ---- | ----
 | CWA 16460（抜粋） | [CWA_16460_抜粋.md](CWA_16460_抜粋.md)
 | EU指令 2014/55/EU（一部翻訳） | 電子インボイスに関係するArticle 233 ( 233条 )のみ翻訳<br>[EU指令_2014_55_EU.md](EU指令_2014_55_EU.md])
@@ -14,7 +14,7 @@
 
 EN 16931は、１２種類の業務パターン、コア要素、ビジネスコントロールについての規則、の他  
 そのパート3では、UBL 2.1及びUN/CEFACTなどとの対応表を規定している。  
-| 資料 | ファイル名
+| 資料 | ファイル / URL
 | ---- | ----
 | EN 16931-1:2017 | 電子インボイス – パート1：電子請求書のコア要素のセマンティックデータモデル<br>[CEN/TC 434 - Electronic Invoicing – Part 1: Semantic data model of the core elements  of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
 | EN 16931-2:2017 | 電子インボイス – パート2：EN 16931-1に準拠する構文のリスト<br>[CEN/TC 434 - Electronic Invoicing - Part 2: List of syntaxes that comply with EN 16931-1](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60603&cs=10D168BCA9F3F058F649A272825D6E580)
