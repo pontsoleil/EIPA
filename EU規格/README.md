@@ -13,10 +13,6 @@
 | EU指令 2014/55/EU | 公共調達における電子インボイスについての指令<br>on electronic invoicing in public procurement<br>[EU法令サイト EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055&from=EN)
 | EN 16931-1:2017 | 電子インボイス – パート1：電子請求書のコア要素のセマンティックデータモデル<br>Electronic invoicing – Part 1: Semantic data model of the core elements  of an electronic invoice<br>[CEN/TC 434 - Electronic Invoicing EN 16931-1:2017](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
 | EN 16931-2:2017 | 電子インボイス – パート2：EN 16931-1に準拠する構文のリスト<br>Electronic invoicing – Part 2: List of syntaxes that comply with EN 16931-1<br>[CEN/TC 434 - 	Electronic Invoicing EN 16931-2:2017](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60603&cs=10D168BCA9F3F058F649A272825D6E580)
-| EN 16931-3-1:2017 | [CEN/TC 434 - Electronic invoicing – Part 3-1: 
-Methodology for syntax bindings of the core elements of an electronic invoice
-](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:63739&cs=174FEF71188CFDC66ACA987E63654BEF3)
-| EN 16931-3-2:2020 | [CEN/TC 434 - Electronic invoicing – Part 3-2: Syntax bindings for ISO/IEC 19845 (UBL 2.1) invoice and credit note
- EN 16931-3-2:2020](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66718&cs=11C6E317DF61446350759AB0B8C0BA78B)
-| EN 16931-3-3:2020 | [CEN/TC 434 - Electronic invoicing – Part 3-3: Syntax bindings for UN/CEFACT XML Industry Invoice D16B
- EN 16931-3-3:2020](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66719&cs=1025C4D8F1D8727856076051C74A8EC14)
+| EN 16931-3-1:2017 | [CEN/TC 434 - Electronic invoicing – Part 3-1: Methodology for syntax bindings of the core elements of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:63739&cs=174FEF71188CFDC66ACA987E63654BEF3)
+| EN 16931-3-2:2020 | [CEN/TC 434 - Electronic invoicing – Part 3-2: Syntax bindings for ISO/IEC 19845 (UBL 2.1) invoice and credit note EN 16931-3-2:2020](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66718&cs=11C6E317DF61446350759AB0B8C0BA78B)
+ | EN 16931-3-3:2020 | [CEN/TC 434 - Electronic invoicing – Part 3-3: Syntax bindings for UN/CEFACT XML Industry Invoice D16B EN 16931-3-3:2020](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66719&cs=1025C4D8F1D8727856076051C74A8EC14)
