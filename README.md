@@ -30,7 +30,7 @@ EU規格制定の前のCWA 16460が基本の考え方を整理するため翻訳
 この観点から、EU規格には、受信した電子インボイスの確認や記載内容のチェックのための膨大なルール群が存在しています。  
 翻訳の途中ですが、下記をご一読ください。  
 [EU規格](https://github.com/pontsoleil/EIPA/tree/master/EU%E8%A6%8F%E6%A0%BC)  
-[CWA 16460　翻訳中](https://github.com/pontsoleil/EIPA/blob/master/EU%E8%A6%8F%E6%A0%BC/CWA_16460.md)  
+[CWA 16460　抜粋](EU規格/CWA_16460_抜粋.md)  
 紙の帳簿の山と電子インボイスを突き合わせて、という状態になると大変な作業です。  
 
 XBRL Japan 顧問 三分一信之  
