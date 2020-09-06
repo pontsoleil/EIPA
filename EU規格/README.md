@@ -11,4 +11,4 @@
 | CWA 16460（英語） | Good Practice: e-Invoicing Compliance Guidelines - The Commentary<br>[CWA_16460.pdf](CWA_16460.pdf)
 | EU指令 2010/45/EU | 請求に関するルールに関する付加価値税の共通システムに関する指令<br>amending Directive 2006/112/EC<br>on the common system of value added tax as regards the rules on invoicing<br>[EU法令サイト EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32010L0045&from=EN)
 | EU指令 2014/55/EU | 公共調達における電子インボイスについての指令<br>on electronic invoicing in public procurement<br>[EU法令サイト EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055&from=EN)
-| EN 16931 | [EN 16931](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
+| EN 16931 | [CEN/TC 434 - 	Electronic Invoicing EN 16931-1:2017](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
