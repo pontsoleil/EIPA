@@ -12,4 +12,4 @@
 | [P 9](P%209%20クレジットノート（払戻通知書）または負のインボイス) | Credit notes or invoices with negative amounts, issued for a variety of reasons including the return of empty packaging | [クレジットノート（払戻通知書）または負の請求書](P%209%20クレジットノート（払戻通知書）または負のインボイス/アクティビティ.png) |
 | [P10](P10%20修正インボイス) | Corrective invoicing (cancellation/correction of an invoice) | [修正インボイス](P10%20修正インボイス/アクティビティ.png) |
 | [P11](P11%20部分的および最終的なインボイス) | Partial and final invoicing | [部分的および最終的なインボイス](P11%20部分的および最終的なインボイス/アクティビティ.png) |
-| [P12](P12%20自己請求インボイス) | Self billing | [自己請求インボイス|(P12%20自己請求インボイス/アクティビティ.png)
+| [P12](P12%20自己請求インボイス) | Self billing | [自己請求インボイス](P12%20自己請求インボイス/アクティビティ.png)
