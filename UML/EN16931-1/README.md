@@ -1,6 +1,7 @@
 # Business process requirements supported
 | # | Process |  |
 | ---- | ---- | ---- |
+| ユースケース |  | [ユースケース](ユースケース.png) |
 | [P 1](P%201%20契約に基づく注文書に対する配送についてのインボイス) | Invoicing of deliveries of goods and services against purchase orders, based on a contract | [契約に基づく、注文書に対する配送についてのインボイス](P%201%20契約に基づく注文書に対する配送についてのインボイス/アクティビティ.png) |
 | [P 2](P%202%20注文書が不要な契約に基づく定期的な配送についてのインボイス) | Invoicing deliveries of goods and services based on a contract | [注文書が不要な契約に基づく定期的な配送についてのインボイス](P%202%20注文書が不要な契約に基づく定期的な配送についてのインボイス/アクティビティ.png) |
 | [P 3](P%203%20偶発的な注文書に対する配送についてのインボイス) | Invoicing the delivery of an incidental purchase order | [偶発的な注文書に対する配送についてのインボイス](P%203%20偶発的な注文書に対する配送についてのインボイス/アクティビティ.png) |
