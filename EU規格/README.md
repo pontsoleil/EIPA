@@ -2,6 +2,10 @@
 ![年表](図/history.png)
 ![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 [クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/deed.ja)
+参考 [Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)　　
+From: Tim McGrath <tmcgrath@portcomm.com.au>
+To: Jon Bosak <Jon.Bosak@Sun.COM>
+Date: Tue, 27 Nov 2001 14:55:24 +0800
 # 資料
 | 資料 | ファイル / URL
 | ---- | ----
