@@ -14,6 +14,7 @@
 
 EN 16931は、１２種類の業務パターン、コア要素、ビジネスコントロールについての規則、の他  
 そのパート3では、UBL 2.1及びUN/CEFACTなどとの対応表を規定している。  
+入手は、CENのサイトから。
 | 資料 | ファイル / URL
 | ---- | ----
 | EN 16931-1:2017 | 電子インボイス – パート1：電子請求書のコア要素のセマンティックデータモデル<br>[CEN/TC 434 - Electronic Invoicing – Part 1: Semantic data model of the core elements  of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
