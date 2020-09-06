@@ -14,3 +14,8 @@
 | [P10](P10%20修正インボイス) | 修正インボイス<br>Corrective invoicing (cancellation/correction of an invoice) | [アクティビティ](P10%20修正インボイス/アクティビティ.png) |
 | [P11](P11%20部分的および最終的なインボイス) | 部分的および最終的なインボイス<br>Partial and final invoicing | [アクティビティ](P11%20部分的および最終的なインボイス/アクティビティ.png) |
 | [P12](P12%20自己請求インボイス) | 自己請求インボイス<br>Self billing | [アクティビティ](P12%20自己請求インボイス/アクティビティ.png)
+| A.3.1 | Taxes other than VAT | 
+| A.3.2 | Allowances and charges | 
+| [A.3.3](A.3.3%20ファクタリング) | ファクタリング<br>Factoring | [アクティビティ](A.3.3%20ファクタリング/アクティビティ.png)
+| A.3.4 | Payment instructions | 
+| A.3.5 | Corrections | 
