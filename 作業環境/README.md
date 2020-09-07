@@ -5,7 +5,9 @@
 [チートシートとしての活用や、問題発生時の参照記事。（(番外編)俺の開発中の主な流れ）](https://qiita.com/gold-kou/items/7f6a3b46e2781b0dd4a0#step1%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E4%BD%9C%E6%88%90)  
 Gitクライアントをインストールすれば、コマンドでなく画面から操作できます。  
 
-* 文書編集環境は、Visual Studioです。
+# 使用するツール
+* 文書編集環境は、Visual Studioです。  
+Markdownで記述した文書を表示する「プレビューを開く」で表示確認させるためのツールが、Markdown PDFです。
 * UML描画ツールは、お絵書きツールのUMLetです。
 
 # Visual Studioのインストール
