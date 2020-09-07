@@ -31,4 +31,8 @@ EN 16931は、１２種類の業務パターン、コア要素、ビジネスコ
  | CEN/TS 16931-3-3:2020 | UN/CEFACT XML 業界の電子インボイス D16Bの構文対応規定 （　[部分](図/TS-16931-3-3.png)　）<br>[CEN/TC 434 - Electronic invoicing – Part 3-3: Syntax bindings for UN/CEFACT XML Industry Invoice D16B](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66719&cs=1025C4D8F1D8727856076051C74A8EC14)
 
 [国会図書館リサーチナビ](https://rnavi.ndl.go.jp/research_guide/entry/theme-honbun-400383.php)
-> EN規格は独自に出版されることはなく、欧州各国の国家規格として入手します。 たとえば、「EN 10002-1」という番号のEN規格を入手したい場合は、BS EN 10002-1　...英国規格協会(BSI)が発行する英国の国家規格（BS規格）DIN EN 10002-1 ...ドイツ規格協会(DIN)が発行するドイツの国家規格（DIN規格）等の国家規格として発行・販売されているものを利用することになります。これらはEN規格「EN 10002-1」が、両国で国家規格として採用されたものです。本文の言語は各国の言語にあわせて翻訳されていますが、内容は同一です。
+> EN規格は独自に出版されることはなく、欧州各国の国家規格として入手します。 たとえば、「EN 10002-1」という番号のEN規格を入手したい場合は、BS EN 10002-1　...英国規格協会(BSI)が発行する英国の国家規格（BS規格）DIN EN 10002-1 ...ドイツ規格協会(DIN)が発行するドイツの国家規格（DIN規格）等の国家規格として発行・販売されているものを利用することになります。これらはEN規格「EN 10002-1」が、両国で国家規格として採用されたものです。本文の言語は各国の言語にあわせて翻訳されていますが、内容は同一です。  
+
+オランダ規格協会（Netherlands Standardisation Institute：NEN）からの購入がおすすめです。  
+[NEN EN 16931-1](https://www.nen.nl/Searchresults.htm?q=EN+16931-1)  
+[CEN/TS 16931-3-n](https://www.nen.nl/Searchresults.htm?q=TS+16931-3)  
