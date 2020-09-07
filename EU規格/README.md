@@ -3,11 +3,11 @@
 ![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 [クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/deed.ja)
 ## 参考  
-* [MoU on electronic business between IEC, ISO, ITU, and UN/ECE](https://www.itu.int/en/ITU-T/ebusiness/Pages/mou/default.aspx)
-* [OASIS Joins International Alliance of Standards-Setting Bodies for Electronic Business](https://www.oasis-open.org/news/pr/oasis-joins-international-alliance-of-standards-setting-bodies-for-electronic-business)  
-UBL2.1@OASIS  [Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)  
+* <i class="fas fa-external-link-alt"></i>[MoU on electronic business between IEC, ISO, ITU, and UN/ECE](https://www.itu.int/en/ITU-T/ebusiness/Pages/mou/default.aspx)
+* <i class="fas fa-external-link-alt"></i>[OASIS Joins International Alliance of Standards-Setting Bodies for Electronic Business](https://www.oasis-open.org/news/pr/oasis-joins-international-alliance-of-standards-setting-bodies-for-electronic-business)  
+UBL2.1@OASIS  <i class="fas fa-external-link-alt"></i>[Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)  
 From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800  
-* [PEPPOL Final Report](https://peppol.eu/wp-content/uploads/2016/08/20121205_PEPPOL_final_report_v2_4_web.pdf)
+* <i class="fas fa-external-link-alt"></i>[PEPPOL Final Report](https://peppol.eu/wp-content/uploads/2016/08/20121205_PEPPOL_final_report_v2_4_web.pdf)
 # 資料
 | 資料 | ファイル / URL
 | ---- | ----
