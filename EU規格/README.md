@@ -4,10 +4,10 @@
 [クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/deed.ja)
 ## 参考  
 * [MoU on electronic business between IEC, ISO, ITU, and UN/ECE](https://www.itu.int/en/ITU-T/ebusiness/Pages/mou/default.aspx)
-* UBL2.1@OASIS[Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)　　
-From: Tim McGrath <tmcgrath@portcomm.com.au>
-To: Jon Bosak <Jon.Bosak@Sun.COM>
-Date: Tue, 27 Nov 2001 14:55:24 +0800
+* UBL2.1@OASIS<br>[Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)<br>
+From: Tim McGrath <tmcgrath@portcomm.com.au>  
+To: Jon Bosak <Jon.Bosak@Sun.COM>  
+Date: Tue, 27 Nov 2001 14:55:24 +0800  
 # 資料
 | 資料 | ファイル / URL
 | ---- | ----
