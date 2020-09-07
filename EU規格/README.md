@@ -5,7 +5,7 @@
 ## 参考  
 * [MoU on electronic business between IEC, ISO, ITU, and UN/ECE](https://www.itu.int/en/ITU-T/ebusiness/Pages/mou/default.aspx)
 * [OASIS Joins International Alliance of Standards-Setting Bodies for Electronic Business](https://www.oasis-open.org/news/pr/oasis-joins-international-alliance-of-standards-setting-bodies-for-electronic-business)  
-UBL2.1@OASIS<br>[Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)  
+UBL2.1@OASIS%20%20ject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)  
 From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800  
 # 資料
 | 資料 | ファイル / URL
