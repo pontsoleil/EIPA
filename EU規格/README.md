@@ -31,6 +31,6 @@ EN 16931は、１２種類の業務パターン、コア要素、ビジネスコ
  | CEN/TS 16931-3-3:2020 | UN/CEFACT XML 業界の電子インボイス D16Bの構文対応規定 （　[部分](図/TS-16931-3-3.png)　）<br>[CEN/TC 434 - Electronic invoicing – Part 3-3: Syntax bindings for UN/CEFACT XML Industry Invoice D16B](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66719&cs=1025C4D8F1D8727856076051C74A8EC14)
 
 EU規格は、オランダのNENからの購入がおすすめです。  
-[EN 16931-1]（https://www.nen.nl/Searchresults.htm?q=EN+16931-1）  
-[TS 16931-3]（https://www.nen.nl/Searchresults.htm?q=TS+16931-3）  
+EN 16931-1は、　https://www.nen.nl/Searchresults.htm?q=EN+16931-1  
+TS 16931-3は、　https://www.nen.nl/Searchresults.htm?q=TS+16931-3  
 NEN-EN 16931-1は、EN 16931-1と同じ内容です。  
