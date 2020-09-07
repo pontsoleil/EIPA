@@ -7,7 +7,7 @@ Gitクライアントをインストールすれば、コマンドでなく画�
 
 # 使用するツール
 * 文書編集環境は、Visual Studioです。  
-Markdownで記述した文書を表示する「プレビューを開く」で表示確認させるためのツールが、Markdown PDFです。
+* Markdownで記述した文書を表示する「プレビューを開く」で表示確認させるためのツールが、Markdown PDFです。
 * UML描画ツールは、お絵書きツールのUMLetです。
 
 # Visual Studioのインストール
