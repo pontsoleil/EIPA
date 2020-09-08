@@ -2,9 +2,6 @@
 ## スライド
 [Standards for exchanging business data](XBRL_GL_and_invoicing_07092020_Koskentalo.pdf)
 
-## 映像
-<video src="XBRL_GL_and_invoicing_07092020_Koskentalo_1.m4v" controls><a href="XBRL_GL_and_invoicing_07092020_Koskentalo_1.m4v">XBRL_GL_and_invoicing_07092020_Koskentalo_1</a></video>
-
 # ハイパーリンク
 ## スライド 4 Letting go of paper with stuctural data
 [Real Time Economy (RTE) project](http://rte.fi/past-projects/)  
