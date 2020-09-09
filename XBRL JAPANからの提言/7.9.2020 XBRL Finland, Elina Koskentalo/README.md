@@ -3,7 +3,7 @@
 [Video](https://www.sambuichi.jp/?p=4137)
 
 ## スライド
-[Standards for exchanging business data](XBRL_GL_and_invoicing_07092020_Koskentalo.pdf)
+[Standards for exchanging business data](07092020_Koskentalo.pdf)
 
 # ハイパーリンク
 ## スライド 4 Letting go of paper with stuctural data
