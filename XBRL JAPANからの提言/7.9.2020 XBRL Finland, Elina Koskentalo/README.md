@@ -1,6 +1,8 @@
 # プレゼンテーション
 ## スライド
-[Standards for exchanging business data](XBRL_GL_and_invoicing_07092020_Koskentalo.pdf)
+[Standards for exchanging business data](07092020_Koskentalo.pdf)  
+![NSG 3.0](Fig/NSG3.png)
+![NSG全体像](Fig/NSGFig.png)
 
 # ハイパーリンク
 ## スライド 4 Letting go of paper with stuctural data
