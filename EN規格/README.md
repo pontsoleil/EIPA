@@ -21,7 +21,6 @@ From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800
 
 EN 16931は、１２種類の業務パターン、コア要素、ビジネスコントロールについての規則、の他  
 そのパート3では、UBL 2.1及びUN/CEFACTなどとの対応表を規定している。  
-入手は、CENのサイトから。
 | 資料 | ファイル / URL
 | ---- | ----
 | EN 16931-1:2017 | 電子インボイス – パート1：電子請求書のコア要素のセマンティックデータモデル<br>[CEN/TC 434 - Electronic Invoicing – Part 1: Semantic data model of the core elements  of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
@@ -40,6 +39,6 @@ EN 16931は、１２種類の業務パターン、コア要素、ビジネスコ
 国会図書館リサーチナビ[EN規格 〜欧州の統一規格〜](https://rnavi.ndl.go.jp/research_guide/entry/theme-honbun-400383.php) より抜粋  
 > EN規格は独自に出版されることはなく、欧州各国の国家規格として入手します。 たとえば、「EN 10002-1」という番号のEN規格を入手したい場合は、BS EN 10002-1　...英国規格協会(BSI)が発行する英国の国家規格（BS規格）DIN EN 10002-1 ...ドイツ規格協会(DIN)が発行するドイツの国家規格（DIN規格）等の国家規格として発行・販売されているものを利用することになります。これらはEN規格「EN 10002-1」が、両国で国家規格として採用されたものです。本文の言語は各国の言語にあわせて翻訳されていますが、内容は同一です。  
 
-オランダ規格協会（Netherlands Standardisation Institute：NEN）からの購入がおすすめです。  
+入手は、CENのサイトから。　オランダ規格協会（Netherlands Standardisation Institute：NEN）からの購入がおすすめです。  
 [NEN EN 16931-1](https://www.nen.nl/Searchresults.htm?q=EN+16931-1)  
 [CEN/TS 16931-3-n](https://www.nen.nl/Searchresults.htm?q=TS+16931-3)  
