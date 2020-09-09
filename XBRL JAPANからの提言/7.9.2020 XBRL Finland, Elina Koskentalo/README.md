@@ -1,7 +1,4 @@
 # プレゼンテーション
-## 動画
-[Video](https://www.sambuichi.jp/?p=4137)
-
 ## スライド
 [Standards for exchanging business data](07092020_Koskentalo.pdf)
 
