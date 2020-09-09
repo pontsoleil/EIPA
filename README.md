@@ -1,5 +1,5 @@
 # EIPA
-電子インボイス推進協議会（英語名称：E-Invoice Promotion Association）
+[電子インボイス推進協議会（英語名称：E-Invoice Promotion Association）](https://www.csaj.jp/activity/project/eipa.html)
 
 ## 目的
 「電子インボイス推進協議会」において「日本の電子インボイス」の要件を整理することを目的とします。
