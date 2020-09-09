@@ -4,7 +4,7 @@
 ![NSG 3.0](Fig/NSG3.png)
 ![NSG全体像](Fig/NSG_Fig.png)
 
-# ハイパーリンク
+# 参考資料
 ## スライド 4 Letting go of paper with stuctural data
 [Real Time Economy (RTE) project](http://rte.fi/past-projects/)  
 [YouTube](https://youtu.be/eMDJAwHg5qM)  
