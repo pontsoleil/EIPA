@@ -22,15 +22,15 @@ From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800
 
 EN 16931は、１２種類の業務パターン、コア要素、ビジネスコントロールについての規則、の他  
 そのパート3では、UBL 2.1及びUN/CEFACTなどとの対応表を規定している。  
-| 資料 | ファイル / URL
-| ---- | ----
-| EN 16931-1:2017 | 電子インボイス – パート1：電子請求書のコア要素のセマンティックデータモデル<br>[CEN/TC 434 - Electronic Invoicing – Part 1: Semantic data model of the core elements  of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD)
-| EN 16931-2:2017 | 電子インボイス – パート2：EN 16931-1に準拠する構文のリスト<br>[CEN/TC 434 - Electronic Invoicing - Part 2: List of syntaxes that comply with EN 16931-1](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60603&cs=10D168BCA9F3F058F649A272825D6E580)
-| CEN/TS 16931-3-1:2017 | 電子インボイスのコア要素の構文バインディングの方法論<br>[CEN/TC 434 - Electronic invoicing – Part 3-1: Methodology for syntax bindings of the core elements of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:63739&cs=174FEF71188CFDC66ACA987E63654BEF3)
-| CEN/TS 16931-3-2:2020 | ISO/IEC 19845（UBL 2.1）の電子インボイスおよびクレジットノートの構文対応規定　（　[部分](図/TS-16931-3-2.png)　）<br>[CEN/TC 434 - Electronic invoicing – Part 3-2: Syntax bindings for ISO/IEC 19845 (UBL 2.1) invoice and credit note](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66718&cs=11C6E317DF61446350759AB0B8C0BA78B)
-| CEN/TS 16931-3-3:2020 | UN/CEFACT XML 業界の電子インボイス D16Bの構文対応規定 （　[部分](図/TS-16931-3-3.png)　）<br>[CEN/TC 434 - Electronic invoicing – Part 3-3: Syntax bindings for UN/CEFACT XML Industry Invoice D16B](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66719&cs=1025C4D8F1D8727856076051C74A8EC14)
-| CEN/TS 16931-3-4:2020 | Electronic invoicing - Part 3-4: Syntax binding for UN/EDIFACT INVOIC D16B	2020-04-29	
-| CEN/TR 16931-4:2017 | Electronic invoicing - Part 4: Guidelines on interoperability of electronic invoices at the transmission level	2017-07-05	
+| 資料 | ファイル / URL |
+| ---- | ---- |
+| EN 16931-1:2017 | 電子インボイス – パート1：電子請求書のコア要素のセマンティックデータモデル<br>[CEN/TC 434 - Electronic Invoicing – Part 1: Semantic data model of the core elements  of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT,FSP_ORG_ID:60602,1883209&cs=104E4C4FA3744A8DEA8E98A7B500306FD) |
+| EN 16931-2:2017 | 電子インボイス – パート2：EN 16931-1に準拠する構文のリスト<br>[CEN/TC 434 - Electronic Invoicing - Part 2: List of syntaxes that comply with EN 16931-1](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60603&cs=10D168BCA9F3F058F649A272825D6E580) |
+| CEN/TS 16931-3-1:2017 | 電子インボイスのコア要素の構文バインディングの方法論<br>[CEN/TC 434 - Electronic invoicing – Part 3-1: Methodology for syntax bindings of the core elements of an electronic invoice](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:63739&cs=174FEF71188CFDC66ACA987E63654BEF3) |
+| CEN/TS 16931-3-2:2020 | ISO/IEC 19845（UBL 2.1）の電子インボイスおよびクレジットノートの構文対応規定　（　[部分](図/TS-16931-3-2.png)　）<br>[CEN/TC 434 - Electronic invoicing – Part 3-2: Syntax bindings for ISO/IEC 19845 (UBL 2.1) invoice and credit note](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66718&cs=11C6E317DF61446350759AB0B8C0BA78B) |
+| CEN/TS 16931-3-3:2020 | UN/CEFACT XML 業界の電子インボイス D16Bの構文対応規定 （　[部分](図/TS-16931-3-3.png)　）<br>[CEN/TC 434 - Electronic invoicing – Part 3-3: Syntax bindings for UN/CEFACT XML Industry Invoice D16B](https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:66719&cs=1025C4D8F1D8727856076051C74A8EC14) |
+| CEN/TS 16931-3-4:2020 | Electronic invoicing - Part 3-4: Syntax binding for UN/EDIFACT INVOIC D16B	2020-04-29 |
+| CEN/TR 16931-4:2017 | Electronic invoicing - Part 4: Guidelines on interoperability of electronic invoices at the transmission level |	2017-07-05	
 | CEN/TR 16931-5:2017 | Electronic invoicing - Part 5: Guidelines on the use of sector or country extensions in conjunction with EN 16931-1, methodology to be applied in the real environment	2017-07-05	
 | CEN/TR 16931-6:2017 | Electronic invoicing - Part 6: Result of the test of EN 16931-1 with respect to its practical application for an end user	2017-10-18	
 | CEN/TS 16931-7:2020 | Electronic invoicing - Part 7: Methodology for the development and use of EN 16931-1 compliant structured Core Invoice Usage Specifications	2020-04-29	
