@@ -27,4 +27,7 @@
 
 # Nordic Smart Government
 ## GitHub
-[nordicsmartgovernment/nordicsmartgovernment](https://github.com/nordicsmartgovernment/nordicsmartgovernment/tree/develop/src/main/resources)
+[nordicsmartgovernment/nordicsmartgovernment](https://github.com/nordicsmartgovernment/nordicsmartgovernment/tree/develop/src/main/resources)  
+
+## XBRL GL Mapping
+[Mapping Excel](https://docs.google.com/spreadsheets/d/124CbyBkBRLzEQFcPxXRKp93dUlOEmg7B/edit#gid=486419030)
