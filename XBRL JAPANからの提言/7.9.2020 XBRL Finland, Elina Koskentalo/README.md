@@ -1,10 +1,10 @@
 # プレゼンテーション
 ## スライド
-[Standards for exchanging business data](07092020_Koskentalo.pdf)  
+### PDF文書　[Standards for exchanging business data](07092020_Koskentalo.pdf)  
 ![NSG 3.0](Fig/NSG3.png)
-![NSG全体像](Fig/NSGFig.png)
+![NSG全体像](Fig/NSG_Fig.png)
 
-# ハイパーリンク
+# 参考資料
 ## スライド 4 Letting go of paper with stuctural data
 [Real Time Economy (RTE) project](http://rte.fi/past-projects/)  
 [YouTube](https://youtu.be/eMDJAwHg5qM)  
@@ -24,3 +24,10 @@
 [Common data management / Yhteinen tiedon hallinta, YTI](https://vm.fi/yhteinen-tiedon-hallinta)  
 [Mandates on eInvoicing](https://vm.fi/artikkeli/-/asset_publisher/lakiesitys-sahkoisesta-laskutuksesta-lausunnoille)  
 [Reporting 3.0. (Estonia)](http://www.emta.ee/et/uudised/palga-ja-toojou-andmete-esitamine-muutub-2018-aasta-algusest-automaatseks)
+
+# Nordic Smart Government
+## GitHub
+[nordicsmartgovernment/nordicsmartgovernment](https://github.com/nordicsmartgovernment/nordicsmartgovernment/tree/develop/src/main/resources)  
+
+## XBRL GL Mapping
+[Mapping Excel](https://docs.google.com/spreadsheets/d/124CbyBkBRLzEQFcPxXRKp93dUlOEmg7B/edit#gid=486419030)
