@@ -39,6 +39,7 @@ EN 16931は、１２種類の業務パターン、コア要素、ビジネスコ
 国会図書館リサーチナビ[EN規格 〜欧州の統一規格〜](https://rnavi.ndl.go.jp/research_guide/entry/theme-honbun-400383.php) より抜粋  
 > EN規格は独自に出版されることはなく、欧州各国の国家規格として入手します。 たとえば、「EN 10002-1」という番号のEN規格を入手したい場合は、BS EN 10002-1　...英国規格協会(BSI)が発行する英国の国家規格（BS規格）DIN EN 10002-1 ...ドイツ規格協会(DIN)が発行するドイツの国家規格（DIN規格）等の国家規格として発行・販売されているものを利用することになります。これらはEN規格「EN 10002-1」が、両国で国家規格として採用されたものです。本文の言語は各国の言語にあわせて翻訳されていますが、内容は同一です。  
 
-入手は、CENのサイトから。　私は、オランダ規格協会（Netherlands Standardisation Institute：NEN）からの購入しました。[NEN EN 16931](https://www.nen.nl/Searchresults.htm?q=EN+16931)  
+入手は、CENのサイトからリンクされる加盟国の規格協会のサイトで。  
+私は、オランダ規格協会（Netherlands Standardisation Institute：NEN）からの購入しました。[NEN EN 16931](https://www.nen.nl/Searchresults.htm?q=EN+16931)  
 
 XBRL JAPAN顧問　[三分一信之](https://www.sambuichi.jp)
