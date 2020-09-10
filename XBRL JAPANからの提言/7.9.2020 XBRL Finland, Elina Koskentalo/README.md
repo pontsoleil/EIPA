@@ -1,6 +1,6 @@
 # プレゼンテーション
 ## スライド
-[Standards for exchanging business data](07092020_Koskentalo.pdf)  
+### PDF文書　[Standards for exchanging business data](07092020_Koskentalo.pdf)  
 ![NSG 3.0](Fig/NSG3.png)
 ![NSG全体像](Fig/NSG_Fig.png)
 
