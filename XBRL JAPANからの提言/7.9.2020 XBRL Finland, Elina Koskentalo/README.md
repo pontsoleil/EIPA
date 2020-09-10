@@ -24,3 +24,7 @@
 [Common data management / Yhteinen tiedon hallinta, YTI](https://vm.fi/yhteinen-tiedon-hallinta)  
 [Mandates on eInvoicing](https://vm.fi/artikkeli/-/asset_publisher/lakiesitys-sahkoisesta-laskutuksesta-lausunnoille)  
 [Reporting 3.0. (Estonia)](http://www.emta.ee/et/uudised/palga-ja-toojou-andmete-esitamine-muutub-2018-aasta-algusest-automaatseks)
+
+# Nordic Smart Government
+## GitHub
+[nordicsmartgovernment/nordicsmartgovernment](https://github.com/nordicsmartgovernment/nordicsmartgovernment/tree/develop/src/main/resources)
