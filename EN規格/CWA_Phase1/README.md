@@ -8,5 +8,5 @@
 | [CWA 15578:2006](CWA15578-2006-Jul.pdf) | Survey of VAT Data Element usage in the Member States and the use of codes for VAT Exemptions |
 | [CWA 15579:2007](CWA15579-2007-Oct) | E-invoices and digital signatures |
 | [CWA 15580:2006](CWA15580-2006-Jul.pdf) | Storage of Electronic Invoices |
-| [CWA 15581:2006](CWA15581-2006-Jul.pdf) | Guidelines for eInvoicing Service Provid |
+| [CWA 15581:2006](CWA15581-2006-Jul.pdf) | Guidelines for eInvoicing Service Provider |
 | [CWA 15582:2006](CWA15582-2006-Jul.pdf) | eInvoice Reference Model for EU VAT purposes specification |
