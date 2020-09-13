@@ -1,3 +1,6 @@
+[ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931)の次のページから
+[EN16931 Validation artefacts v.1.3.2](https://github.com/ConnectingEurope/eInvoicing-EN16931/releases/tag/validation-1.3.2)
+[Source code (zip)](https://github.com/ConnectingEurope/eInvoicing-EN16931/archive/validation-1.3.2.zip)をダウンロードして、｀update-xslt-and-validate.cmd`のmvnコマンドを実行した。
 ```
 Last login: Sun Sep 13 04:47:03 2020 from .....
 
