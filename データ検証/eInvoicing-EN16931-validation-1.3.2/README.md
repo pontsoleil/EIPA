@@ -1,8 +1,9 @@
-このファオルダーは、
+このフォルダーは、
 [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931)の次のページから
 [EN16931 Validation artefacts v.1.3.2](https://github.com/ConnectingEurope/eInvoicing-EN16931/releases/tag/validation-1.3.2)
 [Source code (zip)](https://github.com/ConnectingEurope/eInvoicing-EN16931/archive/validation-1.3.2.zip)をダウンロードして展開したコピー。
 
+以下は、元のREADME.md
 # CEN/TC 434 - EN-16931 - Validation artefacts
 
 Official Schematron eInvoicing-EN16931 artefacts for CEN/TC 434.
