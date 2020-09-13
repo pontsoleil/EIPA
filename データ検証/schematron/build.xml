@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  An Ant script to test the Schematron  
+ -->
+<!--
+ 
+ Copyright 2008 Rick Jelliffe, Topologi Pty. Ltd, Allette Systems 
+ 
+ Licensed under the Apache License, Version 2.0 (the "License"); 
+ you may not use this file except in compliance with the License. 
+ You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+ Unless required by applicable law or agreed to in writing, software distributed 
+ under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
+ CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+ specific language governing permissions and limitations under the License.
+ 
+ -->
+
+<!-- NOTE: I found a classpath problem running this under eclipse. I had to do
+     {ANT RUN BUTTON}>External Tools Configuration
+        then select a configuration, select Add JAR in the paths tab, then select
+        all the schematron/lib/xalan jar files AND SAVE. 
+ -->
+	
+<project name="schematron-test"  default="compile-abstract">
+
+	<property name="lib.dir" value="lib"/>
+	<property name="schemas.dir" value="schemas"/>
+	<property name="xml.dir" value="xml"/>
+	<property name="temp.dir" value="temp"/>
+
+	<!-- ISO SCEMATRON -->
+	<target name="compile-test1" >
+	   <!-- 1. expand inclusions -->
+	   <xslt style="code/iso_dsdl_include.xsl"
+		 	in="${schemas.dir}/test-xslt2.sch" out="${temp.dir}/test1.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+	   </xslt>
+	   <!-- 2. expand abstract patterns -->
+	   <xslt style="code/iso_abstract_expand.xsl"
+		 	in="${temp.dir}/test1.sch" out="${temp.dir}/test2.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+	   </xslt>
+	   <!-- 3. compile it -->
+	   <xslt style="code/iso_svrl_for_xslt2.xsl"
+		 	in="${temp.dir}/test2.sch" out="${temp.dir}/test.xsl"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+	   </xslt>
+	   <!-- 4. validate -->
+	   <xslt style="${temp.dir}/test.xsl"
+				in="${xml.dir}/test1.xml" out="${temp.dir}/instance1.svrlt"> 
+				<classpath>
+					<pathelement location="${lib.dir}/saxon9he.jar"/>
+				</classpath>
+		</xslt>
+	</target>
+	
+	<target name="compile-test2" >
+		<!-- 1. expand inclusions -->
+		<xslt style="code/iso_dsdl_include.xsl"
+			in="${schemas.dir}/test-xslt2.sch" out="${temp.dir}/test1.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 2. expand abstract patterns -->
+			<xslt style="code/iso_abstract_expand.xsl"
+			in="${temp.dir}/test1.sch" out="${temp.dir}/test2.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 3. compile it -->
+		<xslt style="code/iso_svrl_for_xslt2.xsl"
+			in="${temp.dir}/test2.sch" out="${temp.dir}/test.xsl"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 4. validate -->
+		<xslt style="${temp.dir}/test.xsl"
+			in="${xml.dir}/test2.xml" out="${temp.dir}/instance2.svrlt"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+	</target>
+
+	<target name="compile-test3" >
+		<!-- 1. expand inclusions -->
+		<xslt style="code/iso_dsdl_include.xsl"
+			in="${schemas.dir}/test-xslt2.sch" out="${temp.dir}/test1.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 2. expand abstract patterns -->
+			<xslt style="code/iso_abstract_expand.xsl"
+			in="${temp.dir}/test1.sch" out="${temp.dir}/test2.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 3. compile it -->
+		<xslt style="code/iso_svrl_for_xslt2.xsl"
+			in="${temp.dir}/test2.sch" out="${temp.dir}/test.xsl"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 4. validate -->
+		<xslt style="${temp.dir}/test.xsl"
+			in="${xml.dir}/test3.xml" out="${temp.dir}/instance3.svrlt"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+	</target>
+
+	<target name="compile-william-document" >
+		<!-- 1. expand inclusions -->
+		<xslt style="code/iso_dsdl_include.xsl"
+			in="${schemas.dir}/william/william-document.sch" out="${temp.dir}/test1.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 2. expand abstract patterns -->
+			<xslt style="code/iso_abstract_expand.xsl"
+			in="${temp.dir}/test1.sch" out="${temp.dir}/test2.sch"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 3. compile it -->
+		<xslt style="code/iso_svrl_for_xslt2.xsl"
+			in="${temp.dir}/test2.sch" out="${temp.dir}/test.xsl"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+		<!-- 4. validate -->
+		<xslt style="${temp.dir}/test.xsl"
+			in="${xml.dir}/william/william-sample.xml" out="${temp.dir}/william.svrlt"> 
+			<classpath>
+				<pathelement location="${lib.dir}/saxon9he.jar"/>
+			</classpath>
+		</xslt>
+	</target>
+</project>
