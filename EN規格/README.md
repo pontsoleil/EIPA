@@ -25,6 +25,7 @@ From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800
 | EU指令 2014/55/EU（一部翻訳） | 電子インボイスに関係するArticle 233 ( 233条 )のみ翻訳<br>[EU指令_2014_55_EU.md](EU指令_2014_55_EU.md]) |
 | EU指令 2014/55/EU | 公共調達における電子インボイスについての指令<br>on electronic invoicing in public procurement<br>[EU法令サイト EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32014L0055&from=EN) |
 
+# EN 16931
 EN 16931は、１２種類の業務パターン、コア要素、ビジネスコントロールについての規則、の他  
 そのパート3では、UBL 2.1及びUN/CEFACTなどとの対応表を規定している。  
 | 資料 | ファイル / URL |
