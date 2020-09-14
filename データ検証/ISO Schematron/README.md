@@ -1,3 +1,6 @@
+このフォルダーは、[ISO Schematron](https://github.com/Schematron/schematron)のコピー
+元のREADME.mdは、以下の内容。
+
 # ISO SCHEMATRON 2010  
 
 XSLT implementation by Rick Jelliffe with assistance from members of Schematron-love-in maillist.
