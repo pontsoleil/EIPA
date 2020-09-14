@@ -18,5 +18,5 @@
 # PEPPOL BIS version 3.0
 [Peppol BIS version 3.0](https://docs.peppol.eu/poacc/upgrade-3/)  
 
-# JETRO
+# 参考：JETRO
 [VAT登録の要否：EUへ輸出する場合](https://www.jetro.go.jp/world/qa/04O-110801.html)
