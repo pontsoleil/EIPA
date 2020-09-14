@@ -1,5 +1,5 @@
 このフォルダーは、[ISO Schematron](https://github.com/Schematron/schematron)のコピー。
-EN 16931-1では、[eInvoicing-EN16931-validation-1.3.2](eInvoicing-EN16931-validation-1.3.2)ページにあるcmdファイルでSchematronファイルをスタイルシート(XSLT2)にmvnで変換してexampleにあるインボイスのXMLファイルを検証している。
+EN 16931-1では、[eInvoicing-EN16931-validation-1.3.2](../eInvoicing-EN16931-validation-1.3.2)ページにあるcmdファイルでSchematronファイルをスタイルシート(XSLT2)にmvnで変換してexampleにあるインボイスのXMLファイルを検証している。
 
 元のREADME.mdは、以下の内容。
 # ISO SCHEMATRON 2010  
