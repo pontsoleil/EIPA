@@ -20,3 +20,6 @@
 
 # 参考：JETRO
 [VAT登録の要否：EUへ輸出する場合](https://www.jetro.go.jp/world/qa/04O-110801.html)
+
+# Austraria New Zealand Open PEPPOL
+[A-NZ-PEPPOL-BIS-3.0](https://github.com/A-NZ-PEPPOL/A-NZ-PEPPOL-BIS-3.0)
