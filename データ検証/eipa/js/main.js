@@ -298,7 +298,7 @@ function sme_format(d, kind) { // d is the original data object for the row
   return html;
 }
 // -----------------------------------------------------------------
-// EN2CII
+// EN
 function renderBT(row) {
   var term = row.EN_BT,
       card = row.EN_Card,
@@ -407,6 +407,7 @@ x_columnDefs = [
   { 'searchable': false, 'targets': [0, 4] },
   { 'visible': false, 'targets': 1 }
 ];
+
 sme_columns = [
   { 'width': '5%',
     'className': 'details-control',
