@@ -1,4 +1,4 @@
-# A-NZ-PEPPOL-BIS-3.0
+# (A-NZ-PEPPOL-BIS-3.0)[https://github.com/pontsoleil/EIPA/tree/master/%E3%83%87%E3%83%BC%E3%82%BF%E6%A4%9C%E8%A8%BC/A-NZ-PEPPOL-BIS-3.0]
 オーストラリア及びニュージーランドにおけるOpen PEPPOL BIS 3.0の拡張定義
 
 # ISO Schematron
