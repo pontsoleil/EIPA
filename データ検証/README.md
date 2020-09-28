@@ -1,7 +1,7 @@
 # [A-NZ-PEPPOL-BIS-3.0](A-NZ-PEPPOL-BIS-3.0)
 オーストラリア及びニュージーランドにおけるOpen PEPPOL BIS 3.0の拡張定義
 
-# [ISO Schematron](ISO Schematron)
+# [ISO Schematron](ISO_Schematron)
 Schematronのテスト環境
 
 # [eInvoicing-EN16931-validation-1.3.2](eInvoicing-EN16931-validation-1.3.2)
