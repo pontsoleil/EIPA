@@ -1,0 +1,3553 @@
+$.complexType[1].@name AccountingAccountTypeCodeType
+$.complexType[1].xml lang en
+$.complexType[1].UniqueID UN02000101
+$.complexType[1].Acronym DT
+$.complexType[1].DictionaryEntryName Accounting Account Type_ Code. Type
+$.complexType[1].Version 1.0
+$.complexType[1].Definition A character string used to represent the type of an accounting account.
+$.complexType[1].PrimaryRepresentationTerm Code
+$.complexType[1].PrimitiveType String
+$.complexType[1].DataTypeQualifierTerm Accounting Account Type
+$.complexType[1].@base clm210AccountingE501:AccountingAccountTypeContentType
+$.complexType[1].attribute[1].@name listID
+$.complexType[1].attribute[1].@type xsd:token
+$.complexType[1].attribute[1].@use optional
+$.complexType[1].attribute[1].@fixed AccountingE501
+$.complexType[1].attribute[1].xml lang en
+$.complexType[1].attribute[1].UniqueID null
+$.complexType[1].attribute[1].Acronym SC
+$.complexType[1].attribute[1].Name Code List. Identifier
+$.complexType[1].attribute[1].Definition null
+$.complexType[1].attribute[1].Cardinality 0..1
+$.complexType[1].attribute[1].PropertyTerm Identifier
+$.complexType[1].attribute[2].@name listAgencyID
+$.complexType[1].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[1].attribute[2].@use optional
+$.complexType[1].attribute[2].@fixed 210
+$.complexType[1].attribute[2].xml lang en
+$.complexType[1].attribute[2].UniqueID null
+$.complexType[1].attribute[2].Acronym SC
+$.complexType[1].attribute[2].Name Code List. Agency. Identifier
+$.complexType[1].attribute[2].Definition null
+$.complexType[1].attribute[2].Cardinality 0..1
+$.complexType[1].attribute[2].PropertyTerm Agency
+$.complexType[1].attribute[3].@name listVersionID
+$.complexType[1].attribute[3].@type xsd:token
+$.complexType[1].attribute[3].@use optional
+$.complexType[1].attribute[3].@fixed D09B
+$.complexType[1].attribute[3].xml lang en
+$.complexType[1].attribute[3].UniqueID null
+$.complexType[1].attribute[3].Acronym SC
+$.complexType[1].attribute[3].Name Code List. Version. Identifier
+$.complexType[1].attribute[3].Definition null
+$.complexType[1].attribute[3].Cardinality 0..1
+$.complexType[1].attribute[3].PropertyTerm Version
+$.complexType[1].attribute[4].@name listURI
+$.complexType[1].attribute[4].@type xsd:anyURI
+$.complexType[1].attribute[4].@use optional
+$.complexType[1].attribute[4].xml lang en
+$.complexType[1].attribute[4].UniqueID null
+$.complexType[1].attribute[4].Acronym SC
+$.complexType[1].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[1].attribute[4].Definition null
+$.complexType[1].attribute[4].Cardinality 0..1
+$.complexType[1].attribute[4].PropertyTerm Uniform Resource
+$.complexType[2].@name AccountingAmountTypeCodeType
+$.complexType[2].xml lang en
+$.complexType[2].UniqueID UN02000102
+$.complexType[2].Acronym DT
+$.complexType[2].DictionaryEntryName Accounting Amount Type_ Code. Type
+$.complexType[2].Version 1.0
+$.complexType[2].Definition A character string used to represent the type of accounting amount.
+$.complexType[2].PrimaryRepresentationTerm Code
+$.complexType[2].PrimitiveType String
+$.complexType[2].DataTypeQualifierTerm Accounting Amount Type
+$.complexType[2].@base clm210AccountingE601:AccountingAmountTypeContentType
+$.complexType[2].attribute[1].@name listID
+$.complexType[2].attribute[1].@type xsd:token
+$.complexType[2].attribute[1].@use optional
+$.complexType[2].attribute[1].@fixed AccountingE601
+$.complexType[2].attribute[1].xml lang en
+$.complexType[2].attribute[1].UniqueID null
+$.complexType[2].attribute[1].Acronym SC
+$.complexType[2].attribute[1].Name Code List. Identifier
+$.complexType[2].attribute[1].Definition null
+$.complexType[2].attribute[1].Cardinality 0..1
+$.complexType[2].attribute[1].PropertyTerm Identifier
+$.complexType[2].attribute[2].@name listAgencyID
+$.complexType[2].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[2].attribute[2].@use optional
+$.complexType[2].attribute[2].@fixed 210
+$.complexType[2].attribute[2].xml lang en
+$.complexType[2].attribute[2].UniqueID null
+$.complexType[2].attribute[2].Acronym SC
+$.complexType[2].attribute[2].Name Code List. Agency. Identifier
+$.complexType[2].attribute[2].Definition null
+$.complexType[2].attribute[2].Cardinality 0..1
+$.complexType[2].attribute[2].PropertyTerm Agency
+$.complexType[2].attribute[3].@name listVersionID
+$.complexType[2].attribute[3].@type xsd:token
+$.complexType[2].attribute[3].@use optional
+$.complexType[2].attribute[3].@fixed D09B
+$.complexType[2].attribute[3].xml lang en
+$.complexType[2].attribute[3].UniqueID null
+$.complexType[2].attribute[3].Acronym SC
+$.complexType[2].attribute[3].Name Code List. Version. Identifier
+$.complexType[2].attribute[3].Definition null
+$.complexType[2].attribute[3].Cardinality 0..1
+$.complexType[2].attribute[3].PropertyTerm Version
+$.complexType[2].attribute[4].@name listURI
+$.complexType[2].attribute[4].@type xsd:anyURI
+$.complexType[2].attribute[4].@use optional
+$.complexType[2].attribute[4].xml lang en
+$.complexType[2].attribute[4].UniqueID null
+$.complexType[2].attribute[4].Acronym SC
+$.complexType[2].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[2].attribute[4].Definition null
+$.complexType[2].attribute[4].Cardinality 0..1
+$.complexType[2].attribute[4].PropertyTerm Uniform Resource
+$.complexType[3].@name AccountingDebitCreditStatusCodeType
+$.complexType[3].xml lang en
+$.complexType[3].UniqueID UN02000103
+$.complexType[3].Acronym DT
+$.complexType[3].DictionaryEntryName Accounting Debit Credit_ Status_ Code. Type
+$.complexType[3].Version 1.0
+$.complexType[3].Definition A character string used to represent the accounting debit or credit sign.
+$.complexType[3].PrimaryRepresentationTerm Code
+$.complexType[3].PrimitiveType String
+$.complexType[3].DataTypeQualifierTerm Accounting Debit Credit
+$.complexType[3].DataTypeQualifierTerm Status
+$.complexType[3].@base clm64405AccountingDebitCredit:StatusDescriptionCodeAccountingDebitCreditContentType
+$.complexType[3].attribute[1].@name listID
+$.complexType[3].attribute[1].@type xsd:token
+$.complexType[3].attribute[1].@use optional
+$.complexType[3].attribute[1].@fixed 4405_Accounting Debit Credit
+$.complexType[3].attribute[1].xml lang en
+$.complexType[3].attribute[1].UniqueID null
+$.complexType[3].attribute[1].Acronym SC
+$.complexType[3].attribute[1].Name Code List. Identifier
+$.complexType[3].attribute[1].Definition null
+$.complexType[3].attribute[1].Cardinality 0..1
+$.complexType[3].attribute[1].PropertyTerm Identifier
+$.complexType[3].attribute[2].@name listAgencyID
+$.complexType[3].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[3].attribute[2].@use optional
+$.complexType[3].attribute[2].@fixed 6
+$.complexType[3].attribute[2].xml lang en
+$.complexType[3].attribute[2].UniqueID null
+$.complexType[3].attribute[2].Acronym SC
+$.complexType[3].attribute[2].Name Code List. Agency. Identifier
+$.complexType[3].attribute[2].Definition null
+$.complexType[3].attribute[2].Cardinality 0..1
+$.complexType[3].attribute[2].PropertyTerm Agency
+$.complexType[3].attribute[3].@name listVersionID
+$.complexType[3].attribute[3].@type xsd:token
+$.complexType[3].attribute[3].@use optional
+$.complexType[3].attribute[3].@fixed D09B
+$.complexType[3].attribute[3].xml lang en
+$.complexType[3].attribute[3].UniqueID null
+$.complexType[3].attribute[3].Acronym SC
+$.complexType[3].attribute[3].Name Code List. Version. Identifier
+$.complexType[3].attribute[3].Definition null
+$.complexType[3].attribute[3].Cardinality 0..1
+$.complexType[3].attribute[3].PropertyTerm Version
+$.complexType[3].attribute[4].@name listURI
+$.complexType[3].attribute[4].@type xsd:anyURI
+$.complexType[3].attribute[4].@use optional
+$.complexType[3].attribute[4].xml lang en
+$.complexType[3].attribute[4].UniqueID null
+$.complexType[3].attribute[4].Acronym SC
+$.complexType[3].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[3].attribute[4].Definition null
+$.complexType[3].attribute[4].Cardinality 0..1
+$.complexType[3].attribute[4].PropertyTerm Uniform Resource
+$.complexType[4].@name AccountingDocumentCodeType
+$.complexType[4].xml lang en
+$.complexType[4].UniqueID UN02000110
+$.complexType[4].Acronym DT
+$.complexType[4].DictionaryEntryName Accounting_ Document_ Code. Type
+$.complexType[4].Version 1.0
+$.complexType[4].Definition A character string used to represent the type of an accounting document.
+$.complexType[4].PrimaryRepresentationTerm Code
+$.complexType[4].PrimitiveType String
+$.complexType[4].DataTypeQualifierTerm Accounting
+$.complexType[4].DataTypeQualifierTerm Document
+$.complexType[4].@base clm61001Accounting:DocumentNameCodeAccountingContentType
+$.complexType[4].attribute[1].@name listID
+$.complexType[4].attribute[1].@type xsd:token
+$.complexType[4].attribute[1].@use optional
+$.complexType[4].attribute[1].@fixed 1001_Accounting
+$.complexType[4].attribute[1].xml lang en
+$.complexType[4].attribute[1].UniqueID null
+$.complexType[4].attribute[1].Acronym SC
+$.complexType[4].attribute[1].Name Code List. Identifier
+$.complexType[4].attribute[1].Definition null
+$.complexType[4].attribute[1].Cardinality 0..1
+$.complexType[4].attribute[1].PropertyTerm Identifier
+$.complexType[4].attribute[2].@name listAgencyID
+$.complexType[4].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[4].attribute[2].@use optional
+$.complexType[4].attribute[2].@fixed 6
+$.complexType[4].attribute[2].xml lang en
+$.complexType[4].attribute[2].UniqueID null
+$.complexType[4].attribute[2].Acronym SC
+$.complexType[4].attribute[2].Name Code List. Agency. Identifier
+$.complexType[4].attribute[2].Definition null
+$.complexType[4].attribute[2].Cardinality 0..1
+$.complexType[4].attribute[2].PropertyTerm Agency
+$.complexType[4].attribute[3].@name listVersionID
+$.complexType[4].attribute[3].@type xsd:token
+$.complexType[4].attribute[3].@use optional
+$.complexType[4].attribute[3].@fixed D09B
+$.complexType[4].attribute[3].xml lang en
+$.complexType[4].attribute[3].UniqueID null
+$.complexType[4].attribute[3].Acronym SC
+$.complexType[4].attribute[3].Name Code List. Version. Identifier
+$.complexType[4].attribute[3].Definition null
+$.complexType[4].attribute[3].Cardinality 0..1
+$.complexType[4].attribute[3].PropertyTerm Version
+$.complexType[4].attribute[4].@name listURI
+$.complexType[4].attribute[4].@type xsd:anyURI
+$.complexType[4].attribute[4].@use optional
+$.complexType[4].attribute[4].xml lang en
+$.complexType[4].attribute[4].UniqueID null
+$.complexType[4].attribute[4].Acronym SC
+$.complexType[4].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[4].attribute[4].Definition null
+$.complexType[4].attribute[4].Cardinality 0..1
+$.complexType[4].attribute[4].PropertyTerm Uniform Resource
+$.complexType[5].@name AccountingEntryCategoryCodeType
+$.complexType[5].xml lang en
+$.complexType[5].UniqueID UN02000104
+$.complexType[5].Acronym DT
+$.complexType[5].DictionaryEntryName Accounting Entry Category_ Code. Type
+$.complexType[5].Version 1.0
+$.complexType[5].Definition A character string used to represent the category of an accounting entry.
+$.complexType[5].PrimaryRepresentationTerm Code
+$.complexType[5].PrimitiveType String
+$.complexType[5].DataTypeQualifierTerm Accounting Entry Category
+$.complexType[5].@base clm210AccountingE202:AccountingEntryCategoryContentType
+$.complexType[5].attribute[1].@name listID
+$.complexType[5].attribute[1].@type xsd:token
+$.complexType[5].attribute[1].@use optional
+$.complexType[5].attribute[1].@fixed AccountingE202
+$.complexType[5].attribute[1].xml lang en
+$.complexType[5].attribute[1].UniqueID null
+$.complexType[5].attribute[1].Acronym SC
+$.complexType[5].attribute[1].Name Code List. Identifier
+$.complexType[5].attribute[1].Definition null
+$.complexType[5].attribute[1].Cardinality 0..1
+$.complexType[5].attribute[1].PropertyTerm Identifier
+$.complexType[5].attribute[2].@name listAgencyID
+$.complexType[5].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[5].attribute[2].@use optional
+$.complexType[5].attribute[2].@fixed 210
+$.complexType[5].attribute[2].xml lang en
+$.complexType[5].attribute[2].UniqueID null
+$.complexType[5].attribute[2].Acronym SC
+$.complexType[5].attribute[2].Name Code List. Agency. Identifier
+$.complexType[5].attribute[2].Definition null
+$.complexType[5].attribute[2].Cardinality 0..1
+$.complexType[5].attribute[2].PropertyTerm Agency
+$.complexType[5].attribute[3].@name listVersionID
+$.complexType[5].attribute[3].@type xsd:token
+$.complexType[5].attribute[3].@use optional
+$.complexType[5].attribute[3].@fixed D09B
+$.complexType[5].attribute[3].xml lang en
+$.complexType[5].attribute[3].UniqueID null
+$.complexType[5].attribute[3].Acronym SC
+$.complexType[5].attribute[3].Name Code List. Version. Identifier
+$.complexType[5].attribute[3].Definition null
+$.complexType[5].attribute[3].Cardinality 0..1
+$.complexType[5].attribute[3].PropertyTerm Version
+$.complexType[5].attribute[4].@name listURI
+$.complexType[5].attribute[4].@type xsd:anyURI
+$.complexType[5].attribute[4].@use optional
+$.complexType[5].attribute[4].xml lang en
+$.complexType[5].attribute[4].UniqueID null
+$.complexType[5].attribute[4].Acronym SC
+$.complexType[5].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[5].attribute[4].Definition null
+$.complexType[5].attribute[4].Cardinality 0..1
+$.complexType[5].attribute[4].PropertyTerm Uniform Resource
+$.complexType[6].@name AccountingEntryLineCategoryCodeType
+$.complexType[6].xml lang en
+$.complexType[6].UniqueID UN02000105
+$.complexType[6].Acronym DT
+$.complexType[6].DictionaryEntryName Accounting Entry Line Category_ Code. Type
+$.complexType[6].Version 1.0
+$.complexType[6].Definition A character string used to represent the category of a line of an accounting entry.
+$.complexType[6].PrimaryRepresentationTerm Code
+$.complexType[6].PrimitiveType String
+$.complexType[6].DataTypeQualifierTerm Accounting Entry Line Category
+$.complexType[6].@base clm210AccountingE203:AccountingEntryLineCategoryContentType
+$.complexType[6].attribute[1].@name listID
+$.complexType[6].attribute[1].@type xsd:token
+$.complexType[6].attribute[1].@use optional
+$.complexType[6].attribute[1].@fixed AccountingE203
+$.complexType[6].attribute[1].xml lang en
+$.complexType[6].attribute[1].UniqueID null
+$.complexType[6].attribute[1].Acronym SC
+$.complexType[6].attribute[1].Name Code List. Identifier
+$.complexType[6].attribute[1].Definition null
+$.complexType[6].attribute[1].Cardinality 0..1
+$.complexType[6].attribute[1].PropertyTerm Identifier
+$.complexType[6].attribute[2].@name listAgencyID
+$.complexType[6].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[6].attribute[2].@use optional
+$.complexType[6].attribute[2].@fixed 210
+$.complexType[6].attribute[2].xml lang en
+$.complexType[6].attribute[2].UniqueID null
+$.complexType[6].attribute[2].Acronym SC
+$.complexType[6].attribute[2].Name Code List. Agency. Identifier
+$.complexType[6].attribute[2].Definition null
+$.complexType[6].attribute[2].Cardinality 0..1
+$.complexType[6].attribute[2].PropertyTerm Agency
+$.complexType[6].attribute[3].@name listVersionID
+$.complexType[6].attribute[3].@type xsd:token
+$.complexType[6].attribute[3].@use optional
+$.complexType[6].attribute[3].@fixed D09B
+$.complexType[6].attribute[3].xml lang en
+$.complexType[6].attribute[3].UniqueID null
+$.complexType[6].attribute[3].Acronym SC
+$.complexType[6].attribute[3].Name Code List. Version. Identifier
+$.complexType[6].attribute[3].Definition null
+$.complexType[6].attribute[3].Cardinality 0..1
+$.complexType[6].attribute[3].PropertyTerm Version
+$.complexType[6].attribute[4].@name listURI
+$.complexType[6].attribute[4].@type xsd:anyURI
+$.complexType[6].attribute[4].@use optional
+$.complexType[6].attribute[4].xml lang en
+$.complexType[6].attribute[4].UniqueID null
+$.complexType[6].attribute[4].Acronym SC
+$.complexType[6].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[6].attribute[4].Definition null
+$.complexType[6].attribute[4].Cardinality 0..1
+$.complexType[6].attribute[4].PropertyTerm Uniform Resource
+$.complexType[7].@name AccountingEntryLineSourceCodeType
+$.complexType[7].xml lang en
+$.complexType[7].UniqueID UN02000106
+$.complexType[7].Acronym DT
+$.complexType[7].DictionaryEntryName Accounting Entry Line Source_ Code. Type
+$.complexType[7].Version 1.0
+$.complexType[7].Definition A character string used to represent the source of an accounting entry line.
+$.complexType[7].PrimaryRepresentationTerm Code
+$.complexType[7].PrimitiveType String
+$.complexType[7].DataTypeQualifierTerm Accounting Entry Line Source
+$.complexType[7].@base clm210AccountingE302:AccountingEntryLineSourceContentType
+$.complexType[7].attribute[1].@name listID
+$.complexType[7].attribute[1].@type xsd:token
+$.complexType[7].attribute[1].@use optional
+$.complexType[7].attribute[1].@fixed AccountingE302
+$.complexType[7].attribute[1].xml lang en
+$.complexType[7].attribute[1].UniqueID null
+$.complexType[7].attribute[1].Acronym SC
+$.complexType[7].attribute[1].Name Code List. Identifier
+$.complexType[7].attribute[1].Definition null
+$.complexType[7].attribute[1].Cardinality 0..1
+$.complexType[7].attribute[1].PropertyTerm Identifier
+$.complexType[7].attribute[2].@name listAgencyID
+$.complexType[7].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[7].attribute[2].@use optional
+$.complexType[7].attribute[2].@fixed 210
+$.complexType[7].attribute[2].xml lang en
+$.complexType[7].attribute[2].UniqueID null
+$.complexType[7].attribute[2].Acronym SC
+$.complexType[7].attribute[2].Name Code List. Agency. Identifier
+$.complexType[7].attribute[2].Definition null
+$.complexType[7].attribute[2].Cardinality 0..1
+$.complexType[7].attribute[2].PropertyTerm Agency
+$.complexType[7].attribute[3].@name listVersionID
+$.complexType[7].attribute[3].@type xsd:token
+$.complexType[7].attribute[3].@use optional
+$.complexType[7].attribute[3].@fixed D09B
+$.complexType[7].attribute[3].xml lang en
+$.complexType[7].attribute[3].UniqueID null
+$.complexType[7].attribute[3].Acronym SC
+$.complexType[7].attribute[3].Name Code List. Version. Identifier
+$.complexType[7].attribute[3].Definition null
+$.complexType[7].attribute[3].Cardinality 0..1
+$.complexType[7].attribute[3].PropertyTerm Version
+$.complexType[7].attribute[4].@name listURI
+$.complexType[7].attribute[4].@type xsd:anyURI
+$.complexType[7].attribute[4].@use optional
+$.complexType[7].attribute[4].xml lang en
+$.complexType[7].attribute[4].UniqueID null
+$.complexType[7].attribute[4].Acronym SC
+$.complexType[7].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[7].attribute[4].Definition null
+$.complexType[7].attribute[4].Cardinality 0..1
+$.complexType[7].attribute[4].PropertyTerm Uniform Resource
+$.complexType[8].@name AccountingEntryProcessingCodeType
+$.complexType[8].xml lang en
+$.complexType[8].UniqueID UN02000107
+$.complexType[8].Acronym DT
+$.complexType[8].DictionaryEntryName Accounting Entry Processing_ Code. Type
+$.complexType[8].Version 1.0
+$.complexType[8].Definition A character string used to represent the processing of an accounting entry.
+$.complexType[8].PrimaryRepresentationTerm Code
+$.complexType[8].PrimitiveType String
+$.complexType[8].DataTypeQualifierTerm Accounting Entry Processing
+$.complexType[8].@base clm210AccountingE201:AccountingEntryProcessingContentType
+$.complexType[8].attribute[1].@name listID
+$.complexType[8].attribute[1].@type xsd:token
+$.complexType[8].attribute[1].@use optional
+$.complexType[8].attribute[1].@fixed AccountingE201
+$.complexType[8].attribute[1].xml lang en
+$.complexType[8].attribute[1].UniqueID null
+$.complexType[8].attribute[1].Acronym SC
+$.complexType[8].attribute[1].Name Code List. Identifier
+$.complexType[8].attribute[1].Definition null
+$.complexType[8].attribute[1].Cardinality 0..1
+$.complexType[8].attribute[1].PropertyTerm Identifier
+$.complexType[8].attribute[2].@name listAgencyID
+$.complexType[8].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[8].attribute[2].@use optional
+$.complexType[8].attribute[2].@fixed 210
+$.complexType[8].attribute[2].xml lang en
+$.complexType[8].attribute[2].UniqueID null
+$.complexType[8].attribute[2].Acronym SC
+$.complexType[8].attribute[2].Name Code List. Agency. Identifier
+$.complexType[8].attribute[2].Definition null
+$.complexType[8].attribute[2].Cardinality 0..1
+$.complexType[8].attribute[2].PropertyTerm Agency
+$.complexType[8].attribute[3].@name listVersionID
+$.complexType[8].attribute[3].@type xsd:token
+$.complexType[8].attribute[3].@use optional
+$.complexType[8].attribute[3].@fixed D09B
+$.complexType[8].attribute[3].xml lang en
+$.complexType[8].attribute[3].UniqueID null
+$.complexType[8].attribute[3].Acronym SC
+$.complexType[8].attribute[3].Name Code List. Version. Identifier
+$.complexType[8].attribute[3].Definition null
+$.complexType[8].attribute[3].Cardinality 0..1
+$.complexType[8].attribute[3].PropertyTerm Version
+$.complexType[8].attribute[4].@name listURI
+$.complexType[8].attribute[4].@type xsd:anyURI
+$.complexType[8].attribute[4].@use optional
+$.complexType[8].attribute[4].xml lang en
+$.complexType[8].attribute[4].UniqueID null
+$.complexType[8].attribute[4].Acronym SC
+$.complexType[8].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[8].attribute[4].Definition null
+$.complexType[8].attribute[4].Cardinality 0..1
+$.complexType[8].attribute[4].PropertyTerm Uniform Resource
+$.complexType[9].@name AccountingVoucherMediumCodeType
+$.complexType[9].xml lang en
+$.complexType[9].UniqueID UN02000109
+$.complexType[9].Acronym DT
+$.complexType[9].DictionaryEntryName Accounting Voucher Medium_ Code. Type
+$.complexType[9].Version 1.0
+$.complexType[9].Definition A character string used to represent a medium containing an accounting voucher.
+$.complexType[9].PrimaryRepresentationTerm Code
+$.complexType[9].PrimitiveType String
+$.complexType[9].DataTypeQualifierTerm Accounting Voucher Medium
+$.complexType[9].@base clm210AccountingE101:AccountingVoucherMediumContentType
+$.complexType[9].attribute[1].@name listID
+$.complexType[9].attribute[1].@type xsd:token
+$.complexType[9].attribute[1].@use optional
+$.complexType[9].attribute[1].@fixed AccountingE101
+$.complexType[9].attribute[1].xml lang en
+$.complexType[9].attribute[1].UniqueID null
+$.complexType[9].attribute[1].Acronym SC
+$.complexType[9].attribute[1].Name Code List. Identifier
+$.complexType[9].attribute[1].Definition null
+$.complexType[9].attribute[1].Cardinality 0..1
+$.complexType[9].attribute[1].PropertyTerm Identifier
+$.complexType[9].attribute[2].@name listAgencyID
+$.complexType[9].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[9].attribute[2].@use optional
+$.complexType[9].attribute[2].@fixed 210
+$.complexType[9].attribute[2].xml lang en
+$.complexType[9].attribute[2].UniqueID null
+$.complexType[9].attribute[2].Acronym SC
+$.complexType[9].attribute[2].Name Code List. Agency. Identifier
+$.complexType[9].attribute[2].Definition null
+$.complexType[9].attribute[2].Cardinality 0..1
+$.complexType[9].attribute[2].PropertyTerm Agency
+$.complexType[9].attribute[3].@name listVersionID
+$.complexType[9].attribute[3].@type xsd:token
+$.complexType[9].attribute[3].@use optional
+$.complexType[9].attribute[3].@fixed D09B
+$.complexType[9].attribute[3].xml lang en
+$.complexType[9].attribute[3].UniqueID null
+$.complexType[9].attribute[3].Acronym SC
+$.complexType[9].attribute[3].Name Code List. Version. Identifier
+$.complexType[9].attribute[3].Definition null
+$.complexType[9].attribute[3].Cardinality 0..1
+$.complexType[9].attribute[3].PropertyTerm Version
+$.complexType[9].attribute[4].@name listURI
+$.complexType[9].attribute[4].@type xsd:anyURI
+$.complexType[9].attribute[4].@use optional
+$.complexType[9].attribute[4].xml lang en
+$.complexType[9].attribute[4].UniqueID null
+$.complexType[9].attribute[4].Acronym SC
+$.complexType[9].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[9].attribute[4].Definition null
+$.complexType[9].attribute[4].Cardinality 0..1
+$.complexType[9].attribute[4].PropertyTerm Uniform Resource
+$.complexType[10].@name AcknowledgementCodeType
+$.complexType[10].xml lang en
+$.complexType[10].UniqueID UN02000020
+$.complexType[10].Acronym DT
+$.complexType[10].DictionaryEntryName Acknowledgement_ Code. Type
+$.complexType[10].Version 1.0
+$.complexType[10].Definition A character string used to represent a type of acknowledgment.
+$.complexType[10].PrimaryRepresentationTerm Code
+$.complexType[10].PrimitiveType String
+$.complexType[10].DataTypeQualifierTerm Acknowledgement
+$.complexType[10].@base clm61225Acknowledgement:MessageFunctionCodeAcknowledgementContentType
+$.complexType[10].attribute[1].@name listID
+$.complexType[10].attribute[1].@type xsd:token
+$.complexType[10].attribute[1].@use optional
+$.complexType[10].attribute[1].@fixed 1225_Acknowledgement
+$.complexType[10].attribute[1].xml lang en
+$.complexType[10].attribute[1].UniqueID null
+$.complexType[10].attribute[1].Acronym SC
+$.complexType[10].attribute[1].Name Code List. Identifier
+$.complexType[10].attribute[1].Definition null
+$.complexType[10].attribute[1].Cardinality 0..1
+$.complexType[10].attribute[1].PropertyTerm Identifier
+$.complexType[10].attribute[2].@name listAgencyID
+$.complexType[10].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[10].attribute[2].@use optional
+$.complexType[10].attribute[2].@fixed 6
+$.complexType[10].attribute[2].xml lang en
+$.complexType[10].attribute[2].UniqueID null
+$.complexType[10].attribute[2].Acronym SC
+$.complexType[10].attribute[2].Name Code List. Agency. Identifier
+$.complexType[10].attribute[2].Definition null
+$.complexType[10].attribute[2].Cardinality 0..1
+$.complexType[10].attribute[2].PropertyTerm Agency
+$.complexType[10].attribute[3].@name listVersionID
+$.complexType[10].attribute[3].@type xsd:token
+$.complexType[10].attribute[3].@use optional
+$.complexType[10].attribute[3].@fixed D09B
+$.complexType[10].attribute[3].xml lang en
+$.complexType[10].attribute[3].UniqueID null
+$.complexType[10].attribute[3].Acronym SC
+$.complexType[10].attribute[3].Name Code List. Version. Identifier
+$.complexType[10].attribute[3].Definition null
+$.complexType[10].attribute[3].Cardinality 0..1
+$.complexType[10].attribute[3].PropertyTerm Version
+$.complexType[10].attribute[4].@name name
+$.complexType[10].attribute[4].@type xsd:string
+$.complexType[10].attribute[4].@use optional
+$.complexType[10].attribute[4].xml lang en
+$.complexType[10].attribute[4].UniqueID null
+$.complexType[10].attribute[4].Acronym SC
+$.complexType[10].attribute[4].Name Code. Name. Text
+$.complexType[10].attribute[4].Definition null
+$.complexType[10].attribute[4].Cardinality 0..1
+$.complexType[10].attribute[4].PropertyTerm Name
+$.complexType[11].@name AddressTypeCodeType
+$.complexType[11].xml lang en
+$.complexType[11].UniqueID UN02000039
+$.complexType[11].Acronym DT
+$.complexType[11].DictionaryEntryName Address Type_ Code. Type
+$.complexType[11].Version 1.0
+$.complexType[11].Definition A character string used to represent or replace an address type.
+$.complexType[11].PrimaryRepresentationTerm Code
+$.complexType[11].PrimitiveType String
+$.complexType[11].DataTypeQualifierTerm Address Type
+$.complexType[11].@base clm63131:AddressTypeContentType
+$.complexType[11].attribute[1].@name listID
+$.complexType[11].attribute[1].@type xsd:token
+$.complexType[11].attribute[1].@use optional
+$.complexType[11].attribute[1].@fixed 3131
+$.complexType[11].attribute[1].xml lang en
+$.complexType[11].attribute[1].UniqueID null
+$.complexType[11].attribute[1].Acronym SC
+$.complexType[11].attribute[1].Name Code List. Identifier
+$.complexType[11].attribute[1].Definition null
+$.complexType[11].attribute[1].Cardinality 0..1
+$.complexType[11].attribute[1].PropertyTerm Identifier
+$.complexType[11].attribute[2].@name listAgencyID
+$.complexType[11].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[11].attribute[2].@use optional
+$.complexType[11].attribute[2].@fixed 6
+$.complexType[11].attribute[2].xml lang en
+$.complexType[11].attribute[2].UniqueID null
+$.complexType[11].attribute[2].Acronym SC
+$.complexType[11].attribute[2].Name Code List. Agency. Identifier
+$.complexType[11].attribute[2].Definition null
+$.complexType[11].attribute[2].Cardinality 0..1
+$.complexType[11].attribute[2].PropertyTerm Agency
+$.complexType[11].attribute[3].@name listVersionID
+$.complexType[11].attribute[3].@type xsd:token
+$.complexType[11].attribute[3].@use optional
+$.complexType[11].attribute[3].@fixed D09B
+$.complexType[11].attribute[3].xml lang en
+$.complexType[11].attribute[3].UniqueID null
+$.complexType[11].attribute[3].Acronym SC
+$.complexType[11].attribute[3].Name Code List. Version. Identifier
+$.complexType[11].attribute[3].Definition null
+$.complexType[11].attribute[3].Cardinality 0..1
+$.complexType[11].attribute[3].PropertyTerm Version
+$.complexType[11].attribute[4].@name name
+$.complexType[11].attribute[4].@type xsd:string
+$.complexType[11].attribute[4].@use optional
+$.complexType[11].attribute[4].xml lang en
+$.complexType[11].attribute[4].UniqueID null
+$.complexType[11].attribute[4].Acronym SC
+$.complexType[11].attribute[4].Name Code. Name. Text
+$.complexType[11].attribute[4].Definition null
+$.complexType[11].attribute[4].Cardinality 0..1
+$.complexType[11].attribute[4].PropertyTerm Name
+$.complexType[12].@name AdjustmentReasonCodeType
+$.complexType[12].xml lang en
+$.complexType[12].UniqueID UN02000001
+$.complexType[12].Acronym DT
+$.complexType[12].DictionaryEntryName Adjustment Reason_ Code. Type
+$.complexType[12].Version 1.0
+$.complexType[12].Definition A character string used to represent an adjustment reason.
+$.complexType[12].PrimaryRepresentationTerm Code
+$.complexType[12].PrimitiveType String
+$.complexType[12].DataTypeQualifierTerm Adjustment Reason
+$.complexType[12].@base clm64465:AdjustmentReasonDescriptionCodeContentType
+$.complexType[12].attribute[1].@name listID
+$.complexType[12].attribute[1].@type xsd:token
+$.complexType[12].attribute[1].@use optional
+$.complexType[12].attribute[1].@fixed 4465
+$.complexType[12].attribute[1].xml lang en
+$.complexType[12].attribute[1].UniqueID null
+$.complexType[12].attribute[1].Acronym SC
+$.complexType[12].attribute[1].Name Code List. Identifier
+$.complexType[12].attribute[1].Definition null
+$.complexType[12].attribute[1].Cardinality 0..1
+$.complexType[12].attribute[1].PropertyTerm Identifier
+$.complexType[12].attribute[2].@name listAgencyID
+$.complexType[12].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[12].attribute[2].@use optional
+$.complexType[12].attribute[2].@fixed 6
+$.complexType[12].attribute[2].xml lang en
+$.complexType[12].attribute[2].UniqueID null
+$.complexType[12].attribute[2].Acronym SC
+$.complexType[12].attribute[2].Name Code List. Agency. Identifier
+$.complexType[12].attribute[2].Definition null
+$.complexType[12].attribute[2].Cardinality 0..1
+$.complexType[12].attribute[2].PropertyTerm Agency
+$.complexType[12].attribute[3].@name listVersionID
+$.complexType[12].attribute[3].@type xsd:token
+$.complexType[12].attribute[3].@use optional
+$.complexType[12].attribute[3].@fixed D09B
+$.complexType[12].attribute[3].xml lang en
+$.complexType[12].attribute[3].UniqueID null
+$.complexType[12].attribute[3].Acronym SC
+$.complexType[12].attribute[3].Name Code List. Version. Identifier
+$.complexType[12].attribute[3].Definition null
+$.complexType[12].attribute[3].Cardinality 0..1
+$.complexType[12].attribute[3].PropertyTerm Version
+$.complexType[13].@name AlternateCurrencyAmountTypeCodeType
+$.complexType[13].xml lang en
+$.complexType[13].UniqueID UN02000111
+$.complexType[13].Acronym DT
+$.complexType[13].DictionaryEntryName Alternate Currency Amount Type_ Code. Type
+$.complexType[13].Version 1.0
+$.complexType[13].Definition A character string used to represent the type of an alternate currency amount.
+$.complexType[13].PrimaryRepresentationTerm Code
+$.complexType[13].PrimitiveType String
+$.complexType[13].DataTypeQualifierTerm Alternate Currency Amount Type
+$.complexType[13].@base clm210AccountingE304:AlternateCurrencyAmountContentType
+$.complexType[13].attribute[1].@name listID
+$.complexType[13].attribute[1].@type xsd:token
+$.complexType[13].attribute[1].@use optional
+$.complexType[13].attribute[1].@fixed AccountingE304
+$.complexType[13].attribute[1].xml lang en
+$.complexType[13].attribute[1].UniqueID null
+$.complexType[13].attribute[1].Acronym SC
+$.complexType[13].attribute[1].Name Code List. Identifier
+$.complexType[13].attribute[1].Definition null
+$.complexType[13].attribute[1].Cardinality 0..1
+$.complexType[13].attribute[1].PropertyTerm Identifier
+$.complexType[13].attribute[2].@name listAgencyID
+$.complexType[13].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[13].attribute[2].@use optional
+$.complexType[13].attribute[2].@fixed 210
+$.complexType[13].attribute[2].xml lang en
+$.complexType[13].attribute[2].UniqueID null
+$.complexType[13].attribute[2].Acronym SC
+$.complexType[13].attribute[2].Name Code List. Agency. Identifier
+$.complexType[13].attribute[2].Definition null
+$.complexType[13].attribute[2].Cardinality 0..1
+$.complexType[13].attribute[2].PropertyTerm Agency
+$.complexType[13].attribute[3].@name listVersionID
+$.complexType[13].attribute[3].@type xsd:token
+$.complexType[13].attribute[3].@use optional
+$.complexType[13].attribute[3].@fixed D09B
+$.complexType[13].attribute[3].xml lang en
+$.complexType[13].attribute[3].UniqueID null
+$.complexType[13].attribute[3].Acronym SC
+$.complexType[13].attribute[3].Name Code List. Version. Identifier
+$.complexType[13].attribute[3].Definition null
+$.complexType[13].attribute[3].Cardinality 0..1
+$.complexType[13].attribute[3].PropertyTerm Version
+$.complexType[13].attribute[4].@name listURI
+$.complexType[13].attribute[4].@type xsd:anyURI
+$.complexType[13].attribute[4].@use optional
+$.complexType[13].attribute[4].xml lang en
+$.complexType[13].attribute[4].UniqueID null
+$.complexType[13].attribute[4].Acronym SC
+$.complexType[13].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[13].attribute[4].Definition null
+$.complexType[13].attribute[4].Cardinality 0..1
+$.complexType[13].attribute[4].PropertyTerm Uniform Resource
+$.complexType[14].@name CargoTypeClassificationCodeType
+$.complexType[14].xml lang en
+$.complexType[14].UniqueID UN02000049
+$.complexType[14].Acronym DT
+$.complexType[14].DictionaryEntryName Cargo Type Classification_ Code. Type
+$.complexType[14].Version 1.0
+$.complexType[14].Definition A character string used to represent a cargo type classification.
+$.complexType[14].PrimaryRepresentationTerm Code
+$.complexType[14].PrimitiveType String
+$.complexType[14].DataTypeQualifierTerm Cargo Type Classification
+$.complexType[14].@base clm67085:CargoTypeClassificationCodeContentType
+$.complexType[14].attribute[1].@name listID
+$.complexType[14].attribute[1].@type xsd:token
+$.complexType[14].attribute[1].@use optional
+$.complexType[14].attribute[1].@fixed 7085
+$.complexType[14].attribute[1].xml lang en
+$.complexType[14].attribute[1].UniqueID null
+$.complexType[14].attribute[1].Acronym SC
+$.complexType[14].attribute[1].Name Code List. Identifier
+$.complexType[14].attribute[1].Definition null
+$.complexType[14].attribute[1].Cardinality 0..1
+$.complexType[14].attribute[1].PropertyTerm Identifier
+$.complexType[14].attribute[2].@name listAgencyID
+$.complexType[14].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[14].attribute[2].@use optional
+$.complexType[14].attribute[2].@fixed 6
+$.complexType[14].attribute[2].xml lang en
+$.complexType[14].attribute[2].UniqueID null
+$.complexType[14].attribute[2].Acronym SC
+$.complexType[14].attribute[2].Name Code List. Agency. Identifier
+$.complexType[14].attribute[2].Definition null
+$.complexType[14].attribute[2].Cardinality 0..1
+$.complexType[14].attribute[2].PropertyTerm Agency
+$.complexType[14].attribute[3].@name listVersionID
+$.complexType[14].attribute[3].@type xsd:token
+$.complexType[14].attribute[3].@use optional
+$.complexType[14].attribute[3].@fixed D09B
+$.complexType[14].attribute[3].xml lang en
+$.complexType[14].attribute[3].UniqueID null
+$.complexType[14].attribute[3].Acronym SC
+$.complexType[14].attribute[3].Name Code List. Version. Identifier
+$.complexType[14].attribute[3].Definition null
+$.complexType[14].attribute[3].Cardinality 0..1
+$.complexType[14].attribute[3].PropertyTerm Version
+$.complexType[14].attribute[4].@name name
+$.complexType[14].attribute[4].@type xsd:string
+$.complexType[14].attribute[4].@use optional
+$.complexType[14].attribute[4].xml lang en
+$.complexType[14].attribute[4].UniqueID null
+$.complexType[14].attribute[4].Acronym SC
+$.complexType[14].attribute[4].Name Code. Name. Text
+$.complexType[14].attribute[4].Definition null
+$.complexType[14].attribute[4].Cardinality 0..1
+$.complexType[14].attribute[4].PropertyTerm Name
+$.complexType[15].@name ChargePayingPartyRoleCodeType
+$.complexType[15].xml lang en
+$.complexType[15].UniqueID UN02000062
+$.complexType[15].Acronym DT
+$.complexType[15].DictionaryEntryName Charge Paying_ Party Role_ Code. Type
+$.complexType[15].Version 1.0
+$.complexType[15].Definition A character string used to represent the charge paying party role.
+$.complexType[15].PrimaryRepresentationTerm Code
+$.complexType[15].PrimitiveType String
+$.complexType[15].DataTypeQualifierTerm Charge Paying
+$.complexType[15].DataTypeQualifierTerm Party Role
+$.complexType[15].@base clm63035ChargePaying:PartyRoleCodeChargePayingContentType
+$.complexType[15].attribute[1].@name listID
+$.complexType[15].attribute[1].@type xsd:token
+$.complexType[15].attribute[1].@use optional
+$.complexType[15].attribute[1].@fixed 3035_Charge Paying
+$.complexType[15].attribute[1].xml lang en
+$.complexType[15].attribute[1].UniqueID null
+$.complexType[15].attribute[1].Acronym SC
+$.complexType[15].attribute[1].Name Code List. Identifier
+$.complexType[15].attribute[1].Definition null
+$.complexType[15].attribute[1].Cardinality 0..1
+$.complexType[15].attribute[1].PropertyTerm Identifier
+$.complexType[15].attribute[2].@name listAgencyID
+$.complexType[15].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[15].attribute[2].@use optional
+$.complexType[15].attribute[2].@fixed 6
+$.complexType[15].attribute[2].xml lang en
+$.complexType[15].attribute[2].UniqueID null
+$.complexType[15].attribute[2].Acronym SC
+$.complexType[15].attribute[2].Name Code List. Agency. Identifier
+$.complexType[15].attribute[2].Definition null
+$.complexType[15].attribute[2].Cardinality 0..1
+$.complexType[15].attribute[2].PropertyTerm Agency
+$.complexType[15].attribute[3].@name listVersionID
+$.complexType[15].attribute[3].@type xsd:token
+$.complexType[15].attribute[3].@use optional
+$.complexType[15].attribute[3].@fixed D09B
+$.complexType[15].attribute[3].xml lang en
+$.complexType[15].attribute[3].UniqueID null
+$.complexType[15].attribute[3].Acronym SC
+$.complexType[15].attribute[3].Name Code List. Version. Identifier
+$.complexType[15].attribute[3].Definition null
+$.complexType[15].attribute[3].Cardinality 0..1
+$.complexType[15].attribute[3].PropertyTerm Version
+$.complexType[15].attribute[4].@name name
+$.complexType[15].attribute[4].@type xsd:string
+$.complexType[15].attribute[4].@use optional
+$.complexType[15].attribute[4].xml lang en
+$.complexType[15].attribute[4].UniqueID null
+$.complexType[15].attribute[4].Acronym SC
+$.complexType[15].attribute[4].Name Code. Name. Text
+$.complexType[15].attribute[4].Definition null
+$.complexType[15].attribute[4].Cardinality 0..1
+$.complexType[15].attribute[4].PropertyTerm Name
+$.complexType[16].@name ContractorTypeCodeType
+$.complexType[16].xml lang en
+$.complexType[16].UniqueID UN02000112
+$.complexType[16].Acronym DT
+$.complexType[16].DictionaryEntryName Contractor Type_ Code. Type
+$.complexType[16].Version 1.0
+$.complexType[16].Definition A character string used to represent or replace a type of contractor.
+$.complexType[16].PrimaryRepresentationTerm Code
+$.complexType[16].PrimitiveType String
+$.complexType[16].DataTypeQualifierTerm Contractor Type
+$.complexType[16].@base clm6ContractorType:ContractorTypeContentType
+$.complexType[16].attribute[1].@name listID
+$.complexType[16].attribute[1].@type xsd:token
+$.complexType[16].attribute[1].@use optional
+$.complexType[16].attribute[1].@fixed Contractor Type
+$.complexType[16].attribute[1].xml lang en
+$.complexType[16].attribute[1].UniqueID null
+$.complexType[16].attribute[1].Acronym SC
+$.complexType[16].attribute[1].Name Code List. Identifier
+$.complexType[16].attribute[1].Definition null
+$.complexType[16].attribute[1].Cardinality 0..1
+$.complexType[16].attribute[1].PropertyTerm Identifier
+$.complexType[16].attribute[2].@name listAgencyID
+$.complexType[16].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[16].attribute[2].@use optional
+$.complexType[16].attribute[2].@fixed 6
+$.complexType[16].attribute[2].xml lang en
+$.complexType[16].attribute[2].UniqueID null
+$.complexType[16].attribute[2].Acronym SC
+$.complexType[16].attribute[2].Name Code List. Agency. Identifier
+$.complexType[16].attribute[2].Definition null
+$.complexType[16].attribute[2].Cardinality 0..1
+$.complexType[16].attribute[2].PropertyTerm Agency
+$.complexType[16].attribute[3].@name listVersionID
+$.complexType[16].attribute[3].@type xsd:token
+$.complexType[16].attribute[3].@use optional
+$.complexType[16].attribute[3].@fixed D09B
+$.complexType[16].attribute[3].xml lang en
+$.complexType[16].attribute[3].UniqueID null
+$.complexType[16].attribute[3].Acronym SC
+$.complexType[16].attribute[3].Name Code List. Version. Identifier
+$.complexType[16].attribute[3].Definition null
+$.complexType[16].attribute[3].Cardinality 0..1
+$.complexType[16].attribute[3].PropertyTerm Version
+$.complexType[17].@name ContractTypeCodeType
+$.complexType[17].xml lang en
+$.complexType[17].UniqueID UN02000021
+$.complexType[17].Acronym DT
+$.complexType[17].DictionaryEntryName Contract Type_ Code. Type
+$.complexType[17].Version 1.0
+$.complexType[17].Definition A character string used to represent a type of contract.
+$.complexType[17].PrimaryRepresentationTerm Code
+$.complexType[17].PrimitiveType String
+$.complexType[17].DataTypeQualifierTerm Contract Type
+$.complexType[17].@base clm69651:ContractTypeCodeContentType
+$.complexType[17].attribute[1].@name listID
+$.complexType[17].attribute[1].@type xsd:token
+$.complexType[17].attribute[1].@use optional
+$.complexType[17].attribute[1].@fixed 9651
+$.complexType[17].attribute[1].xml lang en
+$.complexType[17].attribute[1].UniqueID null
+$.complexType[17].attribute[1].Acronym SC
+$.complexType[17].attribute[1].Name Code List. Identifier
+$.complexType[17].attribute[1].Definition null
+$.complexType[17].attribute[1].Cardinality 0..1
+$.complexType[17].attribute[1].PropertyTerm Identifier
+$.complexType[17].attribute[2].@name listAgencyID
+$.complexType[17].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[17].attribute[2].@use optional
+$.complexType[17].attribute[2].@fixed 6
+$.complexType[17].attribute[2].xml lang en
+$.complexType[17].attribute[2].UniqueID null
+$.complexType[17].attribute[2].Acronym SC
+$.complexType[17].attribute[2].Name Code List. Agency. Identifier
+$.complexType[17].attribute[2].Definition null
+$.complexType[17].attribute[2].Cardinality 0..1
+$.complexType[17].attribute[2].PropertyTerm Agency
+$.complexType[17].attribute[3].@name listVersionID
+$.complexType[17].attribute[3].@type xsd:token
+$.complexType[17].attribute[3].@use optional
+$.complexType[17].attribute[3].@fixed D09B
+$.complexType[17].attribute[3].xml lang en
+$.complexType[17].attribute[3].UniqueID null
+$.complexType[17].attribute[3].Acronym SC
+$.complexType[17].attribute[3].Name Code List. Version. Identifier
+$.complexType[17].attribute[3].Definition null
+$.complexType[17].attribute[3].Cardinality 0..1
+$.complexType[17].attribute[3].PropertyTerm Version
+$.complexType[18].@name CostManagementCodeType
+$.complexType[18].xml lang en
+$.complexType[18].UniqueID UN02000023
+$.complexType[18].Acronym DT
+$.complexType[18].DictionaryEntryName Cost Management_ Code. Type
+$.complexType[18].Version 1.0
+$.complexType[18].Definition A character string used to represent or replace a cost management value.
+$.complexType[18].PrimaryRepresentationTerm Code
+$.complexType[18].PrimitiveType String
+$.complexType[18].DataTypeQualifierTerm Cost Management
+$.complexType[18].@base clm69653:CostManagementCodeContentType
+$.complexType[18].attribute[1].@name listID
+$.complexType[18].attribute[1].@type xsd:token
+$.complexType[18].attribute[1].@use optional
+$.complexType[18].attribute[1].@fixed 9653
+$.complexType[18].attribute[1].xml lang en
+$.complexType[18].attribute[1].UniqueID null
+$.complexType[18].attribute[1].Acronym SC
+$.complexType[18].attribute[1].Name Code List. Identifier
+$.complexType[18].attribute[1].Definition null
+$.complexType[18].attribute[1].Cardinality 0..1
+$.complexType[18].attribute[1].PropertyTerm Identifier
+$.complexType[18].attribute[2].@name listAgencyID
+$.complexType[18].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[18].attribute[2].@use optional
+$.complexType[18].attribute[2].@fixed 6
+$.complexType[18].attribute[2].xml lang en
+$.complexType[18].attribute[2].UniqueID null
+$.complexType[18].attribute[2].Acronym SC
+$.complexType[18].attribute[2].Name Code List. Agency. Identifier
+$.complexType[18].attribute[2].Definition null
+$.complexType[18].attribute[2].Cardinality 0..1
+$.complexType[18].attribute[2].PropertyTerm Agency
+$.complexType[18].attribute[3].@name listVersionID
+$.complexType[18].attribute[3].@type xsd:token
+$.complexType[18].attribute[3].@use optional
+$.complexType[18].attribute[3].@fixed D09B
+$.complexType[18].attribute[3].xml lang en
+$.complexType[18].attribute[3].UniqueID null
+$.complexType[18].attribute[3].Acronym SC
+$.complexType[18].attribute[3].Name Code List. Version. Identifier
+$.complexType[18].attribute[3].Definition null
+$.complexType[18].attribute[3].Cardinality 0..1
+$.complexType[18].attribute[3].PropertyTerm Version
+$.complexType[19].@name CostReportingCodeType
+$.complexType[19].xml lang en
+$.complexType[19].UniqueID UN02000024
+$.complexType[19].Acronym DT
+$.complexType[19].DictionaryEntryName Cost Reporting_ Code. Type
+$.complexType[19].Version 1.0
+$.complexType[19].Definition A character string used to represent or replace a cost reporting value.
+$.complexType[19].PrimaryRepresentationTerm Code
+$.complexType[19].PrimitiveType String
+$.complexType[19].DataTypeQualifierTerm Cost Reporting
+$.complexType[19].@base clm69655:CostReportingCodeContentType
+$.complexType[19].attribute[1].@name listID
+$.complexType[19].attribute[1].@type xsd:token
+$.complexType[19].attribute[1].@use optional
+$.complexType[19].attribute[1].@fixed 9655
+$.complexType[19].attribute[1].xml lang en
+$.complexType[19].attribute[1].UniqueID null
+$.complexType[19].attribute[1].Acronym SC
+$.complexType[19].attribute[1].Name Code List. Identifier
+$.complexType[19].attribute[1].Definition null
+$.complexType[19].attribute[1].Cardinality 0..1
+$.complexType[19].attribute[1].PropertyTerm Identifier
+$.complexType[19].attribute[2].@name listAgencyID
+$.complexType[19].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[19].attribute[2].@use optional
+$.complexType[19].attribute[2].@fixed 6
+$.complexType[19].attribute[2].xml lang en
+$.complexType[19].attribute[2].UniqueID null
+$.complexType[19].attribute[2].Acronym SC
+$.complexType[19].attribute[2].Name Code List. Agency. Identifier
+$.complexType[19].attribute[2].Definition null
+$.complexType[19].attribute[2].Cardinality 0..1
+$.complexType[19].attribute[2].PropertyTerm Agency
+$.complexType[19].attribute[3].@name listVersionID
+$.complexType[19].attribute[3].@type xsd:token
+$.complexType[19].attribute[3].@use optional
+$.complexType[19].attribute[3].@fixed D09B
+$.complexType[19].attribute[3].xml lang en
+$.complexType[19].attribute[3].UniqueID null
+$.complexType[19].attribute[3].Acronym SC
+$.complexType[19].attribute[3].Name Code List. Version. Identifier
+$.complexType[19].attribute[3].Definition null
+$.complexType[19].attribute[3].Cardinality 0..1
+$.complexType[19].attribute[3].PropertyTerm Version
+$.complexType[20].@name CountryIDType
+$.complexType[20].xml lang en
+$.complexType[20].UniqueID UN02000003
+$.complexType[20].Acronym DT
+$.complexType[20].DictionaryEntryName Country_ Identifier. Type
+$.complexType[20].Version 1.0
+$.complexType[20].Definition A character string to identify and distinguish uniquely, one instance of a country in an identification scheme from all other objects within the same scheme.
+$.complexType[20].PrimaryRepresentationTerm Identifier
+$.complexType[20].PrimitiveType String
+$.complexType[20].DataTypeQualifierTerm Country
+$.complexType[20].@base ids5ISO316612A:ISOTwoletterCountryCodeIdentifierContentType
+$.complexType[20].attribute[1].@name schemeID
+$.complexType[20].attribute[1].@type xsd:token
+$.complexType[20].attribute[1].@use optional
+$.complexType[20].attribute[1].xml lang en
+$.complexType[20].attribute[1].UniqueID null
+$.complexType[20].attribute[1].Acronym SC
+$.complexType[20].attribute[1].Name Identification Scheme. Identifier
+$.complexType[20].attribute[1].Definition null
+$.complexType[20].attribute[1].Cardinality 0..1
+$.complexType[20].attribute[1].PropertyTerm Identifier
+$.complexType[20].attribute[2].@name schemeAgencyID
+$.complexType[20].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[20].attribute[2].@use optional
+$.complexType[20].attribute[2].xml lang en
+$.complexType[20].attribute[2].UniqueID null
+$.complexType[20].attribute[2].Acronym SC
+$.complexType[20].attribute[2].Name Identification Scheme Agency. Identifier
+$.complexType[20].attribute[2].Definition null
+$.complexType[20].attribute[2].Cardinality 0..1
+$.complexType[20].attribute[2].PropertyTerm Identifier
+$.complexType[20].attribute[3].@name schemeVersionID
+$.complexType[20].attribute[3].@type xsd:token
+$.complexType[20].attribute[3].@use optional
+$.complexType[20].attribute[3].@fixed second edition 2006
+$.complexType[20].attribute[3].xml lang en
+$.complexType[20].attribute[3].UniqueID null
+$.complexType[20].attribute[3].Acronym SC
+$.complexType[20].attribute[3].Name Identification Scheme. Version. Identifier
+$.complexType[20].attribute[3].Definition null
+$.complexType[20].attribute[3].Cardinality 0..1
+$.complexType[20].attribute[3].PropertyTerm Version
+$.complexType[21].@name CurrencyCodeType
+$.complexType[21].xml lang en
+$.complexType[21].UniqueID UN02000004
+$.complexType[21].Acronym DT
+$.complexType[21].DictionaryEntryName Currency_ Code. Type
+$.complexType[21].Version 1.1
+$.complexType[21].Definition A character string used to represent a currency.
+$.complexType[21].PrimaryRepresentationTerm Code
+$.complexType[21].PrimitiveType String
+$.complexType[21].DataTypeQualifierTerm Currency
+$.complexType[21].@base clm5ISO42173A:ISO3AlphaCurrencyCodeContentType
+$.complexType[21].attribute[1].@name listID
+$.complexType[21].attribute[1].@type xsd:token
+$.complexType[21].attribute[1].@use optional
+$.complexType[21].attribute[1].@fixed ISO 4217 3A
+$.complexType[21].attribute[1].xml lang en
+$.complexType[21].attribute[1].UniqueID null
+$.complexType[21].attribute[1].Acronym SC
+$.complexType[21].attribute[1].Name Code List. Identifier
+$.complexType[21].attribute[1].Definition null
+$.complexType[21].attribute[1].Cardinality 0..1
+$.complexType[21].attribute[1].PropertyTerm Identifier
+$.complexType[21].attribute[2].@name listAgencyID
+$.complexType[21].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[21].attribute[2].@use optional
+$.complexType[21].attribute[2].@fixed 5
+$.complexType[21].attribute[2].xml lang en
+$.complexType[21].attribute[2].UniqueID null
+$.complexType[21].attribute[2].Acronym SC
+$.complexType[21].attribute[2].Name Code List. Agency. Identifier
+$.complexType[21].attribute[2].Definition null
+$.complexType[21].attribute[2].Cardinality 0..1
+$.complexType[21].attribute[2].PropertyTerm Agency
+$.complexType[21].attribute[3].@name listVersionID
+$.complexType[21].attribute[3].@type xsd:token
+$.complexType[21].attribute[3].@use optional
+$.complexType[21].attribute[3].@fixed 2007-06-18
+$.complexType[21].attribute[3].xml lang en
+$.complexType[21].attribute[3].UniqueID null
+$.complexType[21].attribute[3].Acronym SC
+$.complexType[21].attribute[3].Name Code List. Version. Identifier
+$.complexType[21].attribute[3].Definition null
+$.complexType[21].attribute[3].Cardinality 0..1
+$.complexType[21].attribute[3].PropertyTerm Version
+$.complexType[21].attribute[4].@name listURI
+$.complexType[21].attribute[4].@type xsd:anyURI
+$.complexType[21].attribute[4].@use optional
+$.complexType[21].attribute[4].xml lang en
+$.complexType[21].attribute[4].UniqueID null
+$.complexType[21].attribute[4].Acronym SC
+$.complexType[21].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[21].attribute[4].Definition null
+$.complexType[21].attribute[4].Cardinality 0..1
+$.complexType[21].attribute[4].PropertyTerm Uniform Resource
+$.complexType[22].@name DeliveryTermsCodeType
+$.complexType[22].xml lang en
+$.complexType[22].UniqueID UN02000005
+$.complexType[22].Acronym DT
+$.complexType[22].DictionaryEntryName Delivery Terms_ Code. Type
+$.complexType[22].Version 1.0
+$.complexType[22].Definition A character string used to represent delivery terms.
+$.complexType[22].PrimaryRepresentationTerm Code
+$.complexType[22].PrimitiveType String
+$.complexType[22].DataTypeQualifierTerm Delivery Terms
+$.complexType[22].@base clm64053:DeliveryTermsCodeContentType
+$.complexType[22].attribute[1].@name listID
+$.complexType[22].attribute[1].@type xsd:token
+$.complexType[22].attribute[1].@use optional
+$.complexType[22].attribute[1].@fixed 4053
+$.complexType[22].attribute[1].xml lang en
+$.complexType[22].attribute[1].UniqueID null
+$.complexType[22].attribute[1].Acronym SC
+$.complexType[22].attribute[1].Name Code List. Identifier
+$.complexType[22].attribute[1].Definition null
+$.complexType[22].attribute[1].Cardinality 0..1
+$.complexType[22].attribute[1].PropertyTerm Identifier
+$.complexType[22].attribute[2].@name listAgencyID
+$.complexType[22].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[22].attribute[2].@use optional
+$.complexType[22].attribute[2].@fixed 6
+$.complexType[22].attribute[2].xml lang en
+$.complexType[22].attribute[2].UniqueID null
+$.complexType[22].attribute[2].Acronym SC
+$.complexType[22].attribute[2].Name Code List. Agency. Identifier
+$.complexType[22].attribute[2].Definition null
+$.complexType[22].attribute[2].Cardinality 0..1
+$.complexType[22].attribute[2].PropertyTerm Agency
+$.complexType[22].attribute[3].@name listVersionID
+$.complexType[22].attribute[3].@type xsd:token
+$.complexType[22].attribute[3].@use optional
+$.complexType[22].attribute[3].@fixed 2000
+$.complexType[22].attribute[3].xml lang en
+$.complexType[22].attribute[3].UniqueID null
+$.complexType[22].attribute[3].Acronym SC
+$.complexType[22].attribute[3].Name Code List. Version. Identifier
+$.complexType[22].attribute[3].Definition null
+$.complexType[22].attribute[3].Cardinality 0..1
+$.complexType[22].attribute[3].PropertyTerm Version
+$.complexType[23].@name DimensionTypeCodeType
+$.complexType[23].xml lang en
+$.complexType[23].UniqueID UN02000071
+$.complexType[23].Acronym DT
+$.complexType[23].DictionaryEntryName Dimension Type_ Code. Type
+$.complexType[23].Version 1.0
+$.complexType[23].Definition A character string used to represent the dimension type.
+$.complexType[23].PrimaryRepresentationTerm Code
+$.complexType[23].PrimitiveType String
+$.complexType[23].DataTypeQualifierTerm Dimension Type
+$.complexType[23].@base clm66145:DimensionTypeCodeContentType
+$.complexType[23].attribute[1].@name listID
+$.complexType[23].attribute[1].@type xsd:token
+$.complexType[23].attribute[1].@use optional
+$.complexType[23].attribute[1].@fixed 6145
+$.complexType[23].attribute[1].xml lang en
+$.complexType[23].attribute[1].UniqueID null
+$.complexType[23].attribute[1].Acronym SC
+$.complexType[23].attribute[1].Name Code List. Identifier
+$.complexType[23].attribute[1].Definition null
+$.complexType[23].attribute[1].Cardinality 0..1
+$.complexType[23].attribute[1].PropertyTerm Identifier
+$.complexType[23].attribute[2].@name listAgencyID
+$.complexType[23].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[23].attribute[2].@use optional
+$.complexType[23].attribute[2].@fixed 6
+$.complexType[23].attribute[2].xml lang en
+$.complexType[23].attribute[2].UniqueID null
+$.complexType[23].attribute[2].Acronym SC
+$.complexType[23].attribute[2].Name Code List. Agency. Identifier
+$.complexType[23].attribute[2].Definition null
+$.complexType[23].attribute[2].Cardinality 0..1
+$.complexType[23].attribute[2].PropertyTerm Agency
+$.complexType[23].attribute[3].@name listVersionID
+$.complexType[23].attribute[3].@type xsd:token
+$.complexType[23].attribute[3].@use optional
+$.complexType[23].attribute[3].@fixed D09B
+$.complexType[23].attribute[3].xml lang en
+$.complexType[23].attribute[3].UniqueID null
+$.complexType[23].attribute[3].Acronym SC
+$.complexType[23].attribute[3].Name Code List. Version. Identifier
+$.complexType[23].attribute[3].Definition null
+$.complexType[23].attribute[3].Cardinality 0..1
+$.complexType[23].attribute[3].PropertyTerm Version
+$.complexType[23].attribute[4].@name name
+$.complexType[23].attribute[4].@type xsd:string
+$.complexType[23].attribute[4].@use optional
+$.complexType[23].attribute[4].xml lang en
+$.complexType[23].attribute[4].UniqueID null
+$.complexType[23].attribute[4].Acronym SC
+$.complexType[23].attribute[4].Name Code. Name. Text
+$.complexType[23].attribute[4].Definition null
+$.complexType[23].attribute[4].Cardinality 0..1
+$.complexType[23].attribute[4].PropertyTerm Name
+$.complexType[24].@name DocumentCodeType
+$.complexType[24].xml lang en
+$.complexType[24].UniqueID UN02000006
+$.complexType[24].Acronym DT
+$.complexType[24].DictionaryEntryName Document_ Code. Type
+$.complexType[24].Version 1.1
+$.complexType[24].Definition A character string denoting the type of a document. [Reference United Nations Code List (UNCL) 1001]
+$.complexType[24].PrimaryRepresentationTerm Code
+$.complexType[24].PrimitiveType String
+$.complexType[24].DataTypeQualifierTerm Document
+$.complexType[24].@base clm61001:DocumentNameCodeContentType
+$.complexType[24].attribute[1].@name listID
+$.complexType[24].attribute[1].@type xsd:token
+$.complexType[24].attribute[1].@use optional
+$.complexType[24].attribute[1].@fixed 1001
+$.complexType[24].attribute[1].xml lang en
+$.complexType[24].attribute[1].UniqueID null
+$.complexType[24].attribute[1].Acronym SC
+$.complexType[24].attribute[1].Name Code List. Identifier
+$.complexType[24].attribute[1].Definition null
+$.complexType[24].attribute[1].Cardinality 0..1
+$.complexType[24].attribute[1].PropertyTerm Identifier
+$.complexType[24].attribute[2].@name listAgencyID
+$.complexType[24].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[24].attribute[2].@use optional
+$.complexType[24].attribute[2].@fixed 6
+$.complexType[24].attribute[2].xml lang en
+$.complexType[24].attribute[2].UniqueID null
+$.complexType[24].attribute[2].Acronym SC
+$.complexType[24].attribute[2].Name Code List. Agency. Identifier
+$.complexType[24].attribute[2].Definition null
+$.complexType[24].attribute[2].Cardinality 0..1
+$.complexType[24].attribute[2].PropertyTerm Agency
+$.complexType[24].attribute[3].@name listVersionID
+$.complexType[24].attribute[3].@type xsd:token
+$.complexType[24].attribute[3].@use optional
+$.complexType[24].attribute[3].@fixed D09B
+$.complexType[24].attribute[3].xml lang en
+$.complexType[24].attribute[3].UniqueID null
+$.complexType[24].attribute[3].Acronym SC
+$.complexType[24].attribute[3].Name Code List. Version. Identifier
+$.complexType[24].attribute[3].Definition null
+$.complexType[24].attribute[3].Cardinality 0..1
+$.complexType[24].attribute[3].PropertyTerm Version
+$.complexType[24].attribute[4].@name name
+$.complexType[24].attribute[4].@type xsd:string
+$.complexType[24].attribute[4].@use optional
+$.complexType[24].attribute[4].xml lang en
+$.complexType[24].attribute[4].UniqueID null
+$.complexType[24].attribute[4].Acronym SC
+$.complexType[24].attribute[4].Name Code. Name. Text
+$.complexType[24].attribute[4].Definition null
+$.complexType[24].attribute[4].Cardinality 0..1
+$.complexType[24].attribute[4].PropertyTerm Name
+$.complexType[24].attribute[5].@name listURI
+$.complexType[24].attribute[5].@type xsd:anyURI
+$.complexType[24].attribute[5].@use optional
+$.complexType[24].attribute[5].xml lang en
+$.complexType[24].attribute[5].UniqueID null
+$.complexType[24].attribute[5].Acronym SC
+$.complexType[24].attribute[5].Name Code List. Uniform Resource. Identifier
+$.complexType[24].attribute[5].Definition null
+$.complexType[24].attribute[5].Cardinality 0..1
+$.complexType[24].attribute[5].PropertyTerm Uniform Resource
+$.complexType[25].@name DocumentStatusCodeType
+$.complexType[25].xml lang en
+$.complexType[25].UniqueID UN02000025
+$.complexType[25].Acronym DT
+$.complexType[25].DictionaryEntryName Document Status_ Code. Type
+$.complexType[25].Version 1.0
+$.complexType[25].Definition A character string used to represent or replace a document status.
+$.complexType[25].PrimaryRepresentationTerm Code
+$.complexType[25].PrimitiveType String
+$.complexType[25].DataTypeQualifierTerm Document Status
+$.complexType[25].@base clm61373:DocumentStatusCodeContentType
+$.complexType[25].attribute[1].@name listID
+$.complexType[25].attribute[1].@type xsd:token
+$.complexType[25].attribute[1].@use optional
+$.complexType[25].attribute[1].@fixed 1373
+$.complexType[25].attribute[1].xml lang en
+$.complexType[25].attribute[1].UniqueID null
+$.complexType[25].attribute[1].Acronym SC
+$.complexType[25].attribute[1].Name Code List. Identifier
+$.complexType[25].attribute[1].Definition null
+$.complexType[25].attribute[1].Cardinality 0..1
+$.complexType[25].attribute[1].PropertyTerm Identifier
+$.complexType[25].attribute[2].@name listAgencyID
+$.complexType[25].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[25].attribute[2].@use optional
+$.complexType[25].attribute[2].@fixed 6
+$.complexType[25].attribute[2].xml lang en
+$.complexType[25].attribute[2].UniqueID null
+$.complexType[25].attribute[2].Acronym SC
+$.complexType[25].attribute[2].Name Code List. Agency. Identifier
+$.complexType[25].attribute[2].Definition null
+$.complexType[25].attribute[2].Cardinality 0..1
+$.complexType[25].attribute[2].PropertyTerm Agency
+$.complexType[25].attribute[3].@name listVersionID
+$.complexType[25].attribute[3].@type xsd:token
+$.complexType[25].attribute[3].@use optional
+$.complexType[25].attribute[3].@fixed D09B
+$.complexType[25].attribute[3].xml lang en
+$.complexType[25].attribute[3].UniqueID null
+$.complexType[25].attribute[3].Acronym SC
+$.complexType[25].attribute[3].Name Code List. Version. Identifier
+$.complexType[25].attribute[3].Definition null
+$.complexType[25].attribute[3].Cardinality 0..1
+$.complexType[25].attribute[3].PropertyTerm Version
+$.complexType[25].attribute[4].@name name
+$.complexType[25].attribute[4].@type xsd:string
+$.complexType[25].attribute[4].@use optional
+$.complexType[25].attribute[4].xml lang en
+$.complexType[25].attribute[4].UniqueID null
+$.complexType[25].attribute[4].Acronym SC
+$.complexType[25].attribute[4].Name Code. Name. Text
+$.complexType[25].attribute[4].Definition null
+$.complexType[25].attribute[4].Cardinality 0..1
+$.complexType[25].attribute[4].PropertyTerm Name
+$.complexType[26].@name DurationMeasureType
+$.complexType[26].xml lang en
+$.complexType[26].UniqueID UN02000026
+$.complexType[26].Acronym DT
+$.complexType[26].DictionaryEntryName Duration_ Measure. Type
+$.complexType[26].Version 1.0
+$.complexType[26].Definition A numeric value determined by measuring a duration of time.
+$.complexType[26].PrimaryRepresentationTerm Measure
+$.complexType[26].PrimitiveType Decimal
+$.complexType[26].DataTypeQualifierTerm Duration
+$.complexType[26].@base xsd:decimal
+$.complexType[26].attribute[1].@name unitCode
+$.complexType[26].attribute[1].@type clm6Recommendation20Duration:MeasurementUnitCommonCodeDurationContentType
+$.complexType[26].attribute[1].@use required
+$.complexType[26].attribute[1].xml lang en
+$.complexType[26].attribute[1].UniqueID null
+$.complexType[26].attribute[1].Acronym SC
+$.complexType[26].attribute[1].Name Measure Unit. Code
+$.complexType[26].attribute[1].Definition null
+$.complexType[26].attribute[1].Cardinality 1
+$.complexType[26].attribute[1].PropertyTerm Code
+$.complexType[27].@name EarnedValueCalculationMethodCodeType
+$.complexType[27].xml lang en
+$.complexType[27].UniqueID UN02000027
+$.complexType[27].Acronym DT
+$.complexType[27].DictionaryEntryName Earned Value Calculation Method_ Code. Type
+$.complexType[27].Version 1.0
+$.complexType[27].Definition A character string used to represent or replace the type of earned value calculation method.
+$.complexType[27].PrimaryRepresentationTerm Code
+$.complexType[27].PrimitiveType String
+$.complexType[27].DataTypeQualifierTerm Earned Value Calculation Method
+$.complexType[27].@base clm69657:EarnedValueCalculationMethodContentType
+$.complexType[27].attribute[1].@name listID
+$.complexType[27].attribute[1].@type xsd:token
+$.complexType[27].attribute[1].@use optional
+$.complexType[27].attribute[1].@fixed 9657
+$.complexType[27].attribute[1].xml lang en
+$.complexType[27].attribute[1].UniqueID null
+$.complexType[27].attribute[1].Acronym SC
+$.complexType[27].attribute[1].Name Code List. Identifier
+$.complexType[27].attribute[1].Definition null
+$.complexType[27].attribute[1].Cardinality 0..1
+$.complexType[27].attribute[1].PropertyTerm Identifier
+$.complexType[27].attribute[2].@name listAgencyID
+$.complexType[27].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[27].attribute[2].@use optional
+$.complexType[27].attribute[2].@fixed 6
+$.complexType[27].attribute[2].xml lang en
+$.complexType[27].attribute[2].UniqueID null
+$.complexType[27].attribute[2].Acronym SC
+$.complexType[27].attribute[2].Name Code List. Agency. Identifier
+$.complexType[27].attribute[2].Definition null
+$.complexType[27].attribute[2].Cardinality 0..1
+$.complexType[27].attribute[2].PropertyTerm Agency
+$.complexType[27].attribute[3].@name listVersionID
+$.complexType[27].attribute[3].@type xsd:token
+$.complexType[27].attribute[3].@use optional
+$.complexType[27].attribute[3].@fixed D09B
+$.complexType[27].attribute[3].xml lang en
+$.complexType[27].attribute[3].UniqueID null
+$.complexType[27].attribute[3].Acronym SC
+$.complexType[27].attribute[3].Name Code List. Version. Identifier
+$.complexType[27].attribute[3].Definition null
+$.complexType[27].attribute[3].Cardinality 0..1
+$.complexType[27].attribute[3].PropertyTerm Version
+$.complexType[28].@name FileSizeMeasureType
+$.complexType[28].xml lang en
+$.complexType[28].UniqueID UN02000116
+$.complexType[28].Acronym DT
+$.complexType[28].DictionaryEntryName File Size_ Measure. Type
+$.complexType[28].Version 1.0
+$.complexType[28].Definition A numeric value determined by measuring a file size.
+$.complexType[28].PrimaryRepresentationTerm Measure
+$.complexType[28].PrimitiveType Decimal
+$.complexType[28].DataTypeQualifierTerm File Size
+$.complexType[28].@base xsd:decimal
+$.complexType[28].attribute[1].@name unitCode
+$.complexType[28].attribute[1].@type clm6Recommendation20:MeasurementUnitCommonCodeContentType
+$.complexType[28].attribute[1].@use optional
+$.complexType[28].attribute[1].xml lang en
+$.complexType[28].attribute[1].UniqueID null
+$.complexType[28].attribute[1].Acronym SC
+$.complexType[28].attribute[1].Name Measure Unit. Code
+$.complexType[28].attribute[1].Definition null
+$.complexType[28].attribute[1].Cardinality 0..1
+$.complexType[28].attribute[1].PropertyTerm Code
+$.complexType[29].@name FreightChargeTariffClassCodeType
+$.complexType[29].xml lang en
+$.complexType[29].UniqueID UN02000074
+$.complexType[29].Acronym DT
+$.complexType[29].DictionaryEntryName Freight Charge Tariff Class_ Code. Type
+$.complexType[29].Version 1.0
+$.complexType[29].Definition A character string used to represent the freight charge tariff class.
+$.complexType[29].PrimaryRepresentationTerm Code
+$.complexType[29].PrimitiveType String
+$.complexType[29].DataTypeQualifierTerm Freight Charge Tariff Class
+$.complexType[29].@base clm65243:FreightChargeTariffCodeContentType
+$.complexType[29].attribute[1].@name listID
+$.complexType[29].attribute[1].@type xsd:token
+$.complexType[29].attribute[1].@use optional
+$.complexType[29].attribute[1].@fixed 5243
+$.complexType[29].attribute[1].xml lang en
+$.complexType[29].attribute[1].UniqueID null
+$.complexType[29].attribute[1].Acronym SC
+$.complexType[29].attribute[1].Name Code List. Identifier
+$.complexType[29].attribute[1].Definition null
+$.complexType[29].attribute[1].Cardinality 0..1
+$.complexType[29].attribute[1].PropertyTerm Identifier
+$.complexType[29].attribute[2].@name listAgencyID
+$.complexType[29].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[29].attribute[2].@use optional
+$.complexType[29].attribute[2].@fixed 6
+$.complexType[29].attribute[2].xml lang en
+$.complexType[29].attribute[2].UniqueID null
+$.complexType[29].attribute[2].Acronym SC
+$.complexType[29].attribute[2].Name Code List. Agency. Identifier
+$.complexType[29].attribute[2].Definition null
+$.complexType[29].attribute[2].Cardinality 0..1
+$.complexType[29].attribute[2].PropertyTerm Agency
+$.complexType[29].attribute[3].@name listVersionID
+$.complexType[29].attribute[3].@type xsd:token
+$.complexType[29].attribute[3].@use optional
+$.complexType[29].attribute[3].@fixed D09B
+$.complexType[29].attribute[3].xml lang en
+$.complexType[29].attribute[3].UniqueID null
+$.complexType[29].attribute[3].Acronym SC
+$.complexType[29].attribute[3].Name Code List. Version. Identifier
+$.complexType[29].attribute[3].Definition null
+$.complexType[29].attribute[3].Cardinality 0..1
+$.complexType[29].attribute[3].PropertyTerm Version
+$.complexType[29].attribute[4].@name name
+$.complexType[29].attribute[4].@type xsd:string
+$.complexType[29].attribute[4].@use optional
+$.complexType[29].attribute[4].xml lang en
+$.complexType[29].attribute[4].UniqueID null
+$.complexType[29].attribute[4].Acronym SC
+$.complexType[29].attribute[4].Name Code. Name. Text
+$.complexType[29].attribute[4].Definition null
+$.complexType[29].attribute[4].Cardinality 0..1
+$.complexType[29].attribute[4].PropertyTerm Name
+$.complexType[30].@name FreightChargeTypeIDType
+$.complexType[30].xml lang en
+$.complexType[30].UniqueID UN02000097
+$.complexType[30].Acronym DT
+$.complexType[30].DictionaryEntryName Freight Charge Type_ Identifier. Type
+$.complexType[30].Version 1.0
+$.complexType[30].Definition A character string used to represent the freight charge type.
+$.complexType[30].PrimaryRepresentationTerm Identifier
+$.complexType[30].PrimitiveType String
+$.complexType[30].DataTypeQualifierTerm Freight Charge Type
+$.complexType[30].@base ids6Recommendation23:FreightCostCodeContentType
+$.complexType[30].attribute[1].@name schemeID
+$.complexType[30].attribute[1].@type xsd:token
+$.complexType[30].attribute[1].@use optional
+$.complexType[30].attribute[1].xml lang en
+$.complexType[30].attribute[1].UniqueID null
+$.complexType[30].attribute[1].Acronym SC
+$.complexType[30].attribute[1].Name Identification Scheme. Identifier
+$.complexType[30].attribute[1].Definition null
+$.complexType[30].attribute[1].Cardinality 0..1
+$.complexType[30].attribute[1].PropertyTerm Identifier
+$.complexType[30].attribute[2].@name schemeAgencyID
+$.complexType[30].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[30].attribute[2].@use optional
+$.complexType[30].attribute[2].xml lang en
+$.complexType[30].attribute[2].UniqueID null
+$.complexType[30].attribute[2].Acronym SC
+$.complexType[30].attribute[2].Name Identification Scheme Agency. Identifier
+$.complexType[30].attribute[2].Definition null
+$.complexType[30].attribute[2].Cardinality 0..1
+$.complexType[30].attribute[2].PropertyTerm Identifier
+$.complexType[30].attribute[3].@name schemeVersionID
+$.complexType[30].attribute[3].@type xsd:token
+$.complexType[30].attribute[3].@use optional
+$.complexType[30].attribute[3].xml lang en
+$.complexType[30].attribute[3].UniqueID null
+$.complexType[30].attribute[3].Acronym SC
+$.complexType[30].attribute[3].Name Identification Scheme. Version. Identifier
+$.complexType[30].attribute[3].Definition null
+$.complexType[30].attribute[3].Cardinality 0..1
+$.complexType[30].attribute[3].PropertyTerm Version
+$.complexType[31].@name FundingTypeCodeType
+$.complexType[31].xml lang en
+$.complexType[31].UniqueID UN02000029
+$.complexType[31].Acronym DT
+$.complexType[31].DictionaryEntryName Funding Type_ Code. Type
+$.complexType[31].Version 1.0
+$.complexType[31].Definition A character string used to represent or replace a type of funding.
+$.complexType[31].PrimaryRepresentationTerm Code
+$.complexType[31].PrimitiveType String
+$.complexType[31].DataTypeQualifierTerm Funding Type
+$.complexType[31].@base clm69659:FundingTypeCodeContentType
+$.complexType[31].attribute[1].@name listID
+$.complexType[31].attribute[1].@type xsd:token
+$.complexType[31].attribute[1].@use optional
+$.complexType[31].attribute[1].@fixed 9659
+$.complexType[31].attribute[1].xml lang en
+$.complexType[31].attribute[1].UniqueID null
+$.complexType[31].attribute[1].Acronym SC
+$.complexType[31].attribute[1].Name Code List. Identifier
+$.complexType[31].attribute[1].Definition null
+$.complexType[31].attribute[1].Cardinality 0..1
+$.complexType[31].attribute[1].PropertyTerm Identifier
+$.complexType[31].attribute[2].@name listAgencyID
+$.complexType[31].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[31].attribute[2].@use optional
+$.complexType[31].attribute[2].@fixed 6
+$.complexType[31].attribute[2].xml lang en
+$.complexType[31].attribute[2].UniqueID null
+$.complexType[31].attribute[2].Acronym SC
+$.complexType[31].attribute[2].Name Code List. Agency. Identifier
+$.complexType[31].attribute[2].Definition null
+$.complexType[31].attribute[2].Cardinality 0..1
+$.complexType[31].attribute[2].PropertyTerm Agency
+$.complexType[31].attribute[3].@name listVersionID
+$.complexType[31].attribute[3].@type xsd:token
+$.complexType[31].attribute[3].@use optional
+$.complexType[31].attribute[3].@fixed D09B
+$.complexType[31].attribute[3].xml lang en
+$.complexType[31].attribute[3].UniqueID null
+$.complexType[31].attribute[3].Acronym SC
+$.complexType[31].attribute[3].Name Code List. Version. Identifier
+$.complexType[31].attribute[3].Definition null
+$.complexType[31].attribute[3].Cardinality 0..1
+$.complexType[31].attribute[3].PropertyTerm Version
+$.complexType[32].@name GovernmentActionCodeType
+$.complexType[32].xml lang en
+$.complexType[32].UniqueID UN02000040
+$.complexType[32].Acronym DT
+$.complexType[32].DictionaryEntryName Government Action_ Code. Type
+$.complexType[32].Version 1.0
+$.complexType[32].Definition A character string used to replace or represent a government action.
+$.complexType[32].PrimaryRepresentationTerm Code
+$.complexType[32].PrimitiveType String
+$.complexType[32].DataTypeQualifierTerm Government Action
+$.complexType[32].@base clm69417:GovernmentActionCodeContentType
+$.complexType[32].attribute[1].@name listID
+$.complexType[32].attribute[1].@type xsd:token
+$.complexType[32].attribute[1].@use optional
+$.complexType[32].attribute[1].@fixed 9417
+$.complexType[32].attribute[1].xml lang en
+$.complexType[32].attribute[1].UniqueID null
+$.complexType[32].attribute[1].Acronym SC
+$.complexType[32].attribute[1].Name Code List. Identifier
+$.complexType[32].attribute[1].Definition null
+$.complexType[32].attribute[1].Cardinality 0..1
+$.complexType[32].attribute[1].PropertyTerm Identifier
+$.complexType[32].attribute[2].@name listAgencyID
+$.complexType[32].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[32].attribute[2].@use optional
+$.complexType[32].attribute[2].@fixed 6
+$.complexType[32].attribute[2].xml lang en
+$.complexType[32].attribute[2].UniqueID null
+$.complexType[32].attribute[2].Acronym SC
+$.complexType[32].attribute[2].Name Code List. Agency. Identifier
+$.complexType[32].attribute[2].Definition null
+$.complexType[32].attribute[2].Cardinality 0..1
+$.complexType[32].attribute[2].PropertyTerm Agency
+$.complexType[32].attribute[3].@name listVersionID
+$.complexType[32].attribute[3].@type xsd:token
+$.complexType[32].attribute[3].@use optional
+$.complexType[32].attribute[3].@fixed D09B
+$.complexType[32].attribute[3].xml lang en
+$.complexType[32].attribute[3].UniqueID null
+$.complexType[32].attribute[3].Acronym SC
+$.complexType[32].attribute[3].Name Code List. Version. Identifier
+$.complexType[32].attribute[3].Definition null
+$.complexType[32].attribute[3].Cardinality 0..1
+$.complexType[32].attribute[3].PropertyTerm Version
+$.complexType[32].attribute[4].@name name
+$.complexType[32].attribute[4].@type xsd:string
+$.complexType[32].attribute[4].@use optional
+$.complexType[32].attribute[4].xml lang en
+$.complexType[32].attribute[4].UniqueID null
+$.complexType[32].attribute[4].Acronym SC
+$.complexType[32].attribute[4].Name Code. Name. Text
+$.complexType[32].attribute[4].Definition null
+$.complexType[32].attribute[4].Cardinality 0..1
+$.complexType[32].attribute[4].PropertyTerm Name
+$.complexType[33].@name HierarchicalStructureTypeCodeType
+$.complexType[33].xml lang en
+$.complexType[33].UniqueID UN02000030
+$.complexType[33].Acronym DT
+$.complexType[33].DictionaryEntryName Hierarchical Structure Type_ Code. Type
+$.complexType[33].Version 1.0
+$.complexType[33].Definition A character string used to represent or replace a type of hierarchical structure.
+$.complexType[33].PrimaryRepresentationTerm Code
+$.complexType[33].PrimitiveType String
+$.complexType[33].DataTypeQualifierTerm Hierarchical Structure Type
+$.complexType[33].@base clm69661:HierarchicalStructureTypeCodeContentType
+$.complexType[33].attribute[1].@name listID
+$.complexType[33].attribute[1].@type xsd:token
+$.complexType[33].attribute[1].@use optional
+$.complexType[33].attribute[1].@fixed 9661
+$.complexType[33].attribute[1].xml lang en
+$.complexType[33].attribute[1].UniqueID null
+$.complexType[33].attribute[1].Acronym SC
+$.complexType[33].attribute[1].Name Code List. Identifier
+$.complexType[33].attribute[1].Definition null
+$.complexType[33].attribute[1].Cardinality 0..1
+$.complexType[33].attribute[1].PropertyTerm Identifier
+$.complexType[33].attribute[2].@name listAgencyID
+$.complexType[33].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[33].attribute[2].@use optional
+$.complexType[33].attribute[2].@fixed 6
+$.complexType[33].attribute[2].xml lang en
+$.complexType[33].attribute[2].UniqueID null
+$.complexType[33].attribute[2].Acronym SC
+$.complexType[33].attribute[2].Name Code List. Agency. Identifier
+$.complexType[33].attribute[2].Definition null
+$.complexType[33].attribute[2].Cardinality 0..1
+$.complexType[33].attribute[2].PropertyTerm Agency
+$.complexType[33].attribute[3].@name listVersionID
+$.complexType[33].attribute[3].@type xsd:token
+$.complexType[33].attribute[3].@use optional
+$.complexType[33].attribute[3].@fixed D09B
+$.complexType[33].attribute[3].xml lang en
+$.complexType[33].attribute[3].UniqueID null
+$.complexType[33].attribute[3].Acronym SC
+$.complexType[33].attribute[3].Name Code List. Version. Identifier
+$.complexType[33].attribute[3].Definition null
+$.complexType[33].attribute[3].Cardinality 0..1
+$.complexType[33].attribute[3].PropertyTerm Version
+$.complexType[34].@name InvoiceDocumentCodeType
+$.complexType[34].xml lang en
+$.complexType[34].UniqueID UN02000113
+$.complexType[34].Acronym DT
+$.complexType[34].DictionaryEntryName Invoice_ Document_ Code. Type
+$.complexType[34].Version 1.0
+$.complexType[34].Definition A character string used to represent a type of invoice document.
+$.complexType[34].PrimaryRepresentationTerm Code
+$.complexType[34].PrimitiveType String
+$.complexType[34].DataTypeQualifierTerm Invoice
+$.complexType[34].DataTypeQualifierTerm Document
+$.complexType[34].@base clm61001Invoice:DocumentNameCodeInvoiceContentType
+$.complexType[34].attribute[1].@name listID
+$.complexType[34].attribute[1].@type xsd:token
+$.complexType[34].attribute[1].@use optional
+$.complexType[34].attribute[1].@fixed 1001_Invoice
+$.complexType[34].attribute[1].xml lang en
+$.complexType[34].attribute[1].UniqueID null
+$.complexType[34].attribute[1].Acronym SC
+$.complexType[34].attribute[1].Name Code List. Identifier
+$.complexType[34].attribute[1].Definition null
+$.complexType[34].attribute[1].Cardinality 0..1
+$.complexType[34].attribute[1].PropertyTerm Identifier
+$.complexType[34].attribute[2].@name listAgencyID
+$.complexType[34].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[34].attribute[2].@use optional
+$.complexType[34].attribute[2].@fixed 6
+$.complexType[34].attribute[2].xml lang en
+$.complexType[34].attribute[2].UniqueID null
+$.complexType[34].attribute[2].Acronym SC
+$.complexType[34].attribute[2].Name Code List. Agency. Identifier
+$.complexType[34].attribute[2].Definition null
+$.complexType[34].attribute[2].Cardinality 0..1
+$.complexType[34].attribute[2].PropertyTerm Agency
+$.complexType[34].attribute[3].@name listVersionID
+$.complexType[34].attribute[3].@type xsd:token
+$.complexType[34].attribute[3].@use optional
+$.complexType[34].attribute[3].@fixed D09B
+$.complexType[34].attribute[3].xml lang en
+$.complexType[34].attribute[3].UniqueID null
+$.complexType[34].attribute[3].Acronym SC
+$.complexType[34].attribute[3].Name Code List. Version. Identifier
+$.complexType[34].attribute[3].Definition null
+$.complexType[34].attribute[3].Cardinality 0..1
+$.complexType[34].attribute[3].PropertyTerm Version
+$.complexType[35].@name LinearMeasureType
+$.complexType[35].xml lang en
+$.complexType[35].UniqueID UN02000092
+$.complexType[35].Acronym DT
+$.complexType[35].DictionaryEntryName Linear_ Measure. Type
+$.complexType[35].Version 1.0
+$.complexType[35].Definition The numeric value determined by linear measuring.
+$.complexType[35].PrimaryRepresentationTerm Measure
+$.complexType[35].PrimitiveType Decimal
+$.complexType[35].DataTypeQualifierTerm Linear
+$.complexType[35].@base xsd:decimal
+$.complexType[35].attribute[1].@name unitCode
+$.complexType[35].attribute[1].@type clm6Recommendation20Linear:MeasurementUnitCommonCodeLinearContentType
+$.complexType[35].attribute[1].@use optional
+$.complexType[35].attribute[1].xml lang en
+$.complexType[35].attribute[1].UniqueID null
+$.complexType[35].attribute[1].Acronym SC
+$.complexType[35].attribute[1].Name Measure Unit. Code
+$.complexType[35].attribute[1].Definition null
+$.complexType[35].attribute[1].Cardinality 0..1
+$.complexType[35].attribute[1].PropertyTerm Code
+$.complexType[36].@name LocationFunctionCodeType
+$.complexType[36].xml lang en
+$.complexType[36].UniqueID UN02000041
+$.complexType[36].Acronym DT
+$.complexType[36].DictionaryEntryName Location Function_ Code. Type
+$.complexType[36].Version 1.0
+$.complexType[36].Definition A character string used to replace or represent a location function.
+$.complexType[36].PrimaryRepresentationTerm Code
+$.complexType[36].PrimitiveType String
+$.complexType[36].DataTypeQualifierTerm Location Function
+$.complexType[36].@base clm63227:LocationFunctionCodeContentType
+$.complexType[36].attribute[1].@name listID
+$.complexType[36].attribute[1].@type xsd:token
+$.complexType[36].attribute[1].@use optional
+$.complexType[36].attribute[1].@fixed 3227
+$.complexType[36].attribute[1].xml lang en
+$.complexType[36].attribute[1].UniqueID null
+$.complexType[36].attribute[1].Acronym SC
+$.complexType[36].attribute[1].Name Code List. Identifier
+$.complexType[36].attribute[1].Definition null
+$.complexType[36].attribute[1].Cardinality 0..1
+$.complexType[36].attribute[1].PropertyTerm Identifier
+$.complexType[36].attribute[2].@name listAgencyID
+$.complexType[36].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[36].attribute[2].@use optional
+$.complexType[36].attribute[2].@fixed 6
+$.complexType[36].attribute[2].xml lang en
+$.complexType[36].attribute[2].UniqueID null
+$.complexType[36].attribute[2].Acronym SC
+$.complexType[36].attribute[2].Name Code List. Agency. Identifier
+$.complexType[36].attribute[2].Definition null
+$.complexType[36].attribute[2].Cardinality 0..1
+$.complexType[36].attribute[2].PropertyTerm Agency
+$.complexType[36].attribute[3].@name listVersionID
+$.complexType[36].attribute[3].@type xsd:token
+$.complexType[36].attribute[3].@use optional
+$.complexType[36].attribute[3].@fixed D09B
+$.complexType[36].attribute[3].xml lang en
+$.complexType[36].attribute[3].UniqueID null
+$.complexType[36].attribute[3].Acronym SC
+$.complexType[36].attribute[3].Name Code List. Version. Identifier
+$.complexType[36].attribute[3].Definition null
+$.complexType[36].attribute[3].Cardinality 0..1
+$.complexType[36].attribute[3].PropertyTerm Version
+$.complexType[36].attribute[4].@name name
+$.complexType[36].attribute[4].@type xsd:string
+$.complexType[36].attribute[4].@use optional
+$.complexType[36].attribute[4].xml lang en
+$.complexType[36].attribute[4].UniqueID null
+$.complexType[36].attribute[4].Acronym SC
+$.complexType[36].attribute[4].Name Code. Name. Text
+$.complexType[36].attribute[4].Definition null
+$.complexType[36].attribute[4].Cardinality 0..1
+$.complexType[36].attribute[4].PropertyTerm Name
+$.complexType[37].@name LogisticsChargeCalculationBasisCodeType
+$.complexType[37].xml lang en
+$.complexType[37].UniqueID UN02000051
+$.complexType[37].Acronym DT
+$.complexType[37].DictionaryEntryName Logistics Charge Calculation Basis_ Code. Type
+$.complexType[37].Version 1.0
+$.complexType[37].Definition A character string used to represent the type of basis on which logistic charges are to be calculated.
+$.complexType[37].PrimaryRepresentationTerm Code
+$.complexType[37].PrimitiveType String
+$.complexType[37].DataTypeQualifierTerm Logistics Charge Calculation Basis
+$.complexType[37].@base clm6TDED6131:FreightChargeQuantityUnitBasisCodeContentType
+$.complexType[37].attribute[1].@name listID
+$.complexType[37].attribute[1].@type xsd:token
+$.complexType[37].attribute[1].@use optional
+$.complexType[37].attribute[1].@fixed TDED 6131
+$.complexType[37].attribute[1].xml lang en
+$.complexType[37].attribute[1].UniqueID null
+$.complexType[37].attribute[1].Acronym SC
+$.complexType[37].attribute[1].Name Code List. Identifier
+$.complexType[37].attribute[1].Definition null
+$.complexType[37].attribute[1].Cardinality 0..1
+$.complexType[37].attribute[1].PropertyTerm Identifier
+$.complexType[37].attribute[2].@name listAgencyID
+$.complexType[37].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[37].attribute[2].@use optional
+$.complexType[37].attribute[2].@fixed 6
+$.complexType[37].attribute[2].xml lang en
+$.complexType[37].attribute[2].UniqueID null
+$.complexType[37].attribute[2].Acronym SC
+$.complexType[37].attribute[2].Name Code List. Agency. Identifier
+$.complexType[37].attribute[2].Definition null
+$.complexType[37].attribute[2].Cardinality 0..1
+$.complexType[37].attribute[2].PropertyTerm Agency
+$.complexType[37].attribute[3].@name listVersionID
+$.complexType[37].attribute[3].@type xsd:token
+$.complexType[37].attribute[3].@use optional
+$.complexType[37].attribute[3].@fixed D09B
+$.complexType[37].attribute[3].xml lang en
+$.complexType[37].attribute[3].UniqueID null
+$.complexType[37].attribute[3].Acronym SC
+$.complexType[37].attribute[3].Name Code List. Version. Identifier
+$.complexType[37].attribute[3].Definition null
+$.complexType[37].attribute[3].Cardinality 0..1
+$.complexType[37].attribute[3].PropertyTerm Version
+$.complexType[37].attribute[4].@name name
+$.complexType[37].attribute[4].@type xsd:string
+$.complexType[37].attribute[4].@use optional
+$.complexType[37].attribute[4].xml lang en
+$.complexType[37].attribute[4].UniqueID null
+$.complexType[37].attribute[4].Acronym SC
+$.complexType[37].attribute[4].Name Code. Name. Text
+$.complexType[37].attribute[4].Definition null
+$.complexType[37].attribute[4].Cardinality 0..1
+$.complexType[37].attribute[4].PropertyTerm Name
+$.complexType[38].@name MarkingInstructionCodeType
+$.complexType[38].xml lang en
+$.complexType[38].UniqueID UN02000076
+$.complexType[38].Acronym DT
+$.complexType[38].DictionaryEntryName Marking Instruction_ Code. Type
+$.complexType[38].Version 1.0
+$.complexType[38].Definition A character string used to represent the marking instruction.
+$.complexType[38].PrimaryRepresentationTerm Code
+$.complexType[38].PrimitiveType String
+$.complexType[38].DataTypeQualifierTerm Marking Instruction
+$.complexType[38].@base clm64233:MarkingInstructionCodeContentType
+$.complexType[38].attribute[1].@name listID
+$.complexType[38].attribute[1].@type xsd:token
+$.complexType[38].attribute[1].@use optional
+$.complexType[38].attribute[1].@fixed 4233
+$.complexType[38].attribute[1].xml lang en
+$.complexType[38].attribute[1].UniqueID null
+$.complexType[38].attribute[1].Acronym SC
+$.complexType[38].attribute[1].Name Code List. Identifier
+$.complexType[38].attribute[1].Definition null
+$.complexType[38].attribute[1].Cardinality 0..1
+$.complexType[38].attribute[1].PropertyTerm Identifier
+$.complexType[38].attribute[2].@name listAgencyID
+$.complexType[38].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[38].attribute[2].@use optional
+$.complexType[38].attribute[2].@fixed 6
+$.complexType[38].attribute[2].xml lang en
+$.complexType[38].attribute[2].UniqueID null
+$.complexType[38].attribute[2].Acronym SC
+$.complexType[38].attribute[2].Name Code List. Agency. Identifier
+$.complexType[38].attribute[2].Definition null
+$.complexType[38].attribute[2].Cardinality 0..1
+$.complexType[38].attribute[2].PropertyTerm Agency
+$.complexType[38].attribute[3].@name listVersionID
+$.complexType[38].attribute[3].@type xsd:token
+$.complexType[38].attribute[3].@use optional
+$.complexType[38].attribute[3].@fixed D09B
+$.complexType[38].attribute[3].xml lang en
+$.complexType[38].attribute[3].UniqueID null
+$.complexType[38].attribute[3].Acronym SC
+$.complexType[38].attribute[3].Name Code List. Version. Identifier
+$.complexType[38].attribute[3].Definition null
+$.complexType[38].attribute[3].Cardinality 0..1
+$.complexType[38].attribute[3].PropertyTerm Version
+$.complexType[38].attribute[4].@name name
+$.complexType[38].attribute[4].@type xsd:string
+$.complexType[38].attribute[4].@use optional
+$.complexType[38].attribute[4].xml lang en
+$.complexType[38].attribute[4].UniqueID null
+$.complexType[38].attribute[4].Acronym SC
+$.complexType[38].attribute[4].Name Code. Name. Text
+$.complexType[38].attribute[4].Definition null
+$.complexType[38].attribute[4].Cardinality 0..1
+$.complexType[38].attribute[4].PropertyTerm Name
+$.complexType[39].@name MeasuredAttributeCodeType
+$.complexType[39].xml lang en
+$.complexType[39].UniqueID UN02000042
+$.complexType[39].Acronym DT
+$.complexType[39].DictionaryEntryName Measured Attribute_ Code. Type
+$.complexType[39].Version 1.0
+$.complexType[39].Definition A character string used to replace or represent a measured attribute.
+$.complexType[39].PrimaryRepresentationTerm Code
+$.complexType[39].PrimitiveType String
+$.complexType[39].DataTypeQualifierTerm Measured Attribute
+$.complexType[39].@base clm66313:MeasuredAttributeCodeContentType
+$.complexType[39].attribute[1].@name listID
+$.complexType[39].attribute[1].@type xsd:token
+$.complexType[39].attribute[1].@use optional
+$.complexType[39].attribute[1].@fixed 6313
+$.complexType[39].attribute[1].xml lang en
+$.complexType[39].attribute[1].UniqueID null
+$.complexType[39].attribute[1].Acronym SC
+$.complexType[39].attribute[1].Name Code List. Identifier
+$.complexType[39].attribute[1].Definition null
+$.complexType[39].attribute[1].Cardinality 0..1
+$.complexType[39].attribute[1].PropertyTerm Identifier
+$.complexType[39].attribute[2].@name listAgencyID
+$.complexType[39].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[39].attribute[2].@use optional
+$.complexType[39].attribute[2].@fixed 6
+$.complexType[39].attribute[2].xml lang en
+$.complexType[39].attribute[2].UniqueID null
+$.complexType[39].attribute[2].Acronym SC
+$.complexType[39].attribute[2].Name Code List. Agency. Identifier
+$.complexType[39].attribute[2].Definition null
+$.complexType[39].attribute[2].Cardinality 0..1
+$.complexType[39].attribute[2].PropertyTerm Agency
+$.complexType[39].attribute[3].@name listVersionID
+$.complexType[39].attribute[3].@type xsd:token
+$.complexType[39].attribute[3].@use optional
+$.complexType[39].attribute[3].@fixed D09B
+$.complexType[39].attribute[3].xml lang en
+$.complexType[39].attribute[3].UniqueID null
+$.complexType[39].attribute[3].Acronym SC
+$.complexType[39].attribute[3].Name Code List. Version. Identifier
+$.complexType[39].attribute[3].Definition null
+$.complexType[39].attribute[3].Cardinality 0..1
+$.complexType[39].attribute[3].PropertyTerm Version
+$.complexType[39].attribute[4].@name name
+$.complexType[39].attribute[4].@type xsd:string
+$.complexType[39].attribute[4].@use optional
+$.complexType[39].attribute[4].xml lang en
+$.complexType[39].attribute[4].UniqueID null
+$.complexType[39].attribute[4].Acronym SC
+$.complexType[39].attribute[4].Name Code. Name. Text
+$.complexType[39].attribute[4].Definition null
+$.complexType[39].attribute[4].Cardinality 0..1
+$.complexType[39].attribute[4].PropertyTerm Name
+$.complexType[40].@name MIMECodeType
+$.complexType[40].xml lang en
+$.complexType[40].UniqueID UN02000117
+$.complexType[40].Acronym DT
+$.complexType[40].DictionaryEntryName MIME_ Code. Type
+$.complexType[40].Version 1.0
+$.complexType[40].Definition A character string used to represent a type of MIME.
+$.complexType[40].PrimaryRepresentationTerm Code
+$.complexType[40].PrimitiveType String
+$.complexType[40].DataTypeQualifierTerm MIME
+$.complexType[40].@base clmIANAMIMEMediaType:MIMEMediaTypeContentType
+$.complexType[40].attribute[1].@name listAgencyID
+$.complexType[40].attribute[1].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[40].attribute[1].@use optional
+$.complexType[40].attribute[1].@fixed 379
+$.complexType[40].attribute[1].xml lang en
+$.complexType[40].attribute[1].UniqueID null
+$.complexType[40].attribute[1].Acronym SC
+$.complexType[40].attribute[1].Name Code List. Agency. Identifier
+$.complexType[40].attribute[1].Definition null
+$.complexType[40].attribute[1].Cardinality 0..1
+$.complexType[40].attribute[1].PropertyTerm Agency
+$.complexType[40].attribute[2].@name listName
+$.complexType[40].attribute[2].@type xsd:string
+$.complexType[40].attribute[2].@use optional
+$.complexType[40].attribute[2].@fixed MIME Media Type Code
+$.complexType[40].attribute[2].xml lang en
+$.complexType[40].attribute[2].UniqueID null
+$.complexType[40].attribute[2].Acronym SC
+$.complexType[40].attribute[2].Name Code List. Name. Text
+$.complexType[40].attribute[2].Definition null
+$.complexType[40].attribute[2].Cardinality 0..1
+$.complexType[40].attribute[2].PropertyTerm Name
+$.complexType[40].attribute[3].@name listVersionID
+$.complexType[40].attribute[3].@type xsd:token
+$.complexType[40].attribute[3].@use optional
+$.complexType[40].attribute[3].@fixed 2010-04-06
+$.complexType[40].attribute[3].xml lang en
+$.complexType[40].attribute[3].UniqueID null
+$.complexType[40].attribute[3].Acronym SC
+$.complexType[40].attribute[3].Name Code List. Version. Identifier
+$.complexType[40].attribute[3].Definition null
+$.complexType[40].attribute[3].Cardinality 0..1
+$.complexType[40].attribute[3].PropertyTerm Version
+$.complexType[41].@name PackageTypeCodeType
+$.complexType[41].xml lang en
+$.complexType[41].UniqueID UN02000043
+$.complexType[41].Acronym DT
+$.complexType[41].DictionaryEntryName Package Type_ Code. Type
+$.complexType[41].Version 1.0
+$.complexType[41].Definition A character string used to replace or represent a type of package.
+$.complexType[41].PrimaryRepresentationTerm Code
+$.complexType[41].PrimitiveType String
+$.complexType[41].DataTypeQualifierTerm Package Type
+$.complexType[41].@base clm67065:PackageTypeCodeContentType
+$.complexType[41].attribute[1].@name listID
+$.complexType[41].attribute[1].@type xsd:token
+$.complexType[41].attribute[1].@use optional
+$.complexType[41].attribute[1].@fixed 7065
+$.complexType[41].attribute[1].xml lang en
+$.complexType[41].attribute[1].UniqueID null
+$.complexType[41].attribute[1].Acronym SC
+$.complexType[41].attribute[1].Name Code List. Identifier
+$.complexType[41].attribute[1].Definition null
+$.complexType[41].attribute[1].Cardinality 0..1
+$.complexType[41].attribute[1].PropertyTerm Identifier
+$.complexType[41].attribute[2].@name listAgencyID
+$.complexType[41].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[41].attribute[2].@use optional
+$.complexType[41].attribute[2].@fixed 6
+$.complexType[41].attribute[2].xml lang en
+$.complexType[41].attribute[2].UniqueID null
+$.complexType[41].attribute[2].Acronym SC
+$.complexType[41].attribute[2].Name Code List. Agency. Identifier
+$.complexType[41].attribute[2].Definition null
+$.complexType[41].attribute[2].Cardinality 0..1
+$.complexType[41].attribute[2].PropertyTerm Agency
+$.complexType[41].attribute[3].@name listVersionID
+$.complexType[41].attribute[3].@type xsd:token
+$.complexType[41].attribute[3].@use optional
+$.complexType[41].attribute[3].@fixed 2006
+$.complexType[41].attribute[3].xml lang en
+$.complexType[41].attribute[3].UniqueID null
+$.complexType[41].attribute[3].Acronym SC
+$.complexType[41].attribute[3].Name Code List. Version. Identifier
+$.complexType[41].attribute[3].Definition null
+$.complexType[41].attribute[3].Cardinality 0..1
+$.complexType[41].attribute[3].PropertyTerm Version
+$.complexType[41].attribute[4].@name name
+$.complexType[41].attribute[4].@type xsd:string
+$.complexType[41].attribute[4].@use optional
+$.complexType[41].attribute[4].xml lang en
+$.complexType[41].attribute[4].UniqueID null
+$.complexType[41].attribute[4].Acronym SC
+$.complexType[41].attribute[4].Name Code. Name. Text
+$.complexType[41].attribute[4].Definition null
+$.complexType[41].attribute[4].Cardinality 0..1
+$.complexType[41].attribute[4].PropertyTerm Name
+$.complexType[42].@name PackagingLevelCodeType
+$.complexType[42].xml lang en
+$.complexType[42].UniqueID UN02000078
+$.complexType[42].Acronym DT
+$.complexType[42].DictionaryEntryName Packaging Level_ Code. Type
+$.complexType[42].Version 1.0
+$.complexType[42].Definition A character string used to represent the packaging level.
+$.complexType[42].PrimaryRepresentationTerm Code
+$.complexType[42].PrimitiveType String
+$.complexType[42].DataTypeQualifierTerm Packaging Level
+$.complexType[42].@base clm67075:PackagingLevelCodeContentType
+$.complexType[42].attribute[1].@name listID
+$.complexType[42].attribute[1].@type xsd:token
+$.complexType[42].attribute[1].@use optional
+$.complexType[42].attribute[1].@fixed 7075
+$.complexType[42].attribute[1].xml lang en
+$.complexType[42].attribute[1].UniqueID null
+$.complexType[42].attribute[1].Acronym SC
+$.complexType[42].attribute[1].Name Code List. Identifier
+$.complexType[42].attribute[1].Definition null
+$.complexType[42].attribute[1].Cardinality 0..1
+$.complexType[42].attribute[1].PropertyTerm Identifier
+$.complexType[42].attribute[2].@name listAgencyID
+$.complexType[42].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[42].attribute[2].@use optional
+$.complexType[42].attribute[2].@fixed 6
+$.complexType[42].attribute[2].xml lang en
+$.complexType[42].attribute[2].UniqueID null
+$.complexType[42].attribute[2].Acronym SC
+$.complexType[42].attribute[2].Name Code List. Agency. Identifier
+$.complexType[42].attribute[2].Definition null
+$.complexType[42].attribute[2].Cardinality 0..1
+$.complexType[42].attribute[2].PropertyTerm Agency
+$.complexType[42].attribute[3].@name listVersionID
+$.complexType[42].attribute[3].@type xsd:token
+$.complexType[42].attribute[3].@use optional
+$.complexType[42].attribute[3].@fixed D09B
+$.complexType[42].attribute[3].xml lang en
+$.complexType[42].attribute[3].UniqueID null
+$.complexType[42].attribute[3].Acronym SC
+$.complexType[42].attribute[3].Name Code List. Version. Identifier
+$.complexType[42].attribute[3].Definition null
+$.complexType[42].attribute[3].Cardinality 0..1
+$.complexType[42].attribute[3].PropertyTerm Version
+$.complexType[42].attribute[4].@name name
+$.complexType[42].attribute[4].@type xsd:string
+$.complexType[42].attribute[4].@use optional
+$.complexType[42].attribute[4].xml lang en
+$.complexType[42].attribute[4].UniqueID null
+$.complexType[42].attribute[4].Acronym SC
+$.complexType[42].attribute[4].Name Code. Name. Text
+$.complexType[42].attribute[4].Definition null
+$.complexType[42].attribute[4].Cardinality 0..1
+$.complexType[42].attribute[4].PropertyTerm Name
+$.complexType[43].@name PartyRoleCodeType
+$.complexType[43].xml lang en
+$.complexType[43].UniqueID UN02000044
+$.complexType[43].Acronym DT
+$.complexType[43].DictionaryEntryName Party Role_ Code. Type
+$.complexType[43].Version 1.0
+$.complexType[43].Definition A character string used to replace or represent a role of a party.
+$.complexType[43].PrimaryRepresentationTerm Code
+$.complexType[43].PrimitiveType String
+$.complexType[43].DataTypeQualifierTerm Party Role
+$.complexType[43].@base clm63035:PartyRoleCodeContentType
+$.complexType[43].attribute[1].@name listID
+$.complexType[43].attribute[1].@type xsd:token
+$.complexType[43].attribute[1].@use optional
+$.complexType[43].attribute[1].@fixed 3035
+$.complexType[43].attribute[1].xml lang en
+$.complexType[43].attribute[1].UniqueID null
+$.complexType[43].attribute[1].Acronym SC
+$.complexType[43].attribute[1].Name Code List. Identifier
+$.complexType[43].attribute[1].Definition null
+$.complexType[43].attribute[1].Cardinality 0..1
+$.complexType[43].attribute[1].PropertyTerm Identifier
+$.complexType[43].attribute[2].@name listAgencyID
+$.complexType[43].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[43].attribute[2].@use optional
+$.complexType[43].attribute[2].@fixed 6
+$.complexType[43].attribute[2].xml lang en
+$.complexType[43].attribute[2].UniqueID null
+$.complexType[43].attribute[2].Acronym SC
+$.complexType[43].attribute[2].Name Code List. Agency. Identifier
+$.complexType[43].attribute[2].Definition null
+$.complexType[43].attribute[2].Cardinality 0..1
+$.complexType[43].attribute[2].PropertyTerm Agency
+$.complexType[43].attribute[3].@name listVersionID
+$.complexType[43].attribute[3].@type xsd:token
+$.complexType[43].attribute[3].@use optional
+$.complexType[43].attribute[3].@fixed D09B
+$.complexType[43].attribute[3].xml lang en
+$.complexType[43].attribute[3].UniqueID null
+$.complexType[43].attribute[3].Acronym SC
+$.complexType[43].attribute[3].Name Code List. Version. Identifier
+$.complexType[43].attribute[3].Definition null
+$.complexType[43].attribute[3].Cardinality 0..1
+$.complexType[43].attribute[3].PropertyTerm Version
+$.complexType[43].attribute[4].@name name
+$.complexType[43].attribute[4].@type xsd:string
+$.complexType[43].attribute[4].@use optional
+$.complexType[43].attribute[4].xml lang en
+$.complexType[43].attribute[4].UniqueID null
+$.complexType[43].attribute[4].Acronym SC
+$.complexType[43].attribute[4].Name Code. Name. Text
+$.complexType[43].attribute[4].Definition null
+$.complexType[43].attribute[4].Cardinality 0..1
+$.complexType[43].attribute[4].PropertyTerm Name
+$.complexType[44].@name PaymentGuaranteeMeansCodeType
+$.complexType[44].xml lang en
+$.complexType[44].UniqueID UN02000009
+$.complexType[44].Acronym DT
+$.complexType[44].DictionaryEntryName Payment Guarantee Means_ Code. Type
+$.complexType[44].Version 1.0
+$.complexType[44].Definition A character string used to represent a payment guarantee means.
+$.complexType[44].PrimaryRepresentationTerm Code
+$.complexType[44].PrimitiveType String
+$.complexType[44].DataTypeQualifierTerm Payment Guarantee Means
+$.complexType[44].@base clm64431:PaymentGuaranteeMeansCodeContentType
+$.complexType[44].attribute[1].@name listID
+$.complexType[44].attribute[1].@type xsd:token
+$.complexType[44].attribute[1].@use optional
+$.complexType[44].attribute[1].@fixed 4431
+$.complexType[44].attribute[1].xml lang en
+$.complexType[44].attribute[1].UniqueID null
+$.complexType[44].attribute[1].Acronym SC
+$.complexType[44].attribute[1].Name Code List. Identifier
+$.complexType[44].attribute[1].Definition null
+$.complexType[44].attribute[1].Cardinality 0..1
+$.complexType[44].attribute[1].PropertyTerm Identifier
+$.complexType[44].attribute[2].@name listAgencyID
+$.complexType[44].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[44].attribute[2].@use optional
+$.complexType[44].attribute[2].@fixed 6
+$.complexType[44].attribute[2].xml lang en
+$.complexType[44].attribute[2].UniqueID null
+$.complexType[44].attribute[2].Acronym SC
+$.complexType[44].attribute[2].Name Code List. Agency. Identifier
+$.complexType[44].attribute[2].Definition null
+$.complexType[44].attribute[2].Cardinality 0..1
+$.complexType[44].attribute[2].PropertyTerm Agency
+$.complexType[44].attribute[3].@name listVersionID
+$.complexType[44].attribute[3].@type xsd:token
+$.complexType[44].attribute[3].@use optional
+$.complexType[44].attribute[3].@fixed D09B
+$.complexType[44].attribute[3].xml lang en
+$.complexType[44].attribute[3].UniqueID null
+$.complexType[44].attribute[3].Acronym SC
+$.complexType[44].attribute[3].Name Code List. Version. Identifier
+$.complexType[44].attribute[3].Definition null
+$.complexType[44].attribute[3].Cardinality 0..1
+$.complexType[44].attribute[3].PropertyTerm Version
+$.complexType[45].@name PaymentMeansChannelCodeType
+$.complexType[45].xml lang en
+$.complexType[45].UniqueID UN02000081
+$.complexType[45].Acronym DT
+$.complexType[45].DictionaryEntryName Payment Means Channel_ Code. Type
+$.complexType[45].Version 1.0
+$.complexType[45].Definition A character string used to represent the payment means channel.
+$.complexType[45].PrimaryRepresentationTerm Code
+$.complexType[45].PrimitiveType String
+$.complexType[45].DataTypeQualifierTerm Payment Means Channel
+$.complexType[45].@base clm64435:PaymentMeansChannelCodeContentType
+$.complexType[45].attribute[1].@name listID
+$.complexType[45].attribute[1].@type xsd:token
+$.complexType[45].attribute[1].@use optional
+$.complexType[45].attribute[1].@fixed 4435
+$.complexType[45].attribute[1].xml lang en
+$.complexType[45].attribute[1].UniqueID null
+$.complexType[45].attribute[1].Acronym SC
+$.complexType[45].attribute[1].Name Code List. Identifier
+$.complexType[45].attribute[1].Definition null
+$.complexType[45].attribute[1].Cardinality 0..1
+$.complexType[45].attribute[1].PropertyTerm Identifier
+$.complexType[45].attribute[2].@name listAgencyID
+$.complexType[45].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[45].attribute[2].@use optional
+$.complexType[45].attribute[2].@fixed 6
+$.complexType[45].attribute[2].xml lang en
+$.complexType[45].attribute[2].UniqueID null
+$.complexType[45].attribute[2].Acronym SC
+$.complexType[45].attribute[2].Name Code List. Agency. Identifier
+$.complexType[45].attribute[2].Definition null
+$.complexType[45].attribute[2].Cardinality 0..1
+$.complexType[45].attribute[2].PropertyTerm Agency
+$.complexType[45].attribute[3].@name listVersionID
+$.complexType[45].attribute[3].@type xsd:token
+$.complexType[45].attribute[3].@use optional
+$.complexType[45].attribute[3].@fixed D09B
+$.complexType[45].attribute[3].xml lang en
+$.complexType[45].attribute[3].UniqueID null
+$.complexType[45].attribute[3].Acronym SC
+$.complexType[45].attribute[3].Name Code List. Version. Identifier
+$.complexType[45].attribute[3].Definition null
+$.complexType[45].attribute[3].Cardinality 0..1
+$.complexType[45].attribute[3].PropertyTerm Version
+$.complexType[45].attribute[4].@name name
+$.complexType[45].attribute[4].@type xsd:string
+$.complexType[45].attribute[4].@use optional
+$.complexType[45].attribute[4].xml lang en
+$.complexType[45].attribute[4].UniqueID null
+$.complexType[45].attribute[4].Acronym SC
+$.complexType[45].attribute[4].Name Code. Name. Text
+$.complexType[45].attribute[4].Definition null
+$.complexType[45].attribute[4].Cardinality 0..1
+$.complexType[45].attribute[4].PropertyTerm Name
+$.complexType[46].@name PaymentTermsEventTimeReferenceCodeType
+$.complexType[46].xml lang en
+$.complexType[46].UniqueID UN02000008
+$.complexType[46].Acronym DT
+$.complexType[46].DictionaryEntryName Payment Terms Event_ Time Reference_ Code. Type
+$.complexType[46].Version 1.0
+$.complexType[46].Definition A character string used to represent a time reference for a payment terms event.
+$.complexType[46].PrimaryRepresentationTerm Code
+$.complexType[46].PrimitiveType String
+$.complexType[46].DataTypeQualifierTerm Payment Terms Event
+$.complexType[46].DataTypeQualifierTerm Time Reference
+$.complexType[46].@base clm62475PaymentTermsEvent:EventTimeReferenceCodePaymentTermsEventContentType
+$.complexType[46].attribute[1].@name listID
+$.complexType[46].attribute[1].@type xsd:token
+$.complexType[46].attribute[1].@use optional
+$.complexType[46].attribute[1].@fixed 2475_Payment Terms Event
+$.complexType[46].attribute[1].xml lang en
+$.complexType[46].attribute[1].UniqueID null
+$.complexType[46].attribute[1].Acronym SC
+$.complexType[46].attribute[1].Name Code List. Identifier
+$.complexType[46].attribute[1].Definition null
+$.complexType[46].attribute[1].Cardinality 0..1
+$.complexType[46].attribute[1].PropertyTerm Identifier
+$.complexType[46].attribute[2].@name listAgencyID
+$.complexType[46].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[46].attribute[2].@use optional
+$.complexType[46].attribute[2].@fixed 6
+$.complexType[46].attribute[2].xml lang en
+$.complexType[46].attribute[2].UniqueID null
+$.complexType[46].attribute[2].Acronym SC
+$.complexType[46].attribute[2].Name Code List. Agency. Identifier
+$.complexType[46].attribute[2].Definition null
+$.complexType[46].attribute[2].Cardinality 0..1
+$.complexType[46].attribute[2].PropertyTerm Agency
+$.complexType[46].attribute[3].@name listVersionID
+$.complexType[46].attribute[3].@type xsd:token
+$.complexType[46].attribute[3].@use optional
+$.complexType[46].attribute[3].@fixed D09B
+$.complexType[46].attribute[3].xml lang en
+$.complexType[46].attribute[3].UniqueID null
+$.complexType[46].attribute[3].Acronym SC
+$.complexType[46].attribute[3].Name Code List. Version. Identifier
+$.complexType[46].attribute[3].Definition null
+$.complexType[46].attribute[3].Cardinality 0..1
+$.complexType[46].attribute[3].PropertyTerm Version
+$.complexType[47].@name PaymentTermsIDType
+$.complexType[47].xml lang en
+$.complexType[47].UniqueID UN02000012
+$.complexType[47].Acronym DT
+$.complexType[47].DictionaryEntryName Payment Terms_ Identifier. Type
+$.complexType[47].Version 1.0
+$.complexType[47].Definition A character string used to represent a payment terms.
+$.complexType[47].PrimaryRepresentationTerm Identifier
+$.complexType[47].PrimitiveType String
+$.complexType[47].DataTypeQualifierTerm Payment Terms
+$.complexType[47].@base ids64277:PaymentTermsDescriptionIdentifierContentType
+$.complexType[47].attribute[1].@name schemeID
+$.complexType[47].attribute[1].@type xsd:token
+$.complexType[47].attribute[1].@use optional
+$.complexType[47].attribute[1].xml lang en
+$.complexType[47].attribute[1].UniqueID null
+$.complexType[47].attribute[1].Acronym SC
+$.complexType[47].attribute[1].Name Identification Scheme. Identifier
+$.complexType[47].attribute[1].Definition null
+$.complexType[47].attribute[1].Cardinality 0..1
+$.complexType[47].attribute[1].PropertyTerm Identifier
+$.complexType[47].attribute[2].@name schemeAgencyID
+$.complexType[47].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[47].attribute[2].@use optional
+$.complexType[47].attribute[2].xml lang en
+$.complexType[47].attribute[2].UniqueID null
+$.complexType[47].attribute[2].Acronym SC
+$.complexType[47].attribute[2].Name Identification Scheme Agency. Identifier
+$.complexType[47].attribute[2].Definition null
+$.complexType[47].attribute[2].Cardinality 0..1
+$.complexType[47].attribute[2].PropertyTerm Identifier
+$.complexType[47].attribute[3].@name schemeVersionID
+$.complexType[47].attribute[3].@type xsd:token
+$.complexType[47].attribute[3].@use optional
+$.complexType[47].attribute[3].xml lang en
+$.complexType[47].attribute[3].UniqueID null
+$.complexType[47].attribute[3].Acronym SC
+$.complexType[47].attribute[3].Name Identification Scheme. Version. Identifier
+$.complexType[47].attribute[3].Definition null
+$.complexType[47].attribute[3].Cardinality 0..1
+$.complexType[47].attribute[3].PropertyTerm Version
+$.complexType[48].@name PlanningLevelCodeType
+$.complexType[48].xml lang en
+$.complexType[48].UniqueID UN02000114
+$.complexType[48].Acronym DT
+$.complexType[48].DictionaryEntryName Planning Level_ Code. Type
+$.complexType[48].Version 1.0
+$.complexType[48].Definition A character string used to represent or replace a planning level.
+$.complexType[48].PrimaryRepresentationTerm Code
+$.complexType[48].PrimitiveType String
+$.complexType[48].DataTypeQualifierTerm Planning Level
+$.complexType[48].@base clm6PlanningLevel:PlanningLevelContentType
+$.complexType[48].attribute[1].@name listID
+$.complexType[48].attribute[1].@type xsd:token
+$.complexType[48].attribute[1].@use optional
+$.complexType[48].attribute[1].xml lang en
+$.complexType[48].attribute[1].UniqueID null
+$.complexType[48].attribute[1].Acronym SC
+$.complexType[48].attribute[1].Name Code List. Identifier
+$.complexType[48].attribute[1].Definition null
+$.complexType[48].attribute[1].Cardinality 0..1
+$.complexType[48].attribute[1].PropertyTerm Identifier
+$.complexType[48].attribute[2].@name listAgencyID
+$.complexType[48].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[48].attribute[2].@use optional
+$.complexType[48].attribute[2].@fixed 6
+$.complexType[48].attribute[2].xml lang en
+$.complexType[48].attribute[2].UniqueID null
+$.complexType[48].attribute[2].Acronym SC
+$.complexType[48].attribute[2].Name Code List. Agency. Identifier
+$.complexType[48].attribute[2].Definition null
+$.complexType[48].attribute[2].Cardinality 0..1
+$.complexType[48].attribute[2].PropertyTerm Agency
+$.complexType[48].attribute[3].@name listVersionID
+$.complexType[48].attribute[3].@type xsd:token
+$.complexType[48].attribute[3].@use optional
+$.complexType[48].attribute[3].@fixed D09B
+$.complexType[48].attribute[3].xml lang en
+$.complexType[48].attribute[3].UniqueID null
+$.complexType[48].attribute[3].Acronym SC
+$.complexType[48].attribute[3].Name Code List. Version. Identifier
+$.complexType[48].attribute[3].Definition null
+$.complexType[48].attribute[3].Cardinality 0..1
+$.complexType[48].attribute[3].PropertyTerm Version
+$.complexType[49].@name PriceTypeCodeType
+$.complexType[49].xml lang en
+$.complexType[49].UniqueID UN02000013
+$.complexType[49].Acronym DT
+$.complexType[49].DictionaryEntryName Price Type_ Code. Type
+$.complexType[49].Version 1.0
+$.complexType[49].Definition A character string used to represent or replace a type of price.
+$.complexType[49].PrimaryRepresentationTerm Code
+$.complexType[49].PrimitiveType String
+$.complexType[49].DataTypeQualifierTerm Price Type
+$.complexType[49].@base clm65375:PriceTypeCodeContentType
+$.complexType[49].attribute[1].@name listID
+$.complexType[49].attribute[1].@type xsd:token
+$.complexType[49].attribute[1].@use optional
+$.complexType[49].attribute[1].@fixed 5375
+$.complexType[49].attribute[1].xml lang en
+$.complexType[49].attribute[1].UniqueID null
+$.complexType[49].attribute[1].Acronym SC
+$.complexType[49].attribute[1].Name Code List. Identifier
+$.complexType[49].attribute[1].Definition null
+$.complexType[49].attribute[1].Cardinality 0..1
+$.complexType[49].attribute[1].PropertyTerm Identifier
+$.complexType[49].attribute[2].@name listAgencyID
+$.complexType[49].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[49].attribute[2].@use optional
+$.complexType[49].attribute[2].@fixed 6
+$.complexType[49].attribute[2].xml lang en
+$.complexType[49].attribute[2].UniqueID null
+$.complexType[49].attribute[2].Acronym SC
+$.complexType[49].attribute[2].Name Code List. Agency. Identifier
+$.complexType[49].attribute[2].Definition null
+$.complexType[49].attribute[2].Cardinality 0..1
+$.complexType[49].attribute[2].PropertyTerm Agency
+$.complexType[49].attribute[3].@name listVersionID
+$.complexType[49].attribute[3].@type xsd:token
+$.complexType[49].attribute[3].@use optional
+$.complexType[49].attribute[3].@fixed D09B
+$.complexType[49].attribute[3].xml lang en
+$.complexType[49].attribute[3].UniqueID null
+$.complexType[49].attribute[3].Acronym SC
+$.complexType[49].attribute[3].Name Code List. Version. Identifier
+$.complexType[49].attribute[3].Definition null
+$.complexType[49].attribute[3].Cardinality 0..1
+$.complexType[49].attribute[3].PropertyTerm Version
+$.complexType[50].@name ProcessTypeCodeType
+$.complexType[50].xml lang en
+$.complexType[50].UniqueID UN02000045
+$.complexType[50].Acronym DT
+$.complexType[50].DictionaryEntryName Process Type_ Code. Type
+$.complexType[50].Version 1.0
+$.complexType[50].Definition A character string used to replace or represent a type of process.
+$.complexType[50].PrimaryRepresentationTerm Code
+$.complexType[50].PrimitiveType String
+$.complexType[50].DataTypeQualifierTerm Process Type
+$.complexType[50].@base clm67187:ProcessTypeCodeContentType
+$.complexType[50].attribute[1].@name listID
+$.complexType[50].attribute[1].@type xsd:token
+$.complexType[50].attribute[1].@use optional
+$.complexType[50].attribute[1].@fixed 7187
+$.complexType[50].attribute[1].xml lang en
+$.complexType[50].attribute[1].UniqueID null
+$.complexType[50].attribute[1].Acronym SC
+$.complexType[50].attribute[1].Name Code List. Identifier
+$.complexType[50].attribute[1].Definition null
+$.complexType[50].attribute[1].Cardinality 0..1
+$.complexType[50].attribute[1].PropertyTerm Identifier
+$.complexType[50].attribute[2].@name listAgencyID
+$.complexType[50].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[50].attribute[2].@use optional
+$.complexType[50].attribute[2].@fixed 6
+$.complexType[50].attribute[2].xml lang en
+$.complexType[50].attribute[2].UniqueID null
+$.complexType[50].attribute[2].Acronym SC
+$.complexType[50].attribute[2].Name Code List. Agency. Identifier
+$.complexType[50].attribute[2].Definition null
+$.complexType[50].attribute[2].Cardinality 0..1
+$.complexType[50].attribute[2].PropertyTerm Agency
+$.complexType[50].attribute[3].@name listVersionID
+$.complexType[50].attribute[3].@type xsd:token
+$.complexType[50].attribute[3].@use optional
+$.complexType[50].attribute[3].@fixed D09B
+$.complexType[50].attribute[3].xml lang en
+$.complexType[50].attribute[3].UniqueID null
+$.complexType[50].attribute[3].Acronym SC
+$.complexType[50].attribute[3].Name Code List. Version. Identifier
+$.complexType[50].attribute[3].Definition null
+$.complexType[50].attribute[3].Cardinality 0..1
+$.complexType[50].attribute[3].PropertyTerm Version
+$.complexType[50].attribute[4].@name name
+$.complexType[50].attribute[4].@type xsd:string
+$.complexType[50].attribute[4].@use optional
+$.complexType[50].attribute[4].xml lang en
+$.complexType[50].attribute[4].UniqueID null
+$.complexType[50].attribute[4].Acronym SC
+$.complexType[50].attribute[4].Name Code. Name. Text
+$.complexType[50].attribute[4].Definition null
+$.complexType[50].attribute[4].Cardinality 0..1
+$.complexType[50].attribute[4].PropertyTerm Name
+$.complexType[51].@name ProjectTypeCodeType
+$.complexType[51].xml lang en
+$.complexType[51].UniqueID UN02000032
+$.complexType[51].Acronym DT
+$.complexType[51].DictionaryEntryName Project Type_ Code. Type
+$.complexType[51].Version 1.0
+$.complexType[51].Definition A character string used to replace or represent a type of project.
+$.complexType[51].PrimaryRepresentationTerm Code
+$.complexType[51].PrimitiveType String
+$.complexType[51].DataTypeQualifierTerm Project Type
+$.complexType[51].@base clm69665:ProjectTypeCodeContentType
+$.complexType[51].attribute[1].@name listID
+$.complexType[51].attribute[1].@type xsd:token
+$.complexType[51].attribute[1].@use optional
+$.complexType[51].attribute[1].@fixed 9665
+$.complexType[51].attribute[1].xml lang en
+$.complexType[51].attribute[1].UniqueID null
+$.complexType[51].attribute[1].Acronym SC
+$.complexType[51].attribute[1].Name Code List. Identifier
+$.complexType[51].attribute[1].Definition null
+$.complexType[51].attribute[1].Cardinality 0..1
+$.complexType[51].attribute[1].PropertyTerm Identifier
+$.complexType[51].attribute[2].@name listAgencyID
+$.complexType[51].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[51].attribute[2].@use optional
+$.complexType[51].attribute[2].@fixed 6
+$.complexType[51].attribute[2].xml lang en
+$.complexType[51].attribute[2].UniqueID null
+$.complexType[51].attribute[2].Acronym SC
+$.complexType[51].attribute[2].Name Code List. Agency. Identifier
+$.complexType[51].attribute[2].Definition null
+$.complexType[51].attribute[2].Cardinality 0..1
+$.complexType[51].attribute[2].PropertyTerm Agency
+$.complexType[51].attribute[3].@name listVersionID
+$.complexType[51].attribute[3].@type xsd:token
+$.complexType[51].attribute[3].@use optional
+$.complexType[51].attribute[3].@fixed D09B
+$.complexType[51].attribute[3].xml lang en
+$.complexType[51].attribute[3].UniqueID null
+$.complexType[51].attribute[3].Acronym SC
+$.complexType[51].attribute[3].Name Code List. Version. Identifier
+$.complexType[51].attribute[3].Definition null
+$.complexType[51].attribute[3].Cardinality 0..1
+$.complexType[51].attribute[3].PropertyTerm Version
+$.complexType[52].@name ReferenceCodeType
+$.complexType[52].xml lang en
+$.complexType[52].UniqueID UN02000048
+$.complexType[52].Acronym DT
+$.complexType[52].DictionaryEntryName Reference_ Code. Type
+$.complexType[52].Version 1.0
+$.complexType[52].Definition A character string used to represent a reference.
+$.complexType[52].PrimaryRepresentationTerm Code
+$.complexType[52].PrimitiveType String
+$.complexType[52].DataTypeQualifierTerm Reference
+$.complexType[52].@base clm61153:ReferenceTypeCodeContentType
+$.complexType[52].attribute[1].@name listID
+$.complexType[52].attribute[1].@type xsd:token
+$.complexType[52].attribute[1].@use optional
+$.complexType[52].attribute[1].@fixed 1153
+$.complexType[52].attribute[1].xml lang en
+$.complexType[52].attribute[1].UniqueID null
+$.complexType[52].attribute[1].Acronym SC
+$.complexType[52].attribute[1].Name Code List. Identifier
+$.complexType[52].attribute[1].Definition null
+$.complexType[52].attribute[1].Cardinality 0..1
+$.complexType[52].attribute[1].PropertyTerm Identifier
+$.complexType[52].attribute[2].@name listAgencyID
+$.complexType[52].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[52].attribute[2].@use optional
+$.complexType[52].attribute[2].@fixed 6
+$.complexType[52].attribute[2].xml lang en
+$.complexType[52].attribute[2].UniqueID null
+$.complexType[52].attribute[2].Acronym SC
+$.complexType[52].attribute[2].Name Code List. Agency. Identifier
+$.complexType[52].attribute[2].Definition null
+$.complexType[52].attribute[2].Cardinality 0..1
+$.complexType[52].attribute[2].PropertyTerm Agency
+$.complexType[52].attribute[3].@name listVersionID
+$.complexType[52].attribute[3].@type xsd:token
+$.complexType[52].attribute[3].@use optional
+$.complexType[52].attribute[3].@fixed D09B
+$.complexType[52].attribute[3].xml lang en
+$.complexType[52].attribute[3].UniqueID null
+$.complexType[52].attribute[3].Acronym SC
+$.complexType[52].attribute[3].Name Code List. Version. Identifier
+$.complexType[52].attribute[3].Definition null
+$.complexType[52].attribute[3].Cardinality 0..1
+$.complexType[52].attribute[3].PropertyTerm Version
+$.complexType[52].attribute[4].@name name
+$.complexType[52].attribute[4].@type xsd:string
+$.complexType[52].attribute[4].@use optional
+$.complexType[52].attribute[4].xml lang en
+$.complexType[52].attribute[4].UniqueID null
+$.complexType[52].attribute[4].Acronym SC
+$.complexType[52].attribute[4].Name Code. Name. Text
+$.complexType[52].attribute[4].Definition null
+$.complexType[52].attribute[4].Cardinality 0..1
+$.complexType[52].attribute[4].PropertyTerm Name
+$.complexType[53].@name ReportingThresholdTriggerTypeCodeType
+$.complexType[53].xml lang en
+$.complexType[53].UniqueID UN02000033
+$.complexType[53].Acronym DT
+$.complexType[53].DictionaryEntryName Reporting Threshold Trigger Type_ Code. Type
+$.complexType[53].Version 1.0
+$.complexType[53].Definition A character string used to represent or replace a type of trigger for a reporting threshold.
+$.complexType[53].PrimaryRepresentationTerm Code
+$.complexType[53].PrimitiveType String
+$.complexType[53].DataTypeQualifierTerm Reporting Threshold Trigger Type
+$.complexType[53].@base clm69667:ReportingThresholdTriggerTypeContentType
+$.complexType[53].attribute[1].@name listID
+$.complexType[53].attribute[1].@type xsd:token
+$.complexType[53].attribute[1].@use optional
+$.complexType[53].attribute[1].@fixed 9667
+$.complexType[53].attribute[1].xml lang en
+$.complexType[53].attribute[1].UniqueID null
+$.complexType[53].attribute[1].Acronym SC
+$.complexType[53].attribute[1].Name Code List. Identifier
+$.complexType[53].attribute[1].Definition null
+$.complexType[53].attribute[1].Cardinality 0..1
+$.complexType[53].attribute[1].PropertyTerm Identifier
+$.complexType[53].attribute[2].@name listAgencyID
+$.complexType[53].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[53].attribute[2].@use optional
+$.complexType[53].attribute[2].@fixed 6
+$.complexType[53].attribute[2].xml lang en
+$.complexType[53].attribute[2].UniqueID null
+$.complexType[53].attribute[2].Acronym SC
+$.complexType[53].attribute[2].Name Code List. Agency. Identifier
+$.complexType[53].attribute[2].Definition null
+$.complexType[53].attribute[2].Cardinality 0..1
+$.complexType[53].attribute[2].PropertyTerm Agency
+$.complexType[53].attribute[3].@name listVersionID
+$.complexType[53].attribute[3].@type xsd:token
+$.complexType[53].attribute[3].@use optional
+$.complexType[53].attribute[3].@fixed D09B
+$.complexType[53].attribute[3].xml lang en
+$.complexType[53].attribute[3].UniqueID null
+$.complexType[53].attribute[3].Acronym SC
+$.complexType[53].attribute[3].Name Code List. Version. Identifier
+$.complexType[53].attribute[3].Definition null
+$.complexType[53].attribute[3].Cardinality 0..1
+$.complexType[53].attribute[3].PropertyTerm Version
+$.complexType[54].@name ResourceCostCategoryCodeType
+$.complexType[54].xml lang en
+$.complexType[54].UniqueID UN02000034
+$.complexType[54].Acronym DT
+$.complexType[54].DictionaryEntryName Resource Cost Category_ Code. Type
+$.complexType[54].Version 1.0
+$.complexType[54].Definition A character string used to represent or replace a cost category for a resource.
+$.complexType[54].PrimaryRepresentationTerm Code
+$.complexType[54].PrimitiveType String
+$.complexType[54].DataTypeQualifierTerm Resource Cost Category
+$.complexType[54].@base clm69669:ResourceCostCategoryContentType
+$.complexType[54].attribute[1].@name listID
+$.complexType[54].attribute[1].@type xsd:token
+$.complexType[54].attribute[1].@use optional
+$.complexType[54].attribute[1].@fixed 9669
+$.complexType[54].attribute[1].xml lang en
+$.complexType[54].attribute[1].UniqueID null
+$.complexType[54].attribute[1].Acronym SC
+$.complexType[54].attribute[1].Name Code List. Identifier
+$.complexType[54].attribute[1].Definition null
+$.complexType[54].attribute[1].Cardinality 0..1
+$.complexType[54].attribute[1].PropertyTerm Identifier
+$.complexType[54].attribute[2].@name listAgencyID
+$.complexType[54].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[54].attribute[2].@use optional
+$.complexType[54].attribute[2].@fixed 6
+$.complexType[54].attribute[2].xml lang en
+$.complexType[54].attribute[2].UniqueID null
+$.complexType[54].attribute[2].Acronym SC
+$.complexType[54].attribute[2].Name Code List. Agency. Identifier
+$.complexType[54].attribute[2].Definition null
+$.complexType[54].attribute[2].Cardinality 0..1
+$.complexType[54].attribute[2].PropertyTerm Agency
+$.complexType[54].attribute[3].@name listVersionID
+$.complexType[54].attribute[3].@type xsd:token
+$.complexType[54].attribute[3].@use optional
+$.complexType[54].attribute[3].@fixed D09B
+$.complexType[54].attribute[3].xml lang en
+$.complexType[54].attribute[3].UniqueID null
+$.complexType[54].attribute[3].Acronym SC
+$.complexType[54].attribute[3].Name Code List. Version. Identifier
+$.complexType[54].attribute[3].Definition null
+$.complexType[54].attribute[3].Cardinality 0..1
+$.complexType[54].attribute[3].PropertyTerm Version
+$.complexType[55].@name ResourcePlanMeasureTypeCodeType
+$.complexType[55].xml lang en
+$.complexType[55].UniqueID UN02000035
+$.complexType[55].Acronym DT
+$.complexType[55].DictionaryEntryName Resource Plan Measure Type_ Code. Type
+$.complexType[55].Version 1.0
+$.complexType[55].Definition A character string used to represent or replace the type of resource plan measure.
+$.complexType[55].PrimaryRepresentationTerm Code
+$.complexType[55].PrimitiveType String
+$.complexType[55].DataTypeQualifierTerm Resource Plan Measure Type
+$.complexType[55].@base clm69671:ResourcePlanMeasureTypeContentType
+$.complexType[55].attribute[1].@name listID
+$.complexType[55].attribute[1].@type xsd:token
+$.complexType[55].attribute[1].@use optional
+$.complexType[55].attribute[1].@fixed 9671
+$.complexType[55].attribute[1].xml lang en
+$.complexType[55].attribute[1].UniqueID null
+$.complexType[55].attribute[1].Acronym SC
+$.complexType[55].attribute[1].Name Code List. Identifier
+$.complexType[55].attribute[1].Definition null
+$.complexType[55].attribute[1].Cardinality 0..1
+$.complexType[55].attribute[1].PropertyTerm Identifier
+$.complexType[55].attribute[2].@name listAgencyID
+$.complexType[55].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[55].attribute[2].@use optional
+$.complexType[55].attribute[2].@fixed 6
+$.complexType[55].attribute[2].xml lang en
+$.complexType[55].attribute[2].UniqueID null
+$.complexType[55].attribute[2].Acronym SC
+$.complexType[55].attribute[2].Name Code List. Agency. Identifier
+$.complexType[55].attribute[2].Definition null
+$.complexType[55].attribute[2].Cardinality 0..1
+$.complexType[55].attribute[2].PropertyTerm Agency
+$.complexType[55].attribute[3].@name listVersionID
+$.complexType[55].attribute[3].@type xsd:token
+$.complexType[55].attribute[3].@use optional
+$.complexType[55].attribute[3].@fixed D09B
+$.complexType[55].attribute[3].xml lang en
+$.complexType[55].attribute[3].UniqueID null
+$.complexType[55].attribute[3].Acronym SC
+$.complexType[55].attribute[3].Name Code List. Version. Identifier
+$.complexType[55].attribute[3].Definition null
+$.complexType[55].attribute[3].Cardinality 0..1
+$.complexType[55].attribute[3].PropertyTerm Version
+$.complexType[56].@name ScheduleTaskRelationshipTypeCodeType
+$.complexType[56].xml lang en
+$.complexType[56].UniqueID UN02000036
+$.complexType[56].Acronym DT
+$.complexType[56].DictionaryEntryName Schedule Task Relationship Type_ Code. Type
+$.complexType[56].Version 1.0
+$.complexType[56].Definition A character string used to represent or replace a type of relationship between schedule tasks.
+$.complexType[56].PrimaryRepresentationTerm Code
+$.complexType[56].PrimitiveType String
+$.complexType[56].DataTypeQualifierTerm Schedule Task Relationship Type
+$.complexType[56].@base clm69673:ScheduleTaskRelationshipTypeContentType
+$.complexType[56].attribute[1].@name listID
+$.complexType[56].attribute[1].@type xsd:token
+$.complexType[56].attribute[1].@use optional
+$.complexType[56].attribute[1].@fixed 9673
+$.complexType[56].attribute[1].xml lang en
+$.complexType[56].attribute[1].UniqueID null
+$.complexType[56].attribute[1].Acronym SC
+$.complexType[56].attribute[1].Name Code List. Identifier
+$.complexType[56].attribute[1].Definition null
+$.complexType[56].attribute[1].Cardinality 0..1
+$.complexType[56].attribute[1].PropertyTerm Identifier
+$.complexType[56].attribute[2].@name listAgencyID
+$.complexType[56].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[56].attribute[2].@use optional
+$.complexType[56].attribute[2].@fixed 6
+$.complexType[56].attribute[2].xml lang en
+$.complexType[56].attribute[2].UniqueID null
+$.complexType[56].attribute[2].Acronym SC
+$.complexType[56].attribute[2].Name Code List. Agency. Identifier
+$.complexType[56].attribute[2].Definition null
+$.complexType[56].attribute[2].Cardinality 0..1
+$.complexType[56].attribute[2].PropertyTerm Agency
+$.complexType[56].attribute[3].@name listVersionID
+$.complexType[56].attribute[3].@type xsd:token
+$.complexType[56].attribute[3].@use optional
+$.complexType[56].attribute[3].@fixed D09B
+$.complexType[56].attribute[3].xml lang en
+$.complexType[56].attribute[3].UniqueID null
+$.complexType[56].attribute[3].Acronym SC
+$.complexType[56].attribute[3].Name Code List. Version. Identifier
+$.complexType[56].attribute[3].Definition null
+$.complexType[56].attribute[3].Cardinality 0..1
+$.complexType[56].attribute[3].PropertyTerm Version
+$.complexType[57].@name ScheduleTaskTypeCodeType
+$.complexType[57].xml lang en
+$.complexType[57].UniqueID UN02000037
+$.complexType[57].Acronym DT
+$.complexType[57].DictionaryEntryName Schedule Task Type_ Code. Type
+$.complexType[57].Version 1.0
+$.complexType[57].Definition A character string used to represent or replace a type of schedule task.
+$.complexType[57].PrimaryRepresentationTerm Code
+$.complexType[57].PrimitiveType String
+$.complexType[57].DataTypeQualifierTerm Schedule Task Type
+$.complexType[57].@base clm69675:ScheduleTaskTypeContentType
+$.complexType[57].attribute[1].@name listID
+$.complexType[57].attribute[1].@type xsd:token
+$.complexType[57].attribute[1].@use optional
+$.complexType[57].attribute[1].@fixed 9675
+$.complexType[57].attribute[1].xml lang en
+$.complexType[57].attribute[1].UniqueID null
+$.complexType[57].attribute[1].Acronym SC
+$.complexType[57].attribute[1].Name Code List. Identifier
+$.complexType[57].attribute[1].Definition null
+$.complexType[57].attribute[1].Cardinality 0..1
+$.complexType[57].attribute[1].PropertyTerm Identifier
+$.complexType[57].attribute[2].@name listAgencyID
+$.complexType[57].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[57].attribute[2].@use optional
+$.complexType[57].attribute[2].@fixed 6
+$.complexType[57].attribute[2].xml lang en
+$.complexType[57].attribute[2].UniqueID null
+$.complexType[57].attribute[2].Acronym SC
+$.complexType[57].attribute[2].Name Code List. Agency. Identifier
+$.complexType[57].attribute[2].Definition null
+$.complexType[57].attribute[2].Cardinality 0..1
+$.complexType[57].attribute[2].PropertyTerm Agency
+$.complexType[57].attribute[3].@name listVersionID
+$.complexType[57].attribute[3].@type xsd:token
+$.complexType[57].attribute[3].@use optional
+$.complexType[57].attribute[3].@fixed D09B
+$.complexType[57].attribute[3].xml lang en
+$.complexType[57].attribute[3].UniqueID null
+$.complexType[57].attribute[3].Acronym SC
+$.complexType[57].attribute[3].Name Code List. Version. Identifier
+$.complexType[57].attribute[3].Definition null
+$.complexType[57].attribute[3].Cardinality 0..1
+$.complexType[57].attribute[3].PropertyTerm Version
+$.complexType[58].@name ScheduleTypeCodeType
+$.complexType[58].xml lang en
+$.complexType[58].UniqueID UN02000115
+$.complexType[58].Acronym DT
+$.complexType[58].DictionaryEntryName Schedule Type_ Code. Type
+$.complexType[58].Version 1.0
+$.complexType[58].Definition A character string used to represent or replace a type of schedule.
+$.complexType[58].PrimaryRepresentationTerm Code
+$.complexType[58].PrimitiveType String
+$.complexType[58].DataTypeQualifierTerm Schedule Type
+$.complexType[58].@base clm6ScheduleTypeCode:ScheduleTypeCodeContentType
+$.complexType[58].attribute[1].@name listID
+$.complexType[58].attribute[1].@type xsd:token
+$.complexType[58].attribute[1].@use optional
+$.complexType[58].attribute[1].xml lang en
+$.complexType[58].attribute[1].UniqueID null
+$.complexType[58].attribute[1].Acronym SC
+$.complexType[58].attribute[1].Name Code List. Identifier
+$.complexType[58].attribute[1].Definition null
+$.complexType[58].attribute[1].Cardinality 0..1
+$.complexType[58].attribute[1].PropertyTerm Identifier
+$.complexType[58].attribute[2].@name listAgencyID
+$.complexType[58].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[58].attribute[2].@use optional
+$.complexType[58].attribute[2].@fixed 6
+$.complexType[58].attribute[2].xml lang en
+$.complexType[58].attribute[2].UniqueID null
+$.complexType[58].attribute[2].Acronym SC
+$.complexType[58].attribute[2].Name Code List. Agency. Identifier
+$.complexType[58].attribute[2].Definition null
+$.complexType[58].attribute[2].Cardinality 0..1
+$.complexType[58].attribute[2].PropertyTerm Agency
+$.complexType[58].attribute[3].@name listVersionID
+$.complexType[58].attribute[3].@type xsd:token
+$.complexType[58].attribute[3].@use optional
+$.complexType[58].attribute[3].@fixed D09B
+$.complexType[58].attribute[3].xml lang en
+$.complexType[58].attribute[3].UniqueID null
+$.complexType[58].attribute[3].Acronym SC
+$.complexType[58].attribute[3].Name Code List. Version. Identifier
+$.complexType[58].attribute[3].Definition null
+$.complexType[58].attribute[3].Cardinality 0..1
+$.complexType[58].attribute[3].PropertyTerm Version
+$.complexType[59].@name SecurityClassificationTypeCodeType
+$.complexType[59].xml lang en
+$.complexType[59].UniqueID UN02000038
+$.complexType[59].Acronym DT
+$.complexType[59].DictionaryEntryName Security Classification Type_ Code. Type
+$.complexType[59].Version 1.0
+$.complexType[59].Definition A character string used to replace or represent a security classification.
+$.complexType[59].PrimaryRepresentationTerm Code
+$.complexType[59].PrimitiveType String
+$.complexType[59].DataTypeQualifierTerm Security Classification Type
+$.complexType[59].@base clm69677:SecurityClassificationTypeContentType
+$.complexType[59].attribute[1].@name listID
+$.complexType[59].attribute[1].@type xsd:token
+$.complexType[59].attribute[1].@use optional
+$.complexType[59].attribute[1].@fixed 9677
+$.complexType[59].attribute[1].xml lang en
+$.complexType[59].attribute[1].UniqueID null
+$.complexType[59].attribute[1].Acronym SC
+$.complexType[59].attribute[1].Name Code List. Identifier
+$.complexType[59].attribute[1].Definition null
+$.complexType[59].attribute[1].Cardinality 0..1
+$.complexType[59].attribute[1].PropertyTerm Identifier
+$.complexType[59].attribute[2].@name listAgencyID
+$.complexType[59].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[59].attribute[2].@use optional
+$.complexType[59].attribute[2].@fixed 6
+$.complexType[59].attribute[2].xml lang en
+$.complexType[59].attribute[2].UniqueID null
+$.complexType[59].attribute[2].Acronym SC
+$.complexType[59].attribute[2].Name Code List. Agency. Identifier
+$.complexType[59].attribute[2].Definition null
+$.complexType[59].attribute[2].Cardinality 0..1
+$.complexType[59].attribute[2].PropertyTerm Agency
+$.complexType[59].attribute[3].@name listVersionID
+$.complexType[59].attribute[3].@type xsd:token
+$.complexType[59].attribute[3].@use optional
+$.complexType[59].attribute[3].@fixed D09B
+$.complexType[59].attribute[3].xml lang en
+$.complexType[59].attribute[3].UniqueID null
+$.complexType[59].attribute[3].Acronym SC
+$.complexType[59].attribute[3].Name Code List. Version. Identifier
+$.complexType[59].attribute[3].Definition null
+$.complexType[59].attribute[3].Cardinality 0..1
+$.complexType[59].attribute[3].PropertyTerm Version
+$.complexType[60].@name StatusCodeType
+$.complexType[60].xml lang en
+$.complexType[60].UniqueID UN02000047
+$.complexType[60].Acronym DT
+$.complexType[60].DictionaryEntryName Status_ Code. Type
+$.complexType[60].Version 1.0
+$.complexType[60].Definition A character string used to represent a status.
+$.complexType[60].PrimaryRepresentationTerm Code
+$.complexType[60].PrimitiveType String
+$.complexType[60].DataTypeQualifierTerm Status
+$.complexType[60].@base clm64405:StatusCodeContentType
+$.complexType[60].attribute[1].@name listID
+$.complexType[60].attribute[1].@type xsd:token
+$.complexType[60].attribute[1].@use optional
+$.complexType[60].attribute[1].@fixed 4405
+$.complexType[60].attribute[1].xml lang en
+$.complexType[60].attribute[1].UniqueID null
+$.complexType[60].attribute[1].Acronym SC
+$.complexType[60].attribute[1].Name Code List. Identifier
+$.complexType[60].attribute[1].Definition null
+$.complexType[60].attribute[1].Cardinality 0..1
+$.complexType[60].attribute[1].PropertyTerm Identifier
+$.complexType[60].attribute[2].@name listAgencyID
+$.complexType[60].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[60].attribute[2].@use optional
+$.complexType[60].attribute[2].@fixed 6
+$.complexType[60].attribute[2].xml lang en
+$.complexType[60].attribute[2].UniqueID null
+$.complexType[60].attribute[2].Acronym SC
+$.complexType[60].attribute[2].Name Code List. Agency. Identifier
+$.complexType[60].attribute[2].Definition null
+$.complexType[60].attribute[2].Cardinality 0..1
+$.complexType[60].attribute[2].PropertyTerm Agency
+$.complexType[60].attribute[3].@name listVersionID
+$.complexType[60].attribute[3].@type xsd:token
+$.complexType[60].attribute[3].@use optional
+$.complexType[60].attribute[3].@fixed D09B
+$.complexType[60].attribute[3].xml lang en
+$.complexType[60].attribute[3].UniqueID null
+$.complexType[60].attribute[3].Acronym SC
+$.complexType[60].attribute[3].Name Code List. Version. Identifier
+$.complexType[60].attribute[3].Definition null
+$.complexType[60].attribute[3].Cardinality 0..1
+$.complexType[60].attribute[3].PropertyTerm Version
+$.complexType[60].attribute[4].@name name
+$.complexType[60].attribute[4].@type xsd:string
+$.complexType[60].attribute[4].@use optional
+$.complexType[60].attribute[4].xml lang en
+$.complexType[60].attribute[4].UniqueID null
+$.complexType[60].attribute[4].Acronym SC
+$.complexType[60].attribute[4].Name Code. Name. Text
+$.complexType[60].attribute[4].Definition null
+$.complexType[60].attribute[4].Cardinality 0..1
+$.complexType[60].attribute[4].PropertyTerm Name
+$.complexType[60].attribute[5].@name listURI
+$.complexType[60].attribute[5].@type xsd:anyURI
+$.complexType[60].attribute[5].@use optional
+$.complexType[60].attribute[5].xml lang en
+$.complexType[60].attribute[5].UniqueID null
+$.complexType[60].attribute[5].Acronym SC
+$.complexType[60].attribute[5].Name Code List. Uniform Resource. Identifier
+$.complexType[60].attribute[5].Definition null
+$.complexType[60].attribute[5].Cardinality 0..1
+$.complexType[60].attribute[5].PropertyTerm Uniform Resource
+$.complexType[61].@name TaxCategoryCodeType
+$.complexType[61].xml lang en
+$.complexType[61].UniqueID UN02000014
+$.complexType[61].Acronym DT
+$.complexType[61].DictionaryEntryName Tax Category_ Code. Type
+$.complexType[61].Version 1.1
+$.complexType[61].Definition A character string used to represent a duty or tax category.
+$.complexType[61].PrimaryRepresentationTerm Code
+$.complexType[61].PrimitiveType String
+$.complexType[61].DataTypeQualifierTerm Tax Category
+$.complexType[61].@base clm65305:DutyorTaxorFeeCategoryCodeContentType
+$.complexType[61].attribute[1].@name listID
+$.complexType[61].attribute[1].@type xsd:token
+$.complexType[61].attribute[1].@use optional
+$.complexType[61].attribute[1].@fixed 5305
+$.complexType[61].attribute[1].xml lang en
+$.complexType[61].attribute[1].UniqueID null
+$.complexType[61].attribute[1].Acronym SC
+$.complexType[61].attribute[1].Name Code List. Identifier
+$.complexType[61].attribute[1].Definition null
+$.complexType[61].attribute[1].Cardinality 0..1
+$.complexType[61].attribute[1].PropertyTerm Identifier
+$.complexType[61].attribute[2].@name listAgencyID
+$.complexType[61].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[61].attribute[2].@use optional
+$.complexType[61].attribute[2].@fixed 6
+$.complexType[61].attribute[2].xml lang en
+$.complexType[61].attribute[2].UniqueID null
+$.complexType[61].attribute[2].Acronym SC
+$.complexType[61].attribute[2].Name Code List. Agency. Identifier
+$.complexType[61].attribute[2].Definition null
+$.complexType[61].attribute[2].Cardinality 0..1
+$.complexType[61].attribute[2].PropertyTerm Agency
+$.complexType[61].attribute[3].@name listVersionID
+$.complexType[61].attribute[3].@type xsd:token
+$.complexType[61].attribute[3].@use optional
+$.complexType[61].attribute[3].@fixed D09B
+$.complexType[61].attribute[3].xml lang en
+$.complexType[61].attribute[3].UniqueID null
+$.complexType[61].attribute[3].Acronym SC
+$.complexType[61].attribute[3].Name Code List. Version. Identifier
+$.complexType[61].attribute[3].Definition null
+$.complexType[61].attribute[3].Cardinality 0..1
+$.complexType[61].attribute[3].PropertyTerm Version
+$.complexType[61].attribute[4].@name listURI
+$.complexType[61].attribute[4].@type xsd:anyURI
+$.complexType[61].attribute[4].@use optional
+$.complexType[61].attribute[4].xml lang en
+$.complexType[61].attribute[4].UniqueID null
+$.complexType[61].attribute[4].Acronym SC
+$.complexType[61].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[61].attribute[4].Definition null
+$.complexType[61].attribute[4].Cardinality 0..1
+$.complexType[61].attribute[4].PropertyTerm Uniform Resource
+$.complexType[62].@name TaxExemptionReasonCodeType
+$.complexType[62].xml lang en
+$.complexType[62].UniqueID UN02000108
+$.complexType[62].Acronym DT
+$.complexType[62].DictionaryEntryName Tax Exemption Reason_ Code. Type
+$.complexType[62].Version 1.0
+$.complexType[62].Definition A character string used to represent or replace a reason for tax exemption.
+$.complexType[62].PrimaryRepresentationTerm Code
+$.complexType[62].PrimitiveType String
+$.complexType[62].DataTypeQualifierTerm Tax Exemption Reason
+$.complexType[62].@base clm210AccountingE307:TaxExemptionReasonContentType
+$.complexType[62].attribute[1].@name listID
+$.complexType[62].attribute[1].@type xsd:token
+$.complexType[62].attribute[1].@use optional
+$.complexType[62].attribute[1].@fixed AccountingE307
+$.complexType[62].attribute[1].xml lang en
+$.complexType[62].attribute[1].UniqueID null
+$.complexType[62].attribute[1].Acronym SC
+$.complexType[62].attribute[1].Name Code List. Identifier
+$.complexType[62].attribute[1].Definition null
+$.complexType[62].attribute[1].Cardinality 0..1
+$.complexType[62].attribute[1].PropertyTerm Identifier
+$.complexType[62].attribute[2].@name listAgencyID
+$.complexType[62].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[62].attribute[2].@use optional
+$.complexType[62].attribute[2].@fixed 210
+$.complexType[62].attribute[2].xml lang en
+$.complexType[62].attribute[2].UniqueID null
+$.complexType[62].attribute[2].Acronym SC
+$.complexType[62].attribute[2].Name Code List. Agency. Identifier
+$.complexType[62].attribute[2].Definition null
+$.complexType[62].attribute[2].Cardinality 0..1
+$.complexType[62].attribute[2].PropertyTerm Agency
+$.complexType[62].attribute[3].@name listVersionID
+$.complexType[62].attribute[3].@type xsd:token
+$.complexType[62].attribute[3].@use optional
+$.complexType[62].attribute[3].@fixed D09B
+$.complexType[62].attribute[3].xml lang en
+$.complexType[62].attribute[3].UniqueID null
+$.complexType[62].attribute[3].Acronym SC
+$.complexType[62].attribute[3].Name Code List. Version. Identifier
+$.complexType[62].attribute[3].Definition null
+$.complexType[62].attribute[3].Cardinality 0..1
+$.complexType[62].attribute[3].PropertyTerm Version
+$.complexType[62].attribute[4].@name listURI
+$.complexType[62].attribute[4].@type xsd:anyURI
+$.complexType[62].attribute[4].@use optional
+$.complexType[62].attribute[4].xml lang en
+$.complexType[62].attribute[4].UniqueID null
+$.complexType[62].attribute[4].Acronym SC
+$.complexType[62].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[62].attribute[4].Definition null
+$.complexType[62].attribute[4].Cardinality 0..1
+$.complexType[62].attribute[4].PropertyTerm Uniform Resource
+$.complexType[63].@name TaxTypeCodeType
+$.complexType[63].xml lang en
+$.complexType[63].UniqueID UN02000015
+$.complexType[63].Acronym DT
+$.complexType[63].DictionaryEntryName Tax Type_ Code. Type
+$.complexType[63].Version 1.1
+$.complexType[63].Definition A character string used to represent or replace a tax type.
+$.complexType[63].PrimaryRepresentationTerm Code
+$.complexType[63].PrimitiveType String
+$.complexType[63].DataTypeQualifierTerm Tax Type
+$.complexType[63].@base clm65153:DutyTaxFeeTypeCodeContentType
+$.complexType[63].attribute[1].@name listID
+$.complexType[63].attribute[1].@type xsd:token
+$.complexType[63].attribute[1].@use optional
+$.complexType[63].attribute[1].@fixed 5153
+$.complexType[63].attribute[1].xml lang en
+$.complexType[63].attribute[1].UniqueID null
+$.complexType[63].attribute[1].Acronym SC
+$.complexType[63].attribute[1].Name Code List. Identifier
+$.complexType[63].attribute[1].Definition null
+$.complexType[63].attribute[1].Cardinality 0..1
+$.complexType[63].attribute[1].PropertyTerm Identifier
+$.complexType[63].attribute[2].@name listAgencyID
+$.complexType[63].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[63].attribute[2].@use optional
+$.complexType[63].attribute[2].@fixed 6
+$.complexType[63].attribute[2].xml lang en
+$.complexType[63].attribute[2].UniqueID null
+$.complexType[63].attribute[2].Acronym SC
+$.complexType[63].attribute[2].Name Code List. Agency. Identifier
+$.complexType[63].attribute[2].Definition null
+$.complexType[63].attribute[2].Cardinality 0..1
+$.complexType[63].attribute[2].PropertyTerm Agency
+$.complexType[63].attribute[3].@name listVersionID
+$.complexType[63].attribute[3].@type xsd:token
+$.complexType[63].attribute[3].@use optional
+$.complexType[63].attribute[3].@fixed D09B
+$.complexType[63].attribute[3].xml lang en
+$.complexType[63].attribute[3].UniqueID null
+$.complexType[63].attribute[3].Acronym SC
+$.complexType[63].attribute[3].Name Code List. Version. Identifier
+$.complexType[63].attribute[3].Definition null
+$.complexType[63].attribute[3].Cardinality 0..1
+$.complexType[63].attribute[3].PropertyTerm Version
+$.complexType[63].attribute[4].@name listURI
+$.complexType[63].attribute[4].@type xsd:anyURI
+$.complexType[63].attribute[4].@use optional
+$.complexType[63].attribute[4].xml lang en
+$.complexType[63].attribute[4].UniqueID null
+$.complexType[63].attribute[4].Acronym SC
+$.complexType[63].attribute[4].Name Code List. Uniform Resource. Identifier
+$.complexType[63].attribute[4].Definition null
+$.complexType[63].attribute[4].Cardinality 0..1
+$.complexType[63].attribute[4].PropertyTerm Uniform Resource
+$.complexType[64].@name TemperatureMeasureType
+$.complexType[64].xml lang en
+$.complexType[64].UniqueID UN02000093
+$.complexType[64].Acronym DT
+$.complexType[64].DictionaryEntryName Temperature_ Measure. Type
+$.complexType[64].Version 1.0
+$.complexType[64].Definition The numeric value determined by temperature measuring.
+$.complexType[64].PrimaryRepresentationTerm Measure
+$.complexType[64].PrimitiveType Decimal
+$.complexType[64].DataTypeQualifierTerm Temperature
+$.complexType[64].@base xsd:decimal
+$.complexType[64].attribute[1].@name unitCode
+$.complexType[64].attribute[1].@type clm6Recommendation20Temperature:MeasurementUnitCommonCodeTemperatureContentType
+$.complexType[64].attribute[1].@use optional
+$.complexType[64].attribute[1].xml lang en
+$.complexType[64].attribute[1].UniqueID null
+$.complexType[64].attribute[1].Acronym SC
+$.complexType[64].attribute[1].Name Measure Unit. Code
+$.complexType[64].attribute[1].Definition null
+$.complexType[64].attribute[1].Cardinality 0..1
+$.complexType[64].attribute[1].PropertyTerm Code
+$.complexType[65].@name TemperatureTypeCodeType
+$.complexType[65].xml lang en
+$.complexType[65].UniqueID UN02000046
+$.complexType[65].Acronym DT
+$.complexType[65].DictionaryEntryName Temperature Type_ Code. Type
+$.complexType[65].Version 1.0
+$.complexType[65].Definition A character string used to replace or represent a type of temperature.
+$.complexType[65].PrimaryRepresentationTerm Code
+$.complexType[65].PrimitiveType String
+$.complexType[65].DataTypeQualifierTerm Temperature Type
+$.complexType[65].@base clm66245:TemperatureTypeCodeContentType
+$.complexType[65].attribute[1].@name listID
+$.complexType[65].attribute[1].@type xsd:token
+$.complexType[65].attribute[1].@use optional
+$.complexType[65].attribute[1].@fixed 6245
+$.complexType[65].attribute[1].xml lang en
+$.complexType[65].attribute[1].UniqueID null
+$.complexType[65].attribute[1].Acronym SC
+$.complexType[65].attribute[1].Name Code List. Identifier
+$.complexType[65].attribute[1].Definition null
+$.complexType[65].attribute[1].Cardinality 0..1
+$.complexType[65].attribute[1].PropertyTerm Identifier
+$.complexType[65].attribute[2].@name listAgencyID
+$.complexType[65].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[65].attribute[2].@use optional
+$.complexType[65].attribute[2].@fixed 6
+$.complexType[65].attribute[2].xml lang en
+$.complexType[65].attribute[2].UniqueID null
+$.complexType[65].attribute[2].Acronym SC
+$.complexType[65].attribute[2].Name Code List. Agency. Identifier
+$.complexType[65].attribute[2].Definition null
+$.complexType[65].attribute[2].Cardinality 0..1
+$.complexType[65].attribute[2].PropertyTerm Agency
+$.complexType[65].attribute[3].@name listVersionID
+$.complexType[65].attribute[3].@type xsd:token
+$.complexType[65].attribute[3].@use optional
+$.complexType[65].attribute[3].@fixed D09B
+$.complexType[65].attribute[3].xml lang en
+$.complexType[65].attribute[3].UniqueID null
+$.complexType[65].attribute[3].Acronym SC
+$.complexType[65].attribute[3].Name Code List. Version. Identifier
+$.complexType[65].attribute[3].Definition null
+$.complexType[65].attribute[3].Cardinality 0..1
+$.complexType[65].attribute[3].PropertyTerm Version
+$.complexType[65].attribute[4].@name name
+$.complexType[65].attribute[4].@type xsd:string
+$.complexType[65].attribute[4].@use optional
+$.complexType[65].attribute[4].xml lang en
+$.complexType[65].attribute[4].UniqueID null
+$.complexType[65].attribute[4].Acronym SC
+$.complexType[65].attribute[4].Name Code. Name. Text
+$.complexType[65].attribute[4].Definition null
+$.complexType[65].attribute[4].Cardinality 0..1
+$.complexType[65].attribute[4].PropertyTerm Name
+$.complexType[66].@name TimeReferenceCodeType
+$.complexType[66].xml lang en
+$.complexType[66].UniqueID UN02000016
+$.complexType[66].Acronym DT
+$.complexType[66].DictionaryEntryName Time Reference_ Code. Type
+$.complexType[66].Version 1.0
+$.complexType[66].Definition A character string used to represent a time reference.
+$.complexType[66].PrimaryRepresentationTerm Code
+$.complexType[66].PrimitiveType String
+$.complexType[66].DataTypeQualifierTerm Time Reference
+$.complexType[66].@base clm62475:EventTimeReferenceCodeContentType
+$.complexType[66].attribute[1].@name listID
+$.complexType[66].attribute[1].@type xsd:token
+$.complexType[66].attribute[1].@use optional
+$.complexType[66].attribute[1].@fixed 2475
+$.complexType[66].attribute[1].xml lang en
+$.complexType[66].attribute[1].UniqueID null
+$.complexType[66].attribute[1].Acronym SC
+$.complexType[66].attribute[1].Name Code List. Identifier
+$.complexType[66].attribute[1].Definition null
+$.complexType[66].attribute[1].Cardinality 0..1
+$.complexType[66].attribute[1].PropertyTerm Identifier
+$.complexType[66].attribute[2].@name listAgencyID
+$.complexType[66].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[66].attribute[2].@use optional
+$.complexType[66].attribute[2].@fixed 6
+$.complexType[66].attribute[2].xml lang en
+$.complexType[66].attribute[2].UniqueID null
+$.complexType[66].attribute[2].Acronym SC
+$.complexType[66].attribute[2].Name Code List. Agency. Identifier
+$.complexType[66].attribute[2].Definition null
+$.complexType[66].attribute[2].Cardinality 0..1
+$.complexType[66].attribute[2].PropertyTerm Agency
+$.complexType[66].attribute[3].@name listVersionID
+$.complexType[66].attribute[3].@type xsd:token
+$.complexType[66].attribute[3].@use optional
+$.complexType[66].attribute[3].@fixed D09B
+$.complexType[66].attribute[3].xml lang en
+$.complexType[66].attribute[3].UniqueID null
+$.complexType[66].attribute[3].Acronym SC
+$.complexType[66].attribute[3].Name Code List. Version. Identifier
+$.complexType[66].attribute[3].Definition null
+$.complexType[66].attribute[3].Cardinality 0..1
+$.complexType[66].attribute[3].PropertyTerm Version
+$.complexType[66].attribute[4].@name name
+$.complexType[66].attribute[4].@type xsd:string
+$.complexType[66].attribute[4].@use optional
+$.complexType[66].attribute[4].xml lang en
+$.complexType[66].attribute[4].UniqueID null
+$.complexType[66].attribute[4].Acronym SC
+$.complexType[66].attribute[4].Name Code. Name. Text
+$.complexType[66].attribute[4].Definition null
+$.complexType[66].attribute[4].Cardinality 0..1
+$.complexType[66].attribute[4].PropertyTerm Name
+$.complexType[67].@name TransportEquipmentCategoryCodeType
+$.complexType[67].xml lang en
+$.complexType[67].UniqueID UN02000087
+$.complexType[67].Acronym DT
+$.complexType[67].DictionaryEntryName Transport Equipment Category_ Code. Type
+$.complexType[67].Version 1.0
+$.complexType[67].Definition A character string used to represent the transport equipment category.
+$.complexType[67].PrimaryRepresentationTerm Code
+$.complexType[67].PrimitiveType String
+$.complexType[67].DataTypeQualifierTerm Transport Equipment Category
+$.complexType[67].@base clm68053:TransportEquipmentCategoryCodeContentType
+$.complexType[67].attribute[1].@name listID
+$.complexType[67].attribute[1].@type xsd:token
+$.complexType[67].attribute[1].@use optional
+$.complexType[67].attribute[1].@fixed 8053
+$.complexType[67].attribute[1].xml lang en
+$.complexType[67].attribute[1].UniqueID null
+$.complexType[67].attribute[1].Acronym SC
+$.complexType[67].attribute[1].Name Code List. Identifier
+$.complexType[67].attribute[1].Definition null
+$.complexType[67].attribute[1].Cardinality 0..1
+$.complexType[67].attribute[1].PropertyTerm Identifier
+$.complexType[67].attribute[2].@name listAgencyID
+$.complexType[67].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[67].attribute[2].@use optional
+$.complexType[67].attribute[2].@fixed 6
+$.complexType[67].attribute[2].xml lang en
+$.complexType[67].attribute[2].UniqueID null
+$.complexType[67].attribute[2].Acronym SC
+$.complexType[67].attribute[2].Name Code List. Agency. Identifier
+$.complexType[67].attribute[2].Definition null
+$.complexType[67].attribute[2].Cardinality 0..1
+$.complexType[67].attribute[2].PropertyTerm Agency
+$.complexType[67].attribute[3].@name listVersionID
+$.complexType[67].attribute[3].@type xsd:token
+$.complexType[67].attribute[3].@use optional
+$.complexType[67].attribute[3].@fixed D09B
+$.complexType[67].attribute[3].xml lang en
+$.complexType[67].attribute[3].UniqueID null
+$.complexType[67].attribute[3].Acronym SC
+$.complexType[67].attribute[3].Name Code List. Version. Identifier
+$.complexType[67].attribute[3].Definition null
+$.complexType[67].attribute[3].Cardinality 0..1
+$.complexType[67].attribute[3].PropertyTerm Version
+$.complexType[67].attribute[4].@name name
+$.complexType[67].attribute[4].@type xsd:string
+$.complexType[67].attribute[4].@use optional
+$.complexType[67].attribute[4].xml lang en
+$.complexType[67].attribute[4].UniqueID null
+$.complexType[67].attribute[4].Acronym SC
+$.complexType[67].attribute[4].Name Code. Name. Text
+$.complexType[67].attribute[4].Definition null
+$.complexType[67].attribute[4].Cardinality 0..1
+$.complexType[67].attribute[4].PropertyTerm Name
+$.complexType[68].@name TransportEquipmentFullnessCodeType
+$.complexType[68].xml lang en
+$.complexType[68].UniqueID UN02000088
+$.complexType[68].Acronym DT
+$.complexType[68].DictionaryEntryName Transport Equipment Fullness_ Code. Type
+$.complexType[68].Version 1.0
+$.complexType[68].Definition A character string used to represent the transport equipment fullness.
+$.complexType[68].PrimaryRepresentationTerm Code
+$.complexType[68].PrimitiveType String
+$.complexType[68].DataTypeQualifierTerm Transport Equipment Fullness
+$.complexType[68].@base clm68169:TransportEquipmentFullnessCodeContentType
+$.complexType[68].attribute[1].@name listID
+$.complexType[68].attribute[1].@type xsd:token
+$.complexType[68].attribute[1].@use optional
+$.complexType[68].attribute[1].@fixed 8169
+$.complexType[68].attribute[1].xml lang en
+$.complexType[68].attribute[1].UniqueID null
+$.complexType[68].attribute[1].Acronym SC
+$.complexType[68].attribute[1].Name Code List. Identifier
+$.complexType[68].attribute[1].Definition null
+$.complexType[68].attribute[1].Cardinality 0..1
+$.complexType[68].attribute[1].PropertyTerm Identifier
+$.complexType[68].attribute[2].@name listAgencyID
+$.complexType[68].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[68].attribute[2].@use optional
+$.complexType[68].attribute[2].@fixed 6
+$.complexType[68].attribute[2].xml lang en
+$.complexType[68].attribute[2].UniqueID null
+$.complexType[68].attribute[2].Acronym SC
+$.complexType[68].attribute[2].Name Code List. Agency. Identifier
+$.complexType[68].attribute[2].Definition null
+$.complexType[68].attribute[2].Cardinality 0..1
+$.complexType[68].attribute[2].PropertyTerm Agency
+$.complexType[68].attribute[3].@name listVersionID
+$.complexType[68].attribute[3].@type xsd:token
+$.complexType[68].attribute[3].@use optional
+$.complexType[68].attribute[3].@fixed D09B
+$.complexType[68].attribute[3].xml lang en
+$.complexType[68].attribute[3].UniqueID null
+$.complexType[68].attribute[3].Acronym SC
+$.complexType[68].attribute[3].Name Code List. Version. Identifier
+$.complexType[68].attribute[3].Definition null
+$.complexType[68].attribute[3].Cardinality 0..1
+$.complexType[68].attribute[3].PropertyTerm Version
+$.complexType[68].attribute[4].@name name
+$.complexType[68].attribute[4].@type xsd:string
+$.complexType[68].attribute[4].@use optional
+$.complexType[68].attribute[4].xml lang en
+$.complexType[68].attribute[4].UniqueID null
+$.complexType[68].attribute[4].Acronym SC
+$.complexType[68].attribute[4].Name Code. Name. Text
+$.complexType[68].attribute[4].Definition null
+$.complexType[68].attribute[4].Cardinality 0..1
+$.complexType[68].attribute[4].PropertyTerm Name
+$.complexType[69].@name TransportEquipmentSizeTypeCodeType
+$.complexType[69].xml lang en
+$.complexType[69].UniqueID UN02000061
+$.complexType[69].Acronym DT
+$.complexType[69].DictionaryEntryName Transport Equipment Size Type_ Code. Type
+$.complexType[69].Version 1.0
+$.complexType[69].Definition A character string used to represent a size and type of transport equipment.
+$.complexType[69].PrimaryRepresentationTerm Code
+$.complexType[69].PrimitiveType String
+$.complexType[69].DataTypeQualifierTerm Transport Equipment Size Type
+$.complexType[69].@base clm68155:EquipmentSizeTypeDescriptionCodeContentType
+$.complexType[69].attribute[1].@name listID
+$.complexType[69].attribute[1].@type xsd:token
+$.complexType[69].attribute[1].@use optional
+$.complexType[69].attribute[1].@fixed 8155
+$.complexType[69].attribute[1].xml lang en
+$.complexType[69].attribute[1].UniqueID null
+$.complexType[69].attribute[1].Acronym SC
+$.complexType[69].attribute[1].Name Code List. Identifier
+$.complexType[69].attribute[1].Definition null
+$.complexType[69].attribute[1].Cardinality 0..1
+$.complexType[69].attribute[1].PropertyTerm Identifier
+$.complexType[69].attribute[2].@name listAgencyID
+$.complexType[69].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[69].attribute[2].@use optional
+$.complexType[69].attribute[2].@fixed 6
+$.complexType[69].attribute[2].xml lang en
+$.complexType[69].attribute[2].UniqueID null
+$.complexType[69].attribute[2].Acronym SC
+$.complexType[69].attribute[2].Name Code List. Agency. Identifier
+$.complexType[69].attribute[2].Definition null
+$.complexType[69].attribute[2].Cardinality 0..1
+$.complexType[69].attribute[2].PropertyTerm Agency
+$.complexType[69].attribute[3].@name listVersionID
+$.complexType[69].attribute[3].@type xsd:token
+$.complexType[69].attribute[3].@use optional
+$.complexType[69].attribute[3].@fixed D09B
+$.complexType[69].attribute[3].xml lang en
+$.complexType[69].attribute[3].UniqueID null
+$.complexType[69].attribute[3].Acronym SC
+$.complexType[69].attribute[3].Name Code List. Version. Identifier
+$.complexType[69].attribute[3].Definition null
+$.complexType[69].attribute[3].Cardinality 0..1
+$.complexType[69].attribute[3].PropertyTerm Version
+$.complexType[69].attribute[4].@name name
+$.complexType[69].attribute[4].@type xsd:string
+$.complexType[69].attribute[4].@use optional
+$.complexType[69].attribute[4].xml lang en
+$.complexType[69].attribute[4].UniqueID null
+$.complexType[69].attribute[4].Acronym SC
+$.complexType[69].attribute[4].Name Code. Name. Text
+$.complexType[69].attribute[4].Definition null
+$.complexType[69].attribute[4].Cardinality 0..1
+$.complexType[69].attribute[4].PropertyTerm Name
+$.complexType[70].@name TransportMeansTypeCodeType
+$.complexType[70].xml lang en
+$.complexType[70].UniqueID UN02000098
+$.complexType[70].Acronym DT
+$.complexType[70].DictionaryEntryName Transport Means Type_ Code. Type
+$.complexType[70].Version 1.0
+$.complexType[70].Definition A character string used to represent the transport means type.
+$.complexType[70].PrimaryRepresentationTerm Code
+$.complexType[70].PrimitiveType String
+$.complexType[70].DataTypeQualifierTerm Transport Means Type
+$.complexType[70].@base clm6Recommendation28:TransportMeansTypeCodeContentType
+$.complexType[70].attribute[1].@name listID
+$.complexType[70].attribute[1].@type xsd:token
+$.complexType[70].attribute[1].@use optional
+$.complexType[70].attribute[1].@fixed Recommendation 28
+$.complexType[70].attribute[1].xml lang en
+$.complexType[70].attribute[1].UniqueID null
+$.complexType[70].attribute[1].Acronym SC
+$.complexType[70].attribute[1].Name Code List. Identifier
+$.complexType[70].attribute[1].Definition null
+$.complexType[70].attribute[1].Cardinality 0..1
+$.complexType[70].attribute[1].PropertyTerm Identifier
+$.complexType[70].attribute[2].@name listAgencyID
+$.complexType[70].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[70].attribute[2].@use optional
+$.complexType[70].attribute[2].@fixed 6
+$.complexType[70].attribute[2].xml lang en
+$.complexType[70].attribute[2].UniqueID null
+$.complexType[70].attribute[2].Acronym SC
+$.complexType[70].attribute[2].Name Code List. Agency. Identifier
+$.complexType[70].attribute[2].Definition null
+$.complexType[70].attribute[2].Cardinality 0..1
+$.complexType[70].attribute[2].PropertyTerm Agency
+$.complexType[70].attribute[3].@name listVersionID
+$.complexType[70].attribute[3].@type xsd:token
+$.complexType[70].attribute[3].@use optional
+$.complexType[70].attribute[3].@fixed 2007
+$.complexType[70].attribute[3].xml lang en
+$.complexType[70].attribute[3].UniqueID null
+$.complexType[70].attribute[3].Acronym SC
+$.complexType[70].attribute[3].Name Code List. Version. Identifier
+$.complexType[70].attribute[3].Definition null
+$.complexType[70].attribute[3].Cardinality 0..1
+$.complexType[70].attribute[3].PropertyTerm Version
+$.complexType[70].attribute[4].@name name
+$.complexType[70].attribute[4].@type xsd:string
+$.complexType[70].attribute[4].@use optional
+$.complexType[70].attribute[4].xml lang en
+$.complexType[70].attribute[4].UniqueID null
+$.complexType[70].attribute[4].Acronym SC
+$.complexType[70].attribute[4].Name Code. Name. Text
+$.complexType[70].attribute[4].Definition null
+$.complexType[70].attribute[4].Cardinality 0..1
+$.complexType[70].attribute[4].PropertyTerm Name
+$.complexType[71].@name TransportModeCodeType
+$.complexType[71].xml lang en
+$.complexType[71].UniqueID UN02000018
+$.complexType[71].Acronym DT
+$.complexType[71].DictionaryEntryName Transport Mode_ Code. Type
+$.complexType[71].Version 1.0
+$.complexType[71].Definition A character string used to represent a transport mode.
+$.complexType[71].PrimaryRepresentationTerm Code
+$.complexType[71].PrimitiveType String
+$.complexType[71].DataTypeQualifierTerm Transport Mode
+$.complexType[71].@base clm6Recommendation19:TransportModeCodeContentType
+$.complexType[71].attribute[1].@name listID
+$.complexType[71].attribute[1].@type xsd:token
+$.complexType[71].attribute[1].@use optional
+$.complexType[71].attribute[1].@fixed Recommendation 19
+$.complexType[71].attribute[1].xml lang en
+$.complexType[71].attribute[1].UniqueID null
+$.complexType[71].attribute[1].Acronym SC
+$.complexType[71].attribute[1].Name Code List. Identifier
+$.complexType[71].attribute[1].Definition null
+$.complexType[71].attribute[1].Cardinality 0..1
+$.complexType[71].attribute[1].PropertyTerm Identifier
+$.complexType[71].attribute[2].@name listAgencyID
+$.complexType[71].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[71].attribute[2].@use optional
+$.complexType[71].attribute[2].@fixed 6
+$.complexType[71].attribute[2].xml lang en
+$.complexType[71].attribute[2].UniqueID null
+$.complexType[71].attribute[2].Acronym SC
+$.complexType[71].attribute[2].Name Code List. Agency. Identifier
+$.complexType[71].attribute[2].Definition null
+$.complexType[71].attribute[2].Cardinality 0..1
+$.complexType[71].attribute[2].PropertyTerm Agency
+$.complexType[71].attribute[3].@name listVersionID
+$.complexType[71].attribute[3].@type xsd:token
+$.complexType[71].attribute[3].@use optional
+$.complexType[71].attribute[3].@fixed 2
+$.complexType[71].attribute[3].xml lang en
+$.complexType[71].attribute[3].UniqueID null
+$.complexType[71].attribute[3].Acronym SC
+$.complexType[71].attribute[3].Name Code List. Version. Identifier
+$.complexType[71].attribute[3].Definition null
+$.complexType[71].attribute[3].Cardinality 0..1
+$.complexType[71].attribute[3].PropertyTerm Version
+$.complexType[71].attribute[4].@name name
+$.complexType[71].attribute[4].@type xsd:string
+$.complexType[71].attribute[4].@use optional
+$.complexType[71].attribute[4].xml lang en
+$.complexType[71].attribute[4].UniqueID null
+$.complexType[71].attribute[4].Acronym SC
+$.complexType[71].attribute[4].Name Code. Name. Text
+$.complexType[71].attribute[4].Definition null
+$.complexType[71].attribute[4].Cardinality 0..1
+$.complexType[71].attribute[4].PropertyTerm Name
+$.complexType[72].@name TransportMovementStageCodeType
+$.complexType[72].xml lang en
+$.complexType[72].UniqueID UN02000091
+$.complexType[72].Acronym DT
+$.complexType[72].DictionaryEntryName Transport Movement Stage_ Code. Type
+$.complexType[72].Version 1.0
+$.complexType[72].Definition A character string used to represent the transport movement stage.
+$.complexType[72].PrimaryRepresentationTerm Code
+$.complexType[72].PrimitiveType String
+$.complexType[72].DataTypeQualifierTerm Transport Movement Stage
+$.complexType[72].@base clm68051:TransportMovementStageCodeContentType
+$.complexType[72].attribute[1].@name listID
+$.complexType[72].attribute[1].@type xsd:token
+$.complexType[72].attribute[1].@use optional
+$.complexType[72].attribute[1].@fixed 8051
+$.complexType[72].attribute[1].xml lang en
+$.complexType[72].attribute[1].UniqueID null
+$.complexType[72].attribute[1].Acronym SC
+$.complexType[72].attribute[1].Name Code List. Identifier
+$.complexType[72].attribute[1].Definition null
+$.complexType[72].attribute[1].Cardinality 0..1
+$.complexType[72].attribute[1].PropertyTerm Identifier
+$.complexType[72].attribute[2].@name listAgencyID
+$.complexType[72].attribute[2].@type clm63055:AgencyIdentificationCodeContentType
+$.complexType[72].attribute[2].@use optional
+$.complexType[72].attribute[2].@fixed 6
+$.complexType[72].attribute[2].xml lang en
+$.complexType[72].attribute[2].UniqueID null
+$.complexType[72].attribute[2].Acronym SC
+$.complexType[72].attribute[2].Name Code List. Agency. Identifier
+$.complexType[72].attribute[2].Definition null
+$.complexType[72].attribute[2].Cardinality 0..1
+$.complexType[72].attribute[2].PropertyTerm Agency
+$.complexType[72].attribute[3].@name listVersionID
+$.complexType[72].attribute[3].@type xsd:token
+$.complexType[72].attribute[3].@use optional
+$.complexType[72].attribute[3].@fixed D09B
+$.complexType[72].attribute[3].xml lang en
+$.complexType[72].attribute[3].UniqueID null
+$.complexType[72].attribute[3].Acronym SC
+$.complexType[72].attribute[3].Name Code List. Version. Identifier
+$.complexType[72].attribute[3].Definition null
+$.complexType[72].attribute[3].Cardinality 0..1
+$.complexType[72].attribute[3].PropertyTerm Version
+$.complexType[72].attribute[4].@name name
+$.complexType[72].attribute[4].@type xsd:string
+$.complexType[72].attribute[4].@use optional
+$.complexType[72].attribute[4].xml lang en
+$.complexType[72].attribute[4].UniqueID null
+$.complexType[72].attribute[4].Acronym SC
+$.complexType[72].attribute[4].Name Code. Name. Text
+$.complexType[72].attribute[4].Definition null
+$.complexType[72].attribute[4].Cardinality 0..1
+$.complexType[72].attribute[4].PropertyTerm Name
+$.complexType[73].@name VolumeMeasureType
+$.complexType[73].xml lang en
+$.complexType[73].UniqueID UN02000094
+$.complexType[73].Acronym DT
+$.complexType[73].DictionaryEntryName Volume_ Measure. Type
+$.complexType[73].Version 1.0
+$.complexType[73].Definition The numeric value determined by volume measuring.
+$.complexType[73].PrimaryRepresentationTerm Measure
+$.complexType[73].PrimitiveType Decimal
+$.complexType[73].DataTypeQualifierTerm Volume
+$.complexType[73].@base xsd:decimal
+$.complexType[73].attribute[1].@name unitCode
+$.complexType[73].attribute[1].@type clm6Recommendation20Volume:MeasurementUnitCommonCodeVolumeContentType
+$.complexType[73].attribute[1].@use optional
+$.complexType[73].attribute[1].xml lang en
+$.complexType[73].attribute[1].UniqueID null
+$.complexType[73].attribute[1].Acronym SC
+$.complexType[73].attribute[1].Name Measure Unit. Code
+$.complexType[73].attribute[1].Definition null
+$.complexType[73].attribute[1].Cardinality 0..1
+$.complexType[73].attribute[1].PropertyTerm Code
+$.complexType[74].@name WeightMeasureType
+$.complexType[74].xml lang en
+$.complexType[74].UniqueID UN02000095
+$.complexType[74].Acronym DT
+$.complexType[74].DictionaryEntryName Weight_ Measure. Type
+$.complexType[74].Version 1.0
+$.complexType[74].Definition The numeric value determined by weight measuring.
+$.complexType[74].PrimaryRepresentationTerm Measure
+$.complexType[74].PrimitiveType Decimal
+$.complexType[74].DataTypeQualifierTerm Weight
+$.complexType[74].@base xsd:decimal
+$.complexType[74].attribute[1].@name unitCode
+$.complexType[74].attribute[1].@type clm6Recommendation20Weight:MeasurementUnitCommonCodeWeightContentType
+$.complexType[74].attribute[1].@use optional
+$.complexType[74].attribute[1].xml lang en
+$.complexType[74].attribute[1].UniqueID null
+$.complexType[74].attribute[1].Acronym SC
+$.complexType[74].attribute[1].Name Measure Unit. Code
+$.complexType[74].attribute[1].Definition null
+$.complexType[74].attribute[1].Cardinality 0..1
+$.complexType[74].attribute[1].PropertyTerm Code

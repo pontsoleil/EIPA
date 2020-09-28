@@ -1,0 +1,630 @@
+$.@name InvoiceType
+$.ComponentType ABIE
+$.DictionaryEntryName Invoice. Details
+$.Definition A document used to request payment.
+$.ObjectClass Invoice 
+$.element[1].@ref ext:UBLExtensions
+$.element[1].@minOccurs 0
+$.element[1].@maxOccurs 1
+$.element[1].documentation A container for all extensions present in the document.
+$.element[2].@ref cbc:UBLVersionID
+$.element[2].@minOccurs 0
+$.element[2].@maxOccurs 1
+$.element[2].ComponentType BBIE
+$.element[2].DictionaryEntryName Invoice. UBL Version Identifier. Identifier
+$.element[2].Definition Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.
+$.element[2].Cardinality 0..1
+$.element[2].ObjectClass Invoice
+$.element[2].PropertyTerm UBL Version Identifier
+$.element[2].RepresentationTerm Identifier
+$.element[2].DataType Identifier. Type
+$.element[2].Examples 2.0.5
+$.element[3].@ref cbc:CustomizationID
+$.element[3].@minOccurs 0
+$.element[3].@maxOccurs 1
+$.element[3].ComponentType BBIE
+$.element[3].DictionaryEntryName Invoice. Customization Identifier. Identifier
+$.element[3].Definition Identifies a user-defined customization of UBL for a specific use.
+$.element[3].Cardinality 0..1
+$.element[3].ObjectClass Invoice
+$.element[3].PropertyTerm Customization Identifier
+$.element[3].RepresentationTerm Identifier
+$.element[3].DataType Identifier. Type
+$.element[3].Examples NES
+$.element[4].@ref cbc:ProfileID
+$.element[4].@minOccurs 0
+$.element[4].@maxOccurs 1
+$.element[4].ComponentType BBIE
+$.element[4].DictionaryEntryName Invoice. Profile Identifier. Identifier
+$.element[4].Definition Identifies a user-defined profile of the customization of UBL being used.
+$.element[4].Cardinality 0..1
+$.element[4].ObjectClass Invoice
+$.element[4].PropertyTerm Profile Identifier
+$.element[4].RepresentationTerm Identifier
+$.element[4].DataType Identifier. Type
+$.element[4].Examples BasicProcurementProcess
+$.element[5].@ref cbc:ProfileExecutionID
+$.element[5].@minOccurs 0
+$.element[5].@maxOccurs 1
+$.element[5].ComponentType BBIE
+$.element[5].DictionaryEntryName Invoice. Profile Execution Identifier. Identifier
+$.element[5].Definition Identifies an instance of executing a profile, to associate all transactions in a collaboration.
+$.element[5].Cardinality 0..1
+$.element[5].ObjectClass Invoice
+$.element[5].PropertyTerm Profile Execution Identifier
+$.element[5].RepresentationTerm Identifier
+$.element[5].DataType Identifier. Type
+$.element[5].Examples BPP-1001
+$.element[6].@ref cbc:ID
+$.element[6].@minOccurs 1
+$.element[6].@maxOccurs 1
+$.element[6].ComponentType BBIE
+$.element[6].DictionaryEntryName Invoice. Identifier
+$.element[6].Definition An identifier for this document, assigned by the sender.
+$.element[6].Cardinality 1
+$.element[6].ObjectClass Invoice
+$.element[6].PropertyTerm Identifier
+$.element[6].RepresentationTerm Identifier
+$.element[6].DataType Identifier. Type
+$.element[6].AlternativeBusinessTerms Invoice Number
+$.element[7].@ref cbc:CopyIndicator
+$.element[7].@minOccurs 0
+$.element[7].@maxOccurs 1
+$.element[7].ComponentType BBIE
+$.element[7].DictionaryEntryName Invoice. Copy_ Indicator. Indicator
+$.element[7].Definition Indicates whether this document is a copy (true) or not (false).
+$.element[7].Cardinality 0..1
+$.element[7].ObjectClass Invoice
+$.element[7].PropertyTermQualifier Copy
+$.element[7].PropertyTerm Indicator
+$.element[7].RepresentationTerm Indicator
+$.element[7].DataType Indicator. Type
+$.element[8].@ref cbc:UUID
+$.element[8].@minOccurs 0
+$.element[8].@maxOccurs 1
+$.element[8].ComponentType BBIE
+$.element[8].DictionaryEntryName Invoice. UUID. Identifier
+$.element[8].Definition A universally unique identifier for an instance of this document.
+$.element[8].Cardinality 0..1
+$.element[8].ObjectClass Invoice
+$.element[8].PropertyTerm UUID
+$.element[8].RepresentationTerm Identifier
+$.element[8].DataType Identifier. Type
+$.element[9].@ref cbc:IssueDate
+$.element[9].@minOccurs 1
+$.element[9].@maxOccurs 1
+$.element[9].ComponentType BBIE
+$.element[9].DictionaryEntryName Invoice. Issue Date. Date
+$.element[9].Definition The date, assigned by the sender, on which this document was issued.
+$.element[9].Cardinality 1
+$.element[9].ObjectClass Invoice
+$.element[9].PropertyTerm Issue Date
+$.element[9].RepresentationTerm Date
+$.element[9].DataType Date. Type
+$.element[9].AlternativeBusinessTerms Invoice Date
+$.element[10].@ref cbc:IssueTime
+$.element[10].@minOccurs 0
+$.element[10].@maxOccurs 1
+$.element[10].ComponentType BBIE
+$.element[10].DictionaryEntryName Invoice. Issue Time. Time
+$.element[10].Definition The time, assigned by the sender, at which this document was issued.
+$.element[10].Cardinality 0..1
+$.element[10].ObjectClass Invoice
+$.element[10].PropertyTerm Issue Time
+$.element[10].RepresentationTerm Time
+$.element[10].DataType Time. Type
+$.element[11].@ref cbc:DueDate
+$.element[11].@minOccurs 0
+$.element[11].@maxOccurs 1
+$.element[11].ComponentType BBIE
+$.element[11].DictionaryEntryName Invoice. Due Date. Date
+$.element[11].Definition The date on which Invoice is due.
+$.element[11].Cardinality 0..1
+$.element[11].ObjectClass Invoice
+$.element[11].PropertyTerm Due Date
+$.element[11].RepresentationTerm Date
+$.element[11].DataType Date. Type
+$.element[12].@ref cbc:InvoiceTypeCode
+$.element[12].@minOccurs 0
+$.element[12].@maxOccurs 1
+$.element[12].ComponentType BBIE
+$.element[12].DictionaryEntryName Invoice. Invoice Type Code. Code
+$.element[12].Definition A code signifying the type of the Invoice.
+$.element[12].Cardinality 0..1
+$.element[12].ObjectClass Invoice
+$.element[12].PropertyTerm Invoice Type Code
+$.element[12].RepresentationTerm Code
+$.element[12].DataType Code. Type
+$.element[13].@ref cbc:Note
+$.element[13].@minOccurs 0
+$.element[13].@maxOccurs unbounded
+$.element[13].ComponentType BBIE
+$.element[13].DictionaryEntryName Invoice. Note. Text
+$.element[13].Definition Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures.
+$.element[13].Cardinality 0..n
+$.element[13].ObjectClass Invoice
+$.element[13].PropertyTerm Note
+$.element[13].RepresentationTerm Text
+$.element[13].DataType Text. Type
+$.element[14].@ref cbc:TaxPointDate
+$.element[14].@minOccurs 0
+$.element[14].@maxOccurs 1
+$.element[14].ComponentType BBIE
+$.element[14].DictionaryEntryName Invoice. Tax Point Date. Date
+$.element[14].Definition The date of the Invoice, used to indicate the point at which tax becomes applicable.
+$.element[14].Cardinality 0..1
+$.element[14].ObjectClass Invoice
+$.element[14].PropertyTerm Tax Point Date
+$.element[14].RepresentationTerm Date
+$.element[14].DataType Date. Type
+$.element[15].@ref cbc:DocumentCurrencyCode
+$.element[15].@minOccurs 0
+$.element[15].@maxOccurs 1
+$.element[15].ComponentType BBIE
+$.element[15].DictionaryEntryName Invoice. Document_ Currency Code. Code
+$.element[15].Definition A code signifying the default currency for this document.
+$.element[15].Cardinality 0..1
+$.element[15].ObjectClass Invoice
+$.element[15].PropertyTermQualifier Document
+$.element[15].PropertyTerm Currency Code
+$.element[15].RepresentationTerm Code
+$.element[15].DataTypeQualifier Currency
+$.element[15].DataType Currency_ Code. Type
+$.element[16].@ref cbc:TaxCurrencyCode
+$.element[16].@minOccurs 0
+$.element[16].@maxOccurs 1
+$.element[16].ComponentType BBIE
+$.element[16].DictionaryEntryName Invoice. Tax_ Currency Code. Code
+$.element[16].Definition A code signifying the currency used for tax amounts in the Invoice.
+$.element[16].Cardinality 0..1
+$.element[16].ObjectClass Invoice
+$.element[16].PropertyTermQualifier Tax
+$.element[16].PropertyTerm Currency Code
+$.element[16].RepresentationTerm Code
+$.element[16].DataTypeQualifier Currency
+$.element[16].DataType Currency_ Code. Type
+$.element[17].@ref cbc:PricingCurrencyCode
+$.element[17].@minOccurs 0
+$.element[17].@maxOccurs 1
+$.element[17].ComponentType BBIE
+$.element[17].DictionaryEntryName Invoice. Pricing_ Currency Code. Code
+$.element[17].Definition A code signifying the currency used for prices in the Invoice.
+$.element[17].Cardinality 0..1
+$.element[17].ObjectClass Invoice
+$.element[17].PropertyTermQualifier Pricing
+$.element[17].PropertyTerm Currency Code
+$.element[17].RepresentationTerm Code
+$.element[17].DataTypeQualifier Currency
+$.element[17].DataType Currency_ Code. Type
+$.element[18].@ref cbc:PaymentCurrencyCode
+$.element[18].@minOccurs 0
+$.element[18].@maxOccurs 1
+$.element[18].ComponentType BBIE
+$.element[18].DictionaryEntryName Invoice. Payment_ Currency Code. Code
+$.element[18].Definition A code signifying the currency used for payment in the Invoice.
+$.element[18].Cardinality 0..1
+$.element[18].ObjectClass Invoice
+$.element[18].PropertyTermQualifier Payment
+$.element[18].PropertyTerm Currency Code
+$.element[18].RepresentationTerm Code
+$.element[18].DataTypeQualifier Currency
+$.element[18].DataType Currency_ Code. Type
+$.element[19].@ref cbc:PaymentAlternativeCurrencyCode
+$.element[19].@minOccurs 0
+$.element[19].@maxOccurs 1
+$.element[19].ComponentType BBIE
+$.element[19].DictionaryEntryName Invoice. Payment Alternative_ Currency Code. Code
+$.element[19].Definition A code signifying the alternative currency used for payment in the Invoice.
+$.element[19].Cardinality 0..1
+$.element[19].ObjectClass Invoice
+$.element[19].PropertyTermQualifier Payment Alternative
+$.element[19].PropertyTerm Currency Code
+$.element[19].RepresentationTerm Code
+$.element[19].DataTypeQualifier Currency
+$.element[19].DataType Currency_ Code. Type
+$.element[20].@ref cbc:AccountingCostCode
+$.element[20].@minOccurs 0
+$.element[20].@maxOccurs 1
+$.element[20].ComponentType BBIE
+$.element[20].DictionaryEntryName Invoice. Accounting Cost Code. Code
+$.element[20].Definition The buyer's accounting code, applied to the Invoice as a whole.
+$.element[20].Cardinality 0..1
+$.element[20].ObjectClass Invoice
+$.element[20].PropertyTerm Accounting Cost Code
+$.element[20].RepresentationTerm Code
+$.element[20].DataType Code. Type
+$.element[21].@ref cbc:AccountingCost
+$.element[21].@minOccurs 0
+$.element[21].@maxOccurs 1
+$.element[21].ComponentType BBIE
+$.element[21].DictionaryEntryName Invoice. Accounting Cost. Text
+$.element[21].Definition The buyer's accounting code, applied to the Invoice as a whole, expressed as text.
+$.element[21].Cardinality 0..1
+$.element[21].ObjectClass Invoice
+$.element[21].PropertyTerm Accounting Cost
+$.element[21].RepresentationTerm Text
+$.element[21].DataType Text. Type
+$.element[22].@ref cbc:LineCountNumeric
+$.element[22].@minOccurs 0
+$.element[22].@maxOccurs 1
+$.element[22].ComponentType BBIE
+$.element[22].DictionaryEntryName Invoice. Line Count. Numeric
+$.element[22].Definition The number of lines in the document.
+$.element[22].Cardinality 0..1
+$.element[22].ObjectClass Invoice
+$.element[22].PropertyTerm Line Count
+$.element[22].RepresentationTerm Numeric
+$.element[22].DataType Numeric. Type
+$.element[23].@ref cbc:BuyerReference
+$.element[23].@minOccurs 0
+$.element[23].@maxOccurs 1
+$.element[23].ComponentType BBIE
+$.element[23].DictionaryEntryName Invoice. Buyer_ Reference. Text
+$.element[23].Definition A reference provided by the buyer used for internal routing of the document.
+$.element[23].Cardinality 0..1
+$.element[23].ObjectClass Invoice
+$.element[23].PropertyTermQualifier Buyer
+$.element[23].PropertyTerm Reference
+$.element[23].RepresentationTerm Text
+$.element[23].DataType Text. Type
+$.element[24].@ref cac:InvoicePeriod
+$.element[24].@minOccurs 0
+$.element[24].@maxOccurs unbounded
+$.element[24].ComponentType ASBIE
+$.element[24].DictionaryEntryName Invoice. Invoice_ Period. Period
+$.element[24].Definition A period to which the Invoice applies.
+$.element[24].Cardinality 0..n
+$.element[24].ObjectClass Invoice
+$.element[24].PropertyTermQualifier Invoice
+$.element[24].PropertyTerm Period
+$.element[24].AssociatedObjectClass Period
+$.element[24].RepresentationTerm Period
+$.element[25].@ref cac:OrderReference
+$.element[25].@minOccurs 0
+$.element[25].@maxOccurs 1
+$.element[25].ComponentType ASBIE
+$.element[25].DictionaryEntryName Invoice. Order Reference
+$.element[25].Definition A reference to the Order with which this Invoice is associated.
+$.element[25].Cardinality 0..1
+$.element[25].ObjectClass Invoice
+$.element[25].PropertyTerm Order Reference
+$.element[25].AssociatedObjectClass Order Reference
+$.element[25].RepresentationTerm Order Reference
+$.element[26].@ref cac:BillingReference
+$.element[26].@minOccurs 0
+$.element[26].@maxOccurs unbounded
+$.element[26].ComponentType ASBIE
+$.element[26].DictionaryEntryName Invoice. Billing Reference
+$.element[26].Definition A reference to a billing document associated with this document.
+$.element[26].Cardinality 0..n
+$.element[26].ObjectClass Invoice
+$.element[26].PropertyTerm Billing Reference
+$.element[26].AssociatedObjectClass Billing Reference
+$.element[26].RepresentationTerm Billing Reference
+$.element[27].@ref cac:DespatchDocumentReference
+$.element[27].@minOccurs 0
+$.element[27].@maxOccurs unbounded
+$.element[27].ComponentType ASBIE
+$.element[27].DictionaryEntryName Invoice. Despatch_ Document Reference. Document Reference
+$.element[27].Definition A reference to a Despatch Advice associated with this document.
+$.element[27].Cardinality 0..n
+$.element[27].ObjectClass Invoice
+$.element[27].PropertyTermQualifier Despatch
+$.element[27].PropertyTerm Document Reference
+$.element[27].AssociatedObjectClass Document Reference
+$.element[27].RepresentationTerm Document Reference
+$.element[28].@ref cac:ReceiptDocumentReference
+$.element[28].@minOccurs 0
+$.element[28].@maxOccurs unbounded
+$.element[28].ComponentType ASBIE
+$.element[28].DictionaryEntryName Invoice. Receipt_ Document Reference. Document Reference
+$.element[28].Definition A reference to a Receipt Advice associated with this document.
+$.element[28].Cardinality 0..n
+$.element[28].ObjectClass Invoice
+$.element[28].PropertyTermQualifier Receipt
+$.element[28].PropertyTerm Document Reference
+$.element[28].AssociatedObjectClass Document Reference
+$.element[28].RepresentationTerm Document Reference
+$.element[29].@ref cac:StatementDocumentReference
+$.element[29].@minOccurs 0
+$.element[29].@maxOccurs unbounded
+$.element[29].ComponentType ASBIE
+$.element[29].DictionaryEntryName Invoice. Statement_ Document Reference. Document Reference
+$.element[29].Definition A reference to a Statement associated with this document.
+$.element[29].Cardinality 0..n
+$.element[29].ObjectClass Invoice
+$.element[29].PropertyTermQualifier Statement
+$.element[29].PropertyTerm Document Reference
+$.element[29].AssociatedObjectClass Document Reference
+$.element[29].RepresentationTerm Document Reference
+$.element[30].@ref cac:OriginatorDocumentReference
+$.element[30].@minOccurs 0
+$.element[30].@maxOccurs unbounded
+$.element[30].ComponentType ASBIE
+$.element[30].DictionaryEntryName Invoice. Originator_ Document Reference. Document Reference
+$.element[30].Definition A reference to an originator document associated with this document.
+$.element[30].Cardinality 0..n
+$.element[30].ObjectClass Invoice
+$.element[30].PropertyTermQualifier Originator
+$.element[30].PropertyTerm Document Reference
+$.element[30].AssociatedObjectClass Document Reference
+$.element[30].RepresentationTerm Document Reference
+$.element[31].@ref cac:ContractDocumentReference
+$.element[31].@minOccurs 0
+$.element[31].@maxOccurs unbounded
+$.element[31].ComponentType ASBIE
+$.element[31].DictionaryEntryName Invoice. Contract_ Document Reference. Document Reference
+$.element[31].Definition A reference to a contract associated with this document.
+$.element[31].Cardinality 0..n
+$.element[31].ObjectClass Invoice
+$.element[31].PropertyTermQualifier Contract
+$.element[31].PropertyTerm Document Reference
+$.element[31].AssociatedObjectClass Document Reference
+$.element[31].RepresentationTerm Document Reference
+$.element[32].@ref cac:AdditionalDocumentReference
+$.element[32].@minOccurs 0
+$.element[32].@maxOccurs unbounded
+$.element[32].ComponentType ASBIE
+$.element[32].DictionaryEntryName Invoice. Additional_ Document Reference. Document Reference
+$.element[32].Definition A reference to an additional document associated with this document.
+$.element[32].Cardinality 0..n
+$.element[32].ObjectClass Invoice
+$.element[32].PropertyTermQualifier Additional
+$.element[32].PropertyTerm Document Reference
+$.element[32].AssociatedObjectClass Document Reference
+$.element[32].RepresentationTerm Document Reference
+$.element[33].@ref cac:ProjectReference
+$.element[33].@minOccurs 0
+$.element[33].@maxOccurs unbounded
+$.element[33].ComponentType ASBIE
+$.element[33].DictionaryEntryName Invoice. Project Reference
+$.element[33].Definition Information about a project.
+$.element[33].Cardinality 0..n
+$.element[33].ObjectClass Invoice
+$.element[33].PropertyTerm Project Reference
+$.element[33].AssociatedObjectClass Project Reference
+$.element[33].RepresentationTerm Project Reference
+$.element[34].@ref cac:Signature
+$.element[34].@minOccurs 0
+$.element[34].@maxOccurs unbounded
+$.element[34].ComponentType ASBIE
+$.element[34].DictionaryEntryName Invoice. Signature
+$.element[34].Definition A signature applied to this document.
+$.element[34].Cardinality 0..n
+$.element[34].ObjectClass Invoice
+$.element[34].PropertyTerm Signature
+$.element[34].AssociatedObjectClass Signature
+$.element[34].RepresentationTerm Signature
+$.element[35].@ref cac:AccountingSupplierParty
+$.element[35].@minOccurs 1
+$.element[35].@maxOccurs 1
+$.element[35].ComponentType ASBIE
+$.element[35].DictionaryEntryName Invoice. Accounting_ Supplier Party. Supplier Party
+$.element[35].Definition The accounting supplier party.
+$.element[35].Cardinality 1
+$.element[35].ObjectClass Invoice
+$.element[35].PropertyTermQualifier Accounting
+$.element[35].PropertyTerm Supplier Party
+$.element[35].AssociatedObjectClass Supplier Party
+$.element[35].RepresentationTerm Supplier Party
+$.element[36].@ref cac:AccountingCustomerParty
+$.element[36].@minOccurs 1
+$.element[36].@maxOccurs 1
+$.element[36].ComponentType ASBIE
+$.element[36].DictionaryEntryName Invoice. Accounting_ Customer Party. Customer Party
+$.element[36].Definition The accounting customer party.
+$.element[36].Cardinality 1
+$.element[36].ObjectClass Invoice
+$.element[36].PropertyTermQualifier Accounting
+$.element[36].PropertyTerm Customer Party
+$.element[36].AssociatedObjectClass Customer Party
+$.element[36].RepresentationTerm Customer Party
+$.element[37].@ref cac:PayeeParty
+$.element[37].@minOccurs 0
+$.element[37].@maxOccurs 1
+$.element[37].ComponentType ASBIE
+$.element[37].DictionaryEntryName Invoice. Payee_ Party. Party
+$.element[37].Definition The payee.
+$.element[37].Cardinality 0..1
+$.element[37].ObjectClass Invoice
+$.element[37].PropertyTermQualifier Payee
+$.element[37].PropertyTerm Party
+$.element[37].AssociatedObjectClass Party
+$.element[37].RepresentationTerm Party
+$.element[38].@ref cac:BuyerCustomerParty
+$.element[38].@minOccurs 0
+$.element[38].@maxOccurs 1
+$.element[38].ComponentType ASBIE
+$.element[38].DictionaryEntryName Invoice. Buyer_ Customer Party. Customer Party
+$.element[38].Definition The buyer.
+$.element[38].Cardinality 0..1
+$.element[38].ObjectClass Invoice
+$.element[38].PropertyTermQualifier Buyer
+$.element[38].PropertyTerm Customer Party
+$.element[38].AssociatedObjectClass Customer Party
+$.element[38].RepresentationTerm Customer Party
+$.element[39].@ref cac:SellerSupplierParty
+$.element[39].@minOccurs 0
+$.element[39].@maxOccurs 1
+$.element[39].ComponentType ASBIE
+$.element[39].DictionaryEntryName Invoice. Seller_ Supplier Party. Supplier Party
+$.element[39].Definition The seller.
+$.element[39].Cardinality 0..1
+$.element[39].ObjectClass Invoice
+$.element[39].PropertyTermQualifier Seller
+$.element[39].PropertyTerm Supplier Party
+$.element[39].AssociatedObjectClass Supplier Party
+$.element[39].RepresentationTerm Supplier Party
+$.element[40].@ref cac:TaxRepresentativeParty
+$.element[40].@minOccurs 0
+$.element[40].@maxOccurs 1
+$.element[40].ComponentType ASBIE
+$.element[40].DictionaryEntryName Invoice. Tax Representative_ Party. Party
+$.element[40].Definition The tax representative.
+$.element[40].Cardinality 0..1
+$.element[40].ObjectClass Invoice
+$.element[40].PropertyTermQualifier Tax Representative
+$.element[40].PropertyTerm Party
+$.element[40].AssociatedObjectClass Party
+$.element[40].RepresentationTerm Party
+$.element[41].@ref cac:Delivery
+$.element[41].@minOccurs 0
+$.element[41].@maxOccurs unbounded
+$.element[41].ComponentType ASBIE
+$.element[41].DictionaryEntryName Invoice. Delivery
+$.element[41].Definition A delivery associated with this document.
+$.element[41].Cardinality 0..n
+$.element[41].ObjectClass Invoice
+$.element[41].PropertyTerm Delivery
+$.element[41].AssociatedObjectClass Delivery
+$.element[41].RepresentationTerm Delivery
+$.element[42].@ref cac:DeliveryTerms
+$.element[42].@minOccurs 0
+$.element[42].@maxOccurs 1
+$.element[42].ComponentType ASBIE
+$.element[42].DictionaryEntryName Invoice. Delivery Terms
+$.element[42].Definition A set of delivery terms associated with this document.
+$.element[42].Cardinality 0..1
+$.element[42].ObjectClass Invoice
+$.element[42].PropertyTerm Delivery Terms
+$.element[42].AssociatedObjectClass Delivery Terms
+$.element[42].RepresentationTerm Delivery Terms
+$.element[43].@ref cac:PaymentMeans
+$.element[43].@minOccurs 0
+$.element[43].@maxOccurs unbounded
+$.element[43].ComponentType ASBIE
+$.element[43].DictionaryEntryName Invoice. Payment Means
+$.element[43].Definition Expected means of payment.
+$.element[43].Cardinality 0..n
+$.element[43].ObjectClass Invoice
+$.element[43].PropertyTerm Payment Means
+$.element[43].AssociatedObjectClass Payment Means
+$.element[43].RepresentationTerm Payment Means
+$.element[44].@ref cac:PaymentTerms
+$.element[44].@minOccurs 0
+$.element[44].@maxOccurs unbounded
+$.element[44].ComponentType ASBIE
+$.element[44].DictionaryEntryName Invoice. Payment Terms
+$.element[44].Definition A set of payment terms associated with this document.
+$.element[44].Cardinality 0..n
+$.element[44].ObjectClass Invoice
+$.element[44].PropertyTerm Payment Terms
+$.element[44].AssociatedObjectClass Payment Terms
+$.element[44].RepresentationTerm Payment Terms
+$.element[45].@ref cac:PrepaidPayment
+$.element[45].@minOccurs 0
+$.element[45].@maxOccurs unbounded
+$.element[45].ComponentType ASBIE
+$.element[45].DictionaryEntryName Invoice. Prepaid_ Payment. Payment
+$.element[45].Definition A prepaid payment.
+$.element[45].Cardinality 0..n
+$.element[45].ObjectClass Invoice
+$.element[45].PropertyTermQualifier Prepaid
+$.element[45].PropertyTerm Payment
+$.element[45].AssociatedObjectClass Payment
+$.element[45].RepresentationTerm Payment
+$.element[46].@ref cac:AllowanceCharge
+$.element[46].@minOccurs 0
+$.element[46].@maxOccurs unbounded
+$.element[46].ComponentType ASBIE
+$.element[46].DictionaryEntryName Invoice. Allowance Charge
+$.element[46].Definition A discount or charge that applies to a price component.
+$.element[46].Cardinality 0..n
+$.element[46].ObjectClass Invoice
+$.element[46].PropertyTerm Allowance Charge
+$.element[46].AssociatedObjectClass Allowance Charge
+$.element[46].RepresentationTerm Allowance Charge
+$.element[47].@ref cac:TaxExchangeRate
+$.element[47].@minOccurs 0
+$.element[47].@maxOccurs 1
+$.element[47].ComponentType ASBIE
+$.element[47].DictionaryEntryName Invoice. Tax_ Exchange Rate. Exchange Rate
+$.element[47].Definition The exchange rate between the document currency and the tax currency.
+$.element[47].Cardinality 0..1
+$.element[47].ObjectClass Invoice
+$.element[47].PropertyTermQualifier Tax
+$.element[47].PropertyTerm Exchange Rate
+$.element[47].AssociatedObjectClass Exchange Rate
+$.element[47].RepresentationTerm Exchange Rate
+$.element[48].@ref cac:PricingExchangeRate
+$.element[48].@minOccurs 0
+$.element[48].@maxOccurs 1
+$.element[48].ComponentType ASBIE
+$.element[48].DictionaryEntryName Invoice. Pricing_ Exchange Rate. Exchange Rate
+$.element[48].Definition The exchange rate between the document currency and the pricing currency.
+$.element[48].Cardinality 0..1
+$.element[48].ObjectClass Invoice
+$.element[48].PropertyTermQualifier Pricing
+$.element[48].PropertyTerm Exchange Rate
+$.element[48].AssociatedObjectClass Exchange Rate
+$.element[48].RepresentationTerm Exchange Rate
+$.element[49].@ref cac:PaymentExchangeRate
+$.element[49].@minOccurs 0
+$.element[49].@maxOccurs 1
+$.element[49].ComponentType ASBIE
+$.element[49].DictionaryEntryName Invoice. Payment_ Exchange Rate. Exchange Rate
+$.element[49].Definition The exchange rate between the document currency and the payment currency.
+$.element[49].Cardinality 0..1
+$.element[49].ObjectClass Invoice
+$.element[49].PropertyTermQualifier Payment
+$.element[49].PropertyTerm Exchange Rate
+$.element[49].AssociatedObjectClass Exchange Rate
+$.element[49].RepresentationTerm Exchange Rate
+$.element[50].@ref cac:PaymentAlternativeExchangeRate
+$.element[50].@minOccurs 0
+$.element[50].@maxOccurs 1
+$.element[50].ComponentType ASBIE
+$.element[50].DictionaryEntryName Invoice. Payment Alternative_ Exchange Rate. Exchange Rate
+$.element[50].Definition The exchange rate between the document currency and the payment alternative currency.
+$.element[50].Cardinality 0..1
+$.element[50].ObjectClass Invoice
+$.element[50].PropertyTermQualifier Payment Alternative
+$.element[50].PropertyTerm Exchange Rate
+$.element[50].AssociatedObjectClass Exchange Rate
+$.element[50].RepresentationTerm Exchange Rate
+$.element[51].@ref cac:TaxTotal
+$.element[51].@minOccurs 0
+$.element[51].@maxOccurs unbounded
+$.element[51].ComponentType ASBIE
+$.element[51].DictionaryEntryName Invoice. Tax Total
+$.element[51].Definition The total amount of a specific type of tax.
+$.element[51].Cardinality 0..n
+$.element[51].ObjectClass Invoice
+$.element[51].PropertyTerm Tax Total
+$.element[51].AssociatedObjectClass Tax Total
+$.element[51].RepresentationTerm Tax Total
+$.element[52].@ref cac:WithholdingTaxTotal
+$.element[52].@minOccurs 0
+$.element[52].@maxOccurs unbounded
+$.element[52].ComponentType ASBIE
+$.element[52].DictionaryEntryName Invoice. Withholding_ Tax Total. Tax Total
+$.element[52].Definition The total withholding tax.
+$.element[52].Cardinality 0..n
+$.element[52].ObjectClass Invoice
+$.element[52].PropertyTermQualifier Withholding
+$.element[52].PropertyTerm Tax Total
+$.element[52].AssociatedObjectClass Tax Total
+$.element[52].RepresentationTerm Tax Total
+$.element[53].@ref cac:LegalMonetaryTotal
+$.element[53].@minOccurs 1
+$.element[53].@maxOccurs 1
+$.element[53].ComponentType ASBIE
+$.element[53].DictionaryEntryName Invoice. Legal_ Monetary Total. Monetary Total
+$.element[53].Definition The total amount payable on the Invoice, including Allowances, Charges, and Taxes.
+$.element[53].Cardinality 1
+$.element[53].ObjectClass Invoice
+$.element[53].PropertyTermQualifier Legal
+$.element[53].PropertyTerm Monetary Total
+$.element[53].AssociatedObjectClass Monetary Total
+$.element[53].RepresentationTerm Monetary Total
+$.element[54].@ref cac:InvoiceLine
+$.element[54].@minOccurs 1
+$.element[54].@maxOccurs unbounded
+$.element[54].ComponentType ASBIE
+$.element[54].DictionaryEntryName Invoice. Invoice Line
+$.element[54].Definition A line describing an invoice item.
+$.element[54].Cardinality 1..n
+$.element[54].ObjectClass Invoice
+$.element[54].PropertyTerm Invoice Line
+$.element[54].AssociatedObjectClass Invoice Line
+$.element[54].RepresentationTerm Invoice Line

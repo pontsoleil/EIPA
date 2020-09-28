@@ -1,0 +1,598 @@
+{
+"simpleType":[{
+"@name":"DateTimeType",
+"@xmllang":"en",
+"UniqueID":"UDT000008",
+"Acronym":"UDT",
+"DictionaryEntryName":"Date Time. Type",
+"Version":2.01,
+"Definition":"A particular point in the progression of time together with relevant supplementary information.",
+"PrimitiveType":"string",
+"UsageRule":"Can be used for a date and/or time.",
+"@base":"xsd:dateTime"
+},{
+"@name":"DateType",
+"@xmllang":"en",
+"UniqueID":"UDT000009",
+"Acronym":"UDT",
+"DictionaryEntryName":"Date. Type",
+"Version":2.01,
+"Definition":"A day of the month or year as specified by a number.",
+"PrimitiveType":"string",
+"@base":"xsd:date"
+},{
+"@name":"TimeType",
+"@xmllang":"en",
+"UniqueID":"UDT0000010",
+"Acronym":"UDT",
+"DictionaryEntryName":"Time. Type",
+"Version":2.01,
+"Definition":"a particular point in the progression of time of a day together with relevant supplementary information.",
+"PrimitiveType":"string",
+"@base":"xsd:time"
+},{
+"@name":"IndicatorType",
+"@xmllang":"en",
+"UniqueID":"UDT0000012",
+"Acronym":"UDT",
+"DictionaryEntryName":"Indicator. Type",
+"Version":2.01,
+"Definition":"A list of two mutually exclusive values that express the only possible states of a property.",
+"PrimitiveType":"string",
+"@base":"xsd:boolean"
+},{
+"@name":"NumericType",
+"@xmllang":"en",
+"UniqueID":"UDT0000014",
+"Acronym":"UDT",
+"DictionaryEntryName":"Numeric. Type",
+"Version":2.01,
+"Definition":"Assigned mathematical number that does not require a unit of quantity, measure or currency.",
+"PrimitiveType":"string",
+"@base":"xsd:decimal"
+},{
+"@name":"ValueType",
+"@xmllang":"en",
+"UniqueID":"UDT0000015",
+"Acronym":"UDT",
+"Version":2.01,
+"DictionaryEntryName":"Value. Type",
+"Definition":"A value is the the numerical amount denoted by an algebraic term, a magnitude, quantity, or number.",
+"PrimitiveType":"string",
+"@base":"xsd:decimal"
+},{
+"@name":"PercentType",
+"@xmllang":"en",
+"UniqueID":"UDT0000016",
+"Acronym":"UDT",
+"Version":2.01,
+"DictionaryEntryName":"Percent. Type",
+"Definition":"Numeric information expressed as parts per hundred as determined by calculation.",
+"PrimitiveType":"string",
+"@base":"xsd:decimal"
+},{
+"@name":"RateType",
+"@xmllang":"en",
+"UniqueID":"UDT0000017",
+"Acronym":"UDT",
+"Version":2.01,
+"DictionaryEntryName":"Rate. Type",
+"Definition":"A stated numerical value of one thing corresponding proportionally to a certain value of some other thing.",
+"PrimitiveType":"string",
+"@base":"xsd:decimal"
+}],
+"complexType":[{
+"@name":"AmountType",
+"@xmllang":"en",
+"UniqueID":"UDT000001",
+"Acronym":"UDT",
+"DictionaryEntryName":"Amount. Type",
+"Version":2.01,
+"Definition":"A number of monetary units specified in a currency where the unit of the currency is explicit or implied.",
+"PrimitiveType":"decimal",
+"@base":"xsd:decimal",
+"attribute":[{
+"@name":"currencyID",
+"@type":"clm5ISO42173A:ISO3AlphaCurrencyCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Amount. Currency. Identifier",
+"Definition":"The currency of the amount.",
+"PrimitiveType":"string",
+"usageRule":"By default, use latest ersion of ISO 4217."
+}]
+},{
+"@name":"BinaryObjectType",
+"@xmllang":"en",
+"UniqueID":"UDT000002",
+"Acronym":"UDT",
+"DictionaryEntryName":"Binary Object. Type",
+"Version":2.01,
+"Definition":"A set of finite-length sequences of binary octets.",
+"PrimitiveType":"binary",
+"@base":"xsd:base64Binary",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Binary Object. Format. Text",
+"Definition":"The format of the binary content.",
+"PrimitiveType":"string"
+},{
+"@name":"mimeCode",
+"@type":"clmIANAMIMEMediaType:MIMEMediaTypeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Binary Object. Mime. Code",
+"Definition":"The mime type of the binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"encodingCode",
+"@type":"clm60133:CharacterSetEncodingCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Binary Object. Encoding. Code",
+"Definition":"Specifies the decoding algorithm of the binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"characterSetCode",
+"@type":"clmIANACharacterSetCode:CharacterSetCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Binary Object. Character Set. Code",
+"Definition":"The character set of the binary object if the mime type is text.",
+"PrimitiveType":"string"
+},{
+"@name":"uri",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Binary Object. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the binary object is located.",
+"PrimitiveType":"string"
+},{
+"@name":"filename",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Binary Object. Filename. Text",
+"Definition":"The filename of the binary object.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"GraphicType",
+"@xmllang":"en",
+"UniqueID":"UDT000003",
+"Acronym":"UDT",
+"DictionaryEntryName":"Graphic. Type",
+"Version":2.01,
+"Definition":"A graphic binary object is a visual image displayed on a screen or stored as data.",
+"PrimitiveType":"binary",
+"@base":"xsd:base64Binary",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Graphic. Format. Text",
+"Definition":"The format of the graphic binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"mimeCode",
+"@type":"clmIANAMIMEMediaType:MIMEMediaTypeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Graphic. Mime. Code",
+"Definition":"The mime type of the graphic binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"encodingCode",
+"@type":"clm60133:CharacterSetEncodingCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Graphic. Encoding. Code",
+"Definition":"Specifies the decoding algorithm of the graphic binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"uri",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Graphic. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the graphic binary object is located.",
+"PrimitiveType":"string"
+},{
+"@name":"filename",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Graphic. Filename. Text",
+"Definition":"The filename of the graphic binary object.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"PictureType",
+"@xmllang":"en",
+"UniqueID":"UDT000004",
+"Acronym":"UDT",
+"DictionaryEntryName":"Picture. Type",
+"Version":2.01,
+"Definition":"A visual representation of a person, object, or scene instantiated as a painting, drawing, or photograph.",
+"PrimitiveType":"binary",
+"@base":"xsd:base64Binary",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Picture. Format. Text",
+"Definition":"The format of the picture binary object content.",
+"PrimitiveType":"string"
+},{
+"@name":"mimeCode",
+"@type":"clmIANAMIMEMediaType:MIMEMediaTypeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Picture. Mime. Code",
+"Definition":"The mime type of the picture binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"encodingCode",
+"@type":"clm60133:CharacterSetEncodingCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Picture. Encoding. Code",
+"Definition":"Specifies the decoding algorithm of the picture binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"uri",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Picture. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the picture binary object is located.",
+"PrimitiveType":"string"
+},{
+"@name":"filename",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Picture. Filename. Text",
+"Definition":"The filename of the picture object.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"SoundType",
+"@xmllang":"en",
+"UniqueID":"UDT000005",
+"Acronym":"UDT",
+"DictionaryEntryName":"Sound. Type",
+"Version":2.01,
+"Definition":"A sound binary object is an electronic file containing music, speech, sound effects or other audio.",
+"PrimitiveType":"binary",
+"@base":"xsd:base64Binary",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Sound. Format. Text",
+"Definition":"The format of the sound binary object content.",
+"PrimitiveType":"string"
+},{
+"@name":"mimeCode",
+"@type":"clmIANAMIMEMediaType:MIMEMediaTypeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Sound. Mime. Code",
+"Definition":"The mime type of the sound binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"encodingCode",
+"@type":"clm60133:CharacterSetEncodingCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Sound. Encoding. Code",
+"Definition":"Specifies the decoding algorithm of the sound binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"uri",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Sound. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the sound binary object is located.",
+"PrimitiveType":"string"
+},{
+"@name":"filename",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Sound. Filename. Text",
+"Definition":"The filename of the sound binary object.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"VideoType",
+"@xmllang":"en",
+"UniqueID":"UDT000006",
+"Acronym":"UDT",
+"DictionaryEntryName":"Video. Type",
+"Version":2.01,
+"Definition":"An electronically captured, recorded, processed, stored, transmitted, or reconstructed sequences of still images representing scenes in motion.",
+"PrimitiveType":"binary",
+"@base":"xsd:base64Binary",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Video. Format. Text",
+"Definition":"The format of the video binary object content.",
+"PrimitiveType":"string"
+},{
+"@name":"mimeCode",
+"@type":"clmIANAMIMEMediaType:MIMEMediaTypeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Video. Mime. Code",
+"Definition":"The mime type of the video binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"encodingCode",
+"@type":"clm60133:CharacterSetEncodingCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Video. Encoding. Code",
+"Definition":"Specifies the decoding algorithm of the video binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"uri",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Video. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the video binary object is located.",
+"PrimitiveType":"string"
+},{
+"@name":"filename",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Video. Filename. Text",
+"Definition":"The filename of the video binary object.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"CodeType",
+"@xmllang":"en",
+"UniqueID":"UDT000007",
+"Acronym":"UDT",
+"DictionaryEntryName":"Code. Type",
+"Version":2.01,
+"Definition":"A character string (letters, figures, or symbols) that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute together with relevant supplementary information.",
+"PrimitiveType":"string",
+"@base":"xsd:token",
+"attribute":[{
+"@name":"listID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Identifier",
+"Definition":"The identification of a list of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"listAgencyID",
+"@type":"clm63055:AgencyIdentificationCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Agency. Identifier",
+"Definition":"An agency that maintains one or more code lists.",
+"PrimitiveType":"string",
+"UsageRule":"Should be used"
+},{
+"@name":"listAgencyName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Agency Name. Text",
+"Definition":"The name of the agency that maintains the code list.",
+"PrimitiveType":"string",
+"UsageRule":"Use if Code List. Agency. Identifier is not used"
+},{
+"@name":"listName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Name. Text",
+"Definition":"The name of a list of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"listVersionID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Version. Identifier",
+"Definition":"The version of the code list.",
+"PrimitiveType":"string"
+},{
+"@name":"name",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code. Name. Text",
+"Definition":"The textual equivalent of the code content.",
+"PrimitiveType":"string"
+},{
+"@name":"languageID",
+"@type":"xsd:language",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code. Language. Identifier",
+"Definition":"The identifier of the language used in the corresponding text string.",
+"PrimitiveType":"string"
+},{
+"@name":"listURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the code list is located.",
+"PrimitiveType":"string"
+},{
+"@name":"listSchemeURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Code List. Scheme Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the code list scheme is located.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"IDType",
+"@xmllang":"en",
+"UniqueID":"UDT0000011",
+"Acronym":"UDT",
+"DictionaryEntryName":"Identifier. Type",
+"Version":2.01,
+"Definition":"A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
+"PrimitiveType":"string",
+"@base":"xsd:token",
+"attribute":[{
+"@name":"schemeID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme. Identifier",
+"Definition":"The identification of the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme. Name. Text",
+"Definition":"The name of the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeAgencyID",
+"@type":"clm63055:AgencyIdentificationCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme. Agency. Identifier",
+"Definition":"The identification of the agency that maintains the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeAgencyName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme. Agency Name. Text",
+"Definition":"The name of the agency that maintains the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeVersionID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme. Version. Identifier",
+"Definition":"The version of the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeDataURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme Data. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the identification scheme data is located.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Identification Scheme. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the identification scheme is located.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"MeasureType",
+"@xmllang":"en",
+"UniqueID":"UDT0000013",
+"Acronym":"UDT",
+"DictionaryEntryName":"Measure. Type",
+"Version":2.01,
+"Definition":"A numeric value determined by measuring an object along with the unit of measure specified or implied.",
+"PropertyTerm":"Type",
+"PrimitiveType":"decimal",
+"@base":"xsd:decimal",
+"attribute":[{
+"@name":"unitCode",
+"@type":"clm6Recommendation20:MeasurementUnitCommonCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Measure. Unit. Code",
+"Definition":"The type of unit of measure.",
+"PrimitiveType":"string",
+"UsageRule":"Default is current version of UN/ECE Rec. 20"
+}]
+},{
+"@name":"QuantityType",
+"@xmllang":"en",
+"UniqueID":"UDT0000018",
+"Acronym":"UDT",
+"DictionaryEntryName":"Quantity. Type",
+"Version":2.01,
+"Definition":"A counted number of non-monetary units possibly including fractions.",
+"PrimitiveType":"decimal",
+"@base":"xsd:decimal",
+"attribute":[{
+"@name":"unitCode",
+"@type":"clm6Recommendation20:MeasurementUnitCommonCodeContentType",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Quantity. Unit. Code",
+"Definition":"The unit of the quantity",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"TextType",
+"@xmllang":"en",
+"UniqueID":"UDT0000019",
+"Acronym":"UDT",
+"DictionaryEntryName":"Text. Type",
+"Version":2.01,
+"Definition":"A character string (i.e. a finite set of characters) generally in the form of words of a language.",
+"PrimitiveType":"string",
+"@base":"xsd:string",
+"attribute":[{
+"@name":"languageID",
+"@type":"xsd:language",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Text. Language. Identifier",
+"Definition":"The identifier of the language used in the corresponding text string.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"NameType",
+"@xmllang":"en",
+"UniqueID":"UDT0000020",
+"Acronym":"UDT",
+"DictionaryEntryName":"Name. Type",
+"Version":2.01,
+"Definition":"A word or phrase that constitutes the distinctive designation of a person, place, thing or concept.",
+"PrimitiveType":"string",
+"@base":"xsd:string",
+"attribute":[{
+"@name":"languageID",
+"@type":"xsd:language",
+"@use":"optional",
+"@xmllang":"en",
+"Name":"Language. Identifier",
+"Definition":"The identifier of the language used in the corresponding text string",
+"PrimitiveType":"string"
+}]
+}]
+}

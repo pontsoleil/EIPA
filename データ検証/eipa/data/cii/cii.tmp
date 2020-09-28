@@ -1,0 +1,129 @@
+$.element.@name CrossIndustryInvoice
+$.element.@type rsm:CrossIndustryInvoiceType
+$.element.@xml lang en
+$.element.UniqueID CII
+$.element.Acronym RSM
+$.element.Name CrossIndustryInvoice
+$.element.Version 1.0
+$.element.Definition A message used as a request for payment, or modification of a request for payment, for the supply of goods or services ordered, delivered, received, consumed.
+$.element.BusinessProcessContextValue Invoicing
+$.element.GeopoliticalOrRegionContextValue In All Contexts
+$.element.OfficialConstraintContextValue None
+$.element.ProductContextValue In All Contexts
+$.element.IndustryContextValue In All Contexts
+$.element.BusinessProcessRoleContextValue In All Contexts
+$.element.SupportingRoleContextValue In All Contexts
+$.element.SystemCapabilitiesContextValue In All Contexts
+$.complexType.@name CrossIndustryInvoiceType
+$.complexType.@xml lang en
+$.complexType.UniqueID CII-2
+$.complexType.Acronym MA
+$.complexType.DictionaryEntryName Cross Industry_ Invoice. Details
+$.complexType.Version 1.0
+$.complexType.Definition A message used as a request for payment, or modification of a request for payment, for the supply of goods or services ordered, delivered, received, consumed.
+$.complexType.ObjectClassTerm Invoice
+$.complexType.ObjectClassQualifierTerm Cross Industry
+$.complexType.BusinessProcessContextValue Invoicing
+$.complexType.GeopoliticalOrRegionContextValue In All Contexts
+$.complexType.OfficialConstraintContextValue None
+$.complexType.ProductContextValue In All Contexts
+$.complexType.IndustryContextValue In All Contexts
+$.complexType.BusinessProcessRoleContextValue In All Contexts
+$.complexType.SupportingRoleContextValue In All Contexts
+$.complexType.SystemCapabilitiesContextValue In All Contexts
+$.complexType.element[1].@name CIExchangedDocumentContext
+$.complexType.element[1].@type ram:CIExchangedDocumentContextType
+$.complexType.element[1].@xml lang en
+$.complexType.element[1].UniqueID CII01
+$.complexType.element[1].Acronym ASMA
+$.complexType.element[1].DictionaryEntryName Cross Industry_ Invoice. CI_ Exchanged Document_ Context
+$.complexType.element[1].Version 1.0
+$.complexType.element[1].Definition The scenario or setting of a Cross Industry Invoice (CII) exchanged document, such as its business process application context.
+$.complexType.element[1].Cardinality 1
+$.complexType.element[1].ObjectClassTerm Invoice
+$.complexType.element[1].ObjectClassQualifierTerm Cross Industry
+$.complexType.element[1].AssociationType composition
+$.complexType.element[1].PropertyTerm
+$.complexType.element[1].AssociatedObjectClassTerm Context
+$.complexType.element[1].AssociatedObjectClassQualifierTerm[1] CI
+$.complexType.element[1].AssociatedObjectClassQualifierTerm[2] Exchanged Document
+$.complexType.element[1].BusinessProcessContextValue Invoicing
+$.complexType.element[1].GeopoliticalOrRegionContextValue In All Contexts
+$.complexType.element[1].OfficialConstraintContextValue None
+$.complexType.element[1].ProductContextValue In All Contexts
+$.complexType.element[1].IndustryContextValue In All Contexts
+$.complexType.element[1].BusinessProcessRoleContextValue In All Contexts
+$.complexType.element[1].SupportingRoleContextValue In All Contexts
+$.complexType.element[1].SystemCapabilitiesContextValue In All Contexts
+$.complexType.element[2].@name CIIHExchangedDocument
+$.complexType.element[2].@type ram:CIIHExchangedDocumentType
+$.complexType.element[2].@xml lang en
+$.complexType.element[2].UniqueID CII02
+$.complexType.element[2].Acronym ASMA
+$.complexType.element[2].DictionaryEntryName Cross Industry_ Invoice. CIIH_ Exchanged_ Document
+$.complexType.element[2].Version 1.0
+$.complexType.element[2].Definition A collection of data for a Cross Industry Invoice Header (CIIH) that is exchanged between two or more parties in written, printed or electronic form.
+$.complexType.element[2].Cardinality 1
+$.complexType.element[2].ObjectClassTerm Invoice
+$.complexType.element[2].ObjectClassQualifierTerm Cross Industry
+$.complexType.element[2].AssociationType composition
+$.complexType.element[2].PropertyTerm
+$.complexType.element[2].AssociatedObjectClassTerm Document
+$.complexType.element[2].AssociatedObjectClassQualifierTerm[1] CIIH
+$.complexType.element[2].AssociatedObjectClassQualifierTerm[2] Exchanged
+$.complexType.element[2].BusinessProcessContextValue Invoicing
+$.complexType.element[2].GeopoliticalOrRegionContextValue In All Contexts
+$.complexType.element[2].OfficialConstraintContextValue None
+$.complexType.element[2].ProductContextValue In All Contexts
+$.complexType.element[2].IndustryContextValue In All Contexts
+$.complexType.element[2].BusinessProcessRoleContextValue In All Contexts
+$.complexType.element[2].SupportingRoleContextValue In All Contexts
+$.complexType.element[2].SystemCapabilitiesContextValue In All Contexts
+$.complexType.element[3].@name CIIHSupplyChainTradeTransaction
+$.complexType.element[3].@type ram:CIIHSupplyChainTradeTransactionType
+$.complexType.element[3].@xml lang en
+$.complexType.element[3].UniqueID CII03
+$.complexType.element[3].Acronym ASMA
+$.complexType.element[3].DictionaryEntryName Cross Industry_ Invoice. CIIH_ Supply Chain_ Trade Transaction
+$.complexType.element[3].Version 1.0
+$.complexType.element[3].Definition The trade line items, trade agreement, trade delivery and trade settlement details included in this Cross Industry Invoice Header (CIIH).
+$.complexType.element[3].Cardinality 1
+$.complexType.element[3].ObjectClassTerm Invoice
+$.complexType.element[3].ObjectClassQualifierTerm Cross Industry
+$.complexType.element[3].AssociationType composition
+$.complexType.element[3].PropertyTerm
+$.complexType.element[3].AssociatedObjectClassTerm Trade Transaction
+$.complexType.element[3].AssociatedObjectClassQualifierTerm[1] CIIH
+$.complexType.element[3].AssociatedObjectClassQualifierTerm[2] Supply Chain
+$.complexType.element[3].BusinessProcessContextValue Invoicing
+$.complexType.element[3].GeopoliticalOrRegionContextValue In All Contexts
+$.complexType.element[3].OfficialConstraintContextValue None
+$.complexType.element[3].ProductContextValue In All Contexts
+$.complexType.element[3].IndustryContextValue In All Contexts
+$.complexType.element[3].BusinessProcessRoleContextValue In All Contexts
+$.complexType.element[3].SupportingRoleContextValue In All Contexts
+$.complexType.element[3].SystemCapabilitiesContextValue In All Contexts
+$.complexType.element[4].@name ValuationBreakdownStatement
+$.complexType.element[4].@type ram:ValuationBreakdownStatementType
+$.complexType.element[4].@minOccurs 0
+$.complexType.element[4].@xml lang en
+$.complexType.element[4].UniqueID CII04
+$.complexType.element[4].Acronym ASMA
+$.complexType.element[4].DictionaryEntryName Cross Industry_ Invoice. Valuation_ Breakdown Statement
+$.complexType.element[4].Version 1.0
+$.complexType.element[4].Definition A detailed statement of work, prices, and dimensions included in this Cross Industry Invoice Header (CIIH).
+$.complexType.element[4].Cardinality 0..1
+$.complexType.element[4].ObjectClassTerm Invoice
+$.complexType.element[4].ObjectClassQualifierTerm Cross Industry
+$.complexType.element[4].AssociationType composition
+$.complexType.element[4].PropertyTerm
+$.complexType.element[4].AssociatedObjectClassTerm Breakdown Statement
+$.complexType.element[4].AssociatedObjectClassQualifierTerm[1] Valuation
+$.complexType.element[4].BusinessProcessContextValue Invoicing
+$.complexType.element[4].GeopoliticalOrRegionContextValue In All Contexts
+$.complexType.element[4].OfficialConstraintContextValue None
+$.complexType.element[4].ProductContextValue In All Contexts
+$.complexType.element[4].IndustryContextValue In All Contexts
+$.complexType.element[4].BusinessProcessRoleContextValue In All Contexts
+$.complexType.element[4].SupportingRoleContextValue In All Contexts
+$.complexType.element[4].SystemCapabilitiesContextValue In All Contexts

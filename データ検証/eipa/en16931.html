@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>CEN/TS 16931-3</title>
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/DataTables/Editor-1.9.3/css/editor.dataTables.min.css">
+    <script type="text/javascript" src="/DataTables/DataTables-1.10.21/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/DataTables/Editor-1.9.3/js/dataTables.editor.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="/DataTables/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css ">
+    <!-- this page -->
+    <link rel="stylesheet" href="css/en16931.css">
+    <link rel="stylesheet" href="css/snackbar.css">
+    <script type="text/javascript" src="js/en16931.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/snackbar.js"></script>
+    <script type="text/javascript" class="init">
+      $(document).ready(function() {
+        if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+          $('#ie-warning').removeClass('d-none');
+          return;
+        }
+        $('#ie-warning').addClass('d-none');
+        $('#root').removeClass('d-none').addClass('d-block');
+        initModule();
+        history.replaceState({}, null, location.pathname);
+        //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
+      });
+    </script>
+  </head>
+  <body>
+    <!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
+    <div id="ie-warning" class="container h-100 d-none">
+      <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+          <div>
+            <h1>This service doesn't support Internet Explorer (IE).</h1>
+            Please use either Edge, Chrome, Safari, FireFox, etc.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-1" class="tab">
+      <p class="tablinks title">FROM</p>
+      <p class="tablinks ubl2en_ivc" onclick="setFrame('ubl2en_ivc');return false;">UBL Invoice</p>
+      <p class="tablinks ubl2en_cnt" onclick="setFrame('ubl2en_cnt');return false;">Credit note</p>
+      <p class="tablinks cii2en" onclick="setFrame('cii2en');return false;">UN/CEFACT CII</p>
+    </div>
+
+    <div id="tab-2" class="tab">
+      <p class="tablinks title">TO</p>
+      <p class="tablinks en_ivc2ubl" onclick="setFrame('en_ivc2ubl');return false;">UBL Invoice</p>
+      <p class="tablinks en_cnt2ubl" onclick="setFrame('en_cnt2ubl');return false;">Credit note</p>
+      <p class="tablinks en2cii" onclick="setFrame('en2cii');return false;">UN/CEFACT CII</p>
+    </div>
+
+    <!-- ROOT -->
+    <div id="root" class="tabcontent serif">
+      <div id="root-container">
+      </div>
+    </div>
+
+    <div class="d-none">
+    <!-- en2x -->
+      <!--
+        EN_Parent EN_ID EN_Level EN_Card EN_BT EN_Desc EN_DT
+        Path Type Card Match Rules
+      -->
+    <!-- en2cii Syntax binding for UN/CEFACT XML Industory Invoice D16B -->
+      <div id="en2cii-container">
+        <div id="en2cii-frame">
+          <span class="table-title">CEN/TS 16931-3-3 Table 2 - Semantic model to UN/CEFACT syntax elements mapping (normative)</span>
+          <table id="en2cii" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Data Type</th>
+                <th>Card.</th>
+                <th>Path</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    <!-- en_ivc2ubl CEN/TS 16931-3-2 Syntax binding for ISO/IEC 19845 (UBL 2.1) Invoice and credit note -->
+      <div id="en_ivc2ubl-container">
+        <div id="en_ivc2ubl-frame">
+          <span class="table-title">CEN/TS 16931-3-2 Table 3 - Semantic model to UBL invoice syntax elements mapping (normative)</span>
+          <table id="en_ivc2ubl" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Data Type</th>
+                <th>Card.</th>
+                <th>Path</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    <!-- en_cnt2ubl CEN/TS 16931-3-2 Syntax binding for ISO/IEC 19845 (UBL 2.1) Invoice and credit note -->
+      <div id="en_cnt2ubl-container">
+        <div id="en_cnt2ubl-frame">
+          <span class="table-title">CEN/TS 16931-3-2 Table 5 - Semantic model to UBL credit note syntax elements mapping (normative)</span>
+          <table id="en_cnt2ubl" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Data Type</th>
+                <th>Card.</th>
+                <th>Path</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    <!-- x2en -->
+      <!--
+        Path Card EN_ID EN_Level EN_Card EN_BT EN_Desc EN_DT
+      -->
+    <!-- cii2en Syntax binding for UN/CEFACT XML Industory Invoice D16B -->
+      <div id="cii2en-container">
+        <div id="cii2en-frame">
+          <span class="table-title">CEN/TS 16931-3-3 Table 3 - UN/CEFACT syntax elements to semantic model mapping (informative)</span>
+          <table id="cii2en" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>num</th><!-- hidden -->
+                <th>Path</th>
+                <th>Card.</th>
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Data type</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    <!-- ubl2en_ivc CEN/TS 16931-3-2 Syntax binding for ISO/IEC 19845 (UBL 2.1) Invoice and credit note -->
+      <div id="ubl2en_ivc-container">
+        <div id="ubl2en_ivc-frame">
+          <span class="table-title">CEN/TS 16931-3-2 Table 4 - UBL invoice syntax elements to semantic model mapping (informative)</span>
+          <table id="ubl2en_ivc" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>num</th><!-- hidden -->
+                <th>Path</th>
+                <th>Card.</th>
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Data type</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    <!-- ubl2en_cnt CEN/TS 16931-3-2 Syntax binding for ISO/IEC 19845 (UBL 2.1) Invoice and credit note -->
+      <div id="ubl2en_cnt-container">
+        <div id="ubl2en_cnt-frame">
+          <span class="table-title">CEN/TS 16931-3-2 Table 6 - UBL credit note syntax elements to semantic model mapping (informative)</span>
+          <table id="ubl2en_cnt" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>-</th>
+                <th>num</th><!-- hidden -->
+                <th>Path</th>
+                <th>Card.</th>
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Data type</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+  </body>
+</html>

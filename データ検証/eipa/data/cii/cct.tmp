@@ -1,0 +1,346 @@
+$.complexType[1].@name AmountType
+$.complexType[1].@xml lang en
+$.complexType[1].UniqueID UNDT000001
+$.complexType[1].Acronym CCT
+$.complexType[1].DictionaryEntryName Amount. Type
+$.complexType[1].Version 2.01
+$.complexType[1].Definition A number of monetary units specified in a currency where the unit of the currency is explicit or implied.
+$.complexType[1].PrimaryRepresentationTerm Amount
+$.complexType[1].PrimitiveType decimal
+$.complexType[1].@base xsd:decimal
+$.complexType[1].attribute[1].@name currencyID
+$.complexType[1].attribute[1].@type xsd:token
+$.complexType[1].attribute[1].@use optional
+$.complexType[1].attribute[1].@xml lang en
+$.complexType[1].attribute[1].Name Amount. Currency. Identifier
+$.complexType[1].attribute[1].Definition The currency of the amount.
+$.complexType[1].attribute[1].PrimitiveType string
+$.complexType[1].attribute[2].@name currencyCodeListVersionID
+$.complexType[1].attribute[2].@type xsd:token
+$.complexType[1].attribute[2].@use optional
+$.complexType[1].attribute[2].@xml lang en
+$.complexType[1].attribute[2].Name Amount Currency. Code List Version. Identifier
+$.complexType[1].attribute[2].Definition The VersionID of the UN/ECE Rec9 code list.
+$.complexType[1].attribute[2].PrimitiveType string
+$.complexType[2].@name BinaryObjectType
+$.complexType[2].@xml lang en
+$.complexType[2].UniqueID UNDT000002
+$.complexType[2].Acronym CCT
+$.complexType[2].DictionaryEntryName Binary Object. Type
+$.complexType[2].Version 2.01
+$.complexType[2].Definition A set of finite-length sequences of binary octets.
+$.complexType[2].PrimaryRepresentationTerm Binary Object
+$.complexType[2].PrimitiveType binary
+$.complexType[2].@base xsd:base64Binary
+$.complexType[2].attribute[1].@name format
+$.complexType[2].attribute[1].@type xsd:string
+$.complexType[2].attribute[1].@use optional
+$.complexType[2].attribute[1].@xml lang en
+$.complexType[2].attribute[1].Name Binary Object. Format. Text
+$.complexType[2].attribute[1].Definition The format of the binary content.
+$.complexType[2].attribute[1].PrimitiveType string
+$.complexType[2].attribute[2].@name mimeCode
+$.complexType[2].attribute[2].@type xsd:token
+$.complexType[2].attribute[2].@use optional
+$.complexType[2].attribute[2].@xml lang en
+$.complexType[2].attribute[2].Name Binary Object. Mime. Code
+$.complexType[2].attribute[2].Definition The mime type of the binary object.
+$.complexType[2].attribute[2].PrimitiveType string
+$.complexType[2].attribute[3].@name encodingCode
+$.complexType[2].attribute[3].@type xsd:token
+$.complexType[2].attribute[3].@use optional
+$.complexType[2].attribute[3].@xml lang en
+$.complexType[2].attribute[3].Name Binary Object. Encoding. Code
+$.complexType[2].attribute[3].Definition Specifies the decoding algorithm of the binary object.
+$.complexType[2].attribute[3].PrimitiveType string
+$.complexType[2].attribute[4].@name characterSetCode
+$.complexType[2].attribute[4].@type xsd:token
+$.complexType[2].attribute[4].@use optional
+$.complexType[2].attribute[4].@xml lang en
+$.complexType[2].attribute[4].Name Binary Object. Character Set. Code
+$.complexType[2].attribute[4].Definition The character set of the binary object if the mime type is text.
+$.complexType[2].attribute[4].PrimitiveType string
+$.complexType[2].attribute[5].@name uri
+$.complexType[2].attribute[5].@type xsd:anyURI
+$.complexType[2].attribute[5].@use optional
+$.complexType[2].attribute[5].@xml lang en
+$.complexType[2].attribute[5].Name Binary Object. Uniform Resource. Identifier
+$.complexType[2].attribute[5].Definition The Uniform Resource Identifier that identifies where the binary object is located.
+$.complexType[2].attribute[5].PrimitiveType string
+$.complexType[2].attribute[6].@name fileName
+$.complexType[2].attribute[6].@type xsd:string
+$.complexType[2].attribute[6].@use optional
+$.complexType[2].attribute[6].@xml lang en
+$.complexType[2].attribute[6].Name Binary Object. File. Name
+$.complexType[2].attribute[6].Definition The filename of the binary object.
+$.complexType[2].attribute[6].PrimitiveType string
+$.complexType[3].@name CodeType
+$.complexType[3].@xml lang en
+$.complexType[3].UniqueID UNDT000003
+$.complexType[3].Acronym CCT
+$.complexType[3].DictionaryEntryName Code. Type
+$.complexType[3].Version 2.01
+$.complexType[3].Definition A character string (letters, figures, or symbols) that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute together with relevant supplementary information.
+$.complexType[3].PrimaryRepresentationTerm Code
+$.complexType[3].PrimitiveType string
+$.complexType[3].UsageRule Should not be used if the character string identifies an instance of an object class or an object in the real world, in which case the Identifier. Type should be used.
+$.complexType[3].@base xsd:token
+$.complexType[3].attribute[1].@name listID
+$.complexType[3].attribute[1].@type xsd:token
+$.complexType[3].attribute[1].@use optional
+$.complexType[3].attribute[1].@xml lang en
+$.complexType[3].attribute[1].Name Code List. Identifier
+$.complexType[3].attribute[1].Definition The identification of a list of codes.
+$.complexType[3].attribute[1].PrimitiveType string
+$.complexType[3].attribute[2].@name listAgencyID
+$.complexType[3].attribute[2].@type xsd:token
+$.complexType[3].attribute[2].@use optional
+$.complexType[3].attribute[2].@xml lang en
+$.complexType[3].attribute[2].Name Code List. Agency. Identifier
+$.complexType[3].attribute[2].Definition An agency that maintains one or more lists of codes.
+$.complexType[3].attribute[2].PrimitiveType string
+$.complexType[3].attribute[3].@name listAgencyName
+$.complexType[3].attribute[3].@type xsd:string
+$.complexType[3].attribute[3].@use optional
+$.complexType[3].attribute[3].@xml lang en
+$.complexType[3].attribute[3].Name Code List. Agency Name. Text
+$.complexType[3].attribute[3].Definition The name of the agency that maintains the list of codes.
+$.complexType[3].attribute[3].PrimitiveType string
+$.complexType[3].attribute[4].@name listName
+$.complexType[3].attribute[4].@type xsd:string
+$.complexType[3].attribute[4].@use optional
+$.complexType[3].attribute[4].@xml lang en
+$.complexType[3].attribute[4].Name Code List. Name. Text
+$.complexType[3].attribute[4].Definition The name of a list of codes.
+$.complexType[3].attribute[4].PrimitiveType string
+$.complexType[3].attribute[5].@name listVersionID
+$.complexType[3].attribute[5].@type xsd:token
+$.complexType[3].attribute[5].@use optional
+$.complexType[3].attribute[5].@xml lang en
+$.complexType[3].attribute[5].Name Code List. Version. Identifier
+$.complexType[3].attribute[5].Definition The version of the list of codes.
+$.complexType[3].attribute[5].PrimitiveType string
+$.complexType[3].attribute[6].@name name
+$.complexType[3].attribute[6].@type xsd:string
+$.complexType[3].attribute[6].@use optional
+$.complexType[3].attribute[6].@xml lang en
+$.complexType[3].attribute[6].Name Code. Name. Text
+$.complexType[3].attribute[6].Definition The textual equivalent of the code content component.
+$.complexType[3].attribute[6].PrimitiveType string
+$.complexType[3].attribute[7].@name languageID
+$.complexType[3].attribute[7].@type xsd:language
+$.complexType[3].attribute[7].@use optional
+$.complexType[3].attribute[7].@xml lang en
+$.complexType[3].attribute[7].Name Language. Identifier
+$.complexType[3].attribute[7].Definition The identifier of the language used in the code name.
+$.complexType[3].attribute[7].PrimitiveType string
+$.complexType[3].attribute[8].@name listURI
+$.complexType[3].attribute[8].@type xsd:anyURI
+$.complexType[3].attribute[8].@use optional
+$.complexType[3].attribute[8].@xml lang en
+$.complexType[3].attribute[8].Name Code List. Uniform Resource. Identifier
+$.complexType[3].attribute[8].Definition The Uniform Resource Identifier that identifies where the code list is located.
+$.complexType[3].attribute[8].PrimitiveType string
+$.complexType[3].attribute[9].@name listSchemeURI
+$.complexType[3].attribute[9].@type xsd:anyURI
+$.complexType[3].attribute[9].@use optional
+$.complexType[3].attribute[9].@xml lang en
+$.complexType[3].attribute[9].Name Code List Scheme. Uniform Resource. Identifier
+$.complexType[3].attribute[9].Definition The Uniform Resource Identifier that identifies where the code list scheme is located.
+$.complexType[3].attribute[9].PrimitiveType string
+$.complexType[4].@name DateTimeType
+$.complexType[4].@xml lang en
+$.complexType[4].UniqueID UNDT000004
+$.complexType[4].Acronym CCT
+$.complexType[4].DictionaryEntryName Date Time. Type
+$.complexType[4].Version 2.01
+$.complexType[4].Definition A particular point in the progression of time together with the relevant supplementary information.
+$.complexType[4].PrimaryRepresentationTerm Date Time
+$.complexType[4].PrimitiveType string
+$.complexType[4].@base xsd:string
+$.complexType[4].attribute[1].@name format
+$.complexType[4].attribute[1].@type xsd:string
+$.complexType[4].attribute[1].@use optional
+$.complexType[4].attribute[1].@xml lang en
+$.complexType[4].attribute[1].Name Date Time. Format. Text
+$.complexType[4].attribute[1].Definition The format of the date time content
+$.complexType[4].attribute[1].PrimitiveType string
+$.complexType[5].@name IDType
+$.complexType[5].@xml lang en
+$.complexType[5].UniqueID UNDT000005
+$.complexType[5].Acronym CCT
+$.complexType[5].DictionaryEntryName Identifier. Type
+$.complexType[5].Version 2.01
+$.complexType[5].Definition A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.
+$.complexType[5].PrimaryRepresentationTerm Identifier
+$.complexType[5].PrimitiveType string
+$.complexType[5].@base xsd:token
+$.complexType[5].attribute[1].@name schemeID
+$.complexType[5].attribute[1].@type xsd:token
+$.complexType[5].attribute[1].@use optional
+$.complexType[5].attribute[1].@xml lang en
+$.complexType[5].attribute[1].Name Identification Scheme. Identifier
+$.complexType[5].attribute[1].Definition The identification of the identification scheme.
+$.complexType[5].attribute[1].PrimitiveType string
+$.complexType[5].attribute[2].@name schemeName
+$.complexType[5].attribute[2].@type xsd:string
+$.complexType[5].attribute[2].@use optional
+$.complexType[5].attribute[2].@xml lang en
+$.complexType[5].attribute[2].Name Identification Scheme. Name. Text
+$.complexType[5].attribute[2].Definition The name of the identification scheme.
+$.complexType[5].attribute[2].PrimitiveType string
+$.complexType[5].attribute[3].@name schemeAgencyID
+$.complexType[5].attribute[3].@type xsd:token
+$.complexType[5].attribute[3].@use optional
+$.complexType[5].attribute[3].@xml lang en
+$.complexType[5].attribute[3].Name Identification Scheme. Agency. Identifier
+$.complexType[5].attribute[3].Definition The identification of the agency that maintains the identification scheme.
+$.complexType[5].attribute[3].PrimitiveType string
+$.complexType[5].attribute[4].@name schemeAgencyName
+$.complexType[5].attribute[4].@type xsd:string
+$.complexType[5].attribute[4].@use optional
+$.complexType[5].attribute[4].@xml lang en
+$.complexType[5].attribute[4].Name Identification Scheme. Agency Name. Text
+$.complexType[5].attribute[4].Definition The name of the agency that maintains the identification scheme.
+$.complexType[5].attribute[4].PrimitiveType string
+$.complexType[5].attribute[5].@name schemeVersionID
+$.complexType[5].attribute[5].@type xsd:token
+$.complexType[5].attribute[5].@use optional
+$.complexType[5].attribute[5].@xml lang en
+$.complexType[5].attribute[5].Name Identification Scheme. Version. Identifier
+$.complexType[5].attribute[5].Definition The version of the identification scheme.
+$.complexType[5].attribute[5].PrimitiveType string
+$.complexType[5].attribute[6].@name schemeDataURI
+$.complexType[5].attribute[6].@type xsd:anyURI
+$.complexType[5].attribute[6].@use optional
+$.complexType[5].attribute[6].@xml lang en
+$.complexType[5].attribute[6].Name Identification Scheme Data. Uniform Resource. Identifier
+$.complexType[5].attribute[6].Definition The Uniform Resource Identifier that identifies where the identification scheme data is located.
+$.complexType[5].attribute[6].PrimitiveType string
+$.complexType[5].attribute[7].@name schemeURI
+$.complexType[5].attribute[7].@type xsd:anyURI
+$.complexType[5].attribute[7].@use optional
+$.complexType[5].attribute[7].@xml lang en
+$.complexType[5].attribute[7].Name Identification Scheme. Uniform Resource. Identifier
+$.complexType[5].attribute[7].Definition The Uniform Resource Identifier that identifies where the identification scheme is located.
+$.complexType[5].attribute[7].PrimitiveType string
+$.complexType[6].@name IndicatorType
+$.complexType[6].@xml lang en
+$.complexType[6].UniqueID UNDT000006
+$.complexType[6].Acronym CCT
+$.complexType[6].DictionaryEntryName Indicator. Type
+$.complexType[6].Version 2.01
+$.complexType[6].Definition A list of two mutually exclusive Boolean values that express the only possible states of a Property.
+$.complexType[6].PrimaryRepresentationTerm Indicator
+$.complexType[6].PrimitiveType string
+$.complexType[6].@base xsd:string
+$.complexType[6].attribute[1].@name format
+$.complexType[6].attribute[1].@type xsd:string
+$.complexType[6].attribute[1].@use optional
+$.complexType[6].attribute[1].@xml lang en
+$.complexType[6].attribute[1].Name Indicator. Format. Text
+$.complexType[6].attribute[1].Definition Whether the indicator is numeric, textual or binary.
+$.complexType[6].attribute[1].PrimitiveType string
+$.complexType[7].@name MeasureType
+$.complexType[7].@xml lang en
+$.complexType[7].UniqueID UNDT000007
+$.complexType[7].Acronym CCT
+$.complexType[7].DictionaryEntryName Measure. Type
+$.complexType[7].Version 2.01
+$.complexType[7].Definition A numeric value determined by measuring an object along with the specified unit of measure.
+$.complexType[7].PrimaryRepresentationTerm Measure
+$.complexType[7].PrimitiveType decimal
+$.complexType[7].@base xsd:decimal
+$.complexType[7].attribute[1].@name unitCode
+$.complexType[7].attribute[1].@type xsd:token
+$.complexType[7].attribute[1].@use optional
+$.complexType[7].attribute[1].@xml lang en
+$.complexType[7].attribute[1].Name Measure. Unit. Code
+$.complexType[7].attribute[1].Definition The type of unit of measure.
+$.complexType[7].attribute[1].PrimitiveType string
+$.complexType[7].attribute[2].@name unitCodeListVersionID
+$.complexType[7].attribute[2].@type xsd:token
+$.complexType[7].attribute[2].@use optional
+$.complexType[7].attribute[2].@xml lang en
+$.complexType[7].attribute[2].Name Measure Unit. Code List Version. Identifier
+$.complexType[7].attribute[2].Definition The version of the measure unit code list.
+$.complexType[7].attribute[2].PrimitiveType string
+$.complexType[8].@name NumericType
+$.complexType[8].@xml lang en
+$.complexType[8].UniqueID UNDT000008
+$.complexType[8].Acronym CCT
+$.complexType[8].DictionaryEntryName Numeric. Type
+$.complexType[8].Version 2.01
+$.complexType[8].Definition Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.
+$.complexType[8].PrimaryRepresentationTerm Numeric
+$.complexType[8].PrimitiveType string
+$.complexType[8].@base xsd:string
+$.complexType[8].attribute[1].@name format
+$.complexType[8].attribute[1].@type xsd:string
+$.complexType[8].attribute[1].@use optional
+$.complexType[8].attribute[1].@xml lang en
+$.complexType[8].attribute[1].Name Numeric. Format. Text
+$.complexType[8].attribute[1].Definition Whether the number is an integer, decimal, real number or percentage.
+$.complexType[8].attribute[1].PrimitiveType string
+$.complexType[9].@name QuantityType
+$.complexType[9].@xml lang en
+$.complexType[9].UniqueID UNDT000009
+$.complexType[9].Acronym CCT
+$.complexType[9].DictionaryEntryName Quantity. Type
+$.complexType[9].Version 2.01
+$.complexType[9].Definition A counted number of non-monetary units possibly including fractions.
+$.complexType[9].PrimaryRepresentationTerm Quantity
+$.complexType[9].PrimitiveType decimal
+$.complexType[9].@base xsd:decimal
+$.complexType[9].attribute[1].@name unitCode
+$.complexType[9].attribute[1].@type xsd:token
+$.complexType[9].attribute[1].@use optional
+$.complexType[9].attribute[1].@xml lang en
+$.complexType[9].attribute[1].Name Quantity. Unit. Code
+$.complexType[9].attribute[1].Definition The unit of the quantity
+$.complexType[9].attribute[1].PrimitiveType string
+$.complexType[9].attribute[2].@name unitCodeListID
+$.complexType[9].attribute[2].@type xsd:token
+$.complexType[9].attribute[2].@use optional
+$.complexType[9].attribute[2].@xml lang en
+$.complexType[9].attribute[2].Name Quantity Unit. Code List. Identifier
+$.complexType[9].attribute[2].Definition The quantity unit code list.
+$.complexType[9].attribute[2].PrimitiveType string
+$.complexType[9].attribute[3].@name unitCodeListAgencyID
+$.complexType[9].attribute[3].@type xsd:token
+$.complexType[9].attribute[3].@use optional
+$.complexType[9].attribute[3].@xml lang en
+$.complexType[9].attribute[3].Name Quantity Unit. Code List Agency. Identifier
+$.complexType[9].attribute[3].Definition The identification of the agency that maintains the quantity unit code list
+$.complexType[9].attribute[3].PrimitiveType string
+$.complexType[9].attribute[4].@name unitCodeListAgencyName
+$.complexType[9].attribute[4].@type xsd:string
+$.complexType[9].attribute[4].@use optional
+$.complexType[9].attribute[4].@xml lang en
+$.complexType[9].attribute[4].Name Quantity Unit. Code List Agency. Name
+$.complexType[9].attribute[4].Definition The name of the agency which maintains the quantity unit code list.
+$.complexType[9].attribute[4].PrimitiveType string
+$.complexType[10].@name TextType
+$.complexType[10].@xml lang en
+$.complexType[10].UniqueID UNDT000010
+$.complexType[10].Acronym CCT
+$.complexType[10].DictionaryEntryName Text. Type
+$.complexType[10].Version 2.01
+$.complexType[10].Definition A character string (i.e. a finite set of characters) generally in the form of words of a language.
+$.complexType[10].PrimaryRepresentationTerm Text
+$.complexType[10].PrimitiveType string
+$.complexType[10].@base xsd:string
+$.complexType[10].attribute[1].@name languageID
+$.complexType[10].attribute[1].@type xsd:language
+$.complexType[10].attribute[1].@use optional
+$.complexType[10].attribute[1].@xml lang en
+$.complexType[10].attribute[1].Name Language. Identifier
+$.complexType[10].attribute[1].Definition The identifier of the language used in the content component.
+$.complexType[10].attribute[1].PrimitiveType string
+$.complexType[10].attribute[2].@name languageLocaleID
+$.complexType[10].attribute[2].@type xsd:token
+$.complexType[10].attribute[2].@use optional
+$.complexType[10].attribute[2].@xml lang en
+$.complexType[10].attribute[2].Name Language Locale. Identifier
+$.complexType[10].attribute[2].Definition The identification of the locale of the language.
+$.complexType[10].attribute[2].PrimitiveType string

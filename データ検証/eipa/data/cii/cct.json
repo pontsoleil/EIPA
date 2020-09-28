@@ -1,0 +1,404 @@
+{
+"complexType":[{
+"@name":"AmountType",
+"@xml":"lang en",
+"UniqueID":"UNDT000001",
+"Acronym":"CCT",
+"DictionaryEntryName":"Amount. Type",
+"Version":2.01,
+"Definition":"A number of monetary units specified in a currency where the unit of the currency is explicit or implied.",
+"PrimaryRepresentationTerm":"Amount",
+"PrimitiveType":"decimal",
+"@base":"xsd:decimal",
+"attribute":[{
+"@name":"currencyID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Amount. Currency. Identifier",
+"Definition":"The currency of the amount.",
+"PrimitiveType":"string"
+},{
+"@name":"currencyCodeListVersionID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Amount Currency. Code List Version. Identifier",
+"Definition":"The VersionID of the UN/ECE Rec9 code list.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"BinaryObjectType",
+"@xml":"lang en",
+"UniqueID":"UNDT000002",
+"Acronym":"CCT",
+"DictionaryEntryName":"Binary Object. Type",
+"Version":2.01,
+"Definition":"A set of finite-length sequences of binary octets.",
+"PrimaryRepresentationTerm":"Binary Object",
+"PrimitiveType":"binary",
+"@base":"xsd:base64Binary",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Binary Object. Format. Text",
+"Definition":"The format of the binary content.",
+"PrimitiveType":"string"
+},{
+"@name":"mimeCode",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Binary Object. Mime. Code",
+"Definition":"The mime type of the binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"encodingCode",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Binary Object. Encoding. Code",
+"Definition":"Specifies the decoding algorithm of the binary object.",
+"PrimitiveType":"string"
+},{
+"@name":"characterSetCode",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Binary Object. Character Set. Code",
+"Definition":"The character set of the binary object if the mime type is text.",
+"PrimitiveType":"string"
+},{
+"@name":"uri",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Binary Object. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the binary object is located.",
+"PrimitiveType":"string"
+},{
+"@name":"fileName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Binary Object. File. Name",
+"Definition":"The filename of the binary object.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"CodeType",
+"@xml":"lang en",
+"UniqueID":"UNDT000003",
+"Acronym":"CCT",
+"DictionaryEntryName":"Code. Type",
+"Version":2.01,
+"Definition":"A character string (letters, figures, or symbols) that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute together with relevant supplementary information.",
+"PrimaryRepresentationTerm":"Code",
+"PrimitiveType":"string",
+"UsageRule":"Should not be used if the character string identifies an instance of an object class or an object in the real world, in which case the Identifier. Type should be used.",
+"@base":"xsd:token",
+"attribute":[{
+"@name":"listID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List. Identifier",
+"Definition":"The identification of a list of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"listAgencyID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List. Agency. Identifier",
+"Definition":"An agency that maintains one or more lists of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"listAgencyName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List. Agency Name. Text",
+"Definition":"The name of the agency that maintains the list of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"listName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List. Name. Text",
+"Definition":"The name of a list of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"listVersionID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List. Version. Identifier",
+"Definition":"The version of the list of codes.",
+"PrimitiveType":"string"
+},{
+"@name":"name",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code. Name. Text",
+"Definition":"The textual equivalent of the code content component.",
+"PrimitiveType":"string"
+},{
+"@name":"languageID",
+"@type":"xsd:language",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Language. Identifier",
+"Definition":"The identifier of the language used in the code name.",
+"PrimitiveType":"string"
+},{
+"@name":"listURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the code list is located.",
+"PrimitiveType":"string"
+},{
+"@name":"listSchemeURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Code List Scheme. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the code list scheme is located.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"DateTimeType",
+"@xml":"lang en",
+"UniqueID":"UNDT000004",
+"Acronym":"CCT",
+"DictionaryEntryName":"Date Time. Type",
+"Version":2.01,
+"Definition":"A particular point in the progression of time together with the relevant supplementary information.",
+"PrimaryRepresentationTerm":"Date Time",
+"PrimitiveType":"string",
+"@base":"xsd:string",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Date Time. Format. Text",
+"Definition":"The format of the date time content",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"IDType",
+"@xml":"lang en",
+"UniqueID":"UNDT000005",
+"Acronym":"CCT",
+"DictionaryEntryName":"Identifier. Type",
+"Version":2.01,
+"Definition":"A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
+"PrimaryRepresentationTerm":"Identifier",
+"PrimitiveType":"string",
+"@base":"xsd:token",
+"attribute":[{
+"@name":"schemeID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme. Identifier",
+"Definition":"The identification of the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme. Name. Text",
+"Definition":"The name of the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeAgencyID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme. Agency. Identifier",
+"Definition":"The identification of the agency that maintains the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeAgencyName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme. Agency Name. Text",
+"Definition":"The name of the agency that maintains the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeVersionID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme. Version. Identifier",
+"Definition":"The version of the identification scheme.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeDataURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme Data. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the identification scheme data is located.",
+"PrimitiveType":"string"
+},{
+"@name":"schemeURI",
+"@type":"xsd:anyURI",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Identification Scheme. Uniform Resource. Identifier",
+"Definition":"The Uniform Resource Identifier that identifies where the identification scheme is located.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"IndicatorType",
+"@xml":"lang en",
+"UniqueID":"UNDT000006",
+"Acronym":"CCT",
+"DictionaryEntryName":"Indicator. Type",
+"Version":2.01,
+"Definition":"A list of two mutually exclusive Boolean values that express the only possible states of a Property.",
+"PrimaryRepresentationTerm":"Indicator",
+"PrimitiveType":"string",
+"@base":"xsd:string",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Indicator. Format. Text",
+"Definition":"Whether the indicator is numeric, textual or binary.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"MeasureType",
+"@xml":"lang en",
+"UniqueID":"UNDT000007",
+"Acronym":"CCT",
+"DictionaryEntryName":"Measure. Type",
+"Version":2.01,
+"Definition":"A numeric value determined by measuring an object along with the specified unit of measure.",
+"PrimaryRepresentationTerm":"Measure",
+"PrimitiveType":"decimal",
+"@base":"xsd:decimal",
+"attribute":[{
+"@name":"unitCode",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Measure. Unit. Code",
+"Definition":"The type of unit of measure.",
+"PrimitiveType":"string"
+},{
+"@name":"unitCodeListVersionID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Measure Unit. Code List Version. Identifier",
+"Definition":"The version of the measure unit code list.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"NumericType",
+"@xml":"lang en",
+"UniqueID":"UNDT000008",
+"Acronym":"CCT",
+"DictionaryEntryName":"Numeric. Type",
+"Version":2.01,
+"Definition":"Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+"PrimaryRepresentationTerm":"Numeric",
+"PrimitiveType":"string",
+"@base":"xsd:string",
+"attribute":[{
+"@name":"format",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Numeric. Format. Text",
+"Definition":"Whether the number is an integer, decimal, real number or percentage.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"QuantityType",
+"@xml":"lang en",
+"UniqueID":"UNDT000009",
+"Acronym":"CCT",
+"DictionaryEntryName":"Quantity. Type",
+"Version":2.01,
+"Definition":"A counted number of non-monetary units possibly including fractions.",
+"PrimaryRepresentationTerm":"Quantity",
+"PrimitiveType":"decimal",
+"@base":"xsd:decimal",
+"attribute":[{
+"@name":"unitCode",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Quantity. Unit. Code",
+"Definition":"The unit of the quantity",
+"PrimitiveType":"string"
+},{
+"@name":"unitCodeListID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Quantity Unit. Code List. Identifier",
+"Definition":"The quantity unit code list.",
+"PrimitiveType":"string"
+},{
+"@name":"unitCodeListAgencyID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Quantity Unit. Code List Agency. Identifier",
+"Definition":"The identification of the agency that maintains the quantity unit code list",
+"PrimitiveType":"string"
+},{
+"@name":"unitCodeListAgencyName",
+"@type":"xsd:string",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Quantity Unit. Code List Agency. Name",
+"Definition":"The name of the agency which maintains the quantity unit code list.",
+"PrimitiveType":"string"
+}]
+},{
+"@name":"TextType",
+"@xml":"lang en",
+"UniqueID":"UNDT000010",
+"Acronym":"CCT",
+"DictionaryEntryName":"Text. Type",
+"Version":2.01,
+"Definition":"A character string (i.e. a finite set of characters) generally in the form of words of a language.",
+"PrimaryRepresentationTerm":"Text",
+"PrimitiveType":"string",
+"@base":"xsd:string",
+"attribute":[{
+"@name":"languageID",
+"@type":"xsd:language",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Language. Identifier",
+"Definition":"The identifier of the language used in the content component.",
+"PrimitiveType":"string"
+},{
+"@name":"languageLocaleID",
+"@type":"xsd:token",
+"@use":"optional",
+"@xml":"lang en",
+"Name":"Language Locale. Identifier",
+"Definition":"The identification of the locale of the language.",
+"PrimitiveType":"string"
+}]
+}]
+}

@@ -1,0 +1,222 @@
+num	line	hdr	uniqueID	kind	DictionaryEntryName	name	description	cardinality	comment1	comment2	comment3	update	private	sme	invoice	item_name	note
+1	1	ヘッダ部		MA	SME_ Invoice	請求メッセージ	受注者が発注者に通知する納品書／請求書 等の請求情報文書（メッセージ）。	−									
+1_2	2	ヘッダ部	UN01005479	ASMA	CI_ Exchanged Document_ Context. Details	取引設定クラス	メッセージの設定内容に関する情報からなるクラス	1..1				v1					
+1_2_3	3	ヘッダ部	UN01005480	BBIE	CI_ Exchanged Document_ Context. Specified_ Transaction. Identifier	取引識別子	メッセージがやり取りされる取引番号	0..1				v1	△				
+1_2_4	4	ヘッダ部	UN01012746	BBIE	CI_ Exchanged Document_ Context. Processing_ Transaction. Date  Time	処理日時	メッセージがやり取りされる日時	0..1	日時様式			v1/v2	△				
+1_2_5	5	ヘッダ部	UN01005481	ASBIE	CI_ Exchanged Document_ Context. Business Process_ Specified. CI_ Document Context_ Parameter	取引設定内容/取引プロセスアソシエーショ ン	取引設定内容の取引プロセスに関する情報	1..1				v1					
+1_2_6	6	ヘッダ部	UN01005471	ABIE	CI_ Document Context_ Parameter. Details	取引プロセス設定クラス	取引プロセスに関する情報のクラス	-				v1					
+1_2_6_7	7	ヘッダ部	UN01005472	BBIE	CI_ Document Context_ Parameter. Identification. Identifier	取引プロセス識別子	取引プロセスの識別子(ID)	1..1				v1	△			データ区分	＊
+1_2_6_8	8	ヘッダ部	UN01005473	BBIE	CI_ Document Context_ Parameter. Value. Text	取引プロセス名	取引プロセスの名称	0..1				v1	△				
+1_2_6_9	9	ヘッダ部	UN01005474	ASBIE	CI_ Document Context_ Parameter. Specified. CI_ Document_ Version	取引プロセス/バージョンアソシエーショ ン	取引プロセスのバージョンに関する情報	1..1				v1					
+1_2_6_9_10	10	ヘッダ部	UN01005475	ABIE	CI_ Document_ Version. Details	バージョンクラス	バージョンに関する情報のクラス	-				v1					
+1_2_6_9_10_11	11	ヘッダ部	UN01005476	BBIE	CI_ Document_ Version. Identification. Identifier	バージョン識別子	取引プロセスのバージョン識別子	1..1	コード表識別子	コード表管理者コード	コード表管理者名	v1	△				
+1_2_6_9_10_12	12	ヘッダ部	UN01005478	BBIE	CI_ Document_ Version. Issue. Date  Time	バージョン発行日	取引プロセスのバージョン発行日	1..1	日時様式			v1	△				
+1_2_13	13	ヘッダ部	UN01005483	ASBIE	CI_ Exchanged Document_ Context. Scenario_ Specified. CI_ DocumentContext_ Parameter	取引設定内容/取引シナリオアソシエーショ ン	取引設定内容の取引シナリオに関する情報	0..1				v1					
+1_2_14	14	ヘッダ部	UN01005471	ABIE	CI_ Document Context_ Parameter. Details	取引シナリオ設定クラス	取引シナリオに関する情報のクラス	-				v1					
+1_2_14_15	15	ヘッダ部	UN01005472	BBIE	CI_ Document Context_ Parameter. Identification. Identifier	取引シナリオ識別子	取引シナリオの識別子(ID)	0..1				v1	△				
+1_2_14_16	16	ヘッダ部	UN01005473	BBIE	CI_ Document Context_ Parameter. Value. Text	取引シナリオ名	取引シナリオの名称	0..1				v1	△				
+1_2_17	17	ヘッダ部	UN01005484	ASBIE	CI_ Exchanged Document_ Context. Application_ Specified. CI_ DocumentContext_ Parameter	取引設定内容/アプリケーションアソシエー ション	取引設定内容のアプリケーションに関する 情報	0..1				v1					
+1_2_18	18	ヘッダ部	UN01005471	ABIE	CI_ Document Context_ Parameter. Details	アプリケーション設定クラス	アプリケーションに関する情報のクラス	-				v1					
+1_2_18_19	19	ヘッダ部	UN01005472	BBIE	CI_ Document Context_ Parameter. Identification. Identifier	アプリケーション識別子	業務アプリケーションの識別子	0..1				v1	△				
+1_2_18_20	20	ヘッダ部	UN01005473	BBIE	CI_ Document Context_ Parameter. Value. Text	アプリケーション名	業務アプリケーションの名称	0..1				v1	△				
+1_2_21	21	ヘッダ部	UN01005486	ASBIE	CI_ Exchanged Document_ Context. Subset_ Specified. CI_ Document Contex	取引設定内容/業務領 域アソシエーション	取引設定内容の業務領域の情報に関する情 報	1..1				v1					
+1_2_22	22	ヘッダ部	UN01005471	ABIE	CI_ Document Context_ Parameter. Details	業務領域設定クラス	SIPS業界横断EDIメッセージ業務領域に関する情報のクラス	-				v1					
+1_2_22_23	23	ヘッダ部	UN01005472	BBIE	CI_ Document Context_ Parameter. Identification. Identifier	業務領域識別子	SIPSが付与したメッセージ業務領域識別子(ID)	1..1				v1	△			業界区分	＊
+1_2_22_24	24	ヘッダ部	UN01005473	BBIE	CI_ Document Context_ Parameter. Value. Text	業務領域名	SIPSが付与したメッセージ業務領域名称	0..1				v1	△				
+1_2_22_25	25	ヘッダ部	UN01005474	ASBIE	CI_ Document Context_ Parameter. Specified. CI_ Document_Version	業務領域/バージョン アソシエーション	業務領域のバージョンに関する情報	1..1				v1					
+1_2_22_26	26	ヘッダ部	UN01005475	ABIE	CI_ Document_ Version. Details	バージョンクラス	バージョンに関する情報のクラス	-				v1					
+1_2_22_26_27	27	ヘッダ部	UN01005476	BBIE	CI_ Document_ Version. Identification. Identifier	バージョン識別子	業務領域のバージョン識別子	1..1	コード表識別子	コード表管理者コード	コード表管理者名	v1	△				
+1_2_22_26_28	28	ヘッダ部	UN01005478	BBIE	CI_ Document_ Version. Issue. Date  Time	バージョン発行日	業務領域のバージョン発行日	1..1	日時様式			v1	△				
+1_29	29	ヘッダ部	UN01005861	ASMA	CIIH_ Exchanged_ Document. Details	請求文書クラス	請求情報の文書全体に係る情報からなるクラス。	0..1				v1					
+1_29_30	30	ヘッダ部	UN01005862	BBIE	CIIH_ Exchanged_ Document. Identification. Identifier	請求書番号	受注者が発番した請求書を識別する番号ま たは文字列	0..1				v1		〇		請求書番号	＊（※2）請求書（ないしそれに類する書類）を発行 していない場合は記載不要
+1_29_31	31	ヘッダ部	UN01005863	BBIE	CIIH_ Exchanged_ Document. Name.  Text	請求書名	受注者が付与した請求書の文書名称	0..1	言語コード			v1					
+1_29_32	32	ヘッダ部	UN01005864	BBIE	CIIH_ Exchanged_ Document. Type. Code	文書タイプコード	この文書が請求書であることを識別するコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_29_33	33	ヘッダ部	UN01005865	BBIE	CIIH_ Exchanged_ Document. Issue. Date  Time	請求書発効日	請求書／納品書等の発行日付，または請求書の書面上の発行日付。＜消費税：物品取引でない資産譲渡の場合◎＞	0..1	日時様式			v1		〇		請求書発行日	***
+1_29_34	34	ヘッダ部	UN01005869	BBIE	CIIH_ Exchanged_ Document. Purpose. Code	請求書目的コード	受注者が請求書の目的（新規、変更、取消、打切り）を管理するために付番した区 分コード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2					
+1_29_35	35	ヘッダ部	UN01005875	BBIE	CIIH_ Exchanged_ Document. Category. Code	請求書類型コード	この文書の類型（適格請求書対応、適格請 求書非対応など）を識別するコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2			●		
+1_29_36	36	ヘッダ部	UN01005876	ASBIE	CIIH_ Exchanged_ Document. Included. CI_ Note	請求文書／注釈アソシ エーション	請求書に含まれる注釈のアソシエーション ん。	0..n				v1					
+1_29_37	37	ヘッダ部	UN01005557	ABIE	CI_ Note. Details	請求注釈クラス	注釈を記述するためのクラス	-				v1					
+1_29_37_38	38	ヘッダ部	UN01005558	BBIE	CI_ Note. Subject. Text	請求注釈表題ｎ	注釈内容の表題を示す。	0..1	言語コード			v1					
+1_29_37_39	39	ヘッダ部	UN01005560	BBIE	CI_ Note. Content. Text	請求注釈内容ｎ	注釈項目ごとの内容情報を入力するフリースペース。	0..1	言語コード			v1					
+1_29_37_40	40	ヘッダ部	UN01005562	BBIE	CI_ Note. Identification. Identifier	請求注釈識別子	注釈の識別番号	0..1				v1	△				
+1_41	41	ヘッダ部	UN01005936	ASMA	CIIH_ Supply Chain_ Trade Transaction. Details	請求取引内容クラス	請求で伝達される個別取引の内容に関する情報からなるクラス。	1..1				v1					
+1_41_42	42	ヘッダ部	UN01005937	ASBIE	CIIH_ Supply Chain_ Trade Transaction. Applicable. CIIH_ Supply Chain_ Trade Agreement	請求取引内容／請求契 約アソシエーション	請求取引に適用される取引契約内容に係る アソシエーション。	0..1				v1					
+1_41_43	43	ヘッダ部	UN01005878	ABIE	CIIH_ Supply Chain_ Trade Agreement. Details	請求契約クラス	請求に関わる取引契約に係る情報からなるクラス。	−				v1					
+1_41_43_44	44	ヘッダ部	UN01005879	ASBIE	CIIH_ Supply Chain_ Trade Agreement. Seller. CI_ Trade_ Party	請求契約／受注者アソ シエーション	請求に関わる取引契約の受注者に関するア ソシエーション。	0..1				v1					
+1_41_43_45	45	ヘッダ部	UN01005756	ABIE	CI_ Trade_ Party. Details	受注者クラス	受注者に係る情報からなるクラス。	−				v1					
+1_41_43_45_46	46	ヘッダ部	UN01005757	BBIE	CI_ Trade_ Party. Identification. Identifier	受注者コード	注文を受ける企業等を表すコード。	0..1				v1		〇			
+1_41_43_45_47	47	ヘッダ部	UN01005758	BBIE	CI_ Trade_ Party. Global_ Identification. Identifier	受注者国際企業コード	注文を受ける企業を表す法人コード。	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_43_45_48	48	ヘッダ部	UN01005759	BBIE	CI_ Trade_ Party. Name.  Text	受注者名称	注文を受ける企業等を表す名称。	0..1	言語コード			v1		〇			
+1_41_43_45_49	49	ヘッダ部	UN01005761	ASBIE	CI_ Trade_ Party. Defined. CI_ Trade_ Contact	受注者／連絡先アソシエーション	受注者の連絡先に関わる情報	0..1				v1					
+1_41_43_45_50	50	ヘッダ部	UN01005718	ABIE	CI_ Trade_ Contact. Details	連絡先クラス	連絡先に係る情報からなるクラス。	−				v1					
+1_41_43_45_50_51	51	ヘッダ部	UN01005719	BBIE	CI_ Trade_ Contact. Identification. Identifier	受注部門コード	受注者の受注部門を表すコード。	0..1				v1					
+1_41_43_45_50_52	52	ヘッダ部	UN01005720	BBIE	CI_ Trade_ Contact. Person Name.  Text	受注者担当名	取引連絡先の個人の、文字で表現された名前。	0..1	言語コード			v1					
+1_41_43_45_50_53	53	ヘッダ部	UN01005721	BBIE	CI_ Trade_ Contact. Department Name.  Text	受注者部門名	受注者の受注部門の名称。	0..1	言語コード			v1					
+1_41_43_45_50_54	54	ヘッダ部	UN01005726	ASBIE	CI_ Trade_ Contact. Telephone. CI_ Universal_Communication	連絡先／電話情報アソシエーション	連絡先の電話に関わるアソシエーション。	0..1				v1					
+1_41_43_45_50_55	55	ヘッダ部	UN01005857	ABIE	CI_ Universal_ Communication. Details	電話通信クラス	通信（電話）に関わる情報からなるクラス。	−				v1					
+1_41_43_45_50_55_56	56	ヘッダ部	UN01005860	BBIE	CI_ Universal_ Communication. CompleteNumber. Text	受注者電話番号	受注者の電話番号。	0..1				v1					
+1_41_43_57	57	ヘッダ部	UN01005880	ASBIE	CIIH_ Supply Chain_ Trade Agreement. Buyer. CI_ Trade_ Party	請求契約／発注者アソ シエーション	請求に関わる取引契約の発注者に係るアソ シエーション。	0..1				v1					
+1_41_43_58	58	ヘッダ部	UN01005756	ABIE	CI_ Trade_ Party. Details	発注者クラス	発注者に係る情報からなるクラス。	−				v1					
+1_41_43_58_59	59	ヘッダ部	UN01005757	BBIE	CI_ Trade_ Party. Identification. Identifier	発注者コード	注文を行う企業等を表すコード。	0..1				v1		〇			
+1_41_43_58_60	60	ヘッダ部	UN01005758	BBIE	CI_ Trade_ Party. Global_ Identification. Identifier	発注者国際企業コード	注文を行う企業を表す法人コード。	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_43_58_61	61	ヘッダ部	UN01005759	BBIE	CI_ Trade_ Party. Name.  Text	発注者名称	発注を行う企業等の名称	0..1	言語コード			v1		〇			
+1_41_43_58_62	62	ヘッダ部	UN01005761	ASBIE	CI_ Trade_ Party. Defined. CI_ Trade_ Contact	発注者／連絡先アソシ エーション	発注者の連絡先に関わるアソシエーション	0..1				v1					
+1_41_43_58_63	63	ヘッダ部	UN01005718	ABIE	CI_ Trade_ Contact. Details	連絡先クラス	連絡先に係る情報からなるクラス。	−				v1					
+1_41_43_58_63_64	64	ヘッダ部	UN01005719	BBIE	CI_ Trade_ Contact. Identification. Identifier	発注者部門コード	発注者の発注部門を表すコード。	0..1				v1					
+1_41_43_58_63_65	65	ヘッダ部	UN01005720	BBIE	CI_ Trade_ Contact. Person Name.  Text	発注者担当名	発注者の発注担当者の名称	0..1	言語コード			v1					
+1_41_43_58_63_66	66	ヘッダ部	UN01005721	BBIE	CI_ Trade_ Contact. Department Name.  Text	発注者部門名	発注者の発注部門を表す名称	0..1	言語コード			v1					
+1_41_43_58_63_67	67	ヘッダ部	UN01005726	ASBIE	CI_ Trade_ Contact. Telephone. CI_ Universal_Communication	連絡先／電話情報アソシエーション	連絡先の電話に関わるアソシエーション。	0..1				v1					
+1_41_43_58_63_68	68	ヘッダ部	UN01005857	ABIE	CI_ Universal_ Communication. Details	電話通信クラス	通信（電話）に関わる情報からなるクラス。	−				v1					
+1_41_43_58_63_68_69	69	ヘッダ部	UN01005860	BBIE	CI_ Universal_ Communication. CompleteNumber. Text	発注者電話番号	発注者の電話番号。	0..1				v1					
+1_41_43_70	70	ヘッダ部	UN01005890	ASBIE	CIIH_ Supply Chain_ Trade Agreement. Contract_ Referenced. CI_ Referenced_ Document	請求契約／参照文書ア ソシエーション	この請求書が参照する文書のアソシエー ション	0..1				v1					
+1_41_43_71	71	ヘッダ部	UN01005579	ABIE	CI_ Referenced_ Document. Details	参照文書クラス	参照文書に関する情報のクラス	−				v1					
+1_41_43_71_72	72	ヘッダ部	UN01005580	BBIE	CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier	参照文書番号	この請求書が参照する契約を特定するために参照文書発行者が参照文書を特定するた めに付番した管理番号。	0..1				v1					
+1_41_43_71_73	73	ヘッダ部	UN01005582	BBIE	CI_ Referenced_ Document. Issue. Date  Time	参照文書発行日	この請求書が参照する参照文書に参照文書 発行者が記載した契約を行った日付，また は参照文書の書面上の発行日付。	0..1	日時様式			v1					
+1_41_43_71_74	74	ヘッダ部	UN01005589	BBIE	CI_ Referenced_ Document. Name.  Text	参照文書の書名	この請求書が参照する参照文書発行者が参 照文書に付与した文書名称	0..1	言語コード			v1				契約名	***
+1_41_43_71_75	75	ヘッダ部	UN01009672	BBIE	CI_ Referenced_ Document. Type. Code	参照文書タイプコード	参照文書の種別（例えば契約書、納品書な ど）	0..1				v1					
+1_41_43_76	76	ヘッダ部	UN01011516	ASBIE	CIIH_ Supply Chain_ Trade Agreement. Specified. Procuring_ Project	請求契約／プロジェクト調達アソシエーショ ン	取引契約に関係するプロジェクト調達のア ソシエーション	0..1				v1					
+1_41_43_77	77	ヘッダ部	UN01000371	ABIE	Procuring_ Project. Details	プロジェクト調達クラ ス	プロジェクト調達に関する情報のクラス	−				v1					
+1_41_43_77_78	78	ヘッダ部	UN01000372	BBIE	Procuring_ Project. Identification. Identifier	プロジェクト番号	発注品に関するプロジェクト・工事案件等を管理するための番号。	0..1				v1					
+1_41_43_77_79	79	ヘッダ部	UN01000374	BBIE	Procuring_ Project. Name.  Text	プロジェクト名	発注品に関するプロジェクト・工事案件等 の名称。	0..1	言語コード			v1					
+1_41_80	80	ヘッダ部	UN01005938	ASBIE	CIIH_ Supply Chain_ Trade Transaction. Applicable. CIIH_ Supply Chain_ Trade Delivery	請求取引内容／請求配 送アソシエーション	商取引に適用される取引配送。	0..1				v1					
+1_41_81	81	ヘッダ部	UN01005896	ABIE	CIIH_ Supply Chain_ Trade Delivery. Details	請求配送クラス	発送、荷渡を含む製品またはサービスの配送取り決めに関わるクラス	−				v1					
+1_41_81_82	82	ヘッダ部	UN01005898	ASBIE	CIIH_ Supply Chain_ Trade Delivery. Ship To. CI_ Trade_ Party	請求配送／納入先アソシエーション	この請求書と納入先のアソシエーション	0..1				v1					
+1_41_81_83	83	ヘッダ部	UN01005756	ABIE	CI_ Trade_ Party. Details	納入先クラス	納入先に係る情報からなるクラス。	−				v1					
+1_41_81_84	84	ヘッダ部	UN01005757	BBIE	CI_ Trade_ Party. Identification. Identifier	納入先コード	納入先の企業/工場・事業所・事業部門等を表す発注者が付与したコード。	0..1	企業コード表識別子	企業コード発番機関識別子	企業コード発番機関名	v1					
+1_41_81_85	85	ヘッダ部	UN01005758	BBIE	CI_ Trade_ Party. Global_ Identification. Identifier	納入先国際企業コード	納入先企業を表す国際企業コード。	0..1	企業コード表識別子	企業コード発番機関識別子	企業コード発番機関名	v1	△				
+1_41_81_86	86	ヘッダ部	UN01005759	BBIE	CI_ Trade_ Party. Name.  Text	納入先名称	納入先の企業/工場・事業所・事業部門等の名称	0..1	言語コード			v1					
+1_41_81_87	87	ヘッダ部	UN01005905	ASBIE	CIIH_ Supply Chain_ Trade Delivery. Despatch Advice_ Referenced. CI_ Referenced_ Document	請求配送／参照出荷案 内書アソシエーション	この請求書が参照する出荷案内書のアソシ エーション	0..1				v1					
+1_41_81_88	88	ヘッダ部	UN01005579	ABIE	CI_ Referenced_ Document. Details	（参照）出荷案内書ク ラス	参照出荷案内書（納品書）に関する情報の クラス	−				v1					
+1_41_81_88_89	89	ヘッダ部	UN01005580	BBIE	CI_ Referenced_ Document. Issuer Assigned_ Identification.Identifier	（参照）出荷案内書番 号	この文書が参照する受注者が出荷案内書を 特定するために付番した管理番号。	0..1				v1					
+1_41_81_88_90	90	ヘッダ部	UN01005582	BBIE	CI_ Referenced_ Document. Issue. Date  Time	（参照）出荷案内書発 行日	この文書が参照する出荷案内書に受注者が記載した発送を行った日付，または出荷案 内書の書面上の発行日付。	0..1	日時様式			v1					
+1_41_81_88_91	91	ヘッダ部	UN01005589	BBIE	CI_ Referenced_ Document. Name.  Text	（参照）出荷案内書名	この文書が参照する受注者が出荷案内書に 付与した文書名称	0..1	言語コード			v1					
+1_41_81_88_92	92	ヘッダ部	UN01009672	BBIE	CI_ Referenced_ Document. Type. Code	（参照）文書タイプコード	この文書が参照する文書が出荷案内書であ ることを識別する区分コード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_93	93	ヘッダ部	JPS1900002	BBIE	CI_ Referenced_ Document. Category. Code	（参照）出荷案内書類 型コード	この参照文書の類型（適格請求書対応、適 格請求書非対応など）を識別するコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2					
+1_41_94	94	ヘッダ部	UN01005939	ASBIE	CIIH_ Supply Chain_ Trade Transaction. Applicable. CIIH_ Supply Chain_ Trade Settlement	請求取引内容／請求決 済アソシエーション	請求取引内容の請求決済に関わるアソシ エーション	0..1				v2					
+1_41_95	95	ヘッダ部	UN01005909	ABIE	CIIH_ Supply Chain_ Trade Settlement. Details	請求決済クラス	請求時の決済に係る情報からなるクラス。	−				v2					
+1_41_95_96	96	ヘッダ部	UN01005916	ASBIE	CIIH_ Supply Chain_ Trade Settlement. Invoicer. CI_ Trade_ Party	請求決済／請求者アソシエーション	請求決済の請求者にかかわる情報	0..1				v2					
+1_41_95_97	97	ヘッダ部	UN01005756	ABIE	CI_ Trade_ Party. Details	請求者クラス	請求者に係る情報からなるクラス。	−				v2					
+1_41_95_97_98	98	ヘッダ部	UN01005757	BBIE	CI_ Trade_ Party. Identification. Identifier	請求者コード	請求者のコード。	0..1				v2					
+1_41_95_97_99	99	ヘッダ部	UN01005758	BBIE	CI_ Trade_ Party. Global_ Identification. Identifier	請求者国際企業コード	請求者の法人コード。	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2				受取人企業法人コード	**
+1_41_95_97_100	100	ヘッダ部	UN01005759	BBIE	CI_ Trade_ Party. Name.  Text	請求者名称	請求者の企業等を表す名称。	0..1	言語コード			v2		（◎）		受取人企業名	**
+1_41_95_97_101	101	ヘッダ部	UN01013039	BBIE	CI_ Trade_ Party. Registered_ Identification. Identifier	請求者事業者登録番号	登録された請求者の適格請求書発行事業者 番号	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2			◎		
+1_41_95_97_102	102	ヘッダ部	UN01005761	ASBIE	CI_ Trade_ Party. Defined. CI_ Trade_ Contact	請求者／連絡先アソシエーション	請求者の連絡先に関わる情報	0..1				v2					
+1_41_95_97_103	103	ヘッダ部	UN01005718	ABIE	CI_ Trade_ Contact. Details	連絡先クラス	連絡先に係る情報からなるクラス。	−				v2					
+1_41_95_97_103_104	104	ヘッダ部	UN01005719	BBIE	CI_ Trade_ Contact. Identification. Identifier	請求部門コード	請求者の請求部門を表すコード。	0..1				v2					
+1_41_95_97_103_105	105	ヘッダ部	UN01005720	BBIE	CI_ Trade_ Contact. Person Name.  Text	請求者担当名	請求者個人の、文字で表現された名前。	0..1	言語コード			v2					
+1_41_95_97_103_106	106	ヘッダ部	UN01005721	BBIE	CI_ Trade_ Contact. Department Name.  Text	請求者部門名	請求者の請求部門の名称。	0..1	言語コード			v2					
+1_41_95_97_103_107	107	ヘッダ部	UN01005726	ASBIE	CI_ Trade_ Contact. Telephone. CI_ Universal_Communication	連絡先／電話情報アソシエーション	連絡先の電話に関わるアソシエーション。	0..1				v2					
+1_41_95_97_103_108	108	ヘッダ部	UN01005857	ABIE	CI_ Universal_ Communication. Details	電話通信クラス	通信（電話）に関わる情報からなるクラス。	−				v2					
+1_41_95_97_103_108_109	109	ヘッダ部	UN01005860	BBIE	CI_ Universal_ Communication. CompleteNumber. Text	請求者電話番号	請求者の電話番号。	0..1				v2				受取人企業連絡先電話番号	***
+1_41_95_110	110	ヘッダ部	UN01005917	ASBIE	CIIH_ Supply Chain_ Trade Settlement. Invoicee. CI_ Trade_ Party	請求決済／請求先アソシエーション	請求決済の請求先にかかわる情報	0..1				v2					
+1_41_95_111	111	ヘッダ部	UN01005756	ABIE	CI_ Trade_ Party. Details	請求先クラス	請求先に係る情報からなるクラス。	−				v2					
+1_41_95_111_112	112	ヘッダ部	UN01005757	BBIE	CI_ Trade_ Party. Identification. Identifier	請求先コード	請求を受ける企業等を表すコード。	0..1				v2					
+1_41_95_111_113	113	ヘッダ部	UN01005758	BBIE	CI_ Trade_ Party. Global_ Identification. Identifier	請求先国際企業コード	請求を受ける企業等を表す法人コード。	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2				請求先企業法人コード	**
+1_41_95_111_114	114	ヘッダ部	UN01005759	BBIE	CI_ Trade_ Party. Name.  Text	請求先名称	請求を受ける企業等の名称	0..1	言語コード			v2		（◎）		請求先企業名	**
+1_41_95_111_115	115	ヘッダ部	UN01005761	ASBIE	CI_ Trade_ Party. Defined. CI_ Trade_ Contact	請求先／連絡先アソシ エーション	請求先の連絡先に関わるアソシエーション	0..1				v2					
+1_41_95_111_116	116	ヘッダ部	UN01005718	ABIE	CI_ Trade_ Contact. Details	連絡先クラス	連絡先に係る情報からなるクラス。	−				v2					
+1_41_95_111_116_117	117	ヘッダ部	UN01005719	BBIE	CI_ Trade_ Contact. Identification. Identifier	請求先部門コード	請求先の部門を表すコード。	0..1				v2					
+1_41_95_111_116_118	118	ヘッダ部	UN01005720	BBIE	CI_ Trade_ Contact. Person Name.  Text	請求先担当名	請求先の担当者の名称	0..1	言語コード			v2				請求先連絡担当者	***
+1_41_95_111_116_119	119	ヘッダ部	UN01005721	BBIE	CI_ Trade_ Contact. Department Name.  Text	請求先部門名	請求先の部門を表す名称	0..1	言語コード			v2				請求先連絡先部門	***
+1_41_95_111_116_120	120	ヘッダ部	UN01005726	ASBIE	CI_ Trade_ Contact. Telephone. CI_ Universal_ Communication	連絡先／電話情報アソシエーション	連絡先の電話に関わるアソシエーション。	0..1				v2					
+1_41_95_111_116_121	121	ヘッダ部	UN01005857	ABIE	CI_ Universal_ Communication. Details	電話通信クラス	通信（電話）に関わる情報からなるクラス。	−				v2					
+1_41_95_111_116_121_122	122	ヘッダ部	UN01005860	BBIE	CI_ Universal_ Communication. Complete Number. Text	請求先電話番号	請求先の電話番号。	0..1				v2				支払人企業連絡先電話番号	***
+1_41_95_123	123	ヘッダ部	UN01005923	ASBIE	CIIH_ Supply Chain_ Trade Settlement. Specified. CI_ Trade Settlement_ Payment Means	請求決済／支払手段ア ソシエーション	取引決済に特定される取引決済支払手段の アソシエーション。	0..1				v1					
+1_41_95_124	124	ヘッダ部	UN01005670	ABIE	CI_ Trade Settlement_ Payment Means. Details	支払手段クラス	取引決済の目的で支払が行われる、あるい は行われた手段。	−				v1					
+1_41_95_124_125	125	ヘッダ部	UN01005677	ASBIE	CI_ Trade Settlement_ Payment Means. Payee_ Party. CI_ Creditor_ Financial Account	支払手段／金融口座ア ソシエーション	取引決済の支払手段に関する受取人である 当事者の債権者金融口座。	0..1				v1					
+1_41_95_124_126	126	ヘッダ部	UN01005398	ABIE	CI_ Creditor_ Financial Account. Details	金融口座クラス	債権者の銀行口座	−				v1					
+1_41_95_124_126_127	127	ヘッダ部	UN01005400	BBIE	CI_ Creditor_ Financial Account. Account Name. Text	口座名義	債権者金融口座の、文字で表現された口座名。	0..1	言語コード			v1					
+1_41_95_124_126_128	128	ヘッダ部	UN01005401	BBIE	CI_ Creditor_ Financial Account. Proprietary_ Identification. Identifier	口座番号	債権者金融口座の一意の所有者識別子。	0..1				v1					
+1_41_95_124_129	129	ヘッダ部	UN01005679	ASBIE	CI_ Trade Settlement_ Payment Means. Payee_ Specified. CI_ Creditor_ Financial Institution	支払手段／金融機関ア ソシエーション	取引決済の支払手段に対して特定された受 取人である当事者の債権者金融機関。	0..1				v1					
+1_41_95_124_130	130	ヘッダ部	UN01005402	ABIE	CI_ Creditor_ Financial Institution. Details	金融機関クラス	金額を受け取る当事者の銀行、住宅金融組合、信用金庫、証券会社、あるいはそれと 類似の事業機関。	−				v1					
+1_41_95_124_130_131	131	ヘッダ部	UN01005426	BBIE	CI_ Creditor_ Financial Institution. Name.  Text	金融機関名	債権者金融機関の、文字で表現された名 前。	0..1	言語コード			v1					
+1_41_95_124_130_132	132	ヘッダ部	UN01011521	BBIE	CI_ Creditor_ Financial Institution. Japan  FinancialInstitution Common_ Identification. Identifier	金融機関番号	債権者の金融機関番号（日本の場合）	0..1				v1					
+1_41_95_124_130_133	133	ヘッダ部	UN01005428	ASBIE	CI_ Creditor_ Financial Institution. Sub-Division. Bran	金融機関／金融機関支 店アソシエーション	債権者金融機関の支店金融機関。	0..1				v1					
+1_41_95_124_130_134	134	ヘッダ部	UN01003138	ABIE	Branch_ Financial Institution. Details	金融機関支店クラス	銀行、住宅金融組合、信用金庫、証券会社、あるいはそれと類似の事業の部門。主に金融サー ビスと金融取引を提供するために設立された機 関の支店。	-				v1					
+1_41_95_124_130_134_135	135	ヘッダ部	UN01003139	BBIE	Branch_ Financial Institution. Identification. Identifier	金融機関支店番号	金融機関のこの支店の一意識別子	0..1				v1					
+1_41_95_124_130_134_136	136	ヘッダ部	UN01003140	BBIE	Branch_ Financial Institution. Name.  Text	金融機関支店名	金融機関のこの支店の、文字で表現された名前	0..1	言語コード			v1					
+1_41_95_137	137	ヘッダ部	UN01005921	ASBIE	CIIH_ Supply Chain_ Trade Settlement. Invoice_ Applicable. CI_ Trade_ Currency Exchange	請求決済／為替アソシ エーション	請求決済の為替に関わる情報	0..1				v1					
+1_41_95_138	138	ヘッダ部	UN01005738	ABIE	CI_ Trade_ Currency Exchange. Details	為替クラス	為替に係る情報からなるクラス	−				v1					
+1_41_95_138_139	139	ヘッダ部	UN01005739	BBIE	CI_ Trade_ Currency Exchange. Source Currency. Code	為替交換元通貨コード	為替における交換元通貨を表すコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_95_138_140	140	ヘッダ部	UN01005741	BBIE	CI_ Trade_ Currency Exchange. Target Currency. Code	為替交換先通貨コード	為替における交換先通貨を表すコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_95_138_141	141	ヘッダ部	UN01005744	BBIE	CI_ Trade_ Currency Exchange. Conversion. Rate	為替レート	為替交換のレート	0..1				v1					
+1_41_95_138_142	142	ヘッダ部	UN01005745	BBIE	CI_ Trade_ Currency Exchange. Conversion Rate. Date  Time	為替レート日時	為替交換レートの適用日。	0..1	日時様式			v1					
+1_41_95_143	143	ヘッダ部	UN01005924	ASBIE	CIIH_ Supply Chain_ Trade Settlement. Applicable. CI_ Trade_ Tax	請求決済／取引税アソシエーション	請求決済の取引税に関わるアソシエーション	0..n				v1/v2					
+1_41_95_144	144	ヘッダ部	UN01005832	ABIE	CI_ Trade_ Tax. Details	取引税クラス	取引税に係る情報からなるクラス	−				v1					
+1_41_95_144_145	145	ヘッダ部	UN01005833	BBIE	CI_ Trade_ Tax. Calculated. Amount	税額合計	税区分毎の税額の合計。	0..1	通貨コード			v2			◎	税額	**
+1_41_95_144_146	146	ヘッダ部	UN01005834	BBIE	CI_ Trade_ Tax. Type. Code	税タイプコード	税の種類(消費税、関税等)を識別するコー ド	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1/v2					
+1_41_95_144_147	147	ヘッダ部	UN01005839	BBIE	CI_ Trade_ Tax. Basis. Amount	課税対象金額（税抜き）	税区分ごとの税抜き課税対象合計金額	0..1	通貨コード			v2			◎		
+1_41_95_144_148	148	ヘッダ部	UN01005841	BBIE	CI_ Trade_ Tax. Category. Code	税区分コード	消費税の計算属性(標準税率、軽減税率など)を識別するための区分コード。税クラ スの繰返しの自動識別キーとして使用	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1/v2	△		●		
+1_41_95_144_149	149	ヘッダ部	UN01005850	BBIE	CI_ Trade_ Tax. Category Name.  Text	税区分	消費税の計算属性(標準税率、軽減税率な ど)を識別するための区分名	0..1				v2		〇		税区分	**
+1_41_95_144_150	150	ヘッダ部	UN01007174	BBIE	CI_ Trade_ Tax. Rate_ Applicable. Percent	税率	税額計算のための率。	0..1				v1/v2		〇	◎	税率	**
+1_41_95_144_151	151	ヘッダ部	UN01013040	BBIE	CI_ Trade_ Tax. Grand  Total. Amount	課税対象金額（税込み）	税区分ごとの税込み課税対象合計金額	0..1	通貨コード			v2		（◎）			
+1_41_95_152	152	ヘッダ部	JPS1800091	BBIE	CI_ Trade_ Tax. Calculation Method. Code	税計算方式	税計算方式（積上げ、割戻し等）を指定。	0..1				v2					
+1_41_95_153	153	ヘッダ部	UN01005930	ASBIE	CIIH_ Supply Chain_ Trade Settlement. Specified. CIIH_ Trade Settlement_ Monetary Summation	請求決済／請求合計金 額アソシエーション	請求決済の請求合計金額に関わるアソシ エーション	1..1				v1					
+1_41_95_154	154	ヘッダ部	UN01005941	ABIE	CIIH_ Trade Settlement_ Monetary Summation. Details	請求合計金額クラス	請求合計金額に係る情報からなるクラス	−				v1					
+1_41_95_154_155	155	ヘッダ部	UN01005946	BBIE	CIIH_ Trade Settlement_ Monetary Summation. Tax Total.Amount	請求合計税額	請求明細消費税額の合計金額。	0..1	通貨コード			v1		〇		税額	**
+1_41_95_154_156	156	ヘッダ部	UN01005948	BBIE	CIIH_ Trade Settlement_ Monetary Summation. Grand  Total. Amount	請求総合計金額	請求金額の総合計金額=請求合計金額（税抜き）＋請求合計税額	0..1	通貨コード			v1		〇			
+1_41_95_154_157	157	ヘッダ部	UN01008451	BBIE	CIIH_ Trade Settlement_ Monetary Summation. Net_ LineTotal. Amount	請求合計金額（税抜き）	税抜きの請求合計金額。	0..1	通貨コード			v1					
+1_41_158	158	ヘッダ部	UN01008452	BBIE	CIIH_ Trade Settlement_ Monetary Summation. NetIncluding Taxes_ Line Total. Amount	請求合計金額（税込み）	税込みの請求合計金額。	0..1	通貨コード			v2					
+1_41_159	159	明細部	UN01005940	ASBIE	CIIH_ Supply Chain_ Trade Transaction. Included. CIIL_ Supply Chain_ Trade Line Item	請求取引内容／請求明 細行アソシエーション	請求アソシエーション取引内容の明細行に 関わるアソシエーション。	0..n				v1					
+1_41_160	160	明細部	UN01005988	ABIE	CIIL_ Supply Chain_ Trade Line Item. Details	請求明細行クラス	請求の明細行に関わる情報からなるクラス。	−				v1					
+1_41_160_161	161	明細部	UN01005989	ASBIE	CIIL_ Supply Chain_ Trade Line Item. Associated. CIIL_ Document Line_ Document	請求明細行／請求明細 関係文書アソシエー ション	請求明細行の関係文書に関わるアソシエー ション。	0..1				v1					
+1_41_160_162	162	明細部	UN01005953	ABIE	CIIL_ Document Line_ Document. Details	請求明細文書クラス	請求文書明細に関わる情報からなるクラス。	−				v1					
+1_41_160_162_163	163	明細部	UN01005954	BBIE	CIIL_ Document Line_ Document. Line. Identifier	請求明細行番号	複数明細請求の場合に明細ごとの請求を特 定するために付与した番号。明細行を識別 するために付番する場合は請求番号との複 合キーで請求明細を特定する。	0..1				v1		〇		行番号	***
+1_41_160_162_164	164	明細部	UN01005957	ASBIE	CIIL_ Document Line_ Document. Included. CI_ Note	請求明細文書／請求明細注釈アソシエーショ ン	当該文書行に含まれる注釈	0..n				v1					
+1_41_160_162_165	165	明細部	UN01005557	ABIE	CI_ Note. Details	請求明細注釈クラス	明細注釈を記述するクラス	-				v1					
+1_41_160_162_165_166	166	明細部	UN01005558	BBIE	CI_ Note. Subject. Text	請求明細注釈表題n	明細注釈内容の表題を示す。	0..1	言語コード			v1					
+1_41_160_162_165_167	167	明細部	UN01005560	BBIE	CI_ Note. Content. Text	請求明細注釈内容n	明細注釈表題ごとの内容情報を入力するフリースペース。	0..1	言語コード			v1					
+1_41_160_162_165_168	168	明細部	UN01005562	BBIE	CI_ Note. Identification. Identifier	請求明細注釈識別子	明細注釈の識別番号	0..1				v1	△				
+1_41_160_169	169	明細部	UN01005990	ASBIE	CIIL_ Supply Chain_ Trade Line Item. Specified. CIIL_ Supply Chain_Trade Agreement	請求明細行／契約アソ シエーション	請求明細行の請求明細契約に関わるアソシ エーション。	0..1				v1					
+1_41_160_170	170	明細部	UN01005958	ABIE	CIIL_ Supply Chain_ Trade Agreement. Details	請求明細契約クラス	請求明細行毎の契約に関わる情報からなる クラス。	−				v1					
+1_41_160_170_171	171	明細部	UN01005960	ASBIE	CIIL_ Supply Chain_ Trade Agreement. Seller Order_ Referenced. CI_ Referenced_ Document	請求明細契約／注文回 答書アソシエーション	請求明細行が参照する注文回答書明細に関 わるアソシエーション。	0..1				v1					
+1_41_160_170_172	172	明細部	UN01005579	ABIE	CI_ Referenced_ Document. Details	（参照）受注書明細ク ラス	参照する受注書明細に関わる情報からなる クラス。	−				v1					
+1_41_160_170_172_173	173	明細部	UN01005580	BBIE	CI_ Referenced_ Document. Issuer Assigned_Identification. Identifier	（参照）受注番号	当該請求書が参照する受注書に記載の受注番号	0..1				v1				受注番号	***
+1_41_160_170_172_174	174	明細部	UN01005585	BBIE	CI_ Referenced_ Document. Line. Identifier	（参照）受注明細行番 号	当該請求明細が参照する受注書明細に記載 の受注者が附番した受注明細行番号	0..1				v1					
+1_41_160_170_175	175	明細部	UN01005961	ASBIE	CIIL_ Supply Chain_ Trade Agreement. Buyer Order_ Referenced. CI_ Referenced_ Document	請求明細契約／注文書 アソシエーション	請求明細行が参照する注文書明細に関わる アソシエーション。	0..1				v1					
+1_41_160_170_176	176	明細部	UN01005579	ABIE	CI_ Referenced_ Document. Details	（参照）注文書明細ク ラス	参照する注文書明細に関わる情報からなる クラス。	−				v1					
+1_41_160_170_176_177	177	明細部	UN01005580	BBIE	CI_ Referenced_ Document. Issuer Assigned_Identification. Identifier	（参照）注文番号	当該請求明細行が参照する契約注文書に記載の注文番号	0..1				v1				発注番号	***
+1_41_160_170_176_178	178	明細部	UN01005585	BBIE	CI_ Referenced_ Document. Line. Identifier	（参照）注文明細行番号	当該請求明細が参照する注文書明細に記載の発注者が附番した注文明細行番号	0..1				v1					
+1_41_160_170_179	179	明細部	UN01005967	ASBIE	CIIL_ Supply Chain_ Trade Agreement. Net Price_ Product. CI_ Trade_ Price	請求明細行契約／取引 価格アソシエーション	請求明細契約の取引価格に関わるアソシ エーション。	0..1				v1					
+1_41_160_170_180	180	明細部	UN01005790	ABIE	CI_ Trade_ Price. Details	取引価格クラス	請求明細行毎の取引価格に関わる情報からなるクラス。	−				v1					
+1_41_160_170_180_181	181	明細部	UN01005791	BBIE	CI_ Trade_ Price. Type. Code	単価区分コード	単価の種別を示すコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_160_170_180_182	182	明細部	UN01005792	BBIE	CI_ Trade_ Price. Charge. Amount	契約単価	発注者と受注者が合意した明細発注品の１単位あたり契約単価(税抜き)。	0..1	通貨コード			v1		〇		単価	***
+1_41_160_183	183	明細部	UN01005991	ASBIE	CIIL_ Supply Chain_ Trade Line Item. Specified. CIIL_ Supply Chain_ Trade Delivery	請求明細行／配送アソ シエーション	請求明細行に指定された配送に関するアソ シエーション	0..1				v1					
+1_41_160_184	184	明細部	UN01005968	ABIE	CIIL_ Supply Chain_ Trade Delivery. Details	請求明細配送クラス	請求書明細の配送に関わるクラス	-				v1					
+1_41_160_185	185	明細部	UN01005969	BBIE	CIIL_ Supply Chain_ Trade Delivery. Billed. Quantity	請求数量	当該配送の明細品目で請求した数量	0..1	単位コード			v1		〇		数量	***
+1_41_160_186	186	明細部	UN01011517	BBIE	CIIL_ Supply Chain_ Trade Delivery. Requested. Quantity	要求数量	当該配送明細品目に対する発注者の要求数 量	0..1	単位コード			v1					
+1_41_160_187	187	明細部	UN01005986	ASBIE	CIIL_ Supply Chain_ Trade Delivery. Actual_ Delivery. CI_ Supply Chain_ Event	請求明細配送／取引事 象アソシエーション	請求明細の実納品作業に関わるアソシエ― ション	0..1				v1					
+1_41_160_188	188	明細部	UN01005626	ABIE	CI_ Supply Chain_ Event. Details	配送作業クラス	実納品に関わる情報からなるクラス	−				v1					
+1_41_160_188_189	189	明細部	UN01005627	BBIE	CI_ Supply Chain_ Event. Identification. Identifier	納入番号	受注者が附番した納入書に記載の納入番号	0..1				v1				納入番号	***
+1_41_160_188_190	190	明細部	UN01005628	BBIE	CI_ Supply Chain_ Event. Occurrence. Date  Time	出荷日時	品目の配送日/時刻。<消費税：物品取引による資産譲渡の場合◎>	0..1	日時様式			v1		（◎）		納入日時	***
+1_41_160_191	191	明細部	UN01006041	ASBIE	CIIL_ Supply Chain_ Trade Delivery. Delivery Note_ Referenced. CI_ Referenced_ Document	請求明細配送／参照納品書明細アソシエー ション	請求明細が参照する納品書明細に関するア ソシエーション	0..1				v1					
+1_41_160_192	192	明細部	UN01005579	ABIE	CI_ Referenced_ Document. Details	（参照）納品書明細クラス	当該請求が参照する出荷案内書明細に関わるクラス	-				v1					
+1_41_160_192_193	193	明細部	UN01005580	BBIE	CI_ Referenced_ Document. Issuer Assigned_ Identif	（参照）納品書番号	当該請求書が参照する納品書を特定する番号	0..1				v1		〇		納品伝票番号	***
+1_41_160_192_194	194	明細部	UN01005582	BBIE	CI_ Referenced_ Document. Issue. Date  Time	（参照）納品書発行日	この請求書が参照する納品書に受注者が記載した発送を行った日付，または納品書の 書面上の発行日付。	0..1	日時様式			v1					
+1_41_160_192_195	195	明細部	JPS1900002	BBIE	CI_ Referenced_ Document. Category. Code	（参照）納品書類型コード	この請求書が参照する納品書の類型（適格請求書等対応、適格請求書等非対応等）を 識別するコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v2			●		
+1_41_160_192_196	196	明細部	UN01005585	BBIE	CI_ Referenced_ Document. Line. Identifier	（参照）納品明細行番号	当該請求書が参照する納品書に記載の受注者が附番した納品明細行番号	0..1				v1					
+1_41_160_192_197	197	明細部	UN01005589	BBIE	CI_ Referenced_ Document. Name.  Text	（参照）納品書名	この請求書が参照する受注者が納品書に付 与した文書名称	0..1	言語コード			v1					
+1_41_160_192_198	198	明細部	UN01009672	BBIE	CI_ Referenced_ Document. Type. Code	（参照）文書タイプコード	この請求書が参照する文書が納品書である ことを識別する区分コード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1					
+1_41_160_199	199	明細部	UN01005992	ASBIE	CIIL_ Supply Chain_ Trade Line Item. Specified. CIIL_ Supply Chain_Trade Settlement	検収明細行／検収明細決済アソシエーション	検検収明細行の検収明細決済に関わるアソシエーション。	0..1				v1					
+1_41_160_200	200	明細部	UN01005994	ABIE	CIIL_ Supply Chain_ Trade Settlement. Details	検収明細決済クラス	検収明細行毎の決済に関わる情報からなるクラス。	-				v1					
+1_41_160_200_201	201	明細部	UN01005995	BBIE	CIIL_ Supply Chain_ Trade Settlement. Payment Reference.Text	支払参照情報	当該決済の支払に関する参照情報	0..1	言語コード			v1					
+1_41_160_200_202	202	明細部	UN01005996	ASBIE	CIIL_ Supply Chain_ Trade Settlement. Applicable. CI_ Trade_ Tax	請求明細決済／取引税アソシエーション	請求明細決済の取引税に関わるアソシエーション	0..n				v1/v2					
+1_41_160_200_203	203	明細部	UN01005832	ABIE	CI_ Trade_ Tax. Details	取引税クラス	取引税に係る情報からなるクラス	-				v1					
+1_41_160_200_203_204	204	明細部	UN01005833	BBIE	CI_ Trade_ Tax. Calculated. Amount	明細税額	税の金額。（明細行の消費税額算出は認められない）	0..1	通貨コード			v2					
+1_41_160_200_203_205	205	明細部	UN01005834	BBIE	CI_ Trade_ Tax. Type. Code	税タイプコード	税の種類(消費税、関税など）を識別するコード	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1/v2					
+1_41_160_200_203_206	206	明細部	UN01005839	BBIE	CI_ Trade_ Tax. Basis. Amount	課税対象明細金額（税 抜き）	税抜き消費税課税対象明細金額（＝単価 (税抜き)×検収数量）	0..1				v2					
+1_41_160_200_203_207	207	明細部	UN01005841	BBIE	CI_ Trade_ Tax. Category. Code	税区分コード	消費税の計算属性(標準税率、軽減税率な ど)を識別するための区分コード。税クラ スの繰返しの自動識別キーとして使用	0..1	コード表識別子	コード表管理者コード	コード表管理者名	v1/v2	△		●		
+1_41_160_200_203_208	208	明細部	UN01005850	BBIE	CI_ Trade_ Tax. Category Name.  Text	税区分	消費税の計算属性(標準税率、軽減税率な ど)を識別するための区分名	0..1				v2		（◎）		税区分	**
+1_41_160_200_203_209	209	明細部	UN01007174	BBIE	CI_ Trade_ Tax. Rate_ Applicable. Percent	税率	税額計算のための率。	0..1				v1/v2					
+1_41_160_200_203_210	210	明細部	UN01013040	BBIE	CI_ Trade_ Tax. Grand  Total. Amount	課税対象明細金額（税 込み）	税込み消費税課税対象明細金額（＝単価 (税込み)×数量）	0..1				v2					
+1_41_160_200_203_211	211	明細部	JPS1800091	BBIE	CI_ Trade_ Tax. Calculation Method. Code	税計算方式	税計算方式（積上げ、割戻し等）を指定。	0..1				v2					
+1_41_160_212	212	明細部	UN01006002	ASBIE	CIIL_ Supply Chain_ Trade Settlement. Specified. CIIL_ Trade Settlement_ Monetary Summation	請求明細決済／請求明 細合計金額アソシエー ション	請求明細行決済の請求合計金額に関わるア ソシエーション	0..1				v1					
+1_41_160_213	213	明細部	UN01006006	ABIE	CIIL_ Trade Settlement_ Monetary Summation. Details	請求明細合計金額クラス	請求合計金額に係る情報からなるクラス	-				v1					
+1_41_160_213_214	214	明細部	UN01008456	BBIE	CIIL_ Trade Settlement_ Monetary Summation. Net_ Line Total. Amount	請求明細金額（税抜き）	発注品明細の請求金額(税抜き）。（税抜 き単価×数量）	0..1	通貨コード			v1					
+1_41_160_213_215	215	明細部	UN01013030	BBIE	CIIL_ Trade Settlement_ Monetary Summation.Including Taxes_ Line Total. Amount	請求明細金額（税込み）	発注品明細の請求金額(税込み）。（税込み単価×数量）	0..1	通貨コード			v1					
+1_41_160_216	216	明細部	UN01005993	ASBIE	CIIL_ Supply Chain_ Trade Line Item. Specified. CI_ Trade_ Product	請求明細行／取引品目 アソシエーション	請求明細行の取引品目に関わるアソシエー ション。	0..1				v1					
+1_41_160_217	217	明細部	UN01005809	ABIE	CI_ Trade_ Product. Details	取引品目クラス	発注品（注文明細行の取引品目）に関わる 情報からなるクラス。	-				v1					
+1_41_160_217_218	218	明細部	UN01005813	BBIE	CI_ Trade_ Product. Buyer Assigned_ Identification. Identifier	品名コード	発注者が発注品の品名を特定するために付 与したコード	0..1				v1				製品コード	***
+1_41_160_217_219	219	明細部	UN01005815	BBIE	CI_ Trade_ Product. Name.  Text	品名	発注品の品名。	0..1	言語コード			v1				製品名	***
+1_41_160_217_220	220	明細部	UN01005817	BBIE	CI_ Trade_ Product. Description. Text	品目摘要	このCI取引品目を文字で説明したもの	0..1	言語コード			v1		（◎）		製品名	***
+	END																
