@@ -691,6 +691,7 @@ var initModule = function () {
   // -----------------------------------------------------------------
   function tableInitEN(json) {
     var data, i, item, level, seq, num,
+        prev_item = {},
         idxLevel = [], rows = [];
     EnMap = new Map();
     EnNums = [];
@@ -725,9 +726,12 @@ var initModule = function () {
       idxLevel[level] = num;
       item.num = num;
       item.seq = seq;
-      rows.push(item);
-      EnNums.push(num);
-      EnMap.set(seq, item);
+      if (prev_item.EN_BT !== item.EN_BT) {
+        rows.push(item);
+        EnNums.push(num);
+        EnMap.set(seq, item);
+      }
+      prev_item = item;
     }
     filterRoot('#en');
     checkDetails('#en');
@@ -809,14 +813,9 @@ var initModule = function () {
       num = item.num;
       seq = item.seq;
       item.num = num;
-      if (item['SME'] || item['Invoice'] || item['private'] ||
-          'MA' == item['kind'] || 'ASMA' == item['kind'] ||
-          // 'ASBIE' == item['kind'] || 
-          'ABIE' == item['kind']) {
-        nums.push(num);
-        rows.push(item);
-        map.set(seq, item);
-      }
+      nums.push(num);
+      rows.push(item);
+      map.set(seq, item);
     }
     SmeMap = map;
     SmeNums = nums;
@@ -1031,7 +1030,7 @@ var initModule = function () {
     }
   });
   // CII
-  $('#en tbody').on('click', 'td:not(.info-control)', function (event) {
+  $('#cii tbody').on('click', 'td:not(.info-control)', function (event) {
     event.stopPropagation();
     var tr = $(this).closest('tr'),
         row = cii_table.row(tr), data = row.data();

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <title>Standard data format comparison</title>
+    <title>EN 16931</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <!-- jQuery -->
@@ -74,7 +74,6 @@
     <div id="tab-1" class="tab d-none">
       <p class="tablinks en" onclick="setFrame(1, 'en');return false;">EN 16931</p>
       <p class="tablinks ubl" onclick="setFrame(1, 'ubl');return false;">UBL 2.1</p>
-      <p class="tablinks peppol" onclick="setFrame(1, 'peppol');return false;">PEPPOL</p>
       <p class="tablinks cii" onclick="setFrame(1, 'cii');return false;">CII</p>
       <p class="tablinks sme" onclick="setFrame(1, 'sme');return false;">SME</p>
     </div>
@@ -82,7 +81,6 @@
     <div id="tab-2" class="tab d-none">
       <p class="tablinks en" onclick="setFrame(2, 'en');return false;">EN 16931</p>
       <p class="tablinks ubl" onclick="setFrame(2, 'ubl');return false;">UBL 2.1</p>
-      <p class="tablinks peppol" onclick="setFrame(2, 'peppol');return false;">PEPPOL</p>
       <p class="tablinks cii" onclick="setFrame(2, 'cii');return false;">CII</p>
       <p class="tablinks sme" onclick="setFrame(2, 'sme');return false;">SME</p>
     </div>
@@ -97,12 +95,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <p id="en-title" class="title d-none">EN 16931-1</p>
-    <p id="ubl-title" class="title d-none">UBL 2.1</p>
-    <p id="peppol-title" class="title d-none">PEPPOL BIS</p>
-    <p id="cii-title" class="title d-none">CII</p>
-    <p id="sme-title" class="title d-none">SME</p> -->
 
     <div class="d-none">
       <!-- EN -->
@@ -127,23 +119,6 @@
         <div id="ubl-frame" class="pretty-split-pane-component-inner">
           <span class="table-title">Part 3-2 ISO/IEC 19845 (UBL 2.1)</span>
           <table id="ubl" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>-</th>
-                <th>Name</th>
-                <th>Card.</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <!-- PEPPOL -->
-      <div id="peppol-container">
-        <div id="peppol-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">PEPPOL BIS</span>
-          <table id="peppol" class="display" style="width:100%">
             <thead>
               <tr>
                 <th></th><!-- detail-control -->
