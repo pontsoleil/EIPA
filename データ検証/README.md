@@ -1,3 +1,6 @@
+# [Singapole BIS Billing](https://github.com/SG-PEPPOL/SG-PEPPOL-Specifications)
+シンガポールにおけるOpen PEPPOL BIS 3.0の拡張定義
+
 # [A-NZ-PEPPOL-BIS-3.0](A-NZ-PEPPOL-BIS-3.0)
 オーストラリア及びニュージーランドにおけるOpen PEPPOL BIS 3.0の拡張定義
 
