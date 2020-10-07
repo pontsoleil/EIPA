@@ -26,7 +26,7 @@
     <!-- this page -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/snackbar.css">
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/syntax.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" class="init">
@@ -49,7 +49,7 @@
         $('#ie-warning').addClass('d-none');
         $('#root').removeClass('d-none').addClass('d-block');
         $('#tab-1').removeClass('d-none');
-        // $('#tab-2').removeClass('d-none');
+        $('#tab-2').removeClass('d-none');
         tab1 = getUrlParameter('t1');
         tab2 = getUrlParameter('t2');
         initModule(tab1, tab2);
@@ -79,10 +79,10 @@
     </div>
   
     <div id="tab-2" class="tab d-none">
-      <!-- <p class="tablinks en" onclick="setFrame(2, 'en');return false;">EN 16931</p>
+      <p class="tablinks en" onclick="setFrame(2, 'en');return false;">EN 16931</p>
       <p class="tablinks ubl" onclick="setFrame(2, 'ubl');return false;">UBL 2.1</p>
       <p class="tablinks cii" onclick="setFrame(2, 'cii');return false;">CII</p>
-      <p class="tablinks sme" onclick="setFrame(2, 'sme');return false;">SME</p> -->
+      <p class="tablinks sme" onclick="setFrame(2, 'sme');return false;">SME</p>
     </div>
 
     <!-- ROOT -->
@@ -159,24 +159,6 @@
                 <th>-</th>
                 <th>DEN</th>
                 <th>Card.</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-
-      <!-- Rule -->
-      <div id="rule-container">
-        <div id="rule-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">Business rules</span>
-          <table id="rule" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>ID</th>
-                <th>Desc.</th>
-                <th>Term</th>
                 <th></th><!-- info-control -->
               </tr>
             </thead>
