@@ -1,0 +1,1799 @@
+<xbrli:xbrl xmlns:map="http://www.nsg.org/map" xmlns:xbrli="http://www.xbrl.org/2003/instance"
+            xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2016-12-01"
+            xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2016-12-01"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:gl-cor-fi="http://www.xbrl.org/int/gl/cor/fi/2017-01-01"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2016-12-01"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+            xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2016-12-01"
+            xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+            xmlns:gl-rapko="http://www.xbrl.org/int/gl/rapko/2015-07-01"
+            xmlns:fn="http://www.w3.org/2005/02/xpath-functions"
+            xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2016-12-01"
+            xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+            xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2016-12-01"
+            xmlns:link="http://www.xbrl.org/2003/linkbase"
+            xmlns:iso639="http://www.xbrl.org/2005/iso639"
+            xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2016-12-01 ../../../XBRL-GL-PWD-2016-12-01-fi-2018-11-06/gl/plt/case-c-b-m-u-t-s-r/gl-plt-fi-all-2017-01-01.xsd">
+   <xbrll:schemaRef xlink:type="simple"
+                    xlink:href="../../../XBRL-GL-PWD-2016-12-01-fi-2018-11-06/gl/plt/case-c-b-m-u-t-s-r/gl-plt-fi-all-2017-01-01.xsd"
+                    xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+   <xbrli:context id="now">
+      <xbrli:entity>
+         <xbrli:identifier scheme="http://www.xbrl.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
+      </xbrli:entity>
+      <xbrli:period>
+         <xbrli:instant>2020-10-09+09:00</xbrli:instant>
+      </xbrli:period>
+   </xbrli:context>
+   <xbrli:unit id="NotUsed">
+      <xbrli:measure>pure</xbrli:measure>
+   </xbrli:unit>
+   <xbrli:unit id="">
+      <xbrli:measure>
+          iso4217:
+          </xbrli:measure>
+   </xbrli:unit>
+   <xbrli:unit id="EUR">
+      <xbrli:measure>
+            iso4217:
+            EUR</xbrli:measure>
+   </xbrli:unit>
+   <gl-cor:accountingEntries>
+      <gl-cor:documentInfo>
+         <gl-cor:entriesType contextRef="now">entries</gl-cor:entriesType>
+         <gl-cor:creationDate contextRef="now">2020-10-09+09:00</gl-cor:creationDate>
+         <gl-bus:creator contextRef="now">NSG reference implementation</gl-bus:creator>
+         <gl-cor:entriesComment contextRef="now">Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</gl-cor:entriesComment>
+         <gl-bus:sourceApplication contextRef="now">NSG reference implementation application</gl-bus:sourceApplication>
+         <gl-muc:defaultCurrency contextRef="now"/>
+      </gl-cor:documentInfo>
+      <gl-cor:entityInformation>
+         <gl-bus:organizationIdentifiers/>
+         <gl-bus:organizationIdentifiers/>
+         <gl-bus:organizationAddress>
+            <gl-bus:organizationAddressStreet contextRef="now">POSTBUS 367</gl-bus:organizationAddressStreet>
+            <gl-bus:organizationAddressCity contextRef="now">HEEMSKERK</gl-bus:organizationAddressCity>
+            <gl-bus:organizationAddressZipOrPostalCode contextRef="now">1960 AJ</gl-bus:organizationAddressZipOrPostalCode>
+            <gl-bus:organizationAddressCountry contextRef="now">NL</gl-bus:organizationAddressCountry>
+         </gl-bus:organizationAddress>
+         <gl-bus:contactInformation>
+            <gl-bus:contactAttentionLine contextRef="now">, Dhr. J BLOKKER</gl-bus:contactAttentionLine>
+            <gl-bus:contactPhone/>
+            <gl-bus:contactEMail/>
+         </gl-bus:contactInformation>
+      </gl-cor:entityInformation>
+      <gl-cor:entryHeader>
+         <gl-cor:enteredBy contextRef="now">NSG example person</gl-cor:enteredBy>
+         <gl-cor:sourceJournalID contextRef="now">pj</gl-cor:sourceJournalID>
+         <gl-bus:sourceJournalDescription contextRef="now">journal</gl-bus:sourceJournalDescription>
+         <gl-cor:entryComment contextRef="now">purchases</gl-cor:entryComment>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:accountMainID contextRef="now">290601</gl-cor:accountMainID>
+               <gl-cor:mainAccountTypeDescription contextRef="now">FI</gl-cor:mainAccountTypeDescription>
+               <!--See the Finnish chart of accounts here, also in swedish: https://koodistot.suomi.fi/extension;registryCode=sbr-fi-code-lists;schemeCode=MC-2019-1;extensionCode=MC65--><!--Swedish standard chart of accounts: https://docs.google.com/spreadsheets/d/1MOZ_AlbkiQqFNCCQDjOucVxsElZgc_5yCKKV_KrrHjg/edit?usp=sharing
+Norwegian standard chart of accounts:
+https://drive.google.com/file/d/1oPllLYGpmKKPnF1IXHxsHltanrjevWuu/view?usp=sharing
+Danish standard chart of accounts:
+https://docs.google.com/spreadsheets/d/14KIXWaZEED6UNL4XhSVFtzEwqhCTxNAMJjpalSOyB8A/edit?usp=sharing
+Icelandic standard chart of accounts:
+https://drive.google.com/open?id=18m-0i6DfcAmV1KKZcp-5XRt8mQq-HEsD--></gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-cor:detailComment contextRef="now">Header</gl-cor:detailComment>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:accountMainID contextRef="now">17621</gl-cor:accountMainID>
+               <gl-cor:mainAccountTypeDescription contextRef="now">FI</gl-cor:mainAccountTypeDescription>
+               <!--See the Finnish chart of accounts here, also in swedish: https://koodistot.suomi.fi/extension;registryCode=sbr-fi-code-lists;schemeCode=MC-2019-1;extensionCode=MC65--><!--Swedish standard chart of accounts: https://docs.google.com/spreadsheets/d/1MOZ_AlbkiQqFNCCQDjOucVxsElZgc_5yCKKV_KrrHjg/edit?usp=sharing
+Norwegian standard chart of accounts:
+https://drive.google.com/file/d/1oPllLYGpmKKPnF1IXHxsHltanrjevWuu/view?usp=sharing
+Danish standard chart of accounts:
+https://docs.google.com/spreadsheets/d/14KIXWaZEED6UNL4XhSVFtzEwqhCTxNAMJjpalSOyB8A/edit?usp=sharing
+Icelandic standard chart of accounts:
+https://drive.google.com/open?id=18m-0i6DfcAmV1KKZcp-5XRt8mQq-HEsD--></gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-cor:detailComment contextRef="now">Header VAT</gl-cor:detailComment>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:accountMainID contextRef="now">17621</gl-cor:accountMainID>
+               <gl-cor:mainAccountTypeDescription contextRef="now">FI</gl-cor:mainAccountTypeDescription>
+               <!--See the Finnish chart of accounts here, also in swedish: https://koodistot.suomi.fi/extension;registryCode=sbr-fi-code-lists;schemeCode=MC-2019-1;extensionCode=MC65--><!--Swedish standard chart of accounts: https://docs.google.com/spreadsheets/d/1MOZ_AlbkiQqFNCCQDjOucVxsElZgc_5yCKKV_KrrHjg/edit?usp=sharing
+Norwegian standard chart of accounts:
+https://drive.google.com/file/d/1oPllLYGpmKKPnF1IXHxsHltanrjevWuu/view?usp=sharing
+Danish standard chart of accounts:
+https://docs.google.com/spreadsheets/d/14KIXWaZEED6UNL4XhSVFtzEwqhCTxNAMJjpalSOyB8A/edit?usp=sharing
+Icelandic standard chart of accounts:
+https://drive.google.com/open?id=18m-0i6DfcAmV1KKZcp-5XRt8mQq-HEsD--></gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-cor:detailComment contextRef="now">Header VAT</gl-cor:detailComment>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">9.95</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">166022</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">PATAT FRITES 10MM 10KG</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">2</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">9.85</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">661813</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">PKAAS 50PL. JONG BEL. 1KG</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">8.29</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">438146</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">POT KETCHUP 3 LT</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">7.23</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">438103</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">FRITESSAUS 3 LRR</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">2</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">35.00</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">666955</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">KOFFIE BLIK 3,5KG SNELF </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">35.00</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">664871</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">KOFFIE 3.5 KG BLIK STAND </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">10.65</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">350257</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">SUIKERKLONT</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">1.55</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">350258</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">1 KG UL BLOKJES </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">4.79</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">999998</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">BLOCKNOTE A5 </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">3</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">8.29</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">740810</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">CHIPS NAT KLEIN ZAKJES</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">8.29</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">740829</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">CHIPS PAP KLEINE ZAKJES</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">2</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">9.95</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">740828</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">TR KL PAKJES APPELSAP </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">1.65</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">740827</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">PK CHOCOLADEMEL</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">2</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">10.80</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">999996</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">KRAT BIER </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">21</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">3.90</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">999995</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">STATIEGELD</gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">3.80</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">102172</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">BLEEK 3 X 750 ML </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">2</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">21</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">4.67</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">999994</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">WC PAPIER </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">2</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">21</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">18.63</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">999993</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">BALPENNEN 50 ST BLAUW </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">1</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">21</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">17.02</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">999992</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">EM FRITUURVET </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">6</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+         <gl-cor:entryDetail>
+            <gl-cor:account>
+               <gl-cor:mainAccountTypeDescription contextRef="now">NL</gl-cor:mainAccountTypeDescription>
+            </gl-cor:account>
+            <gl-cor:amount contextRef="now" unitRef="" decimals="2">NaN</gl-cor:amount>
+            <gl-cor:postingDate contextRef="now">2015-01-09</gl-cor:postingDate>
+            <gl-cor-fi:priceDetails>
+               <gl-cor-fi:netPrice contextRef="now" unitRef="EUR" decimals="2">18.33</gl-cor-fi:netPrice>
+            </gl-cor-fi:priceDetails>
+            <gl-muc:amountOriginalCurrency contextRef="now">EUR</gl-muc:amountOriginalCurrency>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierCode contextRef="now">10202</gl-cor:identifierCode>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">POSTBUS 367</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">HEEMSKERK</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1960 AJ</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">57151520</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">ytunnus</gl-cor:identifierAuthority>
+                  <!--Business ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL8200.98.395.B.01</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">alvtunnus</gl-cor:identifierAuthority>
+                  <!--VAT ID--></gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference>
+                  <gl-cor:identifierAuthorityCode contextRef="now">NL57 RABO 0107307510</gl-cor:identifierAuthorityCode>
+                  <gl-cor:identifierAuthority contextRef="now">IBAN</gl-cor:identifierAuthority>
+               </gl-cor:identifierExternalReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+               <gl-cor:identifierDescription contextRef="now">De Koksmaat</gl-cor:identifierDescription>
+               <gl-cor:identifierType contextRef="now">FI-S</gl-cor:identifierType>
+               <gl-bus:identifierAddress>
+                  <gl-bus:identifierStreet contextRef="now">Postbus 7l</gl-bus:identifierStreet>
+                  <gl-bus:identifierCity contextRef="now">Velsen-Noord</gl-bus:identifierCity>
+                  <gl-bus:identifierCountry contextRef="now">NL</gl-bus:identifierCountry>
+                  <gl-bus:identifierZipOrPostalCode contextRef="now">1950 AB</gl-bus:identifierZipOrPostalCode>
+               </gl-bus:identifierAddress>
+               <gl-cor:identifierContactInformationStructure>
+                  <gl-cor:identifierContactPhone/>
+                  <gl-cor:identifierContactEmail/>
+               </gl-cor:identifierContactInformationStructure>
+            </gl-cor:identifierReference>
+            <gl-cor:identifierReference>
+               <gl-cor:identifierExternalReference/>
+               <gl-cor:identifierOrganizationType contextRef="now">organization</gl-cor:identifierOrganizationType>
+            </gl-cor:identifierReference>
+            <gl-cor:documentType contextRef="now">invoice</gl-cor:documentType>
+            <gl-cor:documentReference contextRef="now">Deb. 10202 / Fact. 12115118</gl-cor:documentReference>
+            <gl-cor:documentDate contextRef="now">2015-01-09</gl-cor:documentDate>
+            <gl-bus:paymentMethod contextRef="now">30</gl-bus:paymentMethod>
+            <gl-bus:measurable>
+               <gl-bus:measurableIDOther contextRef="now">175137</gl-bus:measurableIDOther>
+               <gl-bus:measurableDescription contextRef="now">FRITUUR VET 10 KG RETOUR </gl-bus:measurableDescription>
+               <gl-bus:measurableQuantity contextRef="now" unitRef="NotUsed" decimals="0">6</gl-bus:measurableQuantity>
+               <gl-bus:measurableUnitOfMeasure contextRef="now">EA</gl-bus:measurableUnitOfMeasure>
+            </gl-bus:measurable>
+            <gl-cor:taxes>
+               <gl-cor:taxPercentageRate contextRef="now" unitRef="NotUsed" decimals="2">6</gl-cor:taxPercentageRate>
+               <gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+            </gl-cor:taxes>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">despatch-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">receive-advice</gl-taf:originatingDocumentType>
+            </gl-taf:originatingDocumentStructure>
+            <gl-taf:originatingDocumentStructure>
+               <gl-taf:originatingDocumentType contextRef="now">finance-charge</gl-taf:originatingDocumentType>
+               <gl-taf:originatingDocumentIdentifierCode contextRef="now">Deb. 10202 / Fact. 12115118</gl-taf:originatingDocumentIdentifierCode>
+            </gl-taf:originatingDocumentStructure>
+         </gl-cor:entryDetail>
+      </gl-cor:entryHeader>
+   </gl-cor:accountingEntries>
+</xbrli:xbrl>

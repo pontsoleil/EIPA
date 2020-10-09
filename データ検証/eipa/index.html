@@ -5,29 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <title>EN 16931</title>
+    <title>eInvoice</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
+    <style>
+#base.container {
+  border: 0px none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 500px;
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background-color: #efefef;
+  width: 600px;
+  height: 200px;
+}
+.box h2, .box h4 {
+  text-align: center;
+}
+    </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- split-pane on GitHub https://github.com/shagstrom/split-pane -->
-    <link rel="stylesheet" href="css/split-pane.css" />
-    <script src="js/split-pane.js"></script>
-    <!-- DataTables -->
-    <link rel="stylesheet" href="/DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="/DataTables/Editor-1.9.3/css/editor.dataTables.min.css">
-    <script type="text/javascript" src="/DataTables/DataTables-1.10.21/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="/DataTables/Editor-1.9.3/js/dataTables.editor.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css">
     <script type="text/javascript" src="/DataTables/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
     <!-- font awesome -->
     <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css ">
     <!-- this page -->
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/snackbar.css">
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/ajax.js"></script>
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" class="init">
       $(document).ready(function() {
@@ -47,12 +55,14 @@
           }
         };
         $('#ie-warning').addClass('d-none');
-        $('#root').removeClass('d-none').addClass('d-block');
-        $('#tab-1').removeClass('d-none');
+
+        $('#base').removeClass('d-none').addClass('d-block');
+        $('#base').height(window.innerHeight);
+        // $('#tab-1').removeClass('d-none');
         // $('#tab-2').removeClass('d-none');
-        tab1 = getUrlParameter('t1');
-        tab2 = getUrlParameter('t2');
-        initModule(tab1, tab2);
+        // tab1 = getUrlParameter('t1');
+        // tab2 = getUrlParameter('t2');
+        // initModule(tab1, tab2);
         history.replaceState({}, null, location.pathname);
         //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
       });
@@ -71,117 +81,24 @@
       </div>
     </div>
 
-    <div id="tab-1" class="tab d-none">
-      <p class="tablinks en" onclick="setFrame(1, 'en');return false;">EN 16931</p>
-      <p class="tablinks ubl" onclick="setFrame(1, 'ubl');return false;">UBL 2.1</p>
-      <p class="tablinks cii" onclick="setFrame(1, 'cii');return false;">CII</p>
-      <p class="tablinks sme" onclick="setFrame(1, 'sme');return false;">SME</p>
-    </div>
-  
-    <div id="tab-2" class="tab d-none">
-      <!-- <p class="tablinks en" onclick="setFrame(2, 'en');return false;">EN 16931</p>
-      <p class="tablinks ubl" onclick="setFrame(2, 'ubl');return false;">UBL 2.1</p>
-      <p class="tablinks cii" onclick="setFrame(2, 'cii');return false;">CII</p>
-      <p class="tablinks sme" onclick="setFrame(2, 'sme');return false;">SME</p> -->
-    </div>
-
-    <!-- ROOT -->
-    <div id="root" class="split-pane-frame tabcontent serif d-none">
-      <div class="split-pane fixed-left" id="root-split-pane">
-        <div class="split-pane-component" id="component-1">
-        </div>
-        <div class="split-pane-divider" id="vertical-divider"></div>
-        <div class="split-pane-component" id="component-2">
-        </div>
-      </div>
-    </div>
-
-    <div class="d-none">
-      <!-- EN -->
-      <div id="en-container">
-        <div id="en-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">EN 19361-1 Electronic invoicing</span>
-          <table id="en" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>-</th><!-- Kind -->
-                <th>Name</th>
-                <th>Card.</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <!-- UBL -->
-      <div id="ubl-container">
-        <div id="ubl-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">Part 3-2 ISO/IEC 19845 (UBL 2.1)</span>
-          <table id="ubl" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>-</th>
-                <th>Name</th>
-                <th>Card.</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <!-- CII -->
-      <div id="cii-container">
-        <div id="cii-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">Part 3-2 UN/CEFACT XML Industory Invoice D16B</span>
-          <table id="cii" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>-</th>
-                <th>Name</th>
-                <th>Card.</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <!-- SME -->
-      <div id="sme-container">
-        <div id="sme-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">中小企業共通EDIメッセージ</span>
-          <table id="sme" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>-</th>
-                <th>DEN</th>
-                <th>Card.</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-
-      <!-- Rule -->
-      <div id="rule-container">
-        <div id="rule-frame" class="pretty-split-pane-component-inner">
-          <span class="table-title">Business rules</span>
-          <table id="rule" class="display" style="width:100%">
-            <thead>
-              <tr>
-                <th></th><!-- detail-control -->
-                <th>ID</th>
-                <th>Desc.</th>
-                <th>Term</th>
-                <th></th><!-- info-control -->
-              </tr>
-            </thead>
-          </table>
-        </div>
+    <div id="base" class="container d-none">
+      <div class="box">
+        <h2>EIPAユースケース検討チーム</h2>
+        <h4>
+          EN 16931-3<a href="en16931.html" target="_blank">
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a>
+        </h4>
+        <h4>
+          Syntax Compare<a href="syntax.html" target="_blank">
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a>
+        </h4>
+        <h4>
+          Business Rule<a href="rules.html" target="_blank">
+            <i class="fa fa-external-link" aria-hidden="true"></i>
+          </a>
+        </h4>        
       </div>
     </div>
 

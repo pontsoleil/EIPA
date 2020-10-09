@@ -37,7 +37,7 @@
 "Desc":"information to trace to a single despatch advice from the document level (processes P7 and P8);"
 },{
 "num":9,
-"ID":"RIO",
+"ID":"R10",
 "Desc":"information to trace to a single receiving advice from the document level (process P8);"
 },{
 "num":10,
@@ -65,8 +65,8 @@
 "Desc":"information about charges, (non-VAT-)taxes, duties and levies, with their VAT information, that are not included in the line amounts at document level (all processes);"
 },{
 "num":16,
-"ID":"R17 information about charges, (non-VAT-)taxes, duties and levies that compose the taxable amount and are not included in the unit price at separate invoice lines, with a proper identification and/or description (all processes);",
-"Desc":""
+"ID":"R17",
+"Desc":"information about charges, (non-VAT-)taxes, duties and levies that compose the taxable amount and are not included in the unit price at separate invoice lines, with a proper identification and/or description (all processes);"
 },{
 "num":17,
 "ID":"R18",
@@ -274,11 +274,15 @@
 },{
 "num":68,
 "ID":"R70",
-"Desc":"pre-payment invoicesBR-S-1"
+"Desc":"pre-payment invoices"
+},{
+"num":69,
+"ID":"BR-S-1",
+"Desc":"Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Standard rated' shall contain in the VAT breakdown (BG-23) at least one VAT code (BT-118) equal with 'Standard rated'."
 },{
 "num":69,
 "ID":"BR-S-2",
-"Desc":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT idpntifier fRT-631."
+"Desc":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT idpntifier (BT-63)."
 },{
 "num":70,
 "ID":"BR-S-3",
@@ -306,7 +310,7 @@
 },{
 "num":76,
 "ID":"BR-S-9",
-"Desc":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Standard rated' shall equal the VAT category taxable amount fRT-11 f>�_ mnlfinlipd hv the VAT category rate (BT-119)"
+"Desc":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Standard rated' shall equal the VAT category taxable amount (BT-116) mnlfinlipd bv the VAT category rate (BT-119)"
 },{
 "num":77,
 "ID":"BR-S-10",

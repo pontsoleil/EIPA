@@ -1,0 +1,1 @@
+Copied from eInvoicing-EN16931-validation-1.3.2/ubl/examples/

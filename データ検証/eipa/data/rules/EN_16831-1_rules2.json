@@ -4,7 +4,7 @@
 "ID":"BR-CO-3",
 "Desc":"Value added tax point date (BT-7) and Value added tax point date code (BT-8) are mutually exclusive.",
 "Target":"Invoice",
-"BusinessTerm":"\"BT-7,BT-8\""
+"BusinessTerm":"BT-7,BT-8"
 },{
 "num":1,
 "ID":"BR-CO-4",
@@ -16,31 +16,31 @@
 "ID":"BR-CO-5",
 "Desc":"Document level allowance reason code (BT-98) and Document level allowance reason (BT-97) shall indicate the same type of allowance.",
 "Target":"Document level Allowances",
-"BusinessTerm":"\"BT-97,BT-98\""
+"BusinessTerm":"BT-97,BT-98"
 },{
 "num":3,
 "ID":"BR-CO-6",
 "Desc":"Document level charge reason code (BT-105) and Document level charge reason (BT-104) shall indicate the same type of charge.",
 "Target":"Document level Charges",
-"BusinessTerm":"\"BT-104,BT-105\""
+"BusinessTerm":"BT-104,BT-105"
 },{
 "num":4,
 "ID":"BR-CO-7",
 "Desc":"Invoice line allowance reason code (BT-140) and Invoice line allowance reason (BT-139) shall indicate the same type of allowance reason.",
 "Target":"Invoice line Allowances",
-"BusinessTerm":"\"BT-139,BT-140\""
+"BusinessTerm":"BT-139,BT-140"
 },{
 "num":5,
 "ID":"BR-CO-8",
 "Desc":"Invoice line charge reason code (BT-145) and Invoice line charge reason (EST 144} shall indicate the same type of charge reason.",
 "Target":"Invoice line Charges",
-"BusinessTerm":"\"BT-144,BT-145\""
+"BusinessTerm":"BT-144,BT-145"
 },{
 "num":6,
 "ID":"BR-CO-9",
 "Desc":"The Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) shall have a prefix in accordance with ISO code ISO 3166-1 alpha-2 by which the country of issue may be identified. Nevertheless, Greece may use the prefix 'EL'.",
 "Target":"VAT identifiers",
-"BusinessTerm":"\"BT-31,BT-48,BT-63\""
+"BusinessTerm":"BT-31,BT-48,BT-63"
 },{
 "num":7,
 "ID":"BR-CO-IO",
@@ -100,49 +100,49 @@
 "ID":"BR-CO-19",
 "Desc":"If Invoicing period (BG-14) is used, the Invoicing period start date (BT-73) or the Invoicing period end date (BT74) shall be filled, or both.",
 "Target":"Delivery or invoice period",
-"BusinessTerm":"\"BT-73,BT-74\""
+"BusinessTerm":"BT-73,BT-74"
 },{
 "num":17,
 "ID":"BR-CQ-20",
 "Desc":"If Invoice line period (BG-26) is used, the Invoice line period start date (BT-134) or the Invoice line period end date (BT-135) shall be filled, or both.",
 "Target":"Invoice line period",
-"BusinessTerm":"\"BT-134,BT-135\""
+"BusinessTerm":"BT-134,BT-135"
 },{
 "num":18,
 "ID":"BR-CO-21",
 "Desc":"Each Document level allowance (BG-20) shall contain a Document level allowance reason (BT-97) or a Document level allowance reason code (BT-98), or both.",
 "Target":"Document level allowance",
-"BusinessTerm":"\"BT-97,BT-98\""
+"BusinessTerm":"BT-97,BT-98"
 },{
 "num":19,
 "ID":"BR-CO-22",
 "Desc":"Each Document level charge (BG-21) shall contain a Document level charge reason (BT-104) or a Document level charge reason code (BT-105), or both.",
 "Target":"Document level charge",
-"BusinessTerm":"\"BT-104,BT-105\""
+"BusinessTerm":"BT-104,BT-105"
 },{
 "num":20,
 "ID":"BR-CO-23",
 "Desc":"Each Invoice line allowance (BG-27) shall contain an Invoice line allowance reason (BT-139) or an Invoice line allowance reason code (BT-1401 or both.",
 "Target":"Invoice line allowance",
-"BusinessTerm":"\"BT-139,BT-140\""
+"BusinessTerm":"BT-139,BT-140"
 },{
 "num":21,
 "ID":"BR-CO-24",
 "Desc":"Each Invoice line charge (BG-28) shall contain an Invoice line charge reason (BT-144) or an Invoice line charge reason code (BT-145), or both.",
 "Target":"Invoice line charge",
-"BusinessTerm":"\"BT-144,BT-145\""
+"BusinessTerm":"BT-144,BT-145"
 },{
 "num":22,
 "ID":"BR-CO-25",
 "Desc":"In case the Amount due for payment (BT-115) is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present",
 "Target":"Invoice",
-"BusinessTerm":"\"BT-9,BT-20\""
+"BusinessTerm":"BT-9,BT-20"
 },{
 "num":23,
 "ID":"BR-CO-26",
-"Desc":"In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present   ",
+"Desc":"In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present",
 "Target":"Seller",
-"BusinessTerm":"\"BT-29,BT-30,BT-31\"BR-1"
+"BusinessTerm":"BT-29,BT-30,BT-31"
 },{
 "num":24,
 "ID":"BR-2",

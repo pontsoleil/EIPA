@@ -57,7 +57,11 @@ html, body {
 .tablinks.cii2en:hover,
 .tablinks.en_ivc2ubl:hover,
 .tablinks.en_cnt2ubl:hover,
-.tablinks.en2cii:hover {
+.tablinks.en2cii:hover,
+.tablinks.func:hover,
+.tablinks.int:hover,
+.tablinks.cond:hover,
+.tablinks.vat:hover {
   background-color: #ddd;
   color: #333;
 }
@@ -387,4 +391,31 @@ tr.shown td.details-control {
   font-size: 32px;
   font-weight: bold;
   text-align: center;
+}
+
+#rule-frame > span {
+  left: 10rem;
+}
+
+#en-frame > i.fa-refresh,
+#rule-frame > i.fa-refresh  {
+  position: absolute;
+  top: 0.5rem;
+  right: 12rem;
+  z-index: 1;
+}
+#en-frame > i.fa-refresh:hover,
+#rule-frame > i.fa-refresh:hover {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+#en tbody tr.shown td,
+#rule tbody tr.shown td {
+  background-color: #707070;
+  color: #e0e0e0;
+}
+#en tbody tr td.active,
+#rule tbody tr td.active {
+  background-color: #505050;
+  color: #e0e0e0;
 }
