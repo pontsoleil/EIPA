@@ -1,3 +1,9 @@
+/**
+ * main.js
+ *
+ * This is a free to use open source software and licensed under the MIT License
+ * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
+ **/
 var x_columns, x_columnDefs,
     en_columns, en_columnDefs,
     en_table, EnMap, EnNums,

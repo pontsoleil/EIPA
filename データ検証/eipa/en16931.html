@@ -24,16 +24,18 @@
     <link rel="stylesheet" href="css/en16931.css">
     <link rel="stylesheet" href="css/snackbar.css">
     <script type="text/javascript" src="js/en16931.js"></script>
-    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/ajax.min.js"></script>
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" class="init">
       $(document).ready(function() {
         if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
-          $('#ie-warning').removeClass('d-none');
+          $('#ie-warning').css('display', 'block');
           return;
         }
-        $('#ie-warning').addClass('d-none');
-        $('#root').removeClass('d-none').addClass('d-block');
+        $('#ie-warning').css('display', 'none');
+        $('#root').css('display', 'block');
+        $('#tab-1').css('display', 'block');
+        $('#tab-2').css('display', 'block');
         initModule();
         history.replaceState({}, null, location.pathname);
         //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
@@ -42,7 +44,7 @@
   </head>
   <body>
     <!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
-    <div id="ie-warning" class="container h-100 d-none">
+    <div id="ie-warning" class="container h-100">
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
           <div>
@@ -54,14 +56,16 @@
     </div>
 
     <div id="tab-1" class="tab">
-      <p class="tablinks title">FROM</p>
+      <p class="tablinks title">From</p>
       <p class="tablinks ubl2en_ivc" onclick="setFrame('ubl2en_ivc');return false;">UBL Invoice</p>
       <p class="tablinks ubl2en_cnt" onclick="setFrame('ubl2en_cnt');return false;">Credit note</p>
       <p class="tablinks cii2en" onclick="setFrame('cii2en');return false;">UN/CEFACT CII</p>
+      <p class="tablinks title">To EN 16931-1</p>
     </div>
 
     <div id="tab-2" class="tab">
-      <p class="tablinks title">TO</p>
+      <p class="tablinks title">From EN 16931-1</p>
+      <p class="tablinks title">To</p>
       <p class="tablinks en_ivc2ubl" onclick="setFrame('en_ivc2ubl');return false;">UBL Invoice</p>
       <p class="tablinks en_cnt2ubl" onclick="setFrame('en_cnt2ubl');return false;">Credit note</p>
       <p class="tablinks en2cii" onclick="setFrame('en2cii');return false;">UN/CEFACT CII</p>
@@ -73,7 +77,7 @@
       </div>
     </div>
 
-    <div class="d-none">
+    <div style="display:none">
     <!-- en2x -->
       <!--
         EN_Parent EN_ID EN_Level EN_Card EN_BT EN_Desc EN_DT

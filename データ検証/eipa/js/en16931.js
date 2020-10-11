@@ -1,3 +1,9 @@
+/**
+ * en16931.js
+ *
+ * This is a free to use open source software and licensed under the MIT License
+ * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
+ **/
 var en2x_columns, en2x_columnDefs,
     en2cii_table, cii2en_table,
     En2CiiMap, Cii2EnMap, CiiNums,
@@ -36,40 +42,19 @@ function setFrame(table_id) {
       id = child.attr('id');
       match = id.match(/^(.*)-frame$/);
       id = match[1];
-      base = $('#' + id + '-container');
-      table_frame = $('#' + id + '-frame');
+      base = $('#'+id+'-container');
+      table_frame = $('#'+id+'-frame');
       base.append(table_frame);
     }
   }
-  table_frame = $('#' + table_id + '-frame');
+  table_frame = $('#'+table_id+'-frame');
   top_container.append(table_frame);
   $('.tablinks').removeClass('active');
-  $('.tablinks.' + table_id).addClass('active');
+  $('.tablinks.'+table_id).addClass('active');
 }
 // -----------------------------------------------------------------
 // Formatting function for row details
 //
-/*function lookupCiiType(type) {
-  if (!type) { return ''; }
-  type = type.trim();
-  var str = 'Type: ';
-  switch (type) {
-    case 'A': str += 'Attribute'; break;
-    case 'C': str += 'Composite'; break;
-    case 'E': str += 'Element';   break;
-    case 'G': str += 'Aggregate'; break;
-    case 'S': str += 'Segment';   break;
-    default: str += '';
-  }
-  return str;
-}
-function lookupUblType(type) {
-  if (!type) { return ''; }
-  type = type.trim();
-  var datatype = 'Type: ' + (datatypeMap[type] || '');
-  return datatype;
-}
-*/
 function lookupAlignment(match) {
   if (!match) { return ''; }
   var alignments, alignment, str = '';
@@ -115,8 +100,6 @@ function en2x_format(d, kind) { // d is the original data object for the row
   var H1 = 50, H2 = 50,
       desc = d.EN_Desc,
       path = d.Path,
-      // type = d.Type,
-      // card = d.Card,
       match = d.Match,
       rule = d.Rules,
       pathArray,
@@ -124,32 +107,38 @@ function en2x_format(d, kind) { // d is the original data object for the row
       html = '',
       wk_path = '',
       wk_desc;
-  pathArray = path.split('/');
-  wk_path = 'Path: ';
-  for (var i = 1; i < pathArray.length; i++) {
-    wk_path += padding + pathArray[i] + '<br>';
-    padding += '&nbsp;&nbsp;&nbsp;';
-  }
-  wk_desc = (match ? lookupAlignment(match) : '') +
-    (rule ? 'Rule:&nbsp;&nbsp;' + rule : '');
-  html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
-    '<colgroup>' +
-      '<col style="width:' + H1 + '%;">' +
-      '<col style="width:' + H2 + '%;">' +
-    '</colgroup>'+
-    '<tr>'+
-      '<td valign="top">' + desc + '</td>' +
-      '<td valign="top">' +
-        // ('cii' === kind ? lookupCiiType(type) : lookupUblType(type)) + 
-        // (card ? ' ( ' + card + ' )' : '') + '<br>' +
-        wk_path + wk_desc + '</td>' +
-    '</tr>' +
-  '</table>';
-  return html;
+  return googleTranslate(desc)
+  .then(function(translations) {
+    var j_desc = translations[0].translatedText;      
+    pathArray = path.split('/');
+    wk_path = 'Path: ';
+    for (var i = 1; i < pathArray.length; i++) {
+      wk_path += padding + pathArray[i]+'<br>';
+      padding += '&nbsp;&nbsp;&nbsp;';
+    }
+    wk_desc = (match ? lookupAlignment(match) : '') +
+      (rule ? 'Rule:&nbsp;&nbsp;'+rule : '');
+    html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
+      '<colgroup>'+
+        '<col style="width:'+H1+'%;">'+
+        '<col style="width:'+H2+'%;">'+
+      '</colgroup>'+
+      '<tr>'+
+        '<td valign="top">'+desc+'</td>'+
+        '<td valign="top">'+
+          wk_path + wk_desc+'</td>'+
+      '</tr>';
+    if (j_desc) {
+      html += '<tr><td valign="top" colspan="2">'+j_desc+'</td></tr>';
+    }
+    html += '</table>';
+    return html;
+  })
+  .catch(function(err) { console.log(err); });
 }
 function x2en_format(d, kind) { // d is the original data object for the row
   if (!d) { return null; }
-  var H1 = 25, H2 = 45, H3 = 30,
+  var H1 = 25, H2 = 40, H3 = 35,
       paths = d.Paths,
       desc_x,
       desc_en = d.EN_Desc || ' ',
@@ -218,29 +207,60 @@ function x2en_format(d, kind) { // d is the original data object for the row
   _child = _child ? _child : {};
   den = _child['DictionaryEntryName'] || '';
   datatype = _child['DataType'] || '';
-  base = base ? ' ( ' + base + ' ) ' : '';
+  base = base ? ' ( '+base+' ) ' : '';
   cardinality = _child['Cardinality'] || '';
-  cardinality = cardinality ? ' ( ' + cardinality + ')' : '';
+  cardinality = cardinality ? ' ( '+cardinality+')' : '';
   definition =  _child['Definition'] || '';
-  desc_x = den + cardinality + '<br>' +
-            (datatype 
-              ? (datatype + base)
-              : 'cii' === kind ? '' : 'Aggregate'
-            ) + '<br>' +
-            definition;
-  html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
-    '<colgroup>' +
-      '<col style="width:' + H1 + '%;">' +
-      '<col style="width:' + H2 + '%;">' +
-      '<col style="width:' + H3 + '%;">' +
-    '</colgroup>'+
-    '<tr>'+
-      '<td valign="top">Path: ' + paths + '</td>' +
-      '<td valign="top">' + desc_x + '</td>' +
-      '<td valign="top">' + desc_en + '</td>' +
-    '</tr>' +
-  '</table>';
-  return html;
+  return googleTranslate([desc_en, definition])
+  .then(function(translations) {
+    var translatedText = translations[0].translatedText,
+        match, j_desc, j_definition;
+    match = translatedText.match(/.(\&quot;|「)(.*)(\&quot;|」)、.*(\&quot;|「)(.*)(\&quot;|」)./);
+    if (match) {
+      j_desc = match[2];
+      j_definition = match[5];
+    }
+    desc_x = den + cardinality+'<br>'+
+              (datatype 
+                ? (datatype + base)
+                : 'cii' === kind ? '' : 'Aggregate'
+              )+'<br>'+
+              definition;
+    html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
+      '<colgroup>'+
+        '<col style="width:'+H1+'%;">'+
+        '<col style="width:'+H2+'%;">'+
+        '<col style="width:'+H3+'%;">'+
+      '</colgroup>' +
+      '<tr>'+
+        '<td valign="top">Path: '+paths+'</td>';
+    if (desc_x && desc_en) {
+      html += '<td valign="top">'+desc_x+'</td>'+
+        '<td valign="top">'+desc_en+'</td></tr>';
+    }
+    else if (desc_x) {
+      html += '<td valign="top" colspan="2">'+desc_x+'</td></tr>';
+    }
+    else if (desc_x && desc_en) {
+      html += '<td valign="top" colspan="2">'+desc_en+'</td></tr>';
+    }
+    // tranlation
+    if (j_desc && j_definition) {
+      html += '<tr>'+
+        '<td valign="top" colspan="2">'+j_definition+'</td>'+
+        '<td valign="top">'+j_desc+'</td>'+
+      '</tr>';
+    }
+    else if (j_desc) {
+      html += '<tr><td valign="top" colspan="3">'+j_desc+'</td></tr>';
+    }
+    else if (j_definition) {
+      html += '<tr><td valign="top" colspan="3">'+j_definition+'</td></tr>';
+    }
+    html += '</table>';
+    return html;
+  })
+  .catch(function(err) { console.log(err); });
 }
 // -----------------------------------------------------------------
 // EN2CII
@@ -256,14 +276,14 @@ function renderBT(row) {
     res += ' ';
   }
   if (card.match(/^1/)) {
-    term = '<b>' + term + '</b>';
+    term = '<b>'+term+'</b>';
   }
   res = res += term;
   return res;
 }
 function renderDatatype(row) {
   var datatype;
-  datatype = '' + row.EN_DT;
+  datatype = ''+row.EN_DT;
   datatype = datatype.trim();
   datatype = datatypeMap[datatype] || '';
   return datatype;
@@ -277,7 +297,7 @@ function renderPath(row) {
   }
   if (match[1]) {
     parent = match[1];
-    res = parent + ' / ';
+    res = parent+' / ';
   }
   if (match[2]) {
     element = match[2];
@@ -347,7 +367,7 @@ x2en_columns = [
     'data': 'Path',
     'render': function(data, type, row) {
       var path = row.Path || '';
-      if (0 === row.seq) { path = '<b>' + path + '</b>'; }
+      if (0 === row.seq) { path = '<b>'+path+'</b>'; }
       else if (row.Card && row.Card.match(/^1/)) {
         path = path.replace(/^([\+]* )(.*)?/, "$1<b>$2</b>")
       }
@@ -463,7 +483,7 @@ function checkDetails(table_id) {
       tr_s, tr, // nextSibling,
       row, row_data, num, i, nums,// nextrow, nextrow_data,
       rgx;
-  tr_s = $(table_id + ' tbody tr');
+  tr_s = $(table_id+' tbody tr');
   if (data.length > 0) {
     if ('en' === table_id.substr(1, 2)) {
       for (var tr of tr_s) {
@@ -491,7 +511,7 @@ function checkDetails(table_id) {
         num = row_data.num;
         if (1 == num) { i = 1; }
         else {
-          rgx = RegExp('^' + num + '_[^_]+$');
+          rgx = RegExp('^'+num+'_[^_]+$');
           i = 0;
           for (num of nums) {
             if (num.match(rgx)) { i++; }
@@ -519,7 +539,7 @@ function expandCollapse(table_id, map, tr) {
     if ('en' === table_id.substr(1, 2) ||
         'cii' === table_id.substr(1, 3) ||
         'ubl' === table_id.substr(1, 3)) {
-      rgx = RegExp('^' + num + '_[^_]+$')
+      rgx = RegExp('^'+num+'_[^_]+$')
       for (i = 0; i < rows.length; i++) {
         num = rows[i].num;
         if (num.match(rgx)) {
@@ -556,7 +576,7 @@ function expandCollapse(table_id, map, tr) {
     tr.removeClass('expanded');
     removeByNum(expandedRows, row_data);
     collapsedRows = [row_data];
-    rgx = RegExp('^' + collapse + '_');
+    rgx = RegExp('^'+collapse+'_');
     rows = rows.filter(function(row) {
       if (row.num.match(rgx)) {
         removeByNum(expandedRows, row);
@@ -569,7 +589,7 @@ function expandCollapse(table_id, map, tr) {
     tr.addClass('expanded');
     collapsedRows = [];
     expandedRows = [row_data];
-    rgx = RegExp('^' + expand + '_[^_]+$');
+    rgx = RegExp('^'+expand+'_[^_]+$');
     map.forEach(function(value, key) {
       if (value.num.match(rgx)) {
         v = JSON.parse(JSON.stringify(value));
@@ -593,7 +613,7 @@ function expandCollapse(table_id, map, tr) {
     row, row_data, nextrow, nextrow_data,
     rgx;
   if (data.length > 0) {
-    var tr_s = $(table_id + ' tbody tr');
+    var tr_s = $(table_id+' tbody tr');
     for (var tr of tr_s) {
       row = table.row(tr);
       row_data = row.data();
@@ -601,7 +621,7 @@ function expandCollapse(table_id, map, tr) {
       if (nextSibling) {
         nextrow = table.row(nextSibling);
         nextrow_data = nextrow.data();
-        rgx = RegExp('^' + row_data.num + '_[^_]+$');
+        rgx = RegExp('^'+row_data.num+'_[^_]+$');
         if (nextrow_data.num.match(rgx)) {
           tr.classList.add('expanded');
         }
@@ -623,9 +643,9 @@ var initModule = function () {
       item = data[i];
       seq = item.num;
       level = item.EN_Level - 1;
-      num = '' + seq;
+      num = ''+seq;
       if (level > 0) {
-        num = idxLevel[level - 1] + '_' + num;
+        num = idxLevel[level - 1]+'_'+num;
       }
       while (idxLevel.length - 1 > level) {
         idxLevel.pop();
@@ -664,11 +684,11 @@ var initModule = function () {
       item.EN_Card = item.EN_Card || '';
       item.EN_DT = item.EN_DT || '';
       item.EN_Desc = item.EN_Desc || '';
-      num = '' + seq;
+      num = ''+seq;
       paths = item.Path.split('/');
       if (paths.length > 1) {
         for (var i = 1; i < paths.length; i++) {
-          wk_path += padding + paths[i] + '<br>';
+          wk_path += padding + paths[i]+'<br>';
           padding += '&nbsp;&nbsp;&nbsp;';
         }
         item.Paths = wk_path;
@@ -683,7 +703,7 @@ var initModule = function () {
         name += term;
         item.Path = name;
         if (level > 0) {
-          num = idxLevel[level - 1] + '_' + num;
+          num = idxLevel[level - 1]+'_'+num;
         }
         while (idxLevel.length - 1 > level) {
           idxLevel.pop();
@@ -863,7 +883,11 @@ var initModule = function () {
       row.child.hide(); tr.removeClass('shown');
     }
     else { // Open this row
-      row.child(en2x_format(row.data(), 'cii')).show(); tr.addClass('shown');
+      en2x_format(row.data(), 'cii')
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
     }
   });
   // EN_IVC2UBL
@@ -874,7 +898,11 @@ var initModule = function () {
       row.child.hide(); tr.removeClass('shown');
     }
     else { // Open this row
-      row.child(en2x_format(row.data())).show(); tr.addClass('shown');
+      en2x_format(row.data())
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
     }
   });
   // EN_CNT2UBL
@@ -885,8 +913,12 @@ var initModule = function () {
       row.child.hide(); tr.removeClass('shown');
     }
     else { // Open this row
-      row.child(en2x_format(row.data())).show(); tr.addClass('shown');
-    }
+      en2x_format(row.data())
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
+  }
   });
   // CII2EN
   $('#cii2en tbody').on('click', 'td.info-control', function(event) {
@@ -896,7 +928,11 @@ var initModule = function () {
       row.child.hide(); tr.removeClass('shown');
     }
     else { // Open this row
-      row.child(x2en_format(row.data(), 'cii')).show(); tr.addClass('shown');
+      x2en_format(row.data(), 'cii')
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
     }
   });
   // UBL2EN_IVC
@@ -907,7 +943,11 @@ var initModule = function () {
       row.child.hide(); tr.removeClass('shown');
     }
     else { // Open this row
-      row.child(x2en_format(row.data())).show(); tr.addClass('shown');
+      x2en_format(row.data())
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
     }
   });
   // UBL2EN_CNT
@@ -918,7 +958,11 @@ var initModule = function () {
       row.child.hide(); tr.removeClass('shown');
     }
     else { // Open this row
-      row.child(x2en_format(row.data())).show(); tr.addClass('shown');
+      x2en_format(row.data())
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
     }
   });
   // -----------------------------------------------------------------
@@ -964,7 +1008,7 @@ var initModule = function () {
         row = cii2en_table.row(tr), data = row.data();
     if (!data) { return; }
     var num = data.num,
-        rgx = RegExp('^' + num + '_[^_]+$'),
+        rgx = RegExp('^'+num+'_[^_]+$'),
         i = 0;
     for (num of CiiNums) {
       if (num.match(rgx)) { i++; }
@@ -980,7 +1024,7 @@ var initModule = function () {
         row = ubl2en_ivc_table.row(tr), data = row.data();
     if (!data) { return; }
     var num = data.num,
-        rgx = RegExp('^' + num + '_[^_]+$'),
+        rgx = RegExp('^'+num+'_[^_]+$'),
         i = 0;
     for (num of IvcNums) {
       if (num.match(rgx)) { i++; }
@@ -996,7 +1040,7 @@ var initModule = function () {
         row = ubl2en_cnt_table.row(tr), data = row.data();
     if (!data) { return; }
     var num = data.num,
-        rgx = RegExp('^' + num + '_[^_]+$'),
+        rgx = RegExp('^'+num+'_[^_]+$'),
         i = 0;
     for (num of CntNums) {
       if (num.match(rgx)) { i++; }
@@ -1115,4 +1159,4 @@ var initModule = function () {
   .catch(function(err) { console.log(err); });
 
 }
-// main.js
+// en16931.js

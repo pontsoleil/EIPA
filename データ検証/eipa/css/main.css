@@ -14,9 +14,7 @@ html, body {
 .monospace {
   font-family: "Lucida Console", Courier, monospace;
 }
-/** tab */
-/* * {box-sizing: border-box} */
-/* Style the tab */
+/** Style the tab */
 .tab {
   position:absolute;
   border: 1px solid #ccc;
@@ -63,6 +61,10 @@ html, body {
 .tablinks.cond:hover,
 .tablinks.vat:hover {
   background-color: #ddd;
+  color: #333;
+}
+.tablinks.reset:hover {
+  background-color: #4eb3b3;
   color: #333;
 }
 /* Create an active/current "tab button" class */
@@ -338,11 +340,12 @@ td.info-control:hover:before {
   color: rgb(77, 179, 205);
   text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
 }
-tr.shown td.info-control {
+/** info shown */
+/* tr.shown td.info-control {
   position:relative;
 }
 tr.shown td.info-control:before {
-  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  font-family: FontAwesome; 
   color: #9dda0e;
   top:  0;
   left: -0.5rem;
@@ -351,7 +354,7 @@ tr.shown td.info-control:before {
 tr.shown td.info-control:hover:before {
   color: #38f1d8;
   text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
-}
+} */
 /** key-control */
 td.key-control  {
   position:relative;
@@ -364,13 +367,6 @@ td.key-control:before {
   left: -0.5rem;
   content: "\f084";
 }
-/* td.details-control {
-  background: url('../images/details_open.png') no-repeat center center;
-  cursor: pointer;
-}
-tr.shown td.details-control {
-  background: url('../images/details_close.png') no-repeat center center;
-} */
 /** overray */
 .overlay {
   position: absolute; /* Sit on top of the page content */
@@ -397,15 +393,15 @@ tr.shown td.details-control {
   left: 10rem;
 }
 
-#en-frame > i.fa-refresh,
-#rule-frame > i.fa-refresh  {
+#en-frame > i.fa-sync,
+#rule-frame > i.fa-sync  {
   position: absolute;
   top: 0.5rem;
   right: 12rem;
   z-index: 1;
 }
-#en-frame > i.fa-refresh:hover,
-#rule-frame > i.fa-refresh:hover {
+#en-frame > i.fa-sync:hover,
+#rule-frame > i.fa-sync:hover {
   color: rgb(77, 179, 205);
   text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
 }
@@ -418,4 +414,13 @@ tr.shown td.details-control {
 #rule tbody tr td.active {
   background-color: #505050;
   color: #e0e0e0;
+}
+
+td.translate-control i.fa-language:hover {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+
+#peppol > tbody > tr > td > table > tbody > tr > td > p {
+  margin: 0;
 }

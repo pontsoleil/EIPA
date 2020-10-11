@@ -13,18 +13,28 @@
   border: 0px none;
   box-sizing: border-box;
   width: 100%;
-  height: 500px;
   display: flex!important;
   justify-content: center;
   align-items: center;
 }
 .box {
   background-color: #efefef;
-  width: 600px;
-  height: 200px;
+  width: 80%;
+  margin: 64px;
+  padding: 32px;
 }
-.box h2, .box h4 {
+.box>* {
   text-align: center;
+}
+img.cc {
+  width: 5rem;
+}
+footer {
+  width: 100%;
+  height: 60px; 
+  text-align: center;
+  padding: 16px 0;
+  background-color: #c0c0c0;
 }
     </style>
     <!-- jQuery -->
@@ -33,14 +43,15 @@
     <link rel="stylesheet" href="/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css">
     <script type="text/javascript" src="/DataTables/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
     <!-- font awesome -->
-    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css ">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
     <!-- this page -->
     <link rel="stylesheet" href="css/snackbar.css">
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" class="init">
       $(document).ready(function() {
         if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
-          $('#ie-warning').removeClass('d-none');
+          $('#ie-warning').css('display','block');
           return;
         }
         var getUrlParameter = function getUrlParameter(sParam) {
@@ -54,15 +65,9 @@
             }
           }
         };
-        $('#ie-warning').addClass('d-none');
-
-        $('#base').removeClass('d-none').addClass('d-block');
+        $('#ie-warning').css('display','none');
+        $('#base').css('display','block');
         $('#base').height(window.innerHeight);
-        // $('#tab-1').removeClass('d-none');
-        // $('#tab-2').removeClass('d-none');
-        // tab1 = getUrlParameter('t1');
-        // tab2 = getUrlParameter('t2');
-        // initModule(tab1, tab2);
         history.replaceState({}, null, location.pathname);
         //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
       });
@@ -70,7 +75,7 @@
   </head>
   <body>
     <!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
-    <div id="ie-warning" class="container h-100 d-none">
+    <div id="ie-warning" class="container h-100">
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
           <div>
@@ -81,24 +86,35 @@
       </div>
     </div>
 
-    <div id="base" class="container d-none">
+    <div id="base" class="container">
       <div class="box">
-        <h2>EIPAユースケース検討チーム</h2>
+        <h2>EIPAユースケース検討用資料</h2>
+        <p>EN 16931-1およびCEN/TS 16931-3に規定された表から生成。<br>
+        （翻訳は、Google Translation APIを用いた機械翻訳です。）
+        </p>
+        <!-- <i class="fas fa-language"></i> -->
         <h4>
-          EN 16931-3<a href="en16931.html" target="_blank">
-            <i class="fa fa-external-link" aria-hidden="true"></i>
+          欧州規格と各種フォーマットとの対応表<a href="en16931.html" target="_blank">
+            <i class="fas fa-external-link-square-alt"></i>
           </a>
         </h4>
-        <h4>
-          Syntax Compare<a href="syntax.html" target="_blank">
-            <i class="fa fa-external-link" aria-hidden="true"></i>
+        <h4>各種フォーマット相互の比較<a href="syntax.html" target="_blank">
+            <i class="fas fa-external-link-square-alt"></i>
           </a>
         </h4>
+        <p><i class="fas fa-plus-circle"></i>アイコンをクリックすると下位項目を展開<br>
+          <i class="fas fa-info"></i>アイコンをクリックすると翻訳を含む説明を表示</p>
         <h4>
-          Business Rule<a href="rules.html" target="_blank">
-            <i class="fa fa-external-link" aria-hidden="true"></i>
+          ビジネスルール<a href="rules.html" target="_blank">
+            <i class="fas fa-external-link-square-alt"></i>
           </a>
-        </h4>        
+        </h4>
+        <p><i class="fas fa-plus-circle"></i>アイコンをクリックすると下位項目を展開<br>
+          <i class="fas fa-info"></i>アイコンをクリックすると関連項目を展開<br>
+          <i class="fas fa-language"></i>アイコンをクリックすると翻訳を表示</p>
+        <footer>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank"><img src="by-sa.png" class="cc"></a>&nbsp;<i class="fas fa-copyright"></i>&nbsp;2020 <a href="https://www.sambuichi.jp" target="_blank">三分一技術士事務所</a>
+        </footer>
       </div>
     </div>
 

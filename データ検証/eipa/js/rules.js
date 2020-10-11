@@ -1,3 +1,9 @@
+/**
+ * rules.js
+ *
+ * This is a free to use open source software and licensed under the MIT License
+ * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
+ **/
 var rule_columns, rule_columnDefs, rule_table, RuleMap, RuleRows, rule_count=2,
     COL_rule_infocontrol,
     en_columns, en_columnDefs, en_table, EnMap, EnMap2, EnNums, EnRows,
@@ -15,7 +21,18 @@ function setFrame(num, _frame) {
   else {
     frame = _frame;
   }
-  if (['en', 'rule'].indexOf(_frame) >= 0) {
+  if ('reset' === _frame) {
+    if (1 === num) {
+      filterRoot('#en');
+      checkDetails('#en');
+      $('#en-frame .fa-sync').addClass('d-none');
+    }
+    else if (2 === num) {
+      find('#rule', 'ID', null);
+      $('#rule-frame .fa-sync').addClass('d-none')
+    }
+  }
+  else if (['en', 'rule'].indexOf(_frame) >= 0) {
     $('#tab-2 .tablinks').removeClass('active');
     $('#component-'+num+' .split-pane').splitPane('lastComponentSize', 0);
     root_pane = $('#root');
@@ -26,7 +43,8 @@ function setFrame(num, _frame) {
     component.append(content);
   }
   else if (['func', 'int', 'cond', 'vat'].indexOf(_frame) >= 0) {
-    $('#tab-2 .tablinks.' + _frame).addClass('active');
+    $('#tab-2 .tablinks').removeClass('active');
+    $('#tab-2 .tablinks.'+_frame).addClass('active');
     rule_table.clear();
     rule_table.rows.add(RuleRows);
     switch (_frame) {
@@ -47,16 +65,16 @@ function setFrame(num, _frame) {
     .search(keyword, /** regex */true, /** smart */false)
     .draw();
   }
-
+  
   setTimeout(function() {
-    $('#en-frame > i.fa-refresh').on('click', function() {
+    $('#en-frame > i.fa-sync').on('click', function() {
       filterRoot('#en');
       checkDetails('#en');
-      $('#en-frame .fa-refresh').addClass('d-none')
+      $('#en-frame .fa-sync').addClass('d-none');
     });
-    $('#rule-frame > i.fa-refresh').on('click', function() {
+    $('#rule-frame > i.fa-sync').on('click', function() {
       find('#rule', 'ID', null);
-      $('#rule-frame .fa-refresh').addClass('d-none')
+      $('#rule-frame .fa-sync').addClass('d-none')
     });
   }, 500);
 }
@@ -107,12 +125,35 @@ function find(table_id, col, word) {
   .add(rows)
   .draw();
   if ('#en' === table_id) {
-    $('#en-frame .fa-refresh').removeClass('d-none');
+    $('#en-frame .fa-sync').removeClass('d-none');
     checkDetails('#en', true);
+    var trs = $('#en tbody tr');
+    for (var tr of trs){
+      var td = tr.children[5];
+      if (td.innerText.indexOf(word) >= 0) {
+        td.innerText = td.innerText.replace(word, '*'+word);
+      }
+      keys = word.split(' ');
+      td = tr.children[1];
+      for (var key of keys) {
+        if (key === td.innerText) {
+          td.innerText = '*'+key;
+        }
+      }
+
+
+    }
   }
   else if ('#rule' === table_id) {
-    $('#rule-frame .fa-refresh').removeClass('d-none');
+    $('#rule-frame .fa-sync').removeClass('d-none');
   }
+}
+
+function en_find(d) { // d is the original data object for the row
+  var reqID = d.ReqID,
+      word;
+  word = reqID.trim();
+  find('#rule', 'ID', word);
 }
 
 function en_format(d) { // d is the original data object for the row
@@ -121,55 +162,105 @@ function en_format(d) { // d is the original data object for the row
   var H1 = 40, H2 = 60,
       desc = d.Desc || '',
       usage = d.UsageNote || '',
-      reqID = d.ReqID,
-      word,
       html = '';
-  html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
-    '<colgroup>' +
-      '<col style="width:' + H1 + '%;">' +
-      '<col style="width:' + H2 + '%;">' +
-    '</colgroup>'+
-    '<tr>'+
-      '<td valign="top">' + desc +'</td>' +
-      '<td valign="top">' + usage + '</td>' +
-    '</tr>' +
-  '</table>';
-  word = reqID.trim();
-  find('#rule', 'ID', word)
-  return html;
+  return googleTranslate([desc, usage])
+  .then(function(translations) {
+    var translatedText = translations[0].translatedText,
+        match, j_desc, j_usage;
+    usage = usage.replaceAll(' - ','<br>- ');
+    match = translatedText.match(/.(\&quot;|「)(.*)(\&quot;|」)、.*(\&quot;|「)(.*)(\&quot;|」)./);
+    if (match) {
+      j_desc = match[2];
+      j_usage = match[5];
+      j_usage = j_usage.replaceAll(' - ','<br>- ');
+    }
+    html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
+      '<colgroup>'+
+        '<col style="width:'+H1+'%;">'+
+        '<col style="width:'+H2+'%;">'+
+      '</colgroup>'+
+      '<tr>';
+    if (desc && usage) {
+      html += '<td valign="top">'+desc+'</td>'+
+        '<td valign="top">'+usage+'</td>';
+    }
+    else if (desc) {
+      html += '<td valign="top" colspan="2">'+desc+'</td>';
+    }
+    else if (usage) {
+      html += '<td valign="top" colspan="2">'+usage+'</td>';
+    }
+    html += '</tr>';
+    // translation
+    if (j_desc && j_usage) {
+      html += '<tr>'+
+        '<td valign="top">'+j_desc+'</td>'+
+        '<td valign="top">'+j_usage+'</td>'+
+      '</tr>';
+    }
+    else if (j_desc) {
+      html += '<tr><td valign="top" colspan="2">'+j_desc+'</td></tr>';
+    }
+    else if (j_usage) {
+      html += '<tr><td valign="top" colspan="2">'+j_usage+'</td></tr>';
+    }
+    html += '</table>';
+    return html;
+  })
+  .catch(function(err) { console.log(err); })
 }
 
-function rule_format(d, kind) { // d is the original data object for the row
-  if (!d) { return null; }
-/** num ID Desc Target BusinessTerm */
-  var H1 = 40, H2 = 60,
-      id = d.ID,
-      desc = d.Desc || ' ',
-      target = d.Target || '',
-      term = d.BusinessTerm || '',
-      word,
-      html = '';
-  html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
-    '<colgroup>' +
-      '<col style="width:' + H1 + '%;">' +
-      '<col style="width:' + H2 + '%;">' +
-    '</colgroup>'+
-    '<tr>'+
-      '<td valign="top">' + term + '</td>' +
-      '<td valign="top">' + target + '</td>' +
-    '</tr>' +
-  '</table>';
-  word = term;
+function rule_find(d) { // d is the original data object for the row
+  var id = d.ID,
+      term = d.BusinessTerm || '';
   if (term) {
-    find('#en', 'ID', word);
+    find('#en', 'ID', term);
   }
   else {
     find('#en', 'ReqID', id);
   }
-  if (term || target) {
-    return html;
-  }
-  return null;
+}
+
+function rule_format(d) { // d is the original data object for the row
+  if (!d) { return null; }
+/** num ID Desc Target BusinessTerm */
+  var H1 = 40, H2 = 60,
+      desc = d.Desc || ' ',
+      target = d.Target || '',
+      term = d.BusinessTerm || '',
+      // word,
+      html = '';
+  return googleTranslate(desc)
+  .then(function(translations) {
+    var j_desc = translations[0].translatedText;
+    html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
+      '<colgroup>'+
+        '<col style="width:'+H1+'%;">'+
+        '<col style="width:'+H2+'%;">'+
+      '</colgroup>'+
+      '<tr><td colspan="2">'+j_desc+'</td></tr>';
+      if (target && term) {
+        html += '<tr>'+
+          '<td valign="top">'+target+'</td>'+
+          '<td valign="top">'+term+'</td>'+
+        '</tr>'
+      }
+      else if (target) {
+        html += '<tr><td valign="top" colspan="2">'+target+'</td></tr>'
+      }
+      else if (term) {
+        html += '<tr><td valign="top" colspan="2">'+term+'</td></tr>'
+      }
+      html += '</table>';
+    if (j_desc || term || target) {
+      return html;
+    }
+    return null;
+  })
+  .catch(function(err) {
+    console.log(err);
+    return 'ERROR:' + JSON.stringify(err);
+  });
 }
 // -----------------------------------------------------------------
 // EN
@@ -177,7 +268,7 @@ function renderBT(row) {
   var term = row.BusinessTerm,
       level = row.Level,
       res;
-  res = level + ' ' + term;
+  res = level+' '+term;
   return res;
 }
 // -------------------------------------------------------------------
@@ -190,7 +281,7 @@ en_columns = [
     'defaultContent': '' }, // 0
   { 'width': '10%',
     'data': 'ID' }, // 1
-  { 'width': '59%',
+  { 'width': '54%',
     'data': 'BusinessTerm',
     'render': function(data, type, row) {
       var term = renderBT(row);
@@ -201,14 +292,19 @@ en_columns = [
     'data': 'Card' }, // 4
   { 'width': '10%',
     'data': 'ReqID' }, // 5
+  { 'width': '5%',
+    'className': 'translate-control',
+    'orderable': false,
+    'data': null,
+    'defaultContent': '<i class="fas fa-language"></i>' }, // 6
   { 'width': '3%',
     'className': 'info-control',
     'orderable': false,
     'data': null,
-    'defaultContent': '' } // 6
+    'defaultContent': '' } // 7
 ];
 en_columnDefs = [
-  { 'searchable': false, 'targets': [0, 6] }/*,
+  { 'searchable': false, 'targets': [0, 6, 7] }/*,
   { 'visible': false, 'targets': 1 }*/
 ];
 /** num ID Desc Target BusinessTerm */
@@ -216,12 +312,17 @@ COL_rule_infocontrol = 3;
 rule_columns = [
   { 'width': '12%',
     'data': 'ID' }, // 0
-  { 'width': '65%',
+  { 'width': '60%',
     'data': 'Desc' }, // 1
   { //'width': '20%',
     'data': 'BusinessTerm' }, // 2
   { 'width': '20%',
     'data': 'Target' }, // 3
+  { 'width': '5%',
+    'className': 'translate-control',
+    'orderable': false,
+    'data': null,
+    'defaultContent': '<i class="fas fa-language"></i>' },
   { 'width': '3%',
     'className': 'info-control',
     'orderable': false,
@@ -287,10 +388,10 @@ var compareID = function(a, b) {
 }
 
 var compareNum = function(a, b) {
-  var a_num = '' + a.num,
-      b_num = '' + b.num,
-      a_arr = a_num.split('_').map(function(v){ return +v; }),
-      b_arr = b_num.split('_').map(function(v){ return +v; });
+  var a_num = ''+a.num,
+      b_num = ''+b.num,
+      a_arr = a_num.split('_').map(function(v){ return+v; }),
+      b_arr = b_num.split('_').map(function(v){ return+v; });
   while (a_arr.length > 0 && b_arr.length > 0) {
     a_num = a_arr.shift();
     b_num = b_arr.shift();
@@ -316,7 +417,7 @@ function filterRoot(table_id) {
     table.rows
     .add(rows)
     .draw();
-    $('#en-frame .fa-refresh').addClass('d-none')
+    $('#en-frame .fa-sync').addClass('d-none')
   }
 }
 // -------------------------------------------------------------------
@@ -325,7 +426,7 @@ function checkDetails(table_id, /** check if expandes */check) {
       data = table.data(),
       tr_s, tr,
       row, row_data, expanded;
-  tr_s = $(table_id + ' tbody tr');
+  tr_s = $(table_id+' tbody tr');
   if (data.length > 0) {
     if ('#en' === table_id) {
       for (var tr of tr_s) {
@@ -348,7 +449,7 @@ function checkDetails(table_id, /** check if expandes */check) {
 function isExpanded(rows, num) {
   var expanded = false,
       i, rgx;//, count = 0;
-  rgx = RegExp('^' + num + '_[^_]+$')
+  rgx = RegExp('^'+num+'_[^_]+$')
   for (i = 0; i < rows.length; i++) {
     num = rows[i].num;
     if (num.match(rgx)) {
@@ -387,9 +488,9 @@ function expandCollapse(table_id, map, tr) {
     tr.removeClass('expanded');
     removeByNum(expandedRows, row_data);
     collapsedRows = [row_data];
-    rgx = RegExp('^' + collapse + '_');
+    rgx = RegExp('^'+collapse+'_');
     rows = rows.filter(function(row) {
-      var num = '' + row.num;
+      var num = ''+row.num;
       if (num.match(rgx)) {
         removeByNum(expandedRows, row);
         return false;
@@ -401,7 +502,7 @@ function expandCollapse(table_id, map, tr) {
     tr.addClass('expanded');
     collapsedRows = [];
     expandedRows = [row_data];
-    rgx = RegExp('^' + expand + '_[^_]+$');
+    rgx = RegExp('^'+expand+'_[^_]+$');
     map.forEach(function(value, key) {
       if (value.num.match(rgx)) {
         v = JSON.parse(JSON.stringify(value));
@@ -422,7 +523,7 @@ function expandCollapse(table_id, map, tr) {
       row, row_data, nextrow, nextrow_data,
       rgx;
   if (data.length > 0) {
-    tr_s = $(table_id + ' tbody tr');
+    tr_s = $(table_id+' tbody tr');
     for (var tr of tr_s) {
       row = table.row(tr);
       row_data = row.data();
@@ -430,8 +531,8 @@ function expandCollapse(table_id, map, tr) {
       if (nextSibling) {
         nextrow = table.row(nextSibling);
         nextrow_data = nextrow.data();
-        nextrow_data.num = '' + nextrow_data.num;
-        rgx = RegExp('^' + row_data.num + '_[^_]+$');
+        nextrow_data.num = ''+nextrow_data.num;
+        rgx = RegExp('^'+row_data.num+'_[^_]+$');
         if (nextrow_data.num.match(rgx)) {
           tr.classList.add('expanded');
         }
@@ -458,9 +559,9 @@ var initModule = function () {
       item = data[i];
       seq = item.num;
       level = item.Level.length;
-      num = '' + seq;
+      num = ''+seq;
       if (level > 0) {
-        num = idxLevel[level - 1] + '_' + num;
+        num = idxLevel[level - 1]+'_'+num;
       }
       while (idxLevel.length - 1 > level) {
         idxLevel.pop();
@@ -501,12 +602,12 @@ var initModule = function () {
       item = data[i];
       seq = i;
       item.seq = seq;
-      num = '' + seq;
+      num = ''+seq;
       item.num = num;
       item.Target = item.Target || '';
       item.BusinessTerm = item.BusinessTerm || '';
       item.BusinessTerm = item.BusinessTerm.replaceAll(',',' ');
-      desc = item.Desc ?  '' + item.Desc : '';
+      desc = item.Desc ?  ''+item.Desc : '';
       if (desc.match(/NL/)) {
         item.Desc = desc.replaceAll('NL', '<br>\n');
       }
@@ -540,7 +641,7 @@ var initModule = function () {
     .add(rows)
     .draw();
     RuleRows = rows;
-    $('#rule-frame .fa-refresh').addClass('d-none')
+    $('#rule-frame .fa-sync').addClass('d-none')
   }
 
   rule_table = $('#rule').DataTable({
@@ -614,54 +715,76 @@ var initModule = function () {
   });
 
   // -----------------------------------------------------------------
-  // Add event listener for opening and closing info
+  // Add event listener for finding used info
   // -----------------------------------------------------------------
   // EN
   $('#en tbody').on('click', 'td.info-control', function(event) {
     event.stopPropagation();
     var tr = $(this).closest('tr'),
         row = en_table.row(tr);
+    en_find(row.data());
     $('#en tbody tr td').removeClass('active');
-    if (row.child.isShown()) { // This row is already open - close it
-      row.child.hide();
-      tr.removeClass('shown');
-    }
-    else { // Open this row and lookup correponding rules
-      row.child(en_format(row.data())).show();
-      tr.addClass('shown');
-      tr[0].children[1].classList.add('active');
-    }
+    tr[0].children[1].classList.add('active');
   });
   // Rule
   $('#rule tbody').on('click', 'td.info-control', function(event) {
     event.stopPropagation();
     var tr = $(this).closest('tr'),
         row = rule_table.row(tr), info;
+    rule_find(row.data());
     $('#rule tbody tr td').removeClass('active');
+    tr[0].firstElementChild.classList.add('active');
+  });
+  // -----------------------------------------------------------------
+  // Add event listener for opening and closing translation
+  // -----------------------------------------------------------------
+  // EN
+  $('#en tbody').on('click', 'td.translate-control', function(event) {
+    event.stopPropagation();
+    var tr = $(this).closest('tr'),
+        row = en_table.row(tr);
+    if (row.child.isShown()) { // This row is already open - close it
+      row.child.hide();
+      tr.removeClass('shown');
+    }
+    else { // Open this row and lookup correponding rules
+      en_format(row.data())
+      .then(function(html) {
+        row.child(html ).show();
+        tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
+    }
+  });
+  // Rule
+  $('#rule tbody').on('click', 'td.translate-control', function(event) {
+    event.stopPropagation();
+    var tr = $(this).closest('tr'),
+        row = rule_table.row(tr), info;
     if (row.child.isShown()) { // This row is already open - close it
       row.child.hide();
       tr.removeClass('shown');
     }
     else { // Open this row and lookup correponding term/group
-      info = rule_format(row.data());
-      if (info) {
+      rule_format(row.data())
+      .then(function(info) {
         row.child(info).show();
         tr.addClass('shown');
-      }
-      tr[0].firstElementChild.classList.add('active');
+      })
+      .catch(function(err) { console.log(err); });
     }
   });
   // -----------------------------------------------------------------
   // Add event listener for opening and closing detail records
   // -----------------------------------------------------------------
   // EN
-  $('#en tbody').on('click', 'td:not(.info-control)', function (event) {
+  $('#en tbody').on('click', 'td:not(.translate-control, .info-control)', function (event) {
     event.stopPropagation();
     var tr = $(this).closest('tr'),
     row = en_table.row(tr), data = row.data();
     if (!data) { return; }
     var num = data.num,
-        rgx = RegExp('^' + num + '_[^_]+$'),
+        rgx = RegExp('^'+num+'_[^_]+$'),
         i = 0;
     for (num of EnNums) {
       if (num.match(rgx)) { i++; }

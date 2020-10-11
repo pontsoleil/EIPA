@@ -27,12 +27,12 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/snackbar.css">
     <script type="text/javascript" src="js/syntax.js"></script>
-    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/ajax.min.js"></script>
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" class="init">
       $(document).ready(function() {
         if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
-          $('#ie-warning').removeClass('d-none');
+          $('#ie-warning').css('display', 'block');
           return;
         }
         var getUrlParameter = function getUrlParameter(sParam) {
@@ -46,10 +46,10 @@
             }
           }
         };
-        $('#ie-warning').addClass('d-none');
-        $('#root').removeClass('d-none').addClass('d-block');
-        $('#tab-1').removeClass('d-none');
-        $('#tab-2').removeClass('d-none');
+        $('#ie-warning').css('display', 'none');
+        $('#root').css('display', 'block');
+        $('#tab-1').css('display', 'block');
+        $('#tab-2').css('display', 'block');
         tab1 = getUrlParameter('t1');
         tab2 = getUrlParameter('t2');
         initModule(tab1, tab2);
@@ -60,7 +60,7 @@
   </head>
   <body>
     <!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
-    <div id="ie-warning" class="container h-100 d-none">
+    <div id="ie-warning" class="container h-100">
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
           <div>
@@ -71,22 +71,24 @@
       </div>
     </div>
 
-    <div id="tab-1" class="tab d-none">
+    <div id="tab-1" class="tab">
       <p class="tablinks en" onclick="setFrame(1, 'en');return false;">EN 16931</p>
       <p class="tablinks ubl" onclick="setFrame(1, 'ubl');return false;">UBL 2.1</p>
+      <p class="tablinks peppol" onclick="setFrame(1, 'peppol');return false;">PEPPOL</p>
       <p class="tablinks cii" onclick="setFrame(1, 'cii');return false;">CII</p>
       <p class="tablinks sme" onclick="setFrame(1, 'sme');return false;">SME</p>
     </div>
   
-    <div id="tab-2" class="tab d-none">
+    <div id="tab-2" class="tab">
       <p class="tablinks en" onclick="setFrame(2, 'en');return false;">EN 16931</p>
       <p class="tablinks ubl" onclick="setFrame(2, 'ubl');return false;">UBL 2.1</p>
+      <p class="tablinks prppol" onclick="setFrame(2, 'peppol');return false;">PEPPOL</p>
       <p class="tablinks cii" onclick="setFrame(2, 'cii');return false;">CII</p>
       <p class="tablinks sme" onclick="setFrame(2, 'sme');return false;">SME</p>
     </div>
 
     <!-- ROOT -->
-    <div id="root" class="split-pane-frame tabcontent serif d-none">
+    <div id="root" class="split-pane-frame tabcontent serif">
       <div class="split-pane fixed-left" id="root-split-pane">
         <div class="split-pane-component" id="component-1">
         </div>
@@ -96,7 +98,7 @@
       </div>
     </div>
 
-    <div class="d-none">
+    <div style="display:none">
       <!-- EN -->
       <div id="en-container">
         <div id="en-frame" class="pretty-split-pane-component-inner">
@@ -123,6 +125,22 @@
               <tr>
                 <th></th><!-- detail-control -->
                 <th>-</th>
+                <th>Name</th>
+                <th>Card.</th>
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <!-- PEPPOL -->
+      <div id="peppol-container">
+        <div id="peppol-frame" class="pretty-split-pane-component-inner">
+          <span class="table-title">PEPPOL BIS Billing 3.0 Invoice</span>
+          <table id="peppol" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th></th><!-- detail-control -->
                 <th>Name</th>
                 <th>Card.</th>
                 <th></th><!-- info-control -->

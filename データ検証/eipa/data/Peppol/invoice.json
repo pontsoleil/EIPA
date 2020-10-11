@@ -1,0 +1,1397 @@
+{"data": [
+  {
+    "Card":"1..1",
+    "Level":"",
+    "Name":"ubl:Invoice",
+    "Description":"<p>&nbsp;"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cbc:CustomizationID",
+    "Description":"<p><strong>Specification identifier</strong><br/>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</p><p>Default value: <code>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cbc:ProfileID",
+    "Description":"<p><strong>Business process type</strong><br/>Identifies the business process context in which the transaction appears, to enable the Buyer to process the Invoice in an appropriate way.</p><p>Default value: <code>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Invoice number</strong><br/>A unique identification of the Invoice. The sequential number required in Article 226(2) of the directive 2006/112/EC [2], to uniquely identify the Invoice within the business context, time-frame, operating systems and records of the Seller. No identification scheme is to be used.</p><p>Example value: <code>33445566</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cbc:IssueDate",
+    "Description":"<p><strong>Invoice issue date</strong><br/>The date when the Invoice was issued. Format _QUOT_YYYY-MM-DD_QUOT_</p><p>Example value: <code>2017-11-01</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cbc:DueDate",
+    "Description":"<p><strong>Payment due date</strong><br/>The date when the payment is due.Format _QUOT_YYYY-MM-DD_QUOT_. In case the Amount due for payment (BT-115) is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present.</p><p>Example value: <code>2017-11-01</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cbc:InvoiceTypeCode",
+    "Description":"<p><strong>Invoice type code</strong><br/>A code specifying the functional type of the Invoice.</p><p>Example value: <code>380</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cbc:Note",
+    "Description":"<p><strong>Invoice note</strong><br/>A textual note that gives unstructured information that is relevant to the Invoice as a whole.Such as the reason for any correction or assignment note in case the invoice has been factored.</p><p>Example value: <code>Please note our new phone number 33 44 55 66</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cbc:TaxPointDate",
+    "Description":"<p><strong>Value added tax point date</strong><br/>The date when the VAT becomes accountable for the Seller and for the Buyer in so far as that date can be determined and differs from the date of issue of the invoice, according to the VAT directive.This element is required if the Value added tax point date is different from the Invoice issue date.</p><p>Example value: <code>2017-11-01</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cbc:DocumentCurrencyCode",
+    "Description":"<p><strong>Invoice currency code</strong><br/>The currency in which all Invoice amounts are given, except for the Total VAT amount in accounting currency. Only one currency shall be used in the Invoice, except for the VAT accounting currency code (BT-6) and the invoice total VAT amount in accounting currency (BT-111).</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cbc:TaxCurrencyCode",
+    "Description":"<p><strong>VAT accounting currency code</strong><br/>The currency used for VAT accounting and reporting purposes as accepted or required in the country of the Seller. Shall be used in combination with the Invoice total VAT amount in accounting currency (BT-111), when the VAT accounting currency code differs from the Invoice currency code.</p><p>Example value: <code>SEK</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cbc:AccountingCost",
+    "Description":"<p><strong>Buyer accounting reference</strong><br/>A textual value that specifies where to book the relevant data into the Buyer&#39;s financial accounts.</p><p>Example value: <code>4217:2323:2323</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cbc:BuyerReference",
+    "Description":"<p><strong>Buyer reference</strong><br/>An identifier assigned by the Buyer used for internal routing purposes. An invoice must have buyer reference or purchase order reference (BT-13).</p><p>Example value: <code>abs1234</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:InvoicePeriod",
+    "Description":"<p><strong>DELIVERY OR INVOICE PERIOD</strong><br/>A group of business terms providing information on the invoice period. Also called delivery period. If the group is used, the invoiceing period start date and/or end date must be used.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:StartDate",
+    "Description":"<p><strong>Invoicing period start date</strong><br/>The date when the Invoice period starts. Format = _QUOT_YYYY-MM-DD_QUOT_.</p><p>Example value: <code>2017-10-01</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:EndDate",
+    "Description":"<p><strong>Invoicing period end date</strong><br/>The date when the Invoice period ends. Format = _QUOT_YYYY-MM-DD_QUOT_.</p><p>Example value: <code>2017-10-31</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:DescriptionCode",
+    "Description":"<p><strong>Value added tax point date code</strong><br/>The code of the date when the VAT becomes accountable for the Seller and for the Buyer.</p><p>Example value: <code>35</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:OrderReference",
+    "Description":"<p><strong>ORDER AND SALES ORDER REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Purchase order reference</strong><br/>An identifier of a referenced purchase order, issued by the Buyer.An invoice must have buyer reference (BT-10) or purchase order reference.</p><p>Example value: <code>98776</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:SalesOrderID",
+    "Description":"<p><strong>Sales order reference</strong><br/>An identifier of a referenced sales order, issued by the Seller.</p><p>Example value: <code>112233</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"+",
+    "Name":"cac:BillingReference",
+    "Description":"<p><strong>PRECEDING INVOICE REFERENCE</strong><br/>A group of business terms providing information on one or more preceding Invoices.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:InvoiceDocumentReference",
+    "Description":"<p><strong>INVOICE DOCUMENT REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Preceding Invoice number</strong><br/>The identification of an Invoice that was previously sent by the Seller.</p><p>Example value: <code>inv123</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:IssueDate",
+    "Description":"<p><strong>Preceding Invoice issue date</strong><br/>The date when the Preceding Invoice was issued.Shall be provided in case the Preceding Invoice identifier is not unique. Format = _QUOT_YYYY-MM-DD_QUOT_.</p><p>Example value: <code>2017-09-15</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:DespatchDocumentReference",
+    "Description":"<p><strong>DESPATCH ADVICE REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Despatch advice reference</strong><br/>An identifier of a referenced despatch advice.</p><p>Example value: <code>desp98</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:ReceiptDocumentReference",
+    "Description":"<p><strong>RECEIPT ADVICE REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Receiving advice reference</strong><br/>An identifier of a referenced receiving advice.</p><p>Example value: <code>rec98</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:OriginatorDocumentReference",
+    "Description":"<p><strong>TENDER OR LOT REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Tender or lot reference</strong><br/>The identification of the call for tender or lot the invoice relates to.</p><p>Example value: <code>PPID-123</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:ContractDocumentReference",
+    "Description":"<p><strong>CONTRACT REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Contract reference</strong><br/>The identification of a contract.</p><p>Example value: <code>123Contractref</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"+",
+    "Name":"cac:AdditionalDocumentReference",
+    "Description":"<p><strong>ADDITIONAL SUPPORTING DOCUMENTS</strong><br/>A group of business terms providing information about additional supporting documents substantiating the claims made in the Invoice. The additional supporting documents can be used for both referencing a document number which is expected to be known by the receiver, an external document (referenced by a URL) or as an embedded document, Base64 encoded (such as a time report).</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Invoiced object identifier, Supporting document reference</strong><br/>An identifier for an object on which the invoice is based, given by the Seller, or the identifier for the supporting document.</p><p>Example value: <code>AB23456</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Scheme identifier</strong><br/>The identification scheme identifier of the Invoiced object identifier.</p><p>Example value: <code>AUN</code></p>"
+    },
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:DocumentTypeCode",
+    "Description":"<p><strong>Document type code</strong><br/>Code _QUOT_130_QUOT_ MUST be used to indicate an invoice object reference. Not used for other additional documents</p><p>Default value: <code>130</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:DocumentDescription",
+    "Description":"<p><strong>Supporting document description</strong><br/>A description of the supporting document, such as: timesheet, usage report etc.</p><p>Example value: <code>Time list</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:Attachment",
+    "Description":"<p><strong>ATTACHMENT</strong><br/></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:EmbeddedDocumentBinaryObject",
+    "Description":"<p><strong>Attached document</strong><br/>An attached document embedded as binary object (Base64) or sent together with the invoice.</p><p>Example value: <code>aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@mimeCode",
+    "Description":"<p><p><strong>Attached document Mime code</strong><br/>The mime code of the attached document.</p><p>Example value: <code>text/csv</code></p>"
+    },
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@filename",
+    "Description":"<p><p><strong>Attached document Filename</strong><br/>The file name of the attached document</p><p>Example value: <code>Hours-spent.csv</code></p>"
+    },
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:ExternalReference",
+    "Description":"<p><strong>EXTERNAL REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:URI",
+    "Description":"<p><strong>External document location</strong><br/>The URL (Uniform Resource Locator) that identifies where the external document is located. A means of locating the resource, including its primary access mechanism, e.g. http:// or ftp://.</p><p>Example value: <code>http://www.example.com/index.html</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:ProjectReference",
+    "Description":"<p><strong>PROJECT REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Project reference</strong><br/>The identification of the project the invoice refers to.</p><p>Example value: <code>PID33</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cac:AccountingSupplierParty",
+    "Description":"<p><strong>SELLER</strong><br/>A group of business terms providing information about the Seller.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:Party",
+    "Description":"<p><strong>PARTY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:EndpointID",
+    "Description":"<p><strong>Seller electronic address</strong><br/>Identifies the Seller&#39;s electronic address to which a business document may be delivered.</p><p>Example value: <code>7300010000001</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Seller electronic address identification scheme identifier</strong><br/>The identification scheme identifier of the Seller electronic address</p><p>Example value: <code>0088</code></p>"
+    },
+  {
+    "Card":"0..n",
+    "Level":"+++",
+    "Name":"cac:PartyIdentification",
+    "Description":"<p><strong>PARTY IDENTIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Seller identifier or bank assigned creditor identifier</strong><br/>This element is used for both the identification of the Seller, or the unique banking reference identifier of Seller (assigned by the Seller bank.). For seller identification use ICD code list, for SEPA bank assigned creditor reference, use SEPA. In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present</p><p>Example value: <code>5060012349998</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Seller or bank assigned creditor identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Seller identifier. For bank assigned creditor identifier (BT-90), value MUST be _QUOT_SEPA_QUOT_</p><p>Example value: <code>0088</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:PartyName",
+    "Description":"<p><strong>PARTY NAME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Seller trading name</strong><br/>A name by which the Seller is known, other than Seller name (also known as Business name).</p><p>Example value: <code>Seller Business Name AS</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:PostalAddress",
+    "Description":"<p><strong>SELLER POSTAL ADDRESS</strong><br/>A group of business terms providing information about the address of the Seller. Sufficient components of the address are to be filled to comply with legal requirements.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:StreetName",
+    "Description":"<p><strong>Seller address line 1</strong><br/>The main address line in an address.</p><p>Example value: <code>Main Street 1</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:AdditionalStreetName",
+    "Description":"<p><strong>Seller address line 2</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>Po Box 351</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CityName",
+    "Description":"<p><strong>Seller city</strong><br/>The common name of the city, town or village, where the Seller address is located.</p><p>Example value: <code>London</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:PostalZone",
+    "Description":"<p><strong>Seller post code</strong><br/>The identifier for an addressable group of properties according to the relevant postal service.</p><p>Example value: <code>W1G 8LZ</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CountrySubentity",
+    "Description":"<p><strong>Seller country subdivision</strong><br/>The subdivision of a country.</p><p>Example value: <code>Region A</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cac:AddressLine",
+    "Description":"<p><strong>ADDRESS LINE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:Line",
+    "Description":"<p><strong>Seller address line 3</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>Building 23</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:Country",
+    "Description":"<p><strong>COUNTRY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:IdentificationCode",
+    "Description":"<p><strong>Seller country code</strong><br/>A code that identifies the country.</p><p>Example value: <code>GB</code></p>"},
+  {
+    "Card":"0..2",
+    "Level":"+++",
+    "Name":"cac:PartyTaxScheme",
+    "Description":"<p><strong>PARTY VAT/TAX IDENTIFIERS</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:CompanyID",
+    "Description":"<p><strong>Seller VAT identifier, Seller tax registration identifier</strong><br/>The Seller&#39;s VAT identifier (also known as Seller VAT identification number) or the local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference that enables the Seller to state his registered tax status. In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present</p><p>Example value: <code>NO999888777</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:TaxScheme",
+    "Description":"<p><strong>TAX SCHEME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:ID",
+    "Description":"<p>Mandatory element. For Seller VAT identifier (BT-31), use value “VAT”, for the seller tax registration identifier (BT-32), use != _QUOT_VAT_QUOT_</p><p>Example value: <code>VAT</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:PartyLegalEntity",
+    "Description":"<p><strong>PARTY LEGAL ENTITY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:RegistrationName",
+    "Description":"<p><strong>Seller name</strong><br/>The full formal name by which the Seller is registered in the national registry of legal entities or as a Taxable person or otherwise trades as a person or persons.</p><p>Example value: <code>Full Formal Seller Name LTD.</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CompanyID",
+    "Description":"<p><strong>Seller legal registration identifier</strong><br/>An identifier issued by an official registrar that identifies the Seller as a legal entity or person. In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present</p><p>Example value: <code>987654321</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Seller legal registration identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Seller legal registration identifier.</p><p>Example value: <code>0002</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CompanyLegalForm",
+    "Description":"<p><strong>Seller additional legal information</strong><br/>Additional legal information relevant for the Seller.</p><p>Example value: <code>Share capital</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:Contact",
+    "Description":"<p><strong>SELLER CONTACT</strong><br/>A group of business terms providing contact information about the Seller.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Seller contact point</strong><br/>A contact point for a legal entity or person.</p><p>Example value: <code>xyz123</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:Telephone",
+    "Description":"<p><strong>Seller contact telephone number</strong><br/>A phone number for the contact point.</p><p>Example value: <code>887 654 321</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:ElectronicMail",
+    "Description":"<p><strong>Seller contact email address</strong><br/>An e-mail address for the contact point.</p><p>Example value: <code>test.name@foo.bar</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cac:AccountingCustomerParty",
+    "Description":"<p><strong>BUYER</strong><br/>A group of business terms providing information about the Buyer.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:Party",
+    "Description":"<p><strong>PARTY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:EndpointID",
+    "Description":"<p><strong>Buyer electronic address</strong><br/>Identifies the Buyer&#39;s electronic address to which a business document should be delivered.</p><p>Example value: <code>987654321</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Buyer electronic address identification scheme identifier</strong><br/>The identification scheme identifier of the Buyer electronic address.</p><p>Example value: <code>0192</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:PartyIdentification",
+    "Description":"<p><strong>PARTY IDENTIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Buyer identifier</strong><br/>An identifier of the Buyer.</p><p>Example value: <code>SE8765456787</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Buyer identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Buyer identifier.</p><p>Example value: <code>0088</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:PartyName",
+    "Description":"<p><strong>PARTY NAME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Buyer trading name</strong><br/>A name by which the Buyer is known, other than Buyer name (also known as Business name).</p><p>Example value: <code>Buyer Trading Name</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:PostalAddress",
+    "Description":"<p><strong>BUYER POSTAL ADDRESS</strong><br/>A group of business terms providing information about the postal address for the Buyer. Sufficient components of the address are to be filled to comply with legal requirements.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:StreetName",
+    "Description":"<p><strong>Buyer address line 1</strong><br/>The main address line in an address.</p><p>Example value: <code>Hovudgatan 32</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:AdditionalStreetName",
+    "Description":"<p><strong>Buyer address line 2</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>Po box 43</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CityName",
+    "Description":"<p><strong>Buyer city</strong><br/>The common name of the city, town or village, where the Buyer&#39;s address is located.</p><p>Example value: <code>Stockholm</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:PostalZone",
+    "Description":"<p><strong>Buyer post code</strong><br/>The identifier for an addressable group of properties according to the relevant postal service.</p><p>Example value: <code>34567</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CountrySubentity",
+    "Description":"<p><strong>Buyer country subdivision</strong><br/>The subdivision of a country.</p><p>Example value: <code>Region A</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cac:AddressLine",
+    "Description":"<p><strong>ADDRESS LINE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:Line",
+    "Description":"<p><strong>Buyer address line 3</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>Building F2</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:Country",
+    "Description":"<p><strong>COUNTRY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:IdentificationCode",
+    "Description":"<p><strong>Buyer country code</strong><br/>A code that identifies the country.</p><p>Example value: <code>SE</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:PartyTaxScheme",
+    "Description":"<p><strong>PARTY VAT IDENTIFIER</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:CompanyID",
+    "Description":"<p><strong>Buyer VAT identifier</strong><br/>The Buyer&#39;s VAT identifier (also known as Buyer VAT identification number).</p><p>Example value: <code>SE8765456787</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:TaxScheme",
+    "Description":"<p><strong>TAX SCHEME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:ID",
+    "Description":"<p>Mandatory element. Use “VAT”</p><p>Default value: <code>VAT</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:PartyLegalEntity",
+    "Description":"<p><strong>PARTY LEGAL ENTITY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:RegistrationName",
+    "Description":"<p><strong>Buyer name</strong><br/>The full name of the Buyer.</p><p>Example value: <code>Buyer Full Name AS</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CompanyID",
+    "Description":"<p><strong>Buyer legal registration identifier</strong><br/>An identifier issued by an official registrar that identifies the Buyer as a legal entity or person.</p><p>Example value: <code>7300010000001</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Buyer legal registration identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Buyer legal registration identifier.</p><p>Example value: <code>0088</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:Contact",
+    "Description":"<p><strong>BUYER CONTACT</strong><br/>A group of business terms providing contact information relevant for the Buyer.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Buyer contact point</strong><br/>A contact point for a legal entity or person.</p><p>Example value: <code>Jens Jensen</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:Telephone",
+    "Description":"<p><strong>Buyer contact telephone number</strong><br/>A phone number for the contact point.</p><p>Example value: <code>876 654 321</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:ElectronicMail",
+    "Description":"<p><strong>Buyer contact email address</strong><br/>An e-mail address for the contact point.</p><p>Example value: <code>jens.j@buyer.se</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:PayeeParty",
+    "Description":"<p><strong>PAYEE</strong><br/>A group of business terms providing information about the Payee, i.e. the role that receives the payment. Shall be used when the Payee is different from the Seller.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:PartyIdentification",
+    "Description":"<p><strong>PARTY IDENTIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Payee identifier or bank assigned creditor identifier</strong><br/>This element is used for both the identification of the Payee, or the unique banking reference identifier of Payee (assigned by the Payee bank.) For payee identification use ICD code list, for SEPA bank assigned creditor reference, use SEPA.</p><p>Example value: <code>FR932874294</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Payee or bank assigned creditor identifier identification scheme identifier</strong><br/>The identification scheme identifier of the payee identifier. For bank assigned creditor identifier (BT-90), value MUST be _QUOT_SEPA_QUOT_</p><p>Example value: <code>SEPA</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:PartyName",
+    "Description":"<p><strong>PARTY NAME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Payee name</strong><br/>The name of the Payee.</p><p>Example value: <code>Payee Name Ltd</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:PartyLegalEntity",
+    "Description":"<p><strong>PARTY LEGAL ENTITY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:CompanyID",
+    "Description":"<p><strong>Payee legal registration identifier</strong><br/>An identifier issued by an official registrar that identifies the Payee as a legal entity or person.</p><p>Example value: <code>FR932874294</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Payee legal registration identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Payee legal registration identifier.</p><p>Example value: <code>0002</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:TaxRepresentativeParty",
+    "Description":"<p><strong>SELLER TAX REPRESENTATIVE PARTY</strong><br/>A group of business terms providing information about the Seller&#39;s tax representative.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:PartyName",
+    "Description":"<p><strong>PARTY NAME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Seller tax representative name</strong><br/>The full name of the Seller&#39;s tax representative party.</p><p>Example value: <code>Tax Representative Name AS</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:PostalAddress",
+    "Description":"<p><strong>SELLER TAX REPRESENTATIVE POSTAL ADDRESS</strong><br/>A group of business terms providing information about the postal address for the tax representative party. Sufficient components of the address are to be filled to comply with legal requirements. </p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:StreetName",
+    "Description":"<p><strong>Tax representative address line 1</strong><br/>The main address line in an address.</p><p>Example value: <code>Lille gatan 545</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:AdditionalStreetName",
+    "Description":"<p><strong>Tax representative address line 2</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>Po Box 987</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:CityName",
+    "Description":"<p><strong>Tax representative city</strong><br/>The common name of the city, town or village, where the tax representative address is located.</p><p>Example value: <code>Göteborg</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:PostalZone",
+    "Description":"<p><strong>Tax representative post code</strong><br/>The identifier for an addressable group of properties according to the relevant postal service.</p><p>Example value: <code>12345</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:CountrySubentity",
+    "Description":"<p><strong>Tax representative country subdivision</strong><br/>The subdivision of a country.</p><p>Example value: <code>Region Vest</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:AddressLine",
+    "Description":"<p><strong>ADDRESS LINE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Line",
+    "Description":"<p><strong>Tax representative address line 3</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>A87</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:Country",
+    "Description":"<p><strong>COUNTRY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:IdentificationCode",
+    "Description":"<p><strong>Tax representative country code</strong><br/>A code that identifies the country.</p><p>Example value: <code>SE</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:PartyTaxScheme",
+    "Description":"<p><strong>PARTY VAT IDENTIFIER</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:CompanyID",
+    "Description":"<p><strong>Seller tax representative VAT identifier</strong><br/>The VAT identifier of the Seller&#39;s tax representative party.</p><p>Example value: <code>FR932874294</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:TaxScheme",
+    "Description":"<p><strong>TAX SCHEME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p>Mandatory element. Use “VAT”</p><p>Default value: <code>VAT</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:Delivery",
+    "Description":"<p><strong>DELIVERY INFORMATION</strong><br/>A group of business terms providing information about where and when the goods and services invoiced are delivered.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:ActualDeliveryDate",
+    "Description":"<p><strong>Actual delivery date</strong><br/>The date on which the supply of goods or services was made or completed. Format = _QUOT_YYYY-MM-DD_QUOT_</p><p>Example value: <code>2017-12-01</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:DeliveryLocation",
+    "Description":"<p>&nbsp"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Deliver to location identifier</strong><br/>An identifier for the location at which the goods and services are delivered.</p><p>Example value: <code>83745498753497</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Deliver to location identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Deliver to location identifier.</p><p>Example value: <code>0088</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:Address",
+    "Description":"<p><strong>DELIVER TO ADDRESS</strong><br/>A group of business terms providing information about the address to which goods and services invoiced were or are delivered. </p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:StreetName",
+    "Description":"<p><strong>Deliver to address line 1</strong><br/>The main address line in an address.</p><p>Example value: <code>Delivery Street 1</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:AdditionalStreetName",
+    "Description":"<p><strong>Deliver to address line 2</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>Delivery Street 2</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CityName",
+    "Description":"<p><strong>Deliver to city</strong><br/>The common name of the city, town or village, where the deliver to address is located.</p><p>Example value: <code>Malmö</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:PostalZone",
+    "Description":"<p><strong>Deliver to post code</strong><br/>The identifier for an addressable group of properties according to the relevant postal service.</p><p>Example value: <code>86756</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:CountrySubentity",
+    "Description":"<p><strong>Deliver to country subdivision</strong><br/>The subdivision of a country.</p><p>Example value: <code>South Region</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cac:AddressLine",
+    "Description":"<p><strong>ADDRESS LINE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:Line",
+    "Description":"<p><strong>Deliver to address line 3</strong><br/>An additional address line in an address that can be used to give further details supplementing the main line.</p><p>Example value: <code>C54</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:Country",
+    "Description":"<p><strong>COUNTRY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:IdentificationCode",
+    "Description":"<p><strong>Deliver to country code</strong><br/>A code that identifies the country.</p><p>Example value: <code>SE</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:DeliveryParty",
+    "Description":"<p><strong>DELIVER PARTY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:PartyName",
+    "Description":"<p><strong>PARTY NAME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Deliver to party name</strong><br/>The name of the party to which the goods and services are delivered.</p><p>Example value: <code>Deliver name</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"+",
+    "Name":"cac:PaymentMeans",
+    "Description":"<p><strong>PAYMENT INSTRUCTIONS</strong><br/>A group of business terms providing information about the payment.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:PaymentMeansCode",
+    "Description":"<p><strong>Payment means type code</strong><br/>The means, expressed as code, for how a payment is expected to be or has been settled.</p><p>Example value: <code>30</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++",
+    "Name":"@name",
+    "Description":"<p><p><strong>Payment means text</strong><br/>The means, expressed as text, for how a payment is expected to be or has been settled.</p><p>Example value: <code>Credit transfer</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:PaymentID",
+    "Description":"<p><strong>Remittance information</strong><br/>A textual value used to establish a link between the payment and the Invoice, issued by the Seller. Used for creditor&#39;s critical reconciliation information. This information element helps the Seller to assign an incoming payment to the relevant payment process.</p><p>Example value: <code>432948234234234</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:CardAccount",
+    "Description":"<p><strong>PAYMENT CARD INFORMATION</strong><br/>A group of business terms providing information about card used for payment contemporaneous with invoice issuance. </p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:PrimaryAccountNumberID",
+    "Description":"<p><strong>Payment card primary account number</strong><br/>The Primary Account Number (PAN) of the card used for payment.In accordance with card payments security standards, an invoice should never include a full card primary account number.</p><p>Example value: <code>1234</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:NetworkID",
+    "Description":"<p>Card Network identifier, such as VISA, American Express, Master Card.</p><p>Example value: <code>VISA</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:HolderName",
+    "Description":"<p><strong>Payment card holder name</strong><br/>The name of the payment card holder.</p><p>Example value: <code>John Doe</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:PayeeFinancialAccount",
+    "Description":"<p><strong>CREDIT TRANSFER</strong><br/>A group of business terms to specify credit transfer payments.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Payment account identifier</strong><br/>A unique identifier of the financial payment account, at a payment service provider, to which payment should be made. Such as IBAN or BBAN.</p><p>Example value: <code>NO99991122222</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Payment account name</strong><br/>The name of the payment account, at a payment service provider, to which payment should be made.</p><p>Example value: <code>Payment Account</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:FinancialInstitutionBranch",
+    "Description":"<p><strong>FINANCIAL INSTITUTION BRANCH</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Payment service provider identifier</strong><br/>An identifier for the payment service provider where a payment account is located. Such as a BIC or a national clearing code where required. No identification scheme Identifier to be used.</p><p>Example value: <code>9999</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:PaymentMandate",
+    "Description":"<p><strong>DIRECT DEBIT</strong><br/>A group of business terms to specify a direct debit.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Mandate reference identifier</strong><br/>Unique identifier assigned by the Payee for referencing the direct debit mandate. Used in order to pre-notify the Buyer of a SEPA direct debit.</p><p>Example value: <code>123456</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:PayerFinancialAccount",
+    "Description":"<p><strong>PAYER FINANCIAL ACCOUNT</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Debited account identifier</strong><br/>The account to be debited by the direct debit.</p><p>Example value: <code>12345676543</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+",
+    "Name":"cac:PaymentTerms",
+    "Description":"<p><strong>PAYMENT TERMS</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:Note",
+    "Description":"<p><strong>Payment terms</strong><br/>A textual description of the payment terms that apply to the amount due for payment (Including description of possible penalties). In case the Amount due for payment (BT-115) is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present.</p><p>Example value: <code>Net within 30 days</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"+",
+    "Name":"cac:AllowanceCharge",
+    "Description":"<p><strong>DOCUMENT LEVEL ALLOWANCES AND CHARGES</strong><br/>A group of business terms providing information about allowances applicable to the Invoice as a whole. A group of business terms providing information about charges and taxes other than VAT, applicable to the Invoice as a whole.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ChargeIndicator",
+    "Description":"<p>Use “true” when informing about Charges and “false” when informing about Allowances.</p><p>Example value: <code>false</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:AllowanceChargeReasonCode",
+    "Description":"<p><strong>Document level allowance or charge reason code</strong><br/>The reason for the document level allowance or charge, expressed as a code. For allowances a subset of codelist UNCL5189 is to be used, and for charges codelist UNCL7161 applies. The Document level allowance reason code and the Document level allowance reason shall indicate the same allowance reason</p><p>Example value: <code>95</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:AllowanceChargeReason",
+    "Description":"<p><strong>Document level allowance or charge reason</strong><br/>The reason for the document level allowance or charge, expressed as text. The Document level allowance reason code and the Document level allowance reason shall indicate the same allowance reason</p><p>Example value: <code>Discount</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:MultiplierFactorNumeric",
+    "Description":"<p><strong>Document level allowance or charge percentage</strong><br/>The percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20.</p><p>Example value: <code>20</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:Amount",
+    "Description":"<p><strong>Document level allowance or charge amount</strong><br/>The amount of an allowance or a charge, without VAT. Must be rounded to maximum 2 decimals</p><p>Example value: <code>200</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:BaseAmount",
+    "Description":"<p><strong>Document level allowance or charge base amount</strong><br/>The base amount that may be used, in conjunction with the document level allowance or charge percentage, to calculate the document level allowance or charge amount. Must be rounded to maximum 2 decimals</p><p>Example value: <code>1000</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:TaxCategory",
+    "Description":"<p><strong>TAX CATEGORY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Document level allowance or charge VAT category code</strong><br/>A coded identification of what VAT category applies to the document level allowance or charge.</p><p>Example value: <code>S</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:Percent",
+    "Description":"<p><strong>Document level allowance or charge VAT rate</strong><br/>The VAT rate, represented as percentage that applies to the document level allowance or charge.</p><p>Example value: <code>25</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:TaxScheme",
+    "Description":"<p><strong>TAX SCHEME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p>Mandatory element. Use “VAT”</p><p>Default value: <code>VAT</code></p>"},
+  {
+    "Card":"1..2",
+    "Level":"+",
+    "Name":"cac:TaxTotal",
+    "Description":"<p><strong>TAX TOTAL</strong><br/>When tax currency code is provided, two instances of the tax total must be present, but only one with tax subtotal.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:TaxAmount",
+    "Description":"<p><strong>Invoice total VAT amount, Invoice total VAT amount in accounting currency</strong><br/>The total VAT amount for the Invoice or the VAT total amount expressed in the accounting currency accepted or required in the country of the Seller. Must be rounded to maximum 2 decimals</p><p>Example value: <code>486.25</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5 or BT-6.</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"++",
+    "Name":"cac:TaxSubtotal",
+    "Description":"<p><strong>VAT BREAKDOWN</strong><br/>A group of business terms providing information about VAT breakdown by different categories, rates and exemption reasons </p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:TaxableAmount",
+    "Description":"<p><strong>VAT category taxable amount</strong><br/>Sum of all taxable amounts subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable). Must be rounded to maximum 2 decimals.</p><p>Example value: <code>1945.00</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:TaxAmount",
+    "Description":"<p><strong>VAT category tax amount</strong><br/>The total VAT amount for a given VAT category. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>486.25</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:TaxCategory",
+    "Description":"<p><strong>VAT CATEGORY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>VAT category code</strong><br/>Coded identification of a VAT category.</p><p>Example value: <code>S</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:Percent",
+    "Description":"<p><strong>VAT category rate</strong><br/>The VAT rate, represented as percentage that applies for the relevant VAT category.</p><p>Example value: <code>25</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:TaxExemptionReasonCode",
+    "Description":"<p><strong>VAT exemption reason code</strong><br/>A coded statement of the reason for why the amount is exempted from VAT.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:TaxExemptionReason",
+    "Description":"<p><strong>VAT exemption reason text</strong><br/>A textual statement of the reason why the amount is exempted from VAT or why no VAT is being charged.</p><p>Example value: <code>Exempt</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:TaxScheme",
+    "Description":"<p><strong>TAX SCHEME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:ID",
+    "Description":"<p>Mandatory element. Use “VAT”</p><p>Default value: <code>VAT</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+",
+    "Name":"cac:LegalMonetaryTotal",
+    "Description":"<p><strong>DOCUMENT TOTALS</strong><br/>A group of business terms providing the monetary totals for the Invoice.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:LineExtensionAmount",
+    "Description":"<p><strong>Sum of Invoice line net amount</strong><br/>Sum of all Invoice line net amounts in the Invoice. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>3800.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:TaxExclusiveAmount",
+    "Description":"<p><strong>Invoice total amount without VAT</strong><br/>The total amount of the Invoice without VAT. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>3600.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:TaxInclusiveAmount",
+    "Description":"<p><strong>Invoice total amount with VAT</strong><br/>The total amount of the Invoice with VAT. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>4500.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:AllowanceTotalAmount",
+    "Description":"<p><strong>Sum of allowances on document level</strong><br/>Sum of all allowances on document level in the Invoice. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>200.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:ChargeTotalAmount",
+    "Description":"<p><strong>Sum of charges on document level</strong><br/>Sum of all charges on document level in the Invoice. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>0.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:PrepaidAmount",
+    "Description":"<p><strong>Paid amount</strong><br/>The sum of amounts which have been paid in advance. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>1000.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:PayableRoundingAmount",
+    "Description":"<p><strong>Rounding amount</strong><br/>The amount to be added to the invoice total to round the amount to be paid. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>0.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:PayableAmount",
+    "Description":"<p><strong>Amount due for payment</strong><br/>The outstanding amount that is requested to be paid. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>3500.0</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..n",
+    "Level":"+",
+    "Name":"cac:InvoiceLine",
+    "Description":"<p><strong>INVOICE LINE</strong><br/>A group of business terms providing information on individual Invoice lines.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Invoice line identifier</strong><br/>A unique identifier for the individual line within the Invoice.</p><p>Example value: <code>12</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:Note",
+    "Description":"<p><strong>Invoice line note</strong><br/>A textual note that gives unstructured information that is relevant to the Invoice line.</p><p>Example value: <code>New article number 12345</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:InvoicedQuantity",
+    "Description":"<p><strong>Invoiced quantity</strong><br/>The quantity of items (goods or services) that is charged in the Invoice line.</p><p>Example value: <code>100</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@unitCode",
+    "Description":"<p><p><strong>Invoiced quantity unit of measure</strong><br/>The unit of measure that applies to the invoiced quantity.<br>Codes for unit of packaging from UNECE Recommendation No. 21 can be used in accordance with the descriptions in the _QUOT_Intro_QUOT_ section of UN/ECE Recommendation 20, Revision 11 (2015):<br>The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure.</p><br><p>Example value: <code>C62</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cbc:LineExtensionAmount",
+    "Description":"<p><strong>Invoice line net amount</strong><br/>The total amount of the Invoice line. The amount is “net” without VAT, i.e. inclusive of line level allowances and charges as well as other relevant taxes. Must be rounded to maximum 2 decimals.</p><p>Example value: <code>2145.00</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cbc:AccountingCost",
+    "Description":"<p><strong>Invoice line Buyer accounting reference</strong><br/>A textual value that specifies where to book the relevant data into the Buyer&#39;s financial accounts.</p><p>Example value: <code>1287:65464</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:InvoicePeriod",
+    "Description":"<p><strong>INVOICE LINE PERIOD</strong><br/>A group of business terms providing information about the period relevant for the Invoice line.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:StartDate",
+    "Description":"<p><strong>Invoice line period start date</strong><br/>The date when the Invoice period for this Invoice line starts. Format =_QUOT_YYYY-MM-DD_QUOT_</p><p>Example value: <code>2017-10-05</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:EndDate",
+    "Description":"<p><strong>Invoice line period end date</strong><br/>The date when the Invoice period for this Invoice line ends. Format =_QUOT_YYYY-MM-DD_QUOT_</p><p>Example value: <code>2017-10-15</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:OrderLineReference",
+    "Description":"<p><strong>ORDER LINE REFERENCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:LineID",
+    "Description":"<p><strong>Referenced purchase order line reference</strong><br/>An identifier for a referenced line within a purchase order, issued by the Buyer.</p><p>Example value: <code>3</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++",
+    "Name":"cac:DocumentReference",
+    "Description":"<p><strong>LINE OBJECT IDENTIFIER</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Invoice line object identifier</strong><br/>An identifier for an object on which the invoice line is based, given by the Seller.</p><p>Example value: <code>AB12345</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Invoice line object identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Invoice line object identifier.</p><p>Example value: <code>ABZ</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:DocumentTypeCode",
+    "Description":"<p><strong>Document type code</strong><br/>Code _QUOT_130_QUOT_ MUST be used to indicate an invoice object reference. Not used for other additional documents</p><p>Default value: <code>130</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"++",
+    "Name":"cac:AllowanceCharge",
+    "Description":"<p><strong>INVOICE LINE ALLOWANCES OR CHARGES</strong><br/>A group of business terms providing information about allowances or charges applicable to the individual Invoice line.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:ChargeIndicator",
+    "Description":"<p> Use “true” when informing about Charges and “false” when informing about Allowances</p><p>Example value: <code>false</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:AllowanceChargeReasonCode",
+    "Description":"<p><strong>Line level allowance or charge reason code</strong><br/>The reason for the line level allowance or charge, expressed as a code.</p><p>Example value: <code>95</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:AllowanceChargeReason",
+    "Description":"<p><strong>Line level allowance or charge reason</strong><br/>The reason for the line level allowance or charge, expressed as text.</p><p>Example value: <code>Discount</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:MultiplierFactorNumeric",
+    "Description":"<p><strong>Line level allowance or charge percentage</strong><br/>The percentage that may be used, in conjunction with the line level allowance base amount, to calculate the line level allowance or charge amount.</p><p>Example value: <code>20</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:Amount",
+    "Description":"<p><strong>Line level allowance or charge amount</strong><br/>The amount of an allowance or a charge, without VAT. Must be rounded to maximum 2 decimals</p><p>Example value: <code>200</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:BaseAmount",
+    "Description":"<p><strong>Line level allowance or charge base amount</strong><br/>The base amount that may be used, in conjunction with the line level allowance or charge percentage, to calculate the line level allowance or charge amount. Must be rounded to maximum 2 decimals</p><p>Example value: <code>1000</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:Item",
+    "Description":"<p><strong>ITEM INFORMATION</strong><br/>A group of business terms providing information about the goods and services invoiced.</p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:Description",
+    "Description":"<p><strong>Item description</strong><br/>A description for an item.The item description allows for describing the item and its features in more detail than the Item name.</p><p>Example value: <code>Long description of the item on the invoice line</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Item name</strong><br/>A name for an item.</p><p>Example value: <code>Item name</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:BuyersItemIdentification",
+    "Description":"<p><strong>BUYERS ITEM IDENTIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Item Buyer&#39;s identifier</strong><br/>An identifier, assigned by the Buyer, for the item.</p><p>Example value: <code>123455</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:SellersItemIdentification",
+    "Description":"<p><strong>SELLERS ITEM IDENTIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Item Seller&#39;s identifier</strong><br/>An identifier, assigned by the Seller, for the item.</p><p>Example value: <code>9873242</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:StandardItemIdentification",
+    "Description":"<p><strong>STANDARD ITEM IDENTIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Item standard identifier</strong><br/>An item identifier based on a registered scheme.</p><p>Example value: <code>10986700</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++++",
+    "Name":"@schemeID",
+    "Description":"<p><p><strong>Item standard identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Item standard identifier</p><p>Example value: <code>0160</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:OriginCountry",
+    "Description":"<p><strong>ORIGIN COUNTRY</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:IdentificationCode",
+    "Description":"<p><strong>Item country of origin</strong><br/>The code identifying the country from which the item originates.</p><p>Example value: <code>CN</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"+++",
+    "Name":"cac:CommodityClassification",
+    "Description":"<p><strong>COMMODITY CLASSIFICATION</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ItemClassificationCode",
+    "Description":"<p><strong>Item classification identifier</strong><br/>A code for classifying the item by its type or nature.</p><p>Example value: <code>9873242</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++++",
+    "Name":"@listID",
+    "Description":"<p><p><strong>Item classification identifier identification scheme identifier</strong><br/>The identification scheme identifier of the Item classification identifier</p><p>Example value: <code>STI</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"+++++",
+    "Name":"@listVersionID",
+    "Description":"<p><p><strong>Item classification identifier version identification scheme identifier</strong><br/>The identification scheme version identifier of the Item classification identifier</p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cac:ClassifiedTaxCategory",
+    "Description":"<p><strong>LINE VAT INFORMATION</strong><br/>A group of business terms providing information about the VAT applicable for the goods and services invoiced on the Invoice line. </p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ID",
+    "Description":"<p><strong>Invoiced item VAT category code</strong><br/>The VAT category code for the invoiced item.</p><p>Example value: <code>S</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:Percent",
+    "Description":"<p><strong>Invoiced item VAT rate</strong><br/>The VAT rate, represented as percentage that applies to the invoiced item.</p><p>Example value: <code>25</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cac:TaxScheme",
+    "Description":"<p><strong>TAX SCHEME</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++++",
+    "Name":"cbc:ID",
+    "Description":"<p>Mandatory element. Use “VAT”</p><p>Default value: <code>VAT</code></p>"},
+  {
+    "Card":"0..n",
+    "Level":"+++",
+    "Name":"cac:AdditionalItemProperty",
+    "Description":"<p><strong>ITEM ATTRIBUTES</strong><br/>A group of business terms providing information about properties of the goods and services invoiced. </p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Name",
+    "Description":"<p><strong>Item attribute name</strong><br/>The name of the attribute or property of the item.</p><p>Example value: <code>Color</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Value",
+    "Description":"<p><strong>Item attribute value</strong><br/>The value of the attribute or property of the item.</p><p>Example value: <code>Black</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++",
+    "Name":"cac:Price",
+    "Description":"<p><strong>PRICE DETAILS</strong><br/>A group of business terms providing information about the price applied for the goods and services invoiced on the Invoice line.</p>"},
+  {
+    "Card":"1..1",
+    "Level":"+++",
+    "Name":"cbc:PriceAmount",
+    "Description":"<p><strong>Item net price</strong><br/>The price of an item, exclusive of VAT, after subtracting item price discount. The Item net price has to be equal with the Item gross price less the Item price discount, if they are both provided. Item price can not be negative.</p><p>Example value: <code>23.45</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cbc:BaseQuantity",
+    "Description":"<p><strong>Item price base quantity</strong><br/>The number of item units to which the price applies.</p><p>Example value: <code>1</code></p>"},
+  {
+    "Card":"Optional",
+    "Level":"++++",
+    "Name":"@unitCode",
+    "Description":"<p><p><strong>Item price base quantity unit of measure code</strong><br/>The unit of measure that applies to the Item price base quantity, must be the same as the unit code of the Invoiced/credited quantity. Codes for unit of packaging from UNECE Recommendation No. 21 can be used in accordance with the descriptions in the _QUOT_Intro_QUOT_ section of UN/ECE Recommendation 20, Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure.</p><p>Example value: <code>C62</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"+++",
+    "Name":"cac:AllowanceCharge",
+    "Description":"<p><strong>ALLOWANCE</strong><br/></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:ChargeIndicator",
+    "Description":"<p>Mandatory element. Value must be “false”</p><p>Fixed value: <code>false</code></p>"},
+  {
+    "Card":"1..1",
+    "Level":"++++",
+    "Name":"cbc:Amount",
+    "Description":"<p><strong>Item price discount</strong><br/>The total discount subtracted from the Item gross price to calculate the Item net price.</p><p>Example value: <code>100</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"},
+  {
+    "Card":"0..1",
+    "Level":"++++",
+    "Name":"cbc:BaseAmount",
+    "Description":"<p><strong>Item gross price</strong><br/>The unit price, exclusive of VAT, before subtracting Item price discount, can not be negative</p><p>Example value: <code>123.45</code></p>"},
+  {
+    "Card":"Mandatory",
+    "Level":"+++++",
+    "Name":"@currencyID",
+    "Description":"<p><p>Mandatory attribute. Use BT-5</p><p>Example value: <code>EUR</code></p>"
+    }
+]}

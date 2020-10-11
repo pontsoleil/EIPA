@@ -44,7 +44,7 @@
 },{
 "num":7,
 "ID":"BR-CO-IO",
-"Desc":"Sum of Invoice line net amount (BT-106) = SIGMA Invoice line net amount (BT-131).",
+"Desc":"Sum of Invoice line net amount (BT-106) = &#931; Invoice line net amount (BT-131).",
 "Target":"Document totals",
 "BusinessTerm":"BT-106"
 },{
@@ -56,19 +56,19 @@
 },{
 "num":9,
 "ID":"BR-CO-12",
-"Desc":"Sum of charges on document level (BT-108) = SIGMA Document level charge amount (BT-99).",
+"Desc":"Sum of charges on document level (BT-108) = &#931; Document level charge amount (BT-99).",
 "Target":"Document totals",
 "BusinessTerm":"BT-108"
 },{
 "num":10,
 "ID":"BR-CO-13",
-"Desc":"Invoice total amount without VAT (BT-109) = SIGMA Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).",
+"Desc":"Invoice total amount without VAT (BT-109) = &#931; Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).",
 "Target":"Document totals",
 "BusinessTerm":"BT-109"
 },{
 "num":11,
 "ID":"BR-CO-14",
-"Desc":"Invoice total VAT amount (BT-110) = SIGMA VAT category tax amount (BT-117).",
+"Desc":"Invoice total VAT amount (BT-110) = &#931; VAT category tax amount (BT-117).",
 "Target":"Document totals",
 "BusinessTerm":"BT-110"
 },{
@@ -98,7 +98,7 @@
 },{
 "num":16,
 "ID":"BR-CO-19",
-"Desc":"If Invoicing period (BG-14) is used, the Invoicing period start date (BT-73) or the Invoicing period end date (BT74) shall be filled, or both.",
+"Desc":"If Invoicing period (BG-14) is used, the Invoicing period start date (BT-73) or the Invoicing period end date (BT-74) shall be filled, or both.",
 "Target":"Delivery or invoice period",
 "BusinessTerm":"BT-73,BT-74"
 },{
@@ -224,7 +224,7 @@
 },{
 "num":37,
 "ID":"BR-15",
-"Desc":"An Invoice shall have the Amount due for payment (BT115).",
+"Desc":"An Invoice shall have the Amount due for payment (BT-115).",
 "Target":"Document totals",
 "BusinessTerm":"BT-115"
 },{
@@ -428,7 +428,7 @@
 },{
 "num":71,
 "ID":"BR-53",
-"Desc":"If the VAT accounting currency code (BT-6) is present, then the Invoice total VAT amount in accounting currency (BT1111 shall be provided.",
+"Desc":"If the VAT accounting currency code (BT-6) is present, then the Invoice total VAT amount in accounting currency (BT-1111 shall be provided.",
 "Target":"Document totals",
 "BusinessTerm":"BT-111"
 },{
