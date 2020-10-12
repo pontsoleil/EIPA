@@ -420,7 +420,11 @@ td.translate-control i.fa-language:hover {
   color: rgb(77, 179, 205);
   text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
 }
-
+#en > tbody > tr > td > hr,
+#en > tbody > tr > td > table > tbody > tr > td > hr {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
 #peppol > tbody > tr > td > table > tbody > tr > td > p {
   margin: 0;
 }

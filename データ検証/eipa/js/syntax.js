@@ -96,23 +96,29 @@ function lookupAlignment(match) {
   }
   return str;
 }
-
+function renderEnDatatype(row) {
+  var datatype;
+  datatype = ''+row.EN_DT;
+  datatype = datatype.trim();
+  datatype = datatypeMap[datatype] || '';
+  return datatype;
+}
 function en_format(d) { // d is the original data object for the row
   if (!d) { return null; }
-  var H1 = 35, H2 = 65,
+  var H1 = 100,// H2 = 65,
       desc = ''+d.EN_Desc,
       id = ''+d.EN_ID,
-      datatype = ''+d.EN_DT,
+      datatype = renderEnDatatype(d),
       html = '';
     datatype = datatype.trim();
-    datatype = datatype ? 'data type: '+datatypeMap[datatype] : 'Business terms Group';
+    datatype = datatype ? 'data type: '+datatype : 'Business terms Group';
     html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
       '<colgroup>'+
         '<col style="width:'+H1+'%;">'+
-        '<col style="width:'+H2+'%;">'+
+        // '<col style="width:'+H2+'%;">'+
       '</colgroup>'+
       '<tr>'+
-        '<td valign="top">ID: '+id+'<br>'+datatype+'</td>'+
+        // '<td valign="top">ID: '+id+'<br>'+datatype+'</td>'+
         '<td valign="top">'+desc+'</td>'+
       '</tr>';
   if (!desc) {
@@ -127,7 +133,7 @@ function en_format(d) { // d is the original data object for the row
   .then(function(translations) {
     var j_desc = translations[0].translatedText;
     if (j_desc) {
-      html += '<tr><td valign="top" colspan="2">'+j_desc+'</td></tr>';
+      html += '<tr><td valign="top">'+j_desc+'</td></tr>';
     }
     html += '</table>';
     return html;
@@ -344,23 +350,29 @@ en_columns = [
     'orderable': false,
     'data': null,
     'defaultContent': '' }, // 0
-  { 'data': 'EN_ID' }, // 1
-  { 'width': '80%',
+  { 'width': '10%',
+    'data': 'EN_ID' }, // 1
+  { 'width': '70%',
     'data': 'EN_BT',
     'render': function(data, type, row) {
       var term = renderBT(row);
       return term; }}, // 2   
   { 'width': '10%',
-    'data': 'EN_Card' }, // 3
+    'data': 'EN_DT',
+    'render': function(data, type, row) {
+      var datatype = renderEnDatatype(row);
+      return datatype; }}, // 3
+  { 'width': '10%',
+    'data': 'EN_Card' }, // 4
   { 'width': '5%',
     'className': 'info-control',
     'orderable': false,
     'data': null,
-    'defaultContent': '' } // 4
+    'defaultContent': '' } // 5
 ];
 en_columnDefs = [
-  { 'searchable': false, 'targets': [0, 4] },
-  { 'visible': false, 'targets': 1 }
+  { 'searchable': false, 'targets': [0, 5] }/*,
+  { 'visible': false, 'targets': 1 }*/
 ];
 // -------------------------------------------------------------------
 function renderPath(row) {
