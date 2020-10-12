@@ -198,11 +198,11 @@ function AjaxSubmit(form) {
 
 function googleTranslate(text) {
   if (!text) { return ''; }
-  // 'https://translation.googleapis.com/language/translate/v2?key=AIzaSyC-Vci4nO4HRtcnwrP8OyckvUHZPbpFOP4&q=An Invoice that contains a Document level allowance&target=ja'
+  // 'https://translation.googleapis.com/language/translate/v2?key=***&q=An Invoice that contains a Document level allowance&target=ja'
   var url = 'https://translation.googleapis.com/language/translate/v2',
       data;
   data = {
-    key: 'AIzaSyC-Vci4nO4HRtcnwrP8OyckvUHZPbpFOP4',
+    key: '***',
     q: text,
     target: 'ja'
   }
