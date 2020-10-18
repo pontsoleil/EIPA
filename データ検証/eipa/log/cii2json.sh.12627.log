@@ -1,0 +1,8 @@
+# === Usage ===
+# Usage   : parsrx.sh [options] [XML_file]
+# Options : -c  Prints the child tags which are had by the parent tag
+#         : -n  Prints the array subscript number after the tag name
+#         : -lf Replaces the newline sign "\n" with <s>. And in this mode,
+#               also replaces \ with \\
+parsrx.sh -n -lf cii_example1.xml >../log/cii_example1.txt
++ parsrx.sh -n -lf cii_example1.xml

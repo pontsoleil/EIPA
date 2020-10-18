@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <title>CII to X</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <style>
+#base.container {
+  border: 0px none;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background-color: #efefef;
+  width: 80%;
+  margin: 32px;
+  padding: 16px;
+}
+.box>* {
+  text-align: center;
+}
+img.cc {
+  width: 5rem;
+}
+footer {
+  width: 100%;
+  height: 50px; 
+  text-align: center;
+  padding: 12px 0;
+  background-color: #c0c0c0;
+}
+    </style>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="/DataTables/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css">
+    <!-- this page -->
+    <link rel="stylesheet" href="css/snackbar.css">
+    <script type="text/javascript" src="js/snackbar.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/cii2x.js"></script>
+    <script type="text/javascript" class="init">
+      $(document).ready(function() {
+        if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+          $('#ie-warning').css('display','block');
+          return;
+        }
+        var getUrlParameter = function getUrlParameter(sParam) {
+          var pageURL = window.location.search.substring(1),
+              variables = pageURL.split('&'),
+              name, i, tab1, tab2, file;
+          for (i = 0; i < variables.length; i++) {
+            name = variables[i].split('=');
+            if (name[0] === sParam) {
+              return name[1] === undefined ? true : decodeURIComponent(name[1]);
+            }
+          }
+        };
+        $('#ie-warning').css('display','none');
+        $('#base').css('display','block');
+        $('#base').height(window.innerHeight);
+        history.replaceState({}, null, location.pathname);
+        //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
+        $('#go').on('click', function(event) {
+          var url = $('#url').val();
+          eipa.initModule(url, /** time out */3000)
+          .then(function(res) {
+            console.log(res);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
+    <div id="ie-warning" class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+          <div>
+            <h1>This service doesn't support Internet Explorer (IE).</h1>
+            Please use either Edge, Chrome, Safari, FireFox, etc.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="base" class="container">
+      <div class="box">
+        <h3>CII to X</h3>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">URL</label>
+            <input type="text" class="form-control" id="url" placeholder="Enter url">
+          </div>
+          <button type="button" id="go" class="btn btn-primary">Submit</button>
+        </form>
+        <footer>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank"><img src="by-sa.png" class="cc"></a>&nbsp;<i class="fas fa-copyright"></i>&nbsp;2020 <a href="https://www.sambuichi.jp" target="_blank">三分一技術士事務所</a>
+        </footer>
+      </div>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+  </body>
+</html>
