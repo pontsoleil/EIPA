@@ -16,3 +16,5 @@ CEN/TS 16931-3-3-2及び16931-3-3-３の内容確認用の画面
 
 ## [index.html](https://www.wuwei.space/eipa/index.html)
 それぞれのデータ形式の比較画面  
+
+[YouTube](https://www.youtube.com/embed/awAwjrOuTeA)
