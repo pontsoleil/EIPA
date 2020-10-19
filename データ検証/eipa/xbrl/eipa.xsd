@@ -15,9 +15,9 @@ xmlns:eg="http://www.sample.org/eipa/sample">
 	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+			<!-- <link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
         xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" 
-			  xlink:href="eipa-cor-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/>
+			  xlink:href="eipa-cor-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/> -->
 		</appinfo>
 	</annotation>
 <!-- 
@@ -47,10 +47,70 @@ xmlns:eg="http://www.sample.org/eipa/sample">
 <!-- 
   item type 
 -->
-	<complexType name="creatorItemType">
+	<complexType name="BT-1">
 		<simpleContent>
-			<restriction base="xbrli:stringItemType">s
-			</restriction>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+  	<complexType name="BT-2">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+  	<complexType name="BT-2_format">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+  	<complexType name="BT-3">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-5">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-9">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-9_format">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="BT-126">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-129">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-129_unitCode">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-130">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="BT-130_unitCode">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
+		</simpleContent>
+	</complexType>
+  	<complexType name="BT-131">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"></restriction>
 		</simpleContent>
 	</complexType>
 </schema>
