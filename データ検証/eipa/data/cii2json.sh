@@ -19,6 +19,7 @@ exec 2>log/${0##*/}.$$.log
 #         : -n  Prints the array subscript number after the tag name
 #         : -lf Replaces the newline sign "\n" with <s>. And in this mode,
 #               also replaces \ with \\
+# CII_exampleN.xml
 parsrx.sh -n -lf cii/CII_"$1".xml |
 awk '/\/rsm:CrossIndustryInvoice[^ ]+ [a-zA-Z0-9]/{print}' > log/"$1"_filtered.txt
 cat log/"$1"_filtered.txt |

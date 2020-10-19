@@ -667,6 +667,7 @@ var initModule = function () {
     catch(e) { console.log(e); }
   })
   .catch(function(err) { console.log(err); });
+  
   ajaxRequest('data/rules/EN_16931-1_rules2.json', null, 'GET', 1000)
   .then(function(res) {
     try {

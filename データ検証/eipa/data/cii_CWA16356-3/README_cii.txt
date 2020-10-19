@@ -10,7 +10,6 @@ EXPAND B_CEN_Core_Invoice_Example_Schema_Pack_v1.0.zip
 and copy from
 CEN/CEN_Core_Invoice_Example_Schema_Pack_v1.0/data/standard
 
-
 bin/parsrx.sh -n cii/CoreComponentType_2p0.xsd> cii/cct.tmp
 bin/parsrx.sh -n cii/CrossIndustryInvoice_2p0.xsd > cii/cii.tmp
 bin/parsrx.sh -n cii/QualifiedDataType_8p0.xsd > cii/qdt.tmp
