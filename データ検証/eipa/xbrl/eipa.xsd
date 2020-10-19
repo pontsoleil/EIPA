@@ -47,70 +47,18 @@
 <!-- 
   item type 
 -->
-	<complexType name="BT-1">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-  	<complexType name="BT-2">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-  	<complexType name="BT-2_format">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-  	<complexType name="BT-3">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-5">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-9">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-9_format">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-
-	<complexType name="BT-126">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-129">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-129_unitCode">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-130">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="BT-130_unitCode">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
-  	<complexType name="BT-131">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"></restriction>
-		</simpleContent>
-	</complexType>
+<!-- 
+  item 
+-->
+	<element name="BT-1" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-2" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-2_format" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-9" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-9_format" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-126" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-129" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-129_unitCode" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-130" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-130_unitCode" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BT-131" id="eipa-cor_BT-1" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 </schema>
