@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+// fontsize=14
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Cmd to select multiple elements
+// Use Cmd+mouse to select via lasso
+//
+// Use +/- or Cmd+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Cmd+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>105</x>
+      <y>0</y>
+      <w>294</w>
+      <h>728</h>
+    </coordinates>
+    <panel_attributes>売り手
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>497</x>
+      <y>0</y>
+      <w>217</w>
+      <h>728</h>
+    </coordinates>
+    <panel_attributes>買い手
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>343</x>
+      <y>35</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>224</x>
+      <y>147</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>注文書1
+商品/サービス/
+労働を提供
+bg=yellow
+type=sender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>112</y>
+      <w>77</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;30.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>147</x>
+      <y>700</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>224</x>
+      <y>196</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>インボイス1
+発行
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>175</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>350</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>315</x>
+      <y>553</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>一括
+セルフインボイス
+（仕入明細書）
+受領
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>567</y>
+      <w>168</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;50.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>133</x>
+      <y>637</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>代金の受領
+bg=pink
+type=receiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>161</x>
+      <y>658</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>511</x>
+      <y>553</y>
+      <w>77</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>一括
+セルフインボイス
+（仕入明細書）
+発行
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>518</x>
+      <y>637</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>支払い
+bg=pink
+type=sender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>378</y>
+      <w>140</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>413</x>
+      <y>560</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>一括
+セルフインボイス
+（仕入明細書）
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>413</x>
+      <y>196</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>インボイス1
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>203</y>
+      <w>140</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>203</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>567</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>567</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>623</x>
+      <y>147</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>注文書1
+商品/サービス/
+労働を受領
+bg=yellow
+type=receiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>315</x>
+      <y>63</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>契約締結
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>42</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>518</x>
+      <y>63</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>契約締結
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>70</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>609</x>
+      <y>21</y>
+      <w>98</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>受領担当者
+valign=top
+lt=..
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>504</x>
+      <y>21</y>
+      <w>98</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>購買担当者
+valign=top
+lt=..
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>413</x>
+      <y>63</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>契約書
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>70</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>630</x>
+      <y>238</y>
+      <w>70</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>{joinSpec=
+date is on or 
+after July 1st
+and the exam 
+is passed}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>189</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>511</x>
+      <y>609</y>
+      <w>84</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lw=5
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>175</y>
+      <w>21</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>203</y>
+      <w>77</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;60.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>518</x>
+      <y>525</y>
+      <w>70</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lw=5
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>525</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>532</x>
+      <y>217</y>
+      <w>21</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>413</x>
+      <y>105</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>注文書1
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>315</x>
+      <y>105</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>注文書1
+受領
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>518</x>
+      <y>105</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>注文書1
+発送
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>112</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>112</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLTimer</id>
+    <coordinates>
+      <x>497</x>
+      <y>476</y>
+      <w>42</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>月末
+bg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>497</y>
+      <w>35</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>574</x>
+      <y>378</y>
+      <w>84</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;70.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>308</x>
+      <y>21</y>
+      <w>84</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>販売担当者
+valign=top
+lt=..
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>217</x>
+      <y>21</y>
+      <w>84</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>提供担当者
+valign=top
+lt=..
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>196</x>
+      <y>644</y>
+      <w>336</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;..</panel_attributes>
+    <additional_attributes>10.0;10.0;460.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>161</y>
+      <w>350</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;..</panel_attributes>
+    <additional_attributes>480.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>98</x>
+      <y>98</y>
+      <w>623</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>　　複数回
+  　 1..n
+lt=.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>546</x>
+      <y>35</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>42</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>546</x>
+      <y>700</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>658</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>518</x>
+      <y>196</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>インボイス1
+受領
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>112</x>
+      <y>21</y>
+      <w>98</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>入金担当者
+valign=top
+lt=..
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>315</x>
+      <y>273</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>注文書n
+受領
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>413</x>
+      <y>273</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>注文書n
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>518</x>
+      <y>273</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>注文書n
+発送
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>224</x>
+      <y>371</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>インボイスn
+発行
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>224</x>
+      <y>322</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>注文書n
+商品/サービス/
+労働を提供
+bg=yellow
+type=sender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>280</y>
+      <w>56</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>280</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>280</y>
+      <w>77</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;40.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>413</x>
+      <y>371</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>インボイスn
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>511</x>
+      <y>371</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>インボイスn
+受領
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>476</x>
+      <y>378</y>
+      <w>49</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>623</x>
+      <y>322</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>注文書n
+商品/サービス/
+労働を受領
+bg=yellow
+type=receiver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>287</x>
+      <y>336</y>
+      <w>350</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;..</panel_attributes>
+    <additional_attributes>480.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>623</x>
+      <y>420</y>
+      <w>70</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>{joinSpec=
+date is on or 
+after July 1st
+and the exam 
+is passed}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>651</x>
+      <y>350</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>238</y>
+      <w>154</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;420.0;200.0;350.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>420</y>
+      <w>133</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;160.0;170.0;60.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>595</y>
+      <w>21</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>609</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>721</x>
+      <y>28</y>
+      <w>91</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>ITC協会共通EDI標準部会長 川内 作成資料をXBRL Japan顧問 三分一 加筆修正
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSyncBarHorizontal</id>
+    <coordinates>
+      <x>112</x>
+      <y>672</y>
+      <w>70</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>{joinSpec=
+date is on or 
+after July 1st
+and the exam 
+is passed}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>112</x>
+      <y>203</y>
+      <w>126</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;680.0;10.0;30.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>119</x>
+      <y>378</y>
+      <w>119</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;430.0;10.0;30.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>147</x>
+      <y>672</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
