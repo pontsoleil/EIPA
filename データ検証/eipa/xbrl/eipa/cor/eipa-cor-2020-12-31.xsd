@@ -26,6 +26,7 @@
 <!--
   Domain 
 -->
+<!-- L1 -->
   <element name="L1Number" id="eipa-cor_L1Number">
     <simpleType>
       <restriction base="string"/>
@@ -34,6 +35,7 @@
   <element name="dL1Number" id="eipa-cor_dL1Number" type="xbrli:stringItemType"
       substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"
       xbrldt:typedDomainRef="#eipa-cor_L1Number"/>
+<!-- L2 -->
 	<element name="L2Number" id="eipa-cor_L2Number">
 		<simpleType>
 			<restriction base="string"/>
@@ -42,6 +44,24 @@
 	<element name="dL2Number" id="eipa-cor_dL2Number" type="xbrli:stringItemType"
       substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"
       xbrldt:typedDomainRef="#eipa-cor_L2Number"/>
+<!-- L3 -->
+	<element name="L3Number" id="eipa-cor_L3Number">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="dL3Number" id="eipa-cor_dL3Number" type="xbrli:stringItemType"
+      substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"
+      xbrldt:typedDomainRef="#eipa-cor_L3Number"/>
+<!-- L4 -->
+	<element name="L4Number" id="eipa-cor_L4Number">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="dL4Number" id="eipa-cor_dL4Number" type="xbrli:stringItemType"
+      substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"
+      xbrldt:typedDomainRef="#eipa-cor_L4Number"/>
 <!-- 
   item type 
 -->
