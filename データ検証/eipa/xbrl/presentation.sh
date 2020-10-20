@@ -46,10 +46,10 @@ cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
   # print n " id=" id " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4];
   if (1!=parents[parent]) {
     parents[parent]=1;
-    printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-cor-2020-12-31.xsd#gl-cor_%s\" xlink:label=\"gl-cor_%s\" xlink:title=\"presentation parent: %s\"/>\n", parent, parent, parent;
+    printf "    <loc xlink:type=\"locator\" xlink:href=\"eipa-cor-2020-12-31.xsd#eipa-cor_%s\" xlink:label=\"eipa-cor_%s\" xlink:title=\"presentation parent: %s\"/>\n", parent, parent, parent;
   }
-  printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-cor-2020-12-31.xsd#gl-cor_%s\" xlink:label=\"gl-cor_%s\" xlink:title=\"presentation child: %s\"/>\n", id, id, id;
-  printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-cor_%s\" xlink:to=\"gl-cor_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", parent, id, parent, id, n;
+  printf "    <loc xlink:type=\"locator\" xlink:href=\"eipa-cor-2020-12-31.xsd#eipa-cor_%s\" xlink:label=\"eipa-cor_%s\" xlink:title=\"presentation child: %s\"/>\n", id, id, id;
+  printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"eipa-cor_%s\" xlink:to=\"eipa-cor_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", parent, id, parent, id, n;
   n=n+1;
 }
 END {
