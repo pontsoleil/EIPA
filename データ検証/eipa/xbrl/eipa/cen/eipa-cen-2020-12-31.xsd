@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL Japan -->
-<schema targetNamespace="http://www.sample.org/eipa/cor/2020-12-31" 
+<schema targetNamespace="http://www.sample.org/eipa/cen/2020-12-31" 
 	elementFormDefault="qualified" 
 	attributeFormDefault="unqualified" 
 	xmlns="http://www.w3.org/2001/XMLSchema" 
@@ -8,14 +8,14 @@
 	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
 	xmlns:link="http://www.xbrl.org/2003/linkbase" 
 	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
-	xmlns:eipa-cen="http://www.sample.org/eipa/cor/2020-12-31">
+	xmlns:eipa-cen="http://www.sample.org/eipa/cen/2020-12-31">
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
 	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="eipa-cen-2020-12-31-presentation.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple" xlink:title="Presentation Links, all"/>
-			<link:linkbaseRef xlink:href="eipa-cen-2020-12-31-definition.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"  xlink:title="Definition Links, all"/>
-			<link:linkbaseRef xlink:href="eipa-cen-2020-12-31-label.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple" xlink:title="Label Links, all"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="eipa-cen-2020-12-31-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="eipa-cen-2020-12-31-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="eipa-cen-2020-12-31-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
 			<link:roleType id="eipa-cen_structure" roleURI="http://xbrl.org/role/eipa-cen_structure">
 				<link:definition>EIPA Structure</link:definition>
 				<link:usedOn>link:presentationLink</link:usedOn>
