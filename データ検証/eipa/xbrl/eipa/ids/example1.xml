@@ -10,14 +10,14 @@
     xmlns:eipa-cor="http://www.sample.org/eipa/cor/2020-12-31"
     xsi:schemaLocation="http://www.sample.org/eipa/cor/2020-12-31 ../cor/eipa-cor-2020-12-31.xsd">
 	<xbrll:schemaRef xlink:type="simple" xlink:href="../cor/eipa-cor-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
-    <xbrli:context id="now">
+    <!-- <xbrli:context id="now">
         <xbrli:entity>
             <xbrli:identifier scheme="http://www.sample.org/eipa/sample">SAMPLE</xbrli:identifier>
         </xbrli:entity>
         <xbrli:period>
             <xbrli:instant>2020-01-01</xbrli:instant>
         </xbrli:period>
-    </xbrli:context>
+    </xbrli:context> -->
     <xbrli:context id="INVOICE">
         <xbrli:entity>
             <xbrli:identifier scheme="http://www.sample.org/eipa/sample">SAMPLE</xbrli:identifier>
@@ -139,31 +139,40 @@
     <xbrli:BT-5 contextRef="INVOICE">EUR</xbrli:BT-5>
     <xbrli:BT-9 contextRef="INVOICE">20150109</xbrli:BT-9>
     <xbrli:BT-9A contextRef="INVOICE">102</xbrli:BT-9A>
-    <xbrli:BG-25 contextRef="BG-25">BG-25</xbrli:BG-25>
+
+    <xbrli:BG-25 contextRef="BG-25_0"/>
+    <xbrli:BG-25 contextRef="BG-25_1"/>
+    <xbrli:BG-25 contextRef="BG-25_2"/>
+    <xbrli:BG-25 contextRef="BG-25_3"/>
+
     <xbrli:BT-126 contextRef="BG-25_0">1</xbrli:BT-126>
     <xbrli:BT-129 contextRef="BG-25_0">2</xbrli:BT-129>
     <xbrli:BT-129A contextRef="BG-25_0">H87</xbrli:BT-129A>
     <xbrli:BT-130 contextRef="BG-25_0">2</xbrli:BT-130>
     <xbrli:BT-130A contextRef="BG-25_0">H87</xbrli:BT-130A>
     <xbrli:BT-131 contextRef="BG-25_0">19.9</xbrli:BT-131>
+
     <xbrli:BT-126 contextRef="BG-25_1">2</xbrli:BT-126>
     <xbrli:BT-129 contextRef="BG-25_1">1</xbrli:BT-129>
     <xbrli:BT-129A contextRef="BG-25_1">H87</xbrli:BT-129A>
     <xbrli:BT-130 contextRef="BG-25_1">1</xbrli:BT-130>
     <xbrli:BT-130A contextRef="BG-25_1">H87</xbrli:BT-130A>
     <xbrli:BT-131 contextRef="BG-25_1">9.85</xbrli:BT-131>
+
     <xbrli:BT-126 contextRef="BG-25_2">3</xbrli:BT-126>
     <xbrli:BT-129 contextRef="BG-25_2">1</xbrli:BT-129>
     <xbrli:BT-129A contextRef="BG-25_2">H87</xbrli:BT-129A>
     <xbrli:BT-130 contextRef="BG-25_2">1</xbrli:BT-130>
     <xbrli:BT-130A contextRef="BG-25_2">H87</xbrli:BT-130A>
     <xbrli:BT-131 contextRef="BG-25_2">8.29</xbrli:BT-131>
+
     <xbrli:BT-126 contextRef="BG-25_3">4</xbrli:BT-126>
     <xbrli:BT-129 contextRef="BG-25_3">2</xbrli:BT-129>
     <xbrli:BT-129A contextRef="BG-25_3">H87</xbrli:BT-129A>
     <xbrli:BT-130 contextRef="BG-25_3">2</xbrli:BT-130>
     <xbrli:BT-130A contextRef="BG-25_3">H87</xbrli:BT-130A>
     <xbrli:BT-131 contextRef="BG-25_3">14.46</xbrli:BT-131>
+
     <xbrli:BT-126 contextRef="BG-25_4">5</xbrli:BT-126>
     <xbrli:BT-129 contextRef="BG-25_4">1</xbrli:BT-129>
     <xbrli:BT-129A contextRef="BG-25_4">H87</xbrli:BT-129A>
