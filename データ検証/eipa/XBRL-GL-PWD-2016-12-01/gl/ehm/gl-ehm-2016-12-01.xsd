@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema elementFormDefault="qualified" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xbrl.org/int/gl/ehm/2016-12-01" attributeFormDefault="unqualified" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2016-12-01" xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2016-12-01">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="gl-ehm-2016-12-01-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/gen/2016-12-01" schemaLocation="../gen/gl-gen-2016-12-01.xsd"/>
+  <complexType name="measurableClassIDItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="raw material"/>
+				<enumeration value="work-in-process"/>
+				<enumeration value="finished goods"/>
+				<enumeration value="assemblies"/>
+				<enumeration value="supplies"/>
+				<enumeration value="land"/>
+				<enumeration value="building"/>
+				<enumeration value="machinery"/>
+				<enumeration value="furniture"/>
+				<enumeration value="vehicles"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>  
+  <complexType name="costingMethodCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="LIFO"/>
+				<enumeration value="FIFO"/>
+				<enumeration value="average"/>
+				<enumeration value="weighted-average"/>
+				<enumeration value="standard-cost"/>
+				<enumeration value="tax-basis"/>
+				<enumeration value="book-basis"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+  <complexType name="serialLotCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="serial"/>
+				<enumeration value="lot"/>
+				<enumeration value="other"/>
+				<enumeration value="neither"/>
+			</restriction>
+		</simpleContent>
+	</complexType> 
+ <element name="measurableClassID" id="gl-ehm_measurableClassID" type="gl-ehm:measurableClassIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="measurableClassDescription" id="gl-ehm_measurableClassDescription" type="gl-ehm:measurableClassDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="costingMethodCode" id="gl-ehm_costingMethodCode" type="gl-ehm:costingMethodCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="costingMethodDescription" id="gl-ehm_costingMethodDescription" type="gl-ehm:costingMethodDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="geospatialCoordinate" id="gl-ehm_geospatialCoordinate" type="gl-ehm:geospatialCoordinateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLot" id="gl-ehm_serialLot" type="gl-ehm:serialLotComplexType" substitutionGroup="xbrli:tuple" nillable="true"/> 
+ <element name="serialLotCode" id="gl-ehm_serialLotCode" type="gl-ehm:serialLotCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="serialLotDescription" id="gl-ehm_serialLotDescription" type="gl-ehm:serialLotDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="serialLotNumber" id="gl-ehm_serialLotNumber" type="gl-ehm:serialLotNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="nextSerialLotNumber" id="gl-ehm_nextSerialLotNumber" type="gl-ehm:nextSerialLotNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="serialLotQuantity" id="gl-ehm_serialLotQuantity" type="gl-ehm:serialLotQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="serialLotOriginalQuantity" id="gl-ehm_serialLotOriginalQuantity" type="gl-ehm:serialLotOriginalQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="serialLotRemainingQuantity" id="gl-ehm_serialLotRemainingQuantity" type="gl-ehm:serialLotRemainingQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+ <element name="serialLotOrigination" id="gl-ehm_serialLotOrigination" type="gl-ehm:serialLotOriginationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotExpiration" id="gl-ehm_serialLotExpiration" type="gl-ehm:serialLotExpirationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotManufacturer" id="gl-ehm_serialLotManufacturer" type="gl-ehm:serialLotManufacturerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotBatchDescription" id="gl-ehm_serialLotBatchDescription" type="gl-ehm:serialLotBatchDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotWarrantyStartDate" id="gl-ehm_serialLotWarrantyStartDate" type="gl-ehm:serialLotWarrantyStartDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotWarrantyEndDate" id="gl-ehm_serialLotWarrantyEndDate" type="gl-ehm:serialLotWarrantyEndDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotWarrantyPeriod" id="gl-ehm_serialLotWarrantyPeriod" type="gl-ehm:serialLotWarrantyPeriodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotWarrantyPeriodUnit" id="gl-ehm_serialLotWarrantyPeriodUnit" type="gl-ehm:serialLotWarrantyPeriodUnitItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotWarrantyVendor" id="gl-ehm_serialLotWarrantyVendor" type="gl-ehm:serialLotWarrantyVendorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotWarrantyContract" id="gl-ehm_serialLotWarrantyContract" type="gl-ehm:serialLotWarrantyContractItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+ <element name="serialLotComment" id="gl-ehm_serialLotComment" type="gl-ehm:serialLotCommentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>

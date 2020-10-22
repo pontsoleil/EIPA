@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample detailed listing of employee time sheet file for XBRL Global Ledger Framework with annotations  Version 1.0.91021.1 -->
+<!-- This file contains data fields considered very important to representing its subject. Annotations have been provided for the "most important" of those fields. XBRL GL has many other fields that could be helpful in expressing the information, but have been omitted because their presence is more circumstantial. This file was created for educational purposes only, does not represent real company data and we welcome suggestions on improvement. Contact xbrlgl@xbrl.org with comments. -->
+<!-- This file shows how we might represent timecards with XBRL GL. Another set of standards, from HR-XML, may be better suited for this purpose depending on the circumstances. See http://ns.hr-xml.org/2_3/HR-XML-2_3/TimeCard/TimeCard.html. Timecards carry time and expenses but are pre-discovery of monetary amounts associated with the hour lines.-->
+<!-- The "root" of every XBRL file ("instance document") is xbrl. -->
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25" xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25" xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25" xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25" xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:iso639="http://www.xbrl.org/2005/iso639" xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2015-03-25 ../plt/case-c-b-m-u-t/gl-plt-all-2015-03-25.xsd">
+	<xbrll:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../plt/case-c-b-m-u-t/gl-plt-all-2015-03-25.xsd"/>
+	<!-- Contexts, mandatory according to the XBRL 2.1, Specification, are not meant to describe the information in XBRL GL and appear only by convention. All facts are instant and developers are encouraged to duplicate/provide the date the XBRL GL information is created as the period's date. -->
+	<xbrli:context id="now">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.xbrl.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<!-- The XBRL GL WG recommends using the file creation data as the period. -->
+		<xbrli:period>
+			<xbrli:instant>2004-10-03</xbrli:instant>
+		</xbrli:period>
+	</xbrli:context>
+	<!-- Units of measure in XBRL GL are handled within the measurable or multicurrency elements. Units are provided by convention and should not be relied upon in interpreting XBRL GL data. -->
+	<xbrli:unit id="usd">
+		<xbrli:measure>iso4217:USD</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="NotUsed">
+		<xbrli:measure>pure</xbrli:measure>
+	</xbrli:unit>
+	<!-- The container for XBRL GL, accountingEntries, is not the root of an XBRL GL file - the root, as with all XBRL files, is xbrl. This means that a single XBRL GL file can store one or more virtual XBRL GL files, through one or more accountingEntries structures with data inside. The primary key to understanding an XBRL GL file is the entriesType. A single physical XBRL GL file can have multiple accountingEntries structures to represent both transactions and master files; the differences are signified by the appropriate entriesType enumerated values. This is especially important in a representation of this kind. A file creator can create a single physical file but have information about the employees in one accountingEntries section and in information about the time sheets in another referencing only the employee number, thereby reducing the duplicated information (employee name, address, etc.) in the file resulting in smaller file sizes -->
+	<gl-cor:accountingEntries>
+		<!-- Because entriesType is strongly suggested, documentInfo will be required. -->
+		<gl-cor:documentInfo>
+			<!-- This field, entriesType, provides the automated guidance on the purpose of the XBRL GL information. This use of XBRL GL, to represent a grouping of employee timesheets, uses the enumerated value "other". Automated consumption would be based on other factors, such as "employee" for indentifierType (and "other", as opposed to "check", for documentType. -->
+			<gl-cor:entriesType contextRef="now">other</gl-cor:entriesType>
+			<!-- Like a serial number, this field, uniqueID, provides a place to uniquely identify/track a series of entries. Time reports leading to payroll reporting are a likely suspect for the uniqueID. XBRL GL provides for later correction through replacement or augmentation of transferred information. -->
+			<gl-cor:uniqueID contextRef="now">PRTS2005-07-31</gl-cor:uniqueID>
+			<gl-cor:language contextRef="now">iso639:en</gl-cor:language>
+			<!-- The date associated with the creation of the data reflected within the associated accountingEntries section. Somewhat like a "printed date" on a paper report -->
+			<gl-cor:creationDate contextRef="now">2005-07-05</gl-cor:creationDate>
+			<gl-bus:creator contextRef="now">XBRL GL Working Group</gl-bus:creator>
+			<!-- A description related to the batch of information express in the accountingEntries structure. Why was this batch of information put together and published? It would be helpful to put that information in the entriesComment. -->
+			<gl-cor:entriesComment contextRef="now">A best practice listing of employee timesheets instance document</gl-cor:entriesComment>
+			<!-- The period of time reflected by the timesheets. -->
+			<gl-cor:periodCoveredStart contextRef="now">2005-07-16</gl-cor:periodCoveredStart>
+			<gl-cor:periodCoveredEnd contextRef="now">2005-07-31</gl-cor:periodCoveredEnd>
+			<gl-bus:sourceApplication contextRef="now">Runfast Time Clocks Computerize Payroll</gl-bus:sourceApplication>
+			<gl-bus:targetApplication contextRef="now">Abracadabra Payroll</gl-bus:targetApplication>
+			<gl-muc:defaultCurrency contextRef="now">iso4217:usd</gl-muc:defaultCurrency>
+		</gl-cor:documentInfo>
+		<!-- Typically, an export from an accounting system does not carry with it information specifically about the company. However, the name of the company would be a very good thing to include with the file, making the entityInformation tuple necessary. -->
+		<gl-cor:entityInformation>
+			<!-- The name of the company would be a very good thing to include with the file; this structure and its content are where that would be stored. OrganizationDescription is not currently enumerated.  -->
+			<gl-bus:organizationIdentifiers>
+				<gl-bus:organizationIdentifier contextRef="now">XYZ Company</gl-bus:organizationIdentifier>
+				<gl-bus:organizationDescription contextRef="now">Company Name</gl-bus:organizationDescription>
+			</gl-bus:organizationIdentifiers>
+		</gl-cor:entityInformation>
+		<!-- Most representations of business detail requires entry in entryHeader and entryDetail. Few files can be represented using only documentInfo and entityInformation sections, but it is certainly possible. -->
+		<gl-cor:entryHeader>
+			<!-- For audit purposes, the date (if singular?)  the timesheets were posted to the original system may be helpful.  It is important to differentiate between the many dates of XBRL GL. In particular, postedDate (the date information was posted to the computer) should be differentiated from postingDate (accounting significance) or documentDate (the date printed on the form). -->
+			<gl-cor:postedDate contextRef="now">2005-07-01</gl-cor:postedDate>
+			<!-- For audit purposes, the person who entered the timesheets into an original system may be helpful. -->
+			<gl-cor:enteredBy contextRef="now">Otto Wellwood</gl-cor:enteredBy>
+			<!-- For audit purposes, the date the timesheets were actually entered into the original system may be helpful. -->
+			<gl-cor:enteredDate contextRef="now">2005-07-01</gl-cor:enteredDate>
+			<!-- This is an enumerated entry that ties the source journal from the reporting organization to a fixed list that helps in data interchange. Time sheets would be associated with the payroll journal in some way. -->
+			<gl-cor:sourceJournalID contextRef="now">pl</gl-cor:sourceJournalID>
+			<!-- Since sourceJournalID is enumerated (you must pick one of the entries already identified within XBRL GL), sourceJournalDescription lets you capture the actual code or term used to descibe the source journal by the organization. -->
+			<gl-bus:sourceJournalDescription contextRef="now">Payroll time and expense journal</gl-bus:sourceJournalDescription>
+			<!-- The entry origin would indicate whether the timecards came in from another automated system or were manually entered-->
+			<gl-bus:entryOrigin contextRef="now">imported entry</gl-bus:entryOrigin>
+			<!-- Documents are defined at the line level. When representing the lines on timecards, an individual document is represented at the header level, so the entryDetail lines can represent the detailed lines of the timecard. The entryNumber can also be used to represent a unique number on a timecard (which would be repeated in the entryDetail).  -->
+			<gl-cor:entryNumber contextRef="now">50</gl-cor:entryNumber>
+			<!-- The reason for making an entry goes here. If an comment is associated with a timecard, it can go here. -->
+			<gl-cor:entryComment contextRef="now">Timecard: #1234 Employee: #5678</gl-cor:entryComment>
+			<!-- As noted, when illustrating details on a form/document, individual line are represented using entryDetail which must be held together by entryHeaders - one primary amount per entryDetail line. However, you can list different accounts within the same entryDetail line that are associated with that amount. For example, if you capitalize payroll related to research for US GAAP and expense for IFRS, you can have multiple account structures within one entryDetail section. The generic nature of XBRL GL means that much of the  information that is common to each line, such as the employee, or the document attributes, must be repeated on each detail line, or be entered into one of the lines with an understanding that it is common to all. See http://ns.hr-xml.org/2_3/HR-XML-2_3/TimeCard/TimeCard.html scenario 4 for the example data, also duplicated here:
+
+Emp#	Start	End	Type		Dur(hrs)	Amount Task	Project 	Cost Center	Billable	Comment
+										
+400	5/7/05	5/7/05	Regular		8			Repair	1212		700		x	
+May 07 08:00 to May 07 17:00
+
+400	5/7/05	5/7/05	Overtime	2			Repair	1212		700		x		Aaabbccc..
+May 07 17:00 May 07 19:00
+
+400	5/7/05	5/7/05	Dirty W.			$20	Repair	1212		700		
+
+400	5/7/05	5/7/05	Meal				$10 		1212		700		x	
+
+400	5/8/05	5/11/05	Vacation	32			
+
+400	5/14/05	5/14/05	Regular		4			Production		800		
+May 14 08:00 May 14 12:00
+
+400	5/14/05	5/14/05	Sickness	4			
+May 14 13:00 May 14 17:00
+
+400	5/15/05	5/18/05	Sickness	32			
+May 15 08:00 May 18 12:00
+
+Employee number is represented in the identifier structure as gl-cor:identifierCode
+Start and End times are gl-bus:measurableStartDateTime and gl-bus:measurableEndDateTime
+Work type is gl-bus:measurableID/measurableDescription with measurableCode of services
+Duration is gl-bus:measurableQuantity and gl-bus:measurableUnitOfMeasure
+Task is PROBABLY gl-bus:measurableQualifier, although the result is better there; it could go in a comment field or other places as well.
+Project is either a subAccount or represented by jobInfo; we will use the jobCode here.
+Cost Center is associated with a subAccount
+Billable is gl-bus:documentChargeReimb
+Comment is gl-cor:detailComment
+Amount is amount
+-->
+			<gl-cor:entryDetail>
+				<!-- A unique identifier for each entry detail line within an entry header, this should at the least be a counter, representing the line relative to others on the timecard form. -->
+				<gl-cor:lineNumber contextRef="now">1</gl-cor:lineNumber>
+				<!-- Accounts may or may not be associated with entry lines in a time card; the primary accounts are omitted here for the sake of this instance. However, a subaccount to represent the cost center is included in some cases. -->
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">700</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">Cost Center</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<!-- Amounts in systems may be a signed number, a separate sign, and/or a separate debit/credit indicator. While the use of the sign indicator or the separate debit/credit indicator is more likely with journal entries, it is unlikely with invoices. -->
+				<!-- Timecards have combinations of lines without monetary amounts (the hours, found in the measurable structure) and with amounts (the expenses).-->
+				<!-- This is a time line ... <gl-cor:amount contextRef="now" decimals="2" unitRef="usd"/> -->
+				<!-- This date is the accounting significance date, not the date that entries were actually entered or posted to the system, usually the date work was performed but not always. -->
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<!-- Timesheets require employee information. This is held in the identifier structure. As systems may or may not store individual components of the structure all of the time - they may have the employee's number but not the name or vice versa, the only "mandatory" field here is the identifierType to state without question that this is an employee. It may be confusing that the employee must be identified for each line of a timesheet. Why isn't the employee at the Header level? The answer - the generic nature of XBRL GL means it must accomodate both detail and summary style of entry. Rather than duplicate the identifier structure at both header and detail level, it is at the detail level.-->
+				<gl-cor:identifierReference>
+					<!-- XBRL GL provides identification of the employee by an employee number, their tax number (in the US, a social security number) and by their name/description. -->
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<!-- The handling of personal names, as is the case with employee names, is in flux. -->
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<!-- This code states without question that this person is an employee (not a customer or vendor or other role. -->
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<!-- As noted previously, the identifierType of employee and the documentType of other (not check) provides automated guidance that this batch of information has to do with timesheets/payroll for customers. -->
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<!-- Document number in this representation is associated with the time card. Is there a unique identifier on it? -->
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<!-- Document reference is a textual description of the document. Some systems allow for manual entry of this information; some have a default format; some apply an internal counter/unique serial number. -->
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<!-- The document date is the date printed on the document proper. There are a number of other fields for other dates associated with the handling of the document. With a timecard, this may be the last date of the timecard/payroll period. -->
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentChargeReimb contextRef="now">true</gl-bus:documentChargeReimb>
+				<!-- Few systems track the place where the "physical" timecard is filed - whether paper or electronic - but as part of the audit trail, the documentLocation allows representation so one can find their way to the physical location (Bin 3, bottom drawer) or virtual location (c:\docMgmt\4$5%68.doc)  -->
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<!-- The measurable structure is the primary tool for collecting data at the line level. It represents inventory, services, supplies, processes, KPIs, fixed assets and other things that are matched to a code (as opposed to an account) and collects numeric (measurableQuantity) and non-numeric information (measurableQualifier). A typical timecard would have one measurable per entryDetail line. The amount fields in the entryDetail would be the extension of measurableQuantity times MeasurableCostPerUnit. There are a number of elements within the measurable structure - at least ONE of measurableCode or measurableDescription is necessary; anything else is optional, used as needed. -->
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Regular</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">8</gl-bus:measurableQuantity>
+					<gl-bus:measurableQualifier contextRef="now">Repair</gl-bus:measurableQualifier>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">hours</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableStartDateTime contextRef="now">2005-05-07T08:00:00</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2005-05-07T17:00:00</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">1212</gl-usk:jobCode>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<!-- As noted above, the additional entryDetail lines will likely need to duplicate the typical header information necessary to support that which is truly at the line level - the amount, the line number, the measurable. With agreement, that information could be provided in one entryDetail line (e.g., the first line) and then other lines could inherit that information if applications were designed to do so. -->
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">2</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">700</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">Cost Center</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentChargeReimb contextRef="now">true</gl-bus:documentChargeReimb>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<!-- In the case of timecards, the detailComment stores explanatory materials for each line. This could store the information from the "comment" field in the sample time cards.-->
+				<gl-cor:detailComment contextRef="now">Aaabbcc..</gl-cor:detailComment>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Overtime</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">2</gl-bus:measurableQuantity>
+					<gl-bus:measurableQualifier contextRef="now">Repair</gl-bus:measurableQualifier>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">hours</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableStartDateTime contextRef="now">2005-05-07T17:00:00</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2005-05-07T19:00:00</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">1212</gl-usk:jobCode>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">3</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">700</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">Cost Center</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" precision="INF">20</gl-cor:amount>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<!-- In the case of timecards, the detailComment stores explanatory materials for each line. This could store the information from the "comment" field in the sample time cards.-->
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Dirty W.</gl-bus:measurableDescription>
+				</gl-bus:measurable>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">1212</gl-usk:jobCode>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">4</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+					<gl-cor:accountSubID contextRef="now">700</gl-cor:accountSubID>
+					<gl-cor:accountSubType contextRef="now">Cost Center</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" precision="INF">10</gl-cor:amount>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentChargeReimb contextRef="now">true</gl-bus:documentChargeReimb>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Meal</gl-bus:measurableDescription>
+				</gl-bus:measurable>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">1212</gl-usk:jobCode>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">5</gl-cor:lineNumber>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Vacation</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">32</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">hours</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableStartDateTime contextRef="now">2005-05-08T09:00:00</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2005-05-11T17:00:00</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">6</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubID contextRef="now">800</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">Cost Center</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Regular</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">4</gl-bus:measurableQuantity>
+					<gl-bus:measurableQualifier contextRef="now">Production</gl-bus:measurableQualifier>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">hours</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableStartDateTime contextRef="now">2005-05-14T13:00:00</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2005-05-14T17:00:00</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">7</gl-cor:lineNumber>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Sickness</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">4</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">hours</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableStartDateTime contextRef="now">2005-05-14T13:00:00</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2005-05-14T17:00:00</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">8</gl-cor:lineNumber>
+				<gl-cor:postingDate contextRef="now">2005-06-30</gl-cor:postingDate>
+				<gl-cor:identifierReference>
+					<gl-cor:identifierCode contextRef="now">400</gl-cor:identifierCode>
+					<gl-cor:identifierExternalReference>
+						<gl-cor:identifierAuthorityCode contextRef="now">134-53-9377</gl-cor:identifierAuthorityCode>
+						<gl-cor:identifierAuthority contextRef="now">SSA</gl-cor:identifierAuthority>
+					</gl-cor:identifierExternalReference>
+					<gl-cor:identifierDescription contextRef="now">Bernie Bernhardson</gl-cor:identifierDescription>
+					<gl-cor:identifierType contextRef="now">E</gl-cor:identifierType>
+				</gl-cor:identifierReference>
+				<gl-cor:documentType contextRef="now">other</gl-cor:documentType>
+				<gl-cor:documentNumber contextRef="now">51029</gl-cor:documentNumber>
+				<gl-cor:documentReference contextRef="now">Timecard reference#: 100900 </gl-cor:documentReference>
+				<gl-cor:documentDate contextRef="now">2005-07-31</gl-cor:documentDate>
+				<gl-bus:documentLocation contextRef="now">Donald's desk drawer.</gl-bus:documentLocation>
+				<gl-bus:measurable>
+					<gl-bus:measurableDescription contextRef="now">Sickness</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">32</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">hours</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableStartDateTime contextRef="now">2005-05-15T08:00:00</gl-bus:measurableStartDateTime>
+					<gl-bus:measurableEndDateTime contextRef="now">2005-05-18T12:00:00</gl-bus:measurableEndDateTime>
+				</gl-bus:measurable>
+			</gl-cor:entryDetail>
+		</gl-cor:entryHeader>
+	</gl-cor:accountingEntries>
+</xbrli:xbrl>

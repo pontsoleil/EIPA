@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/srcd/2016-12-01" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2016-12-01" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <include schemaLocation="../../srcd/gl-srcd-2016-12-01.xsd"/>
+  <complexType name="summarySegmentComplexType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summarySegmentExplicitDimension"/>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summarySegmentTypedDimension"/>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summarySegmentSimpleElementContent"/>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summarySegmentContents"/>
+    </sequence>
+    <attribute name="id" type="ID"/>
+  </complexType>
+  <complexType name="summaryScenarioComplexType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summaryScenarioExplicitDimension"/>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summaryScenarioTypedDimension"/>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summaryScenarioSimpleElementContent"/>
+      <element maxOccurs="unbounded" minOccurs="0" ref="gl-srcd:summaryScenarioContents"/>
+    </sequence>
+    <attribute name="id" type="ID"/>
+  </complexType>
+</schema>

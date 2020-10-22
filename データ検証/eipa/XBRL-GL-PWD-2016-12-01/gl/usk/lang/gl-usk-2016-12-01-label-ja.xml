@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_frequencyInterval" xlink:label="frequencyInterval"/>
+    <label xlink:type="resource" xlink:label="label_frequencyInterval" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_frequencyInterval">通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、intervalを示す。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyInterval" xlink:to="label_frequencyInterval"/>
+    <label xlink:type="resource" xlink:label="label_frequencyInterval_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_frequencyInterval_2">頻度間隔</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyInterval" xlink:to="label_frequencyInterval_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_frequencyUnit" xlink:label="frequencyUnit"/>
+    <label xlink:type="resource" xlink:label="label_frequencyUnit" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_frequencyUnit">通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、unitを示す。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyUnit" xlink:to="label_frequencyUnit"/>
+    <label xlink:type="resource" xlink:label="label_frequencyUnit_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_frequencyUnit_2">頻度単位</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyUnit" xlink:to="label_frequencyUnit_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_jobCode" xlink:label="jobCode"/>
+    <label xlink:type="resource" xlink:label="label_jobCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_jobCode">関連するジョブ番号かジョブコード。 科目に組み込めるかもしれないが、多くのシステムでは独立したジョブコードシステムを持っている。おもに、ジョブの識別が別システムであり、科目体系に含まれないときに使用される。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobCode" xlink:to="label_jobCode"/>
+    <label xlink:type="resource" xlink:label="label_jobCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_jobCode_2">ジョブ識別子</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobCode" xlink:to="label_jobCode_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_jobDescription" xlink:label="jobDescription"/>
+    <label xlink:type="resource" xlink:label="label_jobDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_jobDescription">ジョブの説明。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobDescription" xlink:to="label_jobDescription"/>
+    <label xlink:type="resource" xlink:label="label_jobDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_jobDescription_2">ジョブ説明</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobDescription" xlink:to="label_jobDescription_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_jobPhaseCode" xlink:label="jobPhaseCode"/>
+    <label xlink:type="resource" xlink:label="label_jobPhaseCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_jobPhaseCode">ジョブコード、フェーズ、活動。 簡単なジョブ番号より詳細な定義が可能。基本的には、ジョブからフェーズを導くのみだが、コストコードにまでいたるように拡張可能。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobPhaseCode" xlink:to="label_jobPhaseCode"/>
+    <label xlink:type="resource" xlink:label="label_jobPhaseCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_jobPhaseCode_2">ジョブフェーズ</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobPhaseCode" xlink:to="label_jobPhaseCode_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_jobPhaseDescription" xlink:label="jobPhaseDescription"/>
+    <label xlink:type="resource" xlink:label="label_jobPhaseDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_jobPhaseDescription">ジョブコード、フェーズ、活動の説明。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobPhaseDescription" xlink:to="label_jobPhaseDescription"/>
+    <label xlink:type="resource" xlink:label="label_jobPhaseDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_jobPhaseDescription_2">ジョブフェーズ説明</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobPhaseDescription" xlink:to="label_jobPhaseDescription_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_lastDateRepeat" xlink:label="lastDateRepeat"/>
+    <label xlink:type="resource" xlink:label="label_lastDateRepeat" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_lastDateRepeat">前回の反復あるいは通常の転記日。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lastDateRepeat" xlink:to="label_lastDateRepeat"/>
+    <label xlink:type="resource" xlink:label="label_lastDateRepeat_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_lastDateRepeat_2">前回反復日付</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lastDateRepeat" xlink:to="label_lastDateRepeat_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_nextDateRepeat" xlink:label="nextDateRepeat"/>
+    <label xlink:type="resource" xlink:label="label_nextDateRepeat" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_nextDateRepeat">次回の反復あるいは通常の転記日。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="nextDateRepeat" xlink:to="label_nextDateRepeat"/>
+    <label xlink:type="resource" xlink:label="label_nextDateRepeat_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_nextDateRepeat_2">次回反復日付</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="nextDateRepeat" xlink:to="label_nextDateRepeat_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_recurringStdDescription" xlink:label="recurringStdDescription"/>
+    <label xlink:type="resource" xlink:label="label_recurringStdDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_recurringStdDescription">通常仕訳または反復仕訳のIDの説明。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="recurringStdDescription" xlink:to="label_recurringStdDescription"/>
+    <label xlink:type="resource" xlink:label="label_recurringStdDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_recurringStdDescription_2">反復通常仕訳説明</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="recurringStdDescription" xlink:to="label_recurringStdDescription_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_repetitionsRemaining" xlink:label="repetitionsRemaining"/>
+    <label xlink:type="resource" xlink:label="label_repetitionsRemaining" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_repetitionsRemaining">反復仕訳の繰り返し予定数。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="repetitionsRemaining" xlink:to="label_repetitionsRemaining"/>
+    <label xlink:type="resource" xlink:label="label_repetitionsRemaining_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_repetitionsRemaining_2">反復残回数</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="repetitionsRemaining" xlink:to="label_repetitionsRemaining_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_reverse" xlink:label="reverse"/>
+    <label xlink:type="resource" xlink:label="label_reverse" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_reverse">仕訳が取り消されるべきか。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reverse" xlink:to="label_reverse"/>
+    <label xlink:type="resource" xlink:label="label_reverse_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_reverse_2">反対仕訳要否</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reverse" xlink:to="label_reverse_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_reversingDate" xlink:label="reversingDate"/>
+    <label xlink:type="resource" xlink:label="label_reversingDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_reversingDate">この仕訳が取り消されるべき日付。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reversingDate" xlink:to="label_reversingDate"/>
+    <label xlink:type="resource" xlink:label="label_reversingDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_reversingDate_2">反対仕訳日付</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reversingDate" xlink:to="label_reversingDate_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_reversingStdId" xlink:label="reversingStdId"/>
+    <label xlink:type="resource" xlink:label="label_reversingStdId" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_reversingStdId">通常、反対、マスタ、取消または他の仕訳のための、それらの仕訳を関連付けるID。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reversingStdId" xlink:to="label_reversingStdId"/>
+    <label xlink:type="resource" xlink:label="label_reversingStdId_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_reversingStdId_2">反対/通常/マスタ仕訳識別子</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reversingStdId" xlink:to="label_reversingStdId_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_endDateRepeatingEntry" xlink:label="endDateRepeatingEntry"/>
+    <label xlink:type="resource" xlink:label="label_endDateRepeatingEntry" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_endDateRepeatingEntry">通常仕訳または反復仕訳のための、反復入力の終了日付/時刻。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="endDateRepeatingEntry" xlink:to="label_endDateRepeatingEntry"/>
+    <label xlink:type="resource" xlink:label="label_endDateRepeatingEntry_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_endDateRepeatingEntry_2">反復仕訳終了日付</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="endDateRepeatingEntry" xlink:to="label_endDateRepeatingEntry_2"/>
+    <loc xlink:type="locator" xlink:href="../gl-usk-2016-12-01.xsd#gl-usk_jobActive" xlink:label="jobActive"/>
+    <label xlink:type="resource" xlink:label="label_jobActive" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" id="label_jobActive">ジョブが有効か無効かを示すブール値。&#13;
+</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobActive" xlink:to="label_jobActive"/>
+    <label xlink:type="resource" xlink:label="label_jobActive_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" id="label_jobActive_2">ジョブ有効性</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="jobActive" xlink:to="label_jobActive_2"/>
+  </labelLink>
+</linkbase>

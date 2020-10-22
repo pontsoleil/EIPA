@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2016-12-01" targetNamespace="http://www.xbrl.org/int/gl/ehm/2016-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<include schemaLocation="../../ehm/gl-ehm-2016-12-01.xsd"/>
+	<complexType name="serialLotComplexType">
+		<complexContent>
+			<restriction base="anyType">
+				<sequence>
+					<element ref="gl-ehm:serialLotCode" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotDescription" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotNumber" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:nextSerialLotNumber" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotQuantity" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotOriginalQuantity" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotRemainingQuantity" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotOrigination" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotExpiration" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotManufacturer" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotBatchDescription" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotWarrantyStartDate" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotWarrantyEndDate" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotWarrantyPeriod" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotWarrantyPeriodUnit" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotWarrantyVendor" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotWarrantyContract" minOccurs="0" maxOccurs="1"/>
+					<element ref="gl-ehm:serialLotComment" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+				<attribute name="id" type="ID"/>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="measurableClassDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="costingMethodDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="geospatialCoordinateItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="nextSerialLotNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotOriginalQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotRemainingQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotOriginationItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotExpirationItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotManufacturerItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotBatchDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyStartDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyEndDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyPeriodItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyPeriodUnitItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyVendorItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyContractItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotCommentItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+</schema>
