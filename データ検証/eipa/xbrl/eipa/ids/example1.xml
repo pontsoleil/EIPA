@@ -8,7 +8,6 @@
     xmlns:iso639="http://www.xbrl.org/2005/iso639" 
     xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
     xmlns:eipa-cen="http://www.sample.org/eipa/cen/2020-12-31">
-    <!-- xsi:schemaLocation="http://www.sample.org/eipa/cen/2020-12-31 ../cen/eipa-cen-2020-12-31.xsd"> -->
 	<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/eipa-cen-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
     <!-- <xbrli:context id="now">
         <xbrli:entity>
@@ -20,7 +19,7 @@
     </xbrli:context> -->
     <xbrli:context id="INVOICE">
         <xbrli:entity>
-            <xbrli:identifier scheme="http://www.sample.org/eipa/sample">SAMPLE</xbrli:identifier>
+            <xbrli:identifier scheme="http://eipa.jp/eipa">SAMPLE</xbrli:identifier>
             <xbrli:segment>
                 <xbrldi:typedMember dimension="eipa-cen:dL1Number">
                     <eipa-cen:L1Number>INVOICE</eipa-cen:L1Number>
@@ -28,7 +27,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <!-- <xbrli:context id="BG-25">
@@ -41,7 +40,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context> -->
     <xbrli:context id="BG-25_1">
@@ -54,7 +53,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <xbrli:context id="BG-25_2">
@@ -67,7 +66,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <xbrli:context id="BG-25_3">
@@ -80,7 +79,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <xbrli:context id="BG-25_4">
@@ -93,7 +92,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <xbrli:context id="BG-25_5">
@@ -106,7 +105,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <!-- unit -->
@@ -178,7 +177,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_6">6</eipa-cen:BT-126>
@@ -200,7 +199,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_7">7</eipa-cen:BT-126>
@@ -222,7 +221,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_8">8</eipa-cen:BT-126>
@@ -244,7 +243,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_9">9</eipa-cen:BT-126>
@@ -266,7 +265,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_20">10</eipa-cen:BT-126>
@@ -288,7 +287,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_21">11</eipa-cen:BT-126>
@@ -310,7 +309,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_22">12</eipa-cen:BT-126>
@@ -332,7 +331,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_23">13</eipa-cen:BT-126>
@@ -354,7 +353,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_24">14</eipa-cen:BT-126>
@@ -376,7 +375,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_25">15</eipa-cen:BT-126>
@@ -398,7 +397,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_26">16</eipa-cen:BT-126>
@@ -420,7 +419,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_27">17</eipa-cen:BT-126>
@@ -442,7 +441,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_28">18</eipa-cen:BT-126>
@@ -464,7 +463,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_29">19</eipa-cen:BT-126>
@@ -486,7 +485,7 @@
             </xbrli:segment>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2020-10-15</xbrli:instant>
+            <xbrli:forever/>
         </xbrli:period>
     </xbrli:context>
     <eipa-cen:BT-126 contextRef="BG-25_30">20</eipa-cen:BT-126>
