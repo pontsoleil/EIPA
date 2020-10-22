@@ -787,12 +787,12 @@ var eipa = (function() {
     return en;
   }
 
-  function en2xbrlgl(en) {
+  function en2xbrl(en) {
     var xbrli = 'http://www.xbrl.org/2003/instance';
     var xbrldi = 'http://xbrl.org/2006/xbrldi';
-    var eipa = 'http://www.sample.org/eipa';
+    var eipa = 'http://www.eipa.jp';
     var eipa_cen = eipa+'/cen/2020-12-31';
-    var eg = eipa;
+    // var eg = eipa;
     var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
     var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
     '<xbrli:xbrl xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
@@ -802,18 +802,18 @@ var eipa = (function() {
       'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
       'xmlns:xbrli="'+xbrli+'" '+
       'xmlns:xbrldi="'+xbrldi+'" '+
-      'xmlns:eipa-cen="'+eipa_cen+'" '+
-      'xmlns:eg="'+eg+'" '+
-      'xsi:schemaLocation="'+eipa_plt+' ../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31.xsd">'+
+      'xmlns:eipa-cen="'+eipa_cen+'>"'+
+      // 'xmlns:eg="'+eg+'" '+
+      // 'xsi:schemaLocation="'+eipa_plt+' ../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31.xsd">'+
       '<xbrll:schemaRef xlink:type="simple" xlink:href="../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31_5.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
-      '<xbrli:context id="now">'+
-        '<xbrli:entity>'+
-          '<xbrli:identifier scheme="'+eipa+'">EIPA</xbrli:identifier>'+
-        '</xbrli:entity>'+
-        '<xbrli:period>'+
-          '<xbrli:instant>'+date+'</xbrli:instant>'+
-        '</xbrli:period>'+
-      '</xbrli:context>'+
+      // '<xbrli:context id="now">'+
+      //   '<xbrli:entity>'+
+      //     '<xbrli:identifier scheme="'+eipa+'">EIPA</xbrli:identifier>'+
+      //   '</xbrli:entity>'+
+      //   '<xbrli:period>'+
+      //     '<xbrli:instant>'+date+'</xbrli:instant>'+
+      //   '</xbrli:period>'+
+      // '</xbrli:context>'+
     '</xbrli:xbrl>';
 // context
 /** <xbrli:context id="H50">
@@ -1056,7 +1056,7 @@ var eipa = (function() {
       catch(e) { console.log(e); }
     })
     .then(function(en) {
-      var xbrlgl = en2xbrlgl(en);
+      var xbrlgl = en2xbrl(en);
       return xbrlgl;
     })
     .then(function(xbrlgl) {
@@ -1089,6 +1089,6 @@ var eipa = (function() {
   return {
     'initModule' : initModule,
     'cii2en': cii2en,
-    'en2xbrlgl': en2xbrlgl
+    'en2xbrl': en2xbrl
   };
 })();
