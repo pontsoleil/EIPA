@@ -791,8 +791,7 @@ var eipa = (function() {
     var xbrli = 'http://www.xbrl.org/2003/instance';
     var xbrldi = 'http://xbrl.org/2006/xbrldi';
     var eipa = 'http://www.sample.org/eipa';
-    var eipa_plt = eipa+'/plt/2020-12-31';
-    var eipa_cor = eipa+'/cor/2020-12-31';
+    var eipa_cen = eipa+'/cen/2020-12-31';
     var eg = eipa;
     var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
     var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
@@ -803,7 +802,7 @@ var eipa = (function() {
       'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
       'xmlns:xbrli="'+xbrli+'" '+
       'xmlns:xbrldi="'+xbrldi+'" '+
-      'xmlns:eipa-cor="'+eipa_cor+'" '+
+      'xmlns:eipa-cen="'+eipa_cen+'" '+
       'xmlns:eg="'+eg+'" '+
       'xsi:schemaLocation="'+eipa_plt+' ../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31.xsd">'+
       '<xbrll:schemaRef xlink:type="simple" xlink:href="../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31_5.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
@@ -821,8 +820,8 @@ var eipa = (function() {
       <xbrli:entity>
         <xbrli:identifier scheme="http://www.sample.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
         <xbrli:segment>
-          <xbrldi:typedMember dimension="eipa-cor:dL1Number">
-            <eipa-cor:L1Number>50</eipa-cor:L1Number>
+          <xbrldi:typedMember dimension="eipa-cen:dL1Number">
+            <eipa-cen:L1Number>50</eipa-cen:L1Number>
           </xbrldi:typedMember>
         </xbrli:segment>
       </xbrli:entity>
@@ -832,10 +831,10 @@ var eipa = (function() {
     </xbrli:context> */
     function appendtypedLNumber(L, ID, segment) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
-          number = xmlDoc.createElementNS(eipa_cor, L+'Number'),
+          number = xmlDoc.createElementNS(eipa_cen, L+'Number'),
           text = xmlDoc.createTextNode(ID);
       segment.appendChild(typedMember);
-      typedMember.setAttribute('dimension', 'eipa-cor:d'+L+'Number');
+      typedMember.setAttribute('dimension', 'eipa-cen:d'+L+'Number');
       typedMember.appendChild(number);
       number.appendChild(text);
     }
@@ -862,11 +861,11 @@ var eipa = (function() {
       <xbrli:entity>
         <xbrli:identifier scheme='http://www.sample.org/xbrlgl/sample'>SAMPLE</xbrli:identifier>
         <xbrli:segment>
-          <xbrldi:typedMember dimension='eipa-cor:dL1Number'>
-            <eipa-cor:L1Number>50</eipa-cor:L1Number>
+          <xbrldi:typedMember dimension='eipa-cen:dL1Number'>
+            <eipa-cen:L1Number>50</eipa-cen:L1Number>
           </xbrldi:typedMember>
-          <xbrldi:typedMember dimension='eipa-cor:dL2Number'>
-            <eipa-cor:L2Number>L1</eipa-cor:L2Number>
+          <xbrldi:typedMember dimension='eipa-cen:dL2Number'>
+            <eipa-cen:L2Number>L1</eipa-cen:L2Number>
           </xbrldi:typedMember>
         </xbrli:segment>
       </xbrli:entity>
@@ -947,7 +946,7 @@ var eipa = (function() {
       var length = keys.length;
       var name = keys[length - 1];
       var val = item.val;
-      var element = xmlDoc.createElementNS(eipa_cor, name);
+      var element = xmlDoc.createElementNS(eipa_cen, name);
       switch(val.length) {
       case 1:
         var text = xmlDoc.createTextNode(item.val[0]);
@@ -964,7 +963,7 @@ var eipa = (function() {
         var val0 = item.val[0][key];
         key = key.replace('@', '_');
         key = name+key;
-        var element0 = xmlDoc.createElementNS(eipa_cor, key);
+        var element0 = xmlDoc.createElementNS(eipa_cen, key);
         var text0 = xmlDoc.createTextNode(val0);
         element0.appendChild(text0);
         element0.setAttribute('contextRef', contextText);
@@ -972,6 +971,7 @@ var eipa = (function() {
         break;
       }
     }
+    // ---------------------------------------------------------------
     // START
     var DOMP = new DOMParser();
     var xmlDoc = DOMP.parseFromString(xmlString, 'text/xml');

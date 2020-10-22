@@ -14,10 +14,12 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xpath ============================================================
-cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN { n=0; }
+cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
+  n=0;
+}
 {
   id=$1;
-  printf "	<element name=\"%s\" id=\"eipa-cor_%s\" type=\"xbrli:stringItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", id, id;
+  printf "	<element name=\"%s\" id=\"eipa-cen_%s\" type=\"eipa-cen:%sItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", id, id, id;
   n=n+1;
 }
 END { }' > eipa/source/elements.xml
