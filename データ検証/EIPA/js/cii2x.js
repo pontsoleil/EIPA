@@ -792,7 +792,7 @@ var eipa = (function() {
     var xbrldi = 'http://xbrl.org/2006/xbrldi';
     var eipa = 'http://www.eipa.jp';
     var eipa_cen = eipa+'/cen/2020-12-31';
-    // var eg = eipa;
+    var eg = eipa;
     var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
     var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
     '<xbrli:xbrl xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
@@ -802,8 +802,8 @@ var eipa = (function() {
       'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
       'xmlns:xbrli="'+xbrli+'" '+
       'xmlns:xbrldi="'+xbrldi+'" '+
-      'xmlns:eipa-cen="'+eipa_cen+'>"'+
-      // 'xmlns:eg="'+eg+'" '+
+      'xmlns:eipa-cen="'+eipa_cen+'" '+
+      'xmlns:eg="'+eg+'">'+
       // 'xsi:schemaLocation="'+eipa_plt+' ../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31.xsd">'+
       '<xbrll:schemaRef xlink:type="simple" xlink:href="../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31_5.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
       // '<xbrli:context id="now">'+
@@ -816,19 +816,19 @@ var eipa = (function() {
       // '</xbrli:context>'+
     '</xbrli:xbrl>';
 // context
-/** <xbrli:context id="H50">
-      <xbrli:entity>
-        <xbrli:identifier scheme="http://www.sample.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
-        <xbrli:segment>
-          <xbrldi:typedMember dimension="eipa-cen:dL1Number">
-            <eipa-cen:L1Number>50</eipa-cen:L1Number>
-          </xbrldi:typedMember>
-        </xbrli:segment>
-      </xbrli:entity>
-      <xbrli:period>
-        <xbrli:instant>2020-01-01</xbrli:instant>
-      </xbrli:period>
-    </xbrli:context> */
+    /** <xbrli:context id="H50">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.eipa.jp/sample">SAMPLE</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:typedMember dimension="eipa-cen:dL1Number">
+                <eipa-cen:L1Number>50</eipa-cen:L1Number>
+              </xbrldi:typedMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2020-01-01</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context> */
     function appendtypedLNumber(L, ID, segment) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
           number = xmlDoc.createElementNS(eipa_cen, L+'Number'),
@@ -857,22 +857,22 @@ var eipa = (function() {
       context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
       return context;
     }
-/** <xbrli:context id='H50L1'>
-      <xbrli:entity>
-        <xbrli:identifier scheme='http://www.sample.org/xbrlgl/sample'>SAMPLE</xbrli:identifier>
-        <xbrli:segment>
-          <xbrldi:typedMember dimension='eipa-cen:dL1Number'>
-            <eipa-cen:L1Number>50</eipa-cen:L1Number>
-          </xbrldi:typedMember>
-          <xbrldi:typedMember dimension='eipa-cen:dL2Number'>
-            <eipa-cen:L2Number>L1</eipa-cen:L2Number>
-          </xbrldi:typedMember>
-        </xbrli:segment>
-      </xbrli:entity>
-      <xbrli:period>
-        <xbrli:instant>2020-01-01</xbrli:instant>
-      </xbrli:period>
-    </xbrli:context> */
+    /** <xbrli:context id='H50L1'>
+          <xbrli:entity>
+            <xbrli:identifier scheme='http://www.eipa.jp/sample'>SAMPLE</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:typedMember dimension='eipa-cen:dL1Number'>
+                <eipa-cen:L1Number>50</eipa-cen:L1Number>
+              </xbrldi:typedMember>
+              <xbrldi:typedMember dimension='eipa-cen:dL2Number'>
+                <eipa-cen:L2Number>L1</eipa-cen:L2Number>
+              </xbrldi:typedMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2020-01-01</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context> */
     function createL2Context(xmlDoc, IDS, date) {
       var L1ID =IDS[0], L2ID = IDS[1];
       var context = xmlDoc.createElementNS(xbrli,'context');
@@ -938,9 +938,9 @@ var eipa = (function() {
     }
 
     function createItem(xmlDoc, keys, item) {
-/**
-<gl-cor:enteredDate contextRef='H50'>2005-07-01</gl-cor:enteredDate>
-  */
+      /**
+      <gl-cor:enteredDate contextRef='H50'>2005-07-01</gl-cor:enteredDate>
+        */
       // console.log(level, keys, item);
       var contextText = keys[0]+(keys[1] ? '_'+keys[1] : '');
       var length = keys.length;
@@ -1047,6 +1047,10 @@ var eipa = (function() {
     return ajaxRequest(url, null, 'GET', ms)
     .then(function(res) {
       // console.log(res);
+      if (res.match(/^<html>/)) {
+        alert(res.match(/<title>(.*)<\/title>/)[1]);
+        return null;
+      }
       try {
         var json = JSON.parse(res);
         var en = cii2en(json);
@@ -1059,7 +1063,7 @@ var eipa = (function() {
       var xbrlgl = en2xbrl(en);
       return xbrlgl;
     })
-    .then(function(xbrlgl) {
+    .then(function(xbrl) {
       var match, dir = '', name = '';
       if (url.match(/\//)) {
         match = url.match(/^(.*)\/([^\/]*)\.json$/);
@@ -1074,14 +1078,14 @@ var eipa = (function() {
       }
       var data = {
         'name': name,
-        'data': xbrlgl
+        'data': xbrl
       };
       return ajaxRequest('data/save.cgi', data, 'POST', 20000)
       .then(function(res) {
         console.log(res);
       })
       .catch(function(err) { console.log(err); })
-      // console.log(xbrlgl);
+      // console.log(xbrl);
       return 
     })
     .catch(function(err) { console.log(err); })
