@@ -13,18 +13,35 @@ export UNIX_STD=2003  # to make HP-UX conform to POSIX
 Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
-# === tsv -> xpath ============================================================
+# === tsv -> xml ============================================================
 cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
-  n=0;
+    printf "\n\n<!-- item type -->\n";
+}
+{ 
+  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+    id=$1;
+    printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:stringItemType\"/></simpleContent>\n  </complexType>\n", id;
+  }
+}
+END { }' > $Tmp-types
+
+cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
+    printf "\n<!-- element -->\n";
 }
 {
-  id=$1;
-  printf "	<element name=\"%s\" id=\"eipa-cen_%s\" type=\"eipa-cen:%sItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", id, id, id;
-  n=n+1;
+  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+    id=$1;
+    printf "	<element name=\"%s\" id=\"eipa-cen_%s\" type=\"eipa-cen:%sItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", id, id, id;
+  }
 }
-END { }' > eipa/source/elements.xml
+END {
+  printf "</schema>";
+}' > $Tmp-elements
+
+cat eipa/source/xBRL_schema_head.txt $Tmp-types $Tmp-elements > eipa/source/xBRL_schema.xml
+
 # --------------------------------------------------------------------
 # rm $Tmp-*
 rm log/${0##*/}.$$.*
 exit 0
-# presentaton.sh
+# text2schema.sh

@@ -1,0 +1,44 @@
+# === tsv -> xml ============================================================
+cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
+  printf "<?xml version="1.0" encoding="UTF-8"?>\n<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">";
+  printf "  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">\n";
+";
+}
+{ 
+  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+    id=$1;
+    tmp="echo " $1 " | openssl cksum | cut -f2 -d\" \""
+    tmp | getline cksum
+    close(tmp)
+    label="";for(i=4;i<=NF;i++) label=label $i" "; 
+    printf "    <link:loc xlink:type=\"locator\" xlink:href=\"eipa-cen-2020-12-31.xsd#eipa-cen_%s\" xlink:label=\"%s\"/>", id, id;
+    printf "    <link:label xlink:type=\"resource\" xlink:label=\"label_%s_%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\" id=\"label_%s_%s\">%s</link:label>\n", id, cksum, id, cksum, label;
+    printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"%s_%s\" xlink:to=\"label_%s_%s\"/>\n", id, cksum, id, cksum;
+  }
+}
+END { }' > eipa/source/xBRL_label.xml
++ cat eipa/source/EN_16931-1.txt
++ awk '-F\t' 'BEGIN {
+  printf "<?xml version="1.0" encoding="UTF-8"?>\n<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">";
+  printf "  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">\n";
+";
+}
+{ 
+  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+    id=$1;
+    tmp="echo " $1 " | openssl cksum | cut -f2 -d\" \""
+    tmp | getline cksum
+    close(tmp)
+    label="";for(i=4;i<=NF;i++) label=label $i" "; 
+    printf "    <link:loc xlink:type=\"locator\" xlink:href=\"eipa-cen-2020-12-31.xsd#eipa-cen_%s\" xlink:label=\"%s\"/>", id, id;
+    printf "    <link:label xlink:type=\"resource\" xlink:label=\"label_%s_%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\" id=\"label_%s_%s\">%s</link:label>\n", id, cksum, id, cksum, label;
+    printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"%s_%s\" xlink:to=\"label_%s_%s\"/>\n", id, cksum, id, cksum;
+  }
+}
+END { }'
+awk: syntax error at source line 2
+ context is
+	  printf "<?xml version="1.0" encoding="UTF-8"?>\n<link:linkbase >>>  xmlns:xsi="http: <<< 
+awk: illegal statement at source line 2
+awk: illegal statement at source line 2
+	extra }

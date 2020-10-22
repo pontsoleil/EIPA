@@ -28,36 +28,38 @@ cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
   print "  <presentationLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">";
 }
 {
-  id=$1;
-  level=$2;
-  currents[level]=id;
-  if (1 == level) {
-    parent="root";
-  }
-  else {
-    parent=currents[level - 1];
-  }
-  if (level < current_level) {
-    for (i = level + 1; i < 5; i++) {
-      currents[i]="";
+  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+    id=$1;
+    level=$2;
+    currents[level]=id;
+    if (1 == level) {
+      parent="root";
     }
+    else {
+      parent=currents[level - 1];
+    }
+    if (level < current_level) {
+      for (i = level + 1; i < 5; i++) {
+        currents[i]="";
+      }
+    }
+    current_level=level;
+    # print n " id=" id " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4];
+    if (1!=parents[parent]) {
+      parents[parent]=1;
+      printf "    <loc xlink:type=\"locator\" xlink:href=\"eipa-cen-2020-12-31.xsd#eipa-cen_%s\" xlink:label=\"eipa-cen_%s\" xlink:title=\"presentation parent: %s\"/>\n", parent, parent, parent;
+    }
+    printf "    <loc xlink:type=\"locator\" xlink:href=\"eipa-cen-2020-12-31.xsd#eipa-cen_%s\" xlink:label=\"eipa-cen_%s\" xlink:title=\"presentation child: %s\"/>\n", id, id, id;
+    printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"eipa-cen_%s\" xlink:to=\"eipa-cen_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", parent, id, parent, id, n;
+    n=n+1;
   }
-  current_level=level;
-  # print n " id=" id " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4];
-  if (1!=parents[parent]) {
-    parents[parent]=1;
-    printf "    <loc xlink:type=\"locator\" xlink:href=\"eipa-cor-2020-12-31.xsd#eipa-cor_%s\" xlink:label=\"eipa-cor_%s\" xlink:title=\"presentation parent: %s\"/>\n", parent, parent, parent;
-  }
-  printf "    <loc xlink:type=\"locator\" xlink:href=\"eipa-cor-2020-12-31.xsd#eipa-cor_%s\" xlink:label=\"eipa-cor_%s\" xlink:title=\"presentation child: %s\"/>\n", id, id, id;
-  printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"eipa-cor_%s\" xlink:to=\"eipa-cor_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", parent, id, parent, id, n;
-  n=n+1;
 }
 END {
   print "  </presentationLink>";
   print "</linkbase>"; 
-}' > eipa/cor/eipa-cor-2020-12-31-presentation.xml
+}' > eipa/source/xBRL_presentation.xml
 # --------------------------------------------------------------------
 # rm $Tmp-*
 rm log/${0##*/}.$$.*
 exit 0
-# presentaton.sh
+# text2presentaton.sh
