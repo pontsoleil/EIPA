@@ -1,6 +1,9 @@
 /**
  * cii2en.js
  *
+ * Convert UN/CEFACT CII xml file to eipa-cen XBRL
+ * called from cii2x.html
+ * 
  * This is a free to use open source software and licensed under the MIT License
  * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
  **/
