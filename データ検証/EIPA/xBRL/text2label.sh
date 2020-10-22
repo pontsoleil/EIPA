@@ -45,7 +45,7 @@ END {
 }' > eipa/source/xBRL_label.xml
 
 # --------------------------------------------------------------------
-# rm $Tmp-*
-# rm log/${0##*/}.$$.*
+rm $Tmp-*
+rm log/${0##*/}.$$.*
 exit 0
 # text2label.sh
