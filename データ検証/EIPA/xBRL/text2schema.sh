@@ -37,6 +37,8 @@ cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
       printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:decimalItemType\"/></simpleContent>\n  </complexType>\n", id;
     } else if ("Percentage"==datatype) {
       printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:pureItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:stringItemType\"/></simpleContent>\n  </complexType>\n", id;
     }
   }
 }
