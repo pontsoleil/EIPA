@@ -943,9 +943,15 @@ var eipa = (function() {
       <gl-cor:enteredDate contextRef='H50'>2005-07-01</gl-cor:enteredDate>
         */
       // console.log(level, keys, item);
-      var contextText = keys[0]+(keys[1] 
-        ? '_'+keys[1] 
-        : '');
+      var contextText;
+      if ('BG-0' === keys[0]) {
+        contextText = keys[0];
+      }
+      else {
+        contextText = keys[0]+(keys[1] 
+          ? '_'+keys[1] 
+          : '');
+      }
       var length = keys.length;
       var name = keys[length - 1];
       var type = EN[name].type;
@@ -954,25 +960,27 @@ var eipa = (function() {
       var match;
       switch(val.length) {
       case 1:
-        var text = xmlDoc.createTextNode(item.val[0]);
+        var val = ''+item.val[0];
         if ('Date' === type) {
-          match = text.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
+          match = val.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
           if (match) {
-            text = match[1]+'-'+match[2]+'-'+match[3];
+            val = match[1]+'-'+match[2]+'-'+match[3];
           }
         }
+        var text = xmlDoc.createTextNode(val);
         element.appendChild(text);
         element.setAttribute('contextRef', contextText);
         xbrl.appendChild(element);
         break;
       case 2:
-        var text = xmlDoc.createTextNode(item.val[1]);
+        var val = ''+item.val[1];
         if ('Date' === type) {
-          match = text.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
+          match = val.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
           if (match) {
-            text = match[1]+'-'+match[2]+'-'+match[3];
+            val = match[1]+'-'+match[2]+'-'+match[3];
           }
         }
+        var text = xmlDoc.createTextNode(val);
         element.appendChild(text);
         element.setAttribute('contextRef', contextText);
         xbrl.appendChild(element);
@@ -1013,7 +1021,7 @@ var eipa = (function() {
       if (L1item.val && L1item.val.length > 0) {
         console.log('1) key:'+L1key, 'item:', L1item);
         if (L1key.match(/^BT/)) {
-          createItem(xmlDoc, [/*L1key*/'BG-0'], L1item);
+          createItem(xmlDoc, [/*L1key*/'BG-0', L1key], L1item);
           if ('BT-5' === L1key) {
             InvoiceCurrency = L1item.val;
           }
