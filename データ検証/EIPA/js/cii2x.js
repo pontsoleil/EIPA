@@ -840,7 +840,9 @@ var eipa = (function() {
       number.appendChild(text);
     }
     function createL1Context(xmlDoc, IDS, date) {
-      var L1ID = IDS[0]
+      var L1ID = IDS[0];
+      if (contexts[L1ID]) { return null; }
+      contexts[L1ID] = true;
       var context = xmlDoc.createElementNS(xbrli,'context');
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
@@ -876,6 +878,8 @@ var eipa = (function() {
         </xbrli:context> */
     function createL2Context(xmlDoc, IDS, date) {
       var L1ID =IDS[0], L2ID = IDS[1];
+      if (contexts[L1ID+'_'+L2ID]) { return null; }
+      contexts[L1ID+'_'+L2ID] = true;
       var context = xmlDoc.createElementNS(xbrli,'context');
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
@@ -896,6 +900,8 @@ var eipa = (function() {
     }
     function createL3Context(xmlDoc, L1ID, date) {
       var L1ID =IDS[0], L2ID = IDS[1], L3ID = IDS[2];
+      if (contexts[L1ID+'_'+L2ID+'_'+L3ID]) { return null; }
+      contexts[L1ID+'_'+L2ID+'_'+L3ID] = true;
       var context = xmlDoc.createElementNS(xbrli,'context');
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
@@ -917,6 +923,8 @@ var eipa = (function() {
     }
     function createL4Context(xmlDoc, L1ID, date) {
       var L1ID =IDS[0], L2ID = IDS[1], L3ID = IDS[2], L4ID = IDS[3];
+      if (contexts[L1ID+'_'+L2ID+'_'+L3ID+'_'+L4ID]) { return null; }
+      contexts[L1ID+'_'+L2ID+'_'+L3ID+'_'+L4ID] = true;
       var context = xmlDoc.createElementNS(xbrli,'context');
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
@@ -937,13 +945,14 @@ var eipa = (function() {
       context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
       return context;
     }
-
     function createItem(xmlDoc, keys, item) {
       /**
       <gl-cor:enteredDate contextRef='H50'>2005-07-01</gl-cor:enteredDate>
         */
       // console.log(level, keys, item);
-      var contextText = keys[0]+(keys[1] ? '_'+keys[1] : '');
+      var contextText = keys[0]+(keys[1] 
+        ? '_'+keys[1] 
+        : '');
       var length = keys.length;
       var name = keys[length - 1];
       var val = item.val;
@@ -962,18 +971,19 @@ var eipa = (function() {
         xbrl.appendChild(element);
         var key = Object.keys(item.val[0])[0];
         var val0 = item.val[0][key];
-        key = key.replace('@', '_');
-        key = name+key;
-        var element0 = xmlDoc.createElementNS(eipa_cen, key);
-        var text0 = xmlDoc.createTextNode(val0);
-        element0.appendChild(text0);
-        element0.setAttribute('contextRef', contextText);
-        xbrl.appendChild(element0);
+        key = key.replace('@', '');
+        // key = name+key;
+        // var element0 = xmlDoc.createElementNS(eipa_cen, key);
+        // var text0 = xmlDoc.createTextNode(val0);
+        // element0.appendChild(text0);
+        element.setAttribute(key, val0);
+        // xbrl.appendChild(element0);
         break;
       }
     }
     // ---------------------------------------------------------------
     // START
+    var contexts = {};
     var DOMP = new DOMParser();
     var xmlDoc = DOMP.parseFromString(xmlString, 'text/xml');
     var xbrl = xmlDoc.getElementsByTagNameNS(xbrli, 'xbrl')[0];
@@ -1061,8 +1071,8 @@ var eipa = (function() {
       catch(e) { console.log(e); }
     })
     .then(function(en) {
-      var xbrlgl = en2xbrl(en);
-      return xbrlgl;
+      var xbrl = en2xbrl(en);
+      return xbrl;
     })
     .then(function(xbrl) {
       var match, dir = '', name = '';
