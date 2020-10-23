@@ -8,6 +8,7 @@
  * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
  **/
 var eipa = (function() {
+
   function cii2en(json) {
     var cii = json;
     var en = {};
@@ -788,6 +789,7 @@ var eipa = (function() {
   }
 
   function en2xbrl(en) {
+    // EN is defined in EN_16931-1.js
     var xbrli = 'http://www.xbrl.org/2003/instance';
     var xbrldi = 'http://xbrl.org/2006/xbrldi';
     var eipa = 'http://www.eipa.jp';
@@ -955,6 +957,7 @@ var eipa = (function() {
         : '');
       var length = keys.length;
       var name = keys[length - 1];
+      var type = EN[name].type;
       var val = item.val;
       var element = xmlDoc.createElementNS(eipa_cen, name);
       switch(val.length) {
@@ -978,6 +981,10 @@ var eipa = (function() {
         // element0.appendChild(text0);
         element.setAttribute(key, val0);
         // xbrl.appendChild(element0);
+        console.log(name, type);
+        if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
+          element.setAttribute('decimal', 'INF');
+        }
         break;
       }
     }
@@ -1101,6 +1108,7 @@ var eipa = (function() {
     })
     .catch(function(err) { console.log(err); })
   }
+
   return {
     'initModule' : initModule,
     'cii2en': cii2en,

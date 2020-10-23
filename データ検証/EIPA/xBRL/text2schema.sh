@@ -18,7 +18,7 @@ cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
     printf "\n\n<!-- item type -->\n";
 }
 { 
-  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+  if ("BG-0"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
     id=$1;
     datatype=$4;
     if ("Text"==datatype){
@@ -48,7 +48,7 @@ cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
     printf "\n<!-- element -->\n";
 }
 {
-  if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
+  if ("BG-0"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
     id=$1;
     printf "	<element name=\"%s\" id=\"eipa-cen_%s\" type=\"eipa-cen:%sItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", id, id, id;
   }
