@@ -974,11 +974,11 @@ var eipa = (function() {
         xbrl.appendChild(element);
         var key = Object.keys(item.val[0])[0];
         var val0 = item.val[0][key];
-        if (val0) {
-          key = key.replace('@', '');
-          element.setAttribute(key, val0);
-        }
-       console.log(name, type);
+        // if (val0) {
+        //   key = key.replace('@', '');
+        //   element.setAttribute(key, val0);
+        // }
+       　console.log(name, type);
         if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
           element.setAttribute('decimal', 'INF');
         }
