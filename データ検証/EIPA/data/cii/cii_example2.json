@@ -153,13 +153,16 @@
 "ram:SpecifiedLineTradeDelivery":[{
 "ram:BilledQuantity":[{
 "@unitCode":"NAR"
-}]
+},-1]
 }],
 "ram:SpecifiedLineTradeSettlement":[{
 "ram:ApplicableTradeTax":[{
 "ram:TypeCode":["VAT"],
 "ram:CategoryCode":["S"],
 "ram:RateApplicablePercent":[15]
+}],
+"ram:SpecifiedTradeSettlementLineMonetarySummation":[{
+"ram:LineTotalAmount":[-3.96]
 }],
 "ram:ReceivableSpecifiedTradeAccountingAccount":[{
 "ram:ID":["BookingCode002"]
@@ -251,13 +254,16 @@
 "ram:SpecifiedLineTradeDelivery":[{
 "ram:BilledQuantity":[{
 "@unitCode":"NAR"
-}]
+},-1]
 }],
 "ram:SpecifiedLineTradeSettlement":[{
 "ram:ApplicableTradeTax":[{
 "ram:TypeCode":["VAT"],
 "ram:CategoryCode":["E"],
 "ram:RateApplicablePercent":[0]
+}],
+"ram:SpecifiedTradeSettlementLineMonetarySummation":[{
+"ram:LineTotalAmount":[-25]
 }],
 "ram:ReceivableSpecifiedTradeAccountingAccount":[{
 "ram:ID":["BookingCode004"]
@@ -481,6 +487,7 @@
 "ram:CalculatedAmount":[0],
 "ram:TypeCode":["VAT"],
 "ram:ExemptionReason":["Exempt New Means of Transport"],
+"ram:BasisAmount":[-25],
 "ram:CategoryCode":["E"],
 "ram:TaxPointDate":[{
 "udt:DateString":[{
