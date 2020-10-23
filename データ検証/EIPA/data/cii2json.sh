@@ -21,7 +21,7 @@ exec 2>log/${0##*/}.$$.log
 #               also replaces \ with \\
 # CII_exampleN.xml
 parsrx.sh -n -lf cii/CII_"$1".xml |
-awk '/\/rsm:CrossIndustryInvoice[^ ]+ [a-zA-Z0-9]/{print}' > log/"$1"_filtered.txt
+awk '/\/rsm:CrossIndustryInvoice[^ ]+ [a-zA-Z0-9\-]/{print}' > log/"$1"_filtered.txt
 cat log/"$1"_filtered.txt |
 sed -e 's/\//$./' | sed -e 's/\//\./g' > log/"$1"_filtered2.txt
 cat log/"$1"_filtered2.txt |

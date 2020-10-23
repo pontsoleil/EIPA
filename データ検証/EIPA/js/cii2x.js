@@ -434,10 +434,12 @@ var eipa = (function() {
         en['BG-16'].val['BG-17'].val['BT-85'] = {
           name: 'Payment account name', val: PayeePartyCreditorFinancialAccount['ram:AccountName']};
       }
-      if (SpecifiedTradeSettlementPaymentMeans['ram:PayeeSpecifiedCreditorFinancialInstitution']) {
+      var PayeeSpecifiedCreditorFinancialInstitution = SpecifiedTradeSettlementPaymentMeans['ram:PayeeSpecifiedCreditorFinancialInstitution'];
+      if (PayeeSpecifiedCreditorFinancialInstitution) {
+        PayeeSpecifiedCreditorFinancialInstitution = PayeeSpecifiedCreditorFinancialInstitution[0];
         en['BG-16'].val['BG-17'].val['BT-86'] = {
           name: 'Payment service provider identifier',
-          val: SpecifiedTradeSettlementPaymentMeans['ram:PayeeSpecifiedCreditorFinancialInstitution'][0]['ram:BICID']};
+          val: PayeeSpecifiedCreditorFinancialInstitution['ram:BICID']};
       }
       // en['BG-16'].val['BT-86'] = {name: 'Payment service provider identifier', val: SpecifiedTradeSettlementPaymentMeans['ram:PayeeSpecifiedCreditorFinancialInstitution'][0]['ram:BICID']};
       var ApplicableTradeSettlementFinancialCard = SpecifiedTradeSettlementPaymentMeans['ram:ApplicableTradeSettlementFinancialCard'];
@@ -452,18 +454,23 @@ var eipa = (function() {
           val: ApplicableTradeSettlementFinancialCard['ram:CardholderName']};
       }
       en['BG-16'].val['BG-19'] = {name: 'DIRECT DEBIT', val: []};//, val: SupplyChainTradeTransaction['ram:ApplicableHeaderTradeSettlement']};
-      if (ApplicableHeaderTradeSettlement['ram:SpecifiedTradePaymentTerms']) {
+      var SpecifiedTradePaymentTerms = ApplicableHeaderTradeSettlement['ram:SpecifiedTradePaymentTerms'];
+      if (SpecifiedTradePaymentTerms) {
+        SpecifiedTradePaymentTerms = SpecifiedTradePaymentTerms[0];
         en['BG-16'].val['BG-19'].val['BT-89'] = {
           name: 'Mandate reference identifier',
-          val: ApplicableHeaderTradeSettlement['ram:SpecifiedTradePaymentTerms'][0]['ram:DirectDebitMandatelD']};
+          val: SpecifiedTradePaymentTerms['ram:DirectDebitMandatelD']};
       }
       en['BG-16'].val['BG-19'].val['BT-90'] = {
         name: 'Bank assigned creditor identifier',
-        val: ApplicableHeaderTradeSettlement['ram:CreditorReferenceID']};
-      if (SpecifiedTradeSettlementPaymentMeans['ram:PayerPartyDebtorFinancialAccount']) {
+        val: ApplicableHeaderTradeSettlement['ram:CreditorReferenceID']
+      };
+      var PayerPartyDebtorFinancialAccount = SpecifiedTradeSettlementPaymentMeans['ram:PayerPartyDebtorFinancialAccount'];
+      if (PayerPartyDebtorFinancialAccount) {
+        PayerPartyDebtorFinancialAccount = PayerPartyDebtorFinancialAccount[0];
         en['BG-16'].val['BG-19'].val['BT-91'] = {
           name: 'Debited account identifier',
-          val: SpecifiedTradeSettlementPaymentMeans['ram:PayerPartyDebtorFinancialAccount'][0]['ram:IBANID']};
+          val: PayerPartyDebtorFinancialAccount['ram:IBANID']};
       }
     }
     // DOCUMENT LEVEL ALLOWANCES
@@ -473,11 +480,14 @@ var eipa = (function() {
       en['BG-20'] = {name: 'DOCUMENT LEVEL ALLOWANCES', val: []};//, val: ApplicableHeaderTradeSettlement['ram:SpecifiedTradeA]lowanceCharge']};
       en['BG-20'].val['BT-92'] = {
         name: 'Document level allowance amount',
-        val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']};
-      if (ApplicableHeaderTradeSettlement['ramiSpecifiedTradeAllowanceCharge']) {
+        val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']
+      };
+      var SpecifiedTradeAllowanceCharge = ApplicableHeaderTradeSettlement['ram:SpecifiedTradeAllowanceCharge'];
+      if (SpecifiedTradeAllowanceCharge) {
+        SpecifiedTradeAllowanceCharge = SpecifiedTradeAllowanceCharge[0];
         en['BG-20'].val['BT-93'] = {
           name: 'Document level allowance base amount',
-          val: ApplicableHeaderTradeSettlement['ramiSpecifiedTradeAllowanceCharge'][0]['ram:BasisAmount']};
+          val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']};
       }
       en['BG-20'].val['BT-94'] = {
         name: 'Document level allowance percentage',
@@ -487,42 +497,54 @@ var eipa = (function() {
         CategoryTradeTax = CategoryTradeTax[0];
         en['BG-20'].val['BT-95'] = {
           name: 'Document level allowance VAT category code',
-          val: CategoryTradeTax['ram:TypeCode']};
+          val: CategoryTradeTax['ram:TypeCode']
+        };
         // en['BT-95'] = {name: 'Document level allowance VAT category code', val: CategoryTradeTax['ram:CategoryCode']};
         en['BG-20'].val['BT-96'] = {
           name: 'Document level allowance VAT rate',
-          val: CategoryTradeTax['ram:RateApplicablePercent']};
+          val: CategoryTradeTax['ram:RateApplicablePercent']
+        };
         en['BG-20'].val['BT-97'] = {
           name: 'Document level allowance reason',
-          val: SpecifiedTradeAllowanceCharge['ram:Reason']};
+          val: SpecifiedTradeAllowanceCharge['ram:Reason']
+        };
         en['BG-20'].val['BT-98'] = {
           name: 'Document level allowance reason code',
-          val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']};
+          val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']
+        };
         en['BG-21'] = {name: 'DOCUMENT LEVEL CHARGES', val: []};//, val: ApplicableHeaderTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
         en['BG-21'].val['BT-99'] = {
           name: 'Document level charge amount',
-          val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']};
+          val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']
+        };
         en['BG-21'].val['BT-100'] = {
           name: 'Document level charge base amount',
-          val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']};
+          val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']
+        };
         en['BG-21'].val['BT-101'] = {
           name: 'Document level charge percentage',
-          val: SpecifiedTradeAllowanceCharge['ram:CalculationPercent']};
+          val: SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
+        };
         en['BG-21'].val['BT-102'] = {
           name: 'Document level charge VAT category code',
-          val: CategoryTradeTax['ram:TypeCode']};
+          val: CategoryTradeTax['ram:TypeCode']
+        };
         en['BG-21'].val['BT-102'] = {
           name: 'Document level charge VAT category code',
-          val: CategoryTradeTax['ram:CategoryCode']};
+          val: CategoryTradeTax['ram:CategoryCode']
+        };
         en['BG-21'].val['BT-103'] = {
           name: 'Document level charge VAT rate',
-          val: CategoryTradeTax['ram:RateApplicablePercent']};
+          val: CategoryTradeTax['ram:RateApplicablePercent']
+        };
         en['BG-21'].val['BT-104'] = {
           name: 'Document level charge reason',
-          val: SpecifiedTradeAllowanceCharge['ram:Reason']};
+          val: SpecifiedTradeAllowanceCharge['ram:Reason']
+        };
         en['BG-21'].val['BT-105'] = {
           name: 'Document level charge reason code',
-          val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']};
+          val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']
+        };
       }
     }
     // DOCUMENT TOTALS
@@ -532,63 +554,88 @@ var eipa = (function() {
       en['BG-22'] = {name: 'DOCUMENT TOTALS', val: []};//, val: ApplicableHeaderTradeSettlement['ram:SpecifiedTradeSettlementHeaderMonetarySummation']};
       en['BG-22'].val['BT-106'] = {
         name: 'Sum of Invoice line net amount',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:LineTotalAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:LineTotalAmount']
+      };
       en['BG-22'].val['BT-107'] = {
-        name: 'Sum of allowances on document level', val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:AllowanceTotalAmount']};
+        name: 'Sum of allowances on document level',
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:AllowanceTotalAmount']
+      };
       en['BG-22'].val['BT-108'] = {
         name: 'Sum of charges on document level',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:ChargeTotalAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:ChargeTotalAmount']
+      };
       en['BG-22'].val['BT-109'] = {
         name: 'Invoice total amount without VAT',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TaxBasisTotalAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TaxBasisTotalAmount']
+      };
       en['BG-22'].val['BT-110'] = {
         name: 'Invoice total VAT amount',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TaxTotalAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TaxTotalAmount']
+      };
       en['BG-22'].val['BT-111'] = {
         name: 'Invoice total VAT amount in accounting currency',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TaxTotalAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TaxTotalAmount']
+      };
       en['BG-22'].val['BT-112'] = {
         name: 'Invoice total amount with VAT',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:GrandTotalAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:GrandTotalAmount']
+      };
       en['BG-22'].val['BT-113'] = {
         name: 'Paid amount',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TotalPrepaidAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:TotalPrepaidAmount']
+      };
       en['BG-22'].val['BT-114'] = {
         name: 'Rounding amount',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:RoundingAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:RoundingAmount']
+      };
       en['BG-22'].val['BT-115'] = {
         name: 'Amount due for payment',
-        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:DuePayableAmount']};
+        val: SpecifiedTradeSettlementHeaderMonetarySummation['ram:DuePayableAmount']
+      };
     }
     // VAT BREAKDOWN
     if (ApplicableTradeTax) {
       en['BG-23'] = {name: 'VAT BREAKDOWN', val: []};//, val: ApplicableHeaderTradeSettlement['ram:ApplicableTradeTax']};
       en['BG-23'].val['BT-116'] = {
-        name: 'VAT category taxable amount', val: ApplicableTradeTax['ram:BasisAmount']};
+        name: 'VAT category taxable amount', val: ApplicableTradeTax['ram:BasisAmount']
+      };
       en['BG-23'].val['BT-117'] = {
-        name: 'VAT category tax amount', val: ApplicableTradeTax['ram:CalculatedAmount']};
+        name: 'VAT category tax amount', val: ApplicableTradeTax['ram:CalculatedAmount']
+      };
       en['BG-23'].val['BT-118'] = {
-        name: 'VAT category code', val: ApplicableTradeTax['ram:TypeCode']};
+        name: 'VAT category code', val: ApplicableTradeTax['ram:TypeCode']
+      };
       // en['BT-118'] = {name: 'VAT category code', val: SupplyChainTradeTransaction['ram:ApplicableHeaderTradeSettIement'][0]['ram:ApplicableTradeTax'][0]['ram:CategoryCode']};
       en['BG-23'].val['BT-119'] = {
-        name: 'VAT category rate', val: ApplicableTradeTax['ram:RateApplicablePercent']};
+        name: 'VAT category rate', val: ApplicableTradeTax['ram:RateApplicablePercent']
+      };
       en['BG-23'].val['BT-120'] = {
-        name: 'VAT exemption reason text', val: ApplicableTradeTax['ram:ExemptionReason']};
+        name: 'VAT exemption reason text', val: ApplicableTradeTax['ram:ExemptionReason']
+      };
       en['BG-23'].val['BT-121'] = {
-        name: 'VAT exemption reason code', val: ApplicableTradeTax['ram:ExemptionReasonCode']};
+        name: 'VAT exemption reason code', val: ApplicableTradeTax['ram:ExemptionReasonCode']
+      };
     }
     // ADDITIONAL SUPPORTING DOCUMENTS
     if (AdditionalReferencedDocument) {
       en['BG-24'] = {name: 'ADDITIONAL SUPPORTING DOCUMENTS', val: []};//, val: ApplicableHeaderTradeAgreement['ram:AdditionalReferencedDocument']};
       en['BG-24'].val['BT-122'] = {
-        name: 'Supportin g document reference', val: AdditionalReferencedDocument['ram:IssuerAssignedID']};
+        name: 'Supportin g document reference',
+        val: AdditionalReferencedDocument['ram:IssuerAssignedID']
+      };
       // en['BT-122'] = {name: 'Supportin g document reference', val: AdditionalReferencedDocument['ram:TypeCode']};
       en['BG-24'].val['BT-123'] = {
-        name: 'Supportin g document description', val: AdditionalReferencedDocument['ram:Name']};
+        name: 'Supportin g document description',
+        val: AdditionalReferencedDocument['ram:Name']
+      };
       en['BG-24'].val['BT-124'] = {
-        name: 'External document location', val: AdditionalReferencedDocument['ram:URIID']};
+        name: 'External document location',
+        val: AdditionalReferencedDocument['ram:URIID']
+      };
       en['BG-24'].val['BT-125'] = {
-        name: 'Attached document', val: AdditionalReferencedDocument['ram:AttachmentBinaryObject']};
+        name: 'Attached document',
+        val: AdditionalReferencedDocument['ram:AttachmentBinaryObject']
+      };
       // en['BT-125'] = {name: 'Attached document Mime code', val: AdditionalReferencedDocument['ram:AttachmentBinaryObject/@mimeCode']};
       // en['BT-125'] = {name: 'Attached document Filename', val: CrossIndustryInvoice['rsm:SuppIyChainTradeTransaction'][0]['ram:ApplicableHeaderTradeAgreement'][0]['ram:AdditionalReferencedDocument'][0]['ram:AttachmentBinaryObject/@filename']};
     }
@@ -598,13 +645,13 @@ var eipa = (function() {
       en['BG-25'] = {name: 'INVOICE LINE', val: []};//, val: SupplyChainTradeTransaction['ram:IncludedSupplyChainTradeLineltem']};
       for (var i = 0; i < IncludedSupplyChainTradeLineItems.length; i++) {
         var IncludedSupplyChainTradeLineItem = IncludedSupplyChainTradeLineItems[i];
-        var bg_25 = {};
+        var BG_25 = {};
         var AssociatedDocumentLineDocuments = IncludedSupplyChainTradeLineItem['ram:AssociatedDocumentLineDocument'];
         if (AssociatedDocumentLineDocuments) {
           var AssociatedDocumentLineDocument = AssociatedDocumentLineDocuments[0];
-          bg_25['BT-126'] = {name: 'Invoice line identifier', val: AssociatedDocumentLineDocument['ram:LineID']};
+          BG_25['BT-126'] = {name: 'Invoice line identifier', val: AssociatedDocumentLineDocument['ram:LineID']};
           if (AssociatedDocumentLineDocument['ram:IncludedNote']) {
-            bg_25['BT-127'] = {
+            BG_25['BT-127'] = {
               name: 'Invoice line note',
               val: AssociatedDocumentLineDocument['ram:IncludedNote'][0]['ram:Content']};
           }
@@ -615,7 +662,7 @@ var eipa = (function() {
           var AdditionalReferencedDocument = SpecifiedLineTradeSettlement['ram:AdditionalReferencedDocument'];
           if (AdditionalReferencedDocument) {
             AdditionalReferencedDocument = AdditionalReferencedDocument[0];
-            bg_25['BT-128'] = {
+            BG_25['BT-128'] = {
               name: 'Invoice line object identifier',
               val: AdditionalReferencedDocument['ram:IssuerAssignedID']};
           }
@@ -625,164 +672,218 @@ var eipa = (function() {
         var SpecifiedLineTradeDeliveries = IncludedSupplyChainTradeLineItem['ram:SpecifiedLineTradeDelivery'];
         if (SpecifiedLineTradeDeliveries) {
           var SpecifiedLineTradeDelivery = SpecifiedLineTradeDeliveries[0];
-          bg_25['BT-129'] = {
+          BG_25['BT-129'] = {
             name: 'Invoiced quantity', val: SpecifiedLineTradeDelivery['ram:BilledQuantity']};
-          bg_25['BT-130'] = {
+          BG_25['BT-130'] = {
             name: 'Invoiced quantity unit of measure',
             val: SpecifiedLineTradeDelivery['ram:BilledQuantity']};//@unitCode']};
         }
-        if (SpecifiedLineTradeSettlement['ram:SpecifiedTradeSettlementLineMonetarySummation']) {
-          bg_25['BT-131'] = {
+        var SpecifiedTradeSettlementLineMonetarySummations = SpecifiedLineTradeSettlement['ram:SpecifiedTradeSettlementLineMonetarySummation'];
+        if (SpecifiedTradeSettlementLineMonetarySummations) {
+          var SpecifiedTradeSettlementLineMonetarySummation = SpecifiedTradeSettlementLineMonetarySummations[0];
+          BG_25['BT-131'] = {
             name: 'Invoice line net amount',
-            val: SpecifiedLineTradeSettlement['ram:SpecifiedTradeSettlementLineMonetarySummation'][0]['ram:LineTotalAmount']};
+            val: SpecifiedTradeSettlementLineMonetarySummation['ram:LineTotalAmount']};
         }
-        var SpecifiedLineTradeAgreement = IncludedSupplyChainTradeLineItem['ram:SpecifiedLineTradeAgreement'];
-        if (SpecifiedLineTradeAgreement) {
-          SpecifiedLineTradeAgreement = SpecifiedLineTradeAgreement[0];
-          if (SpecifiedLineTradeAgreement['ram:BuyerOrderReferencedDocument']) {
-            bg_25['BT-132'] = {
+        var SpecifiedLineTradeAgreements = IncludedSupplyChainTradeLineItem['ram:SpecifiedLineTradeAgreement'];
+        if (SpecifiedLineTradeAgreements) {
+          var SpecifiedLineTradeAgreement = SpecifiedLineTradeAgreements[0];
+          var BuyerOrderReferencedDocuments = SpecifiedLineTradeAgreement['ram:BuyerOrderReferencedDocument'];
+          if (BuyerOrderReferencedDocuments) {
+            var BuyerOrderReferencedDocument = BuyerOrderReferencedDocuments[0];
+            BG_25['BT-132'] = {
               name: 'Referenced purchase order line reference',
-              val: SpecifiedLineTradeAgreement['ram:BuyerOrderReferencedDocument'][0]['ram:LineID']};
+              val: BuyerOrderReferencedDocument['ram:LineID']
+            };
           }
         }
-        if (SpecifiedLineTradeSettlement['ram:ReceivableSpecifiedTradeAccountingAccount']) {
-          bg_25['BT-133'] = {
+        var ReceivableSpecifiedTradeAccountingAccounts = SpecifiedLineTradeSettlement['ram:ReceivableSpecifiedTradeAccountingAccount'];
+        if (ReceivableSpecifiedTradeAccountingAccounts) {
+          var ReceivableSpecifiedTradeAccountingAccount = ReceivableSpecifiedTradeAccountingAccounts[0];
+          BG_25['BT-133'] = {
             name: 'Invoice line Buyer accounting reference',
-            val: SpecifiedLineTradeSettlement['ram:ReceivableSpecifiedTradeAccountingAccount'][0]['ram:ID']};
+            val: ReceivableSpecifiedTradeAccountingAccount['ram:ID']
+          };
         }
         var BillingSpecifiedPeriods = SpecifiedLineTradeSettlement['ram:BillingSpecifiedPeriod'];
         if (BillingSpecifiedPeriods) {
           var BillingSpecifiedPeriod = BillingSpecifiedPeriods[0];
-          bg_25['BG-26'] = {name: 'INVOICE LINE PERIOD', val: []};//, val: SpecifiedLineTradeSettlement['ram:BillingSpecifiedPeriod']};
-          bg_25['BG-26'].val['BT-134'] = {
+          BG_25['BG-26'] = {name: 'INVOICE LINE PERIOD', val: []};//, val: SpecifiedLineTradeSettlement['ram:BillingSpecifiedPeriod']};
+          BG_25['BG-26'].val['BT-134'] = {
             name: 'Invoice line period start date',
-            val: BillingSpecifiedPeriod['ram:StartDateTime'][0]['udt:DateTimeString']};
-          // bg_25['BT-134'] = {name: 'Invoice line period start date', val: SupplyChainTradeTransaction['ram:IncludedSupplyChainTradeLineltem/ranrSpecifiedLineTradeSettlement'][0]['ram:BillingSpecifiedPeriod'][0]['ram:StartDateTime'][0]['udt:DateTimeString/@format']};
-          bg_25['BG-26'].val['BT-135'] = {
+            val: BillingSpecifiedPeriod['ram:StartDateTime'][0]['udt:DateTimeString']
+          };
+          // BG_25['BT-134'] = {name: 'Invoice line period start date', val: SupplyChainTradeTransaction['ram:IncludedSupplyChainTradeLineltem/ranrSpecifiedLineTradeSettlement'][0]['ram:BillingSpecifiedPeriod'][0]['ram:StartDateTime'][0]['udt:DateTimeString/@format']};
+          BG_25['BG-26'].val['BT-135'] = {
             name: 'Invoice line period end date',
-            val: BillingSpecifiedPeriod['ram:EndDateTime'][0]['udt:DateTimeString']};
-          // bg_25['BT-135'] = {name: 'Invoice line period end date', val: BillingSpecifiedPeriod['ram:EndDateTime'][0]['udt:DateTimeString/@format']};
+            val: BillingSpecifiedPeriod['ram:EndDateTime'][0]['udt:DateTimeString']
+          };
+          // BG_25['BT-135'] = {name: 'Invoice line period end date', val: BillingSpecifiedPeriod['ram:EndDateTime'][0]['udt:DateTimeString/@format']};
         }
         var SpecifiedTradeAllowanceCharges = SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge'];
         if (SpecifiedTradeAllowanceCharges) {
           var SpecifiedTradeAllowanceCharge = SpecifiedTradeAllowanceCharges[0];
-          bg_25['BG-27'] = {name: 'INVOICE LINE ALLOWANCES', val: []};//, val: SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
-          bg_25['BG-27'].val['BT-136'] = {
+          BG_25['BG-27'] = {name: 'INVOICE LINE ALLOWANCES', val: []};//, val: SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
+          BG_25['BG-27'].val['BT-136'] = {
             name: 'Invoice line allowance amount',
-            val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']};
-          bg_25['BG-27'].val['BT-137'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']
+          };
+          BG_25['BG-27'].val['BT-137'] = {
             name: 'Invoice line allowance base amount',
-            val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']};
-          bg_25['BG-27'].val['BT-138'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']
+          };
+          // var SpecifiedTradeAllowanceCharge = SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge'];
+          BG_25['BG-27'].val['BT-138'] = {
             name: 'Invoice line allowance percentage',
-            val: SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge'][0]['ram:CalculationPercent']};
-          bg_25['BG-27'].val['BT-139'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
+          };
+          BG_25['BG-27'].val['BT-139'] = {
             name: 'Invoice line allowance reason',
-            val: SpecifiedTradeAllowanceCharge['ram:Reason']};
-          bg_25['BG-27'].val['BT-140'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:Reason']
+          };
+          BG_25['BG-27'].val['BT-140'] = {
             name: 'Invoice line allowance reason code',
-            val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']};
-          bg_25['BG-28'] = {name: 'INVOICE LINE CHARGES', val: []};//, val: SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
-          bg_25['BG-28'].val['BT-141'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']
+          };
+          BG_25['BG-28'] = {name: 'INVOICE LINE CHARGES', val: []};//, val: SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
+          BG_25['BG-28'].val['BT-141'] = {
             name: 'Invoice line charge amount',
-            val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']};
-          bg_25['BG-28'].val['BT-142'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:ActualAmount']
+          };
+          BG_25['BG-28'].val['BT-142'] = {
             name: 'Invoice line charge base amount',
-            val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']};
-          bg_25['BG-28'].val['BT-143'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:BasisAmount']
+          };
+          BG_25['BG-28'].val['BT-143'] = {
             name: 'Invoice line charge percentage',
-            val: SpecifiedTradeAllowanceCharge['ram:CalculationPercent']};
-          bg_25['BG-28'].val['BT-144'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
+          };
+          BG_25['BG-28'].val['BT-144'] = {
             name: 'Invoice line charge reason',
-            val: SpecifiedTradeAllowanceCharge['ram:Reason']};
-          bg_25['BG-28'].val['BT-145'] = {
+            val: SpecifiedTradeAllowanceCharge['ram:Reason']
+          };
+          BG_25['BG-28'].val['BT-145'] = {
             name: 'Invoice line charge reason code',
-            val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']};
+            val: SpecifiedTradeAllowanceCharge['ram:ReasonCode']
+          };
         }
         if (SpecifiedLineTradeAgreement) {
-          var NetPriceProductTradePrice = SpecifiedLineTradeAgreement['ram:NetPriceProductTradePrice'];
-          if (NetPriceProductTradePrice) {
-            NetPriceProductTradePrice = NetPriceProductTradePrice[0];
+          var NetPriceProductTradePrices = SpecifiedLineTradeAgreement['ram:NetPriceProductTradePrice'];
+          var NetPriceProductTradePrices, GrossPriceProductTradePrice;
+          if (NetPriceProductTradePrices) {
+            NetPriceProductTradePrice = NetPriceProductTradePrices[0];
           }
-          var GrossPriceProductTradePrice = SpecifiedLineTradeAgreement['ram:GrossPriceProductTradePrice'];
-          if (GrossPriceProductTradePrice) {
-            GrossPriceProductTradePrice = GrossPriceProductTradePrice[0];
+          var GrossPriceProductTradePrices = SpecifiedLineTradeAgreement['ram:GrossPriceProductTradePrice'];
+          if (GrossPriceProductTradePrices) {
+            GrossPriceProductTradePrice = GrossPriceProductTradePrices[0];
           }
           if (NetPriceProductTradePrice || GrossPriceProductTradePrice) {
-            bg_25['BG-29'] = {name: 'PRICE DETAILS', val: []};//, val: IncludedSupplyChainTradeLineItem['ram:SpecifiedLineTradeAgreement']};
+            BG_25['BG-29'] = {name: 'PRICE DETAILS', val: []};//, val: IncludedSupplyChainTradeLineItem['ram:SpecifiedLineTradeAgreement']};
           }
           if (NetPriceProductTradePrice) {
-            bg_25['BG-29'].val['BT-146'] = {
-              name: 'Item price', val: NetPriceProductTradePrice['ram:ChargeAmount']};
+            BG_25['BG-29'].val['BT-146'] = {
+              name: 'Item price',
+              val: NetPriceProductTradePrice['ram:ChargeAmount']
+            };
           }
           if (GrossPriceProductTradePrice) {
-            if (GrossPriceProductTradePrice['ram:AppliedTradeAllowanceCharge']) {
-              bg_25['BG-29'].val['BT-147'] = {
+            var AppliedTradeAllowanceCharge = GrossPriceProductTradePrice['ram:AppliedTradeAllowanceCharge'];
+            if (AppliedTradeAllowanceCharge) {
+              BG_25['BG-29'].val['BT-147'] = {
                 name: 'Item price discount',
-                val: GrossPriceProductTradePrice['ram:AppliedTradeAllowanceCharge'][0]['ram:ActualAmount']};
+                val: AppliedTradeAllowanceCharge['ram:ActualAmount']}
+                ;
             }
-            bg_25['BG-29'].val['BT-148'] = {
+            BG_25['BG-29'].val['BT-148'] = {
               name: 'Item gross price',
-              val: GrossPriceProductTradePrice['ram:ChargeAmount']};
-            bg_25['BG-29'].val['BT-149'] = {
-              name: 'Item price base quantity', val: GrossPriceProductTradePrice['ram:BasisQuantity']};
-            // bg_25['BT-149'] = {name: 'Item price base quantity', val: SupplyChainTradeTransaction['ram:IncludedSupplyChainTradeLineltem'][0]['ramrSpecifiedLineTradeAgreement'][0]['ram:NetPriceProductTradePrice'][0]['ram:BasisQuantity']};
-            bg_25['BG-29'].val['BT-150'] = {
+              val: GrossPriceProductTradePrice['ram:ChargeAmount']
+            };
+            BG_25['BG-29'].val['BT-149'] = {
+              name: 'Item price base quantity',
+              val: GrossPriceProductTradePrice['ram:BasisQuantity']
+            };
+            // BG_25['BT-149'] = {name: 'Item price base quantity', val: SupplyChainTradeTransaction['ram:IncludedSupplyChainTradeLineltem'][0]['ramrSpecifiedLineTradeAgreement'][0]['ram:NetPriceProductTradePrice'][0]['ram:BasisQuantity']};
+            BG_25['BG-29'].val['BT-150'] = {
               name: 'Item price base quantity unit of measure code',
-              val: GrossPriceProductTradePrice['ram:BasisQuantity']};///@unitCode']};
+              val: GrossPriceProductTradePrice['ram:BasisQuantity']
+            };///@unitCode']};
           }
         }
-        var ApplicableTradeTax = SpecifiedLineTradeSettlement['ram:ApplicableTradeTax'];
-        if (ApplicableTradeTax) {
-          ApplicableTradeTax = ApplicableTradeTax[0];
-          bg_25['BG-30'] = {name: 'LINE VAT INFORMATION', val: []};//, val: SpecifiedLineTradeSettlement['ram:ApplicableTradeTax']};
-          bg_25['BG-30'].val['BT-151'] = {
-            name: 'Invoiced bg_25 VAT category code', val: ApplicableTradeTax['ram:TypeCode']};
-          // bg_25['BT-151'] = {name: 'Invoiced item VAT category code', val: ApplicableTradeTax['ram:CategoryCode']};
-          bg_25['BG-30'].val['BT-152'] = {
-            name: 'Invoiced item VAT rate', val: ApplicableTradeTax['ram:RateApplicablePercent']};
+        var ApplicableTradeTaxes = SpecifiedLineTradeSettlement['ram:ApplicableTradeTax'];
+        if (ApplicableTradeTaxes) {
+          var ApplicableTradeTax = ApplicableTradeTaxes[0];
+          BG_25['BG-30'] = {name: 'LINE VAT INFORMATION', val: []};//, val: SpecifiedLineTradeSettlement['ram:ApplicableTradeTax']};
+          BG_25['BG-30'].val['BT-151'] = {
+            name: 'Invoiced BG_25 VAT category code',
+            val: ApplicableTradeTax['ram:TypeCode']
+          };
+          // BG_25['BT-151'] = {name: 'Invoiced item VAT category code', val: ApplicableTradeTax['ram:CategoryCode']};
+          BG_25['BG-30'].val['BT-152'] = {
+            name: 'Invoiced item VAT rate',
+            val: ApplicableTradeTax['ram:RateApplicablePercent']
+          };
         }
-        var SpecifiedTradeProduct = IncludedSupplyChainTradeLineItem['ram:SpecifiedTradeProduct']
-        if (SpecifiedTradeProduct) {
-          SpecifiedTradeProduct = SpecifiedTradeProduct[0];
-          bg_25['BG-31'] = {name: 'ITEM INFORMATION', val: []};//, val: IncludedSupplyChainTradeLineItem['ram:SpecifiedTradeProduct']};
-          bg_25['BG-31'].val['BT-153'] = {
-            name: 'Item name', val: SpecifiedTradeProduct['ram:Name']};
-          bg_25['BG-31'].val['BT-154'] = {
-            name: 'Item description', val: SpecifiedTradeProduct['ram:Description']};
-          bg_25['BG-31'].val['BT-155'] = {
-            name: 'Item Seller&quots identifier', val: SpecifiedTradeProduct['ram:SellerAssignedID']};
-          bg_25['BG-31'].val['BT-156'] = {
-            name: 'Item Buyer&quots identifier', val: SpecifiedTradeProduct['ram:BuyerAssignedID']};
-          bg_25['BG-31'].val['BT-157'] = {
-            name: 'Item standard identifier', val: SpecifiedTradeProduct['ram:GlobalID']};
-          // bg_25['BT-157'] = {name: 'Item standard identifier identificati on scheme  identifier', val: CrossIndustryInvoice['rsm:Supp]yChainTradeTransaction'][0]['ram:IncludedSupplyChainTradeLineItem'][0]['ram:SpecifiedTradeProduct'][0]['ram:GlobalID/@schemeID']};
-          var DesignatedProductClassification = SpecifiedTradeProduct['ram:DesignatedProductClassification'];
-          if (DesignatedProductClassification) {
-            DesignatedProductClassification = DesignatedProductClassification[0];
-            bg_25['BG-31'].val['BT-158'] = {
-              name: 'Item classificati on identifier', val: DesignatedProductClassification['ram:ClassCode']};
-            bg_25['BG-31'].val['BT-158'] = {
-              name: 'Item classificati on identifier identificati on  scheme identifier', val: DesignatedProductClassification['ram:ClassCode']};///@listID']};
+        var SpecifiedTradeProducts = IncludedSupplyChainTradeLineItem['ram:SpecifiedTradeProduct']
+        if (SpecifiedTradeProducts) {
+          var SpecifiedTradeProduct = SpecifiedTradeProducts[0];
+          BG_25['BG-31'] = {name: 'ITEM INFORMATION', val: []};//, val: IncludedSupplyChainTradeLineItem['ram:SpecifiedTradeProduct']};
+          BG_25['BG-31'].val['BT-153'] = {
+            name: 'Item name',
+            val: SpecifiedTradeProduct['ram:Name']
+          };
+          BG_25['BG-31'].val['BT-154'] = {
+            name: 'Item description',
+            val: SpecifiedTradeProduct['ram:Description']
+          };
+          BG_25['BG-31'].val['BT-155'] = {
+            name: 'Item Seller&quots identifier',
+            val: SpecifiedTradeProduct['ram:SellerAssignedID']
+          };
+          BG_25['BG-31'].val['BT-156'] = {
+            name: 'Item Buyer&quots identifier',
+            val: SpecifiedTradeProduct['ram:BuyerAssignedID']
+          };
+          BG_25['BG-31'].val['BT-157'] = {
+            name: 'Item standard identifier',
+            val: SpecifiedTradeProduct['ram:GlobalID']
+          };
+          // BG_25['BT-157'] = {name: 'Item standard identifier identificati on scheme  identifier', val: CrossIndustryInvoice['rsm:Supp]yChainTradeTransaction'][0]['ram:IncludedSupplyChainTradeLineItem'][0]['ram:SpecifiedTradeProduct'][0]['ram:GlobalID/@schemeID']};
+          var DesignatedProductClassifications = SpecifiedTradeProduct['ram:DesignatedProductClassification'];
+          if (DesignatedProductClassifications) {
+            var DesignatedProductClassification = DesignatedProductClassifications[0];
+            BG_25['BG-31'].val['BT-158'] = {
+              name: 'Item classificati on identifier',
+              val: DesignatedProductClassification['ram:ClassCode']
+            };
+            BG_25['BG-31'].val['BT-158'] = {
+              name: 'Item classificati on identifier identificati on  scheme identifier',
+              val: DesignatedProductClassification['ram:ClassCode']
+            };///@listID']};
           }
-          // bg_25['BT-158'] = {name: 'Scheme version identifer', val: SpecifiedTradeProduct['ram:DesignatedProductClassification'][0]['ram:ClassCode/@listVersionID']};
-          var OriginTradeCountry = SpecifiedTradeProduct['ram:OriginTradeCountry'];
-          if (OriginTradeCountry) {
-            OriginTradeCountry = OriginTradeCountry[0];
-            bg_25['BG-31'].val['BT-159'] = {
-              name: 'Item country of origin', val: OriginTradeCountry['ram:ID']};
+          // BG_25['BT-158'] = {name: 'Scheme version identifer', val: SpecifiedTradeProduct['ram:DesignatedProductClassification'][0]['ram:ClassCode/@listVersionID']};
+          var OriginTradeCountries = SpecifiedTradeProduct['ram:OriginTradeCountry'];
+          if (OriginTradeCountries) {
+            var OriginTradeCountry = OriginTradeCountries[0];
+            BG_25['BG-31'].val['BT-159'] = {
+              name: 'Item country of origin',
+              val: OriginTradeCountry['ram:ID']
+            };
           }
-          var ApplicableProductCharacteristic = SpecifiedTradeProduct['ram:ApplicableProductCharacteristic'];
-          if (ApplicableProductCharacteristic) {
-            ApplicableProductCharacteristic = ApplicableProductCharacteristic[0];
-            bg_25['BG-32'] = {name: 'ITEM ATTRIBUTES', val: []};//, val: SpecifiedTradeProduct['ram:ApplicableProductCharacteristic']};
-            bg_25['BG-32'].val['BT-160'] = {
-              name: 'Item attribute name', val: ApplicableProductCharacteristic['ram:Description']};
-            bg_25['BG-32'].val['BT-161'] = {
-              name: 'Item attribute value', val: ApplicableProductCharacteristic['ram:Value']};
+          var ApplicableProductCharacteristics = SpecifiedTradeProduct['ram:ApplicableProductCharacteristic'];
+          if (ApplicableProductCharacteristics) {
+            var ApplicableProductCharacteristic = ApplicableProductCharacteristics[0];
+            BG_25['BG-32'] = {name: 'ITEM ATTRIBUTES', val: []};//, val: SpecifiedTradeProduct['ram:ApplicableProductCharacteristic']};
+            BG_25['BG-32'].val['BT-160'] = {
+              name: 'Item attribute name',
+              val: ApplicableProductCharacteristic['ram:Description']
+            };
+            BG_25['BG-32'].val['BT-161'] = {
+              name: 'Item attribute value',
+              val: ApplicableProductCharacteristic['ram:Value']
+            };
           }
         }
-        en['BG-25'].val.push(bg_25);
+        en['BG-25'].val.push(BG_25);
       }
     }
     return en;
@@ -984,14 +1085,13 @@ var eipa = (function() {
         element.appendChild(text);
         element.setAttribute('contextRef', contextText);
         xbrl.appendChild(element);
-        var key = Object.keys(item.val[0])[0];
-        var val0 = item.val[0][key];
+        // var key = Object.keys(item.val[0])[0];
+        // var val0 = item.val[0][key];
         // if (val0) {
         //   key = key.replace('@', '');
         //   element.setAttribute(key, val0);
         // }
-        console.log(name, type);
-
+        // console.log(name, type);
         break;
       }
       if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
@@ -1019,7 +1119,7 @@ var eipa = (function() {
     for (var L1key of L1keys) {
       var L1item = en[L1key];
       if (L1item.val && L1item.val.length > 0) {
-        console.log('1) key:'+L1key, 'item:', L1item);
+        // console.log('1) key:'+L1key, 'item:', L1item);
         if (L1key.match(/^BT/)) {
           createItem(xmlDoc, [/*L1key*/'BG-0', L1key], L1item);
           if ('BT-5' === L1key) {
@@ -1045,14 +1145,14 @@ var eipa = (function() {
               for (var L3key of L3keys) {
                 var L3item = L2item[L3key];
                 if (L3item.val && L3item.val.length > 0) {
-                  console.log('2) key:'+L1key+' '+L2key+' '+L3key, 'item:', L3item);
+                  // console.log('2) key:'+L1key+' '+L2key+' '+L3key, 'item:', L3item);
                   createItem(xmlDoc, [L1key, L2key, L3key], L3item);
                 }
               }
             }
             else if (L2key.match(/^BT/)) {
               if (L2item && L2item.length > 0) {
-                console.log('3) key:'+L1key+' '+L2key, 'item:', L2item);
+                // console.log('3) key:'+L1key+' '+L2key, 'item:', L2item);
                 createItem(xmlDoc, [L1key, L2key], L2item);
               }
             }
@@ -1061,7 +1161,7 @@ var eipa = (function() {
               // console.log('L3val:', L3val);
               for (var L3key in L3val) {
                 var L3item = L3val[L3key];
-                console.log('4) key:'+L1key+' '+L2key+' '+L3key, 'item:', L3item);
+                // console.log('4) key:'+L1key+' '+L2key+' '+L3key, 'item:', L3item);
                 if (L3item.val && L3item.val.length > 0) {
                   // var 
                   if (L3key.match(/^[0-9]+$/)) {
@@ -1102,6 +1202,7 @@ var eipa = (function() {
       catch(e) { console.log(e); }
     })
     .then(function(en) {
+      console.log(en);
       var xbrl = en2xbrl(en);
       return xbrl;
     })
