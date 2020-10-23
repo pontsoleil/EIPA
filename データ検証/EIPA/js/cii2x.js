@@ -980,7 +980,7 @@ var eipa = (function() {
         // }
        　console.log(name, type);
         if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
-          element.setAttribute('decimal', 'INF');
+          element.setAttribute('decimals', 'INF');
         }
         break;
       }
