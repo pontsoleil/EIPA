@@ -806,7 +806,6 @@ var eipa = (function() {
       'xmlns:xbrldi="'+xbrldi+'" '+
       'xmlns:eipa-cen="'+eipa_cen+'" '+
       'xmlns:eg="'+eg+'">'+
-      // 'xsi:schemaLocation="'+eipa_plt+' ../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31.xsd">'+
       '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/eipa-cen-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
       // <xbrll:schemaRef xlink:type="simple" xlink:href="../plt/case-c-b-m-u-e-t/eipa-plt-all-2020-12-31_5.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
       // '<xbrli:context id="now">'+
@@ -817,21 +816,13 @@ var eipa = (function() {
       //     '<xbrli:instant>'+date+'</xbrli:instant>'+
       //   '</xbrli:period>'+
       // '</xbrli:context>'+
+      '<xbrli:unit id="eur">'+
+        '<xbrli:measure>iso4217:EUR</xbrli:measure>'+
+      '</xbrli:unit>'+
+      '<xbrli:unit id="NotUsed">'+
+        '<xbrli:measure>pure</xbrli:measure>'+
+      '</xbrli:unit>'+
     '</xbrli:xbrl>';
-// context
-    /** <xbrli:context id="H50">
-          <xbrli:entity>
-            <xbrli:identifier scheme="http://www.eipa.jp/sample">SAMPLE</xbrli:identifier>
-            <xbrli:segment>
-              <xbrldi:typedMember dimension="eipa-cen:dL1Number">
-                <eipa-cen:L1Number>50</eipa-cen:L1Number>
-              </xbrldi:typedMember>
-            </xbrli:segment>
-          </xbrli:entity>
-          <xbrli:period>
-            <xbrli:instant>2020-01-01</xbrli:instant>
-          </xbrli:period>
-        </xbrli:context> */
     function appendtypedLNumber(L, ID, segment) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
           number = xmlDoc.createElementNS(eipa_cen, L+'Number'),
@@ -960,15 +951,28 @@ var eipa = (function() {
       var type = EN[name].type;
       var val = item.val;
       var element = xmlDoc.createElementNS(eipa_cen, name);
+      var match;
       switch(val.length) {
       case 1:
         var text = xmlDoc.createTextNode(item.val[0]);
+        if ('Date' === type) {
+          match = text.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
+          if (match) {
+            text = match[1]+'-'+match[2]+'-'+match[3];
+          }
+        }
         element.appendChild(text);
         element.setAttribute('contextRef', contextText);
         xbrl.appendChild(element);
         break;
       case 2:
         var text = xmlDoc.createTextNode(item.val[1]);
+        if ('Date' === type) {
+          match = text.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
+          if (match) {
+            text = match[1]+'-'+match[2]+'-'+match[3];
+          }
+        }
         element.appendChild(text);
         element.setAttribute('contextRef', contextText);
         xbrl.appendChild(element);
@@ -978,11 +982,13 @@ var eipa = (function() {
         //   key = key.replace('@', '');
         //   element.setAttribute(key, val0);
         // }
-       　console.log(name, type);
-        if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
-          element.setAttribute('decimals', 'INF');
-        }
+        console.log(name, type);
+
         break;
+      }
+      if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
+        element.setAttribute('decimals', 'INF');
+        element.setAttribute('unitRef', 'NotUsed');
       }
     }
     // ---------------------------------------------------------------
@@ -991,7 +997,7 @@ var eipa = (function() {
     var DOMP = new DOMParser();
     var xmlDoc = DOMP.parseFromString(xmlString, 'text/xml');
     var xbrl = xmlDoc.getElementsByTagNameNS(xbrli, 'xbrl')[0];
-    createL1Context(xmlDoc, ['root'], date);
+    createL1Context(xmlDoc, ['BG-0'], date);
     var L1keys = Object.keys(en);
     // console.log('L1keys', L1keys);
     var newL1key = true;
@@ -1000,7 +1006,7 @@ var eipa = (function() {
       if (L1item.val && L1item.val.length > 0) {
         console.log('1) key:'+L1key, 'item:', L1item);
         if (L1key.match(/^BT/)) {
-          createItem(xmlDoc, [L1key], L1item);
+          createItem(xmlDoc, [/*L1key*/'BG-0'], L1item);
         }
         else if (L1key.match(/^BG/)) {
           var L2val = L1item.val;
