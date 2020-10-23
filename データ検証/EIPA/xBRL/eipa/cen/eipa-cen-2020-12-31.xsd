@@ -56,32 +56,20 @@
 	<element name="dL4Number" id="eipa-cen_dL4Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#eipa-cen_L4Number"/>
 
 <!-- item type -->
-	<complexType name="rootItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-1ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BT-2ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-3ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-5ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-6ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-7ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-8ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-9ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-10ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -116,16 +104,10 @@
 	<complexType name="BT-20ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-1ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-21ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-22ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-2ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-23ItemType">
@@ -134,16 +116,7 @@
 	<complexType name="BT-24ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-3ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-25ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-26ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-4ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-27ItemType">
@@ -170,9 +143,6 @@
 	<complexType name="BT-34ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-5ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-35ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
@@ -192,10 +162,7 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-40ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-6ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-41ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -204,9 +171,6 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-43ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-7ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-44ItemType">
@@ -225,9 +189,6 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-49ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-8ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-50ItemType">
@@ -249,10 +210,7 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-55ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-9ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-56ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -261,9 +219,6 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-58ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-10ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-59ItemType">
@@ -275,16 +230,10 @@
 	<complexType name="BT-61ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-11ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-62ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-63ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-12ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-64ItemType">
@@ -306,30 +255,12 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-69ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-13ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-70ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-71ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-72ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-14ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-73ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-74ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-15ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-75ItemType">
@@ -351,21 +282,15 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-80ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-16ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-81ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-82ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-83ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-17ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-84ItemType">
@@ -377,16 +302,10 @@
 	<complexType name="BT-86ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-18ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-87ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-88ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-19ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-89ItemType">
@@ -398,110 +317,95 @@
 	<complexType name="BT-91ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-20ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-92ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-93ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-94ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-95ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-96ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-97ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-98ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-21ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-99ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-100ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-101ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-102ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-103ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-104ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-105ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-22ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-106ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-107ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-108ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-109ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-110ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-111ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-112ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-113ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-114ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-115ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-23ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-116ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-117ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-118ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-119ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-120ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-121ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-24ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-122ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -510,12 +414,6 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-124ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-125ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-25ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-126ItemType">
@@ -528,13 +426,13 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-129ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-130ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-131ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-132ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -542,80 +440,44 @@
 	<complexType name="BT-133ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
-	<complexType name="BG-26ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-134ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-135ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-27ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
 	<complexType name="BT-136ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-137ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-138ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-139ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-140ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-28ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-141ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-142ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-143ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:percentItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-144ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-145ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-29ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-146ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-147ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-148ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-149ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-150ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-30ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-151ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BT-152ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-31ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-153ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -636,10 +498,7 @@
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-159ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
-  </complexType>
-	<complexType name="BG-32ItemType">
-    <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
+    <simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent>
   </complexType>
 	<complexType name="BT-160ItemType">
     <simpleContent><restriction base="xbrli:stringItemType"/></simpleContent>
@@ -649,7 +508,7 @@
   </complexType>
 
 <!-- element -->
-	<element name="root" id="eipa-cen_root" type="eipa-cen:rootItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="BG-0" id="eipa-cen_BG-0" type="eipa-cen:BG-0ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="BT-1" id="eipa-cen_BT-1" type="eipa-cen:BT-1ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="BT-2" id="eipa-cen_BT-2" type="eipa-cen:BT-2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="BT-3" id="eipa-cen_BT-3" type="eipa-cen:BT-3ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

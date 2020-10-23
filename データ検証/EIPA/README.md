@@ -170,3 +170,10 @@ var en = cii2en(json);
 var xbrlgl = en2xbrlgl(en);
 ajaxRequest('data/save.cgi', data, 'POST', timeout)
 ```
+
+# XBRL
+| sh | input | outpput |
+| --- | --- | --- |
+| `text2label.sh` | source/EN_16931-1.txt | source/xBRL_label.xml |
+| `text2presentation.sh` | source/EN_16931-1.txt | source/xBRL_presentation.xml |
+| `text2schema.sh` | source/EN_16931-1.txt | source/xBRL_schema.xml |

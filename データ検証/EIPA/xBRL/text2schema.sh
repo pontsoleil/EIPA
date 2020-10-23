@@ -20,7 +20,22 @@ cat eipa/source/EN_16931-1.txt | awk -F'\t' 'BEGIN {
 { 
   if ("root"==$1 || match($1, /^B[GT]-[0-9]*$/) > 0) {
     id=$1;
-    printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:stringItemType\"/></simpleContent>\n  </complexType>\n", id;
+    datatype=$4;
+    if ("Text"==datatype){
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:stringItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else if ("Code"==datatype) {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:tokenItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else if ("Identifier"==datatype) {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:stringItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else if ("DocumentReference"==datatype) {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:stringItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else if ("Amount"==datatype) {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:monetaryItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else if ("Quantity"==datatype) {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:decimalItemType\"/></simpleContent>\n  </complexType>\n", id;
+    } else if ("Percentage"==datatype) {
+      printf "	<complexType name=\"%sItemType\">\n    <simpleContent><restriction base=\"xbrli:percentItemType\"/></simpleContent>\n  </complexType>\n", id;
+    }
   }
 }
 END { }' > $Tmp-types

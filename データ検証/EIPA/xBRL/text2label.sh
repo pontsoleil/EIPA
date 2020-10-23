@@ -33,7 +33,7 @@ cat $Tmp-cksum | awk -F'\t' 'BEGIN {
     id=$2;
     cksum="_" $1;
     label="";
-    for(i=5;i<=NF;i++) label=label $i" "; 
+    for(i=6;i<=NF;i++) label=label $i" "; 
     printf "    <link:loc xlink:type=\"locator\" xlink:href=\"eipa-cen-2020-12-31.xsd#eipa-cen_%s\" xlink:label=\"%s%s\"/>\n", id, id, cksum;
     printf "    <link:label xlink:type=\"resource\" xlink:label=\"label_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\" id=\"label_%s%s\">%s</link:label>\n", id, cksum, id, cksum, label;
     printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"%s%s\" xlink:to=\"label_%s%s\"/>\n", id, cksum, id, cksum;
