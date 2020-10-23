@@ -988,7 +988,13 @@ var eipa = (function() {
       }
       if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
         element.setAttribute('decimals', 'INF');
-        element.setAttribute('unitRef', 'NotUsed');
+        if ('Amount' == type) {
+          // InvoiceCurrency, VAT_AccountingCurrency;
+          element.setAttribute('unitRef', 'eur');
+        }
+        else {
+          element.setAttribute('unitRef', 'NotUsed');
+        }
       }
     }
     // ---------------------------------------------------------------
@@ -997,6 +1003,7 @@ var eipa = (function() {
     var DOMP = new DOMParser();
     var xmlDoc = DOMP.parseFromString(xmlString, 'text/xml');
     var xbrl = xmlDoc.getElementsByTagNameNS(xbrli, 'xbrl')[0];
+    var InvoiceCurrency, VAT_AccountingCurrency;
     createL1Context(xmlDoc, ['BG-0'], date);
     var L1keys = Object.keys(en);
     // console.log('L1keys', L1keys);
@@ -1007,6 +1014,12 @@ var eipa = (function() {
         console.log('1) key:'+L1key, 'item:', L1item);
         if (L1key.match(/^BT/)) {
           createItem(xmlDoc, [/*L1key*/'BG-0'], L1item);
+          if ('BT-5' === L1key) {
+            InvoiceCurrency = L1item.val;
+          }
+          else if ('BT-6' === L1key) {
+            VAT_AccountingCurrency = L1item.val;
+          }
         }
         else if (L1key.match(/^BG/)) {
           var L2val = L1item.val;
@@ -1085,6 +1098,7 @@ var eipa = (function() {
       return xbrl;
     })
     .then(function(xbrl) {
+      console.log(xbrl);
       var match, dir = '', name = '';
       if (url.match(/\//)) {
         match = url.match(/^(.*)\/([^\/]*)\.json$/);
