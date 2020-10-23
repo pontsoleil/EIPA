@@ -924,105 +924,16 @@ var eipa = (function() {
         '<xbrli:measure>pure</xbrli:measure>'+
       '</xbrli:unit>'+
     '</xbrli:xbrl>';
-    function appendtypedLNumber(L, ID, segment) {
+    function appendtypedLNumber(L, ID, senario) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
           number = xmlDoc.createElementNS(eipa_cen, L+'Number'),
           text = xmlDoc.createTextNode(ID);
-      segment.appendChild(typedMember);
+      senario.appendChild(typedMember);
       typedMember.setAttribute('dimension', 'eipa-cen:d'+L+'Number');
       typedMember.appendChild(number);
       number.appendChild(text);
     }
-    function createL1Context(xmlDoc, IDs, date) {
-      var L1ID = IDs[0];
-      if (contexts[L1ID]) { return null; }
-      contexts[L1ID] = true;
-      var context = xmlDoc.createElementNS(xbrli,'context');
-      var entity = xmlDoc.createElementNS(xbrli,'entity');
-      var identifier = xmlDoc.createElementNS(xbrli,'identifier');
-      var identifierText = xmlDoc.createTextNode('SAMPLE');
-      var segment = xmlDoc.createElementNS(xbrli,'segment');
-      var period = xmlDoc.createElementNS(xbrli,'period');
-      var instant = xmlDoc.createElementNS(xbrli,'instant');
-      var instantText = xmlDoc.createTextNode(date);
-      xbrl.appendChild(context);
-      context.setAttribute('id', L1ID); context.appendChild(entity);
-      entity.appendChild(identifier); identifier.setAttribute('scheme', eg);
-      identifier.appendChild(identifierText);
-      entity.appendChild(segment);
-      appendtypedLNumber('L1', L1ID, segment);
-      context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
-      return context;
-    }
-    /** <xbrli:context id='H50L1'>
-          <xbrli:entity>
-            <xbrli:identifier scheme='http://www.eipa.jp/sample'>SAMPLE</xbrli:identifier>
-            <xbrli:segment>
-              <xbrldi:typedMember dimension='eipa-cen:dL1Number'>
-                <eipa-cen:L1Number>50</eipa-cen:L1Number>
-              </xbrldi:typedMember>
-              <xbrldi:typedMember dimension='eipa-cen:dL2Number'>
-                <eipa-cen:L2Number>L1</eipa-cen:L2Number>
-              </xbrldi:typedMember>
-            </xbrli:segment>
-          </xbrli:entity>
-          <xbrli:period>
-            <xbrli:instant>2020-01-01</xbrli:instant>
-          </xbrli:period>
-        </xbrli:context> */
-    function createL2Context(xmlDoc, IDs, date) {
-      var L1ID =IDs[0], L2ID = IDs[1],
-          _IDs = L1ID+'_'+L2ID;
-      if (contexts[_IDs]) { return null; }
-      contexts[_IDs] = true;
-      var context = xmlDoc.createElementNS(xbrli,'context');
-      var entity = xmlDoc.createElementNS(xbrli,'entity');
-      var identifier = xmlDoc.createElementNS(xbrli,'identifier');
-      var identifierText = xmlDoc.createTextNode('SAMPLE');
-      var segment = xmlDoc.createElementNS(xbrli,'segment');
-      var period = xmlDoc.createElementNS(xbrli,'period');
-      var instant = xmlDoc.createElementNS(xbrli,'instant');
-      var instantText = xmlDoc.createTextNode(date);
-      xbrl.appendChild(context);
-      context.appendChild(entity);
-      context.setAttribute('id', _IDs);
-      identifier.setAttribute('scheme', eg);
-      identifier.appendChild(identifierText);
-      entity.appendChild(identifier);
-      entity.appendChild(segment);
-      appendtypedLNumber('L1', L1ID, segment);
-      appendtypedLNumber('L2', L2ID, segment);
-      context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
-      return context;
-    }
-    function createL3Context(xmlDoc, IDs, date) {
-      var L1ID =IDs[0], L2ID = IDs[1], L3ID = IDs[2],
-          _IDs = L1ID+'_'+L2ID+'_'+L3ID;
-      if (contexts[_IDs]) { return null; }
-      contexts[_IDs] = true;
-      var context = xmlDoc.createElementNS(xbrli,'context');
-      var entity = xmlDoc.createElementNS(xbrli,'entity');
-      var identifier = xmlDoc.createElementNS(xbrli,'identifier');
-      var identifierText = xmlDoc.createTextNode('SAMPLE');
-      var segment = xmlDoc.createElementNS(xbrli,'segment');
-      var period = xmlDoc.createElementNS(xbrli,'period');
-      var instant = xmlDoc.createElementNS(xbrli,'instant');
-      var instantText = xmlDoc.createTextNode(date);
-      xbrl.appendChild(context);
-      context.setAttribute('id', _IDs);
-      context.appendChild(entity);
-      entity.appendChild(identifier);
-      identifier.setAttribute('scheme', eg);
-      identifier.appendChild(identifierText);
-      entity.appendChild(segment);
-      appendtypedLNumber('L1', L1ID, segment);
-      appendtypedLNumber('L2', L2ID, segment);
-      appendtypedLNumber('L3', L3ID, segment);
-      context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
-      return context;
-    }
     function createContext(xmlDoc, IDs, date) {
-      // var L1ID =IDs[0], L2ID = IDs[1], L3ID = IDs[2], L4ID = IDs[3];
       var _IDs = IDs.join('_');
       if (contexts[_IDs]) { return null; }
       contexts[_IDs] = true;
@@ -1030,7 +941,8 @@ var eipa = (function() {
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
       var identifierText = xmlDoc.createTextNode('SAMPLE');
-      var segment = xmlDoc.createElementNS(xbrli,'segment');
+      var senario = xmlDoc.createElementNS(xbrli,'senario');
+      // var segment = xmlDoc.createElementNS(xbrli,'segment');
       var period = xmlDoc.createElementNS(xbrli,'period');
       var instant = xmlDoc.createElementNS(xbrli,'instant');
       var instantText = xmlDoc.createTextNode(date);
@@ -1040,25 +952,26 @@ var eipa = (function() {
       entity.appendChild(identifier);
       identifier.setAttribute('scheme', eg);
       identifier.appendChild(identifierText);
-      entity.appendChild(segment);
+      context.appendChild(senario);
+      // entity.appendChild(segment);
       switch(IDs.length) {
         case 1:
-          appendtypedLNumber('L1', IDs[0], segment);
+          appendtypedLNumber('L1', IDs[0], senario);
           break;
         case 2:
-          appendtypedLNumber('L1', IDs[0], segment);
-          appendtypedLNumber('L2', IDs[1], segment);
+          appendtypedLNumber('L1', IDs[0], senario);
+          appendtypedLNumber('L2', IDs[1], senario);
           break;
         case 3:
-          appendtypedLNumber('L1', IDs[0], segment);
-          appendtypedLNumber('L2', IDs[1], segment);
-          appendtypedLNumber('L3', IDs[2], segment);
+          appendtypedLNumber('L1', IDs[0], senario);
+          appendtypedLNumber('L2', IDs[1], senario);
+          appendtypedLNumber('L3', IDs[2], senario);
           break;
         case 4:
-          appendtypedLNumber('L1', IDs[0], segment);
-          appendtypedLNumber('L2', IDs[1], segment);
-          appendtypedLNumber('L3', IDs[2], segment);
-          appendtypedLNumber('L4', IDs[3], segment);
+          appendtypedLNumber('L1', IDs[0], senario);
+          appendtypedLNumber('L2', IDs[1], senario);
+          appendtypedLNumber('L3', IDs[2], senario);
+          appendtypedLNumber('L4', IDs[3], senario);
           break;
       }
       context.appendChild(period);
