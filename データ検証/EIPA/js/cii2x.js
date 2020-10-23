@@ -1021,10 +1021,11 @@ var eipa = (function() {
       context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
       return context;
     }
-    function createL4Context(xmlDoc, IDs, date) {
-      var L1ID =IDs[0], L2ID = IDs[1], L3ID = IDs[2], L4ID = IDs[3];
-      if (contexts[L1ID+'_'+L2ID+'_'+L3ID+'_'+L4ID]) { return null; }
-      contexts[L1ID+'_'+L2ID+'_'+L3ID+'_'+L4ID] = true;
+    function createContext(xmlDoc, IDs, date) {
+      // var L1ID =IDs[0], L2ID = IDs[1], L3ID = IDs[2], L4ID = IDs[3];
+      var _IDs = IDs.join('_');
+      if (contexts[_IDs]) { return null; }
+      contexts[_IDs] = true;
       var context = xmlDoc.createElementNS(xbrli,'context');
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
@@ -1034,15 +1035,35 @@ var eipa = (function() {
       var instant = xmlDoc.createElementNS(xbrli,'instant');
       var instantText = xmlDoc.createTextNode(date);
       xbrl.appendChild(context);
-      context.setAttribute('id', L1ID); context.appendChild(entity);
-      entity.appendChild(identifier); identifier.setAttribute('scheme', eg);
+      context.setAttribute('id', _IDs);
+      context.appendChild(entity);
+      entity.appendChild(identifier);
+      identifier.setAttribute('scheme', eg);
       identifier.appendChild(identifierText);
       entity.appendChild(segment);
-      appendtypedLNumber('L1', L1ID, segment);
-      appendtypedLNumber('L2', L2ID, segment);
-      appendtypedLNumber('L3', L3ID, segment);
-      appendtypedLNumber('L4', L4ID, segment);
-      context.appendChild(period); period.appendChild(instant); instant.appendChild(instantText);
+      switch(_IDs.length) {
+        case 4:
+          appendtypedLNumber('L1', L1ID, segment);
+          appendtypedLNumber('L2', L2ID, segment);
+          appendtypedLNumber('L3', L3ID, segment);
+          appendtypedLNumber('L4', L4ID, segment);
+          break;
+        case 3:
+          appendtypedLNumber('L1', L1ID, segment);
+          appendtypedLNumber('L2', L2ID, segment);
+          appendtypedLNumber('L3', L3ID, segment);
+          break;
+        case 2:
+          appendtypedLNumber('L1', L1ID, segment);
+          appendtypedLNumber('L2', L2ID, segment);
+          break;
+        case 1:
+          appendtypedLNumber('L1', L1ID, segment);
+          break;
+      }
+      context.appendChild(period);
+      period.appendChild(instant);
+      instant.appendChild(instantText);
       return context;
     }
     function createItem(xmlDoc, keys, item) {
@@ -1118,18 +1139,16 @@ var eipa = (function() {
     var xmlDoc = DOMP.parseFromString(xmlString, 'text/xml');
     var xbrl = xmlDoc.getElementsByTagNameNS(xbrli, 'xbrl')[0];
     var InvoiceCurrency, VAT_AccountingCurrency;
-    createL1Context(xmlDoc, ['BG-0'], date);
     var L1keys = Object.keys(en);
     // console.log('L1keys', L1keys);
-    var newL1key = true;
     for (var L1key of L1keys) {
       var L1item = en[L1key];
       var L1itemkeys = L1item.val ? Object.keys(L1item.val) : null;
       if (L1itemkeys && L1itemkeys.length > 0) {
         // console.log('1) key:'+L1key, 'item:', L1item);
         if (L1key.match(/^BT/)) {
-          createL1Context(xmlDoc, [L1key], date);
-          createItem(xmlDoc, [/*L1key*/'BG-0', L1key], L1item);
+          createContext(xmlDoc, ['BG-0'], date);
+          createItem(xmlDoc, ['BG-0', L1key], L1item);
           if ('BT-5' === L1key) {
             InvoiceCurrency = L1item.val[0];
           }
@@ -1143,18 +1162,13 @@ var eipa = (function() {
           for (var L2key in L2val) {
             var L2item = L2val[L2key];
             if (L2key.match(/^[0-9]+$/)) {
-              if (newL1key) {
-                createL1Context(xmlDoc, [L1key], date);
-              }
-              else { newL1key = false; }
-              createL2Context(xmlDoc, [L1key, L2key], date);
               var L3keys = Object.keys(L2item);
               // console.log('L3keys', L3keys);
               for (var L3key of L3keys) {
                 var L3item = L2item[L3key];
                 if (L3item.val && L3item.val.length > 0) {
                   // console.log('2) key:'+L1key+' '+L2key+' '+L3key, 'item:', L3item);
-                  createL3Context(xmlDoc, [L1key, L2key, L3key], date);
+                  createContext(xmlDoc, [L1key, L2key], date);
                   createItem(xmlDoc, [L1key, L2key, L3key], L3item);
                 }
               }
@@ -1162,7 +1176,7 @@ var eipa = (function() {
             else if (L2key.match(/^BT/)) {
               if (L2item && L2item.length > 0) {
                 // console.log('3) key:'+L1key+' '+L2key, 'item:', L2item);
-                createL2Context(xmlDoc, [L1key, L2key], date);
+                createContext(xmlDoc, [L1key], date);
                 createItem(xmlDoc, [L1key, L2key], L2item);
               }
             }
@@ -1173,17 +1187,16 @@ var eipa = (function() {
                 var L3item = L3val[L3key];
                 // console.log('4) key:'+L1key+' '+L2key+' '+L3key, 'item:', L3item);
                 if (L3item.val && L3item.val.length > 0) {
-                  // var 
                   if (L3key.match(/^[0-9]+$/)) {
-                    createL3Context(xmlDoc, [L1key, L2key, L3key], date);
+                    createContext(xmlDoc, [L1key, L2key], date);
                     createItem(xmlDoc, [L1key, L2key, L3key], L3item);
                   }
                   else if (L3key.match(/^BT/)) {
-                    createL3Context(xmlDoc, [L1key, L2key, L3key], date);
+                    createContext(xmlDoc, [L1key, L2key], date);
                     createItem(xmlDoc, [L1key, L2key, L3key], L3item);
                   }
                   else if (L3key.match(/^BG/)) {
-                    createL3Context(xmlDoc, [L1key, L2key, L3key], date);
+                    createContext(xmlDoc, [L1key, L2key], date);
                     createItem(xmlDoc, [L1key, L2key, L3key], L3item);
                   }
                 }
