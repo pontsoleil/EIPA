@@ -1041,24 +1041,24 @@ var eipa = (function() {
       identifier.setAttribute('scheme', eg);
       identifier.appendChild(identifierText);
       entity.appendChild(segment);
-      switch(_IDs.length) {
+      switch(IDs.length) {
         case 1:
-          appendtypedLNumber('L1', _IDs[0], segment);
+          appendtypedLNumber('L1', IDs[0], segment);
           break;
         case 2:
-          appendtypedLNumber('L1', _IDs[0], segment);
-          appendtypedLNumber('L2', _IDs[1], segment);
+          appendtypedLNumber('L1', IDs[0], segment);
+          appendtypedLNumber('L2', IDs[1], segment);
           break;
         case 3:
-          appendtypedLNumber('L1', _IDs[0], segment);
-          appendtypedLNumber('L2', _IDs[1], segment);
-          appendtypedLNumber('L3', _IDs[2], segment);
+          appendtypedLNumber('L1', IDs[0], segment);
+          appendtypedLNumber('L2', IDs[1], segment);
+          appendtypedLNumber('L3', IDs[2], segment);
           break;
         case 4:
-          appendtypedLNumber('L1', _IDs[0], segment);
-          appendtypedLNumber('L2', _IDs[1], segment);
-          appendtypedLNumber('L3', _IDs[2], segment);
-          appendtypedLNumber('L4', _IDs[3], segment);
+          appendtypedLNumber('L1', IDs[0], segment);
+          appendtypedLNumber('L2', IDs[1], segment);
+          appendtypedLNumber('L3', IDs[2], segment);
+          appendtypedLNumber('L4', IDs[3], segment);
           break;
       }
       context.appendChild(period);

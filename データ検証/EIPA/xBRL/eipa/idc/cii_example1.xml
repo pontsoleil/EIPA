@@ -29,80 +29,22 @@
 			<xbrli:instant>2020-10-23</xbrli:instant>
 		</xbrli:period>
 	</xbrli:context>
-	<xbrli:context id="BT-1">
-		<xbrli:entity>
-			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment>
-				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
-					<eipa-cen:L1Number>BT-1</eipa-cen:L1Number>
-				</xbrldi:typedMember>
-			</xbrli:segment>
-		</xbrli:entity>
-		<xbrli:period>
-			<xbrli:instant>2020-10-23</xbrli:instant>
-		</xbrli:period>
-	</xbrli:context>
 	<eipa-cen:BT-1 contextRef="BG-0">12115118</eipa-cen:BT-1>
-	<xbrli:context id="BT-2">
-		<xbrli:entity>
-			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment>
-				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
-					<eipa-cen:L1Number>BT-2</eipa-cen:L1Number>
-				</xbrldi:typedMember>
-			</xbrli:segment>
-		</xbrli:entity>
-		<xbrli:period>
-			<xbrli:instant>2020-10-23</xbrli:instant>
-		</xbrli:period>
-	</xbrli:context>
 	<eipa-cen:BT-2 contextRef="BG-0">2015-01-09</eipa-cen:BT-2>
-	<xbrli:context id="BT-3">
-		<xbrli:entity>
-			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment>
-				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
-					<eipa-cen:L1Number>BT-3</eipa-cen:L1Number>
-				</xbrldi:typedMember>
-			</xbrli:segment>
-		</xbrli:entity>
-		<xbrli:period>
-			<xbrli:instant>2020-10-23</xbrli:instant>
-		</xbrli:period>
-	</xbrli:context>
 	<eipa-cen:BT-3 contextRef="BG-0">380</eipa-cen:BT-3>
-	<xbrli:context id="BT-5">
-		<xbrli:entity>
-			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment>
-				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
-					<eipa-cen:L1Number>BT-5</eipa-cen:L1Number>
-				</xbrldi:typedMember>
-			</xbrli:segment>
-		</xbrli:entity>
-		<xbrli:period>
-			<xbrli:instant>2020-10-23</xbrli:instant>
-		</xbrli:period>
-	</xbrli:context>
 	<eipa-cen:BT-5 contextRef="BG-0">EUR</eipa-cen:BT-5>
-	<xbrli:context id="BT-9">
-		<xbrli:entity>
-			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment>
-				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
-					<eipa-cen:L1Number>BT-9</eipa-cen:L1Number>
-				</xbrldi:typedMember>
-			</xbrli:segment>
-		</xbrli:entity>
-		<xbrli:period>
-			<xbrli:instant>2020-10-23</xbrli:instant>
-		</xbrli:period>
-	</xbrli:context>
 	<eipa-cen:BT-9 contextRef="BG-0">2015-01-09</eipa-cen:BT-9>
 	<xbrli:context id="BG-4_BG-5">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-4</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>BG-5</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -115,7 +57,14 @@
 	<xbrli:context id="BG-7_BG-8">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-7</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>BG-8</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -128,7 +77,14 @@
 	<xbrli:context id="BG-7_BG-9">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-7</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>BG-9</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -138,26 +94,31 @@
 	<xbrli:context id="BG-16_BG-17">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-16</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>BG-17</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
 		</xbrli:period>
 	</xbrli:context>
 	<eipa-cen:BT-84 contextRef="BG-16_BG-17">NL57 RABO 0107307510</eipa-cen:BT-84>
-	<xbrli:context id="BG-25">
-		<xbrli:entity>
-			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
-		</xbrli:entity>
-		<xbrli:period>
-			<xbrli:instant>2020-10-23</xbrli:instant>
-		</xbrli:period>
-	</xbrli:context>
 	<xbrli:context id="BG-25_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>0</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -170,7 +131,14 @@
 	<xbrli:context id="BG-25_1">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>1</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -183,7 +151,14 @@
 	<xbrli:context id="BG-25_2">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>2</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -196,7 +171,14 @@
 	<xbrli:context id="BG-25_3">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>3</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -209,7 +191,14 @@
 	<xbrli:context id="BG-25_4">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>4</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -222,7 +211,14 @@
 	<xbrli:context id="BG-25_5">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>5</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -235,7 +231,14 @@
 	<xbrli:context id="BG-25_6">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>6</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -248,7 +251,14 @@
 	<xbrli:context id="BG-25_7">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>7</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -261,7 +271,14 @@
 	<xbrli:context id="BG-25_8">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>8</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -274,7 +291,14 @@
 	<xbrli:context id="BG-25_9">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>9</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -287,7 +311,14 @@
 	<xbrli:context id="BG-25_10">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>10</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -300,7 +331,14 @@
 	<xbrli:context id="BG-25_11">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>11</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -313,7 +351,14 @@
 	<xbrli:context id="BG-25_12">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>12</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -326,7 +371,14 @@
 	<xbrli:context id="BG-25_13">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>13</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -339,7 +391,14 @@
 	<xbrli:context id="BG-25_14">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>14</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -352,7 +411,14 @@
 	<xbrli:context id="BG-25_15">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>15</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -365,7 +431,14 @@
 	<xbrli:context id="BG-25_16">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>16</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -378,7 +451,14 @@
 	<xbrli:context id="BG-25_17">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>17</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -391,7 +471,14 @@
 	<xbrli:context id="BG-25_18">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>18</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
@@ -404,7 +491,14 @@
 	<xbrli:context id="BG-25_19">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
-			<xbrli:segment/>
+			<xbrli:segment>
+				<xbrldi:typedMember dimension="eipa-cen:dL1Number">
+					<eipa-cen:L1Number>BG-25</eipa-cen:L1Number>
+				</xbrldi:typedMember>
+				<xbrldi:typedMember dimension="eipa-cen:dL2Number">
+					<eipa-cen:L2Number>19</eipa-cen:L2Number>
+				</xbrldi:typedMember>
+			</xbrli:segment>
 		</xbrli:entity>
 		<xbrli:period>
 			<xbrli:instant>2020-10-23</xbrli:instant>
