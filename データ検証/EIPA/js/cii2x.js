@@ -1042,23 +1042,23 @@ var eipa = (function() {
       identifier.appendChild(identifierText);
       entity.appendChild(segment);
       switch(_IDs.length) {
-        case 4:
-          appendtypedLNumber('L1', L1ID, segment);
-          appendtypedLNumber('L2', L2ID, segment);
-          appendtypedLNumber('L3', L3ID, segment);
-          appendtypedLNumber('L4', L4ID, segment);
-          break;
-        case 3:
-          appendtypedLNumber('L1', L1ID, segment);
-          appendtypedLNumber('L2', L2ID, segment);
-          appendtypedLNumber('L3', L3ID, segment);
+        case 1:
+          appendtypedLNumber('L1', _IDs[0], segment);
           break;
         case 2:
-          appendtypedLNumber('L1', L1ID, segment);
-          appendtypedLNumber('L2', L2ID, segment);
+          appendtypedLNumber('L1', _IDs[0], segment);
+          appendtypedLNumber('L2', _IDs[1], segment);
           break;
-        case 1:
-          appendtypedLNumber('L1', L1ID, segment);
+        case 3:
+          appendtypedLNumber('L1', _IDs[0], segment);
+          appendtypedLNumber('L2', _IDs[1], segment);
+          appendtypedLNumber('L3', _IDs[2], segment);
+          break;
+        case 4:
+          appendtypedLNumber('L1', _IDs[0], segment);
+          appendtypedLNumber('L2', _IDs[1], segment);
+          appendtypedLNumber('L3', _IDs[2], segment);
+          appendtypedLNumber('L4', _IDs[3], segment);
           break;
       }
       context.appendChild(period);
