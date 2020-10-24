@@ -924,11 +924,11 @@ var eipa = (function() {
         '<xbrli:measure>pure</xbrli:measure>'+
       '</xbrli:unit>'+
     '</xbrli:xbrl>';
-    function appendtypedLNumber(L, ID, senario) {
+    function appendtypedLNumber(L, ID, scenario) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
           number = xmlDoc.createElementNS(eipa_cen, L+'Number'),
           text = xmlDoc.createTextNode(ID);
-      senario.appendChild(typedMember);
+      scenario.appendChild(typedMember);
       typedMember.setAttribute('dimension', 'eipa-cen:d'+L+'Number');
       typedMember.appendChild(number);
       number.appendChild(text);
@@ -941,7 +941,7 @@ var eipa = (function() {
       var entity = xmlDoc.createElementNS(xbrli,'entity');
       var identifier = xmlDoc.createElementNS(xbrli,'identifier');
       var identifierText = xmlDoc.createTextNode('SAMPLE');
-      var senario = xmlDoc.createElementNS(xbrli,'senario');
+      var scenario = xmlDoc.createElementNS(xbrli,'scenario');
       // var segment = xmlDoc.createElementNS(xbrli,'segment');
       var period = xmlDoc.createElementNS(xbrli,'period');
       var instant = xmlDoc.createElementNS(xbrli,'instant');
@@ -957,27 +957,27 @@ var eipa = (function() {
       context.appendChild(period);
       period.appendChild(instant);
       instant.appendChild(instantText);
-      // senario
-      context.appendChild(senario);
+      // scenario
+      context.appendChild(scenario);
       // entity.appendChild(segment);
       switch(IDs.length) {
         case 1:
-          appendtypedLNumber('L1', IDs[0], senario);
+          appendtypedLNumber('L1', IDs[0], scenario);
           break;
         case 2:
-          appendtypedLNumber('L1', IDs[0], senario);
-          appendtypedLNumber('L2', IDs[1], senario);
+          appendtypedLNumber('L1', IDs[0], scenario);
+          appendtypedLNumber('L2', IDs[1], scenario);
           break;
         case 3:
-          appendtypedLNumber('L1', IDs[0], senario);
-          appendtypedLNumber('L2', IDs[1], senario);
-          appendtypedLNumber('L3', IDs[2], senario);
+          appendtypedLNumber('L1', IDs[0], scenario);
+          appendtypedLNumber('L2', IDs[1], scenario);
+          appendtypedLNumber('L3', IDs[2], scenario);
           break;
         case 4:
-          appendtypedLNumber('L1', IDs[0], senario);
-          appendtypedLNumber('L2', IDs[1], senario);
-          appendtypedLNumber('L3', IDs[2], senario);
-          appendtypedLNumber('L4', IDs[3], senario);
+          appendtypedLNumber('L1', IDs[0], scenario);
+          appendtypedLNumber('L2', IDs[1], scenario);
+          appendtypedLNumber('L3', IDs[2], scenario);
+          appendtypedLNumber('L4', IDs[3], scenario);
           break;
       }
 
