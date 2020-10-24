@@ -948,10 +948,16 @@ var eipa = (function() {
       var instantText = xmlDoc.createTextNode(date);
       xbrl.appendChild(context);
       context.setAttribute('id', _IDs);
+      // entity
       context.appendChild(entity);
       entity.appendChild(identifier);
       identifier.setAttribute('scheme', eg);
       identifier.appendChild(identifierText);
+      // period
+      context.appendChild(period);
+      period.appendChild(instant);
+      instant.appendChild(instantText);
+      // senario
       context.appendChild(senario);
       // entity.appendChild(segment);
       switch(IDs.length) {
@@ -974,9 +980,7 @@ var eipa = (function() {
           appendtypedLNumber('L4', IDs[3], senario);
           break;
       }
-      context.appendChild(period);
-      period.appendChild(instant);
-      instant.appendChild(instantText);
+
       return context;
     }
     function createItem(xmlDoc, keys, item) {
