@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <title>CII to X</title>
+    <title>e-Invoice to xBRL</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <style>
@@ -49,6 +49,7 @@ footer {
     <link rel="stylesheet" href="css/snackbar.css">
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/ubl2x.js"></script>
     <script type="text/javascript" src="js/cii2x.js"></script>
     <script type="text/javascript" src="js/EN_16931-1.js"></script>
     <script type="text/javascript" class="init">
@@ -75,10 +76,18 @@ footer {
         //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
         $('#go').on('click', function(event) {
           var url = $('#url').val();
-          eipa.initModule(url, /** time out */3000)
-          .then(function(res) {
-            console.log(res);
-          });
+          if (url.match(/\/cii\//)) {
+            eipa_cii.initModule(url, /** time out */3000)
+            .then(function(res) {
+              console.log(res);
+            });
+          }
+          else if (url.match(/\/ubl\//)) {
+            eipa_ubl.initModule(url, /** time out */3000)
+            .then(function(res) {
+              console.log(res);
+            });
+          }
         });
       });
     </script>
@@ -98,7 +107,7 @@ footer {
 
     <div id="base" class="container">
       <div class="box">
-        <h3>CII to X</h3>
+        <h3>e-Invoice to xBRL</h3>
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">URL</label>

@@ -20,12 +20,12 @@ exec 2>log/${0##*/}.$$.log
 #         : -lf Replaces the newline sign "\n" with <s>. And in this mode,
 #               also replaces \ with \\
 # CII_exampleN.xml
-parsrx.sh -n -lf cii/CII_"$1".xml |
-awk '/\/rsm:CrossIndustryInvoice[^ ]+ [a-zA-Z0-9\-\+]/{print}' > log/cii_"$1"_filtered.txt
-cat log/cii_"$1"_filtered.txt |
-sed -e 's/\//$./' | sed -e 's/\//\./g' > log/cii_"$1"_filtered2.txt
-cat log/cii_"$1"_filtered2.txt |
-makrj.sh > cii/cii_"$1".json
+parsrx.sh -n -lf ubl/ubl-tc434-"$1".xml |
+awk '/\/Invoice[^ ]+ [a-zA-Z0-9\-\+]/{print}' > log/ubl_"$1"_filtered.txt
+cat log/ubl_"$1"_filtered.txt |
+sed -e 's/\//$./' | sed -e 's/\//\./g' > log/ubl_"$1"_filtered2.txt
+cat log/ubl_"$1"_filtered2.txt |
+makrj.sh > ubl/ubl_"$1".json
 
 rm log/${0##*/}.$$.log
 exit 0

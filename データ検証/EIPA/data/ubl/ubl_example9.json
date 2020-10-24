@@ -1,0 +1,142 @@
+{
+"Invoice":[{
+"@xmlns:cac":"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
+"@xmlns:cbc":"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+"@xmlns:qdt":"urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2",
+"@xmlns:udt":"urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2",
+"@xmlns:ccts":"urn:un:unece:uncefact:documentation:2",
+"@xmlns":"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+"@xmlns:xsi":"http:..www.w3.org.2001.XMLSchema-instance",
+"@xsi:schemaLocation":"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http:..docs.oasis-open.org.ubl.os-UBL-2.1.xsd.maindoc.UBL-Invoice-2.1.xsd",
+"cbc:CustomizationID":["urn:cen.eu:en16931:2017"],
+"cbc:ID":[20150483],
+"cbc:IssueDate":["2015-04-01"],
+"cbc:DueDate":["2015-04-14"],
+"cbc:InvoiceTypeCode":[380],
+"cbc:Note":["Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van\n       het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen\n       10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden. \n       "],
+"cbc:DocumentCurrencyCode":["EUR"],
+"cac:InvoicePeriod":[{
+"cbc:StartDate":["2016-04-01"],
+"cbc:EndDate":["2016-06-30"]
+}],
+"cac:ContractDocumentReference":[{
+"cbc:ID":["iExpress 20110412"]
+}],
+"cac:AccountingSupplierParty":[{
+"cac:Party":[{
+"cac:PostalAddress":[{
+"cbc:StreetName":["Lindeboomseweg 41"],
+"cbc:CityName":["Amersfoort"],
+"cbc:PostalZone":["3825 AL"],
+"cac:Country":[{
+"cbc:IdentificationCode":["NL"]
+}]
+}],
+"cac:PartyTaxScheme":[{
+"cbc:CompanyID":["NL809163160B01"],
+"cac:TaxScheme":[{
+"cbc:ID":["VAT"]
+}]
+}],
+"cac:PartyLegalEntity":[{
+"cbc:RegistrationName":["Bluem BV"],
+"cbc:CompanyID":["32081330 Amersfoort"]
+}],
+"cac:Contact":[{
+"cbc:Telephone":["033-4549055"],
+"cbc:ElectronicMail":["info@bluem.nl"]
+}]
+}]
+}],
+"cac:AccountingCustomerParty":[{
+"cac:Party":[{
+"cac:PostalAddress":[{
+"cbc:StreetName":["Henry Dunantweg 42"],
+"cbc:CityName":["Alphen aan den Rijn"],
+"cbc:PostalZone":["2402 NR"],
+"cac:Country":[{
+"cbc:IdentificationCode":["NL"]
+}]
+}],
+"cac:PartyLegalEntity":[{
+"cbc:RegistrationName":["Provide Verzekeringen"]
+}]
+}]
+}],
+"cac:PaymentMeans":[{
+"cbc:PaymentMeansCode":[30],
+"cbc:PaymentID":["2015 0483 0000 0000"],
+"cac:PayeeFinancialAccount":[{
+"cbc:ID":["NL13RABO0377815500"],
+"cac:FinancialInstitutionBranch":[{
+"cbc:ID":["RABONL2U"]
+}]
+}]
+}],
+"cac:TaxTotal":[{
+"cbc:TaxAmount":[{
+"@currencyID":"EUR"
+},30.87],
+"cac:TaxSubtotal":[{
+"cbc:TaxableAmount":[{
+"@currencyID":"EUR"
+},147.00],
+"cbc:TaxAmount":[{
+"@currencyID":"EUR"
+},30.87],
+"cac:TaxCategory":[{
+"cbc:ID":["S"],
+"cbc:Percent":[21],
+"cac:TaxScheme":[{
+"cbc:ID":["VAT"]
+}]
+}]
+}]
+}],
+"cac:LegalMonetaryTotal":[{
+"cbc:LineExtensionAmount":[{
+"@currencyID":"EUR"
+},147.00],
+"cbc:TaxExclusiveAmount":[{
+"@currencyID":"EUR"
+},147.00],
+"cbc:TaxInclusiveAmount":[{
+"@currencyID":"EUR"
+},177.87],
+"cbc:PayableAmount":[{
+"@currencyID":"EUR"
+},177.87]
+}],
+"cac:InvoiceLine":[{
+"cbc:ID":[1],
+"cbc:InvoicedQuantity":[{
+"@unitCode":"MON"
+},3],
+"cbc:LineExtensionAmount":[{
+"@currencyID":"EUR"
+},147.00],
+"cac:Item":[{
+"cbc:Name":["IExpress licentiekosten"],
+"cac:ClassifiedTaxCategory":[{
+"cbc:ID":["S"],
+"cbc:Percent":[21],
+"cac:TaxScheme":[{
+"cbc:ID":["VAT"]
+}]
+}],
+"cac:AdditionalItemProperty":[{
+"cbc:Name":["Verbruikscategorie"],
+"cbc:Value":["Start"]
+}]
+}],
+"cac:Price":[{
+"cbc:PriceAmount":[{
+"@currencyID":"EUR"
+},49.00],
+"cbc:BaseQuantity":[{
+"@unitCode":"MON"
+},1]
+}]
+}]
+}]
+}
