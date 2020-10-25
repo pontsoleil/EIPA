@@ -1,7 +1,7 @@
 /**
  * en2xbrl.js
  *
- * Convert UN/CEFACT CII xml or UBL xml file to eipa-cen XBRL
+ * Convert UN/CEFACT CII xml or UBL xml file to cen XBRL
  * called from invoice2xbrl.html
  * 
  * This is a free to use open source software and licensed under the MIT License
@@ -1305,7 +1305,7 @@ var invoice2xbrl = (function() {
     var xbrli = 'http://www.xbrl.org/2003/instance';
     var xbrldi = 'http://xbrl.org/2006/xbrldi';
     var eipa = 'http://www.eipa.jp';
-    var eipa_cen = eipa+'/cen/2020-12-31';
+    var cen = eipa+'/cen/2020-12-31';
     var eg = eipa;
     var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
     var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
@@ -1316,9 +1316,9 @@ var invoice2xbrl = (function() {
       'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
       'xmlns:xbrli="'+xbrli+'" '+
       'xmlns:xbrldi="'+xbrldi+'" '+
-      'xmlns:eipa-cen="'+eipa_cen+'" '+
+      'xmlns:cen="'+cen+'" '+
       'xmlns:eg="'+eg+'">'+
-      '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/eipa-cen-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
+      '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/cen-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
       '<xbrli:unit id="eur">'+
         '<xbrli:measure>iso4217:EUR</xbrli:measure>'+
       '</xbrli:unit>'+
@@ -1326,12 +1326,12 @@ var invoice2xbrl = (function() {
         '<xbrli:measure>xbrli:pure</xbrli:measure>'+
       '</xbrli:unit>'+
     '</xbrli:xbrl>';
-    function appendtypedLNumber(L, ID, scenario) {
+    function appendtypedLN(L, ID, scenario) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
-          number = xmlDoc.createElementNS(eipa_cen, L+'Number'),
+          number = xmlDoc.createElementNS(cen, L+'N'),
           text = xmlDoc.createTextNode(ID);
       scenario.appendChild(typedMember);
-      typedMember.setAttribute('dimension', 'eipa-cen:d'+L+'Number');
+      typedMember.setAttribute('dimension', 'cen:d'+L+'N');
       typedMember.appendChild(number);
       number.appendChild(text);
     }
@@ -1364,22 +1364,22 @@ var invoice2xbrl = (function() {
       // entity.appendChild(segment);
       switch(IDs.length) {
         case 1:
-          appendtypedLNumber('L1', IDs[0], scenario);
+          appendtypedLN('L1', IDs[0], scenario);
           break;
         case 2:
-          appendtypedLNumber('L1', IDs[0], scenario);
-          appendtypedLNumber('L2', IDs[1], scenario);
+          appendtypedLN('L1', IDs[0], scenario);
+          appendtypedLN('L2', IDs[1], scenario);
           break;
         case 3:
-          appendtypedLNumber('L1', IDs[0], scenario);
-          appendtypedLNumber('L2', IDs[1], scenario);
-          appendtypedLNumber('L3', IDs[2], scenario);
+          appendtypedLN('L1', IDs[0], scenario);
+          appendtypedLN('L2', IDs[1], scenario);
+          appendtypedLN('L3', IDs[2], scenario);
           break;
         case 4:
-          appendtypedLNumber('L1', IDs[0], scenario);
-          appendtypedLNumber('L2', IDs[1], scenario);
-          appendtypedLNumber('L3', IDs[2], scenario);
-          appendtypedLNumber('L4', IDs[3], scenario);
+          appendtypedLN('L1', IDs[0], scenario);
+          appendtypedLN('L2', IDs[1], scenario);
+          appendtypedLN('L3', IDs[2], scenario);
+          appendtypedLN('L4', IDs[3], scenario);
           break;
       }
 
@@ -1400,7 +1400,7 @@ var invoice2xbrl = (function() {
       var name = keys[length - 1];
       var type = EN[name].type;
       var val = item.val;
-      var element = xmlDoc.createElementNS(eipa_cen, name);
+      var element = xmlDoc.createElementNS(cen, name);
       var match;
       switch(val.length) {
       case 1:
