@@ -49,8 +49,7 @@ footer {
     <link rel="stylesheet" href="css/snackbar.css">
     <script type="text/javascript" src="js/snackbar.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
-    <script type="text/javascript" src="js/ubl2x.js"></script>
-    <script type="text/javascript" src="js/cii2x.js"></script>
+    <script type="text/javascript" src="js/invoice2xbrl.js"></script>
     <script type="text/javascript" src="js/EN_16931-1.js"></script>
     <script type="text/javascript" class="init">
       $(document).ready(function() {
@@ -76,18 +75,10 @@ footer {
         //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
         $('#go').on('click', function(event) {
           var url = $('#url').val();
-          if (url.match(/\/cii\//)) {
-            eipa_cii.initModule(url, /** time out */3000)
-            .then(function(res) {
-              console.log(res);
-            });
-          }
-          else if (url.match(/\/ubl\//)) {
-            eipa_ubl.initModule(url, /** time out */3000)
-            .then(function(res) {
-              console.log(res);
-            });
-          }
+          invoice2xbrl.initModule(url, /** time out */5000)
+          .then(function(res) {
+            console.log(res);
+          });
         });
       });
     </script>
