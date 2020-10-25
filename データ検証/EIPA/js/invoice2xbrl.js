@@ -1305,7 +1305,7 @@ var invoice2xbrl = (function() {
     var xbrli = 'http://www.xbrl.org/2003/instance';
     var xbrldi = 'http://xbrl.org/2006/xbrldi';
     var eipa = 'http://www.eipa.jp';
-    var cen = eipa+'/cen/2020-12-31';
+    var cen = eipa+'/cen/EN-16931-1';
     var eg = eipa;
     var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
     var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
@@ -1316,9 +1316,8 @@ var invoice2xbrl = (function() {
       'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
       'xmlns:xbrli="'+xbrli+'" '+
       'xmlns:xbrldi="'+xbrldi+'" '+
-      'xmlns:cen="'+cen+'" '+
-      'xmlns:eg="'+eg+'">'+
-      '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/cen-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
+      'xmlns:cen="'+cen+'">'+
+      '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/EN-16931-1.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
       '<xbrli:unit id="eur">'+
         '<xbrli:measure>iso4217:EUR</xbrli:measure>'+
       '</xbrli:unit>'+
@@ -1346,8 +1345,8 @@ var invoice2xbrl = (function() {
       var scenario = xmlDoc.createElementNS(xbrli,'scenario');
       // var segment = xmlDoc.createElementNS(xbrli,'segment');
       var period = xmlDoc.createElementNS(xbrli,'period');
-      var instant = xmlDoc.createElementNS(xbrli,'instant');
-      var instantText = xmlDoc.createTextNode(date);
+      var forever = xmlDoc.createElementNS(xbrli,'forever');
+      // var instantText = xmlDoc.createTextNode(date);
       xbrl.appendChild(context);
       context.setAttribute('id', _IDs);
       // entity
@@ -1357,8 +1356,8 @@ var invoice2xbrl = (function() {
       identifier.appendChild(identifierText);
       // period
       context.appendChild(period);
-      period.appendChild(instant);
-      instant.appendChild(instantText);
+      period.appendChild(forever);
+      // instant.appendChild(instantText);
       // scenario
       context.appendChild(scenario);
       // entity.appendChild(segment);
