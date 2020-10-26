@@ -8,6 +8,7 @@
  * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
  **/
 var invoice2xbrl = (function() {
+  var InvoiceCurrency = [''], VAT_Currency = [''];
 
   function cii2en(json) {
     var cii = json;
@@ -32,9 +33,21 @@ var invoice2xbrl = (function() {
       en['BT-6'] = {'name':'VAT accounting currency code', 'val':[]};
       // PRECEDING INVOICE REFERENCE (Multiple)
       en['BG-3'] = {'name':'PRECEDING INVOICE REFERENCE', 'val':[]};//, 'val':ApplicableHeaderTradeSettlement['ram:InvoiceReferencedDocument']};
-      for (var ApplicableHeaderTradeSettlement of ApplicableHeaderTradeSettlements || []){
-        en['BT-5'].val.push(ApplicableHeaderTradeSettlement['ram:InvoiceCurrencyCode']);
-        en['BT-6'].val.push(ApplicableHeaderTradeSettlement['ram:TaxCurrencyCode']);
+      for (var ApplicableHeaderTradeSettlement of ApplicableHeaderTradeSettlements || []) {
+        var InvoiceCurrencyCode = ApplicableHeaderTradeSettlement['ram:InvoiceCurrencyCode'];
+        if (InvoiceCurrencyCode) {
+          InvoiceCurrency = InvoiceCurrencyCode;
+          if (en['BT-5'].val.indexOf(InvoiceCurrency[0]) < 0) {
+            en['BT-5'].val.push(InvoiceCurrency[0]);
+          }
+        }
+        var TaxCurrencyCode = ApplicableHeaderTradeSettlement['ram:TaxCurrencyCode'];
+        if (TaxCurrencyCode) {
+          VAT_Currency = TaxCurrencyCode;
+          if (en['BT-6'].val.indexOf(VAT_Currency[0]) < 0) {
+            en['BT-6'].val.push(VAT_Currency[0]);
+          }
+        }
         var InvoiceReferencedDocuments = ApplicableHeaderTradeSettlement['ram:InvoiceReferencedDocument'];
         for (InvoiceReferencedDocument of InvoiceReferencedDocuments || []) {
           var BG_3 = {};
@@ -812,8 +825,16 @@ var invoice2xbrl = (function() {
     en['BT-1'] = {'name':'Invoice number', 'val':Invoice['cbc:ID']};
     en['BT-2'] = {'name':'Invoice issue date', 'val':Invoice['cbc:IssueDate']};
     en['BT-3'] = {'name':'Invoice type code', 'val':Invoice['cbc:InvoiceTypeCode']};
-    en['BT-5'] = {'name':'Invoice currency code', 'val':Invoice['cbcDocumentCurrencyCode']};
-    en['BT-6'] = {'name':'VAT accounting currency code', 'val':Invoice['cbciTaxCurrencyCode']};
+    var DocumentCurrencyCode = Invoice['cbc:DocumentCurrencyCode'];
+    if (DocumentCurrencyCode) {
+      InvoiceCurrency = DocumentCurrencyCode;
+    }
+    en['BT-5'] = {'name':'Invoice currency code', 'val':InvoiceCurrency};
+    var TaxCurrencyCode = Invoice['cbc:TaxCurrencyCode'];
+    if (TaxCurrencyCode) {
+      VAT_Currency = TaxCurrencyCode;
+    }
+    en['BT-6'] = {'name':'VAT accounting currency code', 'val':VAT_Currency};
     en['BT-7'] = {'name':'Value added tax point date', 'val':Invoice['cbc:TaxPointDate']};
     var InvoicePeriods = Invoice['cac:InvoicePeriod'];
     if (InvoicePeriods) {
@@ -1484,30 +1505,6 @@ var invoice2xbrl = (function() {
   }
 
   function en2xbrl(en) {
-    // EN is defined in EN_16931-1.js
-    var xbrli = 'http://www.xbrl.org/2003/instance';
-    var xbrldi = 'http://xbrl.org/2006/xbrldi';
-    var eipa = 'http://www.eipa.jp';
-    var cen = eipa+'/cen/EN-16931-1';
-    var eg = eipa;
-    var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
-    var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
-    '<xbrli:xbrl xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
-      'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '+
-      'xmlns:xlink="http://www.w3.org/1999/xlink" '+
-      'xmlns:iso639="http://www.xbrl.org/2005/iso639" '+
-      'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
-      'xmlns:xbrli="'+xbrli+'" '+
-      'xmlns:xbrldi="'+xbrldi+'" '+
-      'xmlns:cen="'+cen+'">'+
-      '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/EN-16931-1.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
-      '<xbrli:unit id="eur">'+
-        '<xbrli:measure>iso4217:EUR</xbrli:measure>'+
-      '</xbrli:unit>'+
-      '<xbrli:unit id="pure">'+
-        '<xbrli:measure>xbrli:pure</xbrli:measure>'+
-      '</xbrli:unit>'+
-    '</xbrli:xbrl>';
     function appendtypedLN(L, ID, scenario) {
       var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
           number = xmlDoc.createElementNS(cen, L+'N'),
@@ -1620,10 +1617,15 @@ var invoice2xbrl = (function() {
         xbrl.appendChild(element);
         break;
       }
-      if (['Amount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
+      if (['Amount', 'UnitPriceAmount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
         element.setAttribute('decimals', 'INF');
-        if ('Amount' == type) {
-          element.setAttribute('unitRef', 'eur');
+        if (type.match(/Amount$/)) {
+          if (name.match(/VAT/)) {
+            element.setAttribute('unitRef', VAT_Currency);
+          }
+          else {
+            element.setAttribute('unitRef', InvoiceCurrency);
+          }
         }
         else if ('Percentage' == type) {
           element.setAttribute('unitRef', 'pure');
@@ -1635,11 +1637,48 @@ var invoice2xbrl = (function() {
     }
     // ---------------------------------------------------------------
     // START
-    var contexts = {};
+    // EN[term] is defined in EN_16931-1.js
+    var xbrli = 'http://www.xbrl.org/2003/instance';
+    var xbrldi = 'http://xbrl.org/2006/xbrldi';
+    var eipa = 'http://www.eipa.jp';
+    var cen = eipa+'/cen/EN-16931-1';
+    var eg = eipa;
+    var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
+    var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
+    '<xbrli:xbrl xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
+      'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '+
+      'xmlns:xlink="http://www.w3.org/1999/xlink" '+
+      'xmlns:iso639="http://www.xbrl.org/2005/iso639" '+
+      'xmlns:iso4217="http://www.xbrl.org/2003/iso4217" '+
+      'xmlns:xbrli="'+xbrli+'" '+
+      'xmlns:xbrldi="'+xbrldi+'" '+
+      'xmlns:cen="'+cen+'">'+
+      '<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/EN-16931-1.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
+      '<xbrli:unit id="pure">'+
+        '<xbrli:measure>xbrli:pure</xbrli:measure>'+
+      '</xbrli:unit>';
+    InvoiceCurrency = InvoiceCurrency[0].toUpperCase();
+    if (InvoiceCurrency.match(/^[A-Z]{3}$/) && 'EUR' !== InvoiceCurrency.toUpperCase()) {
+      xmlString += '<xbrli:unit id="'+InvoiceCurrency+'">'+
+        '<xbrli:measure>iso4217:'+InvoiceCurrency+'</xbrli:measure></xbrli:unit>';
+    }
+    else {
+      InvoiceCurrency = 'EUR';
+      xmlString += '<xbrli:unit id="EUR"><xbrli:measure>iso4217:EUR</xbrli:measure></xbrli:unit>'
+    }
+    VAT_Currency = VAT_Currency[0].toUpperCase();
+    if (VAT_Currency.match(/^[A-Z]{3}$/) && 'EUR' !== VAT_Currency.toUpperCase() && InvoiceCurrency !== VAT_Currency) {
+      xmlString += '<xbrli:unit id="'+VAT_Currency+'">'+
+        '<xbrli:measure>iso4217:'+VAT_Currency+'</xbrli:measure></xbrli:unit>';
+    }
+    else {
+      VAT_Currency = InvoiceCurrency;
+    }
+    xmlString += '</xbrli:xbrl>';
     var DOMP = new DOMParser();
     var xmlDoc = DOMP.parseFromString(xmlString, 'text/xml');
     var xbrl = xmlDoc.getElementsByTagNameNS(xbrli, 'xbrl')[0];
-    var InvoiceCurrency, VAT_AccountingCurrency;
+    var contexts = {};
     var L1keys = Object.keys(en);
     // console.log('L1keys', L1keys);
     for (var L1key of L1keys || []){
@@ -1759,6 +1798,7 @@ var invoice2xbrl = (function() {
       return ajaxRequest('data/save.cgi', data, 'POST', 20000)
       .then(function(res) {
         console.log(res);
+        return res;
       })
       .catch(function(err) { console.log(err); })
       // console.log(xbrl);

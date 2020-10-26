@@ -9,18 +9,18 @@
 	xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
 	xmlns:cen="http://www.eipa.jp/cen/EN-16931-1">
 	<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/EN-16931-1.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
-	<xbrli:unit id="eur">
-		<xbrli:measure>iso4217:EUR</xbrli:measure>
-	</xbrli:unit>
 	<xbrli:unit id="pure">
 		<xbrli:measure>xbrli:pure</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="EUR">
+		<xbrli:measure>iso4217:EUR</xbrli:measure>
 	</xbrli:unit>
 	<xbrli:context id="BG-0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -32,14 +32,13 @@
 	<cen:BT-2 contextRef="BG-0">2014-11-10</cen:BT-2>
 	<cen:BT-3 contextRef="BG-0">380</cen:BT-3>
 	<cen:BT-5 contextRef="BG-0">EUR</cen:BT-5>
-	<cen:BT-6 contextRef="BG-0">undefined</cen:BT-6>
 	<cen:BT-8 contextRef="BG-0">undefined</cen:BT-8>
 	<xbrli:context id="BG-23_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -50,8 +49,8 @@
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-116 contextRef="BG-23_0" decimals="INF" unitRef="eur">908.91</cen:BT-116>
-	<cen:BT-117 contextRef="BG-23_0" decimals="INF" unitRef="eur">190.87</cen:BT-117>
+	<cen:BT-116 contextRef="BG-23_0" decimals="INF" unitRef="EUR">908.91</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_0" decimals="INF" unitRef="EUR">190.87</cen:BT-117>
 	<cen:BT-118 contextRef="BG-23_0">VAT</cen:BT-118>
 	<cen:BT-119 contextRef="BG-23_0" decimals="INF" unitRef="pure">21</cen:BT-119>
 	<cen:BT-9 contextRef="BG-0">2014-11-24</cen:BT-9>
@@ -62,7 +61,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -81,7 +80,7 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -100,7 +99,7 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -117,7 +116,7 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -137,7 +136,7 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -154,7 +153,7 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -174,7 +173,7 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -188,13 +187,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_0">1</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_0" decimals="INF" unitRef="pure">16000</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_0">16000</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_0" decimals="INF" unitRef="eur">140.8</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_0" decimals="INF" unitRef="EUR">140.8</cen:BT-131>
 	<xbrli:context id="BG-25_1">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -208,13 +207,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_1">2</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_1" decimals="INF" unitRef="pure">16000</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_1">16000</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_1" decimals="INF" unitRef="eur">16.16</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_1" decimals="INF" unitRef="EUR">16.16</cen:BT-131>
 	<xbrli:context id="BG-25_2">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -228,13 +227,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_2">3</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_2" decimals="INF" unitRef="pure">132</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_2">132</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_2" decimals="INF" unitRef="eur">167.64</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_2" decimals="INF" unitRef="EUR">167.64</cen:BT-131>
 	<xbrli:context id="BG-25_3">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -248,13 +247,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_3">4</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_3" decimals="INF" unitRef="pure">58</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_3">58</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_3" decimals="INF" unitRef="eur">88.74</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_3" decimals="INF" unitRef="EUR">88.74</cen:BT-131>
 	<xbrli:context id="BG-25_4">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -268,13 +267,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_4">5</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_4" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_4">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_4" decimals="INF" unitRef="eur">36.75</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_4" decimals="INF" unitRef="EUR">36.75</cen:BT-131>
 	<xbrli:context id="BG-25_5">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -288,13 +287,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_5">6</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_5" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_5">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_5" decimals="INF" unitRef="eur">56.5</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_5" decimals="INF" unitRef="EUR">56.5</cen:BT-131>
 	<xbrli:context id="BG-25_6">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -308,13 +307,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_6">7</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_6" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_6">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_6" decimals="INF" unitRef="eur">83.34</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_6" decimals="INF" unitRef="EUR">83.34</cen:BT-131>
 	<xbrli:context id="BG-25_7">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -328,13 +327,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_7">8</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_7" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_7">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_7" decimals="INF" unitRef="eur">190.31</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_7" decimals="INF" unitRef="EUR">190.31</cen:BT-131>
 	<xbrli:context id="BG-25_8">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -348,13 +347,13 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_8">9</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_8" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_8">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_8" decimals="INF" unitRef="eur">64.21</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_8" decimals="INF" unitRef="EUR">64.21</cen:BT-131>
 	<xbrli:context id="BG-25_9">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -368,5 +367,5 @@ acturen. Kijk voor informatie op www.enexis.nl.rentenota</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_9">10</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_9" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_9">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_9" decimals="INF" unitRef="eur">64.46</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_9" decimals="INF" unitRef="EUR">64.46</cen:BT-131>
 </xbrli:xbrl>

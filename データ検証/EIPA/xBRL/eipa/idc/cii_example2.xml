@@ -9,18 +9,18 @@
 	xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
 	xmlns:cen="http://www.eipa.jp/cen/EN-16931-1">
 	<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/EN-16931-1.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
-	<xbrli:unit id="eur">
-		<xbrli:measure>iso4217:EUR</xbrli:measure>
-	</xbrli:unit>
 	<xbrli:unit id="pure">
 		<xbrli:measure>xbrli:pure</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="NOK">
+		<xbrli:measure>iso4217:NOK</xbrli:measure>
 	</xbrli:unit>
 	<xbrli:context id="BG-0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -32,13 +32,12 @@
 	<cen:BT-2 contextRef="BG-0">2013-06-30</cen:BT-2>
 	<cen:BT-3 contextRef="BG-0">380</cen:BT-3>
 	<cen:BT-5 contextRef="BG-0">NOK</cen:BT-5>
-	<cen:BT-6 contextRef="BG-0">undefined</cen:BT-6>
 	<xbrli:context id="BG-23_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -49,8 +48,8 @@
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-116 contextRef="BG-23_0" decimals="INF" unitRef="eur">1460.5</cen:BT-116>
-	<cen:BT-117 contextRef="BG-23_0" decimals="INF" unitRef="eur">365.13</cen:BT-117>
+	<cen:BT-116 contextRef="BG-23_0" decimals="INF" unitRef="NOK">1460.5</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_0" decimals="INF" unitRef="NOK">365.13</cen:BT-117>
 	<cen:BT-118 contextRef="BG-23_0">VAT</cen:BT-118>
 	<cen:BT-119 contextRef="BG-23_0" decimals="INF" unitRef="pure">25</cen:BT-119>
 	<xbrli:context id="BG-23_1">
@@ -58,7 +57,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -69,8 +68,8 @@
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-116 contextRef="BG-23_1" decimals="INF" unitRef="eur">1</cen:BT-116>
-	<cen:BT-117 contextRef="BG-23_1" decimals="INF" unitRef="eur">0.15</cen:BT-117>
+	<cen:BT-116 contextRef="BG-23_1" decimals="INF" unitRef="NOK">1</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_1" decimals="INF" unitRef="NOK">0.15</cen:BT-117>
 	<cen:BT-118 contextRef="BG-23_1">VAT</cen:BT-118>
 	<cen:BT-119 contextRef="BG-23_1" decimals="INF" unitRef="pure">15</cen:BT-119>
 	<xbrli:context id="BG-23_2">
@@ -78,7 +77,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -89,8 +88,8 @@
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-116 contextRef="BG-23_2" decimals="INF" unitRef="eur">-25</cen:BT-116>
-	<cen:BT-117 contextRef="BG-23_2" decimals="INF" unitRef="eur">0</cen:BT-117>
+	<cen:BT-116 contextRef="BG-23_2" decimals="INF" unitRef="NOK">-25</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_2" decimals="INF" unitRef="NOK">0</cen:BT-117>
 	<cen:BT-118 contextRef="BG-23_2">VAT</cen:BT-118>
 	<cen:BT-119 contextRef="BG-23_2" decimals="INF" unitRef="pure">0</cen:BT-119>
 	<cen:BT-120 contextRef="BG-23_2">Exempt New Means of Transport</cen:BT-120>
@@ -104,7 +103,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -127,7 +126,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -149,7 +148,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -167,7 +166,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -189,7 +188,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -208,7 +207,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -230,7 +229,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -247,7 +246,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -269,7 +268,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -286,7 +285,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -297,7 +296,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-92 contextRef="BG-20_0" decimals="INF" unitRef="eur">100</cen:BT-92>
+	<cen:BT-92 contextRef="BG-20_0" decimals="INF" unitRef="NOK">100</cen:BT-92>
 	<cen:BT-95 contextRef="BG-20_0">VAT</cen:BT-95>
 	<cen:BT-96 contextRef="BG-20_0" decimals="INF" unitRef="pure">25</cen:BT-96>
 	<cen:BT-97 contextRef="BG-20_0">Promotion discount</cen:BT-97>
@@ -307,7 +306,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -318,7 +317,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-92 contextRef="BG-20_1" decimals="INF" unitRef="eur">100</cen:BT-92>
+	<cen:BT-92 contextRef="BG-20_1" decimals="INF" unitRef="NOK">100</cen:BT-92>
 	<cen:BT-95 contextRef="BG-20_1">VAT</cen:BT-95>
 	<cen:BT-96 contextRef="BG-20_1" decimals="INF" unitRef="pure">25</cen:BT-96>
 	<cen:BT-97 contextRef="BG-20_1">Freight</cen:BT-97>
@@ -327,7 +326,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -338,7 +337,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-99 contextRef="BG-21_0" decimals="INF" unitRef="eur">100</cen:BT-99>
+	<cen:BT-99 contextRef="BG-21_0" decimals="INF" unitRef="NOK">100</cen:BT-99>
 	<cen:BT-102 contextRef="BG-21_0">S</cen:BT-102>
 	<cen:BT-103 contextRef="BG-21_0" decimals="INF" unitRef="pure">25</cen:BT-103>
 	<cen:BT-104 contextRef="BG-21_0">Promotion discount</cen:BT-104>
@@ -348,7 +347,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -359,7 +358,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<cen:BT-99 contextRef="BG-21_1" decimals="INF" unitRef="eur">100</cen:BT-99>
+	<cen:BT-99 contextRef="BG-21_1" decimals="INF" unitRef="NOK">100</cen:BT-99>
 	<cen:BT-102 contextRef="BG-21_1">S</cen:BT-102>
 	<cen:BT-103 contextRef="BG-21_1" decimals="INF" unitRef="pure">25</cen:BT-103>
 	<cen:BT-104 contextRef="BG-21_1">Freight</cen:BT-104>
@@ -368,7 +367,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -383,7 +382,7 @@ enalty percentage 10% from due date</cen:BT-20>
 	<cen:BT-127 contextRef="BG-25_0">Scratch on box</cen:BT-127>
 	<cen:BT-129 contextRef="BG-25_0" decimals="INF" unitRef="pure">1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_0">1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_0" decimals="INF" unitRef="eur">1273</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_0" decimals="INF" unitRef="NOK">1273</cen:BT-131>
 	<cen:BT-132 contextRef="BG-25_0">1</cen:BT-132>
 	<cen:BT-133 contextRef="BG-25_0">BookingCode001</cen:BT-133>
 	<xbrli:context id="BG-25_1">
@@ -391,7 +390,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -406,7 +405,7 @@ enalty percentage 10% from due date</cen:BT-20>
 	<cen:BT-127 contextRef="BG-25_1">Cover is slightly damaged.</cen:BT-127>
 	<cen:BT-129 contextRef="BG-25_1" decimals="INF" unitRef="pure">-1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_1">-1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_1" decimals="INF" unitRef="eur">-3.96</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_1" decimals="INF" unitRef="NOK">-3.96</cen:BT-131>
 	<cen:BT-132 contextRef="BG-25_1">5</cen:BT-132>
 	<cen:BT-133 contextRef="BG-25_1">BookingCode002</cen:BT-133>
 	<xbrli:context id="BG-25_2">
@@ -414,7 +413,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -428,7 +427,7 @@ enalty percentage 10% from due date</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_2">3</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_2" decimals="INF" unitRef="pure">2</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_2">2</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_2" decimals="INF" unitRef="eur">4.96</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_2" decimals="INF" unitRef="NOK">4.96</cen:BT-131>
 	<cen:BT-132 contextRef="BG-25_2">3</cen:BT-132>
 	<cen:BT-133 contextRef="BG-25_2">BookingCode003</cen:BT-133>
 	<xbrli:context id="BG-25_3">
@@ -436,7 +435,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -450,7 +449,7 @@ enalty percentage 10% from due date</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_3">4</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_3" decimals="INF" unitRef="pure">-1</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_3">-1</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_3" decimals="INF" unitRef="eur">-25</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_3" decimals="INF" unitRef="NOK">-25</cen:BT-131>
 	<cen:BT-132 contextRef="BG-25_3">2</cen:BT-132>
 	<cen:BT-133 contextRef="BG-25_3">BookingCode004</cen:BT-133>
 	<xbrli:context id="BG-25_4">
@@ -458,7 +457,7 @@ enalty percentage 10% from due date</cen:BT-20>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:forever/>
+			<xbrli:instant>2020-10-26</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="cen:dL1N">
@@ -472,7 +471,7 @@ enalty percentage 10% from due date</cen:BT-20>
 	<cen:BT-126 contextRef="BG-25_4">5</cen:BT-126>
 	<cen:BT-129 contextRef="BG-25_4" decimals="INF" unitRef="pure">250</cen:BT-129>
 	<cen:BT-130 contextRef="BG-25_4">250</cen:BT-130>
-	<cen:BT-131 contextRef="BG-25_4" decimals="INF" unitRef="eur">187.5</cen:BT-131>
+	<cen:BT-131 contextRef="BG-25_4" decimals="INF" unitRef="NOK">187.5</cen:BT-131>
 	<cen:BT-132 contextRef="BG-25_4">4</cen:BT-132>
 	<cen:BT-133 contextRef="BG-25_4">BookingCode005</cen:BT-133>
 </xbrli:xbrl>
