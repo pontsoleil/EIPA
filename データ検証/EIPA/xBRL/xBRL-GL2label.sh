@@ -24,7 +24,7 @@ exec 2>log/${0##*/}.$$.log
 #   term=gensub(/([a-z])([A-Z])/, "\\1 \\2", "g", term);
 #   print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $5 "\t" $6 "\t" term "\t" $8;
 # }' > gl/source/xBRL-GL.tsv
-cat gl/source/xBRL-GL.tsv | awk -F'\t' '{
+cat gl/source/xBRL-GL.txt | awk -F'\t' '{
   tmp="echo " $3 date " | openssl md5 | cut -f2 -d\" \"";
   tmp | getline cksum;
   close(tmp);
@@ -70,7 +70,7 @@ END {
 }' > gl/source/gl-"$1"-2020-12-31-label.xml
 
 # --------------------------------------------------------------------
-# rm $Tmp-*
-# rm log/${0##*/}.$$.*
+rm $Tmp-*
+rm log/${0##*/}.$$.*
 exit 0
 # xBRL-GL2label.sh
