@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
 <!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
-<schema targetNamespace="http://www.xbrl.org/int/gl/cor/2020-12-31" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
-	<annotation>
-		<appinfo>
-			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:href="gl-cor-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/>
-		</appinfo>
-	</annotation>
+<schema targetNamespace="http://www.xbrl.org/int/gl/cor/2020-12-31"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xbrli="http://www.xbrl.org/2003/instance"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
 	<include schemaLocation="../../cor/gl-cor-2020-12-31.xsd"/>
 </schema>
