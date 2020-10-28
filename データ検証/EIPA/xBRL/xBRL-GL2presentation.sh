@@ -16,6 +16,7 @@ exec 2>log/${0##*/}.$$.log
 # === tsv -> xpath ============================================================
 # seq parent code level type module term description
 # 1   2      3    4     5    6      7    8
+# TODO check if loc for root exists
 cat gl/source/xBRL-GL.txt | awk -F'\t' -v module=$1 'BEGIN {
   n=0;
   parent="root";
