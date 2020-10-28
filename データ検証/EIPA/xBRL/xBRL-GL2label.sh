@@ -17,7 +17,14 @@ exec 2>log/${0##*/}.$$.log
 # seq parent code level type module term description
 # 1   2      3    4     5    6      7    8
 # see https://stackoverflow.com/questions/8024392/awk-replace-a-column-with-its-hash-value
-cat gl/source/xBRL-GL.txt | awk -F'\t' '{
+# cat gl/source/xBRL-GL.txt | awk -F'\t' '{
+#   term=$7;
+#   match(term, /^([a-z])(.*)$/, b);
+#   term=toupper(b[1]) b[2];
+#   term=gensub(/([a-z])([A-Z])/, "\\1 \\2", "g", term);
+#   print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $5 "\t" $6 "\t" term "\t" $8;
+# }' > gl/source/xBRL-GL.tsv
+cat gl/source/xBRL-GL.tsv | awk -F'\t' '{
   tmp="echo " $3 date " | openssl md5 | cut -f2 -d\" \"";
   tmp | getline cksum;
   close(tmp);
@@ -37,8 +44,12 @@ cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
     code=$4;
     cksum="_" $1;
     term=$8
-    description="";
-    for(i=9;i<=NF;i++) description=description $i" "; 
+    # match(term, /^([a-z])(.*)/, b);
+    # term=toupper(b[1]) b[2];
+    # term=gensub(/([a-z])([A-Z])/, "\\1 \\2", "g", term);
+    description=$9;
+    # description="";
+    # for(i=9;i<=NF;i++) description=description $i" "; 
     # print code " " description;
     if (term || description) {
       printf "    <!-- %s gl-%s:%s -->\n", code, module, term;
