@@ -256,10 +256,10 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 	<!-- The container for XBRL GL, accountingEntries, is not the root of an XBRL GL file - the root, as with all XBRL files, is xbrl. This means that a single XBRL GL file can store one or more virtual XBRL GL files, through one or more accountingEntries structures with data inside. The primary key to understanding an XBRL GL file is the entriesType. A single physical XBRL GL file can have multiple accountingEntries structures to represent both transactions and master files; the differences are signified by the appropriate entriesType enumerated values. This is especially important in a representation of this kind. A file creator can create a single physical file but have information about the vendors in one accountingEntries section and in information about the invoices in another referencing only the vendor number, thereby reducing the duplicated information (vendor name, address, etc.) in the file resulting in smaller file sizes. This instance document uses this approach, identified as "normalized" as opposed to "monolithic", where all the information is stored at detail line level. -->
 	<!-- The first accountingEntries structure contains the information about the vendor invoices. Vendors and inventory items are referenced through a code, and two other accountingEntries structures represent the vendors and the inventory master file. The order in which the different accountingEntries structures appear is insignificant, but FRIS reccomends that referred to information be presented first. -->
 <!-- accountingEntries -->
-		<gl-cor:specified.documentInfo contextRef="now"/>
-		<gl-cor:specified.entityInformation contextRef="now"/>
-		<gl-cor:specified.entryHeader contextRef="now">H50</gl-cor:specified.entryHeader>
-		<gl-cor:specified.entryHeader contextRef="now">H51</gl-cor:specified.entryHeader>
+		<gl-cor:documentInfo contextRef="now"/>
+		<gl-cor:entityInformation contextRef="now"/>
+		<gl-cor:entryHeader contextRef="now">H50</gl-cor:entryHeader>
+		<gl-cor:entryHeader contextRef="now">H51</gl-cor:entryHeader>
 	<!-- Because entriesType is strongly suggested, documentInfo will be required. -->
 		<!-- This field, entriesType, provides the automated guidance on the purpose of the XBRL GL information. This use of XBRL GL, to represent a grouping of vendor invoices, uses the enumerated value "other". Automated consumption would be based on other factors, such as "vendor" for indentifierType and "voucher" for documentType. -->
 		<gl-cor:entriesType contextRef="now">other</gl-cor:entriesType>
@@ -277,7 +277,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-bus:sourceApplication contextRef="now">Oracle</gl-bus:sourceApplication>
 		<gl-muc:defaultCurrency contextRef="now">iso4217:usd</gl-muc:defaultCurrency>
 	<!-- Typically, an export from an accounting system does not carry with it information specifically about the company. However, the name of the company would be a very good thing to include with the file, making the entityInformation tuple necessary. -->
-		<gl-bus:specified.organizationIdentifiers contextRef="now"/>
+		<gl-bus:organizationIdentifiers contextRef="now"/>
 	<!-- The name of the company would be a very good thing to include with the file; this structure and its content are where that would be stored. OrganizationDescription is not currently enumerated.  -->
 		<gl-bus:organizationIdentifier contextRef="now">ABC Company</gl-bus:organizationIdentifier>
 		<gl-bus:organizationDescription contextRef="now">Company Name</gl-bus:organizationDescription>
@@ -299,8 +299,8 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<!-- The reason for making an entry goes here. If a comment is associated with an invoice, it can go here. -->
 		<gl-cor:entryComment contextRef="H50">Invoice: #51029 Vendor: #1130</gl-cor:entryComment>
 		<!-- As noted, when illustrating details on a form/document, individual line are represented using entryDetail which must be held together by entryHeaders - one primary amount per entryDetail line. However, you can list different accounts within the same entryDetail line that are associated with that amount. For example, if you capitalize for US GAAP and expense for IFRS, you can have multiple account structures within one entryDetail section. The generic nature of XBRL GL means that much of the  information that is common to each line, such as the vendor, or the document attributes, must be repeated on each detail line, or be entered into one of the lines with an understanding that it is common to all. -->
-		<gl-cor:specified.entryDetail contextRef="H50">H50L1</gl-cor:specified.entryDetail>
-		<gl-cor:specified.entryDetail contextRef="H50">H50L2</gl-cor:specified.entryDetail>
+		<gl-cor:entryDetail contextRef="H50">H50L1</gl-cor:entryDetail>
+		<gl-cor:entryDetail contextRef="H50">H50L2</gl-cor:entryDetail>
 
 		<!-- A unique identifier for each entry detail line within an entry header, this should at the least be a counter, representing the line relative to others on the invoice form. -->
 		<gl-cor:lineNumber contextRef="H50L1">1</gl-cor:lineNumber>
@@ -313,7 +313,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-bus:amountMemo contextRef="H50L1">false</gl-bus:amountMemo>
 		<!-- Invoices from vendors require vendor information. This is held in the identifier structure. As systems may or may not store individual components of the structure all of the time - they may have the vendor's number but not the name or vice versa, the only "mandatory" field here is the identifierType to state without question that this is a vendor. It may be confusing that the vendor must be identified for each line of an invoice. Why isn't the vendor at the Header level? The answer - the generic nature of XBRL GL means it must accommodate both detail and summary style of entry. Rather than duplicate the identifier structure at both header and detail level, it is at the detail level.-->
 		<!-- The full vendor information is stored in the accountingEntries structure that represents the vendors master file. In addition to the code, the identifierType is included, to distinguish it from other counterparts with the same code (customers, employees etc.). -->
-		<gl-cor:specified.identifierReference contextRef="H50L1">V1130</gl-cor:specified.identifierReference>
+		<gl-cor:identifierReference contextRef="H50L1">V1130</gl-cor:identifierReference>
 		<!-- As noted previously, the identifierType of vendor and the documentType of voucher provide automated guidance that this batch of information has to do with invoices from vendors. Vouchers are invoices received from vendors. -->
 		<gl-cor:documentType contextRef="H50L1">voucher</gl-cor:documentType>
 		<!-- Document number in this representation is the number of the invoice. -->
@@ -333,7 +333,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<!-- Terms is currently a free form expression of the terms of a document. The XBRL GL WG has had discussions of a structure or adoption of existing standards that enumerate this information-->
 		<gl-cor:terms contextRef="H50L1">2% 10 Net 30</gl-cor:terms>
 		<!-- The measurable structure is the primary tool for collecting data at the line level. It represents inventory, services, supplies, processes, KPIs, fixed assets and other things that are matched to a code (as opposed to an account) and collects numeric (measurableQuantity) and non-numeric information (measurableQualifier). A typical invoice would have one measurable per entryDetail line. The amount fields in the entryDetail would be the extension of measurableQuantity times MeasurableCostPerUnit. There are a number of elements within the measurable structure - at least ONE of measurableCode or measurableDescription is necessary; anything else is optional, used as needed. -->
-		<gl-bus:specified.measurable contextRef="H50L1">IN_Widget1</gl-bus:specified.measurable>
+		<gl-bus:measurable contextRef="H50L1">IN_Widget1</gl-bus:measurable>
 	<!-- The full vendor information is stored in the accountingEntries structure that represents the vendors master file. In addition to the code, the identifierType is included, to distinguish it from other counterparts with the same code (customers, employees etc.). -->
 		<gl-cor:identifierCode contextRef="H50L1">1130</gl-cor:identifierCode>
 		<gl-cor:identifierType contextRef="H50L1">V</gl-cor:identifierType>
@@ -346,7 +346,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:amount contextRef="H50L2" decimals="2" unitRef="usd">300</gl-cor:amount>
 		<gl-cor:postingDate contextRef="H50L2">2005-06-30</gl-cor:postingDate>
 		<gl-bus:amountMemo contextRef="H50L2">false</gl-bus:amountMemo>
-		<gl-cor:specified.identifierReference contextRef="H50L2">V1130</gl-cor:specified.identifierReference>
+		<gl-cor:identifierReference contextRef="H50L2">V1130</gl-cor:identifierReference>
 		<gl-cor:documentType contextRef="H50L2">voucher</gl-cor:documentType>
 		<gl-cor:documentNumber contextRef="H50L2">51029</gl-cor:documentNumber>
 		<gl-cor:documentReference contextRef="H50L2">Voucher#: 100900 </gl-cor:documentReference>
@@ -356,7 +356,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:detailComment contextRef="H50L2">Vendor#: 1130 Document#: 51029 Date: 6/15/05</gl-cor:detailComment>
 		<gl-cor:maturityDate contextRef="H50L2">2005-07-15</gl-cor:maturityDate>
 		<gl-cor:terms contextRef="H50L2">2% 10 Net 30</gl-cor:terms>
-		<gl-bus:specified.measurable contextRef="H50L2">IN_Gidget3</gl-bus:specified.measurable>
+		<gl-bus:measurable contextRef="H50L2">IN_Gidget3</gl-bus:measurable>
 
 		<gl-cor:identifierCode contextRef="H50L2">1130</gl-cor:identifierCode>
 		<gl-cor:identifierType contextRef="H50L2">V</gl-cor:identifierType>
@@ -373,15 +373,15 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-bus:entryOrigin contextRef="H51">imported entry</gl-bus:entryOrigin>
 		<gl-cor:entryNumber contextRef="H51">51</gl-cor:entryNumber>
 		<gl-cor:entryComment contextRef="H51">Invoice: #4321 Vendor: #8765</gl-cor:entryComment>
-		<gl-cor:specified.entryDetail contextRef="H51">H51L1</gl-cor:specified.entryDetail>
-		<gl-cor:specified.entryDetail contextRef="H51">H51L2</gl-cor:specified.entryDetail>
-		<gl-cor:specified.entryDetail contextRef="H51">H51L3</gl-cor:specified.entryDetail>
+		<gl-cor:entryDetail contextRef="H51">H51L1</gl-cor:entryDetail>
+		<gl-cor:entryDetail contextRef="H51">H51L2</gl-cor:entryDetail>
+		<gl-cor:entryDetail contextRef="H51">H51L3</gl-cor:entryDetail>
 
 		<gl-cor:lineNumber contextRef="H51L1">1</gl-cor:lineNumber>
 		<gl-cor:amount contextRef="H51L1" decimals="2" unitRef="usd">54000</gl-cor:amount>
 		<gl-cor:postingDate contextRef="H51L1">2005-06-30</gl-cor:postingDate>
 		<gl-bus:amountMemo contextRef="H51L1">false</gl-bus:amountMemo>
-		<gl-cor:specified.identifierReference contextRef="H51L1">V1412</gl-cor:specified.identifierReference>
+		<gl-cor:identifierReference contextRef="H51L1">V1412</gl-cor:identifierReference>
 		<gl-cor:documentType contextRef="H51L1">voucher</gl-cor:documentType>
 		<gl-cor:documentNumber contextRef="H51L1">234</gl-cor:documentNumber>
 		<gl-cor:documentReference contextRef="H51L1">Voucher#: 100901 </gl-cor:documentReference>
@@ -391,7 +391,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:detailComment contextRef="H51L1">Vendor#: 1412 Document#: 234 Date: 6/15/05</gl-cor:detailComment>
 		<gl-cor:maturityDate contextRef="H51L1">2005-07-15</gl-cor:maturityDate>
 		<gl-cor:terms contextRef="H51L1">2% 10 Net 30</gl-cor:terms>
-		<gl-bus:specified.measurable contextRef="H51L1">IN_4576</gl-bus:specified.measurable>
+		<gl-bus:measurable contextRef="H51L1">IN_4576</gl-bus:measurable>
 
 		<gl-cor:identifierCode contextRef="H51L1">1412</gl-cor:identifierCode>
 		<gl-cor:identifierType contextRef="H51L1">V</gl-cor:identifierType>
@@ -404,7 +404,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:amount contextRef="H51L2" decimals="2" unitRef="usd">1500</gl-cor:amount>
 		<gl-cor:postingDate contextRef="H51L2">2005-06-30</gl-cor:postingDate>
 		<gl-bus:amountMemo contextRef="H51L2">false</gl-bus:amountMemo>
-		<gl-cor:specified.identifierReference contextRef="H51L2">V1412</gl-cor:specified.identifierReference>
+		<gl-cor:identifierReference contextRef="H51L2">V1412</gl-cor:identifierReference>
 		<gl-cor:documentType contextRef="H51L2">voucher</gl-cor:documentType>
 		<gl-cor:documentNumber contextRef="H51L2">234</gl-cor:documentNumber>
 		<gl-cor:documentReference contextRef="H51L2">Voucher#: 100901 </gl-cor:documentReference>
@@ -414,7 +414,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:detailComment contextRef="H51L2">Vendor#: 1412 Document#: 234 Date: 6/15/05</gl-cor:detailComment>
 		<gl-cor:maturityDate contextRef="H51L2">2005-07-15</gl-cor:maturityDate>
 		<gl-cor:terms contextRef="H51L2">2% 10 Net 30</gl-cor:terms>
-		<gl-bus:specified.measurable contextRef="H51L2">IN_4800</gl-bus:specified.measurable>
+		<gl-bus:measurable contextRef="H51L2">IN_4800</gl-bus:measurable>
 
 		<gl-cor:identifierCode contextRef="H51L2">1412</gl-cor:identifierCode>
 		<gl-cor:identifierType contextRef="H51L2">V</gl-cor:identifierType>
@@ -427,7 +427,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:amount contextRef="H51L3" decimals="2" unitRef="usd">500</gl-cor:amount>
 		<gl-cor:postingDate contextRef="H51L3">2005-06-30</gl-cor:postingDate>
 		<gl-bus:amountMemo contextRef="H51L3">false</gl-bus:amountMemo>
-		<gl-cor:specified.identifierReference contextRef="H51L3">V1412</gl-cor:specified.identifierReference>
+		<gl-cor:identifierReference contextRef="H51L3">V1412</gl-cor:identifierReference>
 		<gl-cor:documentType contextRef="H51L3">voucher</gl-cor:documentType>
 		<gl-cor:documentNumber contextRef="H51L3">234</gl-cor:documentNumber>
 		<gl-cor:documentReference contextRef="H51L3">Voucher#: 100901 </gl-cor:documentReference>
@@ -437,7 +437,7 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:detailComment contextRef="H51L3">Vendor#: 1412 Document#: 234 Date: 6/15/05</gl-cor:detailComment>
 		<gl-cor:maturityDate contextRef="H51L3">2005-07-15</gl-cor:maturityDate>
 		<gl-cor:terms contextRef="H51L3">2% 10 Net 30</gl-cor:terms>
-		<gl-bus:specified.measurable contextRef="H51L3">IN_120</gl-bus:specified.measurable>
+		<gl-bus:measurable contextRef="H51L3">IN_120</gl-bus:measurable>
 
 		<gl-cor:identifierCode contextRef="H51L3">1412</gl-cor:identifierCode>
 		<gl-cor:identifierType contextRef="H51L3">V</gl-cor:identifierType>
@@ -446,8 +446,8 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-bus:measurableID contextRef="H51L3">120</gl-bus:measurableID>
 		<gl-bus:measurableQuantity contextRef="H51L3" decimals="0" unitRef="NotUsed">12</gl-bus:measurableQuantity>
 	<!-- The second accountingEntries structure represents the vendors master file. -->
-		<gl-cor:specified.account contextRef="V1130">V</gl-cor:specified.account>
-		<gl-cor:specified.identifierReference contextRef="V1130">1130</gl-cor:specified.identifierReference>
+		<gl-cor:account contextRef="V1130">V</gl-cor:account>
+		<gl-cor:identifierReference contextRef="V1130">1130</gl-cor:identifierReference>
 	<!-- The enumerated value of "account" in entriesType and of "vendor" in accountType are used to identify the vendors master file. -->
 		<gl-cor:accountType contextRef="V1130">vendor</gl-cor:accountType>
 
@@ -455,8 +455,8 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:identifierDescription contextRef="V1130">Rettaler Property Ltd</gl-cor:identifierDescription>
 		<gl-cor:identifierType contextRef="V1130">V</gl-cor:identifierType>
 
-		<gl-cor:specified.account contextRef="V1412">V</gl-cor:specified.account>
-		<gl-cor:specified.identifierReference contextRef="V1412">1412</gl-cor:specified.identifierReference>
+		<gl-cor:account contextRef="V1412">V</gl-cor:account>
+		<gl-cor:identifierReference contextRef="V1412">1412</gl-cor:identifierReference>
 
 		<gl-cor:accountType contextRef="V">vendor</gl-cor:accountType>
 
@@ -464,11 +464,11 @@ xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2020-12-31 ../plt/case-c-b-m-
 		<gl-cor:identifierDescription contextRef="V1412">Fitzsimmons Office Supplies</gl-cor:identifierDescription>
 		<gl-cor:identifierType contextRef="V1412">V</gl-cor:identifierType>
 	<!-- The third accountingEntries structure represents the inventory master file. -->	
-		<gl-bus:specified.measurable contextRef="IN_Widget1"/>
-		<gl-bus:specified.measurable contextRef="IN_Gidget3"/>
-		<gl-bus:specified.measurable contextRef="IN_4576"/>
-		<gl-bus:specified.measurable contextRef="IN_4800"/>
-		<gl-bus:specified.measurable contextRef="IN_120"/>
+		<gl-bus:measurable contextRef="IN_Widget1"/>
+		<gl-bus:measurable contextRef="IN_Gidget3"/>
+		<gl-bus:measurable contextRef="IN_4576"/>
+		<gl-bus:measurable contextRef="IN_4800"/>
+		<gl-bus:measurable contextRef="IN_120"/>
 
 		<gl-bus:measurableCode contextRef="IN_Widget1">IN</gl-bus:measurableCode>
 		<gl-bus:measurableID contextRef="IN_Widget1">Widget1</gl-bus:measurableID>
