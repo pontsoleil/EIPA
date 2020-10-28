@@ -53,17 +53,19 @@ cat gl/source/xBRL-GL.txt | awk -F'\t' -v module=$1 'BEGIN {
     terms[code]=term;
     p_module=substr(parent, 1, 3);
     if ("src"==p_module) p_module="srcd";
-    # print n " " code " parent module=" p_module " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4] " [5]" currents[5] " [6]" currents[6] " [7]" currents[7];
-    if (1!=parents[parent]) {
-      parents[parent]=1;
-      if (p_module==module) {
-        printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
-      } else {
-        printf "    <loc xlink:type=\"locator\" xlink:href=\"../gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
+    if ("root"!=parent) {
+      # print n " " code " parent module=" p_module " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4] " [5]" currents[5] " [6]" currents[6] " [7]" currents[7];
+      if (1!=parents[parent]) {
+        parents[parent]=1;
+        if (p_module==module) {
+          printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
+        } else {
+          printf "    <loc xlink:type=\"locator\" xlink:href=\"../gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
+        }
       }
+      printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation child: %s\"/>\n", module, module, term, module, term, term;
+      printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", p_module, terms[parent], module, term, terms[parent], term, n;
     }
-    printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation child: %s\"/>\n", module, module, term, module, term, term;
-    printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", p_module, terms[parent], module, term, terms[parent], term, n;
     n=n+1;
   }
 }
