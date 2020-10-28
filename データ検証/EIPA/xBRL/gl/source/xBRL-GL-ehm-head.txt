@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema 
+targetNamespace="http://www.xbrl.org/int/gl/ehm/2020-12-31" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified" 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+xmlns:link="http://www.xbrl.org/2003/linkbase" 
+xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2020-12-31" 
+xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
+	<annotation>
+		<appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" 
+			xlink:href="gl-ehm-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/>
+		</appinfo>
+	</annotation>
+	<!-- item type -->
+	<complexType name="measurableClassIDItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="raw material"/>
+				<enumeration value="work-in-process"/>
+				<enumeration value="finished goods"/>
+				<enumeration value="assemblies"/>
+				<enumeration value="supplies"/>
+				<enumeration value="land"/>
+				<enumeration value="building"/>
+				<enumeration value="machinery"/>
+				<enumeration value="furniture"/>
+				<enumeration value="vehicles"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="costingMethodCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="LIFO"/>
+				<enumeration value="FIFO"/>
+				<enumeration value="average"/>
+				<enumeration value="weighted-average"/>
+				<enumeration value="standard-cost"/>
+				<enumeration value="tax-basis"/>
+				<enumeration value="book-basis"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="serial"/>
+				<enumeration value="lot"/>
+				<enumeration value="other"/>
+				<enumeration value="neither"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableClassDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="costingMethodDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="geospatialCoordinateItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="nextSerialLotNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotOriginalQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotRemainingQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotOriginationItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotExpirationItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotManufacturerItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotBatchDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyStartDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyEndDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyPeriodItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyPeriodUnitItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyVendorItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotWarrantyContractItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="serialLotCommentItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>

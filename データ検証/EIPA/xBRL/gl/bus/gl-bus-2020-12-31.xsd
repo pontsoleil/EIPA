@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema
+targetNamespace="http://www.xbrl.org/int/gl/bus/2020-12-31" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified" 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+xmlns:link="http://www.xbrl.org/2003/linkbase" 
+xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2020-12-31" 
+xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
+	<annotation>
+		<appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:href="gl-bus-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/>
+		</appinfo>
+	</annotation>
+	<complexType name="periodUnitTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="daily"/>
+				<enumeration value="weekly"/>
+				<enumeration value="bi-weekly"/>
+				<enumeration value="semi-monthly"/>
+				<enumeration value="monthly"/>
+				<enumeration value="quarterly"/>
+				<enumeration value="thirdly"/>
+				<enumeration value="semiannual"/>
+				<enumeration value="annual"/>
+				<enumeration value="ad-hoc"/>
+				<enumeration value="current-period-only"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountingMethodPurposeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="book"/>
+				<enumeration value="tax"/>
+				<enumeration value="management"/>
+				<enumeration value="statutory"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountingMethodItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="accrual"/>
+				<enumeration value="cash"/>
+				<enumeration value="modified cash"/>
+				<enumeration value="modified accrual"/>
+				<enumeration value="encumbrance"/>
+				<enumeration value="special methods"/>
+				<enumeration value="hybrid methods"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantEngagementTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="audit"/>
+				<enumeration value="review"/>
+				<enumeration value="compilation"/>
+				<enumeration value="tax"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingCalendarPeriodTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="monthly"/>
+				<enumeration value="quarterly"/>
+				<enumeration value="semi-annually"/>
+				<enumeration value="4-5-4"/>
+				<enumeration value="ad-hoc"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingCalendarOpenClosedStatusItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="open"/>
+				<enumeration value="closed"/>
+				<enumeration value="pending"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="budgetAllocationCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="D"/>
+				<enumeration value="T"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dmJurisdictionTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="F"/>
+				<enumeration value="federal"/>
+				<enumeration value="S"/>
+				<enumeration value="state"/>
+				<enumeration value="L"/>
+				<enumeration value="local"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+				<enumeration value="BP"/>
+				<enumeration value="FA"/>
+				<enumeration value="IN"/>
+				<enumeration value="KPI"/>
+				<enumeration value="NT"/>
+				<enumeration value="SP"/>
+				<enumeration value="SV-P"/>
+				<enumeration value="SV-M"/>
+				<enumeration value="OT"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationIdentifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="webSiteDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="webSiteURLItemType">
+		<simpleContent>
+			<restriction base="xbrli:anyURIItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactPrefixItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactLastNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactFirstNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactSuffixItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactAttentionLineItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactPositionRoleItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="contactTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="businessDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="fiscalYearStartItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="fiscalYearEndItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAccountingMethodStartDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAccountingMethodEndDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantAddressNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantAddressDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantAddressPurposeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantBuildingNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantStreetItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantAddressStreet2ItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantCityItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantStateOrProvinceItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantCountryItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantZipOrPostalCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactPrefixItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactLastNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactFirstNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactSuffixItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactAttentionLineType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactPositionRoleItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantContactTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingCalendarCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingCalendarDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingCalendarTitleItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingCalendarPeriodTypeDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodIdentifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodStartItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodEndItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodClosedDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="enteredByModifiedItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="entryResponsiblePersonItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="sourceJournalDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="entryOriginItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="postingCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="batchIDItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="batchDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="numberOfEntriesItemType">
+		<simpleContent>
+			<restriction base="xbrli:integerItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="totalDebitItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="totalCreditItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="eliminationCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="budgetScenarioPeriodStartItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="budgetScenarioPeriodEndItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="budgetScenarioTextItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="budgetScenarioItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="amountMemoItemType">
+		<simpleContent>
+			<restriction base="xbrli:booleanItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="allocationCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierPurposeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierAddressDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierAddressPurposeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierBuildingNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierStreetItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierAddressStreet2ItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierCityItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierStateOrProvinceItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierCountryItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierZipOrPostalCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="documentReceivedDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="documentChargeReimbItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="documentLocationItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="paymentMethodItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableCategoryItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableIDItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableIDSchemaItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableIDOtherItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableIDOtherSchemaItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableQuantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableQualifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableUnitOfMeasureItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableCostPerUnitItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableStartDateTimeItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableEndDateTimeItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dmMethodTypeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dmLifeLengthItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dmCommentItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dmDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dmAmountItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodUnitDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAccountingMethodPurposeDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAccountingMethodDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="accountantEngagementTypeDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="measurableCodeDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAccountingMethodPurposeDefaultDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingPurposeDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="entryAccountingMethodDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="entryAccountingMethodPurposeDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressNameItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressPurposeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="locationIdentifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationBuildingNumberItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressStreetItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressStreet2ItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressCityItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressStateOrProvinceItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressZipOrPostalCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="organizationAddressCountryItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<!-- add -->
+	<complexType name="creatorItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="periodCountItemType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="sourceApplicationItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="targetApplicationItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+  <!-- item bus -->
+	<element name="bus-1" id="gl-bus_creator" type="gl-bus:creatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-2" id="gl-bus_periodCount" type="gl-bus:periodCountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-3" id="gl-bus_periodUnit" type="gl-bus:periodUnitTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-4" id="gl-bus_periodUnitDescription" type="gl-bus:periodUnitDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-5" id="gl-bus_sourceApplication" type="gl-bus:sourceApplicationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-6" id="gl-bus_targetApplication" type="gl-bus:targetApplicationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-1" id="gl-bus_entityPhoneNumber" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-7" id="gl-bus_phoneNumberDescription" type="gl-gen:phoneNumberDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-8" id="gl-bus_phoneNumber" type="gl-gen:phoneNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-2" id="gl-bus_entityFaxNumberStructure" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-9" id="gl-bus_entityFaxNumberUsage" type="gl-gen:faxNumberUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-10" id="gl-bus_entityFaxNumber" type="gl-gen:faxNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-3" id="gl-bus_entityEmailAddressStructure" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-11" id="gl-bus_entityEmailAddressUsage" type="gl-gen:emailAddressUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-12" id="gl-bus_entityEmailAddress" type="gl-gen:emailAddressItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-13" id="gl-bus_organizationAccountingMethodPurposeDefault" type="gl-bus:accountingMethodPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-14" id="gl-bus_organizationAccountingMethodPurposeDefaultDescription" type="gl-bus:organizationAccountingMethodPurposeDefaultDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-4" id="gl-bus_organizationIdentifiers" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-15" id="gl-bus_organizationIdentifier" type="gl-bus:organizationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-16" id="gl-bus_organizationDescription" type="gl-bus:organizationDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-5" id="gl-bus_organizationAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-17" id="gl-bus_organizationAddressName" type="gl-bus:organizationAddressNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-18" id="gl-bus_organizationAddressDescription" type="gl-bus:organizationAddressDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-19" id="gl-bus_organizationAddressPurpose" type="gl-bus:organizationAddressPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-20" id="gl-bus_organizationAddressLocationIdentifier" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-21" id="gl-bus_organizationBuildingNumber" type="gl-bus:organizationBuildingNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-22" id="gl-bus_organizationAddressStreet" type="gl-bus:organizationAddressStreetItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-23" id="gl-bus_organizationAddressStreet2" type="gl-bus:organizationAddressStreet2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-24" id="gl-bus_organizationAddressCity" type="gl-bus:organizationAddressCityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-25" id="gl-bus_organizationAddressStateOrProvince" type="gl-bus:organizationAddressStateOrProvinceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-26" id="gl-bus_organizationAddressZipOrPostalCode" type="gl-bus:organizationAddressZipOrPostalCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-27" id="gl-bus_organizationAddressCountry" type="gl-bus:organizationAddressCountryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-28" id="gl-bus_organizationAddressActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-6" id="gl-bus_entityWebSite" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-29" id="gl-bus_webSiteDescription" type="gl-bus:webSiteDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-30" id="gl-bus_webSiteURL" type="gl-bus:webSiteURLItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-7" id="gl-bus_contactInformation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-31" id="gl-bus_contactPrefix" type="gl-bus:contactPrefixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-32" id="gl-bus_contactLastName" type="gl-bus:contactLastNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-33" id="gl-bus_contactFirstName" type="gl-bus:contactFirstNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-34" id="gl-bus_contactSuffix" type="gl-bus:contactSuffixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-35" id="gl-bus_contactAttentionLine" type="gl-bus:contactAttentionLineItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-36" id="gl-bus_contactPositionRole" type="gl-bus:contactPositionRoleItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-8" id="gl-bus_contactPhone" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-37" id="gl-bus_contactPhoneNumberDescription" type="gl-gen:phoneNumberDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-38" id="gl-bus_contactPhoneNumber" type="gl-gen:phoneNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-9" id="gl-bus_contactFax" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-39" id="gl-bus_contactFaxNumberUsage" type="gl-gen:faxNumberUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-40" id="gl-bus_contactFaxNumber" type="gl-gen:faxNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-10" id="gl-bus_contactEMail" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-41" id="gl-bus_contactEmailAddressUsage" type="gl-gen:emailAddressUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-42" id="gl-bus_contactEmailAddress" type="gl-gen:emailAddressItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-43" id="gl-bus_contactType" type="gl-bus:contactTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-44" id="gl-bus_contactLocationIdentifierCrossReference" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-45" id="gl-bus_contactActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-46" id="gl-bus_businessDescription" type="gl-bus:businessDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-47" id="gl-bus_fiscalYearStart" type="gl-bus:fiscalYearStartItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-48" id="gl-bus_fiscalYearEnd" type="gl-bus:fiscalYearEndItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-11" id="gl-bus_organizationAccountingMethodStructure" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-49" id="gl-bus_organizationAccountingMethod" type="gl-bus:accountingMethodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-50" id="gl-bus_organizationAccountingMethodDescription" type="gl-bus:organizationAccountingMethodDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-51" id="gl-bus_organizationAccountingMethodPurpose" type="gl-bus:accountingMethodPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-52" id="gl-bus_organizationAccountingMethodPurposeDescription" type="gl-bus:organizationAccountingMethodPurposeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-53" id="gl-bus_organizationAccountingMethodStartDate" type="gl-bus:organizationAccountingMethodStartDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-54" id="gl-bus_organizationAccountingMethodEndDate" type="gl-bus:organizationAccountingMethodEndDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-12" id="gl-bus_accountantInformation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-55" id="gl-bus_accountantName" type="gl-bus:accountantNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-13" id="gl-bus_accountantAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-56" id="gl-bus_accountantAddressName" type="gl-bus:accountantAddressNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-57" id="gl-bus_accountantAddressDescription" type="gl-bus:accountantAddressDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-58" id="gl-bus_accountantAddressPurpose" type="gl-bus:accountantAddressPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-59" id="gl-bus_accountantAddressLocationIdentifier" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-60" id="gl-bus_accountantBuildingNumber" type="gl-bus:accountantBuildingNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-61" id="gl-bus_accountantStreet" type="gl-bus:accountantStreetItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-62" id="gl-bus_accountantAddressStreet2" type="gl-bus:accountantAddressStreet2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-63" id="gl-bus_accountantCity" type="gl-bus:accountantCityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-64" id="gl-bus_accountantStateOrProvince" type="gl-bus:accountantStateOrProvinceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-65" id="gl-bus_accountantCountry" type="gl-bus:accountantCountryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-66" id="gl-bus_accountantZipOrPostalCode" type="gl-bus:accountantZipOrPostalCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-67" id="gl-bus_accountantAddressActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-68" id="gl-bus_accountantEngagementType" type="gl-bus:accountantEngagementTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-69" id="gl-bus_accountantEngagementTypeDescription" type="gl-bus:accountantEngagementTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-14" id="gl-bus_accountantContactInformation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-70" id="gl-bus_accountantContactPrefix" type="gl-bus:accountantContactPrefixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-71" id="gl-bus_accountantContactLastName" type="gl-bus:accountantContactLastNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-72" id="gl-bus_accountantContactFirstName" type="gl-bus:accountantContactFirstNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-73" id="gl-bus_accountantContactSuffix" type="gl-bus:accountantContactSuffixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-74" id="gl-bus_accountantContactAttentionLine" type="gl-bus:accountantContactAttentionLineType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-75" id="gl-bus_accountantContactPositionRole" type="gl-bus:accountantContactPositionRoleItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-15" id="gl-bus_accountantContactPhone" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-76" id="gl-bus_accountantContactPhoneNumberDescription" type="gl-gen:phoneNumberDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-77" id="gl-bus_accountantContactPhoneNumber" type="gl-gen:phoneNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-16" id="gl-bus_accountantContactFax" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-78" id="gl-bus_accountantContactFaxNumber" type="gl-gen:faxNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-79" id="gl-bus_accountantContactFaxNumberUsage" type="gl-gen:faxNumberUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-17" id="gl-bus_accountantContactEmail" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-80" id="gl-bus_accountantContactEmailAddressUsage" type="gl-gen:emailAddressUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-81" id="gl-bus_accountantContactEmailAddress" type="gl-gen:emailAddressItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-82" id="gl-bus_accountantContactType" type="gl-bus:accountantContactTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-83" id="gl-bus_accountantLocationIdentifierCrossReference" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-84" id="gl-bus_accountantContactActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-18" id="gl-bus_reportingCalendar" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-85" id="gl-bus_reportingCalendarCode" type="gl-bus:reportingCalendarCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-86" id="gl-bus_reportingCalendarDescription" type="gl-bus:reportingCalendarDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-87" id="gl-bus_reportingCalendarTitle" type="gl-bus:reportingCalendarTitleItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-88" id="gl-bus_reportingCalendarPeriodType" type="gl-bus:reportingCalendarPeriodTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-89" id="gl-bus_reportingCalendarPeriodTypeDescription" type="gl-bus:reportingCalendarPeriodTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-90" id="gl-bus_reportingCalendarOpenClosedStatus" type="gl-bus:reportingCalendarOpenClosedStatusItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-91" id="gl-bus_reportingPurpose" type="gl-bus:accountingMethodPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-92" id="gl-bus_reportingPurposeDescription" type="gl-bus:reportingPurposeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-19" id="gl-bus_reportingCalendarPeriod" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-93" id="gl-bus_periodIdentifier" type="gl-bus:periodIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-94" id="gl-bus_periodDescription" type="gl-bus:periodDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-95" id="gl-bus_periodStart" type="gl-bus:periodStartItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-96" id="gl-bus_periodEnd" type="gl-bus:periodEndItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-97" id="gl-bus_periodClosedDate" type="gl-bus:periodClosedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-98" id="gl-bus_enteredByModified" type="gl-bus:enteredByModifiedItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-99" id="gl-bus_entryResponsiblePerson" type="gl-bus:entryResponsiblePersonItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-100" id="gl-bus_sourceJournalDescription" type="gl-bus:sourceJournalDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-102" id="gl-bus_postingCode" type="gl-bus:postingCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-103" id="gl-bus_batchID" type="gl-bus:batchIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-104" id="gl-bus_batchDescription" type="gl-bus:batchDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-105" id="gl-bus_numberOfEntries" type="gl-bus:numberOfEntriesItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-106" id="gl-bus_totalDebit" type="gl-bus:totalDebitItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-107" id="gl-bus_totalCredit" type="gl-bus:totalCreditItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-108" id="gl-bus_eliminationCode" type="gl-bus:eliminationCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-109" id="gl-bus_budgetScenarioPeriodStart" type="gl-bus:budgetScenarioPeriodStartItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-110" id="gl-bus_budgetScenarioPeriodEnd" type="gl-bus:budgetScenarioPeriodEndItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-111" id="gl-bus_budgetScenarioText" type="gl-bus:budgetScenarioTextItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-112" id="gl-bus_budgetScenario" type="gl-bus:budgetScenarioItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-113" id="gl-bus_budgetAllocationCode" type="gl-bus:budgetAllocationCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-114" id="gl-bus_entryAccountingMethod" type="gl-bus:accountingMethodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-115" id="gl-bus_entryAccountingMethodDescription" type="gl-bus:entryAccountingMethodDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-116" id="gl-bus_entryAccountingMethodPurpose" type="gl-bus:accountingMethodPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-117" id="gl-bus_entryAccountingMethodPurposeDescription" type="gl-bus:entryAccountingMethodPurposeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-118" id="gl-bus_amountMemo" type="gl-bus:amountMemoItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-119" id="gl-bus_allocationCode" type="gl-bus:allocationCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-120" id="gl-bus_identifierPurpose" type="gl-bus:identifierPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-20" id="gl-bus_identifierAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-121" id="gl-bus_identifierAddressDescription" type="gl-bus:identifierAddressDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-122" id="gl-bus_identifierAddressPurpose" type="gl-bus:identifierAddressPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-123" id="gl-bus_identifierBuildingNumber" type="gl-bus:identifierBuildingNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-124" id="gl-bus_identifierStreet" type="gl-bus:identifierStreetItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-125" id="gl-bus_identifierAddressStreet2" type="gl-bus:identifierAddressStreet2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-126" id="gl-bus_identifierCity" type="gl-bus:identifierCityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-127" id="gl-bus_identifierStateOrProvince" type="gl-bus:identifierStateOrProvinceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-128" id="gl-bus_identifierCountry" type="gl-bus:identifierCountryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-129" id="gl-bus_identifierZipOrPostalCode" type="gl-bus:identifierZipOrPostalCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-130" id="gl-bus_identifierAddressLocationIdentifier" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-131" id="gl-bus_identifierLocationIdentifierCrossReference" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-132" id="gl-bus_documentReceivedDate" type="gl-bus:documentReceivedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-133" id="gl-bus_documentChargeReimb" type="gl-bus:documentChargeReimbItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-134" id="gl-bus_documentLocation" type="gl-bus:documentLocationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-135" id="gl-bus_paymentMethod" type="gl-bus:paymentMethodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-21" id="gl-bus_measurable" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-136" id="gl-bus_measurableCode" type="gl-bus:measurableCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-137" id="gl-bus_measurableCodeDescription" type="gl-bus:measurableCodeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-138" id="gl-bus_measurableCategory" type="gl-bus:measurableCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-139" id="gl-bus_measurableID" type="gl-bus:measurableIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-140" id="gl-bus_measurableIDSchema" type="gl-bus:measurableIDSchemaItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-141" id="gl-bus_measurableIDOther" type="gl-bus:measurableIDOtherItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-142" id="gl-bus_measurableIDOtherSchema" type="gl-bus:measurableIDOtherSchemaItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-143" id="gl-bus_measurableDescription" type="gl-bus:measurableDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-144" id="gl-bus_measurableQuantity" type="gl-bus:measurableQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-145" id="gl-bus_measurableQualifier" type="gl-bus:measurableQualifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-146" id="gl-bus_measurableUnitOfMeasure" type="gl-bus:measurableUnitOfMeasureItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-147" id="gl-bus_measurableCostPerUnit" type="gl-bus:measurableCostPerUnitItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-148" id="gl-bus_measurableStartDateTime" type="gl-bus:measurableStartDateTimeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-149" id="gl-bus_measurableEndDateTime" type="gl-bus:measurableEndDateTimeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-150" id="gl-bus_measurableActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-22" id="gl-bus_jobInfo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-23" id="gl-bus_depreciationMortgage" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-151" id="gl-bus_dmJurisdiction" type="gl-bus:dmJurisdictionTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-152" id="gl-bus_dmMethodType" type="gl-bus:dmMethodTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-153" id="gl-bus_dmLifeLength" type="gl-bus:dmLifeLengthItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-154" id="gl-bus_dmComment" type="gl-bus:dmCommentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-155" id="gl-bus_dmStartDate" type="gl-bus:dmDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-156" id="gl-bus_dmEndDate" type="gl-bus:dmDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-157" id="gl-bus_dmAmount" type="gl-bus:dmAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>
