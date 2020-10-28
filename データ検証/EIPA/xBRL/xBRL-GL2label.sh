@@ -23,7 +23,8 @@ cat gl/source/xBRL-GL.txt | awk -F'\t' '{
   close(tmp);
   print cksum "\t" $0;
 }' > $Tmp-cksum
-
+# cksum seq parent code level type module term description
+# 1     2   3      4    5     6    7      8    9
 cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
   printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   printf "<link:linkbase xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
@@ -32,14 +33,24 @@ cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
   printf "  <link:labelLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">\n";
 }
 {
-  code=$4;
-  cksum="_" $1;
-  label="";
-  for(i=9;i<=NF;i++) label=label $i" "; 
-  # print code " " label;
-  printf "    <link:loc xlink:type=\"locator\" xlink:href=\"eipa-cen-2020-12-31.xsd#eipa-cen_%s\" xlink:label=\"%s%s\"/>\n", code, code, cksum;
-  printf "    <link:label xlink:type=\"resource\" xlink:label=\"label_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\" code=\"label_%s%s\">%s</link:label>\n", code, cksum, code, cksum, label;
-  printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"%s%s\" xlink:to=\"label_%s%s\"/>\n", code, cksum, code, cksum;
+  if (module==$7) {
+    code=$4;
+    cksum="_" $1;
+    term=$8
+    description="";
+    for(i=9;i<=NF;i++) description=description $i" "; 
+    # print code " " description;
+    printf "    <!-- %s gl-%s:%s -->\n", code, module, term;
+    printf "    <link:loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s%s\"/>\n", module, module, term, module, term, cksum;
+    if (term) {
+      printf "    <link:label xlink:type=\"resource\" xlink:label=\"label_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\">%s</link:label>\n", code, cksum, term;
+      printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"gl-%s_%s%s\" xlink:to=\"label_%s%s\"/>\n", module, term, cksum, code, cksum;
+    }
+    if (description) {
+      printf "    <link:label xlink:type=\"resource\" xlink:label=\"documentation_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/documentation\" xml:lang=\"en\">%s</link:label>\n", code, cksum, description;
+      printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-documentation\" xlink:from=\"gl-%s_%s%s\" xlink:to=\"documentation_%s%s\"/>\n", module, term, cksum, code, cksum;
+    }
+  }
 }
 END {
   printf " </link:labelLink>\n";
