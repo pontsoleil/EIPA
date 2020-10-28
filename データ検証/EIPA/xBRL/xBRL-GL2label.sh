@@ -40,7 +40,7 @@ cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
     description="";
     for(i=9;i<=NF;i++) description=description $i" "; 
     # print code " " description;
-    if (term || description)
+    if (term || description) {
       printf "    <!-- %s gl-%s:%s -->\n", code, module, term;
       printf "    <link:loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s%s\"/>\n", module, module, term, module, term, cksum;
       printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"gl-%s_%s%s\" xlink:to=\"lbl_%s%s\"/>\n", module, term, cksum, code, cksum;
@@ -59,7 +59,7 @@ END {
 }' > gl/source/gl-"$1"-2020-12-31-label.xml
 
 # --------------------------------------------------------------------
-rm $Tmp-*
-rm log/${0##*/}.$$.*
+# rm $Tmp-*
+# rm log/${0##*/}.$$.*
 exit 0
 # xBRL-GL2label.sh
