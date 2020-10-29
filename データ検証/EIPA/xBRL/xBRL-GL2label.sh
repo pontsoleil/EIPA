@@ -14,24 +14,27 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xml ============================================================
-# seq parent code level type module term description
-# 1   2      3    4     5    6      7    8
+# code level type module term description
+# 1    2     3    4      5    6
 # see https://stackoverflow.com/questions/8024392/awk-replace-a-column-with-its-hash-value
-# cat gl/source/xBRL-GL.txt | awk -F'\t' '{
-#   term=$7;
-#   match(term, /^([a-z])(.*)$/, b);
-#   term=toupper(b[1]) b[2];
-#   term=gensub(/([a-z])([A-Z])/, "\\1 \\2", "g", term);
-#   print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $5 "\t" $6 "\t" term "\t" $8;
-# }' > gl/source/xBRL-GL.tsv
-cat gl/source/xBRL-GL.txt | awk -F'\t' '{
+# cat test.txt | awk '{
+# term=$0;
+# match(term, /^([a-z])(.*)$/, b);
+# term=toupper(b[1]) b[2];
+# term=gensub(/([a-z])([A-Z])/, "\\1 \\2", "g", term);
+# print term;
+# }' > test.tsv
+# copy field to XBRL-GL.xlsx to create xBRL-GL.tsv
+# code level type module term label description
+# 1    2     3    4      5    6     7
+cat gl/source/xBRL-GL.tsv | awk -F'\t' '{
   tmp="echo " $3 date " | openssl md5 | cut -f2 -d\" \"";
   tmp | getline cksum;
   close(tmp);
   print cksum "\t" $0;
 }' > $Tmp-cksum
-# cksum seq parent code level type module term description
-# 1     2   3      4    5     6    7      8    9
+# cksum code level type module term label description
+# 1     2    3     4    5      6    7     8
 cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
   printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   printf "<link:linkbase xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
@@ -40,24 +43,19 @@ cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
   printf "  <link:labelLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">\n";
 }
 {
-  if (module==$7) {
-    code=$4;
+  if (module==$5) {
+    code=$2;
     cksum="_" $1;
-    term=$8
-    # match(term, /^([a-z])(.*)/, b);
-    # term=toupper(b[1]) b[2];
-    # term=gensub(/([a-z])([A-Z])/, "\\1 \\2", "g", term);
-    description=$9;
-    # description="";
-    # for(i=9;i<=NF;i++) description=description $i" "; 
-    # print code " " description;
+    term=$6;
+    label=$7;
+    description=$8;
     if (term || description) {
       printf "    <!-- %s gl-%s:%s -->\n", code, module, term;
       printf "    <link:loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s%s\"/>\n", module, module, term, module, term, cksum;
       printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"gl-%s_%s%s\" xlink:to=\"lbl_%s%s\"/>\n", module, term, cksum, code, cksum;
     }
-    if (term) {
-      printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\">%s</link:label>\n", code, cksum, term;
+    if (label) {
+      printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\">%s</link:label>\n", code, cksum, label;
     }
     if (description) {
       printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/documentation\" xml:lang=\"en\">%s</link:label>\n", code, cksum, description;

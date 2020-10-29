@@ -14,17 +14,17 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xml ============================================================
-# seq parent code level type module term description
-# 1   2      3    4     5    6      7    8
-cat gl/source/xBRL-GL.txt | awk -F'\t' -v module=$1 'BEGIN {
+# code level type module term label description
+# 1    2     3    4      5    6     7
+cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
     printf "\n  <!-- item %s -->\n", module;
 }
 {
   if (module==$6) {
-    code=$3;
-    type=$5;
-    term=$7;
-    if ("_"==$5) {
+    code=$1;
+    type=$3;
+    term=$5;
+    if ("_"==$3) {
       printf "	<element name=\"%s\" id=\"gl-%s_%s\" type=\"xbrli:stringItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", code, module, term;
     } else {
       if ("gl-gen:"==substr(type,1,7)) {

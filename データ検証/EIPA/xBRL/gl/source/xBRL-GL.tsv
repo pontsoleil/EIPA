@@ -1,415 +1,418 @@
-1	root	corG-1	1	_	cor	Accounting Entries	Root for XBRL GL. No entry made here.
-2	corG-1	corG-2	2	_	cor	Document Info	Parent for descriptive information about the accountingEntries section in which it is contained.
-3	corG-2	cor-1	3	gl-gen:entriesTypeItemType	cor	Entries Type	account: information to fill in a chart of accounts file.\nbalance: the results of accumulation of a complete and validated list of entries for an account (or a list of account) in a specific period - sometimes called general ledger\nentries: a list of individual accounting entries, which might be posted/validated or nonposted/validated\njournal: a self-balancing (Dr = Cr) list of entries for a specific period including beginning balance for that period.\nledger: a complete list of entries for a specific account (or list of accounts) for a specific period; note - debits do not have to equal credits.\nassets: a listing of open receivables, payables, inventory, fixed assets or other information that can be extracted from but are not necessarily included as part of a journal entry.\ntrialBalance: the self-balancing (Dr = Cr) result of accumulation of a complete and validated list of entries for the entity in a complete list of accounts in a specific period.\ntaxtables: aids automated interpretation of instances that represent tax tables; Tax table are defined by using multiple [taxes] structures to gather the population of codes, authorities and rates; through [taxTableCode] cross-references in the [taxes] structure, these ""master file"" tax tables can be referenced. \nmapping: a collection of mappings between interrelated data sets, such as a local and related corporate standard chart of accounts or detail data mapped to summarized end reporting concepts.\nversioning: a collection of changes between two versions of the same class of information, such as updates to a master file like a chart of accounts.  \nmaster_file: a collection of master files, such as the customer or inventory master file. \ntrade_documents: a collection of trade/transactional documents, such as vendor invoices or customer orders. \nprofile_compliant: the meaning of this collection of information can be determined by understanding an established profile and especially an XBRL GL Profile. Profiles are determined through namespace declarations, schemaRef and conventions of those profiles.\nother: for all other types of representations.\nOften sorted by date or by account, these terms have specific, and sometimes different, meanings in different areas. Common practice will drive accounting method/term matches.
-4	corG-2	cor-2	3	uniqueIDItemType	cor	Unique ID	Unique identifier for this file.
-5	corG-2	cor-3	3	revisesUniqueIDItemType	cor	Revises Unique ID	Internal ID Number associated with identifierReference
-6	corG-2	cor-4	3	gl-gen:revisesUniqueIDActionItemType	cor	Revises Unique IDAction	Provides guidance on action to take with previous set of data: supersedes - old data should be considered as obsolete/overwritten; supplements - belongs with that data as if it was included with it.
-7	corG-2	cor-5	3	languageItemType	cor	Language	Primary language of the intellectual content. Where practical, the content of this field should coincide with ISO 639-1988 language codes.
-8	corG-2	cor-6	3	creationDateItemType	cor	Creation Date	Date/time file was created.
-9	corG-2	bus-1	3	creatorItemType	bus	Creator	Identifies the creator of the XBRL instance.
-10	corG-2	cor-7	3	entriesCommentItemType	cor	Entries Comment	Text for entire document.
-11	corG-2	cor-8	3	periodCoveredStartItemType	cor	Period Covered Start	Start of date range for contents. Used as basis for many assumptions about data, including the date as of which open balances are open.
-12	corG-2	cor-9	3	periodCoveredEndItemType	cor	Period Covered End	End of date range for contents. Used as basis for many assumptions about data, including the date as of which open balances are open.
-13	corG-2	bus-2	3	periodCountItemType	bus	Period Count	Number of periods or buckets, used by postingCode. Used to interpret posting date. It may be preferable to limit entries by period covered to be by individual reporting period.
-14	corG-2	bus-3	3	periodUnitTypeItemType	bus	Period Unit	Type of periods covered by periodCount. Enumerated as: daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, thirdly, semiannual, annual, ad-hoc, current-period-only, other.
-15	corG-2	bus-4	3	periodUnitDescriptionItemType	bus	Period Unit Description	Free format description of the period unit
-16	corG-2	bus-5	3	sourceApplicationItemType	bus	Source Application	Product or service that produced this file. Used by many systems (e.g., VAT). Version number can be included or extended.
-17	corG-2	bus-6	3	targetApplicationItemType	bus	Target Application	Particular use for which file was generated.
-18	corG-2	muc-1	3	currencyItemType	muc	Default Currency	The default currency related to the amount can be entered here instead of the XBRL instance specified way, especially important in multi-currency situations. Recommend ISO 4217 coding
-19	corG-2	srcd-1	3	summaryReportingTaxonomiesComplexType	srcd	Summary Reporting Taxonomies	
-20	corG-1	corG-3	2	_	cor	Entity Information	Holder for entity information - information about the reporting organization.
-21	corG-3	busG-1	3	_	bus	Entity Phone Number	Primary phone number of the entity.
-22	busG-1	bus-7	4	gl-gen:phoneNumberDescriptionItemType	bus	Phone Number Description	Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
-23	busG-1	bus-8	4	gl-gen:phoneNumberItemType	bus	Phone Number	Phone number referred to in 'phoneNumberDescription'
-24	corG-3	busG-2	3	_	bus	Entity Fax Number Structure	Tuple for holding company fax information.
-25	busG-2	bus-9	4	gl-gen:faxNumberUsageItemType	bus	Entity Fax Number Usage	Company fax number usage (e.g. orders, head office, IR)
-26	busG-2	bus-10	4	gl-gen:faxNumberItemType	bus	Entity Fax Number	Company Fax Number
-27	corG-3	busG-3	3	_	bus	Entity Email Address Structure	Tuple for holding company email information.
-28	busG-3	bus-11	4	gl-gen:emailAddressUsageItemType	bus	Entity Email Address Usage	Company email address usage (e.g. orders, head office, IR)
-29	busG-3	bus-12	4	gl-gen:emailAddressItemType	bus	Entity Email Address	Company Email Address
-30	corG-3	bus-13	3	accountingMethodPurposeItemType	bus	Organization Accounting Method Purpose Default	If not stated explicitly at the line level, the default reporting purpose - from book, tax, management, statutory, other
-31	corG-3	bus-14	3	organizationAccountingMethodPurposeDefaultDescriptionItemType	bus	Organization Accounting Method Purpose Default Description	Free format description of the default accounting method purpose
-32	corG-3	busG-4	3	_	bus	Organization Identifiers	Section which contains various identifiers for the company.
-33	busG-4	bus-15	4	organizationIdentifierItemType	bus	Organization Identifier	Code representing the company or organization whose data this file represents: used for situations where one user (e.g., a CPA) needs to keep track of multiple organizations' files (e.g., multiple clients). Can be EIN#, client #, internal/external identifier, SIC code. Codes which identifies the entity. Includes the code identifier of the authority issuing the code, a colon, and the code itself. For example, CIK:01234567 for the CIK number issued by SEC EDGAR.
-34	busG-4	bus-16	4	organizationDescriptionItemType	bus	Organization Description	Text for organization identified by organizationIdentifier. Any descriptive information about the code.
-35	corG-3	busG-5	3	_	bus	Organization Address	Address structure for the reporting entity
-36	busG-5	bus-17	4	organizationAddressNameItemType	bus	Organization Address Name	Name of organization used at this address
-37	busG-5	bus-18	4	organizationAddressDescriptionItemType	bus	Organization Address Description	Description of the address, such as Mailing, Physical, Investor Relations, etc.
-38	busG-5	bus-19	4	organizationAddressPurposeItemType	bus	Organization Address Purpose	Freeform for codes like shipping, billing, mailing at address level.  Allows identification of multiple purpose addresses for each address of the reporting organization.
-39	busG-5	bus-20	4	locationIdentifierItemType	bus	Organization Address Location Identifier	A code used to identify the location and to associate it with contacts and transactions
-40	busG-5	bus-21	4	organizationBuildingNumberItemType	bus	Organization Building Number	Building Number
-41	busG-5	bus-22	4	organizationAddressStreetItemType	bus	Organization Address Street	Street address
-42	busG-5	bus-23	4	organizationAddressStreet2ItemType	bus	Organization Address Street2	Address Detail
-43	busG-5	bus-24	4	organizationAddressCityItemType	bus	Organization Address City	City or town of the address.
-44	busG-5	bus-25	4	organizationAddressStateOrProvinceItemType	bus	Organization Address State Or Province	State, province or region of the address.
-45	busG-5	bus-26	4	organizationAddressZipOrPostalCodeItemType	bus	Organization Address Zip Or Postal Code	Zip or other postal code of the address.
-46	busG-5	bus-27	4	organizationAddressCountryItemType	bus	Organization Address Country	Country of the address.
-47	busG-5	bus-28	4	gl-gen:activeItemType	bus	Organization Address Active	Boolean to indicate whether the address is active (="true") or inactive (="false")
-48	corG-3	busG-6	3	_	bus	Entity Web Site	Primary web site of the entity.
-49	busG-6	bus-29	4	webSiteDescriptionItemType	bus	Web Site Description	Description of the web site.
-50	busG-6	bus-30	4	webSiteURLItemType	bus	Web Site URL	Valid URL of the web site. Should be full URL.
-51	corG-3	busG-7	3	_	bus	Contact Information	Information about contacts.
-52	busG-7	bus-31	4	contactPrefixItemType	bus	Contact Prefix	Prefix (e.g. Dr., Mr., Mrs.)
-53	busG-7	bus-32	4	contactLastNameItemType	bus	Contact Last Name	Last or family name
-54	busG-7	bus-33	4	contactFirstNameItemType	bus	Contact First Name	First or given name
-55	busG-7	bus-34	4	contactSuffixItemType	bus	Contact Suffix	Suffix (e.g. MD, CPA, Jr.)
-56	busG-7	bus-35	4	contactAttentionLineItemType	bus	Contact Attention Line	Attention Line
-57	busG-7	bus-36	4	contactPositionRoleItemType	bus	Contact Position Role	Position or role
-58	busG-7	busG-8	4	_	bus	Contact Phone	Contact Phone Number
-59	busG-8	bus-37	5	gl-gen:phoneNumberDescriptionItemType	bus	Contact Phone Number Description	Contact Phone Number Description such as Main, Investor relations, etc. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
-60	busG-8	bus-38	5	gl-gen:phoneNumberItemType	bus	Contact Phone Number	Contact phone number referred to in the description.
-61	busG-7	busG-9	4	_	bus	Contact Fax	Contact Fax Number Structure
-62	busG-9	bus-39	5	gl-gen:faxNumberUsageItemType	bus	Contact Fax Number Usage	Contact Fax Number Usage (e.g. orders, head office, IR)
-63	busG-9	bus-40	5	gl-gen:faxNumberItemType	bus	Contact Fax Number	Contact Fax Number
-64	busG-7	busG-10	4	_	bus	Contact EMail	Contact E-mail address structure
-65	busG-10	bus-41	5	gl-gen:emailAddressUsageItemType	bus	Contact Email Address Usage	Contact email address usage (e.g. orders, head office, IR)
-66	busG-10	bus-42	5	gl-gen:emailAddressItemType	bus	Contact Email Address	Contact email address
-67	busG-7	bus-43	4	contactTypeItemType	bus	Contact Type	Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant
-68	busG-7	bus-44	4	locationIdentifierItemType	bus	Contact Location Identifier Cross Reference	This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier
-69	busG-7	bus-45	4	gl-gen:activeItemType	bus	Contact Active	Boolean to indicate whether the contact is active (="true") or inactive (="false")
-70	corG-3	bus-46	3	businessDescriptionItemType	bus	Business Description	Description of the nature of the business of the entity.
-71	corG-3	bus-47	3	fiscalYearStartItemType	bus	Fiscal Year Start	Start of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.
-72	corG-3	bus-48	3	fiscalYearEndItemType	bus	Fiscal Year End	End of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.
-73	corG-3	busG-11	3	_	bus	Organization Accounting Method Structure	Section for identifying the methods of accounting used by the entity for different reporting purposes
-74	busG-11	bus-49	4	accountingMethodItemType	bus	Organization Accounting Method	For this entity, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other
-75	busG-11	bus-50	4	organizationAccountingMethodDescriptionItemType	bus	Organization Accounting Method Description	Free format description of the accounting method
-76	busG-11	bus-51	4	accountingMethodPurposeItemType	bus	Organization Accounting Method Purpose	For this entity, the reporting purpose represented - from book, tax, management, statutory, other
-77	busG-11	bus-52	4	organizationAccountingMethodPurposeDescriptionItemType	bus	Organization Accounting Method Purpose Description	Free format description of the accounting method purpose
-78	busG-11	bus-53	4	organizationAccountingMethodStartDateItemType	bus	Organization Accounting Method Start Date	Accounting Method Start Date
-79	busG-11	bus-54	4	organizationAccountingMethodEndDateItemType	bus	Organization Accounting Method End Date	Accounting Method End Date
-80	corG-3	busG-12	3	_	bus	Accountant Information	Information about the relevant external accountant
-81	busG-12	bus-55	4	accountantNameItemType	bus	Accountant Name	Name of the accountant
-82	busG-12	busG-13	4	_	bus	Accountant Address	Section which contains accountant address information.
-83	busG-13	bus-56	5	accountantAddressNameItemType	bus	Accountant Address Name	Address Name for Accountant
-84	busG-13	bus-57	5	accountantAddressDescriptionItemType	bus	Accountant Address Description	Address Description for Accountant
-85	busG-13	bus-58	5	accountantAddressPurposeItemType	bus	Accountant Address Purpose	Address Purpose
-86	busG-13	bus-59	5	locationIdentifierItemType	bus	Accountant Address Location Identifier	A code used to identify the accountant location and to associate it with contacts and transactions
-87	busG-13	bus-60	5	accountantBuildingNumberItemType	bus	Accountant Building Number	Building Number for Accountant
-88	busG-13	bus-61	5	accountantStreetItemType	bus	Accountant Street	Street address of the accountant
-89	busG-13	bus-62	5	accountantAddressStreet2ItemType	bus	Accountant Address Street2	Address Detail for Accountant
-90	busG-13	bus-63	5	accountantCityItemType	bus	Accountant City	City of the accountant
-91	busG-13	bus-64	5	accountantStateOrProvinceItemType	bus	Accountant State Or Province	State, province or region of the accountant
-92	busG-13	bus-65	5	accountantCountryItemType	bus	Accountant Country	Country of accountant
-93	busG-13	bus-66	5	accountantZipOrPostalCodeItemType	bus	Accountant Zip Or Postal Code	Zip or other postal code of the accountant
-94	busG-13	bus-67	5	gl-gen:activeItemType	bus	Accountant Address Active	Boolean to indicate whether the address is active (="true") or inactive (="false")
-95	busG-12	bus-68	4	accountantEngagementTypeItemType	bus	Accountant Engagement Type	Type of engagement being performed by external accountant. Enumerated as: audit, review, compilation, tax, other.
-96	busG-12	bus-69	4	accountantEngagementTypeDescriptionItemType	bus	Accountant Engagement Type Description	Free format description of the type of engagement
-97	busG-12	busG-14	4	_	bus	Accountant Contact Information	Accountant Contact Information Structure
-98	busG-14	bus-70	5	accountantContactPrefixItemType	bus	Accountant Contact Prefix	Prefix (e.g. Dr., Mr., Mrs., etc.) for Accountant Contact
-99	busG-14	bus-71	5	accountantContactLastNameItemType	bus	Accountant Contact Last Name	Family Name for Accountant Contact
-100	busG-14	bus-72	5	accountantContactFirstNameItemType	bus	Accountant Contact First Name	First or Given Name for Accountant Contact
-101	busG-14	bus-73	5	accountantContactSuffixItemType	bus	Accountant Contact Suffix	Suffix (e.g. MD, CPA, Jr., etc.)
-102	busG-14	bus-74	5	accountantContactAttentionLineType	bus	Accountant Contact Attention Line	Attention Line for Accountant Contact
-103	busG-14	bus-75	5	accountantContactPositionRoleItemType	bus	Accountant Contact Position Role	Position or Role for Accountant Contact
-104	busG-14	busG-15	5	_	bus	Accountant Contact Phone	Phone Number for Accountant Contact
-105	busG-15	bus-76	6	gl-gen:phoneNumberDescriptionItemType	bus	Accountant Contact Phone Number Description	Accountant Contact Phone Number Description such as Main, Investor relations, etc. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
-106	busG-15	bus-77	6	gl-gen:phoneNumberItemType	bus	Accountant Contact Phone Number	Accountant Contact phone number referred to in the description.
-107	busG-14	busG-16	5	_	bus	Accountant Contact Fax	Accountant Contact Fax Number Structure
-108	busG-16	bus-78	6	gl-gen:faxNumberItemType	bus	Accountant Contact Fax Number	Accountant Contact Fax Number
-109	busG-16	bus-79	6	gl-gen:faxNumberUsageItemType	bus	Accountant Contact Fax Number Usage	Accountant Contact Fax Number Usage (e.g. orders, head office, IR)
-110	busG-14	busG-17	5	_	bus	Accountant Contact Email	Accountant contact E-mail address structure
-111	busG-17	bus-80	6	gl-gen:emailAddressUsageItemType	bus	Accountant Contact Email Address Usage	Accountant Contact email address usage (e.g. orders, head office, IR)
-112	busG-17	bus-81	6	gl-gen:emailAddressItemType	bus	Accountant Contact Email Address	Accountant Contact email address
-113	busG-14	bus-82	5	accountantContactTypeItemType	bus	Accountant Contact Type	Contact Type for Accountant Contact
-114	busG-14	bus-83	5	locationIdentifierItemType	bus	Accountant Location Identifier Cross Reference	This code is used to associate the contact with a specific location for the Accountant. Its value should be the same as that of the accountantAddressLocationIdentifier
-115	busG-14	bus-84	5	gl-gen:activeItemType	bus	Accountant Contact Active	Boolean to indicate whether the contact is active (="true") or inactive (="false")
-116	corG-3	busG-18	3	_	bus	Reporting Calendar	A tool to collect the periods used to summarise results from transactions.
-117	busG-18	bus-85	4	reportingCalendarCodeItemType	bus	Reporting Calendar Code	The code used to identify this specific reporting calendar, unique across periods
-118	busG-18	bus-86	4	reportingCalendarDescriptionItemType	bus	Reporting Calendar Description	A description of the reporting calendar (associated with the reportingCalendarCode given)
-119	busG-18	bus-87	4	reportingCalendarTitleItemType	bus	Reporting Calendar Title	A description of the reporting period. The actual beginning and ending dates are found within the 'reportingCalendarPeriod' structure
-120	busG-18	bus-88	4	reportingCalendarPeriodTypeItemType	bus	Reporting Calendar Period Type	A tool to collect a specific set of periods used to summarize results from transactions.
-121	busG-18	bus-89	4	reportingCalendarPeriodTypeDescriptionItemType	bus	Reporting Calendar Period Type Description	A description of the type of period involved.
-122	busG-18	bus-90	4	reportingCalendarOpenClosedStatusItemType	bus	Reporting Calendar Open Closed Status	An identifier on whether the reporting calendar is still open for activity. enumerated, "open", "closed", "pending
-123	busG-18	bus-91	4	accountingMethodPurposeItemType	bus	Reporting Purpose	A description of the accounting set of books involved. Uses enumeration from accounting method purpose.
-124	busG-18	bus-92	4	reportingPurposeDescriptionItemType	bus	Reporting Purpose Description	Free format description of the reporting purpose
-125	busG-18	busG-19	4	_	bus	Reporting Calendar Period	A code for the type of period involved. Enumerated as: monthly, quarterly, semi-annually, 4-5-4, ad-hoc, other.
-126	busG-19	bus-93	5	periodIdentifierItemType	bus	Period Identifier	An identifier for this period in this calendar
-127	busG-19	bus-94	5	periodDescriptionItemType	bus	Period Description	A description of this specific reporting period in this calendar.
-128	busG-19	bus-95	5	periodStartItemType	bus	Period Start	The beginning date/time of a period
-129	busG-19	bus-96	5	periodEndItemType	bus	Period End	The ending date/time of a period
-130	busG-19	bus-97	5	periodClosedDateItemType	bus	Period Closed Date	The date/time a period has been closed for activity. If this is present with a nill value (xsi:nill="true") then the period is not closed.
-131	corG-1	corG-4	2	_	cor	Entry Header	Parent for entry headers/journal entry headers.
-132	corG-4	cor-10	3	postedDateItemType	cor	Posted Date	Date this entry was posted (validated) to the general ledger. May not represent the date of accounting significance which is represented by 'postingDate'.
-133	corG-4	cor-11	3	enteredByItemType	cor	Entered By	Initials/name of operator originally entering.
-134	corG-4	bus-98	3	enteredByModifiedItemType	bus	Entered By Modified	Identification for the last person modifying this entry before posting.
-135	corG-4	cor-12	3	enteredDateItemType	cor	Entered Date	Represents the actual date/time of entry into computer (automated from system date, often misrepresented by changing system clock). Posting dates are maintained separately. 
-136	corG-4	bus-99	3	entryResponsiblePersonItemType	bus	Entry Responsible Person	Identifier of person who created or originated or is otherwise responsible for the entry.
-137	corG-4	cor-13	3	gl-gen:sourceJournalIDItemType	cor	Source Journal ID	Source journal. The code of the journal in which the entry is processed. \nThe code must be a unique indication for a journal and is selected from the following enumerated list:\ncd      cash disbursements (sending cheques to vendors)\ncr      cash receipts (receiving cheques from others)\nfa      fixed assets\ngi      giro/other bank adjustments\ngj      general journal\nim      inventory management\njc      job cost\npj      purchase journal (liabilities from purchases)\npl      payroll journal\nsj      sales journal\nse      standard entries\nud      user defined\not      other sources of entries
-138	corG-4	bus-100	3	sourceJournalDescriptionItemType	bus	Source Journal Description	Source journal (full description of general journal, payroll journal, accountant entries). A more easily readable journal indication. The most common journals are: Purchases, Sales, Cash, and General Journal.\n139
-141	corG-4	cor-15	3	entryNumberItemType	cor	Entry Number	Identifier within source journal
-142	corG-4	cor-16	3	entryCommentItemType	cor	Entry Comment	Description of entry described by this entry header (e.g. Opening Balance)
-143	corG-4	cor-17	3	gl-gen:qualifierEntryItemType	cor	Qualifier Entry	Entry Qualifier - An enumerated field that qualifies the type of entry, specifically useful for general ledger and trial balance environments when it is important to state the values represented are summarized as of the reporting date - opening or closing balances. In accounting systems, this is often known as BBF (balance brought forward.) Permitted values are: standard, balance-brought-forward and other.
-144	corG-4	cor-18	3	qualifierEntryDescriptionItemType	cor	Qualifier Entry Description	Free format description of the entry qualifier
-145	corG-4	bus-102	3	postingCodeItemType	bus	Posting Code	Code for posting to period, e.g., period 1-13, based on codes in an accounting period file. We do not recommend that software vendors export here, but suggest providing period end numbers for the buckets. Possibilities W1 through W53, M1 through M13, Q1-Q4. Developers and others creating output files are encouraged to supply an actual end date.
-146	corG-4	bus-103	3	batchIDItemType	bus	Batch ID	ID for a batch for this group of entries
-147	corG-4	bus-104	3	batchDescriptionItemType	bus	Batch Description	Description of this batch
-148	corG-4	bus-105	3	numberOfEntriesItemType	bus	Number Of Entries	The total number of entries.
-149	corG-4	bus-106	3	totalDebitItemType	bus	Total Debit	The total of all debit amounts.
-150	corG-4	bus-107	3	totalCreditItemType	bus	Total Credit	The total of all credit amounts.
-151	corG-4	cor-19	3	gl-gen:bookTaxDifferenceItemType	cor	Book Tax Difference	Enumerated field with possible values of permanent, temporary or none indicating the type of difference between book and tax accounting methods. Omission of this field is equivalent to "none
-152	corG-4	bus-108	3	eliminationCodeItemType	bus	Elimination Code	Informs destination ledger this is an intracompany entry which eliminates in consolidation
-153	corG-4	bus-109	3	budgetScenarioPeriodStartItemType	bus	Budget Scenario Period Start	Start of period covered by associated budgetScenario
-154	corG-4	bus-110	3	budgetScenarioPeriodEndItemType	bus	Budget Scenario Period End	End of period covered by associated budgetScenario
-155	corG-4	bus-111	3	budgetScenarioTextItemType	bus	Budget Scenario Text	Text related to budgetScenario
-156	corG-4	bus-112	3	budgetScenarioItemType	bus	Budget Scenario	Code for a budget scenario identifier (such as PB for 'preliminary budget', or RB for 'revised budget', or other identifier for entryType)
-157	corG-4	bus-113	3	budgetAllocationCodeItemType	bus	Budget Allocation Code	Code associated with the calculation formula: e.g. (D)ivide by number of periods, (T)otal for period given
-158	corG-4	usk-1	3	reversingStdIdItemType	usk	Reversing Std Id	For standard, reversing, master, cancelling or other entries an ID associated with those entries.
-159	corG-4	usk-2	3	recurringStdDescriptionItemType	usk	Recurring Std Description	Description to accompany standard or recurring ID
-160	corG-4	usk-3	3	frequencyIntervalItemType	usk	Frequency Interval	For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the interval.
-161	corG-4	usk-4	3	frequencyUnitItemType	usk	Frequency Unit	For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the unit.
-162	corG-4	usk-5	3	repetitionsRemainingItemType	usk	Repetitions Remaining	Number of times that the recurring entry will repeat
-163	corG-4	usk-6	3	nextDateRepeatItemType	usk	Next Date Repeat	Date next repeated or standard posted
-164	corG-4	usk-7	3	lastDateRepeatItemType	usk	Last Date Repeat	Date last repeated or standard posted
-165	corG-4	usk-8	3	endDateRepeatingEntryItemType	usk	End Date Repeating Entry	For standard or recurring journals, stop date/time for repetitive entry.
-166	corG-4	usk-9	3	reverseTypeItemType	usk	Reverse	Should entry be reversed?
-167	corG-4	usk-10	3	reversingDateItemType	usk	Reversing Date	Date this entry should be reversed
-168	corG-4	cor-20	3	counterItemType	cor	Entry Number Counter	Unique reference for the entry - a numeric counter
-169	corG-4	corG-5	3	_	cor	Entry Detail	Parent for entry detail
-170	corG-5	cor-21	4	lineNumberItemType	cor	Line Number	Identifier for a particular entry detail
-171	corG-5	cor-22	4	counterItemType	cor	Line Number Counter	Unique reference for the line - a numeric counter
-172	corG-5	corG-6	4	_	cor	Account	Tuple: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so:\n/account/accountMainID 1000\n/account/accountMainDescription Cash\n/account/accountSub/accountSubID 4783HG\n/account/accountSub/accountSubDescription Department\n/account/accountSub/accountSubID QOWI\n/account/accountSub/accountSubDescription Branch\n/account/accountSub/accountSubID 192837\n/account/accountSub/accountSubDescription Division
-173	corG-6	cor-23	5	accountMainIDItemType	cor	Account Main ID	Main account - the code used to identify the accounting bucket the entry has been assigned to. Examples might be 1000 for Cash, 567GAAZ for Sales Expense or Z for tax payments. Identifiers such as department, branch, division, manager, or other modifiers are noted in the Subaccount area. Before needing to post, account is not necessary. Posting to the general ledger almost always requires an entry here.
-174	corG-6	cor-24	5	accountMainDescriptionItemType	cor	Account Main Description	Description of accountMainID - the human readable describer that accompanies the code used in accountMainID
-175	corG-6	cor-25	5	gl-gen:mainAccountTypeItemType	cor	Main Account Type	Account type - FASB Concepts 6 and similar international designs. When xbrlInfo is used to associated other XBRL reporting items, this field is more suited to representing existing systems (audit) than data interchange. Enumerated as: asset, liability, equity, income, gain, expense, loss, contr-to-equity, distr-from-equity, comprehensive-income, other.
-176	corG-6	cor-26	5	mainAccountTypeDescriptionItemType	cor	Main Account Type Description	Free format description of the account classification
-177	corG-6	cor-27	5	parentAccountMainIDItemType	cor	Parent Account Main ID	Roll up item from child natural account to parent natural account.
-178	corG-6	cor-28	5	gl-gen:accountPurposeCodeItemType	cor	Account Purpose Code	Code related to usage for account aggregate - Consolidating, European, IFRS, Offsetting, Primary, Tax, USGAAP, Japanese, Other. Japanese companies will use this for the tax required offsetting entry. If left blank, assumes default accounting method for company.
-179	corG-6	cor-29	5	accountPurposeDescriptionItemType	cor	Account Purpose Description	Description of usage for aggregate account
-180	corG-6	cor-30	5	gl-gen:accountTypeItemType	cor	Account Type	Type of account. Enumerated as: account, bank, employee, customer, job, vendor, measurable, statistical, other.
-181	corG-6	cor-31	5	accountTypeDescriptionItemType	cor	Account Type Description	Free format description of the account type
-182	corG-6	bus-114	5	accountingMethodItemType	bus	Entry Accounting Method	For this entry, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other
-183	corG-6	bus-115	5	entryAccountingMethodDescriptionItemType	bus	Entry Accounting Method Description	Free format description of the entry accounting method
-184	corG-6	bus-116	5	accountingMethodPurposeItemType	bus	Entry Accounting Method Purpose	For this entry, the reporting purpose represented - from book, tax, management, statutory, other
-185	corG-6	bus-117	5	entryAccountingMethodPurposeDescriptionItemType	bus	Entry Accounting Method Purpose Description	Free format description of the entry accounting method purpose
-186	corG-6	corG-7	5	_	cor	Account Sub	Tuple to hold multiple accountSubIDs and Descriptions
-187	corG-7	cor-32	6	accountSubDescriptionItemType	cor	Account Sub Description	The description that accompanies accountSubID belongs here.
-188	corG-7	cor-33	6	accountSubIDItemType	cor	Account Sub ID	Where the primary account was placed in accountMainID, the code used for each profit center, division, business unit, fund, program, branch, project, class, su-class or other modifier is placed here.
-189	corG-7	cor-34	6	accountSubTypeItemType	cor	Account Sub Type	Type of sub-account - profit center, division, business unit, fund, program, branch, project, class, su-class or other modifier is placed here. For example:: Accountability center: Business unit: Class:Department: Project: Fund: Program:Job: Profit center: Branch: Setup class: Division: Unit
-190	corG-7	corG-8	6	_	cor	Segment Parent Tuple	Tuple for showing the detail necessary to roll up from one segment (type of subaccount) to another.)
-191	corG-8	cor-35	7	parentSubaccountCodeItemType	cor	Parent Subaccount Code	Subaccount NUMBER this subaccount rolls up to - see also subaccount type it rolls up to.
-192	corG-8	cor-36	7	parentSubaccountTypeItemType	cor	Parent Subaccount Type	The describer of the segment this subaccount rolls up to.
-193	corG-8	cor-37	7	reportingTreeIdentifierItemType	cor	Reporting Tree Identifier	Used for representing descriptions of reporting trees.
-194	corG-8	cor-38	7	parentSubaccountProportionItemType	cor	Parent Subaccount Proportion	For partial allocations of amounts to different parents, the percentage of a child that will be allocated to a parent.
-195	corG-6	cor-39	5	gl-gen:activeItemType	cor	Account Active	Boolean to indicate whether the account is active (="true") or inactive (="false")
-196	corG-5	cor-40	4	gl-gen:amountItemType	cor	Amount	This field (amount) represents the primary monetary amount related to the  subject of the entryDetail line. \nThere is one primary monetary amount per entryDetail structure.\nIt may, for example, represent the amount of one line of a journal entry, the balance on a document, or the extended amount of a line item on an invoice. \nAmount is not required if detailed entry is used for non-financial work and other elements are populated, in particular measurableQuantity. \nThe amount field is a signed number (either positive or negative itself) and used in conjunction with a separate signOfAmount and a separate debitCreditCode, which together are considered for understanding the monetary amount. \nThe unit of measure is determined by amountCurrency if present, and by the default or home currency if amountCurrency is not present.
-197	corG-5	muc-2	4	currencyItemType	muc	Amount Currency	The currency related to the amount can be entered here instead of the XBRL instance specified way, especially important in multi-currency situations. \nRecommend ISO 4217 coding.
-198	corG-5	muc-3	4	gl-gen:amountItemType	muc	Amount Original Amount	Amount in original (as opposed to home) currency, for multi-currency tracking. 
-199	corG-5	muc-4	4	currencyItemType	muc	Amount Original Currency	The currency used to track original, as opposed to home, amounts. Recommended ISO 4217 coding.
-200	corG-5	muc-5	4	exchangeRateItemType	muc	Amount Original Exchange Rate	Exchange rate at time of original transaction (expressed as national currency divided by original currency)
-201	corG-5	muc-6	4	exchangeRateDateItemType	muc	Amount Original Exchange Rate Date	Date of exchange rate used to record the original transaction.
-202	corG-5	muc-7	4	exchangeRateSourceItemType	muc	Amount Original Exchange Rate Source	Source of Exchange Rate - for example, Reuters, Bloomberg
-203	corG-5	muc-8	4	commentItemType	muc	Amount Original Exchange Rate Comment	Comment about exchange rate used for recording original transaction.
-204	corG-5	muc-9	4	gl-gen:amountItemType	muc	Amount Original Triangulation Amount	If triangulation is used, amount in triangulation currency, for multi-currency tracking. Debit is entered as positive, credit as negative.
-205	corG-5	muc-10	4	currencyItemType	muc	Amount Original Triangulation Currency	The currency used for triangulation, if used. May often be EUR or USD. Recommended ISO 4217 coding.
-206	corG-5	muc-11	4	exchangeRateItemType	muc	Amount Original Triangulation Exchange Rate	Exchange rate between national currency and triangulation currency at time of original transaction (expressed as national currency divided by triangulation currency)
-207	corG-5	muc-12	4	exchangeRateSourceItemType	muc	Amount Original Triangulation Exchange Rate Source	Source of Exchange Rate for triangulation amount at time of original transaction - for example, Reuters, Bloomberg
-208	corG-5	muc-13	4	exchangeRateTypeItemType	muc	Amount Original Triangulation Exchange Rate Type	Type of Exchange Rate for triangulation amount at time of original transaction - for example, spot rate, forward contract etc.
-209	corG-5	muc-14	4	exchangeRateItemType	muc	Original Triangulation Exchange Rate	Exchange rate between original currency and triangulation currency at time of original transaction (expressed as original currency divided by triangulation currency)
-210	corG-5	muc-15	4	exchangeRateSourceItemType	muc	Original Exchange Rate Triangulation Source	Source of Exchange Rate for triangulation from original currency to triangulation currency at time of original transaction - for example, Reuters, Bloomberg
-211	corG-5	muc-16	4	exchangeRateTypeItemType	muc	Original Exchange Rate Triangulation Type	Type of Exchange Rate for triangulation from original currency to triangulation currency at time of original transaction - for example, spot rate, forward contract etc.
-212	corG-5	cor-41	4	gl-gen:signOfAmountItemType	cor	Sign Of Amount	Sign of amount; provides 4 possible fields only when used in conjunction with debitCreditCode; primarily used for correcting entries so total debits and credits after an entry error are not inflated. D + increase DebitsD - decrease debitsC + decreases creditC - increases credit
-213	corG-5	cor-42	4	gl-gen:debitCreditCodeItemType	cor	Debit Credit Code	Optional identifier of whether the amount is a (D)ebit, a (C)redit or Undefined
-214	corG-5	cor-43	4	postingDateItemType	cor	Posting Date	At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.
-215	corG-5	bus-118	4	amountMemoItemType	bus	Amount Memo	A boolean like entry that indicates whether an entryDetail line has been provided solely to provide additional details and that tools should not consider the amount in postings.
-216	corG-5	bus-119	4	allocationCodeItemType	bus	Allocation Code	A code that is tied to the Enterprise's allocation system.
-217	corG-5	mucG-1	4	_	muc	Multicurrency Detail	Section to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This structure allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This structure may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.
-218	mucG-1	muc-17	5	exchangeRateDateItemType	muc	Multicurrency Detail Exchange Rate Date	Date of exchange rate (other than original transaction date) on which amount is expressed as amountRestatedAmount or amountTriangulationAmount
-219	mucG-1	muc-18	5	gl-gen:amountItemType	muc	Amount Restated Amount	The amount in the foreign currency identified by amountRestatedCurrency as of multicurrencyDetailExchangeRateDate.
-220	mucG-1	muc-19	5	currencyItemType	muc	Amount Restated Currency	The currency in which amountRestatedAmount is expressed. Recommended ISO 4217 coding.
-221	mucG-1	muc-20	5	exchangeRateItemType	muc	Amount Restated Exchange Rate	Exchange rate used to convert amountRestatedAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by foreign currency)
-222	mucG-1	muc-21	5	exchangeRateSourceItemType	muc	Amount Restated Exchange Rate Source	Source of Exchange Rate for restated amount - for example, Reuters, Bloomberg
-223	mucG-1	muc-22	5	exchangeRateTypeItemType	muc	Amount Restated Exchange Rate Type	Type of Exchange Rate for restated amount - for example, spot rate, forward contract etc.
-224	mucG-1	muc-23	5	gl-gen:amountItemType	muc	Amount Triangulation Amount	The amount in the triangulation currency identified by amountTriangulationCurrency as of multicurrencyDetailExchangeRateDate.
-225	mucG-1	muc-24	5	currencyItemType	muc	Amount Triangulation Currency	The currency used for tringulation between amountRestatedCurrency and the home currency. Recommended ISO 4217 coding.
-226	mucG-1	muc-25	5	exchangeRateItemType	muc	Amount Triangulation Exchange Rate	Exchange rate used to convert amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by triangulation currency)
-227	mucG-1	muc-26	5	exchangeRateSourceItemType	muc	Amount Triangulation Exchange Rate Source	Source of Exchange Rate for triangulation amount - for example, Reuters, Bloomberg
-228	mucG-1	muc-27	5	exchangeRateTypeItemType	muc	Amount Triangulation Exchange Rate Type	Type of Exchange Rate for triangulation amount - for example, spot rate, forward contract etc.
-229	mucG-1	muc-28	5	exchangeRateItemType	muc	Restated Triangulation Exchange Rate	Exchange rate used to convert from amountRestatedAmount to amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as foreign currency divided by triangulation currency)
-230	mucG-1	muc-29	5	exchangeRateSourceItemType	muc	Restated Exchange Rate Triangulation Source	Source of Exchange Rate for converting between foreign currency and triangulation currency - for example, Reuters, Bloomberg
-231	mucG-1	muc-30	5	exchangeRateTypeItemType	muc	Restated Exchange Rate Triangulation Type	Type of Exchange Rate for converting between foreign currency and triangulation currency - for example, spot rate, forward contract etc.
-232	mucG-1	muc-31	5	commentItemType	muc	Multicurrency Detail Comment	Comment describing the enclosing multicurrencyDetail tuple's contents. May include reason for recording additional exchange rates other than that used at the time of the original transaction.
-233	corG-5	corG-9	4	_	cor	Identifier Reference	Identification for customer, vendor, or employee.
-234	corG-9	cor-44	5	identifierCodeItemType	cor	Identifier Code	#N/A
-235	corG-9	corG-10	5	_	cor	Identifier External Reference	Structure containing references to an external authority associated with identifier
-236	corG-10	cor-45	6	identifierAuthorityCodeItemType	cor	Identifier Authority Code	External Authority (e,g, Tax Authority) ID Number associated with identifierReference
-237	corG-10	cor-46	6	identifierAuthorityItemType	cor	Identifier Authority	Name of External Authority (e.g. Tax Authority)
-238	corG-10	cor-47	6	identifierAuthorityVerificationDateItemType	cor	Identifier Authority Verification Date	Date on which the External Authority last performed a verification
-239	corG-9	cor-48	5	gl-gen:identifierOrganizationTypeItemType	cor	Identifier Organization Type	Identifier Organization Type. Enumerated as: individual, organization, other.
-240	corG-9	cor-49	5	identifierOrganizationTypeDescriptionItemType	cor	Identifier Organization Type Description	Free format description of the identifier organization type
-241	corG-9	cor-50	5	identifierDescriptionItemType	cor	Identifier Description	Textual description of identifierReference.
-242	corG-9	cor-51	5	gl-gen:identifierTypeItemType	cor	Identifier Type	Entity type (enumerated): C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.
-243	corG-9	cor-52	5	identifierCategoryItemType	cor	Identifier Category	For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by business).
-244	corG-9	corG-11	5	_	cor	Identifier EMail	Email address for Identifier.
-245	corG-11	cor-53	6	gl-gen:emailAddressUsageItemType	cor	Identifier Email Address Usage	Identifer Email Address Usage (e.g. Orders, Head Office, IR)
-246	corG-11	cor-54	6	gl-gen:emailAddressItemType	cor	Identifier Email Address	Identifer Email Address
-247	corG-9	corG-12	5	_	cor	Identifier Phone Number	Phone number related to Identifier.
-248	corG-12	cor-55	6	gl-gen:phoneNumberDescriptionItemType	cor	Identifier Phone Number Description	Identifier Phone Number Usage (e.g. Main, Investor relations, etc.). Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
-249	corG-12	cor-56	6	gl-gen:phoneNumberItemType	cor	Identifier Phone	Identifier Phone Number
-250	corG-9	corG-13	5	_	cor	Identifier Fax Number	Fax number structure related to identifier.
-251	corG-13	cor-57	6	gl-gen:faxNumberUsageItemType	cor	Identifier Fax Number Usage	Identifer Fax Number Usage (e.g. Orders, Head Office, IR)
-252	corG-13	cor-58	6	gl-gen:faxNumberItemType	cor	Identifier Fax	Identifer Fax Number
-253	corG-9	bus-120	5	identifierPurposeItemType	bus	Identifier Purpose	Freeform for codes like purchasing, billing, manufacturing at identifier level.
-254	corG-9	busG-20	5	_	bus	Identifier Address	Address (block) of customer, vendor, employee for integration purposes, VAT.
-255	busG-20	bus-121	6	identifierAddressDescriptionItemType	bus	Identifier Address Description	For use when the addressee identifier for this address is different than the primary description of the identified party.
-256	busG-20	bus-122	6	identifierAddressPurposeItemType	bus	Identifier Address Purpose	Freeform for codes like shipping, billing, mailing at address level.  Allows identification of multiple purpose addresses for each identifier.
-257	busG-20	bus-123	6	identifierBuildingNumberItemType	bus	Identifier Building Number	Building Number for Identifier Address
-258	busG-20	bus-124	6	identifierStreetItemType	bus	Identifier Street	Street address.
-259	busG-20	bus-125	6	identifierAddressStreet2ItemType	bus	Identifier Address Street2	Address Detail for Identifier Address
-260	busG-20	bus-126	6	identifierCityItemType	bus	Identifier City	City
-261	busG-20	bus-127	6	identifierStateOrProvinceItemType	bus	Identifier State Or Province	State or province
-262	busG-20	bus-128	6	identifierCountryItemType	bus	Identifier Country	Country
-263	busG-20	bus-129	6	identifierZipOrPostalCodeItemType	bus	Identifier Zip Or Postal Code	Zip or other postal code
-264	busG-20	bus-130	6	locationIdentifierItemType	bus	Identifier Address Location Identifier	A code used to identify the identifier location and to associate it with contacts
-265	corG-9	corG-14	5	_	cor	Identifier Contact Information Structure	Identifier Contact Information Structure
-266	corG-14	cor-59	6	identifierContactPrefixItemType	cor	Identifier Contact Prefix	Prefix (e.g. Dr., Mr., Mrs.)
-267	corG-14	cor-60	6	identifierContactLastNameItemType	cor	Identifier Contact Last Name	Identifier Contact Last or Family Name
-268	corG-14	cor-61	6	identifierContactFirstNameItemType	cor	Identifier Contact First Name	First or given name
-269	corG-14	cor-62	6	identifierContactSuffixItemType	cor	Identifier Contact Suffix	Suffix (e.g. MD, CPA, Jr.)
-270	corG-14	cor-63	6	identifierContactAttentionLineItemType	cor	Identifier Contact Attention Line	Attention Line
-271	corG-14	cor-64	6	identifierContactPositionRoleItemType	cor	Identifier Contact Position Role	Position or Role
-272	corG-14	corG-15	6	_	cor	Identifier Contact Phone	Phone Number
-273	corG-15	cor-65	7	gl-gen:phoneNumberDescriptionItemType	cor	Identifier Contact Phone Number Description	Identifier Contact Phone Number Usage (Main, Investor Relations, etc.). Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
-274	corG-15	cor-66	7	gl-gen:phoneNumberItemType	cor	Identifier Contact Phone Number	Identifier Contact Phone Number
-275	corG-14	corG-16	6	_	cor	Identifier Contact Fax	Fax Number
-276	corG-16	cor-67	7	gl-gen:faxNumberUsageItemType	cor	Identifier Contact Fax Number Usage	Identifer Contact Fax Number Usage (e.g. Orders, Head Office, IR)
-277	corG-16	cor-68	7	gl-gen:faxNumberItemType	cor	Identifier Contact Fax Number	Identifer Contact Fax Number
-278	corG-14	corG-17	6	_	cor	Identifier Contact Email	Email Address
-279	corG-17	cor-69	7	gl-gen:emailAddressUsageItemType	cor	Identifier Contact Email Address Usage	Identifer Contact Email Address Usage (e.g. Orders, Head Office, IR)
-280	corG-17	cor-70	7	gl-gen:emailAddressItemType	cor	Identifier Contact Email Address	Identifer Contact Email Address
-281	corG-14	cor-71	6	identifierContactTypeItemType	cor	Identifier Contact Type	Identifier Contact Type
-282	corG-14	bus-131	6	locationIdentifierItemType	bus	Identifier Location Identifier Cross Reference	This code is used to associate the contact with a specific location for the Identifier. Its value should be the same as that of the identifierAddressLocationIdentifier 
-283	corG-9	cor-72	5	gl-gen:activeItemType	cor	Identifier Active	Boolean to indicate whether the identifier is active (="true") or inactive (="false")
-284	corG-5	cor-73	4	gl-gen:documentTypeItemType	cor	Document Type	An enumerated field describing the original source document, with check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.
-285	corG-5	cor-74	4	documentTypeDescriptionItemType	cor	Document Type Description	Free format description of the document type
-286	corG-5	cor-75	4	gl-gen:invoiceTypeItemType	cor	Invoice Type	Invoice Type  (self-billed, ePoS enumerated values)
-287	corG-5	cor-76	4	documentNumberItemType	cor	Document Number	Invoice, check, voucher, or other source document identifier
-288	corG-5	cor-77	4	documentApplyToNumberItemType	cor	Document Apply To Number	Document number of primary invoice number, used to offset payments, debits and credits; for an invoice, usually the same as the documentNumber. When calculating open balance on an invoice, or open amount on payments in advance or not fully applied, this permits calculation of the open item.
-289	corG-5	cor-78	4	documentReferenceItemType	cor	Document Reference	Internal reference for the document above; number assigned internally to track the document
-290	corG-5	cor-79	4	documentDateItemType	cor	Document Date	Date (and less likely in the paper world but possible in the e-world, time) on actual document (invoice, voucher, check date). Other dates control posting information.
-291	corG-5	bus-132	4	documentReceivedDateItemType	bus	Document Received Date	Date/time document was noted as received (if necessary). Represents actual date received. Posting dates are maintained separately.
-292	corG-5	bus-133	4	documentChargeReimbItemType	bus	Document Charge Reimb	Is this entry chargeable to client, reimbursable? Used by some systems to indicate that account on posting/validation should be posted to a customer or vendor's account.
-293	corG-5	bus-134	4	documentLocationItemType	bus	Document Location	Document location as URI, file name or other reference. Alternatively, text of document can be placed here.
-294	corG-5	bus-135	4	paymentMethodItemType	bus	Payment Method	Method used or to be used to make the payment
-295	corG-5	cor-80	4	gl-gen:postingStatusItemType	cor	Posting Status	deferred: although entered, it cannot be posted until a later time\nposted: already posted\nproposed: a proposed item that must be approved\nsimulated: a simulated item, for what-if\ntax: a tax-specific entry\nunposted:entered but not yet posted or validated\ncancelled:entered and later cancelled\nother:other status - should be described in postingStatusDescription
-296	corG-5	cor-81	4	postingStatusDescriptionItemType	cor	Posting Status Description	Free format description of the posting status
-297	corG-5	corG-18	4	_	cor	Xbrl Info	This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.
-298	corG-18	cor-82	5	gl-gen:xbrlIncludeItemType	cor	Xbrl Include	Indicates that the information being given is beginning_balance, ending_balance, period_change.
-299	corG-18	cor-83	5	summaryReportingElementItemType	cor	Summary Reporting Element	Associated XBRL element or XML element within an XML taxonomy - mapping to an XBRL concept.
-300	corG-18	cor-84	5	detailMatchingElementItemType	cor	Detail Matching Element	Associated XBRL element in XBRL-GL instance.
-301	corG-18	srcd-2	5	summaryTuplePathItemType	srcd	Summary Tuple Path	
-302	corG-18	srcd-3	5	detailedContentFilterItemType	srcd	Detailed Content Filter	
-303	corG-18	srcd-4	5	reportingDateSelectorItemType	srcd	Reporting Date Selector	
-304	corG-18	srcd-5	5	summaryOperatorItemType	srcd	Summary Operator	
-305	corG-18	srcd-6	5	summaryPrecisionDecimalsComplexType	srcd	Summary Precision Decimals	
-306	corG-18	srcdG-1	5	summaryContextComplexType	srcd	Summary Context	
-307	srcdG-1	srcdG-2	6	summaryEntityComplexType	srcd	Summary Entity	
-308	srcdG-2	srcd-7	7	summaryIdentifierItemType	srcd	Summary Identifier	
-309	srcdG-2	srcd-8	7	summarySchemeItemType	srcd	Summary Scheme	
-310	srcdG-2	srcd-9	7	summarySegmentComplexType	srcd	Summary Segment	
-311	srcdG-1	srcdG-3	6	summaryPeriodComplexType	srcd	Summary Period	
-312	srcdG-3	srcd-10	7	summaryInstantItemType	srcd	Summary Instant	
-313	srcdG-3	srcd-11	7	summaryStartDateItemType	srcd	Summary Start Date	
-314	srcdG-3	srcd-12	7	summaryEndDateItemType	srcd	Summary End Date	
-315	srcdG-1	srcd-13	6	summaryScenarioComplexType	srcd	Summary Scenario	
-316	corG-18	srcd-14	5	summaryUnitComplexType	srcd	Summary Unit	
-317	corG-18	srcd-15	5	summaryReportingTaxonomyIDRefItemType	srcd	Summary Reporting Taxonomy IDRef	
-318	corG-5	cor-85	4	detailCommentItemType	cor	Detail Comment	Description of this line of detail only
-319	corG-5	cor-86	4	dateAcknowledgedItemType	cor	Date Acknowledged	Date of acknowledgement of goods/services shipped/received.
-320	corG-5	cor-87	4	confirmedDateItemType	cor	Confirmed Date	Date of confirmation of shipment/receipt.
-321	corG-5	cor-88	4	shipFromItemType	cor	Ship From	References organizationAddressLocationIdentifier where used. Otherwise freeform.
-322	corG-5	cor-89	4	shipReceivedDateItemType	cor	Ship Received Date	Date goods/services are shipped/received.
-323	corG-5	cor-90	4	maturityDateItemType	cor	Maturity Date	Due date or other maturity date.
-324	corG-5	cor-91	4	termsItemType	cor	Terms	Discount/payment terms.
-325	corG-5	busG-21	4	_	bus	Measurable	Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an "account", "reporting bucket" or "code". Can be used to track any movements.
-326	busG-21	bus-136	5	measurableCodeItemType	bus	Measurable Code	Code for measurable item including BP - Business process, FA - Fixed asset/Capitalized item, IN - Inventory, KPI - Metric, NT - Intangible, SP - Supplies, SV-P - Service by employee, vendor or contractor, SV-M - Service by equipment/machinery, OT - Other
-327	busG-21	bus-137	5	measurableCodeDescriptionItemType	bus	Measurable Code Description	Free format description of the measurable code
-328	busG-21	bus-138	5	measurableCategoryItemType	bus	Measurable Category	Category of the measurable
-329	busG-21	bus-139	5	measurableIDItemType	bus	Measurable ID	Internal inventory part or SKU number or other code identifier for the measurable.
-330	busG-21	bus-140	5	measurableIDSchemaItemType	bus	Measurable IDSchema	URI or other identifier for schema with which measurable ID can be validated
-331	busG-21	bus-141	5	measurableIDOtherItemType	bus	Measurable IDOther	Second identifier (such as vendor's item number)
-332	busG-21	bus-142	5	measurableIDOtherSchemaItemType	bus	Measurable IDOther Schema	URI or other identifier for schema with which measurable ID Other can be validated
-333	busG-21	bus-143	5	measurableDescriptionItemType	bus	Measurable Description	Text description of measurable (e.g. inventory item or other identifier)
-334	busG-21	bus-144	5	measurableQuantityItemType	bus	Measurable Quantity	Number of units in this transaction; for non-monetary calculations; can be square footage, number of people, etc.
-335	busG-21	bus-145	5	measurableQualifierItemType	bus	Measurable Qualifier	Field that can represent grading, inspection codes, ratings and other qualifiers to properly capture PKI/Balanced Scorecard information
-336	busG-21	bus-146	5	measurableUnitOfMeasureItemType	bus	Measurable Unit Of Measure	Description of unit: e.g. each, case, dozen, etc. ISO standard coding recommended.
-337	busG-21	bus-147	5	measurableCostPerUnitItemType	bus	Measurable Cost Per Unit	Per unit price of the measurable. Although one might expect that measurableQuantity * measurableCostPerUnit = amount, this is not mandated except by external rules sets.
-338	busG-21	bus-148	5	measurableStartDateTimeItemType	bus	Measurable Start Date Time	Start time of the duration being measured
-339	busG-21	bus-149	5	measurableEndDateTimeItemType	bus	Measurable End Date Time	End time of the duration being measured
-340	busG-21	bus-150	5	gl-gen:activeItemType	bus	Measurable Active	Boolean to indicate whether the measurable is active (="true") or inactive (="false")
-341	corG-5	busG-22	4	_	bus	Job Info	Tuple for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo tuple for each entry line, but there may be a need to express more than one.
-342	busG-22	usk-11	5	jobCodeItemType	usk	Job Code	Associated job number or code. This could be built into the account, but many systems maintain a separate job coding system. Use primarily if job identification is a separate system, and not considered part of the chart of accounts.
-343	busG-22	usk-12	5	jobDescriptionItemType	usk	Job Description	Description of job
-344	busG-22	usk-13	5	jobPhaseCodeItemType	usk	Job Phase Code	Job code, phase, activity. Allows greater granularity than a simple job number. Although the core only reaches down from job to phases, this can be customized to extend down to cost codes.
-345	busG-22	usk-14	5	jobPhaseDescriptionItemType	usk	Job Phase Description	Description of Job code, phase, activity
-346	busG-22	usk-15	5	gl-gen:activeItemType	usk	Job Active	Boolean to indicate whether the job is active (="true") or inactive (="false")
-347	corG-5	busG-23	4	_	bus	Depreciation Mortgage	Parent for information related to depreciation, mortgages, etc.
-348	busG-23	bus-151	5	dmJurisdictionTypeItemType	bus	Dm Jurisdiction	Jurisdiction (e.g. federal, state, local): e.g. US Federal, Province of Québec, other identifier. Enumerated as: F, federal, S, state, L, local, other.
-349	busG-23	bus-152	5	dmMethodTypeItemType	bus	Dm Method Type	Type of depreciation method: used for information about the loan percentage for loan or the depreciation method. This is used for informational purposes only. Examples of entries are "20%", "5 year DDB" (Double Declining Balance).
-350	busG-23	bus-153	5	dmLifeLengthItemType	bus	Dm Life Length	Length of life in number of periods.
-351	busG-23	bus-154	5	dmCommentItemType	bus	Dm Comment	Description of each item related to depreciation, mortgage, loan, credit facility, etc.
-352	busG-23	bus-155	5	dmDateItemType	bus	Dm Start Date	Start of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.
-353	busG-23	bus-156	5	dmDateItemType	bus	Dm End Date	End of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.
-354	busG-23	bus-157	5	dmAmountItemType	bus	Dm Amount	Amount of a cost or fee charged for a mortgage, loan, credit facility, etc.
-355	corG-5	ehm-1	4	measurableClassIDItemType	ehm	Measurable Class ID	An enumerated code to identify the inventory, fixed asset or other measurable class. Enumerated as: raw material, work-in-process, finished goods, assemblies, supplies, land, building, machinery, furniture, vehicles, other.
-356	corG-5	ehm-2	4	measurableClassDescriptionItemType	ehm	Measurable Class Description	Free format description associated with gl-ehm:measurableClassID to provide specialization or clarification for the enumerated value of other.
-357	corG-5	ehm-3	4	costingMethodCodeItemType	ehm	Costing Method Code	An enumerated code for the inventory (or other measurable) costing method. Enumerated as: LIFO, FIFO, average, weighted-average, standard-cost, tax-basis, book-basis, other.
-358	corG-5	ehm-4	4	costingMethodDescriptionItemType	ehm	Costing Method Description	Free format description associated with gl-ehm:costingMethodCode to provide specialization of clarification for the enumerated value of other.
-359	corG-5	ehm-5	4	geospatialCoordinateItemType	ehm	Geospatial Coordinate	Enter a relevant location for this item. Format can be either:
-- Degrees, minutes, and seconds (DMS): 41°24'12.2""N 2°10'26.5""E							
-- Degrees and decimal minutes (DMM): 41 24.2028, 2 10.4418							
-- Decimal degrees (DD): 41.40338, 2.17403							
-360	corG-5	ehmG-1	4	_	ehm	Serial Lot	Tuple for holding information about serial numbers or lots (batches). As a tuple, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable structure.
-361	ehmG-1	ehm-6	5	serialLotCodeItemType	ehm	Serial Lot Code	Is this item tracked by serial numbers or lot numbers? A serial number is usually a unique number assigned to a single; a lot or batch number is provided when a batch of items is fungible but must be differentiated from similar items from other batches. Enumerated indicator for serial or lot items. Enumeration are: serial, lot, other, neither. If not included within the tuple, neither is assumed.
-362	ehmG-1	ehm-7	5	serialLotDescriptionItemType	ehm	Serial Lot Description	Free format description associated with gl-ehm:serialLotCode to provide specialization and especially to provide clarification for the enumerated value of other in serialLotCode. Examples might be “batch” or “group”.
-363	ehmG-1	ehm-8	5	serialLotNumberItemType	ehm	Serial Lot Number	The holder for that actual serial number or lot (batch) number/code assigned to an item or a batch of items.
-364	ehmG-1	ehm-9	5	nextSerialLotNumberItemType	ehm	Next Serial Lot Number	A field for holding the next expected serial or lot number to be given to future assignments, or for chaining between already assigned items.
-365	ehmG-1	ehm-10	5	serialLotQuantityItemType	ehm	Serial Lot Quantity	The quantity of units in this particular batch. Unit of measure is the gl-bus:measurableUnitofMeasure.
-366	ehmG-1	ehm-11	5	serialLotOriginalQuantityItemType	ehm	Serial Lot Original Quantity	The quantity of units in this batch on inception.
-367	ehmG-1	ehm-12	5	serialLotRemainingQuantityItemType	ehm	Serial Lot Remaining Quantity	The remaining quantity of units from the original batch; may be the same as the quantity in this batch or include other batches from the same original batch.
-368	ehmG-1	ehm-13	5	serialLotOriginationItemType	ehm	Serial Lot Origination	Date of manufacture or creation.
-369	ehmG-1	ehm-14	5	serialLotExpirationItemType	ehm	Serial Lot Expiration	Expiration date of the batch.
-370	ehmG-1	ehm-15	5	serialLotManufacturerItemType	ehm	Serial Lot Manufacturer	Manufacturer of the item (serial) or items (lot/batch).
-371	ehmG-1	ehm-16	5	serialLotBatchDescriptionItemType	ehm	Serial Lot Batch Description	A name or description of the items in the lot or batch.
-372	ehmG-1	ehm-17	5	serialLotWarrantyStartDateItemType	ehm	Serial Lot Warranty Start Date	If the items are covered by warranty, when that warranty covered will begin or has begun.
-373	ehmG-1	ehm-18	5	serialLotWarrantyEndDateItemType	ehm	Serial Lot Warranty End Date	If the items are covered by warranty, when that warranty covered will end or ended.
-374	ehmG-1	ehm-19	5	serialLotWarrantyPeriodItemType	ehm	Serial Lot Warranty Period	Warranty period – numeric portion; for a 30 day warranty period, the 30 would go here, and the day would go in gl-ehm:serialLotWarrantyPeriodUnit.
-375	ehmG-1	ehm-20	5	serialLotWarrantyPeriodUnitItemType	ehm	Serial Lot Warranty Period Unit	Warrant period – time or cycle unit portion. Values from the XBRL Unit Registry (www.xbrl.org/utr/utr.xml) are suggested where possible. Examples might include: H (hours), D (days), M (months), Y (years), machine cycles, km (kilometers).
-376	ehmG-1	ehm-21	5	serialLotWarrantyVendorItemType	ehm	Serial Lot Warranty Vendor	The vendor providing warranty; this may differ from the manufacturer.
-377	ehmG-1	ehm-22	5	serialLotWarrantyContractItemType	ehm	Serial Lot Warranty Contract	Contract or document information related to the warranty, such as a contract number and date or a URL with more information.
-378	ehmG-1	ehm-23	5	serialLotCommentItemType	ehm	Serial Lot Comment	Free format text related to the serial number or lot.
-379	corG-5	corG-19	4	_	cor	Taxes	Tuple for holding tax related information
-380	corG-19	cor-92	5	taxAuthorityItemType	cor	Tax Authority	Name of the relevant tax authority
-381	corG-19	cor-93	5	taxTableCodeItemType	cor	Tax Table Code	Tax table code used by the relevant tax authority
-382	corG-19	cor-94	5	taxDescriptionItemType	cor	Tax Description	Description of tax authority
-383	corG-19	cor-95	5	taxAmountItemType	cor	Tax Amount	Amount of taxes
-384	corG-19	cor-96	5	taxBasisItemType	cor	Tax Basis	Basis for taxation
-385	corG-19	cor-97	5	taxExchangeRateItemType	cor	Tax Exchange Rate	[DEPRECATED. taxExchangeRate should be used one in gl-muc pallette] Amount for foreign currency tracking in original currency
-386	corG-19	cor-98	5	taxPercentageRateItemType	cor	Tax Percentage Rate	Percent rate for VAT or other taxes normally a number between 0 and 1.0 - e.g. 50% is represented as 0.5
-387	corG-19	cor-99	5	taxCodeItemType	cor	Tax Code	A class or category of taxes
-388	corG-19	cor-100	5	taxCommentExemptionItemType	cor	Tax Comment Exemption	Additional text/code for exemption reasons or other comments.
-389	corG-19	muc-32	5	gl-gen:amountItemType	muc	Tax Amount Foreign Currency	If the tax is in a foreign currency, the amount of tax in that currency
-390	corG-19	muc-33	5	currencyItemType	muc	Tax Currency	If the tax is in a foreign currency, that currency
-391	corG-19	muc-34	5	exchangeRateDateItemType	muc	Tax Exchange Rate Date	If the tax is in a foreign currency, the date or date and time of the exchange rate used
-392	corG-19	muc-35	5	taxExchangeRateItemType	muc	Tax Exchange Rate	If the tax is in a foreign currency, the exchange rate used expressed as national currency divided by foreign currency
-393	corG-19	muc-36	5	exchangeRateSourceItemType	muc	Tax Exchange Rate Source	If the tax is in a foreign currency, source of exchange rate - for example, Reuters, Bloomberg
-394	corG-19	muc-37	5	exchangeRateTypeItemType	muc	Tax Exchange Rate Type	If the tax is in a foreign currency, type of exchange rate - for example, spot rate, forward contract etc.
-395	corG-19	muc-38	5	commentItemType	muc	Tax Exchange Rate Comment	If the tax is in a foreign currency, comment about exchange rate used 
-396	corG-19	muc-39	5	gl-gen:amountItemType	muc	Tax Amount Triangulation Currency	If the tax is in a foreign currency and triangulation is used, the amount of that tax in the triangulation currency
-397	corG-19	muc-40	5	currencyItemType	muc	Tax Triangulation Currency	If the tax is in a foreign currency and triangulation is used, the triangulation currency
-398	corG-19	muc-41	5	exchangeRateItemType	muc	Tax Triangulation Exchange Rate	If the tax is in a foreign currency and triangulation is used, the exchange rate used expressed as national currency divided by triangulation currency
-399	corG-19	muc-42	5	exchangeRateSourceItemType	muc	Tax Triangulation Exchange Rate Source	If the tax is in a foreign currency and triangulation is used, source of exchange rate - for example, Reuters, Bloomberg
-400	corG-19	muc-43	5	exchangeRateTypeItemType	muc	Tax Triangulation Exchange Rate Type	If the tax is in a foreign currency and triangulation is used, type of exchange rate - for example, spot rate, forward contract etc.
-401	corG-19	muc-44	5	exchangeRateItemType	muc	Tax Foreign Triangulation Exchange Rate	If the tax is in a foreign currency and triangulation is used,  the exchange rate used expressed as foreign currency divided by triangulation currency
-402	corG-19	muc-45	5	exchangeRateSourceItemType	muc	Tax Foreign Triangulation Exchange Rate Source	If the tax is in a foreign currency and triangulation is used, source of exchange rate - for example, Reuters, Bloomberg
-403	corG-19	muc-46	5	exchangeRateTypeItemType	muc	Tax Foreign Triangulation Exchange Rate Type	If the tax is in a foreign currency and triangulation is used, type of exchange rate - for example, spot rate, forward contract etc.
-404	corG-5	taf-1	4	tickingFieldItemType	taf	Ticking Field	Signifies that an item has been cleared, finished, finalized. When checking accounts are called for, the tick or letter showing this was done appears in this field. Can also be used for identifying that the original document against which a payment or DR/CR memo applies has been reconciled.
-405	corG-5	taf-2	4	documentRemainingBalanceItemType	taf	Document Remaining Balance	Balance remaining on the document
-406	corG-5	taf-3	4	uniqueConsignmentReferenceItemType	taf	Unique Consignment Reference	Unique Consignment Reference or UCR. An "origin to destination" reference code for international consignments, developed in cooperation with the World Customs Organization and EAN International (EAN). (http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)
-407	corG-5	tafG-1	4	_	taf	Originating Document Structure	A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive structure of related documents.
-408	tafG-1	taf-4	5	gl-gen:documentTypeItemType	taf	Originating Document Type	Originating document type  check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.
-409	tafG-1	taf-5	5	originatingDocumentNumberItemType	taf	Originating Document Number	Originating document number
-410	tafG-1	taf-6	5	originatingDocumentDateItemType	taf	Originating Document Date	Originating document date
-411	tafG-1	taf-7	5	gl-gen:identifierTypeItemType	taf	Originating Document Identifier Type	Originating document identifier type. Enumerated as: C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.
-412	tafG-1	taf-8	5	originatingDocumentIdentifierCodeItemType	taf	Originating Document Identifier Code	Originating document identifier code
-413	tafG-1	taf-9	5	originatingDocumentIdentifierTaxCodeItemType	taf	Originating Document Identifier Tax Code	Originating document identifier tax code
-414	corG-5	srcd-16	4	richTextCommentComplexType	srcd	Rich Text Comment	
+corG-1	1		cor	accountingEntries	Accounting Entries	Root for XBRL GL. No entry made here.
+corG-2	2		cor	documentInfo	Document Info	Parent for descriptive information about the accountingEntries section in which it is contained.
+cor-1	3	gl-gen:entriesTypeItemType	cor	entriesType	Entries Type	"account: information to fill in a chart of accounts file.\nbalance: the results of accumulation of a complete and validated list of entries for an account (or a list of account) in a specific period - sometimes called general ledger\nentries: a list of individual accounting entries, which might be posted/validated or nonposted/validated
+journal: a self-balancing (Dr = Cr) list of entries for a specific period including beginning balance for that period.\nledger: a complete list of entries for a specific account (or list of accounts) for a specific period; note - debits do not have to equal credits.\nassets: a listing of open receivables, payables, inventory, fixed assets or other information that can be extracted from but are not necessarily included as part of a journal entry.\ntrialBalance: the self-balancing (Dr = Cr) result of accumulation of a complete and validated list of entries for the entity in a complete list of accounts in a specific period.\ntaxtables: aids automated interpretation of instances that represent tax tables; Tax table are defined by using multiple [taxes] structures to gather the population of codes, authorities and rates; through [taxTableCode] cross-references in the [taxes] structure, these ""master file"" tax tables can be referenced. \nmapping: a collection of mappings between interrelated data sets, such as a local and related corporate standard chart of accounts or detail data mapped to summarized end reporting concepts.\nversioning: a collection of changes between two versions of the same class of information, such as updates to a master file like a chart of accounts.  \nmaster_file: a collection of master files, such as the customer or inventory master file. 
+trade_documents: a collection of trade/transactional documents, such as vendor invoices or customer orders. \nprofile_compliant: the meaning of this collection of information can be determined by understanding an established profile and especially an XBRL GL Profile. Profiles are determined through namespace declarations, schemaRef and conventions of those profiles.\nother: for all other types of representations.\nOften sorted by date or by account, these terms have specific, and sometimes different, meanings in different areas. Common practice will drive accounting method/term matches."
+cor-2	3	uniqueIDItemType	cor	uniqueID	Unique ID	Unique identifier for this file.
+cor-3	3	revisesUniqueIDItemType	cor	revisesUniqueID	Revises Unique ID	Internal ID Number associated with identifierReference
+cor-4	3	gl-gen:revisesUniqueIDActionItemType	cor	revisesUniqueIDAction	Revises Unique IDAction	Provides guidance on action to take with previous set of data: supersedes - old data should be considered as obsolete/overwritten; supplements - belongs with that data as if it was included with it.
+cor-5	3	languageItemType	cor	language	Language	Primary language of the intellectual content. Where practical, the content of this field should coincide with ISO 639-1988 language codes.
+cor-6	3	creationDateItemType	cor	creationDate	Creation Date	Date/time file was created.
+bus-1	3	creatorItemType	bus	creator	Creator	Identifies the creator of the XBRL instance.
+cor-7	3	entriesCommentItemType	cor	entriesComment	Entries Comment	Text for entire document.
+cor-8	3	periodCoveredStartItemType	cor	periodCoveredStart	Period Covered Start	Start of date range for contents. Used as basis for many assumptions about data, including the date as of which open balances are open.
+cor-9	3	periodCoveredEndItemType	cor	periodCoveredEnd	Period Covered End	End of date range for contents. Used as basis for many assumptions about data, including the date as of which open balances are open.
+bus-2	3	periodCountItemType	bus	periodCount	Period Count	Number of periods or buckets, used by postingCode. Used to interpret posting date. It may be preferable to limit entries by period covered to be by individual reporting period.
+bus-3	3	periodUnitTypeItemType	bus	periodUnit	Period Unit	Type of periods covered by periodCount. Enumerated as: daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, thirdly, semiannual, annual, ad-hoc, current-period-only, other.
+bus-4	3	periodUnitDescriptionItemType	bus	periodUnitDescription	Period Unit Description	Free format description of the period unit
+bus-5	3	sourceApplicationItemType	bus	sourceApplication	Source Application	Product or service that produced this file. Used by many systems (e.g., VAT). Version number can be included or extended.
+bus-6	3	targetApplicationItemType	bus	targetApplication	Target Application	Particular use for which file was generated.
+muc-1	3	currencyItemType	muc	defaultCurrency	Default Currency	The default currency related to the amount can be entered here instead of the XBRL instance specified way, especially important in multi-currency situations. Recommend ISO 4217 coding
+srcd-1	3	summaryReportingTaxonomiesComplexType	srcd	summaryReportingTaxonomies	Summary Reporting Taxonomies	
+corG-3	2		cor	entityInformation	Entity Information	Holder for entity information - information about the reporting organization.
+busG-1	3		bus	entityPhoneNumber	Entity Phone Number	Primary phone number of the entity.
+bus-7	4	gl-gen:phoneNumberDescriptionItemType	bus	phoneNumberDescription	Phone Number Description	Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
+bus-8	4	gl-gen:phoneNumberItemType	bus	phoneNumber	Phone Number	Phone number referred to in 'phoneNumberDescription'
+busG-2	3		bus	entityFaxNumberStructure	Entity Fax Number Structure	Tuple for holding company fax information.
+bus-9	4	gl-gen:faxNumberUsageItemType	bus	entityFaxNumberUsage	Entity Fax Number Usage	Company fax number usage (e.g. orders, head office, IR)
+bus-10	4	gl-gen:faxNumberItemType	bus	entityFaxNumber	Entity Fax Number	Company Fax Number
+busG-3	3		bus	entityEmailAddressStructure	Entity Email Address Structure	Tuple for holding company email information.
+bus-11	4	gl-gen:emailAddressUsageItemType	bus	entityEmailAddressUsage	Entity Email Address Usage	Company email address usage (e.g. orders, head office, IR)
+bus-12	4	gl-gen:emailAddressItemType	bus	entityEmailAddress	Entity Email Address	Company Email Address
+bus-13	3	accountingMethodPurposeItemType	bus	organizationAccountingMethodPurposeDefault	Organization Accounting Method Purpose Default	If not stated explicitly at the line level, the default reporting purpose - from book, tax, management, statutory, other
+bus-14	3	organizationAccountingMethodPurposeDefaultDescriptionItemType	bus	organizationAccountingMethodPurposeDefaultDescription	Organization Accounting Method Purpose Default Description	Free format description of the default accounting method purpose
+busG-4	3		bus	organizationIdentifiers	Organization Identifiers	Section which contains various identifiers for the company.
+bus-15	4	organizationIdentifierItemType	bus	organizationIdentifier	Organization Identifier	Code representing the company or organization whose data this file represents: used for situations where one user (e.g., a CPA) needs to keep track of multiple organizations' files (e.g., multiple clients). Can be EIN#, client #, internal/external identifier, SIC code. Codes which identifies the entity. Includes the code identifier of the authority issuing the code, a colon, and the code itself. For example, CIK:01234567 for the CIK number issued by SEC EDGAR.
+bus-16	4	organizationDescriptionItemType	bus	organizationDescription	Organization Description	Text for organization identified by organizationIdentifier. Any descriptive information about the code.
+busG-5	3		bus	organizationAddress	Organization Address	Address structure for the reporting entity
+bus-17	4	organizationAddressNameItemType	bus	organizationAddressName	Organization Address Name	Name of organization used at this address
+bus-18	4	organizationAddressDescriptionItemType	bus	organizationAddressDescription	Organization Address Description	Description of the address, such as Mailing, Physical, Investor Relations, etc.
+bus-19	4	organizationAddressPurposeItemType	bus	organizationAddressPurpose	Organization Address Purpose	Freeform for codes like shipping, billing, mailing at address level.  Allows identification of multiple purpose addresses for each address of the reporting organization.
+bus-20	4	locationIdentifierItemType	bus	organizationAddressLocationIdentifier	Organization Address Location Identifier	A code used to identify the location and to associate it with contacts and transactions
+bus-21	4	organizationBuildingNumberItemType	bus	organizationBuildingNumber	Organization Building Number	Building Number
+bus-22	4	organizationAddressStreetItemType	bus	organizationAddressStreet	Organization Address Street	Street address
+bus-23	4	organizationAddressStreet2ItemType	bus	organizationAddressStreet2	Organization Address Street2	Address Detail
+bus-24	4	organizationAddressCityItemType	bus	organizationAddressCity	Organization Address City	City or town of the address.
+bus-25	4	organizationAddressStateOrProvinceItemType	bus	organizationAddressStateOrProvince	Organization Address State Or Province	State, province or region of the address.
+bus-26	4	organizationAddressZipOrPostalCodeItemType	bus	organizationAddressZipOrPostalCode	Organization Address Zip Or Postal Code	Zip or other postal code of the address.
+bus-27	4	organizationAddressCountryItemType	bus	organizationAddressCountry	Organization Address Country	Country of the address.
+bus-28	4	gl-gen:activeItemType	bus	organizationAddressActive	Organization Address Active	Boolean to indicate whether the address is active (="true") or inactive (="false")
+busG-6	3		bus	entityWebSite	Entity Web Site	Primary web site of the entity.
+bus-29	4	webSiteDescriptionItemType	bus	webSiteDescription	Web Site Description	Description of the web site.
+bus-30	4	webSiteURLItemType	bus	webSiteURL	Web Site URL	Valid URL of the web site. Should be full URL.
+busG-7	3		bus	contactInformation	Contact Information	Information about contacts.
+bus-31	4	contactPrefixItemType	bus	contactPrefix	Contact Prefix	Prefix (e.g. Dr., Mr., Mrs.)
+bus-32	4	contactLastNameItemType	bus	contactLastName	Contact Last Name	Last or family name
+bus-33	4	contactFirstNameItemType	bus	contactFirstName	Contact First Name	First or given name
+bus-34	4	contactSuffixItemType	bus	contactSuffix	Contact Suffix	Suffix (e.g. MD, CPA, Jr.)
+bus-35	4	contactAttentionLineItemType	bus	contactAttentionLine	Contact Attention Line	Attention Line
+bus-36	4	contactPositionRoleItemType	bus	contactPositionRole	Contact Position Role	Position or role
+busG-8	4		bus	contactPhone	Contact Phone	Contact Phone Number
+bus-37	5	gl-gen:phoneNumberDescriptionItemType	bus	contactPhoneNumberDescription	Contact Phone Number Description	Contact Phone Number Description such as Main, Investor relations, etc. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
+bus-38	5	gl-gen:phoneNumberItemType	bus	contactPhoneNumber	Contact Phone Number	Contact phone number referred to in the description.
+busG-9	4		bus	contactFax	Contact Fax	Contact Fax Number Structure
+bus-39	5	gl-gen:faxNumberUsageItemType	bus	contactFaxNumberUsage	Contact Fax Number Usage	Contact Fax Number Usage (e.g. orders, head office, IR)
+bus-40	5	gl-gen:faxNumberItemType	bus	contactFaxNumber	Contact Fax Number	Contact Fax Number
+busG-10	4		bus	contactEMail	Contact EMail	Contact E-mail address structure
+bus-41	5	gl-gen:emailAddressUsageItemType	bus	contactEmailAddressUsage	Contact Email Address Usage	Contact email address usage (e.g. orders, head office, IR)
+bus-42	5	gl-gen:emailAddressItemType	bus	contactEmailAddress	Contact Email Address	Contact email address
+bus-43	4	contactTypeItemType	bus	contactType	Contact Type	Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant
+bus-44	4	locationIdentifierItemType	bus	contactLocationIdentifierCrossReference	Contact Location Identifier Cross Reference	This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier
+bus-45	4	gl-gen:activeItemType	bus	contactActive	Contact Active	Boolean to indicate whether the contact is active (="true") or inactive (="false")
+bus-46	3	businessDescriptionItemType	bus	businessDescription	Business Description	Description of the nature of the business of the entity.
+bus-47	3	fiscalYearStartItemType	bus	fiscalYearStart	Fiscal Year Start	Start of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.
+bus-48	3	fiscalYearEndItemType	bus	fiscalYearEnd	Fiscal Year End	End of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.
+busG-11	3		bus	organizationAccountingMethodStructure	Organization Accounting Method Structure	Section for identifying the methods of accounting used by the entity for different reporting purposes
+bus-49	4	accountingMethodItemType	bus	organizationAccountingMethod	Organization Accounting Method	For this entity, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other
+bus-50	4	organizationAccountingMethodDescriptionItemType	bus	organizationAccountingMethodDescription	Organization Accounting Method Description	Free format description of the accounting method
+bus-51	4	accountingMethodPurposeItemType	bus	organizationAccountingMethodPurpose	Organization Accounting Method Purpose	For this entity, the reporting purpose represented - from book, tax, management, statutory, other
+bus-52	4	organizationAccountingMethodPurposeDescriptionItemType	bus	organizationAccountingMethodPurposeDescription	Organization Accounting Method Purpose Description	Free format description of the accounting method purpose
+bus-53	4	organizationAccountingMethodStartDateItemType	bus	organizationAccountingMethodStartDate	Organization Accounting Method Start Date	Accounting Method Start Date
+bus-54	4	organizationAccountingMethodEndDateItemType	bus	organizationAccountingMethodEndDate	Organization Accounting Method End Date	Accounting Method End Date
+busG-12	3		bus	accountantInformation	Accountant Information	Information about the relevant external accountant
+bus-55	4	accountantNameItemType	bus	accountantName	Accountant Name	Name of the accountant
+busG-13	4		bus	accountantAddress	Accountant Address	Section which contains accountant address information.
+bus-56	5	accountantAddressNameItemType	bus	accountantAddressName	Accountant Address Name	Address Name for Accountant
+bus-57	5	accountantAddressDescriptionItemType	bus	accountantAddressDescription	Accountant Address Description	Address Description for Accountant
+bus-58	5	accountantAddressPurposeItemType	bus	accountantAddressPurpose	Accountant Address Purpose	Address Purpose
+bus-59	5	locationIdentifierItemType	bus	accountantAddressLocationIdentifier	Accountant Address Location Identifier	A code used to identify the accountant location and to associate it with contacts and transactions
+bus-60	5	accountantBuildingNumberItemType	bus	accountantBuildingNumber	Accountant Building Number	Building Number for Accountant
+bus-61	5	accountantStreetItemType	bus	accountantStreet	Accountant Street	Street address of the accountant
+bus-62	5	accountantAddressStreet2ItemType	bus	accountantAddressStreet2	Accountant Address Street2	Address Detail for Accountant
+bus-63	5	accountantCityItemType	bus	accountantCity	Accountant City	City of the accountant
+bus-64	5	accountantStateOrProvinceItemType	bus	accountantStateOrProvince	Accountant State Or Province	State, province or region of the accountant
+bus-65	5	accountantCountryItemType	bus	accountantCountry	Accountant Country	Country of accountant
+bus-66	5	accountantZipOrPostalCodeItemType	bus	accountantZipOrPostalCode	Accountant Zip Or Postal Code	Zip or other postal code of the accountant
+bus-67	5	gl-gen:activeItemType	bus	accountantAddressActive	Accountant Address Active	Boolean to indicate whether the address is active (="true") or inactive (="false")
+bus-68	4	accountantEngagementTypeItemType	bus	accountantEngagementType	Accountant Engagement Type	Type of engagement being performed by external accountant. Enumerated as: audit, review, compilation, tax, other.
+bus-69	4	accountantEngagementTypeDescriptionItemType	bus	accountantEngagementTypeDescription	Accountant Engagement Type Description	Free format description of the type of engagement
+busG-14	4		bus	accountantContactInformation	Accountant Contact Information	Accountant Contact Information Structure
+bus-70	5	accountantContactPrefixItemType	bus	accountantContactPrefix	Accountant Contact Prefix	Prefix (e.g. Dr., Mr., Mrs., etc.) for Accountant Contact
+bus-71	5	accountantContactLastNameItemType	bus	accountantContactLastName	Accountant Contact Last Name	Family Name for Accountant Contact
+bus-72	5	accountantContactFirstNameItemType	bus	accountantContactFirstName	Accountant Contact First Name	First or Given Name for Accountant Contact
+bus-73	5	accountantContactSuffixItemType	bus	accountantContactSuffix	Accountant Contact Suffix	Suffix (e.g. MD, CPA, Jr., etc.)
+bus-74	5	accountantContactAttentionLineType	bus	accountantContactAttentionLine	Accountant Contact Attention Line	Attention Line for Accountant Contact
+bus-75	5	accountantContactPositionRoleItemType	bus	accountantContactPositionRole	Accountant Contact Position Role	Position or Role for Accountant Contact
+busG-15	5		bus	accountantContactPhone	Accountant Contact Phone	Phone Number for Accountant Contact
+bus-76	6	gl-gen:phoneNumberDescriptionItemType	bus	accountantContactPhoneNumberDescription	Accountant Contact Phone Number Description	Accountant Contact Phone Number Description such as Main, Investor relations, etc. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
+bus-77	6	gl-gen:phoneNumberItemType	bus	accountantContactPhoneNumber	Accountant Contact Phone Number	Accountant Contact phone number referred to in the description.
+busG-16	5		bus	accountantContactFax	Accountant Contact Fax	Accountant Contact Fax Number Structure
+bus-78	6	gl-gen:faxNumberItemType	bus	accountantContactFaxNumber	Accountant Contact Fax Number	Accountant Contact Fax Number
+bus-79	6	gl-gen:faxNumberUsageItemType	bus	accountantContactFaxNumberUsage	Accountant Contact Fax Number Usage	Accountant Contact Fax Number Usage (e.g. orders, head office, IR)
+busG-17	5		bus	accountantContactEmail	Accountant Contact Email	Accountant contact E-mail address structure
+bus-80	6	gl-gen:emailAddressUsageItemType	bus	accountantContactEmailAddressUsage	Accountant Contact Email Address Usage	Accountant Contact email address usage (e.g. orders, head office, IR)
+bus-81	6	gl-gen:emailAddressItemType	bus	accountantContactEmailAddress	Accountant Contact Email Address	Accountant Contact email address
+bus-82	5	accountantContactTypeItemType	bus	accountantContactType	Accountant Contact Type	Contact Type for Accountant Contact
+bus-83	5	locationIdentifierItemType	bus	accountantLocationIdentifierCrossReference	Accountant Location Identifier Cross Reference	This code is used to associate the contact with a specific location for the Accountant. Its value should be the same as that of the accountantAddressLocationIdentifier
+bus-84	5	gl-gen:activeItemType	bus	accountantContactActive	Accountant Contact Active	Boolean to indicate whether the contact is active (="true") or inactive (="false")
+busG-18	3		bus	reportingCalendar	Reporting Calendar	A tool to collect the periods used to summarise results from transactions.
+bus-85	4	reportingCalendarCodeItemType	bus	reportingCalendarCode	Reporting Calendar Code	The code used to identify this specific reporting calendar, unique across periods
+bus-86	4	reportingCalendarDescriptionItemType	bus	reportingCalendarDescription	Reporting Calendar Description	A description of the reporting calendar (associated with the reportingCalendarCode given)
+bus-87	4	reportingCalendarTitleItemType	bus	reportingCalendarTitle	Reporting Calendar Title	A description of the reporting period. The actual beginning and ending dates are found within the 'reportingCalendarPeriod' structure
+bus-88	4	reportingCalendarPeriodTypeItemType	bus	reportingCalendarPeriodType	Reporting Calendar Period Type	A tool to collect a specific set of periods used to summarize results from transactions.
+bus-89	4	reportingCalendarPeriodTypeDescriptionItemType	bus	reportingCalendarPeriodTypeDescription	Reporting Calendar Period Type Description	A description of the type of period involved.
+bus-90	4	reportingCalendarOpenClosedStatusItemType	bus	reportingCalendarOpenClosedStatus	Reporting Calendar Open Closed Status	An identifier on whether the reporting calendar is still open for activity. enumerated, "open", "closed", "pending"
+bus-91	4	accountingMethodPurposeItemType	bus	reportingPurpose	Reporting Purpose	A description of the accounting set of books involved. Uses enumeration from accounting method purpose.
+bus-92	4	reportingPurposeDescriptionItemType	bus	reportingPurposeDescription	Reporting Purpose Description	Free format description of the reporting purpose
+busG-19	4		bus	reportingCalendarPeriod	Reporting Calendar Period	A code for the type of period involved. Enumerated as: monthly, quarterly, semi-annually, 4-5-4, ad-hoc, other.
+bus-93	5	periodIdentifierItemType	bus	periodIdentifier	Period Identifier	An identifier for this period in this calendar
+bus-94	5	periodDescriptionItemType	bus	periodDescription	Period Description	A description of this specific reporting period in this calendar.
+bus-95	5	periodStartItemType	bus	periodStart	Period Start	The beginning date/time of a period
+bus-96	5	periodEndItemType	bus	periodEnd	Period End	The ending date/time of a period
+bus-97	5	periodClosedDateItemType	bus	periodClosedDate	Period Closed Date	The date/time a period has been closed for activity. If this is present with a nill value (xsi:nill="true") then the period is not closed.
+corG-4	2		cor	entryHeader	Entry Header	Parent for entry headers/journal entry headers.
+cor-10	3	postedDateItemType	cor	postedDate	Posted Date	Date this entry was posted (validated) to the general ledger. May not represent the date of accounting significance which is represented by 'postingDate'.
+cor-11	3	enteredByItemType	cor	enteredBy	Entered By	Initials/name of operator originally entering.
+bus-98	3	enteredByModifiedItemType	bus	enteredByModified	Entered By Modified	Identification for the last person modifying this entry before posting.
+cor-12	3	enteredDateItemType	cor	enteredDate	Entered Date	Represents the actual date/time of entry into computer (automated from system date, often misrepresented by changing system clock). Posting dates are maintained separately. 
+bus-99	3	entryResponsiblePersonItemType	bus	entryResponsiblePerson	Entry Responsible Person	Identifier of person who created or originated or is otherwise responsible for the entry.
+cor-13	3	gl-gen:sourceJournalIDItemType	cor	sourceJournalID	Source Journal ID	Source journal. The code of the journal in which the entry is processed. \nThe code must be a unique indication for a journal and is selected from the following enumerated list:\ncd      cash disbursements (sending cheques to vendors)\ncr      cash receipts (receiving cheques from others)\nfa      fixed assets\ngi      giro/other bank adjustments\ngj      general journal\nim      inventory management\njc      job cost\npj      purchase journal (liabilities from purchases)\npl      payroll journal\nsj      sales journal\nse      standard entries\nud      user defined\not      other sources of entries
+bus-100	3	sourceJournalDescriptionItemType	bus	sourceJournalDescription	Source Journal Description	Source journal (full description of general journal, payroll journal, accountant entries). A more easily readable journal indication. The most common journals are: Purchases, Sales, Cash, and General Journal.
+cor-14	3	gl-gen:entryTypeItemType	cor	entryType	Entry Type	One of the following enumerated list: adjusting, budget, comparative, external-accountant, standard, passed-adjusting, eliminating, proposed, recurring, reclassifying, simulated, tax, other
+bus-101	3	entryOriginItemType	bus	entryOrigin	Entry Origin	Origin of entry: accrual, manual entry, imported entry, exchange gain or loss
+cor-15	3	entryNumberItemType	cor	entryNumber	Entry Number	Identifier within source journal
+cor-16	3	entryCommentItemType	cor	entryComment	Entry Comment	Description of entry described by this entry header (e.g. Opening Balance)
+cor-17	3	gl-gen:qualifierEntryItemType	cor	qualifierEntry	Qualifier Entry	Entry Qualifier - An enumerated field that qualifies the type of entry, specifically useful for general ledger and trial balance environments when it is important to state the values represented are summarized as of the reporting date - opening or closing balances. In accounting systems, this is often known as BBF (balance brought forward.) Permitted values are: standard, balance-brought-forward and other.
+cor-18	3	qualifierEntryDescriptionItemType	cor	qualifierEntryDescription	Qualifier Entry Description	Free format description of the entry qualifier
+bus-102	3	postingCodeItemType	bus	postingCode	Posting Code	Code for posting to period, e.g., period 1-13, based on codes in an accounting period file. We do not recommend that software vendors export here, but suggest providing period end numbers for the buckets. Possibilities W1 through W53, M1 through M13, Q1-Q4. Developers and others creating output files are encouraged to supply an actual end date.
+bus-103	3	batchIDItemType	bus	batchID	Batch ID	ID for a batch for this group of entries
+bus-104	3	batchDescriptionItemType	bus	batchDescription	Batch Description	Description of this batch
+bus-105	3	numberOfEntriesItemType	bus	numberOfEntries	Number Of Entries	The total number of entries.
+bus-106	3	totalDebitItemType	bus	totalDebit	Total Debit	The total of all debit amounts.
+bus-107	3	totalCreditItemType	bus	totalCredit	Total Credit	The total of all credit amounts.
+cor-19	3	gl-gen:bookTaxDifferenceItemType	cor	bookTaxDifference	Book Tax Difference	Enumerated field with possible values of permanent, temporary or none indicating the type of difference between book and tax accounting methods. Omission of this field is equivalent to "none"
+bus-108	3	eliminationCodeItemType	bus	eliminationCode	Elimination Code	Informs destination ledger this is an intracompany entry which eliminates in consolidation
+bus-109	3	budgetScenarioPeriodStartItemType	bus	budgetScenarioPeriodStart	Budget Scenario Period Start	Start of period covered by associated budgetScenario
+bus-110	3	budgetScenarioPeriodEndItemType	bus	budgetScenarioPeriodEnd	Budget Scenario Period End	End of period covered by associated budgetScenario
+bus-111	3	budgetScenarioTextItemType	bus	budgetScenarioText	Budget Scenario Text	Text related to budgetScenario
+bus-112	3	budgetScenarioItemType	bus	budgetScenario	Budget Scenario	Code for a budget scenario identifier (such as PB for 'preliminary budget', or RB for 'revised budget', or other identifier for entryType)
+bus-113	3	budgetAllocationCodeItemType	bus	budgetAllocationCode	Budget Allocation Code	Code associated with the calculation formula: e.g. (D)ivide by number of periods, (T)otal for period given
+usk-1	3	reversingStdIdItemType	usk	reversingStdId	Reversing Std Id	For standard, reversing, master, cancelling or other entries an ID associated with those entries.
+usk-2	3	recurringStdDescriptionItemType	usk	recurringStdDescription	Recurring Std Description	Description to accompany standard or recurring ID
+usk-3	3	frequencyIntervalItemType	usk	frequencyInterval	Frequency Interval	For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the interval.
+usk-4	3	frequencyUnitItemType	usk	frequencyUnit	Frequency Unit	For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the unit.
+usk-5	3	repetitionsRemainingItemType	usk	repetitionsRemaining	Repetitions Remaining	Number of times that the recurring entry will repeat
+usk-6	3	nextDateRepeatItemType	usk	nextDateRepeat	Next Date Repeat	Date next repeated or standard posted
+usk-7	3	lastDateRepeatItemType	usk	lastDateRepeat	Last Date Repeat	Date last repeated or standard posted
+usk-8	3	endDateRepeatingEntryItemType	usk	endDateRepeatingEntry	End Date Repeating Entry	For standard or recurring journals, stop date/time for repetitive entry.
+usk-9	3	reverseTypeItemType	usk	reverse	Reverse	Should entry be reversed?
+usk-10	3	reversingDateItemType	usk	reversingDate	Reversing Date	Date this entry should be reversed
+cor-20	3	counterItemType	cor	entryNumberCounter	Entry Number Counter	Unique reference for the entry - a numeric counter
+corG-5	3		cor	entryDetail	Entry Detail	Parent for entry detail
+cor-21	4	lineNumberItemType	cor	lineNumber	Line Number	Identifier for a particular entry detail
+cor-22	4	counterItemType	cor	lineNumberCounter	Line Number Counter	Unique reference for the line - a numeric counter
+corG-6	4		cor	account	Account	"Tuple: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so:\n/account/accountMainID 1000\n/account/accountMainDescription Cash\n/account/accountSub/accountSubID 4783HG
+/account/accountSub/accountSubDescription Department\n/account/accountSub/accountSubID QOWI\n/account/accountSub/accountSubDescription Branch\n/account/accountSub/accountSubID 192837\n/account/accountSub/accountSubDescription Division"
+cor-23	5	accountMainIDItemType	cor	accountMainID	Account Main ID	Main account - the code used to identify the accounting bucket the entry has been assigned to. Examples might be 1000 for Cash, 567GAAZ for Sales Expense or Z for tax payments. Identifiers such as department, branch, division, manager, or other modifiers are noted in the Subaccount area. Before needing to post, account is not necessary. Posting to the general ledger almost always requires an entry here.
+cor-24	5	accountMainDescriptionItemType	cor	accountMainDescription	Account Main Description	Description of accountMainID - the human readable describer that accompanies the code used in accountMainID
+cor-25	5	gl-gen:mainAccountTypeItemType	cor	mainAccountType	Main Account Type	Account type - FASB Concepts 6 and similar international designs. When xbrlInfo is used to associated other XBRL reporting items, this field is more suited to representing existing systems (audit) than data interchange. Enumerated as: asset, liability, equity, income, gain, expense, loss, contr-to-equity, distr-from-equity, comprehensive-income, other.
+cor-26	5	mainAccountTypeDescriptionItemType	cor	mainAccountTypeDescription	Main Account Type Description	Free format description of the account classification
+cor-27	5	parentAccountMainIDItemType	cor	parentAccountMainID	Parent Account Main ID	Roll up item from child natural account to parent natural account.
+cor-28	5	gl-gen:accountPurposeCodeItemType	cor	accountPurposeCode	Account Purpose Code	Code related to usage for account aggregate - Consolidating, European, IFRS, Offsetting, Primary, Tax, USGAAP, Japanese, Other. Japanese companies will use this for the tax required offsetting entry. If left blank, assumes default accounting method for company.
+cor-29	5	accountPurposeDescriptionItemType	cor	accountPurposeDescription	Account Purpose Description	Description of usage for aggregate account
+cor-30	5	gl-gen:accountTypeItemType	cor	accountType	Account Type	Type of account. Enumerated as: account, bank, employee, customer, job, vendor, measurable, statistical, other.
+cor-31	5	accountTypeDescriptionItemType	cor	accountTypeDescription	Account Type Description	Free format description of the account type
+bus-114	5	accountingMethodItemType	bus	entryAccountingMethod	Entry Accounting Method	For this entry, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other
+bus-115	5	entryAccountingMethodDescriptionItemType	bus	entryAccountingMethodDescription	Entry Accounting Method Description	Free format description of the entry accounting method
+bus-116	5	accountingMethodPurposeItemType	bus	entryAccountingMethodPurpose	Entry Accounting Method Purpose	For this entry, the reporting purpose represented - from book, tax, management, statutory, other
+bus-117	5	entryAccountingMethodPurposeDescriptionItemType	bus	entryAccountingMethodPurposeDescription	Entry Accounting Method Purpose Description	Free format description of the entry accounting method purpose
+corG-7	5		cor	accountSub	Account Sub	Tuple to hold multiple accountSubIDs and Descriptions
+cor-32	6	accountSubDescriptionItemType	cor	accountSubDescription	Account Sub Description	The description that accompanies accountSubID belongs here.
+cor-33	6	accountSubIDItemType	cor	accountSubID	Account Sub ID	Where the primary account was placed in accountMainID, the code used for each profit center, division, business unit, fund, program, branch, project, class, su-class or other modifier is placed here.
+cor-34	6	accountSubTypeItemType	cor	accountSubType	Account Sub Type	Type of sub-account - profit center, division, business unit, fund, program, branch, project, class, su-class or other modifier is placed here. For example:: Accountability center: Business unit: Class:Department: Project: Fund: Program:Job: Profit center: Branch: Setup class: Division: Unit
+corG-8	6		cor	segmentParentTuple	Segment Parent Tuple	Tuple for showing the detail necessary to roll up from one segment (type of subaccount) to another.)
+cor-35	7	parentSubaccountCodeItemType	cor	parentSubaccountCode	Parent Subaccount Code	Subaccount NUMBER this subaccount rolls up to - see also subaccount type it rolls up to.
+cor-36	7	parentSubaccountTypeItemType	cor	parentSubaccountType	Parent Subaccount Type	The describer of the segment this subaccount rolls up to.
+cor-37	7	reportingTreeIdentifierItemType	cor	reportingTreeIdentifier	Reporting Tree Identifier	Used for representing descriptions of reporting trees.
+cor-38	7	parentSubaccountProportionItemType	cor	parentSubaccountProportion	Parent Subaccount Proportion	For partial allocations of amounts to different parents, the percentage of a child that will be allocated to a parent.
+cor-39	5	gl-gen:activeItemType	cor	accountActive	Account Active	Boolean to indicate whether the account is active (="true") or inactive (="false")
+cor-40	4	gl-gen:amountItemType	cor	amount	Amount	"This field (amount) represents the primary monetary amount related to the  subject of the entryDetail line. \nThere is one primary monetary amount per entryDetail structure.\nIt may, for example, represent the amount of one line of a journal entry, the balance on a document, or the extended amount of a line item on an invoice. 
+Amount is not required if detailed entry is used for non-financial work and other elements are populated, in particular measurableQuantity. \nThe amount field is a signed number (either positive or negative itself) and used in conjunction with a separate signOfAmount and a separate debitCreditCode, which together are considered for understanding the monetary amount. \nThe unit of measure is determined by amountCurrency if present, and by the default or home currency if amountCurrency is not present."
+muc-2	4	currencyItemType	muc	amountCurrency	Amount Currency	The currency related to the amount can be entered here instead of the XBRL instance specified way, especially important in multi-currency situations. \nRecommend ISO 4217 coding.
+muc-3	4	gl-gen:amountItemType	muc	amountOriginalAmount	Amount Original Amount	Amount in original (as opposed to home) currency, for multi-currency tracking. 
+muc-4	4	currencyItemType	muc	amountOriginalCurrency	Amount Original Currency	The currency used to track original, as opposed to home, amounts. Recommended ISO 4217 coding.
+muc-5	4	exchangeRateItemType	muc	amountOriginalExchangeRate	Amount Original Exchange Rate	Exchange rate at time of original transaction (expressed as national currency divided by original currency)
+muc-6	4	exchangeRateDateItemType	muc	amountOriginalExchangeRateDate	Amount Original Exchange Rate Date	Date of exchange rate used to record the original transaction.
+muc-7	4	exchangeRateSourceItemType	muc	amountOriginalExchangeRateSource	Amount Original Exchange Rate Source	Source of Exchange Rate - for example, Reuters, Bloomberg
+muc-8	4	commentItemType	muc	amountOriginalExchangeRateComment	Amount Original Exchange Rate Comment	Comment about exchange rate used for recording original transaction.
+muc-9	4	gl-gen:amountItemType	muc	amountOriginalTriangulationAmount	Amount Original Triangulation Amount	If triangulation is used, amount in triangulation currency, for multi-currency tracking. Debit is entered as positive, credit as negative.
+muc-10	4	currencyItemType	muc	amountOriginalTriangulationCurrency	Amount Original Triangulation Currency	The currency used for triangulation, if used. May often be EUR or USD. Recommended ISO 4217 coding.
+muc-11	4	exchangeRateItemType	muc	amountOriginalTriangulationExchangeRate	Amount Original Triangulation Exchange Rate	Exchange rate between national currency and triangulation currency at time of original transaction (expressed as national currency divided by triangulation currency)
+muc-12	4	exchangeRateSourceItemType	muc	amountOriginalTriangulationExchangeRateSource	Amount Original Triangulation Exchange Rate Source	Source of Exchange Rate for triangulation amount at time of original transaction - for example, Reuters, Bloomberg
+muc-13	4	exchangeRateTypeItemType	muc	amountOriginalTriangulationExchangeRateType	Amount Original Triangulation Exchange Rate Type	Type of Exchange Rate for triangulation amount at time of original transaction - for example, spot rate, forward contract etc.
+muc-14	4	exchangeRateItemType	muc	originalTriangulationExchangeRate	Original Triangulation Exchange Rate	Exchange rate between original currency and triangulation currency at time of original transaction (expressed as original currency divided by triangulation currency)
+muc-15	4	exchangeRateSourceItemType	muc	originalExchangeRateTriangulationSource	Original Exchange Rate Triangulation Source	Source of Exchange Rate for triangulation from original currency to triangulation currency at time of original transaction - for example, Reuters, Bloomberg
+muc-16	4	exchangeRateTypeItemType	muc	originalExchangeRateTriangulationType	Original Exchange Rate Triangulation Type	Type of Exchange Rate for triangulation from original currency to triangulation currency at time of original transaction - for example, spot rate, forward contract etc.
+cor-41	4	gl-gen:signOfAmountItemType	cor	signOfAmount	Sign Of Amount	Sign of amount; provides 4 possible fields only when used in conjunction with debitCreditCode; primarily used for correcting entries so total debits and credits after an entry error are not inflated. D + increase DebitsD - decrease debitsC + decreases creditC - increases credit
+cor-42	4	gl-gen:debitCreditCodeItemType	cor	debitCreditCode	Debit Credit Code	Optional identifier of whether the amount is a (D)ebit, a (C)redit or Undefined
+cor-43	4	postingDateItemType	cor	postingDate	Posting Date	At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.
+bus-118	4	amountMemoItemType	bus	amountMemo	Amount Memo	A boolean like entry that indicates whether an entryDetail line has been provided solely to provide additional details and that tools should not consider the amount in postings.
+bus-119	4	allocationCodeItemType	bus	allocationCode	Allocation Code	A code that is tied to the Enterprise's allocation system.
+mucG-1	4		muc	multicurrencyDetail	Multicurrency Detail	Section to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This structure allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This structure may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.
+muc-17	5	exchangeRateDateItemType	muc	multicurrencyDetailExchangeRateDate	Multicurrency Detail Exchange Rate Date	Date of exchange rate (other than original transaction date) on which amount is expressed as amountRestatedAmount or amountTriangulationAmount
+muc-18	5	gl-gen:amountItemType	muc	amountRestatedAmount	Amount Restated Amount	The amount in the foreign currency identified by amountRestatedCurrency as of multicurrencyDetailExchangeRateDate.
+muc-19	5	currencyItemType	muc	amountRestatedCurrency	Amount Restated Currency	The currency in which amountRestatedAmount is expressed. Recommended ISO 4217 coding.
+muc-20	5	exchangeRateItemType	muc	amountRestatedExchangeRate	Amount Restated Exchange Rate	Exchange rate used to convert amountRestatedAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by foreign currency)
+muc-21	5	exchangeRateSourceItemType	muc	amountRestatedExchangeRateSource	Amount Restated Exchange Rate Source	Source of Exchange Rate for restated amount - for example, Reuters, Bloomberg
+muc-22	5	exchangeRateTypeItemType	muc	amountRestatedExchangeRateType	Amount Restated Exchange Rate Type	Type of Exchange Rate for restated amount - for example, spot rate, forward contract etc.
+muc-23	5	gl-gen:amountItemType	muc	amountTriangulationAmount	Amount Triangulation Amount	The amount in the triangulation currency identified by amountTriangulationCurrency as of multicurrencyDetailExchangeRateDate.
+muc-24	5	currencyItemType	muc	amountTriangulationCurrency	Amount Triangulation Currency	The currency used for tringulation between amountRestatedCurrency and the home currency. Recommended ISO 4217 coding.
+muc-25	5	exchangeRateItemType	muc	amountTriangulationExchangeRate	Amount Triangulation Exchange Rate	Exchange rate used to convert amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by triangulation currency)
+muc-26	5	exchangeRateSourceItemType	muc	amountTriangulationExchangeRateSource	Amount Triangulation Exchange Rate Source	Source of Exchange Rate for triangulation amount - for example, Reuters, Bloomberg
+muc-27	5	exchangeRateTypeItemType	muc	amountTriangulationExchangeRateType	Amount Triangulation Exchange Rate Type	Type of Exchange Rate for triangulation amount - for example, spot rate, forward contract etc.
+muc-28	5	exchangeRateItemType	muc	restatedTriangulationExchangeRate	Restated Triangulation Exchange Rate	Exchange rate used to convert from amountRestatedAmount to amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as foreign currency divided by triangulation currency)
+muc-29	5	exchangeRateSourceItemType	muc	restatedExchangeRateTriangulationSource	Restated Exchange Rate Triangulation Source	Source of Exchange Rate for converting between foreign currency and triangulation currency - for example, Reuters, Bloomberg
+muc-30	5	exchangeRateTypeItemType	muc	restatedExchangeRateTriangulationType	Restated Exchange Rate Triangulation Type	Type of Exchange Rate for converting between foreign currency and triangulation currency - for example, spot rate, forward contract etc.
+muc-31	5	commentItemType	muc	multicurrencyDetailComment	Multicurrency Detail Comment	Comment describing the enclosing multicurrencyDetail tuple's contents. May include reason for recording additional exchange rates other than that used at the time of the original transaction.
+corG-9	4		cor	identifierReference	Identifier Reference	Identification for customer, vendor, or employee.
+cor-44	5	identifierCodeItemType	cor	identifierCode	Identifier Code	#N/A
+corG-10	5		cor	identifierExternalReference	Identifier External Reference	Structure containing references to an external authority associated with identifier
+cor-45	6	identifierAuthorityCodeItemType	cor	identifierAuthorityCode	Identifier Authority Code	External Authority (e,g, Tax Authority) ID Number associated with identifierReference
+cor-46	6	identifierAuthorityItemType	cor	identifierAuthority	Identifier Authority	Name of External Authority (e.g. Tax Authority)
+cor-47	6	identifierAuthorityVerificationDateItemType	cor	identifierAuthorityVerificationDate	Identifier Authority Verification Date	Date on which the External Authority last performed a verification
+cor-48	5	gl-gen:identifierOrganizationTypeItemType	cor	identifierOrganizationType	Identifier Organization Type	Identifier Organization Type. Enumerated as: individual, organization, other.
+cor-49	5	identifierOrganizationTypeDescriptionItemType	cor	identifierOrganizationTypeDescription	Identifier Organization Type Description	Free format description of the identifier organization type
+cor-50	5	identifierDescriptionItemType	cor	identifierDescription	Identifier Description	Textual description of identifierReference.
+cor-51	5	gl-gen:identifierTypeItemType	cor	identifierType	Identifier Type	Entity type (enumerated): C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.
+cor-52	5	identifierCategoryItemType	cor	identifierCategory	Identifier Category	For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by business).
+corG-11	5		cor	identifierEMail	Identifier EMail	Email address for Identifier.
+cor-53	6	gl-gen:emailAddressUsageItemType	cor	identifierEmailAddressUsage	Identifier Email Address Usage	Identifer Email Address Usage (e.g. Orders, Head Office, IR)
+cor-54	6	gl-gen:emailAddressItemType	cor	identifierEmailAddress	Identifier Email Address	Identifer Email Address
+corG-12	5		cor	identifierPhoneNumber	Identifier Phone Number	Phone number related to Identifier.
+cor-55	6	gl-gen:phoneNumberDescriptionItemType	cor	identifierPhoneNumberDescription	Identifier Phone Number Description	Identifier Phone Number Usage (e.g. Main, Investor relations, etc.). Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
+cor-56	6	gl-gen:phoneNumberItemType	cor	identifierPhone	Identifier Phone	Identifier Phone Number
+corG-13	5		cor	identifierFaxNumber	Identifier Fax Number	Fax number structure related to identifier.
+cor-57	6	gl-gen:faxNumberUsageItemType	cor	identifierFaxNumberUsage	Identifier Fax Number Usage	Identifer Fax Number Usage (e.g. Orders, Head Office, IR)
+cor-58	6	gl-gen:faxNumberItemType	cor	identifierFax	Identifier Fax	Identifer Fax Number
+bus-120	5	identifierPurposeItemType	bus	identifierPurpose	Identifier Purpose	Freeform for codes like purchasing, billing, manufacturing at identifier level.
+busG-20	5		bus	identifierAddress	Identifier Address	Address (block) of customer, vendor, employee for integration purposes, VAT.
+bus-121	6	identifierAddressDescriptionItemType	bus	identifierAddressDescription	Identifier Address Description	For use when the addressee identifier for this address is different than the primary description of the identified party.
+bus-122	6	identifierAddressPurposeItemType	bus	identifierAddressPurpose	Identifier Address Purpose	Freeform for codes like shipping, billing, mailing at address level.  Allows identification of multiple purpose addresses for each identifier.
+bus-123	6	identifierBuildingNumberItemType	bus	identifierBuildingNumber	Identifier Building Number	Building Number for Identifier Address
+bus-124	6	identifierStreetItemType	bus	identifierStreet	Identifier Street	Street address.
+bus-125	6	identifierAddressStreet2ItemType	bus	identifierAddressStreet2	Identifier Address Street2	Address Detail for Identifier Address
+bus-126	6	identifierCityItemType	bus	identifierCity	Identifier City	City
+bus-127	6	identifierStateOrProvinceItemType	bus	identifierStateOrProvince	Identifier State Or Province	State or province
+bus-128	6	identifierCountryItemType	bus	identifierCountry	Identifier Country	Country
+bus-129	6	identifierZipOrPostalCodeItemType	bus	identifierZipOrPostalCode	Identifier Zip Or Postal Code	Zip or other postal code
+bus-130	6	locationIdentifierItemType	bus	identifierAddressLocationIdentifier	Identifier Address Location Identifier	A code used to identify the identifier location and to associate it with contacts
+corG-14	5		cor	identifierContactInformationStructure	Identifier Contact Information Structure	Identifier Contact Information Structure
+cor-59	6	identifierContactPrefixItemType	cor	identifierContactPrefix	Identifier Contact Prefix	Prefix (e.g. Dr., Mr., Mrs.)
+cor-60	6	identifierContactLastNameItemType	cor	identifierContactLastName	Identifier Contact Last Name	Identifier Contact Last or Family Name
+cor-61	6	identifierContactFirstNameItemType	cor	identifierContactFirstName	Identifier Contact First Name	First or given name
+cor-62	6	identifierContactSuffixItemType	cor	identifierContactSuffix	Identifier Contact Suffix	Suffix (e.g. MD, CPA, Jr.)
+cor-63	6	identifierContactAttentionLineItemType	cor	identifierContactAttentionLine	Identifier Contact Attention Line	Attention Line
+cor-64	6	identifierContactPositionRoleItemType	cor	identifierContactPositionRole	Identifier Contact Position Role	Position or Role
+corG-15	6		cor	identifierContactPhone	Identifier Contact Phone	Phone Number
+cor-65	7	gl-gen:phoneNumberDescriptionItemType	cor	identifierContactPhoneNumberDescription	Identifier Contact Phone Number Description	Identifier Contact Phone Number Usage (Main, Investor Relations, etc.). Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.
+cor-66	7	gl-gen:phoneNumberItemType	cor	identifierContactPhoneNumber	Identifier Contact Phone Number	Identifier Contact Phone Number
+corG-16	6		cor	identifierContactFax	Identifier Contact Fax	Fax Number
+cor-67	7	gl-gen:faxNumberUsageItemType	cor	identifierContactFaxNumberUsage	Identifier Contact Fax Number Usage	Identifer Contact Fax Number Usage (e.g. Orders, Head Office, IR)
+cor-68	7	gl-gen:faxNumberItemType	cor	identifierContactFaxNumber	Identifier Contact Fax Number	Identifer Contact Fax Number
+corG-17	6		cor	identifierContactEmail	Identifier Contact Email	Email Address
+cor-69	7	gl-gen:emailAddressUsageItemType	cor	identifierContactEmailAddressUsage	Identifier Contact Email Address Usage	Identifer Contact Email Address Usage (e.g. Orders, Head Office, IR)
+cor-70	7	gl-gen:emailAddressItemType	cor	identifierContactEmailAddress	Identifier Contact Email Address	Identifer Contact Email Address
+cor-71	6	identifierContactTypeItemType	cor	identifierContactType	Identifier Contact Type	Identifier Contact Type
+bus-131	6	locationIdentifierItemType	bus	identifierLocationIdentifierCrossReference	Identifier Location Identifier Cross Reference	This code is used to associate the contact with a specific location for the Identifier. Its value should be the same as that of the identifierAddressLocationIdentifier 
+cor-72	5	gl-gen:activeItemType	cor	identifierActive	Identifier Active	Boolean to indicate whether the identifier is active (="true") or inactive (="false")
+cor-73	4	gl-gen:documentTypeItemType	cor	documentType	Document Type	An enumerated field describing the original source document, with check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.
+cor-74	4	documentTypeDescriptionItemType	cor	documentTypeDescription	Document Type Description	Free format description of the document type
+cor-75	4	gl-gen:invoiceTypeItemType	cor	invoiceType	Invoice Type	Invoice Type  (self-billed, ePoS enumerated values)
+cor-76	4	documentNumberItemType	cor	documentNumber	Document Number	Invoice, check, voucher, or other source document identifier
+cor-77	4	documentApplyToNumberItemType	cor	documentApplyToNumber	Document Apply To Number	Document number of primary invoice number, used to offset payments, debits and credits; for an invoice, usually the same as the documentNumber. When calculating open balance on an invoice, or open amount on payments in advance or not fully applied, this permits calculation of the open item.
+cor-78	4	documentReferenceItemType	cor	documentReference	Document Reference	Internal reference for the document above; number assigned internally to track the document
+cor-79	4	documentDateItemType	cor	documentDate	Document Date	Date (and less likely in the paper world but possible in the e-world, time) on actual document (invoice, voucher, check date). Other dates control posting information.
+bus-132	4	documentReceivedDateItemType	bus	documentReceivedDate	Document Received Date	Date/time document was noted as received (if necessary). Represents actual date received. Posting dates are maintained separately.
+bus-133	4	documentChargeReimbItemType	bus	documentChargeReimb	Document Charge Reimb	Is this entry chargeable to client, reimbursable? Used by some systems to indicate that account on posting/validation should be posted to a customer or vendor's account.
+bus-134	4	documentLocationItemType	bus	documentLocation	Document Location	Document location as URI, file name or other reference. Alternatively, text of document can be placed here.
+bus-135	4	paymentMethodItemType	bus	paymentMethod	Payment Method	Method used or to be used to make the payment
+cor-80	4	gl-gen:postingStatusItemType	cor	postingStatus	Posting Status	deferred: although entered, it cannot be posted until a later time\nposted: already posted\nproposed: a proposed item that must be approved\nsimulated: a simulated item, for what-if\ntax: a tax-specific entry\nunposted:entered but not yet posted or validated\ncancelled:entered and later cancelled\nother:other status - should be described in postingStatusDescription
+cor-81	4	postingStatusDescriptionItemType	cor	postingStatusDescription	Posting Status Description	Free format description of the posting status
+corG-18	4		cor	xbrlInfo	Xbrl Info	This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.
+cor-82	5	gl-gen:xbrlIncludeItemType	cor	xbrlInclude	Xbrl Include	Indicates that the information being given is beginning_balance, ending_balance, period_change.
+cor-83	5	summaryReportingElementItemType	cor	summaryReportingElement	Summary Reporting Element	Associated XBRL element or XML element within an XML taxonomy - mapping to an XBRL concept.
+cor-84	5	detailMatchingElementItemType	cor	detailMatchingElement	Detail Matching Element	Associated XBRL element in XBRL-GL instance.
+srcd-2	5	summaryTuplePathItemType	srcd	summaryTuplePath	Summary Tuple Path	
+srcd-3	5	detailedContentFilterItemType	srcd	detailedContentFilter	Detailed Content Filter	
+srcd-4	5	reportingDateSelectorItemType	srcd	reportingDateSelector	Reporting Date Selector	
+srcd-5	5	summaryOperatorItemType	srcd	summaryOperator	Summary Operator	
+srcd-6	5	summaryPrecisionDecimalsComplexType	srcd	summaryPrecisionDecimals	Summary Precision Decimals	
+srcdG-1	5	summaryContextComplexType	srcd	summaryContext	Summary Context	
+srcdG-2	6	summaryEntityComplexType	srcd	summaryEntity	Summary Entity	
+srcd-7	7	summaryIdentifierItemType	srcd	summaryIdentifier	Summary Identifier	
+srcd-8	7	summarySchemeItemType	srcd	summaryScheme	Summary Scheme	
+srcd-9	7	summarySegmentComplexType	srcd	summarySegment	Summary Segment	
+srcdG-3	6	summaryPeriodComplexType	srcd	summaryPeriod	Summary Period	
+srcd-10	7	summaryInstantItemType	srcd	summaryInstant	Summary Instant	
+srcd-11	7	summaryStartDateItemType	srcd	summaryStartDate	Summary Start Date	
+srcd-12	7	summaryEndDateItemType	srcd	summaryEndDate	Summary End Date	
+srcd-13	6	summaryScenarioComplexType	srcd	summaryScenario	Summary Scenario	
+srcd-14	5	summaryUnitComplexType	srcd	summaryUnit	Summary Unit	
+srcd-15	5	summaryReportingTaxonomyIDRefItemType	srcd	summaryReportingTaxonomyIDRef	Summary Reporting Taxonomy IDRef	
+cor-85	4	detailCommentItemType	cor	detailComment	Detail Comment	Description of this line of detail only
+cor-86	4	dateAcknowledgedItemType	cor	dateAcknowledged	Date Acknowledged	Date of acknowledgement of goods/services shipped/received.
+cor-87	4	confirmedDateItemType	cor	confirmedDate	Confirmed Date	Date of confirmation of shipment/receipt.
+cor-88	4	shipFromItemType	cor	shipFrom	Ship From	References organizationAddressLocationIdentifier where used. Otherwise freeform.
+cor-89	4	shipReceivedDateItemType	cor	shipReceivedDate	Ship Received Date	Date goods/services are shipped/received.
+cor-90	4	maturityDateItemType	cor	maturityDate	Maturity Date	Due date or other maturity date.
+cor-91	4	termsItemType	cor	terms	Terms	Discount/payment terms.
+busG-21	4		bus	measurable	Measurable	Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an "account", "reporting bucket" or "code". Can be used to track any movements.
+bus-136	5	measurableCodeItemType	bus	measurableCode	Measurable Code	Code for measurable item including BP - Business process, FA - Fixed asset/Capitalized item, IN - Inventory, KPI - Metric, NT - Intangible, SP - Supplies, SV-P - Service by employee, vendor or contractor, SV-M - Service by equipment/machinery, OT - Other
+bus-137	5	measurableCodeDescriptionItemType	bus	measurableCodeDescription	Measurable Code Description	Free format description of the measurable code
+bus-138	5	measurableCategoryItemType	bus	measurableCategory	Measurable Category	Category of the measurable
+bus-139	5	measurableIDItemType	bus	measurableID	Measurable ID	Internal inventory part or SKU number or other code identifier for the measurable.
+bus-140	5	measurableIDSchemaItemType	bus	measurableIDSchema	Measurable IDSchema	URI or other identifier for schema with which measurable ID can be validated
+bus-141	5	measurableIDOtherItemType	bus	measurableIDOther	Measurable IDOther	Second identifier (such as vendor's item number)
+bus-142	5	measurableIDOtherSchemaItemType	bus	measurableIDOtherSchema	Measurable IDOther Schema	URI or other identifier for schema with which measurable ID Other can be validated
+bus-143	5	measurableDescriptionItemType	bus	measurableDescription	Measurable Description	Text description of measurable (e.g. inventory item or other identifier)
+bus-144	5	measurableQuantityItemType	bus	measurableQuantity	Measurable Quantity	Number of units in this transaction; for non-monetary calculations; can be square footage, number of people, etc.
+bus-145	5	measurableQualifierItemType	bus	measurableQualifier	Measurable Qualifier	Field that can represent grading, inspection codes, ratings and other qualifiers to properly capture PKI/Balanced Scorecard information
+bus-146	5	measurableUnitOfMeasureItemType	bus	measurableUnitOfMeasure	Measurable Unit Of Measure	Description of unit: e.g. each, case, dozen, etc. ISO standard coding recommended.
+bus-147	5	measurableCostPerUnitItemType	bus	measurableCostPerUnit	Measurable Cost Per Unit	Per unit price of the measurable. Although one might expect that measurableQuantity * measurableCostPerUnit = amount, this is not mandated except by external rules sets.
+bus-148	5	measurableStartDateTimeItemType	bus	measurableStartDateTime	Measurable Start Date Time	Start time of the duration being measured
+bus-149	5	measurableEndDateTimeItemType	bus	measurableEndDateTime	Measurable End Date Time	End time of the duration being measured
+bus-150	5	gl-gen:activeItemType	bus	measurableActive	Measurable Active	Boolean to indicate whether the measurable is active (="true") or inactive (="false")
+busG-22	4		bus	jobInfo	Job Info	Tuple for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo tuple for each entry line, but there may be a need to express more than one.
+usk-11	5	jobCodeItemType	usk	jobCode	Job Code	Associated job number or code. This could be built into the account, but many systems maintain a separate job coding system. Use primarily if job identification is a separate system, and not considered part of the chart of accounts.
+usk-12	5	jobDescriptionItemType	usk	jobDescription	Job Description	Description of job
+usk-13	5	jobPhaseCodeItemType	usk	jobPhaseCode	Job Phase Code	Job code, phase, activity. Allows greater granularity than a simple job number. Although the core only reaches down from job to phases, this can be customized to extend down to cost codes.
+usk-14	5	jobPhaseDescriptionItemType	usk	jobPhaseDescription	Job Phase Description	Description of Job code, phase, activity
+usk-15	5	gl-gen:activeItemType	usk	jobActive	Job Active	Boolean to indicate whether the job is active (="true") or inactive (="false")
+busG-23	4		bus	depreciationMortgage	Depreciation Mortgage	Parent for information related to depreciation, mortgages, etc.
+bus-151	5	dmJurisdictionTypeItemType	bus	dmJurisdiction	Dm Jurisdiction	Jurisdiction (e.g. federal, state, local): e.g. US Federal, Province of Québec, other identifier. Enumerated as: F, federal, S, state, L, local, other.
+bus-152	5	dmMethodTypeItemType	bus	dmMethodType	Dm Method Type	Type of depreciation method: used for information about the loan percentage for loan or the depreciation method. This is used for informational purposes only. Examples of entries are "20%", "5 year DDB" (Double Declining Balance).
+bus-153	5	dmLifeLengthItemType	bus	dmLifeLength	Dm Life Length	Length of life in number of periods.
+bus-154	5	dmCommentItemType	bus	dmComment	Dm Comment	Description of each item related to depreciation, mortgage, loan, credit facility, etc.
+bus-155	5	dmDateItemType	bus	dmStartDate	Dm Start Date	Start of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.
+bus-156	5	dmDateItemType	bus	dmEndDate	Dm End Date	End of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.
+bus-157	5	dmAmountItemType	bus	dmAmount	Dm Amount	Amount of a cost or fee charged for a mortgage, loan, credit facility, etc.
+ehm-1	4	measurableClassIDItemType	ehm	measurableClassID	Measurable Class ID	An enumerated code to identify the inventory, fixed asset or other measurable class. Enumerated as: raw material, work-in-process, finished goods, assemblies, supplies, land, building, machinery, furniture, vehicles, other.
+ehm-2	4	measurableClassDescriptionItemType	ehm	measurableClassDescription	Measurable Class Description	Free format description associated with gl-ehm:measurableClassID to provide specialization or clarification for the enumerated value of other.
+ehm-3	4	costingMethodCodeItemType	ehm	costingMethodCode	Costing Method Code	An enumerated code for the inventory (or other measurable) costing method. Enumerated as: LIFO, FIFO, average, weighted-average, standard-cost, tax-basis, book-basis, other.
+ehm-4	4	costingMethodDescriptionItemType	ehm	costingMethodDescription	Costing Method Description	Free format description associated with gl-ehm:costingMethodCode to provide specialization of clarification for the enumerated value of other.
+ehm-5	4	geospatialCoordinateItemType	ehm	geospatialCoordinate	Geospatial Coordinate	Enter a relevant location for this item. Format can be either:\n- Degrees, minutes, and seconds (DMS): 41°24'12.2"N 2°10'26.5"E\n- Degrees and decimal minutes (DMM): 41 24.2028, 2 10.4418\n- Decimal degrees (DD): 41.40338, 2.17403
+ehmG-1	4		ehm	serialLot	Serial Lot	Tuple for holding information about serial numbers or lots (batches). As a tuple, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable structure.
+ehm-6	5	serialLotCodeItemType	ehm	serialLotCode	Serial Lot Code	Is this item tracked by serial numbers or lot numbers? A serial number is usually a unique number assigned to a single; a lot or batch number is provided when a batch of items is fungible but must be differentiated from similar items from other batches. Enumerated indicator for serial or lot items. Enumeration are: serial, lot, other, neither. If not included within the tuple, neither is assumed.
+ehm-7	5	serialLotDescriptionItemType	ehm	serialLotDescription	Serial Lot Description	Free format description associated with gl-ehm:serialLotCode to provide specialization and especially to provide clarification for the enumerated value of other in serialLotCode. Examples might be “batch” or “group”.
+ehm-8	5	serialLotNumberItemType	ehm	serialLotNumber	Serial Lot Number	The holder for that actual serial number or lot (batch) number/code assigned to an item or a batch of items.
+ehm-9	5	nextSerialLotNumberItemType	ehm	nextSerialLotNumber	Next Serial Lot Number	A field for holding the next expected serial or lot number to be given to future assignments, or for chaining between already assigned items.
+ehm-10	5	serialLotQuantityItemType	ehm	serialLotQuantity	Serial Lot Quantity	The quantity of units in this particular batch. Unit of measure is the gl-bus:measurableUnitofMeasure.
+ehm-11	5	serialLotOriginalQuantityItemType	ehm	serialLotOriginalQuantity	Serial Lot Original Quantity	The quantity of units in this batch on inception.
+ehm-12	5	serialLotRemainingQuantityItemType	ehm	serialLotRemainingQuantity	Serial Lot Remaining Quantity	The remaining quantity of units from the original batch; may be the same as the quantity in this batch or include other batches from the same original batch.
+ehm-13	5	serialLotOriginationItemType	ehm	serialLotOrigination	Serial Lot Origination	Date of manufacture or creation.
+ehm-14	5	serialLotExpirationItemType	ehm	serialLotExpiration	Serial Lot Expiration	Expiration date of the batch.
+ehm-15	5	serialLotManufacturerItemType	ehm	serialLotManufacturer	Serial Lot Manufacturer	Manufacturer of the item (serial) or items (lot/batch).
+ehm-16	5	serialLotBatchDescriptionItemType	ehm	serialLotBatchDescription	Serial Lot Batch Description	A name or description of the items in the lot or batch.
+ehm-17	5	serialLotWarrantyStartDateItemType	ehm	serialLotWarrantyStartDate	Serial Lot Warranty Start Date	If the items are covered by warranty, when that warranty covered will begin or has begun.
+ehm-18	5	serialLotWarrantyEndDateItemType	ehm	serialLotWarrantyEndDate	Serial Lot Warranty End Date	If the items are covered by warranty, when that warranty covered will end or ended.
+ehm-19	5	serialLotWarrantyPeriodItemType	ehm	serialLotWarrantyPeriod	Serial Lot Warranty Period	Warranty period – numeric portion; for a 30 day warranty period, the 30 would go here, and the day would go in gl-ehm:serialLotWarrantyPeriodUnit.
+ehm-20	5	serialLotWarrantyPeriodUnitItemType	ehm	serialLotWarrantyPeriodUnit	Serial Lot Warranty Period Unit	Warrant period – time or cycle unit portion. Values from the XBRL Unit Registry (www.xbrl.org/utr/utr.xml) are suggested where possible. Examples might include: H (hours), D (days), M (months), Y (years), machine cycles, km (kilometers).
+ehm-21	5	serialLotWarrantyVendorItemType	ehm	serialLotWarrantyVendor	Serial Lot Warranty Vendor	The vendor providing warranty; this may differ from the manufacturer.
+ehm-22	5	serialLotWarrantyContractItemType	ehm	serialLotWarrantyContract	Serial Lot Warranty Contract	Contract or document information related to the warranty, such as a contract number and date or a URL with more information.
+ehm-23	5	serialLotCommentItemType	ehm	serialLotComment	Serial Lot Comment	Free format text related to the serial number or lot.
+corG-19	4		cor	taxes	Taxes	Tuple for holding tax related information
+cor-92	5	taxAuthorityItemType	cor	taxAuthority	Tax Authority	Name of the relevant tax authority
+cor-93	5	taxTableCodeItemType	cor	taxTableCode	Tax Table Code	Tax table code used by the relevant tax authority
+cor-94	5	taxDescriptionItemType	cor	taxDescription	Tax Description	Description of tax authority
+cor-95	5	taxAmountItemType	cor	taxAmount	Tax Amount	Amount of taxes
+cor-96	5	taxBasisItemType	cor	taxBasis	Tax Basis	Basis for taxation
+cor-97	5	taxExchangeRateItemType	cor	taxExchangeRate	Tax Exchange Rate	[DEPRECATED. taxExchangeRate should be used one in gl-muc pallette] Amount for foreign currency tracking in original currency
+cor-98	5	taxPercentageRateItemType	cor	taxPercentageRate	Tax Percentage Rate	Percent rate for VAT or other taxes normally a number between 0 and 1.0 - e.g. 50% is represented as 0.5
+cor-99	5	taxCodeItemType	cor	taxCode	Tax Code	A class or category of taxes
+cor-100	5	taxCommentExemptionItemType	cor	taxCommentExemption	Tax Comment Exemption	Additional text/code for exemption reasons or other comments.
+muc-32	5	gl-gen:amountItemType	muc	taxAmountForeignCurrency	Tax Amount Foreign Currency	If the tax is in a foreign currency, the amount of tax in that currency
+muc-33	5	currencyItemType	muc	taxCurrency	Tax Currency	If the tax is in a foreign currency, that currency
+muc-34	5	exchangeRateDateItemType	muc	taxExchangeRateDate	Tax Exchange Rate Date	If the tax is in a foreign currency, the date or date and time of the exchange rate used
+muc-35	5	taxExchangeRateItemType	muc	taxExchangeRate	Tax Exchange Rate	If the tax is in a foreign currency, the exchange rate used expressed as national currency divided by foreign currency
+muc-36	5	exchangeRateSourceItemType	muc	taxExchangeRateSource	Tax Exchange Rate Source	If the tax is in a foreign currency, source of exchange rate - for example, Reuters, Bloomberg
+muc-37	5	exchangeRateTypeItemType	muc	taxExchangeRateType	Tax Exchange Rate Type	If the tax is in a foreign currency, type of exchange rate - for example, spot rate, forward contract etc.
+muc-38	5	commentItemType	muc	taxExchangeRateComment	Tax Exchange Rate Comment	If the tax is in a foreign currency, comment about exchange rate used 
+muc-39	5	gl-gen:amountItemType	muc	taxAmountTriangulationCurrency	Tax Amount Triangulation Currency	If the tax is in a foreign currency and triangulation is used, the amount of that tax in the triangulation currency
+muc-40	5	currencyItemType	muc	taxTriangulationCurrency	Tax Triangulation Currency	If the tax is in a foreign currency and triangulation is used, the triangulation currency
+muc-41	5	exchangeRateItemType	muc	taxTriangulationExchangeRate	Tax Triangulation Exchange Rate	If the tax is in a foreign currency and triangulation is used, the exchange rate used expressed as national currency divided by triangulation currency
+muc-42	5	exchangeRateSourceItemType	muc	taxTriangulationExchangeRateSource	Tax Triangulation Exchange Rate Source	If the tax is in a foreign currency and triangulation is used, source of exchange rate - for example, Reuters, Bloomberg
+muc-43	5	exchangeRateTypeItemType	muc	taxTriangulationExchangeRateType	Tax Triangulation Exchange Rate Type	If the tax is in a foreign currency and triangulation is used, type of exchange rate - for example, spot rate, forward contract etc.
+muc-44	5	exchangeRateItemType	muc	taxForeignTriangulationExchangeRate	Tax Foreign Triangulation Exchange Rate	If the tax is in a foreign currency and triangulation is used,  the exchange rate used expressed as foreign currency divided by triangulation currency
+muc-45	5	exchangeRateSourceItemType	muc	taxForeignTriangulationExchangeRateSource	Tax Foreign Triangulation Exchange Rate Source	If the tax is in a foreign currency and triangulation is used, source of exchange rate - for example, Reuters, Bloomberg
+muc-46	5	exchangeRateTypeItemType	muc	taxForeignTriangulationExchangeRateType	Tax Foreign Triangulation Exchange Rate Type	If the tax is in a foreign currency and triangulation is used, type of exchange rate - for example, spot rate, forward contract etc.
+taf-1	4	tickingFieldItemType	taf	tickingField	Ticking Field	Signifies that an item has been cleared, finished, finalized. When checking accounts are called for, the tick or letter showing this was done appears in this field. Can also be used for identifying that the original document against which a payment or DR/CR memo applies has been reconciled.
+taf-2	4	documentRemainingBalanceItemType	taf	documentRemainingBalance	Document Remaining Balance	Balance remaining on the document
+taf-3	4	uniqueConsignmentReferenceItemType	taf	uniqueConsignmentReference	Unique Consignment Reference	Unique Consignment Reference or UCR. An "origin to destination" reference code for international consignments, developed in cooperation with the World Customs Organization and EAN International (EAN). (http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)
+tafG-1	4		taf	originatingDocumentStructure	Originating Document Structure	A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive structure of related documents.
+taf-4	5	gl-gen:documentTypeItemType	taf	originatingDocumentType	Originating Document Type	Originating document type  check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.
+taf-5	5	originatingDocumentNumberItemType	taf	originatingDocumentNumber	Originating Document Number	Originating document number
+taf-6	5	originatingDocumentDateItemType	taf	originatingDocumentDate	Originating Document Date	Originating document date
+taf-7	5	gl-gen:identifierTypeItemType	taf	originatingDocumentIdentifierType	Originating Document Identifier Type	Originating document identifier type. Enumerated as: C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.
+taf-8	5	originatingDocumentIdentifierCodeItemType	taf	originatingDocumentIdentifierCode	Originating Document Identifier Code	Originating document identifier code
+taf-9	5	originatingDocumentIdentifierTaxCodeItemType	taf	originatingDocumentIdentifierTaxCode	Originating Document Identifier Tax Code	Originating document identifier tax code
+srcd-16	4	richTextCommentComplexType	srcd	richTextComment	Rich Text Comment	
