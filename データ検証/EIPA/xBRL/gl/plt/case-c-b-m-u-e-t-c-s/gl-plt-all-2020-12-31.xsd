@@ -9,14 +9,8 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
 	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
 	xmlns:link="http://www.xbrl.org/2003/linkbase" 
-	xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2020-12-31"
-	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31"
-	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31"
-	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31"
-	xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31"
-	xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2020-12-31"
-	xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2020-12-31"
-	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2020-12-31">
+	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
+	<import namespace="http://www.xbrl.org/int/gl/cor/2020-12-31" schemaLocation="gl-palette-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
 			<!-- presentation -->
@@ -47,12 +41,4 @@
 			<link:linkbaseRef xlink:href="../../srcd/lang/gl-srcd-2020-12-31-label-ja.xml" xlink:type="simple" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 		</appinfo>
 	</annotation>
-	<import namespace="http://www.xbrl.org/int/gl/cor/2020-12-31" schemaLocation="gl-palette-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/bus/2020-12-31" schemaLocation="../../bus/gl-bus-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/muc/2020-12-31" schemaLocation="../../muc/gl-muc-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/usk/2020-12-31" schemaLocation="../../usk/gl-usk-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/ehm/2020-12-31" schemaLocation="../../ehm/gl-ehm-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/taf/2020-12-31" schemaLocation="../../taf/gl-taf-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/cen/2020-12-31" schemaLocation="../../cen/gl-cen-2020-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/int/gl/srcd/2020-12-31" schemaLocation="../../srcd/gl-srcd-2020-12-31.xsd"/>
 </xsd:schema>

@@ -2,10 +2,10 @@
 <!-- (c) XBRL Japan -->
 <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
     <loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_defaultCurrency" xlink:label="gl-muc_defaultCurrency" xlink:title="presentation child: defaultCurrency"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-muc_defaultCurrency" xlink:title="presentation: documentInfo to defaultCurrency" use="optional" order="18"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
     <loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountCurrency" xlink:label="gl-muc_amountCurrency" xlink:title="presentation child: amountCurrency"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-muc_amountCurrency" xlink:title="presentation: entryDetail to amountCurrency" use="optional" order="264"/>
     <loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalExchangeRateDate" xlink:label="gl-muc_amountOriginalExchangeRateDate" xlink:title="presentation child: amountOriginalExchangeRateDate"/>
@@ -69,7 +69,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-muc_multicurrencyDetail" xlink:to="gl-muc_restatedExchangeRateTriangulationType" xlink:title="presentation: multicurrencyDetail to restatedExchangeRateTriangulationType" use="optional" order="313"/>
     <loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_multicurrencyDetailComment" xlink:label="gl-muc_multicurrencyDetailComment" xlink:title="presentation child: multicurrencyDetailComment"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-muc_multicurrencyDetail" xlink:to="gl-muc_multicurrencyDetailComment" xlink:title="presentation: multicurrencyDetail to multicurrencyDetailComment" use="optional" order="314"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_taxes" xlink:label="gl-cor_taxes" xlink:title="presentation parent: taxes"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_taxes" xlink:label="gl-cor_taxes" xlink:title="presentation parent: taxes"/>
     <loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxAmountForeignCurrency" xlink:label="gl-muc_taxAmountForeignCurrency" xlink:title="presentation child: taxAmountForeignCurrency"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_taxes" xlink:to="gl-muc_taxAmountForeignCurrency" xlink:title="presentation: taxes to taxAmountForeignCurrency" use="optional" order="503"/>
     <loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxCurrency" xlink:label="gl-muc_taxCurrency" xlink:title="presentation child: taxCurrency"/>

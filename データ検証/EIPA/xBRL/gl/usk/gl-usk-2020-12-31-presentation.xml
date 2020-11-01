@@ -2,7 +2,7 @@
 <!-- (c) XBRL Japan -->
 <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader" xlink:title="presentation parent: entryHeader"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader" xlink:title="presentation parent: entryHeader"/>
     <loc xlink:type="locator" xlink:href="gl-usk-2020-12-31.xsd#gl-usk_reversingStdId" xlink:label="gl-usk_reversingStdId" xlink:title="presentation child: reversingStdId"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-usk_reversingStdId" xlink:title="presentation: entryHeader to reversingStdId" use="optional" order="163"/>
     <loc xlink:type="locator" xlink:href="gl-usk-2020-12-31.xsd#gl-usk_recurringStdDescription" xlink:label="gl-usk_recurringStdDescription" xlink:title="presentation child: recurringStdDescription"/>
@@ -23,7 +23,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-usk_reverse" xlink:title="presentation: entryHeader to reverse" use="optional" order="171"/>
     <loc xlink:type="locator" xlink:href="gl-usk-2020-12-31.xsd#gl-usk_reversingDate" xlink:label="gl-usk_reversingDate" xlink:title="presentation child: reversingDate"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-usk_reversingDate" xlink:title="presentation: entryHeader to reversingDate" use="optional" order="172"/>
-    <loc xlink:type="locator" xlink:href="../gl-bus-2020-12-31.xsd#gl-bus_jobInfo" xlink:label="gl-bus_jobInfo" xlink:title="presentation parent: jobInfo"/>
+    <loc xlink:type="locator" xlink:href="../bus/gl-bus-2020-12-31.xsd#gl-bus_jobInfo" xlink:label="gl-bus_jobInfo" xlink:title="presentation parent: jobInfo"/>
     <loc xlink:type="locator" xlink:href="gl-usk-2020-12-31.xsd#gl-usk_jobCode" xlink:label="gl-usk_jobCode" xlink:title="presentation child: jobCode"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-bus_jobInfo" xlink:to="gl-usk_jobCode" xlink:title="presentation: jobInfo to jobCode" use="optional" order="480"/>
     <loc xlink:type="locator" xlink:href="gl-usk-2020-12-31.xsd#gl-usk_jobDescription" xlink:label="gl-usk_jobDescription" xlink:title="presentation child: jobDescription"/>

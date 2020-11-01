@@ -2,7 +2,7 @@
 <!-- (c) XBRL Japan -->
 <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_creator" xlink:label="gl-bus_creator" xlink:title="presentation child: creator"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-bus_creator" xlink:title="presentation: documentInfo to creator" use="optional" order="9"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_periodCount" xlink:label="gl-bus_periodCount" xlink:title="presentation child: periodCount"/>
@@ -15,7 +15,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-bus_sourceApplication" xlink:title="presentation: documentInfo to sourceApplication" use="optional" order="16"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_targetApplication" xlink:label="gl-bus_targetApplication" xlink:title="presentation child: targetApplication"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-bus_targetApplication" xlink:title="presentation: documentInfo to targetApplication" use="optional" order="17"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entityInformation" xlink:label="gl-cor_entityInformation" xlink:title="presentation parent: entityInformation"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entityInformation" xlink:label="gl-cor_entityInformation" xlink:title="presentation parent: entityInformation"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_entityPhoneNumber" xlink:label="gl-bus_entityPhoneNumber" xlink:title="presentation child: entityPhoneNumber"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entityInformation" xlink:to="gl-bus_entityPhoneNumber" xlink:title="presentation: entityInformation to entityPhoneNumber" use="optional" order="24"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_entityPhoneNumber" xlink:label="gl-bus_entityPhoneNumber" xlink:title="presentation parent: entityPhoneNumber"/>
@@ -255,7 +255,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-bus_reportingCalendarPeriod" xlink:to="gl-bus_periodEnd" xlink:title="presentation: reportingCalendarPeriod to periodEnd" use="optional" order="135"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_periodClosedDate" xlink:label="gl-bus_periodClosedDate" xlink:title="presentation child: periodClosedDate"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-bus_reportingCalendarPeriod" xlink:to="gl-bus_periodClosedDate" xlink:title="presentation: reportingCalendarPeriod to periodClosedDate" use="optional" order="136"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader" xlink:title="presentation parent: entryHeader"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader" xlink:title="presentation parent: entryHeader"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_enteredByModified" xlink:label="gl-bus_enteredByModified" xlink:title="presentation child: enteredByModified"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-bus_enteredByModified" xlink:title="presentation: entryHeader to enteredByModified" use="optional" order="139"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_entryResponsiblePerson" xlink:label="gl-bus_entryResponsiblePerson" xlink:title="presentation child: entryResponsiblePerson"/>
@@ -288,7 +288,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-bus_budgetScenario" xlink:title="presentation: entryHeader to budgetScenario" use="optional" order="161"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_budgetAllocationCode" xlink:label="gl-bus_budgetAllocationCode" xlink:title="presentation child: budgetAllocationCode"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-bus_budgetAllocationCode" xlink:title="presentation: entryHeader to budgetAllocationCode" use="optional" order="162"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_account" xlink:label="gl-cor_account" xlink:title="presentation parent: account"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_account" xlink:label="gl-cor_account" xlink:title="presentation parent: account"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_entryAccountingMethod" xlink:label="gl-bus_entryAccountingMethod" xlink:title="presentation child: entryAccountingMethod"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_account" xlink:to="gl-bus_entryAccountingMethod" xlink:title="presentation: account to entryAccountingMethod" use="optional" order="249"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_entryAccountingMethodDescription" xlink:label="gl-bus_entryAccountingMethodDescription" xlink:title="presentation child: entryAccountingMethodDescription"/>
@@ -297,12 +297,12 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_account" xlink:to="gl-bus_entryAccountingMethodPurpose" xlink:title="presentation: account to entryAccountingMethodPurpose" use="optional" order="251"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_entryAccountingMethodPurposeDescription" xlink:label="gl-bus_entryAccountingMethodPurposeDescription" xlink:title="presentation child: entryAccountingMethodPurposeDescription"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_account" xlink:to="gl-bus_entryAccountingMethodPurposeDescription" xlink:title="presentation: account to entryAccountingMethodPurposeDescription" use="optional" order="252"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_amountMemo" xlink:label="gl-bus_amountMemo" xlink:title="presentation child: amountMemo"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-bus_amountMemo" xlink:title="presentation: entryDetail to amountMemo" use="optional" order="282"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_allocationCode" xlink:label="gl-bus_allocationCode" xlink:title="presentation child: allocationCode"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-bus_allocationCode" xlink:title="presentation: entryDetail to allocationCode" use="optional" order="298"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation parent: identifierReference"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation parent: identifierReference"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierPurpose" xlink:label="gl-bus_identifierPurpose" xlink:title="presentation child: identifierPurpose"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_identifierReference" xlink:to="gl-bus_identifierPurpose" xlink:title="presentation: identifierReference to identifierPurpose" use="optional" order="335"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddress" xlink:label="gl-bus_identifierAddress" xlink:title="presentation child: identifierAddress"/>
@@ -328,7 +328,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-bus_identifierAddress" xlink:to="gl-bus_identifierZipOrPostalCode" xlink:title="presentation: identifierAddress to identifierZipOrPostalCode" use="optional" order="345"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressLocationIdentifier" xlink:label="gl-bus_identifierAddressLocationIdentifier" xlink:title="presentation child: identifierAddressLocationIdentifier"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-bus_identifierAddress" xlink:to="gl-bus_identifierAddressLocationIdentifier" xlink:title="presentation: identifierAddress to identifierAddressLocationIdentifier" use="optional" order="346"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_identifierContactInformationStructure" xlink:label="gl-cor_identifierContactInformationStructure" xlink:title="presentation parent: identifierContactInformationStructure"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierContactInformationStructure" xlink:label="gl-cor_identifierContactInformationStructure" xlink:title="presentation parent: identifierContactInformationStructure"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierLocationIdentifierCrossReference" xlink:label="gl-bus_identifierLocationIdentifierCrossReference" xlink:title="presentation child: identifierLocationIdentifierCrossReference"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_identifierContactInformationStructure" xlink:to="gl-bus_identifierLocationIdentifierCrossReference" xlink:title="presentation: identifierContactInformationStructure to identifierLocationIdentifierCrossReference" use="optional" order="364"/>
     <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_documentReceivedDate" xlink:label="gl-bus_documentReceivedDate" xlink:title="presentation child: documentReceivedDate"/>

@@ -2,7 +2,7 @@
 <!-- (c) XBRL Japan -->
 <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_tickingField" xlink:label="gl-taf_tickingField" xlink:title="presentation child: tickingField"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_tickingField" xlink:title="presentation: entryDetail to tickingField" use="optional" order="518"/>
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_documentRemainingBalance" xlink:label="gl-taf_documentRemainingBalance" xlink:title="presentation child: documentRemainingBalance"/>

@@ -2,7 +2,7 @@
 <!-- (c) XBRL Japan -->
 <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomies" xlink:label="gl-srcd_summaryReportingTaxonomies" xlink:title="presentation child: summaryReportingTaxonomies"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-srcd_summaryReportingTaxonomies" xlink:title="presentation: documentInfo to summaryReportingTaxonomies" use="optional" order="19"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomies" xlink:label="gl-srcd_summaryReportingTaxonomies" xlink:title="presentation parent: summaryReportingTaxonomies"/>
@@ -14,7 +14,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-srcd_summaryReportingTaxonomies" xlink:to="gl-srcd_summaryReportingTaxonomyHeader" xlink:title="presentation: summaryReportingTaxonomies to summaryReportingTaxonomyHeader" use="optional" order="22"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomyDescription" xlink:label="gl-srcd_summaryReportingTaxonomyDescription" xlink:title="presentation child: summaryReportingTaxonomyDescription"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-srcd_summaryReportingTaxonomies" xlink:to="gl-srcd_summaryReportingTaxonomyDescription" xlink:title="presentation: summaryReportingTaxonomies to summaryReportingTaxonomyDescription" use="optional" order="23"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_xbrlInfo" xlink:label="gl-cor_xbrlInfo" xlink:title="presentation parent: xbrlInfo"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_xbrlInfo" xlink:label="gl-cor_xbrlInfo" xlink:title="presentation parent: xbrlInfo"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryTuplePath" xlink:label="gl-srcd_summaryTuplePath" xlink:title="presentation child: summaryTuplePath"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_xbrlInfo" xlink:to="gl-srcd_summaryTuplePath" xlink:title="presentation: xbrlInfo to summaryTuplePath" use="optional" order="383"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_detailedContentFilter" xlink:label="gl-srcd_detailedContentFilter" xlink:title="presentation child: detailedContentFilter"/>
@@ -114,7 +114,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-srcd_summaryUnit" xlink:to="gl-srcd_summaryDenominator" xlink:title="presentation: summaryUnit to summaryDenominator" use="optional" order="424"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomyIDRef" xlink:label="gl-srcd_summaryReportingTaxonomyIDRef" xlink:title="presentation child: summaryReportingTaxonomyIDRef"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_xbrlInfo" xlink:to="gl-srcd_summaryReportingTaxonomyIDRef" xlink:title="presentation: xbrlInfo to summaryReportingTaxonomyIDRef" use="optional" order="425"/>
-    <loc xlink:type="locator" xlink:href="../gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextComment" xlink:label="gl-srcd_richTextComment" xlink:title="presentation child: richTextComment"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-srcd_richTextComment" xlink:title="presentation: entryDetail to richTextComment" use="optional" order="528"/>
     <loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextComment" xlink:label="gl-srcd_richTextComment" xlink:title="presentation parent: richTextComment"/>
