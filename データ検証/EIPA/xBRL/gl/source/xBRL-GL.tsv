@@ -126,7 +126,7 @@ bus-89	3	bus	reportingCalendarPeriodTypeDescription	reportingCalendarPeriodTypeD
 bus-90	3	bus	reportingCalendarOpenClosedStatus	reportingCalendarOpenClosedStatusItemType	Closed status	An identifier on whether the reporting calendar is still open for activity. enumerated, "open", "closed", "pending"	締状態	報告カレンダーがオープンかどうかを示す識別子。オープン、締切り済み、保留中\n[設定値のリスト]\n(open：オープン)、(closed：締切り済み)、(pending：保留中) \n
 bus-91	3	bus	reportingPurpose	accountingMethodPurposeItemType	Reporting Purpose	A description of the accounting set of books involved. Uses enumeration from accounting method purpose.	報告目的	帳簿の集合の説明。会計処理方法の目的の列挙値を使用する。\n[設定値のリスト]\n(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)
 bus-92	3	bus	reportingPurposeDescription	reportingPurposeDescriptionItemType	Reporting Purpose Description	Free format description of the reporting purpose	報告目的説明	報告目的の説明。
-cenG-14	3	cen	INVOICING_PERIOD	xbrli:stringItemtype	INVOICING PERIOD	_	_	_
+cenG-14	3	cen	INVOICING_PERIOD	_	INVOICING PERIOD	_	_	_
 cen-166	4	cen	periodStartDate	dateItemtype	Period Start Date	_	_	_
 cen-167	4	cen	periodEndDate	dateItemtype	Period End Date	_	_	_
 busG-19	3	bus	reportingCalendarPeriod	_	Reporting Calendar Period	A tool to collect a specific set of periods used to summarize results from transactions.	【報告カレンダー期間】	取引の結果をまとめるための特定の期間を集めるもの。
@@ -173,13 +173,13 @@ usk-8	2	usk	endDateRepeatingEntry	endDateRepeatingEntryItemType	End Date of Repe
 usk-9	2	usk	reverse	reverseTypeItemType	Reverse	Should entry be reversed?	反対仕訳要否	仕訳が取り消されるべきか。
 usk-10	2	usk	reversingDate	reversingDateItemType	Reversing Date	Date this entry should be reversed	反対仕訳日付	この仕訳が取り消されるべき日付。
 cor-20	2	cor	entryNumberCounter	counterItemType	Entry Number Counter	Unique reference for the entry - a numeric counter	仕訳番号カウンタ	仕訳の一意なリファレンス　　カウンタ
-cenG-1	2	cen	INVOICE_NOTE	xbrli:stringItemtype	INVOICE NOTE	_	_	_
+cenG-1	2	cen	INVOICE_NOTE	_	INVOICE NOTE	_	_	_
 cen-21	3	cen	InvoiceNoteSubjectCode	codeItemType	Invoice note subject code	_	_	_
 cen-22	3	cen	InvoiceNote	textItemType	Invoice note	_	_	_
-cenG-2	2	cen	PROCESS_CONTROL	xbrli:stringItemtype	PROCESS CONTROL	_	_	_
+cenG-2	2	cen	PROCESS_CONTROL	_	PROCESS CONTROL	_	_	_
 cen-23	3	cen	BusinessProcessType	textItemType	Business process type	_	_	_
 cen-24	3	cen	SpecificationIdentifier	identifierItemType	Specification identifier	_	_	_
-cenG-3	2	cen	PRECEDING_INVOICE_REFERENCE	xbrli:stringItemtype	PRECEDING INVOICE REFERENCE	_	_	_
+cenG-3	2	cen	PRECEDING_INVOICE_REFERENCE	_	PRECEDING INVOICE REFERENCE	_	_	_
 cen-28	3	cen	SellerTradingName	textItemType	Seller trading name	_	_	_
 cen-33	3	cen	SellerAdditionalLegalInformation	textItemType	Seller additional legal information	_	_	_
 cen-162	4	cen	SellerAddressLine3	textItemType	Seller address line 3	_	_	_
@@ -187,31 +187,31 @@ cen-45	4	cen	BuyerTradingName	textItemType	Buyer trading name	_	_	_
 cen-163	4	cen	BuyerAddressLine3	textItemType	Buyer address line 3	_	_	_
 cen-164	4	cen	TaxRepresentativeAddressLine3	textItemType	Tax representative address line 3	_	_	_
 cen-165	4	cen	DeliverToAddressLine3	textItemType	Deliver to address line 3	_	_	_
-cenG-16	2	cen	PAYMENT_INSTRUCTIONS	xbrli:stringItemtype	PAYMENT INSTRUCTIONS	_	_	_
+cenG-16	2	cen	PAYMENT_INSTRUCTIONS	_	PAYMENT INSTRUCTIONS	_	_	_
 cen-82	3	cen	PaymentMeansText	textItemType	Payment means text	_	_	_
 cen-83	3	cen	RemittanceInformation	textItemType	Remittance information	_	_	_
-cenG-17	3	cen	CREDIT_TRANSFER	xbrli:stringItemtype	CREDIT TRANSFER	_	_	_
+cenG-17	3	cen	CREDIT_TRANSFER	_	CREDIT TRANSFER	_	_	_
 cen-84	4	cen	PaymentAccountIdentifier	identifierItemType	Payment account identifier	_	_	_
 cen-85	4	cen	PaymentAccountName	textItemType	Payment account name	_	_	_
 cen-86	4	cen	PaymentServiceProviderIdentifier	identifierItemType	Payment service provider identifier	_	_	_
-cenG-18	3	cen	PAYMENT_CARD_INFORMATION	xbrli:stringItemtype	PAYMENT CARD INFORMATION	_	_	_
+cenG-18	3	cen	PAYMENT_CARD_INFORMATION	_	PAYMENT CARD INFORMATION	_	_	_
 cen-87	4	cen	PaymentCardPrimaryAccountNumber	textItemType	Payment card primary account number	_	_	_
 cen-88	4	cen	PaymentCardHolderName	textItemType	Payment card holder name	_	_	_
-cenG-19	3	cen	DIRECT_DEBIT	xbrli:stringItemtype	DIRECT DEBIT	_	_	_
+cenG-19	3	cen	DIRECT_DEBIT	_	DIRECT DEBIT	_	_	_
 cen-89	4	cen	MandateReferenceIdentifier	identifierItemType	Mandate reference identifier	_	_	_
 cen-90	4	cen	BankAssignedCreditorIdentifier	identifierItemType	Bank assigned creditor identifier	_	_	_
 cen-91	4	cen	DebitedAccountIdentifier	identifierItemType	Debited account identifier	_	_	_
-cenG-20	2	cen	DOCUMENT_LEVEL_ALLOWANCES	xbrli:stringItemtype	DOCUMENT LEVEL ALLOWANCES	_	_	_
+cenG-20	2	cen	DOCUMENT_LEVEL_ALLOWANCES	_	DOCUMENT LEVEL ALLOWANCES	_	_	_
 cen-93	3	cen	DocumentLevelAllowanceBaseAmount	amountItemType	Document level allowance base amount	_	_	_
 cen-94	3	cen	DocumentLevelAllowancePercentage	percentageItemType	Document level allowance percentage	_	_	_
 cen-97	3	cen	DocumentLevelAllowanceReason	textItemType	Document level allowance reason	_	_	_
 cen-98	3	cen	DocumentLevelAllowanceReasonCode	codeItemType	Document level allowance reason code	_	_	_
-cenG-21	2	cen	DOCUMENT_LEVEL_CHARGES	xbrli:stringItemtype	DOCUMENT LEVEL CHARGES	_	_	_
+cenG-21	2	cen	DOCUMENT_LEVEL_CHARGES	_	DOCUMENT LEVEL CHARGES	_	_	_
 cen-100	3	cen	DocumentLevelChargeBaseAmount	amountItemType	Document level charge base amount	_	_	_
 cen-101	3	cen	DocumentLevelChargePercentage	percentageItemType	Document level charge percentage	_	_	_
 cen-104	3	cen	DocumentLevelChargeReason	textItemType	Document level charge reason	_	_	_
 cen-105	3	cen	DocumentLevelChargeReasonCode	codeItemType	Document level charge reason code	_	_	_
-cenG-22	2	cen	DOCUMENT_TOTALS	xbrli:stringItemtype	DOCUMENT TOTALS	_	_	_
+cenG-22	2	cen	DOCUMENT_TOTALS	_	DOCUMENT TOTALS	_	_	_
 cen-107	3	cen	SumOfAllowancesOnDocumentLevel	amountItemType	Sum of allowances on document level	_	_	_
 cen-108	3	cen	SumOfChargesOnDocumentLevel	amountItemType	Sum of charges on document level	_	_	_
 cen-109	3	cen	InvoiceTotalAmountWithoutVAT	amountItemType	Invoice total amount without VAT	_	_	_
@@ -220,22 +220,22 @@ cen-112	3	cen	InvoiceTotalAmountWithVAT	amountItemType	Invoice total amount with
 cen-113	3	cen	PaidAmount	amountItemType	Paid amount	_	_	_
 cen-114	3	cen	RoundingAmount	amountItemType	Rounding amount	_	_	_
 cen-115	3	cen	AmountDueForPayment	amountItemType	Amount due for payment	_	_	_
-cenG-23	2	cen	VAT_BREAKDOWN	xbrli:stringItemtype	VAT BREAKDOWN	_	_	_
+cenG-23	2	cen	VAT_BREAKDOWN	_	VAT BREAKDOWN	_	_	_
 cen-120	3	cen	VATExemptionReasonText	textItemType	VAT exemption reason text	_	_	_
 cen-121	3	cen	VATExemptionReasonCode	codeItemType	VAT exemption reason code	_	_	_
-cenG-24	2	cen	ADDITIONAL_SUPPORTING_DOCUMENTS	xbrli:stringItemtype	ADDITIONAL SUPPORTING DOCUMENTS	_	_	_
+cenG-24	2	cen	ADDITIONAL_SUPPORTING_DOCUMENTS	_	ADDITIONAL SUPPORTING DOCUMENTS	_	_	_
 cen-122	3	cen	SupportingDocumentReference	documentReferenceItemType	Supporting document reference	_	_	_
 cen-123	3	cen	SupportingDocumentDescription	textItemType	Supporting document description	_	_	_
 cen-124	3	cen	ExternalDocumentLocation	textItemType	External document location	_	_	_
 cen-125	3	cen	AttachedDocument	binaryobjectItemType	Attached document	_	_	_
-cen-125a	3	cen	AttachedDocumentMimeCode	xbrli:stringItemtype	Attached document Mime code	_	_	_
-cen-125b	3	cen	AttachedDocumentFilename	xbrli:stringItemtype	Attached document Filename	_	_	_
+cen-125a	3	cen	AttachedDocumentMimeCode	_	Attached document Mime code	_	_	_
+cen-125b	3	cen	AttachedDocumentFilename	_	Attached document Filename	_	_	_
 cen-8	2	cen	ValueAddedTaxPointDateCode	codeItemType	Value added tax point date code	_	_	_
 cen-18	2	cen	InvoicedObjectIdentifier	identifierItemType	Invoiced object identifier	_	_	_
 corG-5	2	cor	entryDetail	_	Entry Detail	Parent for entry detail	【仕訳明細】	仕訳明細の親タグ。
 cor-21	3	cor	lineNumber	lineNumberItemType	Line Number	Identifier for a particular entry detail\n	明細行番号	仕訳明細の識別子。
 cor-22	3	cor	lineNumberCounter	counterItemType	Line Number Counter	Unique reference for the line - a numeric counter	明細行番号カウンタ	明細行の一意なリファレンス　　カウンタ
-cenG-26	3	cen	INVOICE_LINE_PERIOD	xbrli:stringItemtype	INVOICE LINE PERIOD	_	_	_
+cenG-26	3	cen	INVOICE_LINE_PERIOD	_	INVOICE LINE PERIOD	_	_	_
 cen-168	4	cen	linePeriodStartDate	dateItemtype	Line Period Start Date	_	_	_
 cen-169	4	cen	linePeriodEndDate	dateItemtype	Line Period End Date	_	_	_
 corG-6	3	cor	account	_	Account Identifier	Tuple: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so: \n/account/accountMainID 1000  \n/account/accountMainDescription Cash  \n/account/accountSub/accountSubID 4783HG  \n/account/accountSub/accountSubDescription Department  \n/account/accountSub/accountSubID QOWI  \n/account/accountSub/accountSubDescription Branch  \n/account/accountSub/accountSubID 192837  \n/account/accountSub/accountSubDescription Division	【科目識別子】	タプル。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。\n/account/accountMainID 1000  /account/accountMainDescription Cash  /account/accountSub/accountSubID 4783HG  /account/accountSub/accountSubDescription Department  /account/accountSub/accountSubID QOWI  /account/accountSub/accountSubDescription Branch  /account/accountSub/accountSubID 192837  /account/accountSub/accountSubDescription Division
@@ -282,12 +282,12 @@ cor-41	3	cor	signOfAmount	gl-gen:signOfAmountItemType	Sign Indication for Amount
 cor-42	3	cor	debitCreditCode	gl-gen:debitCreditCodeItemType	Debit/Credit Identifier	Optional identifier of whether the amount is a (D)ebit, a (C)redit or Undefined	貸借区分コード	金額が借方か貸方か不定かを示す識別子。\n[設定値のリスト]\n(D)、(C)、(debit：借方)、(credit：貸方)、(undefined：不定) 
 cor-43	3	cor	postingDate	postingDateItemType	Posting Date	At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.	転記日付	明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。
 bus-118	3	bus	amountMemo	amountMemoItemType	Memo Line	A boolean like entry that indicates whether an entryDetail line has been provided solely to provide additional details and that tools should not consider the amount in postings.	メモ行フラグ	明細行が単に追加の詳細を与えるものであり、転記金額に含めるべきでないことを示すブール値。
-cenG-27	3	cen	INVOICE_LINE_ALLOWANCES	xbrli:stringItemtype	INVOICE LINE ALLOWANCES	_	_	_
+cenG-27	3	cen	INVOICE_LINE_ALLOWANCES	_	INVOICE LINE ALLOWANCES	_	_	_
 cen-137	4	cen	InvoiceLineAllowanceBaseAmount	amountItemType	Invoice line allowance base amount	_	_	_
 cen-138	4	cen	InvoiceLineAllowancePercentage	percentageItemType	Invoice line allowance percentage	_	_	_
 cen-139	4	cen	InvoiceLineAllowanceReason	textItemType	Invoice line allowance reason	_	_	_
 cen-140	4	cen	InvoiceLineAllowanceReasonCode	codeItemType	Invoice line allowance reason code	_	_	_
-cenG-28	3	cen	INVOICE_LINE_CHARGES	xbrli:stringItemtype	INVOICE LINE CHARGES	_	_	_
+cenG-28	3	cen	INVOICE_LINE_CHARGES	_	INVOICE LINE CHARGES	_	_	_
 cen-142	4	cen	InvoiceLineChargeBaseAmount	amountItemType	Invoice line charge base amount	_	_	_
 cen-143	4	cen	InvoiceLineChargePercentage	percentageItemType	Invoice line charge percentage	_	_	_
 cen-144	4	cen	InvoiceLineChargeReason	textItemType	Invoice line charge reason	_	_	_
@@ -468,7 +468,7 @@ ehm-20	5	ehm	serialLotWarrantyPeriodUnit	serialLotWarrantyPeriodUnitItemType	Ser
 ehm-21	5	ehm	serialLotWarrantyVendor	serialLotWarrantyVendorItemType	Serial Lot Warranty Vendor	The vendor providing warranty; this may differ from the manufacturer.		
 ehm-22	5	ehm	serialLotWarrantyContract	serialLotWarrantyContractItemType	Serial Lot Warranty Contract	Contract or document information related to the warranty, such as a contract number and date or a URL with more information.		
 ehm-23	5	ehm	serialLotComment	serialLotCommentItemType	Serial Lot Comment	Free format text related to the serial number or lot.		
-cenG-32	4	cen	ITEM_ATTRIBUTES	xbrli:stringItemtype	ITEM ATTRIBUTES	_	_	_
+cenG-32	4	cen	ITEM_ATTRIBUTES	_	ITEM ATTRIBUTES	_	_	_
 cen-160	5	cen	ItemAttributeName	textItemType	Item attribute name	_	_	_
 cen-161	5	cen	ItemAttributeValue	textItemType	Item attribute value	_	_	_
 cen-146	4	cen	ItemNetPrice	unitPriceAmountItemType	Item net price	_	_	_
