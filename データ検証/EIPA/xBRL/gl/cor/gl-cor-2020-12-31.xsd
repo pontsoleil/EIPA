@@ -5,7 +5,7 @@
 elementFormDefault="qualified" 
 attributeFormDefault="unqualified" 
 xmlns="http://www.w3.org/2001/XMLSchema" 
-xmlns:link="http://www.xbrl.org/2003/linkbase"
+xmlns:xbrll="http://www.xbrl.org/2003/linkbase" 
 xmlns:xlink="http://www.w3.org/1999/xlink" 
 xmlns:xbrli="http://www.xbrl.org/2003/instance" 
 xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2020-12-31" 
@@ -14,8 +14,8 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="gl-cor-2020-12-31-presentation.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple" xlink:title="Presentation Links, all"/>
-			<link:linkbaseRef xlink:href="gl-cor-2020-12-31-label-ja.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple" xlink:title="Label Links, ja"/>
+			<link:linkbaseRef xlink:href="gl-cor-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="gl-cor-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
 			<link:roleType roleURI="http://xbrl.org/role/gl-cor_structure" id="gl-cor_structure">
 				<link:definition>XBRL GL Structure</link:definition>
 				<link:usedOn>link:presentationLink</link:usedOn>
@@ -468,6 +468,7 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 	<element name="cor-11" id="gl-cor_enteredBy" type="gl-cor:enteredByItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-12" id="gl-cor_enteredDate" type="gl-cor:enteredDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-13" id="gl-cor_sourceJournalID" type="gl-gen:sourceJournalIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="cor-14" id="gl-cor_entryType" type="gl-gen:entryTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-15" id="gl-cor_entryNumber" type="gl-cor:entryNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-16" id="gl-cor_entryComment" type="gl-cor:entryCommentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-17" id="gl-cor_qualifierEntry" type="gl-gen:qualifierEntryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -501,7 +502,6 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 	<element name="cor-41" id="gl-cor_signOfAmount" type="gl-gen:signOfAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-42" id="gl-cor_debitCreditCode" type="gl-gen:debitCreditCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-43" id="gl-cor_postingDate" type="gl-cor:postingDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	
 	<element name="corG-9" id="gl-cor_identifierReference" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-44" id="gl-cor_identifierCode" type="gl-cor:identifierCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="corG-10" id="gl-cor_identifierExternalReference" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -513,7 +513,6 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 	<element name="cor-50" id="gl-cor_identifierDescription" type="gl-cor:identifierDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-51" id="gl-cor_identifierType" type="gl-gen:identifierTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-52" id="gl-cor_identifierCategory" type="gl-cor:identifierCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	
 	<element name="corG-11" id="gl-cor_identifierEMail" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-53" id="gl-cor_identifierEmailAddressUsage" type="gl-gen:emailAddressUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-54" id="gl-cor_identifierEmailAddress" type="gl-gen:emailAddressItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -523,7 +522,7 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 	<element name="corG-13" id="gl-cor_identifierFaxNumber" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-57" id="gl-cor_identifierFaxNumberUsage" type="gl-gen:faxNumberUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-58" id="gl-cor_identifierFax" type="gl-gen:faxNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="corG-14" id="gl-cor_identifierContactInformationStructure" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="corG-14" id="gl-cor_identifierContactInformationStructure" type="gl-cor:identifierContactInformationStructureTupleType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-59" id="gl-cor_identifierContactPrefix" type="gl-cor:identifierContactPrefixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-60" id="gl-cor_identifierContactLastName" type="gl-cor:identifierContactLastNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-61" id="gl-cor_identifierContactFirstName" type="gl-cor:identifierContactFirstNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

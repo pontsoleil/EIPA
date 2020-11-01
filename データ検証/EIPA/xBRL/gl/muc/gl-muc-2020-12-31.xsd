@@ -18,8 +18,8 @@ xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31">
 	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:href="gl-muc-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/>
-			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:href="gl-muc-2020-12-31-label-en.xml" xlink:title="Label Links, en"/>
+			<link:linkbaseRef xlink:href="gl-muc-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="gl-muc-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 		</appinfo>
 	</annotation>
 	<!-- item type -->
@@ -56,10 +56,10 @@ xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31">
   <!-- item muc -->
 	<element name="muc-1" id="gl-muc_defaultCurrency" type="gl-muc:currencyItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-2" id="gl-muc_amountCurrency" type="gl-muc:currencyItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="muc-6" id="gl-muc_amountOriginalExchangeRateDate" type="gl-muc:exchangeRateDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-3" id="gl-muc_amountOriginalAmount" type="gl-gen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-4" id="gl-muc_amountOriginalCurrency" type="gl-muc:currencyItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-5" id="gl-muc_amountOriginalExchangeRate" type="gl-muc:exchangeRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="muc-6" id="gl-muc_amountOriginalExchangeRateDate" type="gl-muc:exchangeRateDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-7" id="gl-muc_amountOriginalExchangeRateSource" type="gl-muc:exchangeRateSourceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-8" id="gl-muc_amountOriginalExchangeRateComment" type="gl-muc:commentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-9" id="gl-muc_amountOriginalTriangulationAmount" type="gl-gen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -89,7 +89,7 @@ xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31">
 	<element name="muc-32" id="gl-muc_taxAmountForeignCurrency" type="gl-gen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-33" id="gl-muc_taxCurrency" type="gl-muc:currencyItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-34" id="gl-muc_taxExchangeRateDate" type="gl-muc:exchangeRateDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="muc-35" id="gl-muc_taxExchangeRate" type="gl-muc:exchangeRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="cor-97" id="gl-muc_taxExchangeRate" type="gl-muc:taxExchangeRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-36" id="gl-muc_taxExchangeRateSource" type="gl-muc:exchangeRateSourceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-37" id="gl-muc_taxExchangeRateType" type="gl-muc:exchangeRateTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="muc-38" id="gl-muc_taxExchangeRateComment" type="gl-muc:commentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

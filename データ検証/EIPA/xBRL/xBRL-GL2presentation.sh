@@ -60,7 +60,7 @@ cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
         if (p_module==module) {
           printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
         } else {
-          printf "    <loc xlink:type=\"locator\" xlink:href=\"../gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
+          printf "    <loc xlink:type=\"locator\" xlink:href=\"../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
         }
       }
       printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation child: %s\"/>\n", module, module, term, module, term, term;
