@@ -58,6 +58,18 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	</complexType>
 	<complexType name="identifierItemType">
 		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="documentReferenceItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="binaryobjectItemType">
+		<simpleContent>
 			<restriction base="xbrli:stringItemType">
 			</restriction>
 		</simpleContent>
