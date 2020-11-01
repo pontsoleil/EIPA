@@ -3,7 +3,6 @@
 <linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
     <loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountingEntries" xlink:label="gl-cor_accountingEntries" xlink:title="presentation child: accountingEntries"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-_" xlink:to="gl-cor_accountingEntries" xlink:title="presentation:  to accountingEntries" use="optional" order="2"/>
     <loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
     <loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entriesType" xlink:label="gl-cor_entriesType" xlink:title="presentation child: entriesType"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_entriesType" xlink:title="presentation: documentInfo to entriesType" use="optional" order="3"/>
