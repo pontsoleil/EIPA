@@ -127,18 +127,14 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	<element name="cen-8" id="gl-cen_ValueAddedTaxPointDateCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-18" id="gl-cen_InvoicedObjectIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cenG-26" id="gl-cen_INVOICE_LINE_PERIOD" type="gl-cen:xbrli:stringItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="cen-164" id="gl-cen_periodStartDate" type="gl-cen:dateItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="cen-165" id="gl-cen_periodEndDate" type="gl-cen:dateItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="cen-164" id="gl-cen_linePeriodStartDate" type="gl-cen:dateItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="cen-165" id="gl-cen_linePeriodEndDate" type="gl-cen:dateItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cenG-27" id="gl-cen_INVOICE_LINE_ALLOWANCES" type="gl-cen:xbrli:stringItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-137" id="gl-cen_InvoiceLineAllowanceBaseAmount" type="gl-cen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-138" id="gl-cen_InvoiceLineAllowancePercentage" type="gl-cen:percentageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-139" id="gl-cen_InvoiceLineAllowanceReason" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-140" id="gl-cen_InvoiceLineAllowanceReasonCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cenG-28" id="gl-cen_INVOICE_LINE_CHARGES" type="gl-cen:xbrli:stringItemtype" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="cen-142" id="gl-cen_InvoiceLineChargeBaseAmount" type="gl-cen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="cen-143" id="gl-cen_InvoiceLineChargePercentage" type="gl-cen:percentageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="cen-144" id="gl-cen_InvoiceLineChargeReason" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="cen-145" id="gl-cen_InvoiceLineChargeReasonCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-142" id="gl-cen_InvoiceLineChargeBaseAmount" type="gl-cen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-143" id="gl-cen_InvoiceLineChargePercentage" type="gl-cen:percentageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cen-144" id="gl-cen_InvoiceLineChargeReason" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
