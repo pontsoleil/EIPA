@@ -11,7 +11,7 @@ xmlns:link="http://www.xbrl.org/2003/linkbase"
 xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="gl-srcd-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"  xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+			<link:linkbaseRef xlink:href="gl-srcd-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
 			<link:linkbaseRef xlink:href="gl-srcd-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
 		</appinfo>
 	</annotation>
@@ -177,6 +177,100 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
 	</complexType>
+	
+	<!-- 2020-11-01 -->
+	<complexType name="segmentExplicitDimensionItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="segmentExplicitDimensionValueItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="segmentTypedDimensionItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="segmentTypedDimensionValueItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="segmentSimpleElementContentItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="segmentSimpleElementValueItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="segmentNonDimensionalContentsItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryInstantItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryStartDateItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryEndDateItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryForeverItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioExplicitDimensionItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioExplicitDimensionValueItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioTypedDimensionItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioTypedDimensionValueItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioSimpleElementContentItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioSimpleElementValueItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="senarioNonDimensionalContentsItemType"
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<!-- 2020-11-01 -->
+
 	<complexType name="richTextCommentCodeItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType">
@@ -223,32 +317,32 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	<element name="srcd-12" id="gl-srcd_summaryIdentifier" type="gl-srcd:summaryIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-13" id="gl-srcd_summaryScheme" type="gl-srcd:summarySchemeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcdG-5" id="gl-srcd_summarySegment" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcdG-6" id="gl-srcd_summaryExplicitDimension" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-14" id="gl-srcd_summaryDimension" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-15" id="gl-srcd_summaryExplicitDimensionValue" type="gl-srcd:summaryExplicitDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcdG-7" id="gl-srcd_summaryTypedDimension" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-16" id="gl-srcd_summaryDimension" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-17" id="gl-srcd_summaryTypedDimensionValue" type="gl-srcd:summaryTypedDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcdG-8" id="gl-srcd_summarySimpleElementContent" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-18" id="gl-srcd_summarySimpleElementContentElement" type="gl-srcd:summarySimpleElementContentElementType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-19" id="gl-srcd_summarySimpleElementValue" type="gl-srcd:summarySimpleElementValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-20" id="gl-srcd_summaryContents" type="gl-srcd:summaryContentsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcdG-6" id="gl-srcd_segmentExplicit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-14" id="gl-srcd_segmentExplicitDimension" type="gl-srcd:segmentExplicitDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-15" id="gl-srcd_segmentExplicitDimensionValue" type="gl-srcd:segmentExplicitDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcdG-7" id="gl-srcd_segmentTyped" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-16" id="gl-srcd_segmentTypedDimension" type="gl-srcd:segmentTypedDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-17" id="gl-srcd_segmentTypedDimensionValue" type="gl-srcd:segmentTypedDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcdG-8" id="gl-srcd_segmentSimpleElement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-18" id="gl-srcd_segmentSimpleElementContent" type="gl-srcd:segmentSimpleElementContentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-19" id="gl-srcd_segmentSimpleElementValue" type="gl-srcd:segmentSimpleElementValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-20" id="gl-srcd_segmentNonDimensionalContents" type="gl-srcd:segmentNonDimensionalContentsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcdG-9" id="gl-srcd_summaryPeriod" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-21" id="gl-srcd_summaryInstant" type="gl-srcd:summaryInstantItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-22" id="gl-srcd_summaryStartDate" type="gl-srcd:summaryStartDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-23" id="gl-srcd_summaryEndDate" type="gl-srcd:summaryEndDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-24" id="gl-srcd_summaryForever" type="gl-srcd:summaryForeverItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcdG-10" id="gl-srcd_summaryScenario" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcdG-11" id="gl-srcd_summaryExplicitDimension" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-25" id="gl-srcd_summaryDimension" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-26" id="gl-srcd_summaryExplicitDimensionValue" type="gl-srcd:summaryExplicitDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcdG-12" id="gl-srcd_summaryTypedDimension" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-27" id="gl-srcd_summaryDimension" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-28" id="gl-srcd_summaryTypedDimensionValue" type="gl-srcd:summaryTypedDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcdG-13" id="gl-srcd_summarySimpleElementContent" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-29" id="gl-srcd_summarySimpleElementContentElement" type="gl-srcd:summarySimpleElementContentElementType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-30" id="gl-srcd_summarySimpleElementValue" type="gl-srcd:summarySimpleElementValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="srcd-31" id="gl-srcd_summaryContents" type="gl-srcd:summaryContentsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcdG-11" id="gl-srcd_senarioExplicit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-25" id="gl-srcd_senarioExplicitDimension" type="gl-srcd:senarioExplicitDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-26" id="gl-srcd_senarioExplicitDimensionValue" type="gl-srcd:senarioExplicitDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcdG-12" id="gl-srcd_senarioTyped" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-27" id="gl-srcd_senarioTypedDimension" type="gl-srcd:senarioTypedDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-28" id="gl-srcd_senarioTypedDimensionValue" type="gl-srcd:senarioTypedDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcdG-13" id="gl-srcd_senarioSimpleElement" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-29" id="gl-srcd_senarioSimpleElementContent" type="gl-srcd:senarioSimpleElementContentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-30" id="gl-srcd_senarioSimpleElementValue" type="gl-srcd:senarioSimpleElementValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="srcd-31" id="gl-srcd_senarioNonDimensionalContents" type="gl-srcd:senarioNonDimensionalContentsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcdG-14" id="gl-srcd_summaryUnit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-32" id="gl-srcd_summaryNumerator" type="gl-srcd:summaryNumeratorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-33" id="gl-srcd_summaryDenominator" type="gl-srcd:summaryDenominatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
