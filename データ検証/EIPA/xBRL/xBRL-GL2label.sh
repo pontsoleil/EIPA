@@ -25,17 +25,21 @@ exec 2>log/${0##*/}.$$.log
 # print term;
 # }' > test.tsv
 # copy field to XBRL-GL.xlsx to create xBRL-GL.tsv
-# code level type module term label description
-# 1    2     3    4      5    6     7
+## code level type module term label description
+## 1    2     3    4      5    6     7
+# code	level	module	term	type	label	description	label-ja	description-ja
+# 1     2     3       4     5     6     7           8         9
 cat gl/source/xBRL-GL.tsv | awk -F'\t' '{
-  tmp="echo " $3 date " | openssl md5 | cut -f2 -d\" \"";
+  tmp="echo " $4 date " | openssl md5 | cut -f2 -d\" \"";
   tmp | getline cksum;
   close(tmp);
   print cksum "\t" $0;
 }' > $Tmp-cksum
-# cksum code level type module term label description
-# 1     2    3     4    5      6    7     8
-cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
+## cksum code level type module term label description
+## 1     2    3     4    5      6    7     8
+# cksum code	level	module	term	type	label	description	label-ja	description-ja
+# 1     2     3     4       5     6     7     8           9         10
+cat $Tmp-cksum | awk -F'\t' -v module=$1 -v lang=$2 'BEGIN {
   printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   printf "<link:linkbase xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
   printf "  xmlns:link=\"http://www.xbrl.org/2003/linkbase\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"";
@@ -43,29 +47,34 @@ cat $Tmp-cksum | awk -F'\t' -v module=$1 'BEGIN {
   printf "  <link:labelLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">\n";
 }
 {
-  if (module==$5) {
+  if (module==$4) {
     code=$2;
     cksum="_" $1;
-    term=$6;
-    label=$7;
-    description=$8;
+    term=$5;
+    if ("ja"==lang) {
+      label=$9;
+      description=$10;
+    } else if ("en"==lang) {
+      label=$7;
+      description=$8;
+    }
     if (term || description) {
       printf "    <!-- %s gl-%s:%s -->\n", code, module, term;
       printf "    <link:loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s%s\"/>\n", module, module, term, module, term, cksum;
-      printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"gl-%s_%s%s\" xlink:to=\"lbl_%s%s\"/>\n", module, term, cksum, code, cksum;
+      printf "    <link:labelArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/concept-label\" xlink:from=\"gl-%s_%s%s\" xlink:to=\"lbl_%s-%s%s\"/>\n", module, term, cksum, code, lang, cksum;
     }
     if (label) {
-      printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"en\">%s</link:label>\n", code, cksum, label;
+      printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s-%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/label\" xml:lang=\"%s\">%s</link:label>\n", code, lang, cksum, lang, label;
     }
     if (description) {
-      printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/documentation\" xml:lang=\"en\">%s</link:label>\n", code, cksum, description;
+      printf "    <link:label xlink:type=\"resource\" xlink:label=\"lbl_%s-%s%s\" xlink:role=\"http://www.xbrl.org/2003/role/documentation\" xml:lang=\"%s\">%s</link:label>\n", code, lang, cksum, lang, description;
     }
   }
 }
 END {
   printf " </link:labelLink>\n";
   printf "</link:linkbase>";
-}' > gl/source/gl-"$1"-2020-12-31-label.xml
+}' > gl/source/gl-"$1"-2020-12-31-label"-$2".xml
 
 # --------------------------------------------------------------------
 rm $Tmp-*

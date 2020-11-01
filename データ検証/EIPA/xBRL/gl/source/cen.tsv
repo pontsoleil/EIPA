@@ -1,0 +1,82 @@
+BT-8	Code	Value added tax point date code
+BT-18	Identifier	Invoiced object identifier
+BG-1		INVOICE NOTE
+BT-21	Code	Invoice note subject code
+BT-22	Text	Invoice note
+BG-2		PROCESS CONTROL
+BT-23	Text	Business process type
+BT-24	Identifier	Specification identifier
+BG-3		PRECEDING INVOICE REFERENCE
+BT-28	Text	Seller trading name
+BT-33	Text	Seller additional legal information
+BT-162	Text	Seller address line 3
+BT-45	Text	Buyer trading name
+BT-163	Text	Buyer address line 3
+BT-164	Text	Tax representative address line 3
+BT-165	Text	Deliver to address line 3
+BG-16		PAYMENT INSTRUCTIONS
+BT-82	Text	Payment means text
+BT-83	Text	Remittance information
+BG-17		CREDIT TRANSFER
+BT-84	Identifier	Payment account identifier
+BT-85	Text	Payment account name
+BT-86	Identifier	Payment service provider identifier
+BG-18		PAYMENT CARD INFORMATION
+BT-87	Text	Payment card primary account number
+BT-88	Text	Payment card holder name
+BG-19		DIRECT DEBIT
+BT-89	Identifier	Mandate reference identifier
+BT-90	Identifier	Bank assigned creditor identifier
+BT-91	Identifier	Debited account identifier
+BG-20		DOCUMENT LEVEL ALLOWANCES
+BT-93	Amount	Document level allowance base amount
+BT-94	Percentage	Document level allowance percentage
+BT-97	Text	Document level allowance reason
+BT-98	Code	Document level allowance reason code
+BG-21		DOCUMENT LEVEL CHARGES
+BT-100	Amount	Document level charge base amount
+BT-101	Percentage	Document level charge percentage
+BT-104	Text	Document level charge reason
+BT-105	Code	Document level charge reason code
+BG-22		DOCUMENT TOTALS
+BT-107	Amount	Sum of allowances on document level
+BT-108	Amount	Sum of charges on document level
+BT-109	Amount	Invoice total amount without VAT
+BT-111	Amount	Invoice total VAT amount in accounting currency
+BT-112	Amount	Invoice total amount with VAT
+BT-113	Amount	Paid amount
+BT-114	Amount	Rounding amount
+BT-115	Amount	Amount due for payment
+BG-23		VAT BREAKDOWN
+BT-120	Text	VAT exemption reason text
+BT-121	Code	VAT exemption reason code
+BG-24		ADDITIONAL SUPPORTING DOCUMENTS
+BT-122	DocumentReference	Supporting document reference
+BT-123	Text	Supporting document description
+BT-124	Text	External document location
+BT-125	Binaryobject	Attached document
+BT-125A		Attached document Mime code
+BT-125B		Attached document Filename
+BG-27		INVOICE LINE ALLOWANCES
+BT-137	Amount	Invoice line allowance base amount
+BT-138	Percentage	Invoice line allowance percentage
+BT-139	Text	Invoice line allowance reason
+BT-140	Code	Invoice line allowance reason code
+BG-28		INVOICE LINE CHARGES
+BT-142	Amount	Invoice line charge base amount
+BT-143	Percentage	Invoice line charge percentage
+BT-144	Text	Invoice line charge reason
+BT-145	Code	Invoice line charge reason code
+BT-142	Amount	Invoice line charge base amount
+BT-143	Percentage	Invoice line charge percentage
+BT-144	Text	Invoice line charge reason
+BT-145	Code	Invoice line charge reason code
+BT-154	Text	Item description
+BG-32		ITEM ATTRIBUTES
+BT-160	Text	Item attribute name
+BT-161	Text	Item attribute value
+BT-146	UnitPriceAmount	Item net price
+BT-147	UnitPriceAmount	Item price discount
+BT-148	UnitPriceAmount	Item gross price
+BG-26		INVOICE LINE PERIOD
+BG-14		INVOICING PERIOD

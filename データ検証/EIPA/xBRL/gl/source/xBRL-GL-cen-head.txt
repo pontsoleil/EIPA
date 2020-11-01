@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema
+targetNamespace="http://www.xbrl.org/int/gl/bus/2020-12-31" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified" 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+xmlns:link="http://www.xbrl.org/2003/linkbase" 
+xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2020-12-31" 
+xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
+	<annotation>
+		<appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:href="gl-cen-2020-12-31-presentation.xml" xlink:title="Presentation Links, all"/>
+			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:href="gl-cen-2020-12-31-label.xml" xlink:title="Label Links, all"/>
+		</appinfo>
+	</annotation>
+	<!-- item type -->
+	<complexType name="amountItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="percentageItemType">
+		<simpleContent>
+			<restriction base="xbrli:pureItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="textItemType">
+			<simpleContent>
+				<restriction base="xbrli:stringItemType">
+				</restriction>
+			</simpleContent>
+		</complexType>
+	<complexType name="codeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="unitPriceAmountItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="dateItemtype">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>

@@ -14,10 +14,9 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xpath ============================================================
-# code level type module term label description
-# 1    2     3    4      5    6     7
-# TODO check if loc for root exists
-cat gl/source/xBRL-GL.txt | awk -F'\t' -v module=$1 'BEGIN {
+# code	level	module	term	type	label	description	label-ja	description-ja
+# 1     2     3       4     5     6     7           8         9
+cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
   n=0;
   parent="root";
   curent_level=1;
@@ -34,27 +33,27 @@ cat gl/source/xBRL-GL.txt | awk -F'\t' -v module=$1 'BEGIN {
   print "  <presentationLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">";
 }
 {
-  if (module==$6) {
-    code=$1;
-    level=$2;
-    term=$5;
-    currents[level]=code;
-    if (1 == level) {
-      parent="root";
+  code=$1;
+  level=$2;
+  term=$4;
+  currents[level]=code;
+  if (1 == level) {
+    parent="root";
+  }
+  else {
+    parent=currents[level - 1];
+  }
+  if (level < current_level) {
+    for (i = level + 1; i < 8; i++) {
+      currents[i]="";
     }
-    else {
-      parent=currents[level - 1];
-    }
-    if (level < current_level) {
-      for (i = level + 1; i < 8; i++) {
-        currents[i]="";
-      }
-    }
-    current_level=level;
-    terms[code]=term;
-    p_module=substr(parent, 1, 3);
-    if ("src"==p_module) p_module="srcd";
-    if ("root"!=parent) {
+  }
+  current_level=level;
+  terms[code]=term;
+  p_module=substr(parent, 1, 3);
+  if ("src"==p_module) p_module="srcd";
+  if ("root"!=parent) {
+    if (module==$3) {  
       # print n " " code " parent module=" p_module " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4] " [5]" currents[5] " [6]" currents[6] " [7]" currents[7];
       if (1!=parents[parent]) {
         parents[parent]=1;
@@ -75,7 +74,6 @@ END {
   print "</linkbase>"; 
 }' > gl/source/gl-"$1"-2020-12-31-presentation.xml
 # --------------------------------------------------------------------
-# rm $Tmp-*
 rm log/${0##*/}.$$.*
 exit 0
 # xBRL-GL2presentaton.sh
