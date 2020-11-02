@@ -15,7 +15,7 @@ xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31">
 	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="gl-bus-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<!-- <link:linkbaseRef xlink:href="gl-bus-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/> -->
 			<link:linkbaseRef xlink:href="gl-bus-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 		</appinfo>
 	</annotation>
@@ -924,6 +924,19 @@ xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31">
 	<element name="bus-82" id="gl-bus_accountantContactType" type="gl-bus:accountantContactTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-83" id="gl-bus_accountantLocationIdentifierCrossReference" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-84" id="gl-bus_accountantContactActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-120" id="gl-bus_identifierPurpose" type="gl-bus:identifierPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="busG-20" id="gl-bus_identifierAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-121" id="gl-bus_identifierAddressDescription" type="gl-bus:identifierAddressDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-122" id="gl-bus_identifierAddressPurpose" type="gl-bus:identifierAddressPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-123" id="gl-bus_identifierBuildingNumber" type="gl-bus:identifierBuildingNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-124" id="gl-bus_identifierStreet" type="gl-bus:identifierStreetItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-125" id="gl-bus_identifierAddressStreet2" type="gl-bus:identifierAddressStreet2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-126" id="gl-bus_identifierCity" type="gl-bus:identifierCityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-127" id="gl-bus_identifierStateOrProvince" type="gl-bus:identifierStateOrProvinceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-128" id="gl-bus_identifierCountry" type="gl-bus:identifierCountryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-129" id="gl-bus_identifierZipOrPostalCode" type="gl-bus:identifierZipOrPostalCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-130" id="gl-bus_identifierAddressLocationIdentifier" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="bus-131" id="gl-bus_identifierLocationIdentifierCrossReference" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="busG-18" id="gl-bus_reportingCalendar" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-85" id="gl-bus_reportingCalendarCode" type="gl-bus:reportingCalendarCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-86" id="gl-bus_reportingCalendarDescription" type="gl-bus:reportingCalendarDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -961,19 +974,6 @@ xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31">
 	<element name="bus-117" id="gl-bus_entryAccountingMethodPurposeDescription" type="gl-bus:entryAccountingMethodPurposeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-118" id="gl-bus_amountMemo" type="gl-bus:amountMemoItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-119" id="gl-bus_allocationCode" type="gl-bus:allocationCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-120" id="gl-bus_identifierPurpose" type="gl-bus:identifierPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="busG-20" id="gl-bus_identifierAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-121" id="gl-bus_identifierAddressDescription" type="gl-bus:identifierAddressDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-122" id="gl-bus_identifierAddressPurpose" type="gl-bus:identifierAddressPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-123" id="gl-bus_identifierBuildingNumber" type="gl-bus:identifierBuildingNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-124" id="gl-bus_identifierStreet" type="gl-bus:identifierStreetItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-125" id="gl-bus_identifierAddressStreet2" type="gl-bus:identifierAddressStreet2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-126" id="gl-bus_identifierCity" type="gl-bus:identifierCityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-127" id="gl-bus_identifierStateOrProvince" type="gl-bus:identifierStateOrProvinceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-128" id="gl-bus_identifierCountry" type="gl-bus:identifierCountryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-129" id="gl-bus_identifierZipOrPostalCode" type="gl-bus:identifierZipOrPostalCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-130" id="gl-bus_identifierAddressLocationIdentifier" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="bus-131" id="gl-bus_identifierLocationIdentifierCrossReference" type="gl-bus:locationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-132" id="gl-bus_documentReceivedDate" type="gl-bus:documentReceivedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-133" id="gl-bus_documentChargeReimb" type="gl-bus:documentChargeReimbItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="bus-134" id="gl-bus_documentLocation" type="gl-bus:documentLocationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

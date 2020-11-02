@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL Japan -->
-<xsd:schema targetNamespace="http://www.xbrl.org/int/gl/cor/2020-12-31" 
+<xsd:schema targetNamespace="http://www.xbrl.org/int/gl/plt/2020-12-31" 
 	elementFormDefault="qualified" 
 	attributeFormDefault="unqualified" 
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
@@ -10,24 +10,35 @@
 	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
 	xmlns:link="http://www.xbrl.org/2003/linkbase" 
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
-	<include namespace="http://www.xbrl.org/int/gl/cor/2020-12-31" schemaLocation="gl-palette-2020-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/bus/2020-12-31" schemaLocation="../../bus/gl-bus-2020-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/muv/2020-12-31" schemaLocation="../../muc/gl-muc-2020-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/taf/2020-12-31" schemaLocation="../../taf/gl-taf-2020-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/cen/2020-12-31" schemaLocation="../../cen/gl-cen-2020-12-31.xsd"/>
+	<include namespace="http://www.xbrl.org/int/gl/cor/2020-12-31" schemaLocation="../../cor/gl-cor-2020-12-31.xsd"/>
+
+	<!-- <include namespace="http://www.xbrl.org/int/gl/cor/2020-12-31" schemaLocation="gl-palette-2020-12-31.xsd"/> -->
 	<annotation>
 		<appinfo>
 			<!-- presentation -->
-			<!-- <link:linkbaseRef xlink:href="../../cor/gl-cor-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/> -->
-			<!-- <link:linkbaseRef xlink:href="../../bus/gl-bus-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
-			<link:linkbaseRef xlink:href="../../taf/gl-taf-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/> -->
-			<!-- <link:linkbaseRef xlink:href="../../cen/gl-cen-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/> -->
+			<link:linkbaseRef xlink:href="../../cor/gl-cor-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="../../bus/gl-bus-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="../../muc/gl-muc-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="../../taf/gl-taf-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="../../cen/gl-cen-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="gl-plt-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
 			<!-- label -->
 			<link:linkbaseRef xlink:href="../../cor/gl-cor-2020-12-31-label-en.xml" xlink:type="simple" xlink:title="Label Links, en" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../bus/gl-bus-2020-12-31-label-en.xml" xlink:type="simple" xlink:title="Label Links, en" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="../../muc/gl-muc-2020-12-31-label-en.xml" xlink:type="simple" xlink:title="Label Links, en" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../taf/gl-taf-2020-12-31-label-en.xml" xlink:type="simple" xlink:title="Label Links, en" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../cen/gl-cen-2020-12-31-label-en.xml" xlink:type="simple" xlink:title="Label Links, en" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../cor/gl-cor-2020-12-31-label-ja.xml" xlink:type="simple" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../bus/gl-bus-2020-12-31-label-ja.xml" xlink:type="simple" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
+			<link:linkbaseRef xlink:href="../../muc/gl-muc-2020-12-31-label-ja.xml" xlink:type="simple" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../taf/gl-taf-2020-12-31-label-ja.xml" xlink:type="simple" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 			<link:linkbaseRef xlink:href="../../cen/gl-cen-2020-12-31-label-ja.xml" xlink:type="simple" xlink:title="Label Links, ja" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 		</appinfo>
 	</annotation>
+
 </xsd:schema>

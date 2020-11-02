@@ -16,7 +16,8 @@ xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2020-12-31">
 	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="gl-usk-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+<!--			<link:linkbaseRef xlink:href="gl-usk-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+-->
 			<link:linkbaseRef xlink:href="gl-usk-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 		</appinfo>
 	</annotation>
@@ -91,20 +92,3 @@ xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2020-12-31">
 			<restriction base="xbrli:dateTimeItemType"/>
 		</simpleContent>
 	</complexType>
-  <!-- item usk -->
-	<element name="usk-1" id="gl-usk_reversingStdId" type="gl-usk:reversingStdIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-2" id="gl-usk_recurringStdDescription" type="gl-usk:recurringStdDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-3" id="gl-usk_frequencyInterval" type="gl-usk:frequencyIntervalItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-4" id="gl-usk_frequencyUnit" type="gl-usk:frequencyUnitItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-5" id="gl-usk_repetitionsRemaining" type="gl-usk:repetitionsRemainingItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-6" id="gl-usk_nextDateRepeat" type="gl-usk:nextDateRepeatItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-7" id="gl-usk_lastDateRepeat" type="gl-usk:lastDateRepeatItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-8" id="gl-usk_endDateRepeatingEntry" type="gl-usk:endDateRepeatingEntryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-9" id="gl-usk_reverse" type="gl-usk:reverseTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-10" id="gl-usk_reversingDate" type="gl-usk:reversingDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-11" id="gl-usk_jobCode" type="gl-usk:jobCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-12" id="gl-usk_jobDescription" type="gl-usk:jobDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-13" id="gl-usk_jobPhaseCode" type="gl-usk:jobPhaseCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-14" id="gl-usk_jobPhaseDescription" type="gl-usk:jobPhaseDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="usk-15" id="gl-usk_jobActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-</schema>

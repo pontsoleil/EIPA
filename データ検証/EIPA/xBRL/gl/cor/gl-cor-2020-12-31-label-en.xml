@@ -60,6 +60,196 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entityInformation_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-3-en_537d4c1ada90ea2755c91727202bc0b2"/>
     <link:label xlink:type="resource" xlink:label="lbl_corG-3-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Entity Information section</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_corG-3-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Holder for entity information - information about the reporting organization.</link:label>
+    <!-- corG-9 gl-cor:identifierReference -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-9-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-9-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Reference</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-9-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identification for customer, vendor, or employee.</link:label>
+    <!-- cor-44 gl-cor:identifierCode -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierCode" xlink:label="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-44-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-44-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">ID Number (internal)</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-44-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Internal ID Number associated with identifierReference</link:label>
+    <!-- corG-10 gl-cor:identifierExternalReference -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierExternalReference" xlink:label="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-10-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-10-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-10-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Structure containing references to an external authority associated with identifier</link:label>
+    <!-- cor-45 gl-cor:identifierAuthorityCode -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthorityCode" xlink:label="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-45-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-45-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority ID Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-45-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">External Authority (e,g, Tax Authority) ID Number associated with identifierReference</link:label>
+    <!-- cor-46 gl-cor:identifierAuthority -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthority" xlink:label="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-46-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-46-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-46-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Name of External Authority (e.g. Tax Authority)</link:label>
+    <!-- cor-47 gl-cor:identifierAuthorityVerificationDate -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthorityVerificationDate" xlink:label="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-47-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-47-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority Verification Date</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-47-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Date on which the External Authority last performed a verification</link:label>
+    <!-- cor-48 gl-cor:identifierOrganizationType -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierOrganizationType" xlink:label="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-48-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-48-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Organization Type</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-48-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Organization Type</link:label>
+    <!-- cor-49 gl-cor:identifierOrganizationTypeDescription -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierOrganizationTypeDescription" xlink:label="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-49-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-49-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Organization Type Description</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-49-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Free format description of the identifier organization type</link:label>
+    <!-- cor-50 gl-cor:identifierDescription -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierDescription" xlink:label="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-50-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-50-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Description</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-50-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Textual description of identifierReference.</link:label>
+    <!-- cor-51 gl-cor:identifierType -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierType" xlink:label="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-51-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-51-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Type</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-51-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Entity type (enumerated): e.g., customer, vendor, employee.</link:label>
+    <!-- cor-52 gl-cor:identifierCategory -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierCategory" xlink:label="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-52-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-52-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Category</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-52-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by business).</link:label>
+    <!-- corG-11 gl-cor:identifierEMail -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEMail" xlink:label="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-11-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-11-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Email Address</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-11-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Email address for Identifier.</link:label>
+    <!-- cor-53 gl-cor:identifierEmailAddressUsage -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEmailAddressUsage" xlink:label="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-53-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-53-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Email Address Usage</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-53-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Email Address Usage (e.g. Orders, Head Office, IR)</link:label>
+    <!-- cor-54 gl-cor:identifierEmailAddress -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEmailAddress" xlink:label="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-54-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-54-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Email Address</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-54-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Email Address</link:label>
+    <!-- corG-12 gl-cor:identifierPhoneNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhoneNumber" xlink:label="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-12-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-12-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Phone Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-12-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Phone number related to Identifier.</link:label>
+    <!-- cor-55 gl-cor:identifierPhoneNumberDescription -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhoneNumberDescription" xlink:label="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-55-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-55-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Phone Number Usage</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-55-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Phone Number Usage (e.g. Main, Investor relations, etc.)</link:label>
+    <!-- cor-56 gl-cor:identifierPhone -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhone" xlink:label="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-56-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-56-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Phone Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-56-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Phone Number</link:label>
+    <!-- corG-13 gl-cor:identifierFaxNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFaxNumber" xlink:label="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-13-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-13-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Fax Number Structure</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-13-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Fax number structure related to identifier.</link:label>
+    <!-- cor-57 gl-cor:identifierFaxNumberUsage -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFaxNumberUsage" xlink:label="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-57-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-57-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Fax Number Usage</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-57-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Fax Number Usage (e.g. Orders, Head Office, IR)</link:label>
+    <!-- cor-58 gl-cor:identifierFax -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFax" xlink:label="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-58-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-58-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Fax Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-58-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Fax Number</link:label>
+    <!-- corG-14 gl-cor:identifierContactInformationStructure -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactInformationStructure" xlink:label="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-14-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-14-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Information Structure</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-14-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Information Structure</link:label>
+    <!-- cor-59 gl-cor:identifierContactPrefix -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPrefix" xlink:label="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-59-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-59-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Prefix</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-59-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Prefix (e.g. Dr., Mr., Mrs.)</link:label>
+    <!-- cor-60 gl-cor:identifierContactLastName -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactLastName" xlink:label="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-60-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-60-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Last Name</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-60-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Last or Family Name</link:label>
+    <!-- cor-61 gl-cor:identifierContactFirstName -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFirstName" xlink:label="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-61-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-61-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact First Name</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-61-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">First or given name</link:label>
+    <!-- cor-62 gl-cor:identifierContactSuffix -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactSuffix" xlink:label="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-62-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-62-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Suffix</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-62-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Suffix (e.g. MD, CPA, Jr.)</link:label>
+    <!-- cor-63 gl-cor:identifierContactAttentionLine -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactAttentionLine" xlink:label="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-63-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-63-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Attention Line</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-63-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Attention Line</link:label>
+    <!-- cor-64 gl-cor:identifierContactPositionRole -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPositionRole" xlink:label="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-64-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-64-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Position/Role</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-64-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Position or Role</link:label>
+    <!-- corG-15 gl-cor:identifierContactPhone -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhone" xlink:label="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-15-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-15-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Phone</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-15-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Phone Number</link:label>
+    <!-- cor-65 gl-cor:identifierContactPhoneNumberDescription -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhoneNumberDescription" xlink:label="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-65-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-65-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Phone Number Usage</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-65-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Phone Number Usage (Main, Investor Relations, etc.)</link:label>
+    <!-- cor-66 gl-cor:identifierContactPhoneNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhoneNumber" xlink:label="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-66-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-66-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Phone Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-66-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Phone Number</link:label>
+    <!-- corG-16 gl-cor:identifierContactFax -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFax" xlink:label="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-16-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-16-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Fax Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-16-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Fax Number</link:label>
+    <!-- cor-67 gl-cor:identifierContactFaxNumberUsage -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFaxNumberUsage" xlink:label="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-67-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-67-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Fax Number Usage</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-67-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Fax Number Usage (e.g. Orders, Head Office, IR)</link:label>
+    <!-- cor-68 gl-cor:identifierContactFaxNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFaxNumber" xlink:label="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-68-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-68-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Fax Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-68-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Fax Number</link:label>
+    <!-- corG-17 gl-cor:identifierContactEmail -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmail" xlink:label="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-17-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-17-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Email Address</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-17-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Email Address</link:label>
+    <!-- cor-69 gl-cor:identifierContactEmailAddressUsage -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmailAddressUsage" xlink:label="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-69-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-69-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Email Address Usage</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-69-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Email Address Usage (e.g. Orders, Head Office, IR)</link:label>
+    <!-- cor-70 gl-cor:identifierContactEmailAddress -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmailAddress" xlink:label="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-70-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-70-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Email Address</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-70-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Email Address</link:label>
+    <!-- cor-71 gl-cor:identifierContactType -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactType" xlink:label="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-71-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-71-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Type</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-71-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Type</link:label>
+    <!-- cor-72 gl-cor:identifierActive -->
+    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierActive" xlink:label="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-72-en_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-72-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Active</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-72-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Boolean to indicate whether the identifier is active (="true") or inactive (="false")</link:label>
     <!-- corG-4 gl-cor:entryHeader -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader_537d4c1ada90ea2755c91727202bc0b2"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryHeader_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-4-en_537d4c1ada90ea2755c91727202bc0b2"/>
@@ -255,196 +445,6 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-43-en_537d4c1ada90ea2755c91727202bc0b2"/>
     <link:label xlink:type="resource" xlink:label="lbl_cor-43-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Posting Date</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cor-43-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.</link:label>
-    <!-- corG-9 gl-cor:identifierReference -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-9-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-9-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Reference</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-9-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identification for customer, vendor, or employee.</link:label>
-    <!-- cor-44 gl-cor:identifierCode -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierCode" xlink:label="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-44-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-44-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">ID Number (internal)</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-44-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Internal ID Number associated with identifierReference</link:label>
-    <!-- corG-10 gl-cor:identifierExternalReference -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierExternalReference" xlink:label="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-10-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-10-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-10-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Structure containing references to an external authority associated with identifier</link:label>
-    <!-- cor-45 gl-cor:identifierAuthorityCode -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthorityCode" xlink:label="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-45-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-45-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority ID Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-45-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">External Authority (e,g, Tax Authority) ID Number associated with identifierReference</link:label>
-    <!-- cor-46 gl-cor:identifierAuthority -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthority" xlink:label="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-46-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-46-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-46-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Name of External Authority (e.g. Tax Authority)</link:label>
-    <!-- cor-47 gl-cor:identifierAuthorityVerificationDate -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthorityVerificationDate" xlink:label="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-47-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-47-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">External Authority Verification Date</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-47-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Date on which the External Authority last performed a verification</link:label>
-    <!-- cor-48 gl-cor:identifierOrganizationType -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierOrganizationType" xlink:label="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-48-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-48-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Organization Type</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-48-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Organization Type</link:label>
-    <!-- cor-49 gl-cor:identifierOrganizationTypeDescription -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierOrganizationTypeDescription" xlink:label="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-49-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-49-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Organization Type Description</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-49-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Free format description of the identifier organization type</link:label>
-    <!-- cor-50 gl-cor:identifierDescription -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierDescription" xlink:label="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-50-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-50-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Description</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-50-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Textual description of identifierReference.</link:label>
-    <!-- cor-51 gl-cor:identifierType -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierType" xlink:label="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-51-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-51-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Type</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-51-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Entity type (enumerated): e.g., customer, vendor, employee.</link:label>
-    <!-- cor-52 gl-cor:identifierCategory -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierCategory" xlink:label="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-52-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-52-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Category</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-52-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by business).</link:label>
-    <!-- corG-11 gl-cor:identifierEMail -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEMail" xlink:label="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-11-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-11-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Email Address</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-11-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Email address for Identifier.</link:label>
-    <!-- cor-53 gl-cor:identifierEmailAddressUsage -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEmailAddressUsage" xlink:label="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-53-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-53-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Email Address Usage</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-53-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Email Address Usage (e.g. Orders, Head Office, IR)</link:label>
-    <!-- cor-54 gl-cor:identifierEmailAddress -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEmailAddress" xlink:label="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-54-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-54-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Email Address</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-54-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Email Address</link:label>
-    <!-- corG-12 gl-cor:identifierPhoneNumber -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhoneNumber" xlink:label="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-12-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-12-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Phone Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-12-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Phone number related to Identifier.</link:label>
-    <!-- cor-55 gl-cor:identifierPhoneNumberDescription -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhoneNumberDescription" xlink:label="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-55-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-55-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Phone Number Usage</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-55-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Phone Number Usage (e.g. Main, Investor relations, etc.)</link:label>
-    <!-- cor-56 gl-cor:identifierPhone -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhone" xlink:label="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-56-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-56-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Phone Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-56-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Phone Number</link:label>
-    <!-- corG-13 gl-cor:identifierFaxNumber -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFaxNumber" xlink:label="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-13-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-13-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Fax Number Structure</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-13-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Fax number structure related to identifier.</link:label>
-    <!-- cor-57 gl-cor:identifierFaxNumberUsage -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFaxNumberUsage" xlink:label="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-57-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-57-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Fax Number Usage</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-57-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Fax Number Usage (e.g. Orders, Head Office, IR)</link:label>
-    <!-- cor-58 gl-cor:identifierFax -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFax" xlink:label="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-58-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-58-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Fax Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-58-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Fax Number</link:label>
-    <!-- corG-14 gl-cor:identifierContactInformationStructure -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactInformationStructure" xlink:label="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-14-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-14-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Information Structure</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-14-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Information Structure</link:label>
-    <!-- cor-59 gl-cor:identifierContactPrefix -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPrefix" xlink:label="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-59-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-59-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Prefix</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-59-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Prefix (e.g. Dr., Mr., Mrs.)</link:label>
-    <!-- cor-60 gl-cor:identifierContactLastName -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactLastName" xlink:label="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-60-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-60-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Last Name</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-60-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Last or Family Name</link:label>
-    <!-- cor-61 gl-cor:identifierContactFirstName -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFirstName" xlink:label="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-61-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-61-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact First Name</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-61-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">First or given name</link:label>
-    <!-- cor-62 gl-cor:identifierContactSuffix -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactSuffix" xlink:label="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-62-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-62-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Suffix</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-62-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Suffix (e.g. MD, CPA, Jr.)</link:label>
-    <!-- cor-63 gl-cor:identifierContactAttentionLine -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactAttentionLine" xlink:label="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-63-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-63-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Attention Line</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-63-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Attention Line</link:label>
-    <!-- cor-64 gl-cor:identifierContactPositionRole -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPositionRole" xlink:label="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-64-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-64-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Position/Role</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-64-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Position or Role</link:label>
-    <!-- corG-15 gl-cor:identifierContactPhone -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhone" xlink:label="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-15-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-15-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Phone</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-15-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Phone Number</link:label>
-    <!-- cor-65 gl-cor:identifierContactPhoneNumberDescription -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhoneNumberDescription" xlink:label="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-65-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-65-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Phone Number Usage</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-65-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Phone Number Usage (Main, Investor Relations, etc.)</link:label>
-    <!-- cor-66 gl-cor:identifierContactPhoneNumber -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhoneNumber" xlink:label="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-66-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-66-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Phone Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-66-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Phone Number</link:label>
-    <!-- corG-16 gl-cor:identifierContactFax -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFax" xlink:label="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-16-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-16-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Fax Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-16-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Fax Number</link:label>
-    <!-- cor-67 gl-cor:identifierContactFaxNumberUsage -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFaxNumberUsage" xlink:label="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-67-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-67-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Fax Number Usage</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-67-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Fax Number Usage (e.g. Orders, Head Office, IR)</link:label>
-    <!-- cor-68 gl-cor:identifierContactFaxNumber -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFaxNumber" xlink:label="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-68-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-68-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Fax Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-68-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Fax Number</link:label>
-    <!-- corG-17 gl-cor:identifierContactEmail -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmail" xlink:label="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-17-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-17-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Email Address</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_corG-17-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Email Address</link:label>
-    <!-- cor-69 gl-cor:identifierContactEmailAddressUsage -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmailAddressUsage" xlink:label="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-69-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-69-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Email Address Usage</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-69-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Email Address Usage (e.g. Orders, Head Office, IR)</link:label>
-    <!-- cor-70 gl-cor:identifierContactEmailAddress -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmailAddress" xlink:label="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-70-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-70-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifer Contact Email Address</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-70-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifer Contact Email Address</link:label>
-    <!-- cor-71 gl-cor:identifierContactType -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactType" xlink:label="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-71-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-71-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Contact Type</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-71-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Identifier Contact Type</link:label>
-    <!-- cor-72 gl-cor:identifierActive -->
-    <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierActive" xlink:label="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-72-en_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-72-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Active</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_cor-72-en_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Boolean to indicate whether the identifier is active (="true") or inactive (="false")</link:label>
     <!-- cor-73 gl-cor:documentType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentType" xlink:label="gl-cor_documentType_537d4c1ada90ea2755c91727202bc0b2"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-73-en_537d4c1ada90ea2755c91727202bc0b2"/>

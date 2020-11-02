@@ -505,6 +505,71 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_accountantContactActive_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-84-en_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:label xlink:type="resource" xlink:label="lbl_bus-84-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Accountant Contact Active</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_bus-84-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Boolean to indicate whether the contact is active (="true") or inactive (="false")</link:label>
+    <!-- bus-120 gl-bus:identifierPurpose -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierPurpose" xlink:label="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-120-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-120-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Purpose</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-120-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Freeform for codes like purchasing, billing, manufacturing at identifier level.</link:label>
+    <!-- busG-20 gl-bus:identifierAddress -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddress" xlink:label="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_busG-20-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_busG-20-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Address</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_busG-20-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Address (block) of customer, vendor, employee for integration purposes, VAT.</link:label>
+    <!-- bus-121 gl-bus:identifierAddressDescription -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressDescription" xlink:label="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-121-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-121-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Description</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-121-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">For use when the addressee identifier for this address is different than the primary description of the identified party.</link:label>
+    <!-- bus-122 gl-bus:identifierAddressPurpose -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressPurpose" xlink:label="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-122-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-122-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Purpose</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-122-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Freeform for codes like shipping, billing, mailing at address level.  Allows identification of multiple purpose addresses for each identifier.</link:label>
+    <!-- bus-123 gl-bus:identifierBuildingNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierBuildingNumber" xlink:label="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-123-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-123-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Building Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-123-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Building Number for Identifier Address</link:label>
+    <!-- bus-124 gl-bus:identifierStreet -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStreet" xlink:label="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-124-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-124-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Street</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-124-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Street address.</link:label>
+    <!-- bus-125 gl-bus:identifierAddressStreet2 -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressStreet2" xlink:label="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-125-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-125-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Address Detail</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-125-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Address Detail for Identifier Address</link:label>
+    <!-- bus-126 gl-bus:identifierCity -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCity" xlink:label="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-126-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-126-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">City</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-126-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">City</link:label>
+    <!-- bus-127 gl-bus:identifierStateOrProvince -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStateOrProvince" xlink:label="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-127-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-127-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">State or Province</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-127-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">State or province</link:label>
+    <!-- bus-128 gl-bus:identifierCountry -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCountry" xlink:label="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-128-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-128-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Country</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-128-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Country</link:label>
+    <!-- bus-129 gl-bus:identifierZipOrPostalCode -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierZipOrPostalCode" xlink:label="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-129-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-129-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Zip or Postal Code</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-129-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Zip or other postal code</link:label>
+    <!-- bus-130 gl-bus:identifierAddressLocationIdentifier -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressLocationIdentifier" xlink:label="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-130-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-130-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Location ID</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-130-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A code used to identify the identifier and to associate it with contacts</link:label>
+    <!-- bus-131 gl-bus:identifierLocationIdentifierCrossReference -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierLocationIdentifierCrossReference" xlink:label="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-131-en_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-131-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Location ID Cross Reference</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-131-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">This code is used to associate the contact with a specific location for the Identifier. Its value should be the same as that of the identifierAddressLocationIdentifier</link:label>
     <!-- busG-18 gl-bus:reportingCalendar -->
     <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_reportingCalendar" xlink:label="gl-bus_reportingCalendar_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_reportingCalendar_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_busG-18-en_7834dadcdb71e148646ede9a42e7d1d4"/>
@@ -690,71 +755,6 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_allocationCode_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-119-en_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:label xlink:type="resource" xlink:label="lbl_bus-119-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Allocation Code</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_bus-119-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code associated with the calculation formula: e.g. (D)ivide by number of periods, (T)otal for period given</link:label>
-    <!-- bus-120 gl-bus:identifierPurpose -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierPurpose" xlink:label="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-120-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-120-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Purpose</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-120-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Freeform for codes like purchasing, billing, manufacturing at identifier level.</link:label>
-    <!-- busG-20 gl-bus:identifierAddress -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddress" xlink:label="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_busG-20-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_busG-20-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Address</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_busG-20-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Address (block) of customer, vendor, employee for integration purposes, VAT.</link:label>
-    <!-- bus-121 gl-bus:identifierAddressDescription -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressDescription" xlink:label="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-121-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-121-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Description</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-121-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">For use when the addressee identifier for this address is different than the primary description of the identified party.</link:label>
-    <!-- bus-122 gl-bus:identifierAddressPurpose -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressPurpose" xlink:label="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-122-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-122-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Purpose</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-122-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Freeform for codes like shipping, billing, mailing at address level.  Allows identification of multiple purpose addresses for each identifier.</link:label>
-    <!-- bus-123 gl-bus:identifierBuildingNumber -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierBuildingNumber" xlink:label="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-123-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-123-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Building Number</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-123-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Building Number for Identifier Address</link:label>
-    <!-- bus-124 gl-bus:identifierStreet -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStreet" xlink:label="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-124-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-124-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Street</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-124-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Street address.</link:label>
-    <!-- bus-125 gl-bus:identifierAddressStreet2 -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressStreet2" xlink:label="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-125-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-125-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Address Detail</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-125-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Address Detail for Identifier Address</link:label>
-    <!-- bus-126 gl-bus:identifierCity -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCity" xlink:label="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-126-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-126-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">City</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-126-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">City</link:label>
-    <!-- bus-127 gl-bus:identifierStateOrProvince -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStateOrProvince" xlink:label="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-127-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-127-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">State or Province</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-127-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">State or province</link:label>
-    <!-- bus-128 gl-bus:identifierCountry -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCountry" xlink:label="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-128-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-128-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Country</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-128-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Country</link:label>
-    <!-- bus-129 gl-bus:identifierZipOrPostalCode -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierZipOrPostalCode" xlink:label="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-129-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-129-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Zip or Postal Code</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-129-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Zip or other postal code</link:label>
-    <!-- bus-130 gl-bus:identifierAddressLocationIdentifier -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressLocationIdentifier" xlink:label="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-130-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-130-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Location ID</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-130-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A code used to identify the identifier and to associate it with contacts</link:label>
-    <!-- bus-131 gl-bus:identifierLocationIdentifierCrossReference -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierLocationIdentifierCrossReference" xlink:label="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-131-en_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-131-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Identifier Address Location ID Cross Reference</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-131-en_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">This code is used to associate the contact with a specific location for the Identifier. Its value should be the same as that of the identifierAddressLocationIdentifier</link:label>
     <!-- bus-132 gl-bus:documentReceivedDate -->
     <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_documentReceivedDate" xlink:label="gl-bus_documentReceivedDate_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_documentReceivedDate_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-132-en_7834dadcdb71e148646ede9a42e7d1d4"/>

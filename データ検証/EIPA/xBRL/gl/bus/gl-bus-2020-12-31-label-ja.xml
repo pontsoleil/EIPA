@@ -505,6 +505,71 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_accountantContactActive_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-84-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:label xlink:type="resource" xlink:label="lbl_bus-84-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">会計士担当者有効性</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_bus-84-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者が有効か無効かを示すブール値。</link:label>
+    <!-- bus-120 gl-bus:identifierPurpose -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierPurpose" xlink:label="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-120-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-120-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE目的</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-120-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。</link:label>
+    <!-- busG-20 gl-bus:identifierAddress -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddress" xlink:label="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_busG-20-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_busG-20-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE住所】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_busG-20-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">統合目的やVATのための、顧客、仕入先、従業員の住所(ブロック)。</link:label>
+    <!-- bus-121 gl-bus:identifierAddressDescription -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressDescription" xlink:label="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-121-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-121-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-121-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この住所の宛先が、識別されたCVEの組織の代表記述と異なる場合に使用。</link:label>
+    <!-- bus-122 gl-bus:identifierAddressPurpose -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressPurpose" xlink:label="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-122-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-122-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所目的</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-122-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">配送、請求、郵送のような、住所レベルのコードの自由記述。個々のCVE識別子に対して、複数の住所の用途を識別する。</link:label>
+    <!-- bus-123 gl-bus:identifierBuildingNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierBuildingNumber" xlink:label="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-123-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-123-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所建物番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-123-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の住所の建物番号。</link:label>
+    <!-- bus-124 gl-bus:identifierStreet -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStreet" xlink:label="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-124-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-124-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所通り</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-124-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の通り。</link:label>
+    <!-- bus-125 gl-bus:identifierAddressStreet2 -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressStreet2" xlink:label="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-125-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-125-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所詳細</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-125-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の住所の詳細。</link:label>
+    <!-- bus-126 gl-bus:identifierCity -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCity" xlink:label="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-126-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-126-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所都市</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-126-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">都市。</link:label>
+    <!-- bus-127 gl-bus:identifierStateOrProvince -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStateOrProvince" xlink:label="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-127-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-127-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所州</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-127-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">州や地方。</link:label>
+    <!-- bus-128 gl-bus:identifierCountry -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCountry" xlink:label="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-128-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-128-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所国</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-128-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">国。</link:label>
+    <!-- bus-129 gl-bus:identifierZipOrPostalCode -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierZipOrPostalCode" xlink:label="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-129-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-129-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所郵便番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-129-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">郵便番号。</link:label>
+    <!-- bus-130 gl-bus:identifierAddressLocationIdentifier -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressLocationIdentifier" xlink:label="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-130-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-130-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE所在地識別子</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-130-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子を識別したり、担当者と関係付けるコード。</link:label>
+    <!-- bus-131 gl-bus:identifierLocationIdentifierCrossReference -->
+    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierLocationIdentifierCrossReference" xlink:label="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-131-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-131-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE所在地相互参照情報</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-131-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者とCVE識別子の所在地を関係付けるためのコード。identifierAddressLocationIdentifierと同じ値であるべき。</link:label>
     <!-- busG-18 gl-bus:reportingCalendar -->
     <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_reportingCalendar" xlink:label="gl-bus_reportingCalendar_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_reportingCalendar_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_busG-18-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
@@ -690,71 +755,6 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_allocationCode_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-119-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:label xlink:type="resource" xlink:label="lbl_bus-119-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">配分コード</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_bus-119-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計算方式に関するコード。例えば、(D)期間数で分割、(T)与えられた期間の合計。</link:label>
-    <!-- bus-120 gl-bus:identifierPurpose -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierPurpose" xlink:label="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-120-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-120-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE目的</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-120-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。</link:label>
-    <!-- busG-20 gl-bus:identifierAddress -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddress" xlink:label="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddress_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_busG-20-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_busG-20-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE住所】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_busG-20-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">統合目的やVATのための、顧客、仕入先、従業員の住所(ブロック)。</link:label>
-    <!-- bus-121 gl-bus:identifierAddressDescription -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressDescription" xlink:label="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressDescription_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-121-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-121-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所説明</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-121-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この住所の宛先が、識別されたCVEの組織の代表記述と異なる場合に使用。</link:label>
-    <!-- bus-122 gl-bus:identifierAddressPurpose -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressPurpose" xlink:label="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressPurpose_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-122-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-122-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所目的</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-122-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">配送、請求、郵送のような、住所レベルのコードの自由記述。個々のCVE識別子に対して、複数の住所の用途を識別する。</link:label>
-    <!-- bus-123 gl-bus:identifierBuildingNumber -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierBuildingNumber" xlink:label="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierBuildingNumber_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-123-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-123-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所建物番号</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-123-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の住所の建物番号。</link:label>
-    <!-- bus-124 gl-bus:identifierStreet -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStreet" xlink:label="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStreet_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-124-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-124-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所通り</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-124-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の通り。</link:label>
-    <!-- bus-125 gl-bus:identifierAddressStreet2 -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressStreet2" xlink:label="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressStreet2_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-125-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-125-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所詳細</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-125-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の住所の詳細。</link:label>
-    <!-- bus-126 gl-bus:identifierCity -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCity" xlink:label="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCity_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-126-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-126-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所都市</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-126-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">都市。</link:label>
-    <!-- bus-127 gl-bus:identifierStateOrProvince -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierStateOrProvince" xlink:label="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierStateOrProvince_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-127-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-127-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所州</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-127-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">州や地方。</link:label>
-    <!-- bus-128 gl-bus:identifierCountry -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierCountry" xlink:label="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierCountry_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-128-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-128-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所国</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-128-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">国。</link:label>
-    <!-- bus-129 gl-bus:identifierZipOrPostalCode -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierZipOrPostalCode" xlink:label="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierZipOrPostalCode_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-129-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-129-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE住所郵便番号</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-129-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">郵便番号。</link:label>
-    <!-- bus-130 gl-bus:identifierAddressLocationIdentifier -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierAddressLocationIdentifier" xlink:label="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierAddressLocationIdentifier_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-130-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-130-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE所在地識別子</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-130-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子を識別したり、担当者と関係付けるコード。</link:label>
-    <!-- bus-131 gl-bus:identifierLocationIdentifierCrossReference -->
-    <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_identifierLocationIdentifierCrossReference" xlink:label="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_identifierLocationIdentifierCrossReference_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-131-ja_7834dadcdb71e148646ede9a42e7d1d4"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-131-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE所在地相互参照情報</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-131-ja_7834dadcdb71e148646ede9a42e7d1d4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者とCVE識別子の所在地を関係付けるためのコード。identifierAddressLocationIdentifierと同じ値であるべき。</link:label>
     <!-- bus-132 gl-bus:documentReceivedDate -->
     <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_documentReceivedDate" xlink:label="gl-bus_documentReceivedDate_7834dadcdb71e148646ede9a42e7d1d4"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_documentReceivedDate_7834dadcdb71e148646ede9a42e7d1d4" xlink:to="lbl_bus-132-ja_7834dadcdb71e148646ede9a42e7d1d4"/>

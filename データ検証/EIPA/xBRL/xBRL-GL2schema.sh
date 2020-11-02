@@ -39,7 +39,7 @@ END {
   printf "</schema>";
 }' > $Tmp-elements
 
-cat gl/source/xBRL-GL-"$1"-head.txt $Tmp-elements > gl/source/gl-"$1"-2020-12-31.xsd
+cat gl/source/head/xBRL-GL-"$1"-head.txt $Tmp-elements > gl/source/gl-"$1"-2020-12-31.xsd
 
 # --------------------------------------------------------------------
 rm $Tmp-*
