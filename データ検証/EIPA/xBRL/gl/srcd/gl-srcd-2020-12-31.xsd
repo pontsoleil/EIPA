@@ -11,7 +11,7 @@ xmlns:link="http://www.xbrl.org/2003/linkbase"
 xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	<annotation>
 		<appinfo>
-			<!-- <link:linkbaseRef xlink:href="gl-srcd-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/> -->
+			<link:linkbaseRef xlink:href="gl-srcd-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
 			<link:linkbaseRef xlink:href="gl-srcd-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
 		</appinfo>
 	</annotation>
@@ -179,17 +179,17 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	</complexType>
 
 	<!-- 2020-11-01 -->
-	<complexType name="segmentExplicitDimensionItemType"＞
+	<complexType name="segmentExplicitDimensionItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
 	</complexType>
-	<complexType name="segmentExplicitDimensionValueItemType"＞
+	<complexType name="segmentExplicitDimensionValueItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
 	</complexType>
-	<complexType name="segmentTypedDimensionItemType"
+	<complexType name="segmentTypedDimensionItemType">
 		<simpleContent>
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
