@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <!-- taf-1 gl-taf:tickingField -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_tickingField" xlink:label="gl-taf_tickingField_09cd5db6af785f7c72dfb225c35bb813"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_tickingField_09cd5db6af785f7c72dfb225c35bb813" xlink:to="lbl_taf-1-en_09cd5db6af785f7c72dfb225c35bb813"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-1-en_09cd5db6af785f7c72dfb225c35bb813" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Ticking Field</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-1-en_09cd5db6af785f7c72dfb225c35bb813" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Signifies that an item has been cleared, finished, finalized. When checking accounts are called for, the tick or letter showing this was done appears in this field. Can also be used for identifying that the\noriginal document against which a payment or DR/CR memo applies has been reconciled.</link:label>
+    <!-- taf-2 gl-taf:documentRemainingBalance -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_documentRemainingBalance" xlink:label="gl-taf_documentRemainingBalance_6dbafc24e16ada7dd7dda49b429abecd"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_documentRemainingBalance_6dbafc24e16ada7dd7dda49b429abecd" xlink:to="lbl_taf-2-en_6dbafc24e16ada7dd7dda49b429abecd"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-2-en_6dbafc24e16ada7dd7dda49b429abecd" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Document Remaining Balance</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-2-en_6dbafc24e16ada7dd7dda49b429abecd" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Balance remaining on the document</link:label>
+    <!-- taf-3 gl-taf:uniqueConsignmentReference -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_uniqueConsignmentReference" xlink:label="gl-taf_uniqueConsignmentReference_4f89d2a956f79478e5e39c68b922a3d6"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_uniqueConsignmentReference_4f89d2a956f79478e5e39c68b922a3d6" xlink:to="lbl_taf-3-en_4f89d2a956f79478e5e39c68b922a3d6"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-3-en_4f89d2a956f79478e5e39c68b922a3d6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">UCR</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-3-en_4f89d2a956f79478e5e39c68b922a3d6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Unique Consignment Reference or UCR. An "origin to destination" reference code for international consignments, developed in cooperation with the World Customs Organization and EAN International (EAN). (http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)</link:label>
+    <!-- tafG-1 gl-taf:originatingDocumentStructure -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentStructure" xlink:label="gl-taf_originatingDocumentStructure_edeb4fa06713634358341f11705e1337"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentStructure_edeb4fa06713634358341f11705e1337" xlink:to="lbl_tafG-1-en_edeb4fa06713634358341f11705e1337"/>
+    <link:label xlink:type="resource" xlink:label="lbl_tafG-1-en_edeb4fa06713634358341f11705e1337" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document  - Heading</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_tafG-1-en_edeb4fa06713634358341f11705e1337" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive structure of related documents.</link:label>
+    <!-- taf-4 gl-taf:originatingDocumentType -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentType" xlink:label="gl-taf_originatingDocumentType_5ef4f906cb4446dbf91b7b4efcaf6b8d"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentType_5ef4f906cb4446dbf91b7b4efcaf6b8d" xlink:to="lbl_taf-4-en_5ef4f906cb4446dbf91b7b4efcaf6b8d"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-4-en_5ef4f906cb4446dbf91b7b4efcaf6b8d" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document Type</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-4-en_5ef4f906cb4446dbf91b7b4efcaf6b8d" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Originating document type - order, acknowledgement, confirmation, shipment, delivery/receipt, invoice, payment, etc.</link:label>
+    <!-- taf-5 gl-taf:originatingDocumentNumber -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentNumber" xlink:label="gl-taf_originatingDocumentNumber_9632ddb591442341eb39f757a057043a"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentNumber_9632ddb591442341eb39f757a057043a" xlink:to="lbl_taf-5-en_9632ddb591442341eb39f757a057043a"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-5-en_9632ddb591442341eb39f757a057043a" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document Number</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-5-en_9632ddb591442341eb39f757a057043a" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Originating document number</link:label>
+    <!-- taf-6 gl-taf:originatingDocumentDate -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentDate" xlink:label="gl-taf_originatingDocumentDate_b90b0deabc8d31495faf4342969d9782"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentDate_b90b0deabc8d31495faf4342969d9782" xlink:to="lbl_taf-6-en_b90b0deabc8d31495faf4342969d9782"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-6-en_b90b0deabc8d31495faf4342969d9782" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document Date</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-6-en_b90b0deabc8d31495faf4342969d9782" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Originating document date</link:label>
+    <!-- taf-7 gl-taf:originatingDocumentIdentifierType -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentIdentifierType" xlink:label="gl-taf_originatingDocumentIdentifierType_9a9db422b2600ee03177d43e71481f97"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentIdentifierType_9a9db422b2600ee03177d43e71481f97" xlink:to="lbl_taf-7-en_9a9db422b2600ee03177d43e71481f97"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-7-en_9a9db422b2600ee03177d43e71481f97" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document Identifier Type</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-7-en_9a9db422b2600ee03177d43e71481f97" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Originating document identifier type: e.g. Customer, Vendor, Employee, Other</link:label>
+    <!-- taf-8 gl-taf:originatingDocumentIdentifierCode -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentIdentifierCode" xlink:label="gl-taf_originatingDocumentIdentifierCode_b232a540dc444004b45efb1e6e163a61"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentIdentifierCode_b232a540dc444004b45efb1e6e163a61" xlink:to="lbl_taf-8-en_b232a540dc444004b45efb1e6e163a61"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-8-en_b232a540dc444004b45efb1e6e163a61" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document Identifier Code</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-8-en_b232a540dc444004b45efb1e6e163a61" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Originating document identifier code</link:label>
+    <!-- taf-9 gl-taf:originatingDocumentIdentifierTaxCode -->
+    <link:loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentIdentifierTaxCode" xlink:label="gl-taf_originatingDocumentIdentifierTaxCode_eccfe90b317dcfc87646a545a613b951"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-taf_originatingDocumentIdentifierTaxCode_eccfe90b317dcfc87646a545a613b951" xlink:to="lbl_taf-9-en_eccfe90b317dcfc87646a545a613b951"/>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-9-en_eccfe90b317dcfc87646a545a613b951" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Originating Document Identifier Tax Code</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_taf-9-en_eccfe90b317dcfc87646a545a613b951" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Originating document identifier tax code</link:label>
+ </link:labelLink>
+</link:linkbase>
