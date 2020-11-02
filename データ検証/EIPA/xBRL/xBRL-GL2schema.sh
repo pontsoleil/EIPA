@@ -14,14 +14,14 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xml ============================================================
-# seq code	level	module	term	type	label	description	label-ja	description-ja
-# 1   2     3     4       5     6     7     8           9         10
+# code seq level module term type label description label-ja description-ja
+# 1    2   3     4      5    6    7     8           9         10
 cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
     printf "\n  <!-- item %s -->\n", module;
 }
 {
   if (module==$4) {
-    code=$2;
+    code=$1;
     type=$6;
     term=$5;
     if ("_"==$6) {

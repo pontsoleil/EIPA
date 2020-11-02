@@ -14,9 +14,9 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xpath ============================================================
-# code seq level module term type label description label-ja description-ja
-# 1    2   3     4      5    6    7     8           9         10
-cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
+# code seq level module term
+# 1    2   3     4      5
+cat gl/source/plt.tsv | awk -F'\t' 'BEGIN {
   n=0;
   parent="root";
   curent_level=1;
@@ -35,48 +35,45 @@ cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
   print "  <presentationLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">";
 }
 {
-  code=$1;
-  seq=$2;
-  level=$3;
-  term=$5;
-  currents[level]=code;
-  if (1 == level) {
-    parent="root";
-  }
-  else {
-    parent=currents[level - 1];
-  }
-  if (level < current_level) {
-    for (i = level + 1; i < 10; i++) {
-      currents[i]="";
+  if (n > 0) {
+    code=$1;
+    seq=$2;
+    level=$3;
+    module=$4;
+    term=$5;
+    currents[level]=code;
+    if (1 == level) {
+      parent="root";
     }
-  }
-  current_level=level;
-  terms[code]=term;
-  p_module=substr(parent, 1, 3);
-  if ("src"==p_module) p_module="srcd";
-  if (level > 1) {
-    if (module==$4) {  
+    else {
+      parent=currents[level - 1];
+    }
+    if (level < current_level) {
+      for (i = level + 1; i < 10; i++) {
+        currents[i]="";
+      }
+    }
+    current_level=level;
+    terms[code]=term;
+    p_module=substr(parent, 1, 3);
+    if ("src"==p_module) p_module="srcd";
+    if (level > 1) {
       # print seq " " code " parent module=" p_module " parent=" parent " level=" level " [1]" currents[1] " [2]" currents[2] " [3]" currents[3] " [4]" currents[4] " [5]" currents[5] " [6]" currents[6] " [7]" currents[7] " [8]" currents[8] " [9]" currents[9];
       if (1!=parents[parent]) {
         parents[parent]=1;
-        if (p_module==module) {
-          printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
-        } else {
-          printf "    <loc xlink:type=\"locator\" xlink:href=\"../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
-        }
+        printf "    <loc xlink:type=\"locator\" xlink:href=\"../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
       }
-      printf "    <loc xlink:type=\"locator\" xlink:href=\"gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation child: %s\"/>\n", module, module, term, module, term, term;
+      printf "    <loc xlink:type=\"locator\" xlink:href=\"../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation child: %s\"/>\n", module, module, module, term, module, term, term;
       printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", p_module, terms[parent], module, term, terms[parent], term, seq;
     }
-    n=n+1;
   }
+  n=n+1;
 }
 END {
   print "  </presentationLink>";
   print "</linkbase>"; 
-}' > gl/source/gl-"$1"-2020-12-31-presentation.xml
+}' > gl/source/gl-plt-2020-12-31-presentation.xml
 # --------------------------------------------------------------------
 rm log/${0##*/}.$$.*
 exit 0
-# xBRL-GL2presentaton.sh
+# xBRL-GL2plt.sh

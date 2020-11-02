@@ -19,10 +19,10 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	<!-- item type -->
 	<complexType name="summaryPrecisionDecimalsComplexType">
 		<choice>
-			<element ref="gl-srcd:srcd-8"/>
-			<element ref="gl-srcd:srcd-9"/>
-			<element ref="gl-srcd:srcd-10"/>
-			<element ref="gl-srcd:srcd-11"/>
+			<element ref="gl-srcd:summaryPrecision"/>
+			<element ref="gl-srcd:summaryPrecisionINF"/>
+			<element ref="gl-srcd:summaryDecimals"/>
+			<element ref="gl-srcd:summaryDecimalsINF"/>
 		</choice>
 		<attribute name="id" type="ID"/>
 	</complexType>
@@ -177,19 +177,19 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
 	</complexType>
-	
+
 	<!-- 2020-11-01 -->
-	<complexType name="segmentExplicitDimensionItemType">
+	<complexType name="segmentExplicitDimensionItemType"＞
 		<simpleContent>
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
 	</complexType>
-	<complexType name="segmentExplicitDimensionValueItemType">
+	<complexType name="segmentExplicitDimensionValueItemType"＞
 		<simpleContent>
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>
 	</complexType>
-	<complexType name="segmentTypedDimensionItemType">
+	<complexType name="segmentTypedDimensionItemType"
 		<simpleContent>
 			<restriction base="xbrli:stringItemType"/>
 		</simpleContent>

@@ -14,8 +14,8 @@ Tmp=/tmp/${0##*/}.$$
 # === Log ============================================================
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xml ============================================================
-# code level type module term description
-# 1    2     3    4      5    6
+# code seq level module term type label description label-ja description-ja
+# 1    2   3     4      5    6    7     8           9         10
 # see https://stackoverflow.com/questions/8024392/awk-replace-a-column-with-its-hash-value
 # cat test.txt | awk '{
 # term=$0;
@@ -25,20 +25,14 @@ exec 2>log/${0##*/}.$$.log
 # print term;
 # }' > test.tsv
 # copy field to XBRL-GL.xlsx to create xBRL-GL.tsv
-## code level type module term label description
-## 1    2     3    4      5    6     7
-# code	level	module	term	type	label	description	label-ja	description-ja
-# 1     2     3       4     5     6     7           8         9
 cat gl/source/xBRL-GL.tsv | awk -F'\t' '{
   tmp="echo " $4 date " | openssl md5 | cut -f2 -d\" \"";
   tmp | getline cksum;
   close(tmp);
   print cksum "\t" $0;
 }' > $Tmp-cksum
-## cksum code level type module term label description
-## 1     2    3     4    5      6    7     8
-# cksum code	level	module	term	type	label	description	label-ja	description-ja
-# 1     2     3     4       5     6     7     8           9         10
+# cksum code seq level module term type label description label-ja description-ja
+# 1     2    3   4     5      6    7    8     9           10       11
 cat $Tmp-cksum | awk -F'\t' -v module=$1 -v lang=$2 'BEGIN {
   printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   printf "<link:linkbase xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
@@ -47,16 +41,16 @@ cat $Tmp-cksum | awk -F'\t' -v module=$1 -v lang=$2 'BEGIN {
   printf "  <link:labelLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">\n";
 }
 {
-  if (module==$4) {
+  if (module==$5) {
     code=$2;
     cksum="_" $1;
-    term=$5;
+    term=$6;
     if ("ja"==lang) {
-      label=$9;
-      description=$10;
+      label=$10;
+      description=$11;
     } else if ("en"==lang) {
-      label=$7;
-      description=$8;
+      label=$8;
+      description=$9;
     }
     if (term || description) {
       printf "    <!-- %s gl-%s:%s -->\n", code, module, term;

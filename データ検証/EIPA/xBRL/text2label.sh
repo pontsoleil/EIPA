@@ -15,12 +15,15 @@ Tmp=/tmp/${0##*/}.$$
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xml ============================================================
 # see https://stackoverflow.com/questions/8024392/awk-replace-a-column-with-its-hash-value
+
 cat eipa/source/EN_16931-1.txt | awk -F'\t' '{
   tmp="echo " $1 date " | openssl md5 | cut -f2 -d\" \"";
   tmp | getline cksum;
   close(tmp);
   print cksum "\t" $0;
 }' > $Tmp-cksum
+# cksum seq code	level	module	term	type	label	description	label-ja	description-ja
+# 1     2   3     4     5       6     7     8     9           10        11
 cat $Tmp-cksum | awk -F'\t' 'BEGIN {
   printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
   printf "<link:linkbase xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"";
