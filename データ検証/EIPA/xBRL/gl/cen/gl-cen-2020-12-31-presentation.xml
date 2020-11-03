@@ -73,20 +73,20 @@
     <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_SpecificationIdentifier" xlink:label="gl-cen_SpecificationIdentifier" xlink:title="presentation child: SpecificationIdentifier"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_PROCESS_CONTROL" xlink:to="gl-cen_SpecificationIdentifier" xlink:title="presentation: PROCESS_CONTROL to SpecificationIdentifier" use="optional" order="44"/>
     <!-- TradingName -->
-    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entityInformation" xlink:label="gl-cor_entityInformation" xlink:title="presentation parent: entityInformation"/>
+    <!-- <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entityInformation" xlink:label="gl-cor_entityInformation" xlink:title="presentation parent: entityInformation"/> -->
     <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_TradingName" xlink:label="gl-cen_TradingName" xlink:title="presentation child: TradingName"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entityInformation" xlink:to="gl-cen_TradingName" xlink:title="presentation: entityInformation to TradingName" use="optional" order="46"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_identifierReference" xlink:to="gl-cen_TradingName" xlink:title="presentation: entityInformation to TradingName" use="optional" order="46"/>
     <!-- AdditionalLegalInformation -->
     <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_AdditionalLegalInformation" xlink:label="gl-cen_AdditionalLegalInformation" xlink:title="presentation child: AdditionalLegalInformation"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entityInformation" xlink:to="gl-cen_AdditionalLegalInformation" xlink:title="presentation: entityInformation to AdditionalLegalInformation" use="optional" order="47"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_identifierReference" xlink:to="gl-cen_AdditionalLegalInformation" xlink:title="presentation: entityInformation to AdditionalLegalInformation" use="optional" order="47"/>
     <!-- organizationAddressStreet3 -->
     <loc xlink:type="locator" xlink:href="../bus/gl-bus-2020-12-31.xsd#gl-bus_organizationAddress" xlink:label="gl-bus_organizationAddress" xlink:title="presentation parent: organizationAddress"/>
     <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_organizationAddressStreet3" xlink:label="gl-cen_organizationAddressStreet3" xlink:title="presentation child: organizationAddressStreet3"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-bus_organizationAddress" xlink:to="gl-cen_organizationAddressStreet3" xlink:title="presentation: organizationAddress to organizationAddressStreet3" use="optional" order="70"/>
     <!-- tradingName -->
-    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation parent: identifierReference"/>
+    <!-- <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation parent: identifierReference"/>
     <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_tradingName" xlink:label="gl-cen_tradingName" xlink:title="presentation child: tradingName"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_identifierReference" xlink:to="gl-cen_tradingName" xlink:title="presentation: identifierReference to tradingName" use="optional" order="152"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_identifierReference" xlink:to="gl-cen_tradingName" xlink:title="presentation: identifierReference to tradingName" use="optional" order="152"/> -->
     <!-- AddressLine3 -->
     <loc xlink:type="locator" xlink:href="../bus/gl-bus-2020-12-31.xsd#gl-bus_identifierAddress" xlink:label="gl-bus_identifierAddress" xlink:title="presentation parent: identifierAddress"/>
     <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_AddressLine3" xlink:label="gl-cen_AddressLine3" xlink:title="presentation child: AddressLine3"/>
