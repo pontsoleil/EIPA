@@ -59,14 +59,14 @@
     <!-- prohibit cor:entryDetail to taf:originatingDocumentStructure -->
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_originatingDocumentStructure" priority="1" use="prohibited"/>
     <!-- cor:documentInfo to taf:originatingDocumentStructure -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_PRECEDING_INVOICE_REFERENCE" xlink:to="gl-taf_originatingDocumentStructure" priority="2" use="optional" order="30" xlink:title="presentation: PRECEDING_INVOICE_REFERENCE to originatingDocumentStructure"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-taf_originatingDocumentStructure" priority="2" use="optional" order="30" xlink:title="presentation: PRECEDING_INVOICE_REFERENCE to originatingDocumentStructure"/>
 
     <!-- InvoicedObjectIdentifier -->
-    <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_InvoicedObjectIdentifier" xlink:label="gl-cen_InvoicedObjectIdentifier" xlink:title="presentation child: InvoicedObjectIdentifier"/>
+    <!-- <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_InvoicedObjectIdentifier" xlink:label="gl-cen_InvoicedObjectIdentifier" xlink:title="presentation child: InvoicedObjectIdentifier"/> -->
     <!-- prohibit cor:entryDetail to cen:InvoicedObjectIdentifier -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="1" use="prohibited"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="1" use="prohibited"/> -->
     <!-- cor:documentInfo to cen:InvoicedObjectIdentifier -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="2" use="optional" order="39" xlink:title="presentation: documentInfo to InvoicedObjectIdentifier"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="2" use="optional" order="39" xlink:title="presentation: documentInfo to InvoicedObjectIdentifier"/> -->
 
     <!-- identifierReference -->
     <!-- <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation child: identifierReference"/> -->
