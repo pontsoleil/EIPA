@@ -69,11 +69,11 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="2" use="optional" order="39" xlink:title="presentation: documentInfo to InvoicedObjectIdentifier"/>
 
     <!-- identifierReference -->
-    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation child: identifierReference"/>
+    <!-- <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation child: identifierReference"/> -->
     <!-- prohibit cor:entryDetail to cor:identifierReference -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_identifierReference" priority="1" use="prohibited"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_identifierReference" priority="1" use="prohibited"/> -->
     <!-- cor:entityInformation to cor:identifierReference -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entityInformation" xlink:to="gl-cor_identifierReference" priority="2" use="optional" order="52.5" xlink:title="presentation: entityInformation to identifierReference"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entityInformation" xlink:to="gl-cor_identifierReference" priority="2" use="optional" order="52.5" xlink:title="presentation: entityInformation to identifierReference"/> -->
 
   </presentationLink>
 </linkbase>
