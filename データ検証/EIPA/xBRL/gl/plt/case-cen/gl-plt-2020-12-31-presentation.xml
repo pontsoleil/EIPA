@@ -6,13 +6,73 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <!-- amountOriginalCurrency -->
+    <!-- cor:documentInfo -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation: documentInfo"/>
+    <!-- cor:entityInformation -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_entityInformation" xlink:label="gl-cor_entityInformation" xlink:title="presentation: entityInformation"/>
+    <!-- cor:entryHeader -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader" xlink:title="presentation: entryHeader"/>
+    <!-- cor:entryDetail -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation: entryDetail"/>
+    <!-- cor:documentNumber -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentNumber" xlink:label="gl-cor_documentNumber" xlink:title="presentation child: documentNumber"/>
+    <!-- prohibit cor:entryDetail to cor:documentNumber -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentNumber" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to cor:documentNumber -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_documentNumber" priority="2" use="optional" order="18.2" xlink:title="presentation: documentInfo to documentNumber"/>
+    <!-- prohibit cor:documentDate -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentDate" xlink:label="gl-cor_documentDate" xlink:title="presentation child: documentDate"/>
+    <!-- prohibit cor:entryDetail to cor:documentDate -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentDate" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to cor:documentDate -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_documentDate" priority="2" use="optional" order="18.4" xlink:title="presentation: documentInfo to documentDate"/>
+    <!-- prohibit cor:documentType -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentType" xlink:label="gl-cor_documentType" xlink:title="presentation child: documentType"/>
+    <!-- prohibit cor:entryDetail to cor:documentType -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentType" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to cor:documentType -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_documentType" priority="2" use="optional" order="18.6" xlink:title="presentation: documentInfo to documentType"/>
+    <!-- muc:amountOriginalCurrency -->
     <loc xlink:type="locator" xlink:href="../../muc/gl-muc-2020-12-31.xsd#gl-muc_amountOriginalCurrency" xlink:label="gl-muc_amountOriginalCurrency" xlink:title="presentation child: amountOriginalCurrency"/>
-    <!-- cor_entryDetail -->
-    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation child: entryDetail"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-muc_amountOriginalCurrency" priority="1" use="prohibited" order="329"/>
-    <!-- cor_entryDetail -->
-    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation child: documentInfo"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-muc_amountOriginalCurrency" priority="2" use="optional" order="19" xlink:title="presentation: documentInfo to amountOriginalCurrency"/>
+    <!-- prohibit cor:entryDetail to muc:amountOriginalCurrency -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-muc_amountOriginalCurrency" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to muc:amountOriginalCurrency -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-muc_amountOriginalCurrency" priority="2" use="optional" order="18.8" xlink:title="presentation: documentInfo to amountOriginalCurrency"/>
+    <!-- cor:postingDate -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_postingDate" xlink:label="gl-cor_postingDate" xlink:title="presentation child: postingDate"/>
+    <!-- prohibit cor:entryDetail to cor:postingDate -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_postingDate" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to cor:postingDate -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_postingDate" priority="2" use="optional" order="19" xlink:title="presentation: documentInfo to postingDate"/>
+    <!-- cen:ValueAddedTaxPointDateCode -->
+    <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_ValueAddedTaxPointDateCode" xlink:label="gl-cen_ValueAddedTaxPointDateCode" xlink:title="presentation child: ValueAddedTaxPointDateCode"/>
+    <!-- prohibit cor:entryDetail to cen:ValueAddedTaxPointDateCode -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cen_ValueAddedTaxPointDateCode" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to cen:ValueAddedTaxPointDateCode -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_ValueAddedTaxPointDateCode" priority="2" use="optional" order="19.2" xlink:title="presentation: documentInfo to ValueAddedTaxPointDateCode"/>
+
+    <!-- PRECEDING_INVOICE_REFERENCE -->
+    <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_PRECEDING_INVOICE_REFERENCE" xlink:label="gl-cen_PRECEDING_INVOICE_REFERENCE" xlink:title="presentation: PRECEDING_INVOICE_REFERENCE"/>
+    <!-- originatingDocumentStructure -->
+    <loc xlink:type="locator" xlink:href="../../taf/gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentStructure" xlink:label="gl-taf_originatingDocumentStructure" xlink:title="presentation child: originatingDocumentStructure"/>
+    <!-- prohibit cor:entryDetail to taf:originatingDocumentStructure -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_originatingDocumentStructure" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to taf:originatingDocumentStructure -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_PRECEDING_INVOICE_REFERENCE" xlink:to="gl-taf_originatingDocumentStructure" priority="2" use="optional" order="30" xlink:title="presentation: PRECEDING_INVOICE_REFERENCE to originatingDocumentStructure"/>
+
+    <!-- InvoicedObjectIdentifier -->
+    <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_InvoicedObjectIdentifier" xlink:label="gl-cen_InvoicedObjectIdentifier" xlink:title="presentation child: InvoicedObjectIdentifier"/>
+    <!-- prohibit cor:entryDetail to cen:InvoicedObjectIdentifier -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="1" use="prohibited"/>
+    <!-- cor:documentInfo to cen:InvoicedObjectIdentifier -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_InvoicedObjectIdentifier" priority="2" use="optional" order="39" xlink:title="presentation: documentInfo to InvoicedObjectIdentifier"/>
+
+    <!-- identifierReference -->
+    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference" xlink:title="presentation child: identifierReference"/>
+    <!-- prohibit cor:entryDetail to cor:identifierReference -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_identifierReference" priority="1" use="prohibited"/>
+    <!-- cor:entityInformation to cor:identifierReference -->
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entityInformation" xlink:to="gl-cor_identifierReference" priority="2" use="optional" order="52.5" xlink:title="presentation: entityInformation to identifierReference"/>
+
   </presentationLink>
 </linkbase>
