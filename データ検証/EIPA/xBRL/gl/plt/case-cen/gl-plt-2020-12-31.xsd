@@ -38,31 +38,31 @@
 	<element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
 <!-- Domain -->
 <!-- L1 -->
-  <element name="L1N" id="L1N">
+  <element name="L1" id="L1">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
-  <element name="dL1N" id="dL1N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L1N"/>
+  <element name="dL1" id="dL1" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L1"/>
 <!-- L2 -->
-	<element name="L2N" id="L2N">
+	<element name="L2" id="L2">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
-	<element name="dL2N" id="dL2N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L2N"/>
+	<element name="dL2" id="dL2" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L2"/>
 <!-- L3 -->
-	<element name="L3N" id="L3N">
+	<element name="L3" id="L3">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
-	<element name="dL3N" id="dL3N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L3N"/>
+	<element name="dL3" id="dL3" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L3"/>
 <!-- L4 -->
-	<element name="L4N" id="L4N">
+	<element name="L4" id="L4">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
-	<element name="dL4N" id="dL4N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L4N"/>
+	<element name="dL4" id="dL4" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#L4"/>
 </schema>
