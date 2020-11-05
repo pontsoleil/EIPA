@@ -16,14 +16,14 @@
     <!-- documentDate -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentDate" xlink:label="gl-cor_documentDate" xlink:title="presentation child: documentDate"/>
     <!-- prohibit cor:entryDetail to cor:documentDate -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentDate" priority="1" use="prohibited"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentDate" priority="1" use="prohibited"/> -->
     <!-- cor:documentInfo to cor:documentDate -->
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_documentDate" xlink:title="presentation: documentInfo to documentDate" use="optional" priority="2" order="18.4"/>
 
     <!-- documentType -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentType" xlink:label="gl-cor_documentType" xlink:title="presentation child: documentType"/>
     <!-- prohibit cor:entryDetail to cor:documentType -->
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentType" priority="1" use="prohibited"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentType" priority="1" use="prohibited"/> -->
     <!-- cor:documentInfo to cor:documentType -->
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cor_documentType" xlink:title="presentation: documentInfo to documentType" use="optional" priority="2" order="18.6"/>
 
