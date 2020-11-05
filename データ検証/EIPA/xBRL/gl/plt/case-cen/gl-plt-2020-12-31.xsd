@@ -38,31 +38,31 @@
 	<element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
 <!-- Domain -->
 <!-- L1 -->
-  <element name="L1N" id="cen_L1N">
+  <element name="L1N" id="L1N">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
-  <element name="dL1N" id="cen_dL1N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L1N"/>
+  <element name="dL1N" id="dL1N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#l1N"/>
 <!-- L2 -->
-	<element name="L2N" id="cen_L2N">
+	<element name="L2N" id="L2N">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
-	<element name="dL2N" id="cen_dL2N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L2N"/>
+	<element name="dL2N" id="dL2N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#l2N"/>
 <!-- L3 -->
-	<element name="L3N" id="cen_L3N">
+	<element name="L3N" id="L3N">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
-	<element name="dL3N" id="cen_dL3N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L3N"/>
+	<element name="dL3N" id="dL3N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#l3N"/>
 <!-- L4 -->
-	<element name="L4N" id="cen_L4N">
+	<element name="L4N" id="L4N">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
-	<element name="dL4N" id="cen_dL4N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L4N"/>
+	<element name="dL4N" id="dL4N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#l4N"/>
 </schema>
