@@ -12,19 +12,21 @@
 	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31"
 	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31"
 	xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2020-12-31"
-	xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31">
+	xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31"
+	xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
 	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://xbrl.org/2005/xbrldt-2005.xsd"/>
 	<import namespace="http://www.xbrl.org/int/gl/bus/2020-12-31" schemaLocation="../../bus/gl-bus-2020-12-31.xsd"/>
 	<import namespace="http://www.xbrl.org/int/gl/muc/2020-12-31" schemaLocation="../../muc/gl-muc-2020-12-31.xsd"/>
 	<import namespace="http://www.xbrl.org/int/gl/taf/2020-12-31" schemaLocation="../../taf/gl-taf-2020-12-31.xsd"/>
 	<import namespace="http://www.xbrl.org/int/gl/ehm/2020-12-31" schemaLocation="../../ehm/gl-ehm-2020-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/int/gl/cen/2020-12-31" schemaLocation="../../cen/gl-cen-2020-12-31.xsd"/>
 	<include schemaLocation="../../cor/gl-cor-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
 			<!-- presentation -->
 			<link:linkbaseRef xlink:href="gl-plt-2020-12-31-definition.xml" xlink:type="simple" xlink:title="Definition Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef"/>
-			<link:linkbaseRef xlink:href="gl-plt-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<!-- <link:linkbaseRef xlink:href="gl-plt-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/> -->
 			<link:roleType id="cen_structure" roleURI="http://xbrl.org/role/cen_structure">
 				<link:definition>EN 16931-1 electronic invoice structure</link:definition>
 				<link:usedOn>link:presentationLink</link:usedOn>
