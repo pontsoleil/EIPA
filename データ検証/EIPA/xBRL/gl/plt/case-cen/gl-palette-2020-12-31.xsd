@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
-<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<!-- XBRL Japan -->
 <schema targetNamespace="http://www.xbrl.org/int/gl/cor/2020-12-31" 
 	elementFormDefault="qualified" 
 	attributeFormDefault="unqualified" 
@@ -8,8 +7,10 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
 	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
 	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
 	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31"
 	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31"
+	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31"
 	xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2020-12-31"
 	xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31"
 	xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
@@ -24,6 +25,42 @@
 		<appinfo>
 			<!-- presentation -->
 			<link:linkbaseRef xlink:href="gl-plt-2020-12-31-presentation.xml" xlink:type="simple" xlink:title="Presentation Links, all" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<link:roleType id="cen_structure" roleURI="http://xbrl.org/role/cen_structure">
+				<link:definition>EN 16931-1 electronic invoice structure</link:definition>
+				<link:usedOn>link:presentationLink</link:usedOn>
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
 		</appinfo>
 	</annotation>
+<!-- Hypercube -->
+	<element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
+<!-- Domain -->
+<!-- L1 -->
+  <element name="L1N" id="cen_L1N">
+    <simpleType>
+      <restriction base="string"/>
+    </simpleType>
+  </element>
+  <element name="dL1N" id="cen_dL1N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L1N"/>
+<!-- L2 -->
+	<element name="L2N" id="cen_L2N">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="dL2N" id="cen_dL2N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L2N"/>
+<!-- L3 -->
+	<element name="L3N" id="cen_L3N">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="dL3N" id="cen_dL3N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L3N"/>
+<!-- L4 -->
+	<element name="L4N" id="cen_L4N">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="dL4N" id="cen_dL4N" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#cen_L4N"/>
 </schema>
