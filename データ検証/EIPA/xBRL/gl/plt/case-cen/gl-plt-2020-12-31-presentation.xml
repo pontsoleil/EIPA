@@ -86,7 +86,7 @@
     <!-- PAYMENT_INSTRUCTIONS -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_PAYMENT_INSTRUCTIONS" xlink:label="gl-cen_PAYMENT_INSTRUCTIONS" xlink:title="presentation child: PAYMENT_INSTRUCTIONS"/>
     <!-- paymentMethod -->
-    <loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_paymentMethod" xlink:label="gl-bus_paymentMethod" xlink:title="presentation child: paymentMethod"/>
+    <loc xlink:type="locator" xlink:href="../../bus/gl-bus-2020-12-31.xsd#gl-bus_paymentMethod" xlink:label="gl-bus_paymentMethod" xlink:title="presentation child: paymentMethod"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-bus_paymentMethod" priority="1" use="prohibited"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_PAYMENT_INSTRUCTIONS" xlink:to="gl-bus_paymentMethod" priority="2" use="optional" order="114" xlink:title="presentation: PAYMENT_INSTRUCTIONS to paymentMethod"/>
 
