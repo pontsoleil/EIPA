@@ -19,8 +19,8 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
     <appinfo>
       <link:linkbaseRef xlink:type="simple" xlink:href="gl-plt-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
       <link:linkbaseRef xlink:type="simple" xlink:href="gl-plt-2020-12-31-definition.xml" xlink:title="Definition Links, all" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
-      <link:roleType roleURI="http://xbrl.org/role/cen_structure" id="cen_structure">
-        <link:definition>EN 16931-1 electronic invoice structure</link:definition>
+      <link:roleType roleURI="http://xbrl.org/role/xBRL-GL_structure" id="cen_structure">
+        <link:definition>xBRL GL structure</link:definition>
         <link:usedOn>link:presentationLink</link:usedOn>
         <link:usedOn>link:definitionLink</link:usedOn>
       </link:roleType>
@@ -37,28 +37,39 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	<!-- Hypercube -->
   <element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
 	<!-- Dimension -->
+  <!-- L1 -->
   <element name="L1" id="L1">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
   <element name="dL1" id="dL1" type="xbrli:stringItemType" xbrldt:typedDomainRef="#L1" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- L2 -->
   <element name="L2" id="L2">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
   <element name="dL2" id="dL2" type="xbrli:stringItemType" xbrldt:typedDomainRef="#L2" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- L3 -->
   <element name="L3" id="L3">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
   <element name="dL3" id="dL3" type="xbrli:stringItemType" xbrldt:typedDomainRef="#L3" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- L4 -->
   <element name="L4" id="L4">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
   <element name="dL4" id="dL4" type="xbrli:stringItemType" xbrldt:typedDomainRef="#L4" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- L5 -->
+  <element name="L5" id="L5">
+    <simpleType>
+      <restriction base="string"/>
+    </simpleType>
+  </element>
+  <element name="dL5" id="dL5" type="xbrli:stringItemType" xbrldt:typedDomainRef="#L5" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
 </schema>
