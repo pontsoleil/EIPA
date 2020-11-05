@@ -34,7 +34,7 @@ cen-87	32	5	cen	PaymentCardPrimaryAccountNumber	textItemType	Payment card primar
 cen-88	33	5	cen	PaymentCardHolderName	textItemType	Payment card holder name	The name of the payment card holder.	_
 cenG-19	34	4	cen	DIRECT_DEBIT	_	DIRECT DEBIT	A group of business terms to specify a direct debit.	_
 cen-89	35	5	cen	MandateReferenceIdentifier	identifierItemType	Mandate reference identifier	Unique identifier assigned by the Payee for referencing the direct debit mandate.	_
-cen-90	36	5	cen	BankAssignedCreditorIdentifier	identifierItemType	Bank assigned creditor identifier	Unique banking reference identifier of the Payee or Seller assigned by the Payee or Seller bank. 	_
+cen-90	36	5	cen	BankAssignedCreditorIdentifier	identifierItemType	Bank assigned creditor identifier	Unique banking reference identifier of the Payee or Seller assigned by the Payee or Seller bank.	_
 cen-91	37	5	cen	DebitedAccountIdentifier	identifierItemType	Debited account identifier	The account to be debited by the direct debit.	_
 cenG-3	38	3	cen	PRECEDING_INVOICE_REFERENCE	_	PRECEDING INVOICE REFERENCE	A group of business terms providing information on one or more preceding Invoices.	_
 cenG-1	39	3	cen	INVOICE_NOTE	_	INVOICE NOTE	A group of business terms providing textual notes that are relevant for the invoice, together with an indication of the note subject.	_
@@ -274,7 +274,7 @@ cen-115	272	4	cen	AmountDueForPayment	amountItemType	Amount due for payment	The 
 cenG-23	273	3	cen	VAT_BREAKDOWN	_	VAT BREAKDOWN	A group of business terms providing information about VAT breakdown by different categories, rates and exemption reasons	_
 cen-116	274	4	cen	VATCategoryTaxableAmount	amountItemType	VAT category taxable amount	Sum of all taxable amounts subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable].	
 cen-117	275	4	cen	VATCategoryTaxAmount	amountItemType	VAT category tax amount	The total VAT amount for a given VAT category.	
-cen-118	276	4	cen	VATCategoryCode 	codeItemType	VAT category code 	Coded identification of a VAT category.	
+cen-118	276	4	cen	Vatcategorycode	codeItemType	VAT category code	Coded identification of a VAT category.	
 cen-119	277	4	cen	VATCategoryRate	percentageItemType	VAT category rate	The VAT rate, represented as percentage that applies for the relevant VAT category.	
 cen-120	278	4	cen	VATExemptionReasonText	textItemType	VAT exemption reason text	A textual statement of the reason why the amount is exempted from VAT or why no VAT is being charged	_
 cen-121	279	4	cen	VATExemptionReasonCode	codeItemType	VAT exemption reason code	A coded statement of the reason for why the amount is exempted from VAT.	_
