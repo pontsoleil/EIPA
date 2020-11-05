@@ -1767,7 +1767,7 @@ var invoice2xbrl = (function() {
         else if (url.match(/\/ubl\//)) {
           en = ubl2en(json);
         }
-        // console.log(en);
+        console.log(JSON.stringify(en));
         return en;
       }
       catch(e) { console.log(e); }
