@@ -5,34 +5,34 @@
     <!-- tickingField -->
     <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_tickingField" xlink:label="gl-taf_tickingField" xlink:title="presentation child: tickingField"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_tickingField" xlink:title="presentation: entryDetail to tickingField" use="optional" order="526"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_tickingField" xlink:title="presentation: entryDetail to tickingField" use="optional" order="525"/>
     <!-- documentRemainingBalance -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_documentRemainingBalance" xlink:label="gl-taf_documentRemainingBalance" xlink:title="presentation child: documentRemainingBalance"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_documentRemainingBalance" xlink:title="presentation: entryDetail to documentRemainingBalance" use="optional" order="527"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_documentRemainingBalance" xlink:title="presentation: entryDetail to documentRemainingBalance" use="optional" order="526"/>
     <!-- uniqueConsignmentReference -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_uniqueConsignmentReference" xlink:label="gl-taf_uniqueConsignmentReference" xlink:title="presentation child: uniqueConsignmentReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_uniqueConsignmentReference" xlink:title="presentation: entryDetail to uniqueConsignmentReference" use="optional" order="528"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_uniqueConsignmentReference" xlink:title="presentation: entryDetail to uniqueConsignmentReference" use="optional" order="527"/>
     <!-- originatingDocumentStructure -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentStructure" xlink:label="gl-taf_originatingDocumentStructure" xlink:title="presentation child: originatingDocumentStructure"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_originatingDocumentStructure" xlink:title="presentation: entryDetail to originatingDocumentStructure" use="optional" order="529"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_originatingDocumentStructure" xlink:title="presentation: entryDetail to originatingDocumentStructure" use="optional" order="528"/>
     <!-- originatingDocumentType -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentStructure" xlink:label="gl-taf_originatingDocumentStructure" xlink:title="presentation parent: originatingDocumentStructure"/>
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentType" xlink:label="gl-taf_originatingDocumentType" xlink:title="presentation child: originatingDocumentType"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentType" xlink:title="presentation: originatingDocumentStructure to originatingDocumentType" use="optional" order="530"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentType" xlink:title="presentation: originatingDocumentStructure to originatingDocumentType" use="optional" order="529"/>
     <!-- originatingDocumentNumber -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentNumber" xlink:label="gl-taf_originatingDocumentNumber" xlink:title="presentation child: originatingDocumentNumber"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentNumber" xlink:title="presentation: originatingDocumentStructure to originatingDocumentNumber" use="optional" order="531"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentNumber" xlink:title="presentation: originatingDocumentStructure to originatingDocumentNumber" use="optional" order="530"/>
     <!-- originatingDocumentDate -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentDate" xlink:label="gl-taf_originatingDocumentDate" xlink:title="presentation child: originatingDocumentDate"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentDate" xlink:title="presentation: originatingDocumentStructure to originatingDocumentDate" use="optional" order="532"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentDate" xlink:title="presentation: originatingDocumentStructure to originatingDocumentDate" use="optional" order="531"/>
     <!-- originatingDocumentIdentifierType -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentIdentifierType" xlink:label="gl-taf_originatingDocumentIdentifierType" xlink:title="presentation child: originatingDocumentIdentifierType"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentIdentifierType" xlink:title="presentation: originatingDocumentStructure to originatingDocumentIdentifierType" use="optional" order="533"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentIdentifierType" xlink:title="presentation: originatingDocumentStructure to originatingDocumentIdentifierType" use="optional" order="532"/>
     <!-- originatingDocumentIdentifierCode -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentIdentifierCode" xlink:label="gl-taf_originatingDocumentIdentifierCode" xlink:title="presentation child: originatingDocumentIdentifierCode"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentIdentifierCode" xlink:title="presentation: originatingDocumentStructure to originatingDocumentIdentifierCode" use="optional" order="534"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentIdentifierCode" xlink:title="presentation: originatingDocumentStructure to originatingDocumentIdentifierCode" use="optional" order="533"/>
     <!-- originatingDocumentIdentifierTaxCode -->
     <loc xlink:type="locator" xlink:href="gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentIdentifierTaxCode" xlink:label="gl-taf_originatingDocumentIdentifierTaxCode" xlink:title="presentation child: originatingDocumentIdentifierTaxCode"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentIdentifierTaxCode" xlink:title="presentation: originatingDocumentStructure to originatingDocumentIdentifierTaxCode" use="optional" order="535"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-taf_originatingDocumentStructure" xlink:to="gl-taf_originatingDocumentIdentifierTaxCode" xlink:title="presentation: originatingDocumentStructure to originatingDocumentIdentifierTaxCode" use="optional" order="534"/>
   </presentationLink>
 </linkbase>

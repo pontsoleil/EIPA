@@ -299,13 +299,6 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 		</simpleContent>
 	</complexType>
   <!-- item srcd -->
-	<!-- 2020-11-05 -->
-	<element name="summaryPrecision" id="gl-srcd_summaryPrecision" type="gl-srcd:summaryPrecisionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="summaryPrecisionINF" id="gl-srcd_summaryPrecisionINF" type="gl-srcd:summaryPrecisionINFItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="summaryDecimals" id="gl-srcd_summaryDecimals" type="gl-srcd:summaryDecimalsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="summaryDecimalsINF" id="gl-srcd_summaryDecimalsINF" type="gl-srcd:summaryDecimalsINFItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-
-
 	<element name="srcdG-1" id="gl-srcd_summaryReportingTaxonomies" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-1" id="gl-srcd_summaryReportingTaxonomyID" type="gl-srcd:summaryReportingTaxonomyIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="srcd-2" id="gl-srcd_summaryReportingTaxonomySchemaRefHref" type="gl-srcd:summaryReportingTaxonomySchemaRefHrefItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
