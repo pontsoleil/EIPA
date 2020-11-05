@@ -26,7 +26,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -42,12 +42,13 @@
 	<gl-cor:cor-73 contextRef="corG-1_corG-2">other</gl-cor:cor-73>
 	<gl-muc:muc-4 contextRef="corG-1_corG-2">EUR</gl-muc:muc-4>
 	<gl-cen:cen-8 contextRef="corG-1_corG-2">undefined</gl-cen:cen-8>
+	<gl-cor:cor-90 contextRef="corG-1_corG-2">2015-01-09</gl-cor:cor-90>
 	<xbrli:context id="cenG-23_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -61,13 +62,13 @@
 	<gl-cen:cen-116 contextRef="cenG-23_0" decimals="INF" unitRef="EUR">183.23</gl-cen:cen-116>
 	<gl-cen:cen-117 contextRef="cenG-23_0" decimals="INF" unitRef="EUR">10.99</gl-cen:cen-117>
 	<gl-cen:cen-118 contextRef="cenG-23_0">VAT</gl-cen:cen-118>
-	<gl-cen:cen-119 contextRef="cenG-23_0" decimals="INF" unitRef="pure">6</gl-cen:cen-119>
+	<gl-cen:cen-119 contextRef="cenG-23_0" decimals="INF" unitRef="pure">0.06</gl-cen:cen-119>
 	<xbrli:context id="cenG-23_1">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -81,71 +82,76 @@
 	<gl-cen:cen-116 contextRef="cenG-23_1" decimals="INF" unitRef="EUR">46.37</gl-cen:cen-116>
 	<gl-cen:cen-117 contextRef="cenG-23_1" decimals="INF" unitRef="EUR">9.74</gl-cen:cen-117>
 	<gl-cen:cen-118 contextRef="cenG-23_1">VAT</gl-cen:cen-118>
-	<gl-cen:cen-119 contextRef="cenG-23_1" decimals="INF" unitRef="pure">21</gl-cen:cen-119>
-<!-- 	<gl-cor:BT-9 contextRef="corG-1_corG-2">2015-01-09</gl-cor:BT-9>
-	<xbrli:context id="BG-4_BG-5">
+	<gl-cen:cen-119 contextRef="cenG-23_1" decimals="INF" unitRef="pure">0.21</gl-cen:cen-119>
+ 	<xbrli:context id="corG-9_busG-20_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
-				<gl-cor:L1>BG-4</gl-cor:L1>
+				<gl-cor:L1>corG-9</gl-cor:L1>
 			</xbrldi:typedMember>
 			<xbrldi:typedMember dimension="gl-cor:dL2">
-				<gl-cor:L2>BG-5</gl-cor:L2>
+				<gl-cor:L2>busG-20</gl-cor:L2>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="gl-cor:dL3">
+				<gl-cor:L3>0</gl-cor:L3>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:BT-35 contextRef="BG-4_BG-5">Postbus 7l</gl-cor:BT-35>
-	<gl-cor:BT-37 contextRef="BG-4_BG-5">Velsen-Noord</gl-cor:BT-37>
-	<gl-cor:BT-38 contextRef="BG-4_BG-5">1950 AB</gl-cor:BT-38>
-	<gl-cor:BT-40 contextRef="BG-4_BG-5">NL</gl-cor:BT-40>
-	<xbrli:context id="BG-7_BG-8">
+	<gl-bus:bus-124 contextRef="corG-9_busG-20">Postbus 7l</gl-bus:bus-124>
+	<gl-bus:bus-126 contextRef="corG-9_busG-20">Velsen-Noord</gl-bus:bus-126>
+	<gl-bus:bus-129 contextRef="corG-9_busG-20">1950 AB</gl-bus:bus-129>
+	<gl-bus:bus-128 contextRef="corG-9_busG-20">NL</gl-bus:bus-128>
+	<xbrli:context id="corG-9_busG-20_1">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
-				<gl-cor:L1>BG-7</gl-cor:L1>
+				<gl-cor:L1>corG-9</gl-cor:L1>
 			</xbrldi:typedMember>
 			<xbrldi:typedMember dimension="gl-cor:dL2">
-				<gl-cor:L2>BG-8</gl-cor:L2>
+				<gl-cor:L2>busG-20</gl-cor:L2>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="gl-cor:dL3">
+				<gl-cor:L3>1</gl-cor:L3>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:BT-50 contextRef="BG-7_BG-8">POSTBUS 367</gl-cor:BT-50>
-	<gl-cor:BT-52 contextRef="BG-7_BG-8">HEEMSKERK</gl-cor:BT-52>
-	<gl-cor:BT-53 contextRef="BG-7_BG-8">1960 AJ</gl-cor:BT-53>
-	<gl-cor:BT-55 contextRef="BG-7_BG-8">NL</gl-cor:BT-55>
-	<xbrli:context id="BG-7_BG-9">
+	<gl-bus:bus-124 contextRef="corG-9_busG-20">POSTBUS 367</gl-bus:bus-124>
+	<gl-bus:bus-126 contextRef="corG-9_busG-20">HEEMSKERK</gl-bus:bus-126>
+	<gl-bus:bus-129 contextRef="corG-9_busG-20">1960 AJ</gl-bus:bus-129>
+	<gl-bus:bus-128 contextRef="corG-9_busG-20">NL</gl-bus:bus-128>
+<!--		<xbrli:context id="corG-9_BG-9">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
-				<gl-cor:L1>BG-7</gl-cor:L1>
+				<gl-cor:L1>corG-9</gl-cor:L1>
 			</xbrldi:typedMember>
 			<xbrldi:typedMember dimension="gl-cor:dL2">
 				<gl-cor:L2>BG-9</gl-cor:L2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:BT-56 contextRef="BG-7_BG-9">Dhr. J BLOKKER</gl-cor:BT-56>
+	<gl-cor:BT-56 contextRef="corG-9_BG-9">Dhr. J BLOKKER</gl-cor:BT-56>
 	<xbrli:context id="BG-25_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -165,7 +171,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -185,7 +191,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -205,7 +211,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -225,7 +231,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -245,7 +251,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -265,7 +271,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -285,7 +291,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -305,7 +311,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -325,7 +331,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -345,7 +351,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -365,7 +371,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -385,7 +391,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -405,7 +411,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -425,7 +431,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -445,7 +451,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -465,7 +471,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -485,7 +491,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -505,7 +511,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
@@ -525,7 +531,7 @@
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
 		</xbrli:entity>
 		<xbrli:period>
-			<xbrli:instant>2020-10-26</xbrli:instant>
+			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
 			<xbrldi:typedMember dimension="gl-cor:dL1">
