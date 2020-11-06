@@ -57,6 +57,7 @@
 
     <div id="tab-1" class="tab">
       <p class="tablinks title">From</p>
+      <p class="tablinks itca2en" onclick="setFrame('itca2en');return false;">中小企業共通EDI</p>
       <p class="tablinks ubl2en_ivc" onclick="setFrame('ubl2en_ivc');return false;">UBL Invoice</p>
       <p class="tablinks ubl2en_cnt" onclick="setFrame('ubl2en_cnt');return false;">Credit note</p>
       <p class="tablinks cii2en" onclick="setFrame('cii2en');return false;">UN/CEFACT CII</p>
@@ -147,6 +148,35 @@
       <!--
         Path Card EN_ID EN_Level EN_Card EN_BT EN_Desc EN_DT
       -->
+    <!-- itca2en Syntax binding for 中小企業共通EDI -->
+    <div id="itca2en-container">
+      <div id="itca2en-frame">
+        <span class="table-title">中小企業共通EDIデータ項目とEN 16931-1セマンティック・モデルとの対応表</span>
+        <table id="itca2en" class="display" style="width:100%">
+          <thead>
+            <!-- 
+            name ITCA_Path ITCA_Card EDI Invoice Matching EN_ID EN_BT EN_DT EN_Card 
+            EN_Level EN_Desc seq itca_num  CCL_ID level
+             -->
+            <tr>
+              <th>-</th>
+              <th>num</th><!-- hidden -->
+              <th>日本語名</th>
+              <th>Path</th>
+              <th>Card.</th>
+              <th>共通EDI必須</th>
+              <th>インボイス必須</th>
+              <th>自動突合対応</th>
+              <th>ID</th>
+              <th>Business Term</th>
+              <th>Data type</th>
+              <th>Card.</th>
+              <th></th><!-- info-control -->
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
     <!-- cii2en Syntax binding for UN/CEFACT XML Industory Invoice D16B -->
       <div id="cii2en-container">
         <div id="cii2en-frame">

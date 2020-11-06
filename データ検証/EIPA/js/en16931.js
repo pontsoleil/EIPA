@@ -5,6 +5,7 @@
  * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
  **/
 var en2x_columns, en2x_columnDefs,
+    itca2en_table, Itca2EnMap, ItcaNums,
     en2cii_table, cii2en_table,
     En2CiiMap, Cii2EnMap, CiiNums,
     en_ivc2ubl_table, ubl2en_ivc_table,
@@ -146,10 +147,19 @@ function x2en_format(d, kind) { // d is the original data object for the row
       match, abie, bbie, base,
       parent_type, den, datatype, cardinality, definition,
       html = '';
-  _paths = paths.replaceAll('&nbsp;','').split('<br>');
-  parent = _paths[_paths.length - 3];
-  child = _paths[_paths.length - 2];
-  if ('cii' === kind) {
+  if ('itca' == kind) {
+    paths = d.Path.replace(/\//g, ' /');
+    var path = renderPath(d);
+    _paths = path.split(' / ');
+    parent = _paths[_paths.length - 2];
+    child = _paths[_paths.length - 1];
+  }
+  else {
+    _paths = paths.replaceAll('&nbsp;','').split('<br>');
+    parent = _paths[_paths.length - 3];
+    child = _paths[_paths.length - 2];
+  }
+  if ('cii' === kind || 'itca' === kind) {
     if (parent) {
       match = parent.match(/^rsm:(.*)$/);
       if (match) {
@@ -204,13 +214,15 @@ function x2en_format(d, kind) { // d is the original data object for the row
       base = UBL_CBC.type[UBL_CBC.element[bbie]['@type']]['@base'];
     }
   }
+
   _child = _child ? _child : {};
   den = _child['DictionaryEntryName'] || '';
   datatype = _child['DataType'] || '';
   base = base ? ' ( '+base+' ) ' : '';
   cardinality = _child['Cardinality'] || '';
-  cardinality = cardinality ? ' ( '+cardinality+')' : '';
+  cardinality = cardinality ? ' [ '+cardinality+' ]' : '';
   definition =  _child['Definition'] || '';
+
   return googleTranslate([desc_en, definition])
   .then(function(translations) {
     var translatedText = translations[0].translatedText,
@@ -223,7 +235,11 @@ function x2en_format(d, kind) { // d is the original data object for the row
     desc_x = den + cardinality+'<br>'+
               (datatype 
                 ? (datatype + base)
-                : 'cii' === kind ? '' : 'Aggregate'
+                : 'cii' === kind
+                  ? ''
+                  : 'itca' === kind
+                    ? d.CCL_ID
+                    : 'Aggregate'
               )+'<br>'+
               definition;
     html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
@@ -233,7 +249,7 @@ function x2en_format(d, kind) { // d is the original data object for the row
         '<col style="width:'+H3+'%;">'+
       '</colgroup>' +
       '<tr>'+
-        '<td valign="top">Path: '+paths+'</td>';
+        '<td valign="top">'+paths+'</td>';
     if (desc_x && desc_en) {
       html += '<td valign="top">'+desc_x+'</td>'+
         '<td valign="top">'+desc_en+'</td></tr>';
@@ -396,6 +412,62 @@ x2en_columnDefs = [
   { 'visible': false, 'targets': 1 }
 ];
 // -------------------------------------------------------------------
+/* name Path Card EDI Invoice Matching EN_ID EN_BT EN_DT EN_Card 
+    EN_Level EN_Desc seq itca_num  CCL_ID level
+*/
+itca2en_columns = [
+  { 'width': '2%',
+    'className': 'details-control',
+    'orderable': false,
+    'data': null,
+    'defaultContent': '' }, // 0
+  { 'data': 'num' }, // 1
+  { 'width': '20%',
+    'data': 'name',
+    'render': function(data, type, row) {
+      var name = row.name, level = row.level - 1;
+      if (level > 0) {
+        name = '+'.repeat(level)+' '+name;
+      }
+      return name; }}, // 2
+  { 'width': '34%',
+    'data': 'Path',
+    'render': function(data, type, row) {
+      var path = renderPath2(row);
+    // 'render': function(data, type, row) {
+    //   var path = row.Path || '';
+    //   path = path.replace(/\//g, ' /')
+    return path; }}, // 3
+  { 'width': '4%',
+    'data': 'Card' }, // 4
+  { 'width': '3%',
+    'data': 'EDI' }, // 5
+  { 'width': '3%',
+    'data': 'Invoice' }, // 6
+  { 'width': '3%',
+    'data': 'Matching' }, // 7
+  { 'width': '5%',
+    'data': 'EN_ID' }, // 8
+  { 'width': '12%',
+    'data': 'EN_BT' }, // 9
+  { 'width': '8%',
+    'data': 'EN_DT',
+    'render': function(data, type, row) {
+      var datatype = renderDatatype(row);
+      return datatype; }}, // 10
+  { 'width': '4%',
+    'data': 'EN_Card' }, // 11
+  { 'width': '2%',
+    'className': 'info-control',
+    'orderable': false,
+    'data': null,
+    'defaultContent': '' } // 12
+];
+itca2en_columnDefs = [
+  { 'searchable': false, 'targets': [0, 12] },
+  { 'visible': false, 'targets': 1 }
+];
+// -------------------------------------------------------------------
 // Utility
 //
 function appendByNum(items, item) {
@@ -447,11 +519,14 @@ var compareNum = function(a, b) {
 }
 // -------------------------------------------------------------------
 function filterRoot(table_id) {
-  var table, rows;
+  var table, records, rows;
   table = $(table_id).DataTable();
+  records = [];
   rows = [];
-  table.data().toArray().forEach(function(v, i) {
-    if ('#cii2en' === table_id ||
+  records = table.data().toArray()
+  for (var v of records) {
+    if ('#itca2en' === table_id ||
+        '#cii2en' === table_id ||
         '#ubl2en_ivc' === table_id ||
         '#ubl2en_cnt' === table_id) {
       if (v.num.split('_').length < 3) {
@@ -463,14 +538,15 @@ function filterRoot(table_id) {
         rows.push(v);
       }
     }
-  });
+  }
 
   table.clear();
   table.rows
   .add(rows)
   .draw();
 
-  if ('#cii2en' === table_id ||
+  if ('#itca2en' === table_id ||
+      '#cii2en' === table_id ||
       '#ubl2en_ivc' === table_id ||
       '#ubl2en_cnt' === table_id) {
     $(table_id +' tbody tr')[0].classList.add('expanded');
@@ -494,7 +570,8 @@ function checkDetails(table_id) {
         }
       }
     }
-    else if (table_id.match(/cii/) ||
+    else if (table_id.match(/itca/) ||
+             table_id.match(/cii/) ||
              table_id.match(/ubl/)) {
       if (table_id.match(/cii/)) {
         nums = CiiNums;
@@ -504,6 +581,9 @@ function checkDetails(table_id) {
       }
       else if (table_id.match(/en_cnt/)) {
         nums = CntNums;
+      }
+      else if (table_id.match(/itca/)) {
+        nums = ItcaNums;
       }
       for (var tr of tr_s) {
         row = table.row(tr);
@@ -536,7 +616,8 @@ function expandCollapse(table_id, map, tr) {
   function isExpanded(rows, num) {
     var expanded = false,
         i, rgx, count = 0;
-    if ('en' === table_id.substr(1, 2) ||
+    if ('itca' === table_id.substr(1, 4) ||
+        'en' === table_id.substr(1, 2) ||
         'cii' === table_id.substr(1, 3) ||
         'ubl' === table_id.substr(1, 3)) {
       rgx = RegExp('^'+num+'_[^_]+$')
@@ -731,6 +812,36 @@ var initModule = function () {
     }
     return rows;
   }
+
+  function tableInit3(table_id, json) {
+    var map,
+        data, i, item, level, seq, num,
+        idxLevel = [],
+        map = new Map(),
+        nums = [],
+        rows = [];
+    data = json.data;
+    for (i = 0; i < data.length; i++) {
+      item = data[i];
+      seq = item.seq;
+      level = item.level - 1;
+      num = ''+seq;
+      if (level > 0) {
+        num = idxLevel[level - 1]+'_'+num;
+      }
+      while (idxLevel.length - 1 > level) {
+        idxLevel.pop();
+      }
+      idxLevel[level] = num;
+      item.num = num;
+      nums.push(num);
+      rows.push(item);
+      map.set(seq, item);
+    }
+    Itca2EnMap = map;
+    ItcaNums = nums;
+    return rows;
+  }
   // EN2CII
   en2cii_table = $('#en2cii').DataTable({
     'ajax': 'data/en2cii.json',
@@ -779,6 +890,38 @@ var initModule = function () {
       checkDetails('#en_cnt2ubl');
     }  
   });
+  // ITCA2EN
+  ajaxRequest('data/itca2en.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      json = JSON.parse(res);
+      return tableInit3('#itca2en', json);
+    }
+    catch(e) { console.log(e); }
+  })
+  .then(function(rows) {
+    itca2en_table.clear();
+    itca2en_table.rows
+    .add(rows)
+    .draw();
+  })
+  .then(function() {
+    filterRoot('#itca2en');
+  })
+  .catch(function(err) { console.log(err); })
+
+  itca2en_table = $('#itca2en').DataTable({
+    'columns': itca2en_columns,
+    'columnDefs': itca2en_columnDefs,
+    'paging': false,
+    'autoWidth': false,
+    'ordering': false,
+    'select': true,
+    'drawCallback': function(settings) {
+      checkDetails('#itca2en');
+    }  
+  });
+
   // CII2EN
   ajaxRequest('data/cii2en.json', null, 'GET', 1000)
   .then(function(res) {
@@ -920,6 +1063,21 @@ var initModule = function () {
       .catch(function(err) { console.log(err); });
   }
   });
+  // ITCA2EN
+  $('#itca2en tbody').on('click', 'td.info-control', function(event) {
+    event.stopPropagation();
+    var tr = $(this).closest('tr'), row = itca2en_table.row(tr);
+    if (row.child.isShown()) { // This row is already open - close it
+      row.child.hide(); tr.removeClass('shown');
+    }
+    else { // Open this row
+      x2en_format(row.data(), 'itca')
+      .then(function(html) {
+        row.child(html).show(); tr.addClass('shown');
+      })
+      .catch(function(err) { console.log(err); });
+    }
+  });
   // CII2EN
   $('#cii2en tbody').on('click', 'td.info-control', function(event) {
     event.stopPropagation();
@@ -1001,6 +1159,22 @@ var initModule = function () {
       expandCollapse('#en_cnt2ubl', EnCnt2UblMap, tr);      
     }
   });
+  // ITCA2EN
+  $('#itca2en tbody').on('click', 'td:not(.info-control)', function (event) {
+    event.stopPropagation();
+    var tr = $(this).closest('tr'),
+        row = itca2en_table.row(tr), data = row.data();
+    if (!data) { return; }
+    var num = data.num,
+        rgx = RegExp('^'+num+'_[^_]+$'),
+        i = 0;
+    for (num of ItcaNums) {
+      if (num.match(rgx)) { i++; }
+    }
+    if (i > 0) {
+      expandCollapse('#itca2en', Itca2EnMap, tr);      
+    }
+  });
   // CII2EN
   $('#cii2en tbody').on('click', 'td:not(.info-control)', function (event) {
     event.stopPropagation();
@@ -1049,8 +1223,6 @@ var initModule = function () {
       expandCollapse('#ubl2en_cnt', Ubl2EnCntMap, tr);      
     }
   });
-
-  setFrame('cii2en');
 
   // var ajaxCount = 0;
   // UBL_IVC 
@@ -1157,6 +1329,8 @@ var initModule = function () {
     catch(e) { console.log(e); }
   })
   .catch(function(err) { console.log(err); });
+
+  setFrame('itca2en');
 
 }
 // en16931.js

@@ -30,21 +30,15 @@ var en = {
     },
     "BT-6":{
       "name":"VAT accounting currency code",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-3":{
       "name":"PRECEDING INVOICE REFERENCE",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BT-7":{
       "name":"Value added tax point date",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BT-8":{
       "name":"Value added tax point date code",
@@ -139,45 +133,31 @@ var en = {
     },
     "BG-1":{
       "name":"INVOICE NOTE",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-2":{
       "name":"PROCESS CONTROL",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-4":{
       "name":"SELLER",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-7":{
       "name":"BUYER",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-13":{
       "name":"DELIVERY INFORMATION",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-16":{
       "name":"PAYMENT INSTRUCTIONS",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-22":{
       "name":"DOCUMENT TOTALS",
-      "val":[
-        
-      ]
+      "val":[]
     },
     "BG-25":{
       "name":"INVOICE LINE",
@@ -192,18 +172,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
@@ -215,21 +191,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -242,18 +212,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -265,21 +231,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -292,18 +252,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -315,21 +271,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -342,18 +292,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
@@ -365,21 +311,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -392,18 +332,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -415,21 +351,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -442,18 +372,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -465,21 +391,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -492,18 +412,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -515,21 +431,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -542,18 +452,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -565,21 +471,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -592,18 +492,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               3
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               3
             ]
           },
@@ -615,21 +511,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -642,18 +532,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -665,21 +551,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -692,18 +572,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
@@ -715,21 +591,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -742,18 +612,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -765,21 +631,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -792,18 +652,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
@@ -815,21 +671,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -842,18 +692,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -865,21 +711,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -892,18 +732,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -915,21 +751,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -942,18 +772,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
@@ -965,21 +791,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -992,18 +812,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               2
             ]
           },
@@ -1015,21 +831,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -1042,18 +852,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               1
             ]
           },
@@ -1065,21 +871,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -1092,18 +892,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               6
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               6
             ]
           },
@@ -1115,21 +911,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         },
         {
@@ -1142,18 +932,14 @@ var en = {
           "BT-129":{
             "name":"Invoiced quantity",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               6
             ]
           },
           "BT-130":{
             "name":"Invoiced quantity unit of measure",
             "val":[
-              {
-                "@unitCode":"H87"
-              },
+              { "@unitCode":"H87" },
               6
             ]
           },
@@ -1165,21 +951,15 @@ var en = {
           },
           "BG-29":{
             "name":"PRICE DETAILS",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-30":{
             "name":"LINE VAT INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           },
           "BG-31":{
             "name":"ITEM INFORMATION",
-            "val":[
-              
-            ]
+            "val":[]
           }
         }
       ]
