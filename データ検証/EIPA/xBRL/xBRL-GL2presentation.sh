@@ -35,7 +35,7 @@ cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
   print "  <presentationLink xlink:type=\"extended\" xlink:role=\"http://www.xbrl.org/2003/role/link\">";
 }
 {
-  code=$1;
+  code=substr($4, 1, 3) $1;
   seq=$2;
   level=$3;
   term=$5;
