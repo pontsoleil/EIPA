@@ -1,269 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <!-- srcdG-1 gl-srcd:summaryReportingTaxonomies -->
+    <!-- G1 gl-srcd:summaryReportingTaxonomies -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomies" xlink:label="gl-srcd_summaryReportingTaxonomies_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomies_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-1-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-1-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約報告タクソノミ】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-1-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この文書で示されたデータのロールアップ先となる、1つ以上の報告タクソノミの情報を、識別し提供する。</link:label>
-    <!-- srcd-1 gl-srcd:summaryReportingTaxonomyID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomies_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G1-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G1-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約報告タクソノミ】</link:label>
+    <!-- _1 gl-srcd:summaryReportingTaxonomyID -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomyID" xlink:label="gl-srcd_summaryReportingTaxonomyID_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyID_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-1-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-1-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミ識別子</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-1-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">たとえばxbrlInfo内のsummaryReportingTaxonomyIDRefで参照できるように、報告タクソノミを識別する。</link:label>
-    <!-- srcd-2 gl-srcd:summaryReportingTaxonomySchemaRefHref -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyID_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__1-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__1-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミ識別子</link:label>
+    <!-- _2 gl-srcd:summaryReportingTaxonomySchemaRefHref -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomySchemaRefHref" xlink:label="gl-srcd_summaryReportingTaxonomySchemaRefHref_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomySchemaRefHref_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-2-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-2-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミスキーマ参照情報</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-2-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告タクソノミ内の、schemaRef要素のhref属性の値。</link:label>
-    <!-- srcd-3 gl-srcd:summaryReportingTaxonomyHeader -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomySchemaRefHref_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__2-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__2-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミスキーマ参照情報</link:label>
+    <!-- _3 gl-srcd:summaryReportingTaxonomyHeader -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomyHeader" xlink:label="gl-srcd_summaryReportingTaxonomyHeader_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyHeader_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-3-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-3-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミヘッダ</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-3-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">必要なすべての情報が、複雑すぎて他の方法では定義できないときに、それらを記述する汎用的なデータ域。</link:label>
-    <!-- srcd-4 gl-srcd:summaryReportingTaxonomyDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyHeader_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__3-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__3-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミヘッダ</link:label>
+    <!-- _4 gl-srcd:summaryReportingTaxonomyDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomyDescription" xlink:label="gl-srcd_summaryReportingTaxonomyDescription_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyDescription_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-4-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-4-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミ説明</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-4-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">人が利用するための、タクソノミの説明文。</link:label>
-    <!-- srcd-5 gl-srcd:summaryTuplePath -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyDescription_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__4-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__4-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミ説明</link:label>
+    <!-- _5 gl-srcd:summaryTuplePath -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryTuplePath" xlink:label="gl-srcd_summaryTuplePath_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryTuplePath_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-5-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-5-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約タプルパス</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-5-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">親タグ構造を特定するフィルタ。妥当なXPath記述でなければならない。XPathの結果はノードでなければならない。</link:label>
-    <!-- srcd-6 gl-srcd:detailedContentFilter -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryTuplePath_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__5-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__5-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約タプルパス</link:label>
+    <!-- _6 gl-srcd:detailedContentFilter -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_detailedContentFilter" xlink:label="gl-srcd_detailedContentFilter_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_detailedContentFilter_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-6-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-6-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細コンテントフィルタ</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-6-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">フィルタリング手段。妥当なXPath記述でなければならない。XPathの結果はブール値でなければならない。結果がfalseの場合は、仕訳はF/S内の特定のfactsにマッピングされてはならない。</link:label>
-    <!-- srcd-7 gl-srcd:reportingDateSelector -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_detailedContentFilter_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__6-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__6-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細コンテントフィルタ</link:label>
+    <!-- _7 gl-srcd:reportingDateSelector -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_reportingDateSelector" xlink:label="gl-srcd_reportingDateSelector_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_reportingDateSelector_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-7-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-7-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">報告日付セレクタ</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-7-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">F/Sのコンテキストを生成するためのGLデータの概念を示す。QNameのリストでなければならない。個々のQNameはGL項目を示さなければならない。項目の並びはアクセスの優先度を示す。</link:label>
-    <!-- srcdG-2 gl-srcd:summaryPrecisionDecimals -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_reportingDateSelector_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__7-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__7-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">報告日付セレクタ</link:label>
+    <!-- G2 gl-srcd:summaryPrecisionDecimals -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryPrecisionDecimals" xlink:label="gl-srcd_summaryPrecisionDecimals_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPrecisionDecimals_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-2-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-2-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約有効桁数】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-2-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約の有効桁数と小数部有効桁数の記述の指定場所。</link:label>
-    <!-- srcd-8 gl-srcd:summaryPrecision -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPrecisionDecimals_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G2-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G2-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約有効桁数】</link:label>
+    <!-- _8 gl-srcd:summaryPrecision -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryPrecision" xlink:label="gl-srcd_summaryPrecision_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPrecision_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-8-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-8-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約有効桁数</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-8-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約の有効桁数の記述の指定場所。</link:label>
-    <!-- srcd-9 gl-srcd:summaryPrecisionINF -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPrecision_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__8-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__8-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約有効桁数</link:label>
+    <!-- _9 gl-srcd:summaryPrecisionINF -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryPrecisionINF" xlink:label="gl-srcd_summaryPrecisionINF_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPrecisionINF_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-9-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-9-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約有効桁数無限</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-9-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">F/Sが、有効桁数属性を持っており、その値がINF(無限大)であること示す。</link:label>
-    <!-- srcd-10 gl-srcd:summaryDecimals -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPrecisionINF_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__9-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__9-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約有効桁数無限</link:label>
+    <!-- _10 gl-srcd:summaryDecimals -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryDecimals" xlink:label="gl-srcd_summaryDecimals_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryDecimals_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-10-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-10-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約小数部有効桁数</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-10-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">F/Sが、ここで指定する値の小数部有効桁数属性を持っていることを示す。</link:label>
-    <!-- srcd-11 gl-srcd:summaryDecimalsINF -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryDecimals_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__10-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__10-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約小数部有効桁数</link:label>
+    <!-- _11 gl-srcd:summaryDecimalsINF -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryDecimalsINF" xlink:label="gl-srcd_summaryDecimalsINF_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryDecimalsINF_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-11-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-11-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約小数部有効桁数無限</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-11-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">F/Sが、小数部有効桁数属性を持っており、その値がINF(無限大)であることを示す。</link:label>
-    <!-- srcdG-3 gl-srcd:summaryContext -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryDecimalsINF_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__11-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__11-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約小数部有効桁数無限</link:label>
+    <!-- G3 gl-srcd:summaryContext -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryContext" xlink:label="gl-srcd_summaryContext_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryContext_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-3-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-3-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約コンテキスト】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-3-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のコンテキストの記述の指定場所。</link:label>
-    <!-- srcdG-4 gl-srcd:summaryEntity -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryContext_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G3-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G3-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約コンテキスト】</link:label>
+    <!-- G4 gl-srcd:summaryEntity -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryEntity" xlink:label="gl-srcd_summaryEntity_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryEntity_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-4-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-4-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エンティティ】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-4-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のエンティティの記述の指定場所。</link:label>
-    <!-- srcd-12 gl-srcd:summaryIdentifier -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryEntity_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G4-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G4-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エンティティ】</link:label>
+    <!-- _12 gl-srcd:summaryIdentifier -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryIdentifier" xlink:label="gl-srcd_summaryIdentifier_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryIdentifier_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-12-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-12-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エンティティ識別子</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-12-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のエンティティ識別子の記述の指定場所。</link:label>
-    <!-- srcd-13 gl-srcd:summaryScheme -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryIdentifier_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__12-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__12-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エンティティ識別子</link:label>
+    <!-- _13 gl-srcd:summaryScheme -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryScheme" xlink:label="gl-srcd_summaryScheme_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryScheme_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-13-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-13-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エンティティスキーム</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-13-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のエンティティスキームの記述の指定場所。</link:label>
-    <!-- srcdG-5 gl-srcd:summarySegment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryScheme_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__13-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__13-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エンティティスキーム</link:label>
+    <!-- G5 gl-srcd:summarySegment -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summarySegment" xlink:label="gl-srcd_summarySegment_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summarySegment_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-5-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-5-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エンティティセグメント】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-5-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のエンティティセグメントの記述の指定場所。</link:label>
-    <!-- srcdG-6 gl-srcd:segmentExplicit -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summarySegment_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G5-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G5-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エンティティセグメント】</link:label>
+    <!-- G6 gl-srcd:segmentExplicit -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentExplicit" xlink:label="gl-srcd_segmentExplicit_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentExplicit_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-6-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-6-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エクスプリシットディメンション】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-6-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のエクスプリシットディメンションの記述の指定場所。</link:label>
-    <!-- srcd-14 gl-srcd:segmentExplicitDimension -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentExplicit_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G6-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G6-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エクスプリシットディメンション】</link:label>
+    <!-- _14 gl-srcd:segmentExplicitDimension -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentExplicitDimension" xlink:label="gl-srcd_segmentExplicitDimension_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentExplicitDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-14-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-14-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-14-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">QNameの値は妥当なディメンション項目を示さなければならない。</link:label>
-    <!-- srcd-15 gl-srcd:segmentExplicitDimensionValue -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentExplicitDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__14-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__14-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
+    <!-- _15 gl-srcd:segmentExplicitDimensionValue -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentExplicitDimensionValue" xlink:label="gl-srcd_segmentExplicitDimensionValue_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentExplicitDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-15-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-15-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エクスプリシットディメンション値</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-15-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">QNameの値は妥当なメンバ項目を示さなければならない。</link:label>
-    <!-- srcdG-7 gl-srcd:segmentTyped -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentExplicitDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__15-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__15-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エクスプリシットディメンション値</link:label>
+    <!-- G7 gl-srcd:segmentTyped -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentTyped" xlink:label="gl-srcd_segmentTyped_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentTyped_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-7-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-7-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約タイプトディメンション】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-7-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のタイプトディメンションの記述の指定場所。</link:label>
-    <!-- srcd-16 gl-srcd:segmentTypedDimension -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentTyped_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G7-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G7-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約タイプトディメンション】</link:label>
+    <!-- _16 gl-srcd:segmentTypedDimension -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentTypedDimension" xlink:label="gl-srcd_segmentTypedDimension_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentTypedDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-16-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-16-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-16-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">QNameの値は妥当なディメンション項目を示さなければならない。</link:label>
-    <!-- srcd-17 gl-srcd:segmentTypedDimensionValue -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentTypedDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__16-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__16-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
+    <!-- _17 gl-srcd:segmentTypedDimensionValue -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentTypedDimensionValue" xlink:label="gl-srcd_segmentTypedDimensionValue_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentTypedDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-17-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-17-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約タイプトディメンション値</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-17-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CDATAであり、妥当なXML記述でなければならない。スキーマは、入力されたディメンションスキーマに対して妥当でなければならない。</link:label>
-    <!-- srcdG-8 gl-srcd:segmentSimpleElement -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentTypedDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__17-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__17-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約タイプトディメンション値</link:label>
+    <!-- G8 gl-srcd:segmentSimpleElement -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentSimpleElement" xlink:label="gl-srcd_segmentSimpleElement_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentSimpleElement_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-8-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-8-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約シンプルエレメントコンテント】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-8-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">セグメントまたはシナリオの、空要素を表現するためのタプル。</link:label>
-    <!-- srcd-18 gl-srcd:segmentSimpleElementContent -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentSimpleElement_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G8-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G8-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約シンプルエレメントコンテント】</link:label>
+    <!-- _18 gl-srcd:segmentSimpleElementContent -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentSimpleElementContent" xlink:label="gl-srcd_segmentSimpleElementContent_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentSimpleElementContent_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-18-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-18-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント名</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-18-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約シンプルエレメントの記述のQName</link:label>
-    <!-- srcd-19 gl-srcd:segmentSimpleElementValue -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentSimpleElementContent_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__18-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__18-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント名</link:label>
+    <!-- _19 gl-srcd:segmentSimpleElementValue -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentSimpleElementValue" xlink:label="gl-srcd_segmentSimpleElementValue_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentSimpleElementValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-19-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-19-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント値</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-19-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">シンプルエレメントの値。</link:label>
-    <!-- srcd-20 gl-srcd:segmentNonDimensionalContents -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentSimpleElementValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__19-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__19-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント値</link:label>
+    <!-- _20 gl-srcd:segmentNonDimensionalContents -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_segmentNonDimensionalContents" xlink:label="gl-srcd_segmentNonDimensionalContents_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentNonDimensionalContents_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-20-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-20-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約非ディメンションコンテント</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-20-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CDATAであり、妥当なXML記述でなければならない。</link:label>
-    <!-- srcdG-9 gl-srcd:summaryPeriod -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_segmentNonDimensionalContents_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__20-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__20-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約非ディメンションコンテント</link:label>
+    <!-- G9 gl-srcd:summaryPeriod -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryPeriod" xlink:label="gl-srcd_summaryPeriod_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPeriod_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-9-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-9-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約ピリオド】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-9-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のピリオドの記述の指定場所。</link:label>
-    <!-- srcd-21 gl-srcd:summaryInstant -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryPeriod_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G9-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G9-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約ピリオド】</link:label>
+    <!-- _21 gl-srcd:summaryInstant -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryInstant" xlink:label="gl-srcd_summaryInstant_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryInstant_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-21-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-21-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオドインスタント</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-21-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のピリオドの特定の日付の記述の指定場所。</link:label>
-    <!-- srcd-22 gl-srcd:summaryStartDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryInstant_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__21-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__21-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオドインスタント</link:label>
+    <!-- _22 gl-srcd:summaryStartDate -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryStartDate" xlink:label="gl-srcd_summaryStartDate_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryStartDate_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-22-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-22-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオド開始日付</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-22-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のピリオドの開始日の記述の指定場所。</link:label>
-    <!-- srcd-23 gl-srcd:summaryEndDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryStartDate_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__22-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__22-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオド開始日付</link:label>
+    <!-- _23 gl-srcd:summaryEndDate -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryEndDate" xlink:label="gl-srcd_summaryEndDate_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryEndDate_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-23-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-23-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオド終了日付</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-23-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のピリオドの終了日の記述の指定場所。</link:label>
-    <!-- srcd-24 gl-srcd:summaryForever -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryEndDate_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__23-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__23-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオド終了日付</link:label>
+    <!-- _24 gl-srcd:summaryForever -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryForever" xlink:label="gl-srcd_summaryForever_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryForever_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-24-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-24-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオド無期限</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-24-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のピリオドが無期限であることを示す指定場所。</link:label>
-    <!-- srcdG-10 gl-srcd:summaryScenario -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryForever_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__24-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__24-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ピリオド無期限</link:label>
+    <!-- G10 gl-srcd:summaryScenario -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryScenario" xlink:label="gl-srcd_summaryScenario_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryScenario_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-10-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-10-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約シナリオ】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-10-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のシナリオの記述の指定場所。</link:label>
-    <!-- srcdG-11 gl-srcd:senarioExplicit -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryScenario_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G10-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G10-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約シナリオ】</link:label>
+    <!-- G11 gl-srcd:senarioExplicit -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioExplicit" xlink:label="gl-srcd_senarioExplicit_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioExplicit_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-11-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-11-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エクスプリシットディメンション】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-11-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のエクスプリシットディメンションの記述の指定場所。</link:label>
-    <!-- srcd-25 gl-srcd:senarioExplicitDimension -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioExplicit_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G11-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G11-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約エクスプリシットディメンション】</link:label>
+    <!-- _25 gl-srcd:senarioExplicitDimension -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioExplicitDimension" xlink:label="gl-srcd_senarioExplicitDimension_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioExplicitDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-25-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-25-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-25-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">QNameの値は妥当なディメンション項目を示さなければならない。</link:label>
-    <!-- srcd-26 gl-srcd:senarioExplicitDimensionValue -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioExplicitDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__25-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__25-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
+    <!-- _26 gl-srcd:senarioExplicitDimensionValue -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioExplicitDimensionValue" xlink:label="gl-srcd_senarioExplicitDimensionValue_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioExplicitDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-26-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-26-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エクスプリシットディメンション値</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-26-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">QNameの値は妥当なメンバ項目を示さなければならない。</link:label>
-    <!-- srcdG-12 gl-srcd:senarioTyped -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioExplicitDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__26-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__26-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約エクスプリシットディメンション値</link:label>
+    <!-- G12 gl-srcd:senarioTyped -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioTyped" xlink:label="gl-srcd_senarioTyped_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioTyped_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-12-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-12-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約タイプトディメンション】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-12-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のタイプトディメンションの記述の指定場所。</link:label>
-    <!-- srcd-27 gl-srcd:senarioTypedDimension -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioTyped_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G12-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G12-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約タイプトディメンション】</link:label>
+    <!-- _27 gl-srcd:senarioTypedDimension -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioTypedDimension" xlink:label="gl-srcd_senarioTypedDimension_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioTypedDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-27-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-27-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-27-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">QNameの値は妥当なディメンション項目を示さなければならない。</link:label>
-    <!-- srcd-28 gl-srcd:senarioTypedDimensionValue -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioTypedDimension_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__27-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__27-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ディメンション</link:label>
+    <!-- _28 gl-srcd:senarioTypedDimensionValue -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioTypedDimensionValue" xlink:label="gl-srcd_senarioTypedDimensionValue_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioTypedDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-28-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-28-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約タイプトディメンション値</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-28-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CDATAであり、妥当なXML記述でなければならない。スキーマは、入力されたディメンションスキーマに対して妥当でなければならない。</link:label>
-    <!-- srcdG-13 gl-srcd:senarioSimpleElement -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioTypedDimensionValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__28-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__28-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約タイプトディメンション値</link:label>
+    <!-- G13 gl-srcd:senarioSimpleElement -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioSimpleElement" xlink:label="gl-srcd_senarioSimpleElement_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioSimpleElement_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-13-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-13-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約シンプルエレメントコンテント】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-13-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">セグメントまたはシナリオの、空要素を表現するためのタプル。</link:label>
-    <!-- srcd-29 gl-srcd:senarioSimpleElementContent -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioSimpleElement_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G13-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G13-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約シンプルエレメントコンテント】</link:label>
+    <!-- _29 gl-srcd:senarioSimpleElementContent -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioSimpleElementContent" xlink:label="gl-srcd_senarioSimpleElementContent_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioSimpleElementContent_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-29-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-29-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント名</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-29-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約シンプルエレメントの記述のQName</link:label>
-    <!-- srcd-30 gl-srcd:senarioSimpleElementValue -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioSimpleElementContent_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__29-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__29-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント名</link:label>
+    <!-- _30 gl-srcd:senarioSimpleElementValue -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioSimpleElementValue" xlink:label="gl-srcd_senarioSimpleElementValue_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioSimpleElementValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-30-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-30-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント値</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-30-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">シンプルエレメントの値。</link:label>
-    <!-- srcd-31 gl-srcd:senarioNonDimensionalContents -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioSimpleElementValue_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__30-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__30-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約シンプルエレメント値</link:label>
+    <!-- _31 gl-srcd:senarioNonDimensionalContents -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_senarioNonDimensionalContents" xlink:label="gl-srcd_senarioNonDimensionalContents_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioNonDimensionalContents_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-31-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-31-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約非ディメンションコンテント</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-31-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CDATAであり、妥当なXML記述でなければならない。</link:label>
-    <!-- srcdG-14 gl-srcd:summaryUnit -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_senarioNonDimensionalContents_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__31-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__31-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約非ディメンションコンテント</link:label>
+    <!-- G14 gl-srcd:summaryUnit -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryUnit" xlink:label="gl-srcd_summaryUnit_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryUnit_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-14-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-14-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約ユニット】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-14-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のユニットの記述の指定場所。</link:label>
-    <!-- srcd-32 gl-srcd:summaryNumerator -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryUnit_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G14-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G14-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【集約ユニット】</link:label>
+    <!-- _32 gl-srcd:summaryNumerator -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryNumerator" xlink:label="gl-srcd_summaryNumerator_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryNumerator_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-32-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-32-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ユニット分子</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-32-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のユニットの分子の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。</link:label>
-    <!-- srcd-33 gl-srcd:summaryDenominator -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryNumerator_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__32-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__32-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ユニット分子</link:label>
+    <!-- _33 gl-srcd:summaryDenominator -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryDenominator" xlink:label="gl-srcd_summaryDenominator_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryDenominator_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-33-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-33-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ユニット分母</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-33-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のユニットの分母の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。</link:label>
-    <!-- srcd-34 gl-srcd:summaryReportingTaxonomyIDRef -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryDenominator_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__33-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__33-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約ユニット分母</link:label>
+    <!-- _34 gl-srcd:summaryReportingTaxonomyIDRef -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_summaryReportingTaxonomyIDRef" xlink:label="gl-srcd_summaryReportingTaxonomyIDRef_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyIDRef_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-34-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-34-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミ識別子参照情報</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-34-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関連する報告タクソノミの識別子への参照情報。documentInfo内のsummaryReportingTaxonomies構造体で定義される。特定のタクソノミを示すxbrlInfo構造体の集合を、アプリケーションが識別できるようにする。</link:label>
-    <!-- srcdG-15 gl-srcd:richTextComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_summaryReportingTaxonomyIDRef_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__34-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__34-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告タクソノミ識別子参照情報</link:label>
+    <!-- G15 gl-srcd:richTextComment -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextComment" xlink:label="gl-srcd_richTextComment_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextComment_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcdG-15-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-15-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【リッチテキストコメント】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcdG-15-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XHTMLを含む、リッチテキスト形式のテキストを受け入れる。XBRLインスタンスのフットノートの生成や、文書や伝票のコメントの生成などの、さまざまな目的で利用可能。</link:label>
-    <!-- srcd-35 gl-srcd:richTextCommentCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextComment_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_G15-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G15-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【リッチテキストコメント】</link:label>
+    <!-- _35 gl-srcd:richTextCommentCode -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextCommentCode" xlink:label="gl-srcd_richTextCommentCode_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentCode_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-35-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-35-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメントコード</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-35-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">リッチテキストコメントの用途を識別する、列挙コード。[設定値のリスト]\nlink_footnote：リンクフットノート、footnote：フットノート、source_document：元文書、source_journal：元仕訳帳、batch：仕訳の束、other：その他</link:label>
-    <!-- srcd-36 gl-srcd:richTextCommentDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentCode_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__35-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__35-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメントコード</link:label>
+    <!-- _36 gl-srcd:richTextCommentDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextCommentDescription" xlink:label="gl-srcd_richTextCommentDescription_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentDescription_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-36-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-36-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメント説明</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-36-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">リッチテキストコメントコードの説明。</link:label>
-    <!-- srcd-37 gl-srcd:richTextCommentContent -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentDescription_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__36-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__36-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメント説明</link:label>
+    <!-- _37 gl-srcd:richTextCommentContent -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextCommentContent" xlink:label="gl-srcd_richTextCommentContent_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentContent_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-37-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-37-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメント内容</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-37-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">リッチテキストコメントの内容。</link:label>
-    <!-- srcd-38 gl-srcd:richTextCommentLocator -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentContent_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__37-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__37-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメント内容</link:label>
+    <!-- _38 gl-srcd:richTextCommentLocator -->
     <link:loc xlink:type="locator" xlink:href="gl-srcd-2020-12-31.xsd#gl-srcd_richTextCommentLocator" xlink:label="gl-srcd_richTextCommentLocator_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentLocator_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl_srcd-38-ja_5cbd4241d654852d1e50079a28582c3c"/>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-38-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメントロケータ</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_srcd-38-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">コメントが関係する項目を識別する、XPath表現。</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-srcd_richTextCommentLocator_5cbd4241d654852d1e50079a28582c3c" xlink:to="lbl__38-ja_5cbd4241d654852d1e50079a28582c3c"/>
+    <link:label xlink:type="resource" xlink:label="lbl__38-ja_5cbd4241d654852d1e50079a28582c3c" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">リッチテキストコメントロケータ</link:label>
  </link:labelLink>
 </link:linkbase>

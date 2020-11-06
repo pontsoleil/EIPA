@@ -1,239 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <!-- muc-1 gl-muc:defaultCurrency -->
+    <!-- _1 gl-muc:defaultCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_defaultCurrency" xlink:label="gl-muc_defaultCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_defaultCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-1-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-1-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">既定通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-1-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRLインスタンス内に指定する方法のかわりに、金額の既定の通貨を指定可能。多通貨環境で特に重要。ISO4217コード体系を推奨。</link:label>
-    <!-- muc-2 gl-muc:amountCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_defaultCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__1-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__1-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">既定通貨</link:label>
+    <!-- _2 gl-muc:amountCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountCurrency" xlink:label="gl-muc_amountCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-2-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-2-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-2-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRLインスタンス内に指定する方法のかわりに、金額の通貨を指定可能。多通貨環境で特に重要。ISO4217コード体系を推奨。</link:label>
-    <!-- muc-6 gl-muc:amountOriginalExchangeRateDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__2-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__2-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">通貨</link:label>
+    <!-- _6 gl-muc:amountOriginalExchangeRateDate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalExchangeRateDate" xlink:label="gl-muc_amountOriginalExchangeRateDate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRateDate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-6-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-6-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レート日付</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-6-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引の記録に使われた通貨換算レートの日付。</link:label>
-    <!-- muc-3 gl-muc:amountOriginalAmount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRateDate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__6-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__6-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レート日付</link:label>
+    <!-- _3 gl-muc:amountOriginalAmount -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalAmount" xlink:label="gl-muc_amountOriginalAmount_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-3-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-3-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算額</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-3-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">多通貨取引のための、(自国通貨に対する)原取引通貨での金額。</link:label>
-    <!-- muc-4 gl-muc:amountOriginalCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__3-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__3-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算額</link:label>
+    <!-- _4 gl-muc:amountOriginalCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalCurrency" xlink:label="gl-muc_amountOriginalCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-4-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-4-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-4-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">自国通貨に対する、原取引通貨。ISO4217コードを推奨。</link:label>
-    <!-- muc-5 gl-muc:amountOriginalExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__4-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__4-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨</link:label>
+    <!-- _5 gl-muc:amountOriginalExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalExchangeRate" xlink:label="gl-muc_amountOriginalExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-5-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-5-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-5-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の通貨換算レート。（自国通貨を原取引通貨で割った値）</link:label>
-    <!-- muc-7 gl-muc:amountOriginalExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__5-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__5-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レート</link:label>
+    <!-- _7 gl-muc:amountOriginalExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalExchangeRateSource" xlink:label="gl-muc_amountOriginalExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-7-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-7-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-7-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">通貨換算レートの情報源。たとえば、Reuters, Bloomberg。</link:label>
-    <!-- muc-8 gl-muc:amountOriginalExchangeRateComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__7-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__7-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レート情報源</link:label>
+    <!-- _8 gl-muc:amountOriginalExchangeRateComment -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalExchangeRateComment" xlink:label="gl-muc_amountOriginalExchangeRateComment_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRateComment_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-8-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-8-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レートコメント</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-8-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引の記録に使用された通貨換算レートに関するコメント。</link:label>
-    <!-- muc-9 gl-muc:amountOriginalTriangulationAmount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalExchangeRateComment_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__8-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__8-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨換算レートコメント</link:label>
+    <!-- _9 gl-muc:amountOriginalTriangulationAmount -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalTriangulationAmount" xlink:label="gl-muc_amountOriginalTriangulationAmount_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-9-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-9-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引トライアンギュレーション通貨換算額</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-9-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">トライアンギュレーション取引の場合に、トライアンギュレーション通貨での金額を指定する。借方は正、貸方は負の値を指定。</link:label>
-    <!-- muc-10 gl-muc:amountOriginalTriangulationCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__9-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__9-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引トライアンギュレーション通貨換算額</link:label>
+    <!-- _10 gl-muc:amountOriginalTriangulationCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalTriangulationCurrency" xlink:label="gl-muc_amountOriginalTriangulationCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-10-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-10-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引トライアンギュレーション通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-10-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">トライアンギュレーション取引時の通貨。EUR、USDなど。ISO4217コードを推奨。</link:label>
-    <!-- muc-11 gl-muc:amountOriginalTriangulationExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__10-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__10-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引トライアンギュレーション通貨</link:label>
+    <!-- _11 gl-muc:amountOriginalTriangulationExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalTriangulationExchangeRate" xlink:label="gl-muc_amountOriginalTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-11-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-11-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">自国通貨トライアンギュレーション通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-11-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の、自国通貨とトライアンギュレーション通貨との換算レート。（自国通貨をトライアンギュレーション通貨で割った値）</link:label>
-    <!-- muc-12 gl-muc:amountOriginalTriangulationExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__11-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__11-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">自国通貨トライアンギュレーション通貨換算レート</link:label>
+    <!-- _12 gl-muc:amountOriginalTriangulationExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalTriangulationExchangeRateSource" xlink:label="gl-muc_amountOriginalTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-12-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-12-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">自国通貨トライアンギュレーション通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-12-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の、トライアンギュレーション取引金額の換算レートの情報源。たとえば、Reuters, Bloomberg。</link:label>
-    <!-- muc-13 gl-muc:amountOriginalTriangulationExchangeRateType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__12-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__12-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">自国通貨トライアンギュレーション通貨換算レート情報源</link:label>
+    <!-- _13 gl-muc:amountOriginalTriangulationExchangeRateType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountOriginalTriangulationExchangeRateType" xlink:label="gl-muc_amountOriginalTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-13-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-13-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">自国通貨トライアンギュレーション通貨換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-13-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の、トライアンギュレーション取引金額の換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
-    <!-- muc-14 gl-muc:originalTriangulationExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountOriginalTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__13-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__13-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">自国通貨トライアンギュレーション通貨換算レート種別</link:label>
+    <!-- _14 gl-muc:originalTriangulationExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_originalTriangulationExchangeRate" xlink:label="gl-muc_originalTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_originalTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-14-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-14-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨トライアンギュレーション通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-14-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の、原取引通貨とトライアンギュレーション通貨との換算レート。（原取引通貨をトライアンギュレーション通貨で割った値）</link:label>
-    <!-- muc-15 gl-muc:originalExchangeRateTriangulationSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_originalTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__14-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__14-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨トライアンギュレーション通貨換算レート</link:label>
+    <!-- _15 gl-muc:originalExchangeRateTriangulationSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_originalExchangeRateTriangulationSource" xlink:label="gl-muc_originalExchangeRateTriangulationSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_originalExchangeRateTriangulationSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-15-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-15-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨トライアンギュレーション通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-15-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の、原取引通貨からトライアンギュレーション通貨への換算レートの情報源。たとえば、Reuters, Bloomberg。</link:label>
-    <!-- muc-16 gl-muc:originalExchangeRateTriangulationType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_originalExchangeRateTriangulationSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__15-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__15-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨トライアンギュレーション通貨換算レート情報源</link:label>
+    <!-- _16 gl-muc:originalExchangeRateTriangulationType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_originalExchangeRateTriangulationType" xlink:label="gl-muc_originalExchangeRateTriangulationType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_originalExchangeRateTriangulationType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-16-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-16-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨トライアンギュレーション通貨換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-16-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の、原取引通貨からトライアンギュレーション通貨への換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
-    <!-- mucG-1 gl-muc:multicurrencyDetail -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_originalExchangeRateTriangulationType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__16-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__16-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">原取引通貨トライアンギュレーション通貨換算レート種別</link:label>
+    <!-- G1 gl-muc:multicurrencyDetail -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_multicurrencyDetail" xlink:label="gl-muc_multicurrencyDetail_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_multicurrencyDetail_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_mucG-1-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_mucG-1-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【多通貨明細】</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_mucG-1-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のセクション。－現在および原取引時の、換算レートおよび金額の記録に使用される。\nトライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。</link:label>
-    <!-- muc-17 gl-muc:multicurrencyDetailExchangeRateDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_multicurrencyDetail_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_G1-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl_G1-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【多通貨明細】</link:label>
+    <!-- _17 gl-muc:multicurrencyDetailExchangeRateDate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_multicurrencyDetailExchangeRateDate" xlink:label="gl-muc_multicurrencyDetailExchangeRateDate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_multicurrencyDetailExchangeRateDate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-17-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-17-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート日付</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-17-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">（原取引の日付ではなく）、amountRestatedAmountまたはamountTriangulationAmountが示された換算レートの日付。</link:label>
-    <!-- muc-18 gl-muc:amountRestatedAmount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_multicurrencyDetailExchangeRateDate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__17-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__17-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート日付</link:label>
+    <!-- _18 gl-muc:amountRestatedAmount -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountRestatedAmount" xlink:label="gl-muc_amountRestatedAmount_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-18-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-18-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算額</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-18-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountRestatedCurrencyで指定された外貨での、multicurrencyDetailExchangeRateDate時点の、換算額。</link:label>
-    <!-- muc-19 gl-muc:amountRestatedCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__18-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__18-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算額</link:label>
+    <!-- _19 gl-muc:amountRestatedCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountRestatedCurrency" xlink:label="gl-muc_amountRestatedCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-19-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-19-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-19-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountRestatedAmountで使用される通貨。ISO4217コードを推奨。</link:label>
-    <!-- muc-20 gl-muc:amountRestatedExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__19-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__19-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨</link:label>
+    <!-- _20 gl-muc:amountRestatedExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountRestatedExchangeRate" xlink:label="gl-muc_amountRestatedExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-20-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-20-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-20-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountRestatedAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨を外貨通貨で割った値）\n</link:label>
-    <!-- muc-21 gl-muc:amountRestatedExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__20-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__20-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート</link:label>
+    <!-- _21 gl-muc:amountRestatedExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountRestatedExchangeRateSource" xlink:label="gl-muc_amountRestatedExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-21-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-21-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-21-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。</link:label>
-    <!-- muc-22 gl-muc:amountRestatedExchangeRateType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__21-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__21-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート情報源</link:label>
+    <!-- _22 gl-muc:amountRestatedExchangeRateType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountRestatedExchangeRateType" xlink:label="gl-muc_amountRestatedExchangeRateType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-22-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-22-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-22-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
-    <!-- muc-23 gl-muc:amountTriangulationAmount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountRestatedExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__22-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__22-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算レート種別</link:label>
+    <!-- _23 gl-muc:amountTriangulationAmount -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountTriangulationAmount" xlink:label="gl-muc_amountTriangulationAmount_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-23-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-23-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算額</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-23-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountTriangulationCurrencyで指定されたトライアンギュレーション通貨での、multicurrencyDetailExchangeRateDate時点の換算額。</link:label>
-    <!-- muc-24 gl-muc:amountTriangulationCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationAmount_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__23-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__23-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算額</link:label>
+    <!-- _24 gl-muc:amountTriangulationCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountTriangulationCurrency" xlink:label="gl-muc_amountTriangulationCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-24-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-24-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-24-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountRestatedCurrencyと自国通貨間のトライアンギュレーション取引で使用される通貨。ISO4217コードを推奨。</link:label>
-    <!-- muc-25 gl-muc:amountTriangulationExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__24-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__24-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨</link:label>
+    <!-- _25 gl-muc:amountTriangulationExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountTriangulationExchangeRate" xlink:label="gl-muc_amountTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-25-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-25-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-25-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountTriangulationAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨をトライアンギュレーション通貨で割った値）</link:label>
-    <!-- muc-26 gl-muc:amountTriangulationExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__25-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__25-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算レート</link:label>
+    <!-- _26 gl-muc:amountTriangulationExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountTriangulationExchangeRateSource" xlink:label="gl-muc_amountTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-26-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-26-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-26-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">トライアンギュレーション通貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。</link:label>
-    <!-- muc-27 gl-muc:amountTriangulationExchangeRateType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__26-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__26-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算レート情報源</link:label>
+    <!-- _27 gl-muc:amountTriangulationExchangeRateType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_amountTriangulationExchangeRateType" xlink:label="gl-muc_amountTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-27-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-27-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-27-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">トライアンギュレーション通貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
-    <!-- muc-28 gl-muc:restatedTriangulationExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_amountTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__27-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__27-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">トライアンギュレーション通貨換算レート種別</link:label>
+    <!-- _28 gl-muc:restatedTriangulationExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_restatedTriangulationExchangeRate" xlink:label="gl-muc_restatedTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_restatedTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-28-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-28-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨トライアンギュレーション通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-28-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">amountRestatedAmountからamountTriangulationAmountへの、multicurrencyDetailExchangeRateDate時点の換算レート。（外貨通貨をトライアンギュレーション通貨で割った値）</link:label>
-    <!-- muc-29 gl-muc:restatedExchangeRateTriangulationSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_restatedTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__28-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__28-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨トライアンギュレーション通貨換算レート</link:label>
+    <!-- _29 gl-muc:restatedExchangeRateTriangulationSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_restatedExchangeRateTriangulationSource" xlink:label="gl-muc_restatedExchangeRateTriangulationSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_restatedExchangeRateTriangulationSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-29-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-29-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨トライアンギュレーション通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-29-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外貨通貨とトライアンギュレーション通貨の間の換算レートの情報源。たとえば、Reuters, Bloomberg。</link:label>
-    <!-- muc-30 gl-muc:restatedExchangeRateTriangulationType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_restatedExchangeRateTriangulationSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__29-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__29-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨トライアンギュレーション通貨換算レート情報源</link:label>
+    <!-- _30 gl-muc:restatedExchangeRateTriangulationType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_restatedExchangeRateTriangulationType" xlink:label="gl-muc_restatedExchangeRateTriangulationType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_restatedExchangeRateTriangulationType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-30-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-30-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨トライアンギュレーション通貨換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-30-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外貨通貨とトライアンギュレーション通貨の間の換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
-    <!-- muc-31 gl-muc:multicurrencyDetailComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_restatedExchangeRateTriangulationType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__30-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__30-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">換算通貨トライアンギュレーション通貨換算レート種別</link:label>
+    <!-- _31 gl-muc:multicurrencyDetailComment -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_multicurrencyDetailComment" xlink:label="gl-muc_multicurrencyDetailComment_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_multicurrencyDetailComment_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-31-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-31-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">多通貨明細コメント</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-31-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">multicurrencyDetailの内容のコメント。原取引時以外の、追加の換算レートを記録する理由などを記述。</link:label>
-    <!-- muc-32 gl-muc:taxAmountForeignCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_multicurrencyDetailComment_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__31-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__31-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">多通貨明細コメント</link:label>
+    <!-- _32 gl-muc:taxAmountForeignCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxAmountForeignCurrency" xlink:label="gl-muc_taxAmountForeignCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxAmountForeignCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-32-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-32-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外貨建税額</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-32-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、税額。</link:label>
-    <!-- muc-33 gl-muc:taxCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxAmountForeignCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__32-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__32-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外貨建税額</link:label>
+    <!-- _33 gl-muc:taxCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxCurrency" xlink:label="gl-muc_taxCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-33-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-33-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外貨建税額通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-33-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、通貨。</link:label>
-    <!-- muc-34 gl-muc:taxExchangeRateDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__33-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__33-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外貨建税額通貨</link:label>
+    <!-- _34 gl-muc:taxExchangeRateDate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxExchangeRateDate" xlink:label="gl-muc_taxExchangeRateDate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateDate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-34-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-34-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート日付</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-34-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、換算レートの日付または日付/時刻。</link:label>
-    <!-- muc-35 gl-muc:taxExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateDate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__34-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__34-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート日付</link:label>
+    <!-- _35 gl-muc:taxExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxExchangeRate" xlink:label="gl-muc_taxExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-35-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-35-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-35-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、換算レート。自国通貨を外貨で割った値。</link:label>
-    <!-- muc-36 gl-muc:taxExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__35-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__35-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート</link:label>
+    <!-- _36 gl-muc:taxExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxExchangeRateSource" xlink:label="gl-muc_taxExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-36-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-36-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-36-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、換算レートの情報源。たとえば、Reuters, Bloomberg</link:label>
-    <!-- muc-37 gl-muc:taxExchangeRateType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__36-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__36-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート情報源</link:label>
+    <!-- _37 gl-muc:taxExchangeRateType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxExchangeRateType" xlink:label="gl-muc_taxExchangeRateType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-37-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-37-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-37-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
-    <!-- muc-38 gl-muc:taxExchangeRateComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__37-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__37-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レート種別</link:label>
+    <!-- _38 gl-muc:taxExchangeRateComment -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxExchangeRateComment" xlink:label="gl-muc_taxExchangeRateComment_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateComment_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-38-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-38-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レートコメント</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-38-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、換算レートに関するコメント。</link:label>
-    <!-- muc-39 gl-muc:taxAmountTriangulationCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxExchangeRateComment_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__38-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__38-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算レートコメント</link:label>
+    <!-- _39 gl-muc:taxAmountTriangulationCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxAmountTriangulationCurrency" xlink:label="gl-muc_taxAmountTriangulationCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxAmountTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-39-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-39-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算額</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-39-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、トライアンギュレーション通貨での税額。</link:label>
-    <!-- muc-40 gl-muc:taxTriangulationCurrency -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxAmountTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__39-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__39-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算額</link:label>
+    <!-- _40 gl-muc:taxTriangulationCurrency -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxTriangulationCurrency" xlink:label="gl-muc_taxTriangulationCurrency_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-40-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-40-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算トライアンギュレーション通貨</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-40-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、トライアンギュレーション通貨。</link:label>
-    <!-- muc-41 gl-muc:taxTriangulationExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationCurrency_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__40-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__40-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額換算トライアンギュレーション通貨</link:label>
+    <!-- _41 gl-muc:taxTriangulationExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxTriangulationExchangeRate" xlink:label="gl-muc_taxTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-41-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-41-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-41-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、換算レート。自国通貨をトライアンギュレーション通貨で割った値。</link:label>
-    <!-- muc-42 gl-muc:taxTriangulationExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__41-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__41-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算レート</link:label>
+    <!-- _42 gl-muc:taxTriangulationExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxTriangulationExchangeRateSource" xlink:label="gl-muc_taxTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-42-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-42-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-42-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、換算レートの情報源。たとえば、Reuters, Bloomberg\n</link:label>
-    <!-- muc-43 gl-muc:taxTriangulationExchangeRateType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__42-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__42-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算レート情報源</link:label>
+    <!-- _43 gl-muc:taxTriangulationExchangeRateType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxTriangulationExchangeRateType" xlink:label="gl-muc_taxTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-43-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-43-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-43-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、換算レートの種別。たとえば、スポット・レート、先物など\n</link:label>
-    <!-- muc-44 gl-muc:taxForeignTriangulationExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__43-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__43-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額トライアンギュレーション通貨換算レート種別</link:label>
+    <!-- _44 gl-muc:taxForeignTriangulationExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxForeignTriangulationExchangeRate" xlink:label="gl-muc_taxForeignTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxForeignTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-44-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-44-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額外貨トライアンギュレーション通貨換算レート</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-44-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、換算レート。外貨をトライアンギュレーション通貨で割った値。</link:label>
-    <!-- muc-45 gl-muc:taxForeignTriangulationExchangeRateSource -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxForeignTriangulationExchangeRate_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__44-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__44-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額外貨トライアンギュレーション通貨換算レート</link:label>
+    <!-- _45 gl-muc:taxForeignTriangulationExchangeRateSource -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxForeignTriangulationExchangeRateSource" xlink:label="gl-muc_taxForeignTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxForeignTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-45-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-45-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額外貨トライアンギュレーション通貨換算レート情報源</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-45-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、換算レートの情報源。たとえば、Reuters, Bloomberg</link:label>
-    <!-- muc-46 gl-muc:taxForeignTriangulationExchangeRateType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxForeignTriangulationExchangeRateSource_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__45-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__45-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額外貨トライアンギュレーション通貨換算レート情報源</link:label>
+    <!-- _46 gl-muc:taxForeignTriangulationExchangeRateType -->
     <link:loc xlink:type="locator" xlink:href="gl-muc-2020-12-31.xsd#gl-muc_taxForeignTriangulationExchangeRateType" xlink:label="gl-muc_taxForeignTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxForeignTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl_muc-46-ja_467f7824b0456b978d65a1753380cfc6"/>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-46-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額外貨トライアンギュレーション通貨換算レート種別</link:label>
-    <link:label xlink:type="resource" xlink:label="lbl_muc-46-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建てで、トライアンギュレーション取引の場合の、換算レートの種別。たとえば、スポット・レート、先物など。</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-muc_taxForeignTriangulationExchangeRateType_467f7824b0456b978d65a1753380cfc6" xlink:to="lbl__46-ja_467f7824b0456b978d65a1753380cfc6"/>
+    <link:label xlink:type="resource" xlink:label="lbl__46-ja_467f7824b0456b978d65a1753380cfc6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額外貨トライアンギュレーション通貨換算レート種別</link:label>
  </link:labelLink>
 </link:linkbase>
