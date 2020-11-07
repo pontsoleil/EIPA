@@ -80,6 +80,7 @@
     <!-- DOCUMENT_LEVEL_ALLOWANCES -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader" xlink:title="presentation: entryHeader"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_DOCUMENT_LEVEL_ALLOWANCES" xlink:label="gl-cen_DOCUMENT_LEVEL_ALLOWANCES" xlink:title="presentation parent: DOCUMENT_LEVEL_ALLOWANCES"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cen_DOCUMENT_LEVEL_ALLOWANCES" xlink:title="presentation: corG-4 to cenG-20" order="288.2"/> -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_amount" xlink:label="gl-cor_amount" xlink:title="presentation child: amount"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_DOCUMENT_LEVEL_ALLOWANCES" xlink:to="gl-cor_amount" xlink:title="presentation: DOCUMENT_LEVEL_ALLOWANCES to amount" use="optional" priority="2" order="254.2"/>
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_taxCode" xlink:label="gl-cor_taxCode" xlink:title="presentation child: taxCode"/>
@@ -89,12 +90,14 @@
 
     <!-- DOCUMENT_LEVEL_CHARGES -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_DOCUMENT_LEVEL_CHARGES" xlink:label="gl-cen_DOCUMENT_LEVEL_CHARGES" xlink:title="presentation parent: DOCUMENT_LEVEL_CHARGES"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cen_DOCUMENT_LEVEL_CHARGES" xlink:title="presentation: corG-4 to cenG-21" order="288.4"/> -->
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_DOCUMENT_LEVEL_CHARGES" xlink:to="gl-cor_amount" xlink:title="presentation: DOCUMENT_LEVEL_CHARGES to amount" use="optional" priority="2" order="259.2"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_DOCUMENT_LEVEL_CHARGES" xlink:to="gl-cor_taxCode" xlink:title="presentation: DOCUMENT_LEVEL_CHARGES to taxCode" use="optional" priority="2" order="259.4"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_DOCUMENT_LEVEL_CHARGES" xlink:to="gl-cor_taxPercentageRate" xlink:title="presentation: DOCUMENT_LEVEL_CHARGES to taxPercentageRate" use="optional" priority="2" order="259.6"/>
 
     <!-- DOCUMENT_TOTALS -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_DOCUMENT_TOTALS" xlink:label="gl-cen_DOCUMENT_TOTALS" xlink:title="presentation child: DOCUMENT_TOTALS"/>
+    <!-- <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cen_DOCUMENT_TOTALS" xlink:title="presentation: corG-4 to cenG-22" order="288.3"/> -->
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_DOCUMENT_TOTALS" xlink:to="gl-cor_amount" xlink:title="presentation: DOCUMENT_TOTALS to amount" use="optional" priority="2" order="264.6"/>
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_taxAmount" xlink:label="gl-cor_taxAmount" xlink:title="presentation child: taxAmount"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_DOCUMENT_TOTALS" xlink:to="gl-cor_taxAmount" xlink:title="presentation: DOCUMENT_TOTALS to taxAmount" use="optional" priority="2" order="264.4"/>

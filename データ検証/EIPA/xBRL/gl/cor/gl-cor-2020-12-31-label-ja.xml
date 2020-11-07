@@ -1,480 +1,599 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
-    <!-- G1 gl-cor:accountingEntries -->
+    <!-- corG-1 gl-cor:accountingEntries -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountingEntries" xlink:label="gl-cor_accountingEntries_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountingEntries_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G1-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G1-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【会計仕訳】</link:label>
-    <!-- G2 gl-cor:documentInfo -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountingEntries_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-1-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-1-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【会計仕訳】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-1-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRL GLのルート要素。 この要素にはデータは登録されない。</link:label>
+    <!-- corG-2 gl-cor:documentInfo -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentInfo_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G2-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G2-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【文書情報】</link:label>
-    <!-- _1 gl-cor:entriesType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentInfo_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-2-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-2-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【文書情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-2-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この会計仕訳に関する情報の親タグ。</link:label>
+    <!-- cor-1 gl-cor:entriesType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entriesType" xlink:label="gl-cor_entriesType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entriesType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__1-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__1-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">文書種別</link:label>
-    <!-- _2 gl-cor:uniqueID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entriesType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-1-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-1-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">文書種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-1-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">・科目:科目体系ファイルの情報。\n・残高:特定の期間について、勘定科目(または勘定科目リスト)の、完了し検証された仕訳リストの累算結果。時に総勘定元帳と呼ばれる。\n・仕訳:個々の勘定記入のリスト。転記/検証されていることもあり、されていないこともある。\n・仕訳帳:特定の期間における、その期間の開始残高を含む貸借が一致(Dr=Cr)した仕訳のリスト 。\n・元帳:特定の期間における特定の勘定科目(または勘定科目リスト)についての、仕訳の全リスト 。注意－貸借が一致する必要はない。\n・資産:仕訳記入の一部として必ずしも含まれていないが、そこから抽出可能な売掛金、買掛金、在庫、固定資産、その他の情報のリスト。\n・試算表:事業体に対する、特定期間の全勘定科目リストでの、完了し検証された仕訳リストの、貸借が一致（Dr=Cr)した累算結果。\n・税率表:税率表をあらわすデータを自動的に解釈できるようにする。税率表は、コード、税務当局情報、レートをあらわす複数のtaxes構造データを使って定義される。taxTableCodeはtaxes構造データ内で相互に参照されるが、これらのマスタファイルが参照可能。\n多くの場合、日付または科目によりソートされる。会計処理方法や用語は慣行により適合させる。\n[設定値のリスト]\n(account：科目)、(balance：残高)、(entries：仕訳)、(journal：仕訳帳)、(ledger：元帳)、(assets：資産)、(trialbalance：試算表)、(taxtables：税率表)、(other：その他)</link:label>
+    <!-- cor-2 gl-cor:uniqueID -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_uniqueID" xlink:label="gl-cor_uniqueID_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_uniqueID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__2-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__2-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">監査番号</link:label>
-    <!-- _3 gl-cor:revisesUniqueID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_uniqueID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-2-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-2-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">監査番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-2-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このファイルの一意識別子。</link:label>
+    <!-- cor-3 gl-cor:revisesUniqueID -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_revisesUniqueID" xlink:label="gl-cor_revisesUniqueID_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_revisesUniqueID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__3-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__3-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">改訂前監査番号</link:label>
-    <!-- _4 gl-cor:revisesUniqueIDAction -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_revisesUniqueID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-3-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-3-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">改訂前監査番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-3-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳の束が以前の仕訳の束を改訂する場合に、以前の束を示す。元の文書のuniqueIDが指定される。開発者は、例外報告を考慮すべきである。</link:label>
+    <!-- cor-4 gl-cor:revisesUniqueIDAction -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_revisesUniqueIDAction" xlink:label="gl-cor_revisesUniqueIDAction_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_revisesUniqueIDAction_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__4-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__4-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">改訂前データ処置</link:label>
-    <!-- _5 gl-cor:language -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_revisesUniqueIDAction_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-4-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-4-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">改訂前データ処置</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-4-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">以前のデータの束に対する操作のガイダンス。 取替え-古いデータを無効にし上書きする。\n補完-元々含まれていたかのように、そのデータに所属させる。\n[設定値のリスト]\n(supplement：補完)、(supersede：取替え)</link:label>
+    <!-- cor-5 gl-cor:language -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_language" xlink:label="gl-cor_language_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_language_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__5-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__5-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">言語</link:label>
-    <!-- _6 gl-cor:creationDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_language_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-5-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-5-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">言語</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-5-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主要言語。 実用的には、このフィールドの内容はISO639-1988言語コードに一致すべきである。</link:label>
+    <!-- cor-6 gl-cor:creationDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_creationDate" xlink:label="gl-cor_creationDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_creationDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__6-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__6-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">作成日付</link:label>
-    <!-- _7 gl-cor:entriesComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_creationDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-6-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-6-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">作成日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-6-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ファイルが作成された日付/時間。</link:label>
+    <!-- cor-7 gl-cor:entriesComment -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entriesComment" xlink:label="gl-cor_entriesComment_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entriesComment_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__7-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__7-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">文書コメント</link:label>
-    <!-- _8 gl-cor:periodCoveredStart -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entriesComment_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-7-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-7-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">文書コメント</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-7-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書全体に対する説明文。</link:label>
+    <!-- cor-8 gl-cor:periodCoveredStart -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_periodCoveredStart" xlink:label="gl-cor_periodCoveredStart_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_periodCoveredStart_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__8-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__8-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">対象期間開始日付</link:label>
-    <!-- _9 gl-cor:periodCoveredEnd -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_periodCoveredStart_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-8-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-8-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">対象期間開始日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-8-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">内容の日付範囲の開始日。 残高の開始日付などの、データに関する多くの仮定の基礎として使用される。</link:label>
+    <!-- cor-9 gl-cor:periodCoveredEnd -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_periodCoveredEnd" xlink:label="gl-cor_periodCoveredEnd_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_periodCoveredEnd_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__9-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__9-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">対象期間終了日付</link:label>
-    <!-- G3 gl-cor:entityInformation -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_periodCoveredEnd_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-9-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-9-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">対象期間終了日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-9-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">内容の日付範囲の終了日。 残高の開始日付などの、データに関する多くの仮定の基礎として使用される。</link:label>
+    <!-- corG-3 gl-cor:entityInformation -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entityInformation" xlink:label="gl-cor_entityInformation_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entityInformation_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G3-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G3-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【事業体情報】</link:label>
-    <!-- G9 gl-cor:identifierReference -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entityInformation_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-3-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-3-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【事業体情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-3-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体情報（報告組織に関する情報）の入れ物。</link:label>
+    <!-- corG-9 gl-cor:identifierReference -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierReference" xlink:label="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G9-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G9-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE情報】</link:label>
-    <!-- _44 gl-cor:identifierCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-9-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-9-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-9-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客、仕入先、従業員のための識別子。</link:label>
+    <!-- cor-44 gl-cor:identifierCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierCode" xlink:label="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__44-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__44-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE識別番号（内部）</link:label>
-    <!-- G10 gl-cor:identifierExternalReference -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-44-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-44-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE識別番号（内部）</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-44-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">identifierReferenceに関係付けられた、内部ID番号。</link:label>
+    <!-- corG-10 gl-cor:identifierExternalReference -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierExternalReference" xlink:label="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G10-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G10-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【外部機関】</link:label>
-    <!-- _45 gl-cor:identifierAuthorityCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierExternalReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-10-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-10-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【外部機関】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-10-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">識別子と関係付けられる外部機関への参照情報を含む構造体。</link:label>
+    <!-- cor-45 gl-cor:identifierAuthorityCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthorityCode" xlink:label="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__45-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__45-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外部機関付与識別番号</link:label>
-    <!-- _46 gl-cor:identifierAuthority -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-45-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-45-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外部機関付与識別番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-45-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">identifierReferenceと関係付けられる、外部機関（たとえば、税務署）によるID番号。</link:label>
+    <!-- cor-46 gl-cor:identifierAuthority -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthority" xlink:label="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__46-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__46-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外部機関名</link:label>
-    <!-- _47 gl-cor:identifierAuthorityVerificationDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthority_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-46-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-46-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外部機関名</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-46-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外部機関の名前（たとえば、税務署）</link:label>
+    <!-- cor-47 gl-cor:identifierAuthorityVerificationDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierAuthorityVerificationDate" xlink:label="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__47-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__47-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外部機関認証日付</link:label>
-    <!-- _48 gl-cor:identifierOrganizationType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierAuthorityVerificationDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-47-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-47-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">外部機関認証日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-47-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外部機関が最後に認証した日付。</link:label>
+    <!-- cor-48 gl-cor:identifierOrganizationType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierOrganizationType" xlink:label="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__48-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__48-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE組織種別</link:label>
-    <!-- _49 gl-cor:identifierOrganizationTypeDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-48-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-48-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE組織種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-48-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の組織種別。\n[設定値のリスト]\n(individual：個人)、(organization：組織)、(other：その他) </link:label>
+    <!-- cor-49 gl-cor:identifierOrganizationTypeDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierOrganizationTypeDescription" xlink:label="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__49-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__49-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE組織種別説明</link:label>
-    <!-- _50 gl-cor:identifierDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierOrganizationTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-49-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-49-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE組織種別説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-49-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の組織種別の説明。</link:label>
+    <!-- cor-50 gl-cor:identifierDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierDescription" xlink:label="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__50-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__50-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE説明</link:label>
-    <!-- _51 gl-cor:identifierType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-50-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-50-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-50-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">identifierReferenceの説明。</link:label>
+    <!-- cor-51 gl-cor:identifierType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierType" xlink:label="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__51-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__51-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE種別</link:label>
-    <!-- _52 gl-cor:identifierCategory -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-51-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-51-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-51-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">実体の種別。例えば、顧客、仕入先、従業員。\n[設定値のリスト]\n(C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者) </link:label>
+    <!-- cor-52 gl-cor:identifierCategory -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierCategory" xlink:label="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__52-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__52-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEカテゴリ</link:label>
-    <!-- G11 gl-cor:identifierEMail -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierCategory_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-52-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-52-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEカテゴリ</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-52-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客、仕入先、従業員の分類に使用する。　（住居/商業/機関/政府や、小売/卸や、ビジネスで使用されるその他の分類）。</link:label>
+    <!-- corG-11 gl-cor:identifierEMail -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEMail" xlink:label="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G11-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G11-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【Eメールアドレス】</link:label>
-    <!-- _53 gl-cor:identifierEmailAddressUsage -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEMail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-11-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-11-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【Eメールアドレス】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-11-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のEメールアドレス。</link:label>
+    <!-- cor-53 gl-cor:identifierEmailAddressUsage -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEmailAddressUsage" xlink:label="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__53-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__53-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEEメールアドレス用途</link:label>
-    <!-- _54 gl-cor:identifierEmailAddress -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-53-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-53-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEEメールアドレス用途</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-53-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のEメールアドレスの用途。(注文、本社、IRなど)</link:label>
+    <!-- cor-54 gl-cor:identifierEmailAddress -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierEmailAddress" xlink:label="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__54-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__54-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEEメールアドレス</link:label>
-    <!-- G12 gl-cor:identifierPhoneNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-54-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-54-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEEメールアドレス</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-54-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のEメールアドレス。</link:label>
+    <!-- corG-12 gl-cor:identifierPhoneNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhoneNumber" xlink:label="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G12-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G12-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【電話番号】</link:label>
-    <!-- _55 gl-cor:identifierPhoneNumberDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-12-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-12-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【電話番号】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-12-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の電話番号。</link:label>
+    <!-- cor-55 gl-cor:identifierPhoneNumberDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhoneNumberDescription" xlink:label="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__55-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__55-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE電話番号用途</link:label>
-    <!-- _56 gl-cor:identifierPhone -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-55-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-55-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE電話番号用途</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-55-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の電話番号の用途。(代表、IR用など)\n[設定値のリスト]\n(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他) </link:label>
+    <!-- cor-56 gl-cor:identifierPhone -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierPhone" xlink:label="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__56-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__56-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE電話番号</link:label>
-    <!-- G13 gl-cor:identifierFaxNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-56-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-56-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE電話番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-56-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の電話番号。</link:label>
+    <!-- corG-13 gl-cor:identifierFaxNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFaxNumber" xlink:label="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G13-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G13-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【FAX番号】</link:label>
-    <!-- _57 gl-cor:identifierFaxNumberUsage -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-13-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-13-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【FAX番号】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-13-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のFAX番号の構造体。</link:label>
+    <!-- cor-57 gl-cor:identifierFaxNumberUsage -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFaxNumberUsage" xlink:label="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__57-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__57-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEFAX番号用途</link:label>
-    <!-- _58 gl-cor:identifierFax -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-57-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-57-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEFAX番号用途</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-57-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のFAX番号の用途。(注文、本社、IRなど)</link:label>
+    <!-- cor-58 gl-cor:identifierFax -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierFax" xlink:label="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__58-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__58-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEFAX番号</link:label>
-    <!-- G14 gl-cor:identifierContactInformationStructure -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-58-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-58-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVEFAX番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-58-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のFAX番号。</link:label>
+    <!-- corG-14 gl-cor:identifierContactInformationStructure -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactInformationStructure" xlink:label="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G14-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G14-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者情報】</link:label>
-    <!-- _59 gl-cor:identifierContactPrefix -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactInformationStructure_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-14-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-14-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-14-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者情報の構造体。</link:label>
+    <!-- cor-59 gl-cor:identifierContactPrefix -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPrefix" xlink:label="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__59-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__59-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者敬称</link:label>
-    <!-- _60 gl-cor:identifierContactLastName -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPrefix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-59-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-59-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者敬称</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-59-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">敬称(Dr.、Mr.、Mrs.など)</link:label>
+    <!-- cor-60 gl-cor:identifierContactLastName -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactLastName" xlink:label="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__60-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__60-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者姓</link:label>
-    <!-- _61 gl-cor:identifierContactFirstName -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactLastName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-60-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-60-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者姓</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-60-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者の姓</link:label>
+    <!-- cor-61 gl-cor:identifierContactFirstName -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFirstName" xlink:label="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__61-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__61-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者名</link:label>
-    <!-- _62 gl-cor:identifierContactSuffix -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFirstName_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-61-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-61-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者名</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-61-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">名、クリスチャンネーム</link:label>
+    <!-- cor-62 gl-cor:identifierContactSuffix -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactSuffix" xlink:label="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__62-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__62-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者付加名称\n</link:label>
-    <!-- _63 gl-cor:identifierContactAttentionLine -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactSuffix_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-62-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-62-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者付加名称\n</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-62-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">付加名称(MD、CPA、Jr.など)</link:label>
+    <!-- cor-63 gl-cor:identifierContactAttentionLine -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactAttentionLine" xlink:label="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__63-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__63-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者アテンションライン</link:label>
-    <!-- _64 gl-cor:identifierContactPositionRole -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactAttentionLine_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-63-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-63-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者アテンションライン</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-63-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">アテンションライン</link:label>
+    <!-- cor-64 gl-cor:identifierContactPositionRole -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPositionRole" xlink:label="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__64-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__64-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者地位/役職</link:label>
-    <!-- G15 gl-cor:identifierContactPhone -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPositionRole_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-64-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-64-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者地位/役職</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-64-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">地位や役職</link:label>
+    <!-- corG-15 gl-cor:identifierContactPhone -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhone" xlink:label="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G15-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G15-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者電話番号】</link:label>
-    <!-- _65 gl-cor:identifierContactPhoneNumberDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhone_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-15-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-15-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者電話番号】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-15-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号</link:label>
+    <!-- cor-65 gl-cor:identifierContactPhoneNumberDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhoneNumberDescription" xlink:label="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__65-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__65-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者電話番号用途</link:label>
-    <!-- _66 gl-cor:identifierContactPhoneNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumberDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-65-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-65-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者電話番号用途</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-65-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者の電話番号の用途。(代表、IR用など)\n[設定値のリスト]\n(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR担当者)、(main：代表)、(switchboard：交換台)、(other：その他) </link:label>
+    <!-- cor-66 gl-cor:identifierContactPhoneNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactPhoneNumber" xlink:label="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__66-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__66-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者電話番号</link:label>
-    <!-- G16 gl-cor:identifierContactFax -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactPhoneNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-66-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-66-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者電話番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-66-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者の電話番号。</link:label>
+    <!-- corG-16 gl-cor:identifierContactFax -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFax" xlink:label="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G16-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G16-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者FAX番号】</link:label>
-    <!-- _67 gl-cor:identifierContactFaxNumberUsage -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFax_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-16-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-16-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者FAX番号】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-16-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</link:label>
+    <!-- cor-67 gl-cor:identifierContactFaxNumberUsage -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFaxNumberUsage" xlink:label="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__67-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__67-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者FAX番号用途</link:label>
-    <!-- _68 gl-cor:identifierContactFaxNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumberUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-67-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-67-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者FAX番号用途</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-67-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者のFAX番号の用途。(注文、本社、IRなど)</link:label>
+    <!-- cor-68 gl-cor:identifierContactFaxNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactFaxNumber" xlink:label="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__68-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__68-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者FAX番号</link:label>
-    <!-- G17 gl-cor:identifierContactEmail -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactFaxNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-68-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-68-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者FAX番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-68-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者のFAX番号。</link:label>
+    <!-- corG-17 gl-cor:identifierContactEmail -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmail" xlink:label="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G17-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G17-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者Eメールアドレス】</link:label>
-    <!-- _69 gl-cor:identifierContactEmailAddressUsage -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-17-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-17-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【CVE担当者Eメールアドレス】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-17-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</link:label>
+    <!-- cor-69 gl-cor:identifierContactEmailAddressUsage -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmailAddressUsage" xlink:label="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__69-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__69-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者Eメールアドレス用途</link:label>
-    <!-- _70 gl-cor:identifierContactEmailAddress -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddressUsage_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-69-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-69-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者Eメールアドレス用途</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-69-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者のEメールアドレスの用途。(注文、本社、IRなど)</link:label>
+    <!-- cor-70 gl-cor:identifierContactEmailAddress -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactEmailAddress" xlink:label="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__70-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__70-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者Eメールアドレス</link:label>
-    <!-- _71 gl-cor:identifierContactType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactEmailAddress_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-70-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-70-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者Eメールアドレス</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-70-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者のEメールアドレス。</link:label>
+    <!-- cor-71 gl-cor:identifierContactType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierContactType" xlink:label="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__71-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__71-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者種別</link:label>
-    <!-- _72 gl-cor:identifierActive -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierContactType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-71-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-71-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE担当者種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-71-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者の種別</link:label>
+    <!-- cor-72 gl-cor:identifierActive -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_identifierActive" xlink:label="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__72-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__72-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE有効性</link:label>
-    <!-- G4 gl-cor:entryHeader -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_identifierActive_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-72-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-72-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">CVE有効性</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-72-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子が有効か無効かを示すブール値。</link:label>
+    <!-- corG-4 gl-cor:entryHeader -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryHeader" xlink:label="gl-cor_entryHeader_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryHeader_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G4-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G4-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【仕訳情報】</link:label>
-    <!-- _10 gl-cor:postedDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryHeader_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-4-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-4-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【仕訳情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-4-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">エントリヘッダー/仕訳記入ヘッダーの親タグ。</link:label>
+    <!-- cor-10 gl-cor:postedDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_postedDate" xlink:label="gl-cor_postedDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postedDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__10-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__10-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記済日付</link:label>
-    <!-- _11 gl-cor:enteredBy -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postedDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-10-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-10-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記済日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-10-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳が総勘定元帳に転記された(検証された)日付。 postingDateで示されるような会計上意味のある日付を表さないかもしれない。</link:label>
+    <!-- cor-11 gl-cor:enteredBy -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_enteredBy" xlink:label="gl-cor_enteredBy_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_enteredBy_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__11-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__11-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳作成者</link:label>
-    <!-- _12 gl-cor:enteredDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_enteredBy_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-11-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-11-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳作成者</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-11-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">最初に入力したオペレータのイニシャル/名前。</link:label>
+    <!-- cor-12 gl-cor:enteredDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_enteredDate" xlink:label="gl-cor_enteredDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_enteredDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__12-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__12-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">入力日付</link:label>
-    <!-- _13 gl-cor:sourceJournalID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_enteredDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-12-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-12-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">入力日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-12-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">コンピュータへ入力した実際の日付/時刻(システム日付から自動的に与えられ、システム時計の変更により、しばしば誤った値になる)を示す。 転記日付とは別に管理される。</link:label>
+    <!-- cor-13 gl-cor:sourceJournalID -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_sourceJournalID" xlink:label="gl-cor_sourceJournalID_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_sourceJournalID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__13-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__13-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元仕訳帳種別</link:label>
-    <!-- _14 gl-cor:entryType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_sourceJournalID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-13-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-13-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元仕訳帳種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-13-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元仕訳帳。仕訳が処理される仕訳帳のコード。コードは仕訳帳に一意な指標であり、以下から選択する。\n出金(仕入先への小切手送付)、入金(他者からの小切手受領)、固定資産、振替、一般仕訳帳、在庫管理、個別原価、仕入帳(仕入による負債)、賃金台帳、売上台帳、通常仕訳、ユーザ定義、その他\n[設定値のリスト]\n(cd：出金)、(cr：入金)、(fa：固定資産)、(gi：振替)、(gj：一般仕訳帳)、(im：在庫管理)、(jc：個別原価)、(pj：仕入帳)、(pl：賃金台帳)、(sj：売上台帳)、(se：通常仕訳)、(ud：ユーザ定義)、(ot：その他)</link:label>
+    <!-- cor-14 gl-cor:entryType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryType" xlink:label="gl-cor_entryType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__14-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__14-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">種別識別子</link:label>
-    <!-- _15 gl-cor:entryNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-14-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-14-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">種別識別子</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-14-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">以下の値のうちのひとつ。\n整理、予算、比較、外部会計士、通常、無視、消去、提案、反復、組替、シミュレーション、税、その他\n[設定値のリスト]\n(adjusting：整理)、(budget：予算)、(comparative：比較)、(external-accountant：外部会計士)、(standard：通常)、(passed-adjusting：無視)、(eliminating：消去)、(proposed：提案)、(recurring：反復)、(reclassifying：組替)、(simulated：シミュレーション)、(tax：税)、(other：その他)</link:label>
+    <!-- cor-15 gl-cor:entryNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryNumber" xlink:label="gl-cor_entryNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__15-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__15-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳識別子</link:label>
-    <!-- _16 gl-cor:entryComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-15-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-15-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳識別子</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-15-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元仕訳帳中の識別子。</link:label>
+    <!-- cor-16 gl-cor:entryComment -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryComment" xlink:label="gl-cor_entryComment_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryComment_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__16-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__16-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳説明</link:label>
-    <!-- _17 gl-cor:qualifierEntry -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryComment_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-16-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-16-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-16-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このエントリヘッダーによって説明された仕訳の説明(例えば、期首残高)\n</link:label>
+    <!-- cor-17 gl-cor:qualifierEntry -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_qualifierEntry" xlink:label="gl-cor_qualifierEntry_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_qualifierEntry_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__17-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__17-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳修飾子</link:label>
-    <!-- _18 gl-cor:qualifierEntryDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_qualifierEntry_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-17-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-17-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳修飾子</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-17-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の修飾子。総勘定元帳や試算表で、開始残高や決算残高のように、記された値が報告日で集約されていることを明示することが重要なときに有用な、仕訳の種別を修飾するもの。会計システムにおいて、BBF（繰越残高）として知られるもの。指定可能な値は以下。標準、繰越残高、その他\n[設定値のリスト]\n(standard：標準)、(balance-brought-forward：繰越残高)、(other：その他) </link:label>
+    <!-- cor-18 gl-cor:qualifierEntryDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_qualifierEntryDescription" xlink:label="gl-cor_qualifierEntryDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_qualifierEntryDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__18-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__18-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳修飾子説明</link:label>
-    <!-- _19 gl-cor:bookTaxDifference -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_qualifierEntryDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-18-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-18-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳修飾子説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-18-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の修飾子の説明。</link:label>
+    <!-- cor-19 gl-cor:bookTaxDifference -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_bookTaxDifference" xlink:label="gl-cor_bookTaxDifference_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_bookTaxDifference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__19-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__19-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">帳簿価税務簿価差異種別</link:label>
-    <!-- _20 gl-cor:entryNumberCounter -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_bookTaxDifference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-19-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-19-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">帳簿価税務簿価差異種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-19-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">帳簿と税務会計処理方法との差異の種別を示す値。永久か一時的かまたは無し。値の省略時は「無し」と同じ。\n[設定値のリスト]\n(permanent：永久)、(temporary：一時的)、(none：無し)</link:label>
+    <!-- cor-20 gl-cor:entryNumberCounter -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryNumberCounter" xlink:label="gl-cor_entryNumberCounter_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryNumberCounter_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__20-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__20-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳番号カウンタ</link:label>
-    <!-- G5 gl-cor:entryDetail -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryNumberCounter_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-20-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-20-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">仕訳番号カウンタ</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-20-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の一意なリファレンス　　カウンタ</link:label>
+    <!-- corG-5 gl-cor:entryDetail -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryDetail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G5-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G5-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【仕訳明細】</link:label>
-    <!-- _21 gl-cor:lineNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_entryDetail_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-5-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-5-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【仕訳明細】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-5-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳明細の親タグ。</link:label>
+    <!-- cor-21 gl-cor:lineNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_lineNumber" xlink:label="gl-cor_lineNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_lineNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__21-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__21-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細行番号</link:label>
-    <!-- _22 gl-cor:lineNumberCounter -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_lineNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-21-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-21-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細行番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-21-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳明細の識別子。</link:label>
+    <!-- cor-22 gl-cor:lineNumberCounter -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_lineNumberCounter" xlink:label="gl-cor_lineNumberCounter_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_lineNumberCounter_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__22-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__22-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細行番号カウンタ</link:label>
-    <!-- G6 gl-cor:account -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_lineNumberCounter_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-22-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-22-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細行番号カウンタ</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-22-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細行の一意なリファレンス　　カウンタ</link:label>
+    <!-- corG-6 gl-cor:account -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_account" xlink:label="gl-cor_account_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_account_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G6-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G6-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【科目識別子】</link:label>
-    <!-- _23 gl-cor:accountMainID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_account_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-6-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-6-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【科目識別子】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-6-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">タプル。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。\n/account/accountMainID 1000  /account/accountMainDescription Cash  /account/accountSub/accountSubID 4783HG  /account/accountSub/accountSubDescription Department  /account/accountSub/accountSubID QOWI  /account/accountSub/accountSubDescription Branch  /account/accountSub/accountSubID 192837  /account/accountSub/accountSubDescription Division</link:label>
+    <!-- cor-23 gl-cor:accountMainID -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountMainID" xlink:label="gl-cor_accountMainID_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountMainID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__23-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__23-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目コード</link:label>
-    <!-- _24 gl-cor:accountMainDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountMainID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-23-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-23-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目コード</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-23-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目。仕訳が関連する会計バケットを特定するためのコード。例えば、現金を表す1000、販売費を表す567GAAZ、税を表すZ。\n部門、支店、事業部、マネージャ、その他の識別子は、Subaccount領域に記述される。転記の必要がなければ、勘定科目は必要ではない。総勘定元帳に転記するにはほとんどの場合必要。</link:label>
+    <!-- cor-24 gl-cor:accountMainDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountMainDescription" xlink:label="gl-cor_accountMainDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountMainDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__24-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__24-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目説明</link:label>
-    <!-- _25 gl-cor:mainAccountType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountMainDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-24-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-24-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-24-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目コードの説明。主勘定科目コードとして使用されるコードについての、人が読める記述。</link:label>
+    <!-- cor-25 gl-cor:mainAccountType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_mainAccountType" xlink:label="gl-cor_mainAccountType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_mainAccountType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__25-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__25-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目区分</link:label>
-    <!-- _26 gl-cor:mainAccountTypeDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_mainAccountType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-25-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-25-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目区分</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-25-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目の種別。FASB Concepts 6および、同様の国際的な様式。xbrlInfoが他のXBRL項目と関係付けられる場合、データ交換より現存システム(audit)を示すべき。\n[設定値のリスト]\n(asset：資産)、(liability：負債)、(equity：資本)、(income：収益)、(gain：利得)、(expense：費用)、(loss：損失)、(contr-to-equity：資本増加)、(distr-from-equity：資本減少)、(comprehensive-income：包括利益)、(other：その他) </link:label>
+    <!-- cor-26 gl-cor:mainAccountTypeDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_mainAccountTypeDescription" xlink:label="gl-cor_mainAccountTypeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_mainAccountTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__26-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__26-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目区分説明</link:label>
-    <!-- _27 gl-cor:parentAccountMainID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_mainAccountTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-26-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-26-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">主勘定科目区分説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-26-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目の区分の説明。</link:label>
+    <!-- cor-27 gl-cor:parentAccountMainID -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_parentAccountMainID" xlink:label="gl-cor_parentAccountMainID_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentAccountMainID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__27-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__27-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親勘定科目コード</link:label>
-    <!-- _28 gl-cor:accountPurposeCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentAccountMainID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-27-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-27-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親勘定科目コード</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-27-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">子勘定科目から親勘定科目に包み込む科目。</link:label>
+    <!-- cor-28 gl-cor:accountPurposeCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountPurposeCode" xlink:label="gl-cor_accountPurposeCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountPurposeCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__28-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__28-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">勘定科目目的</link:label>
-    <!-- _29 gl-cor:accountPurposeDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountPurposeCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-28-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-28-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">勘定科目目的</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-28-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">勘定科目群の使用法を示すコード。連結、European, IFRS, 見返、プライマリ, 税, USGAAP, Japanese,その他。日本企業では、見返仕訳で要求される税務処理に利用するかもしれない。空白の場合、企業の既定の勘定方法とみなす。\n[設定値のリスト]\n(consolidating：連結)、(european：ヨーロッパ)、(ifrs：IFRS)、(offsetting：見返)、(primary：プライマリ)、(tax：税)、(usgaap：US GAAP)、(japanese：日本)、(other：その他)</link:label>
+    <!-- cor-29 gl-cor:accountPurposeDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountPurposeDescription" xlink:label="gl-cor_accountPurposeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountPurposeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__29-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__29-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">勘定科目目的説明</link:label>
-    <!-- _30 gl-cor:accountType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountPurposeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-29-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-29-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">勘定科目目的説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-29-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">勘定科目群の使用法の説明。</link:label>
+    <!-- cor-30 gl-cor:accountType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountType" xlink:label="gl-cor_accountType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__30-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__30-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">科目種別</link:label>
-    <!-- _31 gl-cor:accountTypeDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-30-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-30-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">科目種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-30-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">科目の種別。\n[設定値のリスト]\n(account：勘定科目)、(bank：銀行)、(employee：従業員)、(customer：顧客)、(job：ジョブ)、(vendor：仕入先)、(measurable：計測可能物)、(statistical：統計)、(other：その他) </link:label>
+    <!-- cor-31 gl-cor:accountTypeDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountTypeDescription" xlink:label="gl-cor_accountTypeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__31-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__31-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">科目種別説明</link:label>
-    <!-- G7 gl-cor:accountSub -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-31-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-31-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">科目種別説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-31-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">科目の種別の説明。</link:label>
+    <!-- corG-7 gl-cor:accountSub -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountSub" xlink:label="gl-cor_accountSub_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSub_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G7-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G7-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【サブ科目情報】</link:label>
-    <!-- _32 gl-cor:accountSubDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSub_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-7-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-7-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【サブ科目情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-7-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">複数のaccountSubIDと説明文を含むタプル。</link:label>
+    <!-- cor-32 gl-cor:accountSubDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountSubDescription" xlink:label="gl-cor_accountSubDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSubDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__32-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__32-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">サブ科目説明</link:label>
-    <!-- _33 gl-cor:accountSubID -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSubDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-32-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-32-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">サブ科目説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-32-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">accountSubIDに関する説明。</link:label>
+    <!-- cor-33 gl-cor:accountSubID -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountSubID" xlink:label="gl-cor_accountSubID_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSubID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__33-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__33-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">サブ科目コード</link:label>
-    <!-- _34 gl-cor:accountSubType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSubID_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-33-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-33-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">サブ科目コード</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-33-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目をaccountMainIDに指定したときに、各プロフィットセンタ、事業部、事業体、基金、プログラム、支店、プロジェクト、クラス、su-クラス又は他の修飾子に使用されるコードはここに指定する。</link:label>
+    <!-- cor-34 gl-cor:accountSubType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountSubType" xlink:label="gl-cor_accountSubType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSubType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__34-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__34-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">サブ科目種別</link:label>
-    <!-- G8 gl-cor:segmentParentTuple -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountSubType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-34-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-34-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">サブ科目種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-34-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">小勘定科目の種別。プロフィットセンタ、事業部、事業体、基金、プログラム、支店、プロジェクト、クラス、su-クラス又は他の修飾子がここに配置される。 例えば、責任単位、事業単位、クラス、部、プロジェクト、基金、プログラム、ジョブ、プロフィットセンター、支店、セットアップクラス、部門、ユニット\n</link:label>
+    <!-- corG-8 gl-cor:segmentParentTuple -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_segmentParentTuple" xlink:label="gl-cor_segmentParentTuple_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_segmentParentTuple_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G8-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G8-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【親セグメント情報】</link:label>
-    <!-- _35 gl-cor:parentSubaccountCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_segmentParentTuple_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-8-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-8-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【親セグメント情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-8-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">セグメント（小勘定科目の種別）間のロールアップ時に必要な詳細情報を示すタプル。</link:label>
+    <!-- cor-35 gl-cor:parentSubaccountCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_parentSubaccountCode" xlink:label="gl-cor_parentSubaccountCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentSubaccountCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__35-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__35-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親サブ科目コード</link:label>
-    <!-- _36 gl-cor:parentSubaccountType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentSubaccountCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-35-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-35-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親サブ科目コード</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-35-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この小勘定科目のロールアップ先の小勘定科目の番号-ロールアップ先の小勘定科目の種別も参照。</link:label>
+    <!-- cor-36 gl-cor:parentSubaccountType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_parentSubaccountType" xlink:label="gl-cor_parentSubaccountType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentSubaccountType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__36-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__36-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親サブ科目種別</link:label>
-    <!-- _37 gl-cor:reportingTreeIdentifier -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentSubaccountType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-36-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-36-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親サブ科目種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-36-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この小勘定科目のロールアップ先のセグメントの説明。</link:label>
+    <!-- cor-37 gl-cor:reportingTreeIdentifier -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_reportingTreeIdentifier" xlink:label="gl-cor_reportingTreeIdentifier_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_reportingTreeIdentifier_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__37-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__37-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">報告系統識別子</link:label>
-    <!-- _38 gl-cor:parentSubaccountProportion -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_reportingTreeIdentifier_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-37-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-37-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">報告系統識別子</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-37-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告系統の説明に使用される。</link:label>
+    <!-- cor-38 gl-cor:parentSubaccountProportion -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_parentSubaccountProportion" xlink:label="gl-cor_parentSubaccountProportion_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentSubaccountProportion_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__38-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__38-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親サブ科目配分パーセンテージ</link:label>
-    <!-- _39 gl-cor:accountActive -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_parentSubaccountProportion_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-38-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-38-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">親サブ科目配分パーセンテージ</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-38-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">異なる親科目に配分する場合に、親科目に割り当てるパーセンテージ。</link:label>
+    <!-- cor-39 gl-cor:accountActive -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_accountActive" xlink:label="gl-cor_accountActive_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountActive_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__39-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__39-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">科目有効性</link:label>
-    <!-- _40 gl-cor:amount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_accountActive_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-39-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-39-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">科目有効性</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-39-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">科目が有効か無効かを示すブール値。</link:label>
+    <!-- cor-40 gl-cor:amount -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_amount" xlink:label="gl-cor_amount_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_amount_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__40-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__40-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">金額</link:label>
-    <!-- _41 gl-cor:signOfAmount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_amount_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-40-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-40-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">金額</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-40-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">entryDetailの代表的な金額を示す。entryDetailごとにひとつの値を持つ。たとえば、仕訳帳の行、残高、請求書の行の金額。明細が会計業務用でなく、measurableQuantityなどの他の要素が設定されている場合は不要。符号付数値であり、金額を解釈するために用意されたsignOfAmountおよびdebitCreditCodeとあわせて使用される。通貨単位はamountCurrencyで決定される。amountCurrencyが指定されない場合は、既定または自国の通貨単位となる。</link:label>
+    <!-- cor-41 gl-cor:signOfAmount -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_signOfAmount" xlink:label="gl-cor_signOfAmount_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_signOfAmount_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__41-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__41-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">金額符号</link:label>
-    <!-- _42 gl-cor:debitCreditCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_signOfAmount_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-41-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-41-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">金額符号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-41-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額の符号。貸借識別子と関連して使用される場合にだけ、4つの可能なフィールドを提供する。記入エラー後の総貸借が膨張しないように、おもに仕訳の訂正に使用される。 D+は借方を増加させる。D-は借方を減少させる。C+は貸方を減少させる。C-は貸方を増加させる。\n[設定値のリスト]\n(+)、(-)、(plus：プラス)、(minus：マイナス) </link:label>
+    <!-- cor-42 gl-cor:debitCreditCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_debitCreditCode" xlink:label="gl-cor_debitCreditCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_debitCreditCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__42-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__42-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">貸借区分コード</link:label>
-    <!-- _43 gl-cor:postingDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_debitCreditCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-42-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-42-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">貸借区分コード</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-42-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額が借方か貸方か不定かを示す識別子。\n[設定値のリスト]\n(D)、(C)、(debit：借方)、(credit：貸方)、(undefined：不定) </link:label>
+    <!-- cor-43 gl-cor:postingDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_postingDate" xlink:label="gl-cor_postingDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__43-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__43-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記日付</link:label>
-    <!-- _73 gl-cor:documentType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-43-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-43-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-43-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。</link:label>
+    <!-- cor-73 gl-cor:documentType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentType" xlink:label="gl-cor_documentType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__73-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__73-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書種別</link:label>
-    <!-- _74 gl-cor:documentTypeDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-73-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-73-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-73-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客への請求書、ベンダからの請求書、小切手、その他の列挙値による、元文書の説明。\n[設定値のリスト]\n(check：小切手)、(debit-memo：借方メモ)、(credit-memo：貸方メモ)、(finance-charge：財務費用)、(invoice：顧客への請求書)、(order-customer：顧客オーダ)、(order-vendor：仕入先オーダ)、(payment-other：その他支払い)、(reminder：督促状)、(tegata：手形)、(voucher：ベンダからの請求書)、(shipment：出荷票)、(receipt：受領票)、(manual-adjustment：手修正)、(other：その他)</link:label>
+    <!-- cor-74 gl-cor:documentTypeDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentTypeDescription" xlink:label="gl-cor_documentTypeDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__74-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__74-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書種別説明</link:label>
-    <!-- _75 gl-cor:invoiceType -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentTypeDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-74-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-74-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書種別説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-74-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元文書の種別の説明。</link:label>
+    <!-- cor-75 gl-cor:invoiceType -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_invoiceType" xlink:label="gl-cor_invoiceType_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_invoiceType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__75-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__75-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">請求書種別</link:label>
-    <!-- _76 gl-cor:documentNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_invoiceType_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-75-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-75-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">請求書種別</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-75-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書の種別。(self-billed、ePoS)\n[設定値のリスト]\n(ePos：POSシステムからの発行)、(self-billed：手動発行)</link:label>
+    <!-- cor-76 gl-cor:documentNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentNumber" xlink:label="gl-cor_documentNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__76-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__76-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書番号</link:label>
-    <!-- _77 gl-cor:documentApplyToNumber -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-76-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-76-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-76-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書、小切手、証憑、その他の元文書の識別子。</link:label>
+    <!-- cor-77 gl-cor:documentApplyToNumber -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentApplyToNumber" xlink:label="gl-cor_documentApplyToNumber_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentApplyToNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__77-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__77-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">適用先番号</link:label>
-    <!-- _78 gl-cor:documentReference -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentApplyToNumber_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-77-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-77-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">適用先番号</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-77-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払、借方、貸方の相殺に使用される、一次請求書の文書番号。請求書では通常documentNumberと等しい。未決済の請求書残高や、未決済の支払金額の計算時に、利用できる。</link:label>
+    <!-- cor-78 gl-cor:documentReference -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentReference" xlink:label="gl-cor_documentReference_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__78-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__78-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書参照情報</link:label>
-    <!-- _79 gl-cor:documentDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentReference_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-78-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-78-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書参照情報</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-78-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">上の文書のための内部参照情報。文書を追跡するために内部的に割り当てた番号。</link:label>
+    <!-- cor-79 gl-cor:documentDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_documentDate" xlink:label="gl-cor_documentDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__79-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__79-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書日付</link:label>
-    <!-- _80 gl-cor:postingStatus -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_documentDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-79-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-79-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">元文書日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-79-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。</link:label>
+    <!-- cor-80 gl-cor:postingStatus -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_postingStatus" xlink:label="gl-cor_postingStatus_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingStatus_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__80-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__80-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記状態</link:label>
-    <!-- _81 gl-cor:postingStatusDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingStatus_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-80-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-80-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記状態</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-80-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">・据置：入力されたが、まだ転記できない。\n・転記済：転記済み。\n・提案済：検証が必要な項目。\n・シミュレーション：仮定のためにシミュレートされた項目。\n・税：税項目。\n・未転記：入力されたが、まだ検証も転記もされていない。\n・取消済：入力されたが、取り消された。\n・その他：その他の状態。postingStatusDescriptionで説明されるべき。\n[設定値のリスト]\n(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)</link:label>
+    <!-- cor-81 gl-cor:postingStatusDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_postingStatusDescription" xlink:label="gl-cor_postingStatusDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingStatusDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__81-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__81-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記状態説明</link:label>
-    <!-- G18 gl-cor:xbrlInfo -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_postingStatusDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-81-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-81-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">転記状態説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-81-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">転記状態の説明。</link:label>
+    <!-- corG-18 gl-cor:xbrlInfo -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_xbrlInfo" xlink:label="gl-cor_xbrlInfo_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_xbrlInfo_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G18-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G18-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【XBRL情報】</link:label>
-    <!-- _82 gl-cor:xbrlInclude -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_xbrlInfo_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-18-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-18-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【XBRL情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-18-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。</link:label>
+    <!-- cor-82 gl-cor:xbrlInclude -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_xbrlInclude" xlink:label="gl-cor_xbrlInclude_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_xbrlInclude_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__82-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__82-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">XBRL割当</link:label>
-    <!-- _83 gl-cor:summaryReportingElement -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_xbrlInclude_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-82-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-82-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">XBRL割当</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-82-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">与えられた情報が、期首残高、期末残高、期中増減のいずれであるかを示す。\n[設定値のリスト]\n(beginning_balance：期首残高)、(ending_balance：期末残高)、(period_change：期中増減)</link:label>
+    <!-- cor-83 gl-cor:summaryReportingElement -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_summaryReportingElement" xlink:label="gl-cor_summaryReportingElement_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_summaryReportingElement_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__83-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__83-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告エレメント</link:label>
-    <!-- _84 gl-cor:detailMatchingElement -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_summaryReportingElement_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-83-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-83-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">集約報告エレメント</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-83-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係付けられた、XMLタクソノミ中のXBRL要素または、XML要素。XBRLコンセプトへのマッピング。</link:label>
+    <!-- cor-84 gl-cor:detailMatchingElement -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_detailMatchingElement" xlink:label="gl-cor_detailMatchingElement_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_detailMatchingElement_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__84-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__84-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細対応エレメント</link:label>
-    <!-- _85 gl-cor:detailComment -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_detailMatchingElement_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-84-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-84-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">明細対応エレメント</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-84-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係付けられた、XBRL-GLインスタンス中のXBRL要素。</link:label>
+    <!-- cor-85 gl-cor:detailComment -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_detailComment" xlink:label="gl-cor_detailComment_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_detailComment_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__85-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__85-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">説明</link:label>
-    <!-- _86 gl-cor:dateAcknowledged -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_detailComment_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-85-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-85-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-85-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この明細行のみに対する説明。</link:label>
+    <!-- cor-86 gl-cor:dateAcknowledged -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_dateAcknowledged" xlink:label="gl-cor_dateAcknowledged_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_dateAcknowledged_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__86-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__86-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">承認日付</link:label>
-    <!-- _87 gl-cor:confirmedDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_dateAcknowledged_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-86-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-86-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">承認日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-86-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領済みの物品/サービスを承認した日付。</link:label>
+    <!-- cor-87 gl-cor:confirmedDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_confirmedDate" xlink:label="gl-cor_confirmedDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_confirmedDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__87-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__87-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">確認日付</link:label>
-    <!-- _88 gl-cor:shipFrom -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_confirmedDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-87-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-87-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">確認日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-87-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領を確認した日付。</link:label>
+    <!-- cor-88 gl-cor:shipFrom -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_shipFrom" xlink:label="gl-cor_shipFrom_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_shipFrom_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__88-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__88-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">出荷元</link:label>
-    <!-- _89 gl-cor:shipReceivedDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_shipFrom_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-88-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-88-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">出荷元</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-88-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">organizationAddressLocationIdentifierの参照情報。または自由記述。</link:label>
+    <!-- cor-89 gl-cor:shipReceivedDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_shipReceivedDate" xlink:label="gl-cor_shipReceivedDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_shipReceivedDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__89-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__89-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">出荷/受領日付</link:label>
-    <!-- _90 gl-cor:maturityDate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_shipReceivedDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-89-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-89-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">出荷/受領日付</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-89-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">物品/サービスを出荷/受領した日付。</link:label>
+    <!-- cor-90 gl-cor:maturityDate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_maturityDate" xlink:label="gl-cor_maturityDate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_maturityDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__90-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__90-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">支払期日</link:label>
-    <!-- _91 gl-cor:terms -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_maturityDate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-90-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-90-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">支払期日</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-90-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払期日やその他の期日。</link:label>
+    <!-- cor-91 gl-cor:terms -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_terms" xlink:label="gl-cor_terms_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_terms_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__91-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__91-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">支払条件</link:label>
-    <!-- G19 gl-cor:taxes -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_terms_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-91-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-91-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">支払条件</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-91-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">割引/支払い条件。</link:label>
+    <!-- corG-19 gl-cor:taxes -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxes" xlink:label="gl-cor_taxes_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxes_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_G19-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl_G19-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【税情報】</link:label>
-    <!-- _92 gl-cor:taxAuthority -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxes_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_corG-19-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-19-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">【税情報】</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_corG-19-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税関連の情報のタプル。</link:label>
+    <!-- cor-92 gl-cor:taxAuthority -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxAuthority" xlink:label="gl-cor_taxAuthority_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxAuthority_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__92-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__92-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">課税庁</link:label>
-    <!-- _93 gl-cor:taxTableCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxAuthority_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-92-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-92-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">課税庁</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-92-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係する課税庁の名前。</link:label>
+    <!-- cor-93 gl-cor:taxTableCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxTableCode" xlink:label="gl-cor_taxTableCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxTableCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__93-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__93-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税率表コード</link:label>
-    <!-- _94 gl-cor:taxDescription -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxTableCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-93-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-93-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税率表コード</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-93-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係する課税庁で使用される税率表のコード。</link:label>
+    <!-- cor-94 gl-cor:taxDescription -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxDescription" xlink:label="gl-cor_taxDescription_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__94-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__94-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">課税庁説明</link:label>
-    <!-- _95 gl-cor:taxAmount -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxDescription_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-94-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-94-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">課税庁説明</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-94-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">課税庁の説明。</link:label>
+    <!-- cor-95 gl-cor:taxAmount -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxAmount" xlink:label="gl-cor_taxAmount_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxAmount_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__95-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__95-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額</link:label>
-    <!-- _96 gl-cor:taxBasis -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxAmount_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-95-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-95-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税額</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-95-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税額。</link:label>
+    <!-- cor-96 gl-cor:taxBasis -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxBasis" xlink:label="gl-cor_taxBasis_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxBasis_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__96-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__96-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">課税基準</link:label>
-    <!-- _97 gl-cor:taxExchangeRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxBasis_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-96-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-96-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">課税基準</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-96-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">課税基準。</link:label>
+    <!-- cor-97 gl-cor:taxExchangeRate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxExchangeRate" xlink:label="gl-cor_taxExchangeRate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxExchangeRate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__97-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__97-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">[非推奨] 税額換算用レート</link:label>
-    <!-- _98 gl-cor:taxPercentageRate -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxExchangeRate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-97-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-97-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">[非推奨] 税額換算用レート</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-97-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税が外貨建ての場合の、換算レート。自国通貨を外貨で割った値。</link:label>
+    <!-- cor-98 gl-cor:taxPercentageRate -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxPercentageRate" xlink:label="gl-cor_taxPercentageRate_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxPercentageRate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__98-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__98-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税率</link:label>
-    <!-- _99 gl-cor:taxCode -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxPercentageRate_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-98-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-98-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税率</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-98-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">VAT(物品税)またはその他の税のパーセント比率。0から1.0の間の値。たとえば50%は0.5とあらわす。</link:label>
+    <!-- cor-99 gl-cor:taxCode -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxCode" xlink:label="gl-cor_taxCode_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__99-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__99-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税区分</link:label>
-    <!-- _100 gl-cor:taxCommentExemption -->
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxCode_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-99-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-99-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税区分</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-99-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税のクラス又はカテゴリ。</link:label>
+    <!-- cor-100 gl-cor:taxCommentExemption -->
     <link:loc xlink:type="locator" xlink:href="gl-cor-2020-12-31.xsd#gl-cor_taxCommentExemption" xlink:label="gl-cor_taxCommentExemption_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxCommentExemption_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl__100-ja_537d4c1ada90ea2755c91727202bc0b2"/>
-    <link:label xlink:type="resource" xlink:label="lbl__100-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税コメント/免税理由</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cor_taxCommentExemption_537d4c1ada90ea2755c91727202bc0b2" xlink:to="lbl_cor-100-ja_537d4c1ada90ea2755c91727202bc0b2"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-100-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja">税コメント/免税理由</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_cor-100-ja_537d4c1ada90ea2755c91727202bc0b2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">免税理由やその他のコメントのための、追加の文またはコード。</link:label>
  </link:labelLink>
 </link:linkbase>
