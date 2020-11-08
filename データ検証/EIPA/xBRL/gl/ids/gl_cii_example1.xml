@@ -8,12 +8,12 @@
 	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
 	xmlns:xbrli="http://www.xbrl.org/2003/instance"
 	xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
-	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31"
-	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31"
-	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31"
-	xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2020-12-31"
-	xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31"
-	xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
+	xmlns:cor="http://www.xbrl.org/int/gl/cor/2020-12-31"
+	xmlns:bus="http://www.xbrl.org/int/gl/bus/2020-12-31"
+	xmlns:muc="http://www.xbrl.org/int/gl/muc/2020-12-31"
+	xmlns:taf="http://www.xbrl.org/int/gl/taf/2020-12-31"
+	xmlns:ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31"
+	xmlns:cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	<xbrll:schemaRef xlink:type="simple" xlink:href="../plt/case-cen/gl-plt-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
 	<xbrli:unit id="pure">
 		<xbrli:measure>xbrli:pure</xbrli:measure>
@@ -29,20 +29,20 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-1</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-1</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>corG-2</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>corG-2</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-76 contextRef="corG-1_corG-2">12115118</gl-cor:cor-76>
-	<gl-cor:cor-79 contextRef="corG-1_corG-2">2015-01-09</gl-cor:cor-79>
-	<gl-cor:cor-73 contextRef="corG-1_corG-2">other</gl-cor:cor-73>
-	<gl-muc:muc-4 contextRef="corG-1_corG-2">EUR</gl-muc:muc-4>
-	<gl-cen:cen-8 contextRef="corG-1_corG-2">undefined</gl-cen:cen-8>
-	<gl-cor:cor-90 contextRef="corG-1_corG-2">2015-01-09</gl-cor:cor-90>
+	<cor:cor-76 contextRef="corG-1_corG-2">12115118</cor:cor-76>
+	<cor:cor-79 contextRef="corG-1_corG-2">2015-01-09</cor:cor-79>
+	<cor:cor-73 contextRef="corG-1_corG-2">other</cor:cor-73>
+	<muc:muc-4 contextRef="corG-1_corG-2">EUR</muc:muc-4>
+	<cen:cen-8 contextRef="corG-1_corG-2">undefined</cen:cen-8>
+	<cor:cor-90 contextRef="corG-1_corG-2">2015-01-09</cor:cor-90>
 	<xbrli:context id="cenG-23_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -51,18 +51,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>cenG-23</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>cenG-23</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>0</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>0</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cen:cen-116 contextRef="cenG-23_0" decimals="INF" unitRef="EUR">183.23</gl-cen:cen-116>
-	<gl-cen:cen-117 contextRef="cenG-23_0" decimals="INF" unitRef="EUR">10.99</gl-cen:cen-117>
-	<gl-cen:cen-118 contextRef="cenG-23_0">VAT</gl-cen:cen-118>
-	<gl-cen:cen-119 contextRef="cenG-23_0" decimals="INF" unitRef="pure">0.06</gl-cen:cen-119>
+	<cen:cen-116 contextRef="cenG-23_0" decimals="INF" unitRef="EUR">183.23</cen:cen-116>
+	<cen:cen-117 contextRef="cenG-23_0" decimals="INF" unitRef="EUR">10.99</cen:cen-117>
+	<cen:cen-118 contextRef="cenG-23_0">VAT</cen:cen-118>
+	<cen:cen-119 contextRef="cenG-23_0" decimals="INF" unitRef="pure">0.06</cen:cen-119>
 	<xbrli:context id="cenG-23_1">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -71,18 +71,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>cenG-23</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>cenG-23</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>1</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>1</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cen:cen-116 contextRef="cenG-23_1" decimals="INF" unitRef="EUR">46.37</gl-cen:cen-116>
-	<gl-cen:cen-117 contextRef="cenG-23_1" decimals="INF" unitRef="EUR">9.74</gl-cen:cen-117>
-	<gl-cen:cen-118 contextRef="cenG-23_1">VAT</gl-cen:cen-118>
-	<gl-cen:cen-119 contextRef="cenG-23_1" decimals="INF" unitRef="pure">0.21</gl-cen:cen-119>
+	<cen:cen-116 contextRef="cenG-23_1" decimals="INF" unitRef="EUR">46.37</cen:cen-116>
+	<cen:cen-117 contextRef="cenG-23_1" decimals="INF" unitRef="EUR">9.74</cen:cen-117>
+	<cen:cen-118 contextRef="cenG-23_1">VAT</cen:cen-118>
+	<cen:cen-119 contextRef="cenG-23_1" decimals="INF" unitRef="pure">0.21</cen:cen-119>
  	<xbrli:context id="corG-9_0_busG-20">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -91,21 +91,21 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-9</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-9</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>0</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>0</cor:_2>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_3">
-				<gl-cor:_3>busG-20</gl-cor:_3>
+			<xbrldi:typedMember dimension="cor:d_3">
+				<cor:_3>busG-20</cor:_3>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-bus:bus-124 contextRef="corG-9_0_busG-20">Postbus 7l</gl-bus:bus-124>
-	<gl-bus:bus-126 contextRef="corG-9_0_busG-20">Velsen-Noord</gl-bus:bus-126>
-	<gl-bus:bus-129 contextRef="corG-9_0_busG-20">1950 AB</gl-bus:bus-129>
-	<gl-bus:bus-128 contextRef="corG-9_0_busG-20">NL</gl-bus:bus-128>
+	<bus:bus-124 contextRef="corG-9_0_busG-20">Postbus 7l</bus:bus-124>
+	<bus:bus-126 contextRef="corG-9_0_busG-20">Velsen-Noord</bus:bus-126>
+	<bus:bus-129 contextRef="corG-9_0_busG-20">1950 AB</bus:bus-129>
+	<bus:bus-128 contextRef="corG-9_0_busG-20">NL</bus:bus-128>
 	<xbrli:context id="corG-9_1_busG-20">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -114,21 +114,21 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-9</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-9</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>1</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>1</cor:_2>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_3">
-				<gl-cor:_3>busG-20</gl-cor:_3>
+			<xbrldi:typedMember dimension="cor:d_3">
+				<cor:_3>busG-20</cor:_3>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-bus:bus-124 contextRef="corG-9_1_busG-20">POSTBUS 367</gl-bus:bus-124>
-	<gl-bus:bus-126 contextRef="corG-9_1_busG-20">HEEMSKERK</gl-bus:bus-126>
-	<gl-bus:bus-129 contextRef="corG-9_1_busG-20">1960 AJ</gl-bus:bus-129>
-	<gl-bus:bus-128 contextRef="corG-9_1_busG-20">NL</gl-bus:bus-128>
+	<bus:bus-124 contextRef="corG-9_1_busG-20">POSTBUS 367</bus:bus-124>
+	<bus:bus-126 contextRef="corG-9_1_busG-20">HEEMSKERK</bus:bus-126>
+	<bus:bus-129 contextRef="corG-9_1_busG-20">1960 AJ</bus:bus-129>
+	<bus:bus-128 contextRef="corG-9_1_busG-20">NL</bus:bus-128>
 	<xbrli:context id="corG-9_1_corG-14">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -137,18 +137,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-9</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-9</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>1</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>1</cor:_2>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_3">
-				<gl-cor:_3>corG-14</gl-cor:_3>
+			<xbrldi:typedMember dimension="cor:d_3">
+				<cor:_3>corG-14</cor:_3>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-63 contextRef="corG-9_1_corG-14">Dhr. J BLOKKER</gl-cor:cor-63>
+	<cor:cor-63 contextRef="corG-9_1_corG-14">Dhr. J BLOKKER</cor:cor-63>
 	<xbrli:context id="corG-5_0">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -157,18 +157,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>0</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>0</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_0">1</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_0" decimals="INF" unitRef="pure">2</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_0">2</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_0" decimals="INF" unitRef="EUR">19.9</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_0">1</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_0" decimals="INF" unitRef="pure">2</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_0">2</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_0" decimals="INF" unitRef="EUR">19.9</cor:cor-40>
 	<xbrli:context id="corG-5_1">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -177,18 +177,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>1</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>1</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_1">2</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_1" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_1">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_1" decimals="INF" unitRef="EUR">9.85</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_1">2</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_1" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_1">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_1" decimals="INF" unitRef="EUR">9.85</cor:cor-40>
 	<xbrli:context id="corG-5_2">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -197,18 +197,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>2</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>2</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_2">3</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_2" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_2">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_2" decimals="INF" unitRef="EUR">8.29</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_2">3</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_2" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_2">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_2" decimals="INF" unitRef="EUR">8.29</cor:cor-40>
 	<xbrli:context id="corG-5_3">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -217,18 +217,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>3</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>3</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_3">4</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_3" decimals="INF" unitRef="pure">2</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_3">2</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_3" decimals="INF" unitRef="EUR">14.46</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_3">4</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_3" decimals="INF" unitRef="pure">2</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_3">2</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_3" decimals="INF" unitRef="EUR">14.46</cor:cor-40>
 	<xbrli:context id="corG-5_4">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -237,18 +237,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>4</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>4</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_4">5</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_4" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_4">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_4" decimals="INF" unitRef="EUR">35</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_4">5</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_4" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_4">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_4" decimals="INF" unitRef="EUR">35</cor:cor-40>
 	<xbrli:context id="corG-5_5">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -257,18 +257,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>5</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>5</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_5">6</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_5" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_5">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_5" decimals="INF" unitRef="EUR">35</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_5">6</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_5" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_5">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_5" decimals="INF" unitRef="EUR">35</cor:cor-40>
 	<xbrli:context id="corG-5_6">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -277,18 +277,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>6</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>6</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_6">7</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_6" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_6">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_6" decimals="INF" unitRef="EUR">10.65</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_6">7</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_6" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_6">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_6" decimals="INF" unitRef="EUR">10.65</cor:cor-40>
 	<xbrli:context id="corG-5_7">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -297,18 +297,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>7</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>7</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_7">8</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_7" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_7">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_7" decimals="INF" unitRef="EUR">1.55</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_7">8</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_7" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_7">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_7" decimals="INF" unitRef="EUR">1.55</cor:cor-40>
 	<xbrli:context id="corG-5_8">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -317,18 +317,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>8</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>8</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_8">9</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_8" decimals="INF" unitRef="pure">3</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_8">3</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_8" decimals="INF" unitRef="EUR">14.37</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_8">9</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_8" decimals="INF" unitRef="pure">3</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_8">3</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_8" decimals="INF" unitRef="EUR">14.37</cor:cor-40>
 	<xbrli:context id="corG-5_9">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -337,18 +337,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>9</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>9</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_9">10</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_9" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_9">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_9" decimals="INF" unitRef="EUR">8.29</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_9">10</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_9" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_9">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_9" decimals="INF" unitRef="EUR">8.29</cor:cor-40>
 	<xbrli:context id="corG-5_10">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -357,18 +357,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>10</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>10</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_10">11</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_10" decimals="INF" unitRef="pure">2</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_10">2</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_10" decimals="INF" unitRef="EUR">16.58</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_10">11</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_10" decimals="INF" unitRef="pure">2</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_10">2</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_10" decimals="INF" unitRef="EUR">16.58</cor:cor-40>
 	<xbrli:context id="corG-5_11">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -377,18 +377,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>11</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>11</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_11">12</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_11" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_11">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_11" decimals="INF" unitRef="EUR">9.95</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_11">12</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_11" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_11">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_11" decimals="INF" unitRef="EUR">9.95</cor:cor-40>
 	<xbrli:context id="corG-5_12">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -397,18 +397,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>12</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>12</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_12">13</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_12" decimals="INF" unitRef="pure">2</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_12">2</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_12" decimals="INF" unitRef="EUR">3.3</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_12">13</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_12" decimals="INF" unitRef="pure">2</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_12">2</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_12" decimals="INF" unitRef="EUR">3.3</cor:cor-40>
 	<xbrli:context id="corG-5_13">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -417,18 +417,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>13</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>13</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_13">14</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_13" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_13">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_13" decimals="INF" unitRef="EUR">10.8</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_13">14</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_13" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_13">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_13" decimals="INF" unitRef="EUR">10.8</cor:cor-40>
 	<xbrli:context id="corG-5_14">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -437,18 +437,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>14</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>14</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_14">15</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_14" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_14">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_14" decimals="INF" unitRef="EUR">3.9</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_14">15</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_14" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_14">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_14" decimals="INF" unitRef="EUR">3.9</cor:cor-40>
 	<xbrli:context id="corG-5_15">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -457,18 +457,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>15</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>15</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_15">16</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_15" decimals="INF" unitRef="pure">2</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_15">2</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_15" decimals="INF" unitRef="EUR">7.6</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_15">16</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_15" decimals="INF" unitRef="pure">2</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_15">2</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_15" decimals="INF" unitRef="EUR">7.6</cor:cor-40>
 	<xbrli:context id="corG-5_16">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -477,18 +477,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>16</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>16</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_16">17</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_16" decimals="INF" unitRef="pure">2</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_16">2</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_16" decimals="INF" unitRef="EUR">9.34</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_16">17</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_16" decimals="INF" unitRef="pure">2</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_16">2</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_16" decimals="INF" unitRef="EUR">9.34</cor:cor-40>
 	<xbrli:context id="corG-5_17">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -497,18 +497,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>17</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>17</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_17">18</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_17" decimals="INF" unitRef="pure">1</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_17">1</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_17" decimals="INF" unitRef="EUR">18.63</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_17">18</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_17" decimals="INF" unitRef="pure">1</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_17">1</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_17" decimals="INF" unitRef="EUR">18.63</cor:cor-40>
 	<xbrli:context id="corG-5_18">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -517,18 +517,18 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>18</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>18</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_18">19</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_18" decimals="INF" unitRef="pure">6</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_18">6</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_18" decimals="INF" unitRef="EUR">102.12</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_18">19</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_18" decimals="INF" unitRef="pure">6</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_18">6</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_18" decimals="INF" unitRef="EUR">102.12</cor:cor-40>
 	<xbrli:context id="corG-5_19">
 		<xbrli:entity>
 			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
@@ -537,16 +537,16 @@
 			<xbrli:instant>2020-11-06</xbrli:instant>
 		</xbrli:period>
 		<xbrli:scenario>
-			<xbrldi:typedMember dimension="gl-cor:d_1">
-				<gl-cor:_1>corG-5</gl-cor:_1>
+			<xbrldi:typedMember dimension="cor:d_1">
+				<cor:_1>corG-5</cor:_1>
 			</xbrldi:typedMember>
-			<xbrldi:typedMember dimension="gl-cor:d_2">
-				<gl-cor:_2>19</gl-cor:_2>
+			<xbrldi:typedMember dimension="cor:d_2">
+				<cor:_2>19</cor:_2>
 			</xbrldi:typedMember>
 		</xbrli:scenario>
 	</xbrli:context>
-	<gl-cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_19">20</gl-cor:cor-22>
-	<gl-bus:bus-144 contextRef="corG-5_19" decimals="INF" unitRef="pure">6</gl-bus:bus-144>
-	<gl-bus:bus-146 contextRef="corG-5_19">6</gl-bus:bus-146>
-	<gl-cor:cor-40 contextRef="corG-5_19" decimals="INF" unitRef="EUR">-109.98</gl-cor:cor-40>
+	<cor:cor-22 unitRef="pure" decimals="INF" contextRef="corG-5_19">20</cor:cor-22>
+	<bus:bus-144 contextRef="corG-5_19" decimals="INF" unitRef="pure">6</bus:bus-144>
+	<bus:bus-146 contextRef="corG-5_19">6</bus:bus-146>
+	<cor:cor-40 contextRef="corG-5_19" decimals="INF" unitRef="EUR">-109.98</cor:cor-40>
 </xbrli:xbrl>
