@@ -4,11 +4,14 @@
  * This is a free to use open source software and licensed under the MIT License
  * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
  **/
-var rule_columns, rule_columnDefs, rule_table, RuleMap, RuleRows, rule_count=2,
+var rule_columns, rule_columnDefs, rule_table, RuleMap, RuleRows, rule_count=3,
     COL_rule_infocontrol,
     en_columns, en_columnDefs, en_table, EnMap, EnMap2, EnNums, EnRows,
     expandedRows, collapsedRows,
-    TABLE2, RULES, RULES2;
+    TABLE2, RULES, RULES2,
+    TABLE2_JA, RULES_JA,
+    // CONDITIONS_JA, FUNCTIONALITY_JA, INTEGRITY_JA, VAT_JA,
+    VAT_CATEGORY_JA;
 
 function setFrame(num, _frame) {
   var frame, root_pane,
@@ -163,26 +166,45 @@ function en_format(d) { // d is the original data object for the row
       desc = d.Desc || '',
       usage = d.UsageNote || '',
       html = '';
-  return googleTranslate([desc, usage])
+/*  return googleTranslate([desc, usage])
   .then(function(translations) {
     var translatedText = translations[0].translatedText,
-        match, j_desc, j_usage;
+        match, desc_ja, usage_ja;
     usage = usage.replaceAll(' - ','<br>- ');
     match = translatedText.match(/.(\&quot;|「)(.*)(\&quot;|」)、.*(\&quot;|「)(.*)(\&quot;|」)./);
     if (match) {
-      j_desc = match[2];
-      j_usage = match[5];
-      j_usage = j_usage.replaceAll(' - ','<br>- ');
+      desc_ja = match[2];
+      usage_ja = match[5];
+      usage_ja = usage_ja.replaceAll(' - ','<br>- ');
     }
+*/
+  return Promise.resolve()
+  .then(function() {
+    var record, desc_ja = '', usage_ja = '';
+    record = TABLE2_JA[d.ID];
+    desc_ja = record['desc_ja'];
+    usage_ja = record['usage_ja'];
     html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
       '<colgroup>'+
         '<col style="width:'+H1+'%;">'+
         '<col style="width:'+H2+'%;">'+
       '</colgroup>'+
       '<tr>';
+    // translation
+    if (desc_ja && usage_ja) {
+      html += '<tr>'+
+        '<td valign="top">'+desc_ja+'</td><td valign="top">'+usage_ja+'</td>'+
+      '</tr>';
+    }
+    else if (desc_ja) {
+      html += '<tr><td valign="top" colspan="2">'+desc_ja+'</td></tr>';
+    }
+    else if (usage_ja) {
+      html += '<tr><td valign="top" colspan="2">'+usage_ja+'</td></tr>';
+    }
+    // original
     if (desc && usage) {
-      html += '<td valign="top">'+desc+'</td>'+
-        '<td valign="top">'+usage+'</td>';
+      html += '<td valign="top">'+desc+'</td><td valign="top">'+usage+'</td>';
     }
     else if (desc) {
       html += '<td valign="top" colspan="2">'+desc+'</td>';
@@ -191,19 +213,6 @@ function en_format(d) { // d is the original data object for the row
       html += '<td valign="top" colspan="2">'+usage+'</td>';
     }
     html += '</tr>';
-    // translation
-    if (j_desc && j_usage) {
-      html += '<tr>'+
-        '<td valign="top">'+j_desc+'</td>'+
-        '<td valign="top">'+j_usage+'</td>'+
-      '</tr>';
-    }
-    else if (j_desc) {
-      html += '<tr><td valign="top" colspan="2">'+j_desc+'</td></tr>';
-    }
-    else if (j_usage) {
-      html += '<tr><td valign="top" colspan="2">'+j_usage+'</td></tr>';
-    }
     html += '</table>';
     return html;
   })
@@ -230,15 +239,26 @@ function rule_format(d) { // d is the original data object for the row
       term = d.BusinessTerm || '',
       // word,
       html = '';
-  return googleTranslate(desc)
-  .then(function(translations) {
-    var j_desc = translations[0].translatedText;
+  // return googleTranslate(desc)
+  // .then(function(translations) {
+  //   var desc_ja = translations[0].translatedText;
+  return Promise.resolve()
+  .then(function() {
+    // var record, desc_ja = '';
+    // record = RULES_JA[d.ID];
+    // if (record) {
+    //   desc_ja = record['ja'];
+    // }
+    // if (desc_ja.match(/NL/)) {
+    //   desc_ja = desc_ja.replaceAll('NL', '<br>\n');
+    // }
     html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
       '<colgroup>'+
         '<col style="width:'+H1+'%;">'+
         '<col style="width:'+H2+'%;">'+
       '</colgroup>'+
-      '<tr><td colspan="2">'+j_desc+'</td></tr>';
+      // '<tr><td colspan="2">'+desc_ja+'</td></tr>'+
+      '<tr><td colspan="2">'+desc+'</td></tr>';
       if (target && term) {
         html += '<tr>'+
           '<td valign="top">'+target+'</td>'+
@@ -252,7 +272,7 @@ function rule_format(d) { // d is the original data object for the row
         html += '<tr><td valign="top" colspan="2">'+term+'</td></tr>'
       }
       html += '</table>';
-    if (j_desc || term || target) {
+    if (desc || term || target) {
       return html;
     }
     return null;
@@ -266,13 +286,18 @@ function rule_format(d) { // d is the original data object for the row
 // EN
 function renderBT(row) {
   var term = row.BusinessTerm,
+      record,
       level = row.Level,
       res;
+  record = TABLE2_JA[row.ID];
+  if (record) {
+    term = record['bt_ja']
+  }
   res = level+' '+term;
   return res;
 }
 // -------------------------------------------------------------------
-/** num ID Level Card BusinessTerm Desc UsageNote ReqID emanticDataType */
+/** num ID Level Card BusinessTerm Desc UsageNote ReqID semanticDataType */
 en_columns = [
   { 'width': '3%',
     'className': 'details-control',
@@ -313,7 +338,17 @@ rule_columns = [
   { 'width': '12%',
     'data': 'ID' }, // 0
   { 'width': '60%',
-    'data': 'Desc' }, // 1
+    'data': 'Desc',
+    'render': function(data, type, row) {
+      var desc = row.Desc;
+      var record = RULES_JA[row.ID];
+      if (record) {
+        desc = record['ja'];
+      }
+      if (desc.match(/NL/)) {
+        desc = desc.replaceAll('NL', '<br>\n');
+      }
+      return desc; }}, // 1
   { //'width': '20%',
     'data': 'BusinessTerm' }, // 2
   { 'width': '20%',
@@ -653,6 +688,89 @@ var initModule = function () {
     'select': true
   });
   // -----------------------------------------------------------------
+  // Ajax request for japanese translation
+  // -----------------------------------------------------------------
+  ajaxRequest('data/rules/EN_16931-1_table2_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      TABLE2_JA = JSON.parse(res);
+    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+  // RULES
+  ajaxRequest('data/rules/EN_16931-1_rules_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      RULES_JA = JSON.parse(res);
+      rule_count--;
+      if (0 === rule_count) {
+        tableInitRule();
+      }
+    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+/*
+  ajaxRequest('data/rules/EN_16931-1_conditions_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      var json = JSON.parse(res);
+      for(var k in json){
+        var v = json[k];
+        RULES[k] = v;
+      }
+    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+  ajaxRequest('data/rules/EN_16931-1_functionality_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      var json = JSON.parse(res);
+      for(var k in json){
+        var v = json[k];
+        RULES[k] = v;
+      }    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+  ajaxRequest('data/rules/EN_16931-1_integrity_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      var json = JSON.parse(res);
+      for(var k in json){
+        var v = json[k];
+        RULES[k] = v;
+      }
+    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+  ajaxRequest('data/rules/EN_16931-1_vat_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      var json = JSON.parse(res);
+      for(var k in json){
+        var v = json[k];
+        RULES[k] = v;
+      }
+    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+  */
+  // VAT category
+/*  ajaxRequest('data/rules/EN_16931-1_VATcategory_ja.json', null, 'GET', 1000)
+  .then(function(res) {
+    try {
+      VAT_CATEGORY_JA = JSON.parse(res);
+    }
+    catch(e) { console.log(e); }
+  })
+  .catch(function(err) { console.log(err); });
+  */
+  // -----------------------------------------------------------------
   // Ajax request for rule data
   // -----------------------------------------------------------------
   ajaxRequest('data/rules/EN_16931-1_rules.json', null, 'GET', 1000)
@@ -794,6 +912,8 @@ var initModule = function () {
       expandCollapse('#en', EnMap, tr);      
     }
   });
+
+
 
   setTimeout(function() {
     setFrame(1, 'en');
