@@ -166,31 +166,31 @@ function en_format(d) { // d is the original data object for the row
       desc = d.Desc || '',
       usage = d.UsageNote || '',
       html = '';
-/*  return googleTranslate([desc, usage])
+  return googleTranslate([desc, usage])
   .then(function(translations) {
     var translatedText = translations[0].translatedText,
-        match, desc_ja, usage_ja;
+        match, desc_google, usage_google;
     usage = usage.replaceAll(' - ','<br>- ');
     match = translatedText.match(/.(\&quot;|「)(.*)(\&quot;|」)、.*(\&quot;|「)(.*)(\&quot;|」)./);
     if (match) {
-      desc_ja = match[2];
-      usage_ja = match[5];
-      usage_ja = usage_ja.replaceAll(' - ','<br>- ');
+      desc_google = match[2];
+      usage_google = match[5];
+      usage_google = usage_google.replaceAll(' - ','<br>- ');
     }
-*/
-  return Promise.resolve()
-  .then(function() {
+  // return Promise.resolve()
+  // .then(function() {
     var record, desc_ja = '', usage_ja = '';
     record = TABLE2_JA[d.ID];
     desc_ja = record['desc_ja'];
     usage_ja = record['usage_ja'];
+
     html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
       '<colgroup>'+
         '<col style="width:'+H1+'%;">'+
         '<col style="width:'+H2+'%;">'+
       '</colgroup>'+
       '<tr>';
-    // translation
+    //
     if (desc_ja && usage_ja) {
       html += '<tr>'+
         '<td valign="top">'+desc_ja+'</td><td valign="top">'+usage_ja+'</td>'+
@@ -201,6 +201,17 @@ function en_format(d) { // d is the original data object for the row
     }
     else if (usage_ja) {
       html += '<tr><td valign="top" colspan="2">'+usage_ja+'</td></tr>';
+    }
+    // translation
+    if (desc_google && usage_google) {
+      html += '<tr>'+
+        '<td valign="top">- Google翻訳API(V2) -<br>'+desc_google+'</td><td valign="top">'+usage_google+'</td></tr>';
+    }
+    else if (desc_google) {
+      html += '<tr><td valign="top" colspan="2">- Google翻訳API(V2) -<br>'+desc_google+'</td></tr>';
+    }
+    else if (usage_google) {
+      html += '<tr><td valign="top" colspan="2">- Google翻訳API(V2) -<br>'+usage_google+'</td></tr>';
     }
     // original
     if (desc && usage) {
@@ -239,31 +250,37 @@ function rule_format(d) { // d is the original data object for the row
       term = d.BusinessTerm || '',
       // word,
       html = '';
-  // return googleTranslate(desc)
-  // .then(function(translations) {
-  //   var desc_ja = translations[0].translatedText;
-  return Promise.resolve()
-  .then(function() {
-    // var record, desc_ja = '';
-    // record = RULES_JA[d.ID];
-    // if (record) {
-    //   desc_ja = record['ja'];
-    // }
-    // if (desc_ja.match(/NL/)) {
-    //   desc_ja = desc_ja.replaceAll('NL', '<br>\n');
-    // }
+  return googleTranslate(desc)
+  .then(function(translations) {
+    var desc_google = translations[0].translatedText;
+    if (desc_google.match(/NL/)) {
+      desc_google = desc_google.replaceAll('NL', '<br>\n');
+    }
+  // return Promise.resolve()
+  // .then(function() {
+    var record, desc_ja = '';
+    record = RULES_JA[d.ID];
+    if (record) {
+      desc_ja = record['ja'];
+    }
+    if (desc_ja.match(/NL/)) {
+      desc_ja = desc_ja.replaceAll('NL', '<br>\n');
+    }
     html = '<table cellpadding="4" cellspacing="0" border="0" style="width:100%;">'+
       '<colgroup>'+
         '<col style="width:'+H1+'%;">'+
         '<col style="width:'+H2+'%;">'+
-      '</colgroup>'+
-      // '<tr><td colspan="2">'+desc_ja+'</td></tr>'+
-      '<tr><td colspan="2">'+desc+'</td></tr>';
+      '</colgroup>';
+      // if (desc_ja) {
+      //   html += '<tr><td colspan="2">'+desc_ja+'</td></tr>';
+      // }
+      if (desc_google) {
+        html += '<tr><td colspan="2">- Google翻訳API(V2) -<br>'+desc_google+'</td></tr>';
+      }
+      html += '<tr><td colspan="2">'+desc+'</td></tr>';
       if (target && term) {
         html += '<tr>'+
-          '<td valign="top">'+target+'</td>'+
-          '<td valign="top">'+term+'</td>'+
-        '</tr>'
+          '<td valign="top">'+target+'</td><td valign="top">'+term+'</td></tr>'
       }
       else if (target) {
         html += '<tr><td valign="top" colspan="2">'+target+'</td></tr>'
@@ -271,6 +288,7 @@ function rule_format(d) { // d is the original data object for the row
       else if (term) {
         html += '<tr><td valign="top" colspan="2">'+term+'</td></tr>'
       }
+
       html += '</table>';
     if (desc || term || target) {
       return html;
