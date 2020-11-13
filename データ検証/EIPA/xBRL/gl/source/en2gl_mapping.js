@@ -820,7 +820,7 @@ var en2glMapping = (function() {
         var searchEN = function(seq, path, current) {
             var rgx, found, val;
             if ('Array' === current.constructor.name) {
-                rgx = new RegExp((bg ? bg : '')+(bt ? '/'+bt : ''));
+                rgx = new RegExp((bg ? bg : '')+(bt ? '\\\/'+bt : ''));
                 if (path.match(rgx)) {
                     found = check(seq, path, current);
                     if(found) { return found; }
@@ -833,7 +833,7 @@ var en2glMapping = (function() {
                                 var item = record[idx];
                                 var children = item.val;
                                 if (children) {
-                                    rgx = new RegExp((bg ? bg : '')+(bt ? '/'+bt : ''));
+                                    rgx = new RegExp((bg ? bg : '')+(bt ? '\\\/'+bt : ''));
                                     if ((path+'/'+idx).match(rgx)) {
                                         for (seq = 0; seq < children.length; seq++) {
                                             var founds = {};
@@ -852,12 +852,12 @@ var en2glMapping = (function() {
                                         }
                                         break;
                                     }
-                                    if ((path+'/'+idx).match(new RegExp(bg))) {
+                                    if (bg && (path+'/'+idx).match(new RegExp(bg))) {
                                         for (seq = 0; seq < children.length; seq++) {
                                             var child = children[seq];
                                             var founds = {};
                                             for (var key in child) {
-                                                rgx = new RegExp((bg ? bg : '')+(bt ? '/'+bt : ''));
+                                                rgx = new RegExp((bg ? bg : '')+(bt ? '\\\/'+bt : ''));
                                                 if ((path+'/'+idx+'/'+key).match(rgx)) {
                                                     var found = check(seq, path+'/'+idx+'/'+key, child[key]);
                                                     if (found) {
@@ -897,21 +897,24 @@ var en2glMapping = (function() {
         return searchEN(0, '', en.val); 
     }
 
-    var buildPalette = function() {
+    var buildPalette = function(gl_plt) {
         var gl = {};
         for (var id in gl_plt) {
             var record = gl_plt[id];
             path = record.path;
             var paths = path.split('/');
             paths.shift();
-            // var nth = [];
-            // for (var i = 0; i < paths.length; i++) {
-            //     nth.push(0);
-            // }
-            // getPalette(nth, paths);
             var element = gl;
             for (var _id of paths) {
-                // if (!element) { element = []; }
+                if (!element[_id]) {
+                    var record = gl_plt[_id];
+                    var code = record['code'];
+                    var name = record['name'];
+                    element[_id] = {'name':name, 'code':code, 'val':[{}]};
+                }
+                element = element[_id].val[0];
+            }
+            /*for (var _id of paths) {
                 if (!element[_id]) { element[_id] = []; }
                 if (!element[_id][0]) {
                     var record = gl_plt[_id];
@@ -920,7 +923,7 @@ var en2glMapping = (function() {
                     element[_id][0] = {'name':name, 'code':code};
                 }
                 element = element[_id][0];
-            }
+            }*/
         }
         return gl;
     }
@@ -932,55 +935,44 @@ var en2glMapping = (function() {
         path = _path.split('/');
         path.shift();
         function id1check() {
-            if (!xbrl[id1][n1]) {
-                xbrl[id1][n1] = {'name':name1, 'code':code1};
+            if (!xbrl[id1].val[n1]) {
+                xbrl[id1].val[n1] = {};
             }
         }
         function id2check() {
-            if (!xbrl[id1][n1][id2]) {
-                xbrl[id1][n1][id2] = [];
-                xbrl[id1][n1][id2][0] = {'name':name2, 'code':code2};
+            id1check();
+            if (!xbrl[id1].val[n1]) {
+                xbrl[id1].val[n1] = {};
             }
-            if (!xbrl[id1][n1][id2][n2]) {
-                if (!xbrl[id1][n1][id2][0]) {
-                    xbrl[id1][n1][id2][0] = {'name':name2, 'code':code2};
-                }
-                xbrl[id1][n1][id2][n2] = {'name':name2, 'code':code2};
+            if (!xbrl[id1].val[n1][id2]) {
+                xbrl[id1].val[n1][id2] = {'name':name2, 'code':code2, 'val':[{}]};
             }
         }
         function id3check() {
-            if (!xbrl[id1][n1][id2][n2][id3]) {
-                xbrl[id1][n1][id2][n2][id3] = [];
-                xbrl[id1][n1][id2][n2][id3][0] = {'name':name3, 'code':code3};
+            id2check();
+            if (!xbrl[id1].val[n1][id2].val[n2]) {
+                xbrl[id1].val[n1][id2].val[n2] = {};
             }
-            if (!xbrl[id1][n1][id2][n2][id3][n3]) {
-                if (!xbrl[id1][n1][id2][n2][id3][0]) {
-                    xbrl[id1][n1][id2][n2][id3][0] = {'name':name3, 'code':code3};
-                }
-                xbrl[id1][n1][id2][n2][id3][n3] = {'name':name3, 'code':code3};
+            if (!xbrl[id1].val[n1][id2].val[n2][id3]) {
+                xbrl[id1].val[n1][id2].val[n2][id3] = {'name':name3, 'code':code3, 'val':[{}]};
             }
         }
         function id4check() {
-            if (!xbrl[id1][n1][id2][n2][id3][n3][id4]) {
-                xbrl[id1][n1][id2][n2][id3][n3][id4] = [];
-                xbrl[id1][n1][id2][n2][id3][n3][id4][0] = {'name':name4, 'code':code4};
+            id3check();
+            if (!xbrl[id1].val[n1][id2].val[n2][id3].val[n3]) {
+                xbrl[id1].val[n1][id2].val[n2][id3].val[n3] = {};
             }
-            if (!xbrl[id1][n1][id2][n2][id3][n3][id4][n4]) {
-                if (!xbrl[id1][n1][id2][n2][id3][n3][id4][0]) {
-                    xbrl[id1][n1][id2][n2][id3][n3][id4][0] = {'name':name4, 'code':code4};
-                }
-                xbrl[id1][n1][id2][n2][id3][n3][id4][n4] = {'name':name4, 'code':code4};
+            if (!xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4]) {
+                xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4] = {'name':name4, 'code':code4, 'val':[{}]};
             }
         }
         function id5check() {
-            if (!xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5]) {
-                xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5] = [];
-                xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5][0] = {'name':name5, 'code':code5};
+            id4check();
+            if (!xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4].val[n4]) {
+                xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4].val[n4] = {};
             }
-            if (!xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5][n5]) {
-                if (!xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5][0]) {
-                    xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5][0] = {'name':name5, 'code':code5}; }
-                xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5][n5] = {'name':name5, 'code':code5};
+            if (!xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4].val[n4][id5]) {
+                xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4].val[n4][id5] = {'name':name5, 'code':code5, 'val':[{}]};
             }
         }
 
@@ -1004,109 +996,149 @@ var en2glMapping = (function() {
         switch (path.length) {
             case 1:
                 id1check();
-                result = xbrl[id1][n1];
+                result = xbrl[id1];//.val[n1];
                 break;
             case 2:
-                id1check();
                 id2check();
-                result = xbrl[id1][n1][id2][n2];
+                result = xbrl[id1].val[n1][id2];//.val[n2];
                 break;
             case 3:
-                id1check();
-                id2check();
                 id3check();
-                result = xbrl[id1][n1][id2][n2][id3][n3];
+                result = xbrl[id1].val[n1][id2].val[n2][id3];//.val[n3];
                 break;
             case 4:
-                id1check();
-                id2check();
-                id3check();
                 id4check();
-                result = xbrl[id1][n1][id2][n2][id3][n3][id4][n4];
+                result = xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4];//.val[n4];
                 break;
             case 5:
-                id1check();
-                id2check();
-                id3check();
-                id4check();
                 id5check();
-                result = xbrl[id1][n1][id2][n2][id3][n3][id4][n4][id5][n5];
+                result = xbrl[id1].val[n1][id2].val[n2][id3].val[n3][id4].val[n4][id5];//.val[n5];
                 break;
         }
-
+        /*if (nth.length > 3) {
+            console.log('* getPalette', nth, _path, JSON.stringify(result));
+        }
+        else {
+            console.log('* getPalette', nth, _path, result);
+        }*/
         return result;
     }
 
     var fill = function(gl_plt) {
         var populate = function(nth, path, current) {
             var codeP, codePs, len, n;
-            codeP = current[0].code;
+            codeP = current.code;
             var child, code, enG, enT, code;
             var element;
-            nth.push(0);
-            for (var i = 0; i < current.length; i++) {
-                var val = current[i];
+            console.log('populate', nth, path);
+
+            for (var _id in current.val) {
+                var val = current.val[_id];
                 if ('object' == typeof val) {
-                    for (var idx in val) { if (!idx.match(/^(code|name|code|path)$/)) {
+                    for (var idx in val) {
                         child = val[idx];
-                        code = child[0].code;
-                        nth[nth.length - 1] = i;
-                        // element = getPalette(nth, path+'/'+idx);
+                        code = child.code;
                         if (idx.match(/^[a-z]{2,3}G-[0-9]+$/)) { // idx is abcG-nn
                             if (!code) {
-                                populate(nth, path+'/'+idx, child);
+                                var  _nth = [], _path = path+'/'+idx;
+                                var ps = _path.split('/');
+                                ps.shift();
+                                for (var i = 0; i < ps.length; i++) {
+                                    if (undefined === nth[i]) { _nth[i] = 0; }
+                                    else { _nth[i] = nth[i]; }
+                                }
+                                populate(_nth, _path, child);
                             }
                             else if (code.match(/^BG-[0-9]+$/)) { // code is BG-nn
                                 enG = lookupEN(code, '');
+                                element = getPalette(nth, path);
                                 if (enG && enG.length > 1) {
                                     for (var i = 0; i < enG.length; i++) {
-                                        nth[nth.length - 1] = i;
+                                        var depth = (path.match(/\//g) || []).length;
+                                        nth[depth] = i;
+                                        console.log('- code:'+code, i, nth, path);
+
                                         var record = enG[i];
                                         if ('object' == typeof record) {
-                                            for (var key in record) { if (!key.match(/^(code|name|code|path)$/)) {
-                                                if (key.match(/^BT-[0-9]+$/)) { // idx is BT-nn
-                                                    var v = enG[i][key]; // key is BT-nn
-                                                    var _path;
-                                                    for (var k in gl_plt) {
-                                                        var d = gl_plt[k];
-                                                        if (d.code==key){ _path = d.path; }
-                                                    }
-                                                    var _element = getPalette(nth, _path);
-                                                    if (v) {
-                                                        if (_element) {
-                                                            _element['val'] = v;
-                                                        }
-                                                        else { console.log('NOT defined '+_path); }
+                                            for (var key in record) {
+                                                var v = record[key]; // key is either BG-nn or BT-nn
+                                                var _nth = [], _path;
+                                                for (var k in gl_plt) {
+                                                    var d = gl_plt[k];
+                                                    if (d.code == key) {
+                                                        _path = d.path;
                                                     }
                                                 }
-                                            }}
+                                                var ps = _path.split('/');
+                                                ps.shift();
+                                                for (var k = 0; k < ps.length; k++) {
+                                                    if (undefined === nth[k]) { _nth[k] = 0; }
+                                                    else { _nth[k] = nth[k]; }
+                                                }
+                                                // _nth[_nth.length - 1] = i;
+                                                console.log('-- key:'+key, _nth, _path);
+
+                                                if (key.match(/^BG-[0-9]+$/)) { // key is BG-nn)
+                                                    var _element = getPalette(_nth, _path);
+                                                    if (v && _element) {
+                                                        _element.val[i] = v;
+                                                    }
+                                                    else { console.log('NOT defined '+_path+' '+key); }
+                                                }
+                                                else if (key.match(/^BT-[0-9]+$/)) { // key is BT-nn
+                                                    var _element = getPalette(_nth, _path);
+                                                    if (v && _element) {
+                                                        _element.val[0] = v;
+                                                    }
+                                                    else { console.log('NOT defined '+_path+' '+key); }
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
                             else if (code.match(/^BT-[0-9]+$/)) { // code is BT-nn
+                                var  _nth = [], _path = _path+'/'+idx;
+                                var ps = _path.split('/');
+                                ps.shift();
+                                for (var k = 0; k < ps.length; k++) {
+                                    if (undefined === nth[k]) { _nth[k] = 0; }
+                                    else { _nth[k] = nth[k]; }
+                                }
+                                console.log('code:'+key, _nth, _path);
+
+                                element = getPalette(_nth, _path);
                                 enT = lookupEN(codeP, code);
-                                if (enT && enT[0] && enT[0][code]) {
-                                    element = getPalette(nth, path+'/'+idx);
-                                    element['val'] = enT[0][code];
+                                if (element && enT && enT[0] && enT[0][code]) {
+                                    if (element && enT) {
+                                        element.val[0] = enT[0][code];
+                                    }
                                 }
                             }
                         }
                         else if (idx.match(/^[a-z]{2,3}-[0-9]+$/)) { // idx is abc-nn
                             if (code.match(/^BT-[0-9]+$/)) { // code is BT-nn
+                                var _path = path+'/'+idx;
+                                var ps = _path.split('/');
+                                ps.shift();
+                                var _nth = [];
+                                for (var k = 0; k < ps.length; k++) {
+                                    if (undefined === nth[k]) { _nth[k] = 0; }
+                                    else { _nth[k] = nth[k]; }
+                                }
+                                element = getPalette(_nth, _path);
                                 enT = lookupEN(codeP, code);
-                                if (enT && enT[0] && enT[0][code]) {
-                                    element = getPalette(nth, path+'/'+idx);
-                                    element['val'] = enT[0][code];
+                                if (element && enT && enT[0] && enT[0][code]) {
+                                    element.val[0] = enT[0][code];
                                 }
                             }
                         }
-                    }}
+                    }//}
                 }
             }
         }
 
-        xbrl = buildPalette(); //JSON.parse(JSON.stringify(xbrlgl));
+        xbrl = buildPalette(gl_plt); //JSON.parse(JSON.stringify(xbrlgl));
         var current = xbrl['corG-1'];
         populate([0], '/corG-1', current);
 
