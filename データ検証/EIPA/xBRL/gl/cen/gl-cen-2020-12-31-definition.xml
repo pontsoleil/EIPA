@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL Japan -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <!-- AMOUNT -->
+    <loc xlink:type="locator" xlink:href="../cor/gl-cor-2020-12-31.xsd#gl-cor_amount" xlink:label="gl-cor_amount" xlink:title="definition general: amount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_DocumentLevelAllowanceAmount" xlink:label="gl-cen_DocumentLevelAllowanceAmount" xlink:title="definition special: DocumentLevelAllowanceAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_DocumentLevelAllowanceAmount" xlink:title="definition: amount to DocumentLevelAllowanceAmount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_DocumentLevelChargeAmount" xlink:label="gl-cen_DocumentLevelChargeAmount" xlink:title="definition special: DocumentLevelChargeAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_DocumentLevelChargeAmount" xlink:title="definition: amount to DocumentLevelChargeAmount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_SumOfInvoiceLineNetAmount" xlink:label="gl-cen_SumOfInvoiceLineNetAmount" xlink:title="definition special: SumOfInvoiceLineNetAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_SumOfInvoiceLineNetAmount" xlink:title="definition: amount to SumOfInvoiceLineNetAmount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_VATCategoryTaxableAmount" xlink:label="gl-cen_VATCategoryTaxableAmount" xlink:title="definition special: VATCategoryTaxableAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_VATCategoryTaxableAmount" xlink:title="definition: amount to VATCategoryTaxableAmount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_InvoiceLineNetAmount" xlink:label="gl-cen_InvoiceLineNetAmount" xlink:title="definition special: InvoiceLineNetAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_InvoiceLineNetAmount" xlink:title="definition: amount to InvoiceLineNetAmount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_InvoiceLineAllowanceAmount" xlink:label="gl-cen_InvoiceLineAllowanceAmount" xlink:title="definition special: InvoiceLineAllowanceAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_InvoiceLineAllowanceAmount" xlink:title="definition: amount to InvoiceLineAllowanceAmount"/>
+
+    <loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_InvoiceLineChargeAmount" xlink:label="gl-cen_InvoiceLineChargeAmount" xlink:title="definition special: InvoiceLineChargeAmount"/>
+    <definitionArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/general-special" xlink:from="gl-cor_amount" xlink:to="gl-cen_InvoiceLineChargeAmount" xlink:title="definition: amount to InvoiceLineChargeAmount"/>
+
+  </definitionLink>
+</linkbase>
