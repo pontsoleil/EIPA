@@ -501,15 +501,34 @@ var en2glMapping = (function() {
     }
 
     var initModule = function() {
-        xbrl = fill(gl_plt);
-        // console.log(xbrl);
+        return Promise.resolve(gl_plt)
+        .then(function(gl_plt) {
+            xbrl = fill(gl_plt);
+            return xbrl;
+        })
+        .then(function(xbrl) {
+            var name = 'example1.xbrl';
+            var data = {
+            'name': name,
+            'data': xbrl
+            };
+            return ajaxRequest('data/save.cgi', data, 'POST', 20000)
+            .then(function(res) {
+            console.log(res);
+            return res;
+            })
+            .catch(function(err) { console.log(err); })
+            // console.log(xbrl);
+            return 
+        })
+        .catch(function(err) { console.log(err); })
     }
 
     return {
-        gl_plt: gl_plt,
-        lookupEN: lookupEN,
-        getPalette: getPalette,
-        fill: fill,
+        // gl_plt: gl_plt,
+        // lookupEN: lookupEN,
+        // getPalette: getPalette,
+        // fill: fill,
         initModule: initModule
     }
 })();
