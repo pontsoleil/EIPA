@@ -15,7 +15,7 @@ Tmp=/tmp/${0##*/}.$$
 exec 2>log/${0##*/}.$$.log
 # === tsv -> xpath ============================================================
 # code seq level module term type label description label-ja description-ja
-# 1    2   3     4      5    6    7     8           9         10
+# 1    2   3     4      5    6    7     8           9        10
 cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
   n=0;
   parent="root";
