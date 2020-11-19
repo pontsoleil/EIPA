@@ -71,10 +71,6 @@
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_maturityDate" xlink:label="gl-cor_maturityDate" xlink:title="presentation child: maturityDate"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryHeader" xlink:to="gl-cor_maturityDate" priority="1" xlink:title="presentation: entryHeader to maturityDate" use="prohibited"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_maturityDate" priority="2" xlink:title="presentation: entryDetail to maturityDate" use="optional" order="127"/>
-    <!-- accountingEntries -->
-    <loc xlink:type="locator" xlink:href="../../roo/gl-roo-2020-12-31.xsd#gl-roo_1" xlink:label="gl-roo_1" xlink:title="presentation parent: 1"/>
-    <loc xlink:type="locator" xlink:href="../../acc/gl-acc-2020-12-31.xsd#gl-acc_u" xlink:label="gl-acc_u" xlink:title="presentation parent: u"/>
-    <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_accountingEntries" xlink:label="gl-cor_accountingEntries" xlink:title="presentation child: accountingEntries"/>
     <!-- taxCurrency -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_taxes" xlink:label="gl-cor_taxes" xlink:title="presentation parent: taxes"/>
     <loc xlink:type="locator" xlink:href="../../muc/gl-muc-2020-12-31.xsd#gl-muc_taxCurrency" xlink:label="gl-muc_taxCurrency" xlink:title="presentation child: taxCurrency"/>
