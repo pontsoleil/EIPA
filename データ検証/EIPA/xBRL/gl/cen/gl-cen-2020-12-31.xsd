@@ -95,7 +95,7 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
   <element name="cen-18" id="gl-cen_invoicedObjectIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cenG-1" id="gl-cen_invoiceNote" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-21" id="gl-cen_invoiceNoteSubjectCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="cen-22" id="gl-cen_invoiceNote" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="cen-22" id="gl-cen_invoiceNoteText" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cenG-2" id="gl-cen_processControl" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-23" id="gl-cen_businessProcessType" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-24" id="gl-cen_specificationIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -143,7 +143,7 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
   <element name="cen-46" id="gl-cen_buyerIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-47" id="gl-cen_buyerLegalRegistrationIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-48" id="gl-cen_buyerVatIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="cen-47A" id="gl-cen_schemeIdentifier" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="cen-47A" id="gl-cen_buyerSchemeIdentifier" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-44" id="gl-cen_buyerName" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-45" id="gl-cen_buyerTradingName" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cenG-8" id="gl-cen_buyerPostalAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -161,7 +161,7 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
   <element name="cen-58" id="gl-cen_buyerContactEmailAddress" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-60" id="gl-cen_payeeIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-61" id="gl-cen_payeeLegalRegistrationIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="cen-61A" id="gl-cen_schemeIdentifier" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="cen-61A" id="gl-cen_payeeSchemeIdentifier" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-59" id="gl-cen_payeeName" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-70" id="gl-cen_deliverToPartyName" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cenG-15" id="gl-cen_deliverToAddress" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -218,8 +218,8 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
   <element name="cen-149" id="gl-cen_itemPriceBaseQuantity" type="gl-cen:quantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-150" id="gl-cen_itemPriceBaseQuantityUnitOfMeasureCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cenG-31" id="gl-cen_itemInformation" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="cen-155" id="gl-cen_itemSeller'SIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="cen-156" id="gl-cen_itemBuyer'SIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="cen-155" id="gl-cen_itemSellersIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="cen-156" id="gl-cen_itemBuyersIdentifier" type="gl-cen:identifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-129" id="gl-cen_invoicedQuantity" type="gl-cen:quantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-159" id="gl-cen_itemCountryOfOrigin" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-130" id="gl-cen_invoicedQuantityUnitOfMeasureCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

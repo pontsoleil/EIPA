@@ -129,9 +129,9 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_invoiceNoteSubjectCode_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-21-en_48a24b70a0b376535542b996af517398"/>
     <link:label xlink:type="resource" xlink:label="lbl_cen-21-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Invoice note subject code</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cen-21-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The subject of the textual note in BT-22.\nTo be chosen from the entries in UNTDID 4451 [6].</link:label>
-    <!-- cen-22 gl-cen:invoiceNote -->
-    <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_invoiceNote" xlink:label="gl-cen_invoiceNote_48a24b70a0b376535542b996af517398"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_invoiceNote_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-22-en_48a24b70a0b376535542b996af517398"/>
+    <!-- cen-22 gl-cen:invoiceNoteText -->
+    <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_invoiceNoteText" xlink:label="gl-cen_invoiceNoteText_48a24b70a0b376535542b996af517398"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_invoiceNoteText_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-22-en_48a24b70a0b376535542b996af517398"/>
     <link:label xlink:type="resource" xlink:label="lbl_cen-22-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Invoice note</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cen-22-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A textual note that gives unstructured information that is relevant to the Invoice as a whole.\nSuch as the reason for any correction or assignment note in case the invoice has been factored</link:label>
     <!-- cenG-2 gl-cen:processControl -->
@@ -372,10 +372,10 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_buyerVatIdentifier_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-48-en_48a24b70a0b376535542b996af517398"/>
     <link:label xlink:type="resource" xlink:label="lbl_cen-48-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Buyer VAT identifier</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cen-48-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The Buyer's VAT identifier (also known as Buyer VAT identification number).\nVAT number prefixed by a country code based on EN ISO 3166-1 'Codes for the representation of names of countries and their subdivisions'</link:label>
-    <!-- cen-47A gl-cen:schemeIdentifier -->
-    <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_schemeIdentifier" xlink:label="gl-cen_schemeIdentifier_48a24b70a0b376535542b996af517398"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_schemeIdentifier_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-47A-en_48a24b70a0b376535542b996af517398"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cen-47A-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Scheme identifier</link:label>
+    <!-- cen-47A gl-cen:buyerSchemeIdentifier -->
+    <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_buyerSchemeIdentifier" xlink:label="gl-cen_buyerSchemeIdentifier_48a24b70a0b376535542b996af517398"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_buyerSchemeIdentifier_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-47A-en_48a24b70a0b376535542b996af517398"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cen-47A-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Buyer Scheme identifier</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cen-47A-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The identification scheme identifier of the Buyer legal registration identifier.\nIf used, the identification scheme shall be chosen from the entries of the list published by the ISO/1EC 6523 maintenance agency.</link:label>
     <!-- cen-44 gl-cen:buyerName -->
     <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_buyerName" xlink:label="gl-cen_buyerName_48a24b70a0b376535542b996af517398"/>
@@ -467,10 +467,10 @@
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_payeeLegalRegistrationIdentifier_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-61-en_48a24b70a0b376535542b996af517398"/>
     <link:label xlink:type="resource" xlink:label="lbl_cen-61-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Payee legal registration identifier</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cen-61-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">An identifier issued by an official registrar that identifies the Payee as a legal entity or person.\nIf no scheme is specified, it should be known by Buyer and Seller, e.g. the identifier that is exclusively used in the applicable legal environment.</link:label>
-    <!-- cen-61A gl-cen:schemeIdentifier -->
-    <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_schemeIdentifier" xlink:label="gl-cen_schemeIdentifier_48a24b70a0b376535542b996af517398"/>
-    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_schemeIdentifier_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-61A-en_48a24b70a0b376535542b996af517398"/>
-    <link:label xlink:type="resource" xlink:label="lbl_cen-61A-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Scheme identifier</link:label>
+    <!-- cen-61A gl-cen:payeeSchemeIdentifier -->
+    <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_payeeSchemeIdentifier" xlink:label="gl-cen_payeeSchemeIdentifier_48a24b70a0b376535542b996af517398"/>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-cen_payeeSchemeIdentifier_48a24b70a0b376535542b996af517398" xlink:to="lbl_cen-61A-en_48a24b70a0b376535542b996af517398"/>
+    <link:label xlink:type="resource" xlink:label="lbl_cen-61A-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Payee Scheme identifier</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_cen-61A-en_48a24b70a0b376535542b996af517398" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The identification scheme identifier of the Payee legal registration identifier.\nIf used, the identification scheme shall be chosen from the entries of the list published by the ISO/IEC 6523 maintenance agency.</link:label>
     <!-- cen-59 gl-cen:payeeName -->
     <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_payeeName" xlink:label="gl-cen_payeeName_48a24b70a0b376535542b996af517398"/>
@@ -853,7 +853,7 @@
     <!-- bus-140 gl-bus:measurableIDSchema -->
     <link:loc xlink:type="locator" xlink:href="gl-bus-2020-12-31.xsd#gl-bus_measurableIDSchema" xlink:label="gl-bus_measurableIDSchema_1dcca23355272056f04fe8bf20edfce0"/>
     <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="gl-bus_measurableIDSchema_1dcca23355272056f04fe8bf20edfce0" xlink:to="lbl_bus-140-en_1dcca23355272056f04fe8bf20edfce0"/>
-    <link:label xlink:type="resource" xlink:label="lbl_bus-140-en_1dcca23355272056f04fe8bf20edfce0" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Scheme identifier</link:label>
+    <link:label xlink:type="resource" xlink:label="lbl_bus-140-en_1dcca23355272056f04fe8bf20edfce0" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Item Scheme identifier</link:label>
     <link:label xlink:type="resource" xlink:label="lbl_bus-140-en_1dcca23355272056f04fe8bf20edfce0" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The identification scheme identifier of the Item standard identifier\nThe identification scheme shall be identified from the entries of the list published by the ISO/IEC 6523 maintenance agency. </link:label>
     <!-- cen-129 gl-cen:invoicedQuantity -->
     <link:loc xlink:type="locator" xlink:href="gl-cen-2020-12-31.xsd#gl-cen_invoicedQuantity" xlink:label="gl-cen_invoicedQuantity_1dcca23355272056f04fe8bf20edfce0"/>
