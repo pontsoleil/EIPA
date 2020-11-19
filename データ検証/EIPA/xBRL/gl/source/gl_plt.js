@@ -212,4 +212,4 @@ var gl_plt = {
   "cenG-32":{"general":"","level":"4","name":"itemAttributes","path":"/corG-1/corG-4/corG-5/cenG-32","ID":"BG-32","term":"ITEM ATTRIBUTES","Card":"0..n"},
   "cen-160":{"general":"","level":"5","name":"itemAttributeName","path":"/corG-1/corG-4/corG-5/cenG-32/cen-160","ID":"BT-160","term":"Item attribute name","Card":"1..1"},
   "cen-161":{"general":"","level":"5","name":"itemAttributeValue","path":"/corG-1/corG-4/corG-5/cenG-32/cen-161","ID":"BT-161","term":"Item attribute value","Card":"1..1"}
-}
+};
