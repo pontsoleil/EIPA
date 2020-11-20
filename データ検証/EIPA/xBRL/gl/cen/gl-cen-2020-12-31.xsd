@@ -15,7 +15,7 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	<import namespace="http://www.xbrl.org/int/gl/gen/2020-12-31" schemaLocation="../gen/gl-gen-2020-12-31.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="gl-cen-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+			<!--link:linkbaseRef xlink:href="gl-cen-2020-12-31-presentation.xml" xlink:title="Presentation Links, all" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/-->
 			<link:linkbaseRef xlink:href="gl-cen-2020-12-31-label-ja.xml" xlink:title="Label Links, ja" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"/>
 		</appinfo>
 	</annotation>
@@ -27,6 +27,12 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 		</simpleContent>
 	</complexType>
 	<complexType name="percentageItemType">
+		<simpleContent>
+			<restriction base="xbrli:pureItemType">
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="quantityItemType">
 		<simpleContent>
 			<restriction base="xbrli:pureItemType">
 			</restriction>
@@ -248,7 +254,7 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
   <element name="cen-159" id="gl-cen_itemCountryOfOrigin" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-130" id="gl-cen_invoicedQuantityUnitOfMeasureCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-151" id="gl-cen_invoicedItemVatCategoryCode" type="gl-cen:codeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-  <element name="cen-152" id="gl-cen_invoicedItemVatRate" type="gl-cen:percentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="cen-152" id="gl-cen_invoicedItemVatRate" type="gl-cen:percentageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cenG-32" id="gl-cen_itemAttributes" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-160" id="gl-cen_itemAttributeName" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
   <element name="cen-161" id="gl-cen_itemAttributeValue" type="gl-cen:textItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
