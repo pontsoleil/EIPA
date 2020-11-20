@@ -22,55 +22,51 @@ xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31">
 	<!-- item type -->
 	<complexType name="amountItemType">
 		<simpleContent>
-			<restriction base="xbrli:monetaryItemType">
-			</restriction>
+			<restriction base="xbrli:monetaryItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="percentageItemType">
 		<simpleContent>
-			<restriction base="xbrli:pureItemType">
-			</restriction>
+			<restriction base="xbrli:pureItemType"></restriction>
+		</simpleContent>
+	</complexType>
+  <complexType name="quantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:pureItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="textItemType">
 			<simpleContent>
-				<restriction base="xbrli:stringItemType">
-				</restriction>
+				<restriction base="xbrli:stringItemType"></restriction>
 			</simpleContent>
 		</complexType>
 	<complexType name="codeItemType">
 		<simpleContent>
-			<restriction base="xbrli:tokenItemType">
-			</restriction>
+			<restriction base="xbrli:tokenItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="unitPriceAmountItemType">
 		<simpleContent>
-			<restriction base="xbrli:monetaryItemType">
-			</restriction>
+			<restriction base="xbrli:monetaryItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="dateItemType">
 		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
+			<restriction base="xbrli:dateTimeItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="identifierItemType">
 		<simpleContent>
-			<restriction base="xbrli:tokenItemType">
-			</restriction>
+			<restriction base="xbrli:tokenItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="documentReferenceItemType">
 		<simpleContent>
-			<restriction base="xbrli:tokenItemType">
-			</restriction>
+			<restriction base="xbrli:tokenItemType"></restriction>
 		</simpleContent>
 	</complexType>
 	<complexType name="binaryobjectItemType">
 		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
+			<restriction base="xbrli:stringItemType"></restriction>
 		</simpleContent>
 	</complexType>
