@@ -177,9 +177,6 @@
     <!-- vatCategoryCode -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_vatCategoryCode" xlink:label="gl-cen_vatCategoryCode" xlink:title="presentation child: vatCategoryCode"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_vatBreakdown" xlink:to="gl-cen_vatCategoryCode" priority="2" xlink:title="presentation: vatBreakdown to vatCategoryCode" use="optional" order="156"/>
-    <!-- vatCategoryCode -->
-    <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_vatCategoryCode" xlink:label="gl-cen_vatCategoryCode" xlink:title="presentation child: vatCategoryCode"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_taxes" xlink:to="gl-cen_vatCategoryCode" priority="2" xlink:title="presentation: taxes to vatCategoryCode" use="optional" order="206"/>
     <!-- vatCategoryRate -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_vatCategoryRate" xlink:label="gl-cen_vatCategoryRate" xlink:title="presentation child: vatCategoryRate"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_vatBreakdown" xlink:to="gl-cen_vatCategoryRate" priority="2" xlink:title="presentation: vatBreakdown to vatCategoryRate" use="optional" order="157"/>
@@ -283,9 +280,12 @@
     <!-- itemPriceBaseQuantityUnitOfMeasureCode -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_itemPriceBaseQuantityUnitOfMeasureCode" xlink:label="gl-cen_itemPriceBaseQuantityUnitOfMeasureCode" xlink:title="presentation child: itemPriceBaseQuantityUnitOfMeasureCode"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_priceDetails" xlink:to="gl-cen_itemPriceBaseQuantityUnitOfMeasureCode" priority="2" xlink:title="presentation: priceDetails to itemPriceBaseQuantityUnitOfMeasureCode" use="optional" order="192"/>
+    <!-- invoicedItemVatCategoryCode -->
+    <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_invoicedItemVatCategoryCode" xlink:label="gl-cen_invoicedItemVatCategoryCode" xlink:title="presentation child: invoicedItemVatCategoryCode"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_taxes" xlink:to="gl-cen_invoicedItemVatCategoryCode" priority="2" xlink:title="presentation: taxes to invoicedItemVatCategoryCode" use="optional" order="205"/>
     <!-- invoicedItemVatRate -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_invoicedItemVatRate" xlink:label="gl-cen_invoicedItemVatRate" xlink:title="presentation child: invoicedItemVatRate"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_taxes" xlink:to="gl-cen_invoicedItemVatRate" priority="2" xlink:title="presentation: taxes to invoicedItemVatRate" use="optional" order="205"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_taxes" xlink:to="gl-cen_invoicedItemVatRate" priority="2" xlink:title="presentation: taxes to invoicedItemVatRate" use="optional" order="206"/>
     <!-- itemDescription -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_itemDescription" xlink:label="gl-cen_itemDescription" xlink:title="presentation child: itemDescription"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_itemInformation" xlink:to="gl-cen_itemDescription" priority="2" xlink:title="presentation: itemInformation to itemDescription" use="optional" order="195"/>
