@@ -218,7 +218,7 @@ cat $Tmp-palette | awk 'BEGIN {
   }
   if ("u"==mode) {
     printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" priority=\"1\" xlink:title=\"presentation: %s to %s\" use=\"prohibited\"/>\n", p_module, terms[parent], module, term, terms[parent], term, seq;
-    printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" priority=\"2\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", plt_module, terms[plt_parent], module, term, terms[plt_parent], term, seq;
+    # printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" priority=\"2\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", plt_module, terms[plt_parent], module, term, terms[plt_parent], term, seq;
   } else if ("a"==mode) {
     printf "    <presentationArc xlink:type=\"arc\" xlink:arcrole=\"http://www.xbrl.org/2003/arcrole/parent-child\" xlink:from=\"gl-%s_%s\" xlink:to=\"gl-%s_%s\" priority=\"2\" xlink:title=\"presentation: %s to %s\" use=\"optional\" order=\"%s\"/>\n", p_module, terms[parent], module, term, terms[parent], term, seq;
   }
@@ -226,7 +226,7 @@ cat $Tmp-palette | awk 'BEGIN {
 END {
   print "  </presentationLink>";
   print "</linkbase>"; 
-}' > gl/source/gl-cen-2020-12-31-presentation.xml
+}' > gl/source/gl-plt-2020-12-31-presentation.xml
 
 # --------------------------------------------------------------------
 # rm $Tmp-*
