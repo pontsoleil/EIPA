@@ -23,13 +23,13 @@ cat gl/source/cen.tsv | awk -F'\t' 'BEGIN {
   printf "\n  <!-- item -->\n";
 }
 {
-  module=$5;
+  module=$8;
   if (n>0 && "cen"==module) {
     code=$2;
     term=$9;
     type=$16;
     # printf " %s %s %s %s\n", code, module, term, type;
-    if (""==$14) {
+    if (""==$16) {
       printf "  <element name=\"%s\" id=\"gl-%s_%s\" type=\"xbrli:stringItemType\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", code, module, term;
     } else {
       printf "  <element name=\"%s\" id=\"gl-%s_%s\" type=\"gl-%s:%s\" substitutionGroup=\"xbrli:item\" nillable=\"true\" xbrli:periodType=\"instant\"/>\n", code, module, term, module, type;
