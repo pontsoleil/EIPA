@@ -6,40 +6,40 @@
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="presentation parent: documentInfo"/>
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_entryDetail" xlink:label="gl-cor_entryDetail" xlink:title="presentation parent: entryDetail"/>
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentNumber" xlink:label="gl-cor_documentNumber" xlink:title="presentation child: documentNumber"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-cor_documentNumber" priority="2" xlink:title="presentation:  to documentNumber" use="optional" order="3"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-cor_documentNumber" priority="2" xlink:title="presentation:  to documentNumber" use="optional" order="19"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentNumber" priority="1" xlink:title="presentation: entryDetail to documentNumber" use="prohibited"/>
     <!-- documentDate -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentDate" xlink:label="gl-cor_documentDate" xlink:title="presentation child: documentDate"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-cor_documentDate" priority="2" xlink:title="presentation:  to documentDate" use="optional" order="4"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-cor_documentDate" priority="2" xlink:title="presentation:  to documentDate" use="optional" order="20"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentDate" priority="1" xlink:title="presentation: entryDetail to documentDate" use="prohibited"/>
     <!-- documentType -->
     <loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentType" xlink:label="gl-cor_documentType" xlink:title="presentation child: documentType"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-cor_documentType" priority="2" xlink:title="presentation:  to documentType" use="optional" order="5"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-cor_documentType" priority="2" xlink:title="presentation:  to documentType" use="optional" order="21"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-cor_documentType" priority="1" xlink:title="presentation: entryDetail to documentType" use="prohibited"/>
     <!-- projectReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_projectReference" xlink:label="gl-cen_projectReference" xlink:title="presentation child: projectReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_projectReference" priority="2" xlink:title="presentation: documentInfo to projectReference" use="optional" order="6"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_projectReference" priority="2" xlink:title="presentation: documentInfo to projectReference" use="optional" order="22"/>
     <!-- contractReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_contractReference" xlink:label="gl-cen_contractReference" xlink:title="presentation child: contractReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_contractReference" priority="2" xlink:title="presentation: documentInfo to contractReference" use="optional" order="7"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_contractReference" priority="2" xlink:title="presentation: documentInfo to contractReference" use="optional" order="23"/>
     <!-- purchaseOrderReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_purchaseOrderReference" xlink:label="gl-cen_purchaseOrderReference" xlink:title="presentation child: purchaseOrderReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_purchaseOrderReference" priority="2" xlink:title="presentation: documentInfo to purchaseOrderReference" use="optional" order="8"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_purchaseOrderReference" priority="2" xlink:title="presentation: documentInfo to purchaseOrderReference" use="optional" order="24"/>
     <!-- salesOrderReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_salesOrderReference" xlink:label="gl-cen_salesOrderReference" xlink:title="presentation child: salesOrderReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_salesOrderReference" priority="2" xlink:title="presentation: documentInfo to salesOrderReference" use="optional" order="9"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_salesOrderReference" priority="2" xlink:title="presentation: documentInfo to salesOrderReference" use="optional" order="25"/>
     <!-- receivingAdviceReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_receivingAdviceReference" xlink:label="gl-cen_receivingAdviceReference" xlink:title="presentation child: receivingAdviceReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_receivingAdviceReference" priority="2" xlink:title="presentation: documentInfo to receivingAdviceReference" use="optional" order="10"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_receivingAdviceReference" priority="2" xlink:title="presentation: documentInfo to receivingAdviceReference" use="optional" order="26"/>
     <!-- despatchAdviceReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_despatchAdviceReference" xlink:label="gl-cen_despatchAdviceReference" xlink:title="presentation child: despatchAdviceReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_despatchAdviceReference" priority="2" xlink:title="presentation: documentInfo to despatchAdviceReference" use="optional" order="11"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_despatchAdviceReference" priority="2" xlink:title="presentation: documentInfo to despatchAdviceReference" use="optional" order="27"/>
     <!-- tenderOrLotReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_tenderOrLotReference" xlink:label="gl-cen_tenderOrLotReference" xlink:title="presentation child: tenderOrLotReference"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_tenderOrLotReference" priority="2" xlink:title="presentation: documentInfo to tenderOrLotReference" use="optional" order="12"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_tenderOrLotReference" priority="2" xlink:title="presentation: documentInfo to tenderOrLotReference" use="optional" order="28"/>
     <!-- paymentInstructions -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentInstructions" xlink:label="gl-cen_paymentInstructions" xlink:title="presentation child: paymentInstructions"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_paymentInstructions" priority="2" xlink:title="presentation: documentInfo to paymentInstructions" use="optional" order="13"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_paymentInstructions" priority="2" xlink:title="presentation: documentInfo to paymentInstructions" use="optional" order="29"/>
     <!-- paymentMeansTypeCode -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentInstructions" xlink:label="gl-cen_paymentInstructions" xlink:title="presentation parent: paymentInstructions"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentMeansTypeCode" xlink:label="gl-cen_paymentMeansTypeCode" xlink:title="presentation child: paymentMeansTypeCode"/>
@@ -52,7 +52,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_remittanceInformation" priority="2" xlink:title="presentation: paymentInstructions to remittanceInformation" use="optional" order="16"/>
     <!-- creditTransfer -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_creditTransfer" xlink:label="gl-cen_creditTransfer" xlink:title="presentation child: creditTransfer"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_creditTransfer" priority="2" xlink:title="presentation: paymentInstructions to creditTransfer" use="optional" order="17"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_creditTransfer" priority="2" xlink:title="presentation: paymentInstructions to creditTransfer" use="optional" order="30"/>
     <!-- paymentAccountIdentifier -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_creditTransfer" xlink:label="gl-cen_creditTransfer" xlink:title="presentation parent: creditTransfer"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentAccountIdentifier" xlink:label="gl-cen_paymentAccountIdentifier" xlink:title="presentation child: paymentAccountIdentifier"/>
@@ -65,7 +65,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_creditTransfer" xlink:to="gl-cen_paymentServiceProviderIdentifier" priority="2" xlink:title="presentation: creditTransfer to paymentServiceProviderIdentifier" use="optional" order="20"/>
     <!-- paymentCardInformation -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentCardInformation" xlink:label="gl-cen_paymentCardInformation" xlink:title="presentation child: paymentCardInformation"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_paymentCardInformation" priority="2" xlink:title="presentation: paymentInstructions to paymentCardInformation" use="optional" order="21"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_paymentCardInformation" priority="2" xlink:title="presentation: paymentInstructions to paymentCardInformation" use="optional" order="31"/>
     <!-- paymentCardPrimaryAccountNumber -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentCardInformation" xlink:label="gl-cen_paymentCardInformation" xlink:title="presentation parent: paymentCardInformation"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_paymentCardPrimaryAccountNumber" xlink:label="gl-cen_paymentCardPrimaryAccountNumber" xlink:title="presentation child: paymentCardPrimaryAccountNumber"/>
@@ -75,7 +75,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentCardInformation" xlink:to="gl-cen_paymentCardHolderName" priority="2" xlink:title="presentation: paymentCardInformation to paymentCardHolderName" use="optional" order="23"/>
     <!-- directDebit -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_directDebit" xlink:label="gl-cen_directDebit" xlink:title="presentation child: directDebit"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_directDebit" priority="2" xlink:title="presentation: paymentInstructions to directDebit" use="optional" order="24"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_paymentInstructions" xlink:to="gl-cen_directDebit" priority="2" xlink:title="presentation: paymentInstructions to directDebit" use="optional" order="32"/>
     <!-- mandateReferenceIdentifier -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_directDebit" xlink:label="gl-cen_directDebit" xlink:title="presentation parent: directDebit"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_mandateReferenceIdentifier" xlink:label="gl-cen_mandateReferenceIdentifier" xlink:title="presentation child: mandateReferenceIdentifier"/>
@@ -88,7 +88,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_directDebit" xlink:to="gl-cen_debitedAccountIdentifier" priority="2" xlink:title="presentation: directDebit to debitedAccountIdentifier" use="optional" order="27"/>
     <!-- originatingDocumentStructure -->
     <loc xlink:type="locator" xlink:href="../../taf/gl-taf-2020-12-31.xsd#gl-taf_originatingDocumentStructure" xlink:label="gl-taf_originatingDocumentStructure" xlink:title="presentation child: originatingDocumentStructure"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-taf_originatingDocumentStructure" priority="2" xlink:title="presentation:  to originatingDocumentStructure" use="optional" order="28"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_" xlink:to="gl-taf_originatingDocumentStructure" priority="2" xlink:title="presentation:  to originatingDocumentStructure" use="optional" order="33"/>
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_entryDetail" xlink:to="gl-taf_originatingDocumentStructure" priority="1" xlink:title="presentation: entryDetail to originatingDocumentStructure" use="prohibited"/>
     <!-- originatingDocumentType -->
     <!-- originatingDocumentNumber -->
@@ -101,7 +101,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_invoicedObjectIdentifier" priority="2" xlink:title="presentation: documentInfo to invoicedObjectIdentifier" use="optional" order="32"/>
     <!-- invoiceNote -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_invoiceNote" xlink:label="gl-cen_invoiceNote" xlink:title="presentation child: invoiceNote"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_invoiceNote" priority="2" xlink:title="presentation: documentInfo to invoiceNote" use="optional" order="33"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_invoiceNote" priority="2" xlink:title="presentation: documentInfo to invoiceNote" use="optional" order="34"/>
     <!-- invoiceNoteSubjectCode -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_invoiceNote" xlink:label="gl-cen_invoiceNote" xlink:title="presentation parent: invoiceNote"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_invoiceNoteSubjectCode" xlink:label="gl-cen_invoiceNoteSubjectCode" xlink:title="presentation child: invoiceNoteSubjectCode"/>
@@ -111,7 +111,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_invoiceNote" xlink:to="gl-cen_invoiceNoteText" priority="2" xlink:title="presentation: invoiceNote to invoiceNoteText" use="optional" order="35"/>
     <!-- processControl -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_processControl" xlink:label="gl-cen_processControl" xlink:title="presentation child: processControl"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_processControl" priority="2" xlink:title="presentation: documentInfo to processControl" use="optional" order="36"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_processControl" priority="2" xlink:title="presentation: documentInfo to processControl" use="optional" order="35"/>
     <!-- businessProcessType -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_processControl" xlink:label="gl-cen_processControl" xlink:title="presentation parent: processControl"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_businessProcessType" xlink:label="gl-cen_businessProcessType" xlink:title="presentation child: businessProcessType"/>
@@ -121,7 +121,7 @@
     <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cen_processControl" xlink:to="gl-cen_specificationIdentifier" priority="2" xlink:title="presentation: processControl to specificationIdentifier" use="optional" order="38"/>
     <!-- additionalSupportingDocuments -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_additionalSupportingDocuments" xlink:label="gl-cen_additionalSupportingDocuments" xlink:title="presentation child: additionalSupportingDocuments"/>
-    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_additionalSupportingDocuments" priority="2" xlink:title="presentation: documentInfo to additionalSupportingDocuments" use="optional" order="39"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="gl-cor_documentInfo" xlink:to="gl-cen_additionalSupportingDocuments" priority="2" xlink:title="presentation: documentInfo to additionalSupportingDocuments" use="optional" order="36"/>
     <!-- supportingDocumentReference -->
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_additionalSupportingDocuments" xlink:label="gl-cen_additionalSupportingDocuments" xlink:title="presentation parent: additionalSupportingDocuments"/>
     <loc xlink:type="locator" xlink:href="../../cen/gl-cen-2020-12-31.xsd#gl-cen_supportingDocumentReference" xlink:label="gl-cen_supportingDocumentReference" xlink:title="presentation child: supportingDocumentReference"/>
