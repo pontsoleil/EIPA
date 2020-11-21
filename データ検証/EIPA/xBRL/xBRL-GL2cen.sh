@@ -133,16 +133,16 @@ cat gl/source/cen.tsv | awk -F'\t' 'BEGIN {
     if ("src"==plt_module) plt_module="srcd";
     printf "    <!-- %s -->\n", term;
     # print seq " 1." code " 2." p_module " 3." parent " 4." plt_module " 5." plt_parent " 6." mode;
-    if (1!=parents[parent] && ("a"==mode || "u"==mode)) {
-      parents[parent]=1;
+    if (1!=loc_defined[parent] && ("a"==mode || "u"==mode)) {
+      loc_defined[parent]=1;
       printf "    <loc xlink:type=\"locator\" xlink:href=\"../../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", p_module, p_module, p_module, terms[parent], p_module, terms[parent], terms[parent];
     }
-    if (1!=parents[plt_parent] && "u"==mode) {
-      parents[plt_parent]=1;
+    if (1!=loc_defined[plt_parent] && "u"==mode) {
+      loc_defined[plt_parent]=1;
       printf "    <loc xlink:type=\"locator\" xlink:href=\"../../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation parent: %s\"/>\n", plt_module, plt_module, plt_module, terms[plt_parent], plt_module, terms[plt_parent], terms[plt_parent];
     }
-    if ((1!=parents[code] || 1!=children[code]) && ("a"==mode || "u"==mode)) {
-      children[code]=1;
+    if (1!=loc_defined[code] && ("a"==mode || "u"==mode)) {
+      loc_defined[code]=1;
       printf "    <loc xlink:type=\"locator\" xlink:href=\"../../%s/gl-%s-2020-12-31.xsd#gl-%s_%s\" xlink:label=\"gl-%s_%s\" xlink:title=\"presentation child: %s\"/>\n", module, module, module, term, module, term, term;
     }
     if ("u"==mode) {
