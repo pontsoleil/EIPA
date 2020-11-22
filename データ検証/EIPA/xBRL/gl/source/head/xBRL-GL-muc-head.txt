@@ -21,33 +21,9 @@ xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31">
 		</appinfo>
 	</annotation>
 	<!-- item type -->
-	<complexType name="currencyItemType">
-		<simpleContent>
-			<restriction base="xbrli:QNameItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="exchangeRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:pureItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="exchangeRateDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="commentItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="exchangeRateSourceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="exchangeRateTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
+	<complexType name="currencyItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
+	<complexType name="exchangeRateItemType"><simpleContent><restriction base="xbrli:pureItemType"/></simpleContent></complexType>
+	<complexType name="exchangeRateDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="commentItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="exchangeRateSourceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="exchangeRateTypeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>

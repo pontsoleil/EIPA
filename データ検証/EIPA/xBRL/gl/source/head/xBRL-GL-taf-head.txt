@@ -20,38 +20,10 @@ xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2020-12-31">
 		</appinfo>
 	</annotation>
 	<!-- item type -->
-	<complexType name="tickingFieldItemType">
-		<simpleContent>
-			<restriction base="xbrli:booleanItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentRemainingBalanceItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="uniqueConsignmentReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="originatingDocumentNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="originatingDocumentDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="originatingDocumentIdentifierCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="originatingDocumentIdentifierTaxCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
+	<complexType name="tickingFieldItemType"><simpleContent><restriction base="xbrli:booleanItemType"/></simpleContent></complexType>
+	<complexType name="documentRemainingBalanceItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="uniqueConsignmentReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="originatingDocumentNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="originatingDocumentDateItemType"><simpleContent><restriction base="xbrli:dateItemType"/></simpleContent></complexType>
+	<complexType name="originatingDocumentIdentifierCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="originatingDocumentIdentifierTaxCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>

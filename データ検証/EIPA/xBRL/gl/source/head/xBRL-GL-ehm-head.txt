@@ -61,123 +61,23 @@ xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2020-12-31">
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<complexType name="measurableClassDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="costingMethodDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="geospatialCoordinateItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="nextSerialLotNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotQuantityItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotOriginalQuantityItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotRemainingQuantityItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotOriginationItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotExpirationItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotManufacturerItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotBatchDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotWarrantyStartDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotWarrantyEndDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotWarrantyPeriodItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotWarrantyPeriodUnitItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotWarrantyVendorItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotWarrantyContractItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="serialLotCommentItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
+	<complexType name="measurableClassDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="costingMethodDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="geospatialCoordinateItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="nextSerialLotNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotQuantityItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="serialLotOriginalQuantityItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="serialLotRemainingQuantityItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="serialLotOriginationItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="serialLotExpirationItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="serialLotManufacturerItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotBatchDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotWarrantyStartDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="serialLotWarrantyEndDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="serialLotWarrantyPeriodItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="serialLotWarrantyPeriodUnitItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotWarrantyVendorItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotWarrantyContractItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="serialLotCommentItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>

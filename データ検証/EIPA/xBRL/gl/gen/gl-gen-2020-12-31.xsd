@@ -258,46 +258,42 @@ xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2020-12-31">
 			</restriction>
 		</simpleContent>
 	</complexType>
-	<complexType name="phoneNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="faxNumberUsageItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="faxNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="emailAddressUsageItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="emailAddressItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="activeItemType">
-		<simpleContent>
-			<restriction base="xbrli:booleanItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="amountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
+
+	<complexType name="phoneNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="faxNumberUsageItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="faxNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="emailAddressUsageItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="emailAddressItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="activeItemType"><simpleContent><restriction base="xbrli:booleanItemType"/></simpleContent></complexType>
+	<complexType name="amountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+
+	<!-- 2020-12-31 -->
+	<complexType name="addressNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="addressDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="locationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="addressDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="addressPurposeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buildingNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="streetItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="street2ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="cityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="stateOrProvinceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="countryItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="zipOrPostalCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+
+	<complexType name="contactPrefixItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contactLastNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contactFirstNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contactSuffixItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contactAttentionLineType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contactPositionRoleItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contactTypeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+
+	<complexType name="accountingMethodItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountingMethodDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountingMethodPurposeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountingMethodPurposeDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountingMethodStartDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="accountingMethodEndDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+
 </schema>

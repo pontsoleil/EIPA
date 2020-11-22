@@ -24,429 +24,74 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 		</appinfo>
 	</annotation>
 	<!-- item type -->
-	<complexType name="creatorItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="periodCountItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="sourceApplicationItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="targetApplicationItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="uniqueIDItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="revisesUniqueIDItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="languageItemType">
-		<simpleContent>
-			<restriction base="xbrli:QNameItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="creationDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="entriesCommentItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="periodCoveredStartItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="periodCoveredEndItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="postedDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="enteredByItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="enteredDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="entryNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="entryCommentItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="counterItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="lineNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountMainIDItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountMainDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="parentAccountMainIDItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountPurposeDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountSubDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountSubIDItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountSubTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="parentSubaccountCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="parentSubaccountTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="reportingTreeIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="parentSubaccountProportionItemType">
-		<simpleContent>
-			<restriction base="xbrli:pureItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="postingDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierAuthorityCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierAuthorityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierAuthorityVerificationDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierCategoryItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactPrefixItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactLastNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactFirstNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactSuffixItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactAttentionLineItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactPositionRoleItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierContactTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentApplyToNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="summaryReportingElementItemType">
-		<simpleContent>
-			<restriction base="xbrli:QNameItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="detailMatchingElementItemType">
-		<simpleContent>
-			<restriction base="xbrli:QNameItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="detailCommentItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="dateAcknowledgedItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="confirmedDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="shipFromItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="shipReceivedDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="maturityDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="termsItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxAuthorityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxTableCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxBasisItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxExchangeRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:pureItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxPercentageRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:pureItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxCommentExemptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentTypeDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="mainAccountTypeDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="postingStatusDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="qualifierEntryDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountTypeDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="identifierOrganizationTypeDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-			</restriction>
-		</simpleContent>
-	</complexType>
+	<complexType name="creatorItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="periodCountItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="sourceApplicationItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="targetApplicationItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="uniqueIDItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="revisesUniqueIDItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="languageItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
+	<complexType name="creationDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="entriesCommentItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="periodCoveredStartItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="periodCoveredEndItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="postedDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="enteredByItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="enteredDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="entryNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="entryCommentItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="counterItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="lineNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountMainIDItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountMainDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="parentAccountMainIDItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountPurposeDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountSubDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountSubIDItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountSubTypeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="parentSubaccountCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="parentSubaccountTypeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="reportingTreeIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="parentSubaccountProportionItemType"><simpleContent><restriction base="xbrli:pureItemType"/></simpleContent></complexType>
+	<complexType name="postingDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="identifierCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierAuthorityCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierAuthorityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierAuthorityVerificationDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="identifierDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierCategoryItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactPrefixItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactLastNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactFirstNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactSuffixItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactAttentionLineItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactPositionRoleItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierContactTypeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentApplyToNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="summaryReportingElementItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
+	<complexType name="detailMatchingElementItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
+	<complexType name="detailCommentItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="dateAcknowledgedItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="confirmedDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="shipFromItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="shipReceivedDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="maturityDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="termsItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxAuthorityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxTableCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="taxBasisItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="taxExchangeRateItemType"><simpleContent><restriction base="xbrli:pureItemType"/></simpleContent></complexType>
+	<complexType name="taxPercentageRateItemType"><simpleContent><restriction base="xbrli:pureItemType"/></simpleContent></complexType>
+	<complexType name="taxCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxCommentExemptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentTypeDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="mainAccountTypeDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="postingStatusDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="qualifierEntryDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountTypeDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="identifierOrganizationTypeDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
