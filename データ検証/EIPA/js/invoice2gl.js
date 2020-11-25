@@ -588,6 +588,7 @@ var invoice2gl = (function() {
     };
 
     function gl2xbrl(gl) {
+
         var appendtypedLN = function (L, ID, scenario) {
             var typedMember = xmlDoc.createElementNS(xbrldi,'typedMember'),
                 number = xmlDoc.createElementNS(cor, '_'+L),
@@ -597,8 +598,10 @@ var invoice2gl = (function() {
             typedMember.appendChild(number);
             number.appendChild(text);
         }
+
         var createContext = function (xmlDoc, IDs) {
             var contextText = IDs.join('');
+            contextText = contextText.replace(/\[([0-9]+)\]/g, '.$1');
             if (contexts[contextText]) { return null; }
             contexts[contextText] = true;
             var context = xmlDoc.createElementNS(xbrli, 'context');
@@ -663,6 +666,7 @@ var invoice2gl = (function() {
             }
             return context;
         }
+        
         var createItem = function (xmlDoc, path, item) {
             var module;
             var name = path.match(/[^\/]*$/)[0];
@@ -675,10 +679,13 @@ var invoice2gl = (function() {
             path = path.replace(/taf/g, 't');
             path = path.replace(/ehm/g, 'h');
             path = path.replace(/cen/g, 'e');
+            path = path.replace(/\[([0-9]+)\]/g, '.$1');
+
             var keys = path.split('/');
             keys.shift(); keys.shift();
             keys.pop();
             var contextText = keys.join('');
+
             var match = name.match(/^[a-z]{3,4}G-/);
             if (match) {
                 console.log('createItem '+name+' is Group item');
