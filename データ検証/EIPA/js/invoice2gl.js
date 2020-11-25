@@ -712,6 +712,9 @@ var invoice2gl = (function() {
                 case 1:
                     var val = item.val[0];
                     if ('object' != typeof val) {
+                        if ('Percentage' == type) {
+                            val /= 100;
+                        }
                         val = ''+val;
                     }
                     else if (0 === Object.keys(val).length) {
@@ -737,6 +740,9 @@ var invoice2gl = (function() {
                 case 2:
                     var val = item.val[1];
                     if ('object' != typeof val) {
+                        if ('Percentage' == type) {
+                            val /= 100;
+                        }
                         val = ''+val;
                     }
                     else if (0 === Object.keys(val).length) {
