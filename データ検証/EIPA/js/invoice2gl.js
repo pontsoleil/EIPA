@@ -760,8 +760,8 @@ var invoice2gl = (function() {
                     xbrl.appendChild(element);
                     break;
             }
-            if (['Amount', 'UnitPriceAmount', 'Quantity', 'Percentage'].indexOf(type) >= 0
-                ) {
+            if (['Amount', 'UnitPriceAmount', 'Quantity', 'Percentage'].indexOf(type) >= 0 ||
+                'cor-22' === name) {
                 element.setAttribute('decimals', 'INF');
                 if (type.match(/Amount$/)) {
                     if (name.match(/VAT/)) {
