@@ -594,7 +594,7 @@ var invoice2gl = (function() {
                 number = xmlDoc.createElementNS(cor, '_'+L),
                 text = xmlDoc.createTextNode(ID);
             scenario.appendChild(typedMember);
-            typedMember.setAttribute('dimension', 'c:d_'+L);
+            typedMember.setAttribute('dimension', 'c:d'+L);
             typedMember.appendChild(number);
             number.appendChild(text);
         }

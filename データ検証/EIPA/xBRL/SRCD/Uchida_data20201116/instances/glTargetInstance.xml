@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25" xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25" xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2015-03-25" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25" xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25" xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2015-03-25" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25">
+  <link:schemaRef xlink:type="simple" xlink:href="../../XBRL-GL-REC-2015-03-25/gl/plt/case-c-b-m-u-t-s/gl-plt-all-2015-03-25.xsd"/>
+  <xbrli:context id="srcdContext">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.srcdtest.com">123456789</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2014-05-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="USD">
+    <xbrli:measure>iso4217:USD</xbrli:measure>
+  </xbrli:unit>
+  <gl-cor:accountingEntries>
+    <gl-cor:documentInfo>
+      <gl-cor:entriesType contextRef="srcdContext">journal</gl-cor:entriesType>
+      <gl-cor:creationDate contextRef="srcdContext">2014-05-26</gl-cor:creationDate>
+    </gl-cor:documentInfo>
+    <gl-cor:entryHeader>
+      <gl-cor:postedDate contextRef="srcdContext">2014-05-29</gl-cor:postedDate>
+      <gl-cor:entryType contextRef="srcdContext">other</gl-cor:entryType>
+	   <gl-cor:entryDetail>
+        <gl-cor:lineNumber contextRef="srcdContext">001</gl-cor:lineNumber>
+        <gl-cor:account>
+          <gl-cor:accountMainID contextRef="srcdContext">00000001</gl-cor:accountMainID>
+          <gl-cor:accountMainDescription contextRef="srcdContext">ID00000001</gl-cor:accountMainDescription>
+        </gl-cor:account>
+        <gl-cor:amount decimals="0" contextRef="srcdContext" unitRef="USD">150</gl-cor:amount>
+        <gl-cor:debitCreditCode contextRef="srcdContext">C</gl-cor:debitCreditCode>
+        <gl-cor:xbrlInfo>
+          <gl-cor:detailMatchingElement contextRef="srcdContext">gl-cor:amount</gl-cor:detailMatchingElement>
+        </gl-cor:xbrlInfo>
+      </gl-cor:entryDetail>  
+      <gl-cor:entryDetail>
+        <gl-cor:lineNumber contextRef="srcdContext">002</gl-cor:lineNumber>
+        <gl-cor:account>
+          <gl-cor:accountMainID contextRef="srcdContext">00000002</gl-cor:accountMainID>
+          <gl-cor:accountMainDescription contextRef="srcdContext">ID00000002</gl-cor:accountMainDescription>
+        </gl-cor:account>
+        <gl-cor:amount decimals="0" contextRef="srcdContext" unitRef="USD">500</gl-cor:amount>
+	<gl-cor:debitCreditCode contextRef="srcdContext">C</gl-cor:debitCreditCode>  
+        <gl-cor:xbrlInfo>
+          <gl-cor:detailMatchingElement contextRef="srcdContext">gl-cor:amount</gl-cor:detailMatchingElement>
+        </gl-cor:xbrlInfo>
+      </gl-cor:entryDetail>
+      <gl-cor:entryDetail>
+        <gl-cor:lineNumber contextRef="srcdContext">003</gl-cor:lineNumber>
+        <gl-cor:account>
+          <gl-cor:accountMainID contextRef="srcdContext">00000003</gl-cor:accountMainID>
+          <gl-cor:accountMainDescription contextRef="srcdContext">ID00000003</gl-cor:accountMainDescription>
+        </gl-cor:account>
+        <gl-cor:amount decimals="0" contextRef="srcdContext" unitRef="USD">300</gl-cor:amount>
+	<gl-cor:debitCreditCode contextRef="srcdContext">C</gl-cor:debitCreditCode>  
+        <gl-cor:xbrlInfo>
+          <gl-cor:detailMatchingElement contextRef="srcdContext">gl-cor:amount</gl-cor:detailMatchingElement>
+        </gl-cor:xbrlInfo>
+      </gl-cor:entryDetail>
+    </gl-cor:entryHeader>
+  </gl-cor:accountingEntries>
+</xbrli:xbrl>
