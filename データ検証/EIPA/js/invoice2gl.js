@@ -182,14 +182,14 @@ var invoice2gl = (function() {
         "cor-21":{"level":"4","module":"cor","name":"lineNumber","code":"BT-128","type":"Identifier","Card":"0..1","path":"/corG-1/corG-4/corG-5/cor-21"},
         "cen-129":{"level":"4","module":"cen","name":"invoicedQuantity","code":"BT-129","type":"Quantity","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-129"},
         "cen-130":{"level":"4","module":"cen","name":"invoicedQuantityUnitOfMeasureCode","code":"BT-130","type":"Code","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-130"},
-        "cen-131":{"level":"4","module":"cen","name":"invoiceLineNetAmount","code":"BT-131","type":"","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-131"},
+        "cen-131":{"level":"4","module":"cen","name":"invoiceLineNetAmount","code":"BT-131","type":"Amount","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-131"},
         "cen-132":{"level":"4","module":"cen","name":"referencedPurchaseOrderLineReference","code":"BT-132","type":"DocumentReference","Card":"0..1","path":"/corG-1/corG-2/cenG-2/cen-132"},
         "cen-133":{"level":"4","module":"cen","name":"invoiceLineBuyerAccountingReference","code":"BT-133","type":"Text","Card":"0..1","path":"/corG-1/corG-2/cenG-2/cen-133"},
         "cenG-26":{"level":"4","module":"cen","name":"invoiceLinePeriod","code":"BG-26","type":"","Card":"0..1","path":"/corG-1/corG-4/corG-5/cenG-26"},
         "bus-148":{"level":"5","module":"bus","name":"measurableStartDateTime","code":"BT-134","type":"Date","Card":"0..1","path":"/corG-1/corG-4/corG-5/cenG-26/bus-148"},
         "bus-149":{"level":"5","module":"bus","name":"measurableEndDateTime","code":"BT-135","type":"Date","Card":"0..1","path":"/corG-1/corG-4/corG-5/cenG-26/bus-149"},
         "cenG-27":{"level":"5","module":"cen","name":"invoiceLineAllowances","code":"BG-27","type":"","Card":"0..n","path":"/corG-1/corG-4/corG-5/cenG-26/cenG-27"},
-        "cen-136":{"level":"6","module":"cen","name":"invoiceLineAllowanceAmount","code":"BT-136","type":"","Card":"1..1","path":"/corG-1/corG-4/corG-5/corG-19/cenG-27/cen-136"},
+        "cen-136":{"level":"6","module":"cen","name":"invoiceLineAllowanceAmount","code":"BT-136","type":"Amount","Card":"1..1","path":"/corG-1/corG-4/corG-5/corG-19/cenG-27/cen-136"},
         "cen-137":{"level":"6","module":"cen","name":"invoiceLineAllowanceBaseAmount","code":"BT-137","type":"Amount","Card":"0..1","path":"/corG-1/corG-4/corG-5/corG-19/cenG-27/cen-137"},
         "cen-138":{"level":"6","module":"cen","name":"invoiceLineAllowancePercentage","code":"BT-138","type":"Percentage","Card":"0..1","path":"/corG-1/corG-4/corG-5/corG-19/cenG-27/cen-138"},
         "cen-139":{"level":"6","module":"cen","name":"invoiceLineAllowanceReason","code":"BT-139","type":"Text","Card":"0..1","path":"/corG-1/corG-4/corG-5/corG-19/cenG-27/cen-139"},
@@ -666,7 +666,7 @@ var invoice2gl = (function() {
             }
             return context;
         }
-        
+
         var createItem = function (xmlDoc, path, item) {
             var module;
             var name = path.match(/[^\/]*$/)[0];
