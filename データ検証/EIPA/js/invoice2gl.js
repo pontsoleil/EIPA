@@ -598,13 +598,13 @@ var invoice2gl = (function() {
             number.appendChild(text);
         }
         var createContext = function (xmlDoc, IDs) {
-            var _IDs = IDs.join('');
-            if (contexts[_IDs]) { return null; }
-            contexts[_IDs] = true;
+            var contextText = IDs.join('');
+            if (contexts[contextText]) { return null; }
+            contexts[contextText] = true;
             var context = xmlDoc.createElementNS(xbrli, 'context');
             var entity = xmlDoc.createElementNS(xbrli, 'entity');
             var identifier = xmlDoc.createElementNS(xbrli, 'identifier');
-            var identifierText = xmlDoc.createTextNode('SAMPLE');
+            var identifierText = xmlDoc.createTextNode('EIPA');
             var scenario = xmlDoc.createElementNS(xbrli, 'scenario');
             // var segment = xmlDoc.createElementNS(xbrli, 'segment');
             var period = xmlDoc.createElementNS(xbrli, 'period');
@@ -612,7 +612,7 @@ var invoice2gl = (function() {
             // var forever = xmlDoc.createElementNS(xbrli, 'forever');
             var instantText = xmlDoc.createTextNode(date);
             xbrl.appendChild(context);
-            context.setAttribute('id', _IDs);
+            context.setAttribute('id', contextText);
             // entity
             context.appendChild(entity);
             entity.appendChild(identifier);
@@ -666,7 +666,7 @@ var invoice2gl = (function() {
         var createItem = function (xmlDoc, path, item) {
             var module;
             var name = path.match(/[^\/]*$/)[0];
-            path = path.replace(/([a-z]{3,4}G?-[0-9]+)\[([0-9]+)\]\/[^\/]+$/,'$1_$2');
+            // var _path = path.replace(/^(.*[a-z]{3,4}G?-[0-9]+)\[([0-9]+)\]\/[^\/]+$/,'$1_$2');
             path = path.replace(/\[0\]/g, '');
             path = path.replace(/-/g, '');
             path = path.replace(/cor/g, 'c');
@@ -676,7 +676,7 @@ var invoice2gl = (function() {
             path = path.replace(/ehm/g, 'h');
             path = path.replace(/cen/g, 'e');
             var keys = path.split('/');
-            keys.shift();
+            keys.shift(); keys.shift();
             keys.pop();
             var contextText = keys.join('');
             var match = name.match(/^[a-z]{3,4}G-/);
@@ -695,6 +695,8 @@ var invoice2gl = (function() {
             else {
                 console.log('Not defined gl_plt['+name+']');
             }
+            console.log('createItem path:'+path+' name:'+name+' type:'+type+' item:', item);
+
             var val = item.val;
             var element = xmlDoc.createElementNS(module, name);
             var match;
@@ -708,6 +710,9 @@ var invoice2gl = (function() {
                         return null;
                     }
                     if ('Date' === type) {
+                        if ('object' === typeof val && 'Array' === val.constructor.name) {
+                            val = ''+val[1];
+                        }
                         match = val.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
                         if (match) {
                             val = match[1]+'-'+match[2]+'-'+match[3];
@@ -718,7 +723,6 @@ var invoice2gl = (function() {
 
                     var text = xmlDoc.createTextNode(val);
                     element.appendChild(text);
-
                     element.setAttribute('contextRef', contextText);
                     xbrl.appendChild(element);
                     break;
@@ -731,6 +735,9 @@ var invoice2gl = (function() {
                         return null;
                     }
                     if ('Date' === type) {
+                        if ('object' === typeof val && 'Array' === val.constructor.name) {
+                            val = ''+val[1];
+                        }
                         match = val.match(/^([0-9]{4})([0-9]{2})([0-9]{2})$/);
                         if (match) {
                             val = match[1]+'-'+match[2]+'-'+match[3];
@@ -762,7 +769,6 @@ var invoice2gl = (function() {
                     element.setAttribute('unitRef', 'pure');
                 }
             }
-            // console.log('createItem key:'+keys.join(' ')+'name:'+name+'item:', item);
         }
 
         var populateGL = function(xmlDoc, path, current) {
@@ -792,7 +798,7 @@ var invoice2gl = (function() {
         var xbrli = 'http://www.xbrl.org/2003/instance';
         var xbrldi = 'http://xbrl.org/2006/xbrldi';
         var cor = 'http://www.xbrl.org/int/gl/cor/2020-12-31';
-        var eipa = 'http://www.eipa.jp';
+        var eipa = 'http://eipa.jp';
         var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
         var xmlString = '<xbrli:xbrl '+
                 'xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
