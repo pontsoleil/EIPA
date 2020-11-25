@@ -994,4 +994,4 @@ var traverse = function(seq, path, current) {
 }
 
 //call on root node
-traverse(0, '', en.val);
+// traverse(0, '', en.val);

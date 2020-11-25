@@ -1747,7 +1747,7 @@ var invoice2xbrl = (function() {
       }
     }
     var XMLS = new XMLSerializer();
-    var xmlStr = XMLS.serializeToString(xmlDoc)
+    var xmlStr = XMLS.serializeToString(xmlDoc);
     return xmlStr;
   }
 
@@ -1801,8 +1801,6 @@ var invoice2xbrl = (function() {
         return res;
       })
       .catch(function(err) { console.log(err); })
-      // console.log(xbrl);
-      return 
     })
     .catch(function(err) { console.log(err); })
   }
