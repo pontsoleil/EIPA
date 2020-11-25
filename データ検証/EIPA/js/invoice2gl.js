@@ -46,7 +46,7 @@ var invoice2gl = (function() {
         "cen-91":{"level":"5","module":"cen","name":"debitedAccountIdentifier","code":"BT-91","type":"Identifier","Card":"0..1","path":"/corG-1/corG-2/cenG-16/cenG-19/cen-91"},
         "tafG-1":{"level":"3","module":"taf","name":"originatingDocumentStructure","code":"BG-3","type":"","Card":"","path":"/corG-1/corG-2/cenG-3/tafG-1"},
         "taf-4":{"level":"4","module":"taf","name":"originatingDocumentType","code":"","type":"","Card":"","path":"/corG-1/corG-2/cenG-3/tafG-1/taf-4"},
-        "taf-5":{"level":"4","module":"taf","name":"originatingDocumentNumber","code":"BT-25","type":"DocumentReference","Card":"1..1","path":"/corG-1/corG-2/cenG-3/tafG-1/taf-5"},
+        "taf-5":{"level":"4","module":"taf","name":"originatingDocumentNumber","code":"BT-25","type":"Document reference","Card":"1..1","path":"/corG-1/corG-2/cenG-3/tafG-1/taf-5"},
         "cen-26":{"level":"4","module":"cen","name":"precedingInvoiceIssueDate","code":"BT-26","type":"Date","Card":"0..1","path":"/corG-1/corG-2/cenG-3/tafG-1/cen-26"},
         "cen-18":{"level":"3","module":"cen","name":"invoicedObjectIdentifier","code":"BT-18","type":"Identifier","Card":"0..1","path":"/corG-1/corG-2/cen-18"},
         "cenG-1":{"level":"3","module":"cen","name":"invoiceNote","code":"BG-1","type":"","Card":"0..n","path":"/corG-1/corG-2/cenG-1"},
@@ -56,7 +56,7 @@ var invoice2gl = (function() {
         "cen-23":{"level":"4","module":"cen","name":"businessProcessType","code":"BT-23","type":"Text","Card":"0..1","path":"/corG-1/corG-2/cenG-2/cen-23"},
         "cen-24":{"level":"4","module":"cen","name":"specificationIdentifier","code":"BT-24","type":"Identifier","Card":"1..1","path":"/corG-1/corG-2/cenG-2/cen-24"},
         "cenG-24":{"level":"3","module":"cen","name":"additionalSupportingDocuments","code":"BG-24","type":"","Card":"0..n","path":"/corG-1/corG-2/cenG-24"},
-        "cen-122":{"level":"4","module":"cen","name":"supportingDocumentReference","code":"BT-122","type":"DocumentReference","Card":"1..1","path":"/corG-1/corG-2/cenG-24/cen-122"},
+        "cen-122":{"level":"4","module":"cen","name":"supportingDocument reference","code":"BT-122","type":"Document reference","Card":"1..1","path":"/corG-1/corG-2/cenG-24/cen-122"},
         "cen-123":{"level":"4","module":"cen","name":"supportingDocumentDescription","code":"BT-123","type":"Text","Card":"0..1","path":"/corG-1/corG-2/cenG-24/cen-123"},
         "cen-124":{"level":"4","module":"cen","name":"externalDocumentLocation","code":"BT-124","type":"Text","Card":"0..1","path":"/corG-1/corG-2/cenG-24/cen-124"},
         "cen-125":{"level":"4","module":"cen","name":"attachedDocument","code":"BT-125","type":"Binaryobject","Card":"0..1","path":"/corG-1/corG-2/cenG-24/cen-125"},
@@ -183,7 +183,7 @@ var invoice2gl = (function() {
         "cen-129":{"level":"4","module":"cen","name":"invoicedQuantity","code":"BT-129","type":"Quantity","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-129"},
         "cen-130":{"level":"4","module":"cen","name":"invoicedQuantityUnitOfMeasureCode","code":"BT-130","type":"Code","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-130"},
         "cen-131":{"level":"4","module":"cen","name":"invoiceLineNetAmount","code":"BT-131","type":"Amount","Card":"1..1","path":"/corG-1/corG-4/corG-5/cen-131"},
-        "cen-132":{"level":"4","module":"cen","name":"referencedPurchaseOrderLineReference","code":"BT-132","type":"DocumentReference","Card":"0..1","path":"/corG-1/corG-2/cenG-2/cen-132"},
+        "cen-132":{"level":"4","module":"cen","name":"referencedPurchaseOrderLineReference","code":"BT-132","type":"Document reference","Card":"0..1","path":"/corG-1/corG-2/cenG-2/cen-132"},
         "cen-133":{"level":"4","module":"cen","name":"invoiceLineBuyerAccountingReference","code":"BT-133","type":"Text","Card":"0..1","path":"/corG-1/corG-2/cenG-2/cen-133"},
         "cenG-26":{"level":"4","module":"cen","name":"invoiceLinePeriod","code":"BG-26","type":"","Card":"0..1","path":"/corG-1/corG-4/corG-5/cenG-26"},
         "bus-148":{"level":"5","module":"bus","name":"measurableStartDateTime","code":"BT-134","type":"Date","Card":"0..1","path":"/corG-1/corG-4/corG-5/cenG-26/bus-148"},
@@ -222,7 +222,7 @@ var invoice2gl = (function() {
         "cen-159":{"level":"5","module":"cen","name":"itemCountryOfOrigin","code":"BT-159","type":"Code","Card":"0..1","path":"/corG-1/corG-4/corG-5/cenG-31/cen-159"},
         "corG-19":{"level":"4","module":"cor","name":"taxes","code":"BG-30","type":"","Card":"1..1","path":"/corG-1/corG-4/corG-5/corG-19"},
         "cen-151":{"level":"5","module":"cen","name":"invoicedItemVatCategoryCode","code":"BT-151","type":"Code","Card":"1..1","path":"/corG-1/corG-4/corG-5/corG-19/cen-151"},
-        "cen-152":{"level":"5","module":"cen","name":"invoicedItemVatRate","code":"BT-152","type":"Percent","Card":"0..1","path":"/corG-1/corG-4/corG-5/corG-19/cen-152"},
+        "cen-152":{"level":"5","module":"cen","name":"invoicedItemVatRate","code":"BT-152","type":"Percentage","Card":"0..1","path":"/corG-1/corG-4/corG-5/corG-19/cen-152"},
         "cenG-32":{"level":"4","module":"cen","name":"itemAttributes","code":"BG-32","type":"","Card":"0..n","path":"/corG-1/corG-4/corG-5/cenG-32"},
         "cen-160":{"level":"5","module":"cen","name":"itemAttributeName","code":"BT-160","type":"Text","Card":"1..1","path":"/corG-1/corG-4/corG-5/cenG-32/cen-160"},
         "cen-161":{"level":"5","module":"cen","name":"itemAttributeValue","code":"BT-161","type":"Text","Card":"1..1","path":"/corG-1/corG-4/corG-5/cenG-32/cen-161"}
@@ -695,6 +695,7 @@ var invoice2gl = (function() {
             if (match) {
                 module = 'http://www.xbrl.org/int/gl/'+match[1]+'/2020-12-31';
             }
+            
             var type = '';
             if (gl_plt[name]) {
                 type = gl_plt[name].type;
@@ -759,7 +760,8 @@ var invoice2gl = (function() {
                     xbrl.appendChild(element);
                     break;
             }
-            if (['Amount', 'UnitPriceAmount', 'Quantity', 'Percentage'].indexOf(type) >= 0) {
+            if (['Amount', 'UnitPriceAmount', 'Quantity', 'Percentage'].indexOf(type) >= 0
+                ) {
                 element.setAttribute('decimals', 'INF');
                 if (type.match(/Amount$/)) {
                     if (name.match(/VAT/)) {
