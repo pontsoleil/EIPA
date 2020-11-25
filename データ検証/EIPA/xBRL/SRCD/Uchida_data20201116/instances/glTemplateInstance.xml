@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25" xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25" xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2015-03-25" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25" xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25" xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2015-03-25" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:fr-sample="http://www.srcdtest.com" xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25">
+  <link:schemaRef xlink:type="simple" xlink:href="../../XBRL-GL-REC-2015-03-25/gl/plt/case-c-b-m-u-t-s/gl-plt-all-2015-03-25.xsd"/>
+  <xbrli:context id="srcdContext">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://www.srcdtest.com">123456789</xbrli:identifier>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2014-05-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="USD">
+    <xbrli:measure>iso4217:USD</xbrli:measure>
+  </xbrli:unit>
+  <gl-cor:accountingEntries>
+    <gl-cor:documentInfo>
+      <gl-cor:entriesType contextRef="srcdContext">journal</gl-cor:entriesType>
+      <gl-srcd:summaryReportingTaxonomies>
+        <gl-srcd:summaryReportingTaxonomyID contextRef="srcdContext">SRCDTestInstance</gl-srcd:summaryReportingTaxonomyID>
+        <gl-srcd:summaryReportingTaxonomySchemaRefHref contextRef="srcdContext">../frTaxonomy/FRTaxonomy.xsd</gl-srcd:summaryReportingTaxonomySchemaRefHref>
+      </gl-srcd:summaryReportingTaxonomies>
+    </gl-cor:documentInfo>
+    <gl-cor:entryHeader>
+      <gl-cor:entryDetail>
+        <gl-cor:account/>
+        <gl-cor:xbrlInfo>
+          <gl-cor:summaryReportingElement contextRef="srcdContext">fr-sample:PrimaryItem04</gl-cor:summaryReportingElement>
+          <gl-srcd:detailedContentFilter contextRef="srcdContext">gl-cor:account/gl-cor:accountMainID='00000001'</gl-srcd:detailedContentFilter>
+          <gl-srcd:summaryContext>
+            <gl-srcd:summaryEntity>
+              <gl-srcd:summaryIdentifier contextRef="srcdContext">test</gl-srcd:summaryIdentifier>
+              <gl-srcd:summaryScheme contextRef="srcdContext">http://www.srcdtest.com</gl-srcd:summaryScheme>
+              <gl-srcd:summarySegment>
+                <gl-srcd:summarySegmentExplicitDimension>
+                  <gl-srcd:summarySegmentExplicitDimensionElement contextRef="srcdContext">fr-sample:Costcategory1</gl-srcd:summarySegmentExplicitDimensionElement>
+                  <gl-srcd:summarySegmentExplicitDimensionValue contextRef="srcdContext">fr-sample:DomainMember20</gl-srcd:summarySegmentExplicitDimensionValue>
+                </gl-srcd:summarySegmentExplicitDimension>
+              </gl-srcd:summarySegment>
+            </gl-srcd:summaryEntity>
+            <gl-srcd:summaryPeriod>
+              <gl-srcd:summaryStartDate contextRef="srcdContext">2014-05-01</gl-srcd:summaryStartDate>
+              <gl-srcd:summaryEndDate contextRef="srcdContext">2014-05-31</gl-srcd:summaryEndDate>
+            </gl-srcd:summaryPeriod>
+          </gl-srcd:summaryContext>
+          <gl-srcd:summaryUnit>
+            <gl-srcd:summaryNumerator contextRef="srcdContext">iso4217:USD</gl-srcd:summaryNumerator>
+          </gl-srcd:summaryUnit>
+          <gl-srcd:summaryReportingTaxonomyIDRef contextRef="srcdContext">SRCDTestInstance</gl-srcd:summaryReportingTaxonomyIDRef>
+        </gl-cor:xbrlInfo>
+      </gl-cor:entryDetail>
+      <gl-cor:entryDetail>
+        <gl-cor:xbrlInfo>
+          <gl-cor:summaryReportingElement contextRef="srcdContext">fr-sample:PrimaryItem05</gl-cor:summaryReportingElement>
+          <gl-srcd:detailedContentFilter contextRef="srcdContext">gl-cor:account/gl-cor:accountMainID='00000002'</gl-srcd:detailedContentFilter>
+          <gl-srcd:summaryContext>
+            <gl-srcd:summaryEntity>
+              <gl-srcd:summaryIdentifier contextRef="srcdContext">test</gl-srcd:summaryIdentifier>
+              <gl-srcd:summaryScheme contextRef="srcdContext">http://www.srcdtest.com</gl-srcd:summaryScheme>
+              <gl-srcd:summarySegment>
+                <gl-srcd:summarySegmentExplicitDimension>
+                  <gl-srcd:summarySegmentExplicitDimensionElement contextRef="srcdContext">fr-sample:Costcategory1</gl-srcd:summarySegmentExplicitDimensionElement>
+                  <gl-srcd:summarySegmentExplicitDimensionValue contextRef="srcdContext">fr-sample:DomainMember20</gl-srcd:summarySegmentExplicitDimensionValue>
+                </gl-srcd:summarySegmentExplicitDimension>
+              </gl-srcd:summarySegment>
+            </gl-srcd:summaryEntity>
+            <gl-srcd:summaryPeriod>
+              <gl-srcd:summaryStartDate contextRef="srcdContext">2014-05-01</gl-srcd:summaryStartDate>
+              <gl-srcd:summaryEndDate contextRef="srcdContext">2014-05-31</gl-srcd:summaryEndDate>
+            </gl-srcd:summaryPeriod>
+          </gl-srcd:summaryContext>
+          <gl-srcd:summaryUnit>
+            <gl-srcd:summaryNumerator contextRef="srcdContext">iso4217:USD</gl-srcd:summaryNumerator>
+          </gl-srcd:summaryUnit>
+          <gl-srcd:summaryReportingTaxonomyIDRef contextRef="srcdContext">SRCDTestInstance</gl-srcd:summaryReportingTaxonomyIDRef>
+        </gl-cor:xbrlInfo>
+      </gl-cor:entryDetail>
+      <gl-cor:entryDetail>
+        <gl-cor:account/>
+        <gl-cor:xbrlInfo>
+          <gl-cor:summaryReportingElement contextRef="srcdContext">fr-sample:PrimaryItem06</gl-cor:summaryReportingElement>
+          <gl-srcd:detailedContentFilter contextRef="srcdContext">gl-cor:account/gl-cor:accountMainID='00000003'</gl-srcd:detailedContentFilter>
+          <gl-srcd:summaryContext>
+            <gl-srcd:summaryEntity>
+              <gl-srcd:summaryIdentifier contextRef="srcdContext">test</gl-srcd:summaryIdentifier>
+              <gl-srcd:summaryScheme contextRef="srcdContext">http://www.srcdtest.com</gl-srcd:summaryScheme>
+              <gl-srcd:summarySegment>
+                <gl-srcd:summarySegmentExplicitDimension>
+                  <gl-srcd:summarySegmentExplicitDimensionElement contextRef="srcdContext">fr-sample:Costcategory1</gl-srcd:summarySegmentExplicitDimensionElement>
+                  <gl-srcd:summarySegmentExplicitDimensionValue contextRef="srcdContext">fr-sample:DomainMember20</gl-srcd:summarySegmentExplicitDimensionValue>
+                </gl-srcd:summarySegmentExplicitDimension>
+              </gl-srcd:summarySegment>
+            </gl-srcd:summaryEntity>
+            <gl-srcd:summaryPeriod>
+              <gl-srcd:summaryStartDate contextRef="srcdContext">2014-05-01</gl-srcd:summaryStartDate>
+              <gl-srcd:summaryEndDate contextRef="srcdContext">2014-05-31</gl-srcd:summaryEndDate>
+            </gl-srcd:summaryPeriod>
+          </gl-srcd:summaryContext>
+          <gl-srcd:summaryUnit>
+            <gl-srcd:summaryNumerator contextRef="srcdContext">iso4217:USD</gl-srcd:summaryNumerator>
+          </gl-srcd:summaryUnit>
+          <gl-srcd:summaryReportingTaxonomyIDRef contextRef="srcdContext">SRCDTestInstance</gl-srcd:summaryReportingTaxonomyIDRef>
+        </gl-cor:xbrlInfo>
+      </gl-cor:entryDetail>
+    </gl-cor:entryHeader>
+  </gl-cor:accountingEntries>
+</xbrli:xbrl>
