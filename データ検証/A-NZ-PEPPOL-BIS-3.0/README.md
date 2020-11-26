@@ -1,3 +1,4 @@
+次のリンクは、本家の[GitHub](https://github.com/A-NZ-PEPPOL/A-NZ-PEPPOL-BIS-3.0/)です
 # A-NZ PEPPOL BIS 3.0
 Within this repository is a range of artefacts that will help PEPPOL Service Providers implement and adopt the Australia-New Zealand extension of the PEPPOL BIS 3.0 Specification.
 ## What's inside
