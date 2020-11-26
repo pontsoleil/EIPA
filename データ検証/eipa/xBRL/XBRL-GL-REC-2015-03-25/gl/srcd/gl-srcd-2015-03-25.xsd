@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/srcd/2015-03-25" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2015-03-25" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<annotation>
+		<appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:href="gl-srcd-2015-03-25-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+		</appinfo>
+	</annotation>
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<element name="summaryPrecisionDecimals" id="gl-srcd_summaryPrecisionDecimals" type="gl-srcd:summaryPrecisionDecimalsComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryPrecision" id="gl-srcd_summaryPrecision" type="gl-srcd:summaryPrecisionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryPrecisionINF" id="gl-srcd_summaryPrecisionINF" type="gl-srcd:summaryPrecisionINFItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryDecimals" id="gl-srcd_summaryDecimals" type="gl-srcd:summaryDecimalsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryDecimalsINF" id="gl-srcd_summaryDecimalsINF" type="gl-srcd:summaryDecimalsINFItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryTuplePath" id="gl-srcd_summaryTuplePath" type="gl-srcd:summaryTuplePathItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="detailedContentFilter" id="gl-srcd_detailedContentFilter" type="gl-srcd:detailedContentFilterItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="reportingDateSelector" id="gl-srcd_reportingDateSelector" type="gl-srcd:reportingDateSelectorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryContext" id="gl-srcd_summaryContext" type="gl-srcd:summaryContextComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryEntity" id="gl-srcd_summaryEntity" type="gl-srcd:summaryEntityComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryIdentifier" id="gl-srcd_summaryIdentifier" type="gl-srcd:summaryIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScheme" id="gl-srcd_summaryScheme" type="gl-srcd:summarySchemeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegment" id="gl-srcd_summarySegment" type="gl-srcd:summarySegmentComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summarySegmentExplicitDimension" id="gl-srcd_summarySegmentExplicitDimension" type="gl-srcd:summarySegmentExplicitDimensionComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summarySegmentExplicitDimensionElement" id="gl-srcd_summarySegmentExplicitDimensionElement" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentExplicitDimensionValue" id="gl-srcd_summarySegmentExplicitDimensionValue" type="gl-srcd:summaryExplicitDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentExplicitDimensionExpressionValue" id="gl-srcd_summarySegmentExplicitDimensionExpressionValue" type="gl-srcd:summaryExplicitDimensionExpressionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentTypedDimension" id="gl-srcd_summarySegmentTypedDimension" type="gl-srcd:summarySegmentTypedDimensionComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summarySegmentTypedDimensionElement" id="gl-srcd_summarySegmentTypedDimensionElement" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentTypedDimensionValue" id="gl-srcd_summarySegmentTypedDimensionValue" type="gl-srcd:summaryTypedDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentTypedDimensionExpressionValue" id="gl-srcd_summarySegmentTypedDimensionExpressionValue" type="gl-srcd:summaryTypedDimensionExpressionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentSimpleElementContent" id="gl-srcd_summarySegmentSimpleElementContent" type="gl-srcd:summarySegmentSimpleElementContentComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summarySegmentSimpleElementContentElement" id="gl-srcd_summarySegmentSimpleElementContentElement" type="gl-srcd:summarySimpleElementContentElementType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentSimpleElementValue" id="gl-srcd_summarySegmentSimpleElementValue" type="gl-srcd:summarySimpleElementValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summarySegmentContents" id="gl-srcd_summarySegmentContents" type="gl-srcd:summaryContentsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryPeriod" id="gl-srcd_summaryPeriod" type="gl-srcd:summaryPeriodComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryStartDate" id="gl-srcd_summaryStartDate" type="gl-srcd:summaryStartDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryEndDate" id="gl-srcd_summaryEndDate" type="gl-srcd:summaryEndDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryInstant" id="gl-srcd_summaryInstant" type="gl-srcd:summaryInstantItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryForever" id="gl-srcd_summaryForever" type="gl-srcd:summaryForeverItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenario" id="gl-srcd_summaryScenario" type="gl-srcd:summaryScenarioComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryScenarioExplicitDimension" id="gl-srcd_summaryScenarioExplicitDimension" type="gl-srcd:summaryScenarioExplicitDimensionComplexType" substitutionGroup="xbrli:tuple"/>
+	<element name="summaryScenarioExplicitDimensionElement" id="gl-srcd_summaryScenarioExplicitDimensionElement" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioExplicitDimensionValue" id="gl-srcd_summaryScenarioExplicitDimensionValue" type="gl-srcd:summaryExplicitDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioExplicitDimensionExpressionValue" id="gl-srcd_summaryScenarioExplicitDimensionExpressionValue" type="gl-srcd:summaryExplicitDimensionExpressionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioTypedDimension" id="gl-srcd_summaryScenarioTypedDimension" type="gl-srcd:summaryScenarioTypedDimensionComplexType" substitutionGroup="xbrli:tuple"/>
+	<element name="summaryScenarioTypedDimensionElement" id="gl-srcd_summaryScenarioTypedDimensionElement" type="gl-srcd:summaryDimensionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioTypedDimensionValue" id="gl-srcd_summaryScenarioTypedDimensionValue" type="gl-srcd:summaryTypedDimensionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioTypedDimensionExpressionValue" id="gl-srcd_summaryScenarioTypedDimensionExpressionValue" type="gl-srcd:summaryTypedDimensionExpressionValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioSimpleElementContent" id="gl-srcd_summaryScenarioSimpleElementContent" type="gl-srcd:summaryScenarioSimpleElementContentComplexType" substitutionGroup="xbrli:tuple"/>
+	<element name="summaryScenarioSimpleElementContentElement" id="gl-srcd_summaryScenarioSimpleElementContentElement" type="gl-srcd:summarySimpleElementContentElementType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioSimpleElementValue" id="gl-srcd_summaryScenarioSimpleElementValue" type="gl-srcd:summarySimpleElementValueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryScenarioContents" id="gl-srcd_summaryScenarioContents" type="gl-srcd:summaryContentsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryUnit" id="gl-srcd_summaryUnit" type="gl-srcd:summaryUnitComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryNumerator" id="gl-srcd_summaryNumerator" type="gl-srcd:summaryNumeratorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryDenominator" id="gl-srcd_summaryDenominator" type="gl-srcd:summaryDenominatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryReportingTaxonomies" id="gl-srcd_summaryReportingTaxonomies" type="gl-srcd:summaryReportingTaxonomiesComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="summaryReportingTaxonomyID" id="gl-srcd_summaryReportingTaxonomyID" type="gl-srcd:summaryReportingTaxonomyIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryReportingTaxonomySchemaRefHref" id="gl-srcd_summaryReportingTaxonomySchemaRefHref" type="gl-srcd:summaryReportingTaxonomySchemaRefHrefItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryReportingTaxonomyHeader" id="gl-srcd_summaryReportingTaxonomyHeader" type="gl-srcd:summaryReportingTaxonomyHeaderItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryReportingTaxonomyDescription" id="gl-srcd_summaryReportingTaxonomyDescription" type="gl-srcd:summaryReportingTaxonomyDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="summaryReportingTaxonomyIDRef" id="gl-srcd_summaryReportingTaxonomyIDRef" type="gl-srcd:summaryReportingTaxonomyIDRefItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="richTextComment" id="gl-srcd_richTextComment" type="gl-srcd:richTextCommentComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+	<element name="richTextCommentCode" id="gl-srcd_richTextCommentCode" type="gl-srcd:richTextCommentCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="richTextCommentDescription" id="gl-srcd_richTextCommentDescription" type="gl-srcd:richTextCommentDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="richTextCommentContent" id="gl-srcd_richTextCommentContent" type="gl-srcd:richTextCommentContentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="richTextCommentLocator" id="gl-srcd_richTextCommentLocator" type="gl-srcd:richTextCommentLocatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<complexType name="summaryPrecisionDecimalsComplexType">
+		<choice>
+			<element ref="gl-srcd:summaryPrecision"/>
+			<element ref="gl-srcd:summaryPrecisionINF"/>
+			<element ref="gl-srcd:summaryDecimals"/>
+			<element ref="gl-srcd:summaryDecimalsINF"/>
+		</choice>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryPrecisionItemType">
+		<simpleContent>
+			<restriction base="xbrli:nonNegativeIntegerItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryPrecisionINFItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryDecimalsItemType">
+		<simpleContent>
+			<restriction base="xbrli:integerItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryDecimalsINFItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryTuplePathItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="detailedContentFilterItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="reportingDateSelectorItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryContextComplexType">
+		<sequence>
+			<element minOccurs="0" ref="gl-srcd:summaryEntity"/>
+			<element minOccurs="0" ref="gl-srcd:summaryPeriod"/>
+			<element minOccurs="0" ref="gl-srcd:summaryScenario"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryEntityComplexType">
+		<sequence>
+			<element minOccurs="0" ref="gl-srcd:summaryIdentifier"/>
+			<element minOccurs="0" ref="gl-srcd:summaryScheme"/>
+			<element minOccurs="0" ref="gl-srcd:summarySegment"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryIdentifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summarySchemeItemType">
+		<simpleContent>
+			<restriction base="xbrli:anyURIItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryPeriodComplexType">
+		<choice>
+			<element ref="gl-srcd:summaryInstant"/>
+			<sequence>
+				<element ref="gl-srcd:summaryStartDate"/>
+				<element ref="gl-srcd:summaryEndDate"/>
+			</sequence>
+			<element ref="gl-srcd:summaryForever"/>
+		</choice>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryStartDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryEndDateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryInstantItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryForeverItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<length value="0"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="summarySegmentExplicitDimensionComplexType">
+		<sequence>
+			<element ref="gl-srcd:summarySegmentExplicitDimensionElement"/>
+			<choice>
+				<element ref="gl-srcd:summarySegmentExplicitDimensionValue"/>
+				<element ref="gl-srcd:summarySegmentExplicitDimensionExpressionValue"/>
+			</choice>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryScenarioExplicitDimensionComplexType">
+		<sequence>
+			<element ref="gl-srcd:summaryScenarioExplicitDimensionElement"/>
+			<choice>
+				<element ref="gl-srcd:summaryScenarioExplicitDimensionValue"/>
+				<element ref="gl-srcd:summaryScenarioExplicitDimensionExpressionValue"/>
+			</choice>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summarySegmentTypedDimensionComplexType">
+		<sequence>
+			<element ref="gl-srcd:summarySegmentTypedDimensionElement"/>
+			<choice>
+				<element ref="gl-srcd:summarySegmentTypedDimensionValue"/>
+				<element ref="gl-srcd:summarySegmentTypedDimensionExpressionValue"/>
+			</choice>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryScenarioTypedDimensionComplexType">
+		<sequence>
+			<element ref="gl-srcd:summaryScenarioTypedDimensionElement"/>
+			<choice>
+				<element ref="gl-srcd:summaryScenarioTypedDimensionValue"/>
+				<element ref="gl-srcd:summaryScenarioTypedDimensionExpressionValue"/>
+			</choice>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryDimensionItemType">
+		<simpleContent>
+			<restriction base="xbrli:QNameItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryExplicitDimensionValueItemType">
+		<simpleContent>
+			<restriction base="xbrli:QNameItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryExplicitDimensionExpressionValueItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryTypedDimensionValueItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryTypedDimensionExpressionValueItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summarySegmentSimpleElementContentComplexType">
+		<sequence>
+			<element ref="gl-srcd:summarySegmentSimpleElementContentElement"/>
+			<element ref="gl-srcd:summarySegmentSimpleElementValue"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryScenarioSimpleElementContentComplexType">
+		<sequence>
+			<element ref="gl-srcd:summaryScenarioSimpleElementContentElement"/>
+			<element ref="gl-srcd:summaryScenarioSimpleElementValue"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summarySimpleElementContentElementType">
+		<simpleContent>
+			<restriction base="xbrli:QNameItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryContentsItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryUnitComplexType">
+		<sequence>
+			<element ref="gl-srcd:summaryNumerator"/>
+			<element minOccurs="0" ref="gl-srcd:summaryDenominator"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryNumeratorItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryDenominatorItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryReportingTaxonomiesComplexType">
+		<sequence>
+			<element minOccurs="0" ref="gl-srcd:summaryReportingTaxonomyID"/>
+			<element minOccurs="0" ref="gl-srcd:summaryReportingTaxonomySchemaRefHref"/>
+			<element minOccurs="0" ref="gl-srcd:summaryReportingTaxonomyHeader"/>
+			<element minOccurs="0" ref="gl-srcd:summaryReportingTaxonomyDescription"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="summaryReportingTaxonomyIDItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryReportingTaxonomySchemaRefHrefItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryReportingTaxonomyHeaderItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryReportingTaxonomyDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summaryReportingTaxonomyIDRefItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="summarySimpleElementValueItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="richTextCommentComplexType">
+		<sequence>
+			<element minOccurs="0" ref="gl-srcd:richTextCommentCode"/>
+			<element minOccurs="0" ref="gl-srcd:richTextCommentDescription"/>
+			<element minOccurs="0" ref="gl-srcd:richTextCommentContent"/>
+			<element minOccurs="0" ref="gl-srcd:richTextCommentLocator"/>
+		</sequence>
+		<attribute name="id" type="ID"/>
+	</complexType>
+	<complexType name="richTextCommentCodeItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType">
+				<enumeration value="link_footnote"/>
+				<enumeration value="footnote"/>
+				<enumeration value="source_document"/>
+				<enumeration value="source_journal"/>
+				<enumeration value="batch"/>
+				<enumeration value="other"/>
+			</restriction>
+		</simpleContent>
+	</complexType>
+	<complexType name="richTextCommentDescriptionItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="richTextCommentContentItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="richTextCommentLocatorItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+</schema>

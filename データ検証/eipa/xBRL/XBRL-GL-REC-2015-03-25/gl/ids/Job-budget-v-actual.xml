@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample detailed listing of job costing actual versus budget file for XBRL Global Ledger Framework with annotations  Version 1.0.91021.1 -->
+<!-- This file contains data fields considered very important to representing its subject. Annotations have been provided for the "most important" of those fields. XBRL GL has many other fields that could be helpful in expressing the information, but have been omitted because their presence is more circumstantial. This file was created for educational purposes only, does not represent real company data and we welcome suggestions on improvement. Contact xbrlgl@xbrl.org with comments. -->
+<!-- This file shows how we might represent job costing information with XBRL GL. It is meant to highlight different ways to represent the jobs themselves and show some of the ways to represents budgets of different kinds with the tools of XBRL GL. -->
+<!-- The "root" of every XBRL file ("instance document") is xbrl. -->
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25" xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2015-03-25" xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2015-03-25" xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2015-03-25" xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:iso639="http://www.xbrl.org/2005/iso639" xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2015-03-25 ../plt/case-c-b-m-u-t/gl-plt-all-2015-03-25.xsd">
+	<xbrll:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../plt/case-c-b-m-u-t/gl-plt-all-2015-03-25.xsd"/>
+	<!-- Contexts, mandatory according to the XBRL 2.1, Specification, are not meant to describe the information in XBRL GL and appear only by convention. All facts are instant and developers are encouraged to duplicate/provide the date the XBRL GL information is created as the period's date. -->
+	<xbrli:context id="now">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.xbrl.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<!-- The XBRL GL WG recommends using the file creation data as the period. -->
+		<xbrli:period>
+			<xbrli:instant>2005-09-01</xbrli:instant>
+		</xbrli:period>
+	</xbrli:context>
+	<!-- Units of measure in XBRL GL are handled within the measurable or multicurrency elements. Units are provided by convention and should not be relied upon in interpreting XBRL GL data. -->
+	<xbrli:unit id="usd">
+		<xbrli:measure>iso4217:USD</xbrli:measure>
+	</xbrli:unit>
+	<!-- The container for XBRL GL, accountingEntries, is not the root of an XBRL GL file - the root, as with all XBRL files, is xbrl. This means that a single XBRL GL file can store one or more virtual XBRL GL files, through one or more accountingEntries structures with data inside. The primary key to understanding an XBRL GL file is the entriesType. A single physical XBRL GL file can have multiple accountingEntries structures to represent both transactions and master files; the differences are signified by the appropriate entriesType enumerated values. Job details can be listed in one accountingEntries structure while details can be provided in another, referencing only the minimal amount of information needed to unambiguously reference the job, thereby reducing the duplicated information in the file, resulting in smaller file sizes -->
+	<gl-cor:accountingEntries>
+		<!-- Because entriesType is strongly suggested, documentInfo will be required. -->
+		<gl-cor:documentInfo>
+			<!-- This field, entriesType, provides the automated guidance on the purpose of the XBRL GL information. This use of XBRL GL to represent job information could potentially use "assets" (from the fixed enumerated list), as the job values could match a recording on the balance sheet of work in process. In this example, we have instead used the value "other". Automated consumption of this file would be based on other factors. -->
+			<gl-cor:entriesType contextRef="now">other</gl-cor:entriesType>
+			<!-- Like a serial number, this field, uniqueID, provides a place to uniquely identify/track a series of entries. An actual/budget report is usually an ad hoc report, which has less need for the uniqueID. However, it never hurts to provide one. -->
+			<gl-cor:uniqueID contextRef="now">JBRPT2005-08-31</gl-cor:uniqueID>
+			<gl-cor:language contextRef="now">iso639:en</gl-cor:language>
+			<!-- The date associated with the creation of the data reflected within the associated accountingEntries section. Somewhat like a "printed date" on a paper report -->
+			<gl-cor:creationDate contextRef="now">2005-08-31</gl-cor:creationDate>
+			<gl-bus:creator contextRef="now">XBRL GL Working Group</gl-bus:creator>
+			<!-- A description related to the batch of information express in the accountingEntries structure. Why was this batch of information put together and published? It would be helpful to put that information in the entriesComment. -->
+			<gl-cor:entriesComment contextRef="now">A best practice listing of job actual versus budget document</gl-cor:entriesComment>
+			<!-- The as-of date reflected by the job values. -->
+			<gl-cor:periodCoveredEnd contextRef="now">2005-08-31</gl-cor:periodCoveredEnd>
+			<gl-bus:sourceApplication contextRef="now">Timberline</gl-bus:sourceApplication>
+			<gl-bus:targetApplication contextRef="now">AIA AI EIEIO</gl-bus:targetApplication>
+			<gl-muc:defaultCurrency contextRef="now">iso4217:usd</gl-muc:defaultCurrency>
+		</gl-cor:documentInfo>
+		<!-- Typically, an export from an accounting system does not carry with it information specifically about the company. However, the name of the company would be a very good thing to include with the file, making the entityInformation tuple necessary. -->
+		<gl-cor:entityInformation>
+			<!-- The name of the company would be a very good thing to include with the file; this structure and its content are where that would be stored. OrganizationDescription is not currently enumerated.  -->
+			<gl-bus:organizationIdentifiers>
+				<gl-bus:organizationIdentifier contextRef="now">XYZ Company</gl-bus:organizationIdentifier>
+				<gl-bus:organizationDescription contextRef="now">Company Name</gl-bus:organizationDescription>
+			</gl-bus:organizationIdentifiers>
+		</gl-cor:entityInformation>
+		<!-- Most representations of business detail requires entry in entryHeader and entryDetail. Few files can be represented using only documentInfo and entityInformation sections, but it is certainly possible. -->
+		<!-- For this report, we provide the following data:
+			
+			Job
+ID: 05-08SAMEPL
+Description: Old Same Place Division, Lot 103, New Old Post Road
+
+Phases
+01000 	Permits/Surveys
+02000	Foundation
+03000	Slab
+04000	Masonry
+05000	Tie Beam
+06000	Rough In
+07000	Roofing
+08000	Trim/Finish
+
+Budget - original/revised
+Phase 01000
+01200	Permits	500
+01400	Survey	1000
+Phase 02000
+01700	Foundation Labor	4000
+01800	Foundation Material	5000
+Phase 03000
+01920	Slab Labor	4000
+01930	Slab Material 5000
+Phase 04000
+02100	Masonry Labor	4000
+02200	Masonry Material	15000
+Phase 05000 (customer originally was going to do their own tie beam work)
+02300	Tie Beam Labor	0/6000
+02400	Tie Beam Material	0/9000
+03100	Trusses	8250
+Phase 06000
+03200	Rough in Carpentry Labor	5000
+03300	Rough in Carpentry Material	8000
+03400	Electrical Rough	6200
+01900	Plumbing Rough	3000
+Phase 07000
+04100	Roofing Material	4500
+04200	Roofing Labor	2700
+Phases 08000
+04400	Landscaping	5200
+
+Actual
+Phase 01000
+01200	Permits	490
+01400	Survey	950
+Phase 02000
+01700	Foundation Labor	4050
+01800	Foundation Material	4990
+Phase 03000
+01920	Slab Labor	4100
+01930	Slab Material 4950
+Phase 04000
+02100	Masonry Labor	3800
+02200	Masonry Material	15015
+Phase 05000
+02300	Tie Beam Labor	6200
+02400	Tie Beam Material	8800
+03100	Trusses	8200
+Phase 06000
+03200	Rough in Carpentry Labor	5030
+03300	Rough in Carpentry Material	7000
+03400	Electrical Rough	6200
+01900	Plumbing/Rough	2800
+Phase 07000
+04100	Roofing Material	3900
+04200	Roofing Labor	2000
+Phase 08000
+04400	Landscaping	5300
+
+XBRL GL has a number of tools for representing jobs and their details:
+1. There is an accountType of job (enumerated), so jobs with phases and cost codes can be represented by the account structure explicitly.
+2. Even if you use accountType of account (enumerated), you can still use the accountSub and have accountSubType with (nonenumerated) job, phase, cost code.
+3. And alternative to the account structure, you can use the jobInfo structure, which has a jobCode/jobDescription and jobPhaseCode/jobPhaseDescription.
+
+XBRL GL also has a number of tools for representing budgets:
+1. An entry can be related to a budget by the enumeration of budget for entryType.
+2. The budgetScenario/budgetScenarioText, with the associated budgetScenarioPeriodStart and budgetScenarioPeriodEnd, describes the budget(s) involved - you can have the original budget (for a job, in this example), a revised budget, a worst case budget, etc.
+
+In our example above, the job information could be represented
+
+1. Within an account structure, with accountType of "job". The  
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+				</gl-cor:account>
+				
+Phases and cost codes would be subAccount structures
+This would be helpful where a job is also an account on the balance sheet.
+
+2. Within an account structure, with accountType of "job", in the accountSub structure.
+				<gl-cor:account>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05-08SAMEPL</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">job</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+Phases and cost codes would be additional subAccount structures
+Approach 2 and 3 are especially helpful where analysis by job/phase/cost code will be done from the chart of accounts.
+
+3. Within an account structure, with accountType of "account", in the accountSub structure. The
+				<gl-cor:account>
+					<gl-cor:accountType contextRef="now">account</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05-08SAMEPL</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">job</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+Phases and cost codes would be subAccount structures
+
+4. In the jobInfo structure. The
+jobCode: 05-08SAMEPL
+jobDescription: Old Same Place Division, Lot 103, New Old Post Road
+Phases would also be in the jobInfo structure, but cost codes under current XBRL GL design would be subAccount structures in an account structure.
+
+Perhaps simplest and parallels many accounting systems.
+
+Are so many possibilities confusing? Sure - but accounting systems store them in all these different formats and more. As long as an application developer knows that there are a limited number of options, they can plan for it.
+-->
+		<!-- A concept found in the entryHeader is the entryType. This is enumerated, with values that include "budget" and "standard."  As this report will compare budgeted numbers (original and revised) with actual figures, we need three entryHeader structures, two with an entryType of "budget" and one with "standard". The original and revised budgets will be shown using budgetScenario and budgetScenarioText -->
+		<gl-cor:entryHeader>
+			<!-- sourceJournalID is often a key to automated understanding of a file, second only to entriesType. Job costing information is currently classified as ud (user defined) or ot (other). User defined would probably have standards internally at the user level, which would be noted in gl-bus:sourceJournalDescription. The sourceJournalID could be omitted completely in this case. -->
+			<gl-cor:sourceJournalID contextRef="now">ot</gl-cor:sourceJournalID>
+			<!-- entryNumber is used here only as a convenient "counter".  Our 1 entry will be the original budget. -->
+			<gl-cor:entryType contextRef="now">budget</gl-cor:entryType>
+			<gl-cor:entryNumber contextRef="now">1</gl-cor:entryNumber>
+			<!-- A comment related to the information contained within this particular entryHeader goes here. -->
+			<gl-cor:entryComment contextRef="now">Job Actual vs. Budget Report - budget items</gl-cor:entryComment>
+			<gl-bus:budgetScenarioText contextRef="now">Original budget</gl-bus:budgetScenarioText>
+			<!-- budgetScenario is not enumerated. Organizations will need to come up with their own listings. -->
+			<gl-bus:budgetScenario contextRef="now">ORIGINAL</gl-bus:budgetScenario>
+			<!-- Each primary monetary amount requires its own entryDetail section. Likewise, only one primary document can be noted in an entryDetail section. However, we are not referencing any documents here. -->
+			<gl-cor:entryDetail>
+				<!-- A unique identifier for each entry detail line within an entry header, this should at the least be a counter, representing the line relative to others. -->
+				<gl-cor:lineNumber contextRef="now">1</gl-cor:lineNumber>
+				<!-- As noted above, the account structure is one way to represent jobs. Downstream uses of the information may prove that one of the four approaches offered above is the best use. Since XBRL GL allows the assignment of multiple account structures to an entryDetail line, the publisher of the file can choose multiple representations. Both account and jobInfo are illustrated here, only one is probably necessary.  -->
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<!-- accountSub structures give tremendous power. They can be used to define sub-jobs, along with the phases (also part of jobInfo) and cost codes. -->
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Permits/Surveys</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Permits</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<!-- Amounts in systems may be a signed number, a separate sign, and/or a separate debit/credit indicator. While the use of the sign indicator or the separate debit/credit indicator is more likely with journal entries, it is unlikely with invoices. -->
+				<!-- These simple amounts are likely signed monetary amounts.-->
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">500</gl-cor:amount>
+				<!-- Jobs are normally associated with a customer. In this case, we don't have the data that might otherwise be associated with a gl-cor:identifierReference. 
+				<gl-cor:identifierReference /> -->
+				<!-- Likewise, document oriented information is usually vital, but not used here. -->
+				<!-- Should the account structure not be used to represent job information - the US model of accounting systems often has a job/sub-job/phase/cost code system completely separate from the chart of accounts system - the jobInfo structure is where the data goes. -->
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">01000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Permits/Surveys</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">2</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Permits/Surveys</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Surveys</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">1000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">01000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Permits/Surveys</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">3</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01700</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">02000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Foundation</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">4</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01800</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">5000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">02000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Foundation</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">5</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01920</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">03000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Slab</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">6</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01930</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">5000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">03000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Slab</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">7</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02100</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">04000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Masonry</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">8</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">15000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">04000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Masonry</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">9</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02300</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">0</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">10</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">0</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">11</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Trusses</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03100</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">8250</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">12</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In Carpentry Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">5000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">13</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In Carpentry Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03300</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">8000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">14</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Electrical Rough</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">6200</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">15</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Plumbing Rough</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01900</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">3000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">16</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">07000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04100</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4500</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">07000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Roofing</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">17</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">07000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">2700</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">07000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Roofing</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">18</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Trim/Finish</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">08000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Landscaping</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">5200</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">08000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Landscaping</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+		</gl-cor:entryHeader>
+		<!-- Though it is possible to provide more detail in the entryHeader structure that represents the revised budget, for example repeating all the information that appears in the original budget even for the items that have no changes, in this document we choose to include only the items that have been revised. -->
+		<gl-cor:entryHeader>
+			<gl-cor:sourceJournalID contextRef="now">ot</gl-cor:sourceJournalID>
+			<gl-cor:entryType contextRef="now">budget</gl-cor:entryType>
+			<gl-cor:entryNumber contextRef="now">2</gl-cor:entryNumber>
+			<gl-cor:entryComment contextRef="now">Job Actual vs. Budget Report - revised budget items</gl-cor:entryComment>
+			<gl-bus:budgetScenarioText contextRef="now">Revised Budget - Change Order</gl-bus:budgetScenarioText>
+			<gl-bus:budgetScenario contextRef="now">REVISEDCO</gl-bus:budgetScenario>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">1</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02300</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">6000</gl-cor:amount>
+				<gl-cor:detailComment contextRef="now">This amount has changed because customer originally intended to do their own tie beam work, then decided to assign it to us</gl-cor:detailComment>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">2</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">9000</gl-cor:amount>
+				<gl-cor:detailComment contextRef="now">This amount has changed because customer originally intended to do their own tie beam work, then decided to assign it to us</gl-cor:detailComment>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+		</gl-cor:entryHeader>
+		<gl-cor:entryHeader>
+			<gl-cor:sourceJournalID contextRef="now">ot</gl-cor:sourceJournalID>
+			<gl-cor:entryType contextRef="now">standard</gl-cor:entryType>
+			<gl-cor:entryNumber contextRef="now">3</gl-cor:entryNumber>
+			<gl-cor:entryComment contextRef="now">Job Actual vs. Budget Report - actual budget items</gl-cor:entryComment>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">1</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Permits/Surveys</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Permits</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">490</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">01000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Permits/Surveys</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">2</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Permits/Surveys</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Survey</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">950</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">01000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Permits/Surveys</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">3</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01700</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4050</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">02000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Foundation</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">4</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Foundation Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01800</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4990</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">02000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Foundation</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">5</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01920</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4100</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">03000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Slab</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">6</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Slab Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01930</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">4950</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">03000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Slab</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">7</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02100</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">3800</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">04000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Masonry</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">8</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Masonry Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">15015</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">04000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Masonry</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">9</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02300</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">6200</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">10</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">02400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">8800</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">11</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Tie Beam</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">05000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Trusses</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03100</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">8200</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">05000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Tie Beam</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">12</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In Carpentry Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">5030</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">13</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In Carpentry Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03300</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">7000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">14</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Electrical Rough</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">03400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">6200</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">15</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Rough In</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">06000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Plumbing Rough</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">01900</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">2800</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">06000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Rough In</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">16</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">07000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing Material</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04100</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">3900</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">07000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Roofing</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">17</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">07000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Roofing Labor</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04200</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">2000</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">07000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Roofing</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+			<gl-cor:entryDetail>
+				<gl-cor:lineNumber contextRef="now">18</gl-cor:lineNumber>
+				<gl-cor:account>
+					<gl-cor:accountMainID contextRef="now">05-08SAMEPL</gl-cor:accountMainID>
+					<gl-cor:accountMainDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-cor:accountMainDescription>
+					<gl-cor:accountType contextRef="now">job</gl-cor:accountType>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Trim/Finish</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">08000</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">phase</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+					<gl-cor:accountSub>
+						<gl-cor:accountSubDescription contextRef="now">Landscaping</gl-cor:accountSubDescription>
+						<gl-cor:accountSubID contextRef="now">04400</gl-cor:accountSubID>
+						<gl-cor:accountSubType contextRef="now">cost code</gl-cor:accountSubType>
+					</gl-cor:accountSub>
+				</gl-cor:account>
+				<gl-cor:amount contextRef="now" unitRef="usd" decimals="0">5300</gl-cor:amount>
+				<gl-bus:jobInfo>
+					<gl-usk:jobCode contextRef="now">05-08SAMEPL</gl-usk:jobCode>
+					<gl-usk:jobDescription contextRef="now">Old Same Place Division, Lot 103, New Old Post Road</gl-usk:jobDescription>
+					<gl-usk:jobPhaseCode contextRef="now">08000</gl-usk:jobPhaseCode>
+					<gl-usk:jobPhaseDescription contextRef="now">Landscaping</gl-usk:jobPhaseDescription>
+				</gl-bus:jobInfo>
+			</gl-cor:entryDetail>
+		</gl-cor:entryHeader>
+	</gl-cor:accountingEntries>
+</xbrli:xbrl>
