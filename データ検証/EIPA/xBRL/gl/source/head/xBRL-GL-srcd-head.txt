@@ -37,10 +37,12 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	<complexType name="summaryOperatorItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
 	<complexType name="summaryIdentifierItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
 	<complexType name="summarySchemeItemType"><simpleContent><restriction base="xbrli:anyURIItemType"/></simpleContent></complexType>
+<!--
 	<complexType name="summaryStartDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
 	<complexType name="summaryEndDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
 	<complexType name="summaryInstantItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
 	<complexType name="summaryForeverItemType"><simpleContent><restriction base="xbrli:stringItemType"><length value="0"/></restriction></simpleContent></complexType>
+-->
 	<complexType name="summaryDimensionItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
 	<complexType name="summaryExplicitDimensionValueItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
 	<complexType name="summaryExplicitDimensionExpressionValueItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
