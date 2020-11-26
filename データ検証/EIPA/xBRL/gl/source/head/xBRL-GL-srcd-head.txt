@@ -17,6 +17,7 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	</annotation>
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
 	<!-- item type -->
+	<!--
 	<complexType name="summaryPrecisionDecimalsComplexType">
 		<choice>
 			<element ref="gl-srcd:summaryPrecision"/>
@@ -25,23 +26,11 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 			<element ref="gl-srcd:summaryDecimalsINF"/>
 		</choice>
 		<attribute name="id" type="ID"/>
-	</complexType>
+	</complexType>	-->
+
 	<complexType name="summaryPrecisionItemType"><simpleContent><restriction base="xbrli:nonNegativeIntegerItemType"/></simpleContent></complexType>
-	<complexType name="summaryPrecisionINFItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-				<length value="0"/>
-			</restriction>
-		</simpleContent>
-	</complexType>
-	<complexType name="summaryDecimalsItemType"><simpleContent><restriction base="xbrli:integerItemType"/></simpleContent></complexType>
-	<complexType name="summaryDecimalsINFItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-				<length value="0"/>
-			</restriction>
-		</simpleContent>
-	</complexType>
+	<complexType name="summaryPrecisionINFItemType"><simpleContent><restriction base="xbrli:stringItemType"><length value="0"/></restriction></simpleContent></complexType>
+	<complexType name="summaryDecimalsItemType"><simpleContent><restriction base="xbrli:integerItemType"/></simpleContent></complexType><complexType name="summaryDecimalsINFItemType"><simpleContent><restriction base="xbrli:stringItemType"><length value="0"/></restriction></simpleContent></complexType>
 	<complexType name="summaryTuplePathItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
 	<complexType name="detailedContentFilterItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
 	<complexType name="reportingDateSelectorItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
@@ -51,13 +40,7 @@ xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2020-12-31">
 	<complexType name="summaryStartDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
 	<complexType name="summaryEndDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
 	<complexType name="summaryInstantItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
-	<complexType name="summaryForeverItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType">
-				<length value="0"/>
-			</restriction>
-		</simpleContent>
-	</complexType>
+	<complexType name="summaryForeverItemType"><simpleContent><restriction base="xbrli:stringItemType"><length value="0"/></restriction></simpleContent></complexType>
 	<complexType name="summaryDimensionItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
 	<complexType name="summaryExplicitDimensionValueItemType"><simpleContent><restriction base="xbrli:QNameItemType"/></simpleContent></complexType>
 	<complexType name="summaryExplicitDimensionExpressionValueItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
