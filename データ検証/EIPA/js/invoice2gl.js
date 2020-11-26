@@ -815,7 +815,8 @@ var invoice2gl = (function() {
         var cor = 'http://www.xbrl.org/int/gl/cor/2020-12-31';
         var eipa = 'http://eipa.jp';
         var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
-        var xmlString = '<xbrli:xbrl '+
+        var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
+            '<xbrli:xbrl '+
                 'xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
                 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '+
                 'xmlns:xlink="http://www.w3.org/1999/xlink" '+
