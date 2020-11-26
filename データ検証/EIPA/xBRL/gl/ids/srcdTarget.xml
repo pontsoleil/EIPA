@@ -53,9 +53,9 @@
     <c:cor-21 contextRef="cG4cG5">001</c:cor-21>
     <c:cor-23 contextRef="cG4cG5">00000001</c:cor-23>
     <c:cor-24 contextRef="cG4cG5">ID00000001</c:cor-24>
-    <c:cor-40 contextRef="cG4cG5" unitRef="USD">150</c:cor-40>
+    <c:cor-40 contextRef="cG4cG5" unitRef="USD" decimals="INF">150</c:cor-40>
     <c:cor-42 contextRef="cG4cG5">C</c:cor-42>
-    <c:cor-84 contextRef="cG4cG5">gl-cor:amount</c:cor-84>
+    <c:cor-84 contextRef="cG4cG5">c:cor-40</c:cor-84>
     <!-- gl-cor:entryHeader / gl-cor:entryDetail 1 -->
     <xbrli:context id="cG4cG5.1">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
@@ -68,9 +68,9 @@
     <c:cor-21 contextRef="cG4CG5.1">002</c:cor-21>
     <c:cor-23 contextRef="cG4CG5.1">00000002</c:cor-23>
     <c:cor-24 contextRef="cG4CG5.1">ID00000002</c:cor-24>
-    <c:cor-40 contextRef="cG4CG5.1" unitRef="USD">500</c:cor-40>
+    <c:cor-40 contextRef="cG4CG5.1" unitRef="USD" decimals="INF">500</c:cor-40>
     <c:cor-42 contextRef="cG4CG5.1">C</c:cor-42>
-    <c:cor-84 contextRef="cG4CG5.1">gl-cor:amount</c:cor-84>
+    <c:cor-84 contextRef="cG4CG5.1">c:cor-40</c:cor-84>
     <!-- gl-cor:entryHeader / gl-cor:entryDetail 2 -->
     <xbrli:context id="cG4CG5.2">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
@@ -83,7 +83,7 @@
     <c:cor-21 contextRef="cG4CG5.2">003</c:cor-21>
     <c:cor-23 contextRef="cG4CG5.2">00000003</c:cor-23>
     <c:cor-24 contextRef="cG4CG5.2">ID00000003</c:cor-24>
-    <c:cor-40 contextRef="cG4CG5.2" unitRef="USD">300</c:cor-40>
+    <c:cor-40 contextRef="cG4CG5.2" unitRef="USD" decimals="INF">300</c:cor-40>
     <c:cor-42 contextRef="cG4CG5.2">C</c:cor-42>
-    <c:cor-84 contextRef="cG4CG5.2">gl-cor:amount</c:cor-84>
+    <c:cor-84 contextRef="cG4CG5.2">c:cor-40</c:cor-84>
 </xbrli:xbrl>
