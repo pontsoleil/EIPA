@@ -74,4 +74,12 @@ xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31">
     </simpleType>
   </element>
   <element name="d5" id="d5" type="xbrli:stringItemType" xbrldt:typedDomainRef="#_5" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- _6 -->
+  <element name="_6" id="_6">
+    <simpleType>
+      <restriction base="string"/>
+    </simpleType>
+  </element>
+  <element name="d6" id="d6" type="xbrli:stringItemType" xbrldt:typedDomainRef="#_6" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+
 </schema>
