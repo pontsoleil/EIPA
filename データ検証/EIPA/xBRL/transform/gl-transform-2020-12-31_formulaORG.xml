@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
+<link:linkbase 
+xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd 
+http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd 
+http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd 
+http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/filter/tuple 
+http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd 
+http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd 
+http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd 
+http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd 
+http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd 
+http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd 
+http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd 
+http://xbrl.org/2008/filter/relative http://www.xbrl.org/2008/relative-filter.xsd 
+http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd 
+http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd 
+http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd 
+http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+xmlns:link="http://www.xbrl.org/2003/linkbase" 
+xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2020-12-31" 
+xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2020-12-31" 
+xmlns:gl-cen="http://www.xbrl.org/int/gl/cen/2020-12-31" 
+xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2020-12-31" 
+xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31" 
+xmlns:va="http://xbrl.org/2008/assertion/value" 
+xmlns:cf="http://xbrl.org/2008/filter/concept"
+xmlns:gen="http://xbrl.org/2008/generic"
+xmlns:variable="http://xbrl.org/2008/variable"
+xmlns:msg="http://xbrl.org/2010/message">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-satisfied-message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-satisfied-message"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="simple" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:type="simple" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
+		<!-- Value Assertion -->
+		<va:valueAssertion id="vAamount" test="$amount &gt; $measurableCost" aspectModel="dimensional" implicitFiltering="true" xlink:type="resource" xlink:label="vAamount"/>
+		<!-- unsatisfied message -->
+		<gen:arc order="6.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:from="vAamount" xlink:to="vAamount-unsatisfied"/>
+		<msg:message id="vAamount-unsatisfied" xlink:type="resource" xlink:role="http://www.xbrl.org/2010/role/message" xlink:label="vAamount-unsatisfied" xml:lang="en">** COST OVERRUN ** {$contextRef} {$identifier} {$measurable} {$unit} {$amount} &lt;= {$measurableCost} (= {$measurableCostPerUnit}x{$measurableQuantity})</msg:message>
+		<!-- satisfied message -->
+		<gen:arc order="6.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" xlink:from="vAamount" xlink:to="vAamount-satisfied"/>
+		<msg:message id="vAamount-satisfied" xlink:type="resource" xlink:role="http://www.xbrl.org/2010/role/message" xlink:label="vAamount-satisfied" xml:lang="en">{$contextRef} {$identifier} {$measurable} {$unit} {$amount} &gt; {$measurableCost} (= {$measurableCostPerUnit}x{$measurableQuantity})</msg:message>
+		<!-- parameter -->
+		<!--		<variable:variableArc name="administrativeRatio" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="parameter"/>
+		<variable:parameter name="parameter" id="parameter" select="0" required="false" as="xs:decimal" xlink:type="resource" xlink:label="parameter"/> -->
+		<!-- variableArc factVariable -->
+		<variable:variableArc name="amount" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="fVamount"/>
+		<variable:factVariable id="fVamount" bindAsSequence="true" xlink:type="resource" xlink:label="fVamount"/>
+		<!-- variableFilterArc filter -->
+		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="fVamount" xlink:to="cNamount"/>
+		<cf:conceptName id="cNamount" xlink:type="resource" xlink:label="cNamount">
+			<cf:concept>
+				<cf:qname>gl-cor:amount</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+		<!-- variableArc generalVariable -->
+		<!-- unit -->
+		<variable:variableArc name="unit" order="3.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVunit"/>
+		<variable:generalVariable id="gVunit" bindAsSequence="false" select="//xbrli:unit[@id=$amount/@unitRef]/xbrli:measure" xlink:type="resource" xlink:label="gVunit"/>
+		<!-- context -->
+		<variable:variableArc name="contextRef" order="4.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVcontextRef"/>
+		<variable:generalVariable id="gVcontextRef" bindAsSequence="false" select="$amount/@contextRef" xlink:type="resource" xlink:label="gVcontextRef"/>
+		<!-- identifier -->
+		<variable:variableArc name="identifierReference" order="5.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVidentifierReference"/>
+		<variable:generalVariable id="gVidentifierReference" bindAsSequence="false" select="//gl-cor:specified.identifierReference[@contextRef=$contextRef]" xlink:type="resource" xlink:label="gVidentifierReference"/>
+		<variable:variableArc name="identifier" order="6.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVidentifier"/>
+		<variable:generalVariable id="gVidentifier" bindAsSequence="true" select="concat($identifierDescription,&apos;(&apos;,$identifierCode,&apos;)&apos;)" xlink:type="resource" xlink:label="gVidentifier"/>
+		<variable:variableArc name="identifierCode" order="7.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVidentifierCode"/>
+		<variable:generalVariable id="gVidentifierCode" bindAsSequence="true" select="//gl-cor:identifierCode[@contextRef=$identifierReference]" xlink:type="resource" xlink:label="gVidentifierCode"/>
+		<variable:variableArc name="identifierDescription" order="8.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVidentifierDescription"/>
+		<variable:generalVariable id="gVidentifierDescription" bindAsSequence="true" select="//gl-cor:identifierDescription[@contextRef=$identifierReference]" xlink:type="resource" xlink:label="gVidentifierDescription"/>
+		<!-- measurable -->
+		<variable:variableArc name="measurableRef" order="9.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurableRef"/>
+		<variable:generalVariable id="gVmeasurableRef" bindAsSequence="true" select="//gl-bus:specified.measurable[@contextRef=$contextRef]" xlink:type="resource" xlink:label="gVmeasurableRef"/>
+		<variable:variableArc name="measurable" order="10.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurable"/>
+		<variable:generalVariable id="gVmeasurable" bindAsSequence="true" select="concat($measurableDescription,&apos;(&apos;,$measurableID,&apos;)&apos;)" xlink:type="resource" xlink:label="gVmeasurable"/>
+		<variable:variableArc name="measurableDescription" order="11.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurableDescription"/>
+		<variable:generalVariable id="gVmeasurableDescription" bindAsSequence="true" select="//gl-bus:measurableDescription[@contextRef=$measurableRef]" xlink:type="resource" xlink:label="gVmeasurableDescription"/>
+		<variable:variableArc name="measurableID" order="12.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurableID"/>
+		<variable:generalVariable id="gVmeasurableID" bindAsSequence="true" select="//gl-bus:measurableID[@contextRef=$measurableRef]" xlink:type="resource" xlink:label="gVmeasurableID"/>
+		<variable:variableArc name="measurableCost" order="13.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurableCost"/>
+		<variable:generalVariable id="gVmeasurableCost" bindAsSequence="true" select="$measurableCostPerUnit * $measurableQuantity" xlink:type="resource" xlink:label="gVmeasurableCost"/>
+		<variable:variableArc name="measurableQuantity" order="14.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurableQuantity"/>
+		<variable:generalVariable id="gVmeasurableQuantity" bindAsSequence="true" select="//gl-bus:measurableQuantity[@contextRef=$contextRef]" xlink:type="resource" xlink:label="gVmeasurableQuantity"/>
+		<variable:variableArc name="measurableCostPerUnit" order="15.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="vAamount" xlink:to="gVmeasurableCostPerUnit"/>
+		<variable:generalVariable id="gVmeasurableCostPerUnit" bindAsSequence="true" select="//gl-bus:measurableCostPerUnit[@contextRef=$measurableRef]/text()" xlink:type="resource" xlink:label="gVmeasurableCostPerUnit"/>
+	</gen:link>
+</link:linkbase>
