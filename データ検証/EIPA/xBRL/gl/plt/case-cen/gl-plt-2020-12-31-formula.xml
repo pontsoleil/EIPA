@@ -1,39 +1,6 @@
 <?xml version="1.0"?>
 <!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
-<link:linkbase 
-xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd 
-http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd 
-http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd 
-http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd 
-http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd 
-http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd 
-http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd 
-http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd 
-http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd 
-http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd 
-http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd 
-http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd 
-http://xbrl.org/2008/filter/relative http://www.xbrl.org/2008/relative-filter.xsd 
-http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd 
-http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd 
-http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd 
-http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd 
-http://xbrl.org/2008/filter/segment-scenario http://www.xbrl.org/2008/segment-scenario-filter.xsd" 
-xmlns:xlink="http://www.w3.org/1999/xlink" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns:link="http://www.xbrl.org/2003/linkbase" 
-xmlns:xfi="http://www.xbrl.org/2008/function/instance" 
-xmlns:c="http://www.xbrl.org/int/gl/cor/2020-12-31" 
-xmlns:b="http://www.xbrl.org/int/gl/bus/2020-12-31" 
-xmlns:m="http://www.xbrl.org/int/gl/muc/2020-12-31" 
-xmlns:u="http://www.xbrl.org/int/gl/utf/2020-12-31" 
-xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31" 
-xmlns:cf="http://xbrl.org/2008/filter/concept" 
-xmlns:df="http://xbrl.org/2008/filter/dimension" 
-xmlns:gf="http://xbrl.org/2008/filter/general" 
-xmlns:formula="http://xbrl.org/2008/formula" 
-xmlns:gen="http://xbrl.org/2008/generic" 
-xmlns:variable="http://xbrl.org/2008/variable">
+<link:linkbase xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd http://xbrl.org/2008/filter/relative http://www.xbrl.org/2008/relative-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd http://xbrl.org/2008/filter/segment-scenario http://www.xbrl.org/2008/segment-scenario-filter.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31" xmlns:c="http://www.xbrl.org/int/gl/cor/2020-12-31" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:formula="http://xbrl.org/2008/formula" xmlns:gen="http://xbrl.org/2008/generic" xmlns:variable="http://xbrl.org/2008/variable">
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#standard-reference"/>
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"/>
@@ -46,12 +13,22 @@ xmlns:variable="http://xbrl.org/2008/variable">
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"/>
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
-		<formula:formula id="formula_sumOf" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0)
-then concat(&apos;The credit amount &apos;,sum($invoiceLineNetAmount),&apos; and debit amount &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are in balance.&apos;)  
-else concat(&apos;The credit amount &apos;,sum($invoiceLineNetAmount),&apos;) and debit amount &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are not in balance.&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="formula_sumOf">
+		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension2"/>
+		<df:typedDimension id="typedDimension2" xlink:type="resource" xlink:label="typedDimension2">
+			<df:dimension>
+				<df:qname>c:d2</df:qname>
+			</df:dimension>
+		</df:typedDimension>
+		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension"/>
+		<df:typedDimension id="typedDimension" test="string(c:_2)=&quot;eG22&quot;" xlink:type="resource" xlink:label="typedDimension">
+			<df:dimension>
+				<df:qname>c:d2</df:qname>
+			</df:dimension>
+		</df:typedDimension>
+		<formula:formula id="formula_sumOf" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;Total invoice  line net amount &apos;,sum($invoiceLineNetAmount),&apos; and the sum of invoice line net amount under document total &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are the same.&apos;)   else concat(&apos;Total invoice  line net amount &apos;,sum($invoiceLineNetAmount),&apos;) and the sum of invoice line net amount under document total &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are different.&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="formula_sumOf">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>c:entriesComment</formula:qname>
+					<formula:qname>c:cor-16</formula:qname>
 				</formula:concept>
 			</formula:aspects>
 		</formula:formula>
@@ -63,13 +40,11 @@ else concat(&apos;The credit amount &apos;,sum($invoiceLineNetAmount),&apos;) an
 		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
 		<!-- variableFilterArc -->
 		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension2"/>
 		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension2"/>
-		<variable:variableFilterArc order="2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="general5"/>
-		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="lineAmountName"/>
-		<variable:variableFilterArc order="0.5" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="general1"/>
-		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="totalLineAmountName"/>
+		<!--		<variable:variableFilterArc order="2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="general5"/>-->
+		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="lineAmountName"/>
+		<!--		<variable:variableFilterArc order="0.5" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="general1"/>-->
+		<variable:variableFilterArc order="-3.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="totalLineAmountName"/>
 		<!-- filter -->
 		<cf:conceptName id="lineAmountName" xlink:type="resource" xlink:label="lineAmountName">
 			<cf:concept>
@@ -81,14 +56,9 @@ else concat(&apos;The credit amount &apos;,sum($invoiceLineNetAmount),&apos;) an
 				<cf:qname>e:cen-106</cf:qname>
 			</cf:concept>
 		</cf:conceptName>
-		<df:typedDimension id="typedDimension1" test="string-length(c:_1) &gt; 0" xlink:type="resource" xlink:label="typedDimension1">
+		<df:typedDimension id="typedDimension1" test="string(c:_1)=&quot;cG4&quot;" xlink:type="resource" xlink:label="typedDimension1">
 			<df:dimension>
-				<df:qname>c:_1</df:qname>
-			</df:dimension>
-		</df:typedDimension>
-		<df:typedDimension id="typedDimension2" test="string-length(c:_2) &gt; 0" xlink:type="resource" xlink:label="typedDimension2">
-			<df:dimension>
-				<df:qname>c:_2</df:qname>
+				<df:qname>c:d1</df:qname>
 			</df:dimension>
 		</df:typedDimension>
 		<!-- <gf:general id="general1" test="following-sibling::c:debitCreditCode[1] = &apos;D&apos;" xlink:type="resource" xlink:label="general1"/>
