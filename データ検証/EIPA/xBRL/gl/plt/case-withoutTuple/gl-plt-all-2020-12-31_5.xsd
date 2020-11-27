@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<xsd:schema  
+targetNamespace="http://www.xbrl.org/int/gl/plt/2020-12-31" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+xmlns:link="http://www.xbrl.org/2003/linkbase" 
+xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
+	<xsd:import namespace="http://www.xbrl.org/int/gl/cor/2020-12-31" schemaLocation="gl-palette-2020-12-31.xsd"/>
+		<xsd:annotation>
+		<xsd:appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="gl-plt-all-2020-12-31_formula_5.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="gl-plt-all-2020-12-31_table.xml"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

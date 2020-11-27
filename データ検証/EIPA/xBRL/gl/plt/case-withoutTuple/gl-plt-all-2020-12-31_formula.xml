@@ -23,11 +23,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:link="http://www.xbrl.org/2003/linkbase" 
 xmlns:xfi="http://www.xbrl.org/2008/function/instance" 
-xmlns:c="http://www.xbrl.org/int/gl/cor/2020-12-31" 
-xmlns:b="http://www.xbrl.org/int/gl/bus/2020-12-31" 
-xmlns:m="http://www.xbrl.org/int/gl/muc/2020-12-31" 
-xmlns:u="http://www.xbrl.org/int/gl/utf/2020-12-31" 
-xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31" 
+xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31" 
 xmlns:cf="http://xbrl.org/2008/filter/concept" 
 xmlns:df="http://xbrl.org/2008/filter/dimension" 
 xmlns:gf="http://xbrl.org/2008/filter/general" 
@@ -46,54 +42,54 @@ xmlns:variable="http://xbrl.org/2008/variable">
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"/>
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
-		<formula:formula id="formula_sumOf" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0)
-then concat(&apos;The credit amount &apos;,sum($invoiceLineNetAmount),&apos; and debit amount &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are in balance.&apos;)  
-else concat(&apos;The credit amount &apos;,sum($invoiceLineNetAmount),&apos;) and debit amount &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are not in balance.&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="formula_sumOf">
+		<formula:formula id="formula_balance" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $creditAmts ) - sum( $debitAmts )) lt 1.0)
+then concat(&apos;The credit amount &apos;,sum($creditAmts),&apos; and debit amount &apos;,sum($debitAmts),&apos; are in balance.&apos;)  
+else concat(&apos;The credit amount &apos;,sum($creditAmts),&apos;) and debit amount &apos;,sum($debitAmts),&apos; are not in balance.&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="formula_balance">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>c:entriesComment</formula:qname>
+					<formula:qname>gl-cor:entriesComment</formula:qname>
 				</formula:concept>
 			</formula:aspects>
 		</formula:formula>
 		<!-- variableArc -->
-		<variable:variableArc name="invoiceLineNetAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="formula_sumOf" xlink:to="invoiceLineNetAmount"/>
-		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="-1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="formula_sumOf" xlink:to="sumOfInvoiceLineNetAmount"/>
+		<variable:variableArc name="creditAmts" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="formula_balance" xlink:to="creditAmount"/>
+		<variable:variableArc name="debitAmts" order="-1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="formula_balance" xlink:to="debitAmount"/>
 		<!-- factVariable -->
-		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount"/>
-		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
+		<variable:factVariable id="creditAmount" bindAsSequence="true" xlink:type="resource" xlink:label="creditAmount"/>
+		<variable:factVariable id="debitAmount" bindAsSequence="true" xlink:type="resource" xlink:label="debitAmount"/>
 		<!-- variableFilterArc -->
-		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension2"/>
-		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension2"/>
-		<variable:variableFilterArc order="2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="general5"/>
-		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="lineAmountName"/>
-		<variable:variableFilterArc order="0.5" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="general1"/>
-		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="totalLineAmountName"/>
+		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="debitAmount" xlink:to="typedDimension1"/>
+		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="debitAmount" xlink:to="typedDimension"/>
+		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="creditAmount" xlink:to="typedDimension1"/>
+		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="creditAmount" xlink:to="typedDimension"/>
+		<variable:variableFilterArc order="2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="creditAmount" xlink:to="general5"/>
+		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="creditAmount" xlink:to="conceptName"/>
+		<variable:variableFilterArc order="0.5" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="debitAmount" xlink:to="general1"/>
+		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="debitAmount" xlink:to="amount_nameFilter"/>
 		<!-- filter -->
-		<cf:conceptName id="lineAmountName" xlink:type="resource" xlink:label="lineAmountName">
+		<cf:conceptName id="conceptName" xlink:type="resource" xlink:label="conceptName">
 			<cf:concept>
-				<cf:qname>e:cen-131</cf:qname>
+				<cf:qname>gl-cor:amount</cf:qname>
 			</cf:concept>
 		</cf:conceptName>
-		<cf:conceptName id="totalLineAmountName" xlink:type="resource" xlink:label="totalLineAmountName">
+		<cf:conceptName id="amount_nameFilter" xlink:type="resource" xlink:label="amount_nameFilter">
 			<cf:concept>
-				<cf:qname>e:cen-106</cf:qname>
+				<cf:qname>gl-cor:amount</cf:qname>
 			</cf:concept>
 		</cf:conceptName>
-		<df:typedDimension id="typedDimension1" test="string-length(c:_1) &gt; 0" xlink:type="resource" xlink:label="typedDimension1">
+		<df:typedDimension id="typedDimension" test="string-length(gl-cor:EntryNumber) &gt; 0" xlink:type="resource" xlink:label="typedDimension">
 			<df:dimension>
-				<df:qname>c:_1</df:qname>
+				<df:qname>gl-cor:dEntryNumber</df:qname>
 			</df:dimension>
 		</df:typedDimension>
-		<df:typedDimension id="typedDimension2" test="string-length(c:_2) &gt; 0" xlink:type="resource" xlink:label="typedDimension2">
+		<df:typedDimension id="typedDimension1" test="string-length(gl-cor:LineNumber) &gt; 0" xlink:type="resource" xlink:label="typedDimension1">
 			<df:dimension>
-				<df:qname>c:_2</df:qname>
+				<df:qname>gl-cor:dLineNumber</df:qname>
 			</df:dimension>
 		</df:typedDimension>
-		<!-- <gf:general id="general1" test="following-sibling::c:debitCreditCode[1] = &apos;D&apos;" xlink:type="resource" xlink:label="general1"/>
-		<gf:general id="general5" test="following-sibling::c:debitCreditCode[1] = &apos;C&apos;" xlink:type="resource" xlink:label="general5"/>
-		<gf:general id="general3" test="../c:debitCreditCode[@contextref=xfi:context-identifier(xfi:context(.))] = &apos;C&apos;" xlink:type="resource" xlink:label="general3"/>
-		<gf:general id="general2" test="../c:debitCreditCode[@contextref=xfi:context-identifier(xfi:context(.))] = &apos;D&apos;" xlink:type="resource" xlink:label="general2"/> -->
+		<gf:general id="general1" test="following-sibling::gl-cor:debitCreditCode[1] = &apos;D&apos;" xlink:type="resource" xlink:label="general1"/>
+		<gf:general id="general5" test="following-sibling::gl-cor:debitCreditCode[1] = &apos;C&apos;" xlink:type="resource" xlink:label="general5"/>
+		<gf:general id="general3" test="../gl-cor:debitCreditCode[@contextref=xfi:context-identifier(xfi:context(.))] = &apos;C&apos;" xlink:type="resource" xlink:label="general3"/>
+		<gf:general id="general2" test="../gl-cor:debitCreditCode[@contextref=xfi:context-identifier(xfi:context(.))] = &apos;D&apos;" xlink:type="resource" xlink:label="general2"/>
 	</gen:link>
 </link:linkbase>
