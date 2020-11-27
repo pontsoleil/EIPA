@@ -57,8 +57,8 @@ export PATH="$(command -p getconf PATH)${PATH+:}${PATH-}"
 export UNIX_STD=2003  # to make HP-UX conform to POSIX
 
 # === Log ============================================================
-exec 2>log/logfile.$$.txt
-set -x
+# exec 2>log/logfile.$$.txt
+# set -x
 
 # === Usage printing function ========================================
 print_usage_and_exit () {
@@ -480,5 +480,5 @@ else                                                                           #
 fi                                                                             |
 sed 's/'"$LF"'/'"$optlf"'/g'
 
-set -x
-exec 2>/dev/stderr
+# set -x
+# exec 2>/dev/stderr

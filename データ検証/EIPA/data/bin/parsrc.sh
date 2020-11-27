@@ -56,8 +56,9 @@ export PATH=".:$(command -p getconf PATH)${PATH+:}${PATH-}"
 export UNIX_STD=2003  # to make HP-UX conform to POSIX
 
 # === Log ============================================================
-exec 2>log/logfile.$$.txt
-set -x
+# exec 2>log/logfile.$$.txt
+# set -x
+# https://stackoverflow.com/questions/36273665/what-does-set-x-do/36273740#:~:text=set%20%2Dx%20enables%20a%20mode,is%20not%20functioning%20as%20expected.
 
 # === Usage printing function ========================================
 print_usage_and_exit () {
@@ -156,11 +157,11 @@ CR=$( printf '\015')               # Carridge Return                    U+0D cr 
 grep '' ${file:+"$file"}                                             |
 #                                                                    #
 # === Remove <CR> at the end of every line ========================= #
-sed "s/$CR\$//"                                                      | tee log/step0a |
+sed "s/$CR\$//"                                                      | # tee log/step0a |
 #                                                                    #
 # === Escape DQs as value ========================================== #
 #     (However '""'s meaning null are also escape for the moment)    #
-sed 's/""/'$DQ'/g'                                                   | tee log/step0b |
+sed 's/""/'$DQ'/g'                                                   | # tee log/step0b |
 #                                                                    #
 # === Convert <0x0A>s as value into "\n" =========================== #
 #     (It's possible to distinguish it from the ones as CSV record   #
@@ -180,10 +181,10 @@ awk '                                                                #
       }                                                              #
     }                                                                #
   }                                                                  #
-'                                                                    | tee log/step0c |
+'                                                                    | # tee log/step0c |
 #                                                                    #
 # === Mark record separators of CSV with RS after it in advance ==== #
-sed "s/\$/$LFs$RS/"                                                  | tee log/step1 |
+sed "s/\$/$LFs$RS/"                                                  | # tee log/step1 |
 #                                                                    #
 # === Split fields which is quoted with DQ into individual lines === #
 #     (Also remove spaces behind and after the DQ field)             #
@@ -192,39 +193,39 @@ if [ '_\\t' = "_$optfs" ]; then
   sed 's/[ ]*\("[^"]*"\)[ ]*\t/\1'"$LFs$FS$LFs"'/g'
 else
   sed 's/['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*'"$optfs"'/\1'"$LFs$FS$LFs"'/g'
-fi                                                                   | tee log/step2 |
-# sed 's/['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*,/\1'"$LFs$FS$LFs"'/g'     | tee log/step2 |
+fi                                                                   | # tee log/step2 |
+# sed 's/['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*,/\1'"$LFs$FS$LFs"'/g'     | # tee log/step2 |
 # (2/3)Split the DQ fields at the end (NF)                           #
 if [ '_\\t' = "_$optfs" ]; then
   sed 's/\t[ ]*\("[^"]*"\)[ ]*$/'"$LFs$FS$LFs"'\1/g'
 else
   sed 's/'"$optfs"'['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*$/'"$LFs$FS$LFs"'\1/g'
-fi                                                                   | tee log/step3 |
-# sed 's/,['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*$/'"$LFs$FS$LFs"'\1/g'    | tee log/step3 |
+fi                                                                   | # tee log/step3 |
+# sed 's/,['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*$/'"$LFs$FS$LFs"'\1/g'    | # tee log/step3 |
 # (3/3)Remove spaces behind and after the single DQ field in line    #
 if [ '_\\t' = "_$optfs" ]; then
   sed 's/^[ ]*\("[^"]*"\)[ ]*$/\1/g'
 else
   sed 's/^['"$HT"' ]*\("[^"]*"\)['"$HT"' ]*$/\1/g'
-fi                                                                   | tee log/step4 |
+fi                                                                   | # tee log/step4 |
 #                                                                    #
 # === Split non-quoted fields into individual lines ================ #
 #     (It is simple, only convert "," to <0x0A> on non-quoted lines) #
-sed '/['$RS'"]/!s/'"$optfs"'/'"$LFs$FS$LFs"'/g'                      | tee log/step5 |
+sed '/['$RS'"]/!s/'"$optfs"'/'"$LFs$FS$LFs"'/g'                      | # tee log/step5 |
 #                                                                    #
 # === Unquote DQ-quoted field ====================================== #
 #     (It is also simple, only remove DQs. Because the DQs as value  #
 #      are all escaped now.)                                         #
-tr -d '"'                                                            | tee log/step6 |
+tr -d '"'                                                            | # tee log/step6 |
 #                                                                    #
 # === Unescape the DQs as value ==================================== #
 #     (However '""'s meaning null are also unescaped)                #
 # (1/3)Unescape all '""'s                                            #
-sed 's/'$DQ'/""/g'                                                   | tee log/step7 |
+sed 's/'$DQ'/""/g'                                                   | # tee log/step7 |
 # (2/3)Convert only '""'s mean null into empty lines                 #
-sed 's/^['"$HT"' ]*""['"$HT"' ]*$//'                                 | tee log/step8 |
+sed 's/^['"$HT"' ]*""['"$HT"' ]*$//'                                 | # tee log/step8 |
 # (3/3)Convert the left '""'s, which are as value, into '"'s         #
-sed 's/""/"/g'                                                       | tee log/step9 |
+sed 's/""/"/g'                                                       | # tee log/step9 |
 #                                                                    #
 # === Assign the pair number of line and field on the head of line = #
 awk '                                                                #
@@ -242,14 +243,14 @@ awk '                                                                #
       }                                                              #
     }                                                                #
   }                                                                  #
-'                                                                    | tee log/step10 |
+'                                                                    | # tee log/step10 |
 #                                                                    #
 # === Convert escaped <CR>s as value (NL) into the substitute str. = #
 if [ "_$bsesc" != '_\\' ]; then                                      #
   sed 's/\\/'"$bsesc"'/g'                                            #
 else                                                                 #
   cat                                                                #
-fi                                                                   | tee log/step11 |
+fi                                                                   | # tee log/step11 |
 sed 's/'"$NL"'/'"$optlf"'/g'
 
 exec 2>/dev/stderr
