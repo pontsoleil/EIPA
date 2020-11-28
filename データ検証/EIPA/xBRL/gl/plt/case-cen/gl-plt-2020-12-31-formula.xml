@@ -46,61 +46,45 @@
 		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
 		<!-- variableFilterArc -->
 		<!-- BR-CO-10 -->
-		<variable:variableFilterArc complement="false" cover="true" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="invoiceLineNetAmountName"/>
+		<variable:variableFilterArc complement="false" cover="true" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="cNinvoiceLineNetAmount"/>
 		<variable:variableFilterArc complement="false" cover="true" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_1_cG4"/>
 		<variable:variableFilterArc complement="false" cover="true" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_2"/>
-		<variable:variableFilterArc complement="false" cover="true" order="3.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="sumOfInvoiceLineNetAmountName"/>
+		<variable:variableFilterArc complement="false" cover="true" order="3.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="cNsumOfInvoiceLineNetAmount"/>
 		<variable:variableFilterArc complement="false" cover="true" order="4.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_1_cG4"/>
 		<variable:variableFilterArc complement="false" cover="true" order="5.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_2_eG22"/>
 		<!-- BR-CO-11 -->
-		<variable:variableFilterArc complement="false" cover="true" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="documentLevelAllowanceAmountName"/>
+		<variable:variableFilterArc complement="false" cover="true" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="cNdocumentLevelAllowanceAmount"/>
 		<variable:variableFilterArc complement="false" cover="true" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_1_cG4"/>
 		<variable:variableFilterArc complement="false" cover="true" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_2"/>
-		<variable:variableFilterArc complement="false" cover="true" order="3.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="sumOfAllowancesOnDocumentLevelName"/>
+		<variable:variableFilterArc complement="false" cover="true" order="3.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="cNsumOfAllowancesOnDocumentLevel"/>
 		<variable:variableFilterArc complement="false" cover="true" order="4.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_1_cG4"/>
 		<variable:variableFilterArc complement="false" cover="true" order="5.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_2_eG20"/>
 		<!-- filter -->
 		<!-- BR-CO-10 -->
-		<cf:conceptName id="invoiceLineNetAmountName" xlink:type="resource" xlink:label="invoiceLineNetAmountName">
-			<cf:concept>
-				<cf:qname>e:cen-131</cf:qname>
-			</cf:concept>
+		<cf:conceptName id="cNinvoiceLineNetAmount" xlink:type="resource" xlink:label="cNinvoiceLineNetAmount">
+			<cf:concept><cf:qname>e:cen-131</cf:qname></cf:concept>
 		</cf:conceptName>
-		<cf:conceptName id="sumOfInvoiceLineNetAmountName" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmountName">
-			<cf:concept>
-				<cf:qname>e:cen-106</cf:qname>
-			</cf:concept>
+		<cf:conceptName id="cNsumOfInvoiceLineNetAmount" xlink:type="resource" xlink:label="cNsumOfInvoiceLineNetAmount">
+			<cf:concept><cf:qname>e:cen-106</cf:qname></cf:concept>
 		</cf:conceptName>
 		<df:typedDimension id="tD_1_cG4" test="string(c:_1)=&quot;cG4&quot;" xlink:type="resource" xlink:label="tD_1_cG4">
-			<df:dimension>
-				<df:qname>c:d1</df:qname>
-			</df:dimension>
+			<df:dimension><df:qname>c:d1</df:qname></df:dimension>
 		</df:typedDimension>
 		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
-			<df:dimension>
-				<df:qname>c:d2</df:qname>
-			</df:dimension>
+			<df:dimension><df:qname>c:d2</df:qname></df:dimension>
 		</df:typedDimension>
 		<df:typedDimension id="tD_2_eG22" test="string(c:_2)=&quot;eG22&quot;" xlink:type="resource" xlink:label="tD_2_eG22">
-			<df:dimension>
-				<df:qname>c:d2</df:qname>
-			</df:dimension>
+			<df:dimension><df:qname>c:d2</df:qname></df:dimension>
 		</df:typedDimension>
 		<!-- BR-CO-11 -->
-		<cf:conceptName id="documentLevelAllowanceAmountName" xlink:type="resource" xlink:label="documentLevelAllowanceAmountName">
-			<cf:concept>
-				<cf:qname>e:cen-92</cf:qname>
-			</cf:concept>
+		<cf:conceptName id="cNdocumentLevelAllowanceAmount" xlink:type="resource" xlink:label="cNdocumentLevelAllowanceAmount">
+			<cf:concept><cf:qname>e:cen-92</cf:qname></cf:concept>
 		</cf:conceptName>
-		<cf:conceptName id="sumOfAllowancesOnDocumentLevelName" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevelName">
-			<cf:concept>
-				<cf:qname>e:cen-107</cf:qname>
-			</cf:concept>
+		<cf:conceptName id="cNsumOfAllowancesOnDocumentLevel" xlink:type="resource" xlink:label="cNsumOfAllowancesOnDocumentLevel">
+			<cf:concept><cf:qname>e:cen-107</cf:qname></cf:concept>
 		</cf:conceptName>
 		<df:typedDimension id="tD_2_eG20" test="string(c:_2)=&quot;eG20&quot;" xlink:type="resource" xlink:label="tD_2_eG20">
-			<df:dimension>
-				<df:qname>c:d2</df:qname>
-			</df:dimension>
+			<df:dimension><df:qname>c:d2</df:qname></df:dimension>
 		</df:typedDimension>
 	</gen:link>
 </link:linkbase>
