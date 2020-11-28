@@ -13,18 +13,6 @@
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"/>
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
-		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension2"/>
-		<df:typedDimension id="typedDimension2" xlink:type="resource" xlink:label="typedDimension2">
-			<df:dimension>
-				<df:qname>c:d2</df:qname>
-			</df:dimension>
-		</df:typedDimension>
-		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension"/>
-		<df:typedDimension id="typedDimension" test="string(c:_2)=&quot;eG22&quot;" xlink:type="resource" xlink:label="typedDimension">
-			<df:dimension>
-				<df:qname>c:d2</df:qname>
-			</df:dimension>
-		</df:typedDimension>
 		<formula:formula id="BR-CO-10" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; = Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;) else concat(&apos;BR-CO-10 = ERROR = Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; != Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-10">
 			<formula:aspects>
 				<formula:concept>
@@ -34,30 +22,32 @@
 		</formula:formula>
 		<!-- variableArc -->
 		<variable:variableArc name="invoiceLineNetAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount"/>
-		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="-1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
+		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
 		<!-- factVariable -->
 		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount"/>
 		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
 		<!-- variableFilterArc -->
-		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="lineAmountName"/>
-		<variable:variableFilterArc order="-3.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="totalLineAmountName"/>
+		<variable:variableFilterArc order="0.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_2"/>
+		<variable:variableFilterArc order="1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_1_cG4"/>
+		<variable:variableFilterArc order="2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="invoiceLineNetAmountName"/>
+		<variable:variableFilterArc order="3.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="sumOfInvoiceLineNetAmountName"/>
+		<variable:variableFilterArc order="4.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_1_cG4"/>
+		<variable:variableFilterArc order="5.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_2_eG22"/>
 		<!-- filter -->
-		<cf:conceptName id="lineAmountName" xlink:type="resource" xlink:label="lineAmountName">
-			<cf:concept>
-				<cf:qname>e:cen-131</cf:qname>
-			</cf:concept>
+		<cf:conceptName id="invoiceLineNetAmountName" xlink:type="resource" xlink:label="invoiceLineNetAmountName">
+			<cf:concept><cf:qname>e:cen-131</cf:qname></cf:concept>
 		</cf:conceptName>
-		<cf:conceptName id="totalLineAmountName" xlink:type="resource" xlink:label="totalLineAmountName">
-			<cf:concept>
-				<cf:qname>e:cen-106</cf:qname>
-			</cf:concept>
+		<cf:conceptName id="sumOfInvoiceLineNetAmountName" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmountName">
+			<cf:concept><cf:qname>e:cen-106</cf:qname></cf:concept>
 		</cf:conceptName>
-		<df:typedDimension id="typedDimension1" test="string(c:_1)=&quot;cG4&quot;" xlink:type="resource" xlink:label="typedDimension1">
-			<df:dimension>
-				<df:qname>c:d1</df:qname>
-			</df:dimension>
+		<df:typedDimension id="tD_1_cG4" test="string(c:_1)=&quot;cG4&quot;" xlink:type="resource" xlink:label="tD_1_cG4">
+			<df:dimension><df:qname>c:d1</df:qname></df:dimension>
+		</df:typedDimension>
+		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
+			<df:dimension><df:qname>c:d2</df:qname></df:dimension>
+		</df:typedDimension>
+		<df:typedDimension id="tD_2_eG22" test="string(c:_2)=&quot;eG22&quot;" xlink:type="resource" xlink:label="tD_2_eG22">
+			<df:dimension><df:qname>c:d2</df:qname></df:dimension>
 		</df:typedDimension>
 	</gen:link>
 </link:linkbase>
