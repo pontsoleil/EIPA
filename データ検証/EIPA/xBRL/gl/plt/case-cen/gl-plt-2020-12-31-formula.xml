@@ -58,7 +58,7 @@
 		<variable:variableFilterArc complement="false" cover="true" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_2"/>
 		<variable:variableFilterArc complement="false" cover="true" order="3.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="cNsumOfAllowancesOnDocumentLevel"/>
 		<variable:variableFilterArc complement="false" cover="true" order="4.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_1_cG4"/>
-		<variable:variableFilterArc complement="false" cover="true" order="5.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_2_eG20"/>
+		<variable:variableFilterArc complement="false" cover="true" order="5.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_2_eG22"/>
 		<!-- filter -->
 		<!-- BR-CO-10 -->
 		<cf:conceptName id="cNinvoiceLineNetAmount" xlink:type="resource" xlink:label="cNinvoiceLineNetAmount">
@@ -83,8 +83,8 @@
 		<cf:conceptName id="cNsumOfAllowancesOnDocumentLevel" xlink:type="resource" xlink:label="cNsumOfAllowancesOnDocumentLevel">
 			<cf:concept><cf:qname>e:cen-107</cf:qname></cf:concept>
 		</cf:conceptName>
-		<df:typedDimension id="tD_2_eG20" test="string(c:_2)=&quot;eG20&quot;" xlink:type="resource" xlink:label="tD_2_eG20">
+		<!-- <df:typedDimension id="tD_2_eG20" test="string(c:_2)=&quot;eG20&quot;" xlink:type="resource" xlink:label="tD_2_eG20">
 			<df:dimension><df:qname>c:d2</df:qname></df:dimension>
-		</df:typedDimension>
+		</df:typedDimension> -->
 	</gen:link>
 </link:linkbase>
