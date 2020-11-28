@@ -23,7 +23,9 @@
 			</formula:aspects>
 		</formula:formula>
 		<!-- BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). -->
-		<formula:formula id="BR-CO-11" aspectModel="dimensional" implicitFiltering="true" value="if (empty($sumOfAllowancesOnDocumentLevel) or (abs(sum( $documentLevelAllowanceAmount ) - sum( $sumOfAllowancesOnDocumentLevel )) lt 1.0)) then concat(&apos;BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92) .&apos;) else concat(&apos;BR-CO-10 = ERROR = 11 Sum of allowances on document level (BT-107) &apos;,sum($sumOfAllowancesOnDocumentLevel),&apos; != Σ Document level allowance amount (BT-92) &apos;,sum($documentLevelAllowanceAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-11">
+		<formula:formula id="BR-CO-11" aspectModel="dimensional" implicitFiltering="true" value="if (exists($sumOfAllowancesOnDocumentLevel) and (abs(sum( $documentLevelAllowanceAmount ) - sum( $sumOfAllowancesOnDocumentLevel )) lt 1.0)) then
+concat( &apos;BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92)&apos;,sum($documentLevelAllowanceAmount),&apos; .&apos;)
+else concat(&apos;BR-CO-11 = ERROR = 11 Sum of allowances on document level (BT-107) &apos;,sum($sumOfAllowancesOnDocumentLevel),&apos; != Σ Document level allowance amount (BT-92) &apos;,sum($documentLevelAllowanceAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-11">
 			<formula:aspects>
 				<!-- gl-cor:entryComment -->
 				<formula:concept>
@@ -36,15 +38,15 @@
 		<variable:variableArc name="invoiceLineNetAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount"/>
 		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
 		<!-- BR-CO-11 -->
-		<variable:variableArc name="documentLevelAllowanceAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="documentLevelAllowanceAmount"/>
-		<variable:variableArc name="sumOfAllowancesOnDocumentLevel" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfAllowancesOnDocumentLevel"/>
+		<variable:variableArc name="documentLevelAllowanceAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="documentLevelAllowanceAmount"/>
+		<variable:variableArc name="sumOfAllowancesOnDocumentLevel" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="sumOfAllowancesOnDocumentLevel"/>
 		<!-- factVariable -->
 		<!-- BR-CO-10 -->
 		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount"/>
 		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
 		<!-- BR-CO-11 -->
-		<variable:factVariable id="documentLevelAllowanceAmount" bindAsSequence="true" nils="true" fallbackValue="0" xlink:type="resource" xlink:label="documentLevelAllowanceAmount"/>
-		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" bindAsSequence="true" nils="true" fallbackValue="0" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
+		<variable:factVariable id="documentLevelAllowanceAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="documentLevelAllowanceAmount"/>
+		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
 		<!-- variableFilterArc -->
 		<!-- BR-CO-10 -->
 		<variable:variableFilterArc complement="false" cover="true" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="invoiceLineNetAmountName"/>
