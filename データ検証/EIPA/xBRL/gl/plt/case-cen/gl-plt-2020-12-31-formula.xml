@@ -23,7 +23,7 @@
 			</formula:aspects>
 		</formula:formula>
 		<!-- BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). -->
-		<formula:formula id="BR-CO-11" aspectModel="dimensional" implicitFiltering="true" value="if (empty($sumOfAllowancesOnDocumentLevel)) or (abs(sum( $documentLevelAllowanceAmount ) - sum( $sumOfAllowancesOnDocumentLevel )) lt 1.0) then concat( &apos;BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). &apos;,sum($documentLevelAllowanceAmount)) else concat(&apos;BR-CO-11 = ERROR = 11 Sum of allowances on document level (BT-107) &apos;,sum($sumOfAllowancesOnDocumentLevel),&apos; != Σ Document level allowance amount (BT-92) &apos;,sum($documentLevelAllowanceAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-11">
+		<formula:formula id="BR-CO-11" aspectModel="dimensional" implicitFiltering="true" value="if (empty($sumOfAllowancesOnDocumentLevel)) then 'BR-CO-11 There is no allowance.' else if (abs(sum( $documentLevelAllowanceAmount ) - sum( $sumOfAllowancesOnDocumentLevel )) lt 1.0) then concat( &apos;BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). &apos;,sum($documentLevelAllowanceAmount)) else concat(&apos;BR-CO-11 = ERROR = 11 Sum of allowances on document level (BT-107) &apos;,sum($sumOfAllowancesOnDocumentLevel),&apos; != Σ Document level allowance amount (BT-92) &apos;,sum($documentLevelAllowanceAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-11">
 			<formula:aspects>
 				<!-- gl-cor:entryComment -->
 				<formula:concept>
