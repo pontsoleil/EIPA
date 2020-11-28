@@ -14,10 +14,8 @@
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 		<formula:formula id="BR-CO-10" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; = Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;) else concat(&apos;BR-CO-10 = ERROR = Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; != Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-10">
-			<formula:aspects>
-				<formula:concept>
-					<formula:qname>c:cor-16</formula:qname>
-				</formula:concept>
+			<formula:aspects><!-- gl-cor:entryComment -->
+				<formula:concept><formula:qname>c:cor-16</formula:qname></formula:concept>
 			</formula:aspects>
 		</formula:formula>
 		<!-- variableArc -->
