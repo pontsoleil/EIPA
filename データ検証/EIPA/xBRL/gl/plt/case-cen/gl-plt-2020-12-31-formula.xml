@@ -25,7 +25,7 @@
 				<df:qname>c:d2</df:qname>
 			</df:dimension>
 		</df:typedDimension>
-		<formula:formula id="BR-CO-10" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; = Σ Invoice line net amount (BT-131).&apos;,sum($invoiceLineNetAmount)) else concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; != Σ Invoice line net amount (BT-131).&apos;,sum($invoiceLineNetAmount))" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-10">
+		<formula:formula id="BR-CO-10" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; = Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;) else concat(&apos;BR-CO-10 = ERROR = Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; != Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-10">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>c:cor-16</formula:qname>
@@ -41,9 +41,7 @@
 		<!-- variableFilterArc -->
 		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension1"/>
 		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension1"/>
-
 		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="lineAmountName"/>
-
 		<variable:variableFilterArc order="-3.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="totalLineAmountName"/>
 		<!-- filter -->
 		<cf:conceptName id="lineAmountName" xlink:type="resource" xlink:label="lineAmountName">
@@ -61,6 +59,5 @@
 				<df:qname>c:d1</df:qname>
 			</df:dimension>
 		</df:typedDimension>
-
 	</gen:link>
 </link:linkbase>
