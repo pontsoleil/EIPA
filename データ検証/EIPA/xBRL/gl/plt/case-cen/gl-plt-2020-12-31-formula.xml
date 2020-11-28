@@ -25,7 +25,7 @@
 				<df:qname>c:d2</df:qname>
 			</df:dimension>
 		</df:typedDimension>
-		<formula:formula id="formula_sumOf" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;Total invoice  line net amount &apos;,sum($invoiceLineNetAmount),&apos; and the sum of invoice line net amount under document total &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are the same.&apos;)   else concat(&apos;Total invoice  line net amount &apos;,sum($invoiceLineNetAmount),&apos;) and the sum of invoice line net amount under document total &apos;,sum($sumOfInvoiceLineNetAmount),&apos; are different.&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="formula_sumOf">
+		<formula:formula id="BR-CO-10" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; = Σ Invoice line net amount (BT-131).&apos;,sum($invoiceLineNetAmount)) else concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; != Σ Invoice line net amount (BT-131).&apos;,sum($invoiceLineNetAmount))" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-10">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>c:cor-16</formula:qname>
@@ -33,8 +33,8 @@
 			</formula:aspects>
 		</formula:formula>
 		<!-- variableArc -->
-		<variable:variableArc name="invoiceLineNetAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="formula_sumOf" xlink:to="invoiceLineNetAmount"/>
-		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="-1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="formula_sumOf" xlink:to="sumOfInvoiceLineNetAmount"/>
+		<variable:variableArc name="invoiceLineNetAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount"/>
+		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="-1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
 		<!-- factVariable -->
 		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount"/>
 		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
