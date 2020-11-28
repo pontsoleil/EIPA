@@ -43,8 +43,8 @@
 		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount"/>
 		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
 		<!-- BR-CO-11 -->
-		<variable:factVariable id="documentLevelAllowanceAmount" bindAsSequence="true" nils="true" xlink:type="resource" xlink:label="documentLevelAllowanceAmount"/>
-		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" bindAsSequence="true" nils="true" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
+		<variable:factVariable id="documentLevelAllowanceAmount" bindAsSequence="true" nils="true" fallbackValue="0" xlink:type="resource" xlink:label="documentLevelAllowanceAmount"/>
+		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" bindAsSequence="true" nils="true" fallbackValue="0" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
 		<!-- variableFilterArc -->
 		<!-- BR-CO-10 -->
 		<variable:variableFilterArc complement="false" cover="true" order="2.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="invoiceLineNetAmountName"/>
