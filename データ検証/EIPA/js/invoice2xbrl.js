@@ -497,23 +497,25 @@ var invoice2xbrl = (function() {
       en['BG-21'] = {'name':'DOCUMENT LEVEL CHARGES', 'val':[]};
       //, 'val':ApplicableHeaderTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
       for (var SpecifiedTradeAllowanceCharge of SpecifiedTradeAllowanceCharges || []){
-        var BG_20 = {};
-        BG_20['BT-92'] = {'name':'Document level allowance amount',
-          'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']};
-        BG_20['BT-93'] = {'name':'Document level allowance base amount',
-          'val':SpecifiedTradeAllowanceCharge['ram:BasisAmount']};
-        BG_20['BT-94'] = {'name':'Document level allowance percentage',
-          'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']};
         var CategoryTradeTax = SpecifiedTradeAllowanceCharge['ram:CategoryTradeTax'];
-        if (CategoryTradeTax) {
-          CategoryTradeTax = CategoryTradeTax[0];
-          BG_20['BT-95'] = {'name':'Document level allowance VAT category code',
-            'val':CategoryTradeTax['ram:TypeCode']
-          };
-          // en['BT-95'] = {'name':'Document level allowance VAT category code', 'val':CategoryTradeTax['ram:CategoryCode']};
-          BG_20['BT-96'] = {'name':'Document level allowance VAT rate',
-            'val':CategoryTradeTax['ram:RateApplicablePercent']
-          };
+        if (!SpecifiedTradeAllowanceCharge['ram:ChargeIndicator']) {
+          var BG_20 = {};
+          BG_20['BT-92'] = {'name':'Document level allowance amount',
+            'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']};
+          BG_20['BT-93'] = {'name':'Document level allowance base amount',
+            'val':SpecifiedTradeAllowanceCharge['ram:BasisAmount']};
+          BG_20['BT-94'] = {'name':'Document level allowance percentage',
+            'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']};
+          if (CategoryTradeTax) {
+            CategoryTradeTax = CategoryTradeTax[0];
+            BG_20['BT-95'] = {'name':'Document level allowance VAT category code',
+              'val':CategoryTradeTax['ram:TypeCode']
+            };
+            // en['BT-95'] = {'name':'Document level allowance VAT category code', 'val':CategoryTradeTax['ram:CategoryCode']};
+            BG_20['BT-96'] = {'name':'Document level allowance VAT rate',
+              'val':CategoryTradeTax['ram:RateApplicablePercent']
+            };
+          }
           BG_20['BT-97'] = {'name':'Document level allowance reason',
             'val':SpecifiedTradeAllowanceCharge['ram:Reason']
           };
@@ -521,6 +523,8 @@ var invoice2xbrl = (function() {
             'val':SpecifiedTradeAllowanceCharge['ram:ReasonCode']
           };
           en['BG-20'].val.push(BG_20);
+        }
+        else {
           var BG_21 = {};
           BG_21['BT-99'] = {'name':'Document level charge amount',
             'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']
@@ -531,15 +535,18 @@ var invoice2xbrl = (function() {
           BG_21['BT-101'] = {'name':'Document level charge percentage',
             'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
           };
-          BG_21['BT-102'] = {'name':'Document level charge VAT category code',
-            'val':CategoryTradeTax['ram:TypeCode']
-          };
-          BG_21['BT-102'] = {'name':'Document level charge VAT category code',
-            'val':CategoryTradeTax['ram:CategoryCode']
-          };
-          BG_21['BT-103'] = {'name':'Document level charge VAT rate',
-            'val':CategoryTradeTax['ram:RateApplicablePercent']
-          };
+          if (CategoryTradeTax) {
+            CategoryTradeTax = CategoryTradeTax[0];
+            BG_21['BT-102'] = {'name':'Document level charge VAT category code',
+              'val':CategoryTradeTax['ram:TypeCode']
+            };
+            BG_21['BT-102'] = {'name':'Document level charge VAT category code',
+              'val':CategoryTradeTax['ram:CategoryCode']
+            };
+            BG_21['BT-103'] = {'name':'Document level charge VAT rate',
+              'val':CategoryTradeTax['ram:RateApplicablePercent']
+            };
+          }
           BG_21['BT-104'] = {'name':'Document level charge reason',
             'val':SpecifiedTradeAllowanceCharge['ram:Reason']
           };
@@ -1225,40 +1232,44 @@ var invoice2xbrl = (function() {
     if (AllowanceCharges) {
       for (var AllowanceCharge of AllowanceCharges || []){
         var TaxCategories = AllowanceCharge['cac:TaxCategory'];
-        var BG_20 = {};
-        BG_20['BT-92'] = {'name':'Document level allowance amount',
-          'val':AllowanceCharge['cbc:Amount']};
-        BG_20['BT-93'] = {'name':'Document level allowance base amount',
-          'val':AllowanceCharge['cbc:BaseAmount']};
-        BG_20['BT-94'] = {'name':'Document level allowance percentage',
-          'val':AllowanceCharge['cbc:MuItiplierFactorNumeric']};
-        if (TaxCategories) {
-          var TaxCategory = TaxCategories[0];
-          BG_20['BT-95'] = {'name':'Document level allowance VAT category code', 'val':TaxCategory['cbc:ID']};
-          BG_20['BT-96'] = {'name':'Document level allowance VAT rate', 'val':TaxCategory['cbc:Percent']};
+        if (!AllowanceCharge['cbc:ChargeIndicator'][0]) {
+          var BG_20 = {};
+          BG_20['BT-92'] = {'name':'Document level allowance amount',
+            'val':AllowanceCharge['cbc:Amount']};
+          BG_20['BT-93'] = {'name':'Document level allowance base amount',
+            'val':AllowanceCharge['cbc:BaseAmount']};
+          BG_20['BT-94'] = {'name':'Document level allowance percentage',
+            'val':AllowanceCharge['cbc:MuItiplierFactorNumeric']};
+          if (TaxCategories) {
+            var TaxCategory = TaxCategories[0];
+            BG_20['BT-95'] = {'name':'Document level allowance VAT category code', 'val':TaxCategory['cbc:ID']};
+            BG_20['BT-96'] = {'name':'Document level allowance VAT rate', 'val':TaxCategory['cbc:Percent']};
+          }
+          BG_20['BT-97'] = {'name':'Document level allowance reason',
+            'val':AllowanceCharge['cbc:AllowanceChargeReason']};
+          BG_20['BT-98'] = {'name':'Document level allowance reason code',
+            'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
+          en['BG-20'].val.push(BG_20);
         }
-        BG_20['BT-97'] = {'name':'Document level allowance reason',
-          'val':AllowanceCharge['cbc:AllowanceChargeReason']};
-        BG_20['BT-98'] = {'name':'Document level allowance reason code',
-          'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
-        en['BG-20'].val.push(BG_20);
-        var BG_21 = {};
-        BG_21['BT-99'] = {'name':'Document level charge amount',
-          'val':AllowanceCharge['cbc:Amount']};
-        BG_21['BT-100'] = {'name':'Document level charge base amount',
-          'val':Invoice['cac:AIlowanceCharge/cbc:BaseAmount']};
-        BG_21['BT-101'] = {'name':'Document level charge percentage',
-          'val':AllowanceCharge['cbc:MultiplierFactorNumeric']};
-        if (TaxCategories) {
-          var TaxCategory = TaxCategories[0];
-          BG_21['BT-102'] = {'name':'Document level charge VAT category code', 'val':TaxCategory['cbc:ID']};
-          BG_21['BT-103'] = {'name':'Document level charge VAT rate', 'val':TaxCategory['cbc:Percent']};
+        else {
+          var BG_21 = {};
+          BG_21['BT-99'] = {'name':'Document level charge amount',
+            'val':AllowanceCharge['cbc:Amount']};
+          BG_21['BT-100'] = {'name':'Document level charge base amount',
+            'val':Invoice['cac:AIlowanceCharge/cbc:BaseAmount']};
+          BG_21['BT-101'] = {'name':'Document level charge percentage',
+            'val':AllowanceCharge['cbc:MultiplierFactorNumeric']};
+          if (TaxCategories) {
+            var TaxCategory = TaxCategories[0];
+            BG_21['BT-102'] = {'name':'Document level charge VAT category code', 'val':TaxCategory['cbc:ID']};
+            BG_21['BT-103'] = {'name':'Document level charge VAT rate', 'val':TaxCategory['cbc:Percent']};
+          }
+          BG_21['BT-104'] = {'name':'Document level charge reason',
+            'val':AllowanceCharge['cbc:AllowanceChargeReason']};
+          BG_21['BT-105'] = {'name':'Document level charge reason code',
+            'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
+          en['BG-21'].val.push(BG_21);
         }
-        BG_21['BT-104'] = {'name':'Document level charge reason',
-          'val':AllowanceCharge['cbc:AllowanceChargeReason']};
-        BG_21['BT-105'] = {'name':'Document level charge reason code',
-          'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
-        en['BG-21'].val.push(BG_21);
       }
     }
     var LegalMonetaryTotals = Invoice['cac:LegalMonetaryTotal'];
