@@ -41,9 +41,9 @@
 		<!-- variableFilterArc -->
 		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="typedDimension1"/>
 		<variable:variableFilterArc order="-1.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="typedDimension1"/>
-		<!--		<variable:variableFilterArc order="2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="general5"/>-->
+
 		<variable:variableFilterArc order="-2.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="lineAmountName"/>
-		<!--		<variable:variableFilterArc order="0.5" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="general1"/>-->
+
 		<variable:variableFilterArc order="-3.0" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="totalLineAmountName"/>
 		<!-- filter -->
 		<cf:conceptName id="lineAmountName" xlink:type="resource" xlink:label="lineAmountName">
@@ -61,9 +61,6 @@
 				<df:qname>c:d1</df:qname>
 			</df:dimension>
 		</df:typedDimension>
-		<!-- <gf:general id="general1" test="following-sibling::c:debitCreditCode[1] = &apos;D&apos;" xlink:type="resource" xlink:label="general1"/>
-		<gf:general id="general5" test="following-sibling::c:debitCreditCode[1] = &apos;C&apos;" xlink:type="resource" xlink:label="general5"/>
-		<gf:general id="general3" test="../c:debitCreditCode[@contextref=xfi:context-identifier(xfi:context(.))] = &apos;C&apos;" xlink:type="resource" xlink:label="general3"/>
-		<gf:general id="general2" test="../c:debitCreditCode[@contextref=xfi:context-identifier(xfi:context(.))] = &apos;D&apos;" xlink:type="resource" xlink:label="general2"/> -->
+
 	</gen:link>
 </link:linkbase>
