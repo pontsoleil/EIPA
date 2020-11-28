@@ -498,7 +498,7 @@ var invoice2xbrl = (function() {
       //, 'val':ApplicableHeaderTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
       for (var SpecifiedTradeAllowanceCharge of SpecifiedTradeAllowanceCharges || []){
         var CategoryTradeTax = SpecifiedTradeAllowanceCharge['ram:CategoryTradeTax'];
-        if (!SpecifiedTradeAllowanceCharge['ram:ChargeIndicator']) {
+        if (!SpecifiedTradeAllowanceCharge['ram:ChargeIndicator'][0]['udt:Indicator'][0]) {
           var BG_20 = {};
           BG_20['BT-92'] = {'name':'Document level allowance amount',
             'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']};

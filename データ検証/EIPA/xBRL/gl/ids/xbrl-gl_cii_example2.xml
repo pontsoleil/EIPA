@@ -843,6 +843,27 @@
     <e:cen-160 contextRef="cG4cG5.4eG32">Type</e:cen-160>
     <e:cen-161 contextRef="cG4cG5.4eG32">Cat5</e:cen-161>
     <e:cen-19 contextRef="cG4">Project cost code 123</e:cen-19>
+    <xbrli:context id="cG4eG20">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:instant>2020-11-28</xbrli:instant>
+        </xbrli:period>
+        <xbrli:scenario>
+            <xbrldi:typedMember dimension="c:d1">
+                <c:_1>cG4</c:_1>
+            </xbrldi:typedMember>
+            <xbrldi:typedMember dimension="c:d2">
+                <c:_2>eG20</c:_2>
+            </xbrldi:typedMember>
+        </xbrli:scenario>
+    </xbrli:context>
+    <e:cen-92 contextRef="cG4eG20" decimals="INF" unitRef="EUR">100</e:cen-92>
+    <e:cen-95 contextRef="cG4eG20">VAT</e:cen-95>
+    <e:cen-96 contextRef="cG4eG20" decimals="INF" unitRef="pure">0.25</e:cen-96>
+    <e:cen-97 contextRef="cG4eG20">Promotion discount</e:cen-97>
+    <e:cen-98 contextRef="cG4eG20">95</e:cen-98>
     <xbrli:context id="cG4eG21">
         <xbrli:entity>
             <xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier>
@@ -862,28 +883,7 @@
     <e:cen-99 contextRef="cG4eG21" decimals="INF" unitRef="EUR">100</e:cen-99>
     <e:cen-102 contextRef="cG4eG21">S</e:cen-102>
     <e:cen-103 contextRef="cG4eG21" decimals="INF" unitRef="pure">0.25</e:cen-103>
-    <e:cen-104 contextRef="cG4eG21">Promotion discount</e:cen-104>
-    <e:cen-105 contextRef="cG4eG21">95</e:cen-105>
-    <xbrli:context id="cG4eG21.1">
-        <xbrli:entity>
-            <xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier>
-        </xbrli:entity>
-        <xbrli:period>
-            <xbrli:instant>2020-11-28</xbrli:instant>
-        </xbrli:period>
-        <xbrli:scenario>
-            <xbrldi:typedMember dimension="c:d1">
-                <c:_1>cG4</c:_1>
-            </xbrldi:typedMember>
-            <xbrldi:typedMember dimension="c:d2">
-                <c:_2>eG21.1</c:_2>
-            </xbrldi:typedMember>
-        </xbrli:scenario>
-    </xbrli:context>
-    <e:cen-99 contextRef="cG4eG21.1" decimals="INF" unitRef="EUR">100</e:cen-99>
-    <e:cen-102 contextRef="cG4eG21.1">S</e:cen-102>
-    <e:cen-103 contextRef="cG4eG21.1" decimals="INF" unitRef="pure">0.25</e:cen-103>
-    <e:cen-104 contextRef="cG4eG21.1">Freight</e:cen-104>
+    <e:cen-104 contextRef="cG4eG21">Freight</e:cen-104>
     <xbrli:context id="cG4eG22">
         <xbrli:entity>
             <xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier>
