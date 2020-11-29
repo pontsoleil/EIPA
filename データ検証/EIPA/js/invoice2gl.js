@@ -770,7 +770,13 @@ var invoice2gl = (function() {
                 'cor-22' === name) {
                 element.setAttribute('decimals', 'INF');
                 if (type.match(/Amount$/)) {
-                    if (name.match(/VAT/)) {
+                    if (2 === item.val.length) {
+                        var currencyID  = item.val[0]['@currencyID'];
+                        if (currencyID) {
+                            element.setAttribute('unitRef', currencyID);
+                        }
+                    }
+                    else if (name.match(/VAT/)) {
                         element.setAttribute('unitRef', VAT_Currency);
                     }
                     else {
@@ -815,6 +821,17 @@ var invoice2gl = (function() {
         var cor = 'http://www.xbrl.org/int/gl/cor/2020-12-31';
         var eipa = 'http://eipa.jp';
         var date = (new Date()).toISOString().match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})T.*$/)[1];
+        var InvoiceCurrency = lookupEN('/BT-5');
+        if (InvoiceCurrency && InvoiceCurrency.val) {
+            InvoiceCurrency = InvoiceCurrency.val[0];
+        }
+        else {
+            InvoiceCurrency = 'EUR';
+        }
+        var VAT_Currency = lookupEN('/BT-6');
+        if (VAT_Currency && VAT_Currency.val) {
+            VAT_Currency = VAT_Currency.val[0];
+        }
         var xmlString = '<?xml version="1.0" encoding="UTF-8"?>'+
             '<xbrli:xbrl '+
                 'xmlns:xbrll="http://www.xbrl.org/2003/linkbase" '+
@@ -833,27 +850,23 @@ var invoice2gl = (function() {
             '<xbrll:schemaRef xlink:type="simple" xlink:href="../plt/case-cen/gl-plt-2020-12-31.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>'+
             '<xbrli:unit id="pure">'+
                 '<xbrli:measure>xbrli:pure</xbrli:measure>'+
-            '</xbrli:unit>'+
-            '<xbrli:unit id="EUR">'+
-                '<xbrli:measure>iso4217:EUR</xbrli:measure>'+
             '</xbrli:unit>';
-        var InvoiceCurrency = 'EUR';// InvoiceCurrency[0].toUpperCase();
-        // if (InvoiceCurrency.match(/^[A-Z]{3}$/) && 'EUR' !== InvoiceCurrency.toUpperCase()) {
-        //   xmlString += '<xbrli:unit id="'+InvoiceCurrency+'">'+
-        //     '<xbrli:measure>iso4217:'+InvoiceCurrency+'</xbrli:measure></xbrli:unit>';
-        // }
-        // else {
-        //   InvoiceCurrency = 'EUR';
-        //   xmlString += '<xbrli:unit id="EUR"><xbrli:measure>iso4217:EUR</xbrli:measure></xbrli:unit>'
-        // }
-        // VAT_Currency = VAT_Currency[0].toUpperCase();
-        // if (VAT_Currency.match(/^[A-Z]{3}$/) && 'EUR' !== VAT_Currency.toUpperCase() && InvoiceCurrency !== VAT_Currency) {
-        //   xmlString += '<xbrli:unit id="'+VAT_Currency+'">'+
-        //     '<xbrli:measure>iso4217:'+VAT_Currency+'</xbrli:measure></xbrli:unit>';
-        // }
-        // else {
-        //   VAT_Currency = InvoiceCurrency;
-        // }
+        if (InvoiceCurrency && InvoiceCurrency.match(/^[A-Z]{3}$/) && 'EUR' !== InvoiceCurrency.toUpperCase()) {
+          xmlString += '<xbrli:unit id="'+InvoiceCurrency+'">'+
+            '<xbrli:measure>iso4217:'+InvoiceCurrency+'</xbrli:measure></xbrli:unit>';
+        }
+        else {
+          InvoiceCurrency = 'EUR';
+          xmlString += '<xbrli:unit id="EUR"><xbrli:measure>iso4217:EUR</xbrli:measure></xbrli:unit>'
+        }
+        if (VAT_Currency && VAT_Currency.match(/^[A-Z]{3}$/) &&
+            'EUR' !== VAT_Currency.toUpperCase() && InvoiceCurrency !== VAT_Currency) {
+          xmlString += '<xbrli:unit id="'+VAT_Currency+'">'+
+            '<xbrli:measure>iso4217:'+VAT_Currency+'</xbrli:measure></xbrli:unit>';
+        }
+        else {
+          VAT_Currency = InvoiceCurrency;
+        }
         xmlString += '</xbrli:xbrl>';
         var contexts = {};
 

@@ -82,6 +82,7 @@ footer {
         //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
         $('#go').on('click', function(event) {
           var url = $('#url').val();
+          url = location.href.match(/^(.*\/)[^\/]*$/)[1]+url;
           invoice2gl.initModule(url, /** time out */5000)
           .then(function(res) {
             console.log('invoice2gl.initModule', url, res);

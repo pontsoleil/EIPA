@@ -675,43 +675,47 @@ var invoice2xbrl = (function() {
         var SpecifiedTradeAllowanceCharges = SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge'];
         if (SpecifiedTradeAllowanceCharges) {
           var SpecifiedTradeAllowanceCharge = SpecifiedTradeAllowanceCharges[0]; // Multiple
-          // BG-27 INVOICE LINE ALLOWANCES (Multiple)
-          BG_25['BG-27'] = {'name':'INVOICE LINE ALLOWANCES', 'val':[]};
-          //, 'val':SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
-          BG_25['BG-27'].val['BT-136'] = {'name':'Invoice line allowance amount',
-            'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']
-          };
-          BG_25['BG-27'].val['BT-137'] = {'name':'Invoice line allowance base amount',
-            'val':SpecifiedTradeAllowanceCharge['ram:BasisAmount']
-          };
-          // var SpecifiedTradeAllowanceCharge = SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge'];
-          BG_25['BG-27'].val['BT-138'] = {'name':'Invoice line allowance percentage',
-            'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
-          };
-          BG_25['BG-27'].val['BT-139'] = {'name':'Invoice line allowance reason',
-            'val':SpecifiedTradeAllowanceCharge['ram:Reason']
-          };
-          BG_25['BG-27'].val['BT-140'] = {'name':'Invoice line allowance reason code',
-            'val':SpecifiedTradeAllowanceCharge['ram:ReasonCode']
-          };
-          // BG-28 INVOICE LINE CHARGES (Multiple)
-          BG_25['BG-28'] = {'name':'INVOICE LINE CHARGES', 'val':[]};
-          //, 'val':SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
-          BG_25['BG-28'].val['BT-141'] = {'name':'Invoice line charge amount',
-            'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']
-          };
-          BG_25['BG-28'].val['BT-142'] = {'name':'Invoice line charge base amount',
-            'val':SpecifiedTradeAllowanceCharge['ram:BasisAmount']
-          };
-          BG_25['BG-28'].val['BT-143'] = {'name':'Invoice line charge percentage',
-            'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
-          };
-          BG_25['BG-28'].val['BT-144'] = {'name':'Invoice line charge reason',
-            'val':SpecifiedTradeAllowanceCharge['ram:Reason']
-          };
-          BG_25['BG-28'].val['BT-145'] = {'name':'Invoice line charge reason code',
-            'val':SpecifiedTradeAllowanceCharge['ram:ReasonCode']
-          };
+          if (!SpecifiedTradeAllowanceCharge['ram:ChargeIndicator'][0]['udt:Indicator'][0]) {
+            // BG-27 INVOICE LINE ALLOWANCES (Multiple)
+            BG_25['BG-27'] = {'name':'INVOICE LINE ALLOWANCES', 'val':[]};
+            //, 'val':SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
+            BG_25['BG-27'].val['BT-136'] = {'name':'Invoice line allowance amount',
+              'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']
+            };
+            BG_25['BG-27'].val['BT-137'] = {'name':'Invoice line allowance base amount',
+              'val':SpecifiedTradeAllowanceCharge['ram:BasisAmount']
+            };
+            // var SpecifiedTradeAllowanceCharge = SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge'];
+            BG_25['BG-27'].val['BT-138'] = {'name':'Invoice line allowance percentage',
+              'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
+            };
+            BG_25['BG-27'].val['BT-139'] = {'name':'Invoice line allowance reason',
+              'val':SpecifiedTradeAllowanceCharge['ram:Reason']
+            };
+            BG_25['BG-27'].val['BT-140'] = {'name':'Invoice line allowance reason code',
+              'val':SpecifiedTradeAllowanceCharge['ram:ReasonCode']
+            };
+          }
+          else {
+            // BG-28 INVOICE LINE CHARGES (Multiple)
+            BG_25['BG-28'] = {'name':'INVOICE LINE CHARGES', 'val':[]};
+            //, 'val':SpecifiedLineTradeSettlement['ram:SpecifiedTradeAllowanceCharge']};
+            BG_25['BG-28'].val['BT-141'] = {'name':'Invoice line charge amount',
+              'val':SpecifiedTradeAllowanceCharge['ram:ActualAmount']
+            };
+            BG_25['BG-28'].val['BT-142'] = {'name':'Invoice line charge base amount',
+              'val':SpecifiedTradeAllowanceCharge['ram:BasisAmount']
+            };
+            BG_25['BG-28'].val['BT-143'] = {'name':'Invoice line charge percentage',
+              'val':SpecifiedTradeAllowanceCharge['ram:CalculationPercent']
+            };
+            BG_25['BG-28'].val['BT-144'] = {'name':'Invoice line charge reason',
+              'val':SpecifiedTradeAllowanceCharge['ram:Reason']
+            };
+            BG_25['BG-28'].val['BT-145'] = {'name':'Invoice line charge reason code',
+              'val':SpecifiedTradeAllowanceCharge['ram:ReasonCode']
+            };
+          }
         }
         if (SpecifiedLineTradeAgreement) {
           var NetPriceProductTradePrices = SpecifiedLineTradeAgreement['ram:NetPriceProductTradePrice'];
@@ -1386,35 +1390,39 @@ var invoice2xbrl = (function() {
         }
         var AllowanceCharges = InvoiceLine['cac:AllowanceCharge'];
         if (AllowanceCharges) {
-          // BG-27 INVOICE LINE ALLOWANCES (Multiple)
+            // BG-27 INVOICE LINE ALLOWANCES (Multiple)
           BG_25['BG-27'] = {'name':'INVOICE LINE ALLOWANCES', 'val':[]};
           // BG-28 INVOICE LINE CHARGES (Multiple)
           BG_25['BG-28'] = {'name':'INVOICE LINE CHARGES', 'val':[]};
           for (var AllowanceCharge of AllowanceCharges || []){
-            var BG_27 = {};
-            BG_27['BT-136'] = {'name':'Invoice line allowance amount',
-              'val':AllowanceCharge['cbc:Amount']};
-            BG_27['BT-137'] = {'name':'Invoice line allowance base amount',
-              'val':AllowanceCharge['cbc:BaseAmount']};
-            BG_27['BT-138'] = {'name':'Invoice line allowance percentage',
-              'val':AllowanceCharge['cbc:MultiplierFactorNumeric']};
-            BG_27['BT-139'] = {'name':'Invoice line allowance reason',
-              'val':AllowanceCharge['cbc:AllowanceChargeReason']};
-            BG_27['BT-140'] = {'name':'Invoice line allowance reason code',
-              'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
-            BG_25['BG-27'].val.push(BG_27);
-            var BG_28 = {};
-            BG_28['BT-141'] = {'name':'Invoice charge amount',
-              'val':AllowanceCharge['cbc:Amount']};
-            BG_28['BT-142'] = {'name':'Invoice line charge base amount',
-              'val':AllowanceCharge['cbc:BaseAmount']};
-            BG_28['BT-143'] = {'name':'Invoice line charge percentage',
-              'val':AllowanceCharge['cbc:MultiplierFactorNumeric']};
-            BG_28['BT-144'] = {'name':'Invoice charge reason',
-              'val':AllowanceCharge['cbc:AlIowanceChargeReason']};
-            BG_28['BT-145'] = {'name':'Invoice line charge reason code',
-              'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
-            BG_25['BG-28'].val.push(BG_28);
+            if (!AllowanceCharge['cbc:ChargeIndicator'][0]) {
+              var BG_27 = {};
+              BG_27['BT-136'] = {'name':'Invoice line allowance amount',
+                'val':AllowanceCharge['cbc:Amount']};
+              BG_27['BT-137'] = {'name':'Invoice line allowance base amount',
+                'val':AllowanceCharge['cbc:BaseAmount']};
+              BG_27['BT-138'] = {'name':'Invoice line allowance percentage',
+                'val':AllowanceCharge['cbc:MultiplierFactorNumeric']};
+              BG_27['BT-139'] = {'name':'Invoice line allowance reason',
+                'val':AllowanceCharge['cbc:AllowanceChargeReason']};
+              BG_27['BT-140'] = {'name':'Invoice line allowance reason code',
+                'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
+              BG_25['BG-27'].val.push(BG_27);
+            }
+            else {
+              var BG_28 = {};
+              BG_28['BT-141'] = {'name':'Invoice charge amount',
+                'val':AllowanceCharge['cbc:Amount']};
+              BG_28['BT-142'] = {'name':'Invoice line charge base amount',
+                'val':AllowanceCharge['cbc:BaseAmount']};
+              BG_28['BT-143'] = {'name':'Invoice line charge percentage',
+                'val':AllowanceCharge['cbc:MultiplierFactorNumeric']};
+              BG_28['BT-144'] = {'name':'Invoice charge reason',
+                'val':AllowanceCharge['cbc:AlIowanceChargeReason']};
+              BG_28['BT-145'] = {'name':'Invoice line charge reason code',
+                'val':AllowanceCharge['cbc:AllowanceChargeReasonCode']};
+              BG_25['BG-28'].val.push(BG_28);
+            }
           }
         }
         var Prices = InvoiceLine['cac:Price'];
