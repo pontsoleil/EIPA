@@ -1,17 +1,33 @@
 <?xml version="1.0"?>
 <!-- edited with XMLSpy v2020 rel. 2 sp1 (x64) (http://www.altova.com) by SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office) -->
-<link:linkbase xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd http://xbrl.org/2008/filter/relative http://www.xbrl.org/2008/relative-filter.xsd http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd http://xbrl.org/2008/filter/segment-scenario http://www.xbrl.org/2008/segment-scenario-filter.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31" xmlns:c="http://www.xbrl.org/int/gl/cor/2020-12-31" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:formula="http://xbrl.org/2008/formula" xmlns:gen="http://xbrl.org/2008/generic" xmlns:variable="http://xbrl.org/2008/variable">
-	<link:roleRef roleURI="http://www.xbrl.org/2008/role/reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#standard-reference"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label"/>
-	<link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="simple" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity"/>
-	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula"/>
-	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role"/>
+<link:linkbase xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd 
+http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd 
+http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd 
+http://xbrl.org/2008/filter/tuple http://www.xbrl.org/2008/tuple-filter.xsd 
+http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd 
+http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd 
+http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd 
+http://xbrl.org/2008/reference http://www.xbrl.org/2008/generic-reference.xsd 
+http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd 
+http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd 
+http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd 
+http://xbrl.org/2008/filter/relative http://www.xbrl.org/2008/relative-filter.xsd 
+http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd 
+http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd 
+http://xbrl.org/2008/filter/match http://www.xbrl.org/2008/match-filter.xsd 
+http://xbrl.org/2010/filter/concept-relation http://www.xbrl.org/2010/concept-relation-filter.xsd 
+http://xbrl.org/2008/filter/segment-scenario http://www.xbrl.org/2008/segment-scenario-filter.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31" xmlns:c="http://www.xbrl.org/int/gl/cor/2020-12-31" xmlns:cf="http://xbrl.org/2008/filter/concept" xmlns:df="http://xbrl.org/2008/filter/dimension" xmlns:formula="http://xbrl.org/2008/formula" xmlns:gen="http://xbrl.org/2008/generic" xmlns:variable="http://xbrl.org/2008/variable">
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-filter" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#element-reference" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-parameter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-parameter" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2016/assertion-unsatisfied-severity" xlink:type="simple" xlink:href="http://www.xbrl.org/2016/assertion-severity.xsd#assertion-unsatisfied-severity" />
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula" />
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/reference" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-reference.xsd#standard-reference" />
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label" />
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 		<!-- BR-CO-10 Sum of Invoice line net amount (BT-106) = Σ Invoice line net amount (BT-131). -->
 		<formula:formula id="BR-CO-10" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $invoiceLineNetAmount ) - sum( $sumOfInvoiceLineNetAmount )) lt 1.0) then concat(&apos;BR-CO-10 Sum of Invoice line net amount (BT-106) = Σ Invoice line net amount (BT-131). &apos;,sum($invoiceLineNetAmount)) else concat(&apos;BR-CO-10 = ERROR = Sum of Invoice line net amount (BT-106) &apos;,sum($sumOfInvoiceLineNetAmount),&apos; != Σ Invoice line net amount (BT-131) &apos;,sum($invoiceLineNetAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-10">
@@ -26,8 +42,7 @@
 		<formula:formula id="BR-CO-11" aspectModel="dimensional" implicitFiltering="true" value="if (abs($documentLevelAllowanceAmount - $sumOfAllowancesOnDocumentLevel) lt 1.0) then concat( &apos;BR-CO-11 Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). &apos;,sum($documentLevelAllowanceAmount)) else concat(&apos;BR-CO-11 = ERROR = Sum of allowances on document level (BT-107) &apos;,sum($sumOfAllowancesOnDocumentLevel),&apos; != Σ Document level allowance amount (BT-92) &apos;,sum($documentLevelAllowanceAmount),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-11">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>c:cor-16</formula:qname>
-					<!-- gl-cor:entryComment -->
+					<formula:qname>c:cor-16</formula:qname> <!-- gl-cor:entryComment -->
 				</formula:concept>
 			</formula:aspects>
 		</formula:formula>
@@ -35,54 +50,53 @@
 		<formula:formula id="BR-CO-17" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $VAT_CategoryTaxAmount )- sum( $VAT_CategoryTaxableAmount * $VAT_CategoryRate )) lt 1.0) then concat( &apos;BR-CO-17 VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. &apos;,sum( $VAT_CategoryTaxAmount )) else concat(&apos;BR-CO-17 = ERROR = VAT category tax amount (BT-117) &apos;,sum ( $VAT_CategoryTaxAmount ),&apos; != VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. &apos;,sum( $VAT_CategoryTaxableAmount * $VAT_CategoryRate ),&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-17">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>c:cor-16</formula:qname>
-					<!-- gl-cor:entryComment -->
+					<formula:qname>c:cor-16</formula:qname> <!-- gl-cor:entryComment -->
 				</formula:concept>
 			</formula:aspects>
 		</formula:formula>
 		<!-- variableArc -->
 		<!-- BR-CO-10 -->
-		<variable:variableArc name="invoiceLineNetAmount" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount"/>
-		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
+		<variable:variableArc name="invoiceLineNetAmount" order="10.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount" />
+		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="10.02" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount" />
 		<!-- BR-CO-11 -->
-		<variable:variableArc name="documentLevelAllowanceAmount" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="documentLevelAllowanceAmount"/>
-		<variable:variableArc name="sumOfAllowancesOnDocumentLevel" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="sumOfAllowancesOnDocumentLevel"/>
+		<variable:variableArc name="documentLevelAllowanceAmount" order="10.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="documentLevelAllowanceAmount" />
+		<variable:variableArc name="sumOfAllowancesOnDocumentLevel" order="10.02" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="sumOfAllowancesOnDocumentLevel" />
 		<!-- BR-CO-17 -->
-		<variable:variableArc name="VAT_CategoryTaxAmount" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxAmount"/>
-		<variable:variableArc name="contextRef_VAT_CategoryTaxAmount" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="contextRef_VAT_CategoryTaxAmount"/>
-		<variable:variableArc name="VAT_CategoryTaxableAmount" order="10.3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxableAmount"/>
-		<variable:variableArc name="VAT_CategoryRate" order="10.4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryRate"/>
+		<variable:variableArc name="VAT_CategoryTaxAmount" order="10.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxAmount" />
+		<variable:variableArc name="contextRef_VAT_CategoryTaxAmount" order="10.02" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="contextRef_VAT_CategoryTaxAmount" />
+		<variable:variableArc name="VAT_CategoryTaxableAmount" order="10.03" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxableAmount" />
+		<variable:variableArc name="VAT_CategoryRate" order="10.04" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryRate" />
 		<!-- generalVariable -->
 		<!-- BR-CO-17 -->
-		<variable:generalVariable id="contextRef_VAT_CategoryTaxAmount" bindAsSequence="false" select="$VAT_CategoryTaxAmount/@contextRef" xlink:type="resource" xlink:label="contextRef_VAT_CategoryTaxAmount"/>
-		<variable:generalVariable id="VAT_CategoryTaxableAmount" bindAsSequence="false" select="//e:cen-116[@contextRef=$contextRef_VAT_CategoryTaxAmount]" xlink:type="resource" xlink:label="VAT_CategoryTaxableAmount"/>
-		<variable:generalVariable id="VAT_CategoryRate" bindAsSequence="false" select="//e:cen-119[@contextRef=$contextRef_VAT_CategoryTaxAmount]" xlink:type="resource" xlink:label="VAT_CategoryRate"/>	
+		<variable:generalVariable id="contextRef_VAT_CategoryTaxAmount" bindAsSequence="false" select="$VAT_CategoryTaxAmount/@contextRef" xlink:type="resource" xlink:label="contextRef_VAT_CategoryTaxAmount" />
+		<variable:generalVariable id="VAT_CategoryTaxableAmount" bindAsSequence="false" select="//e:cen-116[@contextRef=$contextRef_VAT_CategoryTaxAmount]" xlink:type="resource" xlink:label="VAT_CategoryTaxableAmount" />
+		<variable:generalVariable id="VAT_CategoryRate" bindAsSequence="false" select="//e:cen-119[@contextRef=$contextRef_VAT_CategoryTaxAmount]" xlink:type="resource" xlink:label="VAT_CategoryRate" />
 		<!-- factVariable -->
 		<!-- BR-CO-10 -->
-		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount"/>
-		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount"/>
+		<variable:factVariable id="invoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="invoiceLineNetAmount" />
+		<variable:factVariable id="sumOfInvoiceLineNetAmount" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfInvoiceLineNetAmount" />
 		<!-- BR-CO-11 -->
-		<variable:factVariable id="documentLevelAllowanceAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="documentLevelAllowanceAmount"/>
-		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
+		<variable:factVariable id="documentLevelAllowanceAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="documentLevelAllowanceAmount" />
+		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel" />
 		<!-- BR-CO-17 -->
-		<variable:factVariable id="VAT_CategoryTaxAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="VAT_CategoryTaxAmount"/>
+		<variable:factVariable id="VAT_CategoryTaxAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="VAT_CategoryTaxAmount" />
 		<!-- variableFilterArc -->
 		<!-- BR-CO-10 -->
-		<variable:variableFilterArc complement="false" cover="true" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="cNinvoiceLineNetAmount"/>
-		<variable:variableFilterArc complement="false" cover="true" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_1_cG4"/>
-		<variable:variableFilterArc complement="false" cover="true" order="10.3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_2"/>
-		<variable:variableFilterArc complement="false" cover="true" order="10.4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="cNsumOfInvoiceLineNetAmount"/>
-		<variable:variableFilterArc complement="false" cover="true" order="10.5" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_1_cG4"/>
-		<variable:variableFilterArc complement="false" cover="true" order="10.6" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_2_eG22"/>
+		<variable:variableFilterArc complement="false" cover="true" order="10.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="cNinvoiceLineNetAmount" />
+		<variable:variableFilterArc complement="false" cover="true" order="10.02" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_1_cG4" />
+		<variable:variableFilterArc complement="false" cover="true" order="10.03" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="tD_2" />
+		<variable:variableFilterArc complement="false" cover="true" order="10.04" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="cNsumOfInvoiceLineNetAmount" />
+		<variable:variableFilterArc complement="false" cover="true" order="10.05" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_1_cG4" />
+		<variable:variableFilterArc complement="false" cover="true" order="10.06" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfInvoiceLineNetAmount" xlink:to="tD_2_eG22" />
 		<!-- BR-CO-11 -->
-		<variable:variableFilterArc complement="false" cover="true" order="11.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="cNdocumentLevelAllowanceAmount"/>
-		<variable:variableFilterArc complement="false" cover="true" order="11.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_1_cG4"/>
-		<variable:variableFilterArc complement="false" cover="true" order="11.3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_2"/>
-		<variable:variableFilterArc complement="false" cover="true" order="11.4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="cNsumOfAllowancesOnDocumentLevel"/>
-		<variable:variableFilterArc complement="false" cover="true" order="11.5" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_1_cG4"/>
-		<variable:variableFilterArc complement="false" cover="true" order="11.6" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_2_eG22"/>
+		<variable:variableFilterArc complement="false" cover="true" order="11.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="cNdocumentLevelAllowanceAmount" />
+		<variable:variableFilterArc complement="false" cover="true" order="11.02" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_1_cG4" />
+		<variable:variableFilterArc complement="false" cover="true" order="11.03" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="documentLevelAllowanceAmount" xlink:to="tD_2" />
+		<variable:variableFilterArc complement="false" cover="true" order="11.04" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="cNsumOfAllowancesOnDocumentLevel" />
+		<variable:variableFilterArc complement="false" cover="true" order="11.05" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_1_cG4" />
+		<variable:variableFilterArc complement="false" cover="true" order="11.06" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="sumOfAllowancesOnDocumentLevel" xlink:to="tD_2_eG22" />
 		<!-- BR-CO-17 -->
-		<variable:variableFilterArc complement="false" cover="true" order="17.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="VAT_CategoryTaxAmount" xlink:to="cNVAT_CategoryTaxAmount"/>
+		<variable:variableFilterArc complement="false" cover="true" order="17.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="VAT_CategoryTaxAmount" xlink:to="cNVAT_CategoryTaxAmount" />
 		<!-- filter -->
 		<!-- BR-CO-10 -->
 		<cf:conceptName id="cNinvoiceLineNetAmount" xlink:type="resource" xlink:label="cNinvoiceLineNetAmount">
