@@ -32,7 +32,7 @@
 			</formula:aspects>
 		</formula:formula>
 		<!-- BR-CO-17 VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. -->
-		<formula:formula id="BR-CO-17" aspectModel="dimensional" implicitFiltering="true" value="if (abs(sum( $VAT_CategoryTaxAmount ) - sum( $VAT_CategoryTaxableAmount * $VAT_CategoryRate )) lt 1.0) then concat( &apos;BR-CO-17 VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. &apos;,$VAT_CategoryTaxAmount) else concat(&apos;BR-CO-17 = ERROR = VAT category tax amount (BT-117) &apos;,$VAT_CategoryTaxAmount,&apos; != VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. &apos;,$VAT_CategoryTaxableAmount * $VAT_CategoryRate ,&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-17">
+		<formula:formula id="BR-CO-17" aspectModel="dimensional" implicitFiltering="true" value="if (abs( $VAT_CategoryTaxAmount -  $VAT_CategoryTaxableAmount * $VAT_CategoryRate ) lt 1.0) then concat( &apos;BR-CO-17 VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. &apos;,$VAT_CategoryTaxAmount) else concat(&apos;BR-CO-17 = ERROR = VAT category tax amount (BT-117) &apos;,$VAT_CategoryTaxAmount,&apos; != VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals. &apos;,$VAT_CategoryTaxableAmount * $VAT_CategoryRate ,&apos; .&apos;)" source="formula:uncovered" xlink:type="resource" xlink:label="BR-CO-17">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>c:cor-16</formula:qname>
