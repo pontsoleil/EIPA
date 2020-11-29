@@ -708,6 +708,7 @@ var invoice2gl = (function() {
             var val = item.val;
             var element = xmlDoc.createElementNS(module, name);
             var match;
+            
             switch(val.length) {
                 case 1:
                     var val = item.val[0];
@@ -716,6 +717,12 @@ var invoice2gl = (function() {
                             val /= 100;
                         }
                         val = ''+val;
+                    }
+                    else if (1 == Object.keys(val).length) {
+                        val = JSON.stringify(val[0]);
+                    }
+                    else if (Object.keys(val).length > 1) {
+                        val = JSON.stringify(val);
                     }
                     else if (0 === Object.keys(val).length) {
                         return null;
