@@ -59,9 +59,9 @@
 		<variable:factVariable id="documentLevelAllowanceAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="documentLevelAllowanceAmount"/>
 		<variable:factVariable id="sumOfAllowancesOnDocumentLevel" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="sumOfAllowancesOnDocumentLevel"/>
 		<!-- BR-CO-17 -->
-		<variable:factVariable id="VAT_CategoryTaxAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="VAT_CategoryTaxAmount"/>
-		<variable:factVariable id="VAT_CategoryTaxableAmount" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="VAT_CategoryTaxableAmount"/>
-		<variable:factVariable id="VAT_CategoryRate" nils="true" bindAsSequence="true" xlink:type="resource" xlink:label="VAT_CategoryRate"/>
+		<variable:factVariable id="VAT_CategoryTaxAmount" nils="true" bindAsSequence="false" xlink:type="resource" xlink:label="VAT_CategoryTaxAmount"/>
+		<variable:factVariable id="VAT_CategoryTaxableAmount" nils="true" bindAsSequence="false" xlink:type="resource" xlink:label="VAT_CategoryTaxableAmount"/>
+		<variable:factVariable id="VAT_CategoryRate" nils="true" bindAsSequence="false" xlink:type="resource" xlink:label="VAT_CategoryRate"/>
 		<!-- variableFilterArc -->
 		<!-- BR-CO-10 -->
 		<variable:variableFilterArc order="10.1" complement="false" cover="true" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="invoiceLineNetAmount" xlink:to="cNinvoiceLineNetAmount"/>
