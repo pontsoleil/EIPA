@@ -42,15 +42,16 @@
 		</formula:formula>
 		<!-- variableArc -->
 		<!-- BR-CO-10 -->
-		<variable:variableArc name="invoiceLineNetAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount"/>
-		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
+		<variable:variableArc name="invoiceLineNetAmount" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="invoiceLineNetAmount"/>
+		<variable:variableArc name="sumOfInvoiceLineNetAmount" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-10" xlink:to="sumOfInvoiceLineNetAmount"/>
 		<!-- BR-CO-11 -->
-		<variable:variableArc name="documentLevelAllowanceAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="documentLevelAllowanceAmount"/>
-		<variable:variableArc name="sumOfAllowancesOnDocumentLevel" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="sumOfAllowancesOnDocumentLevel"/>
+		<variable:variableArc name="documentLevelAllowanceAmount" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="documentLevelAllowanceAmount"/>
+		<variable:variableArc name="sumOfAllowancesOnDocumentLevel" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-11" xlink:to="sumOfAllowancesOnDocumentLevel"/>
 		<!-- BR-CO-17 -->
-		<variable:variableArc name="VAT_CategoryTaxAmount" order="0.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxAmount"/>
-		<variable:variableArc name="VAT_CategoryTaxableAmount" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxableAmount"/>
-		<variable:variableArc name="VAT_CategoryRate" order="1.0" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryRate"/>
+		<variable:variableArc name="VAT_CategoryTaxAmount" order="10.1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxAmount"/>
+		<variable:variableArc name="contextRef_VAT_CategoryTaxAmount" order="10.2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="contextRef_VAT_CategoryTaxAmount"/>
+		<variable:variableArc name="VAT_CategoryTaxableAmount" order="10.3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryTaxableAmount"/>
+		<variable:variableArc name="VAT_CategoryRate" order="10.4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="BR-CO-17" xlink:to="VAT_CategoryRate"/>
 		<!-- generalVariable -->
 		<!-- BR-CO-17 -->
 		<variable:generalVariable id="contextRef_VAT_CategoryTaxAmount" bindAsSequence="false" select="$VAT_CategoryTaxAmount/@contextRef" xlink:type="resource" xlink:label="contextRef_VAT_CategoryTaxAmount"/>
