@@ -33,11 +33,11 @@ xmlns:xbrli="http://www.xbrl.org/2003/instance">
 	<!-- Dimension -->
  	<!-- Hypercube -->
   <element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
-  <!-- _1 -->
-  <element name="_1" id="_1"><simpleType><restriction base="string"/></simpleType></element>
-  <element name="d1" id="d1" type="xbrli:stringItemType" xbrldt:typedDomainRef="#_1" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
-  <!-- _2 -->
-  <element name="_2" id="_2"><simpleType><restriction base="string"/></simpleType></element>
-  <element name="d2" id="d2" type="xbrli:stringItemType" xbrldt:typedDomainRef="#_2" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- t1 -->
+  <element name="t1" id="t1"><simpleType><restriction base="string"/></simpleType></element>
+  <element name="d1" id="d1" type="xbrli:stringItemType" xbrldt:typedDomainRef="#t1" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
+  <!-- t2 -->
+  <element name="t2" id="t2"><simpleType><restriction base="string"/></simpleType></element>
+  <element name="d2" id="d2" type="xbrli:stringItemType" xbrldt:typedDomainRef="#t2" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant"/>
 
 </schema>
