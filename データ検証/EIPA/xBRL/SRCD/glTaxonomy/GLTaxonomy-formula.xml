@@ -27,7 +27,7 @@ xmlns:df="http://xbrl.org/2008/filter/dimension"
 xmlns:formula="http://xbrl.org/2008/formula"
 xmlns:gen="http://xbrl.org/2008/generic"
 xmlns:variable="http://xbrl.org/2008/variable"
-xmlns:c="http://www.GL.com"
+xmlns:gl="http://www.GL.com"
 xmlns:fr-sample="http://www.srcdtest.com">
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" />
 	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" />
@@ -65,14 +65,14 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="currencyCode" xlink:to="cNcurrencyCode" />
 		<!-- filter -->
 		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
-			<cf:concept><cf:qname>c:cor-4</cf:qname></cf:concept>
+			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
 		</cf:conceptName>
 		<cf:conceptName id="cNcurrencyCode" xlink:type="resource" xlink:label="cNcurrencyCode">
-			<cf:concept><cf:qname>c:cor-6</cf:qname></cf:concept>
+			<cf:concept><cf:qname>gl:cor-6</cf:qname></cf:concept>
 		</cf:conceptName>
 		<!-- generalVariable -->
 		<variable:generalVariable id="contextRef_accountID" bindAsSequence="false" select="$accountID/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID" />
 		<variable:generalVariable id="unitRef_amount" bindAsSequence="false" select="$amount/@unitRef" xlink:type="resource" xlink:label="unitRef_amount" />
-		<variable:generalVariable id="amount" bindAsSequence="false" select="//c:cor-5[@contextRef=$contextRef_accountID]" xlink:type="resource" xlink:label="amount" />
+		<variable:generalVariable id="amount" bindAsSequence="false" select="//gl:cor-5[@contextRef=$contextRef_accountID]" xlink:type="resource" xlink:label="amount" />
 	</gen:link>
 </link:linkbase>

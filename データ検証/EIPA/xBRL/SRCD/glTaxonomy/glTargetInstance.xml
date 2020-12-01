@@ -7,7 +7,7 @@
     xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
     xmlns:xbrli="http://www.xbrl.org/2003/instance"
     xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
-    xmlns:c="GLTaxonomy.xsd">
+    xmlns:gl="GLTaxonomy.xsd">
     <xbrll:schemaRef xlink:type="simple" xlink:href="GLTaxonomy.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
     <xbrli:unit id="pure">
         <xbrli:measure>xbrli:pure</xbrli:measure>
@@ -20,7 +20,7 @@
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
         <xbrli:scenario>
-            <xbrldi:typedMember dimension="c:d1"><c:_1>cG1</c:_1></xbrldi:typedMember>
+            <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
         </xbrli:scenario>
     </xbrli:context>
     <!-- gl-cor:entryHeader / gl-cor:entryDetail 0 -->
@@ -28,35 +28,35 @@
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
         <xbrli:scenario>
-          <xbrldi:typedMember dimension="c:d1"><c:_1>cG1</c:_1></xbrldi:typedMember>
-          <xbrldi:typedMember dimension="c:d2"><c:_2>cG2</c:_2></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d2"><gl:_2>cG2</gl:_2></xbrldi:typedMember>
         </xbrli:scenario>
     </xbrli:context>
-    <c:cor-3 contextRef="cG1cG2">001</c:cor-3>
-    <c:cor-4 contextRef="cG1cG2">00000001</c:cor-4>
-    <c:cor-5 contextRef="cG1cG2" unitRef="USD" decimals="INF">150</c:cor-5> 
+    <gl:cor-3 contextRef="cG1cG2">001</gl:cor-3>
+    <gl:cor-4 contextRef="cG1cG2">00000001</gl:cor-4>
+    <gl:cor-5 contextRef="cG1cG2" unitRef="USD" decimals="INF">150</gl:cor-5> 
     <!-- gl-cor:entryHeader / gl-cor:entryDetail 1 -->
     <xbrli:context id="cG1cG2.1">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
         <xbrli:scenario>
-          <xbrldi:typedMember dimension="c:d1"><c:_1>cG1</c:_1></xbrldi:typedMember>
-          <xbrldi:typedMember dimension="c:d2"><c:_2>cG2.1</c:_2></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d2"><gl:_2>cG2.1</gl:_2></xbrldi:typedMember>
         </xbrli:scenario>
     </xbrli:context>
-    <c:cor-3 contextRef="cG1cG2.1">002</c:cor-3>
-    <c:cor-4 contextRef="cG1cG2.1">00000002</c:cor-4>
-    <c:cor-5 contextRef="cG1cG2.1" unitRef="USD" decimals="INF">500</c:cor-5>
+    <gl:cor-3 contextRef="cG1cG2.1">002</gl:cor-3>
+    <gl:cor-4 contextRef="cG1cG2.1">00000002</gl:cor-4>
+    <gl:cor-5 contextRef="cG1cG2.1" unitRef="USD" decimals="INF">500</gl:cor-5>
     <!-- gl-cor:entryHeader / gl-cor:entryDetail 2 -->
     <xbrli:context id="cG1cG2.2">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
         <xbrli:scenario>
-          <xbrldi:typedMember dimension="c:d1"><c:_1>cG1</c:_1></xbrldi:typedMember>
-          <xbrldi:typedMember dimension="c:d2"><c:_2>cG2.2</c:_2></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d2"><gl:_2>cG2.2</gl:_2></xbrldi:typedMember>
         </xbrli:scenario>
     </xbrli:context>
-    <c:cor-3 contextRef="cG1cG2.2">003</c:cor-3>
-    <c:cor-4 contextRef="cG1cG2.2">00000003</c:cor-4>
-    <c:cor-5 contextRef="cG1cG2.2" unitRef="USD" decimals="INF">300</c:cor-5>
+    <gl:cor-3 contextRef="cG1cG2.2">003</gl:cor-3>
+    <gl:cor-4 contextRef="cG1cG2.2">00000003</gl:cor-4>
+    <gl:cor-5 contextRef="cG1cG2.2" unitRef="USD" decimals="INF">300</gl:cor-5>
 </xbrli:xbrl>
