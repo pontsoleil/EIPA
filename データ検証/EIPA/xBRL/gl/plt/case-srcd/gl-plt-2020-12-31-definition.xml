@@ -30,7 +30,7 @@
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="Hypercube" xlink:to="dim6" xlink:title="definition Hypercube to Typed Dimension _6" use="optional" order="6.0"/>
     <!-- Primary Item ( gl-cor_accountingEntries ) to Hypercube -->
     <link:loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_accountingEntries" xlink:label="gl-cor_accountingEntries" xlink:title="gl-cor_accountingEntries"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="gl-cor_accountingEntries" xlink:to="Hypercube" xlink:title="definition: gl-cor_accountingEntries to Hypercube" order="0" xbrldt:contextElement="segment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="gl-cor_accountingEntries" xlink:to="Hypercube" xlink:title="definition: gl-cor_accountingEntries to Hypercube" order="0" xbrldt:closed="true" xbrldt:contextElement="scenario" />
     <!-- Primary Item ( gl-cor_accountingEntries ) to each item -->
     <!-- documentNumber -->
     <link:loc xlink:type="locator" xlink:href="../../cor/gl-cor-2020-12-31.xsd#gl-cor_documentInfo" xlink:label="gl-cor_documentInfo" xlink:title="gl-cor_documentInfo"/>
