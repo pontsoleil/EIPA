@@ -44,7 +44,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 		<!-- PrimaryItem04 -->
-		<formula:formula id="PrimaryItem04" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountMainID = '00000001' ) then sum( $amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem04">
+		<formula:formula id="PrimaryItem04" aspectModel="dimensional" implicitFiltering="true" value="sum( $amount )" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem04">
 			<formula:aspects>
 				<formula:entityIdentifier value="'ABCD-1234'"/>
 				<formula:concept>
@@ -70,7 +70,8 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			<cf:concept><cf:qname>c:cor-23</cf:qname></cf:concept>
 		</cf:conceptName>
 		<cf:conceptName id="cNinvoiceCurrencyCode" xlink:type="resource" xlink:label="cNinvoiceCurrencyCode">
-			<cf:concept><cf:qname>m:muc-4</cf:qname></cf:concept>
+			<cf:concept><cf:qname>c:cor-40</cf:qname></cf:concept>
+			<!-- <cf:concept><cf:qname>m:muc-4</cf:qname></cf:concept> -->
 		</cf:conceptName>
 		<!-- generalVariable -->
 		<variable:generalVariable id="contextRef_accountMainID" bindAsSequence="false" select="$accountMainID/@contextRef" xlink:type="resource" xlink:label="contextRef_accountMainID" />
