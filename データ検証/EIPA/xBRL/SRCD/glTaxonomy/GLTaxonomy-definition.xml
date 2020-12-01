@@ -8,20 +8,22 @@
   <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
   <link:definitionLink xlink:type="extended" xlink:role="http://www.GL.com/link">
     <!-- root -->
-    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl-cor_accountingEntries" xlink:label="gl-cor_accountingEntries" xlink:title="gl-cor_accountingEntries"/>
+    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl_accountingEntries" xlink:label="gl_accountingEntries" xlink:title="gl_accountingEntries"/>
     <!-- Hypercube -->
     <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#Hypercube" xlink:label="Hypercube" xlink:title="Hypercube"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="gl-cor_accountingEntries" xlink:to="Hypercube" xlink:title="definition: gl-cor_accountingEntries to Hypercube" order="3.0" xbrldt:contextElement="scenario"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="gl_accountingEntries" xlink:to="Hypercube" xlink:title="definition: gl_accountingEntries to Hypercube" order="3.0" xbrldt:contextElement="scenario"/>
     <!-- parent item (tuple) -->
-    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl-cor_corG-2" xlink:label="corG-2" xlink:title="corG-2"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="gl-cor_accountingEntries" xlink:to="corG-2" xlink:title="definition: gl-cor_accountingEntries to corG-2" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl_entry" xlink:label="entry" xlink:title="entry"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="gl_accountingEntries" xlink:to="entry" xlink:title="definition: gl_accountingEntries to entry" order="1.0"/>
     <!-- item -->
-    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl-cor_cor-3" xlink:label="cor-3" xlink:title="cor-3"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="corG-2" xlink:to="cor-3" xlink:title="definition: corG-2 to cor-3" order="1.0"/>
-    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl-cor_cor-4" xlink:label="cor-4" xlink:title="cor-4"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="corG-2" xlink:to="cor-4" xlink:title="definition: corG-2 to cor-4" order="1.0"/>
-    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl-cor_cor-5" xlink:label="cor-5" xlink:title="cor-5"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="corG-2" xlink:to="cor-5" xlink:title="definition: corG-2 to cor-5" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl_lineNumber" xlink:label="lineNumber" xlink:title="lineNumber"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="entry" xlink:to="lineNumber" xlink:title="definition: entry to lineNumber" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl_accountID" xlink:label="accountID" xlink:title="accountID"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="entry" xlink:to="accountID" xlink:title="definition: entry to accountID" order="2.0"/>
+    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl_amount" xlink:label="amount" xlink:title="amount"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="entry" xlink:to="amount" xlink:title="definition: entry to amount" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#gl_currencyCode" xlink:label="currencyCode" xlink:title="currencyCode"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="entry" xlink:to="currencyCode" xlink:title="definition: entry to currencyCode" order="4.0"/>
 
     <!-- Typed Dimension -->
     <link:loc xlink:type="locator" xlink:href="GLTaxonomy.xsd#d1" xlink:label="dim1" xlink:title="Axis _1"/>
