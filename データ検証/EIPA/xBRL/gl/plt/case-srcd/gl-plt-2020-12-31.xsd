@@ -37,6 +37,8 @@ xmlns:e="http://www.xbrl.org/int/gl/cen/2020-12-31">
   <import namespace="http://www.xbrl.org/int/gl/srcd/2020-12-31" schemaLocation="../../srcd/gl-srcd-2020-12-31.xsd"/>
   <import namespace="http://www.xbrl.org/int/gl/cen/2020-12-31" schemaLocation="../../cen/gl-cen-2020-12-31.xsd"/>
   <include schemaLocation="../../cor/gl-cor-2020-12-31.xsd"/>
+  <!-- Primary Item -->
+  <element name="PrimaryItem" id="PrimaryItem" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="instant"/>
 	<!-- Hypercube -->
   <element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
 	<!-- Dimension -->

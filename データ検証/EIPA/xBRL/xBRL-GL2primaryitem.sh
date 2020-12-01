@@ -79,7 +79,7 @@ cat gl/source/xBRL-GL.tsv | awk -F'\t' -v module=$1 'BEGIN {
 END {
   print "  </presentationLink>";
   print "</linkbase>"; 
-}' > gl/source/gl-"$1"-2020-12-31-presentation.xml
+}' > gl/source/gl-"$1"-2020-12-31-definition.xml
 # --------------------------------------------------------------------
 rm log/${0##*/}.$$.*
 exit 0
