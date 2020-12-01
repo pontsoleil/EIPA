@@ -451,7 +451,7 @@ xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2020-12-31">
 		</simpleContent>
 	</complexType>
   <!-- item cor -->
-	<element name="corG-1" id="gl-cor_accountingEntries" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="corG-1" id="gl-cor_accountingEntries" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="instant"/>
 	<element name="corG-2" id="gl-cor_documentInfo" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-1" id="gl-cor_entriesType" type="gl-gen:entriesTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="cor-2" id="gl-cor_uniqueID" type="gl-cor:uniqueIDItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
