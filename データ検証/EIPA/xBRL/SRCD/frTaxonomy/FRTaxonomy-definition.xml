@@ -16,8 +16,9 @@
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="PrimaryItem04" xlink:title="definition: PrimaryItem03 to PrimaryItem04" order="1.0"/>
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem05" xlink:label="PrimaryItem05" xlink:title="PrimaryItem05"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="PrimaryItem05" xlink:title="definition: PrimaryItem03 to PrimaryItem05" order="2.0"/>
-    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem06" xlink:label="PrimaryItem06" xlink:title="PrimaryItem06"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="PrimaryItem06" xlink:title="definition: PrimaryItem03 to PrimaryItem06" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_comment" xlink:label="Comment" xlink:title="Comment"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="Comment" xlink:title="definition: PrimaryItem03 to Comment" order="3.0"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem54" xlink:label="AdministrativeExpenses" xlink:title="AdministrativeExpenses"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="PrimaryItem01" xlink:to="AdministrativeExpenses" xlink:title="definition: PrimaryItem01 to AdministrativeExpenses" order="3.0" xbrldt:contextElement="segment"/>
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_Costcategory1" xlink:label="Costcategory1" xlink:title="Costcategory1"/>
