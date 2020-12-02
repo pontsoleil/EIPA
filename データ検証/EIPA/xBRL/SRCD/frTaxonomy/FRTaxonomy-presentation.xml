@@ -4,15 +4,15 @@
   <link:roleRef roleURI="http://www.srcdtest.com/report/link" xlink:type="simple" xlink:href="FRTaxonomy.xsd#srcdtest1"/>
   <link:presentationLink xlink:type="extended" xlink:role="http://www.srcdtest.com/report/link">
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem01" xlink:label="PrimaryItem01" xlink:title="PrimaryItem01"/>
-    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem02" xlink:label="Description" xlink:title="Description"/>
-    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem01" xlink:to="Description" xlink:title="presentation: PrimaryItem01 to Description" order="1.0"/>
+    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem02" xlink:label="PrimaryItem02" xlink:title="PrimaryItem02"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem01" xlink:to="PrimaryItem02" xlink:title="presentation: PrimaryItem01 to PrimaryItem02" order="1.0"/>
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem03" xlink:label="PrimaryItem03" xlink:title="PrimaryItem03"/>
-    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="Description" xlink:to="PrimaryItem03" xlink:title="presentation: Description to PrimaryItem03" order="1.0"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem02" xlink:to="PrimaryItem03" xlink:title="presentation: PrimaryItem02 to PrimaryItem03" order="1.0"/>
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem04" xlink:label="PrimaryItem04" xlink:title="PrimaryItem04"/>
     <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem03" xlink:to="PrimaryItem04" xlink:title="presentation: PrimaryItem03 to PrimaryItem04" order="1.0"/>
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem05" xlink:label="PrimaryItem05" xlink:title="PrimaryItem05"/>
     <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem03" xlink:to="PrimaryItem05" xlink:title="presentation: PrimaryItem03 to PrimaryItem05" order="2.0"/>
-    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_Comment" xlink:label="Comment" xlink:title="Comment"/>
-    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem03" xlink:to="Comment" xlink:title="presentation: PrimaryItem03 to Comment" order="3.0"/>
+    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem06" xlink:label="PrimaryItem06" xlink:title="PrimaryItem06"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="PrimaryItem03" xlink:to="PrimaryItem06" xlink:title="presentation: PrimaryItem03 to PrimaryItem06" order="3.0"/>
   </link:presentationLink>
 </link:linkbase>
