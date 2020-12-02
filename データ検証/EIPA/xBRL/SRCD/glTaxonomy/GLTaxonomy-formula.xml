@@ -78,7 +78,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		</df:typedDimension> -->
 
 		<!-- PrimaryItem04 -->
-		<formula:formula id="PrimaryItem04" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="CHECK">
+		<formula:formula id="PrimaryItem04" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem04">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>fr-sample:PrimaryItem04</formula:qname>
@@ -90,9 +90,13 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		</formula:formula>
 
 		<!-- variableArc -->
-		<variable:variableArc name="ammount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="ammount" />
-		<variable:variableArc name="accountID" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="accountID" />
-		<variable:variableArc name="contextRef_accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="contextRef_accountID" />
+		<variable:variableArc name="amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="amount" />
+		<variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="accountID" />
+		<variable:variableArc name="contextRef_accountID" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="contextRef_accountID" />
+
+		<!-- generalVariable -->
+		<variable:generalVariable id="contextRef_accountID" bindAsSequence="false" select="$accountID/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID" />
+		<variable:generalVariable id="amount" bindAsSequence="false" select="//gl:cor-5[@contextRef=$contextRef_accountID]" xlink:type="resource" xlink:label="amount" />
 
 		<!-- factVariable -->
 		<variable:factVariable id="accountID" bindAsSequence="true" xlink:type="resource" xlink:label="accountID" />
@@ -105,9 +109,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
 		</cf:conceptName>
 
-		<!-- generalVariable -->
-		<variable:generalVariable id="contextRef_accountID" bindAsSequence="false" select="$accountID/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID" />
-		<variable:generalVariable id="amount" bindAsSequence="false" select="//c:cor-5[@contextRef=$contextRef_accountID]" xlink:type="resource" xlink:label="amount" />
 
 	</gen:link>
 </link:linkbase>
