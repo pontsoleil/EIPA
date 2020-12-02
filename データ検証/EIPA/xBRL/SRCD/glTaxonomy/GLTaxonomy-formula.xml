@@ -62,7 +62,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<cf:conceptName id="cNamount" xlink:type="resource" xlink:label="cNamount">
 			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
 		</cf:conceptName>
-
+<!-- 
 		<formula:formula id="PrimaryItem04" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $gl_amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem04">
 			<formula:aspects>
 				<formula:concept>
@@ -86,7 +86,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID" xlink:to="cNaccountID" />
 		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
 			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
-		</cf:conceptName>
+		</cf:conceptName> -->
 
 	</gen:link>
 </link:linkbase>
