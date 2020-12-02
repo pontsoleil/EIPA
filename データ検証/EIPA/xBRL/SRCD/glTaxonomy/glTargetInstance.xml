@@ -12,10 +12,9 @@
     <xbrli:unit id="pure">
         <xbrli:measure>xbrli:pure</xbrli:measure>
     </xbrli:unit>
-    <xbrli:unit id="USD">
-        <xbrli:measure>iso4217:USD</xbrli:measure>
+    <xbrli:unit id="JPY">
+        <xbrli:measure>iso4217:JPY</xbrli:measure>
     </xbrli:unit>
-    <!-- gl-cor:entryHeader -->
     <xbrli:context id="cG1">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
@@ -23,7 +22,7 @@
             <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
         </xbrli:scenario>
     </xbrli:context>
-    <!-- gl-cor:entryHeader / gl-cor:entryDetail 0 -->
+
     <xbrli:context id="cG1cG2">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
@@ -34,8 +33,8 @@
     </xbrli:context>
     <gl:cor-3 contextRef="cG1cG2">001</gl:cor-3>
     <gl:cor-4 contextRef="cG1cG2">00000001</gl:cor-4>
-    <gl:cor-5 contextRef="cG1cG2" unitRef="USD" decimals="INF">150</gl:cor-5> 
-    <!-- gl-cor:entryHeader / gl-cor:entryDetail 1 -->
+    <gl:cor-5 contextRef="cG1cG2" unitRef="JPY" decimals="0">150</gl:cor-5> 
+
     <xbrli:context id="cG1cG2.1">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
@@ -46,8 +45,8 @@
     </xbrli:context>
     <gl:cor-3 contextRef="cG1cG2.1">002</gl:cor-3>
     <gl:cor-4 contextRef="cG1cG2.1">00000002</gl:cor-4>
-    <gl:cor-5 contextRef="cG1cG2.1" unitRef="USD" decimals="INF">500</gl:cor-5>
-    <!-- gl-cor:entryHeader / gl-cor:entryDetail 2 -->
+    <gl:cor-5 contextRef="cG1cG2.1" unitRef="JPY" decimals="0">500</gl:cor-5>
+
     <xbrli:context id="cG1cG2.2">
         <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
         <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
@@ -58,5 +57,29 @@
     </xbrli:context>
     <gl:cor-3 contextRef="cG1cG2.2">003</gl:cor-3>
     <gl:cor-4 contextRef="cG1cG2.2">00000003</gl:cor-4>
-    <gl:cor-5 contextRef="cG1cG2.2" unitRef="USD" decimals="INF">300</gl:cor-5>
+    <gl:cor-5 contextRef="cG1cG2.2" unitRef="JPY" decimals="0">300</gl:cor-5>
+
+    <xbrli:context id="cG1cG2.3">
+        <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
+        <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
+        <xbrli:scenario>
+          <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d2"><gl:_2>cG2.3</gl:_2></xbrldi:typedMember>
+        </xbrli:scenario>
+    </xbrli:context>
+    <gl:cor-3 contextRef="cG1cG2.3">004</gl:cor-3>
+    <gl:cor-4 contextRef="cG1cG2.3">00000003</gl:cor-4>
+    <gl:cor-5 contextRef="cG1cG2.3" unitRef="JPY" decimals="0">100</gl:cor-5>
+
+    <xbrli:context id="cG1cG2.4">
+        <xbrli:entity><xbrli:identifier scheme="http://eipa.jp">EIPA</xbrli:identifier></xbrli:entity>
+        <xbrli:period><xbrli:instant>2020-11-26</xbrli:instant></xbrli:period>
+        <xbrli:scenario>
+          <xbrldi:typedMember dimension="gl:d1"><gl:_1>cG1</gl:_1></xbrldi:typedMember>
+          <xbrldi:typedMember dimension="gl:d2"><gl:_2>cG2.4</gl:_2></xbrldi:typedMember>
+        </xbrli:scenario>
+    </xbrli:context>
+    <gl:cor-3 contextRef="cG1cG2.4">005</gl:cor-3>
+    <gl:cor-4 contextRef="cG1cG2.4">00000002</gl:cor-4>
+    <gl:cor-5 contextRef="cG1cG2.4" unitRef="JPY" decimals="0">400</gl:cor-5>
 </xbrli:xbrl>
