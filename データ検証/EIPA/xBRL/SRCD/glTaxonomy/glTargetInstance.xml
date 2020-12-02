@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xbrli:xbrl
-    xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:iso639="http://www.xbrl.org/2005/iso639"
     xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
     xmlns:xbrli="http://www.xbrl.org/2003/instance"
-    xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
-    xmlns:gl="GLTaxonomy.xsd">
-    <xbrll:schemaRef xlink:type="simple" xlink:href="GLTaxonomy.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+    <!-- xmlns:gl="GLTaxonomy.xsd"> -->
+    <link:schemaRef xlink:type="simple" xlink:href="GLTaxonomy.xsd"/>
     <xbrli:unit id="pure">
         <xbrli:measure>xbrli:pure</xbrli:measure>
     </xbrli:unit>
