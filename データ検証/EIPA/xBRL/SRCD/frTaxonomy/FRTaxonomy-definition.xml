@@ -10,23 +10,31 @@
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem01" xlink:label="PrimaryItem01" xlink:title="PrimaryItem01"/>
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem02" xlink:label="Description" xlink:title="Description"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem01" xlink:to="Description" xlink:title="definition: PrimaryItem01 to Description" order="1.0"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem03" xlink:label="PrimaryItem03" xlink:title="PrimaryItem03"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="Description" xlink:to="PrimaryItem03" xlink:title="definition: Description to PrimaryItem03" order="1.0"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem04" xlink:label="PrimaryItem04" xlink:title="PrimaryItem04"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="PrimaryItem04" xlink:title="definition: PrimaryItem03 to PrimaryItem04" order="1.0"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem05" xlink:label="PrimaryItem05" xlink:title="PrimaryItem05"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="PrimaryItem05" xlink:title="definition: PrimaryItem03 to PrimaryItem05" order="2.0"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_Comment" xlink:label="Comment" xlink:title="Comment"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PrimaryItem03" xlink:to="Comment" xlink:title="definition: PrimaryItem03 to Comment" order="3.0"/>
 
-    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_PrimaryItem54" xlink:label="AdministrativeExpenses" xlink:title="AdministrativeExpenses"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="PrimaryItem01" xlink:to="AdministrativeExpenses" xlink:title="definition: PrimaryItem01 to AdministrativeExpenses" order="3.0" xbrldt:contextElement="segment"/>
+    <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_Hypercube" xlink:label="Hypercube" xlink:title="Hypercube"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="PrimaryItem01" xlink:to="Hypercube" xlink:title="definition: PrimaryItem01 to Hypercube" order="3.0" xbrldt:contextElement="segment"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_Costcategory1" xlink:label="Costcategory1" xlink:title="Costcategory1"/>
-    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="AdministrativeExpenses" xlink:to="Costcategory1" xlink:title="definition: AdministrativeExpenses to Costcategory1" order="1.0"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="Hypercube" xlink:to="Costcategory1" xlink:title="definition: Hypercube to Costcategory1" order="1.0"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_DomainMember01" xlink:label="PersonnelCost" xlink:title="c"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="Costcategory1" xlink:to="PersonnelCost" xlink:title="definition: Costcategory1 to PersonnelCost" order="1.0" xbrldt:usable="false"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_DomainMember09" xlink:label="DomainMember07" xlink:title="DomainMember07"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="PersonnelCost" xlink:to="DomainMember07" xlink:title="definition: PersonnelCost to DomainMember07" order="1.0" xbrldt:usable="false"/>
+
     <link:loc xlink:type="locator" xlink:href="FRTaxonomy.xsd#fr-sample_DomainMember20" xlink:label="ExpatSalaryWages" xlink:title="ExpatSalaryWages"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="DomainMember07" xlink:to="ExpatSalaryWages" xlink:title="definition: DomainMember07 to ExpatSalaryWages" order="1.0"/>
   </link:definitionLink>
