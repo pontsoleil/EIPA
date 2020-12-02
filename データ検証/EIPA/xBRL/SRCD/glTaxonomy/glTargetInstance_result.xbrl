@@ -10,5 +10,8 @@
       <instant>2020-11-26</instant>
     </period>
   </context>
-  <fr-sample:Comment contextRef="context">950</fr-sample:Comment>
+  <unit id="USD">
+    <measure>iso4217:USD</measure>
+  </unit>
+  <fr-sample:PrimaryItem04 precision="0" contextRef="context" unitRef="USD">950</fr-sample:PrimaryItem04>
 </xbrl>
