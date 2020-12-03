@@ -42,10 +42,10 @@ xmlns:fr-sample="http://www.srcdtest.com">
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 
-		<formula:formula id="PrimaryItem04" aspectModel="dimensional" implicitFiltering="true" value="sum($amount)" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem04">
+		<formula:formula id="Formula1" aspectModel="dimensional" implicitFiltering="true" value="sum($formula1Amount)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula1">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>fr-sample:PrimaryItem04</formula:qname>
+					<formula:qname>fr-sample:Formula1</formula:qname>
 				</formula:concept>
 				<formula:explicitDimension dimension="fr-sample:Costcategory1">
 					<formula:member><formula:qname>fr-sample:DomainMember20</formula:qname></formula:member>
@@ -53,15 +53,15 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			</formula:aspects>
 		</formula:formula>
 
-		<variable:variableArc name="amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="amount" />
+		<variable:variableArc name="formula1Amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula1" xlink:to="formula1Amount" />
 
-		<variable:factVariable id="amount" bindAsSequence="true" xlink:type="resource" xlink:label="amount" />
+		<variable:factVariable id="formula1Amount" bindAsSequence="true" xlink:type="resource" xlink:label="formula1Amount" />
 
-		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="cNamount" />
-		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_1_cG1" />
-		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_2" />
+		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula1Amount" xlink:to="cNformula1Amount" />
+		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula1Amount" xlink:to="tD_1_cG1" />
+		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula1Amount" xlink:to="tD_2" />
 
-		<cf:conceptName id="cNamount" xlink:type="resource" xlink:label="cNamount">
+		<cf:conceptName id="cNformula1Amount" xlink:type="resource" xlink:label="cNformula1Amount">
 			<cf:concept>
 				<cf:qname>gl:cor-5</cf:qname>
 			</cf:concept>
@@ -77,10 +77,10 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			</df:dimension>
 		</df:typedDimension>
 
-		<formula:formula id="PrimaryItem06" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then $amount else ''" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem06">
+		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $formula2Amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>fr-sample:PrimaryItem06</formula:qname>
+					<formula:qname>fr-sample:Formula2</formula:qname>
 				</formula:concept>
 				<formula:explicitDimension dimension="fr-sample:Costcategory1">
 					<formula:member><formula:qname>fr-sample:DomainMember20</formula:qname></formula:member>
@@ -88,12 +88,12 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			</formula:aspects>
 		</formula:formula>
 
-		<variable:variableArc name="amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="amount" />
-		<variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="accountID" />
-		<variable:variableArc name="contextRef_amount" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="contextRef_amount" />
+		<variable:variableArc name="formula2Amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="formula2Amount" />
+		<variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="accountID" />
+		<variable:variableArc name="contextRef_formula2Amount" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="contextRef_formula2Amount" />
 
-		<variable:generalVariable id="contextRef_amount" bindAsSequence="false" select="$amount/@contextRef" xlink:type="resource" xlink:label="contextRef_amount" />
-		<variable:generalVariable id="accountID" bindAsSequence="false" select="//gl:cor-4[@contextRef=$contextRef_amount]" xlink:type="resource" xlink:label="accountID" />
+		<variable:generalVariable id="contextRef_formula2Amount" bindAsSequence="false" select="$formula2Amount/@contextRef" xlink:type="resource" xlink:label="contextRef_formula2Amount" />
+		<variable:generalVariable id="accountID" bindAsSequence="false" select="//gl:cor-4[@contextRef=$contextRef_formula2Amount]" xlink:type="resource" xlink:label="accountID" />
 
 	</gen:link>
 </link:linkbase>
