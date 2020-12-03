@@ -53,9 +53,10 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			</formula:aspects>
 		</formula:formula>
 
-		<variable:variableArc name="amount" order="10.01" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="amount" />
+		<variable:variableArc name="amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem04" xlink:to="amount" />
 
 		<variable:factVariable id="amount" bindAsSequence="true" xlink:type="resource" xlink:label="amount" />
+
 		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="cNamount" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_1_cG1" />
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_2" />
@@ -87,8 +88,9 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			</formula:aspects>
 		</formula:formula>
 
-		<variable:variableArc name="accountID" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="accountID" />
-		<variable:variableArc name="contextRef_amount" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="contextRef_amount" />
+		<variable:variableArc name="amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="amount" />
+		<variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="accountID" />
+		<variable:variableArc name="contextRef_amount" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="contextRef_amount" />
 
 		<variable:generalVariable id="contextRef_amount" bindAsSequence="false" select="$amount/@contextRef" xlink:type="resource" xlink:label="contextRef_amount" />
 		<variable:generalVariable id="accountID" bindAsSequence="false" select="//gl:cor-4[@contextRef=$contextRef_amount]" xlink:type="resource" xlink:label="accountID" />
