@@ -62,19 +62,13 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula1Amount" xlink:to="tD_2" />
 
 		<cf:conceptName id="cNformula1Amount" xlink:type="resource" xlink:label="cNformula1Amount">
-			<cf:concept>
-				<cf:qname>gl:cor-5</cf:qname>
-			</cf:concept>
+			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
 		</cf:conceptName>
 		<df:typedDimension id="tD_1_cG1" test="string(gl:_1)=&quot;cG1&quot;" xlink:type="resource" xlink:label="tD_1_cG1">
-			<df:dimension>
-				<df:qname>gl:d1</df:qname>
-			</df:dimension>
+			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
 		</df:typedDimension>
 		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
-			<df:dimension>
-				<df:qname>gl:d2</df:qname>
-			</df:dimension>
+			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
 		</df:typedDimension>
 
 		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $formula2Amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
@@ -95,5 +89,11 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:generalVariable id="contextRef_formula2Amount" bindAsSequence="false" select="$formula2Amount/@contextRef" xlink:type="resource" xlink:label="contextRef_formula2Amount" />
 		<variable:generalVariable id="accountID" bindAsSequence="false" select="//gl:cor-4[@contextRef=$contextRef_formula2Amount]" xlink:type="resource" xlink:label="accountID" />
 
+		<variable:factVariable id="formula2Amount" bindAsSequence="true" xlink:type="resource" xlink:label="formula2Amount" />
+		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula2Amount" xlink:to="cNformula2Amount" />
+		<cf:conceptName id="cNformula2Amount" xlink:type="resource" xlink:label="cNformula2Amount">
+			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
+		</cf:conceptName>
+		
 	</gen:link>
 </link:linkbase>
