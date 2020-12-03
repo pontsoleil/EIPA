@@ -83,19 +83,15 @@ xmlns:fr-sample="http://www.srcdtest.com">
 				</formula:concept>
 				<formula:explicitDimension dimension="fr-sample:Costcategory1">
 					<formula:member><formula:qname>fr-sample:DomainMember20</formula:qname></formula:member>
-					</formula:explicitDimension>
+				</formula:explicitDimension>
 			</formula:aspects>
 		</formula:formula>
-		<variable:variableArc name="gl_amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="gl_amount" />
+
 		<variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="accountID" />
-		<variable:variableArc name="contextRef_accountID" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="contextRef_accountID" />
-		<variable:generalVariable id="contextRef_accountID" bindAsSequence="false" select="$accountID/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID" />
-		<variable:generalVariable id="gl_amount" bindAsSequence="false" select="//gl:cor-5[@contextRef=$contextRef_accountID]" xlink:type="resource" xlink:label="gl_amount" />
-		<variable:factVariable id="accountID" bindAsSequence="true" xlink:type="resource" xlink:label="accountID" />
-		<variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID" xlink:to="cNaccountID" />
-		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
-			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
-		</cf:conceptName>
+		<variable:variableArc name="contextRef_amount" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="PrimaryItem06" xlink:to="contextRef_amount" />
+
+		<variable:generalVariable id="contextRef_amount" bindAsSequence="false" select="$amount/@contextRef" xlink:type="resource" xlink:label="contextRef_amount" />
+		<variable:generalVariable id="accountID" bindAsSequence="false" select="//gl:cor-4[@contextRef=$contextRef_amount]" xlink:type="resource" xlink:label="accountID" />
 
 	</gen:link>
 </link:linkbase>
