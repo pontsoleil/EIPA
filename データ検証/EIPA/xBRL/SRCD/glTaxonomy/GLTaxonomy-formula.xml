@@ -107,6 +107,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<!-- <cf:conceptName id="cNformula2_Amount" xlink:type="resource" xlink:label="cNformula2_Amount">
 			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
 		</cf:conceptName> -->
-		<gf:general id="filter_00000002" test="//gl:cor-4 eq &apos;00000002&apos;" xlink:type="resource" xlink:label="filter_00000002"/>		
+		<gf:general id="filter_00000002" test="string(gl:cor-4)=&apos;00000002&apos;" xlink:type="resource" xlink:label="filter_00000002"/>		
 	</gen:link>
 </link:linkbase>
