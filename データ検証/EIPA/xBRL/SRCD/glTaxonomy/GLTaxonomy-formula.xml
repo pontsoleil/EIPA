@@ -74,7 +74,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
 		</df:typedDimension>
 
-		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $formula2Amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
+		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="sum( $formula2Amount )" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>fr-sample:PrimaryItem06</formula:qname>
@@ -100,5 +100,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula2Amount" xlink:to="tD_1_cG1" />
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula2Amount" xlink:to="tD_2" />
 
+		<variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="formula2Amount" xlink:to="filter_00000002"/>
+		<gf:general id="filter_00000002" test="string(gl:cor-4) eq &apos;00000002&apos;" xlink:type="resource" xlink:label="filter_00000002"/>
 	</gen:link>
 </link:linkbase>
