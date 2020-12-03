@@ -91,7 +91,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		</formula:formula>
 
 		<variable:variableArc name="formula2_Amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="formula2_Amount" />
-		<!-- <variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="accountID" /> -->
+		<variable:variableArc name="accountID" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="accountID" />
 		<!-- <variable:variableArc name="contextRef_formula2_Amount" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="contextRef_formula2_Amount" /> -->
 
 		<!-- <variable:generalVariable id="contextRef_formula2_Amount" bindAsSequence="false" select="$formula2_Amount/@contextRef" xlink:type="resource" xlink:label="contextRef_formula2_Amount" /> -->
@@ -108,6 +108,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
 		</cf:conceptName>
 		
-		<gf:general id="filter_00000002" test="string(gl:cor-4) eq &apos;00000002&apos;" xlink:type="resource" xlink:label="filter_00000002"/>
+		<gf:general id="filter_00000002" test="string($accountID) eq &apos;00000002&apos;" xlink:type="resource" xlink:label="filter_00000002"/>
 	</gen:link>
 </link:linkbase>
