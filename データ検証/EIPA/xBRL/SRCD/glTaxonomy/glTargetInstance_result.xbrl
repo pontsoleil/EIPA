@@ -5,13 +5,21 @@
   <context id="context">
     <entity>
       <identifier scheme="http://eipa.jp">EIPA</identifier>
+      <segment>
+        <xbrldi:explicitMember dimension="fr-sample:Costcategory1">fr-sample:DomainMember20</xbrldi:explicitMember>
+      </segment>
     </entity>
     <period>
       <instant>2020-11-26</instant>
     </period>
   </context>
-  <unit id="USD">
-    <measure>iso4217:USD</measure>
+  <unit id="JPY">
+    <measure>iso4217:JPY</measure>
   </unit>
-  <fr-sample:PrimaryItem04 precision="0" contextRef="context" unitRef="USD">950</fr-sample:PrimaryItem04>
+  <fr-sample:PrimaryItem04 precision="0" contextRef="context" unitRef="JPY">1450</fr-sample:PrimaryItem04>
+  <fr-sample:PrimaryItem06 contextRef="context" xsi:nil="true"/>
+  <fr-sample:PrimaryItem06 contextRef="context">1450</fr-sample:PrimaryItem06>
+  <fr-sample:PrimaryItem06 contextRef="context" xsi:nil="true"/>
+  <fr-sample:PrimaryItem06 contextRef="context" xsi:nil="true"/>
+  <fr-sample:PrimaryItem06 contextRef="context">1450</fr-sample:PrimaryItem06>
 </xbrl>
