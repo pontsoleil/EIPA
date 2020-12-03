@@ -77,7 +77,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 			</df:dimension>
 		</df:typedDimension>
 
-		<formula:formula id="PrimaryItem06" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then sum( $amount ) else ''" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem06">
+		<formula:formula id="PrimaryItem06" aspectModel="dimensional" implicitFiltering="true" value="if ( $accountID = '00000002' ) then $amount else ''" source="formula:uncovered" xlink:type="resource" xlink:label="PrimaryItem06">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>fr-sample:PrimaryItem06</formula:qname>
