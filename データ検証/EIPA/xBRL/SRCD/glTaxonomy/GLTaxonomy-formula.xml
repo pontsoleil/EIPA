@@ -47,6 +47,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 	<!-- Formula 1 -->
+<!--
 		<formula:formula id="Formula1" aspectModel="dimensional" implicitFiltering="true" value="sum($amount)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula1">
 			<formula:aspects>
 				<formula:concept>
@@ -59,15 +60,13 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		</formula:formula>
 
 		<variable:variableArc name="amount" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula1" xlink:to="amount" />
-
 		<variable:factVariable id="amount" bindAsSequence="true" xlink:type="resource" xlink:label="amount" />
-
-		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="cNAmount" />
+		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="cNamount" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_1_cG1" />
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_2_cG2" />
-
+-->
 	<!-- Formula 2 -->
-		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat('accountID:', $accountID_0002, ' amount:', sum($amount_accountID_0002))" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
+		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat('accountID:', $accountID_0002, ' amount:', $amount_accountID_0002)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>fr-sample:PrimaryItem06</formula:qname>
@@ -79,36 +78,36 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		</formula:formula>
 
 		<variable:variableArc name="accountID_0002" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="accountID_0002" />
-		<variable:variableArc name="contextRef_accountID_0002" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="contextRef_accountID_0002" />
-		<variable:variableArc name="amount_accountID_0002" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="amount_accountID_0002" />
-
 		<variable:factVariable id="accountID_0002" bindAsSequence="true" xlink:type="resource" xlink:label="accountID_0002" />
-		<variable:generalVariable id="contextRef_accountID_0002" bindAsSequence="false" select="$accountID_0002/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID_0002" />
-		<variable:generalVariable id="amount_accountID_0002" bindAsSequence="false" select="//gl:cor-5[@contextRef=$contextRef_accountID_0002]" xlink:type="resource" xlink:label="amount_accountID_0002" />
-
 		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="cNaccountID" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="filter_accountID_0002"/>
-		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1" />
-		<!-- <variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2" /> -->
+		<!-- <variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1_cG1" /> -->
+		<!-- <variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2_cG2" /> -->
+
+		<variable:variableArc name="contextRef_accountID_0002" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="contextRef_accountID_0002" />
+		<variable:generalVariable id="contextRef_accountID_0002" bindAsSequence="false" select="$accountID_0002/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID_0002" />
+
+		<variable:variableArc name="amount_accountID_0002" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="amount_accountID_0002" />
+		<variable:generalVariable id="amount_accountID_0002" bindAsSequence="false" select="//gl:cor-5[@contextRef=$contextRef_accountID_0002]" xlink:type="resource" xlink:label="amount_accountID_0002" />
 
 		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
 			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
 		</cf:conceptName>
-		<cf:conceptName id="cNAmount" xlink:type="resource" xlink:label="cNAmount">
+		<cf:conceptName id="cNamount" xlink:type="resource" xlink:label="cNamount">
 			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
 		</cf:conceptName>
 
 		<gf:general id="filter_accountID_0002" test=". eq '0002'" xlink:type="resource" xlink:label="filter_accountID_0002"/>		
 
-		<df:typedDimension id="tD_1" xlink:type="resource" xlink:label="tD_1">
+		<!-- <df:typedDimension id="tD_1" xlink:type="resource" xlink:label="tD_1">
 			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
-		</df:typedDimension>
+		</df:typedDimension> -->
 		<df:typedDimension id="tD_1_cG1" test="substring(gl:_1,1,3)='cG1'" xlink:type="resource" xlink:label="tD_1_cG1">
 			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
 		</df:typedDimension>
-		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
+		<!-- <df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
 			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
-		</df:typedDimension> 
+		</df:typedDimension>  -->
 		<df:typedDimension id="tD_2_cG2" test="substring(gl:_2,1,3)='cG2'"  xlink:type="resource" xlink:label="tD_2_cG2">
 			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
 		</df:typedDimension> 
