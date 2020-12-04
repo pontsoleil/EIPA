@@ -74,7 +74,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 				<formula:explicitDimension dimension="fr-sample:Costcategory1">
 					<formula:member><formula:qname>fr-sample:DomainMember20</formula:qname></formula:member>
 				</formula:explicitDimension>
-				<!-- <formula:unit source="$unit_ref"/> -->
+				<formula:unit value="$amount_accountID_0002"/>
 			</formula:aspects>
 		</formula:formula>
 
@@ -91,15 +91,14 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableArc name="amount_accountID_0002" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="amount_accountID_0002" />
 		<variable:generalVariable id="amount_accountID_0002" bindAsSequence="true" select="//gl:cor-5[@contextRef=$contextRef_accountID_0002]" xlink:type="resource" xlink:label="amount_accountID_0002" />
 
-		<!-- <variable:variableArc name="unit_ref" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="unit_ref" />
-		<variable:generalVariable id="unit_ref" bindAsSequence="true" select="$amount_accountID_0002/@unitRef" xlink:type="resource" xlink:label="unit_ref" /> -->
-
+		<!-- <variable:variableArc name="unitRef_amount_accountID_0002" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="unitRef_amount_accountID_0002" /> -->
+		<!-- <variable:generalVariable id="unitRef_amount_accountID_0002" bindAsSequence="false" select="$amount_accountID_0002/@unitRef" xlink:type="resource" xlink:label="unitRef_amount_accountID_0002" /> -->
 	<!-- filters -->
-		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
-			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
-		</cf:conceptName>
 		<cf:conceptName id="cNamount" xlink:type="resource" xlink:label="cNamount">
 			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
+		</cf:conceptName>
+		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
+			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
 		</cf:conceptName>
 
 		<gf:general id="filter_accountID_0002" test=". eq '0002'" xlink:type="resource" xlink:label="filter_accountID_0002"/>		
