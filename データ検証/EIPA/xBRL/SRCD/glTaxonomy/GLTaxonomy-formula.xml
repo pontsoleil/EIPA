@@ -70,6 +70,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<cf:conceptName id="cNformula1_Amount" xlink:type="resource" xlink:label="cNformula1_Amount">
 			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
 		</cf:conceptName>
+	-->
 		<df:typedDimension id="tD_1" xlink:type="resource" xlink:label="tD_1">
 			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
 		</df:typedDimension>
@@ -79,7 +80,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
 			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
 		</df:typedDimension> 
-	-->
 
 	<!-- Formula 2 -->
 		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat(accountID_0002, sum( $amoount_accountID_0002 ))" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
