@@ -47,6 +47,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 	<!-- Formula 1 -->
+		<!-- 
 		<formula:formula id="Formula1" aspectModel="dimensional" implicitFiltering="true" value="sum($formula1_Amount)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula1">
 			<formula:aspects>
 				<formula:concept>
@@ -77,7 +78,8 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		</df:typedDimension>
 		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
 			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
-		</df:typedDimension>
+		</df:typedDimension> 
+	-->
 
 	<!-- Formula 2 -->
 		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat(accountID_0002, sum( $amoount_accountID_0002 ))" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
