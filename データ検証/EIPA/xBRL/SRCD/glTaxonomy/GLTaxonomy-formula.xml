@@ -47,7 +47,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:type="simple" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" />
 	<gen:link xlink:type="extended" xlink:role="http://www.xbrl.org/2008/role/link">
 	<!-- Formula 1 -->
-<!--
 		<formula:formula id="Formula1" aspectModel="dimensional" implicitFiltering="true" value="sum($amount)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula1">
 			<formula:aspects>
 				<formula:concept>
@@ -66,23 +65,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="cNAmount" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_1_cG1" />
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_2_cG2" />
-
-		<cf:conceptName id="cNAmount" xlink:type="resource" xlink:label="cNAmount">
-			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
-		</cf:conceptName>
--->
-		<df:typedDimension id="tD_1" xlink:type="resource" xlink:label="tD_1">
-			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
-		</df:typedDimension>
-		<df:typedDimension id="tD_1_cG1" test="string(gl:_1)='cG1'" xlink:type="resource" xlink:label="tD_1_cG1">
-			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
-		</df:typedDimension>
-		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
-			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
-		</df:typedDimension> 
-		<df:typedDimension id="tD_2_cG2" test="substring(gl:_2,1,3)='cG2'"  xlink:type="resource" xlink:label="tD_2_cG2">
-			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
-		</df:typedDimension> 
 
 	<!-- Formula 2 -->
 		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat('accountID:', $accountID_0002, ' amount:', sum($amount_accountID_0002))" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
@@ -106,13 +88,30 @@ xmlns:fr-sample="http://www.srcdtest.com">
 
 		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="cNaccountID" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="filter_accountID_0002"/>
-		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1_cG1" />
-		<!-- <variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2" /> -->
+		<!-- <variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1_cG1" /> -->
+		<!-- <variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2_cG2" /> -->
 
 		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
 			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
 		</cf:conceptName>
+		<cf:conceptName id="cNAmount" xlink:type="resource" xlink:label="cNAmount">
+			<cf:concept><cf:qname>gl:cor-5</cf:qname></cf:concept>
+		</cf:conceptName>
 
 		<gf:general id="filter_accountID_0002" test=". eq '0002'" xlink:type="resource" xlink:label="filter_accountID_0002"/>		
+
+		<df:typedDimension id="tD_1" xlink:type="resource" xlink:label="tD_1">
+			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
+		</df:typedDimension>
+		<df:typedDimension id="tD_1_cG1" test="substring(gl:_1,1,3)='cG1'" xlink:type="resource" xlink:label="tD_1_cG1">
+			<df:dimension><df:qname>gl:d1</df:qname></df:dimension>
+		</df:typedDimension>
+		<df:typedDimension id="tD_2" xlink:type="resource" xlink:label="tD_2">
+			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
+		</df:typedDimension> 
+		<df:typedDimension id="tD_2_cG2" test="substring(gl:_2,1,3)='cG2'"  xlink:type="resource" xlink:label="tD_2_cG2">
+			<df:dimension><df:qname>gl:d2</df:qname></df:dimension>
+		</df:typedDimension> 
+
 	</gen:link>
 </link:linkbase>
