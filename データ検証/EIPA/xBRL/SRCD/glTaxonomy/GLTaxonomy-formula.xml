@@ -104,6 +104,6 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<!-- <variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1_cG1" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2" /> -->
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="filter_0002"/>
-		<gf:general id="filter_0002" test=". eq&apos;0002&apos;" xlink:type="resource" xlink:label="filter_0002"/>		
+		<gf:general id="filter_0002" test="//gl:cor-4=eq&apos;0002&apos;" xlink:type="resource" xlink:label="filter_0002"/>		
 	</gen:link>
 </link:linkbase>
