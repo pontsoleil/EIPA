@@ -70,12 +70,12 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="sum($amount_accountID_0002)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>gl:cor-7</formula:qname>
-					<!-- <formula:qname>fr-sample:PrimaryItem06</formula:qname> -->
+					<!-- <formula:qname>gl:cor-7</formula:qname> -->
+					<formula:qname>fr-sample:PrimaryItem06</formula:qname>
 				</formula:concept>
-				<!-- <formula:explicitDimension dimension="fr-sample:Costcategory1">
+				<formula:explicitDimension dimension="fr-sample:Costcategory1">
 					<formula:member><formula:qname>fr-sample:DomainMember20</formula:qname></formula:member>
-				</formula:explicitDimension> -->
+				</formula:explicitDimension>
 			</formula:aspects>
 		</formula:formula>
 
