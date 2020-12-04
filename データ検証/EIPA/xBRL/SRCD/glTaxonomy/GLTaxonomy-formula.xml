@@ -67,7 +67,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 -->
 
 	<!-- Formula 2 -->
-		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat('accountID:', $accountID_0002, ' amount:', $amount_accountID_0002)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
+		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="sum($amount_accountID_0002)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
 			<formula:aspects>
 				<formula:concept>
 					<formula:qname>gl:cor-7</formula:qname>
