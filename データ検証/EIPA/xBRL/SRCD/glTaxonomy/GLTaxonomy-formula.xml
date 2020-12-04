@@ -65,15 +65,17 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_1_cG1" />
 		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="amount" xlink:to="tD_2_cG2" />
 -->
+
 	<!-- Formula 2 -->
 		<formula:formula id="Formula2" aspectModel="dimensional" implicitFiltering="true" value="concat('accountID:', $accountID_0002, ' amount:', $amount_accountID_0002)" source="formula:uncovered" xlink:type="resource" xlink:label="Formula2">
 			<formula:aspects>
 				<formula:concept>
-					<formula:qname>fr-sample:PrimaryItem06</formula:qname>
+					<formula:qname>gl:cor-7</formula:qname>
+					<!-- <formula:qname>fr-sample:PrimaryItem06</formula:qname> -->
 				</formula:concept>
-				<formula:explicitDimension dimension="fr-sample:Costcategory1">
+				<!-- <formula:explicitDimension dimension="fr-sample:Costcategory1">
 					<formula:member><formula:qname>fr-sample:DomainMember20</formula:qname></formula:member>
-				</formula:explicitDimension>
+				</formula:explicitDimension> -->
 			</formula:aspects>
 		</formula:formula>
 
@@ -81,8 +83,8 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:factVariable id="accountID_0002" bindAsSequence="true" xlink:type="resource" xlink:label="accountID_0002" />
 		<variable:variableFilterArc complement="false" cover="true" order="1" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="cNaccountID" />
 		<variable:variableFilterArc complement="false" cover="true" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="filter_accountID_0002"/>
-		<!-- <variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1_cG1" /> -->
-		<!-- <variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2_cG2" /> -->
+		<variable:variableFilterArc complement="false" cover="true" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_1_cG1" />
+		<variable:variableFilterArc complement="false" cover="true" order="4" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="accountID_0002" xlink:to="tD_2_cG2" />
 
 		<variable:variableArc name="contextRef_accountID_0002" order="2" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="contextRef_accountID_0002" />
 		<variable:generalVariable id="contextRef_accountID_0002" bindAsSequence="false" select="$accountID_0002/@contextRef" xlink:type="resource" xlink:label="contextRef_accountID_0002" />
@@ -90,6 +92,7 @@ xmlns:fr-sample="http://www.srcdtest.com">
 		<variable:variableArc name="amount_accountID_0002" order="3" xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="Formula2" xlink:to="amount_accountID_0002" />
 		<variable:generalVariable id="amount_accountID_0002" bindAsSequence="false" select="//gl:cor-5[@contextRef=$contextRef_accountID_0002]" xlink:type="resource" xlink:label="amount_accountID_0002" />
 
+<!-- filter -->
 		<cf:conceptName id="cNaccountID" xlink:type="resource" xlink:label="cNaccountID">
 			<cf:concept><cf:qname>gl:cor-4</cf:qname></cf:concept>
 		</cf:conceptName>
