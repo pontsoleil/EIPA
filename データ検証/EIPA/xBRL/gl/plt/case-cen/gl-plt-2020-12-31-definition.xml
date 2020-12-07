@@ -19,6 +19,7 @@
     <!-- Typed Dimension -->
     <link:loc xlink:type="locator" xlink:href="gl-plt-2020-12-31.xsd#d1" xlink:label="dim1" xlink:title="Axis 1"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="Hypercube" xlink:to="dim1" xlink:title="definition Hypercube to typed Dimension 1" use="optional" order="1.0"/>
+    <!-- comment out to avoid xbrldie:PrimaryItemDimensionallyInvalid error -->
     <!--<link:loc xlink:type="locator" xlink:href="gl-plt-2020-12-31.xsd#d2" xlink:label="dim2" xlink:title="Axis 2"/>
     <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="Hypercube" xlink:to="dim2" xlink:title="definition Hypercube to Typed Dimension 2" use="optional" order="2.0"/>
     <link:loc xlink:type="locator" xlink:href="gl-plt-2020-12-31.xsd#d3" xlink:label="dim3" xlink:title="Axis 3"/>
