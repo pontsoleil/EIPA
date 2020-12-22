@@ -1,0 +1,235 @@
+
+ CII	BRS : Cross Industry Invoicing Process				 	Header section				 
+ 	Grouping of Document Details				 
+INV-0001	1..1	Invoice identifier	A unique identification for this document.		Exchanged_ Document. Identification. Identifier 
+INV-0002	1..1	Issue date	The date, time, date time or other date time value for the issuance of this document.		Exchanged_ Document. Issue. Date Time 
+INV-0003	0..1	Document type code	A code specifying a type of document [Reference United Nations Code List (UNCL) 1001 (subset)].	"Specifying the type of the invoice, e.g.:  Commercial invoice   Self-billed invoice   Proforma invoice   Corrected invoice   Credit note – goods and services   Debit note – goods and services   Credit note related to financial adjustments   Debit note related to financial adjustments   Self-billed credit note "	Exchanged_ Document. Type. Code	 					 
+INV-0007	0..1	Document Purpose	The purpose, expressed as code, of this document (e.g. Repair Invoice).	"Exchanged Document Category"	Exchanged_ Document. Purpose. Code 
+INV-0008	0..1	Document Purpose Information	The purpose, expressed in text, of this document.	Renamed, formerly “Document Information”	Exchanged_ Document. Purpose. Text 
+INV-0011	0..1	Document Control Requirement	The indication of whether or not a document has specific control requirements.		Exchanged_ Document. Control Requirement. Indicator 
+INV-0313	0..1	Test indicator	The indication of whether or not this exchanged document context is a test.	Added in 16A.1.	Exchanged Document_ Context. Test. Indicator 
+INV-0314	0..1	Effective Specified Period	The specified period within which this exchanged document is effective.	Added in 16A.1.	Exchanged_ Document. Effective. Specified_ Period 					 	For additional requirements on document details please refer to CSC-DOC.				 	Grouping of Header Trade Agreement				 
+INV-0016	0..1	Seller	The entity contains the details of the seller.	Further details specified in Common BRS (CSC-PAR)	Header_ Trade Agreement. Seller. Trade_ Party 
+INV-0017	0..1	Buyer	The entity contains the details of the buyer.	Further details specified in Common BRS (CSC-PAR)	Header_ Trade Agreement. Buyer. Trade_ Party 
+INV-0018	0..1	Buyer´s tax representative	The entity contains the details of the tax representative of the buyer.	"Split into Seller and Buyer (see INV-00250) within TBG1 review, originally tax representative, not specified. Details see CSC- PAR"	Header_ Trade Agreement. Buyer_ Tax Representative. Trade_ Party 
+INV-0250	0..1	Seller´s tax representative	The entity contains the details of the tax representative of the seller.	"See previous note. Details see CSC-PAR"	Header_ Trade Agreement. Seller_ Tax Representative. Trade_ Party 
+INV-0019	0..1	Buyer accountant	"The entity contains the details of the customer accountant."	Changed from Customer to Buyer within TBG1 review. Details see CSC- PAR	Header_ Trade Agreement. Buyer_ Assigned Accountant. Trade_ Party 
+INV-0020	0..1	Seller accountant	The entity contains the details of the supplier accountant.	Changed from Supplier to Seller within TBG1 review. Details see CSC-PAR	Header_ Trade Agreement. Seller_ Assigned Accountant. Trade_ Party 
+INV-0289	0..*	Requisitioner	A trade party who is a buyer requisitioner in this trade agreement.	"Added during CEFACT Forum Rome by TBG1, 22-Apr-2009 Details see CSC- PAR"	Header_ Trade Agreement. Buyer_ Requisitioner. Trade_ Party
+ 					 
+INV-0021	0..1	Contract document	Reference to contract or agreement document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Agreement. Contract. Referenced_ Document 
+INV-0022	0..1	Quotation document	Reference to quotation document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Agreement. Quotation. Referenced_ Document 
+INV-0023	0..1	Order document (buyer)	Reference to order document of the buyer (reference, issue date, involved parties, etc.)	Buyer added within TBG 1 review. Details see CSC-REF	Header_ Trade Agreement. Buyer_ Order. Referenced_ Document 
+INV-0251	0..1	Order document (Seller)	Reference to order document of the seller (reference, issue date, involved parties, etc.)	Added in addition to 
+INV-0023 within TBG 1 review. Details see CSC-REF	Header_ Trade Agreement. Seller_ Order. Referenced_ Document 
+INV-0024	0..1	Order Response document	Reference to order response document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Agreement. Order Response. Referenced_ Document 
+INV-0025	0..1	Promotional Deal document	Reference to promotional deal document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Agreement. Promotional Deal. Referenced_ Document 
+INV-0026	0..1	Price list document	"Reference to price list document (reference, issue date, involved parties, etc.)"	Details see CSC- REF	Header_ Trade Agreement. Price List. Referenced_ Document 
+INV-0027	0..1	Supply instruction document	Reference to supply instruction document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Agreement. Supply Instruction. Referenced_ Document 
+INV-0028	0..1	Demand forecast document	Reference to demand forecast document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Agreement. Demand Forecast. Referenced_ Document 
+INV-0291	0..*	Requisitioner reference	"The requisitioner document referenced in this supply chain trade agreement."	"Added during CEFACT Forum Rome by TBG1, 22-Apr-2009 Details see CSC- REF"	Header_ Trade Agreement. Requisitioner. Referenced_ Document 
+INV-0030	0..1	Purchase Conditions	Reference to purchase conditions	Details see CSC- Added in 16A.1	Header_ Trade Agreement. Purchase_ Conditions Referenced_ Document 
+INV-0031	0..*	Additional document reference	"Reference to an additional document (reference, issue date, involved parties, etc.)"	Details see CSC- REF	Header_ Trade Agreement. Additional. Referenced_ Document 
+INV-0032	0..1	Additional document type	A code specifying a type of referenced document [Reference United Nations Code List (UNCL) 1153].	"Cardinality changed from 0..* to 0..1 as it refers to 
+INV- 0031."	Referenced_ Document. Reference_ Type. Code 					 
+INV-0033	0..1	Delivery terms	The entity contains the details of the delivery terms and the place if relevant for the delivery terms.	"Includes reference to INCOTERMS"	Header_ Trade Agreement. Applicable. Trade_ Delivery Terms 
+INV-311	0..1	Procuring Project	An endeavour carefully planned to achieve a procurement of goods, works and service.	Added in 16A.	Header_ Trade Agreement. Specified. Procuring_ Project 
+INV-0315	0..1	Product End User	"The party acting as the end user for the products in this trade agreement."	Added in 16A.1	Header_ Trade Agreement. Product End User. Trade_ Party 
+INV-0319	0..*	Reference Text	A reference, expressed as text, for this header trade agreement.	Added in 16A.1	Header_ Trade Agreement. Reference. Text 
+INV-0320	0..*	Customer Order reference	A customer order document referenced for this header trade agreement.	Postponed	 					 	Grouping of Header Trade Delivery Details				 
+INV-0034	0..1	Delivery date, actual	Date/time on which goods or consignment are delivered at their destination.	Also applicable for service completion date. Includes also the indication of delivery periods.	Header_ Trade Delivery. Actual_ Delivery. Supply Chain_ Event 
+INV-0035	0..1	Pick Up date, actual	Pick-up/collection date/time of goods		Header_ Trade Delivery. Actual_ Pick- Up. Supply Chain_ Event 
+INV-0036	0..1	Despatch Date, actual	Date/time on which the goods are despatched or shipped.	"Changed to actual during TBG1 review."	Header_ Trade Delivery. Actual_ Despatch. Supply Chain_ Event 
+INV-0038	0..*	Despatch advice document	Reference to despatch advice document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Header_ Trade Delivery. Despatch Advice. Referenced_ Document 
+INV-0039	0..*	Receiving advice document	Reference to receiving advice document (reference, issue date, etc.)	Cardinality changed in TBG1 review. Details see CSC-REF	Header_ Trade Delivery. Receiving Advice. Referenced_ Document 
+INV-0040	0..*	Delivery note document	Reference to delivery note document (reference, issue date, etc.)	Cardinality changed in TBG1 review. Details see CSC-REF	Header_ Trade Delivery. Delivery Note. Referenced_ Document 
+INV-0041	0..*	Additional document reference	Reference to additional document (reference, issue date, involved parties, etc.)	e.g., packing list, waybill, bill of lading, consumption report also customs documents like export/import license, goods or services	Header_ Trade Delivery. Additional. Referenced_ Document 
+ 				declaration, etc. Details see CSC- REF	 
+INV-0042	0..1	Additional document type	"A code specifying a type of additional document [Reference United Nations Code List (UNCL) 1153]."	"Cardinality changed from 0..* to 0..1 as it refers to 
+INV- 0041."	Referenced_ Document. Reference_ Type. Code 
+INV-0043	0..1	Ship to party	The party where the goods or services were delivered or where the service was completed.	Details see CSC- PAR	Header_ Trade Delivery. Ship To. Trade_ Party 
+INV-0044	0..1	Ship from party	Party where goods or services are shipped from.	Details see CSC- PAR	Header_ Trade Delivery. Ship From. Trade_ Party 
+INV-0045	0..1	Pick up party	Party/Place were goods were picked up by the buyer or his representative	Details see CSC- PAR	Header_ Trade Delivery. Actual_ Pick- Up. Supply Chain_ Event / Supply Chain_ Event. Occurrence. Logistics_ Location 
+INV-0046	0..1	Consignor party	Party which, by contract with a carrier, consigns or sends goods with the carrier, or has them conveyed by him. Synonym: shipper, sender.	Details see CSC- PAR	Supply Chain_ Consignment. Consignor. Trade_ Party 
+INV-0047	0..1	Consignee party	Party to which goods are consigned.	Details see CSC- PAR	Supply Chain_ Consignment. Consignee. Trade_ Party 
+INV-0048	0..1	Ultimate Consignee	Party who has been designated on the invoice or packing list as the final recipient of the stated merchandise.	"Used in cross- docking scenarios Details see CSC-PAR"	Header_ Trade Delivery. Ultimate_ Ship To. Trade_ Party 
+INV-0049	0..1	Ultimate Customer	End customer, the final recipient of goods or services.	Used to identify the end consumer. Mapping into Ultimate_ShipTo. Same mapping applies for 0048 and 0049. Details see CSC-PAR	Header_ Trade Delivery. Ultimate_ Ship To. Trade_ Party 
+INV-0050	0..1	Country of supply of goods or services	The country from which the delivery has taken place		Trade_ Tax. Service Supply. Trade_ Country 
+INV-0051	0..1	Transport mode	The code specifying the mode of transport.		Logistics_ Transport Movement. Mode. Code 
+INV-0052	0..1	Transport means	"The entity contains details regarding the transport means (e.g., license plate of the lorry, wagon number, name of the vessel)."	Further details see Common BRS (CSC-TME)	Logistics_ Transport Movement. Used. Logistics_ Transport Means 					 	Grouping of Header Trade Settlement Details				 
+INV-0053	0..*	Total to be paid amount	"The monetary value that constitutes the total to be paid on which the trade settlement is calculated."		Trade Settlement Header_ Monetary Summation. Total Prepaid. Amount 
+INV-0056	0..*	Total prepaid amount	The monetary value that constitutes the total paid for an advance and on which the trade settlement is calculated.		Trade Settlement Header_ Monetary Summation. Total Prepaid. Amount 
+INV-0058	0..*	Total line items amount of the invoice	The monetary value that constitutes the total line items on which the trade settlement is calculated.	"Cardinality changed during TBG 1 review"	Trade Settlement Header_ Monetary Summation. Line Total. Amount 
+INV-0059	0..*	Total allowances charges amount of the invoice	The monetary value that constitutes the total allowances charges on which the trade settlement	"Cardinality changed during TBG 1 review"	Trade Settlement Header_ Monetary 
+ 			is calculated.		Summation. Allowance Total. Amount 
+INV-0252	0..*	Total allowances amount of the invoice	The monetary value that constitutes the total allowances on which the trade settlement is calculated.	"Agreed in Paris TBG 1, 28- Aug2008 in addition to 
+INV- 0059"	Trade Settlement Header_ Monetary Summation. Allowance Total. Amount 
+INV-0253	0..*	Total charges amount of the invoice	The monetary value that constitutes the total charges on which the trade settlement is calculated.	"Agreed in Paris TBG 1, 28- Aug2008 in addition to 
+INV- 0059"	Trade Settlement Header_ Monetary Summation. Charge Total. Amount 
+INV-0060	0..*	Total amount	"The monetary value that constitutes the total invoice or credit note on which the trade settlement is calculated."	"Renamed to Total amount from Total invoice amount in order to cover invoice and credit note amount."	Trade Settlement Header_ Monetary Summation. Grand Total. Amount 
+INV-0061	0..*	Total tax amount of the invoice	The monetary value that constitutes the total tax on which the trade settlement is calculated.		Trade Settlement Header_ Monetary Summation. Tax Total. Amount 
+INV-0062	0..*	Total tax basis amount of the invoice	The monetary value that constitutes the total tax basis on which the trade settlement is calculated.		Trade Settlement Header_ Monetary Summation. Tax Basis Total. Amount 
+INV-0063	0..*	Total rounding amount	The monetary value that constitutes the total rounding on which the trade settlement is calculated.		Trade Settlement Header_ Monetary Summation. Rounding. Amount 
+INV-0064	0..*	Total Information amount	The monetary value that constitutes the information total on	Can be used for the monetary value that	Trade Settlement 
+ 			which the trade settlement is calculated.	"constitutes the total of a previous invoice to be paid. Code list needs to be developed (based on DE 5025) •      Total retail value •      Total returnable items deposit amount • Calculation basis excluding all taxes • Calculation basis including all taxes except VAT •      Message total duty/tax/fee amount"	Header_ Monetary Summation. Information. Amount 					 					 
+INV-0065	0..1	Total amount subject to payment discount	Part of the invoice amount which is subject to payment discount.		Trade_ Payment Discount Terms. Actual Discount. Amount 
+INV-0067	0..*	Adjustment	Specifying the adjustment.	Includes amount, reason, etc.	Header_ Trade Delivery. Specified. Delivery_ Adjustment 
+INV-0068	0..1	Credit reason	Reason why credit was issued in credit note	Added in 10A.	Header_ Trade Settlement. Credit Reason. Code / Header_ Trade Settlement. Credit Reason. Text 
+INV-0069	0..1	Tax point date	The date of the tax point when taxes are or will be applicable.	"covered within CSC-Tax within Common BRS"	Applied_ Tax. Tax Point. Date 
+INV-0280	0..1	Tax due date code	A code indicating when the duty, tax, or fee payment will be due.	"Refer to EDIFACT, DE 5307. Added during CEFACT Forum Rome, 22-Apr-2009."	Trade_ Payment Terms. Due Date. Date Time 
+INV-0070	0..1	Billing period	"A specific period of time such as the length of time between two known date/time points, from a start date onwards, or up to an end date."		Header_ Trade Settlement. Billing. Specified_ Period 
+INV-0071	0..1	Invoicer party	"The invoicer is the person or organization making the invoice, claiming payment for the goods or services rendered."	Details see CSC- PAR	Header_ Trade Settlement. Invoicer. Trade_ Party 
+INV-0072	0..1	Invoicee party	The invoicee party is the person or organization who will receive the invoice for the delivery of products or services.	Details see CSC- PAR	Header_ Trade Settlement. Invoicee. Trade_ Party 
+INV-0073	0..1	Payer party	The payer is the person or organization responsible for the payment.	Details see CSC- PAR	Header_ Trade Settlement. Payer. Trade_ Party 
+INV-0074	0..*	Payee party	The payee party is the person or organization to whom a payment should be or is made.	"Cardinality 0..* means that various payees can occur in one invoice, related to Payment Means and Payment Terms. The cardinality of 0..* needs further discussion. In 09A only a cardinality of 0..1 will be supported. Details see CSC- PAR"	Header_ Trade Settlement. Payee. Trade_ Party 
+INV-0079	0..1	Invoice document	"Reference to invoice document (reference, issue date, involved parties, etc.) of a previously sent invoice"	Details see CSC- REF	Header_ Trade Settlement. Invoice. Referenced_ Document 
+INV-0080	0..1	Pro-forma invoice document	Reference to pro- forma invoice document (reference, issue date, involved	Details see CSC- REF	Header_ Trade Settlement. Pro-Forma Invoice. 
+ 			parties, etc.)		Referenced_ Document 
+INV-0081	0..1	Letter of credit reference	"Reference to a letter of credit document. This requirement refers to Stand-By Letter of Credit, also called Documentary Credit in Anglo- American."	"The Stand-By Letter of Credit is a guarantee of payment. Definition changed (see INV0082). Details see CSC- REF"	Header_ Trade Settlement. Letter Of Credit. Referenced_ Document 
+INV-0083	0..*	Applicable Tax	"A levy or payment for the support of a government required of persons, groups, or businesses within the domain of that government."	"Further details see Common BRS (CSC-TAX) Note: Includes Place of Supply"	Header_ Trade Settlement. Applicable. Trade_ Tax 
+INV-0316	0..*	Tax - Line Total Basis. Amount	"A monetary value used as the line total basis on which this trade related tax, levy or duty is calculated."	Added in 16A.1	Trade_ Tax. Line Total_ Basis. Amount 
+INV-0317	0..*	Tax - Allowance Charge_ Basis. Amount	A monetary value used as the allowance and charge basis on which this trade related tax, levy or duty is calculated.	Added in 16A.1	Trade_ Tax. Allowance Charge_ Basis. Amount 
+INV-0256	0..*	Calculated Tax	The calculated tax for the invoice.	Added in TBG 1 review. Further details see Common BRS (CSC-TAX)	Header_ Trade Settlement. Subtotal_ Calculated. Trade_ Tax 
+INV-0257	0..*	Tax scheme	Specifying the tax scheme for the calculated or applicable tax.	Added in TBG 1 review. Further details see Common BRS (CSC-TXS)	Trade_ Tax. Category. Code 
+INV-0088	0..*	Tax basis amount per rate	Total taxable amount for the given tax rate and tax category	"May 2009: Implemented as Subtotal_ Calculated. Trade_ Tax. For further details see Common BRS (CSC-TAX)."	Applied_ Tax. Details / Applied_ Tax. Basis. Amount 
+INV-0089	0..*	Tax amount per rate	The total amount of tax per tax rate and tax category	"May 2009: Implemented as Subtotal_ Calculated. Trade_ Tax. For further details see Common BRS (CSC-TAX)."	Trade Settlement Header_ Monetary Summation. Tax Total. Amount 
+INV-0090	0..*	Tax amount per rate in VAT currency	"The total amount of tax per tax rate and tax category in VAT currency"	"May 2009: Implemented as Subtotal_ Calculated. Trade_ Tax. For further details see Common BRS (CSC-TAX)."	Header_ Trade Settlement. Tax_ Currency. Code / Trade_ Tax. Category. Code 
+INV-0091	0..*	Total allowances/charges amount per tax rate	Total allowances / charges amount per tax rate and category	"May 2009: Implemented as Subtotal_ Calculated. Trade_ Tax. For further details see Common BRS (CSC-TAX). Not covered in 09A, moved to 09B."	Line_ Trade Settlement. Specified. Trade_ Allowance Charge 
+INV-0092	0..*	Total of all line item amounts per tax rate	Sum of all line item amounts per tax rate and category	"May 2009: Implemented as Subtotal_ Calculated. Trade_ Tax. For further details see Common BRS (CSC-TAX). Not covered in 09A, moved to 09B."	Header_ Trade Settlement. Specified. Trade Settlement Header_ Monetary Summation 
+INV-0258	0..*	Payment Terms	Specifying payment terms for this document.	Added during TBG1 review to align with Common BRS. Further details see Common BRS (CSC-PYT) Note: Includes reference to direct debit mandate.	Header_ Trade Settlement. Specified. Trade_ Payment Terms 
+INV-0097	0..1	Payment Terms Discount Due Date	"Date by which payment should be made if discount terms are to apply."		Header_ Trade Settlement. Specified. Trade_ Payment Terms 
+ 					Trade_ Payment Terms. Due Date. Date Time 
+INV-0103	0..*	Payment Means	A payment means specified for this trade settlement.	"Usage of DE 4461 (Cheque, cash, bank account etc.) Including Accounts of payer, payee. Further details in Common. Supply Chain BRS. (CSC-PYM)"	Header_ Trade Settlement. Specified. Trade Settlement_ Payment Means 
+INV-0104	0..*	Allowance and/or charge details	Details regarding allowances and charges	Further details in Common Supply Chain BRS. (CSC-ALC)	Header_ Trade Settlement. Specified. Trade_ Allowance Charge 
+INV-0105	0..*	Allowance and/or charge rate	Rate per unit which the allowance or charge applies, e.g., the allowance/charge amount is 3 EUR per 10 tons.	Added in 09A.	Header_ Trade Settlement. Specified. Trade_ Allowance Charge. Calculation. Percent 
+INV-0106	0..*	Allowance and/or charge rate basis	Basis for the rate per unit which the allowance or charge applies, e.g., the allowance/charge amount is 3 EUR per 10 tons.	Added in 09A.	Header_ Trade Settlement. Specified. Trade_ Allowance Charge. Basis. Amount / Header_ Trade Settlement. Specified. Trade_ Allowance Charge. Unit_ Basis. Amount 
+INV-0107	0..*	Freight Charge	Charge for freight	If not included in allowances and charges	Supply Chain_ Consignment. Total Charge. Amount 
+INV-0108	0..1	Invoice Currency	The name or symbol of the monetary unit used for calculation in an invoice.		Header_ Trade Settlement. Invoice_ Applicable. Trade_ Currency Exchange 
+INV-0109	0..1	Tax Currency	The name or symbol of the monetary unit used for tax purposes.		Header_ Trade Settlement. Tax_ Applicable. Trade_ Currency Exchange 
+INV-0110	0..1	Payment Currency	The name or symbol of the monetary unit used for payment.		Header_ Trade Settlement. Payment_ Applicable. Trade_ Currency Exchange 
+INV-0263	0..1	Creditor Reference	The unique identifier of the creditor reference for this trade settlement, such as a specific identifier assigned by the creditor to refer to the financial transaction.	Added during TBG steering review Oct-2008.	Header_ Trade Settlement. Creditor Reference. Identifier 
+INV-0270	0..1	Reconciliation Reference ID	"The unique identifier of the payment instruction, such as assigned by an instructing party for an instructed party to unambiguously identify the instruction."	"Added during CEFACT Forum Rome 22-Apr- 2009, requested by TBG 5"	Header_ Trade Settlement. Payment Reference. Text 
+INV-0272	0..*	Payable Accounting Account	A payable accounting account specified for this trade settlement.	"Added during CEFACT Forum Rome 22-Apr- 2009,in agreement with TBG 12"	Header_ Trade Settlement. Payable_ Specified. Trade_ Accounting Account 
+INV-0273	0..*	Receivable Accounting Account	A receivable accounting account specified for this trade settlement.	"Added during CEFACT Forum Rome 22-Apr- 2009,in agreement with TBG 12"	Header_ Trade Settlement. Receivable_ Specified. Trade_ Accounting Account 
+INV-0274	0..*	Purchase Accounting Account	A purchase accounting account specified for this trade settlement.	"Added during CEFACT Forum Rome 22-Apr- 2009,in agreement with TBG 12"	Header_ Trade Settlement. Purchase_ Specified. Trade_ Accounting Account 
+INV-0275	0..*	Sales Accounting Account	A sales accounting account specified for this trade settlement.	"Added during CEFACT Forum Rome 22-Apr- 2009,in agreement with TBG 12"	Header_ Trade Settlement. Sales_ Specified. Trade_ Accounting Account 
+INV-0281	0..1	Factoring Agreement	Reference to a underlying factoring agreement between invoice seller and factoring service provider.	"Added during CEFACT Forum Rome 22-Apr- 2009, in agreement with TBG 5. Details see CSC-REF"	Header_ Trade Settlement. Factoring Agreement. Referenced_ Document 
+INV-0282	0..1	Factoring List	Reference to a factoring transmission list. This list contains identification information of factored invoices.	"Added during CEFACT Forum Rome 22-Apr- 2009,in agreement with TBG 5 Details see CSC-REF"	Header_ Trade Settlement. Factoring List. Referenced_ Document 
+INV-0293	0..*	Financial Card Details	Details to a financial card related to this trade settlement.	"Requirements reflected by CSCFCA in Common BRS. Added during CEFACT Forum Rome 22-Apr- 2009, in agreement with TBG 5"	Header_ Trade Settlement. Specified. Trade Settlement_ Financial Card Line Section					Supply Chain_ Trade Line Item. Details 	Grouping of Document Line Details				 
+INV-0112	0..1	Invoice line number	"The unique reference given by the issuer to identify an invoice line within an invoice"		Document Line_ Document. Line. Identifier 
+INV-0113	0..1	Invoice line status code	The code specifying the status of this document line.		Document Line_ Document. Line Status. Code 
+INV-0114	0..1	Invoice line status reason code	The code specifying the reason for the status of this document line.		Document Line_ Document. Line Status Reason. Code 
+INV-0115	0..*	Invoice line note	The free text information related to the invoice line.		Document Line_ Document. Included. Note 
+INV-0116	0..1	Invoice parent line reference	Reference to the parent line, used in order to provide sublines of the line item.	Added in 10A.	Document Line_ Document. Parent_ Line. Identifier 
+INV-0295	0..1	Line item description code	A code specifying the type of trade item e.g., invoicing unit, consumer unit etc.	Added in 16A1	Supply Chain_ Trade Line Item. Description. Code 
+INV-0296	0..*	Sub-Line Item	"A collection of information specific for a line breakdown (a constituent part of a product)."	Added in 12B.	Subordinate_ Trade Line Item. Details 
+INV-0297	0..*	Sub-Line Item Price	A product price specified in the sub line trade agreement details.	Added in 12B;	Subordinate Line_ Trade Agreement. Gross Price_ Product. Trade_ Price / Subordinate Line_ Trade Agreement. Net Price_ Product. Trade_ Price / Subordinate Line_ Trade Agreement. List_ Product. Trade_ Price
+ 					 
+INV-0298	0..*	Sub-Line Item agreement reference.	A document referenced in the sub-line trade agreement details.	Added in 12B.	Subordinate Line_ Trade Agreement. Additional. Referenced_ Document 
+INV-0299	0..1	Sub-Line Item package quantity.	The number of packages for this the sub-line item.	Added in 12B.	Subordinate Line_ Trade Delivery. Package. Quantity 
+INV-0300	0..1	Sub-Line Item product unit quantity	The number of product units for this sub-line item.	Added in 12B.	Subordinate Line_ Trade Delivery. Product_ Unit. Quantity 
+INV-0301	0..1	Sub-Line Item per package unit quantity	The number of units per package for this sub-line item.	Added in 12B.	Subordinate Line_ Trade Delivery. Per Package_ Unit. Quantity 
+INV-0302	0..*	Sub-Line Item packaging	Packaging for this sub-line item.	Added in 12B.	Subordinate Line_ Trade Delivery. Included. Supply Chain_ Packaging 
+INV-0303	0..1	Sub-Line Item applicable tax	The trade tax applicable to this sub-line item.	Added in 12B.	Subordinate Line_ Trade Settlement. Applicable. Trade_ Tax 
+INV-0304	0..1	Sub-Line Item seller	The item seller party, such as an auction item seller, specified for this sub-line item.	Added in 12B.	Subordinate Line_ Trade Agreement. Item_ Seller. Trade_ Party 
+INV-0305	0..1	Sub-Line Item buyer	The item buyer party, such as an auction item buyer, specified for this sub-line item.	Added in 12B.	Subordinate Line_ Trade Agreement. Item_ Buyer. Trade_ Party
+ 					 
+INV-0306	0..1	Sub-Line Item marketplace	The marketplace included for this sub-line item.	Added in 12B.	Subordinate Line_ Trade Agreement. Included. Specified_ Marketplace 					 	Grouping of Line Trade Agreement Details				 
+INV-0117	0..1	Seller Order document	"Reference to seller order document (reference, issue date, involved parties, line number etc.)"	Details see CSC- REF	Line_ Trade Agreement. Seller Order. Referenced_ Document 
+INV-0118	0..1	Buyer order document	Reference to order document (reference, issue date, involved parties, line number etc.)	Details see CSC- REF	Line_ Trade Agreement. Buyer Order. Referenced_ Document 
+INV-0119	0..1	Quotation document	Reference to quotation document (reference, issue date, involved parties, line number etc.)	Details see CSC- REF	Line_ Trade Agreement. Quotation. Referenced_ Document 
+INV-0120	0..1	Contract document	"Reference to contract or agreement document (reference, issue date, involved parties, line number etc.)"	Details see CSC- REF	Line_ Trade Agreement. Contract. Referenced_ Document 
+INV-0121	0..1	Demand forecast document	"Reference to demand forecast document (reference, issue date, involved parties, line number etc.)"	Details see CSC- REF	Line_ Trade Agreement. Demand Forecast. Referenced_ Document 
+INV-0292	0..*	Requisitioner reference	The requisitioner document referenced in this supply chain trade agreement.	"Added during CEFACT Forum Rome by TBG1, 22-Apr-2009 Details see CSC- REF"	Line_ Trade Agreement. Requisitioner. Referenced_ Document 
+INV-0123	0..*	Additional document reference	Reference to an additional document (reference, issue date, involved	Details see CSC- REF	Line_ Trade Delivery. Additional. Referenced_ Document 
+ 			parties, etc.)		 
+INV-0124	0..1	Additional document type	A code specifying a type of additional document [Reference United Nations Code List (UNCL) 1153].		Referenced_ Document. Reference_ Type. Code 					 					 
+INV-0125	0..1	End consumer order number	Indication of the ultimate consignee order number	Renamed from Ultimate Consignee Order number to End consumer order number, covered with additional document.	Header_ Trade Agreement. Additional_ Associated. Referenced_ Document 
+INV-0126	0..1	Delivery terms	The entity contains the details of the delivery terms and the place if relevant for the delivery terms.		Line_ Trade Agreement. Applicable. Trade_ Delivery Terms 
+INV-0127	0..1	Purchase Conditions	Reference to purchase conditions		Header_ Trade Agreement. Additional. Referenced_ Document 
+INV-0128	0..*	Price details for gross price	including price amount, price type, base quantity, validity period, free of charge indicator etc.	"Further details see Common BRS (CSC-PRI)"	Line_ Trade Agreement. Gross Price_ Product. Trade_ Price 
+INV-0129	0..*	Price details for net price	including price amount, price type, base quantity, validity period, free of charge indicator etc.	"Further details see Common BRS (CSC-PRI)"	Line_ Trade Agreement. Net Price_ Product. Trade_ Price 
+INV-0290	0..*	Requisitioner	A trade party who is a buyer requisitioner in this trade agreement.	"Added during CEFACT Forum Rome by TBG1, 22-Apr-2009 Details see CSC- PAR"	Line_ Trade Agreement. Buyer_ Requisitioner. Trade_ Party 
+INV-0307	0..1	Marketplace	An actual or nominal place where buyers and sellers interact (directly or through intermediaries) to	Added in 12B.	Line_ Trade Agreement. Included. Specified_ Marketplace 
+ 			trade goods or services.		 
+INV-0308	0..1	Item seller	The item seller party, such as an auction item seller, specified in this trade agreement.	Added in 12B	Line_ Trade Agreement. Item_ Seller. Trade_ Party 
+INV-0309	0..1	Item buyer	The item buyer party, such as an auction item buyer, specified in this trade agreement.	Added in 12B	Line_ Trade Agreement. Item_ Buyer. Trade_ Party 
+INV-0321	0..*	Customer Order reference	"A customer order document referenced for this line trade agreement."	Postponed	 	Grouping of Line Trade Delivery Details				 
+INV-0013	0..1	Despatched quantity	"The quantity of the goods of the invoice line despatched by the supplier."		Header_ Trade Delivery. Actual_ Despatch. Supply Chain_ Event / Supply Chain_ Event. Unit. Quantity 
+INV-0134	0..1	Received quantity	The quantity received in this trade delivery.	Added to 16A.1	Line_ Trade Delivery. Received. Quantity / Supply Chain_ Event. Unit. Quantity 
+INV-0135	0..1	Billed quantity	The quantity billed for this trade delivery		Line_ Trade Delivery. Billed. Quantity 
+INV-0136	0..1	Free goods quantity	The quantity of free goods in this trade delivery		Line_ Trade Delivery. Charge Free. Quantity 
+INV-0137	0..1	Delivered quantity	The quantity of articles or services which has been delivered to the delivery party.		Header_ Trade Delivery. Actual_ Delivery. Supply Chain_ Event / Supply Chain_ Event. Unit. Quantity
+ 					 
+INV-0138	0..1	Returned quantity	The quantity of articles returned by the delivery party or receiving party to the shipper.	Postponed to 16B.	Line_ Trade Delivery. Due In_ Returned. Quantity 
+INV-0139	0..1	Quantity per pack	The quantity contained in the currently identified pack.		Line_ Trade Delivery. Per Package_ Unit. Quantity 
+INV-0140	0..1	Number of consumer	The number of consumer units (package size of a product agreed between trading partners as the unit crossing the retail point of sale) in a traded unit to be ordered, delivered and invoiced.		Line_ Trade Delivery. Product_ Unit. Quantity 					 
+INV-0141	0..1	Number of units in higher packaging or configuration level	The number of units contained in higher packaging or configuration level.		Supply Chain_ Packaging. Details / Supply Chain_ Packaging. Level. Code 
+INV-0143	0..1	Delivery Adjustment	Adjustment to the delivery.		Line_ Trade Delivery. Specified. Delivery_ Adjustment 
+INV-0144	0..1	Gross weight	The weight of the goods including packing but excluding the carriers’ equipment of the invoice line.		Line_ Trade Delivery. Gross Weight. Measure 
+INV-0145	0..1	Net weight	The weight of the goods themselves without any packing. (net weight) of the invoice line		Line_ Trade Delivery. Net Weight. Measure 
+INV-0146	0..1	Theoretical weight	The calculated weight of the goods of the invoice based on the dimensions		Line_ Trade Delivery. Theoretical Weight. 
+ 			ordered.		Measure 
+INV-0147	0..1	Consignor party	"Party which, by contract with a carrier, consigns or sends goods with the carrier, or has them conveyed by him. Synonym: shipper, sender."	Details see CSC- PAR	Supply Chain_ Consignment. Consignor. Trade_ Party 
+INV-0148	0..1	Consignee party	Party to which goods are consigned.	Details see CSC- PAR	Supply Chain_ Consignment. Consignee. Trade_ Party 
+INV-0150	0..1	Number of packages	The total number of packages comprising an invoice line.		Line_ Trade Delivery. Package. Quantity 
+INV-0151	0..1	Type of package	Specifying the type of package, e.g., box. Carton etc.	DE 7065	Supply Chain_ Packaging. Type. Code 
+INV-0152	0..1	Mode of package	Description of the form in which goods are presented.		Supply Chain_ Packaging. Description. Text 
+INV-0153	0..1	Transport mode	The code specifying the mode of transport.		Logistics_ Transport Movement. Mode. Text 
+INV-0154	0..1	Transport means	The entity contains the identification of the means of transport (e.g., license plate of the lorry, wagon number, name of the vessel).		Logistics_ Transport Means. Identification. Identifier 
+INV-0155	0..1	Marks and numbers	The information requested on the transport label of the package.		Packaging_ Marking. Content. Text Packaging_ Marking. Barcode_ Type. Code 					 
+INV-0156	0..1	Transport charge amount	The amount including tax charged by shipper for moving goods, by whatever means, from one place to another.		Line_ Trade Settlement. Specified. Logistics_ Service Charge / Logistics_ Service Charge. Applied. Amount 
+INV-0157	0..1	Taxable transport charge amount	"The amount before tax charged by shipper for moving goods, by whatever means, from one place to another."		Logistics_ Service Charge. Applied. Trade_ Tax 					 					 
+INV-0158	0..1	Insurance charge amount	The amount of premium payable to the insurance company to insure the goods.	Added in 16A.1	Supply Chain_ Consignment. Insurance Premium. Amount 
+INV-0159	0..1	Ship to party	The party where the goods were delivered or where the service was completed.	Details see CSC- PAR	Line_ Trade Delivery. Ship To. Trade_ Party 
+INV-0160	0..1	Ship from party	Party where goods are shipped from.	Details see CSC- PAR	Line_ Trade Delivery. Ship From. Trade_ Party 
+INV-0161	0..1	Pick up place	Party/Place were goods were picked up by the buyer or his representative	Details see CSC- PAR	Line_ Trade Delivery. Actual_ Pick- Up. Supply Chain_ Event 
+INV-0162	0..1	Despatch advice document	Reference to despatch advice document (reference, issue date, involved parties, line number etc.)	Details see CSC- REF	Line_ Trade Delivery. Despatch Advice. Referenced_ Document 
+INV-0163	0..1	Ultimate Consignee	Party who has been designated on the invoice or packing list as the final recipient of the stated merchandise.	Used in cross- docking scenarios Details see CSC-PAR	Supply Chain_ Consignment. Consignee. Trade_ Party 
+INV-0164	0..1	Ultimate Customer	End customer, the final recipient of goods or services.	e.g., to identify the end consumer	Header_ Trade Delivery. Ultimate_ Ship 
+ 				Mapping into Ultimate_ShipTo. Same mapping applies for 0164 and 0163. Details see CSC-PAR	To. Trade_ Party 
+INV-0165	0..*	Receiving advice document	Reference to receiving advice document (reference, issue date, involved parties, line number etc.)	Details see CSC- REF	Line_ Trade Delivery. Receiving Advice. Referenced_ Document 
+INV-0166	0..*	Additional document reference	Reference to an additional document (reference, issue date, involved parties, etc.)	Details see CSC- REF	Line_ Trade Delivery. Additional. Referenced_ Document 
+INV-0167	0..*	Additional document type	A code specifying a type of additional document [Reference United Nations Code List (UNCL) 1153].		Referenced_ Document. Reference_ Type. Code 					 
+INV-0168	0..1	Delivery note document	Reference to delivery note document (reference, issue date, involved parties, line number etc.)	Details see CSC- REF	Line_ Trade Delivery. Delivery Note. Referenced_ Document 					 					 
+INV-0169	0..1	Packing list document	Reference to packing list document (reference, issue date, involved parties, line number etc.)	"Details see CSC- REF Added in 16A.1"	Line_ Trade Delivery. Packing List. Referenced_ Document 
+INV-0170	0..1	Delivery date/period	A date, time, date time, or other date time value of an occurrence of this event.	Also applicable for service completion date. Includes also the indication of delivery periods.	Line_ Trade Delivery. Actual_ Delivery. Supply Chain_ Event / Supply Chain_ Event. Occurrence. Specified_ Period 
+INV-0171	0..1	Despatch Date	Date/time on which the ordered goods or services were dispatched.		Line_ Trade Delivery. Actual_ Despatch. Supply Chain_ Event / Supply Chain_ Event. Occurrence. Date Time 
+INV-0172	0..1	Pick up date	Date/time on which the ordered goods were picked up.		Line_ Trade Delivery. Actual_ Pick- Up. Supply Chain_ Event / Supply Chain_ Event. Occurrence. Date Time 
+INV-0173	0..1	Requested Delivery Date	Date on which buyer requests goods or services to be delivered.	e.g., for calculation of penalties	Line_ Trade Delivery. Requested_ Delivery. Supply Chain_ Event / Supply Chain_ Event. Occurrence. Date Time 
+INV-0174	0..1	Receiving Date	Date/time of receipt.		Line_ Trade Delivery. Actual_ Receipt. Supply Chain_ Event / Supply Chain_ Event. Occurrence. Date Time 
+INV-0310	0..1	Consignment item tariff quantity	The tariff quantity specified for this consignment item.	Added in 12B.	Supply Chain_ Consignment Item. Tariff. Quantity 					 	Grouping of Line Trade Settlement Details				 
+INV-0175	0..1	Invoice line item amount	The monetary amount of the invoice line, without all allowances and charges related to the invoice line and before tax or fee.		Trade Settlement Line_ Monetary Summation. Line Total. Amount 
+INV-0176	0..1	Invoice line item amount without tax	"The monetary value that constitutes the line total without tax. This total is the total of items plus total of allowance/charges."	If the price given is a gross price, the Item Amount is calculated = (Quantity * Unit Gross Price) + Charges – Allowances. If applicable, allowances and charges must be provided. If the price given is a net price, the Item Amount is calculated = Quantity * Unit Net Price.	Trade Settlement Line_ Monetary Summation. Net_ Line Total. Amount 
+INV-0177	0..1	Invoice line item total amount	"The total amount of the invoice line, being the sum of Invoice line item amount, Invoice item allowances/charges amounts and tax/fee amount."		Trade Settlement Line_ Monetary Summation. Line Total. Amount 
+INV-0178	0..1	Allowance and / or charge line total amount of the line item	The monetary value that constitutes the allowance charge line total on which the trade settlement is calculated.		Line_ Trade Settlement. Specified. Trade_ Allowance Charge 
+INV-0179	0..1	Information amount	Additional amount for information: e.g., shrink amount for vegetables, amount without tobacco tax etc.		Trade Settlement Line_ Monetary Summation. Information. Amount 
+INV-0180	0..1	Invoice document	An invoice reference number. The invoice being referred to is a previously sent invoice.	Details see CSC- REF	Line_ Trade Settlement. Invoice. Referenced_ Document 
+INV-0255	0..*	Payment Terms	Specifying Payment terms for this document.	Added during TBG 1 review to align with Common BRS. Further details see Common BRS (CSC-PYT).	Line_ Trade Settlement. Specified. Trade_ Payment Terms 
+INV-0187	0..1	Payment adjustment reason code	A code specifying a reason for the adjustment.		Financial_ Adjustment. Reason. Code 
+INV-0188	0..1	Payment adjustment reason text	A reason, expressed as text, for the adjustment.		Financial_ Adjustment. Reason. Text 
+INV-0189	0..1	Payment adjustment actual amount	The actual monetary amount added or subtracted as a result of this adjustment.	Added in 16A.1	Line_ Trade Settlement. Total_ Adjustment. Amount 
+INV-0190	0..1	Payment adjustment actual quantity	The actual quantity for the Adjustment		Financial_ Adjustment. Actual. Quantity 
+INV-0191	0..1	Payment adjustment actual date time	The actual date, time, date time, or other date time value for the Adjustment		Financial_ Adjustment. Actual. Date Time 
+INV-0195	0..1	Indicator not subject to discount	The item concerned is not applicable for discount calculation.	Added in 16A.1	Line_ Trade Settlement. Discount. Indicator 
+INV-0196	0..*	Allowance and/or charge details	Details regarding allowances and charges	"Further details see Common BRS (CSC-ALC)"	Line_ Trade Settlement. Specified. Trade_ Allowance Charge 
+INV-0197	0..*	Allowance and/or charge rate	Rate per unit which the allowance or charge applies, e.g., the allowance/charge amount is 3 EUR per 10 tons.	Added in 09A.	Line_ Trade Settlement. Specified. Trade_ Allowance Charge. Calculation. Percent 
+INV-0198	0..*	Allowance and/or charge rate basis	Basis for the rate per unit which the allowance or charge applies, e.g., the allowance/charge amount is 3 EUR per 10 tons.	Added in 09A.	Line_ Trade Settlement. Specified. Trade_ Allowance Charge. Basis. Amount / Header_ Trade Settlement. Specified. Trade_ Allowance Charge. Unit_ Basis. Amount
+ 					 
+INV-0199	0..*	Freight Charge	Charge for freight	If not included in allowances and charges	Line_ Trade Settlement. Specified. Logistics_ Service Charge 
+INV-0200	0..*	Total tax basis amount of the line item	The monetary value that constitutes the total tax basis on which the trade settlement is calculated.		Trade Settlement Line_ Monetary Summation. Tax Basis Total. Amount 
+INV-0201	0..*	Tax line total amount of the line item	"The monetary value that constitutes the tax line total on which the trade settlement is calculated."		Trade Settlement Line_ Monetary Summation. Tax Total. Amount 
+INV-0202	0..*	Applicable Tax	"A levy or payment for the support of a government required of persons, groups, or businesses within the domain of that government."	Further details see Common BRS (CSC-TAX) Note: Includes Place of Supply	Line_ Trade Settlement. Applicable. Trade_ Tax 
+INV-0259	0..*	Calculated Tax	The calculated tax for the invoice	Added in TBG 1 review. Further details see Common BRS (CSC-TAX)	Line_ Trade Settlement. Subtotal_ Calculated. Trade_ Tax 
+INV-0260	0..*	Tax scheme	Specifying the tax scheme	Added in TBG 1 review. Further details see Common BRS (CSC-TXS)	Trade_ Tax. Category. Code 
+INV-0276	0..*	Payable Accounting Account	A payable accounting account specified for this trade settlement.	"Added during CEFACT Forum Rome 22-Apr- 2009, in agreement with TBG 12"	Line_ Trade Settlement. Payable_ Specified. Trade_ Accounting Account 
+INV-0277	0..*	Receivable Accounting Account	A receivable accounting account specified for this	"Added during CEFACT Forum Rome 22-Apr-"	Line_ Trade Settlement. Receivable_ Specified. Trade_ Accounting Account
+ 			trade settlement.	"2009, in agreement with TBG 12"	 
+INV-0278	0..*	Purchase Accounting Account	A purchase accounting account specified for this trade settlement.	"Added during CEFACT Forum Rome 22-Apr- 2009, in agreement with TBG 12"	Line_ Trade Settlement. Purchase_ Specified. Trade_ Accounting Account 
+INV-0279	0..*	Sales Accounting Account	A sales accounting account specified for this trade settlement.	Added during CEFACT Forum Rome 22-Apr- 2009, in agreement with TBG 12	Line_ Trade Settlement. Sales_ Specified. Trade_ Accounting Account 
+INV-0294	0..1	Financial Card Details	Details to a financial card related to this trade settlement on line level.	"Requirements reflected by CSCFCA in Common BRS. Added during CEFACT Forum Rome 22-Apr- 2009, in agreement with TBG 5"	Line_ Trade Settlement. Specified. Trade Settlement_ Financial Card 
+INV-312	0..1	Grand Total. Amoun	The monetary value of the grand total amount to this trade settlement on line level.	Added in 16A	Trade Settlement Line_ Monetary Summation. Grand Total. Amount 	Grouping of Product Details				 
+INV-0261	0..1	Product Details	Details regarding the product.	Further details see Common BRS (CSC-PRO including CSC- PIN)	Trade_ Product. Details 
+INV-0318	0..*	"Included Referenced Product"	An included product referenced from this trade product.	Added in 16A.1	Trade_ Product. Included. Referenced_ Product 	Valuation Breakdown Statement				 
+INV-0254	0..*	"Valuation Breakdown Statement"	Used for describing, asserting or approving the works performed and invoiced in specific sectors.	Realization CCL 09B.1 as requested by TBG 6.	Valuation_ Breakdown Statement. Details 
+ 			Used alternatively to the Line Section of an invoice.		
