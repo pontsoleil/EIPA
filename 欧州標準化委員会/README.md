@@ -3,9 +3,8 @@
 ![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 [クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/deed.ja)
 ## YouTube
-* [Peppolの背景であるEUの付加価値税インボイス電子化プロセスに関する勉強会](https://youtu.be/7cRZZ8ZFf4g?t=1)
+* [Peppolの背景であるEUの付加価値税インボイス電子化プロセスに関する勉強会](https://youtu.be/7cRZZ8ZFf4g?t=1)  
 1:10:17  
-Peppolの背景であるEUの付加価値税インボイス電子化プロセスに関する勉強会  
 2020年10月15日　東京税理士会の勉強会で紹介させていただいた際の映像です。  
 - 2:24　自己紹介
 - 7:58　第2回電子インボイス推進協議会(EIPA) 「電子インボイスの推進に対するXBRL Japanからの提言」
