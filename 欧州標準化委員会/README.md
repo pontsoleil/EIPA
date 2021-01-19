@@ -2,6 +2,30 @@
 ![年表](図/history.png)
 ![クリエイティブ・コモンズ・ライセンス](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 [クリエイティブ・コモンズ 表示 - 継承 3.0 非移植 ライセンス](http://creativecommons.org/licenses/by-sa/3.0/deed.ja)
+## YouTube
+* [Peppolの背景であるEUの付加価値税インボイス電子化プロセスに関する勉強会](https://youtu.be/7cRZZ8ZFf4g?t=1)
+1:10:17  
+Peppolの背景であるEUの付加価値税インボイス電子化プロセスに関する勉強会  
+2020年10月15日　東京税理士会の勉強会で紹介させていただいた際の映像です。  
+- 2:24　自己紹介
+- 7:58　第2回電子インボイス推進協議会(EIPA) 「電子インボイスの推進に対するXBRL Japanからの提言」
+- 13:56　欧州規格制定の歴史
+- 25:56　欧州標準化委員会(CEN)の作業部会合意書 CWA 16460 電子インボイス・コンプライアンス・ガイドライン
+- 29:54　第4回電子インボイス推進協議会「作業状況と検討課題について」
+- 46:18　電子インボイスの欧州規格 EN 16931-1 Electronic invoicing - part 1: Semantic data model of the core elements of an electronic invoice
+- 58:51 欧州規格を確認するツールの紹介  
+  
+ともすれば、結果だけをすぐに求めることが多いのですが、昔から「急いては事を仕損じる」と言われます。迂遠（うえん）な様でも、そもそもの根本から理解して進めることが大切です。  
+  
+欧州における電子インボイスの規格制定では、VAT(付加価値税)についての欧州議会からの指令や個人データについての指令を受けて、欧州標準化委員会の作業部会で規格のあるべき姿について議論が重ねられ、合意書(CWA)がまとめられました。この議論と同時並行して、公共調達において電子インボイスを採用するための実証実験も進められました。こうした歴史や議論の内容を理解した上で、日本における電子インボイスがどの様な状況で何のために必要なのかといった議論が重ねられて、ゴールを明確にしておくことが重要です。  
+  
+目的地を確認しておかないと  
+「どうもこの電車では、高尾山に行けないのかな。」  
+「この電車は、丹沢に登るための入り口、秦野行きですよ。乗る電車が違っていませんか。」  
+といった事態になるかもしれません。  
+ 
+三分一信之
+
 ## 参考  
 * [MoU on electronic business between IEC, ISO, ITU, and UN/ECE](https://www.itu.int/en/ITU-T/ebusiness/Pages/mou/default.aspx)
 * [OASIS Joins International Alliance of Standards-Setting Bodies for Electronic Business](https://www.oasis-open.org/news/pr/oasis-joins-international-alliance-of-standards-setting-bodies-for-electronic-business)  
