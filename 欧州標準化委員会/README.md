@@ -30,6 +30,7 @@ UBL2.1 in OASIS mailing list
 From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800  
 * [PEPPOL Final Report](https://peppol.eu/wp-content/uploads/2016/08/20121205_PEPPOL_final_report_v2_4_web.pdf)
 * [What is PEPPOL?](https://peppol.eu/what-is-peppol/)
+* [Peppol international invoicing work group](https://openpeppol.atlassian.net/wiki/spaces/PINT/pages/1244037146/Peppol+International+Invoice+model+review+-+PINT)
 * [CEF DIGITAL](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL)
 * [CEF DIGITAL eInvoicing](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eInvoicing)
 # 資料
