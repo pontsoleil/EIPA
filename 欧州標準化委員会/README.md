@@ -21,14 +21,14 @@
 「どうもこの電車では、高尾山に行けないのかな。」  
 「この電車は、丹沢に登るための入り口、秦野行きですよ。乗る電車が違っていませんか。」  
 といった事態になるかもしれません。  
-
 ## 参考  
 * [MoU on electronic business between IEC, ISO, ITU, and UN/ECE](https://www.itu.int/en/ITU-T/ebusiness/Pages/mou/default.aspx)
 * [OASIS Joins International Alliance of Standards-Setting Bodies for Electronic Business](https://www.oasis-open.org/news/pr/oasis-joins-international-alliance-of-standards-setting-bodies-for-electronic-business)  
 UBL2.1 in OASIS mailing list  
 [Subject: Re: 【ubl】 UBL at the MoU/MG meeting](https://lists.oasis-open.org/archives/ubl/200111/msg00021.html)  
 From: Tim McGrath To: Jon Bosak Date: Tue, 27 Nov 2001 14:55:24 +0800  
-* [PEPPOL Final Report](https://peppol.eu/wp-content/uploads/2016/08/20121205_PEPPOL_final_report_v2_4_web.pdf)
+* [PEPPOL Final Report](https://peppol.eu/wp-content/uploads/2016/08/20121205_PEPPOL_final_report_v2_4_web.pdf)  
+## PEPPOL  
 * [What is PEPPOL?](https://peppol.eu/what-is-peppol/)
 * [Peppol international invoicing work group](https://openpeppol.atlassian.net/wiki/spaces/PINT/pages/1244037146/Peppol+International+Invoice+model+review+-+PINT)
 * [CEF DIGITAL](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL)
