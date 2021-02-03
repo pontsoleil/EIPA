@@ -1,4 +1,4 @@
-対象となった業務パターンは次の２つです。
+対象となった業務パターンは次の２つです。  
 [J1Activity.png](https://github.com/pontsoleil/EIPA/blob/master/UML/%E6%A5%AD%E5%8B%99%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9/J1A%E4%B8%80%E6%8B%AC%E8%AB%8B%E6%B1%82/J1A%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%93%E3%83%86%E3%82%A3.png)  
 [J2Activity.png](https://github.com/pontsoleil/EIPA/blob/master/UML/%E6%A5%AD%E5%8B%99%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9/J2A%E4%BB%95%E5%85%A5%E6%98%8E%E7%B4%B0/J2A%E3%82%A2%E3%82%AF%E3%83%86%E3%82%A3%E3%83%93%E3%83%86%E3%82%A3.png)  
 
