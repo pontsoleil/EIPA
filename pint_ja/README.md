@@ -54,3 +54,8 @@ $ python3 runner.py filename directory
 │   └── dic2etree.md
 ├── genInvoice.py
 ```
+
+## 参考
+https://stackoverflow.com/questions/7684333/converting-xml-to-dictionary-using-elementtree
+https://stackoverflow.com/questions/15210148/get-parents-keys-from-nested-dictionary
+XML出力は、xml.etree.ElementTreeを使用しました。
