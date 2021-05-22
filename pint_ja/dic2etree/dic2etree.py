@@ -2,6 +2,7 @@
 import xml.etree.ElementTree as ET
 # import defusedxml.ElementTree as ET
 from collections import defaultdict
+import csv
 
 ET.register_namespace('cac', 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')
 ET.register_namespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')
@@ -35,7 +36,7 @@ def etree_to_dict(t):
       d[t.tag] = text
   return d
 
-def dict_to_etree(d):
+def dict_to_etree(d, root):
   def _to_etree(d, root):
     if not d:
       pass
@@ -57,11 +58,10 @@ def dict_to_etree(d):
           _to_etree(v, ET.SubElement(root, k))
     else:
       assert d == 'invalid type', (type(d), d)
-  # assert isinstance(d, dict) and len(d) == 1
+  assert isinstance(d, dict) and len(d) == 1
   tag, body = next(iter(d.items()))
-  node = ET.Element(tag)
-  _to_etree(body, node)
-  return node
+  _to_etree(body, root)
+  return root
 
 def dict_to_tsv(tsv, d, tag, path):
   def _setup_record(case, path, tag, k, v):

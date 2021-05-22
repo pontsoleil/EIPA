@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: shift_jis -*-
-
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 import csv
@@ -8,22 +7,12 @@ import re
 import json
 import sys 
 
-from dic2etree import *  # VS Code complains this line but works fine
-
-ns = {
-  '': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
-  'xsi': 'http://www.w3.org/2001/XMLSchema-instance',
-  'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2',
-  'cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2',
-  'qdt': 'urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2',
-  'udt': 'urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2',
-  'ccts': 'urn:un:unece:uncefact:documentation:2'
-}
+from dic2etree import *  # VS Code complains this line when project root is sub directory of repository.
 
 dictXpath = defaultdict(type(""))
 
 def main():
-  print("START "+__file__)
+  print("START ", __file__)
 
   if len(sys.argv) > 1:
     argv1 = sys.argv[1]
@@ -32,24 +21,19 @@ def main():
   if len(sys.argv) > 2:
     argv2 = sys.argv[2]
   else:
-    argv2 = '/Users/pontsoleil/Documents/GitHub/EIPA/pint_ja/data/'
-  if len(sys.argv) > 3:
-    argv3 = sys.argv[3]
-  else:
-    argv3 = 'txt'
+    argv2 = 'txt'
+
   filename = argv1
-  base_dir = argv2
-  extension = argv3
+  extension = argv2
+  base_dir = './data/'
   xpath_file = base_dir+'common/xpath.tsv'
   in_file    = base_dir+"in/"+filename+"."+extension
   out_file   = base_dir+"out/"+filename+".xml"
-  # print("base_dir "+base_dir)
-  # print("xpath_file "+xpath_file)
-  # print("in_file "+in_file)
-  # print("out_file "+out_file)
+
+  dic = defaultdict(type(""))
+  dic['Invoice'] = {}
 
   dictXpath = defaultdict(type(""))
-
   with open(xpath_file, encoding='utf-8', newline='') as f0:
     reader0 = csv.reader(f0, delimiter='\t')
     header = next(reader0)
@@ -62,9 +46,6 @@ def main():
         datatype = record[5]
         xpath = record[7]
         dictXpath[id] = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype,'xpath':xpath}
-
-  dic = defaultdict(type(""))
-  dic['Invoice'] = {}
 
   with open(in_file, encoding='utf-8', newline='') as f:
     reader = csv.reader(f, delimiter='\t')
@@ -136,7 +117,15 @@ def main():
     dicJson = re.sub('ccts:', '{' + ns['ccts'] + '}', dicJson)
     dic2 = json.loads(dicJson)
 
-    tree = dict_to_etree(dic2)
+    root = ET.XML('''
+    <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
+    ''')
+
+    tree = dict_to_etree(dic2, root)
     with open(out_file, 'wb') as f:
       t = ET.ElementTree(tree)
       t.write(f, encoding='UTF-8')
