@@ -33,7 +33,7 @@ $ python3 runner.py filename directory
 - filename ファイル名（拡張子を含まない）  
 - directory ファイルのあるディレクトリの絶対パス
 
-## このディレクトリ階層
+## ディレクトリ階層
 
 ```
 .
@@ -52,5 +52,5 @@ $ python3 runner.py filename directory
 │   └── dic2etree.py
 ├── docs
 │   └── dic2etree.md
-├── runner.py
+├── genInvoice.py
 ```

@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: shift_jis -*-
+
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 import csv
@@ -5,7 +8,7 @@ import re
 import json
 import sys 
 
-from dic2etree import *
+from dic2etree import *  # VS Code complains this line but works fine
 
 ns = {
   '': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
@@ -19,7 +22,7 @@ ns = {
 
 dictXpath = defaultdict(type(""))
 
-def runner():
+def main():
   print("START "+__file__)
 
   if len(sys.argv) > 1:
@@ -140,4 +143,4 @@ def runner():
 
 if __name__ == "__main__":
     # execute only if run as a script
-    runner()
+    main()
