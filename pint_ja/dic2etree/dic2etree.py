@@ -1,11 +1,7 @@
-# https://stackoverflow.com/questions/7684333/converting-xml-to-dictionary-using-elementtree
-# ref https://stackoverflow.com/questions/15210148/get-parents-keys-from-nested-dictionary
-# def breadcrumb(json_dict_or_list, value):
+# print("Load dic2etree.py")
 import xml.etree.ElementTree as ET
 # import defusedxml.ElementTree as ET
 from collections import defaultdict
-
-print("Loaded dic2etree.py")
 
 ET.register_namespace('cac', 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')
 ET.register_namespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')
@@ -16,6 +12,7 @@ ET.register_namespace('', 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-
 
 dictID = defaultdict(type(""))
 
+# https://stackoverflow.com/questions/7684333/converting-xml-to-dictionary-using-elementtree
 def etree_to_dict(t):
   d = {t.tag: {} if t.attrib else None}
   children = list(t)
@@ -94,24 +91,14 @@ def dict_to_tsv(tsv, d, tag, path):
         assert isinstance(k, str)
         if k.startswith('#'):
           assert k == '#text' and isinstance(v, str)  # case 2
-          # pathString = path+'/'+tag
-          # record = {'case': 2,
-          #   'id': dictID[pathString]+' '+dictID[pathString+'/'+tag],
-          #   'path': pathString, 'tag': k, 'val': v}
           record = _setup_record(2, path, tag, k, v)
           tsv.append(record)
         elif isinstance(k, str) and k.startswith('@'):
           assert isinstance(v, str)  # case 3
-          # pathString = path+'/'+tag
-          # record = {'case': 3,
-          #   'id': dictID[pathString]+' '+dictID[pathString+'/'+tag],
-          #   'path': pathString, 'tag': k, 'val': v}
           record = _setup_record(3, path, tag, k, v)
           tsv.append(record)
         elif isinstance(v, list):
           for e in v:  # case 4
-            # pathString = path+'/'+tag+'/'+k
-            # record = {'case': 4, 'id': dictID[pathString], 'path': pathString, 'tag': k, 'val': ''}
             record = _setup_record(4, path, tag, k, '')
             tsv.append(record)
             tsv = _to_tsv(tsv, e, k, path+'/'+tag)
@@ -121,11 +108,12 @@ def dict_to_tsv(tsv, d, tag, path):
       assert d == 'invalid type', (type(d), d)
     return tsv
   assert isinstance(d, dict) and len(d) == 1
-  # tag, body = next(iter(d.items()))
   for tag, body in d.items():
     tsv = _to_tsv(tsv, body, tag, path)
   return tsv
 
+# ref https://stackoverflow.com/questions/15210148/get-parents-keys-from-nested-dictionary
+# def breadcrumb(json_dict_or_list, value):
 def get_path_value(base, path):
   key = path[0]
   if isinstance(base, dict):
@@ -169,7 +157,6 @@ def set_path_value(base, path, value, datatype):
         base = base[key][index]
       except Exception:
         pass
-        # print(json.dumps(dic), path, key, base)
       path.pop(0)
       path.pop(0)
       p = set_path_value(base, path, value, datatype)

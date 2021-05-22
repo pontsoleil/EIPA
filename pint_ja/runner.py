@@ -25,7 +25,7 @@ def runner():
   if len(sys.argv) > 1:
     argv1 = sys.argv[1]
   else:
-    argv1 = 'pint_ex6'
+    argv1 = 'pint_ex6'  # pint_example6
   if len(sys.argv) > 2:
     argv2 = sys.argv[2]
   else:
@@ -37,17 +37,13 @@ def runner():
   filename = argv1
   base_dir = argv2
   extension = argv3
-  xpath_file = base_dir+'in/xpath.tsv'
-  # in_file    = base_dir+'pint_example6.txt'
-  # out_file   = base_dir+'pint_example6.xml'
+  xpath_file = base_dir+'common/xpath.tsv'
   in_file    = base_dir+"in/"+filename+"."+extension
   out_file   = base_dir+"out/"+filename+".xml"
-
-  # print(base_dir)
-  print("xpath_file "+xpath_file)
-  # print(in_file)
-  # print(out_file)
-  # print(__path__)
+  # print("base_dir "+base_dir)
+  # print("xpath_file "+xpath_file)
+  # print("in_file "+in_file)
+  # print("out_file "+out_file)
 
   dictXpath = defaultdict(type(""))
 
