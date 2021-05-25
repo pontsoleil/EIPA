@@ -1,75 +1,68 @@
-1,,/Invoice/cbc:CustomizationID,urn:cen.eu:en16931:2017
-1,,/Invoice/cbc:ID,TOSL110
-1,,/Invoice/cbc:IssueDate,2013-04-10
-1,,/Invoice/cbc:DueDate,2013-05-10
-1,,/Invoice/cbc:InvoiceTypeCode,380
-1,,/Invoice/cbc:DocumentCurrencyCode,DKK
-1,,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode,DK
-1,,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID,DK123456789MVA
-1,,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID,VAT
-1,,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName,SellerCompany
-1,,/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode,DK
-1,,/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName,Buyercompany ltd
-3, ,/Invoice/cac:TaxTotal/cbc:TaxAmount,DKK
-2, ,/Invoice/cac:TaxTotal/cbc:TaxAmount,675.00
-4,,/Invoice/cac:TaxTotal/cac:TaxSubtotal,
-3, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount,DKK
-2, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount,1500.00
-3, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount,DKK
-2, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount,375.00
-1,,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID,S
-1,,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent,25
-1,,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID,VAT
-4,,/Invoice/cac:TaxTotal/cac:TaxSubtotal,
-3, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount,DKK
-2, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount,2500.00
-3, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount,DKK
-2, ,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount,300.00
-1,,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID,S
-1,,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent,12
-1,,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID,VAT
-3, ,/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount,DKK
-2, ,/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount,4000.00
-3, ,/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount,DKK
-2, ,/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount,4000.00
-3, ,/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount,DKK
-2, ,/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount,4675.00
-3, ,/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount,DKK
-2, ,/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount,4675.00
-4,,/Invoice/cac:InvoiceLine,
-1,,/Invoice/cac:InvoiceLine/cbc:ID,1
-3, ,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity,EA
-2, ,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity,1000
-3, ,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount,DKK
-2, ,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount,1000.00
-1,,/Invoice/cac:InvoiceLine/cac:Item/cbc:Name,Printing paper
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID,S
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent,25
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID,VAT
-3, ,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount,DKK
-2, ,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount,1.00
-4,,/Invoice/cac:InvoiceLine,
-1,,/Invoice/cac:InvoiceLine/cbc:ID,2
-3, ,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity,EA
-2, ,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity,100
-3, ,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount,DKK
-2, ,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount,500.00
-1,,/Invoice/cac:InvoiceLine/cac:Item/cbc:Name,Parker Pen
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID,S
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent,25
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID,VAT
-3, ,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount,DKK
-2, ,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount,5.00
-4,,/Invoice/cac:InvoiceLine,
-1,,/Invoice/cac:InvoiceLine/cbc:ID,3
-3, ,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity,EA
-2, ,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity,500
-3, ,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount,DKK
-2, ,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount,2500.00
-1,,/Invoice/cac:InvoiceLine/cac:Item/cbc:Name,American Cookies
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID,S
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent,12
-1,,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID,VAT
-3, ,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount,DKK
-2, ,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount,5.00
-3, ,/Invoice,urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd
+case,column_index,seq,index,base_id,base_card,bough_id,bough_card,twig_id,twig_card,id,tag,value,path
+1,0,0,1,ibg-00,1..1,,,,,ibt-024,cbc:CustomizationID,urn:cen.eu:en16931:2017,/Invoice/cbc:CustomizationID
+1,0,0,0,ibg-00,1..1,,,,,ibt-001,cbc:ID,TOSL110,/Invoice/cbc:ID
+1,2,2,4,ibg-00,1..1,ibg-04,1..1,ibg-05,1..1,ibt-040,cbc:IdentificationCode,DK,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode
+1,1,1,2,ibg-00,1..1,ibg-04,1..1,,,ibt-032,cbc:CompanyID,DK123456789MVA,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID
+1,1,1,3,ibg-00,1..1,ibg-04,1..1,,,ibt-032a,cbc:ID,VAT,/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID
+3,0,0,10,ibg-00,1..1,,,,,ibt-111,@currencyID,DKK,/Invoice/cac:TaxTotal/cbc:TaxAmount
+2,0,0,9,ibg-00,1..1,,,,,ibt-111,#text,675.00,/Invoice/cac:TaxTotal/cbc:TaxAmount
+4,0,0,,ibg-00,1..1,,,,,ibg-23,cac:TaxSubtotal,,/Invoice/cac:TaxTotal/cac:TaxSubtotal
+3,4,4,16,ibg-00,1..1,ibg-23,1..n,,,ibt-116,@currencyID,DKK,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount
+2,4,4,15,ibg-00,1..1,ibg-23,1..n,,,ibt-116,#text,1500.00,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount
+3,4,4,18,ibg-00,1..1,ibg-23,1..n,,,ibt-117,@currencyID,DKK,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount
+2,4,4,17,ibg-00,1..1,ibg-23,1..n,,,ibt-117,#text,375.00,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount
+1,4,4,20,ibg-00,1..1,ibg-23,1..n,,,ibt-118,cbc:ID,S,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID
+1,4,4,21,ibg-00,1..1,ibg-23,1..n,,,ibt-119,cbc:Percent,25,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent
+1,4,4,19,ibg-00,1..1,ibg-23,1..n,,,ibt-118-1,cbc:ID,VAT,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID
+4,0,4,,ibg-00,1..1,,,,,ibg-23,cac:TaxSubtotal,,/Invoice/cac:TaxTotal/cac:TaxSubtotal
+3,4,8,16,ibg-00,1..1,ibg-23,1..n,,,ibt-116,@currencyID,DKK,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount
+2,4,8,15,ibg-00,1..1,ibg-23,1..n,,,ibt-116,#text,2500.00,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount
+3,4,8,18,ibg-00,1..1,ibg-23,1..n,,,ibt-117,@currencyID,DKK,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount
+2,4,8,17,ibg-00,1..1,ibg-23,1..n,,,ibt-117,#text,300.00,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount
+1,4,8,20,ibg-00,1..1,ibg-23,1..n,,,ibt-118,cbc:ID,S,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID
+1,4,8,21,ibg-00,1..1,ibg-23,1..n,,,ibt-119,cbc:Percent,12,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent
+1,4,8,19,ibg-00,1..1,ibg-23,1..n,,,ibt-118-1,cbc:ID,VAT,/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID
+3,3,7,6,ibg-00,1..1,ibg-22,1..1,,,ibt-106,@currencyID,DKK,/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount
+2,3,7,5,ibg-00,1..1,ibg-22,1..1,,,ibt-106,#text,4000.00,/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount
+3,3,7,8,ibg-00,1..1,ibg-22,1..1,,,ibt-109,@currencyID,DKK,/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount
+2,3,7,7,ibg-00,1..1,ibg-22,1..1,,,ibt-109,#text,4000.00,/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount
+3,3,7,12,ibg-00,1..1,ibg-22,1..1,,,ibt-112,@currencyID,DKK,/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount
+2,3,7,11,ibg-00,1..1,ibg-22,1..1,,,ibt-112,#text,4675.00,/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount
+3,3,7,14,ibg-00,1..1,ibg-22,1..1,,,ibt-115,@currencyID,DKK,/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount
+2,3,7,13,ibg-00,1..1,ibg-22,1..1,,,ibt-115,#text,4675.00,/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount
+4,0,7,,ibg-00,1..1,,,,,ibg-25,cac:InvoiceLine,,/Invoice/cac:InvoiceLine
+1,5,12,22,ibg-00,1..1,ibg-25,1..n,,,ibt-126,cbc:ID,1,/Invoice/cac:InvoiceLine/cbc:ID
+3,5,12,24,ibg-00,1..1,ibg-25,1..n,,,ibt-129,@unitCode,EA,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+2,5,12,23,ibg-00,1..1,ibg-25,1..n,,,ibt-129,#text,1000,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+3,5,12,26,ibg-00,1..1,ibg-25,1..n,,,ibt-131,@currencyID,DKK,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+2,5,12,25,ibg-00,1..1,ibg-25,1..n,,,ibt-131,#text,1000.00,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+1,8,15,31,ibg-00,1..1,ibg-25,1..n,ibg-31,1..1,ibt-153,cbc:Name,Printing paper,/Invoice/cac:InvoiceLine/cac:Item/cbc:Name
+1,7,14,29,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-151,cbc:ID,S,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID
+1,7,14,30,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-152,cbc:Percent,25,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent
+1,7,14,32,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-167,cbc:ID,VAT,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID
+3,6,13,28,ibg-00,1..1,ibg-25,1..n,ibg-29,1..1,ibt-146,@currencyID,DKK,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount
+2,6,13,27,ibg-00,1..1,ibg-25,1..n,ibg-29,1..1,ibt-146,#text,1.00,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount
+4,0,13,,ibg-00,1..1,,,,,ibg-25,cac:InvoiceLine,,/Invoice/cac:InvoiceLine
+1,5,18,22,ibg-00,1..1,ibg-25,1..n,,,ibt-126,cbc:ID,2,/Invoice/cac:InvoiceLine/cbc:ID
+3,5,18,24,ibg-00,1..1,ibg-25,1..n,,,ibt-129,@unitCode,EA,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+2,5,18,23,ibg-00,1..1,ibg-25,1..n,,,ibt-129,#text,100,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+3,5,18,26,ibg-00,1..1,ibg-25,1..n,,,ibt-131,@currencyID,DKK,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+2,5,18,25,ibg-00,1..1,ibg-25,1..n,,,ibt-131,#text,500.00,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+1,8,21,31,ibg-00,1..1,ibg-25,1..n,ibg-31,1..1,ibt-153,cbc:Name,Parker Pen,/Invoice/cac:InvoiceLine/cac:Item/cbc:Name
+1,7,20,29,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-151,cbc:ID,S,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID
+1,7,20,30,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-152,cbc:Percent,25,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent
+1,7,20,32,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-167,cbc:ID,VAT,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID
+3,6,19,28,ibg-00,1..1,ibg-25,1..n,ibg-29,1..1,ibt-146,@currencyID,DKK,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount
+2,6,19,27,ibg-00,1..1,ibg-25,1..n,ibg-29,1..1,ibt-146,#text,5.00,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount
+4,0,19,,ibg-00,1..1,,,,,ibg-25,cac:InvoiceLine,,/Invoice/cac:InvoiceLine
+1,5,24,22,ibg-00,1..1,ibg-25,1..n,,,ibt-126,cbc:ID,3,/Invoice/cac:InvoiceLine/cbc:ID
+3,5,24,24,ibg-00,1..1,ibg-25,1..n,,,ibt-129,@unitCode,EA,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+2,5,24,23,ibg-00,1..1,ibg-25,1..n,,,ibt-129,#text,500,/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+3,5,24,26,ibg-00,1..1,ibg-25,1..n,,,ibt-131,@currencyID,DKK,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+2,5,24,25,ibg-00,1..1,ibg-25,1..n,,,ibt-131,#text,2500.00,/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+1,8,27,31,ibg-00,1..1,ibg-25,1..n,ibg-31,1..1,ibt-153,cbc:Name,American Cookies,/Invoice/cac:InvoiceLine/cac:Item/cbc:Name
+1,7,26,29,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-151,cbc:ID,S,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID
+1,7,26,30,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-152,cbc:Percent,12,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent
+1,7,26,32,ibg-00,1..1,ibg-25,1..n,ibg-30,1..n,ibt-167,cbc:ID,VAT,/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID
+3,6,25,28,ibg-00,1..1,ibg-25,1..n,ibg-29,1..1,ibt-146,@currencyID,DKK,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount
+2,6,25,27,ibg-00,1..1,ibg-25,1..n,ibg-29,1..1,ibt-146,#text,5.00,/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount

@@ -1,0 +1,171 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+import csv
+import re
+import json
+import sys 
+import os
+import argparse
+from dic2etree import * 
+
+dictID = defaultdict(type(""))
+dictXpath = defaultdict(type(""))
+
+def file_path(pathname):
+  if "/" == pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+def main():
+  debug_trace = False
+  if debug_trace:
+    print("START ", __file__)
+
+  if not debug_trace:
+    # Create the parser
+    my_parser = argparse.ArgumentParser(prog='genInvoice',
+                                        usage='%(prog)s [options] infile outfile',
+                                        description='ファイル変換')
+    # Add the arguments
+    my_parser.add_argument('inFile',
+                          metavar='infile',
+                          type=str,
+                          help='入力ファイル')
+    my_parser.add_argument('outFile',
+                          metavar='outfile',
+                          type=str,
+                          help='出力ファイル')
+    # Execute the parse_args() method
+    args = my_parser.parse_args()
+    in_file = file_path(args.inFile)
+    out_file = file_path(args.outFile)
+    # Check if infile exists
+    if not os.path.isfile(in_file):
+        print('入力ファイルがありません')
+        sys.exit()
+  else:
+    test_path = "data/out/ubl-tc434-example6"
+    in_file = file_path(test_path+".tsv")
+    out_file = file_path(test_path+".xml")
+
+  # initialize globals
+  dic = defaultdict(type(""))
+  dic['Invoice'] = {}
+
+  xpath_file = file_path('data/common/xpath.txt')
+  with open(xpath_file, encoding='utf-8', newline='') as f0:
+    reader = csv.reader(f0, delimiter='\t')
+    header = next(reader)
+    for record in reader:
+      id = record[1].strip()
+      if id:
+        xpath = record[9]
+        if len(record) > 11 and "/" in xpath:
+          level = record[2]
+          BT = record[3]
+          card = record[4].strip()
+          datatype = record[5]
+          section = record[6]
+          extension = record[7]
+          attributes = record[10]
+          rules = record[11]
+          dictID[xpath] = id
+          dictXpath[id] = { 'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
+                            'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules }
+          if 'Amount' == datatype or 'Unit' == datatype:
+            dictXpath[id+'-1'] = { 'level':str(int(level)+1), 'BT':None, 'card':None, 'datatype':'CurrencyCode', 'section':None, \
+                              'extension':None, 'xpath':xpath+'/@currencyID', 'attributes':None, 'rules': None }
+
+
+  with open(in_file, encoding='utf-8', newline='') as f:
+    reader = csv.reader(f, delimiter='\t')
+    header = next(reader)
+    for record in reader:
+      base0 = dictXpath[record[0]] and dictXpath[record[0]]['xpath']
+      base1 = dictXpath[record[2]] and dictXpath[record[2]]['xpath']
+      base2 = dictXpath[record[4]] and dictXpath[record[4]]['xpath']
+      seq0 = record[1]
+      seq1 = record[3]
+      seq2 = record[5]
+
+      root = '/Invoice'
+      if '' == base0:
+        base = root
+      else:
+        base = base0
+      baseList0 = base.split('/')
+      baseList0.remove('')
+      base_path = baseList0
+      if seq0 and '' != seq0:
+        try:
+          base_path += [int(seq0)]
+        except ValueError:
+          pass
+      if len(base1) > 0:
+        baseList1 = re.sub(base, '', base1).split('/')
+        baseList1.remove('')
+        base = base1
+        base_path += baseList1
+        if seq1 and '' != seq1:
+          try:
+            base_path += [int(seq1)]
+          except ValueError:
+            pass
+        if len(base2) > 0:
+          baseList2 = re.sub(base, '', base2).split('/')
+          baseList2.remove('')
+          base = base2
+          base_path += baseList1
+          if seq2 and '' != seq2:
+            try:
+              base_path += [int(seq2)]
+            except ValueError:
+              pass
+      n = 0
+      for cell in record:  # traverce field in a record
+        if n > 5 and cell:
+          id = header[n]
+          if id:
+            dictxpath = dictXpath[id]
+            if dictxpath:
+              path = dictxpath['xpath']
+              if path:
+                pathList = re.sub(base, '', path).split('/')
+                pathList.remove('')
+                xpath = base_path + pathList
+                datatype = dictxpath['datatype']
+                set_path_value(dic, xpath, cell, datatype)
+        n += 1
+
+    dicJson = json.dumps(dic)
+    dicJson = re.sub('"Invoice"', '"{' + ns[''] + '}Invoice"', dicJson)
+    dicJson = re.sub('xsi:', '{' + ns['xsi'] + '}', dicJson)
+    dicJson = re.sub('cac:', '{' + ns['cac'] + '}', dicJson)
+    dicJson = re.sub('cbc:', '{' + ns['cbc'] + '}', dicJson)
+    dicJson = re.sub('qdt:', '{' + ns['qdt'] + '}', dicJson)
+    dicJson = re.sub('udt:', '{' + ns['udt'] + '}', dicJson)
+    dicJson = re.sub('ccts:', '{' + ns['ccts'] + '}', dicJson)
+    dic2 = json.loads(dicJson)
+
+    root = ET.XML('''
+    <Invoice 
+      xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+      xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+      xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
+    ''')  # this process adds xsi:schemaLocation attribute
+    tree = dict_to_etree(dic2, root)
+
+    with open(out_file, 'wb') as f:
+      t = ET.ElementTree(tree)
+      t.write(f, encoding='UTF-8')
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()

@@ -11,8 +11,6 @@ ET.register_namespace('udt', 'urn:oasis:names:specification:ubl:schema:xsd:Unqua
 ET.register_namespace('ccts', 'urn:un:unece:uncefact:documentation:2')
 ET.register_namespace('', 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2')
 
-dictID = defaultdict(type(""))
-
 # https://stackoverflow.com/questions/7684333/converting-xml-to-dictionary-using-elementtree
 def etree_to_dict(t):
   d = {t.tag: {} if t.attrib else None}
@@ -62,55 +60,6 @@ def dict_to_etree(d, root):
   tag, body = next(iter(d.items()))
   _to_etree(body, root)
   return root
-
-def dict_to_tsv(tsv, d, tag, path):
-  def _setup_record(case, path, tag, k, v):
-    _record = {}
-    if 1 == case:
-      pathString = path+'/'+tag
-      id = dictID[pathString]
-    elif 2 == case or 3 == case:
-      pathString = path+'/'+tag
-      id = dictID[path]+' '+dictID[pathString]
-      tag = k
-    elif 4 == case:
-      pathString = path+'/'+tag+'/'+k
-      id = dictID[pathString]
-      tag = k
-    _record = {'case': case, 'id': id, 'path': pathString, 'tag': tag, 'val': v}
-    return _record
-  def _to_tsv(tsv, d, tag, path):
-    record = {}
-    if not d:
-      pass
-    elif isinstance(d, str):  # case 1
-      record = _setup_record(1, path, tag, '', d)
-      tsv.append(record)
-    elif isinstance(d, dict):
-      for k,v in d.items():
-        assert isinstance(k, str)
-        if k.startswith('#'):
-          assert k == '#text' and isinstance(v, str)  # case 2
-          record = _setup_record(2, path, tag, k, v)
-          tsv.append(record)
-        elif isinstance(k, str) and k.startswith('@'):
-          assert isinstance(v, str)  # case 3
-          record = _setup_record(3, path, tag, k, v)
-          tsv.append(record)
-        elif isinstance(v, list):
-          for e in v:  # case 4
-            record = _setup_record(4, path, tag, k, '')
-            tsv.append(record)
-            tsv = _to_tsv(tsv, e, k, path+'/'+tag)
-        else:
-          tsv = _to_tsv(tsv, v, k, path+'/'+tag)
-    else:
-      assert d == 'invalid type', (type(d), d)
-    return tsv
-  assert isinstance(d, dict) and len(d) == 1
-  for tag, body in d.items():
-    tsv = _to_tsv(tsv, body, tag, path)
-  return tsv
 
 # ref https://stackoverflow.com/questions/15210148/get-parents-keys-from-nested-dictionary
 # breadcrumb(json_dict_or_list, value)
@@ -168,18 +117,18 @@ def set_path_value(base, path, value, datatype):
     if 1 == len(path):
       if not key in base.keys():
         base[key] = {}
-      if 'Amount' == datatype:
+      if 'Amount' == datatype or 'Unit' == datatype:
         value = {'#text':str(value), '@currencyID': 'JPY'}
-      base[key] = value
+      if not '#text' in base[key]:
+        base[key] = value  # when Amount is already set
       return {'k':key, 'v':base[key]}
     else:
       path.pop(0)
       if not key in base.keys():
         base[key] = {}
-      for k, v in base.items():
-        if isinstance(base, dict):
+      if isinstance(base, dict):
+        for k, v in base.items():
           if key == k:
             p = set_path_value(v, path, value, datatype)
             if p:
               return p
-

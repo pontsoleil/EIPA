@@ -1,0 +1,312 @@
+Sem Sort	ID	Level	Business term name 	Card.	Data Type	Section	BIS extension	Synt Sort	UBL syntax xPath	Attributes - adjustments	Rules
+1000	ibt-001	1	Invoice number 	1..1 	ID	Shared		1020	/Invoice/cbc:ID		-
+1005								1300	/Invoice/cac:ContractDocumentReference		-
+1010	ibt-002	1	Invoice issue date 	1..1 	Date	Shared		1030	/Invoice/cbc:IssueDate		-
+1015	ibt-168	1	Invoice issue time	0..1	Time	Shared	Added	1035	/Invoice/cbc:IssueDate		-
+1020	ibt-003	1	Invoice type code 	1..1 	Code	Shared		1050	/Invoice/cbc:InvoiceTypeCode		-
+1030	ibt-005	1	Invoice currency code	1..1 	Code	Shared		1090	/Invoice/cbc:DocumentCurrencyCode		-
+1040	ibt-006	1	Tax accounting currency	0..1 	Code	Aligned		1100	/Invoice/cbc:TaxCurrencyCode		-
+1050	ibt-007	1	TAX point date	0..1 	Date	Aligned		1080	/Invoice/cbc:TaxPointDate		-
+1060	ibt-008	1	TAX point date code	0..1 	Code	Aligned		1160	/Invoice/cac:InvoicePeriod/cbc:DescriptionCode		-
+1070	ibt-009	1	Payment due date 	0..1 	Date	Shared		1040	/Invoice/cbc:DueDate		-
+1080	ibt-010	1	Buyer reference 	0..1 	Text	Shared		1120	/Invoice/cbc:BuyerReference		-
+1085								1430	/Invoice/cac:ProjectReference		-
+1090	ibt-011	1	Project reference 	0..1 	Optional	Shared		1440	/Invoice/cac:ProjectReference/cbc:ID		-
+1100	ibt-012	1	Contract reference 	0..1 	Optional	Shared		1310	/Invoice/cac:ContractDocumentReference/cbc:ID		-
+1105								1170	/Invoice/cac:OrderReference		-
+1110	ibt-013	1	Purchase order reference	0..1 	Optional	Shared		1180	/Invoice/cac:OrderReference/cbc:ID		-
+1120	ibt-014	1	Sales order reference	0..1 	Optional	Shared		1190	/Invoice/cac:OrderReference/cbc:SalesOrderID		-
+1125								1260	/Invoice/cac:ReceiptDocumentReference		-
+1130	ibt-015	1	Receiving advice reference	0..1 	Optional	Shared		1270	/Invoice/cac:ReceiptDocumentReference/cbc:ID		-
+1135								1240	/Invoice/cac:DespatchDocumentReference		-
+1140	ibt-016	1	Despatch advice reference	0..n 	Optional	Aligned	crd from 0..1	1250	/Invoice/cac:DespatchDocumentReference/cbc:ID		-
+1145								1280	/Invoice/cac:OriginatorDocumentReference		-
+1150	ibt-017	1	Tender or lot reference	0..1 	Optional	Shared		1290	/Invoice/cac:OriginatorDocumentReference/cbc:ID		-
+1160	ibt-018	1	Invoiced object identifier	0..1	ID	Shared		1340	/Invoice/cac:AdditionalDocumentReference/cbc:ID	with cbc:DocumentTypeCode=130	-
+1170	ibt-018-1	2	The identification scheme identifier of the Invoiced object identifier	0..1	Scheme	Shared		1350	/Invoice/cac:AdditionalDocumentReference/cbc:ID/@schemeID		-
+1175	ibt-018a	2						1355	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode		-
+1180	ibt-019	1	Buyer accounting reference	0..1 	Text	Shared		1110	/Invoice/cbc:AccountingCost		-
+1189	ibg-33	1	INVOICE TERMS	0..n 	Group	Aligned	Added as class	2700	/Invoice/cac:PaymentTerms		-
+1191	ibt-020	2	Payment terms	0..1 	Text	Shared	crd to 0..n via class	2710	/Invoice/cac:PaymentTerms/cbc:Note		-
+1192	ibt-187	2	Terms payment instructions ID	0..1	ID	Aligned	Added	2712	/Invoice/cac:PaymentTerms/cbc:PaymentMeansID		-
+1193	ibt-176	2	Terms amount	0..1	Amount	Aligned	Added	2713	/Invoice/cac:PaymentTerms/cbc:Amount		-
+1194	ibt-177	2	Terms installment due date	0..1	Date	Aligned	Added	2714	/Invoice/cac:PaymentTerms/cbc:InstallmentDueDate		-
+1200	ibg-01	1	INVOICE NOTE	0..n 	Group						-
+1210	ibt-021	2	Invoice note subject code	0..1	Text	Shared		1060	/Invoice/cbc:Note	Use #subjectcode# 	-
+1220	ibt-022	2	Invoice note	0..1	Text[	Shared		1070	/Invoice/cbc:Note		-
+1230	ibg-02	1	PROCESS CONTROL	1..1 	Group						-
+1240	ibt-023	2	Business process type	0..1 	Text	Shared		1010	/Invoice/cbc:ProfileID		-
+1250	ibt-024	2	Specification identifier	1..1 	ID	Shared		1000	/Invoice/cbc:CustomizationID		-
+1260	ibg-03	1	PRECEDING INVOICE REFERENCE	0..n 	Group			1200	/Invoice/cac:BillingReference		-
+1265								1210	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference		-
+1270	ibt-025	2	Preceding Invoice reference	1..1 	Optional	Shared		1220	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID		-
+1280	ibt-026	2	Preceding Invoice issue date	0..1 	Date	Shared		1230	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate		-
+1290	ibg-04	1	SELLER	1..1	Group			1450	/Invoice/cac:AccountingSupplierParty		-
+1295								1460	/Invoice/cac:AccountingSupplierParty/cac:Party		-
+1305								1700	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity		-
+1310	ibt-027	2	Seller name	1..1 	Text	Shared		1710	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName		-
+1315								1530	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName		-
+1320	ibt-028	2	Seller trading name	0..1 	Text	Shared		1540	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name		-
+1325								1490	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification		-
+1330	ibt-029	2	Seller identifier 	0..n 	ID	Shared		1500	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID		-
+1340	ibt-029-1	3	Scheme identifier	0..1 	Scheme	Shared		1510	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID		-
+1350	ibt-030	2	Seller legal registration identifier	0..1 	ID	Shared		1720	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID		-
+1360	ibt-030-1	3	Scheme identifier	0..1 	Scheme	Shared		1730	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID		-
+1365								1650	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme		-
+1370	ibt-031	2	Seller TAX identifier	0..1 	ID	Aligned		1660	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID	"id qualifier is cac:TaxScheme/cbc:ID, e.g. VAT or GST"	-
+1380	ibt-032	2	Seller TAX registration identifier	0..1	ID	Aligned		1670	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID	id qualifier is cac:TaxScheme/cbc:ID 	-
+1385								1680	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme		-
+1386	ibt-032a	2						1690	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		-
+1390	ibt-033	2	Seller additional legal information	0..1 	Text	Shared		1740	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm		-
+1400	ibt-034	2	Seller electronic address	0..1 	ID	Shared		1470	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID		-
+1410	ibt-034-1	3	Scheme identifier	1..1 	Scheme	Shared		1480	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID		-
+1415	ibg-05	1	SELLER POSTAL ADDRESS	1..1 	Group			1550	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress		-
+1420	ibt-035	3	Seller address line 1 	0..1 	Text	Shared		1560	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName		-
+1430	ibt-036	3	Seller address line 2	0..1 	Text	Shared		1570	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName		-
+1435								1600	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine		-
+1440	ibt-162	3	Seller address line 3	0..1 	Text	Shared		1610	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line		-
+1450	ibt-037	3	Seller city	0..1 	Text	Shared		1580	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName		-
+1460	ibt-038	3	Seller post code	0..1 	Text	Shared		1590	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone		-
+1470	ibt-039	3	Seller country subdivision 	0..1 	Text	Shared		1595	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity		-
+1475								1630	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country		-
+1480	ibt-040	3	Seller country code 	1..1 	Code	Shared		1640	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode		-
+1490	ibg-06	2	SELLER CONTACT 	0..1 	Group			1750	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact		-
+1500	ibt-041	3	Seller contact point 	0..1 	Text	Shared		1760	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name		-
+1510	ibt-042	3	Seller contact telephone number	0..1 	Text	Shared		1770	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone		-
+1520	ibt-043	3	Seller contact email address	0..1 	Text	Shared		1780	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail		-
+1530	ibg-07	1	BUYER 	1..1 	Group			1790	/Invoice/cac:AccountingCustomerParty		-
+1532								1800	/Invoice/cac:AccountingCustomerParty/cac:Party		-
+1535								2020	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity		-
+1540	ibt-044	2	Buyer name 	1..1 	Text	Shared		2030	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName		-
+1545								1860	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName		-
+1550	ibt-045	2	Buyer trading name	0..1 	Text	Shared		1870	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name		-
+1555								1830	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification		-
+1560	ibt-046	2	Buyer identifier 	0..n 	ID	Shared		1840	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID		-
+1570	ibt-046-1	3	Scheme identifier	0..1 	Scheme	Shared		1850	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID		-
+1580	ibt-047	2	Buyer legal registration identifier	0..1 	ID	Shared		2040	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID		-
+1590	ibt-047-1	3	Scheme identifier	0..1 	Scheme	Shared		2050	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID		-
+1595								1980	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme		-
+1600	ibt-048	2	Buyer TAX identifier	0..1 	ID	Aligned		1990	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID		-
+1605								2000	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme		-
+1606	ibt-048a	2						2010	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		-
+1610	ibt-049	2	Buyer electronic address	0..1 	ID	Shared		1810	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID		-
+1620	ibt-049-1	3	Scheme identifier	1..1 	Scheme	Shared		1820	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID		-
+1630	ibg-08	2	BUYER POSTAL ADDRESS	1..1 	Group			1880	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress		-
+1640	ibt-050	3	Buyer address line 1 	0..1 	Text	Shared		1890	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName		-
+1650	ibt-051	3	Buyer address line 2	0..1 	Text	Shared		1900	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName		-
+1655								1940	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine		-
+1660	ibt-163	3	Buyer address line 3	0..1 	Text	Shared		1950	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line		-
+1670	ibt-052	3	Buyer city	0..1 	Text	Shared		1910	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName		-
+1680	ibt-053	3	Buyer post code	0..1 	Text	Shared		1920	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone		-
+1690	ibt-054	3	Buyer country subdivision 	0..1 	Text	Shared		1930	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity		-
+1695								1960	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country		-
+1700	ibt-055	3	Buyer country code 	1..1 	Code	Shared		1970	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode		-
+1710	ibg-09	2	BUYER CONTACT	0..1 	Group			2060	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact		-
+1720	ibt-056	3	Buyer contact point 	0..1 	Text	Shared		2070	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name		-
+1730	ibt-057	3	Buyer contact telephone number	0..1 	Text	Shared		2080	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone		-
+1740	ibt-058	3	Buyer contact email address	0..1 	Text	Shared		2090	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail		-
+1750	ibg-10	1	PAYEE	0..1 	Group			2100	/Invoice/cac:PayeeParty		-
+1755								2130	/Invoice/cac:PayeeParty/cac:PartyName		-
+1760	ibt-059	2	Payee name 	1..1 	Text	Shared		2140	/Invoice/cac:PayeeParty/cac:PartyName/cbc:Name		-
+1765								2110	/Invoice/cac:PayeeParty/cac:PartyIdentification		-
+1770	ibt-060	2	Payee identifier 	0..1 	ID	Shared		2120	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID		-
+1780	ibt-060-1	3	Scheme identifier	0..1 	Scheme	Shared		2125	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID		-
+1785								2160	/Invoice/cac:PayeeParty/cac:PartyLegalEntity		-
+1790	ibt-061	2	Payee legal registration identifier	0..1 	ID	Shared		2170	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID		-
+1800	ibt-061-1	3	Scheme identifier	0..1 	Scheme	Shared		2180	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID		-
+1810	ibg-11	1	SELLER TAX REPRESENTATIVE PARTY	0..1 	Group			2190	/Invoice/cac:TaxRepresentativeParty		-
+1815								2200	/Invoice/cac:TaxRepresentativeParty/cac:PartyName		-
+1820	ibt-062	2	Seller tax representative name	1..1 	Text	Aligned		2210	/Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name		-
+1825								2352	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme		-
+1830	ibt-063	2	Seller tax representative TAX identifier	1..1 	ID	Aligned		2354	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID		-
+1835								2356	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme		-
+1836	ibt-063a	2						2358	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		-
+1840	ibg-12	2	SELLER TAX REPRESENTATIVE POSTAL ADDRESS	1..1 	Group			2260	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress		-
+1850	ibt-064	3	Tax representative address line 1 	0..1 	Text	Shared		2270	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName		-
+1860	ibt-065	3	Tax representative address line 2	0..1 	Text	Shared		2280	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName		-
+1865								2320	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine		-
+1870	ibt-164	3	Tax representative address line 3	0..1 	Text	Shared		2330	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine/cbc:Line		-
+1880	ibt-066	3	Tax representative city	0..1 	Text	Shared		2290	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName		-
+1890	ibt-067	3	Tax representative post code	0..1 	Text	Shared		2300	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone		-
+1900	ibt-068	3	Tax representative country subdivision 	0..1 	Text	Shared		2310	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity		-
+1905								2340	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country		-
+1910	ibt-069	3	Tax representative country code 	1..1 	Code	Shared		2350	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode		-
+1920	ibg-13	1	DELIVERY INFORMATION	0..1 	Group			2360	/Invoice/cac:Delivery		-
+1926								2510	/Invoice/cac:Delivery/cac:DeliveryParty		-
+1928								2520	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName		-
+1930	ibt-070	2	Deliver to party name	0..1 	Text	Shared		2530	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name		-
+1935								2380	/Invoice/cac:Delivery/cac:DeliveryLocation		-
+1940	ibt-071	2	Deliver to location identifier	0..1 	ID	Shared		2390	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID		-
+1950	ibt-071-1	3	Scheme identifier	0..1 	Scheme	Shared		2400	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID/@schemeID		-
+1960	ibt-072	2	Actual delivery date	0..1 	Date	Shared		2370	/Invoice/cac:Delivery/cbc:ActualDeliveryDate		-
+1970	ibg-14	2	INVOICING PERIOD 	0..1 	Group			1130	/Invoice/cac:InvoicePeriod		-
+1980	ibt-073	3	Invoicing period start date	0..1 	Date	Shared		1140	/Invoice/cac:InvoicePeriod/cbc:StartDate		-
+1990	ibt-074	3	Invoicing period end date	0..1 	Date	Shared		1150	/Invoice/cac:InvoicePeriod/cbc:EndDate		-
+2000	ibg-15	2	DELIVER TO ADDRESS	0..1 	Group			2410	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address		-
+2010	ibt-075	3	Deliver to address line 1 	0..1 	Text	Shared		2420	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName		-
+2020	ibt-076	3	Deliver to address line 2	0..1 	Text	Shared		2430	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName		-
+2030	ibt-165	3	Deliver to address line 3	0..1 	Text	Shared		2480	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line		-
+2040	ibt-077	3	Deliver to city	0..1 	Text	Shared		2440	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName		-
+2050	ibt-078	3	Deliver to post code	0..1 	Text	Shared		2450	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone		-
+2060	ibt-079	3	Deliver to country subdivision 	0..1 	Text	Shared		2460	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity		-
+2065								2490	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country		-
+2070	ibt-080	3	Deliver to country code 	1..1 	Code	Shared		2500	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode		-
+2080	ibg-16	1	PAYMENT INSTRUCTIONS	0..n 	Group		Crd from 0..1	2540	/Invoice/cac:PaymentMeans		-
+2089	ibt-178	2	Payment Instructions ID	0..1	ID	Aligned	Added	2545	/Invoice/cac:PaymentMeans/cbc:ID		-
+2090	ibt-081	2	Payment means type code	1..1 	Code	Aligned		2550	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode		-
+2100	ibt-082	2	Payment means text	0..1 	Text	Shared		2560	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode/@Name		-
+2110	ibt-083	2	Remittance information	0..n 	Text	Aligned	Crd from 0..1. Def extended.	2570	/Invoice/cac:PaymentMeans/cbc:PaymentID		-
+2111	ibt-083-1	3	Scheme identifier	0..1	Code	Aligned	Added	2571	/Invoice/cac:PaymentMeans/cbc:PaymentID/@SchemeID		-
+2120	ibg-17	2	CREDIT TRANSFER 	0..n 	Group			2580	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount		-
+2130	ibt-084	3	Payment account identifier	1..1 	ID	Shared		2590	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID		-
+2131	ibt-084-1	3	Scheme identifier	0..1	Code	Aligned	Added	2591	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID/@SchemeID		-
+2140	ibt-085	3	Payment account name	0..1 	Text	Shared		2600	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name		-
+2145								2610	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch		-
+2149	ibt-086	3	Payment service provider identifier	0..1 	ID	Shared		2619	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID		-
+2150	ibg-34	3	ADDRESS	0..1	Group		Added	2620	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address		-
+2151	ibt-169	4	Account address line 1 	0..1 	Text	Aligned	Added	2621	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:StreetName		-
+2152	ibt-170	4	Account address line 2	0..1 	Text	Aligned	Added	2622	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:AdditionalStreetName		-
+2153	ibt-171	4	Account city	0..1 	Text	Aligned	Added	2623	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:CityName		-
+2154	ibt-172	4	Account post code	0..1 	Text	Aligned	Added	2624	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:PostalZone		-
+2155	ibt-173	4	Account country subdivision 	0..1 	Text	Aligned	Added	2625	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:CountrySubentity		-
+2156								2626	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:AddressLine		-
+2157	ibt-174	4	Account address line 3	0..1 	Text	Aligned	Added	2627	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:AddressLine/cbc:Line		-
+2158								2628	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:Country		-
+2159	ibt-175	4	Account country code 	0..1	Code	Aligned	Added	2629	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:Country/cbc:IdentificationCode		-
+2160	ibg-18	2	PAYMENT CARD INFORMATION	0..1 	Group			2630	/Invoice/cac:PaymentMeans/cac:CardAccount		-
+2170	ibt-087	3	Payment card primary account number	1..1 	Text	Shared		2640	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID		-
+2175								2650	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID	Syntax requirment	-
+2180	ibt-088	3	Payment card holder name	0..1 	Text	Shared		2660	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName		-
+2190	ibg-19	2	DIRECT DEBIT 	0..1 	Group			2670	/Invoice/cac:PaymentMeans/cac:PaymentMandate		-
+2200	ibt-089	3	Mandate reference identifier	0..1 	ID	Shared		2680	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID		-
+2210	ibt-090	3	Bank assigned creditor identifier	0..1 	ID	Aligned		1520	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID		-
+2215								2685	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount		-
+2220	ibt-091	3	Debited account identifier	0..1 	ID	Shared		2690	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID		-
+2221	ibg-35	1	Paid amounts	0..n 			Added	2720	/Invoice/cac:PrepaidPayment		-
+2222	ibt-179	2	Payment identifier	0..1	ID	Aligned	Added	2721	/Invoice/cac:PrepaidPayment/cbc:ID		-
+2223	ibt-180	2	Paid amount	1..1	Amount	Aligned	Added	2722	/Invoice/cac:PrepaidPayment/cbc:PaidAmount		-
+2224	ibt-181	2	The date when the paid amount is debited to the invoice	0..1	Date	Aligned	Added	2723	/Invoice/cac:PrepaidPayment/cbc:ReceivedDate		-
+2225	ibt-182	2	Payment type	0..1	Code	Aligned	Added	2724	/Invoice/cac:PrepaidPayment/cbc:InstructionID		-
+2230	ibg-20	1	DOCUMENT LEVEL ALLOWANCES	0..n 	Group			2730	/Invoice/cac:AllowanceCharge	with cbc:ChargeIndicator = 'false'	-
+2240	ibt-092	2	Document level allowance amount	1..1 	Amount	Shared		2780	/Invoice/cac:AllowanceCharge/cbc:Amount	with cbc:ChargeIndicator = 'false'	-
+2250	ibt-093	2	Document level allowance base amount	0..1 	Amount	Shared		2790	/Invoice/cac:AllowanceCharge/cbc:BaseAmount	with cbc:ChargeIndicator = 'false'	-
+2260	ibt-094	2	Document level allowance percentage	0..1 	Percent	Shared		2770	/Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric	with cbc:ChargeIndicator = 'false'	-
+2265								2800	/Invoice/cac:AllowanceCharge/cac:TaxCategory		-
+2270	ibt-095	2	Document level allowance TAX category code	1..1 	Code	Aligned		2810	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID	with cbc:ChargeIndicator = 'false' with cac:TaxScheme/c bc:ID = ｽｿｽｽgVATｽｿｽｽh	-
+2280	ibt-096	2	Document level allowance TAX rate	0..1 	Percent	Aligned		2820	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent	with cbc:ChargeIndicator = 'false'	-
+2285								2830	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme		-
+2286	ibt-096a							2840	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		-
+2290	ibt-097	2	Document level allowance reason	0..1 	Text	Shared		2760	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason	with cbc:ChargeIndicator = 'false'	-
+2295								2740	/Invoice/cac:AllowanceCharge/cbc:ChargeIndicator	UBL qualifier = false	-
+2300	ibt-098	2	Document level allowance reason code	0..1 	Code	Shared		2750	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode	with cbc:ChargeIndicator = 'false'	-
+2310	ibg-21	1	DOCUMENT LEVEL CHARGES	0..n 	Group			2850	/Invoice/cac:AllowanceCharge	with cbc:ChargeIndicator = 'true'	-
+2315								2860	/Invoice/cac:AllowanceCharge/cbc:ChargeIndicator	UBL qualifier = true	-
+2320	ibt-099	2	Document level charge amount	1..1 	Amount	Shared		2890	/Invoice/cac:AllowanceCharge/cbc:Amount	with cbc:ChargeIndicator = 'true'	-
+2330	ibt-100	2	Document level charge base amount	0..1 	Amount	Shared		2900	/Invoice/cac:AllowanceCharge/cbc:BaseAmount	with cbc:ChargeIndicator = 'true'	-
+2340	ibt-101	2	Document level charge percentage	0..1 	Percent	Shared		2880	/Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric	with cbc:ChargeIndicator = 'true'	-
+2345								2910	/Invoice/cac:AllowanceCharge/cac:TaxCategory		-
+2350	ibt-102	2	Document level charge TAX category code	1..1 	Code	Aligned		2920	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID	with cbc:ChargeIndicator = 'true'	-
+2360	ibt-103	2	Document level charge TAX rate	0..1 	Percent	Aligned		2930	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent	with cbc:ChargeIndicator = 'true'	-
+2365								2940	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme		-
+2366	ibt-103a							2960	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		-
+2370	ibt-104	2	Document level charge reason	0..1 	Text	Shared		2870	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason	with cbc:ChargeIndicator = 'true'	-
+2380	ibt-105	2	Document level charge reason code	0..1 	Code	Shared		2865	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode	with cbc:ChargeIndicator = 'true'	-
+2390	ibg-22	1	DOCUMENT TOTALS	1..1 	Group			3090	/Invoice/cac:LegalMonetaryTotal		-
+2400	ibt-106	2	Sum of Invoice line net amount	1..1 	Amount	Shared		3100	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount		-
+2410	ibt-107	2	Sum of allowances on document level	0..1 	Amount	Shared		3130	/Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount		-
+2420	ibt-108	2	Sum of charges on document level	0..1 	Amount	Shared		3140	/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount		-
+2430	ibt-109	2	Invoice total amount without TAX	1..1 	Amount	Shared		3110	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount		-
+2435								2980	/Invoice/cac:TaxTotal		-
+2440	ibt-110	2	Invoice total TAX amount	0..1 	Amount	Shared		2990	/Invoice/cac:TaxTotal/cbc:TaxAmount		-
+2450	ibt-111	2	Invoice total TAX amount in accounting currency	0..1 	Amount	Aligned		3000	/Invoice/cac:TaxTotal/cbc:TaxAmount		-
+2460	ibt-112	2	Invoice total amount with TAX	1..1 	Amount	Shared		3120	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount		-
+2470	ibt-113	2	Paid amount 	0..1 	Amount	Shared		3150	/Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount		-
+2480	ibt-114	2	Rounding amount	0..1 	Amount	Shared		3160	/Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount		-
+2490	ibt-115	2	Amount due for payment	1..1 	Amount	Shared		3170	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount		-
+2500	ibg-23	1	TAX BREAKDOWN	1..n 	Group			3010	/Invoice/cac:TaxTotal/cac:TaxSubtotal		-
+2510	ibt-116	2	TAX category taxable amount	1..1 	Amount	Aligned		3020	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount		-
+2520	ibt-117	2	TAX category tax amount	1..1 	Amount	Aligned		3030	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount		-
+2525								3040	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory		-
+2530	ibt-118	2	TAX category code 	1..1 	Code	Aligned		3050	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID		-
+2535								3052	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme		-
+2536	ibt-118-1							3054	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID		-
+2540	ibt-119	2	TAX category rate	0..1 	Percent	Aligned		3060	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent		-
+2550	ibt-120	2	TAX exemption reason text	0..1 	Text	Aligned		3080	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason		-
+2560	ibt-121	2	TAX exemption reason code	0..1 	Code	Aligned		3070	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode		-
+2570	ibg-24	1	ADDITIONAL SUPPORTING DOCUMENTS	0..n 	Group			1320	/Invoice/cac:AdditionalDocumentReference		-
+2580	ibt-122	2	Supporting document reference	1..1 	Optional	Shared		1330	/Invoice/cac:AdditionalDocumentReference/cbc:ID		-
+2590	ibt-123	2	Supporting document description	0..1 	Text	Shared		1360	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription		-
+2594								1370	/Invoice/cac:AdditionalDocumentReference/cac:Attachment		-
+2595								1410	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference		-
+2600	ibt-124	2	External document location	0..1 	Text	Shared		1420	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI		-
+2610	ibt-125	2	Attached document	0..1 	Binary	Shared		1380	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject	check BT-18	-
+2620	ibt-125-1	3	Attached document Mime code								-
+2630	ibt-125-2	3	Attached document Filename	1..1 	Scheme	Shared		1400	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@filename		-
+2640	ibg-25	1	INVOICE LINE	1..n 	Group			3180	/Invoice/cac:InvoiceLine		-
+2650	ibt-126	2	Invoice line identifier	1..1 	ID	Shared		3190	/Invoice/cac:InvoiceLine/cbc:ID		-
+2660	ibt-127	2	Invoice line note	0..1 	Text	Shared		3200	/Invoice/cac:InvoiceLine/cbc:Note		-
+2665								3270	/Invoice/cac:InvoiceLine/cac:DocumentReference		-
+2670	ibt-128	2	Invoice line object identifier	0..1 	ID	Shared		3280	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID	with cbc:DocumentTy peCode = 130	-
+2680	ibt-128-1	3	Scheme identifier	0..1 	Scheme	Shared		3290	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID/@schemeID		-
+2685	ibt-128-2							3292	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode		-
+2690	ibt-129	2	Invoiced quantity	1..1 	Q 	Shared		3210	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity		-
+2700	ibt-130	2	Invoiced quantity unit of measure code	1..1 	Code	Shared		3220	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode		-
+2710	ibt-131	2	Invoice line net amount 	1..1 	Amount	Shared		3230	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount		-
+2715								3250	/Invoice/cac:InvoiceLine/cac:OrderLineReference		-
+2720	ibt-132	2	Referenced purchase order line reference	0..1 	Optional	Shared		3260	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID		-
+2721	ibt-183	2	Order reference	0..1	Optional	Aligned	Added	3261	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cac:OrderReference/cbc:ID		-
+2722	ibt-184	2	Despatch advice reference	0..1	Optional	Aligned	Added	3265	/Invoice/cac:InvoiceLine/cac:DespatchLineReference/cac:DocumentReference/cbc:ID		-
+2730	ibt-133	2	Invoice line Buyer accounting reference	0..1 	Text	Shared		3240	/Invoice/cac:InvoiceLine/cbc:AccountingCost		-
+2740	ibg-26	2	INVOICE LINE PERIOD	0..1 	Group			3242	/Invoice/cac:InvoiceLine/cac:InvoicePeriod		-
+2750	ibt-134	3	Invoice line period start date	0..1 	Date	Shared		3244	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate		-
+2760	ibt-135	3	Invoice line period end date	0..1 	Date	Shared		3246	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate		-
+2770	ibg-27	2	INVOICE LINE ALLOWANCES	0..n 	Group			3330	/Invoice/cac:InvoiceLine/cac:AllowanceCharge	with cbc:ChargeIndicator = 'false'	-
+2775	ibt-139a							3340	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator	UBL qualifier = false	-
+2780	ibt-136	3	Invoice line allowance amount	1..1 	Amount	Shared		3390	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount	with cbc:ChargeIndicator = 'false'	-
+2790	ibt-137	3	Invoice line allowance base amount	0..1 	Amount	Shared		3400	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount	with cbc:ChargeIndicator = 'false'	-
+2800	ibt-138	3	Invoice line allowance percentage	0..1 	Percent	Shared		3370	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric	with cbc:ChargeIndicator = 'false'	-
+2810	ibt-139	3	Invoice line allowance reason	0..1 	Text	Shared		3360	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason	with cbc:ChargeIndicator = 'false'	-
+2820	ibt-140	3	Invoice line allowance reason code	0..1 	Code	Shared		3350	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode	with cbc:ChargeIndicator = 'false'	-
+2830	ibg-28	2	INVOICE LINE CHARGES	0..n 	Group			3410	/Invoice/cac:InvoiceLine/cac:AllowanceCharge	with cbc:ChargeIndicator = 'true'	-
+2835								3415	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator	UBL qualifier = true	-
+2840	ibt-141	3	Invoice line charge amount	1..1 	Amount	Shared		3450	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount	with cbc:ChargeIndicator = 'true'	-
+2850	ibt-142	3	Invoice line charge base amount	0..1 	Amount	Shared		3460	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount	with cbc:ChargeIndicator = 'true'	-
+2860	ibt-143	3	Invoice line charge percentage	0..1 	Percent	Shared		3440	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric	with cbc:ChargeIndicator = 'true'	-
+2870	ibt-144	3	Invoice line charge reason	0..1 	Text	Shared		3430	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason	with cbc:ChargeIndicator = 'true'	-
+2880	ibt-145	3	Invoice line charge reason code	0..1 	Code	Shared		3420	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode	with cbc:ChargeIndicator = 'true'	-
+2890	ibg-29	2	PRICE DETAILS	1..1 	Group			3690	/Invoice/cac:InvoiceLine/cac:Price		-
+2900	ibt-146	3	Item net price	1..1 	Unit	Shared		3710	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount		-
+2910	ibt-147	3	Item price discount	0..1 	Unit	Shared		3750	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount	with cbc:ChargeIndicator = 'false'	-
+2914								3740	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge		-
+2915	ibt-147a							3745	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator	Only allowed = false	-
+2920	ibt-148	3	Item gross price	0..1 	Unit	Shared		3760	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount	with cbc:ChargeIndicator = 'false'	-
+2925								2470	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine		-
+2930	ibt-149	3	Item price base quantity	0..1 	Quantity	Shared		3720	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity		-
+2940	ibt-150	3	Item price base quantity unit of measure code	0..1 	Code	Shared		3730	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode		-
+2950	ibg-30	2	LINE TAX INFORMATION	1..n 	Group	Aligned	Crd from 1..1	3540	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory		-
+2960	ibt-151	3	Invoiced item TAX category code	1..1 	Code	Aligned		3550	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID		-
+2970	ibt-152	3	Invoiced item TAX rate	0..1 	Percent	Aligned		3560	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent		-
+2971	ibt-185	3	TAX exemption reason text	0..1	Code	Aligned	Added	3564	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode		-
+2972	ibt-186	3	TAX exemption reason code	0..1	Text	Aligned	Added	3566	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReason		-
+2974	ibt-166	3	Unit TAX	0..1	Amount	Aligned	Added	3562	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:PerUnitAmount		-
+2975	ibt-166a							3567	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme		-
+2976	ibt-167	3	Tax Scheme	0..1	Scheme	Aligned	Added	3568	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID		-
+2980	ibg-31	2	ITEM INFORMATION	1..1 	Group			3470	/Invoice/cac:InvoiceLine/cac:Item		-
+2990	ibt-153	3	Item name 	1..1 	Text	Shared		3490	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name		-
+3000	ibt-154	3	Item description 	0..n 	Text	Shared		3480	/Invoice/cac:InvoiceLine/cac:Item/cbc:Description		-
+3005								3520	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification		-
+3010	ibt-155	3	Item Seller's identifier	0..1 	ID	Shared		3530	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID		-
+3015								3500	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification		-
+3020	ibt-156	3	Item Buyer's identifier	0..1 	ID	Shared		3510	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID		-
+3025								3570	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification		-
+3030	ibt-157	3	Item standard identifier	0..1 	ID	Shared		3580	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID		-
+3040	ibt-157-1	4	Scheme identifier	1..1 	Scheme	Shared		3590	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID		-
+3045								3600	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification		-
+3050	ibt-158	3	Item classification identifier	0..n 	ID	Shared		3610	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode		-
+3060	ibt-158-1	4	Scheme identifier	1..1 	Scheme	Shared		3620	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID		-
+3070	ibt-158-2		Scheme version identifier	0..1 	Scheme	Shared		3630	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID		-
+3075								3594	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry		-
+3080	ibt-159	3	Item country of origin	0..1 	Code	Shared		3596	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode		-
+3090	ibg-32	3	ITEM ATTRIBUTES	0..n 	Group			3660	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty		-
+3100	ibt-160	4	Item attribute name	1..1 	Text	Shared		3670	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name		-
+3110	ibt-161	4	Item attribute value 	1..1 	Text	Shared		3680	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value		-

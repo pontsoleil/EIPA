@@ -1,10 +1,8 @@
 # print("Load pint_ja/generate_ubl/dic2etree/__init__.py")
 from .dic2etree import dict_to_etree
 from .dic2etree import etree_to_dict
-from .dic2etree import dict_to_tsv
 from .dic2etree import get_path_value
 from .dic2etree import set_path_value
-from .dic2etree import dictID
 
 ns = {
   '': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
@@ -16,5 +14,4 @@ ns = {
   'ccts': 'urn:un:unece:uncefact:documentation:2'
 }
 
-__all__ = ['dict_to_etree', 'etree_to_dict', 'dict_to_tsv', 'get_path_value', 'set_path_value', \
-            'ns', 'dictID']
+__all__ = ['dict_to_etree', 'etree_to_dict', 'get_path_value', 'set_path_value', 'ns']
