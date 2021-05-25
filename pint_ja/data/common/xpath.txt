@@ -249,8 +249,8 @@ Sem Sort	ID	Level	Business term name 	Card.	Data Type	Section	BIS extension	Synt
 2670	ibt-128	2	Invoice line object identifier	0..1 	ID	Shared		3280	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID	with cbc:DocumentTy peCode = 130	-
 2680	ibt-128-1	3	Scheme identifier	0..1 	Scheme	Shared		3290	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID/@schemeID		-
 2685	ibt-128-2							3292	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode		-
-2690	ibt-129	2	Invoiced quantity	1..1 	Q 	Shared		3210	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity		-
-2700	ibt-130	2	Invoiced quantity unit of measure code	1..1 	Code	Shared		3220	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode		-
+2690	ibt-129	2	Invoiced quantity	1..1 	Quantity	Shared		3210	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity		-
+2700	ibt-130	2	Invoiced quantityunit of measure code	1..1 	Code	Shared		3220	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode		-
 2710	ibt-131	2	Invoice line net amount 	1..1 	Amount	Shared		3230	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount		-
 2715								3250	/Invoice/cac:InvoiceLine/cac:OrderLineReference		-
 2720	ibt-132	2	Referenced purchase order line reference	0..1 	Optional	Shared		3260	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID		-
@@ -282,7 +282,7 @@ Sem Sort	ID	Level	Business term name 	Card.	Data Type	Section	BIS extension	Synt
 2920	ibt-148	3	Item gross price	0..1 	Unit	Shared		3760	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount	with cbc:ChargeIndicator = 'false'	-
 2925								2470	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine		-
 2930	ibt-149	3	Item price base quantity	0..1 	Quantity	Shared		3720	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity		-
-2940	ibt-150	3	Item price base quantity unit of measure code	0..1 	Code	Shared		3730	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode		-
+2940	ibt-150	3	Item price base quantityunit of measure code	0..1 	Code	Shared		3730	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode		-
 2950	ibg-30	2	LINE TAX INFORMATION	1..n 	Group	Aligned	Crd from 1..1	3540	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory		-
 2960	ibt-151	3	Invoiced item TAX category code	1..1 	Code	Aligned		3550	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID		-
 2970	ibt-152	3	Invoiced item TAX rate	0..1 	Percent	Aligned		3560	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent		-

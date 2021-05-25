@@ -119,8 +119,10 @@ def set_path_value(base, path, value, datatype):
         base[key] = {}
       if 'Amount' == datatype or 'Unit' == datatype:
         value = {'#text':str(value), '@currencyID': 'JPY'}
+      elif 'Quantity' == datatype:
+        value = {'#text':str(value), '@unitCode': 'EA'}
       if not '#text' in base[key]:
-        base[key] = value  # when Amount is already set
+        base[key] = value  # when Amount/Unit/Quantity is already set
       return {'k':key, 'v':base[key]}
     else:
       path.pop(0)

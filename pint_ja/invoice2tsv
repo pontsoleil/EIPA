@@ -100,30 +100,22 @@ def main():
   # debug_trace = True
   dictID['/Invoice'] = 'ibg-00'
 
-  if not debug_trace:
-    # Create the parser
-    my_parser = argparse.ArgumentParser(prog='invoice2tsv',
-                                        usage='%(prog)s [options] infile outfile',
-                                        description='ファイル変換')
-    # Add the arguments
-    my_parser.add_argument('inFile',
-                          metavar='infile',
-                          type=str,
-                          help='入力ファイル')
-    my_parser.add_argument('outFile',
-                          metavar='outfile',
-                          type=str,
-                          help='出力ファイル')
-    # Execute the parse_args() method
-    args = my_parser.parse_args()
-    in_file = file_path(args.inFile)
-    out_file = file_path(args.outFile)
-  else:
-    in_path = "data/in/ubl-tc434-example6.xml"
-    out_path = "data/out/ubl-tc434-example6.tsv"
-    in_file = file_path(in_path)
-    out_file = file_path(out_path)
-
+  # Create the parser
+  my_parser = argparse.ArgumentParser(prog='invoice2tsv',
+                                      usage='%(prog)s [options] infile outfile',
+                                      description='ファイル変換')
+  # Add the arguments
+  my_parser.add_argument('inFile',
+                        metavar='infile',
+                        type=str,
+                        help='入力ファイル')
+  my_parser.add_argument('outFile',
+                        metavar='outfile',
+                        type=str,
+                        help='出力ファイル')
+  args = my_parser.parse_args()
+  in_file = file_path(args.inFile)
+  out_file = file_path(args.outFile)
   # Check if infile exists
   if not os.path.isfile(in_file):
       print('入力ファイルがありません')
@@ -146,19 +138,29 @@ def main():
           extension = record[7]
           attributes = record[10]
           rules = record[11]
+          data = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
+                  'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules}
           dictID[xpath] = id
-          dictXpath[id] = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
-                            'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules}
-          if 'Amount' == datatype:
+          dictXpath[id] = data
+          if 'Amount' == datatype or 'Unit' == datatype:
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@currencyID'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':'CurrencyCode', 'section':None, \
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
                      'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
-            dictXpath[id] = data
-            dictID[xpath] = id
+            if not dictID[xpath]:
+              dictID[xpath] = id
+              dictXpath[id] = data
+          elif 'Quantity' == datatype:
+            level = str(int(level)+1)
+            id = id+'-1'
+            xpath = xpath+'/@unitCode'
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
+                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            if not dictID[xpath]:
+              dictID[xpath] = id
+              dictXpath[id] = data
 
-  # in_file = base_dir+'out/ex6.xml'
   tree = ET.parse(in_file)
   root = tree.getroot()
   dic = etree_to_dict(root)

@@ -26,32 +26,27 @@ def main():
   if debug_trace:
     print("START ", __file__)
 
-  if not debug_trace:
-    # Create the parser
-    my_parser = argparse.ArgumentParser(prog='genInvoice',
-                                        usage='%(prog)s [options] infile outfile',
-                                        description='ファイル変換')
-    # Add the arguments
-    my_parser.add_argument('inFile',
-                          metavar='infile',
-                          type=str,
-                          help='入力ファイル')
-    my_parser.add_argument('outFile',
-                          metavar='outfile',
-                          type=str,
-                          help='出力ファイル')
-    # Execute the parse_args() method
-    args = my_parser.parse_args()
-    in_file = file_path(args.inFile)
-    out_file = file_path(args.outFile)
-    # Check if infile exists
-    if not os.path.isfile(in_file):
-        print('入力ファイルがありません')
-        sys.exit()
-  else:
-    test_path = "data/out/ubl-tc434-example6"
-    in_file = file_path(test_path+".tsv")
-    out_file = file_path(test_path+".xml")
+  # Create the parser
+  my_parser = argparse.ArgumentParser(prog='genInvoice',
+                                      usage='%(prog)s [options] infile outfile',
+                                      description='ファイル変換')
+  # Add the arguments
+  my_parser.add_argument('inFile',
+                        metavar='infile',
+                        type=str,
+                        help='入力ファイル')
+  my_parser.add_argument('outFile',
+                        metavar='outfile',
+                        type=str,
+                        help='出力ファイル')
+
+  args = my_parser.parse_args()
+  in_file = file_path(args.inFile)
+  out_file = file_path(args.outFile)
+  # Check if infile exists
+  if not os.path.isfile(in_file):
+      print('入力ファイルがありません')
+      sys.exit()
 
   # initialize globals
   dic = defaultdict(type(""))
@@ -74,13 +69,28 @@ def main():
           extension = record[7]
           attributes = record[10]
           rules = record[11]
+          data = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
+                  'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules}
           dictID[xpath] = id
-          dictXpath[id] = { 'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
-                            'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules }
+          dictXpath[id] = data
           if 'Amount' == datatype or 'Unit' == datatype:
-            dictXpath[id+'-1'] = { 'level':str(int(level)+1), 'BT':None, 'card':None, 'datatype':'CurrencyCode', 'section':None, \
-                              'extension':None, 'xpath':xpath+'/@currencyID', 'attributes':None, 'rules': None }
-
+            level = str(int(level)+1)
+            id = id+'-1'
+            xpath = xpath+'/@currencyID'
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
+                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            if not dictID[xpath]:
+              dictID[xpath] = id
+              dictXpath[id] = data
+          elif 'Quantity' == datatype:
+            level = str(int(level)+1)
+            id = id+'-1'
+            xpath = xpath+'/@unitCode'
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
+                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            if not dictID[xpath]:
+              dictID[xpath] = id
+              dictXpath[id] = data
 
   with open(in_file, encoding='utf-8', newline='') as f:
     reader = csv.reader(f, delimiter='\t')
@@ -127,18 +137,18 @@ def main():
             except ValueError:
               pass
       n = 0
-      for cell in record:  # traverce field in a record
-        if n > 5 and cell:
+      for cell in record:  # traverse field in a record
+        if n > 3 and cell:
           id = header[n]
           if id:
-            dictxpath = dictXpath[id]
-            if dictxpath:
-              path = dictxpath['xpath']
+            _dictxpath = dictXpath[id]
+            if _dictxpath:
+              path = _dictxpath['xpath']
               if path:
                 pathList = re.sub(base, '', path).split('/')
                 pathList.remove('')
                 xpath = base_path + pathList
-                datatype = dictxpath['datatype']
+                datatype = _dictxpath['datatype']
                 set_path_value(dic, xpath, cell, datatype)
         n += 1
 
