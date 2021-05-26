@@ -2,7 +2,7 @@
 import xml.etree.ElementTree as ET
 # import defusedxml.ElementTree as ET
 from collections import defaultdict
-import csv
+# import csv
 
 ET.register_namespace('cac', 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')
 ET.register_namespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')

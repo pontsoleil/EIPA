@@ -8,6 +8,7 @@ import json
 import sys 
 import os
 import argparse
+
 from dic2etree import *
 
 dictID = defaultdict(type(""))
@@ -41,16 +42,15 @@ def dict_to_tsv(tsv, root):
           base_id = _id
     _record = {}
     if 1 == case:
-      pathString = path  # +'/'+tag
+      pathString = path
       id = dictID[pathString]
       value = v
     elif 2 == case or 3 == case:
-      pathString = path  # +'/'+tag
+      pathString = path
       id = dictID[pathString]
       tag = k
       value = v
     elif 4 == case:
-      # pathString = path+'/'+tag+'/'+k
       pathString = path+'/'+k
       id = dictID[pathString]
       tag = k
@@ -98,8 +98,6 @@ def dict_to_tsv(tsv, root):
 def main():
   debug_trace = False
   # debug_trace = True
-  dictID['/Invoice'] = 'ibg-00'
-
   # Create the parser
   my_parser = argparse.ArgumentParser(prog='invoice2tsv',
                                       usage='%(prog)s [options] infile outfile',
@@ -120,6 +118,8 @@ def main():
   if not os.path.isfile(in_file):
       print('入力ファイルがありません')
       sys.exit()
+
+  dictID['/Invoice'] = 'ibg-00'
 
   xpath_file = file_path('data/common/xpath.txt')
   with open(xpath_file, encoding='utf-8', newline='') as f0:
@@ -190,8 +190,6 @@ def main():
   header.sort()
   column_header.sort()
 
-  # with open(out_file, 'w') as f:
-    # writer = csv.writer(f)
   if True:
     seq = 0
     seq4 = 0
@@ -230,7 +228,7 @@ def main():
       #   index = ''
       # if 'ibg-00' != id:
       #   writer.writerow([ case, column_index, seq, index, \
-      #                     base_id, base_card, bough_id, bough_card, twig_id, twig_card, \
+      #                     bough_id, bough_card, twig_id, twig_card, \
       #                     id, tag, value, path ])
 
   with open(out_file, 'w') as f:
@@ -292,11 +290,12 @@ def main():
               twigs[bough_id] = []
             if not twig_id in twigs[bough_id]:
               twigs[bough_id].append(twig_id)
+
         if debug_trace:
           if "ibg-" in id:
-            writer.writerow([ case, seq, base_id, base_card, bough_id, bough_card, twig_id, twig_card, id ] + column)
+            writer.writerow([ case, seq,  bough_id, bough_card, twig_id, twig_card, id ] + column)
           else:
-            writer.writerow([ case, seq, base_id, base_card, bough_id, bough_card, twig_id, twig_card, "" ] + column)
+            writer.writerow([ case, seq,  bough_id, bough_card, twig_id, twig_card, "" ] + column)
         elif column != [None] * (max_index + 1):
           if "ibg-" in id:
             writer.writerow([ bough_id, bough_card, twig_id, twig_card ] + column)
@@ -312,7 +311,7 @@ def main():
       current_id = column_id
       id = record['id']
       tag = record['tag']
-      value = record['value']
+      value = record['value'].encode("unicode_escape").decode("utf-8")
       path = record['path']
       base_card = "1"
       if bough_id and dictXpath[bough_id] and dictXpath[bough_id]['card']:
