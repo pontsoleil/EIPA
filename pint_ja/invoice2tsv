@@ -198,15 +198,18 @@ def main():
   with open(out_file, 'w') as f:
     writer = csv.writer(f, delimiter='\t')
 
-    N = 4
+    N = 7
+    # N = 4 
     
     id = None
     prev_id = None
+
     column = [None] * (max_index + 1)
     for i in range(max_index + 1):
       id = header[i]
       if '-' == id[-2:-1]:
-        if verbose: print('header %s has - in %s' % i, id)
+        if verbose:
+          print('header %s has - in %s' % i, id)
       else:
         if prev_id and '_2' == prev_id[-2:] and '_3' == id[-2:] and prev_id[:-2] == id[:-2]:
           column[i] = id[:-2]+'-1'
@@ -216,12 +219,29 @@ def main():
     writer.writerow([None] * N + column)
 
     column = [None] * (max_index + 1)
+    for i in range(max_index + 1):
+      id = header[i]
+      if id and id[:-2] and id[:-2] in dictXpath and 'BT' in dictXpath[id[:-2]]:
+        column[i] = dictXpath[id[:-2]]['BT']
+      else:
+        column[i] = ''
+    writer.writerow([None] * N + column)
+
+    column = [None] * (max_index + 1)
+    for i in range(max_index + 1):
+      id = header[i]
+      if id and id[:-2] and id[:-2] in dictXpath and 'xpath' in dictXpath[id[:-2]]:
+        column[i] = dictXpath[id[:-2]]['xpath']
+      else:
+        column[i] = ''
+    writer.writerow([None] * N + column)
+
+    column = [None] * (max_index + 1)
     current_id = None
     repetition = {}
     twigs = {}
     for record in tsv:
       column_id = record['base_id']+'_'+record['bough_id']+'_'+record['twig_id']
-      column_index = column_header.index(column_id)
       if column != [None] * (max_index + 1) != column and \
           'ibg-00' != id and current_id and current_id != column_id:
         if bough_card:
@@ -246,19 +266,24 @@ def main():
               twigs[bough_id] = []
             if not twig_id in twigs[bough_id]:
               twigs[bough_id].append(twig_id)
-        if verbose: print('* bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card))
-
-        if 'ibg-' in id:
-          writer.writerow([ bough_id, bough_card, twig_id, twig_card ] + column)
+        if verbose:
+          print('* bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card))
+        if bough_id:
+          bough_name = dictXpath[bough_id]['BT']
         else:
-          writer.writerow([ bough_id, bough_card, twig_id, twig_card ] + column)
-
+          bough_name = ''
+        if twig_id:
+          twig_name = dictXpath[twig_id]['BT']
+        else:
+          twig_name = ''
+        column_index = base_id+'_'+bough_id+'_'+str(bough_card)+'_'+twig_id+'_'+str(twig_card)
+        writer.writerow([ bough_id, bough_card, twig_id, twig_card, column_index, bough_name, twig_name ] + column)
         column = [None] * (max_index + 1)
       case = record['case']
-      # base_id = record['base_id']
+      id = record['id']
+      base_id = record['base_id']
       bough_id = record['bough_id']
       twig_id = record['twig_id']
-      id = record['id']
       # tag = record['tag']
       value = record['value'].encode('unicode_escape').decode('utf-8')
       # path = record['path']
@@ -288,8 +313,9 @@ def main():
             if twig_ids:
               for i in twig_ids:
                 repetition[i] = 0
-      if verbose: print('  bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card), \
-            'repetition:'+json.dumps(repetition), 'twigs:'+json.dumps(twigs))
+      if verbose:
+        print('  bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card), \
+              'repetition:'+json.dumps(repetition), 'twigs:'+json.dumps(twigs))
 
 if __name__ == '__main__':
     # execute only if run as a script

@@ -104,6 +104,8 @@ def main():
   with open(in_file, encoding='utf-8', newline='') as f:
     reader = csv.reader(f, delimiter='\t')
     header = next(reader)
+    header2 = next(reader)  # Business Term
+    header3 = next(reader)  # xPath
     for record in reader:
       base0 = dictXpath[record[0]] and dictXpath[record[0]]['xpath']
       base1 = dictXpath[record[2]] and dictXpath[record[2]]['xpath']
@@ -145,9 +147,10 @@ def main():
               base_path += [int(seq2)]
             except ValueError:
               pass
+      N = 6 # column 0 ~ 3 for bough and twig 4,5 BG name for bough and twig
       n = 0
       for cell in record:  # traverse field in a record
-        if n > 3 and cell: # column 0 ~ 3 for bough and twig
+        if n > N and cell: 
           id = header[n]
           if id:
             _dictxpath = dictXpath[id]
