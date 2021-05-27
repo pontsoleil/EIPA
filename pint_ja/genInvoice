@@ -8,10 +8,11 @@ import json
 import sys 
 import os
 import argparse
+
 from dic2etree import * 
 
-dictID = defaultdict(type(""))
-dictXpath = defaultdict(type(""))
+dictID = defaultdict(type(''))
+dictXpath = defaultdict(type(''))
 
 def clean_list(dic):
   for k, v in dic.items():
@@ -29,7 +30,7 @@ def clean_list(dic):
           v.pop(0) 
 
 def file_path(pathname):
-  if "/" == pathname[0:1]:
+  if '/' == pathname[0:1]:
     return pathname
   else:
     dir = os.path.dirname(__file__)
@@ -37,34 +38,27 @@ def file_path(pathname):
     return new_path
 
 def main():
-  debug_trace = False
-  if debug_trace:
-    print("START ", __file__)
-
   # Create the parser
-  my_parser = argparse.ArgumentParser(prog='genInvoice',
-                                      usage='%(prog)s [options] infile outfile',
-                                      description='ファイル変換')
+  parser = argparse.ArgumentParser(prog='genInvoice',
+                                  usage='%(prog)s [options] infile outfile',
+                                  description='TSVファイルから電子インボイスXMLを作成')
   # Add the arguments
-  my_parser.add_argument('inFile',
-                        metavar='infile',
-                        type=str,
-                        help='入力ファイル')
-  my_parser.add_argument('outFile',
-                        metavar='outfile',
-                        type=str,
-                        help='出力ファイル')
-
-  args = my_parser.parse_args()
+  parser.add_argument('inFile', metavar='infile', type=str, help='入力TSVファイル')
+  parser.add_argument('outFile', metavar='outfile', type=str, help='出力ファイル')
+  parser.add_argument('-v', '--verbose', action='store_true')
+  args = parser.parse_args()
   in_file = file_path(args.inFile)
   out_file = file_path(args.outFile)
+  verbose = args.verbose
   # Check if infile exists
   if not os.path.isfile(in_file):
-      print('入力ファイルがありません')
-      sys.exit()
+    print('入力ファイルがありません')
+    sys.exit()
+  if verbose:
+    print('** START ** ', __file__)
 
   # initialize globals
-  dic = defaultdict(type(""))
+  dic = defaultdict(type(''))
   dic['Invoice'] = {}
 
   xpath_file = file_path('data/common/xpath.txt')
@@ -75,7 +69,7 @@ def main():
       id = record[1].strip()
       if id:
         xpath = record[9]
-        if len(record) > 11 and "/" in xpath:
+        if len(record) > 11 and '/' in xpath:
           level = record[2]
           BT = record[3]
           card = record[4].strip()
@@ -153,7 +147,7 @@ def main():
               pass
       n = 0
       for cell in record:  # traverse field in a record
-        if n > 3 and cell:
+        if n > 3 and cell: # column 0 ~ 3 for bough and twig
           id = header[n]
           if id:
             _dictxpath = dictXpath[id]
@@ -161,7 +155,7 @@ def main():
               path = _dictxpath['xpath']
               if path:
                 pathList = re.sub(base, '', path).split('/')
-                pathList.remove('')  # 2021-05-26
+                pathList.remove('')
                 xpath = base_path + pathList
                 datatype = _dictxpath['datatype']
                 set_path_value(dic, xpath, cell, datatype)
@@ -193,6 +187,6 @@ def main():
       t = ET.ElementTree(tree)
       t.write(f, encoding='UTF-8')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # execute only if run as a script
     main()
