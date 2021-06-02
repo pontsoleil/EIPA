@@ -10,7 +10,3 @@ pythonのdictとElementTreeの相互変換
 ## get_path_value 及び set_path_value
 
 参考　[Stackoverflow Get parents keys from nested dictionary](https://stackoverflow.com/questions/15210148/get-parents-keys-from-nested-dictionary) の回答の中で定義されているbreadcrumb(json_dict_or_list, value)関数を参考に作成した。
-
-## dict_to_tsv
-
-ElementTreeに読み込んだデータをdictに変換した後、この関数でTSVに出力する。（開発途中）

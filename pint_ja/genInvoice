@@ -1,5 +1,32 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#coding: utf-8
+#
+# generate Open Peoopl e-Invoice (UBL 2.1) fron TSV file
+# 
+# designed by SAMBUICHI, Nobuyuki (Nobu)
+# written by SAMBUICHI, Nobuyuki (Nobu)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 import csv
@@ -62,32 +89,33 @@ def main():
   dic['Invoice'] = {}
 
   xpath_file = file_path('data/common/xpath.txt')
+  COL_ID = 0
+  COL_xpath = 1
+  COL_level = 2
+  COL_BT = 3
+  COL_card = 4
+  COL_datatype = 5
+  NUM_COLS = 6
   with open(xpath_file, encoding='utf-8', newline='') as f0:
     reader = csv.reader(f0, delimiter='\t')
     header = next(reader)
     for record in reader:
-      id = record[1].strip()
+      id = record[COL_ID].strip()
       if id:
-        xpath = record[9]
-        if len(record) > 11 and '/' in xpath:
-          level = record[2]
-          BT = record[3]
-          card = record[4].strip()
-          datatype = record[5]
-          section = record[6]
-          extension = record[7]
-          attributes = record[10]
-          rules = record[11]
-          data = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
-                  'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules}
+        xpath = record[COL_xpath]
+        if NUM_COLS == len(record) and '/' in xpath:
+          level = record[COL_level]
+          BT = record[COL_BT]
+          card = record[COL_card].strip()
+          datatype = record[COL_datatype]
+          data = { 'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'xpath':xpath }
           dictID[xpath] = id
           dictXpath[id] = data
           if 'Amount' == datatype or 'Unit' == datatype:
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@currencyID'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
-                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
             if not dictID[xpath]:
               dictID[xpath] = id
               dictXpath[id] = data
@@ -95,8 +123,7 @@ def main():
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@unitCode'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
-                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
             if not dictID[xpath]:
               dictID[xpath] = id
               dictXpath[id] = data
@@ -104,8 +131,8 @@ def main():
   with open(in_file, encoding='utf-8', newline='') as f:
     reader = csv.reader(f, delimiter='\t')
     header = next(reader)
-    header2 = next(reader)  # Business Term
-    header3 = next(reader)  # xPath
+    # next(reader)  # Business Term
+    # next(reader)  # xPath
     for record in reader:
       base0 = dictXpath[record[0]] and dictXpath[record[0]]['xpath']
       base1 = dictXpath[record[2]] and dictXpath[record[2]]['xpath']
@@ -115,7 +142,7 @@ def main():
       seq2 = record[5]
 
       root = '/Invoice'
-      if '' == base0:
+      if '' == base0 or '/' == base0:
         base = root
       else:
         base = base0
@@ -147,7 +174,7 @@ def main():
               base_path += [int(seq2)]
             except ValueError:
               pass
-      N = 6 # column 0 ~ 3 for bough and twig 4,5 BG name for bough and twig
+      N = 3 # column 0 ~ 3 for bough and twig 4,5 BG name for bough and twig
       n = 0
       for cell in record:  # traverse field in a record
         if n > N and cell: 

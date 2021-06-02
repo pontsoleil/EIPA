@@ -1,7 +1,35 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+#coding: utf-8
+#
+# generate TSV from Open Peoopl e-Invoice (UBL 2.1)
+# 
+# designed by SAMBUICHI, Nobuyuki (Nobu)
+# written by SAMBUICHI, Nobuyuki (Nobu)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 import xml.etree.ElementTree as ET
 from collections import defaultdict
+from operator import itemgetter
 import csv
 import re
 import json
@@ -63,27 +91,27 @@ def dict_to_tsv(tsv, root):
     if len(tag) > 0:
       path = path+'/'+tag
     d = body
-    record = {}
+    v = {}
     if not d:
       pass
     elif isinstance(d, str):  # case 1
-      record = _setup_record(1, path, tag, '', d)
-      tsv.append(record)
+      v = _setup_record(1, path, tag, '', d)
+      tsv.append(v)
     elif isinstance(d, dict):
       for k, v in d.items():
         assert isinstance(k, str)
         if k.startswith('#'):
           assert k == '#text' and isinstance(v, str)  # case 2
-          record = _setup_record(2, path, tag, k, v)
-          tsv.append(record)
+          v = _setup_record(2, path, tag, k, v)
+          tsv.append(v)
         elif isinstance(k, str) and k.startswith('@'):
           assert isinstance(v, str)  # case 3
-          record = _setup_record(3, path, tag, k, v)
-          tsv.append(record)
+          v = _setup_record(3, path, tag, k, v)
+          tsv.append(v)
         elif isinstance(v, list):
           for e in v:  # case 4
-            record = _setup_record(4, path, tag, k, e)
-            tsv.append(record)
+            v = _setup_record(4, path, tag, k, e)
+            tsv.append(v)
             tsv = _to_tsv(tsv, path, k, e)
         else:
           tsv = _to_tsv(tsv, path, k, v)
@@ -118,32 +146,32 @@ def main():
   dictID['/Invoice'] = 'ibg-00'
 
   xpath_file = file_path('data/common/xpath.txt')
+  COL_ID = 0
+  COL_xpath = 1
+  COL_level = 2
+  COL_BT = 3
+  COL_card = 4
+  COL_datatype = 5
   with open(xpath_file, encoding='utf-8', newline='') as f0:
     reader = csv.reader(f0, delimiter='\t')
     header = next(reader)
-    for record in reader:
-      id = record[1].strip()
+    for v in reader:
+      id = v[COL_ID].strip()
       if id:
-        xpath = record[9]
-        if len(record) > 11 and '/' in xpath:
-          level = record[2]
-          BT = record[3]
-          card = record[4].strip()
-          datatype = record[5]
-          section = record[6]
-          extension = record[7]
-          attributes = record[10]
-          rules = record[11]
-          data = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'section':section, \
-                  'extension':extension, 'xpath':xpath, 'attributes':attributes, 'rules': rules}
+        xpath = v[COL_xpath]
+        if len(v) > 11 and '/' in xpath:
+          level = v[COL_level]
+          BT = v[COL_BT]
+          card = v[COL_card].strip()
+          datatype = v[COL_datatype]
+          data = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'xpath':xpath }
           dictID[xpath] = id
           dictXpath[id] = data
           if 'Amount' == datatype or 'Unit' == datatype:
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@currencyID'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
-                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
             if not dictID[xpath]:
               dictID[xpath] = id
               dictXpath[id] = data
@@ -151,8 +179,7 @@ def main():
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@unitCode'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'section':None, \
-                     'extension':None, 'xpath':xpath, 'attributes':None, 'rules': None }
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
             if not dictID[xpath]:
               dictID[xpath] = id
               dictXpath[id] = data
@@ -172,14 +199,14 @@ def main():
   
   header = []
   column_header = []
-  for record in tsv:
-    case = record['case']
-    id = record['id']+'_'+str(case)
+  for v in tsv:
+    case = v['case']
+    id = v['id']+'_'+str(case)
     if 4 != case and id and not 'ibg-' in id and not id in header:
       header.append(id)
-    base_id = record['base_id']
-    bough_id = record['bough_id']
-    twig_id = record['twig_id']
+    base_id = v['base_id']
+    bough_id = v['bough_id']
+    twig_id = v['twig_id']
     column_id = base_id+'_'+bough_id+'_'+twig_id
     if not column_id in column_header:
       column_header.append(column_id)
@@ -187,23 +214,104 @@ def main():
   column_header.sort()
 
   max_index = 0
-  for record in tsv:
-    case = record['case']
-    id = record['id']
+  for v in tsv:
+    case = v['case']
+    id = v['id']
     if 4 != case and id and not 'ibg-' in id:
       index = header.index(id+'_'+str(case))
       if index > max_index:
         max_index = index
 
-  with open(out_file, 'w') as f:
-    writer = csv.writer(f, delimiter='\t')
+  column = [None] * (max_index + 1)
+  current_id = None
+  repetition = {}
+  twigs = {}
+  row = []
+  for v in tsv:
+    column_id = v['base_id']+'_'+v['bough_id']+'_'+v['twig_id']
+    if column != [None] * (max_index + 1) != column and \
+        'ibg-00' != id and current_id and current_id != column_id:
+      if bough_card:
+        if '..1' == bough_card[1:]:
+          bough_card = ''
+        elif '..n' == bough_card[1:]:
+          bough_card = 0
+          if bough_id in repetition:
+            bough_card = repetition[bough_id]
+      if twig_card:
+        if '..1' == twig_card[1:]:
+          twig_card = ''
+        elif '..n' == twig_card[1:]:
+          twig_card = 0
+          if twig_id in repetition:
+            twig_card = repetition[twig_id]
+          else:
+            twig_card = 0
+            repetition[twig_id] = 0
+          # assuming bough_id is in repetition:
+          if not bough_id in twigs:
+            twigs[bough_id] = []
+          if not twig_id in twigs[bough_id]:
+            twigs[bough_id].append(twig_id)
+      if verbose:
+        print('* bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card))
+      if bough_id and bough_id in dictXpath and 'BT' in dictXpath[bough_id]:
+        bough_name = dictXpath[bough_id]['BT']
+      else:
+        bough_name = ''
+      if twig_id and twig_id in dictXpath and 'BT' in dictXpath[twig_id]:
+        twig_name = dictXpath[twig_id]['BT']
+      else:
+        twig_name = ''
+      column_index = base_id+'_'+bough_id+'_'+str(bough_card)+'_'+twig_id+'_'+str(twig_card)
+      row.append({
+        'bough_id':bough_id, 'bough_card':bough_card, 'twig_id':twig_id, 'twig_card':twig_card, \
+        'column_index':column_index, 'bough_name':bough_name, 'twig_name':twig_name, 'column':column
+      })
+      column = [None] * (max_index + 1)
+    case = v['case']
+    id = v['id']
+    base_id = v['base_id']
+    bough_id = v['bough_id']
+    twig_id = v['twig_id']
+    # tag = v['tag']
+    value = v['value'].encode('unicode_escape').decode('utf-8')
+    # path = v['path']
+    current_id = column_id
+    if bough_id and dictXpath[bough_id] and dictXpath[bough_id]['card']:
+      bough_card = dictXpath[bough_id]['card']
+    else:
+      bough_id = ''
+      bough_card = ''
+    if twig_id and dictXpath[twig_id] and dictXpath[twig_id]['card']:
+      twig_card = dictXpath[twig_id]['card']
+    else:
+      twig_id = ''
+      twig_card = ''
+    if 4 != case and id and not 'ibg-' in id:
+      index = header.index(id+'_'+str(case))
+      column[index] = value
+    if 4 == case:
+      if not id in repetition:
+        repetition[id] = 0
+      else:
+        repetition[id] += 1
+        if id in twigs:
+          twig_ids = twigs[id]
+          if twig_ids:
+            for i in twig_ids:
+              repetition[i] = 0
+    if verbose:
+      print('  bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card), \
+            'repetition:'+json.dumps(repetition), 'twigs:'+json.dumps(twigs))
 
+  # see https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/  
+  sorted_row = sorted(row, key=itemgetter('column_index'))
+  with open(file_path('test/data/sorted.tsv'), 'w') as f:
+    writer = csv.writer(f, delimiter='\t')
     N = 7
-    # N = 4 
-    
     id = None
     prev_id = None
-
     column = [None] * (max_index + 1)
     for i in range(max_index + 1):
       id = header[i]
@@ -217,105 +325,25 @@ def main():
           column[i] = id[:-2]
       prev_id = id
     writer.writerow([None] * N + column)
-
     column = [None] * (max_index + 1)
     for i in range(max_index + 1):
       id = header[i]
-      if id and id[:-2] and id[:-2] in dictXpath and 'BT' in dictXpath[id[:-2]]:
+      if id and id[:-2] in dictXpath and 'BT' in dictXpath[id[:-2]]:
         column[i] = dictXpath[id[:-2]]['BT']
       else:
         column[i] = ''
     writer.writerow([None] * N + column)
-
     column = [None] * (max_index + 1)
     for i in range(max_index + 1):
       id = header[i]
-      if id and id[:-2] and id[:-2] in dictXpath and 'xpath' in dictXpath[id[:-2]]:
+      if id and id[:-2] in dictXpath and 'xpath' in dictXpath[id[:-2]]:
         column[i] = dictXpath[id[:-2]]['xpath']
       else:
         column[i] = ''
     writer.writerow([None] * N + column)
-
-    column = [None] * (max_index + 1)
-    current_id = None
-    repetition = {}
-    twigs = {}
-    for record in tsv:
-      column_id = record['base_id']+'_'+record['bough_id']+'_'+record['twig_id']
-      if column != [None] * (max_index + 1) != column and \
-          'ibg-00' != id and current_id and current_id != column_id:
-        if bough_card:
-          if '..1' == bough_card[1:]:
-            bough_card = ''
-          elif '..n' == bough_card[1:]:
-            bough_card = 0
-            if bough_id in repetition:
-              bough_card = repetition[bough_id]
-        if twig_card:
-          if '..1' == twig_card[1:]:
-            twig_card = ''
-          elif '..n' == twig_card[1:]:
-            twig_card = 0
-            if twig_id in repetition:
-              twig_card = repetition[twig_id]
-            else:
-              twig_card = 0
-              repetition[twig_id] = 0
-            # assuming bough_id is in repetition:
-            if not bough_id in twigs:
-              twigs[bough_id] = []
-            if not twig_id in twigs[bough_id]:
-              twigs[bough_id].append(twig_id)
-        if verbose:
-          print('* bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card))
-        if bough_id:
-          bough_name = dictXpath[bough_id]['BT']
-        else:
-          bough_name = ''
-        if twig_id:
-          twig_name = dictXpath[twig_id]['BT']
-        else:
-          twig_name = ''
-        column_index = base_id+'_'+bough_id+'_'+str(bough_card)+'_'+twig_id+'_'+str(twig_card)
-        writer.writerow([ bough_id, bough_card, twig_id, twig_card, column_index, bough_name, twig_name ] + column)
-        column = [None] * (max_index + 1)
-      case = record['case']
-      id = record['id']
-      base_id = record['base_id']
-      bough_id = record['bough_id']
-      twig_id = record['twig_id']
-      # tag = record['tag']
-      value = record['value'].encode('unicode_escape').decode('utf-8')
-      # path = record['path']
-      current_id = column_id
-      if bough_id and dictXpath[bough_id] and dictXpath[bough_id]['card']:
-        bough_card = dictXpath[bough_id]['card']
-      else:
-        bough_id = ''
-        bough_card = ''
-      if twig_id and dictXpath[twig_id] and dictXpath[twig_id]['card']:
-        twig_card = dictXpath[twig_id]['card']
-      else:
-        twig_id = ''
-        twig_card = ''
-      
-      if 4 != case and id and not 'ibg-' in id:
-        index = header.index(id+'_'+str(case))
-        column[index] = value
-        
-      if 4 == case:
-        if not id in repetition:
-          repetition[id] = 0
-        else:
-          repetition[id] += 1
-          if id in twigs:
-            twig_ids = twigs[id]
-            if twig_ids:
-              for i in twig_ids:
-                repetition[i] = 0
-      if verbose:
-        print('  bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card), \
-              'repetition:'+json.dumps(repetition), 'twigs:'+json.dumps(twigs))
+    for v in sorted_row:
+      writer.writerow([ v['bough_id'], v['bough_card'], v['twig_id'], v['twig_card'], \
+                        v['column_index'], v['bough_name'], v['twig_name'] ] + v['column'])
 
 if __name__ == '__main__':
     # execute only if run as a script
