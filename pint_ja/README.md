@@ -29,9 +29,17 @@ Business term groupとしてのIDを指定する領域では、IDと出現順の
 
 ## プログラムの実行
 
-$ python3 runner.py filename directory  
-- filename ファイル名（拡張子を含まない）  
-- directory ファイルのあるディレクトリの絶対パス
+$ transpose infile outfile  
+- infile 入力ファイル(.txt)  
+- outfile 出力ファイル(.tsv)  
+
+$ genInvoice infile outfile  
+- infile 入力ファイル(.tsv)   
+- outfile 出力ファイル(.xml)  
+
+$ invoice2tsv infile outfile  
+- infile 入力ファイル(.xml)   
+- outfile 出力ファイル(.tsv)  
 
 ## ディレクトリ階層
 
@@ -52,7 +60,9 @@ $ python3 runner.py filename directory
 │   └── dic2etree.py
 ├── docs
 │   └── dic2etree.md
-├── genInvoice.py
+├── genInvoice
+├── invoice2tsv
+└── transpose
 ```
 
 ## 参考
