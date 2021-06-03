@@ -96,11 +96,12 @@
   </cac:Delivery>
   <cac:AllowanceCharge>
     <cbc:Amount currencyID="JPY">17700</cbc:Amount>
+    <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
       <cbc:Percent>10</cbc:Percent>
     </cac:TaxCategory>
-    <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
   </cac:AllowanceCharge>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="JPY">120000</cbc:LineExtensionAmount>
@@ -190,8 +191,8 @@
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="JPY">50000</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
-      <cbc:Amount currencyID="JPY">10000</cbc:Amount>
       <cbc:ChargeIndicator>0</cbc:ChargeIndicator>
+      <cbc:Amount currencyID="JPY">10000</cbc:Amount>
       <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>
       <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
       <cbc:AllowanceChargeReason>単品値引</cbc:AllowanceChargeReason>

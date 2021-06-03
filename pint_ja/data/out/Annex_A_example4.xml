@@ -1,1 +1,93 @@
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd"><cac:AllowanceCharge><cbc:ChargeIndicator>true</cbc:ChargeIndicator><cbc:Amount currencyID="EUR">28.66</cbc:Amount><cbc:BaseAmount currencyID="EUR">286.62</cbc:BaseAmount><cbc:MultiplierFactorNumeric>10</cbc:MultiplierFactorNumeric><cac:TaxCategory><cbc:ID>Z</cbc:ID><cbc:Percent>0</cbc:Percent></cac:TaxCategory><cbc:AllowanceChargeReason>Freight charge</cbc:AllowanceChargeReason></cac:AllowanceCharge><cac:LegalMonetaryTotal><cbc:LineExtensionAmount currencyID="EUR">286.63</cbc:LineExtensionAmount><cbc:AllowanceTotalAmount currencyID="EUR">28.66</cbc:AllowanceTotalAmount><cbc:ChargeTotalAmount currencyID="EUR">15</cbc:ChargeTotalAmount><cbc:TaxExclusiveAmount currencyID="EUR">272.97</cbc:TaxExclusiveAmount><Invoice><cac:TaxTotal><cbc:TaxAmount currencyID="EUR">64.49</cbc:TaxAmount></cac:TaxTotal></Invoice><cbc:TaxInclusiveAmount currencyID="EUR">337.46</cbc:TaxInclusiveAmount><cbc:PayableAmount currencyID="EUR">337.46</cbc:PayableAmount></cac:LegalMonetaryTotal><cac:TaxTotal><cac:TaxSubtotal><cbc:TaxableAmount currencyID="EUR">257.97</cbc:TaxableAmount><cbc:TaxAmount currencyID="EUR">64.49</cbc:TaxAmount><cac:TaxCategory><cbc:ID>S</cbc:ID><cbc:Percent>25</cbc:Percent></cac:TaxCategory></cac:TaxSubtotal><cac:TaxSubtotal><cbc:TaxableAmount currencyID="EUR">0</cbc:TaxableAmount><cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount><cac:TaxCategory><cbc:ID>Z</cbc:ID><cbc:Percent>0</cbc:Percent></cac:TaxCategory></cac:TaxSubtotal></cac:TaxTotal><cac:InvoiceLine><cbc:ID>1</cbc:ID><cbc:InvoicedQuantity unitCode="Case">25</cbc:InvoicedQuantity><cbc:LineExtensionAmount currencyID="EUR">222.5</cbc:LineExtensionAmount><cac:AllowanceCharge><cbc:Amount currencyID="EUR">10</cbc:Amount><cbc:ChargeIndicator>true</cbc:ChargeIndicator></cac:AllowanceCharge><cac:Price><cbc:PriceAmount currencyID="EUR">8.5</cbc:PriceAmount><cac:AllowanceCharge><cbc:ChargeIndicator>0</cbc:ChargeIndicator><cbc:Amount currencyID="EUR">1</cbc:Amount><cbc:BaseAmount currencyID="EUR">9.5</cbc:BaseAmount></cac:AllowanceCharge><cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity></cac:Price><cac:Item><cac:ClassifiedTaxCategory><cbc:ID>S</cbc:ID><cbc:Percent>25</cbc:Percent></cac:ClassifiedTaxCategory><cbc:Name>Pens</cbc:Name></cac:Item></cac:InvoiceLine><cac:InvoiceLine><cbc:ID>2</cbc:ID><cbc:InvoicedQuantity unitCode="Pack">15</cbc:InvoicedQuantity><cbc:LineExtensionAmount currencyID="EUR">64.12</cbc:LineExtensionAmount><cac:AllowanceCharge><cbc:Amount currencyID="EUR">3.38</cbc:Amount><cbc:BaseAmount currencyID="EUR">67.5</cbc:BaseAmount><cbc:MultiplierFactorNumeric>5</cbc:MultiplierFactorNumeric></cac:AllowanceCharge><cac:Price><cbc:PriceAmount currencyID="EUR">4.5</cbc:PriceAmount><cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity></cac:Price><cac:Item><cac:ClassifiedTaxCategory><cbc:ID>S</cbc:ID><cbc:Percent>25</cbc:Percent></cac:ClassifiedTaxCategory><cbc:Name>Paper</cbc:Name></cac:Item></cac:InvoiceLine></Invoice>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:Amount currencyID="EUR">28.66</cbc:Amount>
+    <cbc:BaseAmount currencyID="EUR">286.62</cbc:BaseAmount>
+    <cbc:MultiplierFactorNumeric>10</cbc:MultiplierFactorNumeric>
+    <cac:TaxCategory>
+      <cbc:ID>Z</cbc:ID>
+      <cbc:Percent>0</cbc:Percent>
+    </cac:TaxCategory>
+    <cbc:AllowanceChargeReason>Freight charge</cbc:AllowanceChargeReason>
+  </cac:AllowanceCharge>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="EUR">286.63</cbc:LineExtensionAmount>
+    <cbc:AllowanceTotalAmount currencyID="EUR">28.66</cbc:AllowanceTotalAmount>
+    <cbc:ChargeTotalAmount currencyID="EUR">15</cbc:ChargeTotalAmount>
+    <cbc:TaxExclusiveAmount currencyID="EUR">272.97</cbc:TaxExclusiveAmount>
+    <Invoice>
+      <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="EUR">64.49</cbc:TaxAmount>
+      </cac:TaxTotal>
+    </Invoice>
+    <cbc:TaxInclusiveAmount currencyID="EUR">337.46</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="EUR">337.46</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:TaxTotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="EUR">257.97</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">64.49</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="EUR">0</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>Z</cbc:ID>
+        <cbc:Percent>0</cbc:Percent>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="Case">25</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">222.5</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:Amount currencyID="EUR">10</cbc:Amount>
+    </cac:AllowanceCharge>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">8.5</cbc:PriceAmount>
+      <cac:AllowanceCharge>
+        <cbc:ChargeIndicator>0</cbc:ChargeIndicator>
+        <cbc:Amount currencyID="EUR">1</cbc:Amount>
+        <cbc:BaseAmount currencyID="EUR">9.5</cbc:BaseAmount>
+      </cac:AllowanceCharge>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+    <cac:Item>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
+      </cac:ClassifiedTaxCategory>
+      <cbc:Name>Pens</cbc:Name>
+    </cac:Item>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="Pack">15</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="EUR">64.12</cbc:LineExtensionAmount>
+    <cac:AllowanceCharge>
+      <cbc:Amount currencyID="EUR">3.38</cbc:Amount>
+      <cbc:BaseAmount currencyID="EUR">67.5</cbc:BaseAmount>
+      <cbc:MultiplierFactorNumeric>5</cbc:MultiplierFactorNumeric>
+    </cac:AllowanceCharge>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="EUR">4.5</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+    <cac:Item>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
+      </cac:ClassifiedTaxCategory>
+      <cbc:Name>Paper</cbc:Name>
+    </cac:Item>
+  </cac:InvoiceLine>
+</Invoice>

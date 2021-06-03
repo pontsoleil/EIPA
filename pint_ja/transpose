@@ -27,7 +27,9 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+from collections import defaultdict
 import pandas as pd
+import csv
 import os
 import sys
 import argparse
@@ -64,7 +66,7 @@ if __name__ == '__main__':
   df = pd.read_csv(in_file, sep='\t', encoding='Shift-JIS',
                     header=None, index_col=0,  # na_values=[''], keep_default_na=False
                   )
-  # df = df.dropna(thresh=6)
-  df = df.drop(df.columns[[0, 1, 2, 3, 4]], axis=1)
+  df = df.drop(df.columns[[0,1,2,3,4,5,6]], axis=1)
   df = df.transpose()
+  df = df.dropna(how='all', axis=1)
   df.to_csv(out_file, index=False, sep='\t', encoding='UTF-8')

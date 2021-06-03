@@ -38,9 +38,6 @@ import argparse
 
 from dic2etree import * 
 
-dictID = defaultdict(type(''))
-dictXpath = defaultdict(type(''))
-
 def clean_list(dic):
   for k, v in dic.items():
     if isinstance(v, dict):
@@ -64,7 +61,7 @@ def file_path(pathname):
     new_path = os.path.join(dir, pathname)
     return new_path
 
-def main():
+if __name__ == '__main__':
   # Create the parser
   parser = argparse.ArgumentParser(prog='genInvoice',
                                   usage='%(prog)s [options] infile outfile',
@@ -88,14 +85,21 @@ def main():
   dic = defaultdict(type(''))
   dic['Invoice'] = {}
 
+  dictID = defaultdict(type(''))
+  dictXpath = defaultdict(type(''))
   xpath_file = file_path('data/common/xpath.txt')
-  COL_ID = 0
-  COL_xpath = 1
-  COL_level = 2
-  COL_BT = 3
-  COL_card = 4
-  COL_datatype = 5
-  NUM_COLS = 6
+  # SemanticSort ID BusinessTerm Level BusinessTermJP Card DataType SyntaxSort xPath
+  # 0            1  2            3     4              5    6        7          8
+  COL_SemanticSort = 0
+  COL_ID = 1
+  COL_BT_EN = 2
+  COL_level = 3
+  COL_BT = 4
+  COL_card = 5
+  COL_datatype = 6
+  COL_SyntaxSort = 7
+  COL_xpath = 8
+  NUM_COLS = 9
   with open(xpath_file, encoding='utf-8', newline='') as f0:
     reader = csv.reader(f0, delimiter='\t')
     header = next(reader)
@@ -103,19 +107,20 @@ def main():
       id = record[COL_ID].strip()
       if id:
         xpath = record[COL_xpath]
-        if NUM_COLS == len(record) and '/' in xpath:
+        if NUM_COLS == len(record):
           level = record[COL_level]
           BT = record[COL_BT]
           card = record[COL_card].strip()
-          datatype = record[COL_datatype]
-          data = { 'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'xpath':xpath }
+          datatype = record[COL_datatype].strip()
+          syntaxsort = record[COL_SyntaxSort].strip()
+          data = { 'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'xpath':xpath, 'syntaxsort': syntaxsort }
           dictID[xpath] = id
           dictXpath[id] = data
           if 'Amount' == datatype or 'Unit' == datatype:
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@currencyID'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath, 'syntaxsort': syntaxsort }
             if not dictID[xpath]:
               dictID[xpath] = id
               dictXpath[id] = data
@@ -123,7 +128,7 @@ def main():
             level = str(int(level)+1)
             id = id+'-1'
             xpath = xpath+'/@unitCode'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
+            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath, 'syntaxsort': syntaxsort }
             if not dictID[xpath]:
               dictID[xpath] = id
               dictXpath[id] = data
@@ -131,8 +136,6 @@ def main():
   with open(in_file, encoding='utf-8', newline='') as f:
     reader = csv.reader(f, delimiter='\t')
     header = next(reader)
-    # next(reader)  # Business Term
-    # next(reader)  # xPath
     for record in reader:
       base0 = dictXpath[record[0]] and dictXpath[record[0]]['xpath']
       base1 = dictXpath[record[2]] and dictXpath[record[2]]['xpath']
@@ -191,32 +194,28 @@ def main():
                 set_path_value(dic, xpath, cell, datatype)
         n += 1
 
-    clean_list(dic)
+  clean_list(dic)
 
-    dicJson = json.dumps(dic)
-    dicJson = re.sub('"Invoice"', '"{' + ns[''] + '}Invoice"', dicJson)
-    dicJson = re.sub('xsi:', '{' + ns['xsi'] + '}', dicJson)
-    dicJson = re.sub('cac:', '{' + ns['cac'] + '}', dicJson)
-    dicJson = re.sub('cbc:', '{' + ns['cbc'] + '}', dicJson)
-    dicJson = re.sub('qdt:', '{' + ns['qdt'] + '}', dicJson)
-    dicJson = re.sub('udt:', '{' + ns['udt'] + '}', dicJson)
-    dicJson = re.sub('ccts:', '{' + ns['ccts'] + '}', dicJson)
-    dic2 = json.loads(dicJson)
+  dicJson = json.dumps(dic)
+  dicJson = re.sub('"Invoice"', '"{' + ns[''] + '}Invoice"', dicJson)
+  dicJson = re.sub('xsi:', '{' + ns['xsi'] + '}', dicJson)
+  dicJson = re.sub('cac:', '{' + ns['cac'] + '}', dicJson)
+  dicJson = re.sub('cbc:', '{' + ns['cbc'] + '}', dicJson)
+  dicJson = re.sub('qdt:', '{' + ns['qdt'] + '}', dicJson)
+  dicJson = re.sub('udt:', '{' + ns['udt'] + '}', dicJson)
+  dicJson = re.sub('ccts:', '{' + ns['ccts'] + '}', dicJson)
+  dic2 = json.loads(dicJson)
 
-    root = ET.XML('''
-    <Invoice 
-      xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
-      xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-      xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
-    ''')  # this step adds xsi:schemaLocation attribute
-    tree = dict_to_etree(dic2, root)
+  root = ET.XML('''
+  <Invoice 
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
+  ''')  # this step adds xsi:schemaLocation attribute
+  tree = dict_to_etree(dic2, root)
 
-    with open(out_file, 'wb') as f:
-      t = ET.ElementTree(tree)
-      t.write(f, encoding='UTF-8')
-
-if __name__ == '__main__':
-    # execute only if run as a script
-    main()
+  with open(out_file, 'wb') as f:
+    t = ET.ElementTree(tree)
+    t.write(f, encoding='UTF-8')
