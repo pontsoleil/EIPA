@@ -2,7 +2,8 @@
 import xml.etree.ElementTree as ET
 # import defusedxml.ElementTree as ET
 from collections import defaultdict
-import csv
+# import csv
+import pprint
 
 ET.register_namespace('cac', 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')
 ET.register_namespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')
@@ -44,11 +45,16 @@ def dict_to_etree(d, root):
       for k,v in d.items():
         assert isinstance(k, str)
         if k.startswith('#'):
-          assert k == '#text' and isinstance(v, str)
+          try:
+            assert k == '#text' and isinstance(v, str)
+          except Exception:
+            pprint(v)
           root.text = v
         elif k.startswith('@'):
-          assert isinstance(v, str)
-          root.set(k[1:], v)
+          if isinstance(v, str): # 2021-06-05
+            root.set(k[1:], v)
+          else:
+            pass
         elif isinstance(v, list):
           for e in v:
             _to_etree(e, ET.SubElement(root, k))
@@ -88,7 +94,7 @@ def get_path_value(base, path):
     except ValueError:
       pass
 
-def set_path_value(base, path, value, datatype):
+def set_path_value(base, parent, path, value, datatype):
   key = path[0]
   if len(path) > 1:
     try:
@@ -108,9 +114,7 @@ def set_path_value(base, path, value, datatype):
         pass
       path.pop(0)
       path.pop(0)
-      p = set_path_value(base, path, value, datatype)
-      if p:
-        return p
+      set_path_value(base, None, path, value, datatype)
     except ValueError:
       pass
   if isinstance(base, dict):
@@ -118,12 +122,11 @@ def set_path_value(base, path, value, datatype):
       if not key in base.keys():
         base[key] = {}
       if 'Amount' == datatype or 'Unit' == datatype:
-        value = {'#text':str(value), '@currencyID': 'JPY'}
+        value = {'#text': str(value), '@currencyID': 'JPY'}
       elif 'Quantity' == datatype:
-        value = {'#text':str(value), '@unitCode': 'EA'}
+        value = {'#text': str(value), '@unitCode': 'EA'}
       if not '#text' in base[key]:
         base[key] = value  # when Amount/Unit/Quantity is already set
-      return {'k':key, 'v':base[key]}
     else:
       path.pop(0)
       if not key in base.keys():
@@ -131,6 +134,16 @@ def set_path_value(base, path, value, datatype):
       if isinstance(base, dict):
         for k, v in base.items():
           if key == k:
-            p = set_path_value(v, path, value, datatype)
-            if p:
-              return p
+            p = None
+            if 1 == len(path) and '@' == path[0][:1]:
+              if isinstance(base[key], str):
+                val = base[key]
+                if isinstance(val, dict):
+                  val[path[0]] = value
+                elif isinstance(val, str):
+                  base[key] = {'#text': val, path[0]: value}
+              elif isinstance(base[key], dict):
+                val = base[key]
+                val[path[0]] = value
+            else:
+              set_path_value(v, None, path, value, datatype)

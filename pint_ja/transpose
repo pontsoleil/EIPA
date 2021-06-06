@@ -3,12 +3,12 @@
 #
 # transpose row and column of inpu file and write result to output file
 # 
-# designed by SAMBUICHI, Nobuyuki (Nobu)
-# written by SAMBUICHI, Nobuyuki (Nobu)
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 #
 # MIT License
 # 
-# Copyright (c) 2021 SAMBUICHI Nobuyuki
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -47,26 +47,75 @@ def file_path(pathname):
 #
 if __name__ == '__main__':
   # Create the parser
-  parser = argparse.ArgumentParser(prog='tateyoko',
-                                  usage='%(prog)s [options] infile outfile',
+  parser = argparse.ArgumentParser(prog='transpose',
+                                  usage='%(prog)s [options] infile',
                                   description='入力ファイルの縦と横を変換')
   # Add the arguments
   parser.add_argument('inFile', metavar='infile', type=str, help='入力XMLファイル')
-  parser.add_argument('outFile', metavar='outfile', type=str, help='出力ファイル')
   parser.add_argument('-v', '--verbose', action='store_true')
   args = parser.parse_args()
   in_file = file_path(args.inFile)
-  out_file = file_path(args.outFile)
+  pre, ext = os.path.splitext(in_file)
+  tmp_file = pre + '.tmp'
+  out_file = pre + '.tsv'
   verbose = args.verbose
   # Check if infile exists
   if not os.path.isfile(in_file):
     print('入力ファイルがありません')
     sys.exit()
 
-  df = pd.read_csv(in_file, sep='\t', encoding='Shift-JIS',
-                    header=None, index_col=0,  # na_values=[''], keep_default_na=False
-                  )
+  records = []
+  with open(in_file, encoding='Shift-JIS', newline='') as f:
+    reader = csv.reader(f, delimiter='\t')
+    row = 0
+    for record in reader:
+      hasData = False
+      row += 1
+      col = 0
+      if row <= 4:
+        records.append(record)
+      elif row <= 6:
+        pass
+      else:
+        for cell in record:
+          col += 1
+          if col > 8 and len(cell) > 0:
+            hasData = True
+        if hasData:
+          records.append(record)
+
+  with open(tmp_file, 'w') as f:
+    writer = csv.writer(f, delimiter='\t')
+    for record in records:
+      writer.writerow(record)
+
+  df = pd.read_csv(tmp_file, sep='\t', encoding='UTF-8', header=None, index_col=0)
   df = df.drop(df.columns[[0,1,2,3,4,5,6]], axis=1)
   df = df.transpose()
-  df = df.dropna(how='all', axis=1)
-  df.to_csv(out_file, index=False, sep='\t', encoding='UTF-8')
+  # df = df.dropna(how='all', axis=1)
+  df.to_csv(tmp_file, index=False, sep='\t', encoding='UTF-8')
+
+  records = []
+  with open(tmp_file, encoding='UTF-8', newline='') as f:
+    reader = csv.reader(f, delimiter='\t')
+    row = 0
+    for record in reader:
+      hasData = False
+      row += 1
+      col = 0
+      if row <= 4:
+        records.append(record)
+      else:
+        for cell in record:
+          col += 1
+          if col > 4 and len(cell) > 0:
+            hasData = True
+        if hasData:
+          records.append(record)
+
+  with open(out_file, 'w') as f:
+    writer = csv.writer(f, delimiter='\t')
+    for record in records:
+      writer.writerow(record)
+
+  os.remove(tmp_file)

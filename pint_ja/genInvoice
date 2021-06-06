@@ -3,12 +3,12 @@
 #
 # generate Open Peoopl e-Invoice (UBL 2.1) fron TSV file
 # 
-# designed by SAMBUICHI, Nobuyuki (Nobu)
-# written by SAMBUICHI, Nobuyuki (Nobu)
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 #
 # MIT License
 # 
-# Copyright (c) 2021 SAMBUICHI Nobuyuki
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -191,7 +191,7 @@ if __name__ == '__main__':
                 pathList.remove('')
                 xpath = base_path + pathList
                 datatype = _dictxpath['datatype']
-                set_path_value(dic, xpath, cell, datatype)
+                set_path_value(dic, None, xpath, cell, datatype)
         n += 1
 
   clean_list(dic)
