@@ -94,7 +94,7 @@ ibg-38	1540	1890	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEn
 ibt-044	1540	1900	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName	3	発注者名称	1..1	Text										株式会社 藤山物産 札幌支社																												
 ibt-047	1580	1910	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID	3	発注者国際企業コード	0..1	ID																																						
 ibt-047-1	1590	1920	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID	4	スキーマ識別子	1..1	Scheme																																						
-ibt-047-2	1595	1930	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeAgencyID	4	発番機関	1..1	Agency																																						
+ibt-047-2	#N/A	#N/A	#N/A	#N/A	#N/A	#N/A	#N/A																																						
 ibg-09	1710	1940	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact	2	発注者の連絡先	0..1	Group																																						
 ibt-056	1720	1950	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name	3	発注者連絡先	0..1	Text											株式会社 藤山物産 札幌支社																											
 ibt-057	1730	1960	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone	3	発注者連絡先電話番号	0..1	Text																																						
@@ -105,7 +105,7 @@ ibt-060-1	1780	2000	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID/@sche
 ibt-059	1760	2010	/Invoice/cac:PayeeParty/cac:PartyName/cbc:Name	2	支払先名称	1..1	Text												株式会社 ○○商事																										
 ibt-061	1790	2020	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID	2	支払先国際企業コード	0..1	ID												(企業が割り当てた値)																										
 ibt-061-1	1800	2030	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID	3	スキーマ識別子	1..1	Scheme												(コードの種類)																										
-ibt-061-2	1800	2030	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeAgencyID	3	発番機関	1..1	Agency												(発番機関)																										
+ibt-061-2	#N/A	#N/A	#N/A	#N/A	#N/A	#N/A	#N/A												(発番機関)																										
 ibg-11	1810	2040	/Invoice/cac:TaxRepresentativeParty	1	販売者の納税管理人	0..1	Group																																						
 ibt-062	1820	2050	/Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name	2	販売者の納税管理人名称	1..1	Text																																						
 ibg-12	1840	2060	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress	2	販売者の納税管理人の住所	1..1	Group																																						

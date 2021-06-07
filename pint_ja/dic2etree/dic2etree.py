@@ -47,9 +47,9 @@ def dict_to_etree(d, root):
         if k.startswith('#'):
           try:
             assert k == '#text' and isinstance(v, str)
-          except Exception:
-            pprint(v)
-          root.text = v
+            root.text = v
+          except (Exception, ValueError, TypeError) as e:
+            print(e, v)
         elif k.startswith('@'):
           if isinstance(v, str): # 2021-06-05
             root.set(k[1:], v)
@@ -94,7 +94,7 @@ def get_path_value(base, path):
     except ValueError:
       pass
 
-def set_path_value(base, parent, path, value, datatype):
+def set_path_value(base, path, value, datatype):
   key = path[0]
   if len(path) > 1:
     try:
@@ -114,7 +114,9 @@ def set_path_value(base, parent, path, value, datatype):
         pass
       path.pop(0)
       path.pop(0)
-      set_path_value(base, None, path, value, datatype)
+      p = set_path_value(base, path, value, datatype)
+      if p:
+        return p
     except ValueError:
       pass
   if isinstance(base, dict):
@@ -125,8 +127,17 @@ def set_path_value(base, parent, path, value, datatype):
         value = {'#text': str(value), '@currencyID': 'JPY'}
       elif 'Quantity' == datatype:
         value = {'#text': str(value), '@unitCode': 'EA'}
-      if not '#text' in base[key]:
-        base[key] = value  # when Amount/Unit/Quantity is already set
+      base[key] = value  # when Amount/Unit/Quantity is already set
+      return {'k':key, 'v':base[key]}
+    elif '@' == path[1][:1]:
+      if not key in base.keys():
+        base[key] = {}
+      if isinstance(base[key], str):
+        v = base[key]
+        base[key] = {}
+        base[key]['#text'] = v
+      base[key][path[1]] = value
+      return {'k':key, 'v': base[key]}
     else:
       path.pop(0)
       if not key in base.keys():
@@ -134,16 +145,6 @@ def set_path_value(base, parent, path, value, datatype):
       if isinstance(base, dict):
         for k, v in base.items():
           if key == k:
-            p = None
-            if 1 == len(path) and '@' == path[0][:1]:
-              if isinstance(base[key], str):
-                val = base[key]
-                if isinstance(val, dict):
-                  val[path[0]] = value
-                elif isinstance(val, str):
-                  base[key] = {'#text': val, path[0]: value}
-              elif isinstance(base[key], dict):
-                val = base[key]
-                val[path[0]] = value
-            else:
-              set_path_value(v, None, path, value, datatype)
+            p = set_path_value(v, path, value, datatype)
+            if p:
+              return p

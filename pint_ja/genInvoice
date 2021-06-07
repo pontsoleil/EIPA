@@ -191,7 +191,7 @@ if __name__ == '__main__':
                 pathList.remove('')
                 xpath = base_path + pathList
                 datatype = _dictxpath['datatype']
-                set_path_value(dic, None, xpath, cell, datatype)
+                set_path_value(dic, xpath, cell, datatype)
         n += 1
 
   clean_list(dic)

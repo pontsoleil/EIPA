@@ -89,7 +89,6 @@ SemanticSort	ID	BusinessTerm	Level	BusinessTermJP	Card.	Data Type	SyntaxSort	xPa
 1540	ibt-044	Buyer name 	3	発注者名称	1..1	Text	1900	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName
 1580	ibt-047	Buyer legal registration identifier	3	発注者国際企業コード	0..1	ID	1910	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID
 1590	ibt-047-1	Scheme identifier	4	スキーマ識別子	1..1	Scheme	1920	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID
-1595	ibt-047-2	Scheme agency	4	発番機関	1..1	Agency	1930	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeAgencyID
 1710	ibg-09	BUYER CONTACT	2	発注者の連絡先	0..1	Group	1940	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact
 1720	ibt-056	Buyer contact point 	3	発注者連絡先	0..1	Text	1950	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name
 1730	ibt-057	Buyer contact telephone number	3	発注者連絡先電話番号	0..1	Text	1960	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone
@@ -100,7 +99,6 @@ SemanticSort	ID	BusinessTerm	Level	BusinessTermJP	Card.	Data Type	SyntaxSort	xPa
 1760	ibt-059	Payee name 	2	支払先名称	1..1	Text	2010	/Invoice/cac:PayeeParty/cac:PartyName/cbc:Name
 1790	ibt-061	Payee legal registration identifier	2	支払先国際企業コード	0..1	ID	2020	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID
 1800	ibt-061-1	Scheme identifier	3	スキーマ識別子	1..1	Scheme	2030	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID
-1800	ibt-061-2	Scheme agency	3	発番機関	1..1	Agency	2030	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeAgencyID
 1810	ibg-11	SELLER TAX REPRESENTATIVE PARTY	1	販売者の納税管理人	0..1	Group	2040	/Invoice/cac:TaxRepresentativeParty
 1820	ibt-062	Seller tax representative name	2	販売者の納税管理人名称	1..1	Text	2050	/Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name
 1840	ibg-12	SELLER TAX REPRESENTATIVE POSTAL ADDRESS	2	販売者の納税管理人の住所	1..1	Group	2060	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress
@@ -129,7 +127,6 @@ SemanticSort	ID	BusinessTerm	Level	BusinessTermJP	Card.	Data Type	SyntaxSort	xPa
 1930	ibt-070	Deliver to party name	2	納入先名称	0..1	Text	2280	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name
 2080	ibg-16	PAYMENT INSTRUCTIONS	1	支払手段	0..n	Group	2290	/Invoice/cac:PaymentMeans
 2089	ibt-178	Payment Instructions ID	2	支払手段ID	0..1	ID	2300	/Invoice/cac:PaymentMeans/cbc:ID
-2089	ibt-178-1	name	3	支払手段	0..1	Code	2300	/Invoice/cac:PaymentMeans/cbc:ID/@name
 2090	ibt-081	Payment means type code	2	支払手段タイプコード	1..1	Code	2310	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode
 2100	ibt-082	Payment means text	2	支払手段内容説明	0..1	Text	2320	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode/@name
 2110	ibt-083	Remittance information	2	送金情報	0..n	Text	2330	/Invoice/cac:PaymentMeans/cbc:PaymentID

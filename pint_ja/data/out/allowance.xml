@@ -91,7 +91,7 @@
       <cbc:Name>株式会社 ○○商事</cbc:Name>
     </cac:PartyName>
     <cac:PartyLegalEntity>
-      <cbc:CompanyID schemeAgencyID="(発番機関)" schemeID="(コードの種類)">(企業が割り当てた値)</cbc:CompanyID>
+      <cbc:CompanyID schemeID="(コードの種類)">(企業が割り当てた値)</cbc:CompanyID>
     </cac:PartyLegalEntity>
   </cac:PayeeParty>
   <cac:Delivery>
@@ -129,7 +129,6 @@
     <cbc:TaxAmount currencyID="JPY">11970</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="JPY">87700</cbc:TaxableAmount>
-      <cac:TaxSubtotal currencyID="JPY">87700</cac:TaxSubtotal>
       <cbc:TaxAmount currencyID="JPY">8770</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
@@ -141,7 +140,6 @@
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="JPY">40000</cbc:TaxableAmount>
-      <cac:TaxSubtotal currencyID="JPY">40000</cac:TaxSubtotal>
       <cbc:TaxAmount currencyID="JPY">3200</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>AA</cbc:ID>
@@ -161,14 +159,12 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>10</cbc:ID>
-    <cac:InvoiceLine unitCode="EA">1000</cac:InvoiceLine>
     <cbc:InvoicedQuantity unitCode="EA">1000</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="JPY">30000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>原稿用紙（A4）</cbc:Name>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
-        <cac:ClassifiedTaxCategory currencyID="JPY">30</cac:ClassifiedTaxCategory>
         <cbc:Percent>10</cbc:Percent>
         <cbc:PerUnitAmount currencyID="JPY">30</cbc:PerUnitAmount>
         <cac:TaxScheme>
@@ -187,14 +183,12 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>20</cbc:ID>
-    <cac:InvoiceLine unitCode="EA">10</cac:InvoiceLine>
     <cbc:InvoicedQuantity unitCode="EA">10</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>XX新聞</cbc:Name>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>AA</cbc:ID>
-        <cac:ClassifiedTaxCategory currencyID="JPY">320</cac:ClassifiedTaxCategory>
         <cbc:Percent>8</cbc:Percent>
         <cbc:PerUnitAmount currencyID="JPY">320</cbc:PerUnitAmount>
         <cac:TaxScheme>
@@ -213,12 +207,10 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>30</cbc:ID>
-    <cac:InvoiceLine unitCode="EA">1</cac:InvoiceLine>
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="JPY">50000</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-      <cac:AllowanceCharge currencyID="JPY">10000</cac:AllowanceCharge>
       <cbc:AllowanceChargeReason>単品値引</cbc:AllowanceChargeReason>
       <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
       <cbc:Amount currencyID="JPY">10000</cbc:Amount>
@@ -228,7 +220,6 @@
       <cbc:Name>回転椅子　K</cbc:Name>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
-        <cac:ClassifiedTaxCategory currencyID="JPY">50000</cac:ClassifiedTaxCategory>
         <cbc:Percent>10</cbc:Percent>
         <cbc:PerUnitAmount currencyID="JPY">50000</cbc:PerUnitAmount>
         <cac:TaxScheme>
