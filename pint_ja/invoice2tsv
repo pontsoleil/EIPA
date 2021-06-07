@@ -123,7 +123,7 @@ def dict_to_tsv(tsv, root):
     tsv = _to_tsv(tsv, '', tag, body)
   return tsv
 
-def main():
+if __name__ == '__main__':
   # Create the parser
   parser = argparse.ArgumentParser(prog='invoice2tsv',
                                   usage='%(prog)s [options] infile outfile',
@@ -307,7 +307,8 @@ def main():
 
   # see https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/  
   sorted_row = sorted(row, key=itemgetter('column_index'))
-  with open(file_path('test/data/sorted.tsv'), 'w') as f:
+  # with open(file_path('test/data/sorted.tsv'), 'w') as f:
+  with open(out_file, 'w') as f:
     writer = csv.writer(f, delimiter='\t')
     N = 7
     id = None
@@ -344,7 +345,3 @@ def main():
     for v in sorted_row:
       writer.writerow([ v['bough_id'], v['bough_card'], v['twig_id'], v['twig_card'], \
                         v['column_index'], v['bough_name'], v['twig_name'] ] + v['column'])
-
-if __name__ == '__main__':
-    # execute only if run as a script
-    main()
