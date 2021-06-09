@@ -124,6 +124,9 @@ def set_path_value(base, path, value, datatype):
       if not key in base.keys():
         base[key] = {}
       if 'Amount' == datatype or 'Unit' == datatype:
+        # if isinstance(value, dict):
+        #   pass
+        # else:
         value = {'#text': str(value), '@currencyID': 'JPY'}
       elif 'Quantity' == datatype:
         value = {'#text': str(value), '@unitCode': 'EA'}

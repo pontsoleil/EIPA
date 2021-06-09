@@ -197,10 +197,10 @@ SemanticSort	ID	BusinessTerm	Level	BusinessTermJP	Card.	Data Type	SyntaxSort	xPa
 2520	ibt-117	TAX category tax amount	2	課税分類毎の消費税額	1..1	Amount	2960	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount
 2525	ibt-117-1	Currency code	3	通貨コード	1..1	Code	2970	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount/@currencyID
 2530	ibt-118	TAX category code 	2	課税分類コード	1..1	Code	2980	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID
-2535	ibt-118-1	Tax Scheme	2	税スキーマ	0..1	Code	2990	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID
 2540	ibt-119	TAX category rate	2	課税分類毎の税率	0..1	Percent	3000	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent
 2560	ibt-121	TAX exemption reason code	2	非課税/不課税理由コード	0..1	Code	3010	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode
 2550	ibt-120	TAX exemption reason text	2	非課税/不課税理由	0..1	Text	3020	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason
+2535	ibt-188	Tax Scheme	2	税スキーマ	0..1	Code	2990	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID
 2390	ibg-22	DOCUMENT TOTALS	1	請求書総合計金額	1..1	Group	3030	/Invoice/cac:LegalMonetaryTotal
 2400	ibt-106	Sum of Invoice line net amount	2	明細行金額(税抜)の合計	1..1	Amount	3040	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount
 2405	ibt-106-1	Currency code	3	通貨コード	1..1	Code	3050	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID
