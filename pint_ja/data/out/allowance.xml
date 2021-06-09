@@ -123,6 +123,9 @@
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
       <cbc:Percent>10</cbc:Percent>
+      <cbc:TaxScheme>
+        <cbc:ID>CST</cbc:ID>
+      </cbc:TaxScheme>
     </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:TaxTotal>
@@ -132,10 +135,10 @@
       <cbc:TaxAmount currencyID="JPY">8770</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>CST</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>10</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
@@ -143,10 +146,10 @@
       <cbc:TaxAmount currencyID="JPY">3200</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>AA</cbc:ID>
+        <cbc:Percent>8</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>CST</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>8</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
@@ -154,8 +157,9 @@
     <cbc:LineExtensionAmount currencyID="JPY">120000</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="JPY">127700</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="JPY">139670</cbc:TaxInclusiveAmount>
-    <cbc:AllowanceTotalAmount currencyID="JPY">10000</cbc:AllowanceTotalAmount>
+    <cbc:AllowanceTotalAmount currencyID="JPY" />
     <cbc:ChargeTotalAmount currencyID="JPY">17700</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="JPY">139670</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>10</cbc:ID>

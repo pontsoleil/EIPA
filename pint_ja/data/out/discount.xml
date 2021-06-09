@@ -1,5 +1,4 @@
-<Invoice 
-  xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
@@ -136,10 +135,10 @@
       <cbc:TaxAmount currencyID="JPY">8770</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>CST</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>10</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
@@ -147,10 +146,10 @@
       <cbc:TaxAmount currencyID="JPY">3200</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>AA</cbc:ID>
+        <cbc:Percent>8</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>CST</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>8</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
