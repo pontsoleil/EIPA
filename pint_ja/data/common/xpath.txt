@@ -185,7 +185,7 @@ SemanticSort	ID	BusinessTerm	Level	BusinessTermJP	Card.	Data Type	SyntaxSort	xPa
 2335	ibt-100-1	Currency code	3	通貨コード	1..1	Code	2830	/Invoice/cac:AllowanceCharge/cbc:BaseAmount/@currencyID
 2350	ibt-102	Document level charge TAX category code	2	ドキュメントレベルの追加請求の課税分類コード	1..1	Code	2840	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID
 2360	ibt-103	Document level charge TAX rate	2	ドキュメントレベルの追加請求の税率	0..1	Percent	2850	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent
-2365	ibt-103a	Tax Scheme	2	税スキーマ	0..1	Code	2860	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:TaxScheme/cbc:ID
+2365	ibt-103a	Tax Scheme	2	税スキーマ	0..1	Code	2860	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID
 2440	ibg-39	INVOICE TOTAL TAX	1	消費税合計金額	0..1	Group	2870	/Invoice/cac:TaxTotal
 2440	ibt-110	Invoice total TAX amount	2	消費税合計金額	1..1	Amount	2880	/Invoice/cac:TaxTotal/cbc:TaxAmount
 2445	ibt-110-1	Currency code	3	通貨コード	1..1	Code	2890	/Invoice/cac:TaxTotal/cbc:TaxAmount/@currencyID
