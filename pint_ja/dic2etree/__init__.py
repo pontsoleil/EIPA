@@ -6,6 +6,7 @@ from .dic2etree import set_path_value
 
 ns = {
   '': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
+  'xsd': 'http://www.w3.org/2001/XMLSchema',
   'xsi': 'http://www.w3.org/2001/XMLSchema-instance',
   'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2',
   'cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2',
