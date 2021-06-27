@@ -28,19 +28,57 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import xml.etree.ElementTree as ET
-from collections import defaultdict
+# from collections import defaultdict
 from operator import itemgetter
+import pandas as pd
 import csv
 import re
 import json
 import sys 
 import os
 import argparse
+import numpy as np
 
 from dic2etree import *
 
-dictID = defaultdict(type(''))
-dictXpath = defaultdict(type(''))
+dictID = {}  # defaultdict(type(''))
+dictXpath = {}  # defaultdict(type(''))
+sortID = {}
+sortXpath = {}
+
+ChargeIndicator = {}
+
+Charges = {
+  'ibg-21', 'ibt-099a', 'ibt-105', 'ibt-104', 'ibt-101', 'ibt-099', 'ibt-099-1', 'ibt-100', 'ibt-100-1', 'ibt-102', 'ibt-103', 'ibt-103-1',
+  'ibg-28', 'ibt-141a', 'ibt-145', 'ibt-144', 'ibt-143', 'ibt-141', 'ibt-141-1', 'ibt-142', 'ibt-142-1'
+}
+Allowances = {
+  'ibg-20', 'ibt-092a', 'ibt-098', 'ibt-097', 'ibt-094', 'ibt-092', 'ibt-092-1', 'ibt-093', 'ibt-093-1', 'ibt-095', 'ibt-096', 'ibt-096-1',
+  'ibg-27', 'ibt-136a', 'ibt-140', 'ibt-139', 'ibt-138', 'ibt-136', 'ibt-136-1', 'ibt-137', 'ibt-137-1',
+  'ibt-147', 'ibt-147-1'
+}
+
+patternIndex = re.compile("(ibg-[0-9]{2,3})_(ibg-[0-9]{2,3}|------)_(ibg-[0-9]{2,3}|------)")  # column_id
+patternSort = re.compile("([0-9]{4})_([0-9]{4})_([0-9]{4})")  # sort_id
+
+def getID(xpath):
+  ID = dictID[xpath]
+  if isinstance(ID, str):
+    return ID
+  li = list(ID)
+  if 'cac:AllowanceCharge' in xpath:
+    if 'v' in ChargeIndicator and ChargeIndicator['v']:
+      if li[0] in Charges:
+        return li[0]
+      if li[1] in Charges:
+        return li[1] 
+    else:
+      if li[0] in Allowances:
+        return li[0]
+      if li[1] in Allowances:
+        return li[1]
+  else:
+    return li[0]
 
 def file_path(pathname):
   if '/' == pathname[0:1]:
@@ -52,42 +90,69 @@ def file_path(pathname):
 
 def dict_to_tsv(tsv, root):
   def _setup_record(case, path, tag, k, v):
-    pathList = path.split('/')
-    pathList.remove('')
+    pathList = path[1:].split('/')
     _path = ''
     base_id = ''
     bough_id = ''
     twig_id = ''
     for p in pathList:
       _path += '/'+p
-      _id = dictID[_path]
-      if 'ibg-' in _id:
-        if _id and bough_id:
-          twig_id = _id
-        elif _id and base_id:
-          bough_id = _id
-        elif _id:
-          base_id = _id
+      if _path in dictID:
+        _id = getID(_path)
+        if _id in parents:
+          column_id = parents[_id]
+          m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+          base_id = m.group(1)
+          bough_id = m.group(2)
+          twig_id = m.group(3)
+          if column_id != base_id+'_'+bough_id+'_'+twig_id:
+            print(column_id, base_id, bough_id, twig_id)
     _record = {}
     if 1 == case:
       pathString = path
-      id = dictID[pathString]
-      value = v
+      if pathString in dictID:
+        id = getID(pathString)
+        value = v
+      else:
+        print(f'--- WARNING _setup_record(tsv, root) --- case {case} {pathString} not in dictID value={v}')
+        return None
     elif 2 == case or 3 == case:
-      pathString = path
-      id = dictID[pathString]
-      tag = k
-      value = v
+      if not k in path and  path+'/'+k in dictID:
+        pathString = path+'/'+k
+        id = getID(pathString)
+        tag = k
+        value = v
+      else:
+        pathString = path
+        if pathString in dictID:
+          id = getID(pathString)
+          tag = k
+          value = v
+        else:
+          print(f'--- WARNING _setup_record(tsv, root) --- case {case} {pathString} not in dictID value={v}')
+          return None
     elif 4 == case:
-      pathString = path+'/'+k
-      id = dictID[pathString]
+      if not k in path:
+        pathString = path+'/'+k
+      else:
+        pathString = path
+      if pathString in dictID:
+        if 'cac:AllowanceCharge' in pathString:
+          ChargeIndicator['v'] = v['cbc:ChargeIndicator']
+        id = getID(pathString)
+      else:
+        if verbose:
+          print(f'--- WARNING _setup_record(tsv, root) --- case {case} {pathString} not in dictID')
+        id = 'ibg-XX'
       tag = k
       value = ''
     _record = {'case': case, 'base_id':base_id, 'bough_id':bough_id, 'twig_id':twig_id, 'id': id, \
                 'path': pathString, 'tag': tag, 'value': value}
     return _record
-  # def _to_tsv(tsv, d, tag, path):
+
   def _to_tsv(tsv, path, tag, body):
+    if 'cbc:ChargeIndicator' == tag:
+      ChargeIndicator['v'] = isinstance(body, str) and 'true' == body.lower()
     if len(tag) > 0:
       path = path+'/'+tag
     d = body
@@ -96,201 +161,348 @@ def dict_to_tsv(tsv, root):
       pass
     elif isinstance(d, str):  # case 1
       v = _setup_record(1, path, tag, '', d)
-      tsv.append(v)
+      if v:
+        tsv.append(v)
     elif isinstance(d, dict):
       for k, v in d.items():
-        assert isinstance(k, str)
-        if k.startswith('#'):
-          assert k == '#text' and isinstance(v, str)  # case 2
+        if isinstance(k, str) and k.startswith('#'):  # case 2
+          assert k == '#text'
           v = _setup_record(2, path, tag, k, v)
-          tsv.append(v)
-        elif isinstance(k, str) and k.startswith('@'):
-          assert isinstance(v, str)  # case 3
-          v = _setup_record(3, path, tag, k, v)
-          tsv.append(v)
-        elif isinstance(v, list):
-          for e in v:  # case 4
-            v = _setup_record(4, path, tag, k, e)
+          if v:
             tsv.append(v)
-            tsv = _to_tsv(tsv, path, k, e)
+        elif isinstance(k, str) and k.startswith('@'):  # case 3
+          if '@cbc:schemaLocation' != k:
+            if not path+'/'+k in dictID:
+              print(f'--- WARNING(_to_tsv) --- {path}/{k} is not in dictID')
+            v = _setup_record(3, path, tag, k, v)
+            if v:
+              tsv.append(v)
+        elif isinstance(v, list):  # case 4
+          for e in v:
+            v = _setup_record(4, path, tag, k, e)
+            if v:
+              tsv.append(v)
+            _to_tsv(tsv, path, k, e)
         else:
-          tsv = _to_tsv(tsv, path, k, v)
+          _to_tsv(tsv, path, k, v)
+    elif isinstance(d, list):
+      print(f'invalid type {type(d)} {d}')
     else:
-      assert d == 'invalid type', (type(d), d)
-    return tsv
+      print(f'invalid type {type(d)} {d}')
+
   assert isinstance(root, dict) and len(root) == 1
   for tag, body in root.items():
-    tsv = _to_tsv(tsv, '', tag, body)
-  return tsv
+    _to_tsv(tsv, '', tag, body)
+
+def get_id(v):
+  id = v['id']
+  path = v['path']
+  tag = v['tag']
+  if '@' in tag and 'ibg-00' != id:
+    if not tag in path:
+      path += '/'+tag
+    id = getID(path)
+  return id
+
+def get_column_id(v):
+  base_id = v['base_id']
+  bough_id = v['bough_id']
+  if 0 == len(bough_id):
+    bough_id = '------'
+  twig_id = v['twig_id']
+  if 0 == len(twig_id):
+    twig_id = '------'
+  column_id = base_id+'_'+bough_id+'_'+twig_id 
+  return column_id
+
+def get_sort_id(v):
+  base_id = v['base_id']
+  bough_id = v['bough_id']
+  if base_id in sortXpath:
+    base_sort = sortXpath[base_id][1]
+  elif 'ibg-00' == base_id:
+    base_sort = '1000'
+  else:
+    base_sort = '0000'
+  if bough_id in sortXpath:
+    bough_sort = sortXpath[bough_id][1]
+  else:
+    bough_sort = '0000'
+  twig_id = v['twig_id']
+  if twig_id in sortXpath:
+    twig_sort = sortXpath[twig_id][1]
+  else:
+    twig_sort = '0000'
+  sort_id = base_sort+'_'+bough_sort+'_'+twig_sort
+  return sort_id
+
+def append_tsv(column_id, bough_card, twig_card, column, id):
+  m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+  base_id = m.group(1)
+  bough_id = m.group(2)
+  twig_id = m.group(3)
+  if 4 == len(bough_card):
+    if '..1' == bough_card[1:]:
+      bough_card = '-'
+    elif '..n' == bough_card[1:]:
+      bough_card = 0
+      if bough_id in repetition:
+        bough_card = repetition[bough_id]
+  if 4 == len(twig_card):
+    if '..1' == twig_card[1:]:
+      twig_card = '-'
+    elif '..n' == twig_card[1:]:
+      twig_card = 0
+      if twig_id in repetition:
+        twig_card = repetition[twig_id]
+      else:
+        twig_card = 0
+        repetition[twig_id] = 0
+      if not bough_id in twigs:  # assuming bough_id is in repetition:
+        twigs[bough_id] = []
+      if not twig_id in twigs[bough_id]:
+        twigs[bough_id].append(twig_id)
+  bough_card = str(bough_card)
+  twig_card = str(twig_card)
+  column_index = base_id+'_'+bough_id+'_'+bough_card+'_'+twig_id+'_'+twig_card
+  index = [column_header[x] for x, y in enumerate(column_header) if y[0] == column_id]
+  if 1 == len(index):
+    index = index[0]
+    column_sort = index[1]
+    m = patternSort.search(column_sort)  # /([0-9]{4})_([0-9]{4})_([0-9]{4})")/
+    base_sort = m.group(1)
+    bough_sort = m.group(2)
+    twig_sort = m.group(3)
+    _column_sort = base_sort+'_'+bough_sort+'_'+bough_card+'_'+twig_sort+'_'+twig_card
+    if bough_id and bough_id in dictXpath and 'BT' in dictXpath[bough_id]:
+      bough_name = dictXpath[bough_id]['BT']
+    else:
+      bough_name = ''
+    if twig_id and twig_id in dictXpath and 'BT' in dictXpath[twig_id]:
+      twig_name = dictXpath[twig_id]['BT']
+    else:
+      twig_name = ''
+    if verbose:
+      print(f'({_column_sort}) {column_index}_{id} {bough_name} {twig_name}')
+    if _column_sort in row:
+      _row = row[_column_sort]
+      _column = _row[8:]
+      for i in range(len(column)):
+        if len(_column[i]) > 0 and column[i] != _column[i]:
+          if len(column[i]) > 0 and verbose:
+            print(f'--- WARNING --- {column_index} {_column_sort} is duplicated column[{i}] {column[i]} and {_column[i]}')
+          if _column_sort+'-1' in row:
+            column_ = row[_column_sort+'-1'][8:]
+            column_[i] = _column[i]
+            _column = column_
+          row[_column_sort+'-1'] = [bough_id, bough_card, twig_id, twig_card, column_index, _column_sort, bough_name, twig_name]+_column
+        else:
+          column[i] = _column[i]
+    row[_column_sort] = [bough_id, bough_card, twig_id, twig_card, column_index, _column_sort, bough_name, twig_name]+column
+  else:
+    print(f'-- NOT FOUND {column_id} in column_header --')
 
 if __name__ == '__main__':
   # Create the parser
   parser = argparse.ArgumentParser(prog='invoice2tsv',
-                                  usage='%(prog)s [options] infile outfile',
+                                  usage='%(prog)s [options] infile -o outfile',
                                   description='電子インボイスXMLファイルをTSVファイルに変換')
   # Add the arguments
   parser.add_argument('inFile', metavar='infile', type=str, help='入力XMLファイル')
-  parser.add_argument('outFile', metavar='outfile', type=str, help='出力ファイル')
+  parser.add_argument('-o', '--out')
   parser.add_argument('-v', '--verbose', action='store_true')
   args = parser.parse_args()
   in_file = file_path(args.inFile)
-  out_file = file_path(args.outFile)
+  pre, ext = os.path.splitext(in_file)
+  tmp_file = pre+'.txt'
+  if args.out:
+    out_file = args.out.lstrip()
+    out_file = file_path(out_file)
+  else:
+    out_file = pre+'.tsv'
   verbose = args.verbose
   # Check if infile exists
   if not os.path.isfile(in_file):
     print('入力ファイルがありません')
     sys.exit()
   if verbose:
-    print('** START ** ', __file__)
+    print(f'** START ** {__file__}')
 
   dictID['/Invoice'] = 'ibg-00'
 
   xpath_file = file_path('data/common/xpath.txt')
-  COL_ID = 0
-  COL_xpath = 1
-  COL_level = 2
-  COL_BT = 3
-  COL_card = 4
-  COL_datatype = 5
+  # SemanticSort paent ID Level BusinessTerm BusinessTermJP Card. DataType SyntaxSort xPath
+  # 0            1     2  3     4            5              6     7        8          9
+  COL_SemanticSort = 0
+  COL_parent = 1
+  COL_ID = 2
+  COL_level = 3
+  COL_BT = 4
+  COL_BT_ja = 5
+  COL_card = 6
+  COL_datatype = 7
+  COL_SyntaxSort = 8
+  COL_xpath = 9
+  parents = {}
   with open(xpath_file, encoding='utf-8', newline='') as f0:
     reader = csv.reader(f0, delimiter='\t')
     header = next(reader)
     for v in reader:
+      parent = v[COL_parent].strip()
       id = v[COL_ID].strip()
+      if 'ibg-' in id:
+        parents[id] = parent+'_'+id
+      else:
+        parents[id] = parent
       if id:
         xpath = v[COL_xpath]
-        if len(v) > 11 and '/' in xpath:
-          level = v[COL_level]
+        if len(v) > 7 and '/' in xpath:
+          semanticSort = v[COL_SemanticSort]
           BT = v[COL_BT]
+          BT_ja = v[COL_BT_ja]
+          level = v[COL_level]
           card = v[COL_card].strip()
           datatype = v[COL_datatype]
-          data = {'level':level, 'BT':BT, 'card':card, 'datatype':datatype, 'xpath':xpath }
-          dictID[xpath] = id
+          syntaxSort = v[COL_SyntaxSort]
+          data = {'level':level, 'parent':parent, 'BT':BT, 'BT_ja':BT_ja, 'card':card, 'datatype':datatype, 'xpath':xpath }
+          if xpath.count('/') > 1 and xpath in dictID and dictID[xpath] != id:
+            if isinstance(dictID[xpath], str):
+              dictID[xpath] = {dictID[xpath], id}
+            else:
+              dictID[xpath].add(id)
+          else:
+            dictID[xpath] = id
           dictXpath[id] = data
+          sortID[xpath] = (id, syntaxSort)
+          sortXpath[id] = (data, syntaxSort)
           if 'Amount' == datatype or 'Unit' == datatype:
             level = str(int(level)+1)
-            id = id+'-1'
             xpath = xpath+'/@currencyID'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
-            if not dictID[xpath]:
+            if not xpath in dictID:
+              id = id+'-1'
+              parents[id] = parents[id[:-2]]
+              data = { 'level':level, 'parent':parent, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
               dictID[xpath] = id
               dictXpath[id] = data
+              sortID[xpath] = (id, syntaxSort)
+              sortXpath[id] = (data, syntaxSort)
           elif 'Quantity' == datatype:
             level = str(int(level)+1)
-            id = id+'-1'
             xpath = xpath+'/@unitCode'
-            data = { 'level':level, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
-            if not dictID[xpath]:
+            if not xpath in dictID:
+              id = id+'-1'
+              parents[id] = parents[id[:-2]]
+              data = { 'level':level, 'parent':parent, 'BT':None, 'card':None, 'datatype':None, 'xpath':xpath }
               dictID[xpath] = id
               dictXpath[id] = data
+              sortID[xpath] = (id, syntaxSort)
+              sortXpath[id] = (data, syntaxSort)
+
+  for k,v in parents.items():
+    if v in parents and 'ibg-00' != v[:6]:
+      parents[k] = parents[v]
+  for k,v in parents.items():
+    if v[:6] in parents and 'ibg-00' != v[:6]:
+      parents[k] = parents[v[:6]]+v[-7:]
+  for k,v in parents.items():
+    if 2 == v.count('_'):
+      pass
+    elif 1 == v.count('_'):
+      parents[k] = v+'_------'
+    elif 0 == v.count('_'):
+      parents[k] = v+'_------_------'
 
   tree = ET.parse(in_file)
   root = tree.getroot()
   dic = etree_to_dict(root)
 
   dicJson = json.dumps(dic)
-  dicJson = re.sub('{' + ns[''] + '}', '', dicJson)
-  dicJson = re.sub('{' + ns['cac'] + '}', 'cac:', dicJson)
-  dicJson = re.sub('{' + ns['cbc'] + '}', 'cbc:', dicJson)
+  dicJson = re.sub('{'+ns['']+'}', '', dicJson)
+  dicJson = re.sub('{'+ns['cac']+'}', 'cac:', dicJson)
+  dicJson = re.sub('{'+ns['cbc']+'}', 'cbc:', dicJson)
+  dicJson = re.sub('{'+ns['xsi']+'}', 'cbc:', dicJson)
+  dicJson = re.sub('{'+ns['xsd']+'}', 'cbc:', dicJson)
   dic2 = json.loads(dicJson)
 
   tsv = []
-  tsv = dict_to_tsv(tsv, dic2)
+  dict_to_tsv(tsv, dic2)
   
   header = []
   column_header = []
   for v in tsv:
     case = v['case']
-    id = v['id']+'_'+str(case)
-    if 4 != case and id and not 'ibg-' in id and not id in header:
-      header.append(id)
-    base_id = v['base_id']
-    bough_id = v['bough_id']
-    twig_id = v['twig_id']
-    column_id = base_id+'_'+bough_id+'_'+twig_id
-    if not column_id in column_header:
-      column_header.append(column_id)
-  header.sort()
-  column_header.sort()
+    id = get_id(v)
+    if 4 != case and id and not 'ibg-' in id:
+      index = [x for x, y in enumerate(header) if y[0] == id]
+      if 1 == len(index):
+        pass
+      else:
+        if id in sortXpath:
+          header.append((id, sortXpath[id][1]))
+        else:
+          header.append((id, ''))
+    column_id = get_column_id(v)
+    sort_id = get_sort_id(v)
+    index = [x for x, y in enumerate(column_header) if y[0] == column_id]
+    if 1 == len(index):
+      pass
+    else:
+      column_header.append((column_id, sort_id))
+  
+  header = sorted(header, key=lambda d: d[1])
+  sortedHeader = [x[0] for x in header]
+  column_header = sorted(column_header, key=lambda d: d[1])
 
   max_index = 0
   for v in tsv:
     case = v['case']
-    id = v['id']
+    id = get_id(v)
     if 4 != case and id and not 'ibg-' in id:
-      index = header.index(id+'_'+str(case))
+      if id in sortedHeader:
+        index = sortedHeader.index(id)
+      else:
+        index = -1
       if index > max_index:
         max_index = index
 
-  column = [None] * (max_index + 1)
-  current_id = None
+  previous_id = None
   repetition = {}
   twigs = {}
-  row = []
+  row = {}
+  # row = []
+  column_length = max_index+2
+  column = ['']*column_length
   for v in tsv:
-    column_id = v['base_id']+'_'+v['bough_id']+'_'+v['twig_id']
-    if column != [None] * (max_index + 1) != column and \
-        'ibg-00' != id and current_id and current_id != column_id:
-      if bough_card:
-        if '..1' == bough_card[1:]:
-          bough_card = ''
-        elif '..n' == bough_card[1:]:
-          bough_card = 0
-          if bough_id in repetition:
-            bough_card = repetition[bough_id]
-      if twig_card:
-        if '..1' == twig_card[1:]:
-          twig_card = ''
-        elif '..n' == twig_card[1:]:
-          twig_card = 0
-          if twig_id in repetition:
-            twig_card = repetition[twig_id]
-          else:
-            twig_card = 0
-            repetition[twig_id] = 0
-          # assuming bough_id is in repetition:
-          if not bough_id in twigs:
-            twigs[bough_id] = []
-          if not twig_id in twigs[bough_id]:
-            twigs[bough_id].append(twig_id)
-      if verbose:
-        print('* bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card))
-      if bough_id and bough_id in dictXpath and 'BT' in dictXpath[bough_id]:
-        bough_name = dictXpath[bough_id]['BT']
-      else:
-        bough_name = ''
-      if twig_id and twig_id in dictXpath and 'BT' in dictXpath[twig_id]:
-        twig_name = dictXpath[twig_id]['BT']
-      else:
-        twig_name = ''
-      column_index = base_id+'_'+bough_id+'_'+str(bough_card)+'_'+twig_id+'_'+str(twig_card)
-      row.append({
-        'bough_id':bough_id, 'bough_card':bough_card, 'twig_id':twig_id, 'twig_card':twig_card, \
-        'column_index':column_index, 'bough_name':bough_name, 'twig_name':twig_name, 'column':column
-      })
-      column = [None] * (max_index + 1)
     case = v['case']
-    id = v['id']
-    base_id = v['base_id']
-    bough_id = v['bough_id']
-    twig_id = v['twig_id']
-    # tag = v['tag']
-    value = v['value'].encode('unicode_escape').decode('utf-8')
-    # path = v['path']
-    current_id = column_id
-    if bough_id and dictXpath[bough_id] and dictXpath[bough_id]['card']:
+    id = get_id(v)
+    if id in parents:
+      column_id = parents[id]
+    else:
+      print(f'--- ERROR --- {id} not in parents')
+    if 'ibg-00' != id and previous_id and previous_id != column_id:
+
+      append_tsv(previous_id, bough_card, twig_card, column, id)
+      
+      column = ['']*column_length
+    column[0] = column_id
+    m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+    base_id = m.group(1)
+    bough_id = m.group(2)
+    twig_id = m.group(3)
+    value = v['value']
+    # value = value.encode('unicode_escape').decode('utf-8')
+    if bough_id in dictXpath and 'card' in dictXpath[bough_id]:
       bough_card = dictXpath[bough_id]['card']
     else:
-      bough_id = ''
-      bough_card = ''
-    if twig_id and dictXpath[twig_id] and dictXpath[twig_id]['card']:
+      bough_card = '-'
+    if twig_id in dictXpath and 'card' in dictXpath[twig_id]:
       twig_card = dictXpath[twig_id]['card']
     else:
-      twig_id = ''
-      twig_card = ''
+      twig_card = '-'
     if 4 != case and id and not 'ibg-' in id:
-      index = header.index(id+'_'+str(case))
-      column[index] = value
+      if id in sortedHeader:
+        index = sortedHeader.index(id)
+        column[index+1] = value
     if 4 == case:
       if not id in repetition:
         repetition[id] = 0
@@ -301,47 +513,66 @@ if __name__ == '__main__':
           if twig_ids:
             for i in twig_ids:
               repetition[i] = 0
-    if verbose:
-      print('  bough:'+bough_id, str(bough_card), 'twig:'+twig_id, str(twig_card), \
-            'repetition:'+json.dumps(repetition), 'twigs:'+json.dumps(twigs))
+    previous_id = column_id
+  append_tsv(previous_id, bough_card, twig_card, column, id)
 
-  # see https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/  
-  sorted_row = sorted(row, key=itemgetter('column_index'))
-  # with open(file_path('test/data/sorted.tsv'), 'w') as f:
-  with open(out_file, 'w') as f:
+  # see https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
+  _row = []
+  for k,v in row.items():
+    _row.append({'column_sort':k, 'v':v})
+  tmp_row = sorted(_row, key=itemgetter('column_sort'))
+  sorted_row = [x['v'] for x in tmp_row]
+
+  N = 9
+  column = ['']*max_index
+  for i in range(max_index):
+    id = sortedHeader[i]
+    column[i] = id
+  sorted_row.insert(0,['']*N+column)
+
+  column = ['']*max_index
+  for i in range(max_index):
+    id = sortedHeader[i]
+    if id and id in dictXpath and 'BT' in dictXpath[id]:
+      column[i] = dictXpath[id]['BT']
+  sorted_row.insert(1,['']*N+column)
+
+  column = ['']*max_index
+  for i in range(max_index):
+    id = sortedHeader[i]
+    if id and id in dictXpath and 'xpath' in dictXpath[id]:
+      column[i] = dictXpath[id]['xpath']
+  sorted_row.insert(2,['']*N+column)
+
+  with open(tmp_file, 'w') as f:
     writer = csv.writer(f, delimiter='\t')
-    N = 7
-    id = None
-    prev_id = None
-    column = [None] * (max_index + 1)
-    for i in range(max_index + 1):
-      id = header[i]
-      if '-' == id[-2:-1]:
-        if verbose:
-          print('header %s has - in %s' % i, id)
-      else:
-        if prev_id and '_2' == prev_id[-2:] and '_3' == id[-2:] and prev_id[:-2] == id[:-2]:
-          column[i] = id[:-2]+'-1'
-        else:
-          column[i] = id[:-2]
-      prev_id = id
-    writer.writerow([None] * N + column)
-    column = [None] * (max_index + 1)
-    for i in range(max_index + 1):
-      id = header[i]
-      if id and id[:-2] in dictXpath and 'BT' in dictXpath[id[:-2]]:
-        column[i] = dictXpath[id[:-2]]['BT']
-      else:
-        column[i] = ''
-    writer.writerow([None] * N + column)
-    column = [None] * (max_index + 1)
-    for i in range(max_index + 1):
-      id = header[i]
-      if id and id[:-2] in dictXpath and 'xpath' in dictXpath[id[:-2]]:
-        column[i] = dictXpath[id[:-2]]['xpath']
-      else:
-        column[i] = ''
-    writer.writerow([None] * N + column)
     for v in sorted_row:
-      writer.writerow([ v['bough_id'], v['bough_card'], v['twig_id'], v['twig_card'], \
-                        v['column_index'], v['bough_name'], v['twig_name'] ] + v['column'])
+      writer.writerow(v)
+
+  # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
+  # transposed_row = np.array(sorted_row).T.tolist() ## DONT WORK FOR Write file
+  transposed_row = [list(i) for i in zip(*sorted_row)]
+
+  dictRow = {}
+  for i in range(9, len(transposed_row)):
+    # id = transposed_row[i][0]
+    # if id in dictXpath and 'BT_ja' in dictXpath[id]:
+    #   transposed_row[i][2] = dictXpath[id]['BT_ja']
+    dictRow[transposed_row[i][0]] = transposed_row[i]
+
+  transposed = []
+  for x,v in dictXpath.items():
+    if 'ibg-' in x:
+      transposed.append([x, dictXpath[x]['BT']]+['']*(len(transposed_row[0])-2))
+    elif x in dictRow:
+      transposed.append(dictRow[x])
+
+  with open(out_file, 'w', encoding='UTF-8') as f:
+    writer = csv.writer(f, delimiter='\t')
+    for i in range(8):
+      writer.writerow(transposed_row[i])
+    for l in transposed:
+      writer.writerow(l)
+
+  if verbose:
+    print('*** END ***')

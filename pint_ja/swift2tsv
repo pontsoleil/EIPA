@@ -1,0 +1,382 @@
+#!/usr/bin/env python3
+#coding: utf-8
+#
+# generate TSV from ISO 20022 XML Schema
+# 
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+import collections
+import xml.etree.ElementTree as ET
+import csv
+import re
+import json
+import sys 
+import os
+import argparse
+
+from dic2etree import *
+
+simpleType = {}
+complexType = {}
+abbreviations = {}
+rootName = ''
+rootType = ''
+
+def file_path(pathname):
+  if '/' == pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+def namespce_code(dic):
+  dicJson = json.dumps(dic)
+  dicJson = re.sub('{' + ns['xsd'] + '}', 'sch:', dicJson)
+  dicJson = re.sub('{' + ns['xsi'] + '}', 'sch:', dicJson)
+  dicJson = re.sub('{' + ns['sch'] + '}', 'sch:', dicJson)
+  return json.loads(dicJson)
+
+def getType(el):
+  if el in complexType:
+    tp = complexType[el]['type']
+    return tp
+  if el in simpleType:
+    tp = simpleType[el]
+    return tp
+  return None
+
+def pathDepth(path):
+  listOfElems = path.split('cac')
+  return len(listOfElems)
+
+def pathElement(path):
+  listOfElems = path[1:].split('/')
+  return listOfElems[len(listOfElems) -1]
+
+# def parse_simple(dic):
+# dic2['sch:schema']['sch:simpleType']
+#   [
+#     { '@name':'...',
+#       'sch:restriction':{
+#         'sch:pattern':{...},
+#         'sch:enumeration':[...],
+#         '@base':'xs:...'
+#       }
+#     },
+#   ]
+def processSimple(dic):
+  if dic and isinstance(dic, dict):
+    name = dic['@name']
+    restriction = dic['sch:restriction']
+    base = restriction['@base']
+    data = {'base':base}
+    if 'sch:enumeration' in restriction:
+      enumeration = restriction['sch:enumeration']
+      if isinstance(enumeration, list):
+        enum_data = []
+        for d in enumeration:
+          enum_data.append(d['@value'])
+        data['enumeration'] = enum_data
+    if 'sch:pattern' in restriction:
+      pattern = restriction['sch:pattern']
+      data['pattern'] = pattern
+    simpleType[name] = data
+  elif dic and isinstance(dic, list):
+    for element in dic:
+      processSimple(element)
+
+# dic2['sch:schema']['sch:complexType']
+#   [
+#     { '@name': '...',
+#       'sch:sequence': {
+#         'sch:choice': {
+#           'sch:element': [{...}, {...}, {...}, {...}]
+#         }
+#       }
+#     },
+#     { '@name': '...',
+#       'sch:sequence': {
+#         'sch:element': [
+#           {'@name': '...', '@type': '...', '@minOccurs': '0', '@maxOccurs': '1'},
+#         ]
+#       }
+#     }
+#   ]
+def processComplex(dic):
+  def set_data(el):
+    element_name = el['@name']
+    element_type = el['@type']
+    data = {'name':element_name, 'type':element_type}
+    if '@minOccurs' in el:
+      minOccurs = el['@minOccurs']
+      data['minOccurs'] = minOccurs
+    if '@maxOccurs' in el:
+      maxOccurs = el['@maxOccurs']
+      data['maxOccurs'] = maxOccurs
+    return data
+  if dic and isinstance(dic, dict):
+    cType = dic
+    type_name = cType['@name']
+    complexType[type_name] = {}
+    if 'sch:simpleContent' in cType:
+      if 'sch:extension' in cType['sch:simpleContent']:
+        type_extension = cType['sch:simpleContent']['sch:extension']
+        if 'sch:attribute' in type_extension:
+          type_attribute = cType['sch:simpleContent']['sch:extension']['sch:attribute']
+          attribute_name = type_attribute['@name']
+          record = {'name':attribute_name}
+          if '@type' in type_attribute:
+            record['type'] = type_attribute['@type']
+          if '@use' in type_attribute:
+            record['use'] = type_attribute['@use']
+          complexType[type_name]['attribute'] = record
+        if '@base' in type_extension:
+          complexType[type_name]['base'] = type_extension['@base']
+    elif 'sch:choice' in cType:
+      choice = cType['sch:choice']['sch:element']
+      ch_data = None
+      if isinstance(choice, list):
+        ch_data = []
+        for ch in choice:
+          data = set_data(ch)
+          ch_data.append(data)
+      # record = {'name': type_name, 'choice':ch_data}
+      complexType[type_name]['choice'] = ch_data
+    elif 'sch:sequence' in cType:
+      type_sequence = cType['sch:sequence']
+      if 'sch:choice' in type_sequence:
+        choice = type_sequence['sch:choice']['sch:element']
+        ch_data = None
+        if isinstance(choice, list):
+          ch_data = []
+          for ch in choice:
+            data = set_data(ch)
+            ch_data.append(data)
+        # record = {'name': type_name, 'choice':ch_data}
+        complexType[type_name]['choice'] = ch_data
+      elif 'sch:element' in type_sequence:
+        type_sequence = type_sequence['sch:element']
+        if isinstance(type_sequence, dict):
+            el = type_sequence
+            data = set_data(el)
+            complexType[type_name]['sequence'] = data
+        if isinstance(type_sequence, list):
+          complexType[type_name]['sequence'] = []
+          for el in type_sequence:
+            data = set_data(el)
+            complexType[type_name]['sequence'].append(data)
+  elif dic and isinstance(dic, list):
+    for cType in dic:
+      processComplex(cType)
+
+def createRecord(type_, path, level, option):
+    if verbose:
+      print(level, path)
+    abbreviation = pathElement(path)
+    spaced = re.sub('([0-9]+)', r' \1', abbreviation)
+    spaced = re.sub('([A-Z]+)', r' \1', spaced)
+    spaced = re.sub('([A-Z][a-z]+)', r' \1', spaced)
+    splitted = spaced.split()
+    name = ' '.join([abbreviations[x] if x in abbreviations else x for x in splitted])
+    if isinstance(type_, dict):
+      tp = None
+      if 'sequence' in type_:
+        type_ = type_['sequence']
+      if isinstance(type_, list):
+        record = {'level':level, 'name':name, 'abbreviation':abbreviation, 'type':rootType, 'path':path, 'option':option}
+        records.append(record)
+        for el in type_:
+          createRecord(el, path+'/'+el['name'], level+1, None)
+        return
+      if 'type' in type_:
+        tp = type_['type']
+      record = {'level':level, 'name':name, 'abbreviation':abbreviation, 'type':tp, 'path':path, 'option':option}
+      if 'minOccurs' in type_:
+        record['minOccurs'] = type_['minOccurs']
+      if 'maxOccurs' in type_:
+        record['maxOccurs'] = type_['maxOccurs']
+      if 'choice' in type_:
+        choice = type_['choice']
+      if abbreviation in simpleType:
+        _type = simpleType[abbreviation]
+        record['type'] = _type
+        records.append(record)
+      elif abbreviation in complexType:
+        records.append(record)
+        cType = complexType[abbreviation]
+        if 'sequence' in cType:
+          sequence = cType['sequence']
+          if isinstance(sequence, dict):
+            createRecord(sequence, path+'/'+sequence['name'], level+1, None)
+          elif isinstance(sequence, list):
+            for el in sequence:
+              createRecord(el, path+'/'+el['name'], level+1, None)
+        else:
+          createRecord(cType, path+'/'+abbreviation, level+1, None)
+      elif tp and tp in simpleType:
+        record['type'] = tp
+        sType = simpleType[tp]
+        if 'base' in sType:
+          base = sType['base']
+          record['base'] = base
+        if 'enumeration' in sType:
+          enumeration = ' '.join(sType['enumeration'])
+          record['enumeration'] = enumeration
+        elif 'pattern' in sType:
+          pattern = sType['pattern']['@value']
+          record['pattern'] = pattern
+        records.append(record)
+      elif tp and tp in complexType:
+        cType = complexType[tp]
+        if 'type' in cType:
+          record['type'] = cType['type']
+        if 'choice' in cType:
+          records.append(record)
+          choice = cType['choice']
+          if isinstance(choice, list):
+            for el in choice:
+              if isinstance(el, dict):
+                createRecord(el, path+'/'+el['name'], level+1, 'choice')
+        elif 'sequence' in cType:
+          records.append(record)
+          sequence = cType['sequence']
+          if isinstance(sequence, dict):
+            createRecord(cType, path+'/'+cType['name'], level+1, None)
+          elif isinstance(sequence, list):
+            for el in sequence:
+              createRecord(el, path+'/'+el['name'], level+1, None)
+        # attribute base
+        elif 'base' in cType:
+          base = cType['base']
+          _base = simpleType[base]['base']
+          record['base'] = base+' ('+_base+')'
+          if 'attribute' in cType:
+            attribute = cType['attribute']
+            record['attribute'] = '@'+attribute['name']+' ('+attribute['type']+':'+attribute['use']+')'
+          records.append(record)
+      return
+    if isinstance(type_, list):
+      for el in type_:
+        createRecord(el, path+'/'+el['name'], level+1, None)
+      return
+    return
+
+if __name__ == '__main__':
+  # Create the parser
+  parser = argparse.ArgumentParser(prog='invoice2tsv',
+                                  usage='%(prog)s [options] infile -n name -t type -o out',
+                                  description='ISO 20022 XMLファイルをTSVファイルに変換')
+  # Add the arguments
+  parser.add_argument('inFile', metavar='infile', type=str, help='入力XMLファイル')
+  parser.add_argument('-n', '--name')
+  parser.add_argument('-t', '--type')
+  parser.add_argument('-o', '--out')
+  parser.add_argument('-v', '--verbose', action='store_true')
+  args = parser.parse_args()
+  in_file = file_path(args.inFile)
+  pre, ext = os.path.splitext(in_file)
+  tmp_file = pre + '.tmp'
+  if args.out:
+    out_file = file_path(args.out)
+  else:
+    out_file = pre + '.tsv'
+  rootName = args.name
+  if rootName:
+    rootName = rootName.lstrip()
+  else:
+    rootName = 'Document'
+  rootType = args.type
+  if rootType:
+    rootType = rootType.lstrip()
+  else:
+    rootType = 'Document'
+  verbose = args.verbose
+  # Check if infile exists
+  if not os.path.isfile(in_file):
+    print('入力ファイルがありません')
+    sys.exit()
+  if verbose:
+    print('** START ** ', __file__)
+  
+  abbreviation_file = file_path('data/ISO20022/XML_Tags.tsv')
+
+  tree = ET.parse(in_file)
+  root = tree.getroot()
+  dic = etree_to_dict(root)
+  dic2 = namespce_code(dic)
+  processSimple(dic2['sch:schema']['sch:simpleType'])
+  processComplex(dic2['sch:schema']['sch:complexType'])
+
+  with open(abbreviation_file) as f:
+    reader = csv.reader(f, delimiter='\t')
+    for row in reader:
+      abbreviations[row[0]] = row[1]
+     
+  records = []
+  targetType = complexType[rootType]
+
+  createRecord(targetType, '/'+rootName, 0, None)
+
+  with open(out_file, 'w') as f:
+    writer = csv.writer(f, delimiter='\t')
+    record = ['seq', 'level', 'option', 'name', 'abbreviation', 'datatype', 'enumeration/pattern', 'occurrence', 'XPath']
+    writer.writerow(record)
+    seq = 1000
+    for d in records:
+      name = d['name']
+      abbreviation = d['abbreviation']
+      path = d['path']
+      level = d['level']
+      datatype = d['type']
+      base = ''
+      if 'base' in d:
+        base = d['base']
+        attribute = ''
+        if 'attribute' in d:
+          attribute = ' '+d['attribute']
+        datatype += ' ('+base+attribute+')'
+      enum_pattern = ''
+      if 'enumeration' in d:
+        enum_pattern += d['enumeration']
+      if 'pattern' in d:
+        enum_pattern += d['pattern']
+      option = ''
+      if 'option' in d:
+        option = d['option']
+      occurrence = ''
+      if 'minOccurs' in d:
+        occurrence = d['minOccurs']+'..'
+        if 'unbounded' == d['maxOccurs']:
+          occurrence += 'n'
+        else:
+          occurrence += str(d['maxOccurs'])
+      if '' == occurrence:
+        occurrence = '1'
+      if 'choice' == option:
+        option = " "+"-"*(level-1)+" Chc"
+      record = [seq, level, option, name, abbreviation, datatype, enum_pattern, occurrence, path]
+      writer.writerow(record)
+      seq += 10
