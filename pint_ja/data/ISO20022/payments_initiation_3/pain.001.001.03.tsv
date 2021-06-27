@@ -1,0 +1,941 @@
+seq	level	option	name	abbreviation	datatype	enumeration/pattern	occurrence	XPath
+1000	0		Document	Document	CustomerCreditTransferInitiationV03		1	/Document
+1010	1		Customer Credit Transfer Initiation	CstmrCdtTrfInitn	CustomerCreditTransferInitiationV03		1	/Document/CstmrCdtTrfInitn
+1020	2		Group Header	GrpHdr	GroupHeader32		1	/Document/CstmrCdtTrfInitn/GrpHdr
+1030	3		Message Identification	MsgId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/MsgId
+1040	3		Creation Date Time	CreDtTm	ISODateTime (xs:dateTime)		1	/Document/CstmrCdtTrfInitn/GrpHdr/CreDtTm
+1050	3		Authorisation	Authstn	Authorisation1Choice		0..2	/Document/CstmrCdtTrfInitn/GrpHdr/Authstn
+1060	4	 --- Chc	Code	Cd	Authorisation1Code (xs:string)	AUTH FDET FSUM ILEV	1	/Document/CstmrCdtTrfInitn/GrpHdr/Authstn/Cd
+1070	4	 --- Chc	Proprietary	Prtry	Max128Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/Authstn/Prtry
+1080	3		Number Of Transactions	NbOfTxs	Max15NumericText (xs:string)	[0-9]{1,15}	1	/Document/CstmrCdtTrfInitn/GrpHdr/NbOfTxs
+1090	3		Control Sum	CtrlSum	DecimalNumber (xs:decimal)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/CtrlSum
+1100	3		Initiating Party	InitgPty	PartyIdentification32		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty
+1110	4		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Nm
+1120	4		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr
+1130	5		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/AdrTp
+1140	5		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/Dept
+1150	5		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/SubDept
+1160	5		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/StrtNm
+1170	5		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/BldgNb
+1180	5		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/PstCd
+1190	5		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/TwnNm
+1200	5		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/CtrySubDvsn
+1210	5		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/Ctry
+1220	5		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/PstlAdr/AdrLine
+1230	4		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id
+1240	5	 ---- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId
+1250	6		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/BICOrBEI
+1260	6		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/Othr
+1270	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/Othr/Id
+1280	7		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/Othr/SchmeNm
+1290	8	 ------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/Othr/SchmeNm/Cd
+1300	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/Othr/SchmeNm/Prtry
+1310	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/OrgId/Othr/Issr
+1320	5	 ---- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId
+1330	6		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/DtAndPlcOfBirth
+1340	7		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+1350	7		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+1360	7		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+1370	7		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+1380	6		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/Othr
+1390	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/Othr/Id
+1400	7		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/Othr/SchmeNm
+1410	8	 ------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/Othr/SchmeNm/Cd
+1420	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/Othr/SchmeNm/Prtry
+1430	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/Id/PrvtId/Othr/Issr
+1440	4		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtryOfRes
+1450	4		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls
+1460	5		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/NmPrfx
+1470	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/Nm
+1480	5		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/PhneNb
+1490	5		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/MobNb
+1500	5		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/FaxNb
+1510	5		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/EmailAdr
+1520	5		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/InitgPty/CtctDtls/Othr
+1530	3		Forwarding Agent	FwdgAgt	BranchAndFinancialInstitutionIdentification4		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt
+1540	4		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId
+1550	5		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/BIC
+1560	5		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/ClrSysMmbId
+1570	6		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/ClrSysMmbId/ClrSysId
+1580	7	 ------ Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+1590	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+1600	6		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/ClrSysMmbId/MmbId
+1610	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Nm
+1620	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr
+1630	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/AdrTp
+1640	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/Dept
+1650	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/SubDept
+1660	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/StrtNm
+1670	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/BldgNb
+1680	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/PstCd
+1690	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/TwnNm
+1700	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/CtrySubDvsn
+1710	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/Ctry
+1720	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/PstlAdr/AdrLine
+1730	5		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Othr
+1740	6		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Othr/Id
+1750	6		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Othr/SchmeNm
+1760	7	 ------ Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Othr/SchmeNm/Cd
+1770	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Othr/SchmeNm/Prtry
+1780	6		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/FinInstnId/Othr/Issr
+1790	4		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId
+1800	5		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/Id
+1810	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/Nm
+1820	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr
+1830	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/AdrTp
+1840	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/Dept
+1850	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/SubDept
+1860	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/StrtNm
+1870	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/BldgNb
+1880	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/PstCd
+1890	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/TwnNm
+1900	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/CtrySubDvsn
+1910	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/Ctry
+1920	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/GrpHdr/FwdgAgt/BrnchId/PstlAdr/AdrLine
+1930	2		Payment Information	PmtInf	PaymentInstructionInformation3		1..n	/Document/CstmrCdtTrfInitn/PmtInf
+1940	3		Payment Information Identification	PmtInfId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtInfId
+1950	3		Payment Method	PmtMtd	PaymentMethod3Code (xs:string)	CHK TRF TRA	1	/Document/CstmrCdtTrfInitn/PmtInf/PmtMtd
+1960	3		Batch Booking	BtchBookg	BatchBookingIndicator (xs:boolean)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/BtchBookg
+1970	3		Number Of Transactions	NbOfTxs	Max15NumericText (xs:string)	[0-9]{1,15}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/NbOfTxs
+1980	3		Control Sum	CtrlSum	DecimalNumber (xs:decimal)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CtrlSum
+1990	3		Payment Type Information	PmtTpInf	PaymentTypeInformation19		0..1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf
+2000	4		Instruction Priority	InstrPrty	Priority2Code (xs:string)	HIGH NORM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/InstrPrty
+2010	4		Service Level	SvcLvl	ServiceLevel8Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/SvcLvl
+2020	5	 ---- Chc	Code	Cd	ExternalServiceLevel1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/SvcLvl/Cd
+2030	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/SvcLvl/Prtry
+2040	4		Local Instrument	LclInstrm	LocalInstrument2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/LclInstrm
+2050	5	 ---- Chc	Code	Cd	ExternalLocalInstrument1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/LclInstrm/Cd
+2060	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/LclInstrm/Prtry
+2070	4		Category Purpose	CtgyPurp	CategoryPurpose1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/CtgyPurp
+2080	5	 ---- Chc	Code	Cd	ExternalCategoryPurpose1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/CtgyPurp/Cd
+2090	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/PmtTpInf/CtgyPurp/Prtry
+2100	3		Requested Execution Date	ReqdExctnDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/ReqdExctnDt
+2110	3		Pooling Adjustment Date	PoolgAdjstmntDt	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/PoolgAdjstmntDt
+2120	3		Debtor	Dbtr	PartyIdentification32		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr
+2130	4		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Nm
+2140	4		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr
+2150	5		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/AdrTp
+2160	5		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/Dept
+2170	5		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/SubDept
+2180	5		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/StrtNm
+2190	5		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/BldgNb
+2200	5		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/PstCd
+2210	5		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/TwnNm
+2220	5		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/CtrySubDvsn
+2230	5		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/Ctry
+2240	5		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/PstlAdr/AdrLine
+2250	4		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id
+2260	5	 ---- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId
+2270	6		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/BICOrBEI
+2280	6		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/Othr
+2290	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/Othr/Id
+2300	7		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/Othr/SchmeNm
+2310	8	 ------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/Othr/SchmeNm/Cd
+2320	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/Othr/SchmeNm/Prtry
+2330	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/OrgId/Othr/Issr
+2340	5	 ---- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId
+2350	6		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/DtAndPlcOfBirth
+2360	7		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+2370	7		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+2380	7		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+2390	7		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+2400	6		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/Othr
+2410	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/Othr/Id
+2420	7		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/Othr/SchmeNm
+2430	8	 ------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/Othr/SchmeNm/Cd
+2440	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/Othr/SchmeNm/Prtry
+2450	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/Id/PrvtId/Othr/Issr
+2460	4		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtryOfRes
+2470	4		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls
+2480	5		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/NmPrfx
+2490	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/Nm
+2500	5		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/PhneNb
+2510	5		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/MobNb
+2520	5		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/FaxNb
+2530	5		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/EmailAdr
+2540	5		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/Dbtr/CtctDtls/Othr
+2550	3		Debtor Account	DbtrAcct	CashAccount16		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct
+2560	4		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id
+2570	5	 ---- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/IBAN
+2580	5	 ---- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/Othr
+2590	6		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/Othr/Id
+2600	6		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/Othr/SchmeNm
+2610	7	 ------ Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/Othr/SchmeNm/Cd
+2620	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/Othr/SchmeNm/Prtry
+2630	6		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Id/Othr/Issr
+2640	4		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Tp
+2650	5	 ---- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Tp/Cd
+2660	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Tp/Prtry
+2670	4		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Ccy
+2680	4		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAcct/Nm
+2690	3		Debtor Agent	DbtrAgt	BranchAndFinancialInstitutionIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt
+2700	4		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId
+2710	5		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/BIC
+2720	5		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/ClrSysMmbId
+2730	6		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/ClrSysMmbId/ClrSysId
+2740	7	 ------ Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+2750	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+2760	6		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/ClrSysMmbId/MmbId
+2770	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Nm
+2780	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr
+2790	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/AdrTp
+2800	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/Dept
+2810	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/SubDept
+2820	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/StrtNm
+2830	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/BldgNb
+2840	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/PstCd
+2850	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/TwnNm
+2860	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/CtrySubDvsn
+2870	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/Ctry
+2880	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/PstlAdr/AdrLine
+2890	5		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Othr
+2900	6		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Othr/Id
+2910	6		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Othr/SchmeNm
+2920	7	 ------ Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Othr/SchmeNm/Cd
+2930	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Othr/SchmeNm/Prtry
+2940	6		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/FinInstnId/Othr/Issr
+2950	4		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId
+2960	5		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/Id
+2970	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/Nm
+2980	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr
+2990	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/AdrTp
+3000	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/Dept
+3010	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/SubDept
+3020	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/StrtNm
+3030	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/BldgNb
+3040	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/PstCd
+3050	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/TwnNm
+3060	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/CtrySubDvsn
+3070	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/Ctry
+3080	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgt/BrnchId/PstlAdr/AdrLine
+3090	3		Debtor Agent Account	DbtrAgtAcct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct
+3100	4		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id
+3110	5	 ---- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/IBAN
+3120	5	 ---- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/Othr
+3130	6		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/Othr/Id
+3140	6		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/Othr/SchmeNm
+3150	7	 ------ Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/Othr/SchmeNm/Cd
+3160	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/Othr/SchmeNm/Prtry
+3170	6		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Id/Othr/Issr
+3180	4		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Tp
+3190	5	 ---- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Tp/Cd
+3200	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Tp/Prtry
+3210	4		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Ccy
+3220	4		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/DbtrAgtAcct/Nm
+3230	3		Ultimate Debtor	UltmtDbtr	PartyIdentification32		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr
+3240	4		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Nm
+3250	4		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr
+3260	5		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/AdrTp
+3270	5		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/Dept
+3280	5		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/SubDept
+3290	5		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/StrtNm
+3300	5		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/BldgNb
+3310	5		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/PstCd
+3320	5		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/TwnNm
+3330	5		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/CtrySubDvsn
+3340	5		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/Ctry
+3350	5		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/PstlAdr/AdrLine
+3360	4		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id
+3370	5	 ---- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId
+3380	6		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/BICOrBEI
+3390	6		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/Othr
+3400	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/Othr/Id
+3410	7		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/Othr/SchmeNm
+3420	8	 ------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/Othr/SchmeNm/Cd
+3430	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/Othr/SchmeNm/Prtry
+3440	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/OrgId/Othr/Issr
+3450	5	 ---- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId
+3460	6		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth
+3470	7		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+3480	7		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+3490	7		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+3500	7		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+3510	6		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/Othr
+3520	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/Othr/Id
+3530	7		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/Othr/SchmeNm
+3540	8	 ------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/Othr/SchmeNm/Cd
+3550	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/Othr/SchmeNm/Prtry
+3560	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/Id/PrvtId/Othr/Issr
+3570	4		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtryOfRes
+3580	4		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls
+3590	5		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/NmPrfx
+3600	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/Nm
+3610	5		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/PhneNb
+3620	5		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/MobNb
+3630	5		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/FaxNb
+3640	5		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/EmailAdr
+3650	5		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/UltmtDbtr/CtctDtls/Othr
+3660	3		Charge Bearer	ChrgBr	ChargeBearerType1Code (xs:string)	DEBT CRED SHAR SLEV	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgBr
+3670	3		Charges Account	ChrgsAcct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct
+3680	4		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id
+3690	5	 ---- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/IBAN
+3700	5	 ---- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/Othr
+3710	6		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/Othr/Id
+3720	6		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/Othr/SchmeNm
+3730	7	 ------ Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/Othr/SchmeNm/Cd
+3740	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/Othr/SchmeNm/Prtry
+3750	6		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Id/Othr/Issr
+3760	4		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Tp
+3770	5	 ---- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Tp/Cd
+3780	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Tp/Prtry
+3790	4		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Ccy
+3800	4		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcct/Nm
+3810	3		Charges Account Agent	ChrgsAcctAgt	BranchAndFinancialInstitutionIdentification4		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt
+3820	4		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId
+3830	5		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/BIC
+3840	5		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/ClrSysMmbId
+3850	6		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/ClrSysMmbId/ClrSysId
+3860	7	 ------ Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+3870	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+3880	6		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/ClrSysMmbId/MmbId
+3890	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Nm
+3900	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr
+3910	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/AdrTp
+3920	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/Dept
+3930	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/SubDept
+3940	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/StrtNm
+3950	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/BldgNb
+3960	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/PstCd
+3970	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/TwnNm
+3980	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/CtrySubDvsn
+3990	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/Ctry
+4000	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/PstlAdr/AdrLine
+4010	5		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Othr
+4020	6		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Othr/Id
+4030	6		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Othr/SchmeNm
+4040	7	 ------ Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Othr/SchmeNm/Cd
+4050	7	 ------ Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Othr/SchmeNm/Prtry
+4060	6		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/FinInstnId/Othr/Issr
+4070	4		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId
+4080	5		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/Id
+4090	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/Nm
+4100	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr
+4110	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/AdrTp
+4120	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/Dept
+4130	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/SubDept
+4140	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/StrtNm
+4150	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/BldgNb
+4160	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/PstCd
+4170	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/TwnNm
+4180	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/CtrySubDvsn
+4190	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/Ctry
+4200	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/ChrgsAcctAgt/BrnchId/PstlAdr/AdrLine
+4210	3		Credit Transfer Transaction Information	CdtTrfTxInf	CreditTransferTransactionInformation10		1..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf
+4220	4		Payment Identification	PmtId	PaymentIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtId
+4230	5		Instruction Identification	InstrId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtId/InstrId
+4240	5		End To End Identification	EndToEndId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtId/EndToEndId
+4250	4		Payment Type Information	PmtTpInf	PaymentTypeInformation19		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf
+4260	5		Instruction Priority	InstrPrty	Priority2Code (xs:string)	HIGH NORM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/InstrPrty
+4270	5		Service Level	SvcLvl	ServiceLevel8Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/SvcLvl
+4280	6	 ----- Chc	Code	Cd	ExternalServiceLevel1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/SvcLvl/Cd
+4290	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/SvcLvl/Prtry
+4300	5		Local Instrument	LclInstrm	LocalInstrument2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/LclInstrm
+4310	6	 ----- Chc	Code	Cd	ExternalLocalInstrument1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/LclInstrm/Cd
+4320	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/LclInstrm/Prtry
+4330	5		Category Purpose	CtgyPurp	CategoryPurpose1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/CtgyPurp
+4340	6	 ----- Chc	Code	Cd	ExternalCategoryPurpose1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/CtgyPurp/Cd
+4350	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/PmtTpInf/CtgyPurp/Prtry
+4360	4		Amount	Amt	AmountType3Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Amt
+4370	5	 ---- Chc	Instructed Amount	InstdAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Amt/InstdAmt
+4380	5	 ---- Chc	Equivalent Amount	EqvtAmt	EquivalentAmount2		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Amt/EqvtAmt
+4390	6		Amount	Amt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Amt/EqvtAmt/Amt
+4400	6		Currency Of Transfer	CcyOfTrf	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Amt/EqvtAmt/CcyOfTrf
+4410	4		Exchange Rate Information	XchgRateInf	ExchangeRateInformation1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/XchgRateInf
+4420	5		Exchange Rate	XchgRate	BaseOneRate (xs:decimal)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/XchgRateInf/XchgRate
+4430	5		Rate Type	RateTp	ExchangeRateType1Code (xs:string)	SPOT SALE AGRD	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/XchgRateInf/RateTp
+4440	5		Contract Identification	CtrctId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/XchgRateInf/CtrctId
+4450	4		Charge Bearer	ChrgBr	ChargeBearerType1Code (xs:string)	DEBT CRED SHAR SLEV	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChrgBr
+4460	4		Cheque Instruction	ChqInstr	Cheque6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr
+4470	5		Cheque Type	ChqTp	ChequeType2Code (xs:string)	CCHQ CCCH BCHQ DRFT ELDR	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqTp
+4480	5		Cheque Number	ChqNb	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqNb
+4490	5		Cheque From	ChqFr	NameAndAddress10		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr
+4500	6		Name	Nm	Max140Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Nm
+4510	6		Address	Adr	PostalAddress6		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr
+4520	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/AdrTp
+4530	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/Dept
+4540	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/SubDept
+4550	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/StrtNm
+4560	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/BldgNb
+4570	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/PstCd
+4580	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/TwnNm
+4590	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/CtrySubDvsn
+4600	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/Ctry
+4610	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqFr/Adr/AdrLine
+4620	5		Delivery Method	DlvryMtd	ChequeDeliveryMethod1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvryMtd
+4630	6	 ----- Chc	Code	Cd	ChequeDelivery1Code (xs:string)	MLDB MLCD MLFA CRDB CRCD CRFA PUDB PUCD PUFA RGDB RGCD RGFA	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvryMtd/Cd
+4640	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvryMtd/Prtry
+4650	5		Deliver To	DlvrTo	NameAndAddress10		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo
+4660	6		Name	Nm	Max140Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Nm
+4670	6		Address	Adr	PostalAddress6		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr
+4680	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/AdrTp
+4690	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/Dept
+4700	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/SubDept
+4710	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/StrtNm
+4720	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/BldgNb
+4730	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/PstCd
+4740	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/TwnNm
+4750	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/CtrySubDvsn
+4760	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/Ctry
+4770	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/DlvrTo/Adr/AdrLine
+4780	5		Instruction Priority	InstrPrty	Priority2Code (xs:string)	HIGH NORM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/InstrPrty
+4790	5		Cheque Maturity Date	ChqMtrtyDt	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/ChqMtrtyDt
+4800	5		Forms Code	FrmsCd	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/FrmsCd
+4810	5		Memo Field	MemoFld	Max35Text (xs:string)		0..2	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/MemoFld
+4820	5		Regional Clearing Zone	RgnlClrZone	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/RgnlClrZone
+4830	5		Print Location	PrtLctn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/ChqInstr/PrtLctn
+4840	4		Ultimate Debtor	UltmtDbtr	PartyIdentification32		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr
+4850	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Nm
+4860	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr
+4870	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/AdrTp
+4880	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/Dept
+4890	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/SubDept
+4900	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/StrtNm
+4910	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/BldgNb
+4920	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/PstCd
+4930	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/TwnNm
+4940	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/CtrySubDvsn
+4950	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/Ctry
+4960	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/PstlAdr/AdrLine
+4970	5		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id
+4980	6	 ----- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId
+4990	7		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/BICOrBEI
+5000	7		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/Othr
+5010	8		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/Othr/Id
+5020	8		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/Othr/SchmeNm
+5030	9	 -------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/Othr/SchmeNm/Cd
+5040	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/Othr/SchmeNm/Prtry
+5050	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/OrgId/Othr/Issr
+5060	6	 ----- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId
+5070	7		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth
+5080	8		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+5090	8		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+5100	8		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+5110	8		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+5120	7		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/Othr
+5130	8		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/Othr/Id
+5140	8		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/Othr/SchmeNm
+5150	9	 -------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/Othr/SchmeNm/Cd
+5160	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/Othr/SchmeNm/Prtry
+5170	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/Id/PrvtId/Othr/Issr
+5180	5		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtryOfRes
+5190	5		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls
+5200	6		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/NmPrfx
+5210	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/Nm
+5220	6		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/PhneNb
+5230	6		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/MobNb
+5240	6		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/FaxNb
+5250	6		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/EmailAdr
+5260	6		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtDbtr/CtctDtls/Othr
+5270	4		Intermediary Agent 1	IntrmyAgt1	BranchAndFinancialInstitutionIdentification4		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1
+5280	5		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId
+5290	6		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/BIC
+5300	6		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/ClrSysMmbId
+5310	7		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/ClrSysMmbId/ClrSysId
+5320	8	 ------- Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+5330	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+5340	7		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/ClrSysMmbId/MmbId
+5350	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Nm
+5360	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr
+5370	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/AdrTp
+5380	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/Dept
+5390	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/SubDept
+5400	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/StrtNm
+5410	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/BldgNb
+5420	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/PstCd
+5430	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/TwnNm
+5440	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/CtrySubDvsn
+5450	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/Ctry
+5460	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/PstlAdr/AdrLine
+5470	6		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Othr
+5480	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Othr/Id
+5490	7		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Othr/SchmeNm
+5500	8	 ------- Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Othr/SchmeNm/Cd
+5510	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Othr/SchmeNm/Prtry
+5520	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/FinInstnId/Othr/Issr
+5530	5		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId
+5540	6		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/Id
+5550	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/Nm
+5560	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr
+5570	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/AdrTp
+5580	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/Dept
+5590	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/SubDept
+5600	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/StrtNm
+5610	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/BldgNb
+5620	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/PstCd
+5630	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/TwnNm
+5640	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/CtrySubDvsn
+5650	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/Ctry
+5660	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1/BrnchId/PstlAdr/AdrLine
+5670	4		Intermediary Agent 1 Account	IntrmyAgt1Acct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct
+5680	5		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id
+5690	6	 ----- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/IBAN
+5700	6	 ----- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/Othr
+5710	7		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/Othr/Id
+5720	7		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/Othr/SchmeNm
+5730	8	 ------- Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/Othr/SchmeNm/Cd
+5740	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/Othr/SchmeNm/Prtry
+5750	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Id/Othr/Issr
+5760	5		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Tp
+5770	6	 ----- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Tp/Cd
+5780	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Tp/Prtry
+5790	5		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Ccy
+5800	5		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt1Acct/Nm
+5810	4		Intermediary Agent 2	IntrmyAgt2	BranchAndFinancialInstitutionIdentification4		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2
+5820	5		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId
+5830	6		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/BIC
+5840	6		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/ClrSysMmbId
+5850	7		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/ClrSysMmbId/ClrSysId
+5860	8	 ------- Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+5870	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+5880	7		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/ClrSysMmbId/MmbId
+5890	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Nm
+5900	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr
+5910	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/AdrTp
+5920	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/Dept
+5930	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/SubDept
+5940	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/StrtNm
+5950	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/BldgNb
+5960	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/PstCd
+5970	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/TwnNm
+5980	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/CtrySubDvsn
+5990	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/Ctry
+6000	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/PstlAdr/AdrLine
+6010	6		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Othr
+6020	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Othr/Id
+6030	7		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Othr/SchmeNm
+6040	8	 ------- Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Othr/SchmeNm/Cd
+6050	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Othr/SchmeNm/Prtry
+6060	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/FinInstnId/Othr/Issr
+6070	5		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId
+6080	6		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/Id
+6090	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/Nm
+6100	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr
+6110	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/AdrTp
+6120	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/Dept
+6130	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/SubDept
+6140	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/StrtNm
+6150	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/BldgNb
+6160	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/PstCd
+6170	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/TwnNm
+6180	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/CtrySubDvsn
+6190	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/Ctry
+6200	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2/BrnchId/PstlAdr/AdrLine
+6210	4		Intermediary Agent 2 Account	IntrmyAgt2Acct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct
+6220	5		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id
+6230	6	 ----- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/IBAN
+6240	6	 ----- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/Othr
+6250	7		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/Othr/Id
+6260	7		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/Othr/SchmeNm
+6270	8	 ------- Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/Othr/SchmeNm/Cd
+6280	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/Othr/SchmeNm/Prtry
+6290	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Id/Othr/Issr
+6300	5		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Tp
+6310	6	 ----- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Tp/Cd
+6320	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Tp/Prtry
+6330	5		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Ccy
+6340	5		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt2Acct/Nm
+6350	4		Intermediary Agent 3	IntrmyAgt3	BranchAndFinancialInstitutionIdentification4		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3
+6360	5		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId
+6370	6		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/BIC
+6380	6		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/ClrSysMmbId
+6390	7		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/ClrSysMmbId/ClrSysId
+6400	8	 ------- Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+6410	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+6420	7		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/ClrSysMmbId/MmbId
+6430	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Nm
+6440	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr
+6450	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/AdrTp
+6460	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/Dept
+6470	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/SubDept
+6480	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/StrtNm
+6490	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/BldgNb
+6500	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/PstCd
+6510	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/TwnNm
+6520	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/CtrySubDvsn
+6530	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/Ctry
+6540	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/PstlAdr/AdrLine
+6550	6		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Othr
+6560	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Othr/Id
+6570	7		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Othr/SchmeNm
+6580	8	 ------- Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Othr/SchmeNm/Cd
+6590	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Othr/SchmeNm/Prtry
+6600	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/FinInstnId/Othr/Issr
+6610	5		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId
+6620	6		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/Id
+6630	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/Nm
+6640	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr
+6650	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/AdrTp
+6660	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/Dept
+6670	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/SubDept
+6680	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/StrtNm
+6690	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/BldgNb
+6700	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/PstCd
+6710	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/TwnNm
+6720	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/CtrySubDvsn
+6730	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/Ctry
+6740	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3/BrnchId/PstlAdr/AdrLine
+6750	4		Intermediary Agent 3 Account	IntrmyAgt3Acct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct
+6760	5		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id
+6770	6	 ----- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/IBAN
+6780	6	 ----- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/Othr
+6790	7		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/Othr/Id
+6800	7		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/Othr/SchmeNm
+6810	8	 ------- Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/Othr/SchmeNm/Cd
+6820	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/Othr/SchmeNm/Prtry
+6830	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Id/Othr/Issr
+6840	5		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Tp
+6850	6	 ----- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Tp/Cd
+6860	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Tp/Prtry
+6870	5		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Ccy
+6880	5		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/IntrmyAgt3Acct/Nm
+6890	4		Creditor Agent	CdtrAgt	BranchAndFinancialInstitutionIdentification4		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt
+6900	5		Financial Institution Identification	FinInstnId	FinancialInstitutionIdentification7		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId
+6910	6		BIC	BIC	BICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/BIC
+6920	6		Clearing System Member Identification	ClrSysMmbId	ClearingSystemMemberIdentification2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/ClrSysMmbId
+6930	7		Clearing System Identification	ClrSysId	ClearingSystemIdentification2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/ClrSysMmbId/ClrSysId
+6940	8	 ------- Chc	Code	Cd	ExternalClearingSystemIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/ClrSysMmbId/ClrSysId/Cd
+6950	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/ClrSysMmbId/ClrSysId/Prtry
+6960	7		Member Identification	MmbId	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/ClrSysMmbId/MmbId
+6970	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Nm
+6980	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr
+6990	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/AdrTp
+7000	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/Dept
+7010	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/SubDept
+7020	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/StrtNm
+7030	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/BldgNb
+7040	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/PstCd
+7050	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/TwnNm
+7060	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/CtrySubDvsn
+7070	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/Ctry
+7080	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/PstlAdr/AdrLine
+7090	6		Other	Othr	GenericFinancialIdentification1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Othr
+7100	7		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Othr/Id
+7110	7		Scheme Name	SchmeNm	FinancialIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Othr/SchmeNm
+7120	8	 ------- Chc	Code	Cd	ExternalFinancialInstitutionIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Othr/SchmeNm/Cd
+7130	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Othr/SchmeNm/Prtry
+7140	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/FinInstnId/Othr/Issr
+7150	5		Branch Identification	BrnchId	BranchData2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId
+7160	6		Identification	Id	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/Id
+7170	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/Nm
+7180	6		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr
+7190	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/AdrTp
+7200	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/Dept
+7210	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/SubDept
+7220	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/StrtNm
+7230	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/BldgNb
+7240	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/PstCd
+7250	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/TwnNm
+7260	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/CtrySubDvsn
+7270	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/Ctry
+7280	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgt/BrnchId/PstlAdr/AdrLine
+7290	4		Creditor Agent Account	CdtrAgtAcct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct
+7300	5		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id
+7310	6	 ----- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/IBAN
+7320	6	 ----- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/Othr
+7330	7		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/Othr/Id
+7340	7		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/Othr/SchmeNm
+7350	8	 ------- Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/Othr/SchmeNm/Cd
+7360	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/Othr/SchmeNm/Prtry
+7370	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Id/Othr/Issr
+7380	5		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Tp
+7390	6	 ----- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Tp/Cd
+7400	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Tp/Prtry
+7410	5		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Ccy
+7420	5		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAgtAcct/Nm
+7430	4		Creditor	Cdtr	PartyIdentification32		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr
+7440	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Nm
+7450	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr
+7460	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/AdrTp
+7470	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/Dept
+7480	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/SubDept
+7490	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/StrtNm
+7500	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/BldgNb
+7510	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/PstCd
+7520	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/TwnNm
+7530	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/CtrySubDvsn
+7540	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/Ctry
+7550	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/PstlAdr/AdrLine
+7560	5		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id
+7570	6	 ----- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId
+7580	7		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/BICOrBEI
+7590	7		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/Othr
+7600	8		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/Othr/Id
+7610	8		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/Othr/SchmeNm
+7620	9	 -------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/Othr/SchmeNm/Cd
+7630	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/Othr/SchmeNm/Prtry
+7640	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/OrgId/Othr/Issr
+7650	6	 ----- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId
+7660	7		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/DtAndPlcOfBirth
+7670	8		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+7680	8		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+7690	8		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+7700	8		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+7710	7		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/Othr
+7720	8		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/Othr/Id
+7730	8		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/Othr/SchmeNm
+7740	9	 -------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/Othr/SchmeNm/Cd
+7750	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/Othr/SchmeNm/Prtry
+7760	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/Id/PrvtId/Othr/Issr
+7770	5		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtryOfRes
+7780	5		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls
+7790	6		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/NmPrfx
+7800	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/Nm
+7810	6		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/PhneNb
+7820	6		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/MobNb
+7830	6		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/FaxNb
+7840	6		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/EmailAdr
+7850	6		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Cdtr/CtctDtls/Othr
+7860	4		Creditor Account	CdtrAcct	CashAccount16		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct
+7870	5		Identification	Id	AccountIdentification4Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id
+7880	6	 ----- Chc	IBAN	IBAN	IBAN2007Identifier (xs:string)	[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/IBAN
+7890	6	 ----- Chc	Other	Othr	GenericAccountIdentification1		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/Othr
+7900	7		Identification	Id	Max34Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/Othr/Id
+7910	7		Scheme Name	SchmeNm	AccountSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/Othr/SchmeNm
+7920	8	 ------- Chc	Code	Cd	ExternalAccountIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/Othr/SchmeNm/Cd
+7930	8	 ------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/Othr/SchmeNm/Prtry
+7940	7		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Id/Othr/Issr
+7950	5		Type	Tp	CashAccountType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Tp
+7960	6	 ----- Chc	Code	Cd	CashAccountType4Code (xs:string)	CASH CHAR COMM TAXE CISH TRAS SACC CACC SVGS ONDP MGLD NREX MOMA LOAN SLRY ODFT	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Tp/Cd
+7970	6	 ----- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Tp/Prtry
+7980	5		Currency	Ccy	ActiveOrHistoricCurrencyCode (xs:string)	[A-Z]{3,3}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Ccy
+7990	5		Name	Nm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/CdtrAcct/Nm
+8000	4		Ultimate Creditor	UltmtCdtr	PartyIdentification32		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr
+8010	5		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Nm
+8020	5		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr
+8030	6		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/AdrTp
+8040	6		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/Dept
+8050	6		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/SubDept
+8060	6		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/StrtNm
+8070	6		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/BldgNb
+8080	6		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/PstCd
+8090	6		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/TwnNm
+8100	6		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/CtrySubDvsn
+8110	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/Ctry
+8120	6		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/PstlAdr/AdrLine
+8130	5		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id
+8140	6	 ----- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId
+8150	7		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/BICOrBEI
+8160	7		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/Othr
+8170	8		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/Othr/Id
+8180	8		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/Othr/SchmeNm
+8190	9	 -------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/Othr/SchmeNm/Cd
+8200	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/Othr/SchmeNm/Prtry
+8210	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/OrgId/Othr/Issr
+8220	6	 ----- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId
+8230	7		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/DtAndPlcOfBirth
+8240	8		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+8250	8		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+8260	8		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+8270	8		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+8280	7		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/Othr
+8290	8		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/Othr/Id
+8300	8		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/Othr/SchmeNm
+8310	9	 -------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/Othr/SchmeNm/Cd
+8320	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/Othr/SchmeNm/Prtry
+8330	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/Id/PrvtId/Othr/Issr
+8340	5		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtryOfRes
+8350	5		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls
+8360	6		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/NmPrfx
+8370	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/Nm
+8380	6		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/PhneNb
+8390	6		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/MobNb
+8400	6		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/FaxNb
+8410	6		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/EmailAdr
+8420	6		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/UltmtCdtr/CtctDtls/Othr
+8430	4		Instruction For Creditor Agent	InstrForCdtrAgt	InstructionForCreditorAgent1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/InstrForCdtrAgt
+8440	5		Code	Cd	Instruction3Code (xs:string)	CHQB HOLD PHOB TELB	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/InstrForCdtrAgt/Cd
+8450	5		Instruction Information	InstrInf	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/InstrForCdtrAgt/InstrInf
+8460	4		Instruction For Debtor Agent	InstrForDbtrAgt	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/InstrForDbtrAgt
+8470	4		Purpose	Purp	Purpose2Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Purp
+8480	5	 ---- Chc	Code	Cd	ExternalPurpose1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Purp/Cd
+8490	5	 ---- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Purp/Prtry
+8500	4		Regulatory Reporting	RgltryRptg	RegulatoryReporting3		0..10	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg
+8510	5		Debit Credit Reporting Indicator	DbtCdtRptgInd	RegulatoryReportingType1Code (xs:string)	CRED DEBT BOTH	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/DbtCdtRptgInd
+8520	5		Authority	Authrty	RegulatoryAuthority2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Authrty
+8530	6		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Authrty/Nm
+8540	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Authrty/Ctry
+8550	5		Details	Dtls	StructuredRegulatoryReporting3		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls
+8560	6		Type	Tp	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls/Tp
+8570	6		Date	Dt	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls/Dt
+8580	6		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls/Ctry
+8590	6		Code	Cd	Max10Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls/Cd
+8600	6		Amount	Amt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls/Amt
+8610	6		Information	Inf	Max35Text (xs:string)		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RgltryRptg/Dtls/Inf
+8620	4		Tax	Tax	TaxInformation3		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax
+8630	5		Creditor	Cdtr	TaxParty1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Cdtr
+8640	6		Tax Identification	TaxId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Cdtr/TaxId
+8650	6		Registration Identification	RegnId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Cdtr/RegnId
+8660	6		Tax Type	TaxTp	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Cdtr/TaxTp
+8670	5		Debtor	Dbtr	TaxParty2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr
+8680	6		Tax Identification	TaxId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr/TaxId
+8690	6		Registration Identification	RegnId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr/RegnId
+8700	6		Tax Type	TaxTp	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr/TaxTp
+8710	6		Authorisation	Authstn	TaxAuthorisation1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr/Authstn
+8720	7		Title	Titl	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr/Authstn/Titl
+8730	7		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dbtr/Authstn/Nm
+8740	5		Administration Zn	AdmstnZn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/AdmstnZn
+8750	5		Reference Number	RefNb	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/RefNb
+8760	5		Method	Mtd	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Mtd
+8770	5		Total Taxable Base Amount	TtlTaxblBaseAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/TtlTaxblBaseAmt
+8780	5		Total Tax Amount	TtlTaxAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/TtlTaxAmt
+8790	5		Date	Dt	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Dt
+8800	5		Sequence Number	SeqNb	Number (xs:decimal)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/SeqNb
+8810	5		Record	Rcrd	TaxRecord1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd
+8820	6		Type	Tp	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Tp
+8830	6		Category	Ctgy	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Ctgy
+8840	6		Category Details	CtgyDtls	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/CtgyDtls
+8850	6		Debtor Status	DbtrSts	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/DbtrSts
+8860	6		Certificate Identification	CertId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/CertId
+8870	6		Forms Code	FrmsCd	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/FrmsCd
+8880	6		Period	Prd	TaxPeriod1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Prd
+8890	7		Year	Yr	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Prd/Yr
+8900	7		Type	Tp	TaxRecordPeriod1Code (xs:string)	MM01 MM02 MM03 MM04 MM05 MM06 MM07 MM08 MM09 MM10 MM11 MM12 QTR1 QTR2 QTR3 QTR4 HLF1 HLF2	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Prd/Tp
+8910	7		From To Date	FrToDt	DatePeriodDetails		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Prd/FrToDt
+8920	8		From Date	FrDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Prd/FrToDt/FrDt
+8930	8		To Date	ToDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/Prd/FrToDt/ToDt
+8940	6		Tax Amount	TaxAmt	TaxAmount1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt
+8950	7		Rate	Rate	PercentageRate (xs:decimal)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Rate
+8960	7		Taxable Base Amount	TaxblBaseAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/TaxblBaseAmt
+8970	7		Total Amount	TtlAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/TtlAmt
+8980	7		Details	Dtls	TaxRecordDetails1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls
+8990	8		Period	Prd	TaxPeriod1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Prd
+9000	9		Year	Yr	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Prd/Yr
+9010	9		Type	Tp	TaxRecordPeriod1Code (xs:string)	MM01 MM02 MM03 MM04 MM05 MM06 MM07 MM08 MM09 MM10 MM11 MM12 QTR1 QTR2 QTR3 QTR4 HLF1 HLF2	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Prd/Tp
+9020	9		From To Date	FrToDt	DatePeriodDetails		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Prd/FrToDt
+9030	10		From Date	FrDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Prd/FrToDt/FrDt
+9040	10		To Date	ToDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Prd/FrToDt/ToDt
+9050	8		Amount	Amt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/TaxAmt/Dtls/Amt
+9060	6		Additional Information	AddtlInf	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/Tax/Rcrd/AddtlInf
+9070	4		Related Remittance Information	RltdRmtInf	RemittanceLocation2		0..10	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf
+9080	5		Remittance Identification	RmtId	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtId
+9090	5		Remittance Location Method	RmtLctnMtd	RemittanceLocationMethod2Code (xs:string)	FAXI EDIC URID EMAL POST SMSM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnMtd
+9100	5		Remittance Location Electronic Address	RmtLctnElctrncAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnElctrncAdr
+9110	5		Remittance Location Postal Address	RmtLctnPstlAdr	NameAndAddress10		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr
+9120	6		Name	Nm	Max140Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Nm
+9130	6		Address	Adr	PostalAddress6		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr
+9140	7		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/AdrTp
+9150	7		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/Dept
+9160	7		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/SubDept
+9170	7		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/StrtNm
+9180	7		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/BldgNb
+9190	7		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/PstCd
+9200	7		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/TwnNm
+9210	7		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/CtrySubDvsn
+9220	7		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/Ctry
+9230	7		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RltdRmtInf/RmtLctnPstlAdr/Adr/AdrLine
+9240	4		Remittance Information	RmtInf	RemittanceInformation5		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf
+9250	5		Unstructured	Ustrd	Max140Text (xs:string)		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Ustrd
+9260	5		Structured	Strd	StructuredRemittanceInformation7		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd
+9270	6		Referred Document Information	RfrdDocInf	ReferredDocumentInformation3		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf
+9280	7		Type	Tp	ReferredDocumentType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/Tp
+9290	8		Code Or Proprietary	CdOrPrtry	ReferredDocumentType1Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/Tp/CdOrPrtry
+9300	9	 -------- Chc	Code	Cd	DocumentType5Code (xs:string)	MSIN CNFA DNFA CINV CREN DEBN HIRI SBIN CMCN SOAC DISP BOLD VCHR AROI TSUT	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/Tp/CdOrPrtry/Cd
+9310	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/Tp/CdOrPrtry/Prtry
+9320	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/Tp/Issr
+9330	7		Number	Nb	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/Nb
+9340	7		Related Date	RltdDt	ISODate (xs:date)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocInf/RltdDt
+9350	6		Referred Document Amount	RfrdDocAmt	RemittanceAmount1		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt
+9360	7		Due Payable Amount	DuePyblAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/DuePyblAmt
+9370	7		Discount Applied Amount	DscntApldAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/DscntApldAmt
+9380	7		Credit Note Amount	CdtNoteAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/CdtNoteAmt
+9390	7		Tax Amount	TaxAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/TaxAmt
+9400	7		Adjustment Amount And Reason	AdjstmntAmtAndRsn	DocumentAdjustment1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/AdjstmntAmtAndRsn
+9410	8		Amount	Amt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/AdjstmntAmtAndRsn/Amt
+9420	8		Credit Debit Indicator	CdtDbtInd	CreditDebitCode (xs:string)	CRDT DBIT	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/AdjstmntAmtAndRsn/CdtDbtInd
+9430	8		Reason	Rsn	Max4Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/AdjstmntAmtAndRsn/Rsn
+9440	8		Additional Information	AddtlInf	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/AdjstmntAmtAndRsn/AddtlInf
+9450	7		Remitted Amount	RmtdAmt	ActiveOrHistoricCurrencyAndAmount (ActiveOrHistoricCurrencyAndAmount_SimpleType (xs:decimal) @Ccy (ActiveOrHistoricCurrencyCode:required))		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/RfrdDocAmt/RmtdAmt
+9460	6		Creditor Reference Information	CdtrRefInf	CreditorReferenceInformation2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf
+9470	7		Type	Tp	CreditorReferenceType2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf/Tp
+9480	8		Code Or Proprietary	CdOrPrtry	CreditorReferenceType1Choice		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf/Tp/CdOrPrtry
+9490	9	 -------- Chc	Code	Cd	DocumentType3Code (xs:string)	RADM RPIN FXDR DISP PUOR SCOR	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf/Tp/CdOrPrtry/Cd
+9500	9	 -------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf/Tp/CdOrPrtry/Prtry
+9510	8		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf/Tp/Issr
+9520	7		Reference	Ref	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/CdtrRefInf/Ref
+9530	6		Invoicer	Invcr	PartyIdentification32		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr
+9540	7		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Nm
+9550	7		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr
+9560	8		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/AdrTp
+9570	8		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/Dept
+9580	8		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/SubDept
+9590	8		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/StrtNm
+9600	8		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/BldgNb
+9610	8		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/PstCd
+9620	8		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/TwnNm
+9630	8		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/CtrySubDvsn
+9640	8		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/Ctry
+9650	8		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/PstlAdr/AdrLine
+9660	7		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id
+9670	8	 ------- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId
+9680	9		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/BICOrBEI
+9690	9		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/Othr
+9700	10		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/Othr/Id
+9710	10		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/Othr/SchmeNm
+9720	11	 ---------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/Othr/SchmeNm/Cd
+9730	11	 ---------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/Othr/SchmeNm/Prtry
+9740	10		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/OrgId/Othr/Issr
+9750	8	 ------- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId
+9760	9		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/DtAndPlcOfBirth
+9770	10		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+9780	10		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+9790	10		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+9800	10		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+9810	9		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/Othr
+9820	10		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/Othr/Id
+9830	10		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/Othr/SchmeNm
+9840	11	 ---------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/Othr/SchmeNm/Cd
+9850	11	 ---------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/Othr/SchmeNm/Prtry
+9860	10		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/Id/PrvtId/Othr/Issr
+9870	7		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtryOfRes
+9880	7		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls
+9890	8		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/NmPrfx
+9900	8		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/Nm
+9910	8		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/PhneNb
+9920	8		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/MobNb
+9930	8		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/FaxNb
+9940	8		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/EmailAdr
+9950	8		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcr/CtctDtls/Othr
+9960	6		Invoicee	Invcee	PartyIdentification32		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee
+9970	7		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Nm
+9980	7		Postal Address	PstlAdr	PostalAddress6		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr
+9990	8		Address Type	AdrTp	AddressType2Code (xs:string)	ADDR PBOX HOME BIZZ MLTO DLVY	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/AdrTp
+10000	8		Department	Dept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/Dept
+10010	8		Sub Department	SubDept	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/SubDept
+10020	8		Street Name	StrtNm	Max70Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/StrtNm
+10030	8		Building Number	BldgNb	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/BldgNb
+10040	8		Post Code	PstCd	Max16Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/PstCd
+10050	8		Town Name	TwnNm	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/TwnNm
+10060	8		Country Sub Division	CtrySubDvsn	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/CtrySubDvsn
+10070	8		Country	Ctry	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/Ctry
+10080	8		Address Line	AdrLine	Max70Text (xs:string)		0..7	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/PstlAdr/AdrLine
+10090	7		Identification	Id	Party6Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id
+10100	8	 ------- Chc	Organisation Identification	OrgId	OrganisationIdentification4		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId
+10110	9		BIC Or BEI	BICOrBEI	AnyBICIdentifier (xs:string)	[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/BICOrBEI
+10120	9		Other	Othr	GenericOrganisationIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/Othr
+10130	10		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/Othr/Id
+10140	10		Scheme Name	SchmeNm	OrganisationIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/Othr/SchmeNm
+10150	11	 ---------- Chc	Code	Cd	ExternalOrganisationIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/Othr/SchmeNm/Cd
+10160	11	 ---------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/Othr/SchmeNm/Prtry
+10170	10		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/OrgId/Othr/Issr
+10180	8	 ------- Chc	Private Identification	PrvtId	PersonIdentification5		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId
+10190	9		Date And Place Of Birth	DtAndPlcOfBirth	DateAndPlaceOfBirth		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/DtAndPlcOfBirth
+10200	10		Birth Date	BirthDt	ISODate (xs:date)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/DtAndPlcOfBirth/BirthDt
+10210	10		Province Of Birth	PrvcOfBirth	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/DtAndPlcOfBirth/PrvcOfBirth
+10220	10		City Of Birth	CityOfBirth	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/DtAndPlcOfBirth/CityOfBirth
+10230	10		Country Of Birth	CtryOfBirth	CountryCode (xs:string)	[A-Z]{2,2}	1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/DtAndPlcOfBirth/CtryOfBirth
+10240	9		Other	Othr	GenericPersonIdentification1		0..n	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/Othr
+10250	10		Identification	Id	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/Othr/Id
+10260	10		Scheme Name	SchmeNm	PersonIdentificationSchemeName1Choice		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/Othr/SchmeNm
+10270	11	 ---------- Chc	Code	Cd	ExternalPersonIdentification1Code (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/Othr/SchmeNm/Cd
+10280	11	 ---------- Chc	Proprietary	Prtry	Max35Text (xs:string)		1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/Othr/SchmeNm/Prtry
+10290	10		Issuer	Issr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/Id/PrvtId/Othr/Issr
+10300	7		Country Of Residence	CtryOfRes	CountryCode (xs:string)	[A-Z]{2,2}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtryOfRes
+10310	7		Contact Details	CtctDtls	ContactDetails2		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls
+10320	8		Name Prefix	NmPrfx	NamePrefix1Code (xs:string)	DOCT MIST MISS MADM	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/NmPrfx
+10330	8		Name	Nm	Max140Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/Nm
+10340	8		Phone Number	PhneNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/PhneNb
+10350	8		Mobile Number	MobNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/MobNb
+10360	8		Fax Number	FaxNb	PhoneNumber (xs:string)	\+[0-9]{1,3}-[0-9()+\-]{1,30}	0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/FaxNb
+10370	8		Email Address	EmailAdr	Max2048Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/EmailAdr
+10380	8		Other	Othr	Max35Text (xs:string)		0..1	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/Invcee/CtctDtls/Othr
+10390	6		Additional Remittance Information	AddtlRmtInf	Max140Text (xs:string)		0..3	/Document/CstmrCdtTrfInitn/PmtInf/CdtTrfTxInf/RmtInf/Strd/AddtlRmtInf
