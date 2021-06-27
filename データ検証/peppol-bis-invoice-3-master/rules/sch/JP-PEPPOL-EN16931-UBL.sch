@@ -205,10 +205,17 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   </pattern>
   <!-- National rules -->
   <!-- JAPAN -->
+  <let name="isJapaneseSender" value="($supplierCountry ='JP')"/>
   <pattern>
+		<!-- VAT Number Rules -->
+		<rule context="cac:AccountingSupplierParty[$isJapaneseSender]/cac:Party/cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID">
+			<assert id="JP-R-001" test="substring(.,1,1) = 'T' and matches(normalize-space(.),'^[0-9]{13}$')" flag="fatal">For the Greek Suppliers, the VAT must start with 'EL' and must be a valid TIN number</assert>
+		</rule>
     <rule context="ubl-creditnote:CreditNote[$supplierCountry = 'JP'] | ubl-invoice:Invoice[$supplierCountry = 'JP']">
-       <assert id="JP-BR-DEC-05" test="not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) or (matches(normalize-space(cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount),'^[0-9]+$'))" flag="fatal">[JP-BR-DEC-05- the Document level charge amount (BT-99)  shall be integer.</assert>
-    <assert id="JP-BR-CO-17" test="(
+      <!-- Amount Representation Rules -->
+      <assert id="JP-BR-DEC-05" test="not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) or (matches(normalize-space(cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount),'^[1-9][0-9]*$'))" flag="fatal">[JP-BR-DEC-05- the Document level charge amount (BT-99)  shall be integer.</assert>
+      <!-- VAT Category TaxTotal Amount Rounding Rules -->
+      <assert id="JP-BR-CO-17" test="(
   round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) = 0
   and (round(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount)) = 0)
 )
