@@ -206,8 +206,8 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <!-- National rules -->
   <!-- JAPAN -->
   <pattern>
-    <rule context="ubl-creditnote:CreditNote[$DKSupplierCountry = 'JP'] | ubl-invoice:Invoice[$DKSupplierCountry = 'JP']">
-       <assert id="BR-DEC-05" test="not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) or (matches(normalize-space(cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount),'^[0-9]+$'))" flag="fatal">[JP-BR-DEC-05- the Document level charge amount (BT-99)  shall be integer.</assert>
+    <rule context="ubl-creditnote:CreditNote[$supplierCountry = 'JP'] | ubl-invoice:Invoice[$supplierCountry = 'JP']">
+       <assert id="JP-BR-DEC-05" test="not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) or (matches(normalize-space(cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount),'^[0-9]+$'))" flag="fatal">[JP-BR-DEC-05- the Document level charge amount (BT-99)  shall be integer.</assert>
     <assert id="JP-BR-CO-17" test="(
   round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) = 0
   and (round(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount)) = 0)
