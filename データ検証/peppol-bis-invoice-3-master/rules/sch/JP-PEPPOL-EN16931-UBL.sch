@@ -1422,9 +1422,9 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <!-- National rules -->
   <!-- JAPAN -->
   <pattern id="Japan">
-    <!-- VAT Number Rules -->
+    <!-- VAT Registration Number Rules -->
     <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
-      <assert id="JP-R-001" test="matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">For the Japanese Suppliers, the VAT must start with 'T' and be  followed by 13-digit number.</assert>
+      <assert id="JP-R-001" test="matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
     </rule>
     <!-- Amount Representation Rules -->
     <rule context="//*[@currencyID='JPY']">
@@ -1438,7 +1438,7 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &gt;= floor(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
   and (
     xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &lt;= ceiling(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
-)" flag="fatal">[JP-BR-CO-17]-VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.</assert>
+)" flag="fatal">[JP-BR-CO-17]- VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.</assert>
     </rule>
   </pattern>
   <!-- NORWAY -->
