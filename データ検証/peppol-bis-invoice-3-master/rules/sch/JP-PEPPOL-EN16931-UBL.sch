@@ -31,13 +31,13 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
           else
             'XX'"/>
   <let name="customerCountry" value="
-		if (/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
-		upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
-		else
-		if (/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) then
-		upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode))
-		else
-		'XX'"/>
+    if (/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
+    upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
+    else
+    if (/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) then
+    upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode))
+    else
+    'XX'"/>
   <!-- -->
   <let name="documentCurrencyCode" value="/*/cbc:DocumentCurrencyCode"/>
   <!-- Functions -->
@@ -1422,13 +1422,13 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <!-- National rules -->
   <!-- JAPAN -->
   <pattern id="Japan">
+    <!-- VAT Number Rules -->
     <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
-      <!-- VAT Number Rules -->
       <assert id="JP-R-001" test="matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">For the Japanese Suppliers, the VAT must start with 'T' and be  followed by 13-digit number.</assert>
     </rule>
     <!-- Amount Representation Rules -->
     <rule context="//*[@currencyID='JPY']">
-		<assert id="JP=R-002" test="matches(normalize-space(),'^-?[1-9][0-9]*$')" flag="fatal">[JP-R-002]- Amount shall be integer.</assert>
+      <assert id="JP-R-002" test="matches(normalize-space(),'^-?[1-9][0-9]*$')" flag="fatal">[JP-R-002]- Amount shall be integer.</assert>
     </rule>
     <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]">
       <!-- VAT Category TaxTotal Amount Rounding Rules -->
@@ -1460,77 +1460,77 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     <rule context="ubl-creditnote:CreditNote[$DKSupplierCountry = 'DK'] | ubl-invoice:Invoice[$DKSupplierCountry = 'DK']">
       <assert id="DK-R-002" test="(normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/text()) != '')" flag="fatal">Danish suppliers MUST provide legal entity (CVR-number)</assert>
       <assert id="DK-R-014" test="not(((boolean(cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID))
-							   and (normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID) != '0184'))
-						)" flag="fatal">For Danish Suppliers it is mandatory to specify schemeID as "0184" (DK CVR-number) when PartyLegalEntity/CompanyID is used for AccountingSupplierParty</assert>
+                 and (normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID) != '0184'))
+            )" flag="fatal">For Danish Suppliers it is mandatory to specify schemeID as "0184" (DK CVR-number) when PartyLegalEntity/CompanyID is used for AccountingSupplierParty</assert>
       <assert id="DK-R-015" test="not((normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cac:TaxScheme/cbc:ID/text()) = 'VAT')
-						and not ((string-length(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cbc:CompanyID/text()) = 10)
-								 and (substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cbc:CompanyID/text(), 1, 2) = 'DK')
-								 and (string-length(translate(substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cbc:CompanyID/text(), 3, 8), '1234567890', '')) = 0))
-						or
-						(normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cac:TaxScheme/cbc:ID/text()) = 'VAT')
-						and not ((string-length(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cbc:CompanyID/text()) = 10)
-								 and (substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cbc:CompanyID/text(), 1, 2) = 'DK')
-								 and (string-length(translate(substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cbc:CompanyID/text(), 3, 8), '1234567890', '')) = 0))
-						)" flag="fatal">For Danish Suppliers, if specified, AccountingSupplierParty/PartyTaxScheme/CompanyID (DK VAT number) must start with DK followed by 8 digits</assert>
+            and not ((string-length(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cbc:CompanyID/text()) = 10)
+                 and (substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cbc:CompanyID/text(), 1, 2) = 'DK')
+                 and (string-length(translate(substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[1]/cbc:CompanyID/text(), 3, 8), '1234567890', '')) = 0))
+            or
+            (normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cac:TaxScheme/cbc:ID/text()) = 'VAT')
+            and not ((string-length(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cbc:CompanyID/text()) = 10)
+                 and (substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cbc:CompanyID/text(), 1, 2) = 'DK')
+                 and (string-length(translate(substring(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[2]/cbc:CompanyID/text(), 3, 8), '1234567890', '')) = 0))
+            )" flag="fatal">For Danish Suppliers, if specified, AccountingSupplierParty/PartyTaxScheme/CompanyID (DK VAT number) must start with DK followed by 8 digits</assert>
       <assert id="DK-R-016" test="not((boolean(/ubl-creditnote:CreditNote) and ($DKCustomerCountry = 'DK'))
-						and (number(cac:LegalMonetaryTotal/cbc:PayableAmount/text()) &lt; 0)
-						)" flag="fatal">For Danish Suppliers, a Credit note cannot have a negative total (PayableAmount)</assert>
+            and (number(cac:LegalMonetaryTotal/cbc:PayableAmount/text()) &lt; 0)
+            )" flag="fatal">For Danish Suppliers, a Credit note cannot have a negative total (PayableAmount)</assert>
     </rule>
     <rule context="ubl-creditnote:CreditNote[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification | ubl-creditnote:CreditNote[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification | ubl-invoice:Invoice[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification | ubl-invoice:Invoice[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification">
       <assert id="DK-R-013" test="not((boolean(cbc:ID))
-						 and (normalize-space(cbc:ID/@schemeID) = '')
-						)" flag="fatal">For Danish Suppliers it is mandatory to use schemeID when PartyIdentification/ID is used for AccountingCustomerParty or AccountingSupplierParty</assert>
+             and (normalize-space(cbc:ID/@schemeID) = '')
+            )" flag="fatal">For Danish Suppliers it is mandatory to use schemeID when PartyIdentification/ID is used for AccountingCustomerParty or AccountingSupplierParty</assert>
     </rule>
     <rule context="ubl-invoice:Invoice[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:PaymentMeans">
       <assert id="DK-R-005" test="contains(' 1 10 31 42 48 49 50 58 59 93 97 ', concat(' ', cbc:PaymentMeansCode, ' '))" flag="fatal">For Danish suppliers the following Payment means codes are allowed: 1, 10, 31, 42, 48, 49, 50, 58, 59, 93 and 97</assert>
       <assert id="DK-R-006" test="not(((cbc:PaymentMeansCode = '31') or (cbc:PaymentMeansCode = '42'))
-						and not((normalize-space(cac:PayeeFinancialAccount/cbc:ID/text()) != '') and (normalize-space(cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID/text()) != ''))
-						)" flag="fatal">For Danish suppliers bank account and registration account is mandatory if payment means is 31 or 42</assert>
+            and not((normalize-space(cac:PayeeFinancialAccount/cbc:ID/text()) != '') and (normalize-space(cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID/text()) != ''))
+            )" flag="fatal">For Danish suppliers bank account and registration account is mandatory if payment means is 31 or 42</assert>
       <assert id="DK-R-007" test="not((cbc:PaymentMeansCode = '49')
-						and not((normalize-space(cac:PaymentMandate/cbc:ID/text()) != '')
-							   and (normalize-space(cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID/text()) != ''))
-						)" flag="fatal">For Danish suppliers PaymentMandate/ID and PayerFinancialAccount/ID are mandatory when payment means is 49</assert>
+            and not((normalize-space(cac:PaymentMandate/cbc:ID/text()) != '')
+                 and (normalize-space(cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID/text()) != ''))
+            )" flag="fatal">For Danish suppliers PaymentMandate/ID and PayerFinancialAccount/ID are mandatory when payment means is 49</assert>
       <assert id="DK-R-008" test="not((cbc:PaymentMeansCode = '50')
-						and not(((substring(cbc:PaymentID, 1, 3) = '01#')
-								  or (substring(cbc:PaymentID, 1, 3) = '04#')
-								  or (substring(cbc:PaymentID, 1, 3) = '15#'))
-								and (string-length(cac:PayeeFinancialAccount/cbc:ID/text()) = 7)
-								)
-						)" flag="fatal">For Danish Suppliers PaymentID is mandatory and MUST start with 01#, 04# or 15# (kortartkode), and PayeeFinancialAccount/ID (Giro kontonummer) is mandatory and must be 7 characters long, when payment means equals 50 (Giro)</assert>
+            and not(((substring(cbc:PaymentID, 1, 3) = '01#')
+                  or (substring(cbc:PaymentID, 1, 3) = '04#')
+                  or (substring(cbc:PaymentID, 1, 3) = '15#'))
+                and (string-length(cac:PayeeFinancialAccount/cbc:ID/text()) = 7)
+                )
+            )" flag="fatal">For Danish Suppliers PaymentID is mandatory and MUST start with 01#, 04# or 15# (kortartkode), and PayeeFinancialAccount/ID (Giro kontonummer) is mandatory and must be 7 characters long, when payment means equals 50 (Giro)</assert>
       <assert id="DK-R-009" test="not((cbc:PaymentMeansCode = '50')
-						and ((substring(cbc:PaymentID, 1, 3) = '04#')
-							  or (substring(cbc:PaymentID, 1, 3)  = '15#'))
-						and not(string-length(cbc:PaymentID) = 19)
-						)" flag="fatal">For Danish Suppliers if the PaymentID is prefixed with 04# or 15# the 16 digits instruction Id must be added to the PaymentID eg. "04#1234567890123456" when Payment means equals 50 (Giro)</assert>
+            and ((substring(cbc:PaymentID, 1, 3) = '04#')
+                or (substring(cbc:PaymentID, 1, 3)  = '15#'))
+            and not(string-length(cbc:PaymentID) = 19)
+            )" flag="fatal">For Danish Suppliers if the PaymentID is prefixed with 04# or 15# the 16 digits instruction Id must be added to the PaymentID eg. "04#1234567890123456" when Payment means equals 50 (Giro)</assert>
       <assert id="DK-R-010" test="not((cbc:PaymentMeansCode = '93')
-						and not(((substring(cbc:PaymentID, 1, 3) = '71#')
-								  or (substring(cbc:PaymentID, 1, 3) = '73#')
-								  or (substring(cbc:PaymentID, 1, 3) = '75#'))
-								and (string-length(cac:PayeeFinancialAccount/cbc:ID/text()) = 8)
-								)
-						)" flag="fatal">For Danish Suppliers the PaymentID is mandatory and MUST start with 71#, 73# or 75# (kortartkode) and PayeeFinancialAccount/ID (Kreditornummer) is mandatory and must be exactly 8 characters long, when Payment means equals 93 (FIK)</assert>
+            and not(((substring(cbc:PaymentID, 1, 3) = '71#')
+                  or (substring(cbc:PaymentID, 1, 3) = '73#')
+                  or (substring(cbc:PaymentID, 1, 3) = '75#'))
+                and (string-length(cac:PayeeFinancialAccount/cbc:ID/text()) = 8)
+                )
+            )" flag="fatal">For Danish Suppliers the PaymentID is mandatory and MUST start with 71#, 73# or 75# (kortartkode) and PayeeFinancialAccount/ID (Kreditornummer) is mandatory and must be exactly 8 characters long, when Payment means equals 93 (FIK)</assert>
       <assert id="DK-R-011" test="not((cbc:PaymentMeansCode = '93')
-						and ((substring(cbc:PaymentID, 1, 3) = '71#')
-							  or (substring(cbc:PaymentID, 1, 3)  = '75#'))
-						and not((string-length(cbc:PaymentID) = 18)
-							  or (string-length(cbc:PaymentID) = 19))
-						)" flag="fatal">For Danish Suppliers if the PaymentID is prefixed with 71# or 75# the 15-16 digits instruction Id must be added to the PaymentID eg. "71#1234567890123456" when payment Method equals 93 (FIK)</assert>
+            and ((substring(cbc:PaymentID, 1, 3) = '71#')
+                or (substring(cbc:PaymentID, 1, 3)  = '75#'))
+            and not((string-length(cbc:PaymentID) = 18)
+                or (string-length(cbc:PaymentID) = 19))
+            )" flag="fatal">For Danish Suppliers if the PaymentID is prefixed with 71# or 75# the 15-16 digits instruction Id must be added to the PaymentID eg. "71#1234567890123456" when payment Method equals 93 (FIK)</assert>
     </rule>
     <!-- Line level -->
     <rule context="ubl-creditnote:CreditNote[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:CreditNoteLine | ubl-invoice:Invoice[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']/cac:InvoiceLine">
       <assert id="DK-R-003" test="not((cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID = 'TST')
-						and not((cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID = '19.05.01')
-							   or (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID = '19.0501')
-							   )
-						)" flag="warning">If ItemClassification is provided from Danish suppliers, UNSPSC version 19.0501 should be used.</assert>
+            and not((cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID = '19.05.01')
+                 or (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID = '19.0501')
+                 )
+            )" flag="warning">If ItemClassification is provided from Danish suppliers, UNSPSC version 19.0501 should be used.</assert>
     </rule>
     <!-- Mix level -->
     <rule context="cac:AllowanceCharge[$DKSupplierCountry = 'DK' and $DKCustomerCountry = 'DK']">
       <assert id="DK-R-004" test="not((cbc:AllowanceChargeReasonCode = 'ZZZ')
-						and not((string-length(normalize-space(cbc:AllowanceChargeReason/text())) = 4)
-								and (number(cbc:AllowanceChargeReason) &gt;= 0)
-								and (number(cbc:AllowanceChargeReason) &lt;= 9999))
-						)" flag="fatal">When specifying non-VAT Taxes, Danish suppliers MUST use the AllowanceChargeReasonCode="ZZZ" and the 4-digit Tax category MUST be specified in 'AllowanceChargeReason'</assert>
+            and not((string-length(normalize-space(cbc:AllowanceChargeReason/text())) = 4)
+                and (number(cbc:AllowanceChargeReason) &gt;= 0)
+                and (number(cbc:AllowanceChargeReason) &lt;= 9999))
+            )" flag="fatal">When specifying non-VAT Taxes, Danish suppliers MUST use the AllowanceChargeReasonCode="ZZZ" and the 4-digit Tax category MUST be specified in 'AllowanceChargeReason'</assert>
     </rule>
   </pattern>
   <!-- ITALY -->
@@ -1580,17 +1580,17 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:TinVerification" as="xs:boolean">
     <param name="val" as="xs:string"/>
     <variable name="digits" select="
-			for $ch in string-to-codepoints($val)
-			return codepoints-to-string($ch)"/>
+      for $ch in string-to-codepoints($val)
+      return codepoints-to-string($ch)"/>
     <variable name="checksum" select="
-			(number($digits[8])*2) +
-			(number($digits[7])*4) +
-			(number($digits[6])*8) +
-			(number($digits[5])*16) +
-			(number($digits[4])*32) +
-			(number($digits[3])*64) +
-			(number($digits[2])*128) +
-			(number($digits[1])*256) "/>
+      (number($digits[8])*2) +
+      (number($digits[7])*4) +
+      (number($digits[6])*8) +
+      (number($digits[5])*16) +
+      (number($digits[4])*32) +
+      (number($digits[3])*64) +
+      (number($digits[2])*128) +
+      (number($digits[1])*256) "/>
     <value-of select="($checksum  mod 11) mod 10 = number($digits[9])"/>
   </function>
 
@@ -1619,15 +1619,15 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
       <let name="IdSegments" value="tokenize(.,'\|')"/>
       <assert id="GR-R-001-1" test="count($IdSegments) = 6" flag="fatal"> When the Supplier is Greek, the Invoice Id should consist of 6 segments</assert>
       <assert id="GR-R-001-2" test="string-length(normalize-space($IdSegments[1])) = 9 
-			                              and u:TinVerification($IdSegments[1])
-			                              and ($IdSegments[1] = /*/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 3, 9)
-			                              or $IdSegments[1] = /*/cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 3, 9) )" flag="fatal">When the Supplier is Greek, the Invoice Id first segment must be a valid TIN Number and match either the Supplier's or the Tax Representative's Tin Number</assert>
+                                    and u:TinVerification($IdSegments[1])
+                                    and ($IdSegments[1] = /*/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 3, 9)
+                                    or $IdSegments[1] = /*/cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 3, 9) )" flag="fatal">When the Supplier is Greek, the Invoice Id first segment must be a valid TIN Number and match either the Supplier's or the Tax Representative's Tin Number</assert>
       <let name="tokenizedIdDate" value="tokenize($IdSegments[2],'/')"/>
       <assert id="GR-R-001-3" test="string-length(normalize-space($IdSegments[2]))>0 
-			                              and matches($IdSegments[2],$dateRegExp)
-			                              and ($tokenizedIdDate[1] = $tokenizedUblIssueDate[3] 
-			                                and $tokenizedIdDate[2] = $tokenizedUblIssueDate[2]
-			                                and $tokenizedIdDate[3] = $tokenizedUblIssueDate[1])" flag="fatal">When the Supplier is Greek, the Invoice Id second segment must be a valid Date that matches the invoice Issue Date</assert>
+                                    and matches($IdSegments[2],$dateRegExp)
+                                    and ($tokenizedIdDate[1] = $tokenizedUblIssueDate[3] 
+                                      and $tokenizedIdDate[2] = $tokenizedUblIssueDate[2]
+                                      and $tokenizedIdDate[3] = $tokenizedUblIssueDate[1])" flag="fatal">When the Supplier is Greek, the Invoice Id second segment must be a valid Date that matches the invoice Issue Date</assert>
       <assert id="GR-R-001-4" test="string-length(normalize-space($IdSegments[3]))>0 and string(number($IdSegments[3])) != 'NaN' and xs:integer($IdSegments[3]) >= 0" flag="fatal">When Supplier is Greek, the Invoice Id third segment must be a positive integer</assert>
       <assert id="GR-R-001-5" test="string-length(normalize-space($IdSegments[4]))>0 and (some $c in $greekDocumentType satisfies $IdSegments[4] = $c)" flag="fatal">When Supplier is Greek, the Invoice Id in the fourth segment must be a valid greek document type</assert>
       <assert id="GR-R-001-6" test="string-length($IdSegments[5]) > 0 " flag="fatal">When Supplier is Greek, the Invoice Id fifth segment must not be empty</assert>
@@ -1641,16 +1641,16 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
 
       <!-- Tax Representative Mandatory -->
       <assert id="GR-R-007-1" test="
-				count(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID) = 1 or
-				count(/ubl-invoice:Invoice/cac:TaxRepresentativeParty) = 1" flag="fatal">When greek supplier does not have a VAT number, the tax representative must be present</assert>
+        count(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID) = 1 or
+        count(/ubl-invoice:Invoice/cac:TaxRepresentativeParty) = 1" flag="fatal">When greek supplier does not have a VAT number, the tax representative must be present</assert>
     </rule>
 
     <!-- Tax Representative Rules -->
     <rule context="cac:TaxRepresentativeParty[$isGreekSender]">
       <assert id="GR-R-007-2" test="string-length(normalize-space(cac:PartyName/cbc:Name))>0" flag="fatal">If the Greek Suppliers do not have Greek VAT they must provide the full name of their tax representative in Greece</assert>
       <assert id="GR-R-007-3" test="count(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID)=1 and
-				substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,1,2) = 'EL' and
-				u:TinVerification(substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,3))" flag="fatal">If the Greek Suppliers do not have Greek VAT, they must provide the VAT number of their tax representative</assert>
+        substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,1,2) = 'EL' and
+        u:TinVerification(substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,3))" flag="fatal">If the Greek Suppliers do not have Greek VAT, they must provide the VAT number of their tax representative</assert>
     </rule>
 
 
@@ -1693,8 +1693,8 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     <!-- VAT Number Rules -->
     <rule context="cac:AccountingCustomerParty[$isGreekSenderandReceiver]/cac:Party">
       <assert id="GR-R-006" test="count(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID)=1 and
-				                        substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,1,2) = 'EL' and
-				                        u:TinVerification(substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,3))" flag="fatal">Greek Suppliers must provide the VAT number of the buyer, if the buyer is Greek </assert>
+                                substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,1,2) = 'EL' and
+                                u:TinVerification(substring(cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/cbc:CompanyID,3))" flag="fatal">Greek Suppliers must provide the VAT number of the buyer, if the buyer is Greek </assert>
     </rule>
     <!-- Endpoint Rules -->
     <rule context="cac:AccountingCustomerParty[$isGreekSenderandReceiver]/cac:Party/cbc:EndpointID">
@@ -1716,12 +1716,12 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
       <assert id="IS-R-003" test="exists(cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName) and exists(cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone)" flag="fatal">[IS-R-003]-If seller is icelandic then it shall contain his address with street name and zip code — Ef seljandi er íslenskur þá skal heimilisfang seljanda innihalda götuheiti og póstnúmer (BT-35 og BT-38).</assert>
 
       <assert id="IS-R-006" test="exists(cac:PaymentMeans[cbc:PaymentMeansCode = '9']/cac:PayeeFinancialAccount/cbc:ID) 
-					  and string-length(normalize-space(cac:PaymentMeans[cbc:PaymentMeansCode = '9']/cac:PayeeFinancialAccount/cbc:ID)) = 12
-					  or not(exists(cac:PaymentMeans[cbc:PaymentMeansCode = '9']))" flag="fatal">[IS-R-006]-If seller is icelandic and payment means code is 9 then a 12 digit account id must exist  — Ef seljandi er íslenskur og greiðslumáti (BT-81) er millifærsla (kóti 9) þá skal koma fram 12 stafa reikningnúmer (BT-84)</assert>
+            and string-length(normalize-space(cac:PaymentMeans[cbc:PaymentMeansCode = '9']/cac:PayeeFinancialAccount/cbc:ID)) = 12
+            or not(exists(cac:PaymentMeans[cbc:PaymentMeansCode = '9']))" flag="fatal">[IS-R-006]-If seller is icelandic and payment means code is 9 then a 12 digit account id must exist  — Ef seljandi er íslenskur og greiðslumáti (BT-81) er millifærsla (kóti 9) þá skal koma fram 12 stafa reikningnúmer (BT-84)</assert>
 
       <assert id="IS-R-007" test="exists(cac:PaymentMeans[cbc:PaymentMeansCode = '42']/cac:PayeeFinancialAccount/cbc:ID) 
-					  and string-length(normalize-space(cac:PaymentMeans[cbc:PaymentMeansCode = '42']/cac:PayeeFinancialAccount/cbc:ID)) = 12
-					  or not(exists(cac:PaymentMeans[cbc:PaymentMeansCode = '42']))" flag="fatal">[IS-R-007]-If seller is icelandic and payment means code is 42 then a 12 digit account id must exist  — Ef seljandi er íslenskur og greiðslumáti (BT-81) er millifærsla (kóti 42) þá skal koma fram 12 stafa reikningnúmer (BT-84)</assert>
+            and string-length(normalize-space(cac:PaymentMeans[cbc:PaymentMeansCode = '42']/cac:PayeeFinancialAccount/cbc:ID)) = 12
+            or not(exists(cac:PaymentMeans[cbc:PaymentMeansCode = '42']))" flag="fatal">[IS-R-007]-If seller is icelandic and payment means code is 42 then a 12 digit account id must exist  — Ef seljandi er íslenskur og greiðslumáti (BT-81) er millifærsla (kóti 42) þá skal koma fram 12 stafa reikningnúmer (BT-84)</assert>
 
       <assert id="IS-R-008" test="(exists(cac:AdditionalDocumentReference[cbc:DocumentDescription = 'EINDAGI']) and string-length(cac:AdditionalDocumentReference[cbc:DocumentDescription = 'EINDAGI']/cbc:ID) = 10 and (string(cac:AdditionalDocumentReference[cbc:DocumentDescription = 'EINDAGI']/cbc:ID) castable as xs:date)) or not(exists(cac:AdditionalDocumentReference[cbc:DocumentDescription = 'EINDAGI']))" flag="fatal">[IS-R-008]-If seller is icelandic and invoice contains supporting description EINDAGI then the id form must be YYYY-MM-DD — Ef seljandi er íslenskur þá skal eindagi (BT-122, DocumentDescription = EINDAGI) vera á forminu YYYY-MM-DD.</assert>
 
