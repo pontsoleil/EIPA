@@ -71,7 +71,7 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <phase id="codelist_phase">
     <active pattern="Codesmodel" />
   </phase>
-  <phase id="Peppol">
+  <phase id="Peppol_phase">
     <active pattern="PEPPOL" />
   </phase>
   <phase id="Empty_phase">
@@ -1426,8 +1426,10 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <!-- JAPAN -->
   <pattern id="Japan">
     <!-- VAT Registration Number Rules -->
-    <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]">
-      <assert id="JP-R-001" test="matches(normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
+    <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+      <assert id="JP-R-001" test="matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
+    </rule>
+     <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingBuyerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="JP-R-002" test="matches(normalize-space(cac:AccountingBuyerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-002]- For the Japanese Buyers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
     </rule>
     <!-- Amount, which is not Unit Price, Representation Rules -->
