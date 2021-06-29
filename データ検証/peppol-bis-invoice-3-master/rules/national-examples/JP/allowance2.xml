@@ -8,7 +8,9 @@
   <cbc:IssueDate>2003-03-04</cbc:IssueDate>
   <cbc:DueDate>2003-03-20</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+<!--
   <cbc:Note>注：＃印は軽減税率対象商品</cbc:Note>
+  -->
   <cbc:DocumentCurrencyCode>JPY</cbc:DocumentCurrencyCode>
   <!-- VAT accounting currency code MUST be different from invoice currency code when provided.
   <cbc:TaxCurrencyCode>JPY</cbc:TaxCurrencyCode>
@@ -125,6 +127,18 @@
 	</cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
+    <cbc:Amount currencyID="JPY">10000</cbc:Amount>
+    <cac:TaxCategory>
+      <cbc:ID>S</cbc:ID>
+      <cbc:Percent>10</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+  <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="JPY">17700</cbc:Amount>
@@ -163,10 +177,11 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="JPY">120000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="JPY">137700</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="JPY">149670</cbc:TaxInclusiveAmount>
+    <cbc:TaxExclusiveAmount currencyID="JPY">127700</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="JPY">139670</cbc:TaxInclusiveAmount>
+    <cbc:AllowanceTotalAmount currencyID="JPY">10000</cbc:AllowanceTotalAmount>
     <cbc:ChargeTotalAmount currencyID="JPY">17700</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="JPY">149670</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="JPY">139670</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>10</cbc:ID>
