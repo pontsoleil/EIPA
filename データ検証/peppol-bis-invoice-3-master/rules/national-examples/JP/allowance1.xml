@@ -163,10 +163,10 @@
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
     <cbc:LineExtensionAmount currencyID="JPY">120000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="JPY">127700</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="JPY">139670</cbc:TaxInclusiveAmount>
+    <cbc:TaxExclusiveAmount currencyID="JPY">137700</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="JPY">149670</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="JPY">17700</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="JPY">139670</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID="JPY">149670</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>10</cbc:ID>
@@ -177,7 +177,8 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>10</cbc:Percent>
-        <cbc:PerUnitAmount currencyID="JPY">30</cbc:PerUnitAmount>
+ <!--       <cbc:PerUnitAmount currencyID="JPY">30</cbc:PerUnitAmount>
+ -->
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -195,13 +196,14 @@
   <cac:InvoiceLine>
     <cbc:ID>20</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">10</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="JPY">50000</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>XX新聞</cbc:Name>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>AA</cbc:ID>
         <cbc:Percent>8</cbc:Percent>
-        <cbc:PerUnitAmount currencyID="JPY">320</cbc:PerUnitAmount>
+  <!--      <cbc:PerUnitAmount currencyID="JPY">320</cbc:PerUnitAmount>
+  -->
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -219,7 +221,7 @@
   <cac:InvoiceLine>
     <cbc:ID>30</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="JPY">50000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
       <cbc:AllowanceChargeReason>単品値引</cbc:AllowanceChargeReason>
@@ -232,7 +234,8 @@
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>10</cbc:Percent>
-        <cbc:PerUnitAmount currencyID="JPY">50000</cbc:PerUnitAmount>
+  <!--      <cbc:PerUnitAmount currencyID="JPY">50000</cbc:PerUnitAmount>
+  -->
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

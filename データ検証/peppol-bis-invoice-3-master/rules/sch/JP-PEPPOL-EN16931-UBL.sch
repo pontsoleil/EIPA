@@ -1242,11 +1242,13 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     <rule flag="fatal" context="cac:PaymentMeans/cbc:PaymentMeansCode">
       <assert id="BR-CL-16" flag="fatal" test="( ( not(contains(normalize-space(.),' ')) and contains( ' 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 74 75 76 77 78 91 92 93 94 95 96 97 ZZZ ',concat(' ',normalize-space(.),' ') ) ) )">[BR-CL-16]-Payment means in an invoice MUST be coded using UNCL4461 code list</assert>
     </rule>
+    <!-- Japan added AA -->
     <rule flag="fatal" context="cac:TaxCategory/cbc:ID">
-      <assert id="BR-CL-17" flag="fatal" test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K B ',concat(' ',normalize-space(.),' ') ) ) )">[BR-CL-17]-Invoice tax categories MUST be coded using UNCL5305 code list</assert>
+      <assert id="BR-CL-17" flag="fatal" test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K B ',concat(' ',normalize-space(.),' ') ) ) )">[BR-CL-17]-Invoice tax categories MUST be coded using UNCL5305 code list</assert>
     </rule>
-    <rule flag="fatal" context="cac:ClassifiedTaxCategory/cbc:ID">
-      <assert id="BR-CL-18" flag="fatal" test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K B ',concat(' ',normalize-space(.),' ') ) ) )">[BR-CL-18]-Invoice tax categories MUST be coded using UNCL5305 code list</assert>
+   <!-- Japan added AA -->
+   <rule flag="fatal" context="cac:ClassifiedTaxCategory/cbc:ID">
+      <assert id="BR-CL-18" flag="fatal" test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K B ',concat(' ',normalize-space(.),' ') ) ) )">[BR-CL-18]-Invoice tax categories MUST be coded using UNCL5305 code list</assert>
     </rule>
     <rule flag="fatal" context="cac:AllowanceCharge[cbc:ChargeIndicator = false()]/cbc:AllowanceChargeReasonCode">
       <assert id="BR-CL-19" flag="fatal" test="((not(contains(normalize-space(.), ' ')) and contains(' 41 42 60 62 63 64 65 66 67 68 70 71 88 95 100 102 103 104 ', concat(' ', normalize-space(.), ' '))))">[BR-CL-19]-Coded allowance reasons MUST belong to the UNCL 5189 code list</assert>
@@ -1268,6 +1270,7 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
       <assert id="BR-CL-24" flag="fatal" test="((@mimeCode = 'application/pdf' or @mimeCode = 'image/png' or @mimeCode = 'image/jpeg' or @mimeCode = 'text/csv' or @mimeCode = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or @mimeCode = 'application/vnd.oasis.opendocument.spreadsheet'))">[BR-CL-24]-For Mime code in attribute use MIMEMediaType.</assert>
     </rule>
     <rule flag="fatal" context="cbc:EndpointID[@schemeID]">
+      <!-- Japan add 0147 0170 0188 -->
       <assert id="BR-CL-25" flag="fatal" test="((not(contains(normalize-space(@schemeID), ' ')) and contains(' 0147 0170 0188 0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0183 0184 0190 0191 0192 0193 0194 0195 0196 0198 0199 0200 0201 0202 0203 0204 0208 0209 0210 0211 0212 0213 9901 9902 9904 9905 9906 9907 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9955 9957 AN AQ AS AU EM ', concat(' ', normalize-space(@schemeID), ' '))))">[BR-CL-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list</assert>
     </rule>
     <rule flag="fatal" context="cac:DeliveryLocation/cbc:ID[@schemeID]">
@@ -1428,16 +1431,16 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     </rule>
     <!-- Amount Representation Rules -->
     <rule context="//*[@currencyID='JPY']">
-      <assert id="JP-R-002" test="matches(normalize-space(),'^-?[1-9][0-9]*$')" flag="fatal">[JP-R-002]- Amount shall be integer.</assert>
+      <assert id="JP-R-002" test="matches(normalize-space(.),'^-?[1-9][0-9]*$')" flag="fatal">[JP-R-002]- Amount shall be integer.</assert>
     </rule>
-    <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]">
+    <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:TaxTotal/cac:TaxSubtotal">
       <!-- VAT Category TaxTotal Amount Rounding Rules -->
       <assert id="JP-BR-CO-17" test="(
-  round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) != 0 
+ cac:TaxCategory/cbc:Percent/xs:decimal(.) != 0 
   and (
-    xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &gt;= floor(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
+    xs:decimal(cbc:TaxAmount) &gt;= floor(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
   and (
-    xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &lt;= ceiling(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
+    xs:decimal(cbc:TaxAmount) &lt;= ceiling(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
 )" flag="fatal">[JP-BR-CO-17]- VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.</assert>
     </rule>
   </pattern>
