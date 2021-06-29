@@ -72,7 +72,7 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     <active pattern="Codesmodel" />
   </phase>
   <phase id="Peppol">
-    <active pattern="Peppol" />
+    <active pattern="PEPPOL" />
   </phase>
   <phase id="Empty_phase">
     <active pattern="Empty-element" />
@@ -1296,7 +1296,7 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     R1XX - Line level
     R11X - Invoice period
   -->
-  <pattern id="Peppol">
+  <pattern id="PEPPOL">
     <!-- Document level -->
     <rule context="ubl-creditnote:CreditNote | ubl-invoice:Invoice">
       <assert id="PEPPOL-EN16931-R001" test="cbc:ProfileID" flag="fatal">Business process MUST be provided.</assert>
@@ -1426,17 +1426,20 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
   <!-- JAPAN -->
   <pattern id="Japan">
     <!-- VAT Registration Number Rules -->
-    <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
-      <assert id="JP-R-001" test="matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
+    <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]">
+      <assert id="JP-R-001" test="matches(normalize-space(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
+      <assert id="JP-R-002" test="matches(normalize-space(cac:AccountingBuyerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">[JP-R-002]- For the Japanese Buyers, the VAT registration number must start with 'T' and be  followed by 13-digit number.</assert>
     </rule>
-    <!-- Amount Representation Rules -->
-    <rule context="//*[@currencyID='JPY']">
-      <assert id="JP-R-002" test="matches(normalize-space(.),'^-?[1-9][0-9]*$')" flag="fatal">[JP-R-002]- Amount shall be integer.</assert>
+    <!-- Amount, which is not Unit Price, Representation Rules -->
+    <rule context="/Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
+        /Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
+        //cac:InvoiceLine/cbc:LineExtensionAmount[@currencyID='JPY']">
+      <assert id="JP-R-003" test="matches(normalize-space(.),'^-?[1-9][0-9]*$')" flag="fatal">[JP-R-003]- Amount shall be integer.</assert>
     </rule>
     <rule context="/ubl-invoice:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:TaxTotal/cac:TaxSubtotal">
       <!-- VAT Category TaxTotal Amount Rounding Rules -->
       <assert id="JP-BR-CO-17" test="(
- cac:TaxCategory/cbc:Percent/xs:decimal(.) != 0 
+ cac:TaxCategory/xs:decimal(cbc:Percent) != 0 
   and (
     xs:decimal(cbc:TaxAmount) &gt;= floor(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))
   and (
