@@ -114,7 +114,9 @@
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="JPY">10000</cbc:Amount>
+    <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric> <!--document level allowance percentage (BT-94) -->
+    <cbc:Amount currencyID="JPY">10000</cbc:Amount> <!-- document level allowance amount (BT-92) = document level base amount (BT-93) x (document level allowance percentage (BT-94) / 100) -->
+    <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount> <!-- document level base amount (BT-93) sum of invoice line net amount -->
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
       <cbc:Percent>10</cbc:Percent>
