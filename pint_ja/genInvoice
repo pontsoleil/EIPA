@@ -246,8 +246,6 @@ if __name__ == '__main__':
 
   # initialize globals
   Dic = defaultdict(type(''))
-  Dic['Invoice'] = {}
-
   dictID = defaultdict(type(''))
   dictXpath = defaultdict(type(''))
 
@@ -340,17 +338,24 @@ if __name__ == '__main__':
     transposed_row = [list(i) for i in zip(*rows)]
     record = transposed_row[0]
     header = [record[0]]+record[2:4]+record[5:]
+    rows = [header]
     for i in range(1,len(transposed_row)):
       record = transposed_row[i]
       row = [record[0]]+record[2:4]+record[5:]
-      set_record(Dic, header, row)
+      rows.append(row)
+    with open(tmp_file, 'w', encoding=encoding) as f:
+      writer = csv.writer(f, delimiter='\t')
+      for row in rows:
+        writer.writerow(row)
   else:
-    with open(in_file, encoding=encoding, newline='') as f:
-      reader = csv.reader(f, delimiter='\t')
-      header = next(reader)
-      for record in reader:
-        row = record[0:4]+record[6:]# column 0 ~ 3 for bough and twig 4,5 BG name for bough and twig
-        set_record(Dic, header, record)
+    tmp_file = in_file
+
+  Dic['Invoice'] = {}
+  with open(tmp_file, encoding=encoding, newline='') as f:
+    reader = csv.reader(f, delimiter='\t')
+    header = next(reader)
+    for record in reader:
+      set_record(Dic, header, record)
 
   clean_list(Dic)
 
