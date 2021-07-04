@@ -17,9 +17,9 @@
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:EndpointID schemeID="0188">1234567890123</cbc:EndpointID>
+      <cbc:EndpointID schemeID="0188">JP1234567890123</cbc:EndpointID>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0147">123456000123</cbc:ID>
+        <cbc:ID>123456:000123:0147:1</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>株式会社 ○○商事</cbc:Name>
@@ -28,7 +28,7 @@
         <cbc:StreetName>四谷4-29-X</cbc:StreetName>
         <cbc:AdditionalStreetName>〇〇商事ビル</cbc:AdditionalStreetName>
         <cbc:CityName>新宿区</cbc:CityName>
-        <cbc:PostalZone>〒160-0044</cbc:PostalZone>
+        <cbc:PostalZone>160-0044</cbc:PostalZone>
         <cbc:CountrySubentity>東京都</cbc:CountrySubentity>
         <cac:Country>
           <cbc:IdentificationCode>JP</cbc:IdentificationCode>
@@ -42,6 +42,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>株式会社 ○○商事</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="0170">123456789::0170:0</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>青木　志郎</cbc:Name>
@@ -52,9 +53,9 @@
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
-      <cbc:EndpointID schemeID="0188">3210987654321</cbc:EndpointID>
+      <cbc:EndpointID schemeID="0188">JP3210987654321</cbc:EndpointID>
       <cac:PartyIdentification>
-        <cbc:ID schemeID="0147">654321000321</cbc:ID>
+        <cbc:ID>0000001020</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>株式会社 藤山物産</cbc:Name>
@@ -77,6 +78,7 @@
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>株式会社 藤山物産 札幌支社</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="0147">654321:000321:0147:1</cbc:CompanyID>
       </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Name>株式会社 藤山物産 札幌支社</cbc:Name>
@@ -107,7 +109,7 @@
     <cbc:PaymentMeansCode name="Credit transfer">30</cbc:PaymentMeansCode>
     <cbc:PaymentID>Snippet1</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
-	  <cbc:ID>1234121123456789</cbc:ID>
+	  <cbc:ID>1234:12:1:123456789</cbc:ID>
 	  <cbc:Name>株式会社 ○○商事</cbc:Name>
 	</cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
@@ -223,7 +225,7 @@
       <cbc:PriceAmount currencyID="JPY">40000</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       <cac:AllowanceCharge>
-        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator> <!-- discount -->
         <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>        
         <cbc:Amount currencyID="JPY">10000</cbc:Amount>
         <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>

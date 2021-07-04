@@ -1,55 +1,234 @@
-								ibt-001	ibt-003	ibt-005	ibt-006	ibt-009	ibt-010	ibt-011	ibt-012	ibt-013	ibt-014	ibt-015	ibt-016	ibt-017	ibt-019	ibt-020	ibt-022	ibt-023	ibt-024	ibt-025	ibt-026	ibt-027	ibt-028	ibt-030	ibt-032	ibt-032a	ibt-033	ibt-034	ibt-034-1	ibt-035	ibt-036	ibt-037	ibt-038	ibt-039	ibt-040	ibt-041	ibt-042	ibt-043	ibt-044	ibt-045	ibt-046	ibt-046-1	ibt-047	ibt-048	ibt-048a	ibt-049	ibt-049-1	ibt-050	ibt-051	ibt-052	ibt-053	ibt-054	ibt-055	ibt-056	ibt-057	ibt-058	ibt-059	ibt-060	ibt-061	ibt-062	ibt-063	ibt-063a	ibt-064	ibt-065	ibt-066	ibt-067	ibt-068	ibt-069	ibt-070	ibt-071	ibt-072	ibt-073	ibt-074	ibt-075	ibt-076	ibt-077	ibt-078	ibt-079	ibt-080	ibt-081	ibt-083	ibt-089	ibt-090	ibt-090-1	ibt-091	ibt-099	ibt-099-1	ibt-100	ibt-100-1	ibt-101	ibt-102	ibt-103	ibt-103a	ibt-104	ibt-105	ibt-106	ibt-106-1	ibt-107	ibt-107-1	ibt-108	ibt-108-1	ibt-109	ibt-109-1	ibt-111	ibt-111-1	ibt-112	ibt-112-1	ibt-113	ibt-113-1	ibt-115	ibt-115-1	ibt-116	ibt-116-1	ibt-117	ibt-117-1	ibt-118-1	ibt-118	ibt-119	ibt-122	ibt-123	ibt-125	ibt-125-1	ibt-126	ibt-127	ibt-128	ibt-129	ibt-129-1	ibt-131	ibt-131-1	ibt-132	ibt-133	ibt-134	ibt-135	ibt-139a	ibt-141	ibt-141-1	ibt-142	ibt-142-1	ibt-143	ibt-144	ibt-145	ibt-146	ibt-146-1	ibt-147	ibt-147-1	ibt-147a	ibt-148	ibt-148-1	ibt-149	ibt-149-1	ibt-151	ibt-152	ibt-153	ibt-154	ibt-155	ibt-156	ibt-157	ibt-157-1	ibt-158	ibt-158-1	ibt-159	ibt-160	ibt-161	ibt-167	ibt-168
-								Invoice number 	Invoice type code 	Invoice currency code	Tax accounting currency	Payment due date 	Buyer reference 	Project reference 	Contract reference 	Purchase order reference	Sales order reference	Receiving advice reference	Despatch advice reference	Tender or lot reference	Buyer accounting reference	Payment terms	Invoice note	Business process type	Specification identifier	Preceding Invoice reference	Preceding Invoice issue date	Seller name	Seller trading name	Seller legal registration identifier	Seller TAX registration identifier		Seller additional legal information	Seller electronic address	Seller electronic address	Seller address line 1 	Seller address line 2	Seller city	Seller post code	Seller country subdivision 	Seller country code 	Seller contact point 	Seller contact telephone number	Seller contact email address	Buyer name 	Buyer trading name	Buyer identifier 	Buyer identifier 	Buyer legal registration identifier	Buyer TAX identifier		Buyer electronic address	Buyer electronic address	Buyer address line 1 	Buyer address line 2	Buyer city	Buyer post code	Buyer country subdivision 	Buyer country code 	Buyer contact point 	Buyer contact telephone number	Buyer contact email address	Payee name 	Payee identifier 	Payee legal registration identifier	Seller tax representative name	Seller tax representative TAX identifier		Tax representative address line 1 	Tax representative address line 2	Tax representative city	Tax representative post code	Tax representative country subdivision 	Tax representative country code 	Deliver to party name	Deliver to location identifier	Actual delivery date	Invoicing period start date	Invoicing period end date	Deliver to address line 1 	Deliver to address line 2	Deliver to city	Deliver to post code	Deliver to country subdivision 	Deliver to country code 	Payment means type code	Remittance information	Mandate reference identifier	Bank assigned creditor identifier	Bank assigned creditor identifier	Debited account identifier	Document level charge amount	Document level charge amount	Document level charge base amount	Document level charge base amount	Document level charge percentage	Document level charge TAX category code	Document level charge TAX rate		Document level charge reason	Document level charge reason code	Sum of Invoice line net amount	Sum of Invoice line net amount	Sum of allowances on document level	Sum of allowances on document level	Sum of charges on document level	Sum of charges on document level	Invoice total amount without TAX	Invoice total amount without TAX	Invoice total TAX amount in accounting currency	Invoice total TAX amount in accounting currency	Invoice total amount with TAX	Invoice total amount with TAX	Paid amount 	Paid amount 	Amount due for payment	Amount due for payment	TAX category taxable amount	TAX category taxable amount	TAX category tax amount	TAX category tax amount		TAX category code 	TAX category rate	Supporting document reference	Supporting document description	Attached document	Attached document	Invoice line identifier	Invoice line note	Invoice line object identifier	Invoiced quantity	Invoiced quantity	Invoice line net amount 	Invoice line net amount 	Referenced purchase order line reference	Invoice line Buyer accounting reference	Invoice line period start date	Invoice line period end date		Invoice line charge amount	Invoice line charge amount	Invoice line charge base amount	Invoice line charge base amount	Invoice line charge percentage	Invoice line charge reason	Invoice line charge reason code	Item net price	Item net price	Item price discount	Item price discount		Item gross price	Item gross price	Item price base quantity	Item price base quantity	Invoiced item TAX category code	Invoiced item TAX rate	Item name 	Item description 	Item Seller's identifier	Item Buyer's identifier	Item standard identifier	Item standard identifier	Item classification identifier	Item classification identifier	Item country of origin	Item attribute name	Item attribute value 	Tax Scheme	Invoice issue time
-								/Invoice/cbc:ID	/Invoice/cbc:InvoiceTypeCode	/Invoice/cbc:DocumentCurrencyCode	/Invoice/cbc:TaxCurrencyCode	/Invoice/cbc:DueDate	/Invoice/cbc:BuyerReference	/Invoice/cac:ProjectReference/cbc:ID	/Invoice/cac:ContractDocumentReference/cbc:ID	/Invoice/cac:OrderReference/cbc:ID	/Invoice/cac:OrderReference/cbc:SalesOrderID	/Invoice/cac:ReceiptDocumentReference/cbc:ID	/Invoice/cac:DespatchDocumentReference/cbc:ID	/Invoice/cac:OriginatorDocumentReference/cbc:ID	/Invoice/cbc:AccountingCost	/Invoice/cac:PaymentTerms/cbc:Note	/Invoice/cbc:Note	/Invoice/cbc:ProfileID	/Invoice/cbc:CustomizationID	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail	/Invoice/cac:PayeeParty/cac:PartyName/cbc:Name	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID	/Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID	/Invoice/cac:Delivery/cbc:ActualDeliveryDate	/Invoice/cac:InvoicePeriod/cbc:StartDate	/Invoice/cac:InvoicePeriod/cbc:EndDate	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode	/Invoice/cac:PaymentMeans/cbc:PaymentID	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID	/Invoice/cac:AllowanceCharge/cbc:Amount	/Invoice/cac:AllowanceCharge/cbc:Amount	/Invoice/cac:AllowanceCharge/cbc:BaseAmount	/Invoice/cac:AllowanceCharge/cbc:BaseAmount	/Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount	/Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount	/Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount	/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount	/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount	/Invoice/cac:TaxTotal/cbc:TaxAmount	/Invoice/cac:TaxTotal/cbc:TaxAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount	/Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount	/Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent	/Invoice/cac:AdditionalDocumentReference/cbc:ID	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject	/Invoice/cac:InvoiceLine/cbc:ID	/Invoice/cac:InvoiceLine/cbc:Note	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID	/Invoice/cac:InvoiceLine/cbc:AccountingCost	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name	/Invoice/cac:InvoiceLine/cac:Item/cbc:Description	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID	/Invoice/cbc:IssueDate
-				ibg-00____				TOSL110	380	DKK	EUR	2013-05-10	qwerty								67543		Ordered through our website#Ordering information	1	urn:cen.eu:en16931:2017																																																																																																																																																		2013-04-10
-ibg-14				ibg-00_ibg-14___	INVOICING PERIOD 																																																																									2013-03-10	2013-04-10																																																																																												
-				ibg-00____												PO4711	123																																																																																																																																																										
-ibg-03	0			ibg-00_ibg-03_0__	PRECEDING INVOICE REFERENCE																					TOSL109	2013-03-10																																																																																																																																																
-				ibg-00____											2013-05			3544	5433	Lot567																																																																																																																																																							
-ibg-24	0			ibg-00_ibg-24_0__	ADDITIONAL SUPPORTING DOCUMENTS																																																																																																																								OBJ999	ATS																																													
-ibg-24	1			ibg-00_ibg-24_1__	ADDITIONAL SUPPORTING DOCUMENTS																																																																																																																								sales slip	your sales slip	VGVzdGluZyBCYXNlNjQgZW5jb2Rpbmc=	EHF.pdf																																											
-				ibg-00____										Project345																																																																																																																																																													
-ibg-04				ibg-00_ibg-04___	SELLER																								SelCo					info@selco.nl	EM																																																						5790000436101	0088																																																																																	
-ibg-04		ibg-05		ibg-00_ibg-04__ibg-05_	SELLER	SELLER POSTAL ADDRESS																														Hoofdstraat 4	Om de hoek	Grootstad	54321	Overijssel	NL																																																																																																																																		
-ibg-04				ibg-00_ibg-04___	SELLER																							SellerCompany		NL16356706	NL16356706	LOC	Export																																																																																																																																										
-ibg-04		ibg-06		ibg-00_ibg-04__ibg-06_	SELLER	SELLER CONTACT 																																				Anthon Larsen	+3198989898	Anthon@Selco.nl																																																																																																																															
-ibg-07				ibg-00_ibg-07___	BUYER 																																									Buyco	5790000436057	0088				info@buyercompany.dk	EM																																																																																																																						
-ibg-07		ibg-08		ibg-00_ibg-07__ibg-08_	BUYER 	BUYER POSTAL ADDRESS																																																Anystreet, Building 1	5th floor	Anytown	101	Jutland	DK																																																																																																																
-ibg-07				ibg-00_ibg-07___	BUYER 																																								Buyercompany ltd				DK16356607	DK16356607	VAT																																																																																																																								
-ibg-07		ibg-09		ibg-00_ibg-07__ibg-09_	BUYER 	BUYER CONTACT																																																						John Hansen	+4598989898	john.hansen@buyercompany.dk																																																																																																													
-ibg-10				ibg-00_ibg-10___	PAYEE																																																										Dagobert Duck	DK16356608	DK16356608																																																																																																										
-ibg-11				ibg-00_ibg-11___	SELLER TAX REPRESENTATIVE PARTY																																																													Dick Panama																																																																																																									
-ibg-11		ibg-12		ibg-00_ibg-11__ibg-12_	SELLER TAX REPRESENTATIVE PARTY	SELLER TAX REPRESENTATIVE POSTAL ADDRESS																																																															Anystreet, Building 1	6th floor	Anytown	101	Jutland	DK																																																																																																	
-ibg-11				ibg-00_ibg-11___	SELLER TAX REPRESENTATIVE PARTY																																																														DK16356609	VAT																																																																																																							
-ibg-13				ibg-00_ibg-13___	DELIVERY INFORMATION																																																																							5790000436068	2013-04-15																																																																																														
-ibg-13		ibg-15		ibg-00_ibg-13__ibg-15_	DELIVERY INFORMATION	DELIVER TO ADDRESS																																																																										Deliverystreet	Gate 15	Deliverycity	9000	Jutland	DK																																																																																						
-ibg-13				ibg-00_ibg-13___	DELIVERY INFORMATION																																																																						Logistic service Ltd																																																																																																
-ibg-16	0			ibg-00_ibg-16_0__	PAYMENT INSTRUCTIONS																																																																																	49	Payref1																																																																																				
-ibg-16	0	ibg-19		ibg-00_ibg-16_0_ibg-19_	PAYMENT INSTRUCTIONS	DIRECT DEBIT 																																																																																		123456			DK1212341234123412																																																																																
-ibg-33	0			ibg-00_ibg-33_0__	INVOICE TERMS																	50% prepaid, 50% within one month																																																																																																																																																					
-ibg-21	0			ibg-00_ibg-21_0__	DOCUMENT LEVEL CHARGES																																																																																							150.00	DKK	1500.00	DKK	10	S	25	VAT	Loyal customer	100																																																																						
-ibg-21	1			ibg-00_ibg-21_1__	DOCUMENT LEVEL CHARGES																																																																																							150.00	DKK	1500.00	DKK	10	S	25	VAT	Packaging	ABL																																																																						
-				ibg-00____																																																																																																										675.00	DKK																																																												
-ibg-23	0			ibg-00_ibg-23_0__	TAX BREAKDOWN																																																																																																																	1500.00	DKK	375.00	DKK	VAT	S	25																																															
-ibg-23	1			ibg-00_ibg-23_1__	TAX BREAKDOWN																																																																																																																	2500.00	DKK	300.00	DKK	VAT	S	12																																															
-				ibg-00____																																																																																																										628.62	EUR																																																												
-ibg-22				ibg-00_ibg-22___	DOCUMENT TOTALS																																																																																																	4000.00	DKK	150.00	DKK	150.00	DKK	4000.00	DKK			4675.00	DKK	2337.50	DKK	2337.50	DKK																																																						
-ibg-25	0			ibg-00_ibg-25_0__	INVOICE LINE																																																																																																																												1	first line		1000	EA	1000.00	DKK		ACC7654																																		
-ibg-25	0	ibg-26		ibg-00_ibg-25_0_ibg-26_	INVOICE LINE	INVOICE LINE PERIOD																																																																																																																																				2013-03-10	2013-04-10																																
-ibg-25	0			ibg-00_ibg-25_0__	INVOICE LINE																																																																																																																														Object2					1																																			
-ibg-25	0	ibg-28	0	ibg-00_ibg-25_0_ibg-28_0	INVOICE LINE	INVOICE LINE CHARGES																																																																																																																																						false	100.00	DKK	1000.00	DKK	10	Loyal customer	100																								
-ibg-25	0	ibg-28	1	ibg-00_ibg-25_0_ibg-28_1	INVOICE LINE	INVOICE LINE CHARGES																																																																																																																																						true	100.00	DKK	1000.00	DKK	10	Packaging	ABL																								
-ibg-25	0	ibg-31		ibg-00_ibg-25_0_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																																																																																																																									Printing paper	Printing paper, 2mm	JB007	BUY123	1234567890128	0088	12344321	ZZZ	NL				
-ibg-25	0	ibg-30	0	ibg-00_ibg-25_0_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																																																																																																																							S	25												VAT	
-ibg-25	0	ibg-32	0	ibg-00_ibg-25_0_ibg-32_0	INVOICE LINE	ITEM ATTRIBUTES																																																																																																																																																																		Thickness	2 mm		
-ibg-25	0	ibg-29		ibg-00_ibg-25_0_ibg-29_	INVOICE LINE	PRICE DETAILS																																																																																																																																														1.00	DKK	0.10	DKK	false	1.10	DKK	1	EA															
-ibg-25	1			ibg-00_ibg-25_1__	INVOICE LINE																																																																																																																												2	second line		100	EA	500.00	DKK		ACC7654																																		
-ibg-25	1	ibg-26		ibg-00_ibg-25_1_ibg-26_	INVOICE LINE	INVOICE LINE PERIOD																																																																																																																																				2013-03-10	2013-04-10																																
-ibg-25	1			ibg-00_ibg-25_1__	INVOICE LINE																																																																																																																														Object2					2																																			
-ibg-25	1	ibg-31		ibg-00_ibg-25_1_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																																																																																																																									Parker Pen	Parker Pen, Black, model Sansa	JB008						NL				
-ibg-25	1	ibg-30	0	ibg-00_ibg-25_1_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																																																																																																																							S	25												VAT	
-ibg-25	1	ibg-29		ibg-00_ibg-25_1_ibg-29_	INVOICE LINE	PRICE DETAILS																																																																																																																																														5.00	DKK																						
-ibg-25	2			ibg-00_ibg-25_2__	INVOICE LINE																																																																																																																												3			500	EA	2500.00	DKK																																				
-ibg-25	2	ibg-31		ibg-00_ibg-25_2_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																																																																																																																									American Cookies		JB009										
-ibg-25	2	ibg-30	0	ibg-00_ibg-25_2_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																																																																																																																							S	12												VAT	
-ibg-25	2	ibg-29		ibg-00_ibg-25_2_ibg-29_	INVOICE LINE	PRICE DETAILS																																																																																																																																														5.00	DKK																						
+						------	------	ibg-01	ibg-14	ibg-03	ibg-24	ibg-24	ibg-04	ibg-04	ibg-07	ibg-10	ibg-11	ibg-13	ibg-16	ibg-16	ibg-33	ibg-20	ibg-21	ibg-21	ibg-39	ibg-39	ibg-23	ibg-23	ibg-22	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25
+								請求書注釈	請求期間	先行請求書への参照	添付書類	添付書類	販売者	販売者	発注者	支払先	販売者の納税管理人	納入先	支払手段	支払手段	支払条件	ドキュメントレベルの返還請求	ドキュメントレベルの追加請求	ドキュメントレベルの追加請求	消費税合計金額	消費税合計金額	消費税内訳情報	消費税内訳情報	請求書総合計金額	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行
+						-	-	0	-	0	0	1	-	-	-	-	-	-	0	0	0	0	0	1	-	-	0	1	-	0	0	0	0	0	0	0	0	0	0	0	0	1	1	1	1	1	1	2	2	2	2
+						------	------	------	------	------	------	------	------	------	------	------	------	------	------	ibg-19	------	------	------	------	------	------	------	------	------	------	------	ibg-26	ibg-36	ibg-27	ibg-28	ibg-28	ibg-31	ibg-30	ibg-30	ibg-32	ibg-29	------	ibg-26	ibg-36	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29
+																				自動口座引落												明細行の期間	発注明細行参照	明細行の返還請求	明細行の追加請求	明細行の追加請求	品目情報	明細行税額情報	明細行税額情報	品目属性	取引価格詳細		明細行の期間	発注明細行参照	品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細
+						-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	0	0	1	-	0	0	0	-	-	-	-	-	0	-	-	-	0	-
+ibg-02	1	PROCESS CONTROL	プロセスコントロール	1..1	Group																																														
+ibt-024	2	Specification identifier	仕様識別子	1..1	ID		urn:cen.eu:en16931:2017																																												
+ibt-023	2	Business process type	ビジネスプロセスタイプ	0..1	Text		1																																												
+ibt-001	1	Invoice number 	請求書番号	1..1	ID		TOSL110																																												
+ibt-002	1	Invoice issue date 	請求書発行日	1..1	Date		2013-04-10																																												
+ibt-009	1	Payment due date 	支払期日	0..1	Date		2013-05-10																																												
+ibt-003	1	Invoice type code 	請求書タイプコード	1..1	Code		380																																												
+ibg-01	1	INVOICE NOTE	請求書注釈	0..n	Group																																														
+ibt-021	2	Invoice note subject code	請求書注釈表題コード	0..1	Text			Ordered through our website#Ordering information																																											
+ibt-005	1	Invoice currency code	請求書通貨コード	1..1	Code																																														
+ibt-006	1	Tax accounting currency.	税会計報告用通貨コード	0..1	Code																																														
+ibt-019	1	Buyer accounting reference	発注者会計参照	0..1	Text																																														
+ibt-010	1	Buyer reference 	発注者参照	0..1	Text																																														
+ibg-14	1	INVOICING PERIOD 	請求期間	0..1	Group																																														
+ibt-073	2	Invoicing period start date	請求期間開始日	0..1	Date				2013-03-10																																										
+ibt-074	2	Invoicing period end date	請求期間終了日	0..1	Date				2013-04-10																																										
+ibt-013	1	Purchase order reference	購買発注参照	0..1	REF																																														
+ibt-014	1	Sales order reference	受注参照	0..1	REF																																														
+ibt-011	1	Project reference 	プロジェクト参照	0..1	REF																																														
+ibg-03	1	PRECEDING INVOICE REFERENCE	先行請求書への参照	0..n	Group																																														
+ibt-025	2	Preceding Invoice reference	先行請求書参照	1..1	REF					TOSL109																																									
+ibt-026	2	Preceding Invoice issue date	先行請求書発行日	0..1	Date					2013-03-10																																									
+ibt-016	1	Despatch advice reference	出荷案内書(納品書)参照	0..n	REF																																														
+ibt-015	1	Receiving advice reference	受取通知書(検収書)参照	0..1	REF																																														
+ibt-017	1	Tender or lot reference	入札又はロット参照	0..1	REF																																														
+ibt-012	1	Contract reference 	契約書参照	0..1	REF																																														
+ibg-24	1	ADDITIONAL SUPPORTING DOCUMENTS	添付書類	0..n	Group																																														
+ibt-018	2	Invoiced object identifier	請求済みオブジェクト識別子	0..1	ID						OBJ999	sales slip																																							
+ibt-123	2	Supporting document description	添付書類のタイプコード	0..1	Text						ATS	your sales slip																																							
+ibt-125	2	Attached document	添付書類	0..1	Binary							VGVzdGluZyBCYXNlNjQgZW5jb2Rpbmc=																																							
+ibt-125-1	3	Attached document Mime code	添付書類MIMEコード	1..1	Scheme							application/pdf																																							
+ibt-125-2	3	Attached document Filename	添付書類ファイル名	1..1	Scheme							EHF.pdf																																							
+ibg-04	1	SELLER	販売者	1..1	Group																																														
+ibt-034	2	Seller electronic address	販売者電子アドレス	0..1	ID									info@selco.nl																																					
+ibt-034-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme									EM																																					
+ibt-029	2	Seller identifier 	販売者コード	0..n	ID									5790000436101																																					
+ibt-029-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme									0088																																					
+ibt-028	2	Seller trading name	販売者の商号	0..1	Text									SelCo																																					
+ibg-05	2	SELLER POSTAL ADDRESS	販売者の住所	1..1	Group																																														
+ibt-035	3	Seller address line 1 	販売者住所欄1	0..1	Text									Hoofdstraat 4																																					
+ibt-036	3	Seller address line 2	販売者住所欄2	0..1	Text									Om de hoek																																					
+ibt-037	3	Seller city	販売者住所 市区町村	0..1	Text									Grootstad																																					
+ibt-038	3	Seller post code	販売者郵便番号	0..1	Text									54321																																					
+ibt-039	3	Seller country subdivision 	販売者住所 都道府県	0..1	Text									Overijssel																																					
+ibt-040	3	Seller country code 	販売者国コード	1..1	Code									NL																																					
+ibg-42	2	SELLER TAX REGISTRATION	販売者VAT登録情報		Group																																														
+ibt-031	3	Seller TAX identifier	販売者 TAX ID	0..1	ID																																														
+ibt-031-1	3	Tax Scheme	税スキーマ	0..1	Code																																														
+ibg-40	2	SELLER TAX REGISTRATION	販売者TAX登録情報		Group																																														
+ibg-37	2	SELLER LEGAL REGISTRATION	販売者登録情報	0..1	Group																																														
+ibt-027	3	Seller name	販売者名称	1..1	Text																																														
+ibt-030	3	Seller legal registration identifier	販売者国際企業コード	0..1	ID																																														
+ibt-033	3	Seller additional legal information	販売者追加法的情報	0..1	Text																																														
+ibg-06	2	SELLER CONTACT 	販売者の連絡先	0..1	Group																																														
+ibt-041	3	Seller contact point 	販売者連絡先	0..1	Text																																														
+ibt-042	3	Seller contact telephone number	販売者連絡先電話番号	0..1	Text																																														
+ibt-043	3	Seller contact email address	販売者連絡先電子メールアドレス	0..1	Text																																														
+ibg-07	1	BUYER 	発注者	1..1	Group																																														
+ibt-049	2	Buyer electronic address	発注者の電子アドレス	0..1	ID										info@buyercompany.dk																																				
+ibt-049-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme										EM																																				
+ibt-046	2	Buyer identifier 	発注者コード	0..n	ID										5790000436057																																				
+ibt-046-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme										0088																																				
+ibt-045	2	Buyer trading name	発注者の商号	0..1	Text										Buyco																																				
+ibg-08	2	BUYER POSTAL ADDRESS	発注者の住所	1..1	Group																																														
+ibt-050	3	Buyer address line 1 	発注者住所欄1	0..1	Text										Anystreet, Building 1																																				
+ibt-051	3	Buyer address line 2	発注者住所欄2	0..1	Text										5th floor																																				
+ibt-052	3	Buyer city	発注者住所 市区町村	0..1	Text										Anytown																																				
+ibt-053	3	Buyer post code	発注者郵便番号	0..1	Text										101																																				
+ibt-054	3	Buyer country subdivision 	発注者住所 都道府県	0..1	Text										Jutland																																				
+ibt-055	3	Buyer country code 	発注者国コード	1..1	Code										DK																																				
+ibg-41	2	BUYER TAX REGISTRATION	発注者税登録情報		Group																																														
+ibt-048	2	Buyer TAX identifier	発注者の適格請求書発行事業者登録番号	0..1	ID										DK16356607																																				
+ibt-048-1	2	Tax Scheme	税スキーマ	0..1	Code										VAT																																				
+ibg-38	2	BUYER LEGAL REGISTRATION	発注者登録情報	0..1	Group																																														
+ibt-044	3	Buyer name 	発注者名称	1..1	Text										Buyercompany ltd																																				
+ibt-047	3	Buyer legal registration identifier	発注者国際企業コード	0..1	ID										DK16356607																																				
+ibg-09	2	BUYER CONTACT	発注者の連絡先	0..1	Group																																														
+ibt-056	3	Buyer contact point 	発注者連絡先	0..1	Text										John Hansen																																				
+ibt-057	3	Buyer contact telephone number	発注者連絡先電話番号	0..1	Text										+4598989898																																				
+ibt-058	3	Buyer contact email address	発注者連絡先電子メールアドレス	0..1	Text										john.hansen@buyercompany.dk																																				
+ibg-10	1	PAYEE	支払先	0..1	Group																																														
+ibt-060	2	Payee identifier 	支払先コード	0..1	ID											DK16356608																																			
+ibt-059	2	Payee name 	支払先名称	1..1	Text											Dagobert Duck																																			
+ibt-061	2	Payee legal registration identifier	支払先国際企業コード	0..1	ID											DK16356608																																			
+ibg-11	1	SELLER TAX REPRESENTATIVE PARTY	販売者の納税管理人	0..1	Group																																														
+ibt-062	2	Seller tax representative name	納税管理人名称	1..1	Text												Dick Panama																																		
+ibg-12	2	SELLER TAX REPRESENTATIVE POSTAL ADDRESS	納税管理人住所	1..1	Group																																														
+ibt-064	3	Tax representative address line 1 	納税管理人住所欄1	0..1	Text												Anystreet, Building 1																																		
+ibt-065	3	Tax representative address line 2	納税管理人住所欄2	0..1	Text												6th floor																																		
+ibt-066	3	Tax representative city	納税管理人住所 市区町村	0..1	Text												Anytown																																		
+ibt-067	3	Tax representative post code	納税管理人郵便番号	0..1	Text												101																																		
+ibt-068	3	Tax representative country subdivision 	納税管理人住所 都道府県	0..1	Text												Jutland																																		
+ibt-069	3	Tax representative country code 	納税管理人国コード	1..1	Code												DK																																		
+ibg-43	2	TAX REPRESENTATIVE TAX REGISTRATION	販売者の納税管理人の登録情報		Group																																														
+ibt-063	3	Seller tax representative TAX identifier	納税管理人の税番号	1..1	ID												DK16356609																																		
+ibt-063-1	3	Tax Scheme	税スキーマ	0..1	Code												VAT																																		
+ibg-13	1	DELIVERY INFORMATION	納入先	0..1	Group																																														
+ibt-072	2	Actual delivery date	実際の納入日	0..1	Date													2013-04-15																																	
+ibt-071	2	Deliver to location identifier	納入先コード	0..1	ID													5790000436068																																	
+ibg-15	2	DELIVER TO ADDRESS	納入先住所	0..1	Group																																														
+ibt-075	3	Deliver to address line 1 	納入先住所欄1	0..1	Text													Deliverystreet																																	
+ibt-076	3	Deliver to address line 2	納入先住所欄2	0..1	Text													Gate 15																																	
+ibt-077	3	Deliver to city	納入先住所 市区町村	0..1	Text													Deliverycity																																	
+ibt-078	3	Deliver to post code	納入先郵便番号	0..1	Text													9000																																	
+ibt-079	3	Deliver to country subdivision 	納入先住所 都道府県	0..1	Text													Jutland																																	
+ibt-080	3	Deliver to country code 	納入先国コード	1..1	Code													DK																																	
+ibt-070	2	Deliver to party name	納入先名称	0..1	Text													Logistic service Ltd																																	
+ibg-16	1	PAYMENT INSTRUCTIONS	支払手段	0..n	Group																																														
+ibt-081	2	Payment means type code	支払手段タイプコード	1..1	Code														49																																
+ibt-083	2	Remittance information	送金情報	0..n	Text														Payref1																																
+ibg-17	2	CREDIT TRANSFER 	銀行振込	0..n	Group																																														
+ibg-34	3	ADDRESS	支払先住所	0..1	Group																																														
+ibg-18	2	PAYMENT CARD INFORMATION	支払カード情報	0..1	Group																																														
+ibg-19	2	DIRECT DEBIT 	自動口座引落	0..1	Group																																														
+ibt-089	3	Mandate reference identifier	マンデーションリファレンス識別子	0..1	ID															123456																															
+ibt-091	3	Debited account identifier	自動引落口座識別子	0..1	ID															DK1212341234123412																															
+ibg-33	1	INVOICE TERMS	支払条件	0..n	Group																																														
+ibt-020	2	Payment terms	支払条件	0..1	Text																50% prepaid, 50% within one month																														
+ibg-35	1	PAID AMOUNTS	支払済金額	0..n	Group																																														
+ibg-20	1	DOCUMENT LEVEL ALLOWANCES	ドキュメントレベルの返還請求	0..n	Group																																														
+ibt-092a	2	Charge indicator	追加請求フラグ	1..1	Indicator																	false																													
+ibt-098	2	Document level allowance reason code	ドキュメントレベルの返還請求の理由コード	0..1	Code																	100																													
+ibt-097	2	Document level allowance reason	ドキュメントレベルの返還請求の理由	0..1	Text																	Loyal customer																													
+ibt-094	2	Document level allowance percentage	ドキュメントレベルの返還請求の率	0..1	Percent																	10																													
+ibt-092	2	Document level allowance amount	ドキュメントレベルの返還請求金額	1..1	Amount																	150.00																													
+ibt-092-1	3	Currency code	通貨コード	1..1	Code																	DKK																													
+ibt-093	2	Document level allowance base amount	ドキュメントレベルの返還請求金額の基準となる金額	0..1	Amount																	1500.00																													
+ibt-093-1	3	Currency code	通貨コード	1..1	Code																	DKK																													
+ibt-095	2	Document level allowance TAX category code	ドキュメントレベルの返還請求の課税分類コード	1..1	Code																	S																													
+ibt-096	2	Document level allowance TAX rate	ドキュメントレベルの返還請求の税率	0..1	Percent																	25																													
+ibt-096a	2	Tax Scheme	税スキーマ	0..1	Code																	VAT																													
+ibg-21	1	DOCUMENT LEVEL CHARGES	ドキュメントレベルの追加請求	0..n	Group																																														
+ibt-099a	2	Charge indicator	追加請求フラグ	1..1	Indicator																			true																											
+ibt-105	2	Document level charge reason code	ドキュメントレベルの追加請求の理由コード	0..1	Code																			ABL																											
+ibt-104	2	Document level charge reason	ドキュメントレベルの追加請求の理由	0..1	Text																			Packaging																											
+ibt-101	2	Document level charge percentage	ドキュメントレベルの追加請求の率	0..1	Percent																			10																											
+ibt-099	2	Document level charge amount	ドキュメントレベルの追加請求金額	1..1	Amount																			150.00																											
+ibt-099-1	3	Currency code	通貨コード	1..1	Code																			DKK																											
+ibt-100	2	Document level charge base amount	ドキュメントレベルの追加請求金額の基準となる金額	0..1	Amount																			1500.00																											
+ibt-100-1	3	Currency code	通貨コード	1..1	Code																			DKK																											
+ibt-102	2	Document level charge TAX category code	ドキュメントレベルの追加請求の課税分類コード	1..1	Code																			S																											
+ibt-103	2	Document level charge TAX rate	ドキュメントレベルの追加請求の税率	0..1	Percent																			25																											
+ibt-103a	2	Tax Scheme	税スキーマ	0..1	Code																			VAT																											
+ibg-39	1	INVOICE TOTAL TAX	消費税合計金額	0..1	Group																																														
+ibt-110	2	Invoice total TAX amount	消費税合計金額	1..1	Amount																				628.62	675.00																									
+ibt-110-1	3	Currency code	通貨コード	1..1	Code																				EUR	DKK																									
+ibg-23	1	TAX BREAKDOWN	消費税内訳情報	1..n	Group																																														
+ibt-116	2	TAX category taxable amount	課税分類毎の課税基準額	1..1	Amount																						1500.00	2500.00																							
+ibt-116-1	3	Currency code	通貨コード	1..1	Code																						DKK	DKK																							
+ibt-117	2	TAX category tax amount	課税分類毎の消費税額	1..1	Amount																						375.00	300.00																							
+ibt-117-1	3	Currency code	通貨コード	1..1	Code																						DKK	DKK																							
+ibt-118	2	TAX category code 	課税分類コード	1..1	Code																						S	S																							
+ibt-119	2	TAX category rate	課税分類毎の税率	0..1	Percent																						25	12																							
+ibt-188	2	Tax Scheme	税スキーマ	0..1	Code																						VAT	VAT																							
+ibg-22	1	DOCUMENT TOTALS	請求書総合計金額	1..1	Group																																														
+ibt-106	2	Sum of Invoice line net amount	明細行金額(税抜)の合計	1..1	Amount																								4000.00																						
+ibt-106-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibt-109	2	Invoice total amount without TAX	請求書合計金額(税抜)	1..1	Amount																								4000.00																						
+ibt-109-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibt-112	2	Invoice total amount with TAX	請求書合計金額(税込)	1..1	Amount																								4675.00																						
+ibt-112-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibt-107	2	Sum of allowances on document level	ドキュメントレベルの返還請求の合計	0..1	Amount																								150.00																						
+ibt-107-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibt-108	2	Sum of charges on document level	ドキュメントレベルの追加請求の合計	0..1	Amount																								150.00																						
+ibt-108-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibt-113	2	Paid amount 	支払済金額	0..1	Amount																								2337.50																						
+ibt-113-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibt-115	2	Amount due for payment	未払金額	1..1	Amount																								2337.50																						
+ibt-115-1	3	Currency code	通貨コード	1..1	Code																								DKK																						
+ibg-25	1	INVOICE LINE	明細行	1..n	Group																																														
+ibt-126	2	Invoice line identifier	明細行番号	1..1	ID																										1											2						3			
+ibt-127	2	Invoice line note	明細行注釈	0..1	Text																										first line											second line									
+ibt-129	2	Invoiced quantity	請求済数量	1..1	Quantity																										1000											100						500			
+ibt-130	2	Invoiced quantity unit of measure code	請求済数量の数量単位コード	1..1	Code																										EA											EA						EA			
+ibt-131	2	Invoice line net amount 	明細行金額(税抜)	1..1	Amount																										1000.00											500.00						2500.00			
+ibt-131-1	3	Currency code	通貨コード	1..1	Code																										DKK											DKK						DKK			
+ibt-133	2	Invoice line Buyer accounting reference	明細行バイヤー会計参照	0..1	Text																										ACC7654											ACC7654									
+ibg-26	2	INVOICE LINE PERIOD	明細行の期間	0..1	Group																																														
+ibt-134	3	Invoice line period start date	明細行の期間開始日	0..1	Date																											2013-03-10											2013-03-10								
+ibt-135	3	Invoice line period end date	明細行の期間終了日	0..1	Date																											2013-04-10											2013-04-10								
+ibg-36	2	Referenced purchase order line reference	発注明細行参照	0..1	Group																																														
+ibt-132	3	Referenced purchase order line identifier	発注明細行番号	1..1	REF																												1											2							
+ibt-128	2	Invoice line object identifier	請求書明細オブジェクト識別子	0..1	ID																												Object2											Object2							
+ibg-27	2	INVOICE LINE ALLOWANCES	明細行の返還請求	0..n	Group																																														
+ibt-136a	3	Charge indicator	追加請求フラグ	1..1	Indicator																													false																	
+ibt-140	3	Invoice line allowance reason code	明細行の返還請求理由コード	0..1	Code																													100																	
+ibt-139	3	Invoice line allowance reason	明細行の返還請求理由	0..1	Text																													Loyal customer																	
+ibt-138	3	Invoice line allowance percentage	明細行の返還請求の率	0..1	Percent																													10																	
+ibt-136	3	Invoice line allowance amount	明細行の返還請求金額(税抜)	1..1	Amount																													100.00																	
+ibt-136-1	4	Currency code	通貨コード	1..1	Code																													DKK																	
+ibt-137	3	Invoice line allowance base amount	明細行の返還請求の基準金額	0..1	Amount																													1000.00																	
+ibt-137-1	4	Currency code	通貨コード	1..1	Code																													DKK																	
+ibg-28	2	INVOICE LINE CHARGES	明細行の追加請求	0..n	Group																																														
+ibt-141a	3	Charge indicator	追加請求フラグ	1..1	Indicator																															true															
+ibt-145	3	Invoice line charge reason code	明細行の追加請求理由コード	0..1	Code																															ABL															
+ibt-144	3	Invoice line charge reason	明細行の追加請求理由	0..1	Text																															Packaging															
+ibt-143	3	Invoice line charge percentage	明細行の追加請求の率	0..1	Percent																															10															
+ibt-141	3	Invoice line charge amount	明細行の追加請求金額(税抜)	1..1	Amount																															100.00															
+ibt-141-1	4	Currency code	通貨コード	1..1	Code																															DKK															
+ibt-142	3	Invoice line charge base amount	明細行の追加請求の基準金額	0..1	Amount																															1000.00															
+ibt-142-1	4	Currency code	通貨コード	1..1	Code																															DKK															
+ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group																																														
+ibt-154	3	Item description 	品目摘要	0..n	Text																																Printing paper, 2mm								Parker Pen, Black, model Sansa						
+ibt-153	3	Item name 	品名	1..1	Text																																Printing paper								Parker Pen				American Cookies		
+ibt-156	3	Item Buyer's identifier	発注者による品目識別子	0..1	ID																																BUY123														
+ibt-155	3	Item Seller's identifier	販売者による品目識別子	0..1	ID																																JB007								JB008				JB009		
+ibg-30	2	LINE TAX INFORMATION	明細行税額情報	1..n	Group																																														
+ibt-151	3	Invoiced item TAX category code	請求される品目に対する課税分類コード	1..1	Code																																									S				S	
+ibt-152	3	Invoiced item TAX rate	請求される品目に対する税率	0..1	Percent																																									25				12	
+ibt-167	3	Tax Scheme	税スキーマ	0..1	Code																																									VAT				VAT	
+ibt-157	3	Item standard identifier	品目標準識別子	0..1	ID																																		1234567890128												
+ibt-157-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme																																		0088												
+ibt-159	3	Item country of origin	品目の原産国	0..1	Code																																		NL							NL					
+ibt-158	2	Item classification identifier	品目分類識別子	0..n	ID																																														
+ibt-158-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme																																														
+ibg-32	2	ITEM ATTRIBUTES	品目属性	0..n	Group																																														
+ibt-160	3	Item attribute name	品目属性名	1..1	Text																																			Thickness											
+ibt-161	3	Item attribute value 	品目属性値	1..1	Text																																			2 mm											
+ibg-29	2	PRICE DETAILS	取引価格詳細	1..1	Group																																														
+ibt-146	3	Item net price	品目単価(割引後)(税抜)	1..1	Unit																																				1.00						5.00				5.00
+ibt-146-1	4	Currency code	通貨コード	1..1	Code																																				DKK						DKK				DKK
+ibt-149	3	Item price base quantity	品目単価基準数量	0..1	Quantity																																				1										
+ibt-150	3	Item price base quantity unit of measure code	品目単価基準数量の数量単位コード	0..1	Code																																				EA										
+ibt-147a	3	Charge indicator	追加請求フラグ	1..1	Indicator																																				false										
+ibt-147	3	Item price discount	品目単価割引(税抜)	0..1	Unit																																				0.10										
+ibt-147-1	4	Currency code	通貨コード	1..1	Code																																				DKK										
+ibt-148	3	Item gross price	品目単価(割引前)(税抜)	0..1	Unit																																				1.10										
+ibt-148-1	4	Currency code	通貨コード	1..1	Code																																				DKK										

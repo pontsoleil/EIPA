@@ -2,12 +2,12 @@
   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
+  <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
   <cbc:ID>TOSL110</cbc:ID>
+  <cbc:IssueDate>2013-04-10</cbc:IssueDate>
+  <cbc:DueDate>2013-05-10</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>DKK</cbc:DocumentCurrencyCode>
-  <cbc:DueDate>2013-05-10</cbc:DueDate>
-  <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
-  <cbc:IssueDate>2013-04-10</cbc:IssueDate>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PostalAddress>
@@ -15,15 +15,15 @@
           <cbc:IdentificationCode>DK</cbc:IdentificationCode>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>SellerCompany</cbc:RegistrationName>
-      </cac:PartyLegalEntity>
       <cac:PartyTaxScheme>
         <cbc:CompanyID>DK123456789MVA</cbc:CompanyID>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>SellerCompany</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
     </cac:Party>
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
@@ -39,27 +39,27 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="JPY">675.00</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="DKK">675.00</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="DKK">1500.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="DKK">375.00</cbc:TaxAmount>
       <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>25</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="DKK">2500.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="DKK">300.00</cbc:TaxAmount>
       <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>12</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>12</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>

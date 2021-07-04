@@ -2,20 +2,18 @@
   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
-  <cbc:ID>20150483</cbc:ID>
-  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
-  <cbc:DueDate>2015-04-14</cbc:DueDate>
-  <cbc:Note>Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van\n        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen\n        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden.</cbc:Note>
   <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
+  <cbc:ID>20150483</cbc:ID>
   <cbc:IssueDate>2015-04-01</cbc:IssueDate>
+  <cbc:DueDate>2015-04-14</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+  <cbc:Note>Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van
+        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen
+        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden.</cbc:Note>
   <cac:InvoicePeriod>
     <cbc:StartDate>2016-04-01</cbc:StartDate>
     <cbc:EndDate>2016-06-30</cbc:EndDate>
   </cac:InvoicePeriod>
-  <cac:ContractDocumentReference>
-    <cbc:ID>iExpress 20110412</cbc:ID>
-  </cac:ContractDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
       <cac:PostalAddress>
@@ -26,16 +24,16 @@
           <cbc:IdentificationCode>NL</cbc:IdentificationCode>
         </cac:Country>
       </cac:PostalAddress>
-      <cac:PartyLegalEntity>
-        <cbc:RegistrationName>Bluem BV</cbc:RegistrationName>
-        <cbc:CompanyID>32081330 Amersfoort</cbc:CompanyID>
-      </cac:PartyLegalEntity>
       <cac:PartyTaxScheme>
         <cbc:CompanyID>NL809163160B01</cbc:CompanyID>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
       </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>Bluem BV</cbc:RegistrationName>
+        <cbc:CompanyID>32081330 Amersfoort</cbc:CompanyID>
+      </cac:PartyLegalEntity>
       <cac:Contact>
         <cbc:Telephone>033-4549055</cbc:Telephone>
         <cbc:ElectronicMail>info@bluem.nl</cbc:ElectronicMail>
@@ -68,16 +66,16 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="JPY">30.87</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="EUR">30.87</cbc:TaxAmount>
     <cac:TaxSubtotal>
       <cbc:TaxableAmount currencyID="EUR">147.00</cbc:TaxableAmount>
       <cbc:TaxAmount currencyID="EUR">30.87</cbc:TaxAmount>
       <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>21</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>21</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>

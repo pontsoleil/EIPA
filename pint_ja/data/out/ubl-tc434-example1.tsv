@@ -1,98 +1,103 @@
-							ibt-001	ibt-003	ibt-005	ibt-009	ibt-022	ibt-024	ibt-027	ibt-030	ibt-032	ibt-032a	ibt-035	ibt-037	ibt-038	ibt-040	ibt-044	ibt-046	ibt-050	ibt-052	ibt-053	ibt-055	ibt-056	ibt-081	ibt-083	ibt-084	ibt-106	ibt-106-1	ibt-109	ibt-109-1	ibt-111	ibt-111-1	ibt-112	ibt-112-1	ibt-115	ibt-115-1	ibt-116	ibt-116-1	ibt-117	ibt-117-1	ibt-118-1	ibt-118	ibt-119	ibt-126	ibt-129	ibt-129-1	ibt-131	ibt-131-1	ibt-146	ibt-146-1	ibt-151	ibt-152	ibt-153	ibt-155	ibt-167	ibt-168
-							Invoice number 	Invoice type code 	Invoice currency code	Payment due date 	Invoice note	Specification identifier	Seller name	Seller legal registration identifier	Seller TAX registration identifier		Seller address line 1 	Seller city	Seller post code	Seller country code 	Buyer name 	Buyer identifier 	Buyer address line 1 	Buyer city	Buyer post code	Buyer country code 	Buyer contact point 	Payment means type code	Remittance information	Payment account identifier	Sum of Invoice line net amount	Sum of Invoice line net amount	Invoice total amount without TAX	Invoice total amount without TAX	Invoice total TAX amount in accounting currency	Invoice total TAX amount in accounting currency	Invoice total amount with TAX	Invoice total amount with TAX	Amount due for payment	Amount due for payment	TAX category taxable amount	TAX category taxable amount	TAX category tax amount	TAX category tax amount		TAX category code 	TAX category rate	Invoice line identifier	Invoiced quantity	Invoiced quantity	Invoice line net amount 	Invoice line net amount 	Item net price	Item net price	Invoiced item TAX category code	Invoiced item TAX rate	Item name 	Item Seller's identifier	Tax Scheme	Invoice issue time
-							/Invoice/cbc:ID	/Invoice/cbc:InvoiceTypeCode	/Invoice/cbc:DocumentCurrencyCode	/Invoice/cbc:DueDate	/Invoice/cbc:Note	/Invoice/cbc:CustomizationID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode	/Invoice/cac:PaymentMeans/cbc:PaymentID	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount	/Invoice/cac:TaxTotal/cbc:TaxAmount	/Invoice/cac:TaxTotal/cbc:TaxAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent	/Invoice/cac:InvoiceLine/cbc:ID	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID	/Invoice/cbc:IssueDate
-				ibg-00____			12115118	380	EUR	2015-01-09	Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms	urn:cen.eu:en16931:2017																																																2015-01-09
-ibg-04		ibg-05		ibg-00_ibg-04__ibg-05_	SELLER	SELLER POSTAL ADDRESS											Postbus 7l	Velsen-Noord	1950 AB	NL																																								
-ibg-04				ibg-00_ibg-04___	SELLER								De Koksmaat	57151520	NL8200.98.395.B.01	VAT																																												
-ibg-07				ibg-00_ibg-07___	BUYER 																	10202																																						
-ibg-07		ibg-08		ibg-00_ibg-07__ibg-08_	BUYER 	BUYER POSTAL ADDRESS																	POSTBUS 367	HEEMSKERK	1960 AJ	NL																																		
-ibg-07				ibg-00_ibg-07___	BUYER 																ODIN 59																																							
-ibg-07		ibg-09		ibg-00_ibg-07__ibg-09_	BUYER 	BUYER CONTACT																					Dhr. J BLOKKER																																	
-ibg-16	0			ibg-00_ibg-16_0__	PAYMENT INSTRUCTIONS																							30	Deb. 10202 / Fact. 12115118																															
-ibg-16	0	ibg-17	0	ibg-00_ibg-16_0_ibg-17_0	PAYMENT INSTRUCTIONS	CREDIT TRANSFER 																								NL57 RABO 0107307510																														
-ibg-16	1			ibg-00_ibg-16_1__	PAYMENT INSTRUCTIONS																							30																																
-ibg-16	1	ibg-17	0	ibg-00_ibg-16_1_ibg-17_0	PAYMENT INSTRUCTIONS	CREDIT TRANSFER 																								NL03 INGB 0004489902																														
-				ibg-00____																															20.73	EUR																								
-ibg-23	0			ibg-00_ibg-23_0__	TAX BREAKDOWN																																				183.23	EUR	10.99	EUR	VAT	S	6													
-ibg-23	1			ibg-00_ibg-23_1__	TAX BREAKDOWN																																				46.37	EUR	9.74	EUR	VAT	S	21													
-ibg-22				ibg-00_ibg-22___	DOCUMENT TOTALS																										229.60	EUR	229.60	EUR			250.33	EUR	250.33	EUR																				
-ibg-25	0			ibg-00_ibg-25_0__	INVOICE LINE																																											1	2	EA	19.90	EUR								
-ibg-25	0	ibg-31		ibg-00_ibg-25_0_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			PATAT FRITES 10MM 10KG	166022		
-ibg-25	0	ibg-30	0	ibg-00_ibg-25_0_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	0	ibg-29		ibg-00_ibg-25_0_ibg-29_	INVOICE LINE	PRICE DETAILS																																															9.95	EUR						
-ibg-25	1			ibg-00_ibg-25_1__	INVOICE LINE																																											2	1	EA	9.85	EUR								
-ibg-25	1	ibg-31		ibg-00_ibg-25_1_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			PKAAS 50PL. JONG BEL. 1KG	661813		
-ibg-25	1	ibg-30	0	ibg-00_ibg-25_1_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	1	ibg-29		ibg-00_ibg-25_1_ibg-29_	INVOICE LINE	PRICE DETAILS																																															9.85	EUR						
-ibg-25	2			ibg-00_ibg-25_2__	INVOICE LINE																																											3	1	EA	8.29	EUR								
-ibg-25	2	ibg-31		ibg-00_ibg-25_2_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			POT KETCHUP 3 LT	438146		
-ibg-25	2	ibg-30	0	ibg-00_ibg-25_2_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	2	ibg-29		ibg-00_ibg-25_2_ibg-29_	INVOICE LINE	PRICE DETAILS																																															8.29	EUR						
-ibg-25	3			ibg-00_ibg-25_3__	INVOICE LINE																																											4	2	EA	14.46	EUR								
-ibg-25	3	ibg-31		ibg-00_ibg-25_3_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			FRITESSAUS 3 LRR	438103		
-ibg-25	3	ibg-30	0	ibg-00_ibg-25_3_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	3	ibg-29		ibg-00_ibg-25_3_ibg-29_	INVOICE LINE	PRICE DETAILS																																															7.23	EUR						
-ibg-25	4			ibg-00_ibg-25_4__	INVOICE LINE																																											5	1	EA	35.00	EUR								
-ibg-25	4	ibg-31		ibg-00_ibg-25_4_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			KOFFIE BLIK 3,5KG SNELF	666955		
-ibg-25	4	ibg-30	0	ibg-00_ibg-25_4_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	4	ibg-29		ibg-00_ibg-25_4_ibg-29_	INVOICE LINE	PRICE DETAILS																																															35.00	EUR						
-ibg-25	5			ibg-00_ibg-25_5__	INVOICE LINE																																											6	1	EA	35.00	EUR								
-ibg-25	5	ibg-31		ibg-00_ibg-25_5_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			KOFFIE 3.5 KG BLIK STAND	664871		
-ibg-25	5	ibg-30	0	ibg-00_ibg-25_5_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	5	ibg-29		ibg-00_ibg-25_5_ibg-29_	INVOICE LINE	PRICE DETAILS																																															35.00	EUR						
-ibg-25	6			ibg-00_ibg-25_6__	INVOICE LINE																																											7	1	EA	10.65	EUR								
-ibg-25	6	ibg-31		ibg-00_ibg-25_6_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			SUIKERKLONT	350257		
-ibg-25	6	ibg-30	0	ibg-00_ibg-25_6_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	6	ibg-29		ibg-00_ibg-25_6_ibg-29_	INVOICE LINE	PRICE DETAILS																																															10.65	EUR						
-ibg-25	7			ibg-00_ibg-25_7__	INVOICE LINE																																											8	1	EA	1.55	EUR								
-ibg-25	7	ibg-31		ibg-00_ibg-25_7_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			1 KG UL BLOKJES	350258		
-ibg-25	7	ibg-30	0	ibg-00_ibg-25_7_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	7	ibg-29		ibg-00_ibg-25_7_ibg-29_	INVOICE LINE	PRICE DETAILS																																															1.55	EUR						
-ibg-25	8			ibg-00_ibg-25_8__	INVOICE LINE																																											9	3	EA	14.37	EUR								
-ibg-25	8	ibg-31		ibg-00_ibg-25_8_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			BLOCKNOTE A5	999998		
-ibg-25	8	ibg-30	0	ibg-00_ibg-25_8_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	8	ibg-29		ibg-00_ibg-25_8_ibg-29_	INVOICE LINE	PRICE DETAILS																																															4.79	EUR						
-ibg-25	9			ibg-00_ibg-25_9__	INVOICE LINE																																											10	1	EA	8.29	EUR								
-ibg-25	9	ibg-31		ibg-00_ibg-25_9_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			CHIPS NAT KLEIN ZAKJES	740810		
-ibg-25	9	ibg-30	0	ibg-00_ibg-25_9_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	9	ibg-29		ibg-00_ibg-25_9_ibg-29_	INVOICE LINE	PRICE DETAILS																																															8.29	EUR						
-ibg-25	10			ibg-00_ibg-25_10__	INVOICE LINE																																											11	2	EA	16.58	EUR								
-ibg-25	10	ibg-31		ibg-00_ibg-25_10_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			CHIPS PAP KLEINE ZAKJES	740829		
-ibg-25	10	ibg-30	0	ibg-00_ibg-25_10_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	10	ibg-29		ibg-00_ibg-25_10_ibg-29_	INVOICE LINE	PRICE DETAILS																																															8.29	EUR						
-ibg-25	11			ibg-00_ibg-25_11__	INVOICE LINE																																											12	1	EA	9.95	EUR								
-ibg-25	11	ibg-31		ibg-00_ibg-25_11_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			TR KL PAKJES APPELSAP	740828		
-ibg-25	11	ibg-30	0	ibg-00_ibg-25_11_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	11	ibg-29		ibg-00_ibg-25_11_ibg-29_	INVOICE LINE	PRICE DETAILS																																															9.95	EUR						
-ibg-25	12			ibg-00_ibg-25_12__	INVOICE LINE																																											13	2	EA	3.30	EUR								
-ibg-25	12	ibg-31		ibg-00_ibg-25_12_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			PK CHOCOLADEMEL	740827		
-ibg-25	12	ibg-30	0	ibg-00_ibg-25_12_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	12	ibg-29		ibg-00_ibg-25_12_ibg-29_	INVOICE LINE	PRICE DETAILS																																															1.65	EUR						
-ibg-25	13			ibg-00_ibg-25_13__	INVOICE LINE																																											14	1	EA	10.80	EUR								
-ibg-25	13	ibg-31		ibg-00_ibg-25_13_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			KRAT BIER	999996		
-ibg-25	13	ibg-30	0	ibg-00_ibg-25_13_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	21			VAT	
-ibg-25	13	ibg-29		ibg-00_ibg-25_13_ibg-29_	INVOICE LINE	PRICE DETAILS																																															10.80	EUR						
-ibg-25	14			ibg-00_ibg-25_14__	INVOICE LINE																																											15	1	EA	3.90	EUR								
-ibg-25	14	ibg-31		ibg-00_ibg-25_14_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			STATIEGELD	999995		
-ibg-25	14	ibg-30	0	ibg-00_ibg-25_14_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	14	ibg-29		ibg-00_ibg-25_14_ibg-29_	INVOICE LINE	PRICE DETAILS																																															3.90	EUR						
-ibg-25	15			ibg-00_ibg-25_15__	INVOICE LINE																																											16	2	EA	7.60	EUR								
-ibg-25	15	ibg-31		ibg-00_ibg-25_15_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			BLEEK 3 X 750 ML	102172		
-ibg-25	15	ibg-30	0	ibg-00_ibg-25_15_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	21			VAT	
-ibg-25	15	ibg-29		ibg-00_ibg-25_15_ibg-29_	INVOICE LINE	PRICE DETAILS																																															3.80	EUR						
-ibg-25	16			ibg-00_ibg-25_16__	INVOICE LINE																																											17	2	EA	9.34	EUR								
-ibg-25	16	ibg-31		ibg-00_ibg-25_16_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			WC PAPIER	999994		
-ibg-25	16	ibg-30	0	ibg-00_ibg-25_16_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	21			VAT	
-ibg-25	16	ibg-29		ibg-00_ibg-25_16_ibg-29_	INVOICE LINE	PRICE DETAILS																																															4.67	EUR						
-ibg-25	17			ibg-00_ibg-25_17__	INVOICE LINE																																											18	1	EA	18.63	EUR								
-ibg-25	17	ibg-31		ibg-00_ibg-25_17_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			BALPENNEN 50 ST BLAUW	999993		
-ibg-25	17	ibg-30	0	ibg-00_ibg-25_17_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	21			VAT	
-ibg-25	17	ibg-29		ibg-00_ibg-25_17_ibg-29_	INVOICE LINE	PRICE DETAILS																																															18.63	EUR						
-ibg-25	18			ibg-00_ibg-25_18__	INVOICE LINE																																											19	6	EA	102.12	EUR								
-ibg-25	18	ibg-31		ibg-00_ibg-25_18_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			EM FRITUURVET	999992		
-ibg-25	18	ibg-30	0	ibg-00_ibg-25_18_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	18	ibg-29		ibg-00_ibg-25_18_ibg-29_	INVOICE LINE	PRICE DETAILS																																															17.02	EUR						
-ibg-25	19			ibg-00_ibg-25_19__	INVOICE LINE																																											20	6	EA	-109.98	EUR								
-ibg-25	19	ibg-31		ibg-00_ibg-25_19_ibg-31_	INVOICE LINE	ITEM INFORMATION																																																			FRITUUR VET 10 KG RETOUR	175137		
-ibg-25	19	ibg-30	0	ibg-00_ibg-25_19_ibg-30_0	INVOICE LINE	LINE TAX INFORMATION																																																	S	6			VAT	
-ibg-25	19	ibg-29		ibg-00_ibg-25_19_ibg-29_	INVOICE LINE	PRICE DETAILS																																															18.33	EUR						
+						------	------	ibg-01	ibg-04	ibg-07	ibg-16	ibg-16	ibg-16	ibg-16	ibg-39	ibg-23	ibg-23	ibg-22	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25	ibg-25
+								請求書注釈	販売者	発注者	支払手段	支払手段	支払手段	支払手段	消費税合計金額	消費税内訳情報	消費税内訳情報	請求書総合計金額	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行	明細行
+						-	-	0	-	-	0	0	1	1	-	0	1	-	0	0	0	0	10	10	10	10	11	11	11	11	12	12	12	12	13	13	13	13	14	14	14	14	15	15	15	15	16	16	16	16	17	17	17	17	18	18	18	18	19	19	19	19	1	1	1	1	2	2	2	2	3	3	3	3	4	4	4	4	5	5	5	5	6	6	6	6	7	7	7	7	8	8	8	8	9	9	9	9
+						------	------	------	------	------	------	ibg-17	------	ibg-17	------	------	------	------	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29	------	ibg-31	ibg-30	ibg-29
+												銀行振込		銀行振込						品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細		品目情報	明細行税額情報	取引価格詳細
+						-	-	-	-	-	-	0	-	0	-	-	-	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-	-	-	0	-
+ibg-02	1	PROCESS CONTROL	プロセスコントロール	1..1	Group																																																																																													
+ibt-024	2	Specification identifier	仕様識別子	1..1	ID		urn:cen.eu:en16931:2017																																																																																											
+ibt-001	1	Invoice number 	請求書番号	1..1	ID		12115118																																																																																											
+ibt-002	1	Invoice issue date 	請求書発行日	1..1	Date		2015-01-09																																																																																											
+ibt-009	1	Payment due date 	支払期日	0..1	Date		2015-01-09																																																																																											
+ibt-003	1	Invoice type code 	請求書タイプコード	1..1	Code		380																																																																																											
+ibg-01	1	INVOICE NOTE	請求書注釈	0..n	Group																																																																																													
+ibt-021	2	Invoice note subject code	請求書注釈表題コード	0..1	Text			Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms																																																																																										
+ibt-005	1	Invoice currency code	請求書通貨コード	1..1	Code																																																																																													
+ibg-14	1	INVOICING PERIOD 	請求期間	0..1	Group																																																																																													
+ibg-03	1	PRECEDING INVOICE REFERENCE	先行請求書への参照	0..n	Group																																																																																													
+ibg-24	1	ADDITIONAL SUPPORTING DOCUMENTS	添付書類	0..n	Group																																																																																													
+ibg-04	1	SELLER	販売者	1..1	Group																																																																																													
+ibg-05	2	SELLER POSTAL ADDRESS	販売者の住所	1..1	Group																																																																																													
+ibt-035	3	Seller address line 1 	販売者住所欄1	0..1	Text				Postbus 7l																																																																																									
+ibt-037	3	Seller city	販売者住所 市区町村	0..1	Text				Velsen-Noord																																																																																									
+ibt-038	3	Seller post code	販売者郵便番号	0..1	Text				1950 AB																																																																																									
+ibt-040	3	Seller country code 	販売者国コード	1..1	Code				NL																																																																																									
+ibg-42	2	SELLER TAX REGISTRATION	販売者VAT登録情報		Group																																																																																													
+ibt-031	3	Seller TAX identifier	販売者 TAX ID	0..1	ID				NL8200.98.395.B.01																																																																																									
+ibt-031-1	3	Tax Scheme	税スキーマ	0..1	Code				VAT																																																																																									
+ibg-40	2	SELLER TAX REGISTRATION	販売者TAX登録情報		Group																																																																																													
+ibg-37	2	SELLER LEGAL REGISTRATION	販売者登録情報	0..1	Group																																																																																													
+ibt-027	3	Seller name	販売者名称	1..1	Text				De Koksmaat																																																																																									
+ibt-030	3	Seller legal registration identifier	販売者国際企業コード	0..1	ID				57151520																																																																																									
+ibg-06	2	SELLER CONTACT 	販売者の連絡先	0..1	Group																																																																																													
+ibg-07	1	BUYER 	発注者	1..1	Group																																																																																													
+ibt-046	2	Buyer identifier 	発注者コード	0..n	ID					10202																																																																																								
+ibg-08	2	BUYER POSTAL ADDRESS	発注者の住所	1..1	Group																																																																																													
+ibt-050	3	Buyer address line 1 	発注者住所欄1	0..1	Text					POSTBUS 367																																																																																								
+ibt-052	3	Buyer city	発注者住所 市区町村	0..1	Text					HEEMSKERK																																																																																								
+ibt-053	3	Buyer post code	発注者郵便番号	0..1	Text					1960 AJ																																																																																								
+ibt-055	3	Buyer country code 	発注者国コード	1..1	Code					NL																																																																																								
+ibg-41	2	BUYER TAX REGISTRATION	発注者税登録情報		Group																																																																																													
+ibg-38	2	BUYER LEGAL REGISTRATION	発注者登録情報	0..1	Group																																																																																													
+ibt-044	3	Buyer name 	発注者名称	1..1	Text					ODIN 59																																																																																								
+ibg-09	2	BUYER CONTACT	発注者の連絡先	0..1	Group																																																																																													
+ibt-056	3	Buyer contact point 	発注者連絡先	0..1	Text					Dhr. J BLOKKER																																																																																								
+ibg-10	1	PAYEE	支払先	0..1	Group																																																																																													
+ibg-11	1	SELLER TAX REPRESENTATIVE PARTY	販売者の納税管理人	0..1	Group																																																																																													
+ibg-12	2	SELLER TAX REPRESENTATIVE POSTAL ADDRESS	納税管理人住所	1..1	Group																																																																																													
+ibg-43	2	TAX REPRESENTATIVE TAX REGISTRATION	販売者の納税管理人の登録情報		Group																																																																																													
+ibg-13	1	DELIVERY INFORMATION	納入先	0..1	Group																																																																																													
+ibg-15	2	DELIVER TO ADDRESS	納入先住所	0..1	Group																																																																																													
+ibg-16	1	PAYMENT INSTRUCTIONS	支払手段	0..n	Group																																																																																													
+ibt-081	2	Payment means type code	支払手段タイプコード	1..1	Code						30		30																																																																																					
+ibt-083	2	Remittance information	送金情報	0..n	Text						Deb. 10202 / Fact. 12115118																																																																																							
+ibg-17	2	CREDIT TRANSFER 	銀行振込	0..n	Group																																																																																													
+ibt-084	3	Payment account identifier	支払先口座番号	1..1	ID							NL57 RABO 0107307510		NL03 INGB 0004489902																																																																																				
+ibg-34	3	ADDRESS	支払先住所	0..1	Group																																																																																													
+ibg-18	2	PAYMENT CARD INFORMATION	支払カード情報	0..1	Group																																																																																													
+ibg-19	2	DIRECT DEBIT 	自動口座引落	0..1	Group																																																																																													
+ibg-33	1	INVOICE TERMS	支払条件	0..n	Group																																																																																													
+ibg-35	1	PAID AMOUNTS	支払済金額	0..n	Group																																																																																													
+ibg-20	1	DOCUMENT LEVEL ALLOWANCES	ドキュメントレベルの返還請求	0..n	Group																																																																																													
+ibg-21	1	DOCUMENT LEVEL CHARGES	ドキュメントレベルの追加請求	0..n	Group																																																																																													
+ibg-39	1	INVOICE TOTAL TAX	消費税合計金額	0..1	Group																																																																																													
+ibt-110	2	Invoice total TAX amount	消費税合計金額	1..1	Amount										20.73																																																																																			
+ibt-110-1	3	Currency code	通貨コード	1..1	Code										EUR																																																																																			
+ibg-23	1	TAX BREAKDOWN	消費税内訳情報	1..n	Group																																																																																													
+ibt-116	2	TAX category taxable amount	課税分類毎の課税基準額	1..1	Amount											183.23	46.37																																																																																	
+ibt-116-1	3	Currency code	通貨コード	1..1	Code											EUR	EUR																																																																																	
+ibt-117	2	TAX category tax amount	課税分類毎の消費税額	1..1	Amount											10.99	9.74																																																																																	
+ibt-117-1	3	Currency code	通貨コード	1..1	Code											EUR	EUR																																																																																	
+ibt-118	2	TAX category code 	課税分類コード	1..1	Code											S	S																																																																																	
+ibt-119	2	TAX category rate	課税分類毎の税率	0..1	Percent											6	21																																																																																	
+ibt-188	2	Tax Scheme	税スキーマ	0..1	Code											VAT	VAT																																																																																	
+ibg-22	1	DOCUMENT TOTALS	請求書総合計金額	1..1	Group																																																																																													
+ibt-106	2	Sum of Invoice line net amount	明細行金額(税抜)の合計	1..1	Amount													229.60																																																																																
+ibt-106-1	3	Currency code	通貨コード	1..1	Code													EUR																																																																																
+ibt-109	2	Invoice total amount without TAX	請求書合計金額(税抜)	1..1	Amount													229.60																																																																																
+ibt-109-1	3	Currency code	通貨コード	1..1	Code													EUR																																																																																
+ibt-112	2	Invoice total amount with TAX	請求書合計金額(税込)	1..1	Amount													250.33																																																																																
+ibt-112-1	3	Currency code	通貨コード	1..1	Code													EUR																																																																																
+ibt-115	2	Amount due for payment	未払金額	1..1	Amount													250.33																																																																																
+ibt-115-1	3	Currency code	通貨コード	1..1	Code													EUR																																																																																
+ibg-25	1	INVOICE LINE	明細行	1..n	Group																																																																																													
+ibt-126	2	Invoice line identifier	明細行番号	1..1	ID														1				11				12				13				14				15				16				17				18				19				20				2				3				4				5				6				7				8				9				10			
+ibt-129	2	Invoiced quantity	請求済数量	1..1	Quantity														2				2				1				2				1				1				2				2				1				6				6				1				1				2				1				1				1				1				3				1			
+ibt-130	2	Invoiced quantity unit of measure code	請求済数量の数量単位コード	1..1	Code														EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA				EA			
+ibt-131	2	Invoice line net amount 	明細行金額(税抜)	1..1	Amount														19.90				16.58				9.95				3.30				10.80				3.90				7.60				9.34				18.63				102.12				-109.98				9.85				8.29				14.46				35.00				35.00				10.65				1.55				14.37				8.29			
+ibt-131-1	3	Currency code	通貨コード	1..1	Code														EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR			
+ibg-26	2	INVOICE LINE PERIOD	明細行の期間	0..1	Group																																																																																													
+ibg-36	2	Referenced purchase order line reference	発注明細行参照	0..1	Group																																																																																													
+ibg-27	2	INVOICE LINE ALLOWANCES	明細行の返還請求	0..n	Group																																																																																													
+ibg-28	2	INVOICE LINE CHARGES	明細行の追加請求	0..n	Group																																																																																													
+ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group																																																																																													
+ibt-153	3	Item name 	品名	1..1	Text															PATAT FRITES 10MM 10KG				CHIPS PAP KLEINE ZAKJES				TR KL PAKJES APPELSAP				PK CHOCOLADEMEL				KRAT BIER				STATIEGELD				BLEEK 3 X 750 ML				WC PAPIER				BALPENNEN 50 ST BLAUW				EM FRITUURVET				FRITUUR VET 10 KG RETOUR				PKAAS 50PL. JONG BEL. 1KG				POT KETCHUP 3 LT				FRITESSAUS 3 LRR				KOFFIE BLIK 3,5KG SNELF				KOFFIE 3.5 KG BLIK STAND				SUIKERKLONT				1 KG UL BLOKJES				BLOCKNOTE A5				CHIPS NAT KLEIN ZAKJES		
+ibt-155	3	Item Seller's identifier	販売者による品目識別子	0..1	ID															166022				740829				740828				740827				999996				999995				102172				999994				999993				999992				175137				661813				438146				438103				666955				664871				350257				350258				999998				740810		
+ibg-30	2	LINE TAX INFORMATION	明細行税額情報	1..n	Group																																																																																													
+ibt-151	3	Invoiced item TAX category code	請求される品目に対する課税分類コード	1..1	Code																S				S				S				S				S				S				S				S				S				S				S				S				S				S				S				S				S				S				S				S	
+ibt-152	3	Invoiced item TAX rate	請求される品目に対する税率	0..1	Percent																6				6				6				6				21				6				21				21				21				6				6				6				6				6				6				6				6				6				6				6	
+ibt-167	3	Tax Scheme	税スキーマ	0..1	Code																VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT				VAT	
+ibg-32	2	ITEM ATTRIBUTES	品目属性	0..n	Group																																																																																													
+ibg-29	2	PRICE DETAILS	取引価格詳細	1..1	Group																																																																																													
+ibt-146	3	Item net price	品目単価(割引後)(税抜)	1..1	Unit																	9.95				8.29				9.95				1.65				10.80				3.90				3.80				4.67				18.63				17.02				18.33				9.85				8.29				7.23				35.00				35.00				10.65				1.55				4.79				8.29
+ibt-146-1	4	Currency code	通貨コード	1..1	Code																	EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR				EUR

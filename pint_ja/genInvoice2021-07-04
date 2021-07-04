@@ -172,30 +172,31 @@ def set_record(Dic, header, record):
     base = base0
 
   base_path = base[1:].split('/')
-  if seq0 and '-' != seq0 and '' != seq0 and '/Invoice' != base:
+  if seq0 and '-' != seq0:
     try:
       base_path += [int(seq0)]
     except ValueError:
       pass
   if len(base1) > 0:
     baseList1 = re.sub(base, '', base1)[1:].split('/')
+    # baseList1.remove('')
     base = base1
     base_path += baseList1
-    if seq1 and '-' != seq1 and '' != seq1:
+    if seq1 and '-' != seq1:
       try:
         base_path += [int(seq1)]
       except ValueError:
         pass
     if len(base2) > 0:
       baseList2 = re.sub(base, '', base2)[1:].split('/')
+      # baseList2.remove('')
       base = base2
       base_path += baseList2
-      if seq2 and '-' != seq2 and '' != seq2:
+      if seq2 and '-' != seq2:
         try:
           base_path += [int(seq2)]
         except ValueError:
           pass
-  print(base_path)
   N = 3 # column 0 ~ 3 for bough and twig
   n = 0
   for cell in record:  # traverse field in a record
@@ -207,7 +208,9 @@ def set_record(Dic, header, record):
           xpath = _dictxpath['xpath']
           if xpath:
             pathList = re.sub(base, '', xpath)[1:].split('/')
+            # pathList.remove('')
             path = base_path + pathList
+            # path = xpath[1:].split('/')
             datatype = _dictxpath['datatype']
             set_path_value(Dic, path, cell, datatype)
     n += 1

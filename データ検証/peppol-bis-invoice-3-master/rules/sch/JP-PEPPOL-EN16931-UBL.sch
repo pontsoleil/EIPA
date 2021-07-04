@@ -1443,7 +1443,8 @@ This schematron uses business terms defined the CEN/EN16931-1 and is reproduced 
     <!-- Amount, which is not Unit Price, Representation Rules -->
     <rule context="ubl-invoice:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
         ubl-invoice:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
-        //cac:InvoiceLine/cbc:LineExtensionAmount[@currencyID='JPY']">
+        //cac:InvoiceLine/*[@currencyID='JPY'] |
+        //cac:InvoiceLine/cac:AllowanceCharge/*[@currencyID='JPY']">
       <assert id="JP-R-003" test="matches(normalize-space(.),'^-?[1-9][0-9]*$')" flag="fatal">
         [JP-R-003]- Amount shall be integer.</assert>
     </rule>
