@@ -246,7 +246,7 @@ SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSo
 2790	ibg-27	ibt-137	3	Invoice line allowance base amount	明細行の返還請求の基準金額	0..1	Amount	3430	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount		
 2795	ibg-27	ibt-137-1	4	Currency code	通貨コード	1..1	Code	3440	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount/@currencyID		
 2796	ibg-27	ibt-137a	3	Invoice line allowance TAX category code	明細行の返還請求の課税分類コード	1..1 	Code	3402	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:ID		
-2787	ibg-27	ibt-137b	3	Invoice line allowance TAX rate	明細行の返還請求の税率	0..1 	Percent	3403	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
+2787	ibg-27	ibt-138	3	Invoice line allowance TAX rate	明細行の返還請求の税率	0..1 	Percent	3403	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
 2788	ibg-27	ibt-137c	3	Tax Scheme	税スキーマ	1..1	Code	3405	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		
 2830	ibg-25	ibg-28	2	INVOICE LINE CHARGES	明細行の追加請求	0..n	Group	3450	/Invoice/cac:InvoiceLine/cac:AllowanceCharge		
 2835	ibg-28	ibt-141a	3	Charge indicator	追加請求フラグ	1..1	Indicator	3460	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator		
