@@ -55,7 +55,7 @@ Charges = {
 
 Allowances = {
   'ibg-20','ibt-092a','ibt-096a','ibt-098','ibt-097','ibt-094','ibt-092','ibt-092-1','ibt-093','ibt-093-1','ibt-095','ibt-096','ibt-096a',
-  'ibg-27','ibt-136a','ibt-140','ibt-139','ibt-138','ibt-136','ibt-136-1','ibt-137','ibt-137-1','ibt-137a','ibt-138','ibt-137c',
+  'ibg-27','ibt-136a','ibt-140','ibt-139','ibt-139a','ibt-138','ibt-136','ibt-136-1','ibt-137','ibt-137-1','ibt-137a','ibt-138','ibt-137c',
   'ibt-147','ibt-147-1'
 }
 
@@ -99,7 +99,7 @@ def dict_to_tsv(tsv, root):
     twig_id = ''
     for p in pathList:
       _path += '/'+p
-      if _path in dictID:
+      if _path != 'Invoice' and _path in dictID:
         _id = getID(_path)
         if _id in parents:
           column_id = parents[_id]
@@ -107,8 +107,8 @@ def dict_to_tsv(tsv, root):
           base_id = m.group(1)
           bough_id = m.group(2)
           twig_id = m.group(3)
-          if column_id != base_id+'_'+bough_id+'_'+twig_id:
-            print(column_id, base_id, bough_id, twig_id)
+          # if column_id != base_id+'_'+bough_id+'_'+twig_id:
+          #   print(column_id, base_id, bough_id, twig_id)
     _record = {}
     if 1 == case:
       pathString = path
@@ -145,9 +145,19 @@ def dict_to_tsv(tsv, root):
       else:
         if verbose:
           print(f'--- WARNING _setup_record(tsv, root) --- case {case} {pathString} not in dictID')
-        id = 'ibg-XX'
+        id = 'ibg-XX'  # TODO error handling
       tag = k
       value = ''
+      if not base_id:
+        if id in parents:
+          column_id = parents[id]
+          m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+          base_id = m.group(1)
+          bough_id = m.group(2)
+          twig_id = m.group(3)
+          # if column_id != base_id+'_'+bough_id+'_'+twig_id:
+          #   print(column_id, base_id, bough_id, twig_id)
+
     _record = {'case': case, 'base_id':base_id, 'bough_id':bough_id, 'twig_id':twig_id, 'id': id, \
                 'path': pathString, 'tag': tag, 'value': value}
     return _record
@@ -367,6 +377,7 @@ if __name__ == '__main__':
   parser.add_argument('-e', '--encoding')  # 'Shift_JIS' 'cp932'
   # parser.add_argument('-l', '--level', action='store_true')
   parser.add_argument('-v', '--verbose', action='store_true')
+
   args = parser.parse_args()
   in_file = file_path(args.inFile)
   pre, ext = os.path.splitext(in_file)
@@ -376,10 +387,11 @@ if __name__ == '__main__':
     out_file = file_path(out_file)
   else:
     out_file = pre+'.tsv'
-  encoding = args.encoding.lstrip()
-  if not encoding:
+  encoding = args.encoding
+  if encoding:
+    encoding = encoding.lstrip()
+  else:
     encoding = 'UTF-8'
-  # level = args.level
   verbose = args.verbose
   # Check if infile exists
   if not os.path.isfile(in_file):
@@ -542,6 +554,7 @@ if __name__ == '__main__':
         max_index = index
 
   previous_id = None
+  previous_column = None
   repetition = {}
   twigs = {}
   row = {}
@@ -553,10 +566,10 @@ if __name__ == '__main__':
     if id in parents:
       column_id = parents[id]
     else:
-      print(f'--- ERROR --- {id} not in parents')
+      print(f'--- ERROR --- {id} for {v} not in parents')
     if 'ibg-00' != id and previous_id and previous_id!=column_id:
 
-      append_tsv(previous_id, column, id, None)
+      append_tsv(previous_id, previous_column, id, None)
       
       column = ['']*column_length
     column[0] = column_id
@@ -566,7 +579,9 @@ if __name__ == '__main__':
       if id in sortedHeader:
         index = sortedHeader.index(id)
         if column[index+1]:
-          append_tsv(previous_id, column, id, True)
+          if verbose:
+            print(f'-- duplicate {previous_id} {id}')
+          append_tsv(previous_id, previous_column, id, True)
           column = ['']*column_length
         column[index+1] = value
     if 4 == case:
@@ -581,8 +596,9 @@ if __name__ == '__main__':
               repetition[i] = 0
 
     previous_id = column_id
+    previous_column = column
 
-  append_tsv(previous_id, column, id, None)
+  append_tsv(previous_id, previous_column, id, None)
 
   # see https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
   _row = []
