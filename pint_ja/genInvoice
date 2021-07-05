@@ -246,6 +246,8 @@ if __name__ == '__main__':
 
   # initialize globals
   Dic = defaultdict(type(''))
+  Dic['Invoice'] = {}
+
   dictID = defaultdict(type(''))
   dictXpath = defaultdict(type(''))
 
@@ -338,24 +340,17 @@ if __name__ == '__main__':
     transposed_row = [list(i) for i in zip(*rows)]
     record = transposed_row[0]
     header = [record[0]]+record[2:4]+record[5:]
-    rows = [header]
     for i in range(1,len(transposed_row)):
       record = transposed_row[i]
       row = [record[0]]+record[2:4]+record[5:]
-      rows.append(row)
-    with open(tmp_file, 'w', encoding=encoding) as f:
-      writer = csv.writer(f, delimiter='\t')
-      for row in rows:
-        writer.writerow(row)
+      set_record(Dic, header, row)
   else:
-    tmp_file = in_file
-
-  Dic['Invoice'] = {}
-  with open(tmp_file, encoding='utf-8', newline='') as f:
-    reader = csv.reader(f, delimiter='\t')
-    header = next(reader)
-    for record in reader:
-      set_record(Dic, header, record)
+    with open(in_file, encoding=encoding, newline='') as f:
+      reader = csv.reader(f, delimiter='\t')
+      header = next(reader)
+      for record in reader:
+        row = record[0:4]+record[6:]# column 0 ~ 3 for bough and twig 4,5 BG name for bough and twig
+        set_record(Dic, header, record)
 
   clean_list(Dic)
 
@@ -377,7 +372,6 @@ if __name__ == '__main__':
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
   ''')  # this step adds xsi:schemaLocation attribute
-
   tree = dict_to_etree(dic2, root)
 
   with open(out_file, 'wb') as f:
