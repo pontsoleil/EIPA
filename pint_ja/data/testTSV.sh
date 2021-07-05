@@ -25,3 +25,7 @@
 ./genInvoice data/out/ubl-tc434-example7.tsv -o data/out/ubl-tc434-example7.xml -e Shift_JIS -t -v
 ./genInvoice data/out/ubl-tc434-example8.tsv -o data/out/ubl-tc434-example8.xml -e Shift_JIS -t -v
 ./genInvoice data/out/ubl-tc434-example9.tsv -o data/out/ubl-tc434-example9.xml -e Shift_JIS -t -v
+
+
+./invoice2tsv data/in/ubl-tc434-example2.xml -o data/out/ubl-tc434-example2.tsv -e Shift_JIS -v
+./genInvoice data/out/ubl-tc434-example2.tsv -o data/out/ubl-tc434-example2.xml -e Shift_JIS -t -v
