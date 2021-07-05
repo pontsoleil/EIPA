@@ -108,17 +108,17 @@
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode name="Credit transfer">30</cbc:PaymentMeansCode>
     <cbc:PaymentID>Snippet1</cbc:PaymentID>
-	  <cac:PayeeFinancialAccount>
-	    <cbc:ID>1234:12:1:123456789</cbc:ID>
-	    <cbc:Name>株式会社 ○○商事</cbc:Name>
-	  </cac:PayeeFinancialAccount>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>1234:12:1:123456789</cbc:ID>
+      <cbc:Name>株式会社 ○○商事</cbc:Name>
+    </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>false</cbc:ChargeIndicator> <!-- allowancw -->
+    <cbc:ChargeIndicator>false</cbc:ChargeIndicator>    <!-- allowancw -->
     <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
-    <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric> <!--document level allowance percentage (BT-94) -->
-    <cbc:Amount currencyID="JPY">10000</cbc:Amount> <!-- document level allowance amount (BT-92) = document level base amount (BT-93) x (document level allowance percentage (BT-94) / 100) -->
-    <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount> <!-- document level base amount (BT-93) sum of invoice line net amount -->
+    <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>    <!--document level allowance percentage (BT-94) -->
+    <cbc:Amount currencyID="JPY">10000</cbc:Amount>    <!-- document level allowance amount (BT-92) = document level base amount (BT-93) x (document level allowance percentage (BT-94) / 100) -->
+    <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>    <!-- document level base amount (BT-93) sum of invoice line net amount -->
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
       <cbc:Percent>10</cbc:Percent>
@@ -128,7 +128,7 @@
     </cac:TaxCategory>
   </cac:AllowanceCharge>
   <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator> <!-- charge -->
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>    <!-- charge -->
     <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="JPY">17700</cbc:Amount>
     <cac:TaxCategory>

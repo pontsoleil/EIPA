@@ -108,13 +108,13 @@
   <cac:PaymentMeans>
     <cbc:PaymentMeansCode name="Credit transfer">30</cbc:PaymentMeansCode>
     <cbc:PaymentID>Snippet1</cbc:PaymentID>
-	<cac:PayeeFinancialAccount>
-	  <cbc:ID>1234:12:1:123456789</cbc:ID>
-	  <cbc:Name>株式会社 ○○商事</cbc:Name>
-	</cac:PayeeFinancialAccount>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>1234:12:1:123456789</cbc:ID>
+      <cbc:Name>株式会社 ○○商事</cbc:Name>
+    </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator> <!-- charge -->
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
     <cbc:Amount currencyID="JPY">17700</cbc:Amount>
     <cac:TaxCategory>
@@ -208,11 +208,11 @@
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator> <!-- allowance -->
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>              <!-- allowance -->
       <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
       <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric> <!-- line level allowance percentage (BT-138) -->
-      <cbc:Amount currencyID="JPY">10000</cbc:Amount> <!-- line level allowance amount (BT-136) = line level base amount (BT-137) x (line level allowance percentage (BT-138) / 100) -->
-      <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount> <!-- line level base amount (BT-1) sum of invoice line net amount -->
+      <cbc:Amount currencyID="JPY">10000</cbc:Amount>               <!-- line level allowance amount (BT-136) = line level base amount (BT-137) x (line level allowance percentage (BT-138) / 100) -->
+      <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>       <!-- line level base amount (BT-1) sum of invoice line net amount -->
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>10</cbc:Percent>

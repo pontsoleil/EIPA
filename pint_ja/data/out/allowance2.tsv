@@ -142,12 +142,12 @@ ibg-26	2	INVOICE LINE PERIOD	明細行の期間	0..1	Group
 ibg-36	2	Referenced purchase order line reference	発注明細行参照	0..1	Group																												
 ibg-27	2	INVOICE LINE ALLOWANCES	明細行の返還請求	0..n	Group																												
 ibg-28	2	INVOICE LINE CHARGES	明細行の追加請求	0..n	Group																												
-ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group																												
-ibt-153	3	Item name 	品名	1..1	Text															原稿用紙（A4）					XX新聞					回転椅子　K			
 ibg-30	2	LINE TAX INFORMATION	明細行税額情報	1..n	Group																												
 ibt-151	3	Invoiced item TAX category code	請求される品目に対する課税分類コード	1..1	Code																S					AA					S		
 ibt-152	3	Invoiced item TAX rate	請求される品目に対する税率	0..1	Percent																10					8					10		
 ibt-167	3	Tax Scheme	税スキーマ	0..1	Code																VAT					VAT					VAT		
+ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group																												
+ibt-153	3	Item name 	品名	1..1	Text															原稿用紙（A4）					XX新聞					回転椅子　K			
 ibg-32	2	ITEM ATTRIBUTES	品目属性	0..n	Group																												
 ibt-160	3	Item attribute name	品目属性名	1..1	Text																	数量単位					数量単位					数量単位	
 ibt-161	3	Item attribute value 	品目属性値	1..1	Text																	枚					部					個	

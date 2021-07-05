@@ -109,9 +109,9 @@
     <cbc:PaymentMeansCode name="Credit transfer">30</cbc:PaymentMeansCode>
     <cbc:PaymentID>Snippet1</cbc:PaymentID>
     <cac:PayeeFinancialAccount>
-	  <cbc:ID>1234:12:1:123456789</cbc:ID>
-	  <cbc:Name>株式会社 ○○商事</cbc:Name>
-	</cac:PayeeFinancialAccount>
+      <cbc:ID>1234:12:1:123456789</cbc:ID>
+      <cbc:Name>株式会社 ○○商事</cbc:Name>
+    </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
@@ -151,7 +151,7 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-      <cbc:LineExtensionAmount currencyID="JPY">110000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="JPY">110000</cbc:LineExtensionAmount>
     <cbc:TaxExclusiveAmount currencyID="JPY">127700</cbc:TaxExclusiveAmount>
     <cbc:TaxInclusiveAmount currencyID="JPY">139670</cbc:TaxInclusiveAmount>
     <cbc:ChargeTotalAmount currencyID="JPY">17700</cbc:ChargeTotalAmount>
@@ -225,8 +225,8 @@
       <cbc:PriceAmount currencyID="JPY">40000</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       <cac:AllowanceCharge>
-        <cbc:ChargeIndicator>false</cbc:ChargeIndicator> <!-- discount -->
-        <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>        
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>        <!-- discount -->
+        <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
         <cbc:Amount currencyID="JPY">10000</cbc:Amount>
         <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>
       </cac:AllowanceCharge>

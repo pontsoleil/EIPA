@@ -231,8 +231,8 @@ SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSo
 2750	ibg-26	ibt-134	3	Invoice line period start date	明細行の期間開始日	0..1	Date	3280	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate		
 2760	ibg-26	ibt-135	3	Invoice line period end date	明細行の期間終了日	0..1	Date	3290	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate		
 2719	ibg-25	ibg-36	2	Referenced purchase order line reference	発注明細行参照	0..1	Group	3300	/Invoice/cac:InvoiceLine/cac:OrderLineReference		
-2720	ibg-36	ibt-132	3	Referenced purchase order line identifier	発注明細行番号	1..1	REF	3310	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID		
-2721	ibg-36	ibt-183	3	Referenced purchase order identifier	発注書番号	0..1	REF	3320	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cac:OrderReference/cbc:ID		
+2720	ibg-36	ibt-132a	3	Referenced purchase order line identifier	発注明細行番号	1..1	REF	3310	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID		
+2721	ibg-36	ibt-132b	3	Referenced purchase order identifier	発注書番号	0..1	REF	3320	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cac:OrderReference/cbc:ID		
 2722	ibg-36	ibt-184	2	Despatch advice reference	出荷案内書(納品書)参照	0..1	REF	3330	/Invoice/cac:InvoiceLine/cac:DespatchLineReference/cac:DocumentReference/cbc:ID		
 2670	ibg-36	ibt-128	2	Invoice line object identifier	請求書明細オブジェクト識別子	0..1	ID	3340	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID		
 2680	ibg-36	ibt-128-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	3350	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID/@schemeID		
@@ -240,7 +240,7 @@ SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSo
 2775	ibg-27	ibt-136a	3	Charge indicator	追加請求フラグ	1..1	Indicator	3370	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator		
 2820	ibg-27	ibt-140	3	Invoice line allowance reason code	明細行の返還請求理由コード	0..1	Code	3380	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode		
 2810	ibg-27	ibt-139	3	Invoice line allowance reason	明細行の返還請求理由	0..1	Text	3390	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason		
-2800	ibg-27	ibt-138	3	Invoice line allowance percentage	明細行の返還請求の率	0..1	Percent	3400	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric		
+2800	ibg-27	ibt-139a	3	Invoice line allowance percentage	明細行の返還請求の率	0..1	Percent	3400	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric		
 2780	ibg-27	ibt-136	3	Invoice line allowance amount	明細行の返還請求金額(税抜)	1..1	Amount	3410	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount		
 2785	ibg-27	ibt-136-1	4	Currency code	通貨コード	1..1	Code	3420	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount/@currencyID		
 2790	ibg-27	ibt-137	3	Invoice line allowance base amount	明細行の返還請求の基準金額	0..1	Amount	3430	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount		
@@ -260,11 +260,6 @@ SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSo
 2856	ibg-28	ibt-142a	3	Invoice line charge TAX category code	明細行の追加請求の課税分類コード	1..1 	Code	3462	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:ID		
 2857	ibg-28	ibt-142b	3	Invoice line charge TAX rate	明細行の追加請求の税率	0..1 	Percent	3463	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
 2858	ibg-28	ibt-142c	3	Tax Scheme	税スキーマ	1..1	Code	3465	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		
-2980	ibg-25	ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group	3540	/Invoice/cac:InvoiceLine/cac:Item		
-3000	ibg-31	ibt-154	3	Item description 	品目摘要	0..n	Text	3550	/Invoice/cac:InvoiceLine/cac:Item/cbc:Description		
-2990	ibg-31	ibt-153	3	Item name 	品名	1..1	Text	3560	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name		
-3020	ibg-31	ibt-156	3	Item Buyer's identifier	発注者による品目識別子	0..1	ID	3570	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID		
-3010	ibg-31	ibt-155	3	Item Seller's identifier	販売者による品目識別子	0..1	ID	3580	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID		
 2950	ibg-25	ibg-30	2	LINE TAX INFORMATION	明細行税額情報	1..n	Group	3590	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory		
 2960	ibg-30	ibt-151	3	Invoiced item TAX category code	請求される品目に対する課税分類コード	1..1	Code	3600	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID		
 2970	ibg-30	ibt-152	3	Invoiced item TAX rate	請求される品目に対する税率	0..1	Percent	3610	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent		
@@ -273,12 +268,17 @@ SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSo
 2971	ibg-30	ibt-185	3	TAX exemption reason text	非課税/不課税理由コード	0..1	Code	3640	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode		
 2972	ibg-30	ibt-186	3	TAX exemption reason code	非課税/不課税理由	0..1	Text	3650	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReason		
 2976	ibg-30	ibt-167	3	Tax Scheme	税スキーマ	0..1	Code	3660	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID		
+2980	ibg-25	ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group	3540	/Invoice/cac:InvoiceLine/cac:Item		
+3000	ibg-31	ibt-154	3	Item description 	品目摘要	0..n	Text	3550	/Invoice/cac:InvoiceLine/cac:Item/cbc:Description		
+2990	ibg-31	ibt-153	3	Item name 	品名	1..1	Text	3560	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name		
+3020	ibg-31	ibt-156	3	Item Buyer's identifier	発注者による品目識別子	0..1	ID	3570	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID		
+3010	ibg-31	ibt-155	3	Item Seller's identifier	販売者による品目識別子	0..1	ID	3580	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID		
 3030	ibg-30	ibt-157	3	Item standard identifier	品目標準識別子	0..1	ID	3670	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID		
 3040	ibg-30	ibt-157-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme	3680	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID		
+3050	ibg-25	ibt-158	3	Item classification identifier	品目分類識別子	0..n	ID	3700	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode		
+3060	ibt-158	ibt-158-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme	3710	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID		
+3070	ibt-158	ibt-158-2	4	Scheme version identifier	スキーマのバージョン識別子	1..1	Scheme	3720	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID		
 3080	ibg-30	ibt-159	3	Item country of origin	品目の原産国	0..1	Code	3690	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode		
-3050	ibg-25	ibt-158	2	Item classification identifier	品目分類識別子	0..n	ID	3700	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode		
-3060	ibt-158	ibt-158-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	3710	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID		
-3070	ibt-158	ibt-158-2	3	Scheme version identifier	スキーマのバージョン識別子	1..1	Scheme	3720	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID		
 3090	ibg-25	ibg-32	2	ITEM ATTRIBUTES	品目属性	0..n	Group	3730	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty		
 3100	ibg-32	ibt-160	3	Item attribute name	品目属性名	1..1	Text	3740	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name		
 3110	ibg-32	ibt-161	3	Item attribute value 	品目属性値	1..1	Text	3750	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value		
