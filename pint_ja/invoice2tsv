@@ -28,7 +28,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import xml.etree.ElementTree as ET
-# from collections import defaultdict
 from operator import itemgetter
 import pandas as pd
 import csv
@@ -42,8 +41,8 @@ import numpy as np
 from dic2etree import *
 
 DEBUG = False
-dictID = {}  # defaultdict(type(''))
-dictXpath = {}  # defaultdict(type(''))
+dictID = {}
+dictXpath = {}
 sortID = {}
 sortXpath = {}
 ChargeIndicator = {}
@@ -59,7 +58,8 @@ Allowances = {
   'ibt-147','ibt-147-1'
 }
 
-patternIndex = re.compile("(ibg-[0-9]{2,3})_(ibg-[0-9]{2,3}|------)_(ibg-[0-9]{2,3}|------)")  # column_id
+patternId = re.compile("(ibg-[0-9]{2,3})_(ibg-[0-9]{2,3}|------)_(ibg-[0-9]{2,3}|------)")  # column_id
+patternIndex = re.compile("(ibg-[0-9]{2,3})_(ibg-[0-9]{2,3}|------)_([^_]*)_(ibg-[0-9]{2,3}|------)_([^_]*)")  # column_index
 patternSort = re.compile("([0-9]{4})_([0-9]{4})_([0-9]{4})")  # sort_id
 
 def getID(xpath):
@@ -103,12 +103,10 @@ def dict_to_tsv(tsv, root):
         _id = getID(_path)
         if _id in parents:
           column_id = parents[_id]
-          m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+          m = patternId.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
           base_id = m.group(1)
           bough_id = m.group(2)
           twig_id = m.group(3)
-          # if column_id != base_id+'_'+bough_id+'_'+twig_id:
-          #   print(column_id, base_id, bough_id, twig_id)
     _record = {}
     if 1 == case:
       pathString = path
@@ -151,12 +149,10 @@ def dict_to_tsv(tsv, root):
       if not base_id:
         if id in parents:
           column_id = parents[id]
-          m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+          m = patternId.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
           base_id = m.group(1)
           bough_id = m.group(2)
           twig_id = m.group(3)
-          # if column_id != base_id+'_'+bough_id+'_'+twig_id:
-          #   print(column_id, base_id, bough_id, twig_id)
 
     _record = {'case': case, 'base_id':base_id, 'bough_id':bough_id, 'twig_id':twig_id, 'id': id, \
                 'path': pathString, 'tag': tag, 'value': value}
@@ -286,7 +282,7 @@ def get_sort_id(v):
   return sort_id
 
 def append_tsv(column_id, column, id, duplicate):
-  m = patternIndex.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
+  m = patternId.search(column_id)  # /(ibg-[0-9]{2})_(ibg-[0-9]{2}|------)_(ibg-[0-9]{2}|------)/
   base_id = m.group(1)
   bough_id = m.group(2)
   twig_id = m.group(3)
@@ -350,19 +346,43 @@ def append_tsv(column_id, column, id, duplicate):
       print(f'({_column_sort}) {column_index} {id} {bough_name} {twig_name}')
     if _column_sort in row:
       _row = row[_column_sort]
-      _column = _row[8:]
-      for i in range(len(column)):
-        if len(_column[i]) > 0 and column[i] != _column[i]:
-          if len(column[i]) > 0 and verbose:
-            print(f'--- WARNING --- {column_index} {_column_sort} is duplicated column[{i}] {column[i]} and {_column[i]}')
-          if _column_sort+'-1' in row:
-            column_ = row[_column_sort+'-1'][8:]
-            column_[i] = _column[i]
-            _column = column_
-          row[_column_sort+'-1'] = [bough_id, bough_card, twig_id, twig_card, column_index, _column_sort, bough_name, twig_name]+_column
-        else:
-          column[i] = _column[i]
-    row[_column_sort] = [bough_id, bough_card, twig_id, twig_card, column_index, _column_sort, bough_name, twig_name]+column
+      data = _row[8:] # exsisted data
+      column_ = column
+      for i in range(len(data)):
+        if len(data[i]) > 0:
+          if 0 == len(column[i]):# overwrite
+            column[i] = data[i]
+          elif column[i] != data[i]: # append new row
+            if verbose:
+              print(f'--- WARNING append_tsv() ({_column_sort}) {column_index} {id} {bough_name} {twig_name} is duplicated column[{i}] {column[i]} and {data[i]}')
+            m = patternIndex.search(column_index)
+            bough_card = m.group(3)
+            twig_card = m.group(5)
+            if '-' == twig_card:
+              if '-' == bough_card:
+                column_index0 = base_id+'_'+bough_id+'_0_'+twig_id+'_'+twig_card
+                column_index1 = base_id+'_'+bough_id+'_1_'+twig_id+'_'+twig_card
+                _column_sort0 = base_sort+'_'+bough_sort+'_0_'+twig_sort+'_'+twig_card
+                _column_sort1 = base_sort+'_'+bough_sort+'_1_'+twig_sort+'_'+twig_card                
+                repetition[bough_id] = bough_card
+                if _column_sort1 in row:
+                  column_ = row[_column_sort1][8:]
+                  column_[i] = column[i]
+                  row[_column_sort1] = [bough_id,1,twig_id,twig_card,column_index1,_column_sort1,bough_name,twig_name]+column_
+                else:
+                  del(row[_column_sort])
+                  row[_column_sort0] = [bough_id,0,twig_id,twig_card,column_index0,_column_sort0,bough_name,twig_name]+data
+                  row[_column_sort1] = [bough_id,1,twig_id,twig_card,column_index1,_column_sort1,bough_name,twig_name]+column
+      try:
+        _column_sort1
+      except NameError:
+        pass
+      else:
+        _column_sort = _column_sort1
+        bough_card = 1
+        column_index = column_index1
+        _column_sort = _column_sort1
+    row[_column_sort] = [bough_id,bough_card,twig_id,twig_card,column_index,_column_sort,bough_name,twig_name]+column
   else:
     print(f'-- NOT FOUND {column_id} in column_header --')
 
@@ -375,7 +395,6 @@ if __name__ == '__main__':
   parser.add_argument('inFile', metavar='infile', type=str, help='入力XMLファイル')
   parser.add_argument('-o', '--out')
   parser.add_argument('-e', '--encoding')  # 'Shift_JIS' 'cp932'
-  # parser.add_argument('-l', '--level', action='store_true')
   parser.add_argument('-v', '--verbose', action='store_true')
 
   args = parser.parse_args()
@@ -502,6 +521,7 @@ if __name__ == '__main__':
     print(f'*** Input file {in_file}')
   tree = ET.parse(in_file)
   root = tree.getroot()
+
   dic = etree_to_dict(root)
 
   dicJson = json.dumps(dic)
@@ -580,7 +600,7 @@ if __name__ == '__main__':
         index = sortedHeader.index(id)
         if column[index+1]:
           if verbose:
-            print(f'-- duplicate {previous_id} {id}')
+            print(f'--- WARNING in main case 4 duplicate {previous_id} {id}')
           append_tsv(previous_id, previous_column, id, True)
           column = ['']*column_length
         column[index+1] = value
@@ -597,12 +617,20 @@ if __name__ == '__main__':
 
     previous_id = column_id
     previous_column = column
-
   append_tsv(previous_id, previous_column, id, None)
+
+  # check if row contains data
+  tmp_row = {}
+  for k,v in row.items():
+    d = ''
+    for i in range(9,len(v)):
+      d += v[i]
+    if len(d) > 0:
+      tmp_row[k] = v
 
   # see https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
   _row = []
-  for k,v in row.items():
+  for k,v in tmp_row.items():
     _row.append({'column_sort':k, 'v':v})
   tmp_row = sorted(_row, key=itemgetter('column_sort'))
   sorted_row = [x['v'] for x in tmp_row]

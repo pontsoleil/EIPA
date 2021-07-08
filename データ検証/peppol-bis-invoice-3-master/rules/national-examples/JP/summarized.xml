@@ -113,37 +113,20 @@
       <cbc:Name>株式会社 ○○商事</cbc:Name>
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
-  <cac:AllowanceCharge>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-    <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
-    <cbc:Amount currencyID="JPY">17700</cbc:Amount>
-    <cac:TaxCategory>
-      <cbc:ID>S</cbc:ID>
-      <cbc:Percent>10</cbc:Percent>
-      <cac:TaxScheme>
-        <cbc:ID>VAT</cbc:ID>
-      </cac:TaxScheme>
-    </cac:TaxCategory>
-  </cac:AllowanceCharge>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="JPY">11970</cbc:TaxAmount>
+    <cbc:TaxIncludedIndicator>false</cbc:TaxIncludedIndicator>
+    <!-- 
+      This field indicate Item net price (ibt-146) is tax excluded or not.
+      Although UBL 3 supports cbc:TaxInclusiveLineExtensionAmount, UBL 2.1 doesn't support this element.
+      This indicate whether cbc:LineExtensionAmount is tax inclusive or not.
+    -->
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="JPY">87700</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="JPY">8770</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="JPY">100000</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="JPY">10000</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>10</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:TaxSubtotal>
-    <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="JPY">40000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="JPY">3200</cbc:TaxAmount>
-      <cac:TaxCategory>
-        <cbc:ID>AA</cbc:ID>
-        <cbc:Percent>8</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -151,105 +134,22 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="JPY">120000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="JPY">127700</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="JPY">139670</cbc:TaxInclusiveAmount>
-    <cbc:ChargeTotalAmount currencyID="JPY">17700</cbc:ChargeTotalAmount>
-    <cbc:PayableAmount currencyID="JPY">139670</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="JPY">100000</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="JPY">100000</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="JPY">110000</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="JPY">10000</cbc:ChargeTotalAmount>
+    <cbc:PayableAmount currencyID="JPY">110000</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>10</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">1000</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="JPY">30000</cbc:LineExtensionAmount>
-    <cac:Item>
-      <cbc:Name>原稿用紙（A4）</cbc:Name>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>10</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>数量単位</cbc:Name>
-        <cbc:Value>枚</cbc:Value>
-      </cac:AdditionalItemProperty>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="JPY">30</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>20</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">10</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
-    <cac:Item>
-      <cbc:Name>XX新聞</cbc:Name>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>AA</cbc:ID>
-        <cbc:Percent>8</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>数量単位</cbc:Name>
-        <cbc:Value>部</cbc:Value>
-      </cac:AdditionalItemProperty>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="JPY">4000</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>30</cbc:ID>
     <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
-    <cac:AllowanceCharge>
-      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>              <!-- allowance -->
-      <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric> <!-- line level allowance percentage (BT-138) -->
-      <cbc:Amount currencyID="JPY">10000</cbc:Amount>               <!-- line level allowance amount (BT-136) = line level base amount (BT-137) x (line level allowance percentage (BT-138) / 100) -->
-      <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>       <!-- line level base amount (BT-1) sum of invoice line net amount -->
-      <cac:TaxCategory>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>10</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:TaxCategory>
-    </cac:AllowanceCharge>
-    <cac:Item>
-      <cbc:Name>回転椅子　K</cbc:Name>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>10</cbc:Percent>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-      <cac:AdditionalItemProperty>
-        <cbc:Name>数量単位</cbc:Name>
-        <cbc:Value>個</cbc:Value>
-      </cac:AdditionalItemProperty>
-    </cac:Item>
-    <cac:Price>
-      <cbc:PriceAmount currencyID="JPY">50000</cbc:PriceAmount>
-      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
-    </cac:Price>
-  </cac:InvoiceLine>
-  <cac:InvoiceLine>
-    <cbc:ID>40</cbc:ID>
-    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
-    <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
+    <cbc:LineExtensionAmount currencyID="JPY">70000</cbc:LineExtensionAmount>
     <cac:DocumentReference>
-      <cbc:ID>202106001</cbc:ID>
-      <cbc:DocumentTypeCode>納品書6月</cbc:DocumentTypeCode>
+      <cbc:ID>0000001020.2021-06-17</cbc:ID>
+      <cbc:DocumentTypeCode>383</cbc:DocumentTypeCode>
     </cac:DocumentReference>
     <cac:Item>
-      <cbc:Name>納品書</cbc:Name>
+      <cbc:Name>納品書 6月17日</cbc:Name>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>10</cbc:Percent>
@@ -264,6 +164,33 @@
     </cac:Item>
     <cac:Price>
       <cbc:PriceAmount currencyID="JPY">70000</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>20</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="JPY">30000</cbc:LineExtensionAmount>
+    <cac:DocumentReference>
+      <cbc:ID>0000001020.2021-06-21</cbc:ID>
+      <cbc:DocumentTypeCode>383</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+    <cac:Item>
+      <cbc:Name>納品書 6月21日</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>10</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>数量単位</cbc:Name>
+        <cbc:Value>件</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="JPY">30000</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>

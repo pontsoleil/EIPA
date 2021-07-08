@@ -56,8 +56,6 @@ SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSo
 1480	ibg-04	ibt-040	3	Seller country code 	販売者国コード	1..1	Code	1530	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode		
 1370	ibg-04	ibg-42	2	SELLER TAX REGISTRATION	販売者VAT登録情報		Group	1540	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme		
 1370	ibg-04	ibt-031	3	Seller TAX identifier	販売者 TAX ID	0..1	ID	1550	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID		
-1375	ibg-04	ibt-031-1	3	Tax Scheme	税スキーマ	0..1	Code	1560	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		
-1380	ibg-04	ibg-40	2	SELLER TAX REGISTRATION	販売者TAX登録情報		Group	1570	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme		
 1380	ibg-04	ibt-032	3	Seller TAX registration identifier	販売者の適格請求書発行事業者登録番号	0..1	ID	1580	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID		
 1385	ibg-04	ibt-032-1	3	Tax Scheme	税スキーマ	0..1	Code	1590	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		
 1310	ibg-04	ibg-37	2	SELLER LEGAL REGISTRATION	販売者登録情報	0..1	Group	1600	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity		
