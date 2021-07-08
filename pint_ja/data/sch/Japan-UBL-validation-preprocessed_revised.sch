@@ -213,29 +213,29 @@
   </pattern>
   <pattern id="Japan">
     <let name="JPSupplierCountry" value="concat(
-      ubl-invoice:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode,
-      ubl-creditnote:CreditNote/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode)"/>
+      ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode,
+      cn:CreditNote/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode)"/>
     <let name="JPCustomerCountry" value="concat(
-      ubl-invoice:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode,
-      ubl-creditnote:CreditNote/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode)"/>   
+      ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode,
+      cn:CreditNote/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode)"/>   
     <!-- VAT Registration Number Rules -->
-    <rule context="ubl-invoice:Invoice[$JPSupplierCountry = 'JP']/cac:AccountingSupplierParty">
+    <rule context="ubl:Invoice[$JPSupplierCountry = 'JP']/cac:AccountingSupplierParty">
       <assert id="JP-R-001" test="cac:Party/cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">
         [JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be followed by 13-digit number.</assert>
     </rule>
-    <rule context="ubl-invoice:Invoice[$JPSupplierCountry = 'JP']/cac:AccountingBuyerParty">
+    <rule context="ubl:Invoice[$JPSupplierCountry = 'JP']/cac:AccountingBuyerParty">
       <assert id="JP-R-002" test="cac:Party/cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">
         [JP-R-002]- For the Japanese Customers, the VAT registration number must start with 'T' and be followed by 13-digit number.</assert>
     </rule>
     <!-- Amount, which is not Unit Price, Representation Rules -->
-    <rule context="ubl-invoice:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
-      ubl-invoice:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
+    <rule context="ubl:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
+      ubl:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
       //cac:InvoiceLine/*[@currencyID='JPY'] |
       //cac:InvoiceLine/cac:AllowanceCharge/*[@currencyID='JPY']">
       <assert id="JP-R-003" test="matches(normalize-space(.),'^-?[1-9][0-9]*$')" flag="fatal">
         [JP-R-003]- Amount shall be integer.</assert>
     </rule>
-    <rule context="ubl-invoice:Invoice[$JPSupplierCountry = 'JP']/cac:TaxTotal/cac:TaxSubtotal">
+    <rule context="ubl:Invoice[$JPSupplierCountry = 'JP']/cac:TaxTotal/cac:TaxSubtotal">
       <!-- VAT Category TaxTotal Amount Rounding Rules -->
       <assert id="JP-BR-CO-17" test="(
         cac:TaxCategory/xs:decimal(cbc:Percent) != 0 
