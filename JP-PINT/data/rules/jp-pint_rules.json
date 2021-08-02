@@ -1,0 +1,687 @@
+[
+  {
+    "context": "cac:AdditionalDocumentReference",
+    "flag": "fatal",
+    "test": "(cbc:ID) != ''",
+    "text": "[ibr-52]-Each Additional supporting document (ibg-24) shall contain a Supporting document reference (ibt-122).",
+    "rules": [
+      "ibg-24",
+      "ibt-122"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal/cbc:PayableAmount",
+    "flag": "fatal",
+    "test": "string-length(substring-after(., '.')) <= 2",
+    "text": "[ibr-67]-Invoice amount due for payment (ibt-115) shall have no more than 2 decimals.",
+    "rules": [
+      "ibt-115"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal/cbc:PayableAmount",
+    "flag": "fatal",
+    "test": "((. > 0) and (exists(//cbc:DueDate) or exists(//cac:PaymentTerms/cbc:Note))) or (. <= 0)",
+    "text": "[ibr-co-25]-In case the Amount due for payment (ibt-115) is positive, either the Payment due date (ibt-009) or the Payment terms (ibt-020) shall be present.",
+    "rules": [
+      "ibt-115",
+      "ibt-009",
+      "ibt-020"
+    ]
+  },
+  {
+    "context": "cac:AccountingCustomerParty/cac:Party/cbc:EndpointID",
+    "flag": "fatal",
+    "test": "exists(@schemeID)",
+    "text": "[ibr-63]-The Buyer electronic address (ibt-049) shall have a Scheme identifier.",
+    "rules": [
+      "ibt-049"
+    ]
+  },
+  {
+    "context": "cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+    "flag": "fatal",
+    "test": "(cac:Country/cbc:IdentificationCode) != ''",
+    "text": "[ibr-11]-The Buyer postal address (ibg-089 shall contain a Buyer country code (ibt-055).",
+    "rules": [
+      "ibg-089",
+      "ibt-055"
+    ]
+  },
+  {
+    "context": "cac:Delivery/cac:DeliveryLocation/cac:Address",
+    "flag": "fatal",
+    "test": "exists(cac:Country/cbc:IdentificationCode)",
+    "text": "[ibr-57]-Each Deliver to address (ibg-15) shall contain a Deliver to country code (ibt-080).",
+    "rules": [
+      "ibg-15",
+      "ibt-080"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "exists(cbc:Amount)",
+    "text": "[ibr-31]-Each Document level allowance (ibg-20) shall have a Document level allowance amount (ibt-092).",
+    "rules": [
+      "ibg-20",
+      "ibt-092"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-33]-Each Document level allowance (ibg-20) shall have a Document level allowance reason (ibt-907) or a Document level allowance reason code (ibt-098).",
+    "rules": [
+      "ibg-20",
+      "ibt-907",
+      "ibt-098"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "true()",
+    "text": "[ibr-co-05]-Document level allowance reason code (ibt-098) and Document level allowance reason (ibt-097) shall indicate the same type of allowance.",
+    "rules": [
+      "ibt-098",
+      "ibt-097"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-co-21]-Each Document level allowance (ibg-20) shall contain a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098), or both.",
+    "rules": [
+      "ibg-20",
+      "ibt-097",
+      "ibt-098"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "exists(cbc:Amount)",
+    "text": "[ibr-36]-Each Document level charge (ibg-21) shall have a Document level charge amount (ibt-099).",
+    "rules": [
+      "ibg-21",
+      "ibt-099"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-38]-Each Document level charge (ibg-21) shall have a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105).",
+    "rules": [
+      "ibg-21",
+      "ibt-104",
+      "ibt-105"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "true()",
+    "text": "[ibr-co-06]-Document level charge reason code (ibt-105) and Document level charge reason (ibt-104) shall indicate the same type of charge.",
+    "rules": [
+      "ibt-105",
+      "ibt-104"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-co-22]-Each Document level charge (ibg-21) shall contain a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105), or both.",
+    "rules": [
+      "ibg-21",
+      "ibt-104",
+      "ibt-105"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "exists(cbc:LineExtensionAmount)",
+    "text": "[ibr-12]-An Invoice shall have the Sum of Invoice line net amount (ibt-106).",
+    "rules": [
+      "ibt-106"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "exists(cbc:TaxExclusiveAmount)",
+    "text": "[ibr-13]-An Invoice shall have the Invoice total amount without Tax (ibt-109).",
+    "rules": [
+      "ibt-109"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "exists(cbc:TaxInclusiveAmount)",
+    "text": "[ibr-14]-An Invoice shall have the Invoice total amount with Tax (ibt-112).",
+    "rules": [
+      "ibt-112"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "exists(cbc:PayableAmount)",
+    "text": "[ibr-15]-An Invoice shall have the Amount due for payment (ibt-115).",
+    "rules": [
+      "ibt-115"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "(xs:decimal(cbc:LineExtensionAmount) = sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount)))",
+    "text": "[ibr-co-10]-Sum of Invoice line net amount (ibt-106) = \u03a3 Invoice line net amount (ibt-131).",
+    "rules": [
+      "ibt-106",
+      "ibt-131"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "xs:decimal(cbc:AllowanceTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount)) or (not(cbc:AllowanceTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]))",
+    "text": "[ibr-co-11]-Sum of allowances on document level (ibt-107) = \u03a3 Document level allowance amount (ibt-092).",
+    "rules": [
+      "ibt-107",
+      "ibt-092"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "xs:decimal(cbc:ChargeTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount)) or (not(cbc:ChargeTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]))",
+    "text": "[ibr-co-12]-Sum of charges on document level (ibt-108) = \u03a3 Document level charge amount (ibt-099).",
+    "rules": [
+      "ibt-108",
+      "ibt-099"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount))) or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount))) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount))) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)))",
+    "text": "[ibr-co-13]-Invoice total amount without Tax (ibt-109) = \u03a3 Invoice line net amount (ibt-131) - Sum of allowances on document level (ibt-107) + Sum of charges on document level (ibt-108).",
+    "rules": [
+      "ibt-109",
+      "ibt-131",
+      "ibt-107",
+      "ibt-108"
+    ]
+  },
+  {
+    "context": "cac:LegalMonetaryTotal",
+    "flag": "fatal",
+    "test": "(xs:decimal(cbc:PrepaidAmount) and not(xs:decimal(cbc:PayableRoundingAmount)) and (xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and not(xs:decimal(cbc:PayableRoundingAmount)) and xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)) or (xs:decimal(cbc:PrepaidAmount) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount)))",
+    "text": "[ibr-co-16]-Amount due for payment (ibt-115) = Invoice total amount with Tax (ibt-112) - Paid amount (ibt-113) + Rounding amount (ibt-114).",
+    "rules": [
+      "ibt-115",
+      "ibt-112",
+      "ibt-113",
+      "ibt-114"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cbc:CustomizationID) != ''",
+    "text": "[ibr-01]-An Invoice shall have a Specification identifier (ibt-024).",
+    "rules": [
+      "ibt-024"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cbc:ID) !=''",
+    "text": "[ibr-02]-An Invoice shall have an Invoice number (ibt-001).",
+    "rules": [
+      "ibt-001"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cbc:IssueDate) !=''",
+    "text": "[ibr-03]-An Invoice shall have an Invoice issue date (ibt-002).",
+    "rules": [
+      "ibt-002"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cbc:InvoiceTypeCode) !='' or (cbc:CreditNoteTypeCode) !=''",
+    "text": "[ibr-04]-An Invoice shall have an Invoice type code (ibt-003).",
+    "rules": [
+      "ibt-003"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cbc:DocumentCurrencyCode) !=''",
+    "text": "[ibr-05]-An Invoice shall have an Invoice currency code (ibt-005).",
+    "rules": [
+      "ibt-005"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName) !=''",
+    "text": "[ibr-06]-An Invoice shall contain the Seller name (ibt-027).",
+    "rules": [
+      "ibt-027"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "(cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName) !=''",
+    "text": "[ibr-07]-An Invoice shall contain the Buyer name (ibt-044).",
+    "rules": [
+      "ibt-044"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "exists(cac:AccountingSupplierParty/cac:Party/cac:PostalAddress)",
+    "text": "[ibr-08]-An Invoice shall contain the Seller postal address (ibg-05).",
+    "rules": [
+      "ibg-05"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "exists(cac:AccountingCustomerParty/cac:Party/cac:PostalAddress)",
+    "text": "[ibr-10]-An Invoice shall contain the Buyer postal address (ibg-08).",
+    "rules": [
+      "ibg-08"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "exists(cac:InvoiceLine) or exists(cac:CreditNoteLine)",
+    "text": "[ibr-16]-An Invoice shall have at least one Invoice line (ibg-25)",
+    "rules": [
+      "ibg-25"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "every $taxcurrency in cbc:TaxCurrencyCode satisfies exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])",
+    "text": "[ibr-53]-If the Tax accounting currency code (ibt-006) is present, then the Invoice total Tax amount in accounting currency (ibt-111) shall be provided.",
+    "rules": [
+      "ibt-006",
+      "ibt-111"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice | /cn:CreditNote",
+    "flag": "fatal",
+    "test": "every $Currency in cbc:DocumentCurrencyCode satisfies cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount) = cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount) + cac:TaxTotal/xs:decimal(cbc:TaxAmount)",
+    "text": "[ibr-co-15]-Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).",
+    "rules": [
+      "ibt-112",
+      "ibt-109",
+      "ibt-110"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "(cbc:ID) != ''",
+    "text": "[ibr-21]-Each Invoice line (ibg-25) shall have an Invoice line identifier (ibt-126).",
+    "rules": [
+      "ibg-25",
+      "ibt-126"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "exists(cbc:InvoicedQuantity) or exists(cbc:CreditedQuantity)",
+    "text": "[ibr-22]-Each Invoice line (ibg-25) shall have an Invoiced quantity (ibt-129).",
+    "rules": [
+      "ibg-25",
+      "ibt-129"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "exists(cbc:InvoicedQuantity/@unitCode) or exists(cbc:CreditedQuantity/@unitCode)",
+    "text": "[ibr-23]-An Invoice line (ibg-25) shall have an Invoiced quantity unit of measure code (ibt-130).",
+    "rules": [
+      "ibg-25",
+      "ibt-130"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "exists(cbc:LineExtensionAmount)",
+    "text": "[ibr-24]-Each Invoice line (ibg-25) shall have an Invoice line net amount (ibt-131).",
+    "rules": [
+      "ibg-25",
+      "ibt-131"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "(cac:Item/cbc:Name) != ''",
+    "text": "[ibr-25]-Each Invoice line (ibg-25) shall contain the Item name (ibt-153).",
+    "rules": [
+      "ibg-25",
+      "ibt-153"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "exists(cac:Price/cbc:PriceAmount)",
+    "text": "[ibr-26]-Each Invoice line (ibg-25) shall contain the Item net price (ibt-146).",
+    "rules": [
+      "ibg-25",
+      "ibt-146"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "(cac:Price/cbc:PriceAmount) >= 0",
+    "text": "[ibr-27]-The Item net price (ibt-146) shall NOT be negative.",
+    "rules": [
+      "ibt-146"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine | cac:CreditNoteLine",
+    "flag": "fatal",
+    "test": "(cac:Price/cac:AllowanceCharge/cbc:BaseAmount) >= 0 or not(exists(cac:Price/cac:AllowanceCharge/cbc:BaseAmount))",
+    "text": "[ibr-28]-The Item gross price (ibt-148) shall NOT be negative.",
+    "rules": [
+      "ibt-148"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "exists(cbc:Amount)",
+    "text": "[ibr-41]-Each Invoice line allowance (ibg-27) shall have an Invoice line allowance amount (ibt-136).",
+    "rules": [
+      "ibg-27",
+      "ibt-136"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-42]-Each Invoice line allowance (ibg-27) shall have an Invoice line allowance reason (ibt-139) or an Invoice line allowance reason code (ibt-140).",
+    "rules": [
+      "ibg-27",
+      "ibt-139",
+      "ibt-140"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]",
+    "flag": "fatal",
+    "test": "true()",
+    "text": "[ibr-co-07]-When both Invoice line allowance reason code (iibt-140) and Invoice line allowance reason (iibt-139) the definition of the code is normative.",
+    "rules": [
+      "ibt-140",
+      "ibt-139"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "exists(cbc:Amount)",
+    "text": "[ibr-43]-Each Invoice line charge (ibg-28) shall have an Invoice line charge amount (ibt-141).",
+    "rules": [
+      "ibg-28",
+      "ibt-141"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-44]-Each Invoice line charge (ibg-28) shall have an Invoice line charge reason (ibt-144) or an invoice line allowance reason code (ibt-145).",
+    "rules": [
+      "ibg-28",
+      "ibt-144",
+      "ibt-145"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "true()",
+    "text": "[ibr-co-08]-When both Invoice line charge reason code (iibt-145) and Invoice line charge reason (iibt-144) the definition of the code is normative.",
+    "rules": [
+      "ibt-145",
+      "ibt-144"
+    ]
+  },
+  {
+    "context": "//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]",
+    "flag": "fatal",
+    "test": "exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)",
+    "text": "[ibr-co-24]-Each Invoice line charge (ibg-28) shall contain an Invoice line charge reason (ibt-144) or an Invoice line charge reason code (ibt-145), or both.",
+    "rules": [
+      "ibg-28",
+      "ibt-144",
+      "ibt-145"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine/cac:InvoicePeriod | cac:CreditNoteLine/cac:InvoicePeriod",
+    "flag": "fatal",
+    "test": "(exists(cbc:EndDate) and exists(cbc:StartDate) and xs:date(cbc:EndDate) >= xs:date(cbc:StartDate)) or not(exists(cbc:StartDate)) or not(exists(cbc:EndDate))",
+    "text": "[ibr-30]-If both Invoice line period start date (ibt-134) and Invoice line period end date (ibt-135) are given then the Invoice line period end date (ibt-135) shall be later or equal to the Invoice line period start date (ibt-134).",
+    "rules": [
+      "ibt-134",
+      "ibt-135",
+      "ibt-135",
+      "ibt-134"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine/cac:InvoicePeriod | cac:CreditNoteLine/cac:InvoicePeriod",
+    "flag": "fatal",
+    "test": "exists(cbc:StartDate) or exists(cbc:EndDate)",
+    "text": "[ibr-co-20]-If Invoice line period (ibg-26) is used, the Invoice line period start date (ibt-134) or the Invoice line period end date (ibt-135) shall be filled, or both.",
+    "rules": [
+      "ibg-26",
+      "ibt-134",
+      "ibt-135"
+    ]
+  },
+  {
+    "context": "cac:InvoicePeriod",
+    "flag": "fatal",
+    "test": "(exists(cbc:EndDate) and exists(cbc:StartDate) and xs:date(cbc:EndDate) >= xs:date(cbc:StartDate)) or not(exists(cbc:StartDate)) or not(exists(cbc:EndDate))",
+    "text": "[ibr-29]-If both Invoicing period start date (ibt-073) and Invoicing period end date (ibt-074) are given then the Invoicing period end date (ibt-074) shall be later or equal to the Invoicing period start date (ibt-073).",
+    "rules": [
+      "ibt-073",
+      "ibt-074",
+      "ibt-074",
+      "ibt-073"
+    ]
+  },
+  {
+    "context": "cac:InvoicePeriod",
+    "flag": "fatal",
+    "test": "exists(cbc:StartDate) or exists(cbc:EndDate) or (exists(cbc:DescriptionCode) and not(exists(cbc:StartDate)) and not(exists(cbc:EndDate)))",
+    "text": "[ibr-co-19]-If Invoicing period (ibg-14) is used, the Invoicing period start date (ibt-073) or the Invoicing period end date (ibt-074) shall be filled, or both.",
+    "rules": [
+      "ibg-14",
+      "ibt-073",
+      "ibt-074"
+    ]
+  },
+  {
+    "context": "//cac:AdditionalItemProperty",
+    "flag": "fatal",
+    "test": "exists(cbc:Name) and exists(cbc:Value)",
+    "text": "[ibr-54]-Each Item attribute (ibg-32) shall contain an Item attribute name (ibt-160) and an Item attribute value (ibt-161).",
+    "rules": [
+      "ibg-32",
+      "ibt-160",
+      "ibt-161"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode | cac:CreditNoteLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode",
+    "flag": "fatal",
+    "test": "exists(@listID)",
+    "text": "[ibr-65]-The Item classification identifier (ibt-158) shall have a Scheme identifier.",
+    "rules": [
+      "ibt-158"
+    ]
+  },
+  {
+    "context": "cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID | cac:CreditNoteLine/cac:Item/cac:StandardItemIdentification/cbc:ID",
+    "flag": "fatal",
+    "test": "exists(@schemeID)",
+    "text": "[ibr-64]-The Item standard identifier (ibt-157) shall have a Scheme identifier.",
+    "rules": [
+      "ibt-157"
+    ]
+  },
+  {
+    "context": "cac:PayeeParty",
+    "flag": "fatal",
+    "test": "exists(cac:PartyName/cbc:Name) and (not(cac:PartyName/cbc:Name = ../cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name) and not(cac:PartyIdentification/cbc:ID = ../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID) )",
+    "text": "[ibr-17]-The Payee name (ibt-059) shall be provided in the Invoice, if the Payee (ibg-10) is different from the Seller (ibg-4).",
+    "rules": [
+      "ibt-059",
+      "ibg-10",
+      "ibg-4"
+    ]
+  },
+  {
+    "context": "cac:PaymentMeans",
+    "flag": "fatal",
+    "test": "exists(cbc:PaymentMeansCode)",
+    "text": "[ibr-49]-A Payment instruction (ibg-16) shall specify the Payment means type code (ibt-081).",
+    "rules": [
+      "ibg-16",
+      "ibt-081"
+    ]
+  },
+  {
+    "context": "cac:BillingReference",
+    "flag": "fatal",
+    "test": "exists(cac:InvoiceDocumentReference/cbc:ID)",
+    "text": "[ibr-55]-Each Preceding Invoice reference (ibg-03) shall contain a Preceding Invoice reference (ibt-025).",
+    "rules": [
+      "ibg-03",
+      "ibt-025"
+    ]
+  },
+  {
+    "context": "cac:AccountingSupplierParty",
+    "flag": "fatal",
+    "test": "exists(cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or exists(cac:Party/cac:PartyIdentification/cbc:ID) or exists(cac:Party/cac:PartyLegalEntity/cbc:CompanyID)",
+    "text": "[ibr-co-26]-In order for the buyer to automatically identify a supplier, the Seller identifier (ibt-029), the Seller legal registration identifier (ibt-030) and/or the Seller Tax identifier (ibt-031) shall be present.",
+    "rules": [
+      "ibt-029",
+      "ibt-030",
+      "ibt-031"
+    ]
+  },
+  {
+    "context": "cac:AccountingSupplierParty/cac:Party/cbc:EndpointID",
+    "flag": "fatal",
+    "test": "exists(@schemeID)",
+    "text": "[ibr-62]-The Seller electronic address (ibt-034) shall have a Scheme identifier.",
+    "rules": [
+      "ibt-034"
+    ]
+  },
+  {
+    "context": "cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+    "flag": "fatal",
+    "test": "(cac:Country/cbc:IdentificationCode) != ''",
+    "text": "[ibr-09]-The Seller postal address (ibg-05) shall contain a Seller country code (ibt-040).",
+    "rules": [
+      "ibg-05",
+      "ibt-040"
+    ]
+  },
+  {
+    "context": "cac:TaxRepresentativeParty",
+    "flag": "fatal",
+    "test": "(cac:PartyName/cbc:Name) != ''",
+    "text": "[ibr-18]-The Seller tax representative name (ibt-062) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11)",
+    "rules": [
+      "ibt-062",
+      "ibg-04",
+      "ibg-11"
+    ]
+  },
+  {
+    "context": "cac:TaxRepresentativeParty",
+    "flag": "fatal",
+    "test": "exists(cac:PostalAddress)",
+    "text": "[ibr-19]-The Seller tax representative postal address (ibg-12) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11).",
+    "rules": [
+      "ibg-12",
+      "ibg-04",
+      "ibg-11"
+    ]
+  },
+  {
+    "context": "cac:TaxRepresentativeParty",
+    "flag": "fatal",
+    "test": "exists(cac:PartyTaxScheme/cbc:CompanyID)",
+    "text": "[ibr-56]-Each Seller tax representative party (ibg-11) shall have a Seller tax representative Tax identifier (ibt-063).",
+    "rules": [
+      "ibg-11",
+      "ibt-063"
+    ]
+  },
+  {
+    "context": "cac:TaxRepresentativeParty/cac:PostalAddress",
+    "flag": "fatal",
+    "test": "(cac:Country/cbc:IdentificationCode) != ''",
+    "text": "[ibr-20]-The Seller tax representative postal address (ibg-12) shall contain a Tax representative country code (ibt-069), if the Seller (ibg-04) has a Seller tax representative party (ibg-11).",
+    "rules": [
+      "ibg-12",
+      "ibt-069",
+      "ibg-04",
+      "ibg-11"
+    ]
+  },
+  {
+    "context": "/ubl:Invoice/cac:TaxTotal | /cn:CreditNote/cac:Taxtotal",
+    "flag": "fatal",
+    "test": "(xs:decimal(cbc:TaxAmount) = sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount))) or not(cac:TaxSubtotal)",
+    "text": "[ibr-co-14]-Invoice total Tax amount (ibt-110) = \u03a3 Tax category tax amount (ibt-117).",
+    "rules": [
+      "ibt-110",
+      "ibt-117"
+    ]
+  }
+]

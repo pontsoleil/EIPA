@@ -1,0 +1,829 @@
+{
+  "data": [
+    {
+      "num": 0,
+      "ID": "R1",
+      "Desc": "information at document level that enables the identification of the Payee, if different from the Seller (all processes, except P9);"
+    },
+    {
+      "num": 1,
+      "ID": "R2",
+      "Desc": "information at document level that enables booking on both the debit and the credit side (all processes);"
+    },
+    {
+      "num": 2,
+      "ID": "R3",
+      "Desc": "information at invoice line level that enables booking on the debit side (all processes);"
+    },
+    {
+      "num": 3,
+      "ID": "R4",
+      "Desc": "Buyer-specific booking information (account numbers) (all processes)."
+    },
+    {
+      "num": 4,
+      "ID": "R5",
+      "Desc": "information to trace to a single related purchase order from the document level (all processes, except P2 and P5);"
+    },
+    {
+      "num": 5,
+      "ID": "R6",
+      "Desc": "information to trace to a single related purchase order line from the invoice line (all processes, except P2 and P5);"
+    },
+    {
+      "num": 6,
+      "ID": "R7",
+      "Desc": "information to trace to a single contract and the underlying call for tenders from the document level (all processes, except P3 and P5);"
+    },
+    {
+      "num": 7,
+      "ID": "R8",
+      "Desc": "a reference supplied by the Buyer at document level (all processes);"
+    },
+    {
+      "num": 8,
+      "ID": "R9",
+      "Desc": "information to trace to a single despatch advice from the document level (processes P7 and P8);"
+    },
+    {
+      "num": 9,
+      "ID": "R10",
+      "Desc": "information to trace to a single receiving advice from the document level (process P8);"
+    },
+    {
+      "num": 10,
+      "ID": "R11",
+      "Desc": "information to trace to a related invoice to be corrected from the document level (process P10);"
+    },
+    {
+      "num": 11,
+      "ID": "R12",
+      "Desc": "reference to multiple part-invoices from a final invoice (process P12);"
+    },
+    {
+      "num": 12,
+      "ID": "R13",
+      "Desc": "information to allow an invoice and related documents to be transferred to a responsible authority, entity, person or department, for verification and approval (all processes);"
+    },
+    {
+      "num": 13,
+      "ID": "R14",
+      "Desc": "information about net price and the quantity on which the price is based at invoice line level, additional information such as gross price and price discount may be added (all processes); "
+    },
+    {
+      "num": 14,
+      "ID": "R15",
+      "Desc": "descriptive and coded information about allowances and charges at both document level and at invoice line level (all processes);"
+    },
+    {
+      "num": 15,
+      "ID": "R16",
+      "Desc": "information about charges, (non-VAT-)taxes, duties and levies, with their VAT information, that are not included in the line amounts at document level (all processes);"
+    },
+    {
+      "num": 16,
+      "ID": "R17",
+      "Desc": "information about charges, (non-VAT-)taxes, duties and levies that compose the taxable amount and are not included in the unit price at separate invoice lines, with a proper identification and/or description (all processes);"
+    },
+    {
+      "num": 17,
+      "ID": "R18",
+      "Desc": "information about charges at invoice line level as part of the line amount (all processes);"
+    },
+    {
+      "num": 18,
+      "ID": "R19",
+      "Desc": "the amounts of allowances and charges at document and invoice line level (all processes);"
+    },
+    {
+      "num": 19,
+      "ID": "R20",
+      "Desc": "textual descriptions of invoiced goods and services at invoice line level (all processes);"
+    },
+    {
+      "num": 20,
+      "ID": "R21",
+      "Desc": "identification of invoiced goods and services by means of a Seller's item number at invoice line level (all processes);"
+    },
+    {
+      "num": 21,
+      "ID": "R22",
+      "Desc": "identification of invoiced goods and services by means of a Buyer's item number at invoice line level (all processes);"
+    },
+    {
+      "num": 22,
+      "ID": "R23",
+      "Desc": "identification of invoiced goods and services by means of a qualified general item identifier at invoice line level as agreed by the Buyer and the Seller (all processes);"
+    },
+    {
+      "num": 23,
+      "ID": "R24",
+      "Desc": "classification of invoiced goods and services by means of applicable classification identifiers and schema reference as agreed between the Seller and the Buyer at invoice line level (all processes];"
+    },
+    {
+      "num": 24,
+      "ID": "R25",
+      "Desc": "information about returned and credited returnable assets or packages, such as pallets, and package charges, stated as normal invoice lines (all processes);"
+    },
+    {
+      "num": 25,
+      "ID": "R26",
+      "Desc": "information about returnable asset charges, stated as normal invoice lines (all processes);"
+    },
+    {
+      "num": 26,
+      "ID": "R27",
+      "Desc": "information about returned goods, stated as normal invoice lines (all processes);"
+    },
+    {
+      "num": 27,
+      "ID": "R28",
+      "Desc": "descriptive information about attributes of goods and services at invoice line level (all processes);"
+    },
+    {
+      "num": 28,
+      "ID": "R29",
+      "Desc": "information about the country of origin of goods and services at invoice line level (all processes);"
+    },
+    {
+      "num": 29,
+      "ID": "R30",
+      "Desc": "an invoice line period at invoice line level (process P2, Pll);"
+    },
+    {
+      "num": 30,
+      "ID": "R31",
+      "Desc": "one delivery date at document level (all processes);"
+    },
+    {
+      "num": 31,
+      "ID": "R32",
+      "Desc": "one delivery location or address at document level (all processes);"
+    },
+    {
+      "num": 32,
+      "ID": "R33",
+      "Desc": "identification of the invoiced object at document and line level (process P2);"
+    },
+    {
+      "num": 33,
+      "ID": "R34",
+      "Desc": "a delivery/invoice period at document level (process P2, Pll);"
+    },
+    {
+      "num": 34,
+      "ID": "R35",
+      "Desc": "attached documents of a limited set of file types (all processes);"
+    },
+    {
+      "num": 35,
+      "ID": "R36",
+      "Desc": "multiple attached or referenced documents at document level (all processes);"
+    },
+    {
+      "num": 36,
+      "ID": "R37",
+      "Desc": "a VAT category and rate at invoice line level (all processes);"
+    },
+    {
+      "num": 37,
+      "ID": "R38",
+      "Desc": "VAT totals per category at document level (all processes);"
+    },
+    {
+      "num": 38,
+      "ID": "R39",
+      "Desc": "a quantity and a net amount (exclusive of VAT) at invoice line level (all processes);"
+    },
+    {
+      "num": 39,
+      "ID": "R40",
+      "Desc": "all amounts at document and invoice line level that make up the invoice total amount and the amount due for payment (all processes);"
+    },
+    {
+      "num": 40,
+      "ID": "R41",
+      "Desc": "Reference to a sales order, issued by the Seller at document level (all processes);"
+    },
+    {
+      "num": 41,
+      "ID": "R42",
+      "Desc": "Allowance/charge percentage and base amount at document and invoice line level (all processes);"
+    },
+    {
+      "num": 42,
+      "ID": "R44",
+      "Desc": "Information to allow automated validation of a received electronic invoice (all processes)."
+    },
+    {
+      "num": 43,
+      "ID": "R45",
+      "Desc": "information to determine the requirements of the applicable VAT legislation in force and the calculation and reporting thereof;"
+    },
+    {
+      "num": 44,
+      "ID": "R46",
+      "Desc": "information on the date the VAT is liable at document level;"
+    },
+    {
+      "num": 45,
+      "ID": "R47",
+      "Desc": "the necessary elements for national legal VAT requirements that apply for invoices issued to national and foreign Buyers, such as the legal registration status of the Seller;"
+    },
+    {
+      "num": 46,
+      "ID": "R48",
+      "Desc": "information to support the following VAT use cases:NL - Invoices for supplies for which VAT is charged;NL - Invoices for supplies for which VAT is not charged based on an exemption reason;NL - Invoices for supplies for which the Seller's goods and services are exempt from VAT at line level;NL - Invoices for supplies that are issued under reverse charge;NL - Invoices for exempt intra-community supplies for which an intra-communityNLacquisition has to be done;NL - Invoices for supplies outside the scope of the Directive 2006/112/EC [2] (non-VAT invoices);"
+    },
+    {
+      "num": 47,
+      "ID": "R49",
+      "Desc": "the total VAT amount at document level;"
+    },
+    {
+      "num": 48,
+      "ID": "R50",
+      "Desc": "total taxable amount per VAT rate at document level;"
+    },
+    {
+      "num": 49,
+      "ID": "R51",
+      "Desc": "any additional information required to support the exemption evidence in case VAT is not charged based on an exemption reason at document and at invoice line level;"
+    },
+    {
+      "num": 50,
+      "ID": "R52",
+      "Desc": "the legal registration number and the VAT registration number of the Seller and Buyer and the VAT registration number of the Tax representative of the Supplier;"
+    },
+    {
+      "num": 51,
+      "ID": "R53",
+      "Desc": "the official postal address of the Buyer, Seller and Tax representative of the Supplier and their place of business and registered office;"
+    },
+    {
+      "num": 52,
+      "ID": "R54",
+      "Desc": "the invoice currency and the VAT accounting currency at document level if different from the invoice currency;"
+    },
+    {
+      "num": 53,
+      "ID": "R55",
+      "Desc": "codes for exemption reasons at document and invoice line level."
+    },
+    {
+      "num": 54,
+      "ID": "R56",
+      "Desc": "sufficient information to support the auditing process with regard to:NL - identification of the invoice;NL - identification of the date of issue of the invoice;NL - identification of the products and services traded, including their description, valueNLand quantity;NL - information for relating the invoice to its settlement;NL - information for relating the invoice to relevant documents such as a contract, aNLpurchase order and a despatch advice;NL - information about the reason for invoice correction (process P10);"
+    },
+    {
+      "num": 55,
+      "ID": "R57",
+      "Desc": "identification of the parties that fulfil the following roles at the invoice level, including their legal name and address:NL - the Seller (including the Seller's trade name);NL - the Buyer;NL - the Deliver to party (if different from the Buyer);NL - the Payee (if different from the Seller);NL - the Tax representative of the Supplier;"
+    },
+    {
+      "num": 56,
+      "ID": "R58",
+      "Desc": "identification of the means of settlement;"
+    },
+    {
+      "num": 57,
+      "ID": "R59",
+      "Desc": "the requested amount due for payment;"
+    },
+    {
+      "num": 58,
+      "ID": "R60",
+      "Desc": "the date on which payment is due;"
+    },
+    {
+      "num": 59,
+      "ID": "R61",
+      "Desc": "necessary details to support bank transfers in accordance with SEPA and national systems;"
+    },
+    {
+      "num": 60,
+      "ID": "R62",
+      "Desc": "a reference number and any additional reference data to be included in the payment;"
+    },
+    {
+      "num": 61,
+      "ID": "R63",
+      "Desc": "reference number and any additional reference data to be included in the payment, in order to relate the payment to the invoice;"
+    },
+    {
+      "num": 62,
+      "ID": "R64",
+      "Desc": "information for relating an invoice to a payment card used for settlement;"
+    },
+    {
+      "num": 63,
+      "ID": "R65",
+      "Desc": "basic information to support national payment systems for use in domestic trade;"
+    },
+    {
+      "num": 64,
+      "ID": "R66",
+      "Desc": "information about the amount that was pre-paid;"
+    },
+    {
+      "num": 65,
+      "ID": "R67",
+      "Desc": "invoices that have a total amount of zero;"
+    },
+    {
+      "num": 66,
+      "ID": "R68",
+      "Desc": "invoices that have an amount to pay of zero;"
+    },
+    {
+      "num": 67,
+      "ID": "R69",
+      "Desc": "necessary details to support direct debits."
+    },
+    {
+      "num": 68,
+      "ID": "R70",
+      "Desc": "pre-payment invoices"
+    },
+    {
+      "num": 69,
+      "ID": "BR-S-1",
+      "Desc": "Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Standard rated' shall contain in the VAT breakdown (BG-23) at least one VAT code (BT-118) equal with 'Standard rated'."
+    },
+    {
+      "num": 69,
+      "ID": "BR-S-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT idpntifier (BT-63)."
+    },
+    {
+      "num": 70,
+      "ID": "BR-S-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 71,
+      "ID": "BR-S-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 72,
+      "ID": "BR-S-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' the Invoiced item VAT rate (BT-152) shall be greater than zero."
+    },
+    {
+      "num": 73,
+      "ID": "BR-S-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Standard rated' the Document level allowance VAT rate (BT-96) shall be greater than zero."
+    },
+    {
+      "num": 74,
+      "ID": "BR-S-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Standard rated' the Document level charge VAT rate (BT-103) shall be greater than zero."
+    },
+    {
+      "num": 75,
+      "ID": "BR-S-8",
+      "Desc": "For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is 'Standard rated', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'Standard rated' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119)."
+    },
+    {
+      "num": 76,
+      "ID": "BR-S-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Standard rated' shall equal the VAT category taxable amount (BT-116) mnlfinlipd bv the VAT category rate (BT-119)"
+    },
+    {
+      "num": 77,
+      "ID": "BR-S-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Standard rate' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120)."
+    },
+    {
+      "num": 78,
+      "ID": "BR-Z-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Zero rated' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Zero rated'."
+    },
+    {
+      "num": 79,
+      "ID": "BR-Z-2",
+      "Desc": "An Invoice that contains an Invoice line where the Invoiced item VAT category code (BT-151) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 80,
+      "ID": "BR-Z-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 81,
+      "ID": "BR-Z-4",
+      "Desc": "An Invoice that contains a Document level charge where the Document level charge VAT category code (BT-102) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 82,
+      "ID": "BR-Z-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT categoiy code (BT-151) is 'Zero rated' the Invoiced item VAT rate (BT-152) shall be 0 (zero)."
+    },
+    {
+      "num": 83,
+      "ID": "BR-Z-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Zero rated' the Document level allowance VAT rate (BT-96) shall be 0 fzerol.   "
+    },
+    {
+      "num": 84,
+      "ID": "BR-Z-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Zero rated' the Document level charge VAT rate (BT-103) shall be 0 (zero)."
+    },
+    {
+      "num": 85,
+      "ID": "BR-Z-8",
+      "Desc": "In a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Zero rated' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amount (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Zero rated'."
+    },
+    {
+      "num": 86,
+      "ID": "BR-Z-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown category code (BT-118) is 'Zero rated' shall equal 0 (zero)."
+    },
+    {
+      "num": 87,
+      "ID": "BR-Z-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Zero rated' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120)."
+    },
+    {
+      "num": 88,
+      "ID": "BR-E-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Exempt from VAT' shall contain exactly one VAT breakdown (BG-23) with the VAT category code (BT-118) equal to 'Exempt from VAT'."
+    },
+    {
+      "num": 89,
+      "ID": "BR-E-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 90,
+      "ID": "BR-E-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 91,
+      "ID": "BR-E-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32J and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 92,
+      "ID": "BR-E-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Exempt from VAT', the Invoiced item VAT rate (BT-152) shall be 0 (zero)."
+    },
+    {
+      "num": 93,
+      "ID": "BR-E-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Exempt from VAT', the Document level allowance VAT rate (BT-961 shall be 0 ('zero)."
+    },
+    {
+      "num": 94,
+      "ID": "BR-E-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Exempt from VAT', the Document level charge VAT rate (BT-103) shall be 0 (zero)."
+    },
+    {
+      "num": 95,
+      "ID": "BR-E-8",
+      "Desc": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Exempt from VAT' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Exempt from VAT'."
+    },
+    {
+      "num": 96,
+      "ID": "BR-E-9",
+      "Desc": "The VAT category tax amount (BT-117) In a VAT breakdown (BG-23) where the VAT category code (BT-118) equals 'Exempt from VAT' shall equal 0 (zero)."
+    },
+    {
+      "num": 97,
+      "ID": "BR-E-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Exempt from VAT' shall have a VAT exemption reason code (BT-121) or a VAT exemption reason text (BT-120)."
+    },
+    {
+      "num": 98,
+      "ID": "BR-AE-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Reverse charge' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'VAT reverse charge'."
+    },
+    {
+      "num": 99,
+      "ID": "BR-AE-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47)."
+    },
+    {
+      "num": 100,
+      "ID": "BR-AE-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).   "
+    },
+    {
+      "num": 101,
+      "ID": "BR-AE-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47)."
+    },
+    {
+      "num": 102,
+      "ID": "BR-AE-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Reverse charge' the Invoiced item VAT rate (BT-152) shall be 0 (zero)."
+    },
+    {
+      "num": 103,
+      "ID": "BR-AE-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Reverse charge' the Document level allowance VAT rate (BT-96) shall be 0 (zerol."
+    },
+    {
+      "num": 104,
+      "ID": "BR-AE-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Reverse charge' the Document level charge VAT rate (BT-103) shall be 0 (zero)."
+    },
+    {
+      "num": 105,
+      "ID": "BR-AE-8",
+      "Desc": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Reverse charge' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92} plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Reverse charge'."
+    },
+    {
+      "num": 106,
+      "ID": "BR-AE-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Reverse charge' shall hp 0 fzprnl"
+    },
+    {
+      "num": 107,
+      "ID": "BR-AE-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Reverse charge' shall have a VAT exemption reason code (BT-121), meaning 'Reverse charge' or the VAT exemption reason text (BT-120) 'Reverse charge' (or the equivalent standard text in"
+    },
+    {
+      "num": 108,
+      "ID": "BR-IC-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Intra-community supply' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Intra-community supply'."
+    },
+    {
+      "num": 109,
+      "ID": "BR-IC-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier"
+    },
+    {
+      "num": 110,
+      "ID": "BR-IC-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48)."
+    },
+    {
+      "num": 111,
+      "ID": "BR-IC-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48)."
+    },
+    {
+      "num": 112,
+      "ID": "BR-IC-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Intracommunity supply' the Invoiced item VAT rate (BT-152) shall be 0 (zero)."
+    },
+    {
+      "num": 113,
+      "ID": "BR-IC-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Intra-commumty supply' the Document level allowance VAT rate (BT-96) shall be 0 fzerol."
+    },
+    {
+      "num": 114,
+      "ID": "BR-IC-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Intra-community supply' the Document level charge VAT rate (BT-103) shall be 0 (zero)."
+    },
+    {
+      "num": 115,
+      "ID": "BR-IC-8",
+      "Desc": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Intra-community supply'.   "
+    },
+    {
+      "num": 116,
+      "ID": "BR-IC-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' shall be 0 (zero)."
+    },
+    {
+      "num": 117,
+      "ID": "BR-IC-10",
+      "Desc": "A VAT Breakdown (BG-23) with the VAT Category code (BT-118) 'Intra-community supply' shall have a VAT exemption reason code (BT-121) meaning 'Intra-community"
+    },
+    {
+      "num": 119,
+      "ID": "BR-IC-11",
+      "Desc": "In an Invoice with a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the Actual delivery date (BT-72) or the Invoicing period (BG-14) shall not be blank."
+    },
+    {
+      "num": 120,
+      "ID": "BR-IC-12",
+      "Desc": "In an Invoice with a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the Deliver to country code (BT-80) shall not be blank."
+    },
+    {
+      "num": 121,
+      "ID": "BR-G-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Export outside the EU' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Export outside the EU'."
+    },
+    {
+      "num": 122,
+      "ID": "BR-G-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-631)."
+    },
+    {
+      "num": 123,
+      "ID": "BR-G-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 124,
+      "ID": "BR-G-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 125,
+      "ID": "BR-G-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Export outside the EU' the Invoiced item VAT rate (BT-152) shall be 0 (zero)."
+    },
+    {
+      "num": 126,
+      "ID": "BR-G-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Export outside the EU' the Document level allowance VAT rate (BT-96) shall be 0 (zero)."
+    },
+    {
+      "num": 127,
+      "ID": "BR-G-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Export outside the EU' the Document level charge VAT rate (BT-103) shall be 0"
+    },
+    {
+      "num": 128,
+      "ID": "BR-G-8",
+      "Desc": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Export outside the EU' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Export outside the EU'."
+    },
+    {
+      "num": 129,
+      "ID": "BR-G-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Export outside the EU' shall be 0 (zero)."
+    },
+    {
+      "num": 130,
+      "ID": "BR-G-10",
+      "Desc": "A VAT Breakdown (BG-23) with the VAT Category code (BT-118) 'Export outside the EU' shall have a VAT exemption reason code (BT-121), meaning 'Export outside the EU' or the VAT exemption reason text (BT-120) 'Export outside the EU' (or the equivalent standard text in another language)."
+    },
+    {
+      "num": 131,
+      "ID": "BR-0-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Not subject to VAT' shall contain exactly one VAT breakdown group (BG-23) with the VAT category code (BT-118) equal to 'Not subject to VAT'."
+    },
+    {
+      "num": 132,
+      "ID": "BR-0-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) |ac) or the Buyer VAT identifier (BT-48) <11."
+    },
+    {
+      "num": 133,
+      "ID": "BR-0-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) or the Buyer VAT identifier (BT-48).   "
+    },
+    {
+      "num": 134,
+      "ID": "BR-0-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) or the Buyer VAT identifier (BT-48)."
+    },
+    {
+      "num": 135,
+      "ID": "BR-0-5",
+      "Desc": "An Invoice line (BG-25) where the VAT category code (BT-151) is 'Not subject to VAT' shall not contain an Invoiced item VAT rate (BT-152)."
+    },
+    {
+      "num": 136,
+      "ID": "BR-0-6",
+      "Desc": "A Document level allowance (BG-20) where VAT category code (BT-95) is 'Not subject to VAT' shall not contain a Document level allowance VAT rate (BT-96)."
+    },
+    {
+      "num": 137,
+      "ID": "BR-0-7",
+      "Desc": "A Document level charge (BG-21) where the VAT category code (BT-102) is 'Not subject to VAT' shall not contain a Document level charge VAT rate (BT-103)."
+    },
+    {
+      "num": 138,
+      "ID": "BR-0-8",
+      "Desc": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is ' Not subject to VAT' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Not subject to VAT'."
+    },
+    {
+      "num": 139,
+      "ID": "BR-0-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Not subject to VAT' shall be 0 ' - '"
+    },
+    {
+      "num": 140,
+      "ID": "BR-0-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) ' Not subject to VAT' shall have a VAT exemption reason code (BT-121), meaning ' Not subject to VAT' or a VAT exemption reason text (BT-120) ' Not subject to VAT' (or the equivalent standard text in"
+    },
+    {
+      "num": 141,
+      "ID": "BR-0-11",
+      "Desc": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT-118) 'Not subject to VAT' shall not contain other VAT breakdown groups (BG-23)."
+    },
+    {
+      "num": 142,
+      "ID": "BR-0-12",
+      "Desc": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT-118) 'Not subject to VAT' shall not contain an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is not 'Not subject to VAT'."
+    },
+    {
+      "num": 143,
+      "ID": "BR-0-13",
+      "Desc": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT-118) 'Not subject to VAT' shall not contain Document level allowances (BG-20) where Document level allowance VAT category code (BT-95) is not 'Not subject to VAT'."
+    },
+    {
+      "num": 144,
+      "ID": "BR-0-14",
+      "Desc": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT-1181 'Not subject to VAT' shall not contain Document level charges fBG-211 where Document level charge VAT category code (BT-102) is not 'Not subject to VAT'."
+    },
+    {
+      "num": 145,
+      "ID": "BR-IG-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'IGIC' shall contain in the VAT breakdown (BG-23) at least one VAT category code (BT-118) equal with 'IGIC'."
+    },
+    {
+      "num": 146,
+      "ID": "BR-IG-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32J and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 147,
+      "ID": "BR-IG-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 148,
+      "ID": "BR-IG-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 149,
+      "ID": "BR-IG-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IGIC' the invoiced item VAT rate (BT-152) shall be 0 (zero) or greater than zero."
+    },
+    {
+      "num": 150,
+      "ID": "BR-IG-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IGIC' the Document level allowance VAT rate (BT-96) shall be 0 (zero) or greater than zero.   "
+    },
+    {
+      "num": 151,
+      "ID": "BR-IG-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IGIC' the Document level charge VAT rate (BT-103) shall be 0 (zero) or prpater than zero."
+    },
+    {
+      "num": 152,
+      "ID": "BR-IG-8",
+      "Desc": "For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is 'IGIC', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'IGIC' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119)."
+    },
+    {
+      "num": 153,
+      "ID": "BR-IG-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'IGIC' shall equal the VAT category taxable amount (BT-116) multiplied bv the VAT cateeorv rate CBT-1191."
+    },
+    {
+      "num": 154,
+      "ID": "BR-IG-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'IGIC' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120)."
+    },
+    {
+      "num": 155,
+      "ID": "BR-IP-1",
+      "Desc": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'IPSI' shall contain in the VAT breakdown (BG-23) at least one VAT category code (BT-118) equal with 'IPSI'."
+    },
+    {
+      "num": 156,
+      "ID": "BR-IP-2",
+      "Desc": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-"
+    },
+    {
+      "num": 157,
+      "ID": "BR-IP-3",
+      "Desc": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 158,
+      "ID": "BR-IP-4",
+      "Desc": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63)."
+    },
+    {
+      "num": 159,
+      "ID": "BR-IP-5",
+      "Desc": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IPSI' the Invoiced item VAT rate (BT-152) shall be 0 fzerol or greater than zero."
+    },
+    {
+      "num": 160,
+      "ID": "BR-IP-6",
+      "Desc": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IPSI' the Document level allowance VAT rate (BT-96) shall be 0 (zero) or greater than zero."
+    },
+    {
+      "num": 161,
+      "ID": "BR-IP-7",
+      "Desc": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IPSI' the Document level charge VAT rate (BT-103) shall be 0 (zero) or greater than zero."
+    },
+    {
+      "num": 162,
+      "ID": "BR-IP-8",
+      "Desc": "For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is 'IPSI', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'IPSI' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119)."
+    },
+    {
+      "num": 163,
+      "ID": "BR-IP-9",
+      "Desc": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'IPSI' shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119)."
+    },
+    {
+      "num": 164,
+      "ID": "BR-IP-10",
+      "Desc": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'IPSI' shall exemption reason code (BT-121) or VAT exemDtion reasnn tpyt (RT-170)"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+#coding: utf-8
+#
+# generate TSV from XML Schematron
+# 
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+from operator import itemgetter
+import csv
+import re
+import json
+import sys 
+import os
+import argparse
+
+from dic2etree import *
+
+dictID = defaultdict(type(''))
+dictXpath = defaultdict(type(''))
+
+def file_path(pathname):
+  if '/' == pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+def dict_to_tsv(tsv, root):
+  def setup_record(context, id, flag, test, text):
+    test = test.strip()
+    test = ' '.join(test.split())
+    text = text.strip()
+    text = ' '.join(text.split())
+    terms_pattern = 'I?BT-[0-9]*'
+    terms = re.findall(terms_pattern, text, flags=re.IGNORECASE)
+    terms = ' '.join(terms)
+    groups_pattern = 'I?BG-[0-9]*'
+    groups = re.findall(groups_pattern, text, flags=re.IGNORECASE)
+    groups = ' '.join(groups)
+    record = [context, id, flag, test, text, groups, terms]
+    return record
+
+  def process_pattern(tsv, pattern):
+    pattern_id = pattern['@id']
+    rules = pattern['sch:rule']
+    if isinstance(rules, dict):
+      try:
+        context = rules['@context']
+        d = rules['sch:assert']
+        if isinstance(d, list):
+          for v in d:
+            record = setup_record(context, v['@id'], v['@flag'], v['@test'], v['#text'])
+            tsv.append(record)
+        elif isinstance(d, dict):
+          record = setup_record(context, d['@id'], d['@flag'], d['@test'], d['#text'])
+          tsv.append(record)
+        else:
+          if verbose:
+            print(json.dumps(d))
+          pass
+      except Exception as expt:
+        if verbose:
+          print(expt.args)
+        pass
+    elif isinstance(rules, list):
+      for rule in rules:
+        try:
+          context = rule['@context']
+          d = rule['sch:assert']
+          if isinstance(d, list):
+            for v in d:
+              record = setup_record(context, v['@id'], v['@flag'], v['@test'], v['#text'])
+              tsv.append(record)
+          elif isinstance(d, dict):
+            record = setup_record(context, d['@id'], d['@flag'], d['@test'], d['#text'])
+            tsv.append(record)
+          else:
+            if verbose:
+              print(json.dumps(d))
+            pass
+        except Exception as expt:
+          if verbose:
+            print(expt.args)
+          pass
+    else:
+      pass
+    return tsv
+  
+  # header
+  record = ['context', 'id', 'flag', 'test', 'text', 'BG', 'BT']
+  tsv.append(record)
+  if 'sch:pattern' in root:
+    pattern = root['sch:pattern']
+    tsv = process_pattern(tsv, pattern)
+  elif root['sch:schema'] and isinstance(root['sch:schema'], dict):
+    for tag, body in root['sch:schema'].items():
+      if 'sch:pattern' == tag:
+        for pattern in body:
+          tsv = process_pattern(tsv, pattern)
+
+if __name__ == '__main__':
+  # Create the parser
+  parser = argparse.ArgumentParser(prog='invoice2tsv',
+                                  usage='%(prog)s [options] pintFile jpFile -o outfile',
+                                  description='スキーマトロンファイルをTSVファイルに変換')
+  # Add the arguments
+  parser.add_argument('pintFile', metavar='pintfile', type=str, help='入力PINT-UBLファイル')
+  parser.add_argument('jpFile', metavar='jpfile', type=str, help='入力Japan-UBLファイル')
+  parser.add_argument('-o', '--out')
+  parser.add_argument('-v', '--verbose', action='store_true')
+  args = parser.parse_args()
+  pint_file = file_path(args.pintFile)
+  jp_file = file_path(args.jpFile)
+  pre, ext = os.path.splitext(pint_file)
+  tmp_file = pre + '.tmp'
+  if args.out:
+    out_file = args.out.lstrip()
+    out_file = file_path(out_file)
+  else:
+    out_file = pre + '.tsv'
+  verbose = args.verbose
+  # Check if infile exists
+  if not os.path.isfile(pint_file):
+    print('入力ファイルがありません')
+    sys.exit()
+  if verbose:
+    print('** START ** ', __file__)
+
+  pint_tree = ET.parse(pint_file)
+  pint_root = pint_tree.getroot()
+  pint_dict = etree_to_dict(pint_root)
+  dicJson = json.dumps(pint_dict)
+  dicJson = re.sub('{' + ns[''] + '}', '', dicJson)
+  dicJson = re.sub('{' + ns['cac'] + '}', 'cac:', dicJson)
+  dicJson = re.sub('{' + ns['cbc'] + '}', 'cbc:', dicJson)
+  dicJson = re.sub('{' + ns['sch'] + '}', 'sch:', dicJson)
+  pint_dict2 = json.loads(dicJson)
+  pint_tsv = []
+  dict_to_tsv(pint_tsv, pint_dict2)
+
+  jp_tree = ET.parse(jp_file)
+  jp_root = jp_tree.getroot()
+  jp_dict = etree_to_dict(jp_root)
+  dicJson = json.dumps(jp_dict)
+  dicJson = re.sub('{' + ns[''] + '}', '', dicJson)
+  dicJson = re.sub('{' + ns['cac'] + '}', 'cac:', dicJson)
+  dicJson = re.sub('{' + ns['cbc'] + '}', 'cbc:', dicJson)
+  dicJson = re.sub('{' + ns['sch'] + '}', 'sch:', dicJson)
+  jp_dict2 = json.loads(dicJson)
+  jp_tsv = []
+  dict_to_tsv(jp_tsv, jp_dict2)
+
+  pint_set = set([json.dumps(x) for x in pint_tsv])
+  jp_set = set([json.dumps(y) for y in jp_tsv])
+  pint_list = list(pint_set | jp_set)
+  tsv = [json.loads(w) for w in pint_list]
+
+  with open(out_file,'w',newline='') as f:
+    writer = csv.writer(f)
+    header = ['context', 'id', 'flag', 'test', 'text', 'BG', 'BT']
+    writer.writerow(header)
+    for record in tsv:
+      writer.writerow(record)
+
+  if verbose:
+    print(f'** END ** {out_file}')

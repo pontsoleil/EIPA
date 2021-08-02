@@ -1,0 +1,445 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/** font */
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+.sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
+/** Style the tab */
+.tab {
+  position:absolute;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  width: 26px;
+  height: 100%;
+  z-index: 1;
+}
+#tab-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#tab-2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+/* Style the buttons that are used to open the tab content */
+.language {
+  display: block;
+  /* width: 20px; */
+  margin: 4px 0;
+  padding: 0;
+  background-color: inherit;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tablinks {
+  display: block;
+  /* width: 20px; */
+  margin: 8px 0;
+  padding: 4px 0;
+  background-color: inherit;
+  color: black;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* Change background color of buttons on hover */
+.tablinks.ubl2pint:hover,
+.tablinks.pint2ubl:hover,
+.tablinks.func:hover,
+.tablinks.int:hover,
+.tablinks.cond:hover,
+.tablinks.vat:hover {
+  background-color: #ddd;
+  color: #333;
+}
+.tablinks.reset:hover {
+  background-color: #4eb3b3;
+  color: #333;
+}
+/* Create an active/current "tab button" class */
+.tablinks.active {
+  color: #efefef;
+  background-color: #505050;
+}
+/* Style the tab content */
+.tabcontent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-right: 26px;
+  padding-left: 26px;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-right: none;
+  border-left: none;
+  height: 100%;
+  display: none;
+}
+.tabcontent.active {
+  display: block;
+}
+.tabcontent>p {
+  margin: 0 1rem;
+}
+/** split-pane */
+/** vertical-percent */
+.split-pane {
+  font-size: 0.9rem;
+  background: #fefefe;
+}
+#component-1 {
+  width: 50%;
+}
+#vertical-divider {
+  left: 50%;
+  width: 4px;
+  background: #a0a0a0;
+}
+#component-2 {
+  left: 50%;
+  margin-left: 4px;
+}
+/** horizontal-percent */
+#top-component-1,
+#top-component-2 {
+  bottom: 0%;
+  margin-bottom: 4px;
+}
+#horizontal-divider-1,
+#horizontal-divider-2 {
+  bottom: 0%;
+  height: 4px;
+  background: #a0a0a0;
+}
+#botom-component-1,
+#botom-component-2 {
+  height: 0%;
+}
+/** inner horizontal-percent */
+#top-bottom-component-1,
+#top-bottom-component-2 {
+  bottom: 40%;
+  margin-bottom: 4px;
+}
+#bottom-horizontal-divider-1,
+#bottom-horizontal-divider-2 {
+  bottom: 40%;
+  height: 4px;
+  background: #a0a0a0;
+}
+#bottom-bottom-component-1,
+#bottom-bottom-component-2 {
+  height: 40%;
+}
+/** up control */
+#up-1,
+#up-2 {
+  position: absolute;
+  top: -1rem;
+  left: 0.2rem;
+  z-index: 2;
+}
+span.up-control {
+  position: relative;
+  cursor: pointer;
+}
+span.up-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  font-size: 1.5rem;
+  color: #505050;
+  top:0;
+  left: -0.75rem;
+  content: "\f0d8";
+}
+span.up-control:hover:before {
+  color: #fefefe;
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+/** back control */
+#back-1,
+#back-2 {
+  position: absolute;
+  top: -0.3rem;
+  left: 0.2rem;
+  z-index: 2;
+}
+span.back-control {
+  position: relative;
+  cursor: pointer;
+}
+span.back-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  font-size: 1.5rem;
+  color: #505050;
+  top:0;
+  left: -0.75rem;
+  content: "\f0d9";
+}
+span.back-control:hover:before {
+  color: #fefefe;
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+/** collapse control */
+#collapse-1,
+#collapse-2 {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  z-index: 2;
+}
+span.collapse-control {
+  position:relative;
+  cursor: pointer;
+}
+span.collapse-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  font-size: 1rem;
+  color: #505050;
+  top:0;
+  left: -0.5rem;
+  content: "\f00d";
+}
+span.collapse-control:hover:before {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+/** 
+ * dataTable
+ */
+span.table-title {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.5rem;
+  font-size: 1.2rem;
+  background: #fffa;
+}
+.dataTable thead {
+  height: 1.5rem;
+}
+.dataTable th {
+  padding: 0 4px !important;
+  line-height: 0.8rem;
+  font-size: 0.8rem;
+  background-color: #e0e0e0;
+  border-bottom: 1px solid #707070 !important;
+}
+.dataTable td {
+  padding: 2px 4px !important;
+  line-height: 0.9rem;
+}
+.paginate_button {
+  padding: 4px !important;
+}
+.dataTables_filter label > input[type=search] {
+  border: none 0px;
+  border-bottom: solid 1px #808080;
+  margin: 0 0.5rem 0 0;
+  padding: 0 0.25rem;
+  font-size: smaller;
+}
+select {
+  border: none !important;
+}
+table.dataTable tbody>tr:hover {
+  cursor: pointer;
+  background-color: #fdfadd !important;
+}
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr.selected i {
+  color: #fefefe;
+  background-color: #909Ea9 !important;
+}
+table.dataTable tbody>tr.expanded,
+table.dataTable tbody>tr.expanded i {
+  color: #303030;
+  background-color: #e5f2f8 !important;
+}
+/** details control button */
+td.details-control {
+  position:relative;
+  cursor: pointer;
+}
+td.details-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  color: #505050;
+  top:0;
+  left: -0.5rem;
+  content: "\f055";
+}
+tr:hover td.details-control:before {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+tr.expanded td.details-control {
+  position:relative;
+}
+tr.expanded td.details-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  color: #2692c4;
+  top:  0;
+  left: -0.5rem;
+  content: "\f056";
+}
+tr.expanded:hover td.details-control:before {
+  color: #38dbf1;
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+/** link control button */
+td.link-control {
+  position:relative;
+  cursor: pointer;
+}
+td.link-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  color: #505050;
+  top:0;
+  left: -0.5rem;
+  content: "\f08e";
+}
+tr:hover td.link-control:before {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+tr.expanded td.link-control {
+  position:relative;
+}
+tr.expanded td.link-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  color: #26c426;
+  top:  0;
+  left: -0.5rem;
+  content: "\xf14c";
+}
+tr.expanded:hover td.link-control:before {
+  color: #38e5f1;
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+/** info control button */
+td.info-control {
+  position:relative;
+  cursor: pointer;
+}
+td.info-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  color: #505050;
+  top:0;
+  left: -0.5rem;
+  content: "\f129";
+}
+td.info-control:hover:before {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+/** info shown */
+/* tr.shown td.info-control {
+  position:relative;
+}
+tr.shown td.info-control:before {
+  font-family: FontAwesome; 
+  color: #9dda0e;
+  top:  0;
+  left: -0.5rem;
+  content: "\f05a";
+}
+tr.shown td.info-control:hover:before {
+  color: #38f1d8;
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+} */
+/** key-control */
+td.key-control  {
+  position:relative;
+  cursor: pointer;
+}
+td.key-control:before {
+  font-family: FontAwesome; /** https://fontawesome.com/v4.7.0/cheatsheet/ */
+  color: #505050;
+  top:0;
+  left: -0.5rem;
+  content: "\f084";
+}
+/** overray */
+.overlay {
+  position: absolute; /* Sit on top of the page content */
+  /* display: none; Hidden by default */
+  display: flex;
+  top: 0; 
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%; /* Full height (cover the whole page) */
+  /* padding-left: 16px; */
+  background-color: #5a5b5c8a;
+  cursor: pointer;
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+.overlay p {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+#pint-rule-frame > span,
+#rule-frame > span {
+  left: 10rem;
+}
+#pint-frame > i.fa-sync,
+#pint-rule-frame > i.fa-sync,
+#en-frame > i.fa-sync,
+#rule-frame > i.fa-sync  {
+  position: absolute;
+  top: 0.5rem;
+  right: 12rem;
+  z-index: 1;
+}
+/* #en-frame > i.fa-sync:hover,
+#rule-frame > i.fa-sync:hover {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+} */
+#pint tbody tr.shown td,
+#pint-rule tbody tr.shown td,
+#en tbody tr.shown td,
+#rule tbody tr.shown td {
+  background-color: #b3ffec;
+  color: #5d6066;
+}
+#pint tbody tr td.active,
+#pint-rule tbody tr td.active
+#en tbody tr td.active,
+#rule tbody tr td.active {
+  background-color: #c8ecec;
+  color: #414346;
+}
+
+td.translate-control i.fa-language:hover {
+  color: rgb(77, 179, 205);
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.3);
+}
+#en > tbody > tr > td > hr,
+#en > tbody > tr > td > table > tbody > tr > td > hr {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+#peppol > tbody > tr > td > table > tbody > tr > td > p {
+  margin: 0;
+}

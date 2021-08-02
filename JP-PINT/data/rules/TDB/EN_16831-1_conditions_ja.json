@@ -1,0 +1,98 @@
+{
+  "BR-CO-3": {
+    "en": "Value added tax point date (BT-7) and Value added tax point date code (BT-8) are mutually exclusive.",
+    "ja": "付加価値税ポイント日付（BT-7）と付加価値税ポイント日付コード（BT-8）は相互に排他的です。"
+  },
+  "BR-CO-4": {
+    "en": "Each Invoice line (BG-25) shall be categorized with an Invoiced item VAT category code (BT-151).",
+    "ja": "各請求書ライン（BG-25）は、請求書アイテムのVATカテゴリコード（BT-151）で分類されます。"
+  },
+  "BR-CO-5": {
+    "en": "Document level allowance reason code (BT-98) and Document level allowance reason (BT-97) shall indicate the same type of allowance.",
+    "ja": "文書レベルの許容理由コード（BT-98）と文書レベルの許容理由（BT-97）は、同じタイプの許容を示すものとします。"
+  },
+  "BR-CO-6": {
+    "en": "Document level charge reason code (BT-105) and Document level charge reason (BT-104) shall indicate the same type of charge.",
+    "ja": "文書レベルの請求理由コード（BT-105）と文書レベルの請求理由（BT-104）は、同じ種類の請求を示すものとします。"
+  },
+  "BR-CO-7": {
+    "en": "Invoice line allowance reason code (BT-140) and Invoice line allowance reason (BT-139) shall indicate the same type of allowance reason.",
+    "ja": "請求書ライン許容理由コード（BT-140）と請求書ライン許容理由（BT-139）は、同じタイプの許容理由を示すものとします。"
+  },
+  "BR-CO-8": {
+    "en": "Invoice line charge reason code (BT-145) and Invoice line charge reason (EST 144} shall indicate the same type of charge reason.",
+    "ja": "請求書明細請求理由コード（BT-145）と請求書明細請求理由（EST 144}は、同じタイプの請求理由を示すものとします。"
+  },
+  "BR-CO-9": {
+    "en": "The Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) shall have a prefix in accordance with ISO code ISO 3166-1 alpha-2 by which the country of issue may be identified. Nevertheless, Greece may use the prefix 'EL'.",
+    "ja": "売り手のVAT識別子（BT-31）、売り手の税務代理人のVAT識別子（BT-63）、および買い手のVAT識別子（BT-48）には、ISOコードISO 3166-1alpha-2に準拠した接頭辞を付ける必要があります。問題の国が特定される場合があります。それでも、ギリシャでは接頭辞「EL」を使用できます。"
+  },
+  "BR-CO-IO": {
+    "en": "Sum of Invoice line net amount (BT-106) = SIGMA Invoice line net amount (BT-131).",
+    "ja": "請求書明細の正味額の合計（BT-106）= SIGMA請求書明細の正味額（BT-131）。"
+  },
+  "BR-CO-11": {
+    "en": "Sum of allowances on document level (BT-107) = J) Document level allowance amount (BT-92).",
+    "ja": "伝票レベルの引当金の合計（BT-107）= J）伝票レベルの引当金額（BT-92）。"
+  },
+  "BR-CO-12": {
+    "en": "Sum of charges on document level (BT-108) = SIGMA Document level charge amount (BT-99).",
+    "ja": "ドキュメントレベルの料金の合計（BT-108）= SIGMAドキュメントレベルの料金額（BT-99）。"
+  },
+  "BR-CO-13": {
+    "en": "Invoice total amount without VAT (BT-109) = SIGMA Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).",
+    "ja": "VATなしの請求書合計金額（BT-109）= SIGMA請求書明細正味金額（BT-131）-伝票レベルの引当金の合計（BT-107）+伝票レベルの料金の合計（BT-108）。"
+  },
+  "BR-CO-14": {
+    "en": "Invoice total VAT amount (BT-110) = SIGMA VAT category tax amount (BT-117).",
+    "ja": "請求書の合計VAT額（BT-110）= SIGMA VATカテゴリの税額（BT-117）。"
+  },
+  "BR-CO-15": {
+    "en": "Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).",
+    "ja": "VATを含む請求書の合計金額（BT-112）= VATを含まない請求書の合計金額（BT-109）+請求書の合計VAT金額（BT-110）。"
+  },
+  "BR-CO-16": {
+    "en": "Amount due for payment (BT-115) = Invoice total amount with VAT (BT-112) -Paid amount (BT-113) + Rounding amount (BT-114).",
+    "ja": "支払期日（BT-115）= VATを含む請求書の合計額（BT-112）-支払額（BT-113）+端数処理金額（BT-114）。"
+  },
+  "BR-CO-17": {
+    "en": "VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.",
+    "ja": "VATカテゴリの税額（BT-117）= VATカテゴリの課税額（BT-116）x（VATカテゴリの税率（BT-119）/ 100）、小数点以下第2位を四捨五入します。"
+  },
+  "BR-CO-18": {
+    "en": "An Invoice shall at least have one VAT breakdown group (BG-23).",
+    "ja": "請求書には、少なくとも1つのVAT内訳グループ（BG-23）が必要です。"
+  },
+  "BR-CO-19": {
+    "en": "If Invoicing period (BG-14) is used, the Invoicing period start date (BT-73) or the Invoicing period end date (BT74) shall be filled, or both.",
+    "ja": "請求期間（BG-14）を使用する場合は、請求期間の開始日（BT-73）または請求期間の終了日（BT74）、あるいはその両方を入力する必要があります。"
+  },
+  "BR-CQ-20": {
+    "en": "If Invoice line period (BG-26) is used, the Invoice line period start date (BT-134) or the Invoice line period end date fBT-135) shall be filled, or both.",
+    "ja": "請求書明細期間（BG-26）を使用する場合は、請求書明細期間の開始日（BT-134）または請求書明細期間の終了日（fBT-135）、あるいはその両方を入力する必要があります。"
+  },
+  "BR-CO-21": {
+    "en": "Each Document level allowance (BG-20) shall contain a Document level allowance reason (BT-97) or a Document level allowance reason code (BT-98), or both.",
+    "ja": "各ドキュメントレベルの許容値（BG-20）には、ドキュメントレベルの許容値の理由（BT-97）またはドキュメントレベルの許容値の理由コード（BT-98）、あるいはその両方が含まれている必要があります。"
+  },
+  "BR-CO-22": {
+    "en": "Each Document level charge (BG-21) shall contain a Document level charge reason (BT-104) or a Document level charge reason code (BT-105), or both.",
+    "ja": "各ドキュメントレベルの請求（BG-21）には、ドキュメントレベルの請求理由（BT-104）またはドキュメントレベルの請求理由コード（BT-105）、あるいはその両方が含まれている必要があります。"
+  },
+  "BR-CO-23": {
+    "en": "Each Invoice line allowance (BG-27) shall contain an Invoice line allowance reason (BT-139) or an Invoice line allowance reason code (BT-1401 or both.",
+    "ja": "各請求書明細手当（BG-27）には、請求書明細手当理由（BT-139）または請求書明細手当理由コード（BT-1401、あるいはその両方）が含まれている必要があります。"
+  },
+  "BR-CO-24": {
+    "en": "Each Invoice line charge (BG-28) shall contain an Invoice line charge reason (BT-144) or an Invoice line charge reason code (BT-145), or both.",
+    "ja": "各請求書明細請求書（BG-28）には、請求書明細書請求理由（BT-144）または請求書明細請求理由コード（BT-145）、あるいはその両方が含まれている必要があります。"
+  },
+  "BR-CO-25": {
+    "en": "In case the Amount due for payment (BT-115) is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present",
+    "ja": "支払期日（BT-115）が正の場合、支払期日（BT-9）または支払条件（BT-20）のいずれかが存在するものとします。"
+  },
+  "BR-CO-26": {
+    "en": "In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present   ",
+    "ja": "買い手がサプライヤーを自動的に識別するために、売り手識別子（BT-29）、売り手法的登録識別子（BT-30）、および/または売り手VAT識別子（BT-31）が存在するものとします。"
+  }
+}

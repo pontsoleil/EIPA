@@ -1,0 +1,604 @@
+[
+  {
+    "num": 0,
+    "ID": "ibr-01",
+    "Desc": "[fatal] An Invoice shall have a Specification identifier (ibt-024).   ",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u4ed5\u69d8ID(ibt-024)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-024"
+  },
+  {
+    "num": 1,
+    "ID": "ibr-02",
+    "Desc": "[fatal] An Invoice shall have an Invoice number (ibt-001).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8acb\u6c42\u66f8\u756a\u53f7(ibt-001)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-001"
+  },
+  {
+    "num": 2,
+    "ID": "ibr-03",
+    "Desc": "[fatal] An Invoice shall have an Invoice issue date (ibt-002).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8acb\u6c42\u66f8\u767a\u884c\u65e5(ibt-002)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-002"
+  },
+  {
+    "num": 3,
+    "ID": "ibr-04",
+    "Desc": "[fatal] An Invoice shall have an Invoice type code (ibt-003).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8acb\u6c42\u66f8\u30bf\u30a4\u30d7\u30b3\u30fc\u30c9(ibt-003)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-003"
+  },
+  {
+    "num": 4,
+    "ID": "ibr-05",
+    "Desc": "[fatal] An Invoice shall have an Invoice currency code (ibt-005).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8acb\u6c42\u66f8\u901a\u8ca8\u30b3\u30fc\u30c9(ibt-005)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-005"
+  },
+  {
+    "num": 5,
+    "ID": "ibr-06",
+    "Desc": "[fatal] An Invoice shall contain the Seller name (ibt-027).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u58f2\u308a\u624b\u540d\u79f0(ibt-027)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-027"
+  },
+  {
+    "num": 6,
+    "ID": "ibr-07",
+    "Desc": "[fatal] An Invoice shall contain the Buyer name (ibt-044).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8cb7\u3044\u624b\u540d\u79f0(ibt-044)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-044"
+  },
+  {
+    "num": 7,
+    "ID": "ibr-08",
+    "Desc": "[fatal] An Invoice shall contain the Seller postal address (ibg-05).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u58f2\u308a\u624b\u4f4f\u6240(ibg-05)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-05"
+  },
+  {
+    "num": 8,
+    "ID": "ibr-09",
+    "Desc": "[fatal] The Seller postal address (ibg-05) shall contain a Seller country code (ibt-040).",
+    "Desc_ja": "\u58f2\u308a\u624b\u4f4f\u6240(ibg-05)\u306f\u3001\u58f2\u308a\u624b\u56fd\u30b3\u30fc\u30c9(ibt-040)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-05,ibt-040"
+  },
+  {
+    "num": 9,
+    "ID": "ibr-10",
+    "Desc": "[fatal] An Invoice shall contain the Buyer postal address (ibg-08).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8cb7\u3044\u624b\u4f4f\u6240(ibg-08)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-08"
+  },
+  {
+    "num": 10,
+    "ID": "ibr-11",
+    "Desc": "[fatal] The Buyer postal address (ibg-089 shall contain a Buyer country code (ibt-055).",
+    "Desc_ja": "\u8cb7\u3044\u624b\u4f4f\u6240(ibg-089)\u306f\u3001\u8cb7\u3044\u624b\u56fd\u30b3\u30fc\u30c9(ibt-055)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-089,ibt-055"
+  },
+  {
+    "num": 11,
+    "ID": "ibr-12",
+    "Desc": "[fatal] An Invoice shall have the Sum of Invoice line net amount (ibt-106).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u5024\u5f15/\u5272\u5f15\u5f8c\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u91d1\u984d\u306e\u5408\u8a08(ibt-106)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-106"
+  },
+  {
+    "num": 12,
+    "ID": "ibr-13",
+    "Desc": "[fatal] An Invoice shall have the Invoice total amount without Tax (ibt-109).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8acb\u6c42\u66f8\u5408\u8a08\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-109)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-109"
+  },
+  {
+    "num": 13,
+    "ID": "ibr-14",
+    "Desc": "[fatal] An Invoice shall have the Invoice total amount with Tax (ibt-112).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u8acb\u6c42\u66f8\u5408\u8a08\u91d1\u984d(\u7a0e\u8fbc\u307f)(ibt-112)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-112"
+  },
+  {
+    "num": 14,
+    "ID": "ibr-15",
+    "Desc": "[fatal] An Invoice shall have the Amount due for payment (ibt-115).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u672a\u6255\u91d1\u984d(ibt-115)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-115"
+  },
+  {
+    "num": 15,
+    "ID": "ibr-16",
+    "Desc": "[fatal] An Invoice shall have at least one Invoice line (ibg-25)",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306f\u3001\u5c11\u306a\u304f\u3068\u3082\u3072\u3068\u3064\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25"
+  },
+  {
+    "num": 16,
+    "ID": "ibr-17",
+    "Desc": "[fatal] The Payee name (ibt-059) shall be provided in the Invoice, if the Payee (ibg-10) is different from the Seller (ibg-04).",
+    "Desc_ja": "\u652f\u6255\u5148\u540d\u79f0(ibt-059)\u306f\u3001\u652f\u6255\u5148(ibg-10)\u304c\u58f2\u308a\u624b(ibg-04)\u3068\u7570\u306a\u308b\u5834\u5408\u306f\u3001\u8acb\u6c42\u66f8\u3067\u6307\u5b9a\u3055\u308c\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-059,ibg-10,ibg-04"
+  },
+  {
+    "num": 17,
+    "ID": "ibr-18",
+    "Desc": "[fatal] The Seller tax representative name (ibt-062) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11)",
+    "Desc_ja": "\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba\u540d\u79f0(ibt-062)\u306f\u3001\u58f2\u308a\u624b(ibg-04)\u306b\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba(ibg-11)\u304c\u3044\u308b\u5834\u5408\u3001\u8acb\u6c42\u66f8\u3067\u660e\u793a\u7684\u306b\u6307\u5b9a\u3055\u308c\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-062,ibg-04,ibg-11"
+  },
+  {
+    "num": 18,
+    "ID": "ibr-19",
+    "Desc": "[fatal] The Seller tax representative postal address (ibg-12) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11).",
+    "Desc_ja": "\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba\u4f4f\u6240(ibg-12)\u306f\u3001\u58f2\u308a\u624b(ibg-04)\u306b\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba(ibg-11)\u304c\u3044\u308b\u5834\u5408\u3001\u8acb\u6c42\u66f8\u3067\u660e\u793a\u7684\u306b\u6307\u5b9a\u3055\u308c\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-12,ibg-04,ibg-11"
+  },
+  {
+    "num": 19,
+    "ID": "ibr-20",
+    "Desc": "[fatal] The Seller tax representative postal address (ibg-12) shall contain a Tax representative country code (ibt-069), if the Seller (ibg-04) has a Seller tax representative party (ibg-11).",
+    "Desc_ja": "\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba\u4f4f\u6240(ibg-12)\u306f\u3001\u58f2\u308a\u624b(ibg-04)\u306b\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba(ibg-11)\u304c\u3044\u308b\u5834\u5408\u3001\u7d0d\u7a0e\u7ba1\u7406\u4eba\u56fd\u30b3\u30fc\u30c9(ibt-069)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-12,ibt-069,ibg-04,ibg-11"
+  },
+  {
+    "num": 20,
+    "ID": "ibr-21",
+    "Desc": "[fatal] Each Invoice line (ibg-25) shall have an Invoice line identifier (ibt-126).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884cID(ibt-126)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25,ibt-126"
+  },
+  {
+    "num": 21,
+    "ID": "ibr-22",
+    "Desc": "[fatal] Each Invoice line (ibg-25) shall have an Invoiced quantity (ibt-129).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u306f\u3001\u8acb\u6c42\u3055\u308c\u308b\u6570\u91cf(ibt-129)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25,ibt-129"
+  },
+  {
+    "num": 22,
+    "ID": "ibr-23",
+    "Desc": "[fatal] An Invoice line (ibg-25) shall have an Invoiced quantity unit of measure code (ibt-130).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u306f\u3001\u8acb\u6c42\u3055\u308c\u308b\u6570\u91cf\u306e\u6570\u91cf\u5358\u4f4d\u30b3\u30fc\u30c9(ibt-130)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25,ibt-130"
+  },
+  {
+    "num": 23,
+    "ID": "ibr-24",
+    "Desc": "[fatal] Each Invoice line (ibg-25) shall have an Invoice line net amount (ibt-131).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u306f\u3001\u5024\u5f15/\u5272\u5f15\u5f8c\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u91d1\u984d(ibt-131)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25,ibt-131"
+  },
+  {
+    "num": 24,
+    "ID": "ibr-25",
+    "Desc": "[fatal] Each Invoice line (ibg-25) shall contain the Item name (ibt-153).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u306f\u3001\u54c1\u540d(ibt-153)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25,ibt-153"
+  },
+  {
+    "num": 25,
+    "ID": "ibr-26",
+    "Desc": "[fatal] Each Invoice line (ibg-25) shall contain the Item net price (ibt-146).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c(ibg-25)\u306f\u3001\u54c1\u76ee\u5358\u4fa1(\u5024\u5f15/\u5272\u5f15\u5f8c)(\u7a0e\u629c\u304d)(ibt-146)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-25,ibt-146"
+  },
+  {
+    "num": 26,
+    "ID": "ibr-27",
+    "Desc": "[fatal] The Item net price (ibt-146) shall NOT be negative.",
+    "Desc_ja": "\u54c1\u76ee\u5358\u4fa1(\u5024\u5f15/\u5272\u5f15\u5f8c)(\u7a0e\u629c\u304d)(ibt-146)\u306f\u3001\u8ca0\u306e\u5024\u3068\u306a\u3063\u3066\u306f\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-146"
+  },
+  {
+    "num": 27,
+    "ID": "ibr-28",
+    "Desc": "[fatal] The Item gross price (ibt-148) shall NOT be negative.",
+    "Desc_ja": "\u54c1\u76ee\u5358\u4fa1(\u5024\u5f15/\u5272\u5f15\u524d)(\u7a0e\u629c\u304d)(ibt-148)\u306f\u3001\u8ca0\u306e\u5024\u3068\u306a\u3063\u3066\u306f\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-148"
+  },
+  {
+    "num": 28,
+    "ID": "ibr-29",
+    "Desc": "[fatal] If both Invoicing period start date (ibt-073) and Invoicing period end date (ibt-074) are given then the Invoicing period end date (ibt-074) shall be later or equal to the Invoicing period start date (ibt-073).",
+    "Desc_ja": "\u8acb\u6c42\u671f\u9593\u958b\u59cb\u65e5(ibt-073)\u3068\u8acb\u6c42\u671f\u9593\u7d42\u4e86\u65e5(ibt-074)\u304c\u6307\u5b9a\u3055\u308c\u3066\u3044\u308b\u5834\u5408\u3001\u8acb\u6c42\u671f\u9593\u7d42\u4e86\u65e5(ibt-074)\u306f\u3001\u8acb\u6c42\u671f\u9593\u958b\u59cb\u65e5(ibt-073)\u4ee5\u4e0a\u3067\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-073,ibt-074,ibt-074,ibt-073"
+  },
+  {
+    "num": 29,
+    "ID": "ibr-30",
+    "Desc": "[fatal] If both Invoice line period start date (ibt-134) and Invoice line period end date (ibt-135) are given then the Invoice line period end date (ibt-135) shall be later or equal to the Invoice line period start date (ibt-134).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593\u958b\u59cb\u65e5(ibt-134)\u3068\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593\u7d42\u4e86\u65e5(ibt-135)\u304c\u6307\u5b9a\u3055\u308c\u3066\u3044\u308b\u5834\u5408\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593\u7d42\u4e86\u65e5(ibt-135)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593\u958b\u59cb\u65e5(ibt-134)\u4ee5\u4e0a\u3067\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-134,ibt-135,ibt-135,ibt-134"
+  },
+  {
+    "num": 30,
+    "ID": "ibr-31",
+    "Desc": "[fatal] Each Document level allowance (ibg-20) shall have a Document level allowance amount (ibt-092).",
+    "Desc_ja": "\u500b\u3005\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\n(ibg-20)\u306f\u3001\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-092)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-20,ibt-092"
+  },
+  {
+    "num": 31,
+    "ID": "ibr-33",
+    "Desc": "[fatal] Each Document level allowance (ibg-20) shall have a Document level allowance reason (ibt-907) or a Document level allowance reason code (ibt-098).",
+    "Desc_ja": "\u500b\u3005\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\n(ibg-20)\u306f\u3001\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u7406\u7531(ibt-097)\u3082\u3057\u304f\u306f\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u7406\u7531\u30b3\u30fc\u30c9(ibt-098)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-20,ibt-907,ibt-098"
+  },
+  {
+    "num": 32,
+    "ID": "ibr-36",
+    "Desc": "[fatal] Each Document level charge (ibg-21) shall have a Document level charge amount (ibt-099).",
+    "Desc_ja": "\u500b\u3005\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\n(ibg-21)\u306f\u3001\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-099)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-21,ibt-099"
+  },
+  {
+    "num": 33,
+    "ID": "ibr-38",
+    "Desc": "[fatal] Each Document level charge (ibg-21) shall have a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105).",
+    "Desc_ja": "\u500b\u3005\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\n(ibg-21)\u306f\u3001\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u7406\u7531(ibt-104)\u3082\u3057\u304f\u306f\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u7406\u7531\u30b3\u30fc\u30c9(ibt-105)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-21,ibt-104,ibt-105"
+  },
+  {
+    "num": 34,
+    "ID": "ibr-41",
+    "Desc": "[fatal] Each Invoice line allowance (ibg-27) shall have an Invoice line allowance amount (ibt-136).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\n(ibg-27)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-136)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-27,ibt-136"
+  },
+  {
+    "num": 35,
+    "ID": "ibr-42",
+    "Desc": "[fatal] Each Invoice line allowance (ibg-27) shall have an Invoice line allowance reason (ibt-139) or an Invoice line allowance reason code (ibt-140).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\n(ibg-27)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\u7406\u7531(ibt-139)\u3082\u3057\u304f\u306f\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\u7406\u7531\u30b3\u30fc\u30c9(ibt-140)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-27,ibt-139,ibt-140"
+  },
+  {
+    "num": 36,
+    "ID": "ibr-43",
+    "Desc": "[fatal] Each Invoice line charge (ibg-28) shall have an Invoice line charge amount (ibt-141).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\n(ibg-28)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-141)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-28,ibt-141"
+  },
+  {
+    "num": 37,
+    "ID": "ibr-44",
+    "Desc": "[fatal] Each Invoice line charge (ibg-28) shall have an Invoice line charge reason (ibt-144) or an invoice line allowance reason code (ibt-145).",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\n(ibg-28)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u7406\u7531(ibt-144)\u3082\u3057\u304f\u306f\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u7406\u7531\u30b3\u30fc\u30c9(ibt-145)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-28,ibt-144,ibt-145"
+  },
+  {
+    "num": 38,
+    "ID": "ibr-49",
+    "Desc": "[fatal] A Payment instruction (ibg-16) shall specify the Payment means type code (ibt-081).",
+    "Desc_ja": "\u652f\u6255\u6307\u793a(ibg-16)\u306f\u3001\u652f\u6255\u624b\u6bb5\u30bf\u30a4\u30d7\u30b3\u30fc\u30c9(ibt-081)\u3092\u7279\u5b9a\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-16,ibt-081"
+  },
+  {
+    "num": 39,
+    "ID": "ibr-52",
+    "Desc": "[fatal] Each Additional supporting document (ibg-24) shall contain a Supporting document reference (ibt-122).   ",
+    "Desc_ja": "\u500b\u3005\u306e\u6dfb\u4ed8\u66f8\u985e(ibg-24)\u306f\u3001\u6dfb\u4ed8\u66f8\u985e\u3078\u306e\u53c2\u7167(ibt-122)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-24,ibt-122"
+  },
+  {
+    "num": 40,
+    "ID": "ibr-53",
+    "Desc": "[fatal] If the Tax accounting currency code (ibt-006) is present, then the Invoice total Tax amount in accounting currency (ibt-111) shall be provided.",
+    "Desc_ja": "\u7a0e\u4f1a\u8a08\u5831\u544a\u7528\u901a\u8ca8\u30b3\u30fc\u30c9(ibt-006)\u304c\u6307\u5b9a\u3055\u308c\u3066\u3044\u308b\u5834\u5408\u306f\u3001\u4f1a\u8a08\u901a\u8ca8\u3067\u306e\u8acb\u6c42\u66f8\u6d88\u8cbb\u7a0e\u5408\u8a08\u91d1\u984d(ibt-111)\u3092\u6307\u5b9a\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-006,ibt-111"
+  },
+  {
+    "num": 41,
+    "ID": "ibr-54",
+    "Desc": "[fatal] Each Item attribute (ibg-32) shall contain an Item attribute name (ibt-160) and an Item attribute value (ibt-161).",
+    "Desc_ja": "\u500b\u3005\u306e\u54c1\u76ee\u5c5e\u6027(ibg-32)\u306f\u3001\u54c1\u76ee\u5c5e\u6027\u540d(ibt-160)\u3068\u54c1\u76ee\u5c5e\u6027\u5024(ibt-161)\u3092\u542b\u307e\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-32,ibt-160,ibt-161"
+  },
+  {
+    "num": 42,
+    "ID": "ibr-55",
+    "Desc": "[fatal] Each Preceding Invoice reference (ibg-03) shall contain a Preceding Invoice reference (ibt-025).",
+    "Desc_ja": "\u500b\u3005\u306e\u5148\u884c\u8acb\u6c42\u66f8\u3078\u306e\u53c2\u7167(ibg-03)\u306f\u3001\u5148\u884c\u8acb\u6c42\u66f8\u3078\u306e\u53c2\u7167(ibt-025)\u3092\u542b\u307e\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-03,ibt-025"
+  },
+  {
+    "num": 43,
+    "ID": "ibr-56",
+    "Desc": "[fatal] Each Seller tax representative party (ibg-11) shall have a Seller tax representative Tax identifier (ibt-063).",
+    "Desc_ja": "\u500b\u3005\u306e\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba(ibg-11)\u306f\u3001\u58f2\u308a\u624b\u7d0d\u7a0e\u7ba1\u7406\u4eba\u7a0eID(ibt-063)\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-11,ibt-063"
+  },
+  {
+    "num": 44,
+    "ID": "ibr-57",
+    "Desc": "[fatal] Each Deliver to address (ibg-15) shall contain a Deliver to country code (ibt-080).",
+    "Desc_ja": "\u500b\u3005\u306e\u7d0d\u5165\u5148\u4f4f\u6240(ibg-15)\u306f\u3001\u7d0d\u5165\u5148\u56fd\u30b3\u30fc\u30c9(ibt-080)\u3092\u542b\u307e\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-15,ibt-080"
+  },
+  {
+    "num": 45,
+    "ID": "ibr-62",
+    "Desc": "[fatal] The Seller electronic address (ibt-034) shall have a Scheme identifier.",
+    "Desc_ja": "\u58f2\u308a\u624b\u96fb\u5b50\u30a2\u30c9\u30ec\u30b9(ibt-034)\u306f\u3001\u30b9\u30ad\u30fc\u30deID\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-034"
+  },
+  {
+    "num": 46,
+    "ID": "ibr-63",
+    "Desc": "[fatal] The Buyer electronic address (ibt-049) shall have a Scheme identifier.   ",
+    "Desc_ja": "\u8cb7\u3044\u624b\u96fb\u5b50\u30a2\u30c9\u30ec\u30b9(ibt-049)\u306f\u3001\u30b9\u30ad\u30fc\u30deID\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-049"
+  },
+  {
+    "num": 47,
+    "ID": "ibr-64",
+    "Desc": "[fatal] The Item standard identifier (ibt-157) shall have a Scheme identifier.",
+    "Desc_ja": "\u54c1\u76ee\u6a19\u6e96ID(ibt-157)\u306f\u3001\u30b9\u30ad\u30fc\u30deID\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-157"
+  },
+  {
+    "num": 48,
+    "ID": "ibr-65",
+    "Desc": "[fatal] The Item classification identifier (ibt-158) shall have a Scheme identifier.",
+    "Desc_ja": "\u54c1\u76ee\u5206\u985eID(ibt-158)\u306f\u3001\u30b9\u30ad\u30fc\u30deID\u3092\u6301\u305f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-158"
+  },
+  {
+    "num": 49,
+    "ID": "ibr-67",
+    "Desc": "[fatal] Invoice amount due for payment (ibt-115) shall have no more than 2 decimals.",
+    "Desc_ja": "\u672a\u6255\u91d1\u984d(ibt-115)\u306f\u3001\u5c0f\u6570\u70b9\u4ee5\u4e0b2\u6841\u4ee5\u4e0a\u3092\u6301\u3063\u3066\u306f\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-115"
+  },
+  {
+    "num": 50,
+    "ID": "ibr-cl-01",
+    "Desc": "[fatal] The document type code MUST be coded by the invoice and credit note related code lists of UNTDID 1001.",
+    "Desc_ja": "\u6587\u66f8\u30bf\u30a4\u30d7\u30b3\u30fc\u30c9\u306f\u3001UNTDID 1001\u306e\u30b3\u30fc\u30c9\u30ea\u30b9\u30c8\u304b\u3089\u3001\u8acb\u6c42\u66f8\u3001\u30af\u30ec\u30b8\u30c3\u30c8\u30ce\u30fc\u30c8\u306b\u95a2\u9023\u3059\u308b\u30b3\u30fc\u30c9\u3092\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 51,
+    "ID": "ibr-cl-03",
+    "Desc": "[fatal] currencyID MUST be coded using ISO code list 4217 alpha-3.",
+    "Desc_ja": "\u901a\u8ca8ID\u306f\u3001ISO code list 4217 alpha-3 \u306b\u3042\u308b\u30b3\u30fc\u30c9\u3092\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 52,
+    "ID": "ibr-cl-04",
+    "Desc": "[fatal] Invoice currency code MUST be coded using ISO code list 4217 alpha-3",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u901a\u8ca8\u30b3\u30fc\u30c9\u306f\u3001ISO code list 4217 alpha-3 \u306b\u3042\u308b\u30b3\u30fc\u30c9\u3092\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 53,
+    "ID": "ibr-cl-05",
+    "Desc": "[fatal] Tax currency code MUST be coded using ISO code list 4217 alpha-3",
+    "Desc_ja": "\u7a0e\u901a\u8ca8\u30b3\u30fc\u30c9\u306f\u3001ISO code list 4217 alpha-3 \u306b\u3042\u308b\u30b3\u30fc\u30c9\u3092\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 54,
+    "ID": "ibr-cl-07",
+    "Desc": "[fatal] Object identifier identification scheme MUST be coded using a restriction of UNTDID 1153.",
+    "Desc_ja": "\u30aa\u30d6\u30b8\u30a7\u30af\u30c8ID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001UNTDID 1153 \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 55,
+    "ID": "ibr-cl-10",
+    "Desc": "[fatal] Any identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.",
+    "Desc_ja": "\u3069\u306e\u3088\u3046\u306aID\u3067\u3082\u3001ID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001 ISO 6523 ICD \u306e\u4e00\u89a7\u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 56,
+    "ID": "ibr-cl-11",
+    "Desc": "[fatal] Any registration identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.",
+    "Desc_ja": "\u767b\u9332ID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001 ISO 6523 ICD \u306e\u4e00\u89a7\u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 57,
+    "ID": "ibr-cl-13",
+    "Desc": "[fatal] Item classification identifier identification scheme MUST be coded using one of the UNTDID 7143 list.",
+    "Desc_ja": "\u54c1\u76ee\u5206\u985eID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001 UNTDID 7143 \u306e\u4e00\u89a7\u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 58,
+    "ID": "ibr-cl-14",
+    "Desc": "[fatal] Country codes in an invoice MUST be coded using ISO code list 3166-1",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306b\u8a18\u8f09\u3055\u308c\u308b\u56fd\u30b3\u30fc\u30c9\u306f\u3001 ISO code list 3166-1 \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 59,
+    "ID": "ibr-cl-15",
+    "Desc": "[fatal] Origin country codes in an invoice MUST be coded using ISO code list 3166-1",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306b\u8a18\u8f09\u3055\u308c\u308b\u539f\u7523\u56fd\u30b3\u30fc\u30c9\u306f\u3001 ISO code list 3166-1 \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 60,
+    "ID": "ibr-cl-16",
+    "Desc": "[fatal] Payment means in an invoice MUST be coded using UNCL4461 code list (adding Z01 and Z02)",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u306b\u8a18\u8f09\u3055\u308c\u308b\u652f\u6255\u624b\u6bb5\u306f\u3001Z01\u53ca\u3073Z02\u304c\u8ffd\u52a0\u3055\u308c\u305fUNCL4461 code list \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 61,
+    "ID": "ibr-cl-19",
+    "Desc": "[fatal] Coded allowance reasons MUST belong to the UNCL 5189 code list",
+    "Desc_ja": "\u8fd4\u9084\u8acb\u6c42\u7406\u7531\u306f\u3001UNCL 5189 code list \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 62,
+    "ID": "ibr-cl-20",
+    "Desc": "[fatal] Coded charge reasons MUST belong to the UNCL 7161 code list",
+    "Desc_ja": "\u8ffd\u52a0\u8acb\u6c42\u7406\u7531\u306f\u3001UNCL 7161 code list \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 63,
+    "ID": "ibr-cl-21",
+    "Desc": "[fatal] Item standard identifier scheme identifier MUST belong to the ISO 6523 ICD list.",
+    "Desc_ja": "\u54c1\u76ee\u6a19\u6e96ID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001ISO 6523 ICD \u306e\u4e00\u89a7\u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 64,
+    "ID": "ibr-cl-23",
+    "Desc": "[fatal] Unit code MUST be coded according to the UN/ECE Recommendation 20 with Rec 21 extension",
+    "Desc_ja": "\u6570\u91cf\u5358\u4f4d\u30b3\u30fc\u30c9\u306f\u3001UN/ECE Recommendation 20 with Rec 21 extension \u306b\u5f93\u3063\u305f\u3082\u306e\u3067\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 65,
+    "ID": "ibr-cl-24",
+    "Desc": "[fatal] Mime code must be according to subset of IANA code list.",
+    "Desc_ja": "MIME\u30b3\u30fc\u30c9\u306f\u3001IANA code list \u306b\u5f93\u3063\u305f\u3082\u306e\u3067\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 66,
+    "ID": "ibr-cl-25",
+    "Desc": "[fatal] Endpoint identifier scheme identifier MUST belong to the CEF EAS code list.",
+    "Desc_ja": "\u30a8\u30f3\u30c9\u30dd\u30a4\u30f3\u30c8ID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001CEF EAS code list \u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 67,
+    "ID": "ibr-cl-26",
+    "Desc": "[fatal] Delivery location identifier scheme identifier MUST belong to the ISO 6523 ICD code list.",
+    "Desc_ja": "\u7d0d\u5165\u5148ID\u306e\u30b9\u30ad\u30fc\u30deID\u306f\u3001ISO 6523 ICD \u306e\u4e00\u89a7\u304b\u3089\u9078\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": ""
+  },
+  {
+    "num": 68,
+    "ID": "ibr-co-05",
+    "Desc": "[fatal] Document level allowance reason code (ibt-098) and Document level allowance reason (ibt-097) shall indicate the same type of allowance.",
+    "Desc_ja": "\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u7406\u7531\u30b3\u30fc\u30c9(ibt-098)\u304a\u3088\u3073\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u7406\u7531(ibt-097)\u306f\u3001\u540c\u3058\u8fd4\u9084\u8acb\u6c42\u30bf\u30a4\u30d7\u3092\u793a\u3057\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-098,ibt-097"
+  },
+  {
+    "num": 69,
+    "ID": "ibr-co-06",
+    "Desc": "[fatal] Document level charge reason code (ibt-105) and Document level charge reason (ibt-104) shall indicate the same type of charge.",
+    "Desc_ja": "\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u7406\u7531\u30b3\u30fc\u30c9(ibt-105)\u304a\u3088\u3073\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u7406\u7531(ibt-104)\u306f\u3001\u540c\u3058\u8ffd\u52a0\u8acb\u6c42\u30bf\u30a4\u30d7\u3092\u793a\u3057\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-105,ibt-104"
+  },
+  {
+    "num": 70,
+    "ID": "ibr-co-07",
+    "Desc": "[fatal] When both Invoice line allowance reason code (iibt-140) and Invoice line allowance reason (iibt-139) the definition of the code is normative.",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\u7406\u7531\u30b3\u30fc\u30c9(ibt-140)\u3068\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8fd4\u9084\u8acb\u6c42\u7406\u7531(ibt-139)\u4e21\u65b9\u306e\u5834\u5408\u3001\u30b3\u30fc\u30c9\u5b9a\u7fa9\u304c\u3055\u308c\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-140,ibt-139"
+  },
+  {
+    "num": 71,
+    "ID": "ibr-co-08",
+    "Desc": "[fatal] When both Invoice line charge reason code (iibt-145) and Invoice line charge reason (iibt-144) the definition of the code is normative.",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u7406\u7531\u30b3\u30fc\u30c9(ibt-145)\u3068\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u7406\u7531(ibt-144)\u4e21\u65b9\u306e\u5834\u5408\u3001\u30b3\u30fc\u30c9\u5b9a\u7fa9\u304c\u3055\u308c\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-145,ibt-144"
+  },
+  {
+    "num": 72,
+    "ID": "ibr-co-10",
+    "Desc": "[fatal] Sum of Invoice line net amount (ibt-106) = \u03a3 Invoice line net amount (ibt-131).",
+    "Desc_ja": "\u5024\u5f15/\u5272\u5f15\u5f8c\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u91d1\u984d\u306e\u5408\u8a08(ibt-106) = \u2211 \u5024\u5f15/\u5272\u5f15\u5f8c\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u91d1\u984d(ibt-131).",
+    "BusinessTerm": "ibt-106,ibt-131"
+  },
+  {
+    "num": 73,
+    "ID": "ibr-co-11",
+    "Desc": "[fatal] Sum of allowances on document level (ibt-107) = \u03a3 Document level allowance amount (ibt-092).",
+    "Desc_ja": "\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u5408\u8a08(ibt-107) = \u2211 \u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-092).",
+    "BusinessTerm": "ibt-107,ibt-092"
+  },
+  {
+    "num": 74,
+    "ID": "ibr-co-12",
+    "Desc": "[fatal] Sum of charges on document level (ibt-108) = \u03a3 Document level charge amount (ibt-099).",
+    "Desc_ja": "\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u5408\u8a08(ibt-108) = \u2211 \u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u91d1\u984d(ibt-099).",
+    "BusinessTerm": "ibt-108,ibt-099"
+  },
+  {
+    "num": 75,
+    "ID": "ibr-co-13",
+    "Desc": "[fatal] Invoice total amount without Tax (ibt-109) = \u03a3 Invoice line net amount (ibt-131) - Sum of allowances on document level (ibt-107) + Sum of charges on document level (ibt-108).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u5408\u8a08\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-0109) = \u2211 \u5024\u5f15/\u5272\u5f15\u5f8c\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u91d1\u984d(ibt-131) - \u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u5408\u8a08(ibt-107) + \u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u5408\u8a08(ibt-108).",
+    "BusinessTerm": "ibt-109,ibt-131,ibt-107,ibt-108"
+  },
+  {
+    "num": 76,
+    "ID": "ibr-co-14",
+    "Desc": "[fatal] Invoice total Tax amount (ibt-110) = \u03a3 Tax category tax amount (ibt-117).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u6d88\u8cbb\u7a0e\u5408\u8a08\u91d1\u984d(BT-110) = \u03a3 \u8ab2\u7a0e\u5206\u985e\u6bce\u306e\u6d88\u8cbb\u7a0e\u984d(BT-117)",
+    "BusinessTerm": "ibt-110,ibt-117"
+  },
+  {
+    "num": 77,
+    "ID": "ibr-co-15",
+    "Desc": "[fatal] Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u5408\u8a08\u91d1\u984d(\u7a0e\u8fbc\u307f)(ibt-112) = \u8acb\u6c42\u66f8\u5408\u8a08\u91d1\u984d(\u7a0e\u629c\u304d)(ibt-109) + \u8acb\u6c42\u66f8\u6d88\u8cbb\u7a0e\u5408\u8a08\u91d1\u984d(ibt-110).",
+    "BusinessTerm": "ibt-112,ibt-109,ibt-110"
+  },
+  {
+    "num": 78,
+    "ID": "ibr-co-16",
+    "Desc": "[fatal] Amount due for payment (ibt-115) = Invoice total amount with Tax (ibt-112) - Paid amount (ibt-113) + Rounding amount (ibt-114).",
+    "Desc_ja": "\u672a\u6255\u91d1\u984d (ibt-115) = \u8acb\u6c42\u66f8\u5408\u8a08\u91d1\u984d(\u7a0e\u8fbc\u307f)(ibt-112) - \u652f\u6255\u6e08\u91d1\u984d (ibt-113) + \u7aef\u6570\u51e6\u7406\u91d1\u984d (ibt-114).",
+    "BusinessTerm": "ibt-115,ibt-112,ibt-113,ibt-114"
+  },
+  {
+    "num": 79,
+    "ID": "ibr-co-19",
+    "Desc": "[fatal] If Invoicing period (ibg-14) is used, the Invoicing period start date (ibt-073) or the Invoicing period end date (ibt-074) shall be filled, or both.",
+    "Desc_ja": "\u8acb\u6c42\u671f\u9593 (ibg-14) \u304c\u4f7f\u308f\u308c\u3066\u3044\u308b\u5834\u5408\u3001\u8acb\u6c42\u671f\u9593\u958b\u59cb\u65e5 (ibt-073) \u3082\u3057\u304f\u306f\u8acb\u6c42\u671f\u9593\u7d42\u4e86\u65e5 (ibt-074)\u3001\u3082\u3057\u304f\u306f\u305d\u306e\u4e21\u65b9\u304c\u6307\u5b9a\u3055\u308c\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-14,ibt-073,ibt-074"
+  },
+  {
+    "num": 80,
+    "ID": "ibr-co-20",
+    "Desc": "[fatal] If Invoice line period (ibg-26) is used, the Invoice line period start date (ibt-134) or the Invoice line period end date (ibt-135) shall be filled, or both.",
+    "Desc_ja": "\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593 (ibg-26) \u304c\u4f7f\u308f\u308c\u3066\u3044\u308b\u5834\u5408\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593\u958b\u59cb\u65e5 (ibt-134) \u3082\u3057\u304f\u306f\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u671f\u9593\u7d42\u4e86\u65e5 (ibt-135)\u3001\u3082\u3057\u304f\u306f\u305d\u306e\u4e21\u65b9\u304c\u6307\u5b9a\u3055\u308c\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-26,ibt-134,ibt-135"
+  },
+  {
+    "num": 81,
+    "ID": "ibr-co-21",
+    "Desc": "[fatal] Each Document level allowance (ibg-20) shall contain a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098), or both",
+    "Desc_ja": "\u500b\u3005\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42(ibg-20)\u306f\u3001\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u7406\u7531(ibt-097)\u3082\u3057\u304f\u306f\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8fd4\u9084\u8acb\u6c42\u306e\u7406\u7531\u30b3\u30fc\u30c9(ibt-098)\u3001\u3042\u308b\u3044\u306f\u305d\u306e\u4e21\u65b9\u3092\u542b\u307e\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-20,ibt-097,ibt-098"
+  },
+  {
+    "num": 82,
+    "ID": "ibr-co-22",
+    "Desc": "[fatal] Each Document level charge (ibg-21) shall contain a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105), or both.",
+    "Desc_ja": "\u500b\u3005\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42(ibg-21)\u306f\u3001\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u7406\u7531(ibt-104)\u3082\u3057\u304f\u306f\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30ec\u30d9\u30eb\u306e\u8ffd\u52a0\u8acb\u6c42\u306e\u7406\u7531\u30b3\u30fc\u30c9(ibt-105)\u3001\u3042\u308b\u3044\u306f\u305d\u306e\u4e21\u65b9\u3092\u542b\u307e\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-21,ibt-104,ibt-105"
+  },
+  {
+    "num": 83,
+    "ID": "ibr-co-24",
+    "Desc": "[fatal] Each Invoice line charge (ibg-28) shall contain an Invoice line charge reason (ibt-144) or an Invoice line charge reason code (ibt-145), or both.",
+    "Desc_ja": "\u500b\u3005\u306e\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42(ibg-28)\u306f\u3001\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u7406\u7531(ibt-144)\u3082\u3057\u304f\u306f\u8acb\u6c42\u66f8\u660e\u7d30\u884c\u306e\u8ffd\u52a0\u8acb\u6c42\u7406\u7531\u30b3\u30fc\u30c9(ibt-145)\u3001\u3042\u308b\u3044\u306f\u305d\u306e\u4e21\u65b9\u3092\u542b\u307e\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibg-28,ibt-144,ibt-145"
+  },
+  {
+    "num": 84,
+    "ID": "ibr-co-25",
+    "Desc": "[fatal] In case the Amount due for payment (ibt-115) is positive, either the Payment due date (ibt-009) or the Payment terms (ibt-020) shall be present.",
+    "Desc_ja": "\u672a\u6255\u91d1\u984d(ibt-115)\u304c\u6b63\u306e\u5024\u306e\u5834\u5408\u3001\u652f\u6255\u671f\u65e5(ibt-009)\u3082\u3057\u304f\u306f\u652f\u6255\u6761\u4ef6(ibt-020)\u304c\u6307\u5b9a\u3055\u308c\u3066\u3044\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-115,ibt-009,ibt-020"
+  },
+  {
+    "num": 85,
+    "ID": "ibr-co-26",
+    "Desc": "[fatal] In order for the buyer to automatically identify a supplier, the Seller identifier (ibt-029), the Seller legal registration identifier (ibt-030) and/or the Seller Tax identifier (ibt-031) shall be present.",
+    "Desc_ja": "\u8cb7\u3044\u624b\u304c\u81ea\u52d5\u3067\u30b5\u30d7\u30e9\u30a4\u30e4\u3092\u8b58\u5225\u3067\u304d\u308b\u3088\u3046\u306b\u3001\u58f2\u308a\u624bID(ibt-029)\u3001\u58f2\u308a\u624b\u767b\u9332\u4f01\u696dID(ibt-030) \u53ca\u3073/\u3082\u3057\u304f\u306f \u58f2\u308a\u624b\u7a0eID(ibt-031)\u3092\u6307\u5b9a\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3002",
+    "BusinessTerm": "ibt-029,ibt-030,ibt-031"
+  }
+]

@@ -1,0 +1,56 @@
+Component Name	Subset	Cardinality	Definition	Alternative Business Terms	Examples	Dictionary Entry Name	Object Class Qualifier	Object Class	Property Term Qualifier	Property Term Possessive Noun	Property Term Primary Noun	Property Term	Representation Term	Data Type Qualifier	Data Type	Associated Object Class Qualifier	Associated Object Class	Component Type	UN/TDED Code	Current Version	Editor's Notes
+Invoice			A document used to request payment.			Invoice. Details		Invoice										ABIE		2.0	
+UBLVersionID		0..1	Identifies the earliest version of the UBL 2 schema for this document type that defines all of the elements that might be encountered in the current instance.		2.0.5	Invoice. UBL Version Identifier. Identifier		Invoice		UBL Version	Identifier	UBL Version Identifier	Identifier		Identifier. Type			BBIE		2.0	
+CustomizationID		0..1	Identifies a user-defined customization of UBL for a specific use.		NES	Invoice. Customization Identifier. Identifier		Invoice		Customization	Identifier	Customization Identifier	Identifier		Identifier. Type			BBIE		2.0	
+ProfileID		0..1	Identifies a user-defined profile of the customization of UBL being used.		BasicProcurementProcess	Invoice. Profile Identifier. Identifier		Invoice		Profile	Identifier	Profile Identifier	Identifier		Identifier. Type			BBIE		2.0	
+ProfileExecutionID		0..1	"Identifies an instance of executing a profile, to associate all transactions in a collaboration."		BPP-1001	Invoice. Profile Execution Identifier. Identifier		Invoice		Profile Execution	Identifier	Profile Execution Identifier	Identifier		Identifier. Type			BBIE		2.1	
+ID		1	"An identifier for this document, assigned by the sender."	Invoice Number		Invoice. Identifier		Invoice			Identifier	Identifier	Identifier		Identifier. Type			BBIE	1334	2.0	
+CopyIndicator		0..1	Indicates whether this document is a copy (true) or not (false).			Invoice. Copy_ Indicator. Indicator		Invoice	Copy		Indicator	Indicator	Indicator		Indicator. Type			BBIE		2.0	
+UUID		0..1	A universally unique identifier for an instance of this document.			Invoice. UUID. Identifier		Invoice			UUID	UUID	Identifier		Identifier. Type			BBIE		2.0	
+IssueDate		1	"The date, assigned by the sender, on which this document was issued."	Invoice Date		Invoice. Issue Date. Date		Invoice		Issue	Date	Issue Date	Date		Date. Type			BBIE	2377	2.0	
+IssueTime		0..1	"The time, assigned by the sender, at which this document was issued."			Invoice. Issue Time. Time		Invoice		Issue	Time	Issue Time	Time		Time. Type			BBIE	2377	2.0	
+DueDate		0..1	The date on which Invoice is due.			Invoice. Due Date. Date		Invoice		Due	Date	Due Date	Date		Date. Type			BBIE		2.1	
+InvoiceTypeCode		0..1	A code signifying the type of the Invoice.			Invoice. Invoice Type Code. Code		Invoice		Invoice Type	Code	Invoice Type Code	Code		Code. Type			BBIE	1027	2.0	
+Note		0..n	"Free-form text pertinent to this document, conveying information that is not contained explicitly in other structures."			Invoice. Note. Text		Invoice			Note	Note	Text		Text. Type			BBIE		2.0	
+TaxPointDate		0..1	"The date of the Invoice, used to indicate the point at which tax becomes applicable."			Invoice. Tax Point Date. Date		Invoice		Tax Point	Date	Tax Point Date	Date		Date. Type			BBIE		2.0	
+DocumentCurrencyCode		0..1	A code signifying the default currency for this document.			Invoice. Document_ Currency Code. Code		Invoice	Document	Currency	Code	Currency Code	Code	Currency	Currency_ Code. Type			BBIE		2.0	
+TaxCurrencyCode		0..1	A code signifying the currency used for tax amounts in the Invoice.			Invoice. Tax_ Currency Code. Code		Invoice	Tax	Currency	Code	Currency Code	Code	Currency	Currency_ Code. Type			BBIE		2.0	
+PricingCurrencyCode		0..1	A code signifying the currency used for prices in the Invoice.			Invoice. Pricing_ Currency Code. Code		Invoice	Pricing	Currency	Code	Currency Code	Code	Currency	Currency_ Code. Type			BBIE		2.0	
+PaymentCurrencyCode		0..1	A code signifying the currency used for payment in the Invoice.			Invoice. Payment_ Currency Code. Code		Invoice	Payment	Currency	Code	Currency Code	Code	Currency	Currency_ Code. Type			BBIE		2.0	
+PaymentAlternativeCurrencyCode		0..1	A code signifying the alternative currency used for payment in the Invoice.			Invoice. Payment Alternative_ Currency Code. Code		Invoice	Payment Alternative	Currency	Code	Currency Code	Code	Currency	Currency_ Code. Type			BBIE		2.0	
+AccountingCostCode		0..1	"The buyer's accounting code, applied to the Invoice as a whole."			Invoice. Accounting Cost Code. Code		Invoice		Accounting Cost	Code	Accounting Cost Code	Code		Code. Type			BBIE		2.0	
+AccountingCost		0..1	"The buyer's accounting code, applied to the Invoice as a whole, expressed as text."			Invoice. Accounting Cost. Text		Invoice		Accounting	Cost	Accounting Cost	Text		Text. Type			BBIE		2.0	
+LineCountNumeric		0..1	The number of lines in the document.			Invoice. Line Count. Numeric		Invoice		Line	Count	Line Count	Numeric		Numeric. Type			BBIE		2.0	
+BuyerReference		0..1	A reference provided by the buyer used for internal routing of the document.			Invoice. Buyer_ Reference. Text		Invoice	Buyer		Reference	Reference	Text		Text. Type			BBIE		2.1	
+InvoicePeriod		0..n	A period to which the Invoice applies.			Invoice. Invoice_ Period. Period		Invoice	Invoice			Period	Period				Period	ASBIE		2.0	
+OrderReference		0..1	A reference to the Order with which this Invoice is associated.			Invoice. Order Reference		Invoice				Order Reference	Order Reference				Order Reference	ASBIE		2.0	
+BillingReference		0..n	A reference to a billing document associated with this document.			Invoice. Billing Reference		Invoice				Billing Reference	Billing Reference				Billing Reference	ASBIE		2.0	
+DespatchDocumentReference		0..n	A reference to a Despatch Advice associated with this document.			Invoice. Despatch_ Document Reference. Document Reference		Invoice	Despatch			Document Reference	Document Reference				Document Reference	ASBIE		2.0	
+ReceiptDocumentReference		0..n	A reference to a Receipt Advice associated with this document.			Invoice. Receipt_ Document Reference. Document Reference		Invoice	Receipt			Document Reference	Document Reference				Document Reference	ASBIE		2.0	
+StatementDocumentReference		0..n	A reference to a Statement associated with this document.			Invoice. Statement_ Document Reference. Document Reference		Invoice	Statement			Document Reference	Document Reference				Document Reference	ASBIE		2.1	
+OriginatorDocumentReference		0..n	A reference to an originator document associated with this document.			Invoice. Originator_ Document Reference. Document Reference		Invoice	Originator			Document Reference	Document Reference				Document Reference	ASBIE		2.0	
+ContractDocumentReference		0..n	A reference to a contract associated with this document.			Invoice. Contract_ Document Reference. Document Reference		Invoice	Contract			Document Reference	Document Reference				Document Reference	ASBIE		2.0	
+AdditionalDocumentReference		0..n	A reference to an additional document associated with this document.			Invoice. Additional_ Document Reference. Document Reference		Invoice	Additional			Document Reference	Document Reference				Document Reference	ASBIE		2.0	
+ProjectReference		0..n	Information about a project.			Invoice. Project Reference		Invoice				Project Reference	Project Reference				Project Reference	ASBIE		2.1	
+Signature		0..n	A signature applied to this document.			Invoice. Signature		Invoice				Signature	Signature				Signature	ASBIE		2.0	
+AccountingSupplierParty		1	The accounting supplier party.			Invoice. Accounting_ Supplier Party. Supplier Party		Invoice	Accounting			Supplier Party	Supplier Party				Supplier Party	ASBIE	3029	2.0	
+AccountingCustomerParty		0..1	The accounting customer party.			Invoice. Accounting_ Customer Party. Customer Party		Invoice	Accounting			Customer Party	Customer Party				Customer Party	ASBIE	3007	2.0	
+PayeeParty		0..1	The payee.			Invoice. Payee_ Party. Party		Invoice	Payee			Party	Party				Party	ASBIE		2.0	
+BuyerCustomerParty		0..1	The buyer.			Invoice. Buyer_ Customer Party. Customer Party		Invoice	Buyer			Customer Party	Customer Party				Customer Party	ASBIE		2.0	
+SellerSupplierParty		0..1	The seller.			Invoice. Seller_ Supplier Party. Supplier Party		Invoice	Seller			Supplier Party	Supplier Party				Supplier Party	ASBIE		2.0	
+TaxRepresentativeParty		0..1	The tax representative.			Invoice. Tax Representative_ Party. Party		Invoice	Tax Representative			Party	Party				Party	ASBIE		2.0	
+Delivery		0..n	A delivery associated with this document.			Invoice. Delivery		Invoice				Delivery	Delivery				Delivery	ASBIE		2.0	
+DeliveryTerms		0..1	A set of delivery terms associated with this document.			Invoice. Delivery Terms		Invoice				Delivery Terms	Delivery Terms				Delivery Terms	ASBIE		2.0	
+PaymentMeans		0..n	Expected means of payment.			Invoice. Payment Means		Invoice				Payment Means	Payment Means				Payment Means	ASBIE		2.0	
+PaymentTerms		0..n	A set of payment terms associated with this document.			Invoice. Payment Terms		Invoice				Payment Terms	Payment Terms				Payment Terms	ASBIE		2.0	
+PrepaidPayment		0..n	A prepaid payment.			Invoice. Prepaid_ Payment. Payment		Invoice	Prepaid			Payment	Payment				Payment	ASBIE		2.0	
+AllowanceCharge		0..n	A discount or charge that applies to a price component.			Invoice. Allowance Charge		Invoice				Allowance Charge	Allowance Charge				Allowance Charge	ASBIE		2.0	
+TaxExchangeRate		0..1	The exchange rate between the document currency and the tax currency.			Invoice. Tax_ Exchange Rate. Exchange Rate		Invoice	Tax			Exchange Rate	Exchange Rate				Exchange Rate	ASBIE		2.0	
+PricingExchangeRate		0..1	The exchange rate between the document currency and the pricing currency.			Invoice. Pricing_ Exchange Rate. Exchange Rate		Invoice	Pricing			Exchange Rate	Exchange Rate				Exchange Rate	ASBIE		2.0	
+PaymentExchangeRate		0..1	The exchange rate between the document currency and the payment currency.			Invoice. Payment_ Exchange Rate. Exchange Rate		Invoice	Payment			Exchange Rate	Exchange Rate				Exchange Rate	ASBIE		2.0	
+PaymentAlternativeExchangeRate		0..1	The exchange rate between the document currency and the payment alternative currency.			Invoice. Payment Alternative_ Exchange Rate. Exchange Rate		Invoice	Payment Alternative			Exchange Rate	Exchange Rate				Exchange Rate	ASBIE		2.0	
+TaxTotal		0..n	The total amount of a specific type of tax.			Invoice. Tax Total		Invoice				Tax Total	Tax Total				Tax Total	ASBIE		2.0	
+WithholdingTaxTotal		0..n	The total withholding tax.			Invoice. Withholding_ Tax Total. Tax Total		Invoice	Withholding			Tax Total	Tax Total				Tax Total	ASBIE		2.1	
+LegalMonetaryTotal		1	"The total amount payable on the Invoice, including Allowances, Charges, and Taxes."			Invoice. Legal_ Monetary Total. Monetary Total		Invoice	Legal			Monetary Total	Monetary Total				Monetary Total	ASBIE	5214	2.0	
+InvoiceLine		1..n	A line describing an invoice item.			Invoice. Invoice Line		Invoice				Invoice Line	Invoice Line				Invoice Line	ASBIE		2.0	
+																		END			

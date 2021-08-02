@@ -1,0 +1,20 @@
+﻿context,id,flag,test,text
+/ubl:Invoice | /cn:CreditNote,BR-01,fatal,(cbc:CustomizationID) != '',An Invoice shall have a Specification identifier (BT-24).
+/ubl:Invoice | /cn:CreditNote,BR-02,fatal,(cbc:ID) !='',An Invoice shall have an Invoice number (BT-1).
+/ubl:Invoice | /cn:CreditNote,BR-03,fatal,(cbc:IssueDate) !='',An Invoice shall have an Invoice issue date (BT-2).
+/ubl:Invoice | /cn:CreditNote,BR-04,fatal,(cbc:InvoiceTypeCode) !='' or (cbc:CreditNoteTypeCode) !='',An Invoice shall have an Invoice type code (BT-3).
+/ubl:Invoice | /cn:CreditNote,BR-05,fatal,(cbc:DocumentCurrencyCode) !='',An Invoice shall have an Invoice currency code (BT-5).
+/ubl:Invoice | /cn:CreditNote,BR-06,fatal,(cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName) !='',An Invoice shall contain the Seller name (BT-27).
+/ubl:Invoice | /cn:CreditNote,BR-07,fatal,(cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName) !='',An Invoice shall contain the Buyer name (BT-44).
+/ubl:Invoice | /cn:CreditNote,BR-08,fatal,exists(cac:AccountingSupplierParty/cac:Party/cac:PostalAddress),An Invoice shall contain the Seller postal address.
+cac:AccountingSupplierParty/cac:Party/cac:PostalAddress,BR-09,fatal,(cac:Country/cbc:IdentificationCode) != '',The Seller postal address (BG-5) shall contain a Seller country code (BT-40).
+/ubl:Invoice | /cn:CreditNote,BR-10,fatal,exists(cac:AccountingCustomerParty/cac:Party/cac:PostalAddress),An Invoice shall contain the Buyer postal address (BG-8).
+cac:AccountingCustomerParty/cac:Party/cac:PostalAddress,BR-11,fatal,(cac:Country/cbc:IdentificationCode) != '',The Buyer postal address shall contain a Buyer country code (BT-55).
+cac:LegalMonetaryTotal,BR-12,fatal,exists(cbc:LineExtensionAmount),An Invoice shall have the Sum of Invoice line net amount (BT-106).
+cac:LegalMonetaryTotal,BR-13,fatal,exists(cbc:TaxExclusiveAmount),An Invoice shall have the Invoice total amount without VAT (BT-109).
+cac:LegalMonetaryTotal,BR-14,fatal,exists(cbc:TaxInclusiveAmount),An Invoice shall have the Invoice total amount with VAT (BT-112).
+cac:LegalMonetaryTotal,BR-15,fatal,exists(cbc:PayableAmount),An Invoice shall have the Amount due for payment (BT-115).
+/ubl:Invoice | /cn:CreditNote,BR-16,fatal,exists(cac:InvoiceLine) or exists(cac:CreditNoteLine),An Invoice shall have at least one Invoice line (BG-25)
+cac:PayeeParty,BR-17,fatal,exists(cac:PartyName/cbc:Name) and (not(cac:PartyName/cbc:Name = ../cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name) and not(cac:PartyIdentification/cbc:ID = ../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID) ),"The Payee name (BT-59) shall be provided in the Invoice, if the Payee (BG-10) is different from the Seller (BG-4)"
+cac:TaxRepresentativeParty,BR-18,fatal,(cac:PartyName/cbc:Name) != '',"The Seller tax representative name (BT-62) shall be provided in the Invoice, if the Seller (BG-4) has a Seller tax representative party (BG-11)"
+cac:TaxRepresentativeParty,BR-19,fatal,exists(cac:PostalAddress),"The Seller tax representative postal address (BG-12) shall be provided in the Invoice, if the Seller (BG-4) has a Seller tax representative party (BG-11)."
