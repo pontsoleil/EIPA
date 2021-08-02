@@ -1,6 +1,30 @@
 /**
  * rules.js
+ * 
+ * designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+ * written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
  *
+ * MIT License
+ * 
+ * Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  * This is a free to use open source software and licensed under the MIT License
  * CC-SA-BY Copyright (c) 2020, Sambuichi Professional Engineers Office
  **/
@@ -10,7 +34,6 @@ var rule_columns, rule_columnDefs, rule_table, RuleMap, RuleRows, rule_count=3,
     expandedRows, collapsedRows,
     TABLE2, RULES, RULES2,
     TABLE2_JA, RULES_JA,
-    // CONDITIONS_JA, FUNCTIONALITY_JA, INTEGRITY_JA, VAT_JA,
     VAT_CATEGORY_JA;
 
 function setFrame(num, _frame) {
@@ -143,8 +166,6 @@ function find(table_id, col, word) {
           td.innerText = '*'+key;
         }
       }
-
-
     }
   }
   else if ('#rule' === table_id) {
@@ -177,8 +198,6 @@ function en_format(d) { // d is the original data object for the row
       usage_google = match[5];
       usage_google = usage_google.replaceAll(' - ','<br>- ');
     }
-  // return Promise.resolve()
-  // .then(function() {
     var record, desc_ja = '', usage_ja = '';
     record = TABLE2_JA[d.ID];
     desc_ja = record['desc_ja'];
@@ -190,7 +209,6 @@ function en_format(d) { // d is the original data object for the row
         '<col style="width:'+H2+'%;">'+
       '</colgroup>'+
       '<tr>';
-    //
     if (desc_ja && usage_ja) {
       html += '<tr>'+
         '<td valign="top">'+desc_ja+'</td><td valign="top">'+usage_ja+'</td>'+
@@ -256,8 +274,6 @@ function rule_format(d) { // d is the original data object for the row
     if (desc_google.match(/NL/)) {
       desc_google = desc_google.replaceAll('NL', '<br>\n');
     }
-  // return Promise.resolve()
-  // .then(function() {
     var record, desc_ja = '';
     record = RULES_JA[d.ID];
     if (record) {
@@ -271,9 +287,6 @@ function rule_format(d) { // d is the original data object for the row
         '<col style="width:'+H1+'%;">'+
         '<col style="width:'+H2+'%;">'+
       '</colgroup>';
-      // if (desc_ja) {
-      //   html += '<tr><td colspan="2">'+desc_ja+'</td></tr>';
-      // }
       if (desc_google) {
         html += '<tr><td colspan="2">- Google翻訳API(V2) -<br>'+desc_google+'</td></tr>';
       }
@@ -729,65 +742,6 @@ var initModule = function () {
     catch(e) { console.log(e); }
   })
   .catch(function(err) { console.log(err); });
-/*
-  ajaxRequest('data/rules/EN_16931-1_conditions_ja.json', null, 'GET', 1000)
-  .then(function(res) {
-    try {
-      var json = JSON.parse(res);
-      for(var k in json){
-        var v = json[k];
-        RULES[k] = v;
-      }
-    }
-    catch(e) { console.log(e); }
-  })
-  .catch(function(err) { console.log(err); });
-  ajaxRequest('data/rules/EN_16931-1_functionality_ja.json', null, 'GET', 1000)
-  .then(function(res) {
-    try {
-      var json = JSON.parse(res);
-      for(var k in json){
-        var v = json[k];
-        RULES[k] = v;
-      }    }
-    catch(e) { console.log(e); }
-  })
-  .catch(function(err) { console.log(err); });
-  ajaxRequest('data/rules/EN_16931-1_integrity_ja.json', null, 'GET', 1000)
-  .then(function(res) {
-    try {
-      var json = JSON.parse(res);
-      for(var k in json){
-        var v = json[k];
-        RULES[k] = v;
-      }
-    }
-    catch(e) { console.log(e); }
-  })
-  .catch(function(err) { console.log(err); });
-  ajaxRequest('data/rules/EN_16931-1_vat_ja.json', null, 'GET', 1000)
-  .then(function(res) {
-    try {
-      var json = JSON.parse(res);
-      for(var k in json){
-        var v = json[k];
-        RULES[k] = v;
-      }
-    }
-    catch(e) { console.log(e); }
-  })
-  .catch(function(err) { console.log(err); });
-  */
-  // VAT category
-/*  ajaxRequest('data/rules/EN_16931-1_VATcategory_ja.json', null, 'GET', 1000)
-  .then(function(res) {
-    try {
-      VAT_CATEGORY_JA = JSON.parse(res);
-    }
-    catch(e) { console.log(e); }
-  })
-  .catch(function(err) { console.log(err); });
-  */
   // -----------------------------------------------------------------
   // Ajax request for rule data
   // -----------------------------------------------------------------
@@ -930,8 +884,6 @@ var initModule = function () {
       expandCollapse('#en', EnMap, tr);      
     }
   });
-
-
 
   setTimeout(function() {
     setFrame(1, 'en');

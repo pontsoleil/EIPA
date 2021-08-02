@@ -56,10 +56,10 @@ def dict_to_tsv(tsv, root):
     test = ' '.join(test.split())
     text = text.strip()
     text = ' '.join(text.split())
-    terms_pattern = 'BT-[0-9]*'
+    terms_pattern = 'I?BT-[0-9]*'
     terms = re.findall(terms_pattern, text, flags=re.IGNORECASE)
     terms = ' '.join(terms)
-    groups_pattern = 'BG-[0-9]*'
+    groups_pattern = 'I?BG-[0-9]*'
     groups = re.findall(groups_pattern, text, flags=re.IGNORECASE)
     groups = ' '.join(groups)
     record = [ct, id, flag, test, text, groups, terms]

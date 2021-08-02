@@ -1,249 +1,990 @@
 {
-  "BR-S-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Standard rated' shall contain in the VAT breakdown (BG-23) at least one VAT code (BT-118) equal with 'Standard rated'.","ja":"請求書行（BG-25）、ドキュメントレベルの手当（BG-20）、またはドキュメントレベルの料金（BG-21）を含む請求書。VATカテゴリコード（BT-151、BT-95、またはBT-102） 「標準定格」は、VAT内訳（BG-23）に「標準定格」と等しい少なくとも1つのVATコード（BT-118）を含むものとします。"},
-  "BR-S-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT idpntifier (BT-63).","ja":"インボイスライン（BG-25）に含まれるインボイスで、インボイス項目のVATカテゴリコード（BT-151）が「標準定格」である場合は、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32）、および/または売り手税務代表者VAT idpntifier（BT-63）を含むものとします。"},
-  "BR-S-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリコード（BT-95）が「標準定格」である場合には、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）および/または売主税務代表者VAT識別子（BT-63）を記載しなければなりません。"},
-  "BR-S-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベルチャージ（BG-21）を含む請求書には、文書レベルチャージのVATカテゴリーコード（BT-102）が「Standard rated」である場合、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32）、および/または売り手税務代表者VAT識別子（BT-63）を記載しなければなりません。"},
-  "BR-S-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' the Invoiced item VAT rate (BT-152)shall be greater than zero.","ja":"インボイスライン（BG-25）において、インボイス項目VATカテゴリコード（BT-151）が「標準定格」である場合、インボイス項目VATレート(BT-152)はゼロよりも大きいものとします。"},
-  "BR-S-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Standard rated' the Document level allowance VAT rate (BT96) shall be greater than zero.","ja":"文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリーコード（BT-95）が「標準定格」である場合、文書レベル引当金のVATレート（BT96）はゼロよりも大きいものとする。"},
-  "BR-S-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Standard rated' the Document level charge VAT rate (BT-103) shall be greater than zero.","ja":"ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「標準定格」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）はゼロよりも大きいものとします。"},
-  "BR-S-8":{"en":"For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is 'Standard rated', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'Standard rated' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).","ja":"VAT カテゴリーコード（BT-118）が「標準定格」である場合の VAT カテゴリーレート（BT-119）の値が異なる場合、VAT 内訳（BG-23）の VAT カテゴリー課税額（BT-116）は、VAT カテゴリーコード（BT-151）が「標準定格」である場合、インボイスラインのネット金額（BT-131）と文書レベルのチャージ金額（BT-99）の合計から文書レベルの引当金金額（BT-92）の合計を差し引いた金額と同じになります。BT-102, BT-95）は「標準定格」であり、VATレート（BT-152, BT-103, BT-96）はVATカテゴリレート（BT-119）と等しくなります。"},
-  "BR-S-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Standard rated' shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119)","ja":"VAT カテゴリーコード(BT-118)が「標準定格」の場合、VAT 内訳書(BG-23)の VAT カテゴリー課税額(BT-117)は、VAT カテゴリー税率 (BT-119)とVAT カテゴリー課税額(BT-116)の積と等しくなります。"},
-  "BR-S-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Standard rate' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120).","ja":"VATカテゴリーコード(BT-118)のあるVATブレイクダウン(BG-23)は、VAT免除理由コード(BT-121)またはVAT免除理由テキスト(BT-120)を持たないものとします。"},
-  "BR-Z-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Zero rated' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Zero rated'.","ja":"インボイスライン（BG-25）、文書レベル引当金（BG-20）、文書レベルチャージ（BG-21）を含むインボイスで、VATカテゴリーコード（BT-151、BT-95、BT-102）が「ゼロ定格」である場合、VAT内訳（BG-23）には、「ゼロ定格」と同じVATカテゴリーコード（BT-118）を正確に1つ含まなければなりません。"},
-  "BR-Z-2":{"en":"An Invoice that contains an Invoice line where the Invoiced item VAT category code (BT151) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"請求項目VATカテゴリコード（BT151）が「ゼロ定格」であるインボイス行を含むインボイスには、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）および／または売主税務代表VAT識別子（BT-63）が含まれているものとします。"},
-  "BR-Z-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリコード（BT-95）が「Zero rated」である場合、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）、および/または売主税務代表者VAT識別子（BT-63）を記載しなければなりません。"},
-  "BR-Z-4":{"en":"An Invoice that contains a Document level charge where the Document level charge VAT category code (BT-102) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベルチャージ VAT カテゴリコード（BT-102）が「ゼロ定格」である文書レベルチャージを含むインボイスには、売り手の VAT 識別子（BT-31）、売り手の税務登録識別子（BT-32）、および／または売り手の税務代表者の VAT 識別子（BT-63）が含まれているものとします。"},
-  "BR-Z-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT categoiy code (BT-151) is 'Zero rated' the Invoiced item VAT rate (BT-152) shall be 0 (zero).","ja":"インボイスライン(BG-25)で、請求項目VAT分類コード(BT-151)が「ゼロ定格」である場合、請求項目VATレート(BT-152)は0(ゼロ)となります。"},
-  "BR-Z-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Zero rated' the Document level allowance VAT rate (BT-96) shall be 0 (zero).","ja":"文書レベル引当金（BG-20）で、文書レベル引当金のVATカテゴリーコード（BT-95）が「ゼロ定格」である場合、文書レベル引当金のVATレート（BT-96）は0(ゼロ)となります。"},
-  "BR-Z-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Zero rated' the Document level charge VAT rate (BT-103) shall be 0 (zero).","ja":"ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「ゼロ・レーティング」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）は0（ゼロ）となります。"},
-  "BR-Z-8":{"en":"In a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Zero rated' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amount (BT131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Zero rated'.","ja":"VAT カテゴリーコード（BT-118）が「ゼロ税率」の場合、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）を差し引いた金額と、VAT カテゴリーコード（BT-151、BT-95、BT-102）が「ゼロ税率」の場合の文書レベルのチャージ金額（BT-99）の合計との合計に相当します。"},
-  "BR-Z-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown category code fBT-118) is 'Zero rated' shall equal 0 (zero).","ja":"VAT内訳カテゴリーコードfBT-118のVATカテゴリー税額（BT-117）が「ゼロ定格」である場合は、0（ゼロ）に等しいものとする。"},
-  "BR-Z-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Zero rated' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120).","ja":"VAT カテゴリコード(BT-118)が「ゼロ定格」の VAT ブレイクダウン（BG-23）には、VAT 免除理由コード(BT-121)または VAT 免除理由テキスト(BT-120)を持たないものとします。"},
-  "BR-E-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Exempt from VAT' shall contain exactly one VAT breakdown (BG-23) with the VAT category code (BT-118) equal to 'Exempt from VAT'.","ja":"インボイスにインボイスライン（BG-25）、文書レベル引当金（BG-20）、またはVATカテゴリーコード（BT-151、BT-95、またはBT-102）が「Exempt from VAT」である文書レベル料金（BG-21）を含むインボイスには、VATカテゴリーコード（BT-118）が「Exempt from VAT」に等しいVAT内訳（BG-23）を正確に1つ含まなければなりません。"},
-  "BR-E-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier fBT-63).","ja":"請求項目VATカテゴリコード（BT-151）が「VAT免除」である請求行（BG-25）を含む請求書には、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32）および/または売り手税務代表者VAT識別子fBT-63）が含まれているものとします。"},
-  "BR-E-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリコード（BT-95）が「VAT免除」である場合には、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）、および/または売主税務代表者VAT識別子（BT-63）を記載しなければなりません。"},
-  "BR-E-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32J and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベルチャージ（BG-21）を含む請求書には、文書レベルチャージのVATカテゴリーコード（BT-102）が「Exempt from VAT」である場合には、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32J）および/または売り手税務代表者VAT識別子（BT-63）を記載しなければなりません。"},
-  "BR-E-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Exempt from VAT', the Invoiced item VAT rate (BT-152) shall be 0 (zero).","ja":"インボイスライン(BG-25)において、インボイス項目のVATカテゴリコード(BT-151)が「Exempt from VAT」である場合、インボイス項目のVATレート(BT-152)は0(ゼロ)となります。"},
-  "BR-E-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Exempt from VAT', the Document level allowance VAT rate (BT-961 shall be 0 ('zero).","ja":"文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリコード（BT-95）が「VAT免除」である場合、文書レベル引当金のVATレート（BT-961）は0（「ゼロ」）とする。"},
-  "BR-E-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Exempt from VAT', the Document level charge VAT rate (BT-103) shall be 0 (zero).","ja":"文書レベルチャージ（BG-21）において、文書レベルチャージのVATカテゴリーコード（BT-102）が「VAT免除」である場合、文書レベルチャージのVATレート（BT-103）は0（ゼロ）とする。"},
-  "BR-E-8":{"en":"In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Exempt from VAT' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT151, BT-95, BT-102) are 'Exempt from VAT'.","ja":"VAT カテゴリーコード（BT-118）が「VAT 免除」の場合、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）を差し引いた金額と、VAT カテゴリーコード（BT-151、BT-95、BT-102）が「VAT 免除」の場合は、文書レベルのチャージ金額（BT-99）を差し引いた金額との合計となります。"},
-  "BR-E-9":{"en":"The VAT category tax amount (BT-117) In a VAT breakdown (BG-23) where the VAT category code (BT-118) equals 'Exempt from VAT' shall equal 0 (zero).","ja":"VATカテゴリ税額(BT-117) VATカテゴリコード(BT-118)が「VATを免除する」に等しいVAT内訳(BG-23)では、0 (0個)となります。"},
-  "BR-E-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Exempt from VAT' shall have a VAT exemption reason code (BT-121) or a VAT exemption reason text (BT-120).","ja":"VATカテゴリ・コード(BT-118)のVAT内訳(BG-23) 「VATを免除する」には、VAT免税事由コード(BT-121)またはVAT免税事由テキスト(BT-120)が含まれている必要があります。"},
-  "BR-AE-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Reverse charge' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'VAT reverse charge'.","ja":"VATカテゴリ・コード(BT-151、BT-95またはBT-102)が「リバースチャージ」である請求書明細(BG-25)、文書レベル引当金(BG-20)または文書レベル手数料(BG-21)を含む請求書は、VAT内訳(BG-23)に、「付加価値税 (VAT) リバース・チャージ」と等しい1つのVATカテゴリ・コード(BT-118)を含むものとします。"},
-  "BR-AE-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).","ja":"請求書品目のVATカテゴリ・コード(BT-151)が「リバースチャージ」である請求書明細(BG-25)を含む請求書には、売り手VAT識別子(BT-31)、売り手税登録識別子(BT-32)および/または売り手税代表VAT識別子(BT-63)、買い手VAT識別子(BT-48)および/または買い手法的登録識別子(BT-47)を含めるものとする。"},
-  "BR-AE-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).   ","ja":"請求書明細(BG-25)の請求済品目のVATカテゴリ・コード(BT-151)が「リバースチャージ」の場合、請求済品目のVATレート(BT-152)は0 (0個)となります。"},
-  "BR-AE-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).","ja":"ドキュメントレベルチャージVATカテゴリコード(BT-102)が「リバースチャージ」であるドキュメントレベルチャージ(BG-21)を含む請求書は、売り手VAT識別子(ビーティー31)、売り手税登録識別子(BT-32)および/または売り手税代表VAT識別子(BT-63)、および買い手VAT識別子(BT-48)および/または買い手法的登録識別子(BT-47)を含むものとする。"},
-  "BR-AE-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Reverse charge' the Invoiced item VAT rate (BT-152) shall be 0 (zero).","ja":"請求書明細(BG-25)の請求済品目のVATカテゴリ・コード(BT-151)が「リバースチャージ」の場合、請求済品目のVATレート(BT-152)は0 (0個)となります。"},
-  "BR-AE-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Reverse charge' the Document level allowance VAT rate (BT96) shall be 0 (zerol.","ja":"Document Level Allowance VAT Category Code (BT-95)が「リバースチャージ」であるDocument Level Allowance (BG-20)では、Document Level Allowance VAT Rate (BT-96)は0 (0個)でなければならない。"},
-  "BR-AE-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Reverse charge' the Document level charge VAT rate (BT-103) shall be 0 (zero).","ja":"ドキュメントレベルチャージVATカテゴリコード(BT-102)が「リバースチャージ」であるドキュメントレベルチャージ(BG-21)において、ドキュメントレベルチャージVATレート(BT-103)が0 (0個)であること。"},
-  "BR-AE-8":{"en":"In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Reverse charge' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92} plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT151, BT-95, BT-102) are 'Reverse charge'.","ja":"VATカテゴリ・コード(BT-118)が「リバースチャージ」の場合のVAT内訳(BG-23)では、VATカテゴリ課税対象額(BT-116)は、請求書明細の正味金額の合計(BT-131)から文書レベル引当額の合計(BT-92)を差し引いた額に、VATカテゴリ・コード(BT-151、BT-95、BT-102)が(BT-99)の場合の文書レベル引当額の合計を足した額と等しくなります。"},
-  "BR-AE-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code fBT-118) is 'Reverse charge' shall be 0 (zero).","ja":"VAT区分コード(BT-118)が「リバースチャージ」の場合のVAT内訳(BG-23)におけるVAT区分税額(BT-117)は、0 (0個)とする。"},
-  "BR-AE-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Reverse charge' shall have a VAT exemption reason code (BT-121), meaning 'Reverse charge' or the VAT exemption reason text (BT-120) 'Reverse charge' (or the equivalent standard text in another language).","ja":"VATカテゴリ・コード(BT-118) 「リバースチャージ」を持つVAT内訳(BG-23)は、「リバースチャージ」を意味するVAT免税理由コード(BT-121)またはVAT免税理由テキスト(BT-120) 「リバースチャージ」 (または他の言語の同等の標準テキスト)を持つものとします。"},
-  "BR-IC-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Intra-community supply' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Intra-community supply'.","ja":"VATカテゴリ・コード(BT-151、BT-95またはBT-102)が「コミュニティ内供給」である請求書明細(BG-25)、文書レベル引当金(BG-20)または文書レベル手数料(BG-21)を含む請求書は、VAT内訳(BG-23)に、「コミュニティ内供給」と等しい1つのVATカテゴリ・コード(BT-118)を含むものとします。"},
-  "BR-IC-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48).","ja":"請求書品目のVATカテゴリ・コード(BT-151)が「コミュニティ内供給」である請求書明細(BG-25)を含む請求書には、売り手VAT識別子(BT31)または売り手税代表VAT識別子(BT-63)および買い手VAT識別子(BT-48)を含めるものとする。"},
-  "BR-IC-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48).","ja":"ドキュメントレベルアローワンス(BG-20)を含む請求書で、ドキュメントレベルアローワンスVATカテゴリコード(BT-95)が「コミュニティ内供給」であるものは、売り手VAT識別子(BT31)または売り手税代表VAT識別子(BT-63)および買い手VAT識別子(BT-48)を含むものとする。"},
-  "BR-IC-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48).","ja":"ドキュメントレベルチャージVATカテゴリコード(BT-102)が「コミュニティ内供給」であるドキュメントレベルチャージ (BG-21)を含む請求書は、Seller VAT Identifier (BT31)または売り手税担当者のVAT識別子 (BT-63)および、買い手VAT識別子 (BT-48)を含むものとします。"},
-  "BR-IC-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Intracommunity supply' the Invoiced item VAT rate (BT-152) shall be 0 (zero).","ja":"請求書明細(BG-25)の請求済品目のVATカテゴリ・コード(BT-151)が「コミュニティ内供給」の場合、請求済品目のVATレート(BT-152)は0 (0個)となります。"},
-  "BR-IC-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Intra-commumty supply' the Document level allowance VAT rate (BT-96) shall be 0 fzerol.","ja":"Document Level Allowance VAT Category Code (BT-95)が「コミュニティ内供給」であるDocument Level Allowance (BG-20)では、Document Level Allowance VAT Rate (BT-96)は0 (0個)でなければならない。"},
-  "BR-IC-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Intra-community supply' the Document level charge VAT rate (BT-103) shall be 0 (zero).","ja":"ドキュメントレベルチャージVATカテゴリコード(BT-102)が「コミュニティ内供給」であるドキュメントレベルチャージ(BG-21)において、ドキュメントレベルチャージVATレート(BT-103)が0 (0個)であること。"},
-  "BR-IC-8":{"en":"In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Intra-community supply'.   ","ja":"VATカテゴリ・コード(BT-118)が「コミュニティ内供給」の場合のVAT内訳(BG-23)では、VATカテゴリ課税対象金額(BT-116)は、請求書明細の正味金額の合計(BT-131)から文書レベル引当金金額の合計(BT-92)を差し引いた金額と、VATカテゴリ・コード(BT-151、BT-95、BT-102)が(BT-99)の場合の文書レベル手数料金額の合計と等しくなります。"},
-  "BR-IC-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118)is 'Intra-community supply' shall be 0 (zero).","ja":"VAT内訳(BG-23)のVATカテゴリ税額(BT-117)で、VATがカテゴリコード(BT-118)が「コミュニティ内供給」の場合は、0 (0個)とする。"},
-  "BR-IC-10":{"en":"A VAT Breakdown (BG-23) with the VAT Category code (BT-118) 'Intra-community supply' shall have a VAT exemption reason code (BT-121)meaning 'Intra-community supply' or the VAT exemption reason text (BT-120) 'Intra-community supply' (or the equivalent standard text in another language).","ja":"VAT カテゴリコード(BT-118)の「コミュニティ内供給」を含む VAT ブレイクダウン（BG-23）には、「コミュニティ内供給」を意味する VAT 免除理由コード (BT-121)または VAT 免除理由テキスト(BT-120)の「コミュニティ内供給」（または他の言語で同等の標準テキスト）が含まれていなければなりません。"},
-  "BR-IC-11":{"en":"In an Invoice with a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the Actual delivery date (BT-72) or the Invoicing period (BG14) shall not be blank.","ja":"VATカテゴリーコード（BT-118）が「地域内供給」であるVAT内訳（BG-23）のインボイスでは、実際の納品日（BT-72）または請求書発行期間（BG14）は空白にしてはなりません。"},
-  "BR-IC-12":{"en":"In an Invoice with a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the Deliver to country code (BT-80)shall not be blank.","ja":"VATカテゴリーコード（BT-118）が「域内供給」であるVAT内訳（BG-23）のインボイスにおいて、納入先国コードfBT-801は空欄にしてはなりません。"},
-  "BR-G-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Export outside the EU' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Export outside the EU'.","ja":"インボイスにインボイスライン（BG-25）、文書レベル引当金（BG-20）または文書レベル料金（BG-21）が含まれ、VATカテゴリーコード（BT-151、BT-95またはBT-102）が「EU域外への輸出」である場合、VAT内訳（BG-23）には、「EU域外への輸出」と同じVATカテゴリーコード（BT-118）を正確に1つだけ含まなければなりません。"},
-  "BR-G-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-631).","ja":"インボイスライン（BG-25）に含まれるインボイスには、インボイス項目のVATカテゴリーコード（BT-151）が「EU域外輸出」である場合には、売り手VAT識別子（BT-31）または売り手税務代表者VAT識別子（BT-631）が含まれているものとします。"},
-  "BR-G-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリーコード（BT-95）が「EU域外輸出」である場合、売主VAT識別子（BT-31）または売主税理士VAT識別子（BT-63）を記載しなければなりません。"},
-  "BR-G-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベルチャージ VAT カテゴリコード（BT-102）が「EU 域外への輸出」である文書レベルチャージ（BG-21）を含むインボイスには、売り手の VAT 識別子（BT-31）または売り手の税務担当者の VAT 識別子（BT-63）を記載しなければなりません。"},
-  "BR-G-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Export outside the EU' the Invoiced item VAT rate (BT-152) shall be 0 (zero).","ja":"インボイス行(BG-25)において、インボイス項目VATカテゴリーコード(BT-151)が「EU域外輸出」である場合、インボイス項目VATレート(BT-152)は0(ゼロ)となります。"},
-  "BR-G-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Export outside the EU' the Document level allowance VAT rate (BT-96) shall be 0 (zero).","ja":"文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリーコード（BT-95）が「EU域外輸出」である場合、文書レベル引当金のVATレート（BT-96）は0（ゼロ）となります。"},
-  "BR-G-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Export outside the EU' the Document level charge VAT rate (BT-103) shall be 0 (zero).","ja":"文書レベルチャージ（BG-21）で、文書レベルチャージのVATカテゴリーコード（BT-102）が「EU域外輸出」である場合、文書レベルチャージのVATレート（BT-103）は0（ゼロ）となります。"},
-  "BR-G-8":{"en":"In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Export outside the EU' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Export outside the EU'.","ja":"VAT カテゴリーコード（BT-118）が「EU 域外への輸出」である場合の VAT 内訳（BG-23）では、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）を差し引いた金額と、VAT カテゴリーコード（BT-151、BT-95、BT-102）が「EU 域外への輸出」である場合の文書レベルのチャージ金額（BT-99）を差し引いた金額との合計となります。"},
-  "BR-G-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Export outside the EU' shall be 0 (zero).","ja":"VATカテゴリーコードfBT-118')が「EU域外輸出」である場合のVAT内訳(BG-23)のVATカテゴリー税額(BT-117)は、0(ゼロ)とします。"},
-  "BR-G-10":{"en":"A VAT Breakdown (BG-23) with the VAT Category code (BT-118) 'Export outside the EU' shall have a VAT exemption reason code (BT-121), meaning 'Export outside the EU' or the VAT exemption reason text (BT-120) 'Export outside the EU' (or the equivalent standard text in another language).","ja":"VATカテゴリーコード(BT-118)が「EU外への輸出」である場合のVAT内訳(BG-23)のVATカテゴリー税額(BT-117)は、0(ゼロ)となります。"},
-  "BR-0-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Not subject to VAT' shall contain exactly one VAT breakdown group (BG-23) with the VAT category code (BT-118) equal to 'Not subject to VAT'.","ja":"インボイスにインボイスライン(BG-25)、文書レベル引当金(BG-20)、文書レベルチャージ(BG-21)が含まれ、VATカテゴリーコード(BT-151、BT-95、BT-102)が「Not subject to VAT」であるインボイスには、VATカテゴリーコード(BT-118)が「Not subject to VAT」に等しいVAT内訳グループ(BG-23)が1つだけ含まれていなければなりません。"},
-  "BR-0-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) and/or|ac) or the Buyer VAT identifier (BT48) <11.","ja":"インボイスライン（BG-25）を含むインボイスで、インボイス項目のVATカテゴリコード（BT-151）が「Not subject to VAT」である場合、売り手VAT識別子（BT-31）、売り手税理士VAT識別子（BT-63）、および/または買い手VAT識別子（BT48）は含まれないものとします。"},
-  "BR-0-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) or the Buyer VAT identifier (BT-48).   ","ja":"文書レベル引当金（BG-20）を含むインボイスで、文書レベル引当金のVATカテゴリコード（BT-95）が「Not subject to VAT」である場合、売主VAT識別子（BT-31）、売主税理士VAT識別子（BT-63）、買主VAT識別子（BT-48）は含まれないものとする。  "},
-  "BR-0-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) or the Buyer VAT identifier (BT-48).","ja":"文書レベルチャージVATカテゴリコード（BT-102）が「Not subject to VAT」である文書レベルチャージ（BG-21）を含むインボイスには、売主VAT識別子（BT-31）、売主税理士VAT識別子（BT-63）、買主VAT識別子（BT-48）は含まれないものとする。"},
-  "BR-0-5":{"en":"An Invoice line (BG-25) where the VAT category code (BT-151) is 'Not subject to VAT' shall not contain an Invoiced item VAT rate (BT-152).","ja":"VAT カテゴリ コード（BT-151）が「Not subject to VAT」であるインボイス行（BG-25）には、インボイス項目の VAT レート（BT-152）を含まないものとします。"},
-  "BR-0-6":{"en":"A Document level allowance (BG-20) where VAT category code (BT-95) is 'Not subject to VAT' shall not contain a Document level allowance VAT rate (BT-96).","ja":"VAT カテゴリ コード（BT-95）が「Not subject to VAT」である文書レベル引当金（BG-20）には、文書レベル引当金の VAT レート（BT-96）は含まれないものとする。"},
-  "BR-0-7":{"en":"A Document level charge (BG-21) where the VAT category code (BT-102) is 'Not subject to VAT' shall not contain a Document level charge VAT rate (BT-103).","ja":"VAT カテゴリ コード（BT-102）が「Not subject to VAT」である文書レベルチャージ（BG-21）には、文書レベルチャージの VAT レート（BT-103）は含まれないものとします。"},
-  "BR-0-8":{"en":"In a VAT breakdown (BG-23) where the VAT category code (BT-118) is ' Not subject to VAT' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Not subject to VAT'.","ja":"VAT カテゴリーコード（BT-118）が「Not subject to VAT」である場合の VAT 内訳（BG-23）では、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）と文書レベルのチャージ金額（BT-99）の合計金額（BT-99）の合計金額となります。"},
-  "BR-0-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code fBT-118) is 'Not subject to VAT' shall be 0 (zero).  0 ' - '","ja":"VATカテゴリーコードfBT-118）が「Not subject to VAT」である場合のVAT内訳（BG-23）のVATカテゴリー税額（BT-117）は、0（ゼロ）とする。"},
-  "BR-0-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) ' Not subject to VAT' shall have a VAT exemption reason code (BT-121), meaning ' Not subject to VAT' or a VAT exemption reason text (BT-120) ' Not subject to VAT' (or the equivalent standard text in another language).","ja":"VATカテゴリーコード(BT-118)が「Not subject to VAT」であるVAT Breakdown (BG-23)には、「Not subject to VAT」を意味するVAT免除理由コード(BT-121)、またはVAT免除理由テキスト(BT-120)が「Not subject to VAT」(または他の言語で同等の標準テキスト)として記載されているものとする。"},
-  "BR-0-11":{"en":"An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118) 'Not subject to VAT' shall not contain other VAT breakdown groups (BG-23).","ja":"VATカテゴリーコード(BT118)が「Not subject to VAT」のVAT内訳グループ(BG-23)を含むインボイスには、他のVAT内訳グループ(BG-23)は含まれないものとする。"},
-  "BR-0-12":{"en":"An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118) 'Not subject to VAT' shall not contain an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is not 'Not subject to VAT'.","ja":"VATカテゴリーコード(BT118)が「Not subject to VAT」であるVAT内訳グループ(BG-23)を含むインボイスには、インボイス項目のVATカテゴリーコード(BT-151)が「Not subject to VAT」ではないインボイス行(BG-25)は含まれないものとする。"},
-  "BR-0-13":{"en":"An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118) 'Not subject to VAT' shall not contain Document level allowances (BG-20) where Document level allowance VAT category code (BT-95)is not 'Not subject to VAT'.","ja":"VATカテゴリーコード(BT118)が「Not subject to VAT」のVAT内訳グループ(BG-23)を含むインボイスには、文書レベル引当金のVATカテゴリーコードfBT-951が「Not subject to VAT」ではない場合、文書レベル引当金(BG-20)は含まれないものとする。"},
-  "BR-0-14":{"en":"An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118)1 'Not subject to VAT' shall not contain Document level charges f(BG-21)1 where Document level charge VAT category code (BT-102) is not 'Not subject to VAT'.","ja":"VATカテゴリーコード(BT118)が「Not subject to VAT」であるVAT内訳グループ(BG-23)を含むインボイスには、文書レベルチャージVATカテゴリーコード(BT-102)が「Not subject to VAT」ではない場合、文書レベルチャージ(BG-21)は含まれないものとする。"},
-  "BR-IG-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'IGIC' shall contain in the VAT breakdown (BG-23) at least one VAT category code (BT118) equal with 'IGIC'.","ja":"インボイスライン（BG-25）、文書レベル引当金（BG-20）または文書レベル料金（BG-21）を含むインボイスで、VATカテゴリーコード（BT-151、BT-95またはBT-102）が「IGIC」であるものは、VAT内訳（BG-23）に「IGIC」と同等のVATカテゴリーコード（BT118）を少なくとも1つ含まなければなりません。"},
-  "BR-IG-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32J and/or the Seller tax representative VAT identifier (BT-63).","ja":"請求項目VATカテゴリコード（BT-151）が「IGIC」であるインボイスライン（BG-25）を含むインボイスには、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32J）および/または売主税務代表VAT識別子（BT-63）が含まれているものとする。"},
-  "BR-IG-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IGIC' shall contain the Seller VAT Identifier (BT31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金VATカテゴリコード（BT-95）が「IGIC」である場合には、売主VAT識別子（BT31）、売主税務登録識別子（BT-32）、および/または売主税務代表者VAT識別子（BT-63）を記載しなければならない。"},
-  "BR-IG-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier  (BT-63).fBT-631.","ja":"文書レベルチャージ VAT カテゴリコード（BT-102）が「IGIC」である文書レベルチャージ（BG-21）を含むインボイスには、売主 VAT 識別子（BT-31）、売主税務登録識別子（BT-32）および／または売主税務代表者 VAT 識別子（BT-63）が含まれているものとする。"},
-  "BR-IG-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IGIC' the invoiced item VAT rate (BT-152) shall be 0 (zero) or greater than zero.","ja":"インボイスライン（BG-25）で、請求項目VATカテゴリコード（BT-151）が「IGIC」である場合、請求項目VATレート（BT-152）は、0（ゼロ）またはゼロより大きい値となります。"},
-  "BR-IG-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IGIC' the Document level allowance VAT rate (BT-96) shall be 0 (zero) or greater than zero.   ","ja":"文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリーコード（BT-95）が「IGIC」である場合、文書レベル引当金のVATレート（BT-96）は、0（ゼロ）以上でなければなりません。  "},
-  "BR-IG-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IGIC' the Document level charge VAT rate (BT-103) shall be 0 (zero) or prpater than zero.","ja":"ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「IGIC」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）は、0（ゼロ）または0よりも大きい値とする。"},
-  "BR-IG-8":{"en":"For each different value of VAT category rate (BT-119) where the VAT category code (BT118) is 'IGIC', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'IGIC' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).","ja":"VAT カテゴリーコード（BT118）が「IGIC」である場合の VAT カテゴリーレート（BT-119）の値が異なる場合、VAT 内訳（BG-23）の VAT カテゴリー課税額（BT-116）は、VAT カテゴリーコード（BT-151）が「IGIC」である場合、インボイスラインのネット金額（BT-131）と文書レベルのチャージ金額（BT-99）の合計から文書レベルの引当金金額（BT-92）の合計を差し引いた金額となります。BT-102、BT-95）は「IGIC」であり、VATレート（BT-152、BT-103、BT-96）はVATカテゴリレート（BT-119）と等しくなります。"},
-  "BR-IG-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'IGIC' shall equal the VAT category taxable amount (BT-116) multiplied bv the VAT category rate (BT-119).cateeorv rate CBT-1191.","ja":"VAT カテゴリーコード（BT-118）が「IGIC」である場合、VAT 内訳（BG-23）の VAT カテゴリー課税額（BT-117）は、VAT カテゴリー課税額（BT-116）に VAT カテゴリーレート（BT-119）を乗じた額となります。"},
-  "BR-IG-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'IGIC' shall not have a VAT exemption reason code (BT-121)fBT-121) or VAT exemption reason text (BT-120).fBT-120).","ja":"VATカテゴリーコード（BT-118）を持つVATブレイクダウン（BG-23）「IGIC」は、VAT免除理由コード（BT-121）またはVAT免除理由テキスト（BT-120）を持たないものとします。"},
-  "BR-IP-1":{"en":"An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'IPSI' shall contain in the VAT breakdown (BG-23) at least one VAT category code (BT118) equal with 'IPSI'.","ja":"インボイスにインボイスライン（BG-25）、文書レベル引当金（BG-20）、文書レベルチャージ（BG-21）が含まれ、VATカテゴリーコード（BT-151、BT-95、BT-102）が「IPSI」であるインボイスは、VAT内訳（BG-23）に「IPSI」と同等のVATカテゴリーコード（BT118）を少なくとも1つ含まなければならない。"},
-  "BR-IP-2":{"en":"An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"請求項目VATカテゴリコード（BT-151）が「IPSI」であるインボイスライン（BG-25）を含むインボイスには、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）および/または売主税務代表VAT識別子（BT-63）が含まれなければならない。"},
-  "BR-IP-3":{"en":"An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IPSI' shall contain the Seller VAT Identifier (BT31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金VATカテゴリコード（BT-95）が「IPSI」である場合には、売主VAT識別子（BT31）、売主税登録識別子（BT-32）、および/または売主税代表VAT識別子（BT-63）を含むものとします。"},
-  "BR-IP-4":{"en":"An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).","ja":"文書レベルチャージVATカテゴリコード（BT-102）が「IPSI」である文書レベルチャージ（BG-21）を含むインボイスには、売主VAT識別子（BT-31）、売主税登録識別子（BT-32）および/または売主税代表VAT識別子（BT-63）が含まれているものとする。"},
-  "BR-IP-5":{"en":"In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IPSI' the Invoiced item VAT rate (BT-152)fBT-152) shall be 0 (zero)fzerol or greater than zero.","ja":"インボイスライン(BG-25)において、請求項目VATカテゴリコード(BT-151)が「IPSI」である場合、請求項目VATレート(BT-152)は0(ゼロ)以上となります。"},
-  "BR-IP-6":{"en":"In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IPSI' the Document level allowance VAT rate (BT-96) shall be 0 (zero) or greater than zero.","ja":"文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリコード（BT-95）が「IPSI」である場合、文書レベル引当金のVATレート（BT-96）は、0（ゼロ）以上でなければなりません。"},
-  "BR-IP-7":{"en":"In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IPSI' the Document level charge VAT rate (BT-103) shall be 0 (zero) or greater than zero.","ja":"ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「IPSI」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）は、0（ゼロ）以上でなければなりません。"},
-  "BR-IP-8":{"en":"For each different value of VAT category rate (BT-119) where the VAT category code (BT118) is 'IPSI', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'IPSI' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).","ja":"VAT カテゴリーコード(BT118)が「IPSI」である場合の VAT カテゴリーレート(BT-119)の値が異なる場合、VAT 内訳書(BG-23)の VAT カテゴリー課税額(BT-116)は、VAT カテゴリーコード(BT-151)が「IPSI」である場合、インボイスラインのネット金額(BT-131)と文書レベルのチャージ金額(BT-99)の合計から文書レベルの引当金金額(BT-92)の合計を差し引いた金額となります。BT-102、BT-95）は「IPSI」であり、VATレート（BT-152、BT-103、BT-96）はVATカテゴリレート（BT-119）と等しくなります。"},
-  "BR-IP-9":{"en":"The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'IPSI' shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119).","ja":"VATカテゴリーコード(BT-118)が「IPSI」である場合のVAT内訳(BG-23)におけるVATカテゴリー課税額(BT-117)は、VATカテゴリー課税額(BT-116)にVATカテゴリーレート(BT-119)を乗じた額となります。"},
-  "BR-IP-10":{"en":"A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'IPSI' shall exemption reason code (BT-121)fBT-121') or VAT exemption reason text (BT-120).VAT exemption reasnn text (BT-120)","ja":"VATカテゴリーコード(BT-118)のあるVATブレイクダウン(BG-23)は、VAT免除理由コード(BT-121)またはVAT免除理由テキスト(BT-120)を使用しなければなりません。"},
-  "BR-CO-3":{"en":"Value added tax point date (BT-7) and Value added tax point date code (BT-8) are mutually exclusive.","ja":"付加価値税ポイント日付（BT-7）と付加価値税ポイント日付コード（BT-8）は相互に排他的です。"},
-  "BR-CO-4":{"en":"Each Invoice line (BG-25) shall be categorized with an Invoiced item VAT category code (BT-151).","ja":"各請求書ライン（BG-25）は、請求書アイテムのVATカテゴリコード（BT-151）で分類されます。"},
-  "BR-CO-5":{"en":"Document level allowance reason code (BT-98) and Document level allowance reason (BT-97) shall indicate the same type of allowance.","ja":"文書レベルの許容理由コード（BT-98）と文書レベルの許容理由（BT-97）は、同じタイプの許容を示すものとします。"},
-  "BR-CO-6":{"en":"Document level charge reason code (BT-105) and Document level charge reason (BT-104) shall indicate the same type of charge.","ja":"文書レベルの請求理由コード（BT-105）と文書レベルの請求理由（BT-104）は、同じ種類の請求を示すものとします。"},
-  "BR-CO-7":{"en":"Invoice line allowance reason code (BT-140) and Invoice line allowance reason (BT-139) shall indicate the same type of allowance reason.","ja":"請求書ライン許容理由コード（BT-140）と請求書ライン許容理由（BT-139）は、同じタイプの許容理由を示すものとします。"},
-  "BR-CO-8":{"en":"Invoice line charge reason code (BT-145) and Invoice line charge reason (EST 144} shall indicate the same type of charge reason.","ja":"請求書明細請求理由コード（BT-145）と請求書明細請求理由（EST 144}は、同じタイプの請求理由を示すものとします。"},
-  "BR-CO-9":{"en":"The Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) shall have a prefix in accordance with ISO code ISO 3166-1 alpha-2 by which the country of issue may be identified. Nevertheless, Greece may use the prefix 'EL'.","ja":"売り手のVAT識別子（BT-31）、売り手の税務代理人のVAT識別子（BT-63）、および買い手のVAT識別子（BT-48）には、ISOコードISO 3166-1alpha-2に準拠した接頭辞を付ける必要があります。問題の国が特定される場合があります。それでも、ギリシャでは接頭辞「EL」を使用できます。"},
-  "BR-CO-10":{"en":"Sum of Invoice line net amount (BT-106) = SIGMA Invoice line net amount (BT-131).","ja":"請求書明細の正味額の合計（BT-106）= SIGMA請求書明細の正味額（BT-131）。"},
-  "BR-CO-11":{"en":"Sum of allowances on document level (BT-107) = J) Document level allowance amount (BT-92).","ja":"伝票レベルの引当金の合計（BT-107）= J）伝票レベルの引当金額（BT-92）。"},
-  "BR-CO-12":{"en":"Sum of charges on document level (BT-108) = SIGMA Document level charge amount (BT-99).","ja":"ドキュメントレベルの料金の合計（BT-108）= SIGMAドキュメントレベルの料金額（BT-99）。"},
-  "BR-CO-13":{"en":"Invoice total amount without VAT (BT-109) = SIGMA Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).","ja":"VATなしの請求書合計金額（BT-109）= SIGMA請求書明細正味金額（BT-131）-伝票レベルの引当金の合計（BT-107）+伝票レベルの料金の合計（BT-108）。"},
-  "BR-CO-14":{"en":"Invoice total VAT amount (BT-110) = SIGMA VAT category tax amount (BT-117).","ja":"請求書の合計VAT額（BT-110）= SIGMA VATカテゴリの税額（BT-117）。"},
-  "BR-CO-15":{"en":"Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).","ja":"VATを含む請求書の合計金額（BT-112）= VATを含まない請求書の合計金額（BT-109）+請求書の合計VAT金額（BT-110）。"},
-  "BR-CO-16":{"en":"Amount due for payment (BT-115) = Invoice total amount with VAT (BT-112) -Paid amount (BT-113) + Rounding amount (BT-114).","ja":"支払期日（BT-115）= VATを含む請求書の合計額（BT-112）-支払額（BT-113）+端数処理金額（BT-114）。"},
-  "BR-CO-17":{"en":"VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.","ja":"VATカテゴリの税額（BT-117）= VATカテゴリの課税額（BT-116）x（VATカテゴリの税率（BT-119）/ 100）、小数点以下第2位を四捨五入します。"},
-  "BR-CO-18":{"en":"An Invoice shall at least have one VAT breakdown group (BG-23).","ja":"請求書には、少なくとも1つのVAT内訳グループ（BG-23）が必要です。"},
-  "BR-CO-19":{"en":"If Invoicing period (BG-14) is used, the Invoicing period start date (BT-73) or the Invoicing period end date (BT74) shall be filled, or both.","ja":"請求期間（BG-14）を使用する場合は、請求期間の開始日（BT-73）または請求期間の終了日（BT74）、あるいはその両方を入力する必要があります。"},
-  "BR-CQ-20":{"en":"If Invoice line period (BG-26) is used, the Invoice line period start date (BT-134) or the Invoice line period end date fBT-135) shall be filled, or both.","ja":"請求書明細期間（BG-26）を使用する場合は、請求書明細期間の開始日（BT-134）または請求書明細期間の終了日（fBT-135）、あるいはその両方を入力する必要があります。"},
-  "BR-CO-21":{"en":"Each Document level allowance (BG-20) shall contain a Document level allowance reason (BT-97) or a Document level allowance reason code (BT-98), or both.","ja":"各ドキュメントレベルの許容値（BG-20）には、ドキュメントレベルの許容値の理由（BT-97）またはドキュメントレベルの許容値の理由コード（BT-98）、あるいはその両方が含まれている必要があります。"},
-  "BR-CO-22":{"en":"Each Document level charge (BG-21) shall contain a Document level charge reason (BT-104) or a Document level charge reason code (BT-105), or both.","ja":"各ドキュメントレベルの請求（BG-21）には、ドキュメントレベルの請求理由（BT-104）またはドキュメントレベルの請求理由コード（BT-105）、あるいはその両方が含まれている必要があります。"},
-  "BR-CO-23":{"en":"Each Invoice line allowance (BG-27) shall contain an Invoice line allowance reason (BT-139) or an Invoice line allowance reason code (BT-1401 or both.","ja":"各請求書明細手当（BG-27）には、請求書明細手当理由（BT-139）または請求書明細手当理由コード（BT-1401、あるいはその両方）が含まれている必要があります。"},
-  "BR-CO-24":{"en":"Each Invoice line charge (BG-28) shall contain an Invoice line charge reason (BT-144) or an Invoice line charge reason code (BT-145), or both.","ja":"各請求書明細請求書（BG-28）には、請求書明細書請求理由（BT-144）または請求書明細請求理由コード（BT-145）、あるいはその両方が含まれている必要があります。"},
-  "BR-CO-25":{"en":"In case the Amount due for payment (BT-115) is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present","ja":"支払期日（BT-115）が正の場合、支払期日（BT-9）または支払条件（BT-20）のいずれかが存在するものとします。"},
-  "BR-CO-26":{"en":"In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present   ","ja":"買い手がサプライヤーを自動的に識別するために、売り手識別子（BT-29）、売り手法的登録識別子（BT-30）、および/または売り手VAT識別子（BT-31）が存在するものとします。"},
-  "R1":{"en":"information at document level that enables the identification of the Payee, if different from the Seller (all processes, except P9);","ja":"売主と異なる場合は、受取人の識別を可能にする文書レベルの情報（P9を除く全てのプロセス）。"},
-  "R2":{"en":"information at document level that enables booking on both the debit and the credit side (all processes);","ja":"デビット側とクレジット側の両方で予約を可能にするドキュメントレベルの情報（全プロセス）。"},
-  "R3":{"en":"information at invoice line level that enables booking on the debit side (all processes);","ja":"引き落とし側（全プロセス）でのブッキングを可能にする請求書ラインレベルの情報。"},
-  "R4":{"en":"Buyer-specific booking information (account numbers) (all processes).","ja":"バイヤー固有の予約情報（アカウント番号）（全プロセス）。"},
-  "R5":{"en":"information to trace to a single related purchase order from the document level (all processes, except P2 and P5);","ja":"ドキュメントレベル（P2とP5を除くすべてのプロセス）から1つの関連する購入注文にトレースするための情報。"},
-  "R6":{"en":"information to trace to a single related purchase order line from the invoice line (all processes, except P2 and P5);","ja":"インボイスライン（P2とP5を除くすべてのプロセス）から1つの関連する購入注文ラインにトレースするための情報。"},
-  "R7":{"en":"information to trace to a single contract and the underlying call for tenders from the document level (all processes, except P3 and P5);","ja":"ドキュメントレベル（P3とP5を除くすべてのプロセス）から、単一の契約と基礎となる入札の募集にトレースするための情報を提供します。"},
-  "R8":{"en":"a reference supplied by the Buyer at document level (all processes);","ja":"バイヤーが文書レベルで提供する参照（すべてのプロセス）。"},
-  "R9":{"en":"information to trace to a single despatch advice from the document level (processes P7 and P8);","ja":"文書レベル（プロセスP7とP8）から単一の発送アドバイスにトレースするための情報を提供します。"},
-  "R10":{"en":"information to trace to a single receiving advice from the document level (process P8);","ja":"情報を文書レベルから単一の受信アドバイスにトレースする（プロセスP8）。"},
-  "R11":{"en":"information to trace to a related invoice to be corrected from the document level (process P10);","ja":"関連する請求書にトレースするための情報を文書レベルから修正する（プロセスＰ１０）。"},
-  "R12":{"en":"reference to multiple part-invoices from a final invoice (process P12);","ja":"最終請求書から複数のパートインボイスを参照する（プロセスＰ１２）。"},
-  "R13":{"en":"information to allow an invoice and related documents to be transferred to a responsible authority, entity, person or department, for verification and approval (all processes);","ja":"請求書および関連文書を、検証および承認のために、責任のある当局、事業体、個人または部門に転送できるようにするための情報（すべてのプロセス）。"},
-  "R14":{"en":"information about net price and the quantity on which the price is based at invoice line level, additional information such as gross price and price discount may be added (all processes); ","ja":"インボイスラインレベルでの正味価格と価格の根拠となる数量の情報に、グロス価格や値引きなどの追加情報を追加することができる（全工程）。"},
-  "R15":{"en":"descriptive and coded information about allowances and charges at both document level and at invoice line level (all processes);","ja":"文書レベルと請求書ラインレベルの両方で、引当金と料金に関する記述的でコード化された情報（全プロセス）。"},
-  "R16":{"en":"information about charges, (non-VAT-)taxes, duties and levies, with their VAT information, that are not included in the line amounts at document level (all processes);","ja":"文書レベル（全プロセス）のライン金額に含まれていない料金、（非VAT-）税、関税、課徴金に関する情報とVAT情報。"},
-  "R17":{"en":"information about charges, (non-VAT-)taxes, duties and levies that compose the taxable amount and are not included in the unit price at separate invoice lines, with a proper identification and/or description (all processes);","ja":"課税金額を構成する料金、（非VAT）税、関税および課徴金についての情報で、個別のインボイスラインで単価に含まれていないものを、適切な識別および／または説明とともに提供すること（全工程）。"},
-  "R18":{"en":"information about charges at invoice line level as part of the line amount (all processes);","ja":"ライン金額の一部としての請求書ラインレベルでの料金に関する情報（全工程）。"},
-  "R19":{"en":"the amounts of allowances and charges at document and invoice line level (all processes);","ja":"文書および請求書ラインレベルでの引当金および料金の金額（すべてのプロセス）。"},
-  "R20":{"en":"textual descriptions of invoiced goods and services at invoice line level (all processes);","ja":"インボイスラインレベル（全プロセス）での請求された商品およびサービスのテキスト記述"},
-  "R21":{"en":"identification of invoiced goods and services by means of a Seller's item number at invoice line level (all processes);","ja":"請求書ラインレベルでの売主の商品番号による請求書付き商品およびサービスの識別（全プロセス）。"},
-  "R22":{"en":"identification of invoiced goods and services by means of a Buyer's item number at invoice line level (all processes);","ja":"請求書ラインレベルでの購入者の商品番号による請求書付き商品およびサービスの識別（全プロセス）。"},
-  "R23":{"en":"identification of invoiced goods and services by means of a qualified general item identifier at invoice line level as agreed by the Buyer and the Seller (all processes);","ja":"買い手と売り手が合意した通りに、インボイスラインレベルで適格な一般品目識別子を用いて、請求された商品およびサービスを識別すること（すべてのプロセス）。"},
-  "R24":{"en":"classification of invoiced goods and services by means of applicable classification identifiers and schema reference as agreed between the Seller and the Buyer at invoice line level (all processes];","ja":"インボイスラインレベルで売主と買主の間で合意された、適用可能な分類識別子とスキーマ参照を用いて、請求された商品およびサービスを分類すること（すべてのプロセス）。"},
-  "R25":{"en":"information about returned and credited returnable assets or packages, such as pallets, and package charges, stated as normal invoice lines (all processes);","ja":"通常の請求書ライン（すべてのプロセス）として記載された、パレットなどの返品および入金された返品可能な資産またはパッケージに関する情報。"},
-  "R26":{"en":"information about returnable asset charges, stated as normal invoice lines (all processes);","ja":"通常の請求書ライン（全プロセス）として記載されている回収可能な資産料金に関する情報。"},
-  "R27":{"en":"information about returned goods, stated as normal invoice lines (all processes);","ja":"通常のインボイスライン（全工程）として記載されている返品商品に関する情報。"},
-  "R28":{"en":"descriptive information about attributes of goods and services at invoice line level (all processes);","ja":"インボイスラインレベルでの商品及びサービスの属性に関する記述情報（全プロセス）。"},
-  "R29":{"en":"information about the country of origin of goods and services at invoice line level (all processes);","ja":"インボイスラインレベルでの商品・サービスの原産国に関する情報（全プロセス）。"},
-  "R30":{"en":"an invoice line period at invoice line level (process P2, P11);","ja":"インボイスラインレベルでのインボイスライン期間（プロセスＰ２、Ｐ１１）。"},
-  "R31":{"en":"one delivery date at document level (all processes);","ja":"文書レベル（全プロセス）で1回の納期。"},
-  "R32":{"en":"one delivery location or address at document level (all processes);","ja":"文書レベル（全プロセス）で1つの配送場所またはアドレスを指定します。"},
-  "R33":{"en":"identification of the invoiced object at document and line level (process P2);","ja":"ドキュメントレベルとラインレベルでの請求対象の識別（プロセスP2）。"},
-  "R34":{"en":"a delivery/invoice period at document level (process P2, Pll);","ja":"文書レベルでの納品/請求書期間（プロセスP2、P１１）。"},
-  "R35":{"en":"attached documents of a limited set of file types (all processes);","ja":"限られたファイルタイプのセット（全プロセス）の添付文書。"},
-  "R36":{"en":"multiple attached or referenced documents at document level (all processes);","ja":"文書レベルでの複数の添付文書または参照文書（すべてのプロセス）。"},
-  "R37":{"en":"a VAT category and rate at invoice line level (all processes);","ja":"インボイスラインレベルでのVATカテゴリとレート（全プロセス）。"},
-  "R38":{"en":"VAT totals per category at document level (all processes);","ja":"文書レベルでのカテゴリーごとのVAT合計（全プロセス）。"},
-  "R39":{"en":"a quantity and a net amount (exclusive of VAT) at invoice line level (all processes);","ja":"インボイスラインレベル（全プロセス）での数量と純額（付加価値税を除く）。"},
-  "R40":{"en":"all amounts at document and invoice line level that make up the invoice total amount and the amount due for payment (all processes);","ja":"請求書の合計金額と支払期限の金額を構成する文書および請求書ラインレベルのすべての金額（すべてのプロセス）。"},
-  "R41":{"en":"Reference to a sales order, issued by the Seller at document level (all processes);","ja":"文書レベル（全工程）で売主が発行した販売指示書を参照すること。"},
-  "R42":{"en":"Allowance/charge percentage and base amount at document and invoice line level (all processes);","ja":"文書・請求書ラインレベル（全工程）での引当金/請求割合と基準額。"},
-  "R44":{"en":"Information to allow automated validation of a received electronic invoice (all processes).","ja":"受信した電子請求書の自動検証を可能にするための情報（全プロセス"},
-  "R45":{"en":"information to determine the requirements of the applicable VAT legislation in force and the calculation and reporting thereof;","ja":"適用されるVAT法の要件を決定し、その計算と報告を行うための情報を提供することができます。"},
-  "R46":{"en":"information on the date the VAT is liable at document level;","ja":"文書レベルでの付加価値税（VAT）の支払い義務のある日に関する情報。"},
-  "R47":{"en":"the necessary elements for national legal VAT requirements that apply for invoices issued to national and foreign Buyers, such as the legal registration status of the Seller;","ja":"売主の法的登録状況など、国内および海外の買主に発行された請求書に適用される国内法上のVAT要件に必要な要素。"},
-  "R48":{"en":"information to support the following VAT use cases:NL -  Invoices for supplies for which VAT is charged;NL -  Invoices for supplies for which VAT is not charged based on an exemption reason;NL -  Invoices for supplies for which the Seller's goods and services are exempt from VAT at line level;NL -  Invoices for supplies that are issued under reverse charge;NL -  Invoices for exempt intra-community supplies for which an intra-communityNLacquisition has to be done;NL -  Invoices for supplies outside the scope of the Directive 2006/112/EC [2] (non-VAT invoices);","ja":"以下のVATの使用事例をサポートするための情報を提供することができます。 NL - VAT が課される供給品の請求書、NL - 免除理由に基づいて VAT が課されない供給品の請求書、NL - 売主の商品およびサービスがラインレベルで VAT が免除される供給品の請求書、NL - リバースチャージの下で発行される供給品の請求書、NL - 共同体内で共同体内買収を行う必要がある共同体内免税供給品の請求書、NL - 指令 2006/112/EC [2] の適用範囲外の供給品（非 VAT 請求書）の請求書。"},
-  "R49":{"en":"the total VAT amount at document level;","ja":"文書レベルでのVAT総額。"},
-  "R50":{"en":"total taxable amount per VAT rate at document level;","ja":"文書レベルでの付加価値税率あたりの課税総額"},
-  "R51":{"en":"any additional information required to support the exemption evidence in case VAT is not charged based on an exemption reason at document and at invoice line level;","ja":"免除理由に基づいてVATが請求されない場合に、免除の証拠を裏付けるために必要な追加情報を文書レベルおよびインボイスラインレベルで提供する。"},
-  "R52":{"en":"the legal registration number and the VAT registration number of the Seller and Buyer and the VAT registration number of the Tax representative of the Supplier;","ja":"売主と買主の法定登録番号とVAT登録番号、および買主の税務担当者のVAT登録番号。"},
-  "R53":{"en":"the official postal address of the Buyer, Seller and Tax representative of the Supplier and their place of business and registered office;","ja":"買い手、売り手、サプライヤーの税務担当者の正式な住所、事業所および登録された事務所。"},
-  "R54":{"en":"the invoice currency and the VAT accounting currency at document level if different from the invoice currency;","ja":"請求書通貨と異なる場合は、文書レベルでの請求書通貨およびVAT会計通貨を指定します。"},
-  "R55":{"en":"codes for exemption reasons at document and invoice line level.","ja":"ドキュメントおよび請求書ラインレベルでの免除理由のためのコード。"},
-  "R56":{"en":"sufficient information to support the auditing process with regard to:NL -  identification of the invoice;NL -  identification of the date of issue of the invoice;NL -  identification of the products and services traded, including their description, valueNLand quantity;NL -  information for relating the invoice to its settlement;NL -  information for relating the invoice to relevant documents such as a contract, aNLpurchase order and a despatch advice;NL -  information about the reason for invoice correction (process P10);","ja":"NL - 請求書の識別、NL - 請求書発行日の識別、NL - 取引された製品およびサービスの識別（説明、金額、数量を含む）、NL - 請求書と決済に関する情報、NL - 契約書、NL発注書、発送通知書などの関連文書と請求書を関連付けるための情報、NL - 請求書の訂正理由に関する情報（プロセスP10）。"},
-  "R57":{"en":"identification of the parties that fulfil the following roles at the invoice level, including their legal name and address:NL -  the Seller (including the Seller's trade name);NL -  the Buyer;NL -  the Deliver to party (if different from the Buyer);NL -  the Payee (if different from the Seller);NL -  the Tax representative of the Supplier;","ja":"NL-売主（売主の商号を含む）、NL-買主、NL-納品先（買主と異なる場合）、NL-受取人（売主と異なる場合）、NL-供給者の税務担当者。"},
-  "R58":{"en":"identification of the means of settlement;","ja":"決済手段の特定。"},
-  "R59":{"en":"the requested amount due for payment;","ja":"支払い期限のある請求額の記載。"},
-  "R60":{"en":"the date on which payment is due;","ja":"支払期限日を指定。"},
-  "R61":{"en":"necessary details to support bank transfers in accordance with SEPA and national systems;","ja":"SEPAや国の制度に準拠した銀行振込をサポートするために必要な詳細。"},
-  "R62":{"en":"a reference number and any additional reference data to be included in the payment;","ja":"参照番号と、支払いに含まれる追加の参照データ。"},
-  "R63":{"en":"reference number and any additional reference data to be included in the payment, in order to relate the payment to the invoice;","ja":"支払いを請求書に関連付けるために、支払いに含まれる参照番号および追加の参照データ。"},
-  "R64":{"en":"information for relating an invoice to a payment card used for settlement;","ja":"請求書と決済に使用するペイメントカードを関連付けるための情報を提供します。"},
-  "R65":{"en":"basic information to support national payment systems for use in domestic trade;","ja":"国内貿易で利用するための国の支払制度を支援するための基本情報"},
-  "R66":{"en":"information about the amount that was pre-paid;","ja":"前払いされた金額についての情報提供。"},
-  "R67":{"en":"invoices that have a total amount of zero;","ja":"総額がゼロになる請求書。"},
-  "R68":{"en":"invoices that have an amount to pay of zero;","ja":"支払額がゼロの請求書。"},
-  "R69":{"en":"necessary details to support direct debits.","ja":"口座引落しをサポートするために必要な詳細"},
-  "R70":{"en":"pre-payment invoices","ja":"前払い請求書"},
-  "BR-1":{"en":"An Invoice shall have a Specification identifier (BT-24).","ja":"請求書は、明細識別子(BT-24)を有するものとする。"},
-  "BR-2":{"en":"An Invoice shall have an Invoice number (BT-1).","ja":"請求書は、請求書番号(BT-1)を有するものとする。"},
-  "BR-3":{"en":"An Invoice shall have an Invoice issue date (BT-2).","ja":"請求書には、請求書発行日(バイト2)が記載されている必要があります。"},
-  "BR-4":{"en":"An Invoice shall have an Invoice type code (BT-3).","ja":"請求書は、請求書タイプコード(BT-3)を有するものとする。"},
-  "BR-5":{"en":"An Invoice shall have an Invoice currency code (BT-5),","ja":"請求書には、請求書通貨コード(BT-5)が必要です。"},
-  "BR-6":{"en":"An Invoice shall contain the Seller name (BT-27).","ja":"請求書には販売者名(BT-27)を記載するものとする。"},
-  "BR-7":{"en":"An Invoice shall contain the Buyer name (BT-44).","ja":"請求書には、購入者の名前(BT-44)を記載するものとします。"},
-  "BR-8":{"en":"An Invoice shall contain the Seller postal address (BG-5).","ja":"請求書には売主の住所(BG-5)を記載するものとする。"},
-  "BR-9":{"en":"The Seller postal address (BG-5) shall contain country code fBT-401.","ja":"売主の郵便宛先(BG-5)には、売主の国コード(BT-40)を含めるものとする。"},
-  "BR-10":{"en":"An Invoice shall contain the Buyer postal address (BG-8).","ja":"請求書には、購入者の住所(BG-8)を記載するものとします。"},
-  "BR-11":{"en":"The Buyer postal address shall contain a Buyer country code (BT-55).","ja":"購入者の住所には、購入者の国コード(BT-55)を記載するものとします。"},
-  "BR-12":{"en":"An Invoice shall have the Sum of Invoice line net amount (BT-106).","ja":"請求書には、請求書明細合計の正味金額(BT-106)があるものとします。"},
-  "BR-13":{"en":"An Invoice shall have the Invoice total amount without VAT (BT-109).","ja":"請求書には、VATを含まない請求書総額(BT-109)が記載されている必要があります。"},
-  "BR-14":{"en":"An Invoice shall have the Invoice total amount with VAT (BT-112).","ja":"請求書には、VATを含む請求書総額(BT-112)が記載されている必要があります。"},
-  "BR-15":{"en":"An Invoice shall have the Amount due for payment (BT115).","ja":"請求書には、支払額(BT-115)を記載するものとします。"},
-  "BR-16":{"en":"An Invoice shall have at least one Invoice line (BG-25).","ja":"請求書には、少なくとも1つの請求書明細(BG-25)が必要です。"},
-  "BR-17":{"en":"The Payee name (BT-59) shall be provided in the Invoice, if the Payee (BG-10) is different from the Seller (BG-4),","ja":"受取人(BG-10)が売り手(BG-4)と異なる場合は、受取人名(BT-59)を請求書に記載するものとする。"},
-  "BR-18":{"en":"The Seller tax representative name (BT-62) shall be provided in the Invoice, if the Seller (BG-4J has a Seller tax representative party (BG-11).","ja":"売主の税務代理人の名称(BT-62)は以下のとおりとする。"},
-  "BR-19":{"en":"The Seller tax representative postal address (BG-12) shall be provided in the Invoice, if the Seller (BG-4) has a Seller tax representative party (BG-11).","ja":"売り手(BG-4)に売り手税の代表者(BG-11)がいる場合、請求書には売り手税の代表者の郵便宛先(BG-12)が記載されるものとする。"},
-  "BR-20":{"en":" The Seller tax representative postal address (BG-12) shall contain a Tax representative country code (BT-69), if the Seller fBG-4) has a Seller tax representative party (BG-","ja":"売り手(BG-4)に売り手税金代表当事者(BG-11)がいる場合、売り手税金代表の郵便宛先(BG-12)には、税金代表国コード(BT-69)を含めるものとします。"},
-  "BR-21":{"en":"Each Invoice line (BG-25) shall have an Invoice line identifier (BT-126).","ja":"各請求書明細(BG-25)には、請求書明細(BT-126)があります。"},
-  "BR-22":{"en":"Each Invoice line (BG-25) shall have an Invoiced quantity (BT-129).","ja":"各請求書明細(BG-25)には、請求済数量(BT-129)があるものとします。"},
-  "BR-23":{"en":"An Invoice line (BG-25) shall have an Invoiced quantity unit of measure code (BT-130).","ja":"請求書明細(BG-25)には、請求済数量単位コード(BT-130)が含まれている必要があります。"},
-  "BR-24":{"en":"Each Invoice line (BG-25) shall have an Invoice line net amount (BT-131).","ja":"各請求書明細(BG-25)には、請求書明細の正味金額(BT-131)があります。"},
-  "BR-25":{"en":"Each Invoice line (BG-25) shall contain the Item name 153).","ja":"各請求書明細(BG-25)は、項目名(バイト-153)を含むものとする。"},
-  "BR-26":{"en":"Each Invoice line (BG-25) shall contain the Item net price (BT-146).","ja":"各請求書明細(BG-25)には、品目の正味価格(BT-146)が含まれている必要があります。"},
-  "BR-27":{"en":"The Item net price (BT-146) shall NOT be negative.","ja":"アイテムの正味価格(BT-146)は負であってはなりません。"},
-  "BR-28":{"en":"The Item gross price (BT-148) shall NOT be negative.","ja":"アイテム総価格(BT-148)は負であってはならない。"},
-  "BR-29":{"en":"If both Invoicing period start date (BT-73) and Invoicing period end date (BT-74) are given then the Invoicing period end date (BT-74) shall be later or equal to the Invoicing period start date (BT-73).","ja":"請求期間開始日(BT-73)と請求期間終了日(BT-74)の両方が指定されている場合、請求期間終了日(BT-74)は請求期間開始日(BT-73)以降になります。"},
-  "BR-30":{"en":"If both Invoice line period start date (BT-134) and Invoice line period end date (BT-135) are given then the Invoice line period end date (BT-135) shall be later or equal to the Invoice line period start date (BT-134).","ja":"請求書明細期間開始日(BT-134)と請求書明細期間終了日(BT-135)の両方が指定されている場合、請求書明細期間終了日(BT-135)は、請求書明細期間開始日(BT-134)以降である必要があります。"},
-  "BR-31":{"en":"Each Document level allowance (BG-20) shall have a Document level allowance amount (BT-92).","ja":"各ドキュメントレベルアローワンス(BG-20)には、ドキュメントレベルアローワンス額(BT-92)を設定する。"},
-  "BR-32":{"en":"Each Document level allowance (BG-20) shall have a Document level allowance VAT category code (BT-95).","ja":"各ドキュメントレベルアローワンス(BG-20)は、ドキュメントレベルアローワンスVATカテゴリコード(BT-95)を持つものとする。"},
-  "BR-33":{"en":"Each Document level allowance (BG-20) shall have a Document level allowance reason (BT-97) or a Document level allowance reason code (BT-98).","ja":"各ドキュメントレベルアローワンス(BG-20)には、ドキュメントレベルアローワンス理由(BT-97)またはドキュメントレベルアローワンス理由コード(BT-98)があること。"},
-  "BR-36":{"en":"Each Document level charge (BG-21) shall have a Document level charge amount (BT-99).","ja":"各ドキュメントレベルチャージ(BG-21)には、ドキュメントレベルチャージ金額(BT-99)がある。"},
-  "BR-37":{"en":"Each Document level charge (BG-21) shall have a Document level charge VAT category code fBT-102).","ja":"各ドキュメントレベルチャージ(BG-21)には、ドキュメントレベルチャージVATカテゴリコード(BT-102)があります。"},
-  "BR-38":{"en":"Each Document level charge (BG-21) shall have a Document level charge reason (BT-104) or a Document level charge reason code fBT-1051","ja":"各文書レベルチャージ(BG-21)は、文書レベルチャージ理由(BT-104)または文書レベルチャージ理由コード(BT-105)を有するものとする。"},
-  "BR-41":{"en":"Each Invoice line allowance (BG-27) shall have an Invoice line allowance amount (BT-136).","ja":"各請求書明細引当(BG-27)には、請求書明細引当金額(BT-136)があります。"},
-  "BR-42":{"en":"Each Invoice line allowance (BG-27) shall have an Invoice line allowance reason (BT-139) or an Invoice line allowance reason code (BT-140).","ja":"各請求書明細引当(BG-27)には、請求書明細引当理由(BT-139)または請求書明細引当理由コード(BT-140)が必要です。"},
-  "BR-43":{"en":"Each Invoice line charge (BG-28) shall have an Invoice line charge amount (BT-141).","ja":"各請求書明細手数料(BG-28)には、請求書明細手数料金額(BT-141)があります。"},
-  "BR-44":{"en":"Each Invoice line charge (BG-28) shall have an Invoice line charge reason (BT-144) or an Invoice line charge reason code (BT-145),","ja":"各請求書明細手数料(BG-28)には、請求書明細手数料事由(BT-144)または請求書明細手数料事由コード(BT-145)が必要です。"},
-  "BR-45":{"en":"Each VAT breakdown (BG-23) shall have a VAT category taxable amount (BT-116).","ja":"各VAT明細(BG-23)には、VATカテゴリ課税対象額(BT-116)があります。"},
-  "BR-46":{"en":"Each VAT breakdown (BG-23) shall have a VAT category tax amount (BT-117).","ja":"各VAT内訳(BG-23)には、VATカテゴリー税額(BT-117)が含まれます。"},
-  "BR-47":{"en":"Each VAT breakdown (BG-23) shall be defined through a VAT category code (BT-118).","ja":"各VAT内訳(BG-23)は、VATカテゴリーコード(BT-118)によって定義されなければならない。"},
-  "BR-48":{"en":"Each VAT breakdown (BG-23) shall have a VAT category rate (BT-119), except if the Invoice is not subject to VAT.","ja":"各VAT内訳(BG-23)は、請求書がVATの対象となっていない場合を除き、VATカテゴリレート(BT-119)を持つものとします。"},
-  "BR-49":{"en":"A Payment instruction (BG-16) shall specify the Payment means type code (BT-81).","ja":"支払指図(BG-16)は、支払手段タイプコード(BT-81)を指定しなければならない。"},
-  "BR-50":{"en":"A Payment account identifier (BT-84) shall be present if Credit transfer (BG-16) information is provided in the Invoice.","ja":"クレジット振替(BG-16)情報が請求書に記載されている場合は、支払勘定科目識別子(BT-84)が表示されます。"},
-  "BR-51":{"en":"The last 4 to 6 digits of the Payment card primary account number (BT-87) shall be present if Payment card information (BG-18) is provided in the Invoice.","ja":"支払いカード情報（BG-18）が請求書に記載されている場合は、支払いカードのプライマリアカウント番号（BT-87）の最後の4〜6桁が表示されます。"},
-  "BR-52":{"en":"Each Additional supporting document (BG-24) shall contain a Supporting document reference (BT-122).","ja":"各追加サポートドキュメント(BG-24)には、サポートドキュメント参照(ビーティー122)を含めるものとします。"},
-  "BR-53":{"en":"If the VAT accounting currency code (BT-6) is present, then the Invoice total VAT amount in accounting currency (BT1111 shall be provided.","ja":"VAT会計通貨コード(BT-6)が存在する場合は、会計通貨(バイト-111)での請求書合計VAT金額が提供されるものとします。"},
-  "BR-54":{"en":"Each Item attribute (BG-32) shall contain an Item attribute name (BT-160) and an Item attribute value (BT-161).","ja":"各項目属性(BG-32)は,項目属性名(BT-160)および項目属性値(BT-161)を含む。"},
-  "BR-55":{"en":"Each Preceding Invoice reference (BG-3) shall contain a Preceding Invoice reference (BT-25).","ja":"各先行請求書参照(BG-3)には、先行請求書参照(BT-25)を含めるものとします。"},
-  "BR-56":{"en":"Each Seller tax representative party (BG-11) shall have a Seller tax representative VAT identifier (BT-63).","ja":"各売主税金代表当事者(BG-11)は、売主税金代表VAT識別子(BT-63)を有するものとする。"},
-  "BR-57":{"en":"Each Deliver to address (BG-15) shall contain a Deliver to country code (BT-80).","ja":"各搬送先所在地(BG-15)には、搬送先国コード(BT-80)が含まれている必要があります。"},
-  "BR-61":{"en":"If the Payment means type code (BT-81) means SEPA credit transfer, Local credit transfer or Non-SEPA international credit transfer, the Payment account identifier (BT-84) shall be present.","ja":"支払手段タイプコード(BT-81)がSEPA送金、ローカル送金、または非SEPA国際送金を意味する場合、支払口座識別子(BT-84)が表示されるものとします。"},
-  "BR-62":{"en":"The Seller electronic address (BT-34) shall have a Scheme identifier.","ja":"売り手の電子アドレス(BT-34)はスキーム識別子を持つものとする。"},
-  "BR-63":{"en":"The Buyer electronic address (BT-49) shall have a Scheme identifier.","ja":"購入者の電子アドレス(BT-49)はスキーム識別子を持つものとする。"},
-  "BR-64":{"en":"The Item standard identifier (BT-157) shall have a Scheme identifier","ja":"アイテム標準識別子(BT-157)はスキーム識別子を持つ。"},
-  "BR-65":{"en":"The Item classification identifier (BT-158) shall have a Scheme identifier","ja":"項目分類識別子(BT-158)はスキーム識別子を持つ。"}
+  "BR-S-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Standard rated' shall contain in the VAT breakdown (BG-23) at least one VAT code (BT-118) equal with 'Standard rated'.",
+    "ja": "請求書行（BG-25）、ドキュメントレベルの手当（BG-20）、またはドキュメントレベルの料金（BG-21）を含む請求書。VATカテゴリコード（BT-151、BT-95、またはBT-102） 「標準定格」は、VAT内訳（BG-23）に「標準定格」と等しい少なくとも1つのVATコード（BT-118）を含むものとします。"
+  },
+  "BR-S-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT idpntifier (BT-63).",
+    "ja": "インボイスライン（BG-25）に含まれるインボイスで、インボイス項目のVATカテゴリコード（BT-151）が「標準定格」である場合は、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32）、および/または売り手税務代表者VAT idpntifier（BT-63）を含むものとします。"
+  },
+  "BR-S-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリコード（BT-95）が「標準定格」である場合には、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）および/または売主税務代表者VAT識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-S-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Standard rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベルチャージ（BG-21）を含む請求書には、文書レベルチャージのVATカテゴリーコード（BT-102）が「Standard rated」である場合、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32）、および/または売り手税務代表者VAT識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-S-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Standard rated' the Invoiced item VAT rate (BT-152)shall be greater than zero.",
+    "ja": "インボイスライン（BG-25）において、インボイス項目VATカテゴリコード（BT-151）が「標準定格」である場合、インボイス項目VATレート(BT-152)はゼロよりも大きいものとします。"
+  },
+  "BR-S-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Standard rated' the Document level allowance VAT rate (BT96) shall be greater than zero.",
+    "ja": "文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリーコード（BT-95）が「標準定格」である場合、文書レベル引当金のVATレート（BT96）はゼロよりも大きいものとする。"
+  },
+  "BR-S-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Standard rated' the Document level charge VAT rate (BT-103) shall be greater than zero.",
+    "ja": "ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「標準定格」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）はゼロよりも大きいものとします。"
+  },
+  "BR-S-8": {
+    "en": "For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is 'Standard rated', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'Standard rated' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).",
+    "ja": "VAT カテゴリーコード（BT-118）が「標準定格」である場合の VAT カテゴリーレート（BT-119）の値が異なる場合、VAT 内訳（BG-23）の VAT カテゴリー課税額（BT-116）は、VAT カテゴリーコード（BT-151）が「標準定格」である場合、インボイスラインのネット金額（BT-131）と文書レベルのチャージ金額（BT-99）の合計から文書レベルの引当金金額（BT-92）の合計を差し引いた金額と同じになります。BT-102, BT-95）は「標準定格」であり、VATレート（BT-152, BT-103, BT-96）はVATカテゴリレート（BT-119）と等しくなります。"
+  },
+  "BR-S-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Standard rated' shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119)",
+    "ja": "VAT カテゴリーコード(BT-118)が「標準定格」の場合、VAT 内訳書(BG-23)の VAT カテゴリー課税額(BT-117)は、VAT カテゴリー税率 (BT-119)とVAT カテゴリー課税額(BT-116)の積と等しくなります。"
+  },
+  "BR-S-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Standard rate' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120).",
+    "ja": "VATカテゴリーコード(BT-118)のあるVATブレイクダウン(BG-23)は、VAT免除理由コード(BT-121)またはVAT免除理由テキスト(BT-120)を持たないものとします。"
+  },
+  "BR-Z-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Zero rated' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Zero rated'.",
+    "ja": "インボイスライン（BG-25）、文書レベル引当金（BG-20）、文書レベルチャージ（BG-21）を含むインボイスで、VATカテゴリーコード（BT-151、BT-95、BT-102）が「ゼロ定格」である場合、VAT内訳（BG-23）には、「ゼロ定格」と同じVATカテゴリーコード（BT-118）を正確に1つ含まなければなりません。"
+  },
+  "BR-Z-2": {
+    "en": "An Invoice that contains an Invoice line where the Invoiced item VAT category code (BT151) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "請求項目VATカテゴリコード（BT151）が「ゼロ定格」であるインボイス行を含むインボイスには、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）および／または売主税務代表VAT識別子（BT-63）が含まれているものとします。"
+  },
+  "BR-Z-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリコード（BT-95）が「Zero rated」である場合、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）、および/または売主税務代表者VAT識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-Z-4": {
+    "en": "An Invoice that contains a Document level charge where the Document level charge VAT category code (BT-102) is 'Zero rated' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベルチャージ VAT カテゴリコード（BT-102）が「ゼロ定格」である文書レベルチャージを含むインボイスには、売り手の VAT 識別子（BT-31）、売り手の税務登録識別子（BT-32）、および／または売り手の税務代表者の VAT 識別子（BT-63）が含まれているものとします。"
+  },
+  "BR-Z-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT categoiy code (BT-151) is 'Zero rated' the Invoiced item VAT rate (BT-152) shall be 0 (zero).",
+    "ja": "インボイスライン(BG-25)で、請求項目VAT分類コード(BT-151)が「ゼロ定格」である場合、請求項目VATレート(BT-152)は0(ゼロ)となります。"
+  },
+  "BR-Z-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Zero rated' the Document level allowance VAT rate (BT-96) shall be 0 (zero).",
+    "ja": "文書レベル引当金（BG-20）で、文書レベル引当金のVATカテゴリーコード（BT-95）が「ゼロ定格」である場合、文書レベル引当金のVATレート（BT-96）は0(ゼロ)となります。"
+  },
+  "BR-Z-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Zero rated' the Document level charge VAT rate (BT-103) shall be 0 (zero).",
+    "ja": "ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「ゼロ・レーティング」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）は0（ゼロ）となります。"
+  },
+  "BR-Z-8": {
+    "en": "In a VAT breakdown (BG-23) where VAT category code (BT-118) is 'Zero rated' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amount (BT131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Zero rated'.",
+    "ja": "VAT カテゴリーコード（BT-118）が「ゼロ税率」の場合、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）を差し引いた金額と、VAT カテゴリーコード（BT-151、BT-95、BT-102）が「ゼロ税率」の場合の文書レベルのチャージ金額（BT-99）の合計との合計に相当します。"
+  },
+  "BR-Z-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown category code fBT-118) is 'Zero rated' shall equal 0 (zero).",
+    "ja": "VAT内訳カテゴリーコードfBT-118のVATカテゴリー税額（BT-117）が「ゼロ定格」である場合は、0（ゼロ）に等しいものとする。"
+  },
+  "BR-Z-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Zero rated' shall not have a VAT exemption reason code (BT-121) or VAT exemption reason text (BT-120).",
+    "ja": "VAT カテゴリコード(BT-118)が「ゼロ定格」の VAT ブレイクダウン（BG-23）には、VAT 免除理由コード(BT-121)または VAT 免除理由テキスト(BT-120)を持たないものとします。"
+  },
+  "BR-E-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Exempt from VAT' shall contain exactly one VAT breakdown (BG-23) with the VAT category code (BT-118) equal to 'Exempt from VAT'.",
+    "ja": "インボイスにインボイスライン（BG-25）、文書レベル引当金（BG-20）、またはVATカテゴリーコード（BT-151、BT-95、またはBT-102）が「Exempt from VAT」である文書レベル料金（BG-21）を含むインボイスには、VATカテゴリーコード（BT-118）が「Exempt from VAT」に等しいVAT内訳（BG-23）を正確に1つ含まなければなりません。"
+  },
+  "BR-E-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier fBT-63).",
+    "ja": "請求項目VATカテゴリコード（BT-151）が「VAT免除」である請求行（BG-25）を含む請求書には、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32）および/または売り手税務代表者VAT識別子fBT-63）が含まれているものとします。"
+  },
+  "BR-E-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリコード（BT-95）が「VAT免除」である場合には、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）、および/または売主税務代表者VAT識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-E-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Exempt from VAT' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32J and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベルチャージ（BG-21）を含む請求書には、文書レベルチャージのVATカテゴリーコード（BT-102）が「Exempt from VAT」である場合には、売り手VAT識別子（BT-31）、売り手税務登録識別子（BT-32J）および/または売り手税務代表者VAT識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-E-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Exempt from VAT', the Invoiced item VAT rate (BT-152) shall be 0 (zero).",
+    "ja": "インボイスライン(BG-25)において、インボイス項目のVATカテゴリコード(BT-151)が「Exempt from VAT」である場合、インボイス項目のVATレート(BT-152)は0(ゼロ)となります。"
+  },
+  "BR-E-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Exempt from VAT', the Document level allowance VAT rate (BT-961 shall be 0 ('zero).",
+    "ja": "文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリコード（BT-95）が「VAT免除」である場合、文書レベル引当金のVATレート（BT-961）は0（「ゼロ」）とする。"
+  },
+  "BR-E-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Exempt from VAT', the Document level charge VAT rate (BT-103) shall be 0 (zero).",
+    "ja": "文書レベルチャージ（BG-21）において、文書レベルチャージのVATカテゴリーコード（BT-102）が「VAT免除」である場合、文書レベルチャージのVATレート（BT-103）は0（ゼロ）とする。"
+  },
+  "BR-E-8": {
+    "en": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Exempt from VAT' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT151, BT-95, BT-102) are 'Exempt from VAT'.",
+    "ja": "VAT カテゴリーコード（BT-118）が「VAT 免除」の場合、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）を差し引いた金額と、VAT カテゴリーコード（BT-151、BT-95、BT-102）が「VAT 免除」の場合は、文書レベルのチャージ金額（BT-99）を差し引いた金額との合計となります。"
+  },
+  "BR-E-9": {
+    "en": "The VAT category tax amount (BT-117) In a VAT breakdown (BG-23) where the VAT category code (BT-118) equals 'Exempt from VAT' shall equal 0 (zero).",
+    "ja": "VATカテゴリ税額(BT-117) VATカテゴリコード(BT-118)が「VATを免除する」に等しいVAT内訳(BG-23)では、0 (0個)となります。"
+  },
+  "BR-E-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Exempt from VAT' shall have a VAT exemption reason code (BT-121) or a VAT exemption reason text (BT-120).",
+    "ja": "VATカテゴリ・コード(BT-118)のVAT内訳(BG-23) 「VATを免除する」には、VAT免税事由コード(BT-121)またはVAT免税事由テキスト(BT-120)が含まれている必要があります。"
+  },
+  "BR-AE-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Reverse charge' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'VAT reverse charge'.",
+    "ja": "VATカテゴリ・コード(BT-151、BT-95またはBT-102)が「リバースチャージ」である請求書明細(BG-25)、文書レベル引当金(BG-20)または文書レベル手数料(BG-21)を含む請求書は、VAT内訳(BG-23)に、「付加価値税 (VAT) リバース・チャージ」と等しい1つのVATカテゴリ・コード(BT-118)を含むものとします。"
+  },
+  "BR-AE-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).",
+    "ja": "請求書品目のVATカテゴリ・コード(BT-151)が「リバースチャージ」である請求書明細(BG-25)を含む請求書には、売り手VAT識別子(BT-31)、売り手税登録識別子(BT-32)および/または売り手税代表VAT識別子(BT-63)、買い手VAT識別子(BT-48)および/または買い手法的登録識別子(BT-47)を含めるものとする。"
+  },
+  "BR-AE-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).   ",
+    "ja": "請求書明細(BG-25)の請求済品目のVATカテゴリ・コード(BT-151)が「リバースチャージ」の場合、請求済品目のVATレート(BT-152)は0 (0個)となります。"
+  },
+  "BR-AE-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Reverse charge' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) and/or the Buyer legal registration identifier (BT-47).",
+    "ja": "ドキュメントレベルチャージVATカテゴリコード(BT-102)が「リバースチャージ」であるドキュメントレベルチャージ(BG-21)を含む請求書は、売り手VAT識別子(ビーティー31)、売り手税登録識別子(BT-32)および/または売り手税代表VAT識別子(BT-63)、および買い手VAT識別子(BT-48)および/または買い手法的登録識別子(BT-47)を含むものとする。"
+  },
+  "BR-AE-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Reverse charge' the Invoiced item VAT rate (BT-152) shall be 0 (zero).",
+    "ja": "請求書明細(BG-25)の請求済品目のVATカテゴリ・コード(BT-151)が「リバースチャージ」の場合、請求済品目のVATレート(BT-152)は0 (0個)となります。"
+  },
+  "BR-AE-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Reverse charge' the Document level allowance VAT rate (BT96) shall be 0 (zerol.",
+    "ja": "Document Level Allowance VAT Category Code (BT-95)が「リバースチャージ」であるDocument Level Allowance (BG-20)では、Document Level Allowance VAT Rate (BT-96)は0 (0個)でなければならない。"
+  },
+  "BR-AE-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Reverse charge' the Document level charge VAT rate (BT-103) shall be 0 (zero).",
+    "ja": "ドキュメントレベルチャージVATカテゴリコード(BT-102)が「リバースチャージ」であるドキュメントレベルチャージ(BG-21)において、ドキュメントレベルチャージVATレート(BT-103)が0 (0個)であること。"
+  },
+  "BR-AE-8": {
+    "en": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Reverse charge' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92} plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT151, BT-95, BT-102) are 'Reverse charge'.",
+    "ja": "VATカテゴリ・コード(BT-118)が「リバースチャージ」の場合のVAT内訳(BG-23)では、VATカテゴリ課税対象額(BT-116)は、請求書明細の正味金額の合計(BT-131)から文書レベル引当額の合計(BT-92)を差し引いた額に、VATカテゴリ・コード(BT-151、BT-95、BT-102)が(BT-99)の場合の文書レベル引当額の合計を足した額と等しくなります。"
+  },
+  "BR-AE-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code fBT-118) is 'Reverse charge' shall be 0 (zero).",
+    "ja": "VAT区分コード(BT-118)が「リバースチャージ」の場合のVAT内訳(BG-23)におけるVAT区分税額(BT-117)は、0 (0個)とする。"
+  },
+  "BR-AE-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'Reverse charge' shall have a VAT exemption reason code (BT-121), meaning 'Reverse charge' or the VAT exemption reason text (BT-120) 'Reverse charge' (or the equivalent standard text in another language).",
+    "ja": "VATカテゴリ・コード(BT-118) 「リバースチャージ」を持つVAT内訳(BG-23)は、「リバースチャージ」を意味するVAT免税理由コード(BT-121)またはVAT免税理由テキスト(BT-120) 「リバースチャージ」 (または他の言語の同等の標準テキスト)を持つものとします。"
+  },
+  "BR-IC-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Intra-community supply' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Intra-community supply'.",
+    "ja": "VATカテゴリ・コード(BT-151、BT-95またはBT-102)が「コミュニティ内供給」である請求書明細(BG-25)、文書レベル引当金(BG-20)または文書レベル手数料(BG-21)を含む請求書は、VAT内訳(BG-23)に、「コミュニティ内供給」と等しい1つのVATカテゴリ・コード(BT-118)を含むものとします。"
+  },
+  "BR-IC-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48).",
+    "ja": "請求書品目のVATカテゴリ・コード(BT-151)が「コミュニティ内供給」である請求書明細(BG-25)を含む請求書には、売り手VAT識別子(BT31)または売り手税代表VAT識別子(BT-63)および買い手VAT識別子(BT-48)を含めるものとする。"
+  },
+  "BR-IC-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48).",
+    "ja": "ドキュメントレベルアローワンス(BG-20)を含む請求書で、ドキュメントレベルアローワンスVATカテゴリコード(BT-95)が「コミュニティ内供給」であるものは、売り手VAT識別子(BT31)または売り手税代表VAT識別子(BT-63)および買い手VAT識別子(BT-48)を含むものとする。"
+  },
+  "BR-IC-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Intra-community supply' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48).",
+    "ja": "ドキュメントレベルチャージVATカテゴリコード(BT-102)が「コミュニティ内供給」であるドキュメントレベルチャージ (BG-21)を含む請求書は、Seller VAT Identifier (BT31)または売り手税担当者のVAT識別子 (BT-63)および、買い手VAT識別子 (BT-48)を含むものとします。"
+  },
+  "BR-IC-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Intracommunity supply' the Invoiced item VAT rate (BT-152) shall be 0 (zero).",
+    "ja": "請求書明細(BG-25)の請求済品目のVATカテゴリ・コード(BT-151)が「コミュニティ内供給」の場合、請求済品目のVATレート(BT-152)は0 (0個)となります。"
+  },
+  "BR-IC-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Intra-commumty supply' the Document level allowance VAT rate (BT-96) shall be 0 fzerol.",
+    "ja": "Document Level Allowance VAT Category Code (BT-95)が「コミュニティ内供給」であるDocument Level Allowance (BG-20)では、Document Level Allowance VAT Rate (BT-96)は0 (0個)でなければならない。"
+  },
+  "BR-IC-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Intra-community supply' the Document level charge VAT rate (BT-103) shall be 0 (zero).",
+    "ja": "ドキュメントレベルチャージVATカテゴリコード(BT-102)が「コミュニティ内供給」であるドキュメントレベルチャージ(BG-21)において、ドキュメントレベルチャージVATレート(BT-103)が0 (0個)であること。"
+  },
+  "BR-IC-8": {
+    "en": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Intra-community supply'.   ",
+    "ja": "VATカテゴリ・コード(BT-118)が「コミュニティ内供給」の場合のVAT内訳(BG-23)では、VATカテゴリ課税対象金額(BT-116)は、請求書明細の正味金額の合計(BT-131)から文書レベル引当金金額の合計(BT-92)を差し引いた金額と、VATカテゴリ・コード(BT-151、BT-95、BT-102)が(BT-99)の場合の文書レベル手数料金額の合計と等しくなります。"
+  },
+  "BR-IC-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118)is 'Intra-community supply' shall be 0 (zero).",
+    "ja": "VAT内訳(BG-23)のVATカテゴリ税額(BT-117)で、VATがカテゴリコード(BT-118)が「コミュニティ内供給」の場合は、0 (0個)とする。"
+  },
+  "BR-IC-10": {
+    "en": "A VAT Breakdown (BG-23) with the VAT Category code (BT-118) 'Intra-community supply' shall have a VAT exemption reason code (BT-121)meaning 'Intra-community supply' or the VAT exemption reason text (BT-120) 'Intra-community supply' (or the equivalent standard text in another language).",
+    "ja": "VAT カテゴリコード(BT-118)の「コミュニティ内供給」を含む VAT ブレイクダウン（BG-23）には、「コミュニティ内供給」を意味する VAT 免除理由コード (BT-121)または VAT 免除理由テキスト(BT-120)の「コミュニティ内供給」（または他の言語で同等の標準テキスト）が含まれていなければなりません。"
+  },
+  "BR-IC-11": {
+    "en": "In an Invoice with a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the Actual delivery date (BT-72) or the Invoicing period (BG14) shall not be blank.",
+    "ja": "VATカテゴリーコード（BT-118）が「地域内供給」であるVAT内訳（BG-23）のインボイスでは、実際の納品日（BT-72）または請求書発行期間（BG14）は空白にしてはなりません。"
+  },
+  "BR-IC-12": {
+    "en": "In an Invoice with a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Intra-community supply' the Deliver to country code (BT-80)shall not be blank.",
+    "ja": "VATカテゴリーコード（BT-118）が「域内供給」であるVAT内訳（BG-23）のインボイスにおいて、納入先国コードfBT-801は空欄にしてはなりません。"
+  },
+  "BR-G-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT102) is 'Export outside the EU' shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with 'Export outside the EU'.",
+    "ja": "インボイスにインボイスライン（BG-25）、文書レベル引当金（BG-20）または文書レベル料金（BG-21）が含まれ、VATカテゴリーコード（BT-151、BT-95またはBT-102）が「EU域外への輸出」である場合、VAT内訳（BG-23）には、「EU域外への輸出」と同じVATカテゴリーコード（BT-118）を正確に1つだけ含まなければなりません。"
+  },
+  "BR-G-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-631).",
+    "ja": "インボイスライン（BG-25）に含まれるインボイスには、インボイス項目のVATカテゴリーコード（BT-151）が「EU域外輸出」である場合には、売り手VAT識別子（BT-31）または売り手税務代表者VAT識別子（BT-631）が含まれているものとします。"
+  },
+  "BR-G-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金のVATカテゴリーコード（BT-95）が「EU域外輸出」である場合、売主VAT識別子（BT-31）または売主税理士VAT識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-G-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Export outside the EU' shall contain the Seller VAT Identifier (BT-31) or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベルチャージ VAT カテゴリコード（BT-102）が「EU 域外への輸出」である文書レベルチャージ（BG-21）を含むインボイスには、売り手の VAT 識別子（BT-31）または売り手の税務担当者の VAT 識別子（BT-63）を記載しなければなりません。"
+  },
+  "BR-G-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Export outside the EU' the Invoiced item VAT rate (BT-152) shall be 0 (zero).",
+    "ja": "インボイス行(BG-25)において、インボイス項目VATカテゴリーコード(BT-151)が「EU域外輸出」である場合、インボイス項目VATレート(BT-152)は0(ゼロ)となります。"
+  },
+  "BR-G-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Export outside the EU' the Document level allowance VAT rate (BT-96) shall be 0 (zero).",
+    "ja": "文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリーコード（BT-95）が「EU域外輸出」である場合、文書レベル引当金のVATレート（BT-96）は0（ゼロ）となります。"
+  },
+  "BR-G-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Export outside the EU' the Document level charge VAT rate (BT-103) shall be 0 (zero).",
+    "ja": "文書レベルチャージ（BG-21）で、文書レベルチャージのVATカテゴリーコード（BT-102）が「EU域外輸出」である場合、文書レベルチャージのVATレート（BT-103）は0（ゼロ）となります。"
+  },
+  "BR-G-8": {
+    "en": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Export outside the EU' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Export outside the EU'.",
+    "ja": "VAT カテゴリーコード（BT-118）が「EU 域外への輸出」である場合の VAT 内訳（BG-23）では、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）を差し引いた金額と、VAT カテゴリーコード（BT-151、BT-95、BT-102）が「EU 域外への輸出」である場合の文書レベルのチャージ金額（BT-99）を差し引いた金額との合計となります。"
+  },
+  "BR-G-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is 'Export outside the EU' shall be 0 (zero).",
+    "ja": "VATカテゴリーコードfBT-118')が「EU域外輸出」である場合のVAT内訳(BG-23)のVATカテゴリー税額(BT-117)は、0(ゼロ)とします。"
+  },
+  "BR-G-10": {
+    "en": "A VAT Breakdown (BG-23) with the VAT Category code (BT-118) 'Export outside the EU' shall have a VAT exemption reason code (BT-121), meaning 'Export outside the EU' or the VAT exemption reason text (BT-120) 'Export outside the EU' (or the equivalent standard text in another language).",
+    "ja": "VATカテゴリーコード(BT-118)が「EU外への輸出」である場合のVAT内訳(BG-23)のVATカテゴリー税額(BT-117)は、0(ゼロ)となります。"
+  },
+  "BR-0-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'Not subject to VAT' shall contain exactly one VAT breakdown group (BG-23) with the VAT category code (BT-118) equal to 'Not subject to VAT'.",
+    "ja": "インボイスにインボイスライン(BG-25)、文書レベル引当金(BG-20)、文書レベルチャージ(BG-21)が含まれ、VATカテゴリーコード(BT-151、BT-95、BT-102)が「Not subject to VAT」であるインボイスには、VATカテゴリーコード(BT-118)が「Not subject to VAT」に等しいVAT内訳グループ(BG-23)が1つだけ含まれていなければなりません。"
+  },
+  "BR-0-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) and/or|ac) or the Buyer VAT identifier (BT48) <11.",
+    "ja": "インボイスライン（BG-25）を含むインボイスで、インボイス項目のVATカテゴリコード（BT-151）が「Not subject to VAT」である場合、売り手VAT識別子（BT-31）、売り手税理士VAT識別子（BT-63）、および/または買い手VAT識別子（BT48）は含まれないものとします。"
+  },
+  "BR-0-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) or the Buyer VAT identifier (BT-48).   ",
+    "ja": "文書レベル引当金（BG-20）を含むインボイスで、文書レベル引当金のVATカテゴリコード（BT-95）が「Not subject to VAT」である場合、売主VAT識別子（BT-31）、売主税理士VAT識別子（BT-63）、買主VAT識別子（BT-48）は含まれないものとする。  "
+  },
+  "BR-0-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'Not subject to VAT' shall not contain the Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) or the Buyer VAT identifier (BT-48).",
+    "ja": "文書レベルチャージVATカテゴリコード（BT-102）が「Not subject to VAT」である文書レベルチャージ（BG-21）を含むインボイスには、売主VAT識別子（BT-31）、売主税理士VAT識別子（BT-63）、買主VAT識別子（BT-48）は含まれないものとする。"
+  },
+  "BR-0-5": {
+    "en": "An Invoice line (BG-25) where the VAT category code (BT-151) is 'Not subject to VAT' shall not contain an Invoiced item VAT rate (BT-152).",
+    "ja": "VAT カテゴリ コード（BT-151）が「Not subject to VAT」であるインボイス行（BG-25）には、インボイス項目の VAT レート（BT-152）を含まないものとします。"
+  },
+  "BR-0-6": {
+    "en": "A Document level allowance (BG-20) where VAT category code (BT-95) is 'Not subject to VAT' shall not contain a Document level allowance VAT rate (BT-96).",
+    "ja": "VAT カテゴリ コード（BT-95）が「Not subject to VAT」である文書レベル引当金（BG-20）には、文書レベル引当金の VAT レート（BT-96）は含まれないものとする。"
+  },
+  "BR-0-7": {
+    "en": "A Document level charge (BG-21) where the VAT category code (BT-102) is 'Not subject to VAT' shall not contain a Document level charge VAT rate (BT-103).",
+    "ja": "VAT カテゴリ コード（BT-102）が「Not subject to VAT」である文書レベルチャージ（BG-21）には、文書レベルチャージの VAT レート（BT-103）は含まれないものとします。"
+  },
+  "BR-0-8": {
+    "en": "In a VAT breakdown (BG-23) where the VAT category code (BT-118) is ' Not subject to VAT' the VAT category taxable amount (BT-116) shall equal the sum of Invoice line net amounts (BT-131) minus the sum of Document level allowance amounts (BT-92) plus the sum of Document level charge amounts (BT-99) where the VAT category codes (BT-151, BT-95, BT-102) are 'Not subject to VAT'.",
+    "ja": "VAT カテゴリーコード（BT-118）が「Not subject to VAT」である場合の VAT 内訳（BG-23）では、VAT カテゴリーの課税金額（BT-116）は、インボイスラインのネット金額（BT-131）から文書レベルの引当金額（BT-92）と文書レベルのチャージ金額（BT-99）の合計金額（BT-99）の合計金額となります。"
+  },
+  "BR-0-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code fBT-118) is 'Not subject to VAT' shall be 0 (zero).  0 ' - '",
+    "ja": "VATカテゴリーコードfBT-118）が「Not subject to VAT」である場合のVAT内訳（BG-23）のVATカテゴリー税額（BT-117）は、0（ゼロ）とする。"
+  },
+  "BR-0-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) ' Not subject to VAT' shall have a VAT exemption reason code (BT-121), meaning ' Not subject to VAT' or a VAT exemption reason text (BT-120) ' Not subject to VAT' (or the equivalent standard text in another language).",
+    "ja": "VATカテゴリーコード(BT-118)が「Not subject to VAT」であるVAT Breakdown (BG-23)には、「Not subject to VAT」を意味するVAT免除理由コード(BT-121)、またはVAT免除理由テキスト(BT-120)が「Not subject to VAT」(または他の言語で同等の標準テキスト)として記載されているものとする。"
+  },
+  "BR-0-11": {
+    "en": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118) 'Not subject to VAT' shall not contain other VAT breakdown groups (BG-23).",
+    "ja": "VATカテゴリーコード(BT118)が「Not subject to VAT」のVAT内訳グループ(BG-23)を含むインボイスには、他のVAT内訳グループ(BG-23)は含まれないものとする。"
+  },
+  "BR-0-12": {
+    "en": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118) 'Not subject to VAT' shall not contain an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is not 'Not subject to VAT'.",
+    "ja": "VATカテゴリーコード(BT118)が「Not subject to VAT」であるVAT内訳グループ(BG-23)を含むインボイスには、インボイス項目のVATカテゴリーコード(BT-151)が「Not subject to VAT」ではないインボイス行(BG-25)は含まれないものとする。"
+  },
+  "BR-0-13": {
+    "en": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118) 'Not subject to VAT' shall not contain Document level allowances (BG-20) where Document level allowance VAT category code (BT-95)is not 'Not subject to VAT'.",
+    "ja": "VATカテゴリーコード(BT118)が「Not subject to VAT」のVAT内訳グループ(BG-23)を含むインボイスには、文書レベル引当金のVATカテゴリーコードfBT-951が「Not subject to VAT」ではない場合、文書レベル引当金(BG-20)は含まれないものとする。"
+  },
+  "BR-0-14": {
+    "en": "An Invoice that contains a VAT breakdown group (BG-23) with a VAT category code (BT118)1 'Not subject to VAT' shall not contain Document level charges f(BG-21)1 where Document level charge VAT category code (BT-102) is not 'Not subject to VAT'.",
+    "ja": "VATカテゴリーコード(BT118)が「Not subject to VAT」であるVAT内訳グループ(BG-23)を含むインボイスには、文書レベルチャージVATカテゴリーコード(BT-102)が「Not subject to VAT」ではない場合、文書レベルチャージ(BG-21)は含まれないものとする。"
+  },
+  "BR-IG-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'IGIC' shall contain in the VAT breakdown (BG-23) at least one VAT category code (BT118) equal with 'IGIC'.",
+    "ja": "インボイスライン（BG-25）、文書レベル引当金（BG-20）または文書レベル料金（BG-21）を含むインボイスで、VATカテゴリーコード（BT-151、BT-95またはBT-102）が「IGIC」であるものは、VAT内訳（BG-23）に「IGIC」と同等のVATカテゴリーコード（BT118）を少なくとも1つ含まなければなりません。"
+  },
+  "BR-IG-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32J and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "請求項目VATカテゴリコード（BT-151）が「IGIC」であるインボイスライン（BG-25）を含むインボイスには、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32J）および/または売主税務代表VAT識別子（BT-63）が含まれているものとする。"
+  },
+  "BR-IG-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IGIC' shall contain the Seller VAT Identifier (BT31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金VATカテゴリコード（BT-95）が「IGIC」である場合には、売主VAT識別子（BT31）、売主税務登録識別子（BT-32）、および/または売主税務代表者VAT識別子（BT-63）を記載しなければならない。"
+  },
+  "BR-IG-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IGIC' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier  (BT-63).fBT-631.",
+    "ja": "文書レベルチャージ VAT カテゴリコード（BT-102）が「IGIC」である文書レベルチャージ（BG-21）を含むインボイスには、売主 VAT 識別子（BT-31）、売主税務登録識別子（BT-32）および／または売主税務代表者 VAT 識別子（BT-63）が含まれているものとする。"
+  },
+  "BR-IG-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IGIC' the invoiced item VAT rate (BT-152) shall be 0 (zero) or greater than zero.",
+    "ja": "インボイスライン（BG-25）で、請求項目VATカテゴリコード（BT-151）が「IGIC」である場合、請求項目VATレート（BT-152）は、0（ゼロ）またはゼロより大きい値となります。"
+  },
+  "BR-IG-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IGIC' the Document level allowance VAT rate (BT-96) shall be 0 (zero) or greater than zero.   ",
+    "ja": "文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリーコード（BT-95）が「IGIC」である場合、文書レベル引当金のVATレート（BT-96）は、0（ゼロ）以上でなければなりません。  "
+  },
+  "BR-IG-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IGIC' the Document level charge VAT rate (BT-103) shall be 0 (zero) or prpater than zero.",
+    "ja": "ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「IGIC」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）は、0（ゼロ）または0よりも大きい値とする。"
+  },
+  "BR-IG-8": {
+    "en": "For each different value of VAT category rate (BT-119) where the VAT category code (BT118) is 'IGIC', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'IGIC' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).",
+    "ja": "VAT カテゴリーコード（BT118）が「IGIC」である場合の VAT カテゴリーレート（BT-119）の値が異なる場合、VAT 内訳（BG-23）の VAT カテゴリー課税額（BT-116）は、VAT カテゴリーコード（BT-151）が「IGIC」である場合、インボイスラインのネット金額（BT-131）と文書レベルのチャージ金額（BT-99）の合計から文書レベルの引当金金額（BT-92）の合計を差し引いた金額となります。BT-102、BT-95）は「IGIC」であり、VATレート（BT-152、BT-103、BT-96）はVATカテゴリレート（BT-119）と等しくなります。"
+  },
+  "BR-IG-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'IGIC' shall equal the VAT category taxable amount (BT-116) multiplied bv the VAT category rate (BT-119).cateeorv rate CBT-1191.",
+    "ja": "VAT カテゴリーコード（BT-118）が「IGIC」である場合、VAT 内訳（BG-23）の VAT カテゴリー課税額（BT-117）は、VAT カテゴリー課税額（BT-116）に VAT カテゴリーレート（BT-119）を乗じた額となります。"
+  },
+  "BR-IG-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'IGIC' shall not have a VAT exemption reason code (BT-121)fBT-121) or VAT exemption reason text (BT-120).fBT-120).",
+    "ja": "VATカテゴリーコード（BT-118）を持つVATブレイクダウン（BG-23）「IGIC」は、VAT免除理由コード（BT-121）またはVAT免除理由テキスト（BT-120）を持たないものとします。"
+  },
+  "BR-IP-1": {
+    "en": "An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is 'IPSI' shall contain in the VAT breakdown (BG-23) at least one VAT category code (BT118) equal with 'IPSI'.",
+    "ja": "インボイスにインボイスライン（BG-25）、文書レベル引当金（BG-20）、文書レベルチャージ（BG-21）が含まれ、VATカテゴリーコード（BT-151、BT-95、BT-102）が「IPSI」であるインボイスは、VAT内訳（BG-23）に「IPSI」と同等のVATカテゴリーコード（BT118）を少なくとも1つ含まなければならない。"
+  },
+  "BR-IP-2": {
+    "en": "An Invoice that contains an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "請求項目VATカテゴリコード（BT-151）が「IPSI」であるインボイスライン（BG-25）を含むインボイスには、売主VAT識別子（BT-31）、売主税務登録識別子（BT-32）および/または売主税務代表VAT識別子（BT-63）が含まれなければならない。"
+  },
+  "BR-IP-3": {
+    "en": "An Invoice that contains a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IPSI' shall contain the Seller VAT Identifier (BT31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベル引当金（BG-20）を含む請求書には、文書レベル引当金VATカテゴリコード（BT-95）が「IPSI」である場合には、売主VAT識別子（BT31）、売主税登録識別子（BT-32）、および/または売主税代表VAT識別子（BT-63）を含むものとします。"
+  },
+  "BR-IP-4": {
+    "en": "An Invoice that contains a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IPSI' shall contain the Seller VAT Identifier (BT-31), the Seller Tax registration identifier (BT-32) and/or the Seller tax representative VAT identifier (BT-63).",
+    "ja": "文書レベルチャージVATカテゴリコード（BT-102）が「IPSI」である文書レベルチャージ（BG-21）を含むインボイスには、売主VAT識別子（BT-31）、売主税登録識別子（BT-32）および/または売主税代表VAT識別子（BT-63）が含まれているものとする。"
+  },
+  "BR-IP-5": {
+    "en": "In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is 'IPSI' the Invoiced item VAT rate (BT-152)fBT-152) shall be 0 (zero)fzerol or greater than zero.",
+    "ja": "インボイスライン(BG-25)において、請求項目VATカテゴリコード(BT-151)が「IPSI」である場合、請求項目VATレート(BT-152)は0(ゼロ)以上となります。"
+  },
+  "BR-IP-6": {
+    "en": "In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is 'IPSI' the Document level allowance VAT rate (BT-96) shall be 0 (zero) or greater than zero.",
+    "ja": "文書レベル引当金（BG-20）において、文書レベル引当金のVATカテゴリコード（BT-95）が「IPSI」である場合、文書レベル引当金のVATレート（BT-96）は、0（ゼロ）以上でなければなりません。"
+  },
+  "BR-IP-7": {
+    "en": "In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is 'IPSI' the Document level charge VAT rate (BT-103) shall be 0 (zero) or greater than zero.",
+    "ja": "ドキュメント・レベル・チャージ（BG-21）で、ドキュメント・レベル・チャージのVATカテゴリー・コード（BT-102）が「IPSI」である場合、ドキュメント・レベル・チャージのVATレート（BT-103）は、0（ゼロ）以上でなければなりません。"
+  },
+  "BR-IP-8": {
+    "en": "For each different value of VAT category rate (BT-119) where the VAT category code (BT118) is 'IPSI', the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is 'IPSI' and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).",
+    "ja": "VAT カテゴリーコード(BT118)が「IPSI」である場合の VAT カテゴリーレート(BT-119)の値が異なる場合、VAT 内訳書(BG-23)の VAT カテゴリー課税額(BT-116)は、VAT カテゴリーコード(BT-151)が「IPSI」である場合、インボイスラインのネット金額(BT-131)と文書レベルのチャージ金額(BT-99)の合計から文書レベルの引当金金額(BT-92)の合計を差し引いた金額となります。BT-102、BT-95）は「IPSI」であり、VATレート（BT-152、BT-103、BT-96）はVATカテゴリレート（BT-119）と等しくなります。"
+  },
+  "BR-IP-9": {
+    "en": "The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where VAT category code (BT-118) is 'IPSI' shall equal the VAT category taxable amount (BT-116) multiplied by the VAT category rate (BT-119).",
+    "ja": "VATカテゴリーコード(BT-118)が「IPSI」である場合のVAT内訳(BG-23)におけるVATカテゴリー課税額(BT-117)は、VATカテゴリー課税額(BT-116)にVATカテゴリーレート(BT-119)を乗じた額となります。"
+  },
+  "BR-IP-10": {
+    "en": "A VAT Breakdown (BG-23) with VAT Category code (BT-118) 'IPSI' shall exemption reason code (BT-121)fBT-121') or VAT exemption reason text (BT-120).VAT exemption reasnn text (BT-120)",
+    "ja": "VATカテゴリーコード(BT-118)のあるVATブレイクダウン(BG-23)は、VAT免除理由コード(BT-121)またはVAT免除理由テキスト(BT-120)を使用しなければなりません。"
+  },
+  "BR-CO-3": {
+    "en": "Value added tax point date (BT-7) and Value added tax point date code (BT-8) are mutually exclusive.",
+    "ja": "付加価値税ポイント日付（BT-7）と付加価値税ポイント日付コード（BT-8）は相互に排他的です。"
+  },
+  "BR-CO-4": {
+    "en": "Each Invoice line (BG-25) shall be categorized with an Invoiced item VAT category code (BT-151).",
+    "ja": "各請求書ライン（BG-25）は、請求書アイテムのVATカテゴリコード（BT-151）で分類されます。"
+  },
+  "BR-CO-5": {
+    "en": "Document level allowance reason code (BT-98) and Document level allowance reason (BT-97) shall indicate the same type of allowance.",
+    "ja": "文書レベルの許容理由コード（BT-98）と文書レベルの許容理由（BT-97）は、同じタイプの許容を示すものとします。"
+  },
+  "BR-CO-6": {
+    "en": "Document level charge reason code (BT-105) and Document level charge reason (BT-104) shall indicate the same type of charge.",
+    "ja": "文書レベルの請求理由コード（BT-105）と文書レベルの請求理由（BT-104）は、同じ種類の請求を示すものとします。"
+  },
+  "BR-CO-7": {
+    "en": "Invoice line allowance reason code (BT-140) and Invoice line allowance reason (BT-139) shall indicate the same type of allowance reason.",
+    "ja": "請求書ライン許容理由コード（BT-140）と請求書ライン許容理由（BT-139）は、同じタイプの許容理由を示すものとします。"
+  },
+  "BR-CO-8": {
+    "en": "Invoice line charge reason code (BT-145) and Invoice line charge reason (EST 144} shall indicate the same type of charge reason.",
+    "ja": "請求書明細請求理由コード（BT-145）と請求書明細請求理由（EST 144}は、同じタイプの請求理由を示すものとします。"
+  },
+  "BR-CO-9": {
+    "en": "The Seller VAT identifier (BT-31), the Seller tax representative VAT identifier (BT-63) and the Buyer VAT identifier (BT-48) shall have a prefix in accordance with ISO code ISO 3166-1 alpha-2 by which the country of issue may be identified. Nevertheless, Greece may use the prefix 'EL'.",
+    "ja": "売り手のVAT識別子（BT-31）、売り手の税務代理人のVAT識別子（BT-63）、および買い手のVAT識別子（BT-48）には、ISOコードISO 3166-1alpha-2に準拠した接頭辞を付ける必要があります。問題の国が特定される場合があります。それでも、ギリシャでは接頭辞「EL」を使用できます。"
+  },
+  "BR-CO-10": {
+    "en": "Sum of Invoice line net amount (BT-106) = SIGMA Invoice line net amount (BT-131).",
+    "ja": "請求書明細の正味額の合計（BT-106）= SIGMA請求書明細の正味額（BT-131）。"
+  },
+  "BR-CO-11": {
+    "en": "Sum of allowances on document level (BT-107) = J) Document level allowance amount (BT-92).",
+    "ja": "伝票レベルの引当金の合計（BT-107）= J）伝票レベルの引当金額（BT-92）。"
+  },
+  "BR-CO-12": {
+    "en": "Sum of charges on document level (BT-108) = SIGMA Document level charge amount (BT-99).",
+    "ja": "ドキュメントレベルの料金の合計（BT-108）= SIGMAドキュメントレベルの料金額（BT-99）。"
+  },
+  "BR-CO-13": {
+    "en": "Invoice total amount without VAT (BT-109) = SIGMA Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).",
+    "ja": "VATなしの請求書合計金額（BT-109）= SIGMA請求書明細正味金額（BT-131）-伝票レベルの引当金の合計（BT-107）+伝票レベルの料金の合計（BT-108）。"
+  },
+  "BR-CO-14": {
+    "en": "Invoice total VAT amount (BT-110) = SIGMA VAT category tax amount (BT-117).",
+    "ja": "請求書の合計VAT額（BT-110）= SIGMA VATカテゴリの税額（BT-117）。"
+  },
+  "BR-CO-15": {
+    "en": "Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).",
+    "ja": "VATを含む請求書の合計金額（BT-112）= VATを含まない請求書の合計金額（BT-109）+請求書の合計VAT金額（BT-110）。"
+  },
+  "BR-CO-16": {
+    "en": "Amount due for payment (BT-115) = Invoice total amount with VAT (BT-112) -Paid amount (BT-113) + Rounding amount (BT-114).",
+    "ja": "支払期日（BT-115）= VATを含む請求書の合計額（BT-112）-支払額（BT-113）+端数処理金額（BT-114）。"
+  },
+  "BR-CO-17": {
+    "en": "VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.",
+    "ja": "VATカテゴリの税額（BT-117）= VATカテゴリの課税額（BT-116）x（VATカテゴリの税率（BT-119）/ 100）、小数点以下第2位を四捨五入します。"
+  },
+  "BR-CO-18": {
+    "en": "An Invoice shall at least have one VAT breakdown group (BG-23).",
+    "ja": "請求書には、少なくとも1つのVAT内訳グループ（BG-23）が必要です。"
+  },
+  "BR-CO-19": {
+    "en": "If Invoicing period (BG-14) is used, the Invoicing period start date (BT-73) or the Invoicing period end date (BT74) shall be filled, or both.",
+    "ja": "請求期間（BG-14）を使用する場合は、請求期間の開始日（BT-73）または請求期間の終了日（BT74）、あるいはその両方を入力する必要があります。"
+  },
+  "BR-CQ-20": {
+    "en": "If Invoice line period (BG-26) is used, the Invoice line period start date (BT-134) or the Invoice line period end date fBT-135) shall be filled, or both.",
+    "ja": "請求書明細期間（BG-26）を使用する場合は、請求書明細期間の開始日（BT-134）または請求書明細期間の終了日（fBT-135）、あるいはその両方を入力する必要があります。"
+  },
+  "BR-CO-21": {
+    "en": "Each Document level allowance (BG-20) shall contain a Document level allowance reason (BT-97) or a Document level allowance reason code (BT-98), or both.",
+    "ja": "各ドキュメントレベルの許容値（BG-20）には、ドキュメントレベルの許容値の理由（BT-97）またはドキュメントレベルの許容値の理由コード（BT-98）、あるいはその両方が含まれている必要があります。"
+  },
+  "BR-CO-22": {
+    "en": "Each Document level charge (BG-21) shall contain a Document level charge reason (BT-104) or a Document level charge reason code (BT-105), or both.",
+    "ja": "各ドキュメントレベルの請求（BG-21）には、ドキュメントレベルの請求理由（BT-104）またはドキュメントレベルの請求理由コード（BT-105）、あるいはその両方が含まれている必要があります。"
+  },
+  "BR-CO-23": {
+    "en": "Each Invoice line allowance (BG-27) shall contain an Invoice line allowance reason (BT-139) or an Invoice line allowance reason code (BT-1401 or both.",
+    "ja": "各請求書明細手当（BG-27）には、請求書明細手当理由（BT-139）または請求書明細手当理由コード（BT-1401、あるいはその両方）が含まれている必要があります。"
+  },
+  "BR-CO-24": {
+    "en": "Each Invoice line charge (BG-28) shall contain an Invoice line charge reason (BT-144) or an Invoice line charge reason code (BT-145), or both.",
+    "ja": "各請求書明細請求書（BG-28）には、請求書明細書請求理由（BT-144）または請求書明細請求理由コード（BT-145）、あるいはその両方が含まれている必要があります。"
+  },
+  "BR-CO-25": {
+    "en": "In case the Amount due for payment (BT-115) is positive, either the Payment due date (BT-9) or the Payment terms (BT-20) shall be present",
+    "ja": "支払期日（BT-115）が正の場合、支払期日（BT-9）または支払条件（BT-20）のいずれかが存在するものとします。"
+  },
+  "BR-CO-26": {
+    "en": "In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present   ",
+    "ja": "買い手がサプライヤーを自動的に識別するために、売り手識別子（BT-29）、売り手法的登録識別子（BT-30）、および/または売り手VAT識別子（BT-31）が存在するものとします。"
+  },
+  "R1": {
+    "en": "information at document level that enables the identification of the Payee, if different from the Seller (all processes, except P9);",
+    "ja": "売主と異なる場合は、受取人の識別を可能にする文書レベルの情報（P9を除く全てのプロセス）。"
+  },
+  "R2": {
+    "en": "information at document level that enables booking on both the debit and the credit side (all processes);",
+    "ja": "デビット側とクレジット側の両方で予約を可能にするドキュメントレベルの情報（全プロセス）。"
+  },
+  "R3": {
+    "en": "information at invoice line level that enables booking on the debit side (all processes);",
+    "ja": "引き落とし側（全プロセス）でのブッキングを可能にする請求書ラインレベルの情報。"
+  },
+  "R4": {
+    "en": "Buyer-specific booking information (account numbers) (all processes).",
+    "ja": "バイヤー固有の予約情報（アカウント番号）（全プロセス）。"
+  },
+  "R5": {
+    "en": "information to trace to a single related purchase order from the document level (all processes, except P2 and P5);",
+    "ja": "ドキュメントレベル（P2とP5を除くすべてのプロセス）から1つの関連する購入注文にトレースするための情報。"
+  },
+  "R6": {
+    "en": "information to trace to a single related purchase order line from the invoice line (all processes, except P2 and P5);",
+    "ja": "インボイスライン（P2とP5を除くすべてのプロセス）から1つの関連する購入注文ラインにトレースするための情報。"
+  },
+  "R7": {
+    "en": "information to trace to a single contract and the underlying call for tenders from the document level (all processes, except P3 and P5);",
+    "ja": "ドキュメントレベル（P3とP5を除くすべてのプロセス）から、単一の契約と基礎となる入札の募集にトレースするための情報を提供します。"
+  },
+  "R8": {
+    "en": "a reference supplied by the Buyer at document level (all processes);",
+    "ja": "バイヤーが文書レベルで提供する参照（すべてのプロセス）。"
+  },
+  "R9": {
+    "en": "information to trace to a single despatch advice from the document level (processes P7 and P8);",
+    "ja": "文書レベル（プロセスP7とP8）から単一の発送アドバイスにトレースするための情報を提供します。"
+  },
+  "R10": {
+    "en": "information to trace to a single receiving advice from the document level (process P8);",
+    "ja": "情報を文書レベルから単一の受信アドバイスにトレースする（プロセスP8）。"
+  },
+  "R11": {
+    "en": "information to trace to a related invoice to be corrected from the document level (process P10);",
+    "ja": "関連する請求書にトレースするための情報を文書レベルから修正する（プロセスＰ１０）。"
+  },
+  "R12": {
+    "en": "reference to multiple part-invoices from a final invoice (process P12);",
+    "ja": "最終請求書から複数のパートインボイスを参照する（プロセスＰ１２）。"
+  },
+  "R13": {
+    "en": "information to allow an invoice and related documents to be transferred to a responsible authority, entity, person or department, for verification and approval (all processes);",
+    "ja": "請求書および関連文書を、検証および承認のために、責任のある当局、事業体、個人または部門に転送できるようにするための情報（すべてのプロセス）。"
+  },
+  "R14": {
+    "en": "information about net price and the quantity on which the price is based at invoice line level, additional information such as gross price and price discount may be added (all processes); ",
+    "ja": "インボイスラインレベルでの正味価格と価格の根拠となる数量の情報に、グロス価格や値引きなどの追加情報を追加することができる（全工程）。"
+  },
+  "R15": {
+    "en": "descriptive and coded information about allowances and charges at both document level and at invoice line level (all processes);",
+    "ja": "文書レベルと請求書ラインレベルの両方で、引当金と料金に関する記述的でコード化された情報（全プロセス）。"
+  },
+  "R16": {
+    "en": "information about charges, (non-VAT-)taxes, duties and levies, with their VAT information, that are not included in the line amounts at document level (all processes);",
+    "ja": "文書レベル（全プロセス）のライン金額に含まれていない料金、（非VAT-）税、関税、課徴金に関する情報とVAT情報。"
+  },
+  "R17": {
+    "en": "information about charges, (non-VAT-)taxes, duties and levies that compose the taxable amount and are not included in the unit price at separate invoice lines, with a proper identification and/or description (all processes);",
+    "ja": "課税金額を構成する料金、（非VAT）税、関税および課徴金についての情報で、個別のインボイスラインで単価に含まれていないものを、適切な識別および／または説明とともに提供すること（全工程）。"
+  },
+  "R18": {
+    "en": "information about charges at invoice line level as part of the line amount (all processes);",
+    "ja": "ライン金額の一部としての請求書ラインレベルでの料金に関する情報（全工程）。"
+  },
+  "R19": {
+    "en": "the amounts of allowances and charges at document and invoice line level (all processes);",
+    "ja": "文書および請求書ラインレベルでの引当金および料金の金額（すべてのプロセス）。"
+  },
+  "R20": {
+    "en": "textual descriptions of invoiced goods and services at invoice line level (all processes);",
+    "ja": "インボイスラインレベル（全プロセス）での請求された商品およびサービスのテキスト記述"
+  },
+  "R21": {
+    "en": "identification of invoiced goods and services by means of a Seller's item number at invoice line level (all processes);",
+    "ja": "請求書ラインレベルでの売主の商品番号による請求書付き商品およびサービスの識別（全プロセス）。"
+  },
+  "R22": {
+    "en": "identification of invoiced goods and services by means of a Buyer's item number at invoice line level (all processes);",
+    "ja": "請求書ラインレベルでの購入者の商品番号による請求書付き商品およびサービスの識別（全プロセス）。"
+  },
+  "R23": {
+    "en": "identification of invoiced goods and services by means of a qualified general item identifier at invoice line level as agreed by the Buyer and the Seller (all processes);",
+    "ja": "買い手と売り手が合意した通りに、インボイスラインレベルで適格な一般品目識別子を用いて、請求された商品およびサービスを識別すること（すべてのプロセス）。"
+  },
+  "R24": {
+    "en": "classification of invoiced goods and services by means of applicable classification identifiers and schema reference as agreed between the Seller and the Buyer at invoice line level (all processes];",
+    "ja": "インボイスラインレベルで売主と買主の間で合意された、適用可能な分類識別子とスキーマ参照を用いて、請求された商品およびサービスを分類すること（すべてのプロセス）。"
+  },
+  "R25": {
+    "en": "information about returned and credited returnable assets or packages, such as pallets, and package charges, stated as normal invoice lines (all processes);",
+    "ja": "通常の請求書ライン（すべてのプロセス）として記載された、パレットなどの返品および入金された返品可能な資産またはパッケージに関する情報。"
+  },
+  "R26": {
+    "en": "information about returnable asset charges, stated as normal invoice lines (all processes);",
+    "ja": "通常の請求書ライン（全プロセス）として記載されている回収可能な資産料金に関する情報。"
+  },
+  "R27": {
+    "en": "information about returned goods, stated as normal invoice lines (all processes);",
+    "ja": "通常のインボイスライン（全工程）として記載されている返品商品に関する情報。"
+  },
+  "R28": {
+    "en": "descriptive information about attributes of goods and services at invoice line level (all processes);",
+    "ja": "インボイスラインレベルでの商品及びサービスの属性に関する記述情報（全プロセス）。"
+  },
+  "R29": {
+    "en": "information about the country of origin of goods and services at invoice line level (all processes);",
+    "ja": "インボイスラインレベルでの商品・サービスの原産国に関する情報（全プロセス）。"
+  },
+  "R30": {
+    "en": "an invoice line period at invoice line level (process P2, P11);",
+    "ja": "インボイスラインレベルでのインボイスライン期間（プロセスＰ２、Ｐ１１）。"
+  },
+  "R31": {
+    "en": "one delivery date at document level (all processes);",
+    "ja": "文書レベル（全プロセス）で1回の納期。"
+  },
+  "R32": {
+    "en": "one delivery location or address at document level (all processes);",
+    "ja": "文書レベル（全プロセス）で1つの配送場所またはアドレスを指定します。"
+  },
+  "R33": {
+    "en": "identification of the invoiced object at document and line level (process P2);",
+    "ja": "ドキュメントレベルとラインレベルでの請求対象の識別（プロセスP2）。"
+  },
+  "R34": {
+    "en": "a delivery/invoice period at document level (process P2, Pll);",
+    "ja": "文書レベルでの納品/請求書期間（プロセスP2、P１１）。"
+  },
+  "R35": {
+    "en": "attached documents of a limited set of file types (all processes);",
+    "ja": "限られたファイルタイプのセット（全プロセス）の添付文書。"
+  },
+  "R36": {
+    "en": "multiple attached or referenced documents at document level (all processes);",
+    "ja": "文書レベルでの複数の添付文書または参照文書（すべてのプロセス）。"
+  },
+  "R37": {
+    "en": "a VAT category and rate at invoice line level (all processes);",
+    "ja": "インボイスラインレベルでのVATカテゴリとレート（全プロセス）。"
+  },
+  "R38": {
+    "en": "VAT totals per category at document level (all processes);",
+    "ja": "文書レベルでのカテゴリーごとのVAT合計（全プロセス）。"
+  },
+  "R39": {
+    "en": "a quantity and a net amount (exclusive of VAT) at invoice line level (all processes);",
+    "ja": "インボイスラインレベル（全プロセス）での数量と純額（付加価値税を除く）。"
+  },
+  "R40": {
+    "en": "all amounts at document and invoice line level that make up the invoice total amount and the amount due for payment (all processes);",
+    "ja": "請求書の合計金額と支払期限の金額を構成する文書および請求書ラインレベルのすべての金額（すべてのプロセス）。"
+  },
+  "R41": {
+    "en": "Reference to a sales order, issued by the Seller at document level (all processes);",
+    "ja": "文書レベル（全工程）で売主が発行した販売指示書を参照すること。"
+  },
+  "R42": {
+    "en": "Allowance/charge percentage and base amount at document and invoice line level (all processes);",
+    "ja": "文書・請求書ラインレベル（全工程）での引当金/請求割合と基準額。"
+  },
+  "R44": {
+    "en": "Information to allow automated validation of a received electronic invoice (all processes).",
+    "ja": "受信した電子請求書の自動検証を可能にするための情報（全プロセス"
+  },
+  "R45": {
+    "en": "information to determine the requirements of the applicable VAT legislation in force and the calculation and reporting thereof;",
+    "ja": "適用されるVAT法の要件を決定し、その計算と報告を行うための情報を提供することができます。"
+  },
+  "R46": {
+    "en": "information on the date the VAT is liable at document level;",
+    "ja": "文書レベルでの付加価値税（VAT）の支払い義務のある日に関する情報。"
+  },
+  "R47": {
+    "en": "the necessary elements for national legal VAT requirements that apply for invoices issued to national and foreign Buyers, such as the legal registration status of the Seller;",
+    "ja": "売主の法的登録状況など、国内および海外の買主に発行された請求書に適用される国内法上のVAT要件に必要な要素。"
+  },
+  "R48": {
+    "en": "information to support the following VAT use cases:NL -  Invoices for supplies for which VAT is charged;NL -  Invoices for supplies for which VAT is not charged based on an exemption reason;NL -  Invoices for supplies for which the Seller's goods and services are exempt from VAT at line level;NL -  Invoices for supplies that are issued under reverse charge;NL -  Invoices for exempt intra-community supplies for which an intra-communityNLacquisition has to be done;NL -  Invoices for supplies outside the scope of the Directive 2006/112/EC [2] (non-VAT invoices);",
+    "ja": "以下のVATの使用事例をサポートするための情報を提供することができます。 NL - VAT が課される供給品の請求書、NL - 免除理由に基づいて VAT が課されない供給品の請求書、NL - 売主の商品およびサービスがラインレベルで VAT が免除される供給品の請求書、NL - リバースチャージの下で発行される供給品の請求書、NL - 共同体内で共同体内買収を行う必要がある共同体内免税供給品の請求書、NL - 指令 2006/112/EC [2] の適用範囲外の供給品（非 VAT 請求書）の請求書。"
+  },
+  "R49": {
+    "en": "the total VAT amount at document level;",
+    "ja": "文書レベルでのVAT総額。"
+  },
+  "R50": {
+    "en": "total taxable amount per VAT rate at document level;",
+    "ja": "文書レベルでの付加価値税率あたりの課税総額"
+  },
+  "R51": {
+    "en": "any additional information required to support the exemption evidence in case VAT is not charged based on an exemption reason at document and at invoice line level;",
+    "ja": "免除理由に基づいてVATが請求されない場合に、免除の証拠を裏付けるために必要な追加情報を文書レベルおよびインボイスラインレベルで提供する。"
+  },
+  "R52": {
+    "en": "the legal registration number and the VAT registration number of the Seller and Buyer and the VAT registration number of the Tax representative of the Supplier;",
+    "ja": "売主と買主の法定登録番号とVAT登録番号、および買主の税務担当者のVAT登録番号。"
+  },
+  "R53": {
+    "en": "the official postal address of the Buyer, Seller and Tax representative of the Supplier and their place of business and registered office;",
+    "ja": "買い手、売り手、サプライヤーの税務担当者の正式な住所、事業所および登録された事務所。"
+  },
+  "R54": {
+    "en": "the invoice currency and the VAT accounting currency at document level if different from the invoice currency;",
+    "ja": "請求書通貨と異なる場合は、文書レベルでの請求書通貨およびVAT会計通貨を指定します。"
+  },
+  "R55": {
+    "en": "codes for exemption reasons at document and invoice line level.",
+    "ja": "ドキュメントおよび請求書ラインレベルでの免除理由のためのコード。"
+  },
+  "R56": {
+    "en": "sufficient information to support the auditing process with regard to:NL -  identification of the invoice;NL -  identification of the date of issue of the invoice;NL -  identification of the products and services traded, including their description, valueNLand quantity;NL -  information for relating the invoice to its settlement;NL -  information for relating the invoice to relevant documents such as a contract, aNLpurchase order and a despatch advice;NL -  information about the reason for invoice correction (process P10);",
+    "ja": "NL - 請求書の識別、NL - 請求書発行日の識別、NL - 取引された製品およびサービスの識別（説明、金額、数量を含む）、NL - 請求書と決済に関する情報、NL - 契約書、NL発注書、発送通知書などの関連文書と請求書を関連付けるための情報、NL - 請求書の訂正理由に関する情報（プロセスP10）。"
+  },
+  "R57": {
+    "en": "identification of the parties that fulfil the following roles at the invoice level, including their legal name and address:NL -  the Seller (including the Seller's trade name);NL -  the Buyer;NL -  the Deliver to party (if different from the Buyer);NL -  the Payee (if different from the Seller);NL -  the Tax representative of the Supplier;",
+    "ja": "NL-売主（売主の商号を含む）、NL-買主、NL-納品先（買主と異なる場合）、NL-受取人（売主と異なる場合）、NL-供給者の税務担当者。"
+  },
+  "R58": {
+    "en": "identification of the means of settlement;",
+    "ja": "決済手段の特定。"
+  },
+  "R59": {
+    "en": "the requested amount due for payment;",
+    "ja": "支払い期限のある請求額の記載。"
+  },
+  "R60": {
+    "en": "the date on which payment is due;",
+    "ja": "支払期限日を指定。"
+  },
+  "R61": {
+    "en": "necessary details to support bank transfers in accordance with SEPA and national systems;",
+    "ja": "SEPAや国の制度に準拠した銀行振込をサポートするために必要な詳細。"
+  },
+  "R62": {
+    "en": "a reference number and any additional reference data to be included in the payment;",
+    "ja": "参照番号と、支払いに含まれる追加の参照データ。"
+  },
+  "R63": {
+    "en": "reference number and any additional reference data to be included in the payment, in order to relate the payment to the invoice;",
+    "ja": "支払いを請求書に関連付けるために、支払いに含まれる参照番号および追加の参照データ。"
+  },
+  "R64": {
+    "en": "information for relating an invoice to a payment card used for settlement;",
+    "ja": "請求書と決済に使用するペイメントカードを関連付けるための情報を提供します。"
+  },
+  "R65": {
+    "en": "basic information to support national payment systems for use in domestic trade;",
+    "ja": "国内貿易で利用するための国の支払制度を支援するための基本情報"
+  },
+  "R66": {
+    "en": "information about the amount that was pre-paid;",
+    "ja": "前払いされた金額についての情報提供。"
+  },
+  "R67": {
+    "en": "invoices that have a total amount of zero;",
+    "ja": "総額がゼロになる請求書。"
+  },
+  "R68": {
+    "en": "invoices that have an amount to pay of zero;",
+    "ja": "支払額がゼロの請求書。"
+  },
+  "R69": {
+    "en": "necessary details to support direct debits.",
+    "ja": "口座引落しをサポートするために必要な詳細"
+  },
+  "R70": {
+    "en": "pre-payment invoices",
+    "ja": "前払い請求書"
+  },
+  "BR-1": {
+    "en": "An Invoice shall have a Specification identifier (BT-24).",
+    "ja": "請求書は、明細識別子(BT-24)を有するものとする。"
+  },
+  "BR-2": {
+    "en": "An Invoice shall have an Invoice number (BT-1).",
+    "ja": "請求書は、請求書番号(BT-1)を有するものとする。"
+  },
+  "BR-3": {
+    "en": "An Invoice shall have an Invoice issue date (BT-2).",
+    "ja": "請求書には、請求書発行日(バイト2)が記載されている必要があります。"
+  },
+  "BR-4": {
+    "en": "An Invoice shall have an Invoice type code (BT-3).",
+    "ja": "請求書は、請求書タイプコード(BT-3)を有するものとする。"
+  },
+  "BR-5": {
+    "en": "An Invoice shall have an Invoice currency code (BT-5),",
+    "ja": "請求書には、請求書通貨コード(BT-5)が必要です。"
+  },
+  "BR-6": {
+    "en": "An Invoice shall contain the Seller name (BT-27).",
+    "ja": "請求書には販売者名(BT-27)を記載するものとする。"
+  },
+  "BR-7": {
+    "en": "An Invoice shall contain the Buyer name (BT-44).",
+    "ja": "請求書には、購入者の名前(BT-44)を記載するものとします。"
+  },
+  "BR-8": {
+    "en": "An Invoice shall contain the Seller postal address (BG-5).",
+    "ja": "請求書には売主の住所(BG-5)を記載するものとする。"
+  },
+  "BR-9": {
+    "en": "The Seller postal address (BG-5) shall contain country code fBT-401.",
+    "ja": "売主の郵便宛先(BG-5)には、売主の国コード(BT-40)を含めるものとする。"
+  },
+  "BR-10": {
+    "en": "An Invoice shall contain the Buyer postal address (BG-8).",
+    "ja": "請求書には、購入者の住所(BG-8)を記載するものとします。"
+  },
+  "BR-11": {
+    "en": "The Buyer postal address shall contain a Buyer country code (BT-55).",
+    "ja": "購入者の住所には、購入者の国コード(BT-55)を記載するものとします。"
+  },
+  "BR-12": {
+    "en": "An Invoice shall have the Sum of Invoice line net amount (BT-106).",
+    "ja": "請求書には、請求書明細合計の正味金額(BT-106)があるものとします。"
+  },
+  "BR-13": {
+    "en": "An Invoice shall have the Invoice total amount without VAT (BT-109).",
+    "ja": "請求書には、VATを含まない請求書総額(BT-109)が記載されている必要があります。"
+  },
+  "BR-14": {
+    "en": "An Invoice shall have the Invoice total amount with VAT (BT-112).",
+    "ja": "請求書には、VATを含む請求書総額(BT-112)が記載されている必要があります。"
+  },
+  "BR-15": {
+    "en": "An Invoice shall have the Amount due for payment (BT115).",
+    "ja": "請求書には、支払額(BT-115)を記載するものとします。"
+  },
+  "BR-16": {
+    "en": "An Invoice shall have at least one Invoice line (BG-25).",
+    "ja": "請求書には、少なくとも1つの請求書明細(BG-25)が必要です。"
+  },
+  "BR-17": {
+    "en": "The Payee name (BT-59) shall be provided in the Invoice, if the Payee (BG-10) is different from the Seller (BG-4),",
+    "ja": "受取人(BG-10)が売り手(BG-4)と異なる場合は、受取人名(BT-59)を請求書に記載するものとする。"
+  },
+  "BR-18": {
+    "en": "The Seller tax representative name (BT-62) shall be provided in the Invoice, if the Seller (BG-4J has a Seller tax representative party (BG-11).",
+    "ja": "売主の税務代理人の名称(BT-62)は以下のとおりとする。"
+  },
+  "BR-19": {
+    "en": "The Seller tax representative postal address (BG-12) shall be provided in the Invoice, if the Seller (BG-4) has a Seller tax representative party (BG-11).",
+    "ja": "売り手(BG-4)に売り手税の代表者(BG-11)がいる場合、請求書には売り手税の代表者の郵便宛先(BG-12)が記載されるものとする。"
+  },
+  "BR-20": {
+    "en": " The Seller tax representative postal address (BG-12) shall contain a Tax representative country code (BT-69), if the Seller fBG-4) has a Seller tax representative party (BG-",
+    "ja": "売り手(BG-4)に売り手税金代表当事者(BG-11)がいる場合、売り手税金代表の郵便宛先(BG-12)には、税金代表国コード(BT-69)を含めるものとします。"
+  },
+  "BR-21": {
+    "en": "Each Invoice line (BG-25) shall have an Invoice line identifier (BT-126).",
+    "ja": "各請求書明細(BG-25)には、請求書明細(BT-126)があります。"
+  },
+  "BR-22": {
+    "en": "Each Invoice line (BG-25) shall have an Invoiced quantity (BT-129).",
+    "ja": "各請求書明細(BG-25)には、請求済数量(BT-129)があるものとします。"
+  },
+  "BR-23": {
+    "en": "An Invoice line (BG-25) shall have an Invoiced quantity unit of measure code (BT-130).",
+    "ja": "請求書明細(BG-25)には、請求済数量単位コード(BT-130)が含まれている必要があります。"
+  },
+  "BR-24": {
+    "en": "Each Invoice line (BG-25) shall have an Invoice line net amount (BT-131).",
+    "ja": "各請求書明細(BG-25)には、請求書明細の正味金額(BT-131)があります。"
+  },
+  "BR-25": {
+    "en": "Each Invoice line (BG-25) shall contain the Item name 153).",
+    "ja": "各請求書明細(BG-25)は、項目名(バイト-153)を含むものとする。"
+  },
+  "BR-26": {
+    "en": "Each Invoice line (BG-25) shall contain the Item net price (BT-146).",
+    "ja": "各請求書明細(BG-25)には、品目の正味価格(BT-146)が含まれている必要があります。"
+  },
+  "BR-27": {
+    "en": "The Item net price (BT-146) shall NOT be negative.",
+    "ja": "アイテムの正味価格(BT-146)は負であってはなりません。"
+  },
+  "BR-28": {
+    "en": "The Item gross price (BT-148) shall NOT be negative.",
+    "ja": "アイテム総価格(BT-148)は負であってはならない。"
+  },
+  "BR-29": {
+    "en": "If both Invoicing period start date (BT-73) and Invoicing period end date (BT-74) are given then the Invoicing period end date (BT-74) shall be later or equal to the Invoicing period start date (BT-73).",
+    "ja": "請求期間開始日(BT-73)と請求期間終了日(BT-74)の両方が指定されている場合、請求期間終了日(BT-74)は請求期間開始日(BT-73)以降になります。"
+  },
+  "BR-30": {
+    "en": "If both Invoice line period start date (BT-134) and Invoice line period end date (BT-135) are given then the Invoice line period end date (BT-135) shall be later or equal to the Invoice line period start date (BT-134).",
+    "ja": "請求書明細期間開始日(BT-134)と請求書明細期間終了日(BT-135)の両方が指定されている場合、請求書明細期間終了日(BT-135)は、請求書明細期間開始日(BT-134)以降である必要があります。"
+  },
+  "BR-31": {
+    "en": "Each Document level allowance (BG-20) shall have a Document level allowance amount (BT-92).",
+    "ja": "各ドキュメントレベルアローワンス(BG-20)には、ドキュメントレベルアローワンス額(BT-92)を設定する。"
+  },
+  "BR-32": {
+    "en": "Each Document level allowance (BG-20) shall have a Document level allowance VAT category code (BT-95).",
+    "ja": "各ドキュメントレベルアローワンス(BG-20)は、ドキュメントレベルアローワンスVATカテゴリコード(BT-95)を持つものとする。"
+  },
+  "BR-33": {
+    "en": "Each Document level allowance (BG-20) shall have a Document level allowance reason (BT-97) or a Document level allowance reason code (BT-98).",
+    "ja": "各ドキュメントレベルアローワンス(BG-20)には、ドキュメントレベルアローワンス理由(BT-97)またはドキュメントレベルアローワンス理由コード(BT-98)があること。"
+  },
+  "BR-36": {
+    "en": "Each Document level charge (BG-21) shall have a Document level charge amount (BT-99).",
+    "ja": "各ドキュメントレベルチャージ(BG-21)には、ドキュメントレベルチャージ金額(BT-99)がある。"
+  },
+  "BR-37": {
+    "en": "Each Document level charge (BG-21) shall have a Document level charge VAT category code fBT-102).",
+    "ja": "各ドキュメントレベルチャージ(BG-21)には、ドキュメントレベルチャージVATカテゴリコード(BT-102)があります。"
+  },
+  "BR-38": {
+    "en": "Each Document level charge (BG-21) shall have a Document level charge reason (BT-104) or a Document level charge reason code fBT-1051",
+    "ja": "各文書レベルチャージ(BG-21)は、文書レベルチャージ理由(BT-104)または文書レベルチャージ理由コード(BT-105)を有するものとする。"
+  },
+  "BR-41": {
+    "en": "Each Invoice line allowance (BG-27) shall have an Invoice line allowance amount (BT-136).",
+    "ja": "各請求書明細引当(BG-27)には、請求書明細引当金額(BT-136)があります。"
+  },
+  "BR-42": {
+    "en": "Each Invoice line allowance (BG-27) shall have an Invoice line allowance reason (BT-139) or an Invoice line allowance reason code (BT-140).",
+    "ja": "各請求書明細引当(BG-27)には、請求書明細引当理由(BT-139)または請求書明細引当理由コード(BT-140)が必要です。"
+  },
+  "BR-43": {
+    "en": "Each Invoice line charge (BG-28) shall have an Invoice line charge amount (BT-141).",
+    "ja": "各請求書明細手数料(BG-28)には、請求書明細手数料金額(BT-141)があります。"
+  },
+  "BR-44": {
+    "en": "Each Invoice line charge (BG-28) shall have an Invoice line charge reason (BT-144) or an Invoice line charge reason code (BT-145),",
+    "ja": "各請求書明細手数料(BG-28)には、請求書明細手数料事由(BT-144)または請求書明細手数料事由コード(BT-145)が必要です。"
+  },
+  "BR-45": {
+    "en": "Each VAT breakdown (BG-23) shall have a VAT category taxable amount (BT-116).",
+    "ja": "各VAT明細(BG-23)には、VATカテゴリ課税対象額(BT-116)があります。"
+  },
+  "BR-46": {
+    "en": "Each VAT breakdown (BG-23) shall have a VAT category tax amount (BT-117).",
+    "ja": "各VAT内訳(BG-23)には、VATカテゴリー税額(BT-117)が含まれます。"
+  },
+  "BR-47": {
+    "en": "Each VAT breakdown (BG-23) shall be defined through a VAT category code (BT-118).",
+    "ja": "各VAT内訳(BG-23)は、VATカテゴリーコード(BT-118)によって定義されなければならない。"
+  },
+  "BR-48": {
+    "en": "Each VAT breakdown (BG-23) shall have a VAT category rate (BT-119), except if the Invoice is not subject to VAT.",
+    "ja": "各VAT内訳(BG-23)は、請求書がVATの対象となっていない場合を除き、VATカテゴリレート(BT-119)を持つものとします。"
+  },
+  "BR-49": {
+    "en": "A Payment instruction (BG-16) shall specify the Payment means type code (BT-81).",
+    "ja": "支払指図(BG-16)は、支払手段タイプコード(BT-81)を指定しなければならない。"
+  },
+  "BR-50": {
+    "en": "A Payment account identifier (BT-84) shall be present if Credit transfer (BG-16) information is provided in the Invoice.",
+    "ja": "クレジット振替(BG-16)情報が請求書に記載されている場合は、支払勘定科目識別子(BT-84)が表示されます。"
+  },
+  "BR-51": {
+    "en": "The last 4 to 6 digits of the Payment card primary account number (BT-87) shall be present if Payment card information (BG-18) is provided in the Invoice.",
+    "ja": "支払いカード情報（BG-18）が請求書に記載されている場合は、支払いカードのプライマリアカウント番号（BT-87）の最後の4〜6桁が表示されます。"
+  },
+  "BR-52": {
+    "en": "Each Additional supporting document (BG-24) shall contain a Supporting document reference (BT-122).",
+    "ja": "各追加サポートドキュメント(BG-24)には、サポートドキュメント参照(ビーティー122)を含めるものとします。"
+  },
+  "BR-53": {
+    "en": "If the VAT accounting currency code (BT-6) is present, then the Invoice total VAT amount in accounting currency (BT1111 shall be provided.",
+    "ja": "VAT会計通貨コード(BT-6)が存在する場合は、会計通貨(バイト-111)での請求書合計VAT金額が提供されるものとします。"
+  },
+  "BR-54": {
+    "en": "Each Item attribute (BG-32) shall contain an Item attribute name (BT-160) and an Item attribute value (BT-161).",
+    "ja": "各項目属性(BG-32)は,項目属性名(BT-160)および項目属性値(BT-161)を含む。"
+  },
+  "BR-55": {
+    "en": "Each Preceding Invoice reference (BG-3) shall contain a Preceding Invoice reference (BT-25).",
+    "ja": "各先行請求書参照(BG-3)には、先行請求書参照(BT-25)を含めるものとします。"
+  },
+  "BR-56": {
+    "en": "Each Seller tax representative party (BG-11) shall have a Seller tax representative VAT identifier (BT-63).",
+    "ja": "各売主税金代表当事者(BG-11)は、売主税金代表VAT識別子(BT-63)を有するものとする。"
+  },
+  "BR-57": {
+    "en": "Each Deliver to address (BG-15) shall contain a Deliver to country code (BT-80).",
+    "ja": "各搬送先所在地(BG-15)には、搬送先国コード(BT-80)が含まれている必要があります。"
+  },
+  "BR-61": {
+    "en": "If the Payment means type code (BT-81) means SEPA credit transfer, Local credit transfer or Non-SEPA international credit transfer, the Payment account identifier (BT-84) shall be present.",
+    "ja": "支払手段タイプコード(BT-81)がSEPA送金、ローカル送金、または非SEPA国際送金を意味する場合、支払口座識別子(BT-84)が表示されるものとします。"
+  },
+  "BR-62": {
+    "en": "The Seller electronic address (BT-34) shall have a Scheme identifier.",
+    "ja": "売り手の電子アドレス(BT-34)はスキーム識別子を持つものとする。"
+  },
+  "BR-63": {
+    "en": "The Buyer electronic address (BT-49) shall have a Scheme identifier.",
+    "ja": "購入者の電子アドレス(BT-49)はスキーム識別子を持つものとする。"
+  },
+  "BR-64": {
+    "en": "The Item standard identifier (BT-157) shall have a Scheme identifier",
+    "ja": "アイテム標準識別子(BT-157)はスキーム識別子を持つ。"
+  },
+  "BR-65": {
+    "en": "The Item classification identifier (BT-158) shall have a Scheme identifier",
+    "ja": "項目分類識別子(BT-158)はスキーム識別子を持つ。"
+  }
 }
