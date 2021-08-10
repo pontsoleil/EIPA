@@ -28,6 +28,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import csv
+import collections
+from collections import OrderedDict
 import re
 import json
 import sys 
@@ -42,8 +44,12 @@ SYNTAX_BASE = jp_pint_constants.SYNTAX_BASE
 RULES_BASE = jp_pint_constants.RULES_BASE
 RULES_UBL_JAPAN_BASE = jp_pint_constants.RULES_UBL_JAPAN_BASE
 RULES_UBL_PINT_BASE = jp_pint_constants.RULES_UBL_PINT_BASE
+RULES_EN_PEPPOL = jp_pint_constants.RULES_EN_PEPPOL
+RULES_EN_CEN = jp_pint_constants.RULES_EN_CEN
+
 SPEC_TITLE_en = jp_pint_constants.SPEC_TITLE_en
 SPEC_TITLE_ja = jp_pint_constants.SPEC_TITLE_ja
+
 SEMANTICS_MESSAGE_TITLE_en = jp_pint_constants.SEMANTICS_MESSAGE_TITLE_en
 SEMANTICS_MESSAGE_TITLE_ja = jp_pint_constants.SEMANTICS_MESSAGE_TITLE_ja
 SYNTAX_MESSAGE_TITLE_en = jp_pint_constants.SYNTAX_MESSAGE_TITLE_en
@@ -52,6 +58,7 @@ PINT_RULE_MESSAGE_TITLE_en = jp_pint_constants.PINT_RULE_MESSAGE_TITLE_en
 PINT_RULE_MESSAGE_TITLE_ja = jp_pint_constants.PINT_RULE_MESSAGE_TITLE_ja
 JP_RULE_MESSAGE_TITLE_en = jp_pint_constants.JP_RULE_MESSAGE_TITLE_en
 JP_RULE_MESSAGE_TITLE_ja = jp_pint_constants.JP_RULE_MESSAGE_TITLE_ja
+
 HOME_en = jp_pint_constants.HOME_en
 HOME_ja = jp_pint_constants.HOME_ja
 
@@ -61,8 +68,28 @@ navbar_html = jp_pint_constants.navbar_html
 dropdown_menu_en = jp_pint_constants.dropdown_menu_en.format(APP_BASE)
 dropdown_menu_ja = jp_pint_constants.dropdown_menu_ja.format(APP_BASE)
 legend_en = '''
+	<dl class="row">
+		<dt class="col-3">XML</dt>
+		<dd class="col-9">UBL 2.1 XML element name</dd>
+		<dt class="col-3">Datatype</dt>
+		<dd class="col-9">UBL 2.1 XML type name</dd>
+		<dt class="col-3">Cardinality</dt>
+		<dd class="col-9">Cardinality of corresponding semantic model Business Term or Business term Group</dd>
+		<dt class="col-3">Business Term / Description</dt>
+		<dd class="col-9">Business Term and Description defined in Semantic data model</dd>
+	</dl>
 '''
 legend_ja = '''
+	<dl class="row">
+		<dt class="col-3">XML</dt>
+		<dd class="col-9">UBL 2.1 XML要素名</dd>
+		<dt class="col-3">データ型</dt>
+		<dd class="col-9">UBL 2.1 XMLタイプ名</dd>
+		<dt class="col-3">繰返</dt>
+		<dd class="col-9">モデル定義における繰返し</dd>
+		<dt class="col-3">ビジネス用語 / 説明</dt>
+		<dd class="col-9">モデル定義で指定されたビジネス用語及び説明</dd>
+	</dl>
 '''
 infoCAR_en = '''
 	<dl class="row">
@@ -126,11 +153,19 @@ infoCAR_ja = '''
 		</dd>
 	</dl>
 '''
+CAR_Modal_title = '''
+					<p class="mb-0">
+						<span style="font-size:xx-large">{0}</span><br>
+						CEN/TS 16931-3-1 Electronic invoicing - <br>
+						Part 3-1: Methodology for syntax bindings of the core elements of an electronic invoice<br>
+						4.4 Cardinality assesment
+					</p>
+'''
 infoCAR_Modal = '''
-	<div id="infoCAR_Modal" class="modal modal-lg" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
+	<div id="infoCAR_Modal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header">{0}</h5>
+				<div class="modal-header">{0}
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -248,7 +283,10 @@ item_data = '''
 				<dt class="col-3">{14}</dt><dd class="col-9">{15}</dd>
 				<dt class="col-3">{16}</dt><dd class="col-9">{17}</dd>
 				<dt class="col-3">{18}</dt><dd class="col-9">{19}</dd>
-				<dt class="col-3">{20}</dt><dd class="col-9">{21}</dd>
+'''
+rule_data = '''
+				<dt class="col-3">{0}</dt><dd class="col-9">{1}</dd>
+				<dt class="col-3">{2}</dt><dd class="col-9">{3}</dd>
 '''
 child_elements_dt = '''
 		<dt class="col-3">{0}</dt>
@@ -279,7 +317,7 @@ def setupTr(data,lang):
 	element = m.groups()[0]
 	if 'Invoice' == element or re.match(r'^cac:[^\/]*$',element):
 		html += '<tr class="group"'+ \
-							' data-seq="'+data['SemSort']+'"'+ \
+							' data-seq="'+data['SynSort']+'"'+ \
 							' data-en_id="'+data['EN_ID']+'"'+ \
 							' data-pint_id="'+data['PINT_ID']+'"'+ \
 							' data-level="'+data['Level']+'"'+ \
@@ -288,7 +326,7 @@ def setupTr(data,lang):
 		html += '<td class="expand-control" align="center"></td>'
 	elif re.match(r'^cbc:[^\/s]*$',element) or re.match(r'^@[a-zA-Z]+',element):
 		html += '<tr'+ \
-							' data-seq="'+data['SemSort']+'"'+ \
+							' data-seq="'+data['SynSort']+'"'+ \
 							' data-en_id="'+data['EN_ID']+'"'+ \
 							' data-pint_id="'+data['PINT_ID']+'"'+ \
 							' data-level="'+data['Level']+'"'+ \
@@ -297,13 +335,18 @@ def setupTr(data,lang):
 		html += '<td>&nbsp;</td>'
 	else:
 		return ''
-	if 0 == len(path[9:]):
-		item_dir = SYNTAX_BASE+lang+'/'
+	if re.match(r'^@[a-zA-Z]+',element):
+		html += '<td><span>'+element+'</span></td>'
+		html += '<td><span>'+data['Datatype'].strip()+'</span></td>\n'
+		html += '<td><span>'+data['Card'].strip()+'</span></td>\n'
 	else:
-		item_dir = SYNTAX_BASE+path[9:].replace(':','-')+'/'+lang+'/'
-	html += '<td class="info-link"><a href="'+item_dir+'">'+element+'</a></td>'
-	html += '<td><span>'+data['Datatype'].strip()+'</span></td>\n'
-	html += '<td><span>'+data['Card'].strip()+'</span></td>\n'
+		if 0 == len(path[9:]):
+			item_dir = SYNTAX_BASE+lang+'/'
+		else:
+			item_dir = SYNTAX_BASE+path[9:].replace(':','-')+'/'+lang+'/'
+		html += '<td class="info-link"><a href="'+item_dir+'">'+element+'</a></td>'
+		html += '<td><span>'+data['Datatype'].strip()+'</span></td>\n'
+		html += '<td><span>'+data['Card'].strip()+'</span></td>\n'
 	html += '<td><p>'
 	if 'ja' == lang:
 		html += '<strong>'+data['BT_ja']+'</strong><br />'
@@ -335,22 +378,22 @@ def writeTr_en(f,data):
 	element = m.groups()[0]
 	if 'Invoice' == element or re.match(r'^cac:[^\/]*$',element):
 		f.write(tabs+'<tr class="group"'+ \
-										' data-seq="'+data['SemSort']+'"'+ \
-										' data-en_id="'+data['EN_ID']+'"'+ \
-										' data-pint_id="'+data['PINT_ID']+'"'+ \
-										' data-level="'+data['Level']+'"'+ \
-										' data-card="'+data['Card'].strip()+'"'+ \
-										' data-path="'+data['Path']+'">\n')
+									' data-seq="'+data['SynSort']+'"'+ \
+									' data-en_id="'+data['EN_ID']+'"'+ \
+									' data-pint_id="'+data['PINT_ID']+'"'+ \
+									' data-level="'+data['Level']+'"'+ \
+									' data-card="'+data['Card'].strip()+'"'+ \
+									' data-path="'+data['Path']+'">\n')
 		f.write(tabs+'\t<td class="expand-control" align="center"><i class="expand fa fa-plus-circle"></i>'+ 
 									'<i class="fold fa fa-minus-circle" style="display:none"></i></td>\n')
 	elif re.match(r'^cbc:[^\/s]*$',element) or re.match(r'^@[a-zA-Z]+',element):
 		f.write(tabs+'<tr'+ \
-										' data-seq="'+data['SemSort']+'"'+ \
-										' data-en_id="'+data['EN_ID']+'"'+ \
-										' data-pint_id="'+data['PINT_ID']+'"'+ \
-										' data-level="'+data['Level']+'"'+ \
-										' data-card="'+data['Card'].strip()+'"'+ \
-										' data-path="'+data['Path']+'">\n')
+									' data-seq="'+data['SynSort']+'"'+ \
+									' data-en_id="'+data['EN_ID']+'"'+ \
+									' data-pint_id="'+data['PINT_ID']+'"'+ \
+									' data-level="'+data['Level']+'"'+ \
+									' data-card="'+data['Card'].strip()+'"'+ \
+									' data-path="'+data['Path']+'">\n')
 		f.write(tabs+'\t<td>&nbsp;</td>\n')
 	else:
 		return
@@ -387,7 +430,7 @@ def writeTr_ja(f,data):
 	element = m.groups()[0]
 	if 'Invoice' == element or re.match(r'^cac:[^\/]*$',element):
 		f.write(tabs+'<tr class="group"'+ \
-									' data-seq="'+data['SemSort']+'"'+ \
+									' data-seq="'+data['SynSort']+'"'+ \
 									' data-en_id="'+data['EN_ID']+'"'+ \
 									' data-pint_id="'+data['PINT_ID']+'"'+ \
 									' data-level="'+data['Level']+'"'+ \
@@ -397,7 +440,7 @@ def writeTr_ja(f,data):
 									'<i class="fold fa fa-minus-circle" style="display:none"></i></td>\n')
 	elif re.match(r'^cbc:[^\/s]*$',element) or re.match(r'^@[a-zA-Z]+',element):
 		f.write(tabs+'<tr'+ \
-									' data-seq="'+data['SemSort']+'"'+ \
+									' data-seq="'+data['SynSort']+'"'+ \
 									' data-en_id="'+data['EN_ID']+'"'+ \
 									' data-pint_id="'+data['PINT_ID']+'"'+ \
 									' data-level="'+data['Level']+'"'+ \
@@ -451,10 +494,10 @@ def writeBreadcrumb(f,path,lang):
 			f.write(tabs+'\t<li class="breadcrumb-item active">'+el+'</li>')
 	f.write(tabs+'</ol>')
 
-def blank2nbsp(str):
+def blank2fa_minus(str):
 	if str:
 		return str
-	return '&nbsp;'
+	return '<i class="fa fa-minus" aria-hidden="true"></i>'
 
 def getNamespace(element):
 	if re.match(r'^cac:.*$',element):
@@ -462,9 +505,9 @@ def getNamespace(element):
 	elif re.match(r'^cbc:.*$',element):
 		NS = '<code>cbc</code> urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2'
 	elif re.match(r'^CreditNote$',element):
-		NS = 'urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2'
+		NS = '<code>CreditNote</code> urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2'
 	elif re.match(r'^Invoice$',element):
-		NS = 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'
+		NS = '<code>Invoice</code> urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'
 	else:
 		NS = ''
 	return NS
@@ -480,11 +523,11 @@ def checkRules(data, lang):
 	diff0 = []
 	for r in Rules:
 		if r in rule_dict:
+			if 'ja' == lang:
+				message = rule_dict[r]['Message_ja']
+			else:
+				message = rule_dict[r]['Message']
 			if r in schematron_dict:
-				if 'ja' == lang:
-					message = rule_dict[r]['Message_ja']
-				else:
-					message = rule_dict[r]['Message']
 				schematron = schematron_dict[r]
 				context = schematron['context']
 				flag = schematron['flag']
@@ -496,25 +539,23 @@ def checkRules(data, lang):
 				Rs += '<h5>'+R+' ('+flag+')</h5>'+message+'<br />'
 				Rs += '<dl class="row">'
 				if 'ja' == lang:
-					Rs += '<dt class="col-3">対象(context)</dt><dd class="col-9">'+context+'</dd>'+ \
-								'<dt class="col-3">検証(test)</dt><dd class="col-9">'+test+'</dd>'
+					Rs += '<dt class="col-3">対象(context)</dt><dd class="col-9"><code>'+context+'</code></dd>'+ \
+								'<dt class="col-3">検証(test)</dt><dd class="col-9"><code>'+test+'</code></dd>'
 				else:
-					Rs += '<dt class="col-3">cotext</dt><dd class="col-9">'+context+'</dd>'+ \
-								'<dt class="col-3">test</dt><dd class="col-9">'+test+'</dd>'
+					Rs += '<dt class="col-3">cotext</dt><dd class="col-9"><code>'+context+'</code></dd>'+ \
+								'<dt class="col-3">test</dt><dd class="col-9"><code>'+test+'</code></dd>'
 				Rs += '</dl>'
 			else:
-				if 'ja' == lang:
-					message = rule_dict[r]['Message_ja']
-				else:
-					message = rule_dict[r]['Message']
 				Rs += '<h5>'+r+'</h5>'+message+'<br />'
+				Rs += '<span class="text-danger"><b>'
 				if 'ja' == lang:
-					Rs += 'スキーマトロン未定義<br />'
+					Rs += 'スキーマトロンで未定義'
 				else:
-					Rs += 'is not defined in the schematron file.<br />'
+					Rs += 'is not defined in the schematron file.'
+				Rs += '</b></span><br />'
 		else:
 			diff0.append(r)
-	rules_ = rules[id]
+	rules_ = rules[id] # From pint_list data['Rules']
 	if rules_:
 		rules_ = list(rules_)
 	diff1 = list(set(rules_) - set(Rules))
@@ -522,9 +563,9 @@ def checkRules(data, lang):
 	if len(diff0) > 0:
 		Rs += '<span class="text-danger"><b>'
 		if 'ja' == lang:
-			Rs += 'スキーマトロンで未定義'
+			Rs += 'ルール表で未定義'
 		else:
-			Rs += 'is not defined in the schematron file.'
+			Rs += 'is not defined in the rule table.'
 		Rs += '</b></span><br />'
 		for r in diff0:
 			if re.match(r'^jp-',r):
@@ -565,25 +606,67 @@ def checkRules(data, lang):
 		Rs = Rs[:-6]
 	return Rs
 
+def checkBIS_Rules(data, lang):
+	id = data['PINT_ID']
+	if not id:
+		return ''
+	if 'ibt' == id[:3]:
+		ID = 'BT-'+str(int(id[4:7]))
+	elif 'ibg' == id[:3]:
+		ID ='BG-'+str(int(id[4:6]))
+	Rs = ''
+	if ID in BISrules:
+		Rules = BISrules[ID]
+		for r in Rules:
+			if r in BISrule_dict:
+				rule = BISrule_dict[r]
+				message = rule['text']
+				context = rule['context']
+				flag = rule['flag']
+				test = rule['test']
+				if re.match(r'^(BR|UBL)-',r):
+					R = '<a href="'+RULES_EN_CEN+r+'/'+lang+'/">'+r+'</a>'
+				else:
+					R = '<a href="'+RULES_EN_PEPPOL+r+'/'+lang+'/">'+r+'</a>'
+				Rs += '<h5>'+R+' ('+flag+')</h5>'+message+'<br />'
+				Rs += '<dl class="row">'
+				if 'ja' == lang:
+					Rs += '<dt class="col-3">対象(context)</dt><dd class="col-9"><code>'+context+'</code></dd>'+ \
+								'<dt class="col-3">検証(test)</dt><dd class="col-9"><code>'+test+'</code></dd>'
+				else:
+					Rs += '<dt class="col-3">cotext</dt><dd class="col-9"><code>'+context+'</code></dd>'+ \
+								'<dt class="col-3">test</dt><dd class="col-9"><code>'+test+'</code></dd>'
+				Rs += '</dl>'
+	return Rs
+
 if __name__ == '__main__':
 	# Create the parser
-	parser = argparse.ArgumentParser(prog='genInvoice',
-																	usage='%(prog)s [options] infile pint_rulefile jp_rulefile schematronfile',
+	parser = argparse.ArgumentParser(prog='jp-pint_syntax',
+																	usage='%(prog)s [options] infile pint_rulefile jp_rulefile schematronfile ppeppol_rulefile cen_rulefile',
 																	description='CSVファイルからJP-PINTのHTMLファイルを作成')
 	# Add the arguments
 	parser.add_argument('inFile',metavar='infile',type=str,help='入力TSVファイル')
 	parser.add_argument('pint_ruleFile',metavar='pint_rulefile',type=str,help='PINTルールCSVファイル')
 	parser.add_argument('jp_ruleFile',metavar='jp_rulefile',type=str,help='JPルールCSVファイル')
 	parser.add_argument('schematronFile',metavar='schematronfile',type=str,help='スキーマトロンCSVファイル')
+	parser.add_argument('peppol_ruleFile',metavar='peppol_rulefile',type=str,help='PEPPOLルールCSVファイル')
+	parser.add_argument('cen_ruleFile',metavar='cen_rulefile',type=str,help='CENルールCSVファイル')
+
 	parser.add_argument('-v','--verbose',action='store_true')
+
 	args = parser.parse_args()
 	in_file = file_path(args.inFile)
 	pint_rule_file = file_path(args.pint_ruleFile)
 	jp_rule_file = file_path(args.jp_ruleFile)
 	schematron_file = file_path(args.schematronFile)
+	peppol_rule_file = file_path(args.peppol_ruleFile)
+	cen_rule_file = file_path(args.cen_ruleFile)
+
 	dir = os.path.dirname(in_file)
+
 	syntax_en_html = 'billing-japan/syntax/ubl-invoice/tree/en/index.html'
 	syntax_ja_html = 'billing-japan/syntax/ubl-invoice/tree/ja/index.html'
+	
 	verbose = args.verbose
 	# Check if infile exists
 	if not os.path.isfile(in_file):
@@ -598,7 +681,7 @@ if __name__ == '__main__':
 	with open(schematron_file,'r',encoding='utf-8') as f:
 		reader = csv.DictReader(f,schematron_keys)
 		for row in reader:
-			context = row['context']
+			context = row['context'].replace(' ','')
 			id = row['id']
 			flag = row['flag']
 			test = row['test']
@@ -612,11 +695,11 @@ if __name__ == '__main__':
 				'test':test,
 				'text':text,
 				'BG':BG,
-				'BT':BT,
+				'BT':BT
 			}
 			schematron_dict[id] = data
 
-	# Read Rule CSV file
+	# Read PINT Rule CSV file
 	rule_dict = {}
 	rule_keys = ('ID','Flag','Message','Message_ja')
 	with open(pint_rule_file,'r',encoding='utf-8') as f:
@@ -659,45 +742,101 @@ if __name__ == '__main__':
 			data['PINT_IDs'] = ' '.join(rules)
 			rule_dict[RuleID] = data
 
+	# Read BIS Rule CSV file
+	rule_keys = ('context','id','flag','test','text')
+	peppol_rule_dict = {}
+	with open(peppol_rule_file,'r',encoding='utf-8') as f:
+		reader = csv.DictReader(f,rule_keys)
+		header = next(reader)
+		for row in reader:
+			id = row['id']
+			flag = row['flag']
+			text = row['text']
+			context = row['context']
+			test = row['test']
+			data = { # 'context','id','flag','test','text'
+				'id':id,
+				'flag':flag,
+				'text':text,
+				'context':context,
+				'test':test
+			}
+			rulesBG = re.findall(r'(BG-[0-9]+)',text)
+			data['BG'] = ' '.join(rulesBG)
+			rulesBT = re.findall(r'(BT-[0-9]+)',text)
+			data['BT'] = ' '.join(rulesBT)
+			rules = rulesBG + rulesBT
+			data['PINT_IDs'] = ' '.join(rules)
+			peppol_rule_dict[id] = data
+
+	cen_rule_dict = {}
+	with open(cen_rule_file,'r',encoding='utf-8') as f:
+		reader = csv.DictReader(f,rule_keys)
+		header = next(reader)
+		for row in reader:
+			id = row['id']
+			flag = row['flag']
+			text = row['text']
+			context = row['context']
+			test = row['test']
+			data = { # 'context','id','flag','test','text'
+				'id':id,
+				'flag':flag,
+				'text':text,
+				'context':context,
+				'test':test
+			}
+			rulesBG = re.findall(r'(BG-[0-9]+)',text)
+			data['BG'] = ' '.join(rulesBG)
+			rulesBT = re.findall(r'(BT-[0-9]+)',text)
+			data['BT'] = ' '.join(rulesBT)
+			rules = rulesBG + rulesBT
+			data['PINT_IDs'] = ' '.join(rules)
+			cen_rule_dict[id] = data
+
 	# Read CSV file
-	csv_list = []
 	keys = (
 		'SemSort','EN_ID','PINT_ID','Level','BT','BT_ja','Desc','Desc_ja','Exp','Exp_ja','Example',
 		'Card','DT','Section','Extension','SynSort','Path','Attr','Rules','Datatype','Occ','Align'
 	)
+	csv_item = OrderedDict([
+		('SemSort','0000'),
+		('EN_ID','BG-0'),
+		('PINT_ID','ibg-00'),
+		('Level','0'),
+		('BT','Invoice'),
+		('BT_ja','インボイス'),
+		('Desc',''),
+		('Desc_ja',''),
+		('Exp',''),
+		('Exp_ja',''),
+		('Example',''),
+		('Card','1..n'),
+		('DT',''),
+		('Section',''),
+		('Extension',''),
+		('SynSort','0000'),
+		('Path','/Invoice'),
+		('Attr',''),
+		('Rules',''),
+		('Datatype','InvoiceType'),
+		('Occ','1..n'),
+		('Align','')
+	])
+	csv_list = [csv_item]
 	with open(in_file,'r',encoding='utf-8') as f:
 		reader = csv.DictReader(f,keys)
 		header = next(reader)
 		header = next(reader)
 		for row in reader:
+			Path = row['Path'].replace(' ','')
+			row['Path'] = Path
 			csv_list.append(row)
 
-	pint_list = [{
-			"SemSort": "0000",
-			"EN_ID": "BG-0",
-			"PINT_ID": "ibg-00",
-			"Level": "0",
-			"BT": "Invoice",
-			"BT_ja": "インボイス",
-			"Desc": "",
-			"Desc_ja": "",
-			"Exp": "",
-			"Exp_ja": "",
-			"Example": "",
-			"Card": "1..1 ",
-			"DT": "",
-			"Section": "Shared",
-			"Extension": "",
-			"SynSort": "0000",
-			"Path": "/Invoice",
-			"Attr": "",
-			"Rules": "",
-			"Datatype":"",
-			"Occ":"1..n",
-			"Align":""
-		}]+[x for x in csv_list if ''!=x['SynSort'] and ''!=x['Path']]
+	pint_list = [x for x in csv_list if ''!=x['SynSort'] and ''!=x['Path']]
 	pint_list = sorted(pint_list,key=lambda x: x['SynSort'])
 
+	# PINT rules 
 	rules = {}
 	idxLevel = ['']*6
 	for data in pint_list:
@@ -712,8 +851,64 @@ if __name__ == '__main__':
 					if pint_id in pint_ids:
 						rules[pint_id].add(k)
 
+	# BIS rules
+	BISrules = {}
+	BISrule_dict = {}
+	for k,v in peppol_rule_dict.items():
+		BISrule_dict[k] = v
+		pint_ids = v['PINT_IDs']
+		if pint_ids:
+			pint_ids = pint_ids.split(' ')
+			for pint_id in pint_ids:
+				if not pint_id in BISrules:
+					BISrules[pint_id] = set()
+				BISrules[pint_id].add(k)
+	for k,v in cen_rule_dict.items():
+		BISrule_dict[k] = v
+		pint_ids = v['PINT_IDs']
+		if pint_ids:
+			pint_ids = pint_ids.split(' ')
+			for pint_id in pint_ids:
+				if not pint_id in BISrules:
+					BISrules[pint_id] = set()
+				BISrules[pint_id].add(k)
+
+	# update schematron_dict
+	for k,v in schematron_dict.items():
+		context = v['context']
+		mC = re.findall(r'^.*(Invoice|cac:[a-zA-Z]+.*\/)(xs:[a-zA-Z]+\()?(cac:[a-zA-Z]+(\[[^\]]+\])?)?',context)
+		_mC = [x[0]+x[2] for x in mC]
+		test = v['test']
+		mT = re.findall(r'(cac:[a-zA-Z]+\/)*(xs:[a-zA-Z]+\()*(cbc:[a-zA-Z\[\]\@\$\=]+)',test)
+		_mT = [x[0]+x[2] for x in mT]
+		BTs = set()
+		if _mC:
+			for ctx in _mC:
+				for tst in _mT:
+					if ctx:
+						BTs.add('^.*'+re.escape(ctx.replace(' ',''))+'.*'+re.escape(tst.replace(' ',''))+'$')
+					else:
+						BTs.add('^.*'+re.escape(tst.replace(' ',''))+'$')
+		else:
+			for tst in _mT:
+				BTs.add('^.*'+re.escape(tst.replace(' ',''))+'$')
+		BTs = list(BTs)
+		if BTs:
+			Pset = set()
+			for path in BTs:
+				Ps = [x['PINT_ID'] for x in pint_list if re.match(path,x['Path'])]
+				for id in Ps:
+					Pset.add(id)
+			if Pset:
+				Ps = sorted(list(Pset))
+				BTs = ' '.join(Ps)
+				if verbose and BTs != v['BT']:
+					print('{0} context:{1}\ntest:{2}\nRegEx:{3}\nFound:{4}\nRecorded:{5}\n\n'.format(k,v['context'],v['test'],path,BTs,v['BT']))
+				v['BTs'] = BTs
+				schematron_dict[k] = v
+
 	children = {}
-	with open(syntax_en_html,'w',encoding='utf-8') as f:
+	with open(syntax_en_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'en'
 		f.write(html_head.format(lang, APP_BASE))
 		f.write(javascript_html)
@@ -721,7 +916,7 @@ if __name__ == '__main__':
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,SYNTAX_MESSAGE_TITLE_en,lang, \
 															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description')
+															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
 		f.write(html)
 		f.write(table_html.format('XML','Datatype','Card','Business Term / Description','3%','33%'))
 		for data in pint_list:
@@ -738,7 +933,7 @@ if __name__ == '__main__':
 					if not path in children:
 						children[path] = set()
 					children[path].add(json.dumps(data))
-		f.write(trailer)
+		f.write(trailer.format('Go to top'))
 
 	for data in pint_list:
 		if not data or not data['Path']:
@@ -755,41 +950,25 @@ if __name__ == '__main__':
 
 			os.makedirs(item_dir0,exist_ok=True)
 
-			with open(item_dir0+'/index.html','w',encoding='utf-8') as f:
+			with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 				paths = path[9:].replace(':','-').split('/')
 				f.write(item_head.format(lang,APP_BASE))
 				f.write(javascript_html)
 				f.write('</head><body>')
-
 				CARtitle = 'Alignment of cardinalities'
-				f.write(infoCAR_Modal.format(CARtitle,infoCAR_en))
-
+				f.write(infoCAR_Modal.format(CAR_Modal_title.format(CARtitle),infoCAR_en))
 				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText
-				f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE,'Legend',item_legend_en,dropdown_menu_en,'Show Legend'))
+				f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE, \
+																	'Legend',item_legend_en,dropdown_menu_en,'Show Legend','modal-lg'))
 
 				writeBreadcrumb(f,path,lang)
 
-				Datatype = data['Datatype']
 				Desc = '<br />'.join(data['Desc'].split('\\n'))
 				f.write(item_header.format(element,Desc))
 
-				Card = data['Card']+'&nbsp;'
 				NS = getNamespace(element)
-				Example = data['Example']
-				if Example:
-					Example = '<code>'+blank2nbsp(Example)+'</code>'
-				else:
-					Example = ''
-				Rules = blank2nbsp(checkRules(data,lang))
-				BT = blank2nbsp(data['BT'])
-				id = data['PINT_ID']
-				ID = '<a href="'+APP_BASE+'semantic/invoice/'+id+'/'+lang+'/">'+id+'</a>'
-				Explanation = '<br />'.join(data['Exp'].split('\\n'))
-				if len(Explanation) > 0:
-					Explanation_title = 'Additional explanation'
-				else:
-					Explanation_title = '&nbsp;'
-					Explanation = '&nbsp;'
+				Datatype = data['Datatype']
+				Card = data['Card']+'&nbsp;'
 				Align = data['Align'][:5]
 				if 'CAR-1' == Align:
 					Align = Align+' Semantic: optional(0..x) → Syntax: mandatory(1..x)<br />[Issue] If the value is not present, the UBL schema validation reports an error. <br />[Resolution] Agree on "default value if missing"  (e.g. 0, 1-1-1970, AAA)'
@@ -800,13 +979,30 @@ if __name__ == '__main__':
 				elif 'CAR-4' == Align:
 					Align = Align+' Semantic: multiple(x..n) → Syntax: single(x..1)<br />[Issue] Repeating elements cannot be handled. <br />[Resolution] 1) If possible, repeat a higher level in the structure. 2) In the case of text elements, concatenate the repeating elements.'
 				elif 'CAR-5' == Align:
-					Align = Align+' Semantic: element missing  → Syntax: element mandatory<br />[Issue] Yes.<br />[Resolution] Agree on "default value if missing" (e.g. 0, 1-1-1970, AAA)'
-				f.write(item_data.format('XPath',data['Path'],'Data type',Datatype,'Cardinality',Card,'Namespace',NS,'Example',Example,\
-																	'Transaction Business Rules',Rules, \
-																	'Business Term',BT,'Business Term ID',ID,'Additional Explanation',Explanation, \
-																	'UBL cardinality',data['Occ'],CAR_Button.format(CARtitle),Align))
+					Align = Align+' Semantic: element missing → Syntax: element mandatory<br />[Issue] Yes.<br />[Resolution] Agree on "default value if missing" (e.g. 0, 1-1-1970, AAA)'
+				elif not Align:
+					Align = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				Example = data['Example']
+				if Example:
+					Example = '<code>'+blank2fa_minus(Example)+'</code>'
+				else:
+					Example = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				BT = blank2fa_minus(data['BT'])
+				id = data['PINT_ID']
+				ID = '<a href="'+APP_BASE+'semantic/invoice/'+id+'/'+lang+'/">'+id+'</a>'
+				Explanation = '<br />'.join(data['Exp'].split('\\n'))
+				if not Explanation:
+					Explanation = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				html = item_data.format('XPath',data['Path'],'Namespace',NS,'Data type',Datatype, \
+																'Cardinality',Card,'UBL cardinality',data['Occ'],CAR_Button.format(CARtitle),Align, \
+																'Business Term',BT,'Business Term ID',ID,'Additional Explanation',Explanation,'Example',Example)
+				f.write(html)
+				Rules = blank2fa_minus(checkRules(data,lang))
+				BIS_Rules = blank2fa_minus(checkBIS_Rules(data,lang))
+				html = rule_data.format('Transaction Business Rules',Rules,'BIS 3.0 Billing Rules (informative)',BIS_Rules)
+				f.write(html)
 				html = ''
-				if re.match(r'^cac:.*$',element):
+				if 'Invoice' == element or re.match(r'^cac:.*$',element):
 					for _data in pint_list:
 						_path = _data['Path']
 						_m = re.match(r'.*\/([^\/]+)$',_path)
@@ -828,18 +1024,17 @@ if __name__ == '__main__':
 					f.write(html)
 					f.write(table_trailer)
 
-				f.write(item_trailer)
+				f.write(item_trailer.format('Go to top'))
 
-	with open(syntax_ja_html,'w',encoding='utf-8') as f:
+	with open(syntax_ja_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-
 		# 0.SPEC_TITLE_ja 1.'' 2.'selected' 3.HOME_ja 4.SYNTAX_MESSAGE_TITLE_ja 5.lang 6.APP_BASE 
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,SYNTAX_MESSAGE_TITLE_ja,lang, \
 															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語')
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
 		f.write(html)
 		f.write(table_html.format('XML','データ型','繰返','ビジネス用語 / XPath / 説明','3%','33%'))
 		for data in pint_list:
@@ -850,7 +1045,7 @@ if __name__ == '__main__':
 				writeTr_ja(f,data)
 
 		f.write(table_trailer)							
-		f.write(trailer)
+		f.write(trailer.format('先頭に戻る'))
 
 	for data in pint_list:
 		if not data or not data['Path']:
@@ -867,40 +1062,25 @@ if __name__ == '__main__':
 
 			os.makedirs(item_dir0,exist_ok=True)
 
-			with open(item_dir0+'/index.html','w',encoding='utf-8') as f:
+			with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 				paths = path[9:].replace(':','-').split('/')
 				f.write(item_head.format(lang,APP_BASE))
 				f.write(javascript_html)
 				f.write('</head><body>')
-
 				CARtitle = '繰返しの違いの調整'
-				f.write(infoCAR_Modal.format(CARtitle,infoCAR_ja))
-
+				f.write(infoCAR_Modal.format(CAR_Modal_title.format(CARtitle),infoCAR_ja))
 				# 0.SPEC_TITLE_en 1.'' 2.'selected' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText
-				f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE,'凡例',item_legend_ja,dropdown_menu_ja,'凡例を表示'))
+				f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE, \
+																	'凡例',item_legend_ja,dropdown_menu_ja,'凡例を表示','modal-lg'))
 
 				writeBreadcrumb(f,path,lang)
 
 				Desc = '<br />'.join(data['Desc_ja'].split('\\n'))
 				f.write(item_header.format(element,Desc))
-				Card = data['Card']+'&nbsp;'
+
 				NS = getNamespace(element)
 				Datatype = data['Datatype']
-				Example = data['Example']
-				if Example:
-					Example = '<code>'+blank2nbsp(Example)+'</code>'
-				else:
-					Example = ''
-				Rules = blank2nbsp(checkRules(data,lang))
-				BT = blank2nbsp(data['BT_ja'])
-				id = data['PINT_ID']
-				ID = '<a href="'+APP_BASE+'semantic/invoice/'+id+'/'+lang+'/">'+id+'</a>'
-				Explanation = '<br />'.join(data['Exp_ja'].split('\\n'))
-				if len(Explanation) > 0:
-					Explanation_title = '追加説明'
-				else:
-					Explanation_title = '&nbsp;'
-					Explanation = '&nbsp;'
+				Card = data['Card']+'&nbsp;'
 				Align = data['Align'][:5]
 				if 'CAR-1' == Align:
 					Align = Align+' Semantic: optional(0..x) → Syntax: mandatory(1..x)<br />[問題] 要素がないと、UBLのスキーマ検証でエラーとなる。<br />[対策] 欠損した時のデフォルト値を決めておく。(例 0, 1-1-1970, AAA)'
@@ -911,12 +1091,30 @@ if __name__ == '__main__':
 				elif 'CAR-4' == Align:
 					Align = Align+' Semantic: multiple(x..n) → Syntax: single(x..1)<br />[問題] 繰返された要素は、受け付けられない。<br />[対策] 1) 可能なときには、上位の要素で繰り返す。2) テキストデータのときには、文章を連結する。'
 				elif 'CAR-5' == Align:
-					Align = Align+' element missing  → Syntax: element mandatory<br />[問題] 問題。<br />[対策] 欠損した時のデフォルト値を決めておく。(例 0, 1-1-1970, AAA)'
-				f.write(item_data.format('XPath',data['Path'],'データ型',Datatype,'繰返し',Card,'ネームスペース',NS,'例',Example,\
-																	'ビジネスルール',Rules,'ビジネス用語',BT,'ビジネス用語ID',ID,Explanation_title,Explanation, \
-																	'UBL要素の繰返し',data['Occ'],CAR_Button.format(CARtitle),Align))
+					Align = Align+' element missing → Syntax: element mandatory<br />[問題] 問題。<br />[対策] 欠損した時のデフォルト値を決めておく。(例 0, 1-1-1970, AAA)'
+				elif not Align:
+					Align = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				BT = blank2fa_minus(data['BT_ja'])
+				id = data['PINT_ID']
+				ID = '<a href="'+APP_BASE+'semantic/invoice/'+id+'/'+lang+'/">'+id+'</a>'
+				Explanation = '<br />'.join(data['Exp_ja'].split('\\n'))
+				if not Explanation:
+					Explanation = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				Example = data['Example']
+				if Example:
+					Example = '<code>'+blank2fa_minus(Example)+'</code>'
+				else:
+					Example = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				html = item_data.format('XPath',data['Path'],'ネームスペース',NS,'データ型',Datatype, \
+																'繰返し',Card,'UBL要素の繰返し',data['Occ'],CAR_Button.format(CARtitle),Align, \
+																'ビジネス用語',BT,'ビジネス用語ID',ID,'追加説明',Explanation,'例',Example)
+				f.write(html)
+				Rules = blank2fa_minus(checkRules(data,lang))
+				BIS_Rules = blank2fa_minus(checkBIS_Rules(data,lang))
+				html = rule_data.format('ビジネスルール',Rules,'（参考）BIS 3.0 Billing ルール',BIS_Rules)
+				f.write(html)
 				html = ''
-				if re.match(r'^cac:.*$',element):
+				if 'Invoice' == element or re.match(r'^cac:.*$',element):
 					for _data in pint_list:
 						_path = _data['Path']
 						_m = re.match(r'.*\/([^\/]+)$',_path)
@@ -939,7 +1137,7 @@ if __name__ == '__main__':
 					f.write(table_trailer)
 
 				f.write(infoCAR_Modal.format(CARtitle,infoCAR_ja))
-				f.write(item_trailer)
+				f.write(item_trailer.format('先頭に戻る'))
 
 	if verbose:
 		print(f'** END ** {syntax_en_html} {syntax_ja_html}')

@@ -1,13 +1,13 @@
 SPEC_TITLE_en = 'Japanese PEPPOL BIS Documentation (Draft)'
 SPEC_TITLE_ja = '日本版 PEPPOL BIS 仕様書（草稿）'
 SEMANTICS_MESSAGE_TITLE_en = 'Standard Commercial Invoice, Semantic Data Model'
-SEMANTICS_MESSAGE_TITLE_ja = '（都度）請求書 セマンティックモデル'
+SEMANTICS_MESSAGE_TITLE_ja = '都度請求書モデル'
 SYNTAX_MESSAGE_TITLE_en = 'Standard Commercial Invoice, UBL Syntax'
-SYNTAX_MESSAGE_TITLE_ja = '（都度）請求書 UBL構文'
+SYNTAX_MESSAGE_TITLE_ja = '都度請求書 UBL(XML)構文'
 PINT_RULE_MESSAGE_TITLE_en = 'Rules for PEPPOL PINT'
 PINT_RULE_MESSAGE_TITLE_ja = 'EPPOL PINTルール'
 JP_RULE_MESSAGE_TITLE_en = 'Rules for Standard Commercial Invoice'
-JP_RULE_MESSAGE_TITLE_ja = '（都度）請求書ルール'
+JP_RULE_MESSAGE_TITLE_ja = '都度請求書ルール'
 peppol_rule_MESSAGE_TITLE_en = 'Rules for PEPPOL BIS 3.0 Billing'
 peppol_rule_MESSAGE_TITLE_ja = 'PEPPOL BIS 3.0 Billing ルール'
 cen_rule_MESSAGE_TITLE_en = 'EN16931 model bound to UBL'
@@ -21,6 +21,8 @@ SYNTAX_BASE = APP_BASE+'syntax/ubl-invoice/'
 RULES_BASE = APP_BASE+'rules/'
 RULES_UBL_JAPAN_BASE = APP_BASE+'rules/ubl-japan/'
 RULES_UBL_PINT_BASE = APP_BASE+'rules/ubl-pint/'
+RULES_EN_PEPPOL = APP_BASE+'rules/en-peppol/'
+RULES_EN_CEN = APP_BASE+'rules/en-cen/'
 
 html_head = '''
 <!DOCTYPE html>
@@ -30,6 +32,7 @@ html_head = '''
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="icon" href="https://www.wuwei.space/jp_pint/billing-japan/favicon.ico">
 	<!-- font awesome 4 -->
 	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
@@ -74,8 +77,8 @@ navbar_html = '''
 			</div>
 		</div>
 	</div>
-	<div id="infoModal" class="modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg" role="document">
+	<div id="infoModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog {12}" role="document">
 			<div class="modal-content">
 				<div class="modal-header">{7}</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -128,6 +131,9 @@ trailer = '''
 			</div>
 		</div>
 	</div>
+	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="{0}">
+  	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	</button>
 </body>
 </html>
 '''
@@ -139,6 +145,7 @@ item_head = '''
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" href="https://www.wuwei.space/jp_pint/billing-japan/favicon.ico">
 	<!-- font awesome 4 -->
 	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
@@ -156,8 +163,8 @@ item_head = '''
 '''
 # 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText
 item_navbar = '''
-	<div id="itemInfoModal" class="modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
+	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog {9}" role="document">
 			<div class="modal-content">
 				<div class="modal-header">{5}</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -200,6 +207,9 @@ item_trailer = '''
 			</dl>
 		</div>
 	</div>
+	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="{0}">
+  	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	</button>
 </body>
 </html>
 '''
@@ -210,12 +220,14 @@ dropdown_menu_ja = '''
             <i class="fa fa-list" aria-hidden="true"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{0}semantic/invoice/tree/ja/">（都度）請求書 セマンティックモデル</a>
+					  <a class="dropdown-item" href="{0}ja/"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/ja/" class="back">（都度）請求書 UBL構文</a>
+            <a class="dropdown-item" href="{0}semantic/invoice/tree/ja/">都度請求書モデル</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/ja/" class="back">都度請求書 UBL構文</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{0}rules/ubl-pint/ja/">PEPPOL PINTルール</a>
-            <a class="dropdown-item" href="{0}rules/ubl-japan/ja/">（都度）請求書ルール</a>
+            <a class="dropdown-item" href="{0}rules/ubl-japan/ja/">都度請求書ルール</a>
           </div>
         </li>
       </div>
@@ -225,6 +237,8 @@ dropdown_menu_en = '''
           <a class="nav-link dropdown-toggle fa fa-list" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{0}en/"><i class="fa fa-square mr-2" aria-hidden="true"> Home</i></a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{0}semantic/invoice/tree/en/">Standard Commercial Invoice, Semantic Data Model</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/en/">Standard Commercial Invoice, UBL Syntax</a>

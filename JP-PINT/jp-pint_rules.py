@@ -28,6 +28,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import csv
+import collections
+from collections import OrderedDict
 import re
 import json
 import sys 
@@ -88,11 +90,11 @@ item_navbar = jp_pint_constants.item_navbar
 # 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 item_breadcrumb = '''
 			<ol class="breadcrumb pt-1 pb-1">
-        <li class="breadcrumb-item"><a href="{6}{0}/">{1}</a></li>
-        <li class="breadcrumb-item"><a href="{6}rules/{0}">{2}</a></li>
-        <li class="breadcrumb-item"><a href="{6}rules/{3}/{0}/">{4}</a></li>
-        <li class="breadcrumb-item active">{5}</li>
-    </ol>
+				<li class="breadcrumb-item"><a href="{6}{0}/">{1}</a></li>
+				<li class="breadcrumb-item"><a href="{6}rules/{0}">{2}</a></li>
+				<li class="breadcrumb-item"><a href="{6}rules/{3}/{0}/">{4}</a></li>
+				<li class="breadcrumb-item active">{5}</li>
+		</ol>
 '''
 item_header = jp_pint_constants.item_header
 item_data = '''
@@ -125,6 +127,24 @@ datatypeDict = {
 	'REF (Optional)': 'Document Reference',
 	'Binary': 'Binary objects'
 }
+
+# 6.4 Business rules in EN 16931-1
+Rules = '''
+			<h6>Business rules in EN 16931-1</h6>
+			<dl class="row">
+				<dt class="col-3">Integrity constraints</dt><dd class="col-9">BR-1 ~ BR-65</dd>
+				<dt class="col-3">Conditions</dt><dd class="col-9">BR-CO-3 ~ BR-CO-26</dd>
+				<dt class="col-3">VAT standard and reduced rate</dt><dd class="col-9">BR-S-1 ~ BR-S-10</dd>
+				<dt class="col-3">VAT zero rate</dt><dd class="col-9">BR-Z-1 ~ BR-Z-10</dd>
+				<dt class="col-3">Exempted from VAT</dt><dd class="col-9">BR-E-1 ~ BR-E-10</dd>
+				<dt class="col-3">VAT reverse charge</dt><dd class="col-9">BR-AE-1 ~ BR-AE-10</dd>
+				<dt class="col-3">VAT intra-community supply</dt><dd class="col-9">BR-IC-1 ~ BR-IC-12</dd>
+				<dt class="col-3">VAT exports</dt><dd class="col-9">BR-G-1 ~ BR-G-10</dd>
+				<dt class="col-3">Not subject to VAT</dt><dd class="col-9">BR-O-1 ~ BR-O-14</dd>
+				<dt class="col-3">Canary islands tax</dt><dd class="col-9">BR-IG-1 ~ BR-IG-10</dd>
+				<dt class="col-3">Ceuta and Melilla tax</dt><dd class="col-9">BR-IP-1 ~ BR-IP-10</dd>
+			</dl>
+'''
 
 def file_path(pathname):
 	if '/' == pathname[0:1]:
@@ -159,89 +179,80 @@ def writeTr_ja(f,type,data): # Identifier,Flag,Message,Message_ja
 def blank2nbsp(str):
 	if str:
 		return str
-	return '&nbsp;'
+	return '<i class="fa fa-minus" aria-hidden="true"></i>'
 
-def checkRules(data, lang):
-	id = data['PINT_ID']
-	if not id:
-		return ''
-	Rules = data['Rules']
-	if Rules:
-		Rules = Rules.split(',')
+def checkRule(rule):
+	rule_id = rule['id']
+	context = rule['context']
+	test = rule['test']
+	BG = rule['BG']
+	BT = rule['BT']
 	Rs = ''
-	diff0 = []
-	for r in Rules:
-		if r in rule_dict:
-			if r in schematron_dict:
-				if 'ja' == lang:
-					message = rule_dict[r]['Message_ja']
+	_cac = '(\/cac:[a-zA-Z]+)?'
+	_cnd = '(\[[^\]]+\])?'
+	check = '[:a-z]*(InvoiceLine|Invoice|cac:[a-zA-Z]+)'+_cnd+_cac+_cnd+_cac+_cnd+_cac+_cnd+_cac+_cnd
+	mC = re.findall(check,context)
+	_mC = [x[0]+_cnd+x[2]+_cnd+x[4]+_cnd+x[6]+_cnd+x[8]+_cnd for x in mC if ''!=x[8]] + \
+				[x[0]+_cnd+x[2]+_cnd+x[4]+_cnd+x[6]+_cnd for x in mC if ''!=x[6] and ''==x[8]] + \
+				[x[0]+_cnd+x[2]+_cnd+x[4]+_cnd for x in mC if ''!=x[4] and ''==x[6] and ''==x[8]] + \
+				[x[0]+_cnd+x[2]+_cnd for x in mC if ''!=x[2] and ''==x[4] and ''==x[6] and ''==x[8]] + \
+				[x[0]+_cnd for x in mC if ''!=x[0] and ''==x[2] and ''==x[4] and ''==x[6] and ''==x[8]]
+	_mC = sorted(list(set(_mC)))
+	mT = re.findall(r'(cac:[a-zA-Z]+\/)*(xs:[a-zA-Z]+\()*(cbc:[a-zA-Z\[\]\@\$\=]+)',test)
+	_mT = [x[0]+x[2] for x in mT]
+	_mT = sorted(list(set(_mT)))
+	rgxs = set()
+	if _mC:
+		for ctx in _mC:
+			for tst in _mT:
+				if ctx:
+					rgx = '^.*'+ctx.replace(' ','')+re.escape('/'+tst.replace(' ',''))+'$'
+					rgxs.add(rgx)
 				else:
-					message = rule_dict[r]['Message']
-				schematron = schematron_dict[r]
-				context = schematron['context']
-				flag = schematron['flag']
-				test = schematron['test']
-				Rs += '<h5>'+r+' ('+flag+')</h5>'+message+'<br />'
-				Rs += '<dl class="row">'
-				if 'ja' == lang:
-					Rs += '<dt class="col-3">対象(context)</dt><dd class="col-9">'+context+'</dd>'+ \
-								'<dt class="col-3">検証(test)</dt><dd class="col-9">'+test+'</dd>'
-				else:
-					Rs += '<dt class="col-3">cotext</dt><dd class="col-9">'+context+'</dd>'+ \
-								'<dt class="col-3">test</dt><dd class="col-9">'+test+'</dd>'
-				Rs += '</dl>'
-			else:
-				if 'ja' == lang:
-					Rs += '** 未定義 **<br />'
-				else:
-					Rs += '** Not defined **<br />'
-		else:
-			diff0.append(r)
-	rules_ = rules[id]
-	if rules_:
-		rules_ = list(rules_)
-	diff1 = list(set(rules_) - set(Rules))
-	diff2 = list(set(Rules) - set(rules_) - set(diff0))
-	if len(diff0) > 0:
-		Rs += '<span class="text-danger"><strong>'
-		if 'ja' == lang:
-			Rs += 'スキーマトロンで未定義'
-		else:
-			Rs += 'Not defined in the schematron file.'
-		Rs += '</strong></span><br />'
-		for r in diff0:
-			Rs += r+' '
-		Rs += '<br />'
-	if len(diff1) > 0:
-		Rs += '<span class="text-danger"><strong>'
-		if 'ja' == lang:
-			Rs += 'PINTモデルで未定義'
-		else:
-			Rs += 'Not defined in the semantic model.'
-		Rs += '</strong></span><br />'
-		for r in diff1:
-			Rs += r+' '
-		Rs += '<br />'
-	if len(diff2) > 0:
-		Rs += '<span class="text-danger"><strong>'
-		if 'ja' == lang:
-			Rs += data['PINT_ID']+'は、PINTルールで未言及'
-		else:
-			Rs += data['PINT_ID']+' is not mentioned in the rule.'
-		Rs += '</strong></span><br />'
-		for r in diff2:
-			Rs += r+' '
-		Rs += '<br />'
-	if Rs[-6:]=='<bt />':
-		Rs = Rs[:-6]
+					rgx = '^.*'+re.escape(tst.replace(' ',''))+'$'
+					rgxs.add(rgx)
+	else:
+		for tst in _mT:
+			rgx = '^.*'+re.escape(tst.replace(' ',''))+'$'
+			rgxs.add(rgx)
+	rgxs = list(rgxs)
+	if rgxs:
+		Pset = set()
+		for path in rgxs:
+			Ps = [x['PINT_ID'] for x in pint_list if re.match(path,x['Path'])]
+			for id in Ps:
+				Pset.add(id)
+		if Pset:
+			Ps = sorted(list(Pset))
+			BTs = ' '.join(Ps)
+			XPaths = set()
+			for id in Ps:
+				XPath = [id+'_'+x['Path'] for x in pint_list if id == x['PINT_ID']]
+				XPaths.add(XPath[0])
+			XPaths = '<br />'.join(XPaths)
+			bt = sorted(BT.split(' '))
+			bt = ' '.join(bt)
+			if not BTs in bt:
+				rule_data = '''
+				<dl class="row">
+					<dt class="col-3">Regular Expression</dt><dd class="col-9">{0}</dd>
+					<dt class="col-3">Business term IDs</dt><dd class="col-9">{1}</dd>
+					<dt class="col-3">business term XPath</dt><dd class="col-9">{2}</dd>
+				</dl>
+'''
+				Rs += rule_data.format('<br />'.join(rgxs),BTs,XPaths)
 	return Rs
 
 def lookupBG(data, lang):
-	table ='&nbsp;'
+	table ='<i class="fa fa-minus" aria-hidden="true"></i>'
 	terms = data['BG']
 	if len(terms) > 0:
 		table = item_table_head
 		terms = terms.split(' ')
+		_terms = set()
+		for id in terms:
+			_terms.add(id)
+		terms = list(_terms)
 		for id in terms:
 			if 'ja' == lang:
 				term = [x['BT_ja'] for x in pint_list if id == x['PINT_ID']]
@@ -265,11 +276,15 @@ def lookupBG(data, lang):
 	return table
 		
 def lookupBT(data,lang):
-	table = '&nbsp;'
+	table = '<i class="fa fa-minus" aria-hidden="true"></i>'
 	terms = data['BT']
 	if len(terms) > 0:
 		table = item_table_head
 		terms = terms.split(' ')
+		_terms = set()
+		for id in terms:
+			_terms.add(id)
+		terms = list(_terms)
 		for id in terms:
 			if re.match(r'^ibt-[0-9]{2}$',id):
 				id = 'ibt-0'+id[-2:]
@@ -294,14 +309,22 @@ def lookupBGT(id,lang):
 		if len(rule) > 0:
 			pint_ids = rule['PINT_IDs']
 	pint_ids = pint_ids.split(' ')
-	terms = ' '.join([x for x in pint_ids if re.match(r'^ibg-.*$',x)])
+	terms = [x for x in pint_ids if re.match(r'^ibg-.*$',x)]
+	_terms = set()
+	for id in terms:
+		_terms.add(id)
+	terms = ' '.join(sorted(list(_terms)))
 	BGroup = termTable(terms,lang)
-	terms = ' '.join([x for x in pint_ids if re.match(r'^ibt-.*$',x)])
+	terms = [x for x in pint_ids if re.match(r'^ibt-.*$',x)]
+	_terms = set()
+	for id in terms:
+		_terms.add(id)
+	terms = ' '.join(sorted(list(_terms)))
 	BTerm = termTable(terms,lang)
 	return {'BGroup':BGroup,'BTerm':BTerm}
 
 def termTable(terms,lang):
-	table = '&nbsp;'
+	table = '<i class="fa fa-minus" aria-hidden="true"></i>'
 	if len(terms) > 0:
 		table = item_table_head
 		terms = terms.split(' ')
@@ -322,7 +345,7 @@ def termTable(terms,lang):
 
 if __name__ == '__main__':
 	# Create the parser
-	parser = argparse.ArgumentParser(prog='genInvoice',
+	parser = argparse.ArgumentParser(prog='jp-pint_rules.py',
 																	usage='%(prog)s [options] infile pint_rulefile jp_rulefile schematronfile',
 																	description='CSVファイルからJP-PINTのHTMLファイルを作成')
 	# Add the arguments
@@ -420,11 +443,35 @@ if __name__ == '__main__':
 			jp_rule_dict[RuleID] = data
 
 	# Read CSV file
-	csv_list = []
 	keys = (
 		'SemSort','EN_ID','PINT_ID','Level','BT','BT_ja','Desc','Desc_ja','Exp','Exp_ja','Example',
 		'Card','DT','Section','Extension','SynSort','Path','Attr','Rules','Datatype','Occ','Align'
 	)
+	csv_item = OrderedDict([
+		('SemSort','0000'),
+		('EN_ID','BG-0'),
+		('PINT_ID','ibg-00'),
+		('Level','0'),
+		('BT','Invoice'),
+		('BT_ja','インボイス'),
+		('Desc',''),
+		('Desc_ja',''),
+		('Exp',''),
+		('Exp_ja',''),
+		('Example',''),
+		('Card','1..n'),
+		('DT',''),
+		('Section',''),
+		('Extension',''),
+		('SynSort','0000'),
+		('Path','/Invoice'),
+		('Attr',''),
+		('Rules',''),
+		('Datatype','InvoiceType'),
+		('Occ','1..n'),
+		('Align','')
+	])
+	csv_list = [csv_item]
 	with open(in_file,'r',encoding='utf-8') as f:
 		reader = csv.DictReader(f,keys)
 		header = next(reader)
@@ -478,7 +525,7 @@ if __name__ == '__main__':
 					if pint_id in pint_ids:
 						rules[pint_id].add(k)
 
-	with open(pint_rule_en_html,'w',encoding='utf-8') as f:
+	with open(pint_rule_en_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
@@ -486,14 +533,14 @@ if __name__ == '__main__':
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,PINT_RULE_MESSAGE_TITLE_en,lang, \
 															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description')
+															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
 		f.write(html)
 		f.write(table_html.format('PINT','Identifier / Error message','Flag'))
 		for id,data in pint_rule_dict.items():
 			writeTr_en(f,'ubl-pint',data)
-		f.write(trailer)
+		f.write(trailer.format('Go to top'))
 
-	with open(pint_rule_ja_html,'w',encoding='utf-8') as f:
+	with open(pint_rule_ja_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
@@ -501,14 +548,14 @@ if __name__ == '__main__':
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,PINT_RULE_MESSAGE_TITLE_ja,lang, \
 															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語')
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
 		f.write(html)
 		f.write(table_html.format('PINT','ID / エラ-メッセージ','重要度'))
 		for id,data in pint_rule_dict.items():
 			writeTr_ja(f,'ubl-pint',data)
-		f.write(trailer)
+		f.write(trailer.format('先頭に戻る'))
 
-	with open(jp_rule_en_html,'w',encoding='utf-8') as f:
+	with open(jp_rule_en_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
@@ -516,14 +563,14 @@ if __name__ == '__main__':
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,JP_RULE_MESSAGE_TITLE_en,lang, \
 															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description')
+															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
 		f.write(html)
 		f.write(table_html.format('JP','Identifier / Error message','Flag'))
 		for id,data in jp_rule_dict.items():
 			writeTr_en(f,'ubl-japan',data)
-		f.write(trailer)
+		f.write(trailer.format('Go to top'))
 
-	with open(jp_rule_ja_html,'w',encoding='utf-8') as f:
+	with open(jp_rule_ja_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
@@ -531,12 +578,12 @@ if __name__ == '__main__':
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,JP_RULE_MESSAGE_TITLE_ja,lang, \
 															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語')
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
 		f.write(html)
 		f.write(table_html.format('JP','ID / エラ-メッセージ','重要度'))
 		for id,data in jp_rule_dict.items():
 			writeTr_ja(f,'ubl-japan',data)
-		f.write(trailer)
+		f.write(trailer.format('先頭に戻る'))
 
 	for id,v in pint_rule_dict.items():
 		if not id:
@@ -544,12 +591,13 @@ if __name__ == '__main__':
 		lang = 'en'
 		item_dir0 = 'billing-japan/rules/ubl-pint/'+id+'/'+lang
 		os.makedirs(item_dir0,exist_ok=True)
-		with open(item_dir0+'/index.html','w',encoding='utf-8') as f:
+		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
 			f.write(javascript_html)
 			f.write('</head><body>')
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText
-			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE,'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend'))
+			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE, \
+																'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg'))
 			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','ubl-pint',PINT_RULE_MESSAGE_TITLE_en, \
 																			id,APP_BASE))
@@ -559,27 +607,32 @@ if __name__ == '__main__':
 				f.write(item_header.format(title,v['Message']))
 				BGroup = termTable(data['BG'],lang)
 				BTerm = termTable(data['BT'],lang)
-				html = item_data.format('context',data['context'],'test',data['test'], \
+				html = item_data.format('context','<code>'+data['context']+'</code>','test','<code>'+data['test']+'</code>', \
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
+				# TODO verify AllowanceCharge
+				# html = checkRule(data)
+				# if html:
+				# 	f.write(html)
 			else:
 				f.write(item_header.format(id,v['Message']))
 				GBT = lookupBGT(id,lang)
 				BGroup = GBT['BGroup']
 				BTerm = GBT['BTerm']
-				html = item_data.format('context','** The rule is not defined in the schematron file. **','test','&nbsp;',
+				html = item_data.format('context','** The rule is not defined in the schematron file. **','test','<i class="fa fa-minus" aria-hidden="true"></i>',
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
-			f.write(item_trailer)
+			f.write(item_trailer.format('Go to top'))
 
 		lang = 'ja'
 		item_dir0 = 'billing-japan/rules/ubl-pint/'+id+'/'+lang
 		os.makedirs(item_dir0,exist_ok=True)
-		with open(item_dir0+'/index.html','w',encoding='utf-8') as f:
+		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
 			f.write(javascript_html)
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText
-			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE,'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示'))
+			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE, \
+																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg'))
 			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','ubl-pint',PINT_RULE_MESSAGE_TITLE_ja, \
 																			id,APP_BASE))
@@ -589,7 +642,7 @@ if __name__ == '__main__':
 				f.write(item_header.format(title,v['Message_ja']))
 				BGroup = lookupBG(data,'ja')
 				BTerm = lookupBT(data,'ja')
-				html = item_data.format('対象(context)',data['context'],'検証(test)',data['test'], \
+				html = item_data.format('対象(context)','<code>'+data['context']+'</code>','検証(test)','<code>'+data['test']+'</code>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
 			else:
@@ -597,10 +650,10 @@ if __name__ == '__main__':
 				BGroup = GBT['BGroup']
 				BTerm = GBT['BTerm']
 				f.write(item_header.format(id,v['Message_ja']))
-				html = item_data.format('対象(context)','** ビジネスルールは、スキーマトロンで未定義 **','検証(test)','&nbsp;', \
+				html = item_data.format('対象(context)','** ビジネスルールは、スキーマトロンで未定義 **','検証(test)','<i class="fa fa-minus" aria-hidden="true"></i>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
-			f.write(item_trailer)
+			f.write(item_trailer.format('先頭に戻る'))
 
 	for id,v in jp_rule_dict.items():
 		if not id:
@@ -608,11 +661,12 @@ if __name__ == '__main__':
 		lang = 'en'
 		item_dir0 = 'billing-japan/rules/ubl-japan/'+id+'/'+lang
 		os.makedirs(item_dir0,exist_ok=True)
-		with open(item_dir0+'/index.html','w',encoding='utf-8') as f:
+		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
 			f.write(javascript_html)
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText
-			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE,'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend'))
+			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE, \
+																'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg'))
 			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','ubl-japan',JP_RULE_MESSAGE_TITLE_en, \
 																			id,APP_BASE))
@@ -622,7 +676,8 @@ if __name__ == '__main__':
 				f.write(item_header.format(title,v['Message']))
 				BGroup = lookupBG(data,lang)
 				BTerm = lookupBT(data,lang)
-				html = item_data.format('context',data['context'],'test',data['test'],'Flag',data['flag'], \
+				html = item_data.format('context','<code>'+data['context']+'</code>','test','<code>'+data['test']+'</code>', \
+																# 'Flag',data['flag'], \
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
 			else:
@@ -630,19 +685,20 @@ if __name__ == '__main__':
 				BGroup = GBT['BGroup']
 				BTerm = GBT['BTerm']
 				f.write(item_header.format(id,v['Message']))
-				html = item_data.format('context','** The rule is not defined in the schematron file. **','test','&nbsp;', 
+				html = item_data.format('context','** The rule is not defined in the schematron file. **','test','<i class="fa fa-minus" aria-hidden="true"></i>', 
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
-			f.write(item_trailer)
+			f.write(item_trailer.format('Go to top'))
 
 		lang = 'ja'
 		item_dir0 = 'billing-japan/rules/ubl-japan/'+id+'/'+lang
 		os.makedirs(item_dir0,exist_ok=True)
-		with open(item_dir0+'/index.html','w',encoding='utf-8') as f:
+		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
 			f.write(javascript_html)
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText
-			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE,'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示'))
+			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE, \
+																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg'))
 			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','ubl-japan',JP_RULE_MESSAGE_TITLE_ja, \
 																			id,APP_BASE))
@@ -652,7 +708,7 @@ if __name__ == '__main__':
 				f.write(item_header.format(title,v['Message_ja']))
 				BGroup = lookupBG(data,lang)
 				BTerm = lookupBT(data,lang)
-				html = item_data.format('対象(context)',data['context'],'検証(test)',data['test'], \
+				html = item_data.format('対象(context)','<code>'+data['context']+'</code>','検証(test)','<code>'+data['test']+'</code>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
 			else:
@@ -660,10 +716,10 @@ if __name__ == '__main__':
 				BGroup = GBT['BGroup']
 				BTerm = GBT['BTerm']
 				f.write(item_header.format(id,v['Message_ja']))
-				html = item_data.format('対象(context)','** ビジネスルールは、スキーマトロンで未定義 **','検証(test)','&nbsp;', \
+				html = item_data.format('対象(context)','** ビジネスルールは、スキーマトロンで未定義 **','検証(test)','<i class="fa fa-minus" aria-hidden="true"></i>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
-			f.write(item_trailer)
+			f.write(item_trailer.format('先頭に戻る'))
 
 	if verbose:
 		print(f'** END ** {pint_rule_en_html} {pint_rule_ja_html} {jp_rule_en_html} {jp_rule_ja_html}')
