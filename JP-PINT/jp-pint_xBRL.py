@@ -78,8 +78,9 @@ if __name__ == '__main__':
 	dir = os.path.dirname(in_file)
 
 	xbrl_schema = 'xBRL/data/pint-2021-12-31.xsd'
-	label_linkbase = 'xBRL/data/pint-2021-12-31-label.xml'
 	presentation_linkbase = 'xBRL/data/pint-2021-12-31-presentation.xml'
+	label_linkbase = 'xBRL/data/pint-2021-12-31-label.xml'
+	reference_linkbase = 'xBRL/data/pint-2021-12-31-reference.xml'
 
 	verbose = args.verbose
 	# Check if infile exists
@@ -148,9 +149,10 @@ if __name__ == '__main__':
 	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pint-2021-12-31-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple"/>
-			<link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pint-2021-12-31-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"/>
-      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pint-2021-12-31-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="pint-2021-12-31-presentation.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="pint-2021-12-31-definition.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:href="pint-2021-12-31-label.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+      <link:linkbaseRef xlink:href="pint-2021-12-31-reference.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:type="simple"/>
 			<link:roleType id="pint_structure" roleURI="http://xbrl.org/role/pint_structure">
 				<link:definition>PINT Structure</link:definition>
 				<link:usedOn>link:presentationLink</link:usedOn>
@@ -273,12 +275,74 @@ if __name__ == '__main__':
 				current = datetime.utcnow().isoformat(timespec='microseconds')
 				cksum = hashlib.md5(current.encode('utf-8')).hexdigest()
 				label = data['BT']
+				label_ja = data['BT_ja']
+				desc = data['Desc']
+				desc_ja = data['Desc_ja']
 				xml = '		<!-- {0}:{1} -->\n'.format(id,BT)
 				f.write(xml)
+				# locator
 				xml = '    <link:loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="{0}{1}"/>\n'.format(id, cksum)
 				f.write(xml)
+				# label
 				xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, label)
 				f.write(xml)
+				xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, label_ja)
+				f.write(xml)
+				if desc:
+					xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, desc)
+					f.write(xml)
+				if desc_ja:
+					xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, desc_ja)
+					f.write(xml)
+				# arc
+				xml = '    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="{0}{1}" xlink:to="label_{0}{1}"/>\n'.format(id, cksum)
+				f.write(xml)
+		f.write('	</link:labelLink>\n</link:linkbase>')
+
+	with open(reference_linkbase,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
+		xml = '''<?xml version="1.0" encoding="UTF-8"?>\n
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">\n
+  <link:referenceLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+'''
+		f.write(xml)
+		for data in pint_list:
+			if not data or not data['PINT_ID']:
+				continue
+			id = data['PINT_ID']
+			if re.match(r'^ib[tg]-[0-9]*$',id):
+				BT = data['BT']
+				if re.match(r'^ibt-[0-9]*$',id):
+					BT = camelCase(BT)
+				else:
+					BT = BT.replace(' ','_')
+				current = datetime.utcnow().isoformat(timespec='microseconds')
+				cksum = hashlib.md5(current.encode('utf-8')).hexdigest()
+				xpath = data['Path']
+				exp = data['Exp']
+				exp_ja = data['Exp_ja']
+				example = data['Example']
+				xml = '		<!-- {0}:{1} -->\n'.format(id,BT)
+				f.write(xml)
+				# locator
+				xml = '    <link:loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="{0}{1}"/>\n'.format(id, cksum)
+				f.write(xml)
+				# refeence
+				xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/definitionRef" xml:lang="en" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, xpath)
+				f.write(xml)
+				if exp:
+					xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/commentaryRef" xml:lang="en" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, exp)
+					f.write(xml)
+				if exp_ja:
+					xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/commentaryRef" xml:lang="ja" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, exp_ja)
+					f.write(xml)
+				if example:
+					xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/exampleRef" xml:lang="en" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, example)
+					f.write(xml)
+					xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/exampleRef" xml:lang="ja" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, example)
+					f.write(xml)
+				# arc
 				xml = '    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="{0}{1}" xlink:to="label_{0}{1}"/>\n'.format(id, cksum)
 				f.write(xml)
 		f.write('	</link:labelLink>\n</link:linkbase>')
