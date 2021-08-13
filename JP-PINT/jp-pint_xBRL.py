@@ -193,7 +193,7 @@ if __name__ == '__main__':
 		f.write(xml)
 		f.write('<!-- item type -->\n')
 		template = '	<complexType name="{0}ItemType"><simpleContent><restriction base="{1}"/></simpleContent></complexType>\n'
-		types = set()
+		types = {}
 		for data in pint_list:
 			if not data or not data['PINT_ID']:
 				continue
@@ -229,12 +229,12 @@ if __name__ == '__main__':
 				else:
 					itemtype = 'xbrli:stringItemType'
 				xml = template.format(BT, itemtype)
-				types.add(xml)
-		for xml in types:	
+				types[BT] = xml
+		for BT,xml in types.items():	
 			f.write(xml)
 
 		f.write('  \n<!-- element -->\n')
-		elements = set()
+		elements = {}
 		template = '	<element name="{0}" id="pint-{0}" type="pint:{1}ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'
 		for data in pint_list:
 			if not data or not data['PINT_ID']:
@@ -247,8 +247,8 @@ if __name__ == '__main__':
 				else:
 					BT = BT.replace(' ','_')
 				xml = template.format(id,BT)
-				elements.add(xml)
-		for xml in elements:
+				elements[BT] = xml
+		for BT,xml in elements.items():
 			f.write(xml)
 		f.write('</schema>')
 
