@@ -275,9 +275,9 @@ if __name__ == '__main__':
 				label = data['BT']
 				xml = '		<!-- {0}:{1} -->\n'.format(id,BT)
 				f.write(xml)
-				xml = '    <link:loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="{0}{1}"/>\n'.format(id, cksum)
+				xml = '    <link:loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="{0}{1}" id="label_{0}{1}"/>\n'.format(id, cksum)
 				f.write(xml)
-				xml = '    <link:label xlink:type="resource" xlink:label="label_{0}{1}" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, label)
+				xml = '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en" xlink:label="label_{0}{1}" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, label)
 				f.write(xml)
 				xml = '    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="{0}{1}" xlink:to="label_{0}{1}"/>\n'.format(id, cksum)
 				f.write(xml)
