@@ -133,8 +133,7 @@ if __name__ == '__main__':
 	pint_list = sorted(pint_list,key=lambda x: x['SemSort'])
 
 	with open(xbrl_schema,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
-		xml = '''
-<?xml version="1.0" encoding="UTF-8"?>
+		xml = '''<?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL Japan -->
 <schema targetNamespace="http://peppol.eu/2021-12-31" 
 	elementFormDefault="qualified" 
@@ -192,7 +191,9 @@ if __name__ == '__main__':
 	<element name="dL4Number" id="pint_dL4Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L4Number"/>
 '''
 		f.write(xml)
-		f.write('\n<!-- item type -->\n')
+		f.write('<!-- item type -->\n')
+		template = '	<complexType name="{0}ItemType"><simpleContent><restriction base="{1}"/></simpleContent></complexType>\n'
+		types = set()
 		for data in pint_list:
 			if not data or not data['PINT_ID']:
 				continue
@@ -227,10 +228,14 @@ if __name__ == '__main__':
 					itemtype = 'xbrli:pureItemType'
 				else:
 					itemtype = 'xbrli:stringItemType'
-				xml = '	<complexType name="{0}ItemType"><simpleContent><restriction base="{1}"/></simpleContent></complexType>\n'
-				f.write(xml.format(BT, itemtype))
+				xml = template.format(BT, itemtype)
+				types.add(xml)
+		for xml in types:	
+			f.write(xml)
 
 		f.write('  \n<!-- element -->\n')
+		elements = set()
+		template = '	<element name="{0}" id="pint-{0}" type="pint:{1}ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'
 		for data in pint_list:
 			if not data or not data['PINT_ID']:
 				continue
@@ -241,17 +246,18 @@ if __name__ == '__main__':
 					BT = camelCase(BT)
 				else:
 					BT = BT.replace(' ','_')
-				xml = '	<element name="{0}" id="pint-{0}" type="pint:{1}ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'
-				f.write(xml.format(id,BT))
+				xml = template.format(id,BT)
+				elements.add(xml)
+		for xml in elements:
+			f.write(xml)
 		f.write('</schema>')
 
 	with open(label_linkbase,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
-		xml = '''
-<?xml version="1.0" encoding="UTF-8"?>\n
+		xml = '''<?xml version="1.0" encoding="UTF-8"?>\n
 <link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
-    xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
-  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">\n
+    xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">\n
+  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
 '''
 		f.write(xml)
 		for data in pint_list:
@@ -278,8 +284,7 @@ if __name__ == '__main__':
 		f.write('	</link:labelLink>\n</link:linkbase>')
 
 	with open(presentation_linkbase,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
-		xml = '''
-<?xml version="1.0" encoding="UTF-8"?>
+		xml = '''<?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL Japan -->
 <linkbase
   xmlns="http://www.xbrl.org/2003/linkbase"
