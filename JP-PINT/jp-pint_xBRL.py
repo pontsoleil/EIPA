@@ -57,6 +57,12 @@ def file_path(pathname):
 		new_path = os.path.join(dir,pathname)
 		return new_path
 
+# https://stackoverflow.com/questions/8347048/how-to-convert-string-to-title-case-in-python
+def camelCase(st):
+	st = st.replace("'","")
+	output = ''.join(x for x in st.title() if x.isalnum())
+	return output[0].lower() + output[1:]
+
 if __name__ == '__main__':
 	# Create the parser
 	parser = argparse.ArgumentParser(prog='jp-pint_semantics.py',
@@ -119,6 +125,8 @@ if __name__ == '__main__':
 		header = next(reader)
 		header = next(reader)
 		for row in reader:
+			BT = row['BT']
+			row['BT'] = BT.strip()
 			csv_list.append(row)
 
 	pint_list = [x for x in csv_list if ''!=x['SemSort'] and ''!=x['PINT_ID']]
@@ -151,31 +159,31 @@ if __name__ == '__main__':
 			</link:roleType>
 		</appinfo>
 	</annotation>
-<!-- Hypercube -->
+	<!-- Hypercube -->
 	<element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
-<!-- Domain -->
-<!-- L1 -->
+	<!-- Domain -->
+	<!-- L1 -->
   <element name="L1Number" id="pint_L1Number">
     <simpleType>
       <restriction base="string"/>
     </simpleType>
   </element>
   <element name="dL1Number" id="pint_dL1Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L1Number"/>
-<!-- L2 -->
+	<!-- L2 -->
 	<element name="L2Number" id="pint_L2Number">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
 	<element name="dL2Number" id="pint_dL2Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L2Number"/>
-<!-- L3 -->
+	<!-- L3 -->
 	<element name="L3Number" id="pint_L3Number">
 		<simpleType>
 			<restriction base="string"/>
 		</simpleType>
 	</element>
 	<element name="dL3Number" id="pint_dL3Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L3Number"/>
-<!-- L4 -->
+	<!-- L4 -->
 	<element name="L4Number" id="pint_L4Number">
 		<simpleType>
 			<restriction base="string"/>
@@ -190,6 +198,11 @@ if __name__ == '__main__':
 				continue
 			id = data['PINT_ID']
 			if re.match(r'^ib[tg]-[0-9]*$',id):
+				BT = data['BT']
+				if re.match(r'^ibt-[0-9]*$',id):
+					BT = camelCase(BT)
+				else:
+					BT = BT.replace(' ','_')
 				DT = data['DT']
 				if DT in datatypeDict:
 					DT = datatypeDict[DT]
@@ -214,7 +227,8 @@ if __name__ == '__main__':
 					itemtype = 'xbrli:pureItemType'
 				else:
 					itemtype = 'xbrli:stringItemType'
-				f.write('  <complexType name="{0}ItemType">\n    <simpleContent><restriction base="{1}"/></simpleContent>\n  </complexType>\n'.format(id, itemtype))
+				xml = '	<complexType name="{0}ItemType"><simpleContent><restriction base="{1}"/></simpleContent></complexType>\n'
+				f.write(xml.format(BT, itemtype))
 
 		f.write('  \n<!-- element -->\n')
 		for data in pint_list:
@@ -222,34 +236,46 @@ if __name__ == '__main__':
 				continue
 			id = data['PINT_ID']
 			if re.match(r'^ib[tg]-[0-9]*$',id):
-				xml = '  	<element name="{0}" id="pint_{0}" type="pint:{0}ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'.format(id)
-				f.write(xml)
-		f.write('  </schema>')
+				BT = data['BT']
+				if re.match(r'^ibt-[0-9]*$',id):
+					BT = camelCase(BT)
+				else:
+					BT = BT.replace(' ','_')
+				xml = '	<element name="{0}" id="pint-{0}" type="pint:{1}ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'
+				f.write(xml.format(id,BT))
+		f.write('</schema>')
 
 	with open(label_linkbase,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		xml = '''
 <?xml version="1.0" encoding="UTF-8"?>\n
-  <link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
     xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
-    <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">\n
-		'''
+  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">\n
+'''
 		f.write(xml)
 		for data in pint_list:
 			if not data or not data['PINT_ID']:
 				continue
 			id = data['PINT_ID']
 			if re.match(r'^ib[tg]-[0-9]*$',id):
+				BT = data['BT']
+				if re.match(r'^ibt-[0-9]*$',id):
+					BT = camelCase(BT)
+				else:
+					BT = BT.replace(' ','_')
 				current = datetime.utcnow().isoformat(timespec='microseconds')
 				cksum = hashlib.md5(current.encode('utf-8')).hexdigest()
 				label = data['BT']
-				xml = '    <link:loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint_{0}" xlink:label="{0}{1}"/>\n'.format(id, cksum)
+				xml = '		<!-- {0}:{1} -->\n'.format(id,BT)
+				f.write(xml)
+				xml = '    <link:loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="{0}{1}"/>\n'.format(id, cksum)
 				f.write(xml)
 				xml = '    <link:label xlink:type="resource" xlink:label="label_{0}{1}" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en" id="label_{0}{1}">{2}</link:label>\n'.format(id, cksum, label)
 				f.write(xml)
 				xml = '    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="{0}{1}" xlink:to="label_{0}{1}"/>\n'.format(id, cksum)
 				f.write(xml)
-		f.write(' </link:labelLink>\n</link:linkbase>')
+		f.write('	</link:labelLink>\n</link:linkbase>')
 
 	with open(presentation_linkbase,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		xml = '''
