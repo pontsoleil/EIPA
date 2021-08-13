@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:link="http://www.xbrl.org/2003/linkbase"
+    xmlns:cen="http://www.eipa.jp/cen/EN-16931-1"
+		xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" >
+	<link:roleRef xlink:type="simple" xlink:href="EN-16931-1.xsd#cen_structure" roleURI="http://xbrl.org/role/cen_structure"/>
+	<link:arcroleRef xlink:type="simple" xlink:href="http://xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension" arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension"/>
+	<link:definitionLink xlink:type="extended" xlink:role="http://xbrl.org/role/cen_structure">
+		<!-- Hypercube -->
+		<link:loc xlink:type="locator" xlink:href="EN-16931-1.xsd#Hypercube" xlink:label="Hypercube" xlink:title="Hypercube"/>
+		<link:loc xlink:type="locator" xlink:href="EN-16931-1.xsd#cen_dL1N" xlink:label="dim_L1N" xlink:title="Axis L1N"/>
+		<link:loc xlink:type="locator" xlink:href="EN-16931-1.xsd#cen_dL2N" xlink:label="dim_L2N" xlink:title="Axis L2N"/>
+		<link:loc xlink:type="locator" xlink:href="EN-16931-1.xsd#cen_dL3N" xlink:label="dim_L3N" xlink:title="Axis L3N"/>
+		<link:loc xlink:type="locator" xlink:href="EN-16931-1.xsd#cen_dL4N" xlink:label="dim_L4N" xlink:title="Axis L4N"/>
+		<link:definitionArc xlink:type="arc" xlink:from="Hypercube" xlink:to="dim_L1N" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:title="definition Hypercube to typed Dimension L1N" use="optional" order="1.0"/>
+		<link:definitionArc xlink:type="arc" xlink:from="Hypercube" xlink:to="dim_L2N" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:title="definition Hypercube to Typed Dimension L2N" use="optional" order="2.0"/>
+		<link:definitionArc xlink:type="arc" xlink:from="Hypercube" xlink:to="dim_L3N" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:title="definition Hypercube to Typed Dimension L3N" use="optional" order="3.0"/>
+		<link:definitionArc xlink:type="arc" xlink:from="Hypercube" xlink:to="dim_L4N" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:title="definition Hypercube to Typed Dimension L4N" use="optional" order="4.0"/>
+	</link:definitionLink>
+</link:linkbase>

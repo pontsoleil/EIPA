@@ -64,8 +64,10 @@ dropdown_menu_en = jp_pint_constants.dropdown_menu_en.format(APP_BASE)
 dropdown_menu_ja = jp_pint_constants.dropdown_menu_ja.format(APP_BASE)
 
 legend_en ='''
+<h3>TBD</h3>
 '''
 legend_ja = '''
+<h3>未定</h3>
 '''
 table_html = '''
 				<table class="{0} rules table table-sm table-hover" style="table-layout: fixed; width: 100%;">
@@ -86,9 +88,17 @@ trailer = jp_pint_constants.trailer
 # 
 item_head = jp_pint_constants.item_head
 info_item_modal_en = '''
+<h3>ISO/IEC 19757-3:2016(E)</h3>
+<h5>Information technology -- Document Schema definition languages (DSDL) -- <br />part 3: Rule-based validation -- Schemetron</h5>
+<h5>rule element</h5>
+A list of assertions tested within the conttext specified by the required <strong>context</strong> attribute. The <strong>context</strong> attribute specifies the rule context expression.<br />
+<br />
+<h5>assert element</h5>
+An assertion made about the context nodes. The data contents is a natural-language assertion. The required <strong>test</strong> attribute is an assertion test evaluated in the current context. If the test evaluates positive, the report succeeds.
+The natural-language assertion shall be a positive statement of a constraint.<br />
+The <strong>flag</strong> attribute allows more detailed outcomes.
 '''
-info_item_modal_ja = '''
-'''
+info_item_modal_ja = info_item_modal_en
 item_navbar = jp_pint_constants.item_navbar
 # 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'en-peppol' 4.peppol_rule_MESSAGE_TITLE_en 5.id 6.APP_BASE
 item_breadcrumb = '''
@@ -632,12 +642,12 @@ if __name__ == '__main__':
 					if _t in k:
 						defined = True
 						# if verbose:
-						# 	print('-OK-\t{0} is defined in Rules.'.format(k))
+						# 	print('-OK-\t{0} is defined in the rule.'.format(k))
 						break
 				if not defined:
 					Rs += k+'<br />'
 					if verbose:
-						print('*NG*\t{0} is not defined in Rules.'.format(k))
+						print('*NG*\t{0} is not defined in the rule.'.format(k))
 		return Rs
 
 	listUndefInSchematron()
@@ -663,9 +673,9 @@ R11X - Invoice period
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,peppol_rule_MESSAGE_TITLE_en,lang, \
 															APP_BASE,'Legend',legend_en,'Shows a modal window for the legend.', \
-															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
+															dropdown_menu_en,'ID or word in Term/Description','modal-sm')
 		f.write(html)
-		f.write(table_html.format('PINT','Identifier / Error message','Flag'))
+		f.write(table_html.format('PINT','ID / Message','flag'))
 		for id,data in peppol_rule_dict.items():
 			writeTr_en(f,'en-peppol/',data)
 		f.write(trailer.format('Go to top'))
@@ -678,9 +688,9 @@ R11X - Invoice period
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,peppol_rule_MESSAGE_TITLE_ja,lang, \
 															APP_BASE,'凡例',legend_ja,'凡例を表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm')
 		f.write(html)
-		f.write(table_html.format('PINT','ID / エラ-メッセージ','重要度'))
+		f.write(table_html.format('PINT','ID / メッセージ','flag'))
 		for id,data in peppol_rule_dict.items():
 			writeTr_ja(f,'en-peppol/',data)
 		f.write(trailer.format('先頭に戻る'))
@@ -692,10 +702,10 @@ R11X - Invoice period
 		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.MESSAGE_TITLE_en 5.lang 6.APP_BASE 
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,cen_rule_MESSAGE_TITLE_en,lang, \
-															APP_BASE,'Legend','&nbsp;','Shows a modal window of the legend.', \
-															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
+															APP_BASE,'Legend',legend_en,'Shows a modal window of the legend.', \
+															dropdown_menu_en,'ID or word in Term/Description','modal-sm')
 		f.write(html)
-		f.write(table_html.format('JP','Identifier / Error message','Flag'))
+		f.write(table_html.format('JP','ID / Message','flag'))
 		for id,data in cen_rule_dict.items():
 			writeTr_en(f,'en-cen/',data)
 		f.write(trailer.format('Go to top'))
@@ -707,10 +717,10 @@ R11X - Invoice period
 		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.MESSAGE_TITLE_en 5.lang 6.APP_BASE 
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,cen_rule_MESSAGE_TITLE_ja,lang, \
-															APP_BASE,'凡例','&nbsp;','凡例を表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
+															APP_BASE,'凡例',legend_ja,'凡例を表示', \
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm')
 		f.write(html)
-		f.write(table_html.format('JP','ID / エラ-メッセージ','重要度'))
+		f.write(table_html.format('JP','ID / メッセージ','flag'))
 		for id,data in cen_rule_dict.items():
 			writeTr_ja(f,'en-cen/',data)
 		f.write(trailer.format('先頭に戻る'))
@@ -727,7 +737,7 @@ R11X - Invoice period
 			f.write('</head><body>')
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText
 			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE, \
-																'Legend','&nbsp;',dropdown_menu_en,'Shows a modal window of the legend.','modal-lg'))
+																'Legend',info_item_modal_en,dropdown_menu_en,'Shows a modal window of the legend.','modal-lg'))
 			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'en-peppol' 4.peppol_rule_MESSAGE_TITLE_en 5.id 6.APP_BASE
 			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','en-peppol',peppol_rule_MESSAGE_TITLE_en, \
 																			id,APP_BASE))
@@ -772,7 +782,7 @@ R11X - Invoice period
 			f.write(javascript_html)
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText
 			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE, \
-																'凡例','&nbsp;',dropdown_menu_ja,'凡例を表示','modal-lg'))
+																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg'))
 			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'en-peppol' 4.peppol_rule_MESSAGE_TITLE_en 5.id 6.APP_BASE
 			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','en-peppol',peppol_rule_MESSAGE_TITLE_ja, \
 																			id,APP_BASE))

@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:iso639="http://www.xbrl.org/2005/iso639"
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+	xmlns:xbrli="http://www.xbrl.org/2003/instance"
+	xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+	xmlns:cen="http://www.eipa.jp/cen/EN-16931-1">
+	<xbrll:schemaRef xlink:type="simple" xlink:href="../cen/EN-16931-1.xsd" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+	<xbrli:unit id="pure">
+		<xbrli:measure>xbrli:pure</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="NOK">
+		<xbrli:measure>iso4217:NOK</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:context id="BG-0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-0</cen:L1N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-1 contextRef="BG-0">TOSL108</cen:BT-1>
+	<cen:BT-2 contextRef="BG-0">2013-06-30</cen:BT-2>
+	<cen:BT-3 contextRef="BG-0">380</cen:BT-3>
+	<cen:BT-5 contextRef="BG-0">NOK</cen:BT-5>
+	<cen:BT-7 contextRef="BG-0">2013-06-30</cen:BT-7>
+	<cen:BT-9 contextRef="BG-0">2013-07-20</cen:BT-9>
+	<cen:BT-12 contextRef="BG-0">Contract321</cen:BT-12>
+	<cen:BT-13 contextRef="BG-0">123</cen:BT-13>
+	<cen:BT-18 contextRef="BG-0">Doc1</cen:BT-18>
+	<cen:BT-19 contextRef="BG-0">Project cost code 123</cen:BT-19>
+	<xbrli:context id="BG-1_0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-1</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>0</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<xbrli:context id="BG-4_BG-5">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-4</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>BG-5</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-35 contextRef="BG-4_BG-5">Main street 34</cen:BT-35>
+	<cen:BT-36 contextRef="BG-4_BG-5">Suite 123</cen:BT-36>
+	<cen:BT-37 contextRef="BG-4_BG-5">Big city</cen:BT-37>
+	<cen:BT-38 contextRef="BG-4_BG-5">303</cen:BT-38>
+	<cen:BT-40 contextRef="BG-4_BG-5">NO</cen:BT-40>
+	<xbrli:context id="BG-4_BG-6">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-4</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>BG-6</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-41 contextRef="BG-4_BG-6">Antonio Salesmacher</cen:BT-41>
+	<cen:BT-42 contextRef="BG-4_BG-6">46211230</cen:BT-42>
+	<cen:BT-43 contextRef="BG-4_BG-6">antonio@salescompany.no</cen:BT-43>
+	<xbrli:context id="BG-7_BG-8">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-7</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>BG-8</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-50 contextRef="BG-7_BG-8">Anystreet 8</cen:BT-50>
+	<cen:BT-51 contextRef="BG-7_BG-8">Back door</cen:BT-51>
+	<cen:BT-52 contextRef="BG-7_BG-8">Anytown</cen:BT-52>
+	<cen:BT-53 contextRef="BG-7_BG-8">101</cen:BT-53>
+	<cen:BT-54 contextRef="BG-7_BG-8">RegionB</cen:BT-54>
+	<cen:BT-55 contextRef="BG-7_BG-8">NO</cen:BT-55>
+	<xbrli:context id="BG-7_BG-9">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-7</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>BG-9</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-56 contextRef="BG-7_BG-9">John Doe</cen:BT-56>
+	<cen:BT-57 contextRef="BG-7_BG-9">5121230</cen:BT-57>
+	<cen:BT-58 contextRef="BG-7_BG-9">john@buyercompany.no</cen:BT-58>
+	<cen:BT-59 contextRef="BG-0">Ebeneser Scrooge AS</cen:BT-59>
+	<cen:BT-60 contextRef="BG-0">2298740918237</cen:BT-60>
+	<xbrli:context id="BG-11_BG-12">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-11</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>BG-12</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-64 contextRef="BG-11_BG-12">Regent street</cen:BT-64>
+	<cen:BT-65 contextRef="BG-11_BG-12">Front door</cen:BT-65>
+	<cen:BT-66 contextRef="BG-11_BG-12">Newtown</cen:BT-66>
+	<cen:BT-67 contextRef="BG-11_BG-12">202</cen:BT-67>
+	<cen:BT-68 contextRef="BG-11_BG-12">RegionC</cen:BT-68>
+	<cen:BT-69 contextRef="BG-11_BG-12">NO</cen:BT-69>
+	<xbrli:context id="BG-13_BG-15">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-13</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>BG-15</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-75 contextRef="BG-13_BG-15">Deliverystreet 2</cen:BT-75>
+	<cen:BT-76 contextRef="BG-13_BG-15">Side door</cen:BT-76>
+	<cen:BT-77 contextRef="BG-13_BG-15">DeliveryCity</cen:BT-77>
+	<cen:BT-78 contextRef="BG-13_BG-15">523427</cen:BT-78>
+	<cen:BT-79 contextRef="BG-13_BG-15">RegionD</cen:BT-79>
+	<xbrli:context id="BG-20_0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-20</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>0</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-92 contextRef="BG-20_0" decimals="INF" unitRef="NOK">100</cen:BT-92>
+	<cen:BT-95 contextRef="BG-20_0">S</cen:BT-95>
+	<cen:BT-96 contextRef="BG-20_0" decimals="INF" unitRef="pure">25</cen:BT-96>
+	<cen:BT-97 contextRef="BG-20_0">Promotion discount</cen:BT-97>
+	<cen:BT-98 contextRef="BG-20_0">88</cen:BT-98>
+	<xbrli:context id="BG-20_1">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-20</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>1</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-92 contextRef="BG-20_1" decimals="INF" unitRef="NOK">100</cen:BT-92>
+	<cen:BT-95 contextRef="BG-20_1">S</cen:BT-95>
+	<cen:BT-96 contextRef="BG-20_1" decimals="INF" unitRef="pure">25</cen:BT-96>
+	<cen:BT-97 contextRef="BG-20_1">Freight</cen:BT-97>
+	<xbrli:context id="BG-21_0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-21</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>0</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-99 contextRef="BG-21_0" decimals="INF" unitRef="NOK">100</cen:BT-99>
+	<cen:BT-102 contextRef="BG-21_0">S</cen:BT-102>
+	<cen:BT-103 contextRef="BG-21_0" decimals="INF" unitRef="pure">25</cen:BT-103>
+	<cen:BT-104 contextRef="BG-21_0">Promotion discount</cen:BT-104>
+	<cen:BT-105 contextRef="BG-21_0">88</cen:BT-105>
+	<xbrli:context id="BG-21_1">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-21</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>1</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-99 contextRef="BG-21_1" decimals="INF" unitRef="NOK">100</cen:BT-99>
+	<cen:BT-102 contextRef="BG-21_1">S</cen:BT-102>
+	<cen:BT-103 contextRef="BG-21_1" decimals="INF" unitRef="pure">25</cen:BT-103>
+	<cen:BT-104 contextRef="BG-21_1">Freight</cen:BT-104>
+	<xbrli:context id="BG-23_0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-23</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>0</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-116 contextRef="BG-23_0" decimals="INF" unitRef="NOK">1460.5</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_0" decimals="INF" unitRef="NOK">365.13</cen:BT-117>
+	<cen:BT-118 contextRef="BG-23_0">S</cen:BT-118>
+	<cen:BT-119 contextRef="BG-23_0" decimals="INF" unitRef="pure">25</cen:BT-119>
+	<xbrli:context id="BG-23_1">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-23</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>1</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-116 contextRef="BG-23_1" decimals="INF" unitRef="NOK">1</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_1" decimals="INF" unitRef="NOK">0.15</cen:BT-117>
+	<cen:BT-118 contextRef="BG-23_1">S</cen:BT-118>
+	<cen:BT-119 contextRef="BG-23_1" decimals="INF" unitRef="pure">15</cen:BT-119>
+	<xbrli:context id="BG-23_2">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-23</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>2</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-116 contextRef="BG-23_2" decimals="INF" unitRef="NOK">-25</cen:BT-116>
+	<cen:BT-117 contextRef="BG-23_2" decimals="INF" unitRef="NOK">0</cen:BT-117>
+	<cen:BT-118 contextRef="BG-23_2">E</cen:BT-118>
+	<cen:BT-119 contextRef="BG-23_2" decimals="INF" unitRef="pure">0</cen:BT-119>
+	<cen:BT-120 contextRef="BG-23_2">Exempt New Means of Transport</cen:BT-120>
+	<xbrli:context id="BG-24_0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-24</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>0</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-122 contextRef="BG-24_0">Doc1</cen:BT-122>
+	<cen:BT-123 contextRef="BG-24_0">Timesheet</cen:BT-123>
+	<cen:BT-124 contextRef="BG-24_0">http:..www.suppliersite.eu.sheet001.html</cen:BT-124>
+	<xbrli:context id="BG-24_1">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-24</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>1</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-122 contextRef="BG-24_1">Doc2</cen:BT-122>
+	<cen:BT-123 contextRef="BG-24_1">EHF specification</cen:BT-123>
+	<cen:BT-125 contextRef="BG-24_1">VGVzdGluZyBCYXNlNjQgZW5jb2Rpbmc=</cen:BT-125>
+	<xbrli:context id="BG-25_0">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-25</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>0</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-126 contextRef="BG-25_0">1</cen:BT-126>
+	<cen:BT-127 contextRef="BG-25_0">Scratch on box</cen:BT-127>
+	<cen:BT-129 contextRef="BG-25_0" decimals="INF" unitRef="pure">2</cen:BT-129>
+	<cen:BT-131 contextRef="BG-25_0" decimals="INF" unitRef="NOK">1273</cen:BT-131>
+	<cen:BT-133 contextRef="BG-25_0">BookingCode001</cen:BT-133>
+	<cen:BG-27 contextRef="BG-25_0">[object Object]</cen:BG-27>
+	<cen:BG-28 contextRef="BG-25_0">[object Object]</cen:BG-28>
+	<xbrli:context id="BG-25_1">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-25</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>1</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-126 contextRef="BG-25_1">2</cen:BT-126>
+	<cen:BT-127 contextRef="BG-25_1">Cover is slightly damaged.</cen:BT-127>
+	<cen:BT-129 contextRef="BG-25_1" decimals="INF" unitRef="pure">-1</cen:BT-129>
+	<cen:BT-131 contextRef="BG-25_1" decimals="INF" unitRef="NOK">-3.96</cen:BT-131>
+	<cen:BT-133 contextRef="BG-25_1">BookingCode002</cen:BT-133>
+	<xbrli:context id="BG-25_2">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-25</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>2</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-126 contextRef="BG-25_2">3</cen:BT-126>
+	<cen:BT-129 contextRef="BG-25_2" decimals="INF" unitRef="pure">2</cen:BT-129>
+	<cen:BT-131 contextRef="BG-25_2" decimals="INF" unitRef="NOK">4.96</cen:BT-131>
+	<cen:BT-133 contextRef="BG-25_2">BookingCode003</cen:BT-133>
+	<xbrli:context id="BG-25_3">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-25</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>3</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-126 contextRef="BG-25_3">4</cen:BT-126>
+	<cen:BT-129 contextRef="BG-25_3" decimals="INF" unitRef="pure">-1</cen:BT-129>
+	<cen:BT-131 contextRef="BG-25_3" decimals="INF" unitRef="NOK">-25</cen:BT-131>
+	<cen:BT-133 contextRef="BG-25_3">BookingCode004</cen:BT-133>
+	<xbrli:context id="BG-25_4">
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.eipa.jp">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<xbrli:instant>2020-10-26</xbrli:instant>
+		</xbrli:period>
+		<xbrli:scenario>
+			<xbrldi:typedMember dimension="cen:dL1N">
+				<cen:L1N>BG-25</cen:L1N>
+			</xbrldi:typedMember>
+			<xbrldi:typedMember dimension="cen:dL2N">
+				<cen:L2N>4</cen:L2N>
+			</xbrldi:typedMember>
+		</xbrli:scenario>
+	</xbrli:context>
+	<cen:BT-126 contextRef="BG-25_4">5</cen:BT-126>
+	<cen:BT-129 contextRef="BG-25_4" decimals="INF" unitRef="pure">250</cen:BT-129>
+	<cen:BT-131 contextRef="BG-25_4" decimals="INF" unitRef="NOK">187.5</cen:BT-131>
+	<cen:BT-133 contextRef="BG-25_4">BookingCode005</cen:BT-133>
+</xbrli:xbrl>

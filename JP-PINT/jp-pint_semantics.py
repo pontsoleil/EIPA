@@ -37,6 +37,7 @@ import os
 import argparse
 
 import jp_pint_constants
+from jp_pint_constants import APP_BASE
 
 APP_BASE = jp_pint_constants.APP_BASE
 SEMANTIC_BASE = jp_pint_constants.SEMANTIC_BASE

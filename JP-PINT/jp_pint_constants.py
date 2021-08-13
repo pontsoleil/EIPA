@@ -33,17 +33,13 @@ html_head = '''
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="icon" href="https://www.wuwei.space/jp_pint/billing-japan/favicon.ico">
-	<!-- font awesome 4 -->
-	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
-	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
-	<!-- bootstrap 4 and jQuery 3 
-	If you’re using our compiled JavaScript, don’t forget to include CDN versions of jQuery and Popper.js before it.
-	https://getbootstrap.com/docs/4.0/getting-started/download/
-	-->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- Bootstrap 4 jQuery 3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+	<!-- Font Awesome 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- this page -->
 	<link rel="stylesheet" href="{1}css/main.css" crossorigin="anonymous">
 	<script src="{1}js/main.js" crossorigin="anonymous"></script>
@@ -94,20 +90,20 @@ navbar_html = '''
 			</div>
 		</div>
 	</div>
+	<form id="nav-menu" class="form-inline flex-nowrap">
+		<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
+		<input class="search form-control mr-0" type="search" placeholder="Search" aria-label="Search" data-toggle="tooltip" title="{11}">
+		<select id="language" class="form-control mr-0 border-0">
+			<option value="en" {1}>English</option>
+			<option value="ja" {2}>日本語</option>
+		</select>
+		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
+			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{9}"></i>
+		</button>
+		{10}
+	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
 		<a class="navbar-brand col-8 mr-auto" href="{6}{5}">{0}</a>
-		<form class="form-inline bg-light flex-nowrap">
-			<button class="search btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
-			<input class="search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" data-toggle="tooltip" title="{11}">
-			<select id="language" class="form-control mr-sm-1 border-0">
-				<option value="en" {1}>English</option>
-				<option value="ja" {2}>日本語</option>
-			</select>
-      <button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0" data-toggle="modal" data-target="#infoModal">
-				<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{9}"></i>
-			</button>
-      {10}
-		</form>
 	</nav>
 	<div class="container">
 		<div class="syntax">
@@ -180,18 +176,18 @@ item_navbar = '''
 			</div>
 		</div>
 	</div>
+	<form id="nav-menu" class="form-inline flex-nowrap">
+		<select id="language" class="form-control mr-0 border-0">
+			<option value="en" {1}>English</option>
+			<option value="ja" {2}>日本語</option>
+		</select>
+		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
+			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{8}"></i>
+		</button>
+		{7}
+	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
 		<a class="navbar-brand col-8 mr-auto" href="{4}{3}">{0}</a>
-		<form class="form-inline flex-nowrap">
-			<select id="language" class="form-control mr-sm-1 border-0">
-				<option value="en" {1}>English</option>
-				<option value="ja" {2}>日本語</option>
-			</select>
-      <button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0" data-toggle="modal" data-target="#itemInfoModal">
-				<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{8}"></i>
-			</button>
-      {7}
-		</form>
 	</nav>
 	<div class="container">
 		<div class="item-syntax">
@@ -214,7 +210,6 @@ item_trailer = '''
 </html>
 '''
 dropdown_menu_ja = '''
-      <div class="collapse navbar-collapse" data-toggle="tooltip" data-placement="bottom" title="他の文書への遷移">
         <li class="nav-item dropdown ja p-0">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-list" aria-hidden="true"></i>
@@ -230,7 +225,6 @@ dropdown_menu_ja = '''
             <a class="dropdown-item" href="{0}rules/ubl-japan/ja/">都度請求書ルール</a>
           </div>
         </li>
-      </div>
 '''
 dropdown_menu_en = '''
         <li class="nav-item dropdown en p-0" data-toggle="tooltip" data-placement="bottom" title="Navigation menu">

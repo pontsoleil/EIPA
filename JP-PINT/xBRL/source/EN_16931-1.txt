@@ -1,0 +1,213 @@
+BG-0	0	1_1		BusinessTerm
+BT-1	1	1_1	Identifier	Invoice number
+BT-2	1	1_1	Date	Invoice issue date
+BT-3	1	1_1	Code	Invoice type code
+BT-5	1	1_1	Code	Invoice currency code
+BT-6	1	0_1	Code	VAT accounting currency code
+BT-7	1	0_1	Date	Value added tax point date
+BT-8	1	0_1	Code	Value added tax point date code
+BT-9	1	0_1	Date	Payment due date
+BT-10	1	0_1	Text	Buyer reference
+BT-11	1	0_1	DocumentReference	Project reference
+BT-12	1	0_1	DocumentReference	Contract reference
+BT-13	1	0_1	DocumentReference	Purchase order reference 
+BT-14	1	0_1	DocumentReference	Sales order reference
+BT-15	1	0_1	DocumentReference	Receiving advice reference
+BT-16	1	0_1	DocumentReference	Despatch advice reference
+BT-17	1	0_1	DocumentReference	Tender or lot reference
+BT-18	1	0_1	Identifier	Invoiced object identifier
+BT-18A	1	0_1		Scheme identifier
+BT-19	1	0_1	Text	Buyer accounting reference
+BT-20	1	0_1	Text	Payment terms
+BG-1	1	0_n		INVOICE NOTE
+BT-21	2	0_1	Code	Invoice note subject code
+BT-22	2	1_1	Text	Invoice note
+BG-2	1	1_1		PROCESS CONTROL
+BT-23	2	0_1	Text	Business process type
+BT-24	2	1_1	Identifier	Specification identifier
+BG-3	1	0_n		PRECEDING INVOICE REFERENCE
+BT-25	2	1_1	DocumentReference	Preceding Invoice reference
+BT-26	2	0_1	Date	Preceding Invoice issue date
+BG-4	1	1_1		SELLER
+BT-27	2	1_1	Text	Seller name
+BT-28	2	0_1	Text	Seller trading name
+BT-29	2	0_n	Identifier	Seller identifier
+BT-29A	2	0_1		Scheme identifier
+BT-30	2	0_1	Identifier	Seller legal registration identifier
+BT-30A	2	0_1		Scheme identifier
+BT-31	2	0_1	Identifier	Seller VAT identifier
+BT-32	2	0_1	Identifier	Seller tax registration identifier
+BT-33	2	0_1	Text	Seller additional legal information
+BT-34	2	0_1	Identifier	Seller electronic address
+BT-34A	2	1_1		Scheme identifier
+BG-5	2	1_1		SELLER POSTAL ADDRESS
+BT-35	3	0_1	Text	Seller address line 1
+BT-36	3	0_1	Text	Seller address line 2
+BT-162	3	0_1	Text	Seller address line 3
+BT-37	3	0_1	Text	Seller city
+BT-38	3	0_1	Text	Seller post code
+BT-39	3	0_1	Text	Seller country subdivision
+BT-40	3	1_1	Code	Seller country code
+BG-6	2	0_1		SELLER CONTACT
+BT-41	3	0_1	Text	Seller contact point
+BT-42	3	0_1	Text	Seller contact telephone number
+BT-43	3	0_1	Text	Seller contact email address
+BG-7	1	1_1		BUYER
+BT-44	2	1_1	Text	Buyer name
+BT-45	2	0_1	Text	Buyer trading name
+BT-46	2	0_1	Identifier	Buyer identifier
+BT-46A	2	0_1		Scheme identifier
+BT-47	2	0_1	Identifier	Buyer legal registration identifier
+BT-47A	2	0_1		Scheme identifier
+BT-48	2	0_1	Identifier	Buyer VAT identifier
+BT-49	2	0_1	Identifier	Buyer electronic address
+BT-49A	2	1_1		Scheme identifier
+BG-8	2	1_1		BUYER POSTAL ADDRESS
+BT-50	3	0_1	Text	Buyer address line 1
+BT-51	3	0_1	Text	Buyer address line 2
+BT-163	3	0_1	Text	Buyer address line 3
+BT-52	3	0_1	Text	Buyer city
+BT-53	3	0_1	Text	Buyer post code
+BT-54	3	0_1	Text	Buyer country subdivision
+BT-55	3	1_1	Code	Buyer country code
+BG-9	2	0_1		BUYER CONTACT 
+BT-56	3	0_1	Text	Buyer contact point
+BT-57	3	0_1	Text	Buyer contact telephone number
+BT-58	3	0_1	Text	Buyer contact email address
+BG-10	1	0_1		PAYEE
+BT-59	2	1_1	Text	Payee name
+BT-60	2	0_1	Identifier	Payee identifier
+BT-60A	2	0_1		Scheme identifier
+BT-61	2	0_1	Identifier	Payee legal registration identifier
+BT-61A	2	0_1		Scheme identifier
+BG-11	1	0_1		SELLER TAX REPRESENTATIVE PARTY
+BT-62	2	1_1	Text	Seller tax representative name
+BT-63	2	1_1	Identifier	Seller tax representative VAT identifier
+BG-12	2	1_1		SELLER TAX REPRESENTATIVE POSTAL ADDRESS
+BT-64	3	0_1	Text	Tax representative address line 1
+BT-65	3	0_1	Text	Tax representative address line 2
+BT-164	3	0_1	Text	Tax representative address line 3
+BT-66	3	0_1	Text	Tax representative city
+BT-67	3	0_1	Text	Tax representative post code
+BT-68	3	0_1	Text	Tax representative country subdivision
+BT-69	3	1_1	Code	Tax representative country code
+BG-13	1	0_1		DELIVERY INFORMATION
+BT-70	2	0_1	Text	Deliver to party name
+BT-71	2	0_1	Identifier	Deliver to location identifier
+BT-71A	2	0_1		Scheme identifier
+BT-72	2	0_1	Date	Actual delivery date
+BG-14	2	0_1		INVOICING PERIOD
+BT-73	3	0_1	Date	Invoicing period start date
+BT-74	3	0_1	Date	Invoicing period end date
+BG-15	2	0_1		DELIVER TO ADDRESS
+BT-75	3	0_1	Text	Deliver to address line 1
+BT-76	3	0_1	Text	Deliver to address line 2
+BT-165	3	0_1	Text	Deliver to address line 3
+BT-77	3	0_1	Text	Deliver to city
+BT-78	3	0_1	Text	Deliver to post code
+BT-79	3	0_1	Text	Deliver to country subdivision
+BT-80	3	1_1	Code	Deliver to country code
+BG-16	1	0_1		PAYMENT INSTRUCTIONS
+BT-81	2	1_1	Code	Payment means type code
+BT-82	2	0_1	Text	Payment means text
+BT-83	2	0_1	Text	Remittance information
+BG-17	2	0_n		CREDIT TRANSFER
+BT-84	3	1_1	Identifier	Payment account identifier
+BT-85	3	0_1	Text	Payment account name
+BT-86	3	0_1	Identifier	Payment service provider identifier
+BG-18	2	0_1		PAYMENT CARD INFORMATION
+BT-87	3	1_1	Text	Payment card primary account number
+BT-88	3	0_1	Text	Payment card holder name
+BG-19	2	0_1		DIRECT DEBIT
+BT-89	3	0_1	Identifier	Mandate reference identifier
+BT-90	3	0_1	Identifier	Bank assigned creditor identifier
+BT-91	3	0_1	Identifier	Debited account identifier
+BG-20	1	0_n		DOCUMENT LEVEL ALLOWANCES
+BT-92	2	1_1	Amount	Document level allowance amount
+BT-93	2	0_1	Amount	Document level allowance base amount
+BT-94	2	0_1	Percentage	Document level allowance percentage
+BT-95	2	1_1	Code	Document level allowance VAT category code
+BT-96	2	0_1	Percentage	Document level allowance VAT rate
+BT-97	2	0_1	Text	Document level allowance reason
+BT-98	2	0_1	Code	Document level allowance reason code
+BG-21	1	0_n		DOCUMENT LEVEL CHARGES
+BT-99	2	1_1	Amount	Document level charge amount
+BT-100	2	0_1	Amount	Document level charge base amount
+BT-101	2	0_1	Percentage	Document level charge percentage
+BT-102	2	1_1	Code	Document level charge VAT category code
+BT-103	2	0_1	Percentage	Document level charge VAT rate
+BT-104	2	0_1	Text	Document level charge reason
+BT-105	2	0_1	Code	Document level charge reason code
+BG-22	1	1_1		DOCUMENT TOTALS
+BT-106	2	1_1	Amount	Sum of Invoice line net amount
+BT-107	2	0_1	Amount	Sum of allowances on document level
+BT-108	2	0_1	Amount	Sum of charges on document level
+BT-109	2	1_1	Amount	Invoice total amount without VAT
+BT-110	2	0_1	Amount	Invoice total VAT amount
+BT-111	2	0_1	Amount	Invoice total VAT amount in accounting currency
+BT-112	2	1_1	Amount	Invoice total amount with VAT
+BT-113	2	0_1	Amount	Paid amount
+BT-114	2	0_1	Amount	Rounding amount
+BT-115	2	1_1	Amount	Amount due for payment
+BG-23	1	1_n		VAT BREAKDOWN
+BT-116	2	1_1	Amount	VAT category taxable amount
+BT-117	2	1_1	Amount	VAT category tax amount
+BT-118	2	1_1	Code	VAT category code 
+BT-119	2	0_1	Percentage	VAT category rate
+BT-120	2	0_1	Text	VAT exemption reason text
+BT-121	2	0_1	Code	VAT exemption reason code
+BG-24	1	0_n		ADDITIONAL SUPPORTING DOCUMENTS
+BT-122	2	1_1	DocumentReference	Supporting document reference
+BT-123	2	0_1	Text	Supporting document description
+BT-124	2	0_1	Text	External document location
+BT-125	2	0_1	Binaryobject	Attached document
+BT-125A	2	1_1		Attached document Mime code
+BT-125B	2	1_1		Attached document Filename
+BG-25	1	1_n		INVOICE LINE
+BT-126	2	1_1	Identifier	Invoice line identifier
+BT-127	2	0_1	Text	Invoice line note
+BT-128	2	0_1	Identifier	Invoice line object identifier
+BT-128A	2	0_1		Scheme identifier
+BT-129	2	1_1	Quantity	Invoiced quantity
+BT-130	2	1_1	Code	Invoiced quantity unit of measure code
+BT-131	2	1_1	Amount	Invoice line net amount
+BT-132	2	0_1	DocumentReference	Referenced purchase order line reference
+BT-133	2	0_1	Text	Invoice line Buyer accounting reference
+BG-26	2	0_1		INVOICE LINE PERIOD
+BT-134	3	0_1	Date	Invoice line period start date
+BT-135	3	0_1	Date	Invoice line period end date
+BG-27	2	0_n		INVOICE LINE ALLOWANCES
+BT-136	3	1_1	Amount	Invoice line allowance amount
+BT-137	3	0_1	Amount	Invoice line allowance base amount
+BT-138	3	0_1	Percentage	Invoice line allowance percentage
+BT-139	3	0_1	Text	Invoice line allowance reason
+BT-140	3	0_1	Code	Invoice line allowance reason code
+BG-28	2	0_n		INVOICE LINE CHARGES
+BT-141	3	1_1	Amount	Invoice line charge amount
+BT-142	3	0_1	Amount	Invoice line charge base amount
+BT-143	3	0_1	Percentage	Invoice line charge percentage
+BT-144	3	0_1	Text	Invoice line charge reason
+BT-145	3	0_1	Code	Invoice line charge reason code
+BG-29	2	1_1		PRICE DETAILS
+BT-146	3	1_1	Unit price amount	Item net price
+BT-147	3	0_1	Unit price amount	Item price discount
+BT-148	3	0_1	Unit price amount	Item gross price
+BT-149	3	0_1	Quantity	Item price base quantity
+BT-150	3	0_1	Code	Item price base quantity unit of measure code
+BG-30	2	1_1		LINE VAT INFORMATION
+BT-151	3	1_1	Code	Invoiced item VAT category code
+BT-152	3	0_1	Percent	Invoiced item VAT rate
+BG-31	2	1_1		ITEM INFORMATION
+BT-153	3	1_1	Text	Item name
+BT-154	3	0_1	Text	Item description
+BT-155	3	0_1	Identifier	Item Seller's identifier
+BT-156	3	0_1	Identifier	Item Buyer's identifier
+BT-157	3	0_1	Identifier	Item standard identifier
+BT-157A	3	1_1		Scheme identifier
+BT-158	3	0_n	Identifier	Item classification identifier
+BT-158A	3	1_1		Scheme identifier
+BT-158B	3	0_1		Scheme version identifier
+BT-159	3	0_1	Code	Item country of origin
+BG-32	3	0_n		ITEM ATTRIBUTES
+BT-160	4	1_1	Text	Item attribute name
+BT-161	4	1_1	Text	Item attribute value

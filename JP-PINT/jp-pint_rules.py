@@ -63,8 +63,10 @@ navbar_html = jp_pint_constants.navbar_html
 dropdown_menu_en = jp_pint_constants.dropdown_menu_en.format(APP_BASE)
 dropdown_menu_ja = jp_pint_constants.dropdown_menu_ja.format(APP_BASE)
 legend_en ='''
+<h3>TBD</h3>
 '''
-legend_ja ='''
+legend_ja = '''
+<h3>未定</h3>
 '''
 table_html = '''
 				<table class="{0} rules table table-sm table-hover" style="table-layout: fixed; width: 100%;">
@@ -83,9 +85,18 @@ trailer = jp_pint_constants.trailer
 # ITEM
 item_head = jp_pint_constants.item_head
 info_item_modal_en = '''
+<h3>ISO/IEC 19757-3:2016(E)</h3>
+<h5>Information technology -- Document Schema definition languages (DSDL) -- <br />part 3: Rule-based validation -- Schemetron</h5>
+<h5>rule element</h5>
+A list of assertions tested within the conttext specified by the required <strong>context</strong> attribute. The <strong>context</strong> attribute specifies the rule context expression.<br />
+<br />
+<h5>assert element</h5>
+An assertion made about the context nodes. The data contents is a natural-language assertion. The required <strong>test</strong> attribute is an assertion test evaluated in the current context. If the test evaluates positive, the report succeeds.
+The natural-language assertion shall be a positive statement of a constraint.<br />
+The <strong>flag</strong> attribute allows more detailed outcomes.
 '''
-info_item_modal_ja = '''
-'''
+info_item_modal_ja = info_item_modal_en
+
 item_navbar = jp_pint_constants.item_navbar
 # 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 item_breadcrumb = '''
@@ -533,9 +544,9 @@ if __name__ == '__main__':
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,PINT_RULE_MESSAGE_TITLE_en,lang, \
 															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
+															dropdown_menu_en,'ID or word in Term/Description','modal-sm')
 		f.write(html)
-		f.write(table_html.format('PINT','Identifier / Error message','Flag'))
+		f.write(table_html.format('PINT','Identifier / Message','flag'))
 		for id,data in pint_rule_dict.items():
 			writeTr_en(f,'ubl-pint',data)
 		f.write(trailer.format('Go to top'))
@@ -548,9 +559,9 @@ if __name__ == '__main__':
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,PINT_RULE_MESSAGE_TITLE_ja,lang, \
 															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm')
 		f.write(html)
-		f.write(table_html.format('PINT','ID / エラ-メッセージ','重要度'))
+		f.write(table_html.format('PINT','ID / メッセージ','flag'))
 		for id,data in pint_rule_dict.items():
 			writeTr_ja(f,'ubl-pint',data)
 		f.write(trailer.format('先頭に戻る'))
@@ -563,9 +574,9 @@ if __name__ == '__main__':
 		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,JP_RULE_MESSAGE_TITLE_en,lang, \
 															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description','modal-lg')
+															dropdown_menu_en,'ID or word in Term/Description','modal-sm')
 		f.write(html)
-		f.write(table_html.format('JP','Identifier / Error message','Flag'))
+		f.write(table_html.format('JP','Identifier / Message','flag'))
 		for id,data in jp_rule_dict.items():
 			writeTr_en(f,'ubl-japan',data)
 		f.write(trailer.format('Go to top'))
@@ -578,9 +589,9 @@ if __name__ == '__main__':
 		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,JP_RULE_MESSAGE_TITLE_ja,lang, \
 															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg')
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm')
 		f.write(html)
-		f.write(table_html.format('JP','ID / エラ-メッセージ','重要度'))
+		f.write(table_html.format('JP','ID / メッセージ','flag'))
 		for id,data in jp_rule_dict.items():
 			writeTr_ja(f,'ubl-japan',data)
 		f.write(trailer.format('先頭に戻る'))

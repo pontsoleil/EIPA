@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+
+    <title>Business Rule</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- split-pane on GitHub https://github.com/shagstrom/split-pane -->
+    <link rel="stylesheet" href="css/split-pane.css" />
+    <script src="js/split-pane.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/DataTables/Editor-1.9.3/css/editor.dataTables.min.css">
+    <script type="text/javascript" src="/DataTables/DataTables-1.10.21/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="/DataTables/Editor-1.9.3/js/dataTables.editor.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/DataTables/Bootstrap-4-4.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="/DataTables/Bootstrap-4-4.1.1/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css ">
+    <!-- <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css"> -->
+    <!-- this page -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/snackbar.css">
+    <script type="text/javascript" src="js/rules.js"></script>
+    <script type="text/javascript" src="js/ajax.min.js"></script>
+    <script type="text/javascript" src="js/snackbar.js"></script>
+    <script type="text/javascript" class="init">
+      $(document).ready(function() {
+        if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+          $('#ie-warning').css('display','block');
+          return;
+        }
+        var getUrlParameter = function getUrlParameter(sParam) {
+          var pageURL = window.location.search.substring(1),
+              variables = pageURL.split('&'),
+              name, i, tab1, tab2, file;
+          for (i = 0; i < variables.length; i++) {
+            name = variables[i].split('=');
+            if (name[0] === sParam) {
+              return name[1] === undefined ? true : decodeURIComponent(name[1]);
+            }
+          }
+        };
+        $('#ie-warning').css('display','none');
+        $('#root').css('display','block');
+        $('#tab-1').css('display','block');
+        $('#tab-2').css('display','block');
+        // tab1 = getUrlParameter('t1');
+        // tab2 = getUrlParameter('t2');
+        initModule();
+        history.replaceState({},null,location.pathname);
+        //** see https://stackoverflow.com/questions/13650408/hide-variables-passed-in-url */
+      });
+    </script>
+  </head>
+  <body>
+    <!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
+    <div id="ie-warning" class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-6 mx-auto">
+          <div>
+            <h1>This service doesn't support Internet Explorer (IE).</h1>
+            Please use either Edge, Chrome, Safari, FireFox, etc.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-1" class="tab">
+      <p class="tablinks flip" onclick="setMenu('tab-1');return false;"><i class="fa fa-ellipsis-h"></i></p>
+      <p class="language change" onclick="changeLanguage();return false;"><i class="fa fa-language"></i></p>
+      <p class="language use">en</p>
+      <p class="tablinks en title">EN 16931-1</p>
+      <p class="tablinks pint title">JP-PINT</p>
+      <p class="tablinks reset" onclick="setFrame('reset','reset');return false;">Reset</p>
+    </div>
+
+    <div id="tab-2" class="tab">
+      <p class="tablinks flip" onclick="setMenu('tab-2');return false;"><i class="fa fa-ellipsis-h"></i></p>
+      <p class="language change" onclick="changeLanguage();return false;"><i class="fa fa-language"></i></p>
+      <p class="language use">en</p>
+      <p class="tablinks en title">EN 16931-1</p>
+      <p class="tablinks en func" onclick="setFrame('en','func');return false;">Functionality</p>
+      <p class="tablinks en int" onclick="setFrame('en','int');return false;">Integrity</p>
+      <p class="tablinks en cond" onclick="setFrame('en','cond');return false;">Conditions</p>
+      <p class="tablinks en vat" onclick="setFrame('en','vat');return false;">VAT</p>
+      <p class="tablinks pint title">Rules</p>
+      <p class="tablinks pint pint" onclick="setFrame('pint','pint');return false;">PINT</p>
+      <p class="tablinks pint jp-pint" onclick="setFrame('pint','jp-pint');return false;">JP-PINT</p>
+      <p class="tablinks reset" onclick="setFrame('reset','reset');return false;">Reset</p>
+    </div>
+
+    <!-- ROOT -->
+    <div id="root" class="split-pane-frame tabcontent serif">
+      <div class="split-pane fixed-left" id="root-split-pane">
+        <div class="split-pane-component" id="component-1"></div>
+        <div class="split-pane-divider" id="vertical-divider"></div>
+        <div class="split-pane-component" id="component-2"></div>
+      </div>
+    </div>
+
+    <div style="display:none">
+      <!-- PINT -->
+      <div id="pint-container">
+        <div id="pint-frame" class="pretty-split-pane-component-inner">
+          <span class="table-title">PINT Electronic invoicing</span>
+          <!-- <i class="fas fa-sync fa-lg" aria-hidden="true"></i> -->
+          <table id="pint" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th></th><!-- detail-control -->
+                <th>EN ID</th>
+                <th>PINT ID</th>
+                <th>Business Term</th>
+                <th>日本語訳</th>
+                <th>Datatype</th>
+                <th>Card.</th>
+                <th>Rule IDs</th>
+                <th></th><!-- translate-control -->
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <!-- PINT Rule -->
+      <div id="pint-rule-container">
+        <div id="pint-rule-frame" class="pretty-split-pane-component-inner">
+          <span class="table-title">PINT Business Rules</span>
+          <!-- <i class="fas fa-sync fa-lg" aria-hidden="true"></i> -->
+          <table id="pint-rule" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Rule ID</th>
+                <th>Desc</th>
+                <th>日本語訳</th>
+                <th>IDs</th>
+                <th></th><!-- rule-control -->
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <!-- EN -->
+      <div id="en-container">
+        <div id="en-frame" class="pretty-split-pane-component-inner">
+          <span class="table-title">EN 19361-1 Electronic invoicing</span>
+          <i class="fas fa-sync fa-lg" aria-hidden="true"></i>
+          <table id="en" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th></th><!-- detail-control -->
+                <th>ID</th>
+                <th>Business Term</th>
+                <th>Datatype</th>
+                <th>Card.</th>
+                <th>Rule IDs</th>
+                <th></th><!-- rule-control -->
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <!-- Rule -->
+      <div id="rule-container">
+        <div id="rule-frame" class="pretty-split-pane-component-inner">
+          <span class="table-title">EN Business Rules</span>
+          <i class="fas fa-sync fa-lg" aria-hidden="true"></i>
+          <table id="rule" class="display" style="width:100%">
+            <thead>
+              <tr>
+                <th>Rule ID</th>
+                <th>Desc</th>
+                <th>IDs</th>
+                <!-- <th>Target</th> -->
+                <th></th><!-- rule-control -->
+                <th></th><!-- info-control -->
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+  </body>
+</html>
