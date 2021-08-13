@@ -297,6 +297,7 @@ if __name__ == '__main__':
 		idxLevel = {}
 		parent = None
 		n = 0
+		writtenLocator = set()
 		for data in pint_list:
 			if not data or not data['PINT_ID']:
 				continue
@@ -314,10 +315,18 @@ if __name__ == '__main__':
 					num = parent_num + '_' + id
 				idxLevel[level] = num
 				if parent:
-					xml = '    <loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="pint_{0}" xlink:title="presentation parent: {0}"/>\n'.format(parent)
-					f.write(xml)
-					xml = '    <loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="pint_{0}" xlink:title="presentation child: {0}"/>\n'.format(id)
-					f.write(xml)
+					if parent in writtenLocator:
+						pass
+					else:
+						xml = '    <loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="pint_{0}" xlink:title="presentation parent: {0}"/>\n'.format(parent)
+						f.write(xml)
+						writtenLocator.add(parent)
+					if id in writtenLocator:
+						pass
+					else:					
+						xml = '    <loc xlink:type="locator" xlink:href="pint-2021-12-31.xsd#pint-{0}" xlink:label="pint_{0}" xlink:title="presentation child: {0}"/>\n'.format(id)
+						f.write(xml)
+						writtenLocator.add(id)
 					xml = '    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="pint_{0}" xlink:to="pint_{1}" xlink:title="presentation: {0} to {1}" use="optional" order="{2}"/>\n'.format(parent, id, n)
 					f.write(xml)
 				n = n + 1
