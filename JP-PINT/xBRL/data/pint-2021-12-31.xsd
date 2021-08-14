@@ -11,9 +11,6 @@
 	xmlns:gen="http://xbrl.org/2008/generic"
 	xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
 	xmlns:pint="http://peppol.eu/2021-12-31">
-	<!-- xsi:schemaLocation="http://www.xbrl.org/2003/XLink http://www.xbrl.org/2003/xlink-2003-12-31.xsd
-											http://www.xbrl.org/2003/linkbase xbrl-linkbase-2003-12-31.xsd
-                      http://www.w3.org/1999/xlink xlink-2003-12-31.xsd"> -->
 	<annotation>
 		<appinfo>
 			<link:linkbaseRef xlink:href="pint-2021-12-31-presentation.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple"/>
@@ -40,7 +37,7 @@
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
 	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
-	<element name="opinionLink" substitutionGroup="xl:extended">
+	<element name="xpthLink" substitutionGroup="xl:extended">
 		<complexType>
 			<complexContent>
 				<restriction base="xl:extendedType">
