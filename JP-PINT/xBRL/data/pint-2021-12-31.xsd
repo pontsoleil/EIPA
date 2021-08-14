@@ -1,1206 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) XBRL Japan -->
 <schema targetNamespace="http://peppol.eu/2021-12-31" 
-	elementFormDefault="qualified" attributeFormDefault="unqualified"
-	xmlns="http://www.w3.org/2001/XMLSchema"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xbrli="http://www.xbrl.org/2003/instance"
-	xmlns:link="http://www.xbrl.org/2003/linkbase"
-	xmlns:xl="http://www.xbrl.org/2003/XLink"
-	xmlns:gen="http://xbrl.org/2008/generic"
-	xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
 	xmlns:pint="http://peppol.eu/2021-12-31">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<annotation>
 		<appinfo>
-			<link:linkbaseRef xlink:href="pint-2021-12-31-presentation.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:type="simple"/>
-			<link:linkbaseRef xlink:href="pint-2021-12-31-definition.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:type="simple"/>
-			<link:linkbaseRef xlink:href="pint-2021-12-31-reference.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:type="simple"/>
-			<link:linkbaseRef xlink:href="pint-2021-12-31-label.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="pint-2021-12-31-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="pint-2021-12-31-definition.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="pint-2021-12-31-reference.xml" xlink:role="http://www.xbrl.org/2003/role/referenceLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
+			<link:linkbaseRef xlink:href="pint-2021-12-31-label.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
 			<link:roleType id="pint_structure" roleURI="http://peppol.eu/2021-12-31/role/pint_structure">
 				<link:definition>PINT Structure</link:definition>
 				<link:usedOn>link:presentationLink</link:usedOn>
 				<link:usedOn>link:definitionLink</link:usedOn>
 			</link:roleType>
-			<link:arcroleType id="xpth" arcroleURI="http://peppol.eu/2021-12-31/role/xpth">
+			<link:arcroleType arcroleURI="http://peppol.eu/2021-12-31/role/XPath" cyclesAllowed="any" id="xpth">
 				<link:definition>
-					Arc from an xpath to a fact.
+					Arc from an XPath to a fact.
 				</link:definition>
 				<link:usedOn>link:referenceLink</link:usedOn>
 			</link:arcroleType>
 		</appinfo>
 	</annotation>
-	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.xbrl.org/2003/xlink-2003-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/2003/XLink" schemaLocation="http://www.xbrl.org/2003/xl-2003-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
-	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
-	<import namespace="http://xbrl.org/2008/generic" schemaLocation="http://www.xbrl.org/2008/generic-link.xsd"/>
-	<!-- <element name="xpthLink" substitutionGroup="xl:extended">
-		<complexType>
-			<complexContent>
-				<restriction base="xl:extendedType">
-					<choice maxOccurs="unbounded" minOccurs="0">
-						<element ref="xl:documentation"/>
-						<element ref="link:loc"/>
-						<element ref="gen:arc"/>
-						<element ref="pint:xpath"/>
-					</choice>
-					<attribute fixed="extended" use="required" ref="xlink:type"/>
-					<attribute use="required" ref="xlink:role"/>
-					<attribute use="optional" ref="xlink:title"/>
-					<attribute name="id" use="optional" type="ID"/>
-					<anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
-				</restriction>
-			</complexContent>
-		</complexType>
-	</element>
-	<element name="xpath" substitutionGroup="xl:resource">
-		<complexType mixed="true">
-			<complexContent mixed="true">
-				<extension base="xl:resourceType">
-					<sequence>
-						<any maxOccurs="unbounded" minOccurs="0" namespace="http://www.w3.org/1999/xhtml" processContents="skip"/>
-					</sequence>
-					<anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
-				</extension>
-			</complexContent>
-		</complexType>
-	</element> -->
+	
 	<!-- Hypercube -->
-	<element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
-	<!-- Domain -->
-	<!-- L1 -->
-	<element name="L1Number" id="pint_L1Number">
-		<simpleType>
-			<restriction base="string"/>
-		</simpleType>
-	</element>
-	<element name="dL1Number" id="pint_dL1Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L1Number"/>
-	<!-- L2 -->
-	<element name="L2Number" id="pint_L2Number">
-		<simpleType>
-			<restriction base="string"/>
-		</simpleType>
-	</element>
-	<element name="dL2Number" id="pint_dL2Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L2Number"/>
-	<!-- L3 -->
-	<element name="L3Number" id="pint_L3Number">
-		<simpleType>
-			<restriction base="string"/>
-		</simpleType>
-	</element>
-	<element name="dL3Number" id="pint_dL3Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L3Number"/>
-	<!-- L4 -->
-	<element name="L4Number" id="pint_L4Number">
-		<simpleType>
-			<restriction base="string"/>
-		</simpleType>
-	</element>
-	<element name="dL4Number" id="pint_dL4Number" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#pint_L4Number"/>
-	<!-- item type -->
-	<complexType name="InvoiceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceIssueDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceIssueTimeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceTypeCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceCurrencyCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxAccountingCurrencyItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxPointDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxPointDateCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentDueDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="projectReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="contractReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="purchaseOrderReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="salesOrderReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="receivingAdviceReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="despatchAdviceReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="tenderOrLotReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicedObjectIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerAccountingReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICE_TERMSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentTermsItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="termsPaymentInstructionsIdItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="termsAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="termsInstallmentDueDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICE_NOTEItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceNoteSubjectCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceNoteItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="PROCESS_CONTROLItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="businessProcessTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="specificationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="PRECEDING_INVOICE_REFERENCEItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="precedingInvoiceReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="precedingInvoiceIssueDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="SELLERItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerTradingNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerLegalRegistrationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerTaxIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerTaxRegistrationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerAdditionalLegalInformationItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerElectronicAddressItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="SELLER_POSTAL_ADDRESSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerAddressLine1ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerAddressLine2ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerAddressLine3ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerCityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerPostCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerCountrySubdivisionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerCountryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="SELLER_CONTACTItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerContactPointItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerContactTelephoneNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerContactEmailAddressItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="BUYERItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerTradingNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerLegalRegistrationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerTaxIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerElectronicAddressItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="BUYER_POSTAL_ADDRESSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerAddressLine1ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerAddressLine2ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerAddressLine3ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerCityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerPostCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerCountrySubdivisionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerCountryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="BUYER_CONTACTItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerContactPointItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerContactTelephoneNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="buyerContactEmailAddressItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="PAYEEItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="payeeNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="payeeIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="payeeLegalRegistrationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="SELLER_TAX_REPRESENTATIVE_PARTYItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerTaxRepresentativeNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sellerTaxRepresentativeTaxIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativeAddressLine1ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativeAddressLine2ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativeAddressLine3ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativeCityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativePostCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativeCountrySubdivisionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxRepresentativeCountryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="DELIVERY_INFORMATIONItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToPartyNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToLocationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="actualDeliveryDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICING_PERIODItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicingPeriodStartDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicingPeriodEndDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="DELIVER_TO_ADDRESSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToAddressLine1ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToAddressLine2ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToAddressLine3ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToCityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToPostCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToCountrySubdivisionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="deliverToCountryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="PAYMENT_INSTRUCTIONSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentInstructionsIdItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentMeansTypeCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentMeansTextItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="remittanceInformationItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="CREDIT_TRANSFERItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentAccountIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentAccountNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentServiceProviderIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="ADDRESSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountAddressLine1ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountAddressLine2ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountCityItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountPostCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountCountrySubdivisionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountAddressLine3ItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="accountCountryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="PAYMENT_CARD_INFORMATIONItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentCardPrimaryAccountNumberItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentCardHolderNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="DIRECT_DEBITItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="mandateReferenceIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="bankAssignedCreditorIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="debitedAccountIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="Paid_amountsItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paidAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="theDateWhenThePaidAmountIsDebitedToTheInvoiceItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="paymentTypeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="DOCUMENT_LEVEL_ALLOWANCESItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowanceAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowanceBaseAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowancePercentageItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowanceTaxCategoryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowanceTaxRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowanceReasonItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelAllowanceReasonCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="DOCUMENT_LEVEL_CHARGESItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargeAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargeBaseAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargePercentageItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargeTaxCategoryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargeTaxRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargeReasonItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="documentLevelChargeReasonCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="DOCUMENT_TOTALSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sumOfInvoiceLineNetAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sumOfAllowancesOnDocumentLevelItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="sumOfChargesOnDocumentLevelItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceTotalAmountWithoutTaxItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineUnitPriceTaxIncludedIndicatorItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceTotalTaxAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceTotalTaxAmountInAccountingCurrencyItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceTotalAmountWithTaxItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="roundingAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="amountDueForPaymentItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="TAX_BREAKDOWNItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxCategoryTaxableAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxCategoryTaxAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxCategoryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxCategoryRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxExemptionReasonTextItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxExemptionReasonCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="ADDITIONAL_SUPPORTING_DOCUMENTSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="supportingDocumentReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="supportingDocumentDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="externalDocumentLocationItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="attachedDocumentItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICE_LINEItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineNoteItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineObjectIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicedQuantityItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicedQuantityUnitOfMeasureCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineNetAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="referencedPurchaseOrderLineReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="orderReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineDespatchAdviceReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineBuyerAccountingReferenceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICE_LINE_PERIODItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLinePeriodStartDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLinePeriodEndDateItemType">
-		<simpleContent>
-			<restriction base="xbrli:dateTimeItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICE_LINE_ALLOWANCESItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineAllowanceAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineAllowanceBaseAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineAllowancePercentageItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineAllowanceReasonItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineAllowanceReasonCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="INVOICE_LINE_CHARGESItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineChargeAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineChargeBaseAmountItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineChargePercentageItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineChargeReasonItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoiceLineChargeReasonCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="PRICE_DETAILSItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemNetPriceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemPriceDiscountItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemGrossPriceItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemPriceBaseQuantityItemType">
-		<simpleContent>
-			<restriction base="xbrli:decimalItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemPriceBaseQuantityUnitOfMeasureCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="LINE_TAX_INFORMATIONItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicedItemTaxCategoryCodeItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="invoicedItemTaxRateItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="unitTaxItemType">
-		<simpleContent>
-			<restriction base="xbrli:monetaryItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="taxSchemeItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="ITEM_INFORMATIONItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemDescriptionItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemSellersIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemBuyersIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemStandardIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemClassificationIdentifierItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemCountryOfOriginItemType">
-		<simpleContent>
-			<restriction base="xbrli:tokenItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="ITEM_ATTRIBUTESItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemAttributeNameItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
-	<complexType name="itemAttributeValueItemType">
-		<simpleContent>
-			<restriction base="xbrli:stringItemType"/>
-		</simpleContent>
-	</complexType>
+	<xs:element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
 
-	<!-- element -->
+	<!-- Dimension -->
+	<!-- _1 -->
+	<xs:element name="_1" id="_1">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="d1" id="d1" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_1"/>
+	<!-- _2 -->
+	<xs:element name="_2" id="_2">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="d2" id="d2" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_2"/>
+	<!-- _3 -->
+	<xs:element name="_3" id="_3">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="d3" id="d3" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_3"/>
+	<!-- _4 -->
+	<xs:element name="_4" id="_4">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="d4" id="d4" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_4"/>
+	<!-- _5 -->
+	<xs:element name="_5" id="_5">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="d5" id="d5" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_5"/>
+
+	<!-- reference -->
+	<element name="XPath" type="string" substitutionGroup="link:part"/>
+	<element name="Example" type="string" substitutionGroup="link:part"/>
+<!-- item type -->
+	<complexType name="InvoiceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceIssueDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="invoiceIssueTimeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceTypeCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="invoiceCurrencyCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="taxAccountingCurrencyItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="taxPointDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="taxPointDateCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="paymentDueDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="buyerReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="projectReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="contractReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="purchaseOrderReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="salesOrderReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="receivingAdviceReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="despatchAdviceReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="tenderOrLotReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoicedObjectIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerAccountingReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="INVOICE_TERMSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentTermsItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="termsPaymentInstructionsIdItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="termsAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="termsInstallmentDueDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="INVOICE_NOTEItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceNoteSubjectCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceNoteItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="PROCESS_CONTROLItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="businessProcessTypeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="specificationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="PRECEDING_INVOICE_REFERENCEItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="precedingInvoiceReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="precedingInvoiceIssueDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="SELLERItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerTradingNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerLegalRegistrationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerTaxIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerTaxRegistrationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerAdditionalLegalInformationItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerElectronicAddressItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="SELLER_POSTAL_ADDRESSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerAddressLine1ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerAddressLine2ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerAddressLine3ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerCityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerPostCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerCountrySubdivisionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerCountryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="SELLER_CONTACTItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerContactPointItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerContactTelephoneNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerContactEmailAddressItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="BUYERItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerTradingNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerLegalRegistrationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerTaxIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerElectronicAddressItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="BUYER_POSTAL_ADDRESSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerAddressLine1ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerAddressLine2ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerAddressLine3ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerCityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerPostCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerCountrySubdivisionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerCountryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="BUYER_CONTACTItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerContactPointItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerContactTelephoneNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="buyerContactEmailAddressItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="PAYEEItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="payeeNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="payeeIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="payeeLegalRegistrationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="SELLER_TAX_REPRESENTATIVE_PARTYItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerTaxRepresentativeNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sellerTaxRepresentativeTaxIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="SELLER_TAX_REPRESENTATIVE_POSTAL_ADDRESSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativeAddressLine1ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativeAddressLine2ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativeAddressLine3ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativeCityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativePostCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativeCountrySubdivisionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxRepresentativeCountryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="DELIVERY_INFORMATIONItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToPartyNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToLocationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="actualDeliveryDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="INVOICING_PERIODItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoicingPeriodStartDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="invoicingPeriodEndDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="DELIVER_TO_ADDRESSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToAddressLine1ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToAddressLine2ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToAddressLine3ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToCityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToPostCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToCountrySubdivisionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="deliverToCountryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="PAYMENT_INSTRUCTIONSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentInstructionsIdItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentMeansTypeCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="paymentMeansTextItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="remittanceInformationItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="CREDIT_TRANSFERItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentAccountIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentAccountNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentServiceProviderIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="ADDRESSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountAddressLine1ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountAddressLine2ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountCityItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountPostCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountCountrySubdivisionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountAddressLine3ItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="accountCountryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="PAYMENT_CARD_INFORMATIONItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentCardPrimaryAccountNumberItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentCardHolderNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="DIRECT_DEBITItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="mandateReferenceIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="bankAssignedCreditorIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="debitedAccountIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="Paid_amountsItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paymentIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="paidAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="theDateWhenThePaidAmountIsDebitedToTheInvoiceItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="paymentTypeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="DOCUMENT_LEVEL_ALLOWANCESItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowanceAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowanceBaseAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowancePercentageItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowanceTaxCategoryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowanceTaxRateItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowanceReasonItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelAllowanceReasonCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="DOCUMENT_LEVEL_CHARGESItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargeAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargeBaseAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargePercentageItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargeTaxCategoryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargeTaxRateItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargeReasonItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="documentLevelChargeReasonCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="DOCUMENT_TOTALSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="sumOfInvoiceLineNetAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="sumOfAllowancesOnDocumentLevelItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="sumOfChargesOnDocumentLevelItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceTotalAmountWithoutTaxItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineUnitPriceTaxIncludedIndicatorItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceTotalTaxAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceTotalTaxAmountInAccountingCurrencyItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceTotalAmountWithTaxItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="roundingAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="amountDueForPaymentItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="TAX_BREAKDOWNItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxCategoryTaxableAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="taxCategoryTaxAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="taxCategoryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="taxCategoryRateItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="taxExemptionReasonTextItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="taxExemptionReasonCodeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="ADDITIONAL_SUPPORTING_DOCUMENTSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="supportingDocumentReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="supportingDocumentDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="externalDocumentLocationItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="attachedDocumentItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="INVOICE_LINEItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineNoteItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineObjectIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoicedQuantityItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="invoicedQuantityUnitOfMeasureCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineNetAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="referencedPurchaseOrderLineReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="orderReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineDespatchAdviceReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineBuyerAccountingReferenceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="INVOICE_LINE_PERIODItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLinePeriodStartDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLinePeriodEndDateItemType"><simpleContent><restriction base="xbrli:dateTimeItemType"/></simpleContent></complexType>
+	<complexType name="INVOICE_LINE_ALLOWANCESItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineAllowanceAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineAllowanceBaseAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineAllowancePercentageItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineAllowanceReasonItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineAllowanceReasonCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="INVOICE_LINE_CHARGESItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineChargeAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineChargeBaseAmountItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineChargePercentageItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineChargeReasonItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoiceLineChargeReasonCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="PRICE_DETAILSItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemNetPriceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemPriceDiscountItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemGrossPriceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemPriceBaseQuantityItemType"><simpleContent><restriction base="xbrli:decimalItemType"/></simpleContent></complexType>
+	<complexType name="itemPriceBaseQuantityUnitOfMeasureCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="LINE_TAX_INFORMATIONItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="invoicedItemTaxCategoryCodeItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="invoicedItemTaxRateItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="unitTaxItemType"><simpleContent><restriction base="xbrli:monetaryItemType"/></simpleContent></complexType>
+	<complexType name="taxSchemeItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="ITEM_INFORMATIONItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemDescriptionItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemSellerX27SIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemBuyerX27SIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemStandardIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemClassificationIdentifierItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemCountryOfOriginItemType"><simpleContent><restriction base="xbrli:tokenItemType"/></simpleContent></complexType>
+	<complexType name="ITEM_ATTRIBUTESItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemAttributeNameItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+	<complexType name="itemAttributeValueItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
+  
+<!-- element -->
 	<element name="ibg-00" id="pint-ibg-00" type="pint:InvoiceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-001" id="pint-ibt-001" type="pint:invoiceNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-002" id="pint-ibt-002" type="pint:invoiceIssueDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -1413,8 +510,8 @@
 	<element name="ibg-31" id="pint-ibg-31" type="pint:ITEM_INFORMATIONItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-153" id="pint-ibt-153" type="pint:itemNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-154" id="pint-ibt-154" type="pint:itemDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="ibt-155" id="pint-ibt-155" type="pint:itemSellersIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="ibt-156" id="pint-ibt-156" type="pint:itemBuyersIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-155" id="pint-ibt-155" type="pint:itemSellerX27SIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-156" id="pint-ibt-156" type="pint:itemBuyerX27SIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-157" id="pint-ibt-157" type="pint:itemStandardIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-158" id="pint-ibt-158" type="pint:itemClassificationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-159" id="pint-ibt-159" type="pint:itemCountryOfOriginItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
