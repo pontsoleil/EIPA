@@ -9,9 +9,6 @@
 	xmlns:link="http://www.xbrl.org/2003/linkbase" 
 	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
 	xmlns:pint="http://peppol.eu/2021-12-31">
-	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
-	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
-	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<annotation>
 		<appinfo>
 			<link:linkbaseRef xlink:href="pint-2021-12-31-presentation.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:type="simple"/>
@@ -31,46 +28,49 @@
 			</link:arcroleType>
 		</appinfo>
 	</annotation>
-	
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+
 	<!-- Hypercube -->
-	<xs:element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
+	<element name="Hypercube" id="Hypercube" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" abstract="true" xbrli:periodType="instant"/>
 
 	<!-- Dimension -->
 	<!-- _1 -->
-	<xs:element name="_1" id="_1">
-		<xs:simpleType>
-			<xs:restriction base="xs:string"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="d1" id="d1" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_1"/>
+	<element name="_1" id="_1">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="d1" id="d1" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_1"/>
 	<!-- _2 -->
-	<xs:element name="_2" id="_2">
-		<xs:simpleType>
-			<xs:restriction base="xs:string"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="d2" id="d2" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_2"/>
+	<element name="_2" id="_2">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="d2" id="d2" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_2"/>
 	<!-- _3 -->
-	<xs:element name="_3" id="_3">
-		<xs:simpleType>
-			<xs:restriction base="xs:string"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="d3" id="d3" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_3"/>
+	<element name="_3" id="_3">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="d3" id="d3" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_3"/>
 	<!-- _4 -->
-	<xs:element name="_4" id="_4">
-		<xs:simpleType>
-			<xs:restriction base="xs:string"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="d4" id="d4" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_4"/>
+	<element name="_4" id="_4">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="d4" id="d4" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_4"/>
 	<!-- _5 -->
-	<xs:element name="_5" id="_5">
-		<xs:simpleType>
-			<xs:restriction base="xs:string"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="d5" id="d5" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_5"/>
+	<element name="_5" id="_5">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<element name="d5" id="d5" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_5"/>
 
 	<!-- reference -->
 	<element name="XPath" type="string" substitutionGroup="link:part"/>
