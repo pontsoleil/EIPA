@@ -7,7 +7,7 @@
 			CC BY 4.0
 			https://creativecommons.org/licenses/by/4.0/
 			
-			2021-08-14T16:19+09:00
+			2021-08-15T08:19+09:00
 -->
 <schema targetNamespace="http://peppol.eu/2021-12-31" 
 	elementFormDefault="qualified" 
@@ -79,7 +79,13 @@
 	</element>
 	<element name="d5" id="d5" substitutionGroup="xbrldt:dimensionItem" abstract="true" type="xbrli:stringItemType" xbrli:periodType="instant" xbrldt:typedDomainRef="#_5"/>
 <!-- reference -->
+	<element name="Namespace" type="string" substitutionGroup="link:part"/>
 	<element name="XPath" type="string" substitutionGroup="link:part"/>
+	<element name="Attribute" type="string" substitutionGroup="link:part"/>
+	<element name="SemanticDatatype" type="string" substitutionGroup="link:part"/>
+	<element name="Cardinality" type="string" substitutionGroup="link:part"/>
+	<element name="Datatype" type="string" substitutionGroup="link:part"/>
+	<element name="Occurrence" type="string" substitutionGroup="link:part"/>
 	<element name="Example" type="string" substitutionGroup="link:part"/>
 <!-- item type -->
 	<complexType name="InvoiceItemType"><simpleContent><restriction base="xbrli:stringItemType"/></simpleContent></complexType>
