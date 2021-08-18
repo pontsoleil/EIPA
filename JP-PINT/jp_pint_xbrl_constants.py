@@ -105,7 +105,7 @@ DEFINITION_HEAD = '''<?xml version="1.0" encoding="UTF-8"?>
   xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
-  <link:roleRef roleURI="http://xbrl.org/role/pint_structure" xlink:type="simple" xlink:href="pint-2021-12-31.xsd#pint_structure"/>
+  <link:roleRef roleURI="http://peppol.eu/2021-12-31/role/pint_structure" xlink:type="simple" xlink:href="pint-2021-12-31.xsd#pint_structure"/>
   <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://xbrl.org/2005/xbrldt-2005.xsd#all"/>
   <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
   <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
