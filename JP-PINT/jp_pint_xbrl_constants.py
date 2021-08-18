@@ -148,6 +148,7 @@ PRESENTATION_HEAD = '''<?xml version="1.0" encoding="UTF-8"?>
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+	<link:roleRef roleURI="http://peppol.eu/2021-12-31/role/pint_structure" xlink:type="simple" xlink:href="pint-2021-12-31.xsd#pint_structure"/>
   <presentationLink xlink:type="extended" xlink:role="http://peppol.eu/2021-12-31/role/pint_structure">
 '''
 LABEL_HEAD = '''<?xml version="1.0" encoding="UTF-8"?>
