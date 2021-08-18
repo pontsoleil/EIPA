@@ -305,10 +305,10 @@ if __name__ == '__main__':
 				# 
 				xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en" xlink:label="label-{0}{1}" id="label-{0}{1}">{2}</link:label>\n'.format(id, cksum, label)
 				xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="ja" xlink:label="label-{0}{1}" id="label-{0}{1}">{2}</link:label>\n'.format(id, cksum, label_ja)
-				if desc:    xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en" xlink:label="label-{0}{1}" id="label-{0}{1}">{2}</link:label>\n'.format(id, cksum, desc)
-				if desc_ja: xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" xlink:label="label-{0}{1}" id="label-{0}{1}">{2}</link:label>\n'.format(id, cksum, desc_ja)
-				if exp:     xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance" xml:lang="en" xlink:label="label-{0}{1}" id="label-{0}{1}">{2}</link:label>\n'.format(id, cksum, exp)
-				if exp_ja:  xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance" xml:lang="ja" xlink:label="label-{0}{1}" id="label-{0}{1}">{2}</link:label>\n'.format(id, cksum, exp_ja)
+				if desc:    xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en" xlink:label="label-{0}{1}" id="label-doc-en-{0}{1}">{2}</link:label>\n'.format(id, cksum, desc)
+				if desc_ja: xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja" xlink:label="label-{0}{1}" id="label-doc-ja-d-{0}{1}">{2}</link:label>\n'.format(id, cksum, desc_ja)
+				if exp:     xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance" xml:lang="en" xlink:label="label-{0}{1}" id="label-guide-en-{0}{1}">{2}</link:label>\n'.format(id, cksum, exp)
+				if exp_ja:  xml += '    <link:label xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance" xml:lang="ja" xlink:label="label-{0}{1}" id="label-guide-ja-{0}{1}">{2}</link:label>\n'.format(id, cksum, exp_ja)
 				# 
 				# labelArc
 				# 

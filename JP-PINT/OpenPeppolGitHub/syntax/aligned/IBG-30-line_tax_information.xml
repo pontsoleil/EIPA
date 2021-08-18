@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1" cardinality="1..1">
+ 
+		<Term>cac:ClassifiedTaxCategory</Term>
+		<Name>LINE TAX INFORMATION</Name>
+		<Description>(Aligned) — A group of business terms providing information about the TAX applicable for the goods and services
+			invoiced on the Invoice line.
+		</Description>
+		<Reference type="BUSINESS_TERM">IBG-30</Reference>
+		
+		<Element>
+			<Term>cbc:ID</Term>
+			<Name>Invoiced item TAX category code</Name>
+			<Description>(Aligned) — The TAX category code for the invoiced item.</Description>
+			<DataType>Code</DataType>
+			<Reference type="BUSINESS_TERM">IBT-151</Reference>
+			<Reference type="CODE_LIST">UNCL5305</Reference>
+			<Value type="EXAMPLE">S</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:Percent</Term>
+			<Name>Invoiced item TAX rate</Name>
+			<Description>(Aligned) — The TAX rate, represented as percentage that applies to the invoiced item.</Description>
+			<DataType>Percentage</DataType>
+			<Reference type="BUSINESS_TERM">IBT-152</Reference>
+			<Value type="EXAMPLE">25</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:PerUnitAmount</Term>
+			<Name>Unit TAX</Name>
+			<Description>(Aligned) — The TAX rate, represented as percentage that applies to the invoiced item.</Description>
+			<DataType>Amount</DataType>
+			<Reference type="BUSINESS_TERM">IBT-152</Reference>
+			<Value type="EXAMPLE">25</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:TaxExemptionReasonCode</Term>
+			<Name>TAX exemption reason code</Name>
+			<Description>(Aligned) — A coded statement of the reason for why the amount is exempted from TAX.</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-185</Reference>
+			<Section>Aligned</Section>			
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:TaxExemptionReason</Term>
+			<Name>TAX exemption reason text</Name>
+			<Description>(Aligned) — A textual statement of the reason why the amount is exempted from TAX or why no TAX is being charged.</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-186</Reference>
+			<Value type="EXAMPLE">Exempt</Value> 
+			<Section>Aligned</Section>			
+		</Element>
+
+		<Element>
+			<Term>cac:TaxScheme</Term>
+			<Name>TAX SCHEME</Name>
+			
+			<Element>
+				<Term>cbc:ID</Term>
+				<Description>(Aligned) — Mandatory element.</Description>
+				<Value type="DEFAULT">TAX</Value>
+				<Reference type="BUSINESS_TERM">IBT-167</Reference>
+				<Section>Aligned</Section>			
+			</Element>
+		</Element>
+			
+    </Element>
+    

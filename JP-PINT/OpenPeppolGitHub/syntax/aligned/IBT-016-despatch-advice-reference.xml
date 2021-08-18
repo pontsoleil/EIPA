@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element cardinality="0..n" xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+
+		<Term>cac:DespatchDocumentReference</Term>
+		<Name>DESPATCH ADVICE REFERENCE</Name>
+
+		<Element>
+			<Term>cbc:ID</Term>
+			<Name>Despatch advice reference</Name>
+			<Description>(Aligned) — An identifier of a referenced despatch advice.</Description>
+			<DataType>Document Reference</DataType>
+			<Reference type="BUSINESS_TERM">IBT-016</Reference>
+			<Value type="EXAMPLE">desp98</Value>
+			<Section>Aligned</Section>
+		</Element>
+
+	</Element>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element cardinality="0..1" xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+
+        <!-- <Element cardinality="0..1"> -->
+            <Term>cbc:TaxCurrencyCode</Term>
+            <Name>Tax Currency Code</Name>
+            <Description>(Aligned) — A code signifying the currency used for tax amounts in the Invoice.</Description>
+            <DataType>Code</DataType>
+            <Reference type="BUSINESS_TERM">IBT-006</Reference>
+            <Reference type="CODE_LIST">ISO4217</Reference>
+            <Value type="EXAMPLE">SEK</Value>
+    		<Section>Aligned</Section>
+			<Aligned>true</Aligned>
+        <!-- </Element> -->
+ 
+	</Element>

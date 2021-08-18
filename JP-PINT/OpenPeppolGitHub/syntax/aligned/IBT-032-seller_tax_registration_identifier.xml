@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element cardinality="0..1" xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+
+		<Term>cac:PartyTaxScheme</Term>
+		<Name>TAX IDENTIFIERS</Name>
+		
+		<Element>
+			<Term>cbc:CompanyID</Term>
+			<Name>Seller tax registration identifier</Name>
+			<Description>(Aligned) — The local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference that enables the Seller to state his registered tax status.</Description>
+			<DataType>Identifier</DataType>
+			<Reference type="BUSINESS_TERM">IBT-032</Reference>
+			<Value type="EXAMPLE">NO999888777</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element>
+			<Term>cac:TaxScheme</Term>
+			<Name>TAX SCHEME</Name>
+			
+			<Element>
+				<Term>cbc:ID</Term>
+				<Description>(Aligned) — Qualifies the identifier as seller tax registration identifier.</Description>
+			<Reference type="BUSINESS_TERM">IBT-032-1</Reference>
+				<Value type="EXAMPLE">!="VAT"</Value>
+			</Element>
+		</Element>
+		
+ 	</Element>

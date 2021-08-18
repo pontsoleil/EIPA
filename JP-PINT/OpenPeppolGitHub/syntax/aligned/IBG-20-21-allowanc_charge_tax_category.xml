@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1" cardinality="1..1">
+ 
+        <Term>cac:TaxCategory</Term>
+        <Name>TAX CATEGORY</Name>
+        
+        <Element>
+            <Term>cbc:ID</Term>
+            <Name>Document level allowance or charge TAX category code</Name>
+            <Description>(Aligned) — A coded identification of what TAX category applies to the document level allowance or charge.</Description>
+            <DataType>Code</DataType>
+            <Reference type="BUSINESS_TERM">IBT-095,IBT-102</Reference>
+            <Reference type="CODE_LIST">UNCL5305</Reference>
+            <Value type="EXAMPLE">S</Value>
+			<Section>Aligned</Section>
+         </Element>
+        
+        <Element cardinality="0..1">
+            <Term>cbc:Percent</Term>
+            <Name>Document level allowance or charge TAX rate</Name>
+            <Description>(Aligned) — The TAX rate, represented as percentage that applies to the document level allowance or charge.</Description>
+            <DataType>Percentage</DataType>
+            <Reference type="BUSINESS_TERM">IBT-096,IBT-103</Reference>
+            <Value type="EXAMPLE">25</Value>
+			<Section>Aligned</Section>
+        </Element>
+        
+        <Element>
+            <Term>cac:TaxScheme</Term>
+            <Name>TAX SCHEME</Name>
+            
+            <Element>
+                <Term>cbc:ID</Term>
+                <Description>(Aligned) — Mandatory element to indicate tax type.</Description>
+                <Reference type="BUSINESS_TERM">IBT-188,IBT-189</Reference>
+				<Value type="EXAMPLE">VAT</Value>
+				<Section>Aligned</Section>
+             </Element>
+        </Element>
+
+    </Element>
+    

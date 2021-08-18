@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element cardinality="0..1" xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+
+		<Term>cbc:PaymentMeansCode</Term>
+		<Name>Payment means type code</Name>
+		<Description>(Aligned) — The means, expressed as code, for how a payment is expected to be or has been settled.
+		</Description>
+		<DataType>Code</DataType>
+		<Reference type="BUSINESS_TERM">IBT-081</Reference>
+		<Reference type="CODE_LIST">UNCL4461</Reference>
+		<Section>Aligned</Section>
+		<Value type="EXAMPLE">30</Value>
+ 
+	</Element>

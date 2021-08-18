@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element cardinality="0..1" xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+
+		<Term>cac:PartyTaxScheme</Term>
+		<Name>PARTY VAT IDENTIFIER</Name>
+		
+		<Element>
+			<Term>cbc:CompanyID</Term>
+			<Name>Buyer TAX identifier</Name>
+			<Description>(Aligned) — The Buyer's TAX identifier (also known as Buyer TAX identification number).</Description>
+			<DataType>Identifier</DataType>
+			<Reference type="BUSINESS_TERM">IBT-048</Reference>
+			<Value type="EXAMPLE">SE8765456787</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element>
+			<Term>cac:TaxScheme</Term>
+			<Name>TAX SCHEME</Name>
+			
+			<Element>
+				<Term>cbc:ID</Term>
+				<Description>(Aligned) — Qualifies the type of the tax identifier</Description>
+				<DataType>Identifier</DataType>
+				<Reference type="BUSINESS_TERM">IBT-048-1</Reference>
+				<Value type="DEFAULT">VAT</Value>
+				<Section>Aligned</Section>
+			</Element>
+
+		</Element>
+		
+ 	</Element>

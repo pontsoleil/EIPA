@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1" cardinality="0..1">
+ 
+		<Term>cac:PostalAddress</Term>
+		<Name>FINANCIAL INSTITUTION ADDRESS</Name>
+		<Description>(Aligned) — The address of the financial institution or its branch that holds the payment account.</Description>
+		<Reference type="BUSINESS_TERM">IBG-34</Reference>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:StreetName</Term>
+			<Name>Buyer address line 1</Name>
+			<Description>(Aligned) — The main address line in an address.</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-169</Reference>
+			<Value type="EXAMPLE">Hovudgatan 32</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:AdditionalStreetName</Term>
+			<Name>Buyer address line 2</Name>
+			<Description>(Aligned) — An additional address line in an address that can be used to give further details supplementing the main line.</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-170</Reference>
+			<Value type="EXAMPLE">Po box 43</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:CityName</Term>
+			<Name>Buyer city</Name>
+			<Description>(Aligned) — The common name of the city, town or village, where the Buyer's address is located.</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-171</Reference>
+			<Value type="EXAMPLE">Stockholm</Value>
+			<Section>Aligned</Section>
+	   </Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:PostalZone</Term>
+			<Name>Buyer post code</Name>
+			<Description>(Aligned) — The identifier for an addressable group of properties according to the relevant postal service.
+			</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-172</Reference>
+			<Value type="EXAMPLE">34567</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cbc:CountrySubentity</Term>
+			<Name>Buyer country subdivision</Name>
+			<Description>(Aligned) — The subdivision of a country.</Description>
+			<DataType>Text</DataType>
+			<Reference type="BUSINESS_TERM">IBT-173</Reference>
+			<Value type="EXAMPLE">Region A</Value>
+			<Section>Aligned</Section>
+		</Element>
+		
+		<Element cardinality="0..1">
+			<Term>cac:AddressLine</Term>
+			<Name>ADDRESS LINE</Name>
+			
+			<Element>
+				<Term>cbc:Line</Term>
+				<Name>Buyer address line 3</Name>
+				<Description>(Aligned) — An additional address line in an address that can be used to give further details supplementing the main line.
+				</Description>
+				<DataType>Text</DataType>
+				<Reference type="BUSINESS_TERM">IBT-174</Reference>
+				<Value type="EXAMPLE">Building F2</Value>
+				<Section>Aligned</Section>
+			</Element>
+
+		</Element>
+		
+		<Element>
+			<Term>cac:Country</Term>
+			<Name>COUNTRY</Name>
+			
+			<Element>
+				<Term>cbc:IdentificationCode</Term>
+				<Name>Buyer country code</Name>
+				<Description>(Aligned) — A code that identifies the country.</Description>
+				<DataType>Code</DataType>
+				<Reference type="BUSINESS_TERM">IBT-175</Reference>
+				<Reference type="CODE_LIST">ISO3166</Reference>
+				<Value type="EXAMPLE">SE</Value>
+				<Section>Aligned</Section>
+			</Element>
+
+		</Element>
+    </Element>
+    

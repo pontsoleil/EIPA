@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Element xmlns="urn:fdc:difi.no:2017:vefa:structure-1" cardinality="0..n">
+ 
+            <Term>cac:PrepaidPayment</Term>
+            <Name>PAID AMOUNTS</Name>
+			<Description>(Aligned) — Breakdown of the paid amount deducted from the amount due.</Description>
+			<Reference type="BUSINESS_TERM">IBG-35</Reference>
+
+			<Element cardinality="0..1">
+				<Term>cbc:ID</Term>
+				<Name>Payment identifier</Name>
+				<Description>(Aligned) — An identifier that references the payment, such as bank transfer identifier.</Description>
+				<DataType>Identifier</DataType>
+				<Reference type="BUSINESS_TERM">IBT-179</Reference>
+				<Value type="EXAMPLE">1</Value>
+				<Section>Aligned</Section>
+			</Element>
+
+            <Element  cardinality="0..1">
+                <Term>cbc:PaidAmount</Term>
+                <Name>Paid amount</Name>
+                <Description>(Aligned) — The amount of the payment in the invoice currency.</Description>
+                <DataType>Amount</DataType>
+                <Reference type="BUSINESS_TERM">IBT-180</Reference>
+                <Value type="EXAMPLE">100.00</Value>
+				<Section>Aligned</Section>
+            </Element>
+
+			<Element  cardinality="0..1">
+					<Term>cbc:ReceivedDate</Term>
+					<Name>The date when the paid amount is debited to the invoice.</Name>
+					<Description>(Aligned) — The date when the prepaid amount was received by the seller.</Description>
+					<DataType>Date</DataType>
+					<Reference type="BUSINESS_TERM">IBT-181</Reference>
+					<Value type="EXAMPLE">2021-01-01</Value>
+					<Section>Aligned</Section>
+			</Element>
+
+			<Element  cardinality="0..1">
+					<Term>cbc:InstructionID</Term>
+					<Name>Payment type</Name>
+					<Description>(Aligned) — The date before end of which the terms amount shall be settled.</Description>
+					<DataType>Code</DataType>
+					<Reference type="BUSINESS_TERM">IBT-182</Reference>
+					<Value type="EXAMPLE">None</Value>
+					<Section>Aligned</Section>
+			</Element>
+
+    </Element>
+    

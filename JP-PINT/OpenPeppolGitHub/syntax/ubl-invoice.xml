@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+
+    <Term>ubl-invoice</Term>
+    <Name>PEPPOL International Invoice</Name>
+
+    <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</Namespace>
+    <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"</Namespace>
+    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+
+    <Rules type="schematron">../../rules/sch/PINT-UBL-validation-preprocessed.sch</Rules>
+
+    <Document>
+        <Term>ubl:Invoice</Term>
+
+        <Element>
+            <Term>cbc:CustomizationID</Term>
+            <Name languageID="en-GB">Specification identifier</Name>
+            <!-- <Name languageID="ja-JP">Specification identifier</Name> -->
+            <Description languageID="en-GB">(Shared) — An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Description>
+            <!-- <Description languageID="ja-JP">An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Description> -->
+            <DataType>Identifier</DataType>
+            <Reference type="BUSINESS_TERM">IBT-024</Reference>
+            <Value type="EXAMPLE">urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</Value>
+			<Section>Shared</Section>
+        </Element>
+      
+		<Element>
+            <Term>cbc:ProfileID</Term>
+            <Name>Business process type</Name>
+            <Description>(Shared) — Identifies the business process context in which the transaction appears, to enable the Buyer to process the Invoice in an appropriate way.
+            </Description>
+            <DataType>Text</DataType>
+            <Reference type="BUSINESS_TERM">IBT-023</Reference>
+            <Value type="DEFAULT">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Value>
+			<Section>Shared</Section>
+        </Element>
+
+        <Element>
+            <Term>cbc:ID</Term>
+            <Name>Invoice number</Name>
+            <Description>(Shared) — A unique identification of the Invoice. The sequential number required in Article 226(2) of the directive 2006/112/EC [2], to uniquely identify the Invoice 
+                within the business context, time-frame, operating systems and records of the Seller. No identification scheme is to be used.</Description>
+            <DataType>Identifier</DataType>
+            <Reference type="BUSINESS_TERM">IBT-001</Reference>
+            <Value type="EXAMPLE">33445566</Value>
+			<Section>Shared</Section>
+        </Element>
+
+        <Element>
+            <Term>cbc:IssueDate</Term>
+            <Name>Invoice issue date</Name>
+            <Description>(Shared) — The date when the Invoice was issued.</Description>
+            <DataType>Date</DataType>
+            <Reference type="BUSINESS_TERM">IBT-002</Reference>
+            <Value type="EXAMPLE">2017-11-01</Value>
+ 			<Section>Shared</Section>
+		</Element>
+
+        <Element cardinality="0..1">
+            <Term>cbc:IssueTime</Term>
+            <Name>Invoice issue date</Name>
+            <Description>(Shared) — The time of day when an invoice was issued.</Description>
+            <DataType>Time</DataType>
+            <Reference type="BUSINESS_TERM">IBT-168</Reference>
+            <Value type="EXAMPLE">12:35</Value>
+ 			<Section>Shared</Section>
+		</Element>
+
+        <Element cardinality="0..1">
+            <Term>cbc:DueDate</Term>
+            <Name>Payment due date</Name>
+            <Description>(Shared) — The date when the payment is due.</Description>
+            <DataType>Date</DataType>
+            <Reference type="BUSINESS_TERM">IBT-009</Reference>
+             <Value type="EXAMPLE">2017-11-30</Value>
+  			<Section>Shared</Section>
+			</Element>
+
+        <Element>
+            <Term>cbc:InvoiceTypeCode</Term>
+            <Name>Invoice type code</Name>
+            <Description>(Shared) — A code specifying the functional type of the Invoice.</Description>
+            <DataType>Code</DataType>
+            <Reference type="BUSINESS_TERM">IBT-003</Reference>
+            <Reference type="CODE_LIST">UNCL1001-inv</Reference>
+            <Value type="EXAMPLE">380</Value>
+  			<Section>Shared</Section>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cbc:Note</Term>
+            <Name>Invoice note</Name>
+            <Description>(Shared) — A textual note that gives unstructured information that is relevant to the Invoice as a whole.
+            </Description>
+            <DataType>Text</DataType>
+            <Reference type="BUSINESS_TERM">IBT-022</Reference>
+            <Value type="EXAMPLE">Please note our new phone number 33 44 55 66</Value>
+  			<Section>Shared</Section>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cbc:Note</Term>
+            <Name>Invoice note</Name>
+            <Description>(Shared) — The subject of the textual note in EN BT-022.
+            </Description>
+            <DataType>Text</DataType>
+            <Reference type="BUSINESS_TERM">IBT-22</Reference>
+           <Value type="EXAMPLE">Please note our new phone number 33 44 55 66</Value>
+  			<Section>Shared</Section>
+        </Element>
+
+		<Include>aligned/IBT-007-tax_point_date.xml</Include>
+
+        <Element>
+            <Term>cbc:DocumentCurrencyCode</Term>
+            <Name>Invoice currency code</Name>
+            <Description>(Shared) — The currency in which all Invoice amounts are given, except for the Total TAX amount in accounting currency.
+            </Description>
+            <DataType>Code</DataType>
+            <Reference type="BUSINESS_TERM">IBT-005</Reference>
+            <Reference type="CODE_LIST">ISO4217</Reference>
+            <Value type="EXAMPLE">EUR</Value>
+   			<Section>Shared</Section>
+		</Element>
+
+		<Include>aligned/IBT-006-tax_accounting_currency.xml</Include>
+		
+        <Element cardinality="0..1">
+            <Term>cbc:AccountingCost</Term>
+            <Name>Buyer accounting reference</Name>
+            <Description>(Shared) — A textual value that specifies where to book the relevant data into the Buyer's financial accounts.
+            </Description>
+            <DataType>Text</DataType>
+            <Reference type="BUSINESS_TERM">IBT-019</Reference>
+			<Value type="EXAMPLE">4217:2323:2323</Value>
+			<Section>Shared</Section>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cbc:BuyerReference</Term>
+            <Name>Buyer reference</Name>
+            <Description>(Shared) — An identifier assigned by the Buyer used for internal routing purposes.</Description>
+            <DataType>Text</DataType>
+            <Reference type="BUSINESS_TERM">IBT-010</Reference>
+            <Value type="EXAMPLE">abs1234</Value>
+			<Section>Shared</Section>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:InvoicePeriod</Term>
+            <Name>DELIVERY OR INVOICE PERIOD</Name>
+            <Description>(Shared) — A group of business terms providing information on the invoice period.</Description>
+            <Reference type="BUSINESS_TERM">BG-14</Reference>
+
+            <Element cardinality="0..1">
+                <Term>cbc:StartDate</Term>
+                <Name>Invoicing period start date</Name>
+                <Description>(Shared) — The date when the Invoice period starts.</Description>
+                <DataType>Date</DataType>
+                <Reference type="BUSINESS_TERM">IBT-073</Reference>
+                <Value type="EXAMPLE">2017-10-01</Value>
+				<Section>Shared</Section>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:EndDate</Term>
+                <Name>Invoicing period end date</Name>
+                <Description>(Shared) — The date when the Invoice period ends.</Description>			
+                <DataType>Date</DataType>
+                <Reference type="BUSINESS_TERM">IBT-074</Reference>
+                <Value type="EXAMPLE">2017-10-31</Value>
+    			<Section>Shared</Section>
+			</Element>
+
+			<Include>aligned/IBT-008-tax_point_date_code.xml</Include>
+			
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:OrderReference</Term>
+            <Name>ORDER AND SALES ORDER REFERENCE</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Purchase order reference</Name>
+                <Description>(Shared) — An identifier of a referenced purchase order, issued by the Buyer.</Description>
+                <DataType>Document Reference</DataType>
+                <Reference type="BUSINESS_TERM">IBT-013</Reference>
+                <Value type="EXAMPLE">98776</Value>
+    			<Section>Shared</Section>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:SalesOrderID</Term>
+                <Name>Sales order reference</Name>
+                <Description>(Shared) — An identifier of a referenced sales order, issued by the Seller.</Description>
+                <DataType>Document Reference</DataType>
+                <Reference type="BUSINESS_TERM">IBT-014</Reference>
+                <Value type="EXAMPLE">112233</Value>
+    			<Section>Shared</Section>
+            </Element>
+        </Element>
+
+        <Element cardinality="0..n">
+            <Term>cac:BillingReference</Term>
+            <Name>PRECEDING INVOICE REFERENCE</Name>
+            <Description>(Shared) — A group of business terms providing information on one or more preceding Invoices.</Description>
+            <Reference type="BUSINESS_TERM">IBG-03</Reference>
+
+            <Element>
+                <Term>cac:InvoiceDocumentReference</Term>
+                <Name>INVOICE DOCUMENT REFERENCE</Name>      
+
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Preceding Invoice number</Name>
+                    <Description>(Shared) — The identification of an Invoice that was previously sent by the Seller.</Description>
+                    <DataType>Document Reference</DataType>
+                    <Reference type="BUSINESS_TERM">IBT-025</Reference>
+                    <Value type="EXAMPLE">inv123</Value>
+					<Section>Shared</Section>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:IssueDate</Term>
+                    <Name>Preceding Invoice issue date</Name>
+                    <Description>(Shared) — The date when the Preceding Invoice was issued.</Description>
+                    <DataType>Date</DataType>
+                    <Reference type="BUSINESS_TERM">IBT-026</Reference>
+                    <Value type="EXAMPLE">2017-09-15</Value>
+					<Section>Shared</Section>
+                </Element>
+            </Element>
+        </Element>
+
+		<Include>aligned/IBT-016-despatch-advice-reference.xml</Include>
+
+       <Element cardinality="0..1">
+            <Term>cac:ReceiptDocumentReference</Term>
+            <Name>RECEIPT ADVICE REFERENCE</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Receiving advice reference</Name>
+                <Description>(Shared) — An identifier of a referenced receiving advice.</Description>
+                <DataType>Document Reference</DataType>
+                <Reference type="BUSINESS_TERM">IBT-015</Reference>
+                <Value type="EXAMPLE">rec98</Value>
+				<Section>Shared</Section>
+            </Element>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:OriginatorDocumentReference</Term>
+            <Name>TENDER OR LOT REFERENCE</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Tender or lot reference</Name>
+                <Description>(Shared) — The identification of the call for tender or lot the invoice relates to.</Description>
+                <DataType>Document Reference</DataType>
+                <Reference type="BUSINESS_TERM">IBT-017</Reference>
+                <Value type="EXAMPLE">PPID-123</Value>
+				<Section>Shared</Section>
+            </Element>
+        </Element>
+
+        <Element cardinality="0..1">
+            <Term>cac:ContractDocumentReference</Term>
+            <Name>CONTRACT REFERENCE</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Contract reference</Name>
+                <Description>(Shared) — The identification of a contract.</Description>
+                <DataType>Document Reference</DataType>
+                <Reference type="BUSINESS_TERM">IBT-012</Reference>
+                <Value type="EXAMPLE">123Contractref</Value>
+				<Section>Shared</Section>
+            </Element>
+        </Element>
+
+        <Element> 
+        <Term>cac:AdditionalDocumentReference</Term>
+        <Name>Invoice object identifier</Name>
+        <Description>(Shared) — A group of elements mappint the Invoice object identifier as a document reference qualified as document type 130.</Description>
+        <Reference type="BUSINESS_TERM">IBT-018</Reference>
+		
+			<Element>
+				<Term>cbc:ID</Term>
+				<Name>Invoiced object identifier</Name>
+				<Description>(Shared) — An identifier for an object on which the invoice is based, given by the Seller.</Description>
+				<DataType>Identifier</DataType>
+				<Reference type="BUSINESS_TERM">IBT-018</Reference>
+				<Section>Shared</Section>
+				
+				<Attribute usage="Optional">
+					<Term>schemeID</Term>
+					<Name>Scheme identifier</Name>
+					<Description>(Shared) — The identification scheme identifier of the Invoiced object identifier.</Description>
+					<Reference type="BUSINESS_TERM">IBT-018-1</Reference>
+					<Reference type="CODE_LIST">UNCL1153</Reference>
+					<Value type="EXAMPLE">AUN</Value>
+				</Attribute>
+				
+			</Element>
+			
+			<Element cardinality="0..1">
+				<Term>cbc:DocumentTypeCode</Term>
+				<Name>Document type code</Name>
+				<Description>(Shared) — Code "130" MUST be used to indicate an invoice object reference. Not used for other additional documents</Description>
+				<DataType>Code</DataType>
+				<Reference type="BUSINESS_TERM">IBT-018-2</Reference>
+				<Value type="DEFAULT">130</Value>
+			</Element>
+			
+        </Element>   
+
+        <Include>shared/IBG-24-additional-docs.xml</Include>
+      
+        <Element cardinality="0..1">
+            <Term>cac:ProjectReference</Term>
+            <Name>PROJECT REFERENCE</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Project reference</Name>
+                <Description>(Shared) — The identification of the project the invoice refers to.</Description>
+                <DataType>Document Reference</DataType>
+                <Reference type="BUSINESS_TERM">IBT-011</Reference>
+                <Value type="EXAMPLE">PID33</Value>
+				<Section>Shared</Section>
+            </Element>
+        </Element>
+
+        <Include>shared/IBG-04-supplier-party.xml</Include>
+        
+        <Include>shared/IBG-07-customer-party.xml</Include>
+        
+        <Include>shared/IBG-10-payee-party.xml</Include>
+
+        <Include>aligned/IBG-11-taxrep-party.xml</Include>
+
+        <Include>shared/IBG-13-delivery.xml</Include>
+
+        <Element cardinality="0..n">
+        <Term>cac:PaymentMeans</Term>
+        <Name>PAYMENT INSTRUCTIONS</Name>
+        <Description>(Shared) — A group of business terms providing information about the payment.</Description>
+        <Reference type="BUSINESS_TERM">IBG-16</Reference>
+        
+			<Include>aligned/IBT-178-payment_instructions_id.xml</Include>
+
+			<Include>aligned/IBT-081-payment_means_type_code.xml</Include>			
+
+			<Attribute usage="Optional">
+					<Term>name</Term>
+					<Name>Payment means text</Name>
+					<Description>(Shared) — The means, expressed as text, for how a payment is expected to be or has been settled.
+					</Description>
+					<DataType>Text</DataType>
+					<Reference type="BUSINESS_TERM">IBT-082</Reference>
+					<Value type="EXAMPLE">Credit transfer</Value>
+					<Section>Shared</Section>
+			</Attribute>
+			
+			<Element cardinality="0..1">
+				<Term>cbc:PaymentID</Term>
+				<Name>Remittance information</Name>
+				<Description>(Shared) — A textual value used for payment routing or to establish a link between the payment and the Invoice.</Description>
+				<DataType>Text</DataType>
+				<Reference type="BUSINESS_TERM">IBT-083</Reference>
+				<Value type="EXAMPLE">432948234234234</Value>
+				<Section>Shared</Section>
+			</Element>
+
+            <Include>shared/IBG-18-card-payment.xml</Include>
+
+            <Include>shared/IBG-17-credit-transfer.xml</Include>
+
+ 			<Include>shared/IBG-19-payment-mandate.xml</Include>
+
+        </Element>
+
+       <Element cardinality="0..1">
+            <Term>cac:PaymentTerms</Term>
+            <Name>INVOICE TERMS</Name>
+			<Description>(Shared) — Information about the terms that apply to the settlement of the invoice amount.</Description>
+			<Reference type="BUSINESS_TERM">IBG-33</Reference>
+
+            <Element  cardinality="0..1">
+                <Term>cbc:Note</Term>
+                <Name>Payment terms</Name>
+                <Description>(Shared) — A textual description of the payment terms that apply to the amount due for payment (Including description of possible penalties). In case the Amount due for payment (IBT-115) is positive, either the Payment due date (IBT-9) or the Payment terms (IBT-20) shall be present.</Description>
+                <DataType>Text</DataType>
+                <Reference type="BUSINESS_TERM">IBT-020</Reference>
+                <Value type="EXAMPLE">Net within 30 days</Value>
+				<Section>Shared</Section>
+            </Element>
+
+		</Element>
+
+		<Include>aligned/IBG-36-invoice_installment_terms.xml</Include>
+
+		<Include>aligned/IBG-35-paid_amounts.xml</Include>
+        
+        <Include>shared/IBG-20-21-allowance-charge.xml</Include>
+        
+        <Include>shared/tax-total.xml</Include>
+     
+        <Include>shared/IBG-22-monetary-totals.xml</Include>
+   
+ <!-- Hingað -->
+
+        <Element cardinality="1..n">
+            <Term>cac:InvoiceLine</Term>
+            <Name>INVOICE LINE</Name>
+            <Description>(Shared) — A group of business terms providing information on individual Invoice lines.</Description>
+            <Reference type="BUSINESS_TERM">IBG-25</Reference>
+            
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Invoice line identifier</Name>
+                <Description>(Shared) — A unique identifier for the individual line within the Invoice.</Description>
+                <DataType>Identifier</DataType>
+                <Reference type="BUSINESS_TERM">IBT-126</Reference>
+                <Value type="EXAMPLE">12</Value>
+				<Section>Shared</Section>
+			</Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:Note</Term>
+                <Name>Invoice line note</Name>
+                <Description>(Shared) — A textual note that gives unstructured information that is relevant to the Invoice line.</Description>
+                <DataType>Text</DataType>
+                <Reference type="BUSINESS_TERM">IBT-127</Reference>
+                <Value type="EXAMPLE">New article number 12345</Value>
+				<Section>Shared</Section>
+			</Element>
+
+            <Element>
+                <Term>cbc:InvoicedQuantity</Term>
+                <Name>Invoiced quantity</Name>
+                <Description>(Shared) — The quantity of items (goods or services) that is charged in the Invoice line.</Description>
+                <DataType>Quantity</DataType>
+                <Reference type="BUSINESS_TERM">IBT-129</Reference>
+                <Value type="EXAMPLE">100</Value>
+				<Section>Shared</Section>
+
+                <Attribute>
+                    <Term>unitCode</Term>
+                    <Name>Invoiced quantity unit of measure</Name>
+                    <Description>(Shared) — The unit of measure that applies to the invoiced quantity.</Description>
+                    <DataType>Code</DataType>
+                    <Reference type="BUSINESS_TERM">IBT-130</Reference>
+                    <Reference type="CODE_LIST">UNECERec20</Reference>
+                    <Value type="EXAMPLE">C62</Value>
+                </Attribute>
+            </Element>
+
+            <Element>
+                <Term>cbc:LineExtensionAmount</Term>
+                <Name>Invoice line net amount</Name>
+                <Description>(Shared) — The total amount of the Invoice line.</Description>
+                <DataType>Amount</DataType>
+                <Reference type="BUSINESS_TERM">IBT-131</Reference>
+                <Value type="EXAMPLE">2145.00</Value>
+				<Section>Shared</Section>
+                
+                <Attribute>
+                    <Term>currencyID</Term>
+                    <Description>(Shared) — Mandatory attribute. Use IBT-005</Description>
+					<Reference type="CODE_LIST">ISO4217</Reference>
+                    <Value type="EXAMPLE">EUR</Value>
+                </Attribute>
+                
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:AccountingCost</Term>
+                <Name>Invoice line Buyer accounting reference</Name>
+                <Description>(Shared) — A textual value that specifies where to book the relevant data into the Buyer's financial accounts.</Description>
+                <DataType>Identifier</DataType>
+                <Reference type="BUSINESS_TERM">IBT-133</Reference>
+                <Value type="EXAMPLE">1234:56789</Value>
+				<Section>Shared</Section>
+            </Element>
+            
+            <Include>shared/IBG-26-line-period.xml</Include>
+
+            <Element cardinality="0..1">
+                <Term>cac:OrderLineReference</Term>
+                <Name>ORDER LINE REFERENCE</Name>
+
+                <Element>
+                    <Term>cbc:LineID</Term>
+                    <Name>Referenced purchase order line reference</Name>
+                    <Description>(Shared) — An identifier for a referenced line within a purchase order, issued by the Buyer.</Description>
+                    <DataType>Identifier</DataType>
+                    <Reference type="BUSINESS_TERM">IBT-132</Reference>
+                    <Value type="EXAMPLE">3</Value>
+					<Section>Shared</Section>
+                </Element>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:DocumentReference</Term>
+                <Name>LINE OBJECT IDENTIFIER</Name>
+
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Invoice line object identifier</Name>
+                    <Description>(Shared) — An identifier for an object on which the invoice line is based, given by the Seller.</Description>
+                    <DataType>Identifier</DataType>
+                    <Reference type="BUSINESS_TERM">IBT-128</Reference>
+                    <Value type="EXAMPLE">AB12345</Value>
+					<Section>Shared</Section>
+                    
+                    <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Name>Invoice line object identifier identification scheme identifier</Name>
+                        <Description>(Shared) — The identification scheme identifier of the Invoice line object identifier.</Description>
+                        <Reference type="CODE_LIST">UNCL1153</Reference>
+						<Reference type="BUSINESS_TERM">IBT-128-1</Reference>
+						<Value type="EXAMPLE">ABZ</Value>
+						<Section>Shared</Section>
+                    </Attribute>
+                </Element>
+                
+                <Element>
+                    <Term>cbc:DocumentTypeCode</Term>
+                    <Name>Document type code</Name>
+                    <Description>(Shared) — Code "130" MUST be used to indicate an invoice object reference. Not used for other additional documents</Description>
+                    <DataType>Code</DataType>
+                    <Reference type="BUSINESS_TERM">IBT-128</Reference>
+                    <Value type="DEFAULT">130</Value>
+					<Section>Shared</Section>
+				</Element>
+ 
+			</Element>
+            
+            <Include>shared/IBG-27-28-line-allowance-charge.xml</Include>
+
+            <Include>shared/IBG-31-item.xml</Include>
+              
+            <Include>shared/IBG-29-price.xml</Include>
+          
+        </Element>
+    </Document>
+</Structure>
