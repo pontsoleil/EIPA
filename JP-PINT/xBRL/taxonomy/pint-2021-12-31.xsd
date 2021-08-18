@@ -7,7 +7,7 @@
 			CC BY 4.0
 			https://creativecommons.org/licenses/by/4.0/
 			
-			2021-08-18T12:48+09:00
+			2021-08-18T12:58+09:00
 -->
 <schema targetNamespace="http://peppol.eu/2021-12-31" 
 	elementFormDefault="qualified" 
@@ -440,7 +440,7 @@
 	<element name="ibt-091" id="pint-ibt-091" type="pint:debitedAccountIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibg-35" id="pint-ibg-35" type="pint:Paid_amountsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-179" id="pint-ibt-179" type="pint:paymentIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="ibt-113" id="pint-ibt-113" type="pint:paidAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-180" id="pint-ibt-180" type="pint:paidAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-181" id="pint-ibt-181" type="pint:theDateWhenThePaidAmountIsDebitedToTheInvoiceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-182" id="pint-ibt-182" type="pint:paymentTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibg-20" id="pint-ibg-20" type="pint:DOCUMENT_LEVEL_ALLOWANCESItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -468,6 +468,7 @@
 	<element name="ibt-110" id="pint-ibt-110" type="pint:invoiceTotalTaxAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-111" id="pint-ibt-111" type="pint:invoiceTotalTaxAmountInAccountingCurrencyItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-112" id="pint-ibt-112" type="pint:invoiceTotalAmountWithTaxItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-113" id="pint-ibt-113" type="pint:paidAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-114" id="pint-ibt-114" type="pint:roundingAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-115" id="pint-ibt-115" type="pint:amountDueForPaymentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibg-23" id="pint-ibg-23" type="pint:TAX_BREAKDOWNItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -475,8 +476,8 @@
 	<element name="ibt-117" id="pint-ibt-117" type="pint:taxCategoryTaxAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-118" id="pint-ibt-118" type="pint:taxCategoryCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-119" id="pint-ibt-119" type="pint:taxCategoryRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="ibt-185" id="pint-ibt-185" type="pint:taxExemptionReasonTextItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
-	<element name="ibt-186" id="pint-ibt-186" type="pint:taxExemptionReasonCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-120" id="pint-ibt-120" type="pint:taxExemptionReasonTextItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-121" id="pint-ibt-121" type="pint:taxExemptionReasonCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibg-24" id="pint-ibg-24" type="pint:ADDITIONAL_SUPPORTING_DOCUMENTSItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-122" id="pint-ibt-122" type="pint:supportingDocumentReferenceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-123" id="pint-ibt-123" type="pint:supportingDocumentDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
@@ -517,6 +518,8 @@
 	<element name="ibg-30" id="pint-ibg-30" type="pint:LINE_TAX_INFORMATIONItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-151" id="pint-ibt-151" type="pint:invoicedItemTaxCategoryCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-152" id="pint-ibt-152" type="pint:invoicedItemTaxRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-185" id="pint-ibt-185" type="pint:taxExemptionReasonTextItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+	<element name="ibt-186" id="pint-ibt-186" type="pint:taxExemptionReasonCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-166" id="pint-ibt-166" type="pint:unitTaxItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibt-167" id="pint-ibt-167" type="pint:taxSchemeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
 	<element name="ibg-31" id="pint-ibg-31" type="pint:ITEM_INFORMATIONItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>

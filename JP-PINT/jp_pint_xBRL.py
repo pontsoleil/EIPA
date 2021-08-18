@@ -203,8 +203,8 @@ if __name__ == '__main__':
 				if re.match(r'^ibt-[0-9]*$',id): BT = camelCase(BT)
 				else: BT = BT.replace(' ','_')
 				xml = template.format(id,BT)
-				elements[BT] = xml
-		for BT,xml in elements.items(): f.write(xml)
+				elements[id] = xml
+		for id,xml in elements.items(): f.write(xml)
 		f.write('</schema>')
 
 	with open(definition_linkbase,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
