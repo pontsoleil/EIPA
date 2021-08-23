@@ -227,11 +227,20 @@
         (
           not(contains(normalize-space(.),' ')) and 
           contains( ' AA S Z G O E ',concat(' ',normalize-space(.),' '))
+        )
       )">
         [jp-cl-03]- Japanese invoice tax categories MUST be coded using UNCL5305 code list</assert>
     </rule>
     <rule flag="fatal" context="cbc:TaxExemptionReasonCode">
-      <assert id="jp-cl-04" flag="fatal" test="((not(contains(normalize-space(.), ' ')) and contains(' ZZZ ', concat(' ', normalize-space(upper-case(.)), ' '))))">[jp-cl-04]-Tax exemption reason code identifier scheme identifier MUST belong to the ????</assert>
+      <assert id="jp-cl-04" flag="fatal" test="
+      (
+        (
+          not(contains(normalize-space(.), ' ')) and 
+          contains(' ZZZ ', concat(' ', normalize-space(upper-case(.)), ' '))
+        )
+      )">
+        [jp-cl-04]-Tax exemption reason code identifier scheme identifier MUST belong to the ????
+      </assert>
     </rule>
   </pattern>
 </schema>
