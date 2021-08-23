@@ -1,9 +1,24 @@
-SPEC_TITLE_en = 'Japanese PEPPOL BIS Documentation (Draft)'
-SPEC_TITLE_ja = '日本版 PEPPOL BIS 仕様書（草稿）'
-SEMANTICS_MESSAGE_TITLE_en = 'Standard Commercial Invoice, Semantic Data Model'
-SEMANTICS_MESSAGE_TITLE_ja = '都度請求書モデル'
-SYNTAX_MESSAGE_TITLE_en = 'Standard Commercial Invoice, UBL Syntax'
-SYNTAX_MESSAGE_TITLE_ja = '都度請求書 UBL(XML)構文'
+import jp_pint_app_base
+from jp_pint_app_base import APP_BASE
+
+SEMANTIC_BASE = APP_BASE+'semantic/invoice/'
+SYNTAX_BASE = APP_BASE+'syntax/ubl-invoice/'
+RULES_BASE = APP_BASE+'rules/'
+RULES_UBL_JAPAN_BASE = APP_BASE+'rules/ubl-japan/'
+RULES_UBL_PINT_BASE = APP_BASE+'rules/ubl-pint/'
+RULES_EN_PEPPOL = APP_BASE+'rules/en-peppol/'
+RULES_EN_CEN = APP_BASE+'rules/en-cen/'
+
+SPEC_TITLE_en = 'Japanese PEPPOL BIS Documentation'
+SPEC_TITLE_ja = '日本版 PEPPOL ビジネス相互運用性仕様'
+SEMANTICS_MESSAGE_TITLE_en = 'Standard Commercial Invoice, semantc data model'
+SEMANTICS_MESSAGE_TITLE_ja = '都度請求書/合算請求書モデル'
+SEMANTICS_LEGEND_TITLE_en = 'Semantic data model'
+SEMANTICS_LEGEND_TITLE_ja = 'コアインボイスモデル'
+SYNTAX_MESSAGE_TITLE_en = 'Standard Commercial Invoice, message specification'
+SYNTAX_MESSAGE_TITLE_ja = '都度請求書/合算請求書XML構文'
+SYNTAX_LEGEND_TITLE_en = 'Message specification'
+SYNTAX_LEGEND_TITLE_ja = 'XML構文'
 PINT_RULE_MESSAGE_TITLE_en = 'Rules for PEPPOL PINT'
 PINT_RULE_MESSAGE_TITLE_ja = 'EPPOL PINTルール'
 JP_RULE_MESSAGE_TITLE_en = 'Rules for Standard Commercial Invoice'
@@ -15,14 +30,10 @@ cen_rule_MESSAGE_TITLE_ja = 'EN16931モデルをUBLで表すためのルール'
 HOME_en = '<i class="fa fa-square mr-2" aria-hidden="true"> Home</i>'
 HOME_ja = '<i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i>'
 
-APP_BASE = '/billing-japan/'
-SEMANTIC_BASE = APP_BASE+'semantic/invoice/'
-SYNTAX_BASE = APP_BASE+'syntax/ubl-invoice/'
-RULES_BASE = APP_BASE+'rules/'
-RULES_UBL_JAPAN_BASE = APP_BASE+'rules/ubl-japan/'
-RULES_UBL_PINT_BASE = APP_BASE+'rules/ubl-pint/'
-RULES_EN_PEPPOL = APP_BASE+'rules/en-peppol/'
-RULES_EN_CEN = APP_BASE+'rules/en-cen/'
+variables = {
+	'/Invoice/cbc:DocumentCurrencyCode/text()':'$documentcurrency',
+	'/Invoice/cbc:TaxCurrencyCode/text()':'$taxcurrency'
+}
 
 html_head = '''
 <!DOCTYPE html>

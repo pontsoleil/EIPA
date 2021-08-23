@@ -312,6 +312,8 @@ def lookupBT(data,lang):
 	return table
 
 def lookupBGT(id,lang):
+	if not id in jp_rule_dict:
+		return {'BGroup':'','BTerm':''}
 	rule = jp_rule_dict[id]
 	if len(rule) > 0:
 		pint_ids = rule['PINT_IDs']
@@ -364,7 +366,10 @@ if __name__ == '__main__':
 	parser.add_argument('pint_ruleFile',metavar='pint_rulefile',type=str,help='PINTルールCSVファイル')
 	parser.add_argument('jp_ruleFile',metavar='jp_rulefile',type=str,help='JPルールCSVファイル')
 	parser.add_argument('schematronFile',metavar='schematronfile',type=str,help='スキーマトロンCSVファイル')
+
 	parser.add_argument('-v','--verbose',action='store_true')
+	parser.add_argument('-d','--detail',action='store_true')
+	
 	args = parser.parse_args()
 
 	in_file = file_path(args.inFile)
@@ -378,6 +383,7 @@ if __name__ == '__main__':
 	jp_rule_ja_html = 'billing-japan/rules/ubl-japan/ja/index.html'
 
 	verbose = args.verbose
+	detail = args.detail
 	# Check if infile exists
 	if not os.path.isfile(in_file):
 		print('入力ファイルがありません')
@@ -390,14 +396,15 @@ if __name__ == '__main__':
 	schematron_keys = ('context','id','flag','test','text','BG','BT')
 	with open(schematron_file,'r',encoding='utf-8') as f:
 		reader = csv.DictReader(f,schematron_keys)
+		header = next(reader)
 		for row in reader:
 			context = row['context']
-			id = row['id']
-			flag = row['flag']
-			test = row['test']
-			text = row['text']
-			BG = row['BG']
-			BT = row['BT']
+			id = row['id'].strip()
+			flag = row['flag'].strip()
+			test = row['test'].strip()
+			text = row['text'].strip()
+			BG = row['BG'].strip()
+			BT = row['BT'].strip()
 			data = { # Identifier,Flag,Message,Message_ja
 				'context':context,
 				'id':id,
@@ -416,10 +423,10 @@ if __name__ == '__main__':
 		reader = csv.DictReader(f,rule_keys)
 		header = next(reader)
 		for row in reader:
-			RuleID = row['ID']
-			Flag = row['Flag']
-			Message = row['Message']
-			Message_ja = row['Message_ja']
+			RuleID = row['ID'].strip()
+			Flag = row['Flag'].strip()
+			Message = row['Message'].strip()
+			Message_ja = row['Message_ja'].strip()
 			data = { # Identifier,Flag,Message,Message_ja
 				'RuleID':RuleID,
 				'Flag':Flag,
@@ -437,10 +444,10 @@ if __name__ == '__main__':
 		reader = csv.DictReader(f,rule_keys)
 		header = next(reader)
 		for row in reader:
-			RuleID = row['ID']
-			Flag = row['Flag']
-			Message = row['Message']
-			Message_ja = row['Message_ja']
+			RuleID = row['ID'].strip()
+			Flag = row['Flag'].strip()
+			Message = row['Message'].strip()
+			Message_ja = row['Message_ja'].strip()
 			data = { # Identifier,Flag,Message,Message_ja
 				'RuleID':RuleID,
 				'Flag':Flag,
@@ -601,7 +608,9 @@ if __name__ == '__main__':
 			continue
 		lang = 'en'
 		item_dir0 = 'billing-japan/rules/ubl-pint/'+id+'/'+lang
+
 		os.makedirs(item_dir0,exist_ok=True)
+
 		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
 			f.write(javascript_html)
@@ -614,17 +623,13 @@ if __name__ == '__main__':
 																			id,APP_BASE))
 			if id in schematron_dict:
 				data = schematron_dict[id]
-				title = id+' ('+data['flag']+')'
-				f.write(item_header.format(title,v['Message']))
 				BGroup = termTable(data['BG'],lang)
 				BTerm = termTable(data['BT'],lang)
+				title = id+' ('+data['flag']+')'
+				f.write(item_header.format(title,v['Message']))
 				html = item_data.format('context','<code>'+data['context']+'</code>','test','<code>'+data['test']+'</code>', \
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
-				# TODO verify AllowanceCharge
-				# html = checkRule(data)
-				# if html:
-				# 	f.write(html)
 			else:
 				f.write(item_header.format(id,v['Message']))
 				GBT = lookupBGT(id,lang)
@@ -649,10 +654,10 @@ if __name__ == '__main__':
 																			id,APP_BASE))
 			if id in schematron_dict:
 				data = schematron_dict[id]
-				title = id+' ('+data['flag']+')'
-				f.write(item_header.format(title,v['Message_ja']))
 				BGroup = lookupBG(data,'ja')
 				BTerm = lookupBT(data,'ja')
+				title = id+' ('+data['flag']+')'
+				f.write(item_header.format(title,v['Message_ja']))
 				html = item_data.format('対象(context)','<code>'+data['context']+'</code>','検証(test)','<code>'+data['test']+'</code>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
@@ -661,7 +666,7 @@ if __name__ == '__main__':
 				BGroup = GBT['BGroup']
 				BTerm = GBT['BTerm']
 				f.write(item_header.format(id,v['Message_ja']))
-				html = item_data.format('対象(context)','** ビジネスルールは、スキーマトロンで未定義 **','検証(test)','<i class="fa fa-minus" aria-hidden="true"></i>', \
+				html = item_data.format('対象(context)','** スキーマトロンのビジネスルールは検討中 **','検証(test)','<i class="fa fa-minus" aria-hidden="true"></i>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
 			f.write(item_trailer.format('先頭に戻る'))
@@ -683,10 +688,10 @@ if __name__ == '__main__':
 																			id,APP_BASE))
 			if id in schematron_dict:
 				data = schematron_dict[id]
-				title = id+' ('+data['flag']+')'
-				f.write(item_header.format(title,v['Message']))
 				BGroup = lookupBG(data,lang)
 				BTerm = lookupBT(data,lang)
+				title = id+' ('+data['flag']+')'
+				f.write(item_header.format(title,v['Message']))
 				html = item_data.format('context','<code>'+data['context']+'</code>','test','<code>'+data['test']+'</code>', \
 																# 'Flag',data['flag'], \
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
@@ -715,10 +720,10 @@ if __name__ == '__main__':
 																			id,APP_BASE))
 			if id in schematron_dict:
 				data = schematron_dict[id]
-				title = id+' ('+data['flag']+')'
-				f.write(item_header.format(title,v['Message_ja']))
 				BGroup = lookupBG(data,lang)
 				BTerm = lookupBT(data,lang)
+				title = id+' ('+data['flag']+')'
+				f.write(item_header.format(title,v['Message_ja']))
 				html = item_data.format('対象(context)','<code>'+data['context']+'</code>','検証(test)','<code>'+data['test']+'</code>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
@@ -727,7 +732,7 @@ if __name__ == '__main__':
 				BGroup = GBT['BGroup']
 				BTerm = GBT['BTerm']
 				f.write(item_header.format(id,v['Message_ja']))
-				html = item_data.format('対象(context)','** ビジネスルールは、スキーマトロンで未定義 **','検証(test)','<i class="fa fa-minus" aria-hidden="true"></i>', \
+				html = item_data.format('対象(context)','** スキーマトロンのビジネスルールは検討中 **','検証(test)','<i class="fa fa-minus" aria-hidden="true"></i>', \
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
 			f.write(item_trailer.format('先頭に戻る'))

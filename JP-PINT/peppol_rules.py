@@ -412,11 +412,11 @@ if __name__ == '__main__':
 		reader = csv.DictReader(f,rule_keys)
 		header = next(reader)
 		for row in reader:
-			id = row['id']
-			flag = row['flag']
-			text = row['text']
-			context = row['context']
-			test = row['test']
+			id = row['id'].strip()
+			flag = row['flag'].strip()
+			text = row['text'].strip()
+			context = row['context'].strip()
+			test = row['test'].strip()
 			vars = re.findall('\$([a-zA-Z]*)',context)
 			if len(vars) > 0 and vars[0]:
 				varSet = set()
@@ -465,11 +465,11 @@ if __name__ == '__main__':
 		reader = csv.DictReader(f,rule_keys)
 		header = next(reader)
 		for row in reader:
-			id = row['id']
-			flag = row['flag']
-			text = row['text']
-			context = row['context']
-			test = row['test']
+			id = row['id'].strip()
+			flag = row['flag'].strip()
+			text = row['text'].strip()
+			context = row['context'].strip()
+			test = row['test'].strip()
 			vars = re.findall('\$([a-zA-Z]*)',context)
 			if len(vars) > 0 and vars[0]:
 				varSet = set()
@@ -520,11 +520,11 @@ if __name__ == '__main__':
 		reader = csv.DictReader(f,not_keys)
 		header = next(reader)
 		for row in reader:
-			XPath = row['XPath']
-			PINT_ID = row['PINT_ID']
-			Schematron = row['Schematron']
-			Datatype = row['Datatype']
-			Occurrence = row['Occurrence']
+			XPath = row['XPath'].strip()
+			PINT_ID = row['PINT_ID'].strip()
+			Schematron = row['Schematron'].strip()
+			Datatype = row['Datatype'].strip()
+			Occurrence = row['Occurrence'].strip()
 			data = {
 				'XPath':XPath,
 				'PINT_ID':PINT_ID,
@@ -622,7 +622,7 @@ if __name__ == '__main__':
 
 	def listUndefInSchematron():
 		Rs = ''
-		tests = [v['test'] for k,v in rule_dict.items() \
+		tests = [v['test'] for k,v in rule_dict.items()
 			if re.match(r'UBL-.*',v['id']) and re.match(r'^not\([^\)]*\)',v['test'])]
 		for k,v in ubl_not_dict.items():
 			if 'not' == v['Schematron']:
