@@ -31,31 +31,31 @@
     <active pattern="Codesmodel" />
   </phase>
   <pattern id="UBL-model">
-    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-br-01" flag="fatal" test="matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')">
       [jp-br-01]- For the Japanese Suppliers, the Tax identifier must start with 'T' and must be 13 digits.
       </assert>
       <assert id="jp-s-01" flag="fatal" test="
       (
-        (count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID) = 'S']) + count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'S'])) > 0 and 
-        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'S']) > 0
+        (count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='S']) + count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])) > 0 and 
+        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S']) > 0
       ) or 
       (
-        (count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID) = 'S']) + count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'S'])) = 0 and 
-        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'S']) = 0
+        (count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='S']) + count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S']))=0 and 
+        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'])=0
       )">
         [jp-s-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) or a Document level charge (ibg-21) where the Consumption Tax category code (ibt-151, ibt-095 or ibt-102) is "Standard rated" shall contain in the Consumption Tax breakdown (ibg-23) at least one Consumption Tax category code (ibt-118) equal with "Standard rated".
       </assert>
       <assert id="jp-s-02" flag="fatal" test="
       (
-        exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and 
+        exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and 
         (
           exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or 
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID)) = 'VAT')]/cbc:CompanyID)
+          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
         )
       ) or 
       not(
-        exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'S'])
+        exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])
       )">
         [jp-s-02]-An Invoice that contains an Invoice line (ibg-25) where the Invoiced item Consumption Tax category code (ibt-151) is "Standard rated" shall contain the Seller Consumption Tax Identifier (ibt-031), the Seller tax registration identifier (ibt-032) and/or the Seller tax representative Consumption Tax identifier (ibt-063).
       </assert>
@@ -64,7 +64,7 @@
         exists(//cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and 
         (
           exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or 
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID)) = 'VAT')]/cbc:CompanyID)
+          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
         )
       ) or 
       not(
@@ -77,7 +77,7 @@
         exists(//cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and 
         (
           exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or 
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID)) = 'VAT')]/cbc:CompanyID)
+          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
         )
       ) or 
       not(
@@ -86,20 +86,17 @@
         [jp-s-04]-An Invoice that contains a Document level charge (ibg-21) where the Document level charge Consumption Tax category code (ibt-$1) is "Standard rated" shall contain the Seller Consumption Tax Identifier (ibt-031), the Seller tax registration identifier (ibt-032) and/or the Seller tax representative Consumption Tax identifier (ibt-063).
       </assert>
     </rule>
-    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]">
+    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP' ]">
       <assert id="jp-br-co-01" flag="fatal" test="
-      cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) != 0 and 
-      (
-        xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &gt;= floor(
-          xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)
+        cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) != 0 and 
+        cac:TaxTotal/cac:TaxSubtotal/xs:decimal(cbc:TaxAmount) &gt;= floor(
+          cac:TaxTotal/cac:TaxSubtotal/xs:decimal(cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)
+        ) and 
+        cac:TaxTotal/cac:TaxSubtotal/xs:decimal(cbc:TaxAmount) &lt;= ceiling(
+          cac:TaxTotal/cac:TaxSubtotal/xs:decimal(cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)
         )
-      ) and 
-      (
-        xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &lt;= ceiling(
-          xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)
-        )
-      )">
-        [jp-br-co-01]-Consumption Tax category tax amount (ibt-117) = Consumption Tax category taxable amount (ibt-116) x (Consumption Tax category rate (ibt-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.
+      ">
+        [jp-br-co-01]-Consumption Tax category tax amount (ibt-117)=Consumption Tax category taxable amount (ibt-116) x (Consumption Tax category rate (ibt-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.
       </assert>
     </rule>
     <rule context="ubl:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] | ubl:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] | //cac:InvoiceLine/cbc:LineExtensionAmount[@currencyID='JPY']">
@@ -107,48 +104,48 @@
         [jp-br-02]- Amount shall be integer.
       </assert>
     </rule>
-    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP' ]/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-08" flag="fatal" test="
         every $rate in xs:decimal(cbc:Percent) satisfies (
           (
             (
-              exists(//cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID) = 'S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent) = $rate]) or 
-              exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate])
+              exists(//cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]) or 
+              exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
             ) and 
             (
               (
-                ../xs:decimal(cbc:TaxableAmount - 1) &lt; (
-                  sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:LineExtensionAmount)) + 
-                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator = true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount)) - 
-                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount))
+                ../xs:decimal(cbc:TaxableAmount) &lt;= ceiling(
+                  sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
                 )
               ) and 
               (
-                ../xs:decimal(cbc:TaxableAmount + 1) &gt; (
-                  sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:LineExtensionAmount)) + 
-                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator = true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount)) - 
-                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount))
+                ../xs:decimal(cbc:TaxableAmount) &gt;= floor(
+                  sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+                  sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
                 )
               )
             )
           ) or 
           (
-            exists(//cac:CreditNoteLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID) = 'S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent) = $rate]) or 
-            exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID) = 'S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate])
+            exists(//cac:CreditNoteLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]) or 
+            exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
           ) and 
           (
             (
-              ../xs:decimal(cbc:TaxableAmount - 1) &lt; (
-                sum(../../../cac:CreditNoteLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent) =$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
-                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount)) - 
-                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount))
+              ../xs:decimal(cbc:TaxableAmount) &lt;= ceiling(
+                sum(../../../cac:CreditNoteLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
               )
             ) and 
             (
-              ../xs:decimal(cbc:TaxableAmount + 1) &gt; (
-                sum(../../../cac:CreditNoteLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent) =$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
-                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount)) - 
-                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent) = $rate]/xs:decimal(cbc:Amount))
+              ../xs:decimal(cbc:TaxableAmount) &gt;= floor(
+                sum(../../../cac:CreditNoteLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+                sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
               )
             )
           )
@@ -156,18 +153,9 @@
         [jp-s-08]-For each different value of Consumption Tax category rate (ibt-119) where the Consumption Tax category code (ibt-118) is "Standard rated", the Consumption Tax category taxable amount (ibt-116) in a Consumption Tax breakdown (ibg-23) shall equal the sum of Invoice line net amounts (ibt-131) plus the sum of document level charge amounts (ibt-099) minus the sum of document level allowance amounts (ibt-092) where the Consumption Tax category code (ibt-151, ibt-102, ibt-095) is "Standard rated" and the Consumption Tax rate (ibt-152, ibt-103, ibt-096) equals the Consumption Tax category rate (ibt-119).
       </assert>
       <assert id="jp-s-09" flag="fatal" test="
-      (
-        abs(xs:decimal(../cbc:TaxAmount)) - 1 &lt; 
-        round(
-          (abs(xs:decimal(../cbc:TaxableAmount)) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10
-        ) div 100 
-      ) and 
-      (
-        abs(xs:decimal(../cbc:TaxAmount)) + 1&gt; 
-        round(
-          (abs(xs:decimal(../cbc:TaxableAmount)) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10
-        ) div 100 
-      )">
+        ../xs:decimal(cbc:TaxAmount) &gt;= floor(xs:decimal(../cbc:TaxableAmount) * (xs:decimal(cbc:Percent) div 100)) and
+        ../xs:decimal(cbc:TaxAmount) &lt;= ceiling(xs:decimal(../cbc:TaxableAmount) * (xs:decimal(cbc:Percent) div 100))
+      ">
         [jp-s-09]-The Consumption Tax category tax amount (ibt-117) in a Consumption Tax breakdown (ibg-23) where Consumption Tax category code (ibt-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (ibt-116) multiplied by the Consumption Tax category rate (ibt-119).
       </assert>
       <assert id="jp-s-10" flag="fatal" test="
@@ -186,8 +174,8 @@
         [jp-s-07]-In a Document level charge (ibg-21) where the Document level charge Consumption Tax category code (ibt-102) is "Standard rated" the Document level charge Consumption Tax rate (ibt-103) shall be greater than zero.
       </assert>
     </rule>
-    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
-    /cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
+    /cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-05" flag="fatal" test="(cbc:Percent) > 0">[jp-s-05]-In an Invoice line (ibg-25) where the Invoiced item Consumption Tax category code (ibt-151) is "Standard rated" the Invoiced item Consumption Tax rate (ibt-152) shall be greater than zero.</assert>
     </rule>
   </pattern>

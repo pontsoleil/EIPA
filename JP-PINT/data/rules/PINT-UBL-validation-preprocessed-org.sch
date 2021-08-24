@@ -39,7 +39,7 @@
       <assert id="ibr-co-25" flag="fatal" test="((. > 0) and (exists(//cbc:DueDate) or exists(//cac:PaymentTerms/cbc:Note))) or (. &lt;= 0)">[ibr-co-25]-In case the Amount due for payment (ibt-115) is positive, either the Payment due date (ibt-009) or the Payment terms (ibt-020) shall be present.</assert>
     </rule>
     <rule context="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
-      <assert id="ibr-63" flag="fatal" test="exists(@schemeID)">[ibr-63]-The Buyer electronic address (ibt-049) shall have a Scheme identifier.</assert>
+      <assert id="ibr-63" flag="fatal" test="exists(@schemeID)">[ibr-63]-The Buyer electronic address (ibt-049) shall have a Scheme identifier.    </assert>
     </rule>
     <rule context="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress">
       <assert id="ibr-11" flag="fatal" test="(cac:Country/cbc:IdentificationCode) != ''">[ibr-11]-The Buyer postal address (ibg-08) shall contain a Buyer country code (ibt-055).</assert>
@@ -64,86 +64,14 @@
       <assert id="ibr-13" flag="fatal" test="exists(cbc:TaxExclusiveAmount)">[ibr-13]-An Invoice shall have the Invoice total amount without Tax (ibt-109).</assert>
       <assert id="ibr-14" flag="fatal" test="exists(cbc:TaxInclusiveAmount)">[ibr-14]-An Invoice shall have the Invoice total amount with Tax (ibt-112).</assert>
       <assert id="ibr-15" flag="fatal" test="exists(cbc:PayableAmount)">[ibr-15]-An Invoice shall have the Amount due for payment (ibt-115).</assert>
-      <assert id="ibr-co-10" flag="fatal" test="
-        xs:decimal(cbc:LineExtensionAmount) = sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount))
-      ">
-        [ibr-co-10]-Sum of Invoice line net amount (ibt-106) = Σ Invoice line net amount (ibt-131).
-      </assert>
-      <assert id="ibr-co-11" flag="fatal" test="
-      (
-        xs:decimal(cbc:AllowanceTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount))
-      ) or
-      (
-        not(cbc:AllowanceTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()])
-      )">
-        [ibr-co-11]-Sum of allowances on document level (ibt-107) = Σ Document level allowance amount (ibt-092).</assert>
-      <assert id="ibr-co-12" flag="fatal" test="
-      (
-        xs:decimal(cbc:ChargeTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount))
-      ) or 
-      (
-        not(cbc:ChargeTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()])
-      )">
-        [ibr-co-12]-Sum of charges on document level (ibt-108) = Σ Document level charge amount (ibt-099).</assert>
-      <assert id="ibr-co-13" flag="fatal" test="
-      (
-        cbc:ChargeTotalAmount and 
-        cbc:AllowanceTotalAmount and 
-        (
-          xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)
-        )
-      ) or 
-      (
-        not(cbc:ChargeTotalAmount) and 
-        cbc:AllowanceTotalAmount and 
-        (
-          xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount)
-        )
-      ) or 
-      (
-        cbc:ChargeTotalAmount and 
-        not(cbc:AllowanceTotalAmount) and 
-        (
-          xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount)
-        )
-      ) or 
-      (
-        not(cbc:ChargeTotalAmount) and 
-        not(cbc:AllowanceTotalAmount) and 
-        (
-          xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)
-        )
-      )">
-        [ibr-co-13]-Invoice total amount without Tax (ibt-109) = Σ Invoice line net amount (ibt-131) - Sum of allowances on document level (ibt-107) + Sum of charges on document level (ibt-108).</assert>
-      <assert id="ibr-co-16" flag="fatal" test="
-      (
-        xs:decimal(cbc:PrepaidAmount) and 
-        not(xs:decimal(cbc:PayableRoundingAmount)) and 
-        (
-          xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount)
-        )
-      ) or 
-      (
-        not(xs:decimal(cbc:PrepaidAmount)) and 
-        not(xs:decimal(cbc:PayableRoundingAmount)) and
-        xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)
-      ) or 
-      (
-        xs:decimal(cbc:PrepaidAmount) and 
-        xs:decimal(cbc:PayableRoundingAmount) and 
-        (xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))
-      ) or 
-      (
-        not(xs:decimal(cbc:PrepaidAmount)) and 
-        xs:decimal(cbc:PayableRoundingAmount) and 
-        (xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount) = xs:decimal(cbc:TaxInclusiveAmount)
-        )
-      )">
-        [ibr-co-16]-Amount due for payment (ibt-115) = Invoice total amount with Tax (ibt-112) - Paid amount (ibt-113) + Rounding amount (ibt-114).
-      </assert>
+      <assert id="ibr-co-10" flag="fatal" test="(xs:decimal(cbc:LineExtensionAmount) = (round(sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100))">[ibr-co-10]-Sum of Invoice line net amount (ibt-106) = Σ Invoice line net amount (ibt-131).</assert>
+      <assert id="ibr-co-11" flag="fatal" test="xs:decimal(cbc:AllowanceTotalAmount) = (round(sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount)) * 10 * 10) div 100) or  (not(cbc:AllowanceTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]))">[ibr-co-11]-Sum of allowances on document level (ibt-107) = Σ Document level allowance amount (ibt-092).</assert>
+      <assert id="ibr-co-12" flag="fatal" test="xs:decimal(cbc:ChargeTotalAmount) = (round(sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount)) * 10 * 10) div 100) or (not(cbc:ChargeTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]))">[ibr-co-12]-Sum of charges on document level (ibt-108) = Σ Document level charge amount (ibt-099).</assert>
+      <assert id="ibr-co-13" flag="fatal" test="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100 ))  or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = round((xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10 ) div 100)) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10 ) div 100)) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)))">[ibr-co-13]-Invoice total amount without Tax (ibt-109) = Σ Invoice line net amount (ibt-131) - Sum of allowances on document level (ibt-107) + Sum of charges on document level (ibt-108).</assert>
+      <assert id="ibr-co-16" flag="fatal" test="(xs:decimal(cbc:PrepaidAmount) and not(xs:decimal(cbc:PayableRoundingAmount)) and (xs:decimal(cbc:PayableAmount) = (round((xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount)) * 10 * 10) div 100))) or (not(xs:decimal(cbc:PrepaidAmount)) and not(xs:decimal(cbc:PayableRoundingAmount)) and xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)) or (xs:decimal(cbc:PrepaidAmount) and xs:decimal(cbc:PayableRoundingAmount) and ((round((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) * 10 * 10) div 100) = (round((xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount)) * 10 * 10) div 100))) or (not(xs:decimal(cbc:PrepaidAmount)) and xs:decimal(cbc:PayableRoundingAmount) and ((round((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) * 10 * 10) div 100) = xs:decimal(cbc:TaxInclusiveAmount)))">[ibr-co-16]-Amount due for payment (ibt-115) = Invoice total amount with Tax (ibt-112) - Paid amount (ibt-113) + Rounding amount (ibt-114).</assert>
     </rule>
     <rule context="/ubl:Invoice | /cn:CreditNote">
-      <assert id="ibr-01" flag="fatal" test="(cbc:CustomizationID) != ''">[ibr-01]-An Invoice shall have a Specification identifier (ibt-024).</assert>
+      <assert id="ibr-01" flag="fatal" test="(cbc:CustomizationID) != ''">[ibr-01]-An Invoice shall have a Specification identifier (ibt-024).   </assert>
       <assert id="ibr-02" flag="fatal" test="(cbc:ID) !=''">[ibr-02]-An Invoice shall have an Invoice number (ibt-001).</assert>
       <assert id="ibr-03" flag="fatal" test="(cbc:IssueDate) !=''">[ibr-03]-An Invoice shall have an Invoice issue date (ibt-002).</assert>
       <assert id="ibr-04" flag="fatal" test="(cbc:InvoiceTypeCode) !='' or (cbc:CreditNoteTypeCode) !=''">[ibr-04]-An Invoice shall have an Invoice type code (ibt-003).</assert>
@@ -274,7 +202,7 @@
       <assert id="ibr-cl-24" flag="fatal" test="((@mimeCode = 'application/pdf' or @mimeCode = 'image/png' or @mimeCode = 'image/jpeg' or @mimeCode = 'text/csv' or @mimeCode = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' or @mimeCode = 'application/vnd.oasis.opendocument.spreadsheet'))">[ibr-cl-24]-Mime code must be according to subset of IANA code list.</assert>
     </rule>
     <rule flag="fatal" context="cbc:EndpointID[@schemeID]">
-      <assert id="ibr-cl-25" flag="fatal" test="((not(contains(normalize-space(@schemeID), ' ')) and contains(' 0147 0170 0188 0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0183 0184 0190 0191 0192 0193 0194 0195 0196 0198 0199 0200 0201 0202 0203 0204 0208 0209 0210 0211 0212 0213 9901 9902 9904 9905 9906 9907 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9955 9957 AN AQ AS AU EM ', concat(' ', normalize-space(@schemeID), ' '))))">[ibr-cl-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list</assert>
+      <assert id="ibr-cl-25" flag="fatal" test="((not(contains(normalize-space(@schemeID), ' ')) and contains(' 0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0183 0184 0190 0191 0192 0193 0194 0195 0196 0198 0199 0200 0201 0202 0203 0204 0208 0209 0210 0211 0212 0213 9901 9902 9904 9905 9906 9907 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9955 9957 AN AQ AS AU EM ', concat(' ', normalize-space(@schemeID), ' '))))">[ibr-cl-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list</assert>
     </rule>
     <rule flag="fatal" context="cac:DeliveryLocation/cbc:ID[@schemeID]">
       <assert id="ibr-cl-26" flag="fatal" test="((not(contains(normalize-space(@schemeID), ' ')) and contains(' 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012 0013 0014 0015 0016 0017 0018 0019 0020 0021 0022 0023 0024 0025 0026 0027 0028 0029 0030 0031 0032 0033 0034 0035 0036 0037 0038 0039 0040 0041 0042 0043 0044 0045 0046 0047 0048 0049 0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060 0061 0062 0063 0064 0065 0066 0067 0068 0069 0070 0071 0072 0073 0074 0075 0076 0077 0078 0079 0080 0081 0082 0083 0084 0085 0086 0087 0088 0089 0090 0091 0093 0094 0095 0096 0097 0098 0099 0100 0101 0102 0104 0105 0106 0107 0108 0109 0110 0111 0112 0113 0114 0115 0116 0117 0118 0119 0120 0121 0122 0123 0124 0125 0126 0127 0128 0129 0130 0131 0132 0133 0134 0135 0136 0137 0138 0139 0140 0141 0142 0143 0144 0145 0146 0147 0148 0149 0150 0151 0152 0153 0154 0155 0156 0157 0158 0159 0160 0161 0162 0163 0164 0165 0166 0167 0168 0169 0170 0171 0172 0173 0174 0175 0176 0177 0178 0179 0180 0183 0184 0185 0186 0187 0188 0189 0190 0191 0192 0193 0194 0195 0196 0197 0198 0199 0200 0201 0202 0203 0204 0205 0206 0207 0208 0209 0210 0211 0212 0213 ', concat(' ', normalize-space(@schemeID), ' '))))">[ibr-cl-26]-Delivery location identifier scheme identifier MUST belong to the ISO 6523 ICD code list</assert>
