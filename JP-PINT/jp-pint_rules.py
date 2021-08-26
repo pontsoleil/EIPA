@@ -36,32 +36,38 @@ import sys
 import os
 import argparse
 
+import jp_pint_base
+# from jp_pint_base import APP_BASE
+from jp_pint_base import MESSAGE # invoice debitnote summarized
+
 import jp_pint_constants
+from jp_pint_constants import profiles
+from jp_pint_constants import APP_BASE
+# from jp_pint_constants import SEMANTIC_BASE
+# from jp_pint_constants import SYNTAX_BASE
+from jp_pint_constants import RULES_BASE
+# from jp_pint_constants import RULES_UBL_JAPAN_BASE
+# from jp_pint_constants import RULES_UBL_PINT_BASE
+from jp_pint_constants import SPEC_TITLE_en
+from jp_pint_constants import SPEC_TITLE_ja
+# from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_en
+# from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_ja
+# from jp_pint_constants import SYNTAX_MESSAGE_TITLE_en
+# from jp_pint_constants import SYNTAX_MESSAGE_TITLE_ja
+from jp_pint_constants import PINT_RULE_MESSAGE_TITLE_en
+from jp_pint_constants import PINT_RULE_MESSAGE_TITLE_ja
+from jp_pint_constants import JP_RULE_MESSAGE_TITLE_en
+from jp_pint_constants import JP_RULE_MESSAGE_TITLE_ja
+from jp_pint_constants import HOME_en
+from jp_pint_constants import HOME_ja
 
-APP_BASE = jp_pint_constants.APP_BASE
-SEMANTIC_BASE = jp_pint_constants.SEMANTIC_BASE
-SYNTAX_BASE = jp_pint_constants.SYNTAX_BASE
-RULES_BASE = jp_pint_constants.RULES_BASE
-RULES_UBL_JAPAN_BASE = jp_pint_constants.RULES_UBL_JAPAN_BASE
-RULES_UBL_PINT_BASE = jp_pint_constants.RULES_UBL_PINT_BASE
-SPEC_TITLE_en = jp_pint_constants.SPEC_TITLE_en
-SPEC_TITLE_ja = jp_pint_constants.SPEC_TITLE_ja
-SEMANTICS_MESSAGE_TITLE_en = jp_pint_constants.SEMANTICS_MESSAGE_TITLE_en
-SEMANTICS_MESSAGE_TITLE_ja = jp_pint_constants.SEMANTICS_MESSAGE_TITLE_ja
-SYNTAX_MESSAGE_TITLE_en = jp_pint_constants.SYNTAX_MESSAGE_TITLE_en
-SYNTAX_MESSAGE_TITLE_ja = jp_pint_constants.SYNTAX_MESSAGE_TITLE_ja
-PINT_RULE_MESSAGE_TITLE_en = jp_pint_constants.PINT_RULE_MESSAGE_TITLE_en
-PINT_RULE_MESSAGE_TITLE_ja = jp_pint_constants.PINT_RULE_MESSAGE_TITLE_ja
-JP_RULE_MESSAGE_TITLE_en = jp_pint_constants.JP_RULE_MESSAGE_TITLE_en
-JP_RULE_MESSAGE_TITLE_ja = jp_pint_constants.JP_RULE_MESSAGE_TITLE_ja
-HOME_en = jp_pint_constants.HOME_en
-HOME_ja = jp_pint_constants.HOME_ja
-
-html_head = jp_pint_constants.html_head
-javascript_html = jp_pint_constants.javascript_html
-navbar_html = jp_pint_constants.navbar_html
-dropdown_menu_en = jp_pint_constants.dropdown_menu_en.format(APP_BASE)
-dropdown_menu_ja = jp_pint_constants.dropdown_menu_ja.format(APP_BASE)
+from jp_pint_constants import html_head
+from jp_pint_constants import javascript_html
+from jp_pint_constants import navbar_html
+from jp_pint_constants import dropdown_menu_en
+dropdown_menu_en = dropdown_menu_en.format(APP_BASE)
+from jp_pint_constants import dropdown_menu_ja
+dropdown_menu_ja = dropdown_menu_ja.format(APP_BASE)
 legend_en ='''
 <h3>TBD</h3>
 '''
@@ -80,10 +86,10 @@ table_html = '''
 					</thead>
 					<tbody>
 '''
-table_trailer = jp_pint_constants.table_trailer
-trailer = jp_pint_constants.trailer
+from jp_pint_constants import table_trailer
+from jp_pint_constants import trailer
 # ITEM
-item_head = jp_pint_constants.item_head
+from jp_pint_constants import item_head
 info_item_modal_en = '''
 <h3>ISO/IEC 19757-3:2016(E)</h3>
 <h5>Information technology -- Document Schema definition languages (DSDL) -- <br />part 3: Rule-based validation -- Schemetron</h5>
@@ -97,17 +103,17 @@ The <strong>flag</strong> attribute allows more detailed outcomes.
 '''
 info_item_modal_ja = info_item_modal_en
 
-item_navbar = jp_pint_constants.item_navbar
+from jp_pint_constants import item_navbar
 # 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
 item_breadcrumb = '''
 			<ol class="breadcrumb pt-1 pb-1">
-				<li class="breadcrumb-item"><a href="{6}{0}/">{1}</a></li>
+				<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/">{1}</a></li>
 				<li class="breadcrumb-item"><a href="{6}rules/{0}">{2}</a></li>
 				<li class="breadcrumb-item"><a href="{6}rules/{3}/{0}/">{4}</a></li>
 				<li class="breadcrumb-item active">{5}</li>
 		</ol>
 '''
-item_header = jp_pint_constants.item_header
+from jp_pint_constants import item_header
 item_data = '''
 				<dt class="col-3">{0}</dt><dd class="col-9">{1}</dd>
 				<dt class="col-3">{2}</dt><dd class="col-9">{3}</dd>
@@ -130,7 +136,7 @@ item_table_trailer = '''
 						</tbody>
 					</table>
 ''' 
-item_trailer = jp_pint_constants.item_trailer
+from jp_pint_constants import item_trailer
 
 datatypeDict = {
 	'ID': 'Identifier',
@@ -547,11 +553,11 @@ if __name__ == '__main__':
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.MESSAGE_TITLE_en 5.lang 6.APP_BASE 
-		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
-		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,PINT_RULE_MESSAGE_TITLE_en,lang, \
-															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description','modal-sm')
+		title = PINT_RULE_MESSAGE_TITLE_en
+		warning = '<p class="lead">NOTE The information provided here is currently under consideration and is subject to change.</p>'
+		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,title,'Legend',legend_en,
+															'Shows a modal window of legend information.',
+															dropdown_menu_en,'ID or word in Term/Description','modal-sm',warning,APP_BASE,lang)
 		f.write(html)
 		f.write(table_html.format('PINT','Identifier / Message','flag'))
 		for id,data in pint_rule_dict.items():
@@ -562,11 +568,10 @@ if __name__ == '__main__':
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.MESSAGE_TITLE_en 5.lang 6.APP_BASE 
-		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
-		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,PINT_RULE_MESSAGE_TITLE_ja,lang, \
-															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm')
+		title = PINT_RULE_MESSAGE_TITLE_ja
+		warning = '<p class="lead">注：ここに記載されている情報は現在検討中であり、変更される可能性があります。</p>'
+		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,title,'凡例',legend_ja,'凡例を説明するウィンドウを表示',
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm',warning,APP_BASE,lang)
 		f.write(html)
 		f.write(table_html.format('PINT','ID / メッセージ','flag'))
 		for id,data in pint_rule_dict.items():
@@ -577,11 +582,11 @@ if __name__ == '__main__':
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.MESSAGE_TITLE_en 5.lang 6.APP_BASE 
-		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
-		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,JP_RULE_MESSAGE_TITLE_en,lang, \
-															APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-															dropdown_menu_en,'ID or word in Term/Description','modal-sm')
+		title = JP_RULE_MESSAGE_TITLE_en
+		warning = '<p class="lead">NOTE The information provided here is currently under consideration and is subject to change.</p>'
+		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,title,'Legend',legend_en,
+															'Shows a modal window of legend information.',
+															dropdown_menu_en,'ID or word in Term/Description','modal-sm',warning,APP_BASE,lang)
 		f.write(html)
 		f.write(table_html.format('JP','Identifier / Message','flag'))
 		for id,data in jp_rule_dict.items():
@@ -592,11 +597,10 @@ if __name__ == '__main__':
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.MESSAGE_TITLE_en 5.lang 6.APP_BASE 
-		# 7.'凡例' 8.legend_ja 9.'凡例を説明するウィンドウを表示' 10.dropdown_menu_ja 11.tooltipTextForSearch
-		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,JP_RULE_MESSAGE_TITLE_ja,lang, \
-															APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm')
+		title = JP_RULE_MESSAGE_TITLE_ja
+		warning = '<p class="lead">注：ここに記載されている情報は現在検討中であり、変更される可能性があります。</p>'
+		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,title,'凡例',legend_ja,'凡例を説明するウィンドウを表示',
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm',warning,APP_BASE,lang)
 		f.write(html)
 		f.write(table_html.format('JP','ID / メッセージ','flag'))
 		for id,data in jp_rule_dict.items():

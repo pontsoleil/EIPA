@@ -36,43 +36,53 @@ import sys
 import os
 import argparse
 
+import jp_pint_base
+# from jp_pint_base import APP_BASE
+from jp_pint_base import MESSAGE # invoice debitnote summarized
+
 import jp_pint_constants
+from jp_pint_constants import profiles
+message_title_en = profiles[MESSAGE]['title_en']
+message_title_ja = profiles[MESSAGE]['title_ja']
+profile_id = profiles[MESSAGE]['ProfileID']
+customization_id = profiles[MESSAGE]['CustomizationID']
+from jp_pint_constants import APP_BASE
+from jp_pint_constants import SEMANTIC_BASE
+# from jp_pint_constants import SYNTAX_BASE
+# from jp_pint_constants import RULES_BASE
+from jp_pint_constants import RULES_UBL_JAPAN_BASE
+from jp_pint_constants import RULES_UBL_PINT_BASE
+from jp_pint_constants import RULES_EN_PEPPOL
+from jp_pint_constants import RULES_EN_CEN
 
-APP_BASE = jp_pint_constants.APP_BASE
-SEMANTIC_BASE = jp_pint_constants.SEMANTIC_BASE
-SYNTAX_BASE = jp_pint_constants.SYNTAX_BASE
-RULES_BASE = jp_pint_constants.RULES_BASE
-RULES_UBL_JAPAN_BASE = jp_pint_constants.RULES_UBL_JAPAN_BASE
-RULES_UBL_PINT_BASE = jp_pint_constants.RULES_UBL_PINT_BASE
-RULES_EN_PEPPOL = jp_pint_constants.RULES_EN_PEPPOL
-RULES_EN_CEN = jp_pint_constants.RULES_EN_CEN
+from jp_pint_constants import SPEC_TITLE_en
+from jp_pint_constants import SPEC_TITLE_ja
 
-SPEC_TITLE_en = jp_pint_constants.SPEC_TITLE_en
-SPEC_TITLE_ja = jp_pint_constants.SPEC_TITLE_ja
+from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_en
+from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_ja
+from jp_pint_constants import SEMANTICS_LEGEND_TITLE_en
+from jp_pint_constants import SEMANTICS_LEGEND_TITLE_ja
+# from jp_pint_constants import SYNTAX_MESSAGE_TITLE_en
+# from jp_pint_constants import SYNTAX_MESSAGE_TITLE_ja
+# from jp_pint_constants import SYNTAX_LEGEND_TITLE_en
+# from jp_pint_constants import SYNTAX_LEGEND_TITLE_ja
+# from jp_pint_constants import PINT_RULE_MESSAGE_TITLE_en
+# from jp_pint_constants import PINT_RULE_MESSAGE_TITLE_ja
+# from jp_pint_constants import JP_RULE_MESSAGE_TITLE_en
+# from jp_pint_constants import JP_RULE_MESSAGE_TITLE_ja
 
-SEMANTICS_MESSAGE_TITLE_en = jp_pint_constants.SEMANTICS_MESSAGE_TITLE_en
-SEMANTICS_MESSAGE_TITLE_ja = jp_pint_constants.SEMANTICS_MESSAGE_TITLE_ja
-SEMANTICS_LEGEND_TITLE_en = jp_pint_constants.SEMANTICS_LEGEND_TITLE_en
-SEMANTICS_LEGEND_TITLE_ja = jp_pint_constants.SEMANTICS_LEGEND_TITLE_ja
-SYNTAX_MESSAGE_TITLE_en = jp_pint_constants.SYNTAX_MESSAGE_TITLE_en
-SYNTAX_MESSAGE_TITLE_ja = jp_pint_constants.SYNTAX_MESSAGE_TITLE_ja
-SYNTAX_LEGEND_TITLE_en = jp_pint_constants.SYNTAX_LEGEND_TITLE_en
-SYNTAX_LEGEND_TITLE_ja = jp_pint_constants.SYNTAX_LEGEND_TITLE_ja
-PINT_RULE_MESSAGE_TITLE_en = jp_pint_constants.PINT_RULE_MESSAGE_TITLE_en
-PINT_RULE_MESSAGE_TITLE_ja = jp_pint_constants.PINT_RULE_MESSAGE_TITLE_ja
-JP_RULE_MESSAGE_TITLE_en = jp_pint_constants.JP_RULE_MESSAGE_TITLE_en
-JP_RULE_MESSAGE_TITLE_ja = jp_pint_constants.JP_RULE_MESSAGE_TITLE_ja
+from jp_pint_constants import HOME_en
+from jp_pint_constants import HOME_ja
 
-HOME_en = jp_pint_constants.HOME_en
-HOME_ja = jp_pint_constants.HOME_ja
+from jp_pint_constants import variables
 
-variables = jp_pint_constants.variables
-
-html_head = jp_pint_constants.html_head
-javascript_html = jp_pint_constants.javascript_html
-navbar_html = jp_pint_constants.navbar_html
-dropdown_menu_en = jp_pint_constants.dropdown_menu_en.format(APP_BASE)
-dropdown_menu_ja = jp_pint_constants.dropdown_menu_ja.format(APP_BASE)
+from jp_pint_constants import html_head
+from jp_pint_constants import javascript_html
+from jp_pint_constants import navbar_html
+from jp_pint_constants import dropdown_menu_en
+dropdown_menu_en = dropdown_menu_en.format(APP_BASE)
+from jp_pint_constants import dropdown_menu_ja
+dropdown_menu_ja = dropdown_menu_ja.format(APP_BASE)
 legend_en = '''
           <dl class="row">
             <dt class="col-3"><strong>ID</strong></dt>
@@ -157,10 +167,10 @@ table_html = '''
 					</thead>
 					<tbody>
 '''
-table_trailer = jp_pint_constants.table_trailer
-trailer = jp_pint_constants.trailer
+from jp_pint_constants import table_trailer
+from jp_pint_constants import trailer
 # ITEM
-item_head = jp_pint_constants.item_head
+from jp_pint_constants import item_head
 info_item_modal_en = '''
           <dl class="row">
             <dt class="col-3"><strong>Data type</strong></dt>
@@ -265,8 +275,8 @@ info_item_modal_ja = '''
             </dd>
           </dl>
 '''
-item_navbar = jp_pint_constants.item_navbar
-item_header = jp_pint_constants.item_header
+from jp_pint_constants import item_navbar
+from jp_pint_constants import item_header
 # 'DT','Section','Extension','Path','Attr','Rules','Explanation'
 item_data_detail = '''
 				<dt class="col-2">{0}</dt><dd class="col-10">{1}</dd>
@@ -309,7 +319,7 @@ childelements_dt = '''
 		<dd class="col-10">
 			<div class="table-responsive semantics">
 '''
-item_trailer = jp_pint_constants.item_trailer
+from jp_pint_constants import item_trailer
 
 datatypeDict = {
 	'ID': 'Identifier',
@@ -423,7 +433,11 @@ def writeTr_en(f,data):
 	else:
 		desc = ''
 	f.write(tabs+'\t<td>\n'+desc)
-	if data['Example']:
+	if 'ibt-023' == data['PINT_ID']:
+		example = tabs+'\t\t<p>Default value: <code>'+profile_id+'</code></p>\n'
+	elif 'ibt-024' == data['PINT_ID']:
+		example = tabs+'\t\t<p>Default value: <code>'+customization_id+'</code></p>\n'
+	elif data['Example']:
 		example = tabs+'\t\t<p>Example value: <code>'+data['Example']+'</code></p>\n'
 	else:
 		example = ''
@@ -473,7 +487,11 @@ def writeTr_ja(f,data):
 	else:
 		desc = ''
 	f.write(tabs+'\t<td>\n'+desc)
-	if data['Example']:
+	if 'ibt-023' == data['PINT_ID']:
+		example = tabs+'\t\t<p>既定値: <code>'+profile_id+'</code></p>\n'
+	elif 'ibt-024' == data['PINT_ID']:
+		example = tabs+'\t\t<p>既定値: <code>'+customization_id+'</code></p>\n'
+	elif data['Example']:
 		example = tabs+'\t\t例: <code>'+data['Example']+'</code>'
 	else:
 		example = ''
@@ -487,11 +505,11 @@ def writeBreadcrumb(f,num,lang):
 	f.write(tabs+'<ol class="breadcrumb pt-1 pb-1">')
 	if 'ja' == lang:
 		home_str = HOME_ja
-		name = SEMANTICS_LEGEND_TITLE_ja
+		name = SEMANTICS_MESSAGE_TITLE_ja
 	else:
 		home_str = HOME_en
-		name = SEMANTICS_LEGEND_TITLE_en	
-	f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+home_dir+lang+'/">'+home_str+'</a></li>')
+		name = SEMANTICS_MESSAGE_TITLE_en	
+	f.write(tabs+'\t<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/">'+home_str+'</a></li>')
 	f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+SEMANTIC_BASE+'tree/'+lang+'/">'+name+'</a></li>')
 	for id in nums:
 		item_dir = SEMANTIC_BASE+id+'/'
@@ -586,8 +604,8 @@ if __name__ == '__main__':
 
 	dir = os.path.dirname(in_file)
 
-	semantic_en_html = 'billing-japan/semantic/invoice/tree/en/index.html'
-	semantic_ja_html = 'billing-japan/semantic/invoice/tree/ja/index.html'
+	semantic_en_html = 'billing-japan/semantic/'+MESSAGE+'/tree/en/index.html'
+	semantic_ja_html = 'billing-japan/semantic/'+MESSAGE+'/tree/ja/index.html'
 
 	verbose = args.verbose
 	detail = args.detail
@@ -818,11 +836,11 @@ if __name__ == '__main__':
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.lang 6.APP_BASE 
-		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_en 11.tooltipTextForSearch
-		f.write(navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,SEMANTICS_MESSAGE_TITLE_en,lang, \
-																APP_BASE,'Legend',legend_en,'Shows a modal window of legend information.', \
-																dropdown_menu_en,'ID or word in Term/Description','modal-lg'))
+		warning_en = '<p class="lead">NOTE all element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, but this covers both standard commercial invoice, summarised invoice and delivery note (debit note).<br />The tag names are correct according to the UBL 2.1 Invoice schema.</p>'
+		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,SEMANTICS_MESSAGE_TITLE_en,
+															'Legend',legend_en,'Shows a modal window of legend information.',
+															dropdown_menu_en,'ID or word in Term/Description','modal-lg',warning_en,APP_BASE,lang)
+		f.write(html)
 		f.write(table_html.format('Business Term','Card','Description','3%','22%'))
 		for data in pint_list:
 			id = data['PINT_ID']
@@ -844,7 +862,7 @@ if __name__ == '__main__':
 		lang = 'en'
 		id = data['PINT_ID']
 		if re.match(r'^ib[tg]-[0-9]*$',id):
-			item_dir0 = 'billing-japan/semantic/invoice/'+id+'/'+lang
+			item_dir0 = 'billing-japan/semantic/'+MESSAGE+'/'+id+'/'+lang
 
 			os.makedirs(item_dir0,exist_ok=True)
 
@@ -929,11 +947,11 @@ if __name__ == '__main__':
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.lang 6.APP_BASE 
-		# 7.'Legend' 8.legend_en 9.'Shows a ...' 10.dropdown_menu_ja 11.tooltipTextForSearch
-		f.write(navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,SEMANTICS_MESSAGE_TITLE_ja,lang, \
-																APP_BASE,'凡例',legend_ja,'凡例を説明するウィンドウを表示', \
-																dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg'))
+		warning_ja = '<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています<br />XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'
+		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,SEMANTICS_MESSAGE_TITLE_ja,
+															'凡例',legend_ja,'凡例を説明するウィンドウを表示',
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg',warning_ja,APP_BASE,lang)
+		f.write(html)
 		f.write(table_html.format('ビジネス用語','繰返','説明','3%','22%'))
 		for data in pint_list:
 			id = data['PINT_ID']
@@ -947,7 +965,7 @@ if __name__ == '__main__':
 		lang = 'ja'
 		id = data['PINT_ID']
 		if re.match(r'^ib[tg]-[0-9]*$',id):
-			item_dir0 = 'billing-japan/semantic/invoice/'+id+'/'+lang
+			item_dir0 = 'billing-japan/semantic/'+MESSAGE+'/'+id+'/'+lang
 
 			os.makedirs(item_dir0,exist_ok=True)
 
