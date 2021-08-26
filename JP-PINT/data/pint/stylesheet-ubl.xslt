@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cn="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:in="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:u="utils" version="2.0" exclude-result-prefixes="cac cbc u cn in xs">
-	<xsl:output method="html" version="5.0" encoding="UTF-8" indent="no"/>
-	<xsl:param name="stylesheet_url" select="'NONE'"/>
+	<xsl:output method="html" version="5.0" encoding="UTF-8" indent="no"/> 
+<!--	<xsl:output method="xml" encoding="UTF-8" indent="yes"/>
+-->	<xsl:param name="stylesheet_url" select="'NONE'"/>
 	<xsl:template name="doc-head">
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -24,7 +25,7 @@
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="cn:CreditNote[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0')]" mode="document" priority="1000">
+	<xsl:template match="cn:CreditNote[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:peppol:pint:billing-3.0@jp:peppol-1')]" mode="document" priority="1000">
 		<html lang="{$language}">
 			<head>
 				<xsl:call-template name="doc-head"/>
@@ -88,9 +89,9 @@
 					<hr/>
 					<div id="details">
 						<h3>Details</h3>
-						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator='true']" mode="line"/>
+						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=true()]" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount" mode="line"/>
-						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator='false']" mode="line"/>
+						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=false()]" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount" mode="line"/>
 						<xsl:apply-templates select="cac:CreditNoteLine" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount" mode="line"/>
@@ -100,7 +101,7 @@
 			</body>
 		</html>
 	</xsl:template>
-	<xsl:template match="in:Invoice[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0')]" mode="document" priority="1000">
+	<xsl:template match="in:Invoice[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:peppol:pint:billing-3.0@jp:peppol-1')]" mode="document" priority="1000">
 		<html lang="{$language}">
 			<head>
 				<xsl:call-template name="doc-head"/>
@@ -164,9 +165,9 @@
 					<hr/>
 					<div id="details">
 						<h3>Details</h3>
-						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator='true']" mode="line"/>
+						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=true()]" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount" mode="line"/>
-						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator='false']" mode="line"/>
+						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=false()]" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount" mode="line"/>
 						<xsl:apply-templates select="cac:InvoiceLine" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:LineExtensionAmount" mode="line"/>
@@ -1689,7 +1690,7 @@
 		<xsl:value-of select="text()"/>
 	</xsl:template>
 	<xsl:template match="cbc:*[ends-with(local-name(), 'Amount')]" mode="common">
-		<xsl:value-of select="format-number(text(), '###,##0.00')"/> <small>
+		<xsl:value-of select="format-number(text(), '###,##0')"/> <small>
 			<xsl:value-of select="@currencyID"/>
 		</small>
 	</xsl:template>
@@ -1858,7 +1859,7 @@
 			<xsl:value-of select="cbc:Value"/>
 		</dd>
 	</xsl:template>
-	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator='false']" mode="line">
+	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator=false()]" mode="line">
 		<div class="row">
 			<div class="col-sm-11 col-sm-offset-1">
 				<xsl:value-of select="cbc:AllowanceChargeReason"/>
@@ -1879,7 +1880,7 @@
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator='true']" mode="line">
+	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator=true()]" mode="line">
 		<div class="row">
 			<div class="col-sm-11 col-sm-offset-1">
 				<xsl:value-of select="cbc:AllowanceChargeReason"/>
@@ -1985,7 +1986,7 @@
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator='true']" mode="line-ac">
+	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator=true()]" mode="line-ac">
 		<div class="linesupport">
 			<div class="row">
 				<div class="col-sm-9">
@@ -1997,7 +1998,7 @@
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator='false']" mode="line-ac">
+	<xsl:template match="cac:AllowanceCharge[cbc:ChargeIndicator=false()]" mode="line-ac">
 		<div class="linesupport">
 			<div class="row">
 				<div class="col-sm-9">
