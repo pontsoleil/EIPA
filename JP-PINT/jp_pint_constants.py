@@ -1,4 +1,5 @@
 import jp_pint_base
+from jp_pint_base import OP_BASE
 from jp_pint_base import APP_BASE
 from jp_pint_base import MESSAGE # invoice debitnote summarized
 
@@ -22,14 +23,7 @@ profiles = {
 		'CustomizationID':'urn:peppol:pint:billing-3.0@jp:peppol-1@jp:suminvpt1-1'
 	}
 }
-# https://www.wuwei.space/jp_pint/billing-japan/syntax/ubl-invoice/tree/en/
-# https://www.wuwei.space/jp_pint/billing-japan/syntax/ubl-summarised/tree/en/
-# https://www.wuwei.space/jp_pint/billing-japan/syntax/ubl-debitnote/tree/en/
-# https://www.wuwei.space/jp_pint/billing-japan/semantic/invoice/tree/en/
-# https://www.wuwei.space/jp_pint/billing-japan/semantic/summarised/tree/en/
-# https://www.wuwei.space/jp_pint/billing-japan/semantic/debitnote/tree/en/
-# https://www.wuwei.space/jp_pint/billing-japan/rules/ubl-pint/en/ 
-# https://www.wuwei.space/jp_pint/billing-japan/rules/ubl-japan/en/
+
 SEMANTIC_BASE = APP_BASE+'semantic/'+MESSAGE+'/'
 SYNTAX_BASE = APP_BASE+'syntax/ubl-'+MESSAGE+'/'
 RULES_BASE = APP_BASE+'rules/'
@@ -87,18 +81,15 @@ html_head = '''
 javascript_html = '''
 	<script type="text/javascript" class="init">
 		$(document).ready(function() {
-			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
-				$('#ie-warning').css('display','block');
-				return;
-			}
-			$('#ie-warning').css('display','none');
 			var id = getUrlParameter('id')
 			initModule(id);
 		});
 	</script>
 '''
 # 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang 14.NOT_SUPPORTED  15.gobacktext
+NOT_SUPPORTED_en = "<h1>This service doesn't support Internet Explorer (IE).</h1>Please use either Edge, Chrome, Safari, FireFox, etc."
+NOT_SUPPORTED_ja = "<h1>インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません</h1>Edge, Google Chrome, Safari, FireFox をご使用ください。"
 navbar_html = '''
 </head>
 <body>
@@ -107,8 +98,7 @@ navbar_html = '''
 		<div class="row align-items-center h-100">
 			<div class="col-6 mx-auto">
 				<div>
-					<h1>This service doesn't support Internet Explorer (IE).</h1>
-					Please use either Edge, Chrome, Safari, FireFox, etc.
+					{14}				
 				</div>
 			</div>
 		</div>
@@ -131,6 +121,7 @@ navbar_html = '''
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{15}"></i></button>
 		<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
 		<input class="search form-control mr-0" type="search" placeholder="Search" aria-label="Search" data-toggle="tooltip" title="{9}">
 		<select id="language" class="form-control mr-0 border-0">
@@ -198,7 +189,7 @@ item_head = '''
 	<link rel="stylesheet" href="{1}css/main.css" crossorigin="anonymous">
 	<script src="{1}js/main.js" crossorigin="anonymous"></script>
 '''
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText
+# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText 9.gobcckText
 item_navbar = '''
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog {9}" role="document">
@@ -218,6 +209,7 @@ item_navbar = '''
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{9}"></i></button>
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" {1}>English</option>
 			<option value="ja" {2}>日本語</option>
@@ -251,48 +243,79 @@ item_trailer = '''
 </html>
 '''
 dropdown_menu_ja = '''
-        <li class="nav-item dropdown ja p-0">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-list" aria-hidden="true"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-					  <a class="dropdown-item" href="{0}ja"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}semantic/invoice/tree/ja/">都度請求書モデル</a>
-            <a class="dropdown-item" href="{0}semantic/summarised/tree/ja/">合算請求書パターン１モデル</a>
-            <a class="dropdown-item" href="{0}semantic/debitnote/tree/ja/">納品書モデル</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/ja/" class="back">都度請求書XML構文</a>
-            <a class="dropdown-item" href="{0}syntax/ubl-summarised/tree/ja/" class="back">合算請求書パターン１XML構文</a>
-            <a class="dropdown-item" href="{0}syntax/ubl-debitnote/tree/ja/" class="back">納品書XML</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}rules/ubl-pint/ja/">PEPPOL PINTルール</a>
-            <a class="dropdown-item" href="{0}rules/ubl-japan/ja/">都度請求書ルール</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="https://www.eipa.jp/">電子インボイス推進協議会</a>
-          </div>
-        </li>
+		<li class="nav-item dropdown ja p-0" data-toggle="tooltip" data-placement="bottom" title="遷移メニュー">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-list" aria-hidden="true"></i>
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="{0}ja"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a>
+				<div class="dropdown-divider"></div>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Standard Commercial Invoice <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Debit note <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Summary invoice pattern 1 <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{0}semantic/invoice/tree/ja/">都度請求書モデル</a>
+				<a class="dropdown-item" href="{0}semantic/summarised/tree/ja/">合算請求書パターン１モデル</a>
+				<a class="dropdown-item" href="{0}semantic/debitnote/tree/ja/">納品書モデル</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/ja/" class="back">都度請求書XML構文</a>
+				<a class="dropdown-item" href="{0}syntax/ubl-summarised/tree/ja/" class="back">合算請求書パターン１XML構文</a>
+				<a class="dropdown-item" href="{0}syntax/ubl-debitnote/tree/ja/" class="back">納品書XML</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{0}rules/ubl-pint/ja/">PEPPOL PINTルール</a>
+				<a class="dropdown-item" href="{0}rules/ubl-japan/ja/">都度請求書ルール</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://www.eipa.jp/">電子インボイス推進協議会</a>
+			</div>
+		</li>
 '''
 dropdown_menu_en = '''
-        <li class="nav-item dropdown en p-0" data-toggle="tooltip" data-placement="bottom" title="Navigation menu">
-          <a class="nav-link dropdown-toggle fa fa-list" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="{0}en"><i class="fa fa-square mr-2" aria-hidden="true"> Home</i></a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}semantic/invoice/tree/en/">Japanese Commercial Invoice, Semantic Data Model</a>
-            <a class="dropdown-item" href="{0}semantic/summarised/tree/en/">Japanese Summary Invoice, pattern 1, Semantic Data Model</a>
-            <a class="dropdown-item" href="{0}semantic/debitnote/tree/en/">Japanese Debit Note, Semantic Data Model</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/en/">Japanese Invoice, UBL Syntax</a>
-            <a class="dropdown-item" href="{0}syntax/ubl-summarised/tree/en/">Japanese Summary Invoice, pattern 1, UBL Syntax</a>
-            <a class="dropdown-item" href="{0}syntax/ubl-debitnote/tree/en/">Japanese Debit Note, UBL Syntax</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{0}rules/ubl-pint/en/">Rules for PEPPOL PINT</a>
-            <a class="dropdown-item" href="{0}rules/ubl-japan/en/">Japanese rules for Commercial Invoice</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="https://www.eipa.jp/">電子インボイス推進協議会</a>
-          </div>
-        </li>
-      </div>
+		<li class="nav-item dropdown en p-0" data-toggle="tooltip" data-placement="bottom" title="Navigation menu">
+			<a class="nav-link dropdown-toggle fa fa-list" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="{0}en"><i class="fa fa-square mr-2" aria-hidden="true"> Home</i></a>
+				<div class="dropdown-divider"></div>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Standard Commercial Invoice <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Debit note <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Summary invoice pattern 1 <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{0}semantic/invoice/tree/en/">Commercial Invoice, Semantic Data Model</a>
+				<a class="dropdown-item" href="{0}semantic/summarised/tree/en/">Summary Invoice, pattern 1, Semantic Data Model</a>
+				<a class="dropdown-item" href="{0}semantic/debitnote/tree/en/">Debit Note, Semantic Data Model</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/en/">Invoice, UBL Syntax</a>
+				<a class="dropdown-item" href="{0}syntax/ubl-summarised/tree/en/">Summary Invoice, pattern 1, UBL Syntax</a>
+				<a class="dropdown-item" href="{0}syntax/ubl-debitnote/tree/en/">Debit Note, UBL Syntax</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="{0}rules/ubl-pint/en/">Rules for PEPPOL PINT</a>
+				<a class="dropdown-item" href="{0}rules/ubl-japan/en/">rules for Commercial Invoice</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://www.eipa.jp/">E-Invoice Promotion Association</a>
+			</div>
+		</li>
 '''

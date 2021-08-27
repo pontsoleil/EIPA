@@ -45,6 +45,7 @@ message_title_en = profiles[MESSAGE]['title_en']
 message_title_ja = profiles[MESSAGE]['title_ja']
 profile_id = profiles[MESSAGE]['ProfileID']
 customization_id = profiles[MESSAGE]['CustomizationID']
+from jp_pint_constants import OP_BASE
 from jp_pint_constants import APP_BASE
 # from jp_pint_constants import SEMANTIC_BASE
 from jp_pint_constants import SYNTAX_BASE
@@ -56,6 +57,8 @@ from jp_pint_constants import RULES_EN_CEN
 
 from jp_pint_constants import SPEC_TITLE_en
 from jp_pint_constants import SPEC_TITLE_ja
+from jp_pint_constants import NOT_SUPPORTED_en
+from jp_pint_constants import NOT_SUPPORTED_ja
 
 # from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_en
 # from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_ja
@@ -1028,10 +1031,14 @@ if __name__ == '__main__':
 		lang = 'en'
 		f.write(html_head.format(lang, APP_BASE))
 		f.write(javascript_html)
-		warning_en = '<p class="lead">NOTE all element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, but this covers both standard commercial invoice, summarised invoice and delivery note (debit note).<br />The tag names are correct according to the UBL 2.1 Invoice schema.</p>'
+		warning_en = '<p class="lead">NOTE: All element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, the same items are used in standard commercial invoice, summarised invoice and delivery note (debit note). The difference is Business process type (Profile ID) and Specification identifier (Customization ID). The tag names are correct according to the UBL 2.1 Invoice schema.</p>'
+# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+# 14.NOT_SUPPORTED  15.gobacktext
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,SYNTAX_MESSAGE_TITLE_en,
 															'Legend',legend_en,'Shows a modal window of legend information.',
-															dropdown_menu_en,'ID or word in Term/Description','modal-lg',warning_en,APP_BASE,lang)
+															dropdown_menu_en,'ID or word in Term/Description','modal-lg',warning_en,OP_BASE,'',
+															NOT_SUPPORTED_en,'Return to previous page.')
 		f.write(html)
 		f.write(table_html.format('XML','Datatype','Card','Business Term / Description','3%','33%'))
 		for data in pint_list:
@@ -1072,9 +1079,9 @@ if __name__ == '__main__':
 				f.write('</head><body>')
 				CARtitle = 'Alignment of cardinalities'
 				f.write(infoCAR_Modal.format(CAR_Modal_title.format(CARtitle),infoCAR_en))
-				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText
-				f.write(item_navbar.format(SPEC_TITLE_en,'selected','',lang,APP_BASE, \
-																	'Legend',item_legend_en,dropdown_menu_en,'Show Legend','modal-lg'))
+				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText 9.gobacktext
+				f.write(item_navbar.format(SPEC_TITLE_en,'selected','',OP_BASE,'', \
+																	'Legend',item_legend_en,dropdown_menu_en,'Show Legend','modal-lg','Go Back'))
 
 				writeBreadcrumb(f,path,lang)
 
@@ -1160,10 +1167,14 @@ if __name__ == '__main__':
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
 		f.write(javascript_html)
-		warning_ja = '<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。<br />XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'	
+		warning_ja = '<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)と仕様ID (Customization ID)です。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'
+# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+# 14.NOT_SUPPORTED  15.gobacktext
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,SYNTAX_MESSAGE_TITLE_ja,
 															'凡例',legend_ja,'凡例を説明するウィンドウを表示',
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg',warning_ja,APP_BASE,lang)
+															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg',warning_ja,OP_BASE,'',
+															NOT_SUPPORTED_ja,'前のページに戻る')
 		f.write(html)
 		f.write(table_html.format('XML','データ型','繰返','ビジネス用語 / 説明','3%','33%'))
 		for data in pint_list:
@@ -1175,7 +1186,7 @@ if __name__ == '__main__':
 				writeTr_ja(f,data)
 
 		f.write(table_trailer)							
-		f.write(trailer.format('先頭に戻る'))
+		f.write(trailer.format('先頭に前のページに'))
 
 	for data in pint_list:
 		if not data or not data['Path']:
@@ -1200,9 +1211,9 @@ if __name__ == '__main__':
 				f.write('</head><body>')
 				CARtitle = '繰返しの違いの調整'
 				f.write(infoCAR_Modal.format(CAR_Modal_title.format(CARtitle),infoCAR_ja))
-				# 0.SPEC_TITLE_en 1.'' 2.'selected' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText
-				f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',lang,APP_BASE, \
-																	'凡例',item_legend_ja,dropdown_menu_ja,'凡例を表示','modal-lg'))
+				# 0.SPEC_TITLE_en 1.'' 2.'selected' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText 9.gobacktext
+				f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',OP_BASE,'',
+																	'凡例',item_legend_ja,dropdown_menu_ja,'凡例を表示','modal-lg','前のページに戻る'))
 
 				writeBreadcrumb(f,path,lang)
 
