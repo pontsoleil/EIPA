@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Japanese PEPPOL BIS Documentation</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../favicon.ico">
+  <!-- font awesome 4 -->
+  <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
+  <!-- jQuery 3 & Bootstrap 4 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <!-- this page -->
+  <link rel="stylesheet" href="../css/main.css" crossorigin="anonymous">
+  <script src="../js/main.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" class="init">
+    $(document).ready(function () {
+      initModule();
+    });
+  </script>
+</head>
+
+<body>
+  <div id="Legend" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">Excerpt from EN 16931-1 6.2 Legend</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <dl class="row">
+            <dt class="col-2"><strong>ID</strong></dt>
+            <dd class="col-10">
+              An identifier for the information element (BT - Business Term) and group of information elements (BG -
+              business terms group). The identifiers are not necessarily consecutive or in sequence.</p>
+            </dd>
+            <dt class="col-2"><strong>Level</strong></dt>
+            <dd class="col-10">
+              Indicates on which level in the model the information element occurs:<br />
+              ー &bullet;: The first level of the model;<br />
+              ー &bullet;&bullet;: The second level of the model. The information element (or the group of information
+              elements) is part of a group of information elements which id defined at the first level of the
+              model;<br />
+              ー &bullet;&bullet;&bullet;: The third level of the model. The information element (or the group of
+              information elements) is part of a group of information elements which id defined at the second level of
+              the model;<br />
+              ー &bullet;&bullet;&bullet;&bullet;: The fourth level of the model, The information element (or the group
+              of information elements) is part of a group of information elements which id defined at the third level of
+              the model;</p>
+            </dd>
+            <dt class="col-2"><strong>Cardinality</strong></dt>
+            <dd class="col-10">
+              Also known as multiplicity is used to indicate if an information element (or group of information
+              elements) is mandatory or conditional, and if it is repeatable. The cardinality shall always be analysed
+              in the context of where the information element is used. Example: the payee Name is mandatory in the core
+              invoice model, but only when a payee is stated and is relevant.<br />
+              The following cardinalities exist:<br />
+              ー 1..1: Mandatory, minimum 1 occurence and maximum 1 occurrence of the information element (or group of
+              the information elements) shall be present in any compliant instance document;<br />
+              ー 1..n: Mandatory and repeatable, minimum 1 occurrence and unbounded upper maximum occurrences of the
+              information element (or group of information elements) shall be present in any compliant instance
+              document;<br />
+              ー 0..1: Conditional,minimum 0 occurence and maximum 1 occurrence of the information element (or group of
+              the information elements) may be present in any compliant instance document; it's use depends on business
+              rules stated as well as the regulatory, commercial and contractual conditions that applies to the business
+              transaction;<br />
+              ー 0..n: Conditional,minimum 0 occurence and unboounded upper maximum occurrence of the information element
+              (or group of the information elements) may be present in any compliant instance document; it's use depends
+              on business rules stated as well as the regulatory, commercial and contractual conditions that applies to
+              the business transaction;</p>
+            </dd>
+            <dt class="col-2"><strong>Business Term</strong></dt>
+            <dd class="col-10">
+              The name of the information element used in the core invoice model or the name of a coherent group of
+              related information elements, provided to give logical meaning.</p>
+            </dd>
+            <dt class="col-2"><strong>Description</strong></dt>
+            <dd class="col-10">
+              A description of the semantic meaning of the information element.
+            </dd>
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <a class="navbar-brand" href="#">Japanese PEPPOL BIS Documentation</a>
+    <ul class="navbar-nav mr-auto"></ul>
+    <form class="form-inline">
+      <select id="language" class="form-control mr-sm-1 border-0">
+        <option value="en" selected>English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </form>
+  </nav>
+
+  <div class="container">
+    <div>
+      <div class="page-header">
+        <h1><i class="fa fa-square mr-2" aria-hidden="true"></i>Home (EIPA)</h1>
+      </div>
+      <dl class="row">
+
+        <dt class="col-3">
+          <h4>Documentation</h4><br />Peppol Business Interoperability Specification (Peppol BIS)
+        </dt>
+        <dd class="col-9">
+          <div class="list-group">
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Japan Standard Commercial Invoice process (BIS) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Debit note (BIS) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Summary invoice pattern 1 (BIS) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Release notes <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+          </div>
+        </dd>
+
+        <dt class="col-3">
+          <h4>Semantic Data Model</h4>
+        </dt>
+        <dd class="col-9">
+          <div class="list-group">
+            <a href="../semantic/invoice/tree/en" class="list-group-item">
+              <h4 class="list-group-item-heading">Japan Standard Commercial Invoice, semantic data model</h4>
+            </a>
+            <a href="../semantic/debitnote/tree/en" class="list-group-item">
+              <h4 class="list-group-item-heading">Debit Note, Semantic data model</h4>
+            </a>
+            <a href="../semantic/summarised/tree/en" class="list-group-item">
+              <h4 class="list-group-item-heading">Summary Invoice, pattern 1, Semantic data model</h4>
+            </a>
+          </div>
+        </dd>
+
+        <dt class="col-3">
+          <h4>Syntax</h4>
+        </dt>
+        <dd class="col-9">
+          <div class="list-group">
+            <a href="../syntax/ubl-invoice/tree/en" class="list-group-item">
+              <h4 class="list-group-item-heading">Japan Standard Commercial Invoice, Message specification</h4>
+            </a>
+            <a href="../syntax/ubl-debitnote/tree/en" class="list-group-item">
+              <h4 class="list-group-item-heading">Debit Note, Message specification</h4>
+            </a>
+            <a href="../syntax/ubl-summarised/tree/en" class="list-group-item">
+              <h4 class="list-group-item-heading">Summary Invoice, pattern 1, Message specification</h4>
+            </a>
+          </div>
+        </dd>
+
+        <dt class="col-3">
+          <h4>Rules</h4>
+        </dt>
+        <dd class="col-9">
+          <div class="list-group">
+            <a href="../rules/ubl-pint/en/" class="list-group-item">
+              <h4 class="list-group-item-heading">Rules for PEPPOL PINT</h4>
+            </a>
+            <a href="../rules/ubl-japan/en/" class="list-group-item">
+              <h4 class="list-group-item-heading">Rules for Standard Commercial Invoice</h4>
+            </a>
+          </div>
+        </dd>
+
+        <dt class="col-3">
+          <h4>Code lists</h4>
+        </dt>
+        <dd class="col-9">
+          <div class="list-group">
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/ICD/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">ISO 6523 ICD list <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/eas/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Electronic Address Scheme (EAS) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/ISO3166/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">ISO 3166-1:Alpha2 Country codes <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/ISO4217/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">ISO 4217 Currency codes <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNECERec20/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Recommendation 20, including Recommendation 21 codes - prefixed with X s(UN/ECE) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL5305/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Consumption Tax Category code (Subset of UNCL5305) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL7143/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Item type identification code (UNCL7143) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL1001-inv/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Invoice type code (UNCL1001 subset) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL1001-cn/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Credit note type code (UNCL1001 subset) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL1153/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Invoiced object identifier scheme (UNCL 1153) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL4461/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Payment means code (UNCL4461) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL5189/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Allowance reason codes (UNCL5189 subset) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/UNCL7161/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Charge reason code (UNCL7161) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+            <a href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/MimeCode/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external list-group-item" target="_blank">
+              <h4 class="list-group-item-heading">Mime code (subset of IANA code list) <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+            </a>
+          </div>
+        </dd>
+        <dt class="col-3">
+          <h4>Downloads</h4>
+        </dt>
+        <dd class="col-9">
+          <a href="#" class="list-group-item" onClick="return confirm('Not supprted yet.')" >
+            <h4 class="list-group-item-heading">Schematron for PEPPOL PINT rules (UBL)</h4>
+            <p class="list-group-item-text">Schematron file containing rules according to ISO Schematron.</p>
+          </a>
+          <a href="#" class="list-group-item" onClick="return confirm('Not supprted yet.')" >
+            <h4 class="list-group-item-heading">Schematron for Japanese rules (UBL)</h4>
+            <p class="list-group-item-text">Schematron file containing Japanese rules according to ISO Schematron.</p>
+          </a>
+          <a href="#" class="list-group-item" onClick="return confirm('Not supprted yet.')" >
+            <h4 class="list-group-item-heading">Stylesheet for UBL instances <i class="fa fa-external-link" aria-hidden="true"></i></h4>
+          </a>
+        </div>
+      </dd>
+    </dl>
+
+  </div>
+  <button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
+    title="Go to top">
+    <i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+  </button>
+</body>

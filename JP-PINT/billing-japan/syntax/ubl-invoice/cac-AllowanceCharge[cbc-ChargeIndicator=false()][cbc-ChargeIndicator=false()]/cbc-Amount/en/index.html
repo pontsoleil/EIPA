@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Japanese PEPPOL BIS Documentation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- font awesome 4 -->
+	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
+	<!-- bootstrap 4 and jQuery 3 
+	If you’re using our compiled JavaScript, don’t forget to include CDN versions of jQuery and Popper.js before it.
+	https://getbootstrap.com/docs/4.0/getting-started/download/
+	-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- this page -->
+	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
+	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				$('#ie-warning').css('display','block');
+				return;
+			}
+			$('#ie-warning').css('display','none');
+			var id = getUrlParameter('id')
+			initModule(id);
+		});
+	</script>
+
+</head>
+<body>
+	<div id="infoModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">Legend</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
+		<a class="navbar-brand col-8" href="/billing-japan/en">Japanese PEPPOL BIS Documentation (Draft)</a>
+		<ul class="navbar-nav mr-auto"></ul>
+		<form class="form-inline">
+			<button type="button" class="back btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0">
+				<i class="fa fa-list" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0" data-toggle="modal" data-target="#infoModal">
+				<i class="fa fa-info" aria-hidden="true"></i>
+			</button>
+			<select id="language" class="form-control mr-sm-1 border-0">
+				<option value="en" selected>English</option>
+				<option value="ja" >日本語</option>
+			</select>
+		</form>
+	</nav>
+	<div class="container">
+		<div class="item-syntax">
+			<ol class="breadcrumb pt-1 pb-1">				<li class="breadcrumb-item"><a href="/billing-japan/en/">Home</a></li>				<li class="breadcrumb-item"><a href="/billing-japan/syntax/ubl-invoice/tree/en/">ubl:Invoice</a></li>				<li class="breadcrumb-item"><a href="/billing-japan/syntax/ubl-invoice/cac-AllowanceCharge[cbc-ChargeIndicator=false()][cbc-ChargeIndicator=false()]/en">cac:AllowanceCharge[cbc:ChargeIndicator=false()][cbc:ChargeIndicator=false()]</a></li>				<li class="breadcrumb-item"><a href="/billing-japan/syntax/ubl-invoice/cac-AllowanceCharge[cbc-ChargeIndicator=false()][cbc-ChargeIndicator=false()]/cbc-Amount/en">cbc:Amount</a></li>			</ol>
+			<div class="page-header">
+				<h1>cbc:Amount</h1>
+			</div>
+			<p class="lead">The amount of an allowance, without TAX.</p>
+			<dl class="row">
+
+				<dt class="col-2">XPath</dt><dd class="col-10">/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()][cbc:ChargeIndicator=false()]/cbc:Amount</dd>
+				<dt class="col-2">Cardinality</dt><dd class="col-10">1..1&nbsp;</dd>
+				<dt class="col-2">Namespace</dt><dd class="col-10"><code>cbc</code> urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</dd>
+				<dt class="col-2">Data type</dt><dd class="col-10">Amount</dd>
+				<dt class="col-2">Example</dt><dd class="col-10"></dd>
+				<dt class="col-2">Transaction Business Rules</dt><dd class="col-10"><h5>IBR-31 (fatal)</h5>Each Document level allowance (ibg-20) shall have a Document level allowance amount (ibt-092).<br /><dl class="row"><dt class="col-2">cotext</dt><dd class="col-10">/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]</dd><dt class="col-2">test</dt><dd class="col-10">exists(cbc:Amount)</dd></dl><h5>IBR-CO-11 (fatal)</h5>Sum of allowances on document level (ibt-107) = Σ Document level allowance amount (ibt-092).<br /><dl class="row"><dt class="col-2">cotext</dt><dd class="col-10">cac:LegalMonetaryTotal</dd><dt class="col-2">test</dt><dd class="col-10">xs:decimal(cbc:AllowanceTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount)) or (not(cbc:AllowanceTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]))</dd></dl><h5>JP-S-08</h5>For each different value of Consumption Tax category rate (ibt-119) where the Consumption Tax category code (ibt-118) is "Standard rated", the Consumption Tax category taxable amount (ibt-116) in a Consumption Tax breakdown (ibg-23) shall equal the sum of Invoice line net amounts (ibt-131) plus the sum of document level charge amounts (ibt-99) minus the sum of document level allowance amounts (ibt-92) where the Consumption Tax category code (ibt-151, ibt-102, ibt-95) is "Standard rated" and the Consumption Tax rate (ibt-152, ibt-103, ibt-96) equals the Consumption Tax category rate (ibt-119).<br />** Not defined in the schematron file **<br /><span class="text-danger"><b>Not defined in the schematron file.</b></span><br />ibc-cl-03 <br /><span class="text-danger"><b>ibt-092 is not mentioned in the rule.</b></span><br />jp-s-08 </dd>
+				<dt class="col-2">Business Term</dt><dd class="col-10">Document level allowance amount</dd>
+				<dt class="col-2">Business Term ID</dt><dd class="col-10"><a href="/billing-japan/semantic/invoice/ibt-092/en/">ibt-092</a></dd>
+				<dt class="col-2">Additional Explanation</dt><dd class="col-10">In the numerical representation, for data type amount, only the integer is allowed and the integer part is not separated by 1000 units.</dd>
+
+			</dl>
+		</div>
+	</div>
+</body>
+</html>

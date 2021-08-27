@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<title>Japanese PEPPOL BIS Documentation</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="icon" href="https://www.wuwei.space/jp_pint/billing-japan/favicon.ico">
+	<!-- Bootstrap 4 jQuery 3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+	<!-- Font Awesome 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- this page -->
+	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
+	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var id = getUrlParameter('id')
+			initModule(id);
+		});
+	</script>
+
+</head>
+<body>
+	<!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
+	<div id="ie-warning" class="container h-100" style="display:none">
+		<div class="row align-items-center h-100">
+			<div class="col-6 mx-auto">
+				<div>
+					<h1>インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません</h1>Edge, Google Chrome, Safari, FireFox をご使用ください。				
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="infoModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">凡例</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+<h3>未定</h3>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form id="nav-menu" class="form-inline flex-nowrap">
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="戻る"></i></button>
+		<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
+		<input class="search form-control mr-0" type="search" placeholder="Search" aria-label="Search" data-toggle="tooltip" title="IDまたは用語/説明文が含む単語">
+		<select id="language" class="form-control mr-0 border-0">
+			<option value="en" >English</option>
+			<option value="ja" selected>日本語</option>
+		</select>
+		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
+			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を説明するウィンドウを表示"></i>
+		</button>
+		
+		<li class="nav-item dropdown ja p-0" data-toggle="tooltip" data-placement="bottom" title="遷移メニュー">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-list" aria-hidden="true"></i>
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="/billing-japan/ja"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a>
+				<div class="dropdown-divider"></div>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Standard Commercial Invoice <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Debit note <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Summary invoice pattern 1 <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/semantic/invoice/tree/ja/">都度請求書モデル</a>
+				<a class="dropdown-item" href="/billing-japan/semantic/summarised/tree/ja/">合算請求書パターン１モデル</a>
+				<a class="dropdown-item" href="/billing-japan/semantic/debitnote/tree/ja/">納品書モデル</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-invoice/tree/ja/" class="back">都度請求書XML構文</a>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-summarised/tree/ja/" class="back">合算請求書パターン１XML構文</a>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-debitnote/tree/ja/" class="back">納品書XML</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/rules/ubl-pint/ja/">PEPPOL PINTルール</a>
+				<a class="dropdown-item" href="/billing-japan/rules/ubl-japan/ja/">都度請求書ルール</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://www.eipa.jp/">電子インボイス推進協議会</a>
+			</div>
+		</li>
+
+	</form>
+	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+	</nav>
+	<div class="container">
+		<div class="syntax">
+			<ol class="breadcrumb pt-1 pb-1">
+				<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a></li>
+				<li class="breadcrumb-item active">PEPPOL PINTルール</li>
+			</ol>
+			<div class="page-header">
+				<h1>PEPPOL PINTルール</h1>
+				<p class="lead">注：ここに記載されている情報は現在検討中であり、変更される可能性があります。</p>
+			</div>
+			<div class="table-responsive">
+
+				<table class="PINT rules table table-sm table-hover" style="table-layout: fixed; width: 100%;">
+					<colgroup>
+						<col span="1" style="width: 90%;">
+						<col span="1" style="width: 10%;">
+					</colgroup>
+					<thead>
+						<th>ID / メッセージ</th>
+						<th>flag</th>
+					</thead>
+					<tbody>
+						<tr data-id="ibr-01">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-01/ja/">ibr-01</a><br />請求書は、仕様ID(ibt-024)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-02">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-02/ja/">ibr-02</a><br />請求書は、請求書番号(ibt-001)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-03">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-03/ja/">ibr-03</a><br />請求書は、請求書発行日(ibt-002)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-04">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-04/ja/">ibr-04</a><br />請求書は、請求書タイプコード(ibt-003)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-05">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-05/ja/">ibr-05</a><br />請求書は、請求書通貨コード(ibt-005)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-06">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-06/ja/">ibr-06</a><br />請求書は、売り手名称(ibt-027)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-07">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-07/ja/">ibr-07</a><br />請求書は、買い手名称(ibt-044)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-08">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-08/ja/">ibr-08</a><br />請求書は、売り手住所(ibg-05)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-09">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-09/ja/">ibr-09</a><br />売り手住所(ibg-05)は、売り手国コード(ibt-040)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-10">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-10/ja/">ibr-10</a><br />請求書は、買い手住所(ibg-08)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-11">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-11/ja/">ibr-11</a><br />買い手住所(ibg-089)は、買い手国コード(ibt-055)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-12">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-12/ja/">ibr-12</a><br />請求書は、値引/割引後請求書明細行金額の合計(ibt-106)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-13">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-13/ja/">ibr-13</a><br />請求書は、請求書合計金額(税抜き)(ibt-109)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-14">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-14/ja/">ibr-14</a><br />請求書は、請求書合計金額(税込み)(ibt-112)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-15">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-15/ja/">ibr-15</a><br />請求書は、未払金額(ibt-115)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-16">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-16/ja/">ibr-16</a><br />請求書は、少なくともひとつの請求書明細行(ibg-25)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-17">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-17/ja/">ibr-17</a><br />支払先名称(ibt-059)は、支払先(ibg-10)が売り手(ibg-04)と異なる場合は、請求書で指定されなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-18">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-18/ja/">ibr-18</a><br />売り手納税管理人名称(ibt-062)は、売り手(ibg-04)に売り手納税管理人(ibg-11)がいる場合、請求書で明示的に指定されなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-19">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-19/ja/">ibr-19</a><br />売り手納税管理人住所(ibg-12)は、売り手(ibg-04)に売り手納税管理人(ibg-11)がいる場合、請求書で明示的に指定されなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-20">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-20/ja/">ibr-20</a><br />売り手納税管理人住所(ibg-12)は、売り手(ibg-04)に売り手納税管理人(ibg-11)がいる場合、納税管理人国コード(ibt-069)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-21">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-21/ja/">ibr-21</a><br />個々の請求書明細行(ibg-25)は、請求書明細行ID(ibt-126)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-22">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-22/ja/">ibr-22</a><br />個々の請求書明細行(ibg-25)は、請求される数量(ibt-129)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-23">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-23/ja/">ibr-23</a><br />請求書明細行(ibg-25)は、請求される数量の数量単位コード(ibt-130)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-24">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-24/ja/">ibr-24</a><br />個々の請求書明細行(ibg-25)は、値引/割引後請求書明細行金額(税抜き)(ibt-131)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-25">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-25/ja/">ibr-25</a><br />個々の請求書明細行(ibg-25)は、品名(ibt-153)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-26">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-26/ja/">ibr-26</a><br />個々の請求書明細行(ibg-25)は、品目単価(値引/割引後)(税抜き)(ibt-146)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-27">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-27/ja/">ibr-27</a><br />品目単価(値引/割引後)(税抜き)(ibt-146)は、負の値となってはならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-28">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-28/ja/">ibr-28</a><br />品目単価(値引/割引前)(税抜き)(ibt-148)は、負の値となってはならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-29">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-29/ja/">ibr-29</a><br />請求期間開始日(ibt-073)と請求期間終了日(ibt-074)が指定されている場合、請求期間終了日(ibt-074)は、請求期間開始日(ibt-073)以上でなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-30">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-30/ja/">ibr-30</a><br />請求書明細行の期間開始日(ibt-134)と請求書明細行の期間終了日(ibt-135)が指定されている場合、請求書明細行の期間終了日(ibt-135)は、請求書明細行の期間開始日(ibt-134)以上でなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-31">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-31/ja/">ibr-31</a><br />個々のドキュメントレベルの返還請求(ibg-20)は、ドキュメントレベルの返還請求金額(税抜き)(ibt-092)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-33">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-33/ja/">ibr-33</a><br />個々のドキュメントレベルの返還請求(ibg-20)は、ドキュメントレベルの返還請求の理由(ibt-097)もしくはドキュメントレベルの返還請求の理由コード(ibt-098)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-36">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-36/ja/">ibr-36</a><br />個々のドキュメントレベルの追加請求(ibg-21)は、ドキュメントレベルの追加請求金額(税抜き)(ibt-099)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-38">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-38/ja/">ibr-38</a><br />個々のドキュメントレベルの追加請求(ibg-21)は、ドキュメントレベルの追加請求の理由(ibt-104)もしくはドキュメントレベルの追加請求の理由コード(ibt-105)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-41">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-41/ja/">ibr-41</a><br />個々の請求書明細行の返還請求(ibg-27)は、請求書明細行の返還請求金額(税抜き)(ibt-136)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-42">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-42/ja/">ibr-42</a><br />個々の請求書明細行の返還請求(ibg-27)は、請求書明細行の返還請求理由(ibt-139)もしくは請求書明細行の返還請求理由コード(ibt-140)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-43">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-43/ja/">ibr-43</a><br />個々の請求書明細行の追加請求(ibg-28)は、請求書明細行の追加請求金額(税抜き)(ibt-141)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-44">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-44/ja/">ibr-44</a><br />個々の請求書明細行の追加請求(ibg-28)は、請求書明細行の追加請求理由(ibt-144)もしくは請求書明細行の追加請求理由コード(ibt-145)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-49">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-49/ja/">ibr-49</a><br />支払指示(ibg-16)は、支払手段タイプコード(ibt-081)を特定しなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-52">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-52/ja/">ibr-52</a><br />個々の添付書類(ibg-24)は、添付書類への参照(ibt-122)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-53">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-53/ja/">ibr-53</a><br />税会計報告用通貨コード(ibt-006)が指定されている場合は、会計通貨での請求書消費税合計金額(ibt-111)を指定しなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-54">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-54/ja/">ibr-54</a><br />個々の品目属性(ibg-32)は、品目属性名(ibt-160)と品目属性値(ibt-161)を含まなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-55">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-55/ja/">ibr-55</a><br />個々の先行請求書への参照(ibg-03)は、先行請求書への参照(ibt-025)を含まなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-56">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-56/ja/">ibr-56</a><br />個々の売り手納税管理人(ibg-11)は、売り手納税管理人税ID(ibt-063)を持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-57">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-57/ja/">ibr-57</a><br />個々の納入先住所(ibg-15)は、納入先国コード(ibt-080)を含まなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-62">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-62/ja/">ibr-62</a><br />売り手電子アドレス(ibt-034)は、スキーマIDを持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-63">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-63/ja/">ibr-63</a><br />買い手電子アドレス(ibt-049)は、スキーマIDを持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-64">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-64/ja/">ibr-64</a><br />品目標準ID(ibt-157)は、スキーマIDを持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-65">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-65/ja/">ibr-65</a><br />品目分類ID(ibt-158)は、スキーマIDを持たなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-67">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-67/ja/">ibr-67</a><br />未払金額(ibt-115)は、小数点以下2桁以上を持ってはならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-01">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-01/ja/">ibr-cl-01</a><br />文書タイプコードは、UNTDID 1001のコードリストから、請求書、クレジットノートに関連するコードを選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-03">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-03/ja/">ibr-cl-03</a><br />通貨IDは、ISO code list 4217 alpha-3 にあるコードを使わなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-04">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-04/ja/">ibr-cl-04</a><br />請求書通貨コードは、ISO code list 4217 alpha-3 にあるコードを使わなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-05">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-05/ja/">ibr-cl-05</a><br />税通貨コードは、ISO code list 4217 alpha-3 にあるコードを使わなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-07">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-07/ja/">ibr-cl-07</a><br />オブジェクトIDのスキーマIDは、UNTDID 1153 から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-10">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-10/ja/">ibr-cl-10</a><br />どのようなIDでも、IDのスキーマIDは、 ISO 6523 ICD の一覧から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-11">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-11/ja/">ibr-cl-11</a><br />登録IDのスキーマIDは、 ISO 6523 ICD の一覧から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-13">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-13/ja/">ibr-cl-13</a><br />品目分類IDのスキーマIDは、 UNTDID 7143 の一覧から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-14">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-14/ja/">ibr-cl-14</a><br />請求書に記載される国コードは、 ISO code list 3166-1 から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-15">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-15/ja/">ibr-cl-15</a><br />請求書に記載される原産国コードは、 ISO code list 3166-1 から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-16">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-16/ja/">ibr-cl-16</a><br />請求書に記載される支払手段は、Z01及びZ02が追加されたUNCL4461 code list から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-19">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-19/ja/">ibr-cl-19</a><br />返還請求理由は、UNCL 5189 code list から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-20">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-20/ja/">ibr-cl-20</a><br />追加請求理由は、UNCL 7161 code list から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-21">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-21/ja/">ibr-cl-21</a><br />品目標準IDのスキーマIDは、ISO 6523 ICD の一覧から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-23">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-23/ja/">ibr-cl-23</a><br />数量単位コードは、UN/ECE Recommendation 20 with Rec 21 extension に従ったものでなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-24">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-24/ja/">ibr-cl-24</a><br />MIMEコードは、IANA code list に従ったものでなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-25">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-25/ja/">ibr-cl-25</a><br />エンドポイントIDのスキーマIDは、CEF EAS code list から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-cl-26">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-cl-26/ja/">ibr-cl-26</a><br />納入先IDのスキーマIDは、ISO 6523 ICD の一覧から選ばなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-05">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-05/ja/">ibr-co-05</a><br />ドキュメントレベルの返還請求の理由コード(ibt-098)およびドキュメントレベルの返還請求の理由(ibt-097)は、同じ返還請求タイプを示していなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-06">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-06/ja/">ibr-co-06</a><br />ドキュメントレベルの追加請求の理由コード(ibt-105)およびドキュメントレベルの追加請求の理由(ibt-104)は、同じ追加請求タイプを示していなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-07">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-07/ja/">ibr-co-07</a><br />請求書明細行の返還請求理由コード(ibt-140)と請求書明細行の返還請求理由(ibt-139)両方の場合、コード定義がされていなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-08">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-08/ja/">ibr-co-08</a><br />請求書明細行の追加請求理由コード(ibt-145)と請求書明細行の追加請求理由(ibt-144)両方の場合、コード定義がされていなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-10">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-10/ja/">ibr-co-10</a><br />値引/割引後請求書明細行金額の合計(ibt-106) = ∑ 値引/割引後請求書明細行金額(税抜き)(ibt-131).</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-11">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-11/ja/">ibr-co-11</a><br />ドキュメントレベルの返還請求の合計(ibt-107) = ∑ ドキュメントレベルの返還請求金額(税抜き)(ibt-092).</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-12">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-12/ja/">ibr-co-12</a><br />ドキュメントレベルの追加請求の合計(ibt-108) = ∑ ドキュメントレベルの追加請求金額(ibt-099).</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-13">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-13/ja/">ibr-co-13</a><br />請求書合計金額(税抜き)(ibt-0109) = ∑ 値引/割引後請求書明細行金額(税抜き)(ibt-131) - ドキュメントレベルの返還請求の合計(ibt-107) + ドキュメントレベルの追加請求の合計(ibt-108).</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-14">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-14/ja/">ibr-co-14</a><br />請求書消費税合計金額(BT-110) = Σ 課税分類毎の消費税額(BT-117)</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-15">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-15/ja/">ibr-co-15</a><br />請求書合計金額(税込み)(ibt-112) = 請求書合計金額(税抜き)(ibt-109) + 請求書消費税合計金額(ibt-110).</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-16">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-16/ja/">ibr-co-16</a><br />未払金額 (ibt-115) = 請求書合計金額(税込み)(ibt-112) - 支払済金額 (ibt-113) + 丸めた金額 (ibt-114).</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-19">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-19/ja/">ibr-co-19</a><br />請求期間 (ibg-14) が使われている場合、請求期間開始日 (ibt-073) もしくは請求期間終了日 (ibt-074)、もしくはその両方が指定されていなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-20">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-20/ja/">ibr-co-20</a><br />請求書明細行の期間 (ibg-26) が使われている場合、請求書明細行の期間開始日 (ibt-134) もしくは請求書明細行の期間終了日 (ibt-135)、もしくはその両方が指定されていなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-21">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-21/ja/">ibr-co-21</a><br />個々のドキュメントレベルの返還請求(ibg-20)は、ドキュメントレベルの返還請求の理由(ibt-097)もしくはドキュメントレベルの返還請求の理由コード(ibt-098)、あるいはその両方を含まなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-22">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-22/ja/">ibr-co-22</a><br />個々のドキュメントレベルの追加請求(ibg-21)は、ドキュメントレベルの追加請求の理由(ibt-104)もしくはドキュメントレベルの追加請求の理由コード(ibt-105)、あるいはその両方を含まなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-24">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-24/ja/">ibr-co-24</a><br />個々の請求書明細行の追加請求(ibg-28)は、請求書明細行の追加請求理由(ibt-144)もしくは請求書明細行の追加請求理由コード(ibt-145)、あるいはその両方を含まなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-25">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-25/ja/">ibr-co-25</a><br />未払金額(ibt-115)が正の値の場合、支払期日(ibt-009)もしくは支払条件(ibt-020)が指定されていなければならない。</td>
+							<td>fatal</td>
+						</tr>
+						<tr data-id="ibr-co-26">
+							<td class="info-link"><a href="/billing-japan/rules/ubl-pint/ibr-co-26/ja/">ibr-co-26</a><br />買い手が自動でサプライヤを識別できるように、売り手ID(ibt-029)、売り手登録企業ID(ibt-030) 及び/もしくは 売り手税ID(ibt-031)を指定しなければならない。</td>
+							<td>fatal</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
+  	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	</button>
+</body>
+</html>

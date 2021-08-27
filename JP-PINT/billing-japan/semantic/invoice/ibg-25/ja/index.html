@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<title>Japanese PEPPOL BIS Documentation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" href="https://www.wuwei.space/jp_pint/billing-japan/favicon.ico">
+	<!-- font awesome 4 -->
+	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
+	<!-- bootstrap 4 and jQuery 3
+		If you’re using our compiled JavaScript, don’t forget to include CDN versions of jQuery and Popper.js before it.
+		https://getbootstrap.com/docs/4.0/getting-started/download/
+	-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- this page -->
+	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
+	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var id = getUrlParameter('id')
+			initModule(id);
+		});
+	</script>
+
+	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">凡例</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+          <dl class="row">
+            <dt class="col-3"><strong>データ型</strong></dt>
+            <dd class="col-9">
+							<a href="https://docs.peppol.eu/poacc/billing/3.0/bis/#_semantic_datatypes">Semantic datatypes</a><br />
+								セマンティックデータ型は、EN16931のセマンティックモデルで定義された情報要素によって表現されるセマンティック概念と技術的な実装との間のギャップを埋めるために使用される。 セマンティックデータ型は、内容とする値の許容値の範囲と、その正確な解釈を保証するために必要な追加の情報構成要素（属性）を定義する。
+						</dd>
+            <dt class="col-3"><strong>Section</strong></dt>
+            <dd class="col-9">
+							4a. Peppol International Invoice (PINT) Presented by Georg Birgisson<br />
+							Source: OpenPeppol Cross-Community Plenary session 20.10.2020
+							<dl calss="row">
+								<dt class="col-3"><strong>•Shared</strong></dt>
+								<dd class="col-9">
+									全ての管轄地域に共通。最低限のルール<br />
+									基本レベルの自動化には十分
+								</dd>
+								<dt class="col-3"><strong>•Aligned</strong></dt>
+								<dd class="col-9">
+									すべての管轄地域で一般的に理解されている<br />
+									特定のルールはない<br />
+									自動化用に最適化されていない<br />
+									管轄地域固有に特化して自動化とコンプライアンスを可能にする<br />
+								</dd>
+								<dt class="col-3"><strong>•Distinct</strong></dt>
+								<dd class="col-9">
+									関連する管轄地域でのみ理解される
+								</dd>
+							</dl>
+						</dd>
+            <dt class="col-3"><strong>欧州規格の拡張</strong></dt>
+            <dd class="col-9">
+							欧州規格EN 16931に対する拡張の内容
+            </dd>
+            <dt class="col-3"><strong>XPath</strong></dt>
+            <dd class="col-9">
+							この要素のXPath
+            </dd>
+            <dt class="col-3"><strong>XML属性</strong></dt>
+            <dd class="col-9">
+							この要素に関連するXML属性の使用条件
+            </dd>
+						<dt class="col-3"><strong>ビジネスルール</strong></dt>
+            <dd class="col-9">
+							この要素に関連するビジネスルール
+            </dd>
+						<dt class="col-3"><strong>（参考）IS 3.0 Billing ビジネスルール</strong></dt>
+            <dd class="col-9">
+							BIS 3.0 Billingで定義された　この要素に関連するビジネスルール
+            </dd>
+          </dl>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form id="nav-menu" class="form-inline flex-nowrap">
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="modal-lg"></i></button>
+		<select id="language" class="form-control mr-0 border-0">
+			<option value="en" >English</option>
+			<option value="ja" selected>日本語</option>
+		</select>
+		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
+			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を表示"></i>
+		</button>
+		
+		<li class="nav-item dropdown ja p-0" data-toggle="tooltip" data-placement="bottom" title="遷移メニュー">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-list" aria-hidden="true"></i>
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="/billing-japan/ja"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a>
+				<div class="dropdown-divider"></div>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Standard Commercial Invoice <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Debit note <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Summary invoice pattern 1 <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/semantic/invoice/tree/ja/">都度請求書モデル</a>
+				<a class="dropdown-item" href="/billing-japan/semantic/summarised/tree/ja/">合算請求書パターン１モデル</a>
+				<a class="dropdown-item" href="/billing-japan/semantic/debitnote/tree/ja/">納品書モデル</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-invoice/tree/ja/" class="back">都度請求書XML構文</a>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-summarised/tree/ja/" class="back">合算請求書パターン１XML構文</a>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-debitnote/tree/ja/" class="back">納品書XML</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/rules/ubl-pint/ja/">PEPPOL PINTルール</a>
+				<a class="dropdown-item" href="/billing-japan/rules/ubl-japan/ja/">都度請求書ルール</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://www.eipa.jp/">電子インボイス推進協議会</a>
+			</div>
+		</li>
+
+	</form>
+	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+	</nav>
+	<div class="container">
+		<div class="item-syntax">
+			<ol class="breadcrumb pt-1 pb-1">				<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a></li>				<li class="breadcrumb-item"><a href="/billing-japan/semantic/invoice/tree/ja/">都度請求書モデル</a></li>				<li class="breadcrumb-item"><a href="/billing-japan/semantic/invoice/ibg-00/ja/">インボイス</a></li>				<li class="breadcrumb-item active">請求書明細行</li>			</ol>
+			<div class="page-header">
+				<h1>ibg-25&nbsp;請求書明細行</h1>
+			</div>
+			<p class="lead">請求書明細行に関する情報。</p>
+			<dl class="row">
+
+				<dt class="col-2">データ型</dt><dd class="col-10">Group</dd>
+				<dt class="col-2">使用条件(Section)</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">欧州規格の拡張</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">追加説明</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">XPath</dt><dd class="col-10"><a href="/billing-japan/syntax/ubl-invoice/cac-InvoiceLine/ja/"><h5>/Invoice/cac:InvoiceLine</h5></a></dd>
+				<dt class="col-2">XML属性</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">ビジネスルール</dt><dd class="col-10"><h5><a href="/billing-japan/rules/ubl-pint/ibr-16/ja/">ibr-16</a> (fatal)</h5>請求書は、少なくともひとつの請求書明細行(ibg-25)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-pint/ibr-21/ja/">ibr-21</a> (fatal)</h5>個々の請求書明細行(ibg-25)は、請求書明細行ID(ibt-126)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-pint/ibr-22/ja/">ibr-22</a> (fatal)</h5>個々の請求書明細行(ibg-25)は、請求される数量(ibt-129)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-pint/ibr-23/ja/">ibr-23</a> (fatal)</h5>請求書明細行(ibg-25)は、請求される数量の数量単位コード(ibt-130)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-pint/ibr-24/ja/">ibr-24</a> (fatal)</h5>個々の請求書明細行(ibg-25)は、値引/割引後請求書明細行金額(税抜き)(ibt-131)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-pint/ibr-25/ja/">ibr-25</a> (fatal)</h5>個々の請求書明細行(ibg-25)は、品名(ibt-153)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-pint/ibr-26/ja/">ibr-26</a> (fatal)</h5>個々の請求書明細行(ibg-25)は、品目単価(値引/割引後)(税抜き)(ibt-146)を持たなければならない。<br /><h5><a href="/billing-japan/rules/ubl-japan/jp-s-01/ja/">jp-s-01</a> (fatal)</h5>課税分類コード(ibt-151, ibt-95 又は ibt-102) が、"標準税率" である請求書明細行(ibg-25)、ドキュメントレベルの返還請求(ibg-20)、 又はドキュメントレベルの追加請求(ibg-21)を含む請求書は、税内訳情報(ibg-23) に、"標準税率" と同じ課税分類コード(ibt-118) を少なくともひとつ含んでいなければならない。<br /><h5><a href="/billing-japan/rules/ubl-japan/jp-s-02/ja/">jp-s-02</a> (fatal)</h5>請求される品目に対する課税分類コード(ibt-151)が"標準税率"である請求書明細行(iibg-25)を含む請求書は、税内訳情報(ibg-23)に、"標準税率" と同じ課税分類コード(ibt-118)を少なくともひとつ含んでいなければならない。<br /><h5><a href="/billing-japan/rules/ubl-japan/jp-s-05/ja/">jp-s-05</a> (fatal)</h5>請求される品目に対する課税分類コード(ibt-151)が"標準税率"である請求書明細行(ibg-25)には、ゼロより大きい請求される品目に対する税率(ibt-152)がなければならない。</dd>
+
+		<dt class="col-2">下位要素</dt>
+		<dd class="col-10">
+			<div class="table-responsive semantics">
+
+				<table class="semantics table table-sm table-hover" style="table-layout: fixed; width: 100%;">
+					<colgroup>
+						<col span="1" style="width: 0%;">
+						<col span="1" style="width: 9%;">
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 6%;">
+						<col span="1" style="width: 60%;">
+					</colgroup>
+					<thead>
+						<th>-</th>
+						<th>ID</th>
+						<th>ビジネス用語</th>
+						<th>繰返</th>
+						<th>説明</th>
+					</thead>
+					<tbody>
+<tr data-seq="2650" data-en_id="IBT-126" data-pint_id="ibt-126" data-level="2" data-card="1..1 " data-path="/Invoice/cac:InvoiceLine/cbc:ID"><td>&nbsp;</td><td>ibt-126</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-126/ja/">請求書明細行ID</a></td><td><span>1..1 </span></td><td><p>この請求書内で個々の明細行を一意に識別するためのID。</p>例: <code>10</code></td></html><tr data-seq="2660" data-en_id="IBT-127" data-pint_id="ibt-127" data-level="2" data-card="0..1 " data-path="/Invoice/cac:InvoiceLine/cbc:Note"><td>&nbsp;</td><td>ibt-127</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-127/ja/">請求書明細行注釈</a></td><td><span>0..1 </span></td><td><p>請求書明細行に関連する構造化されていない情報を提供するためのテキスト、注釈。</p></td></html><tr data-seq="2670" data-en_id="IBT-128" data-pint_id="ibt-128" data-level="2" data-card="0..1 " data-path="/Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode='130']/cbc:ID"><td>&nbsp;</td><td>ibt-128</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-128/ja/">請求書明細行オブジェクトID</a></td><td><span>0..1 </span></td><td><p>売り手によって提供された、請求書明細行の根拠となるオブジェクトのID。必要に応じて、予約番号、電話番号、メーターポイントなどを指定できる。</p></td></html><tr data-seq="2682" data-en_id="IBT-188" data-pint_id="ibt-188" data-level="2" data-card="0..1 " data-path="/Invoice/cac:InvoiceLine/cac:DocumentReference[not(cbc:DocumentTypeCode='130')]/cbc:ID"><td>&nbsp;</td><td>ibt-188</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-188/ja/">明細行文書参照</a></td><td><span>0..1 </span></td><td><p>請求書明細行が参照する文書の識別子</p>例: <code>AB12345</code></td></html><tr data-seq="2685" data-en_id="IBT-189" data-pint_id="ibt-189" data-level="2" data-card="0..1" data-path="/Invoice/cac:InvoiceLine/cac:DocumentReference[not(cbc:DocumentTypeCode='130')]/cbc:DocumentTypeCode"><td>&nbsp;</td><td>ibt-189</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-189/ja/">文書タイプコード</a></td><td><span>0..1</span></td><td><p>参照文書を区別するコード</p>例: <code>383</code></td></html><tr data-seq="2690" data-en_id="IBT-129" data-pint_id="ibt-129" data-level="2" data-card="1..1 " data-path="/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity"><td>&nbsp;</td><td>ibt-129</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-129/ja/">請求される数量</a></td><td><span>1..1 </span></td><td><p>請求書明細行で請求する品目(商品やサービス)の数量。</p>例: <code>1000</code></td></html><tr data-seq="2700" data-en_id="IBT-130" data-pint_id="ibt-130" data-level="2" data-card="1..1 " data-path="/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode"><td>&nbsp;</td><td>ibt-130</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-130/ja/">請求される数量の数量単位コード</a></td><td><span>1..1 </span></td><td><p>請求数量に適用する数量単位コード。</p>例: <code>EA</code></td></html><tr data-seq="2710" data-en_id="IBT-131" data-pint_id="ibt-131" data-level="2" data-card="1..1 " data-path="/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount"><td>&nbsp;</td><td>ibt-131</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-131/ja/">値引/割引後請求書明細行金額(税抜き)</a></td><td><span>1..1 </span></td><td><p>値引/割引後の請求書明細行の合計金額(税抜き)。</p>例: <code>30000</code></td></html><tr data-seq="2720" data-en_id="IBT-132" data-pint_id="ibt-132" data-level="2" data-card="0..1 " data-path="/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID"><td>&nbsp;</td><td>ibt-132</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-132/ja/">購買発注明細行参照</a></td><td><span>0..1 </span></td><td><p>買い手が発番した発注書内の明細行を参照するためのID。</p></td></html><tr data-seq="2721" data-en_id="IBT-183" data-pint_id="ibt-183" data-level="2" data-card="0..1" data-path="/Invoice/cac:InvoiceLine/cac:OrderLineReference/cac:OrderReference/cbc:ID"><td>&nbsp;</td><td>ibt-183</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-183/ja/">受注参照</a></td><td><span>0..1</span></td><td><p>買い手が発番した発注番号を参照するためのID。</p></td></html><tr data-seq="2722" data-en_id="IBT-184" data-pint_id="ibt-184" data-level="2" data-card="0..1" data-path="/Invoice/cac:InvoiceLine/cac:DespatchLineReference/cac:DocumentReference/cbc:ID"><td>&nbsp;</td><td>ibt-184</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-184/ja/">出荷案内書(納品書)参照</a></td><td><span>0..1</span></td><td><p>この請求書が参照する出荷案内書（納品書）のID。</p></td></html><tr data-seq="2730" data-en_id="IBT-133" data-pint_id="ibt-133" data-level="2" data-card="0..1 " data-path="/Invoice/cac:InvoiceLine/cbc:AccountingCost"><td>&nbsp;</td><td>ibt-133</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibt-133/ja/">請求書明細行買い手会計参照</a></td><td><span>0..1 </span></td><td><p>請求書明細行に関連したデータを買い手のどの勘定科目で記帳するかを指定するテキスト。必要に応じて、請求書を発するときに、この参照情報を買い手が売り手に提供する。</p></td></html><tr class="group" data-seq="2740" data-en_id="IBG-26" data-pint_id="ibg-26" data-level="2" data-card="0..1 " data-path="/Invoice/cac:InvoiceLine/cac:InvoicePeriod"><td class="expand-control" align="center"></td><td>ibg-26</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibg-26/ja/">請求書明細行の期間</a></td><td><span>0..1 </span></td><td><p>請求書明細行に関連する期間に関する情報</p></td></html><tr class="group" data-seq="2770" data-en_id="IBG-27" data-pint_id="ibg-27" data-level="2" data-card="0..n " data-path="/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]"><td class="expand-control" align="center"></td><td>ibg-27</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibg-27/ja/">請求書明細行の返還請求</a></td><td><span>0..n </span></td><td><p>請求書明細行に適用可能な控除（返還請求）に関する情報。</p></td></html><tr class="group" data-seq="2830" data-en_id="IBG-28" data-pint_id="ibg-28" data-level="2" data-card="0..n " data-path="/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]"><td class="expand-control" align="center"></td><td>ibg-28</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibg-28/ja/">請求書明細行の追加請求</a></td><td><span>0..n </span></td><td><p>請求書明細行に適用可能な追加請求や消費税以外の税金に関する情報。</p></td></html><tr class="group" data-seq="2890" data-en_id="IBG-29" data-pint_id="ibg-29" data-level="2" data-card="1..1 " data-path="/Invoice/cac:InvoiceLine/cac:Price"><td class="expand-control" align="center"></td><td>ibg-29</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibg-29/ja/">取引価格詳細</a></td><td><span>1..1 </span></td><td><p>請求書明細行で請求される財、サービスに適用される価格に係る情報</p></td></html><tr class="group" data-seq="2950" data-en_id="IBG-30" data-pint_id="ibg-30" data-level="2" data-card="1..n " data-path="/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory"><td class="expand-control" align="center"></td><td>ibg-30</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibg-30/ja/">請求書明細行税情報</a></td><td><span>1..n </span></td><td><p>請求書明細行で請求される財、サービスに適用される消費税に係る情報。</p></td></html><tr class="group" data-seq="2980" data-en_id="IBG-31" data-pint_id="ibg-31" data-level="2" data-card="1..1 " data-path="/Invoice/cac:InvoiceLine/cac:Item"><td class="expand-control" align="center"></td><td>ibg-31</td><td class="info-link"><a href="/billing-japan/semantic/invoice/ibg-31/ja/">品目情報</a></td><td><span>1..1 </span></td><td><p>請求される財、サービスに係る情報。</p></td></html>
+					</tbody>
+				</div>
+			</dd>
+
+			</dl>
+		</div>
+	</div>
+	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
+  	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	</button>
+</body>
+</html>

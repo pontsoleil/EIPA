@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<title>Japanese PEPPOL BIS Documentation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" href="https://www.wuwei.space/jp_pint/billing-japan/favicon.ico">
+	<!-- font awesome 4 -->
+	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
+	<!-- bootstrap 4 and jQuery 3
+		If you’re using our compiled JavaScript, don’t forget to include CDN versions of jQuery and Popper.js before it.
+		https://getbootstrap.com/docs/4.0/getting-started/download/
+	-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- this page -->
+	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
+	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			var id = getUrlParameter('id')
+			initModule(id);
+		});
+	</script>
+
+	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">凡例</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+<h3>ISO/IEC 19757-3:2016(E)</h3>
+<h5>Information technology -- Document Schema definition languages (DSDL) -- <br />part 3: Rule-based validation -- Schemetron</h5>
+<h5>rule element</h5>
+A list of assertions tested within the conttext specified by the required <strong>context</strong> attribute. The <strong>context</strong> attribute specifies the rule context expression.<br />
+<br />
+<h5>assert element</h5>
+An assertion made about the context nodes. The data contents is a natural-language assertion. The required <strong>test</strong> attribute is an assertion test evaluated in the current context. If the test evaluates positive, the report succeeds.
+The natural-language assertion shall be a positive statement of a constraint.<br />
+The <strong>flag</strong> attribute allows more detailed outcomes.
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form id="nav-menu" class="form-inline flex-nowrap">
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="modal-lg"></i></button>
+		<select id="language" class="form-control mr-0 border-0">
+			<option value="en" >English</option>
+			<option value="ja" selected>日本語</option>
+		</select>
+		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
+			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を表示"></i>
+		</button>
+		
+		<li class="nav-item dropdown ja p-0" data-toggle="tooltip" data-placement="bottom" title="遷移メニュー">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-list" aria-hidden="true"></i>
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="/billing-japan/ja"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a>
+				<div class="dropdown-divider"></div>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Standard Commercial Invoice <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Debit note <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Summary invoice pattern 1 <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
+					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
+				</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/semantic/invoice/tree/ja/">都度請求書モデル</a>
+				<a class="dropdown-item" href="/billing-japan/semantic/summarised/tree/ja/">合算請求書パターン１モデル</a>
+				<a class="dropdown-item" href="/billing-japan/semantic/debitnote/tree/ja/">納品書モデル</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-invoice/tree/ja/" class="back">都度請求書XML構文</a>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-summarised/tree/ja/" class="back">合算請求書パターン１XML構文</a>
+				<a class="dropdown-item" href="/billing-japan/syntax/ubl-debitnote/tree/ja/" class="back">納品書XML</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="/billing-japan/rules/ubl-pint/ja/">PEPPOL PINTルール</a>
+				<a class="dropdown-item" href="/billing-japan/rules/ubl-japan/ja/">都度請求書ルール</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://www.eipa.jp/">電子インボイス推進協議会</a>
+			</div>
+		</li>
+
+	</form>
+	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+	</nav>
+	<div class="container">
+		<div class="item-syntax">
+
+			<ol class="breadcrumb pt-1 pb-1">
+				<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/"><i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i></a></li>
+				<li class="breadcrumb-item"><a href="/billing-japan/rules/ja">ビジネスルール</a></li>
+				<li class="breadcrumb-item"><a href="/billing-japan/rules/ubl-pint/ja/">PEPPOL PINTルール</a></li>
+				<li class="breadcrumb-item active">ibr-cl-07</li>
+		</ol>
+
+			<div class="page-header">
+				<h1>ibr-cl-07 (fatal)</h1>
+			</div>
+			<p class="lead">オブジェクトIDのスキーマIDは、UNTDID 1153 から選ばなければならない。</p>
+			<dl class="row">
+
+				<dt class="col-3">対象(context)</dt><dd class="col-9"><code>cac:AdditionalDocumentReference[cbc:DocumentTypeCode = '130']/cbc:ID[@schemeID] | cac:DocumentReference[cbc:DocumentTypeCode = '130']/cbc:ID[@schemeID]</code></dd>
+				<dt class="col-3">検証(test)</dt><dd class="col-9"><code>((not(contains(normalize-space(@schemeID), ' ')) and contains(' AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL AAM AAN AAO AAP AAQ AAR AAS AAT AAU AAV AAW AAX AAY AAZ ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ABM ABN ABO ABP ABQ ABR ABS ABT ABU ABV ABW ABX ABY ABZ AC ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ACN ACO ACP ACQ ACR ACT ACU ACV ACW ACX ACY ACZ ADA ADB ADC ADD ADE ADF ADG ADI ADJ ADK ADL ADM ADN ADO ADP ADQ ADT ADU ADV ADW ADX ADY ADZ AE AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL AEM AEN AEO AEP AEQ AER AES AET AEU AEV AEW AEX AEY AEZ AF AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL AFM AFN AFO AFP AFQ AFR AFS AFT AFU AFV AFW AFX AFY AFZ AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL AGM AGN AGO AGP AGQ AGR AGS AGT AGU AGV AGW AGX AGY AGZ AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL AHM AHN AHO AHP AHQ AHR AHS AHT AHU AHV AHX AHY AHZ AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL AIM AIN AIO AIP AIQ AIR AIS AIT AIU AIV AIW AIX AIY AIZ AJA AJB AJC AJD AJE AJF AJG AJH AJI AJJ AJK AJL AJM AJN AJO AJP AJQ AJR AJS AJT AJU AJV AJW AJX AJY AJZ AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL AKM AKN AKO AKP AKQ AKR AKS AKT AKU AKV AKW AKX AKY AKZ ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ALM ALN ALO ALP ALQ ALR ALS ALT ALU ALV ALW ALX ALY ALZ AMA AMB AMC AMD AME AMF AMG AMH AMI AMJ AMK AML AMM AMN AMO AMP AMQ AMR AMS AMT AMU AMV AMW AMX AMY AMZ ANA ANB ANC AND ANE ANF ANG ANH ANI ANJ ANK ANL ANM ANN ANO ANP ANQ ANR ANS ANT ANU ANV ANW ANX ANY AOA AOD AOE AOF AOG AOH AOI AOJ AOK AOL AOM AON AOO AOP AOQ AOR AOS AOT AOU AOV AOW AOX AOY AOZ AP APA APB APC APD APE APF APG APH API APJ APK APL APM APN APO APP APQ APR APS APT APU APV APW APX APY APZ AQA AQB AQC AQD AQE AQF AQG AQH AQI AQJ AQK AQL AQM AQN AQO AQP AQQ AQR AQS AQT AQU AQV AQW AQX AQY AQZ ARA ARB ARC ARD ARE ARF ARG ARH ARI ARJ ARK ARL ARM ARN ARO ARP ARQ ARR ARS ART ARU ARV ARW ARX ARY ARZ ASA ASB ASC ASD ASE ASF ASG ASH ASI ASJ ASK ASL ASM ASN ASO ASP ASQ ASR ASS AST ASU ASV ASW ASX ASY ASZ ATA ATB ATC ATD ATE ATF ATG ATH ATI ATJ ATK ATL ATM ATN ATO ATP ATQ ATR ATS ATT ATU ATV ATW ATX ATY ATZ AU AUA AUB AUC AUD AUE AUF AUG AUH AUI AUJ AUK AUL AUM AUN AUO AUP AUQ AUR AUS AUT AUU AUV AUW AUX AUY AUZ AV AVA AVB AVC AVD AVE AVF AVG AVH AVI AVJ AVK AVL AVM AVN AVO AVP AVQ AVR AVS AVT AVU AVV AVW AVX AVY AVZ AWA AWB AWC AWD AWE AWF AWG AWH AWI AWJ AWK AWL AWM AWN AWO AWP AWQ AWR AWS AWT AWU AWV AWW AWX AWY AWZ AXA AXB AXC AXD AXE AXF AXG AXH AXI AXJ AXK AXL AXM AXN AXO AXP AXQ AXR AXS BA BC BD BE BH BM BN BO BR BT BTP BW CAS CAT CAU CAV CAW CAX CAY CAZ CBA CBB CD CEC CED CFE CFF CFO CG CH CK CKN CM CMR CN CNO COF CP CR CRN CS CST CT CU CV CW CZ DA DAN DB DI DL DM DQ DR EA EB ED EE EEP EI EN EQ ER ERN ET EX FC FF FI FLW FN FO FS FT FV FX GA GC GD GDN GN HS HWB IA IB ICA ICE ICO II IL INB INN INO IP IS IT IV JB JE LA LAN LAR LB LC LI LO LRC LS MA MB MF MG MH MR MRN MS MSS MWB NA NF OH OI ON OP OR PB PC PD PE PF PI PK PL POR PP PQ PR PS PW PY RA RC RCN RE REN RF RR RT SA SB SD SE SEA SF SH SI SM SN SP SQ SRN SS STA SW SZ TB TCR TE TF TI TIN TL TN TP UAR UC UCN UN UO URI VA VC VGR VM VN VON VOR VP VR VS VT VV WE WM WN WR WS WY XA XC XP ZZZ ', concat(' ', normalize-space(@schemeID), ' '))))</code></dd>
+				<dt class="col-3">関連するビジネス用語グループ</dt><dd class="col-9"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-3">関連するビジネス用語</dt><dd class="col-9"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+
+			</dl>
+		</div>
+	</div>
+	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
+  	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+	</button>
+</body>
+</html>

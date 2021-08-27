@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Japanese PEPPOL BIS Documentation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- font awesome 4 -->
+	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/d109b16d3e.js" crossorigin="anonymous"></script>
+	<!-- bootstrap 4 and jQuery 3 
+	If you’re using our compiled JavaScript, don’t forget to include CDN versions of jQuery and Popper.js before it.
+	https://getbootstrap.com/docs/4.0/getting-started/download/
+	-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- this page -->
+	<link rel="stylesheet" href="../../../../../css/main.css" crossorigin="anonymous">
+	<script src="../../../../../js/main.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				$('#ie-warning').css('display','block');
+				return;
+			}
+			$('#ie-warning').css('display','none');
+			initModule();
+		});
+	</script>
+
+</head>
+<body>
+	<div id="infoModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">Legend</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
+		<a class="navbar-brand col-8" href="../../../../en">Japanese PEPPOL BIS Documentation (Draft)</a>
+		<ul class="navbar-nav mr-auto"></ul>
+		<form class="form-inline">
+			<input class="search form-control mr-sm-2" type="search" placeholder="Search ID" aria-label="Search ID">
+			<button class="search btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
+			<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-sm-2 border-0" data-toggle="modal" data-target="#infoModal">
+				<i class="fa fa-info" aria-hidden="true"></i>
+			</button>
+			<select id="language" class="form-control mr-sm-1 border-0">
+				<option value="en" selected>English</option>
+				<option value="ja" >日本語</option>
+			</select>
+		</form>
+	</nav>
+	<div class="container">
+		<div class="item-syntax">
+			<ol class="breadcrumb pt-1 pb-1">				<li class="breadcrumb-item"><a href="../../../../../en/">Home</a></li>				<li class="breadcrumb-item"><a href="../../../tree/en/">ubl:Invoice</a></li>				<li class="breadcrumb-item"><a href="../../../cac-AllowanceCharge/en">cac:AllowanceCharge</a></li>				<li class="breadcrumb-item"><a href="../../../cac-AllowanceCharge/cbc-ChargeIndicator/en">cbc:ChargeIndicator</a></li>			</ol>
+			<div class="page-header">
+				<h1>cbc:ChargeIndicator</h1>
+			</div>
+			<p class="lead">Fixed value 'true'</p>
+			<dl class="row">
+
+				<dt class="col-2">XPath</dt><dd class="col-10">/Invoice/cac:AllowanceCharge/cbc:ChargeIndicator</dd>
+				<dt class="col-2">Cardinality</dt><dd class="col-10">&nbsp;</dd>
+				<dt class="col-2">Namespace</dt><dd class="col-10"><code>cbc</code> urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</dd>
+				<dt class="col-2">Data type</dt><dd class="col-10">&nbsp;</dd>
+				<dt class="col-2">Example</dt><dd class="col-10"><code>TRUE</code></dd>
+				<dt class="col-2">Transaction Business Rules</dt><dd class="col-10">&nbsp;</dd>
+				<dt class="col-2">Business Term</dt><dd class="col-10">Charge indicator</dd>
+				<dt class="col-2">Business Term ID</dt><dd class="col-10"><a href="../../../../../semantic/invoice/ibt-099a/en/">ibt-099a</a></dd>
+				<dt class="col-2">Additional Explanation</dt><dd class="col-10">&nbsp;</dd>
+
+			</dl>
+		</div>
+	</div>
+</body>
+</html>
