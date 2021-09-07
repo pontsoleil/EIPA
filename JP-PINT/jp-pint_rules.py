@@ -107,12 +107,12 @@ The <strong>flag</strong> attribute allows more detailed outcomes.
 info_item_modal_ja = info_item_modal_en
 
 from jp_pint_constants import item_navbar
-# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
+# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id
 item_breadcrumb = '''
 			<ol class="breadcrumb pt-1 pb-1">
-				<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/">{1}</a></li>
-				<li class="breadcrumb-item"><a href="{6}rules/{0}">{2}</a></li>
-				<li class="breadcrumb-item"><a href="{6}rules/{3}/{0}/">{4}</a></li>
+				<li class="breadcrumb-item"><a href="'''+OP_BASE+'''">{1}</a></li>
+				<li class="breadcrumb-item"><a href="'''+APP_BASE+'''rules/{0}">{2}</a></li>
+				<li class="breadcrumb-item"><a href="'''+APP_BASE+'''rules/{3}/{0}/">{4}</a></li>
 				<li class="breadcrumb-item active">{5}</li>
 		</ol>
 '''
@@ -140,6 +140,12 @@ item_table_trailer = '''
 					</table>
 ''' 
 from jp_pint_constants import item_trailer
+
+
+from jp_pint_constants import warning_ja
+from jp_pint_constants import warning_en
+from jp_pint_constants import searchLegend_ja
+from jp_pint_constants import searchLegend_en
 
 datatypeDict = {
 	'ID': 'Identifier',
@@ -555,76 +561,84 @@ if __name__ == '__main__':
 	with open(pint_rule_en_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
-		f.write(javascript_html)
+		# f.write(javascript_html)
 		title = PINT_RULE_MESSAGE_TITLE_en
 		warning = '<p class="lead">NOTE The information provided here is currently under consideration and is subject to change.</p>'
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
-# 14.NOT_SUPPORTED  15.gobacktext
+		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+		# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+		# 14.NOT_SUPPORTED  15.gobacktext 16.SearchText
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,title,'Legend',legend_en,
 															'Shows a modal window of legend information.',
-															dropdown_menu_en,'ID or word in Term/Description','modal-sm',warning,OP_BASE,'',
-															NOT_SUPPORTED_en,'Go Back')
+															dropdown_menu_en,searchLegend_en,'modal-sm',warning,OP_BASE,'',
+															NOT_SUPPORTED_en,'Go back to the previous page,','Search')
 		f.write(html)
 		f.write(table_html.format('PINT','Identifier / Message','flag'))
 		for id,data in pint_rule_dict.items():
 			writeTr_en(f,'ubl-pint',data)
 		f.write(trailer.format('Go to top'))
+		f.write(javascript_html)
+		f.write('</body></html>')
 
 	with open(pint_rule_ja_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
-		f.write(javascript_html)
+		# f.write(javascript_html)
 		title = PINT_RULE_MESSAGE_TITLE_ja
 		warning = '<p class="lead">注：ここに記載されている情報は現在検討中であり、変更される可能性があります。</p>'
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
-# 14.NOT_SUPPORTED  15.gobacktext
+		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+		# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+		# 14.NOT_SUPPORTED  15.gobacktext 16.SearchText
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,title,'凡例',legend_ja,'凡例を説明するウィンドウを表示',
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm',warning,OP_BASE,'',
-															NOT_SUPPORTED_ja,'戻る')
+															dropdown_menu_ja,searchLegend_ja,'modal-sm',warning,OP_BASE,'',
+															NOT_SUPPORTED_ja,'前のページに戻る','検索')
 		f.write(html)
 		f.write(table_html.format('PINT','ID / メッセージ','flag'))
 		for id,data in pint_rule_dict.items():
 			writeTr_ja(f,'ubl-pint',data)
 		f.write(trailer.format('先頭に戻る'))
+		f.write(javascript_html)
+		f.write('</body></html>')
 
 	with open(jp_rule_en_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
-		f.write(javascript_html)
+		# f.write(javascript_html)
 		title = JP_RULE_MESSAGE_TITLE_en
 		warning = '<p class="lead">NOTE The information provided here is currently under consideration and is subject to change.</p>'
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
-# 14.NOT_SUPPORTED  15.gobacktext
+		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+		# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+		# 14.NOT_SUPPORTED  15.gobacktext
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,title,'Legend',legend_en,
 															'Shows a modal window of legend information.',
-															dropdown_menu_en,'ID or word in Term/Description','modal-sm',warning,OP_BASE,'',
-															NOT_SUPPORTED_en,'Go Back')
+															dropdown_menu_en,searchLegend_en,'modal-sm',warning,OP_BASE,'',
+															NOT_SUPPORTED_en,'Go back to the previous page,','Search')
 		f.write(html)
 		f.write(table_html.format('JP','Identifier / Message','flag'))
 		for id,data in jp_rule_dict.items():
 			writeTr_en(f,'ubl-japan',data)
 		f.write(trailer.format('Go to top'))
+		f.write(javascript_html)
+		f.write('</body></html>')
 
 	with open(jp_rule_ja_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
-		f.write(javascript_html)
+		# f.write(javascript_html)
 		title = JP_RULE_MESSAGE_TITLE_ja
 		warning = '<p class="lead">注：ここに記載されている情報は現在検討中であり、変更される可能性があります。</p>'
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
-# 14.NOT_SUPPORTED  15.gobacktext
+		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+		# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+		# 14.NOT_SUPPORTED  15.gobacktext
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,title,'凡例',legend_ja,'凡例を説明するウィンドウを表示',
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-sm',warning,OP_BASE,'',
-															NOT_SUPPORTED_ja,'戻る')
+															dropdown_menu_ja,searchLegend_ja,'modal-sm',warning,OP_BASE,'',
+															NOT_SUPPORTED_ja,'前のページに戻る','検索')
 		f.write(html)
 		f.write(table_html.format('JP','ID / メッセージ','flag'))
 		for id,data in jp_rule_dict.items():
 			writeTr_ja(f,'ubl-japan',data)
 		f.write(trailer.format('先頭に戻る'))
+		f.write(javascript_html)
+		f.write('</body></html>')
 
 	for id,v in pint_rule_dict.items():
 		if not id:
@@ -636,14 +650,14 @@ if __name__ == '__main__':
 
 		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
-			f.write(javascript_html)
+			# f.write(javascript_html)
 			f.write('</head><body>')
-			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText 9.gobacktext
+			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.APP_BASE 4.lang 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText 9.size 10.gobcckText 11.warning
 			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',OP_BASE,'',
-																'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg','Go Back'))
-			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
-			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','ubl-pint',PINT_RULE_MESSAGE_TITLE_en,
-																			id,APP_BASE))
+																'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg',
+																'Go back to the previous page,',warning_en))
+			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id
+			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','ubl-pint',PINT_RULE_MESSAGE_TITLE_en,id))
 			if id in schematron_dict:
 				data = schematron_dict[id]
 				BGroup = termTable(data['BG'],lang)
@@ -662,19 +676,20 @@ if __name__ == '__main__':
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
 			f.write(item_trailer.format('Go to top'))
+			f.write(javascript_html)
+			f.write('</body></html>')
 
 		lang = 'ja'
 		item_dir0 = 'billing-japan/rules/ubl-pint/'+id+'/'+lang
 		os.makedirs(item_dir0,exist_ok=True)
 		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
-			f.write(javascript_html)
+			# f.write(javascript_html)
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText 9.gobacktext
 			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',OP_BASE,'',
-																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg','戻る'))
-			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
-			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','ubl-pint',PINT_RULE_MESSAGE_TITLE_ja,
-																			id,APP_BASE))
+																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg','前のページに戻る',warning_ja))
+			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id
+			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','ubl-pint',PINT_RULE_MESSAGE_TITLE_ja,id))
 			if id in schematron_dict:
 				data = schematron_dict[id]
 				BGroup = lookupBG(data,'ja')
@@ -693,6 +708,8 @@ if __name__ == '__main__':
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
 			f.write(item_trailer.format('先頭に戻る'))
+			f.write(javascript_html)
+			f.write('</body></html>')
 
 	for id,v in jp_rule_dict.items():
 		if not id:
@@ -702,13 +719,13 @@ if __name__ == '__main__':
 		os.makedirs(item_dir0,exist_ok=True)
 		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
-			f.write(javascript_html)
+			# f.write(javascript_html)
 			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en　8.tooltipText 9.gobacktext
 			f.write(item_navbar.format(SPEC_TITLE_en,'selected','',OP_BASE,'',
-																'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg','Go Back'))
-			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
-			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','ubl-japan',JP_RULE_MESSAGE_TITLE_en,
-																			id,APP_BASE))
+																'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg',
+																'Go back to the previous page,',warning_en))
+			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id
+			f.write(item_breadcrumb.format(lang,HOME_en,'Transction Business Rules','ubl-japan',JP_RULE_MESSAGE_TITLE_en,id))
 			if id in schematron_dict:
 				data = schematron_dict[id]
 				BGroup = lookupBG(data,lang)
@@ -728,19 +745,20 @@ if __name__ == '__main__':
 																'Associated Business term Group',BGroup,'Associated Business Term',BTerm)
 				f.write(html)
 			f.write(item_trailer.format('Go to top'))
+			f.write(javascript_html)
+			f.write('</body></html>')
 
 		lang = 'ja'
 		item_dir0 = 'billing-japan/rules/ubl-japan/'+id+'/'+lang
 		os.makedirs(item_dir0,exist_ok=True)
 		with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 			f.write(item_head.format(lang,APP_BASE))
-			f.write(javascript_html)
-			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText 9.gobacktext
+			# f.write(javascript_html)
+			# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'凡例' 6.info_item_modal_ja 7.dropdown_menu_ja 8.tooltipText 9.gobacktext 10.warning
 			f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',OP_BASE,'',
-																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg','戻る'))
-			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id 6.APP_BASE
-			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','ubl-japan',JP_RULE_MESSAGE_TITLE_ja,
-																			id,APP_BASE))
+																'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg','前のページに戻る',warning_ja))
+			# 0.lang 1.HOME_en 2.'Transction Business Rules' 3.'ubl-pint' 4.PINT_RULE_MESSAGE_TITLE_en 5.id
+			f.write(item_breadcrumb.format(lang,HOME_ja,'ビジネスルール','ubl-japan',JP_RULE_MESSAGE_TITLE_ja,id))
 			if id in schematron_dict:
 				data = schematron_dict[id]
 				BGroup = lookupBG(data,lang)
@@ -759,6 +777,8 @@ if __name__ == '__main__':
 																'関連するビジネス用語グループ',BGroup,'関連するビジネス用語',BTerm)
 				f.write(html)
 			f.write(item_trailer.format('先頭に戻る'))
+			f.write(javascript_html)
+			f.write('</body></html>')
 
 	if verbose:
 		print(f'** END ** {pint_rule_en_html} {pint_rule_ja_html} {jp_rule_en_html} {jp_rule_ja_html}')

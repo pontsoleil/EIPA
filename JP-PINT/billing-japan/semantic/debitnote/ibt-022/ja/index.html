@@ -22,13 +22,9 @@
 	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
 	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
 
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-			var id = getUrlParameter('id')
-			initModule(id);
-		});
-	</script>
-
+	<div id="ie-warning" class="container h-100" style="display:none">
+	<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)と仕様ID (Customization ID)です。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>
+	</div>
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -40,7 +36,7 @@
 				<div class="modal-body">
 					
           <dl class="row">
-            <dt class="col-3"><strong>データ型</strong></dt>
+            <dt class="col-3"><strong>セマンティックデータ型</strong></dt>
             <dd class="col-9">
 							<a href="https://docs.peppol.eu/poacc/billing/3.0/bis/#_semantic_datatypes">Semantic datatypes</a><br />
 								セマンティックデータ型は、EN16931のセマンティックモデルで定義された情報要素によって表現されるセマンティック概念と技術的な実装との間のギャップを埋めるために使用される。 セマンティックデータ型は、内容とする値の許容値の範囲と、その正確な解釈を保証するために必要な追加の情報構成要素（属性）を定義する。
@@ -76,9 +72,9 @@
             <dd class="col-9">
 							この要素のXPath
             </dd>
-            <dt class="col-3"><strong>XML属性</strong></dt>
+            <dt class="col-3"><strong>特定の使用条件</strong></dt>
             <dd class="col-9">
-							この要素に関連するXML属性の使用条件
+							この要素に関連した特定の使用条件
             </dd>
 						<dt class="col-3"><strong>ビジネスルール</strong></dt>
             <dd class="col-9">
@@ -98,11 +94,11 @@
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="modal-lg"></i></button>
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" >English</option>
 			<option value="ja" selected>日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="戻る"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を表示"></i>
 		</button>
@@ -147,7 +143,7 @@
 
 	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">電子インボイス 国内標準仕様 - ドラフト 第一版</a>
 	</nav>
 	<div class="container">
 		<div class="item-syntax">
@@ -158,12 +154,13 @@
 			<p class="lead">注釈の内容を入力するフリースペース。</p>
 			<dl class="row">
 
-				<dt class="col-2">データ型</dt><dd class="col-10">Text</dd>
+				<dt class="col-2">セマンティックデータ型</dt><dd class="col-10">Text</dd>
 				<dt class="col-2">使用条件(Section)</dt><dd class="col-10">Shared</dd>
 				<dt class="col-2">欧州規格の拡張</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 				<dt class="col-2">追加説明</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
-				<dt class="col-2">XPath</dt><dd class="col-10"><a href="/billing-japan/syntax/ubl-invoice/cbc-Note/ja/"><h5>/Invoice/cbc:Note</h5></a></dd>
-				<dt class="col-2">XML属性</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">XPath</dt><dd class="col-10"><a href="/billing-japan/syntax/ubl-debitnote/cbc-Note/ja/"><h5>/Invoice/cbc:Note</h5></a></dd>
+				<dt class="col-2">UBLデータ型</dt><dd class="col-10">TextType</dd>
+				<dt class="col-2">特定の条件</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 				<dt class="col-2">ビジネスルール</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 
 			</dl>
@@ -172,5 +169,19 @@
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			alertText = document.getElementById('ie-warning').innerText.trim();
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				confirm(alertText);
+				var expands = document.getElementsByClassName('expand');
+				for (var i = 0; i < expands.length; i++) {
+					expands[i].style.display = 'none';
+				}
+			}
+
+			initModule();
+		});
+	</script>
+</body></html>

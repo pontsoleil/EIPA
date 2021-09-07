@@ -1,0 +1,321 @@
+#! /bin/sh
+
+# designed by Nobuaki Tounaka
+# written by 321516
+
+# print the usage and exit
+print_usage_and_exit () {
+  cat <<-__USAGE 1>&2
+	Usage   : ${0##*/} key=<key> <master> <tran>
+	Version : Mon Oct 19 12:58:39 JST 2015
+	        : Open usp Tukubai (POSIX.1 Bourne Shell/POSIX.1 commands/UTF-8)
+__USAGE
+  exit 1
+}
+# decide whether to use the alternative length of AWK or not
+if awk 'BEGIN{a[1]=1;b=length(a)}' 2>/dev/null; then
+  arlen='length'
+else
+  arlen='arlen'
+fi
+
+
+# initialize
+PATH='/usr/bin:/bin'
+IFS=$(printf ' \t\n_'); IFS=${IFS%_}
+export IFS LANG=C LC_ALL=C
+LF=$(printf '\\\n_');LF=${LF%_}
+set -u
+
+key=''
+fldstr=''
+masterfile=''
+tranfile=''
+
+
+# validate the arguments
+case $# in [01]) print_usage_and_exit;; esac
+for arg in "$@"; do
+  case "$arg" in
+    key=*)
+      key=${arg#key=}
+      case "$key" in *NF*)
+        printf '%s\n' "${0##*/}: Cannot use NF in the key argument" 1>&2
+        exit 1
+        ;;
+      esac
+      ;;
+    *)
+      if [ -z "$masterfile" ]; then
+        if [ \( -f "$arg" \) -o \( -c "$arg" \) -o \( -p "$arg" \) -o \
+             \( "_$arg" = '_-' \)                                     ]; then
+          masterfile=$arg
+        fi
+      elif [ -z "$tranfile" ]; then
+        if [ \( -f "$arg" \) -o \( -c "$arg" \) -o \( -p "$arg" \) -o \
+             \( "_$arg" = '_-' \)                                     ]; then
+          tranfile=$arg
+        fi
+      else
+        print_usage_and_exit
+      fi
+      ;;
+  esac
+done
+case "$key"        in '') print_usage_and_exit;; esac
+case "$masterfile" in '') print_usage_and_exit;; esac
+case "$tranfile"   in '') tranfile='-'        ;; esac
+use_stdin=0
+for file in "$masterfile" "$tranfile"; do
+  if [ \( "_$file" = '_-'               \) -o \
+       \( "_$file" = '_/dev/stdin'      \) -o \
+       \( "_$file" = '_/dev/fd/0'       \) -o \
+       \( "_$file" = '_/proc/self/fd/0' \)    ]
+  then
+    use_stdin=$((use_stdin+1))
+  fi
+done
+if [ $use_stdin -gt 1 ]; then
+  print_usage_and_exit
+fi
+if [ \( ! -r "$masterfile" \) -a \( "_$masterfile" != '_-' \) ]; then
+  printf '%s\n' "${0##*/}: Cannot open the master file" 1>&2
+  exit 1
+fi
+if [ \( ! -r "$tranfile" \) -a \( "_$tranfile" != '_-' \) ]; then
+  printf '%s\n' "${0##*/}: Cannot open the transaction file" 1>&2
+  exit 1
+fi
+case "$masterfile" in ''|-|/*|./*|../*) :;; *) masterfile="./$masterfile";; esac
+case "$tranfile"   in ''|-|/*|./*|../*) :;; *)   tranfile="./$tranfile"  ;; esac
+
+# validate the "key" argument and make the fields to compare from it
+dlm='"\001" '
+for arg in $(printf '%s\n' "$key" | tr '@' ' '); do
+  # "/" extraction mode (make arg2 if this mode)
+  arg1=${arg%%/*}
+  arg2=${arg##*/}
+  if [ \( "_${arg1}/${arg2}" = "_$arg"   \) -a \
+       \( -n "$arg1" \) -a \( -n "$arg2" \)    ]
+  then
+    :
+  else
+    arg2=''
+  fi
+  # get substr parameters from arg1 if possible
+  stpos=0
+  edpos=-1
+  arg1s=${arg1#*.}
+  arg1=${arg1%%.*}
+  if [ "_$arg1s" != "_$arg1" ]; then
+    if printf '%s\n' "$arg1s" | grep -q '^[0-9]\{1,\}$'; then
+      stpos=$arg1s
+      if [ $stpos -eq 0 ]; then
+        break
+      fi
+    elif printf '%s\n' "$arg1s" | grep -q '^[0-9]\{1,\}\.[0-9]\{1,\}$'; then
+      stpos=${arg1s%.*}
+      edpos=${arg1s#*.}
+      if [ $stpos -eq 0 ]; then
+        break
+      fi
+    else
+      break
+    fi
+  fi
+  # judge the field number type of arg1 (also arg2 if possible)
+  if printf '%s\n' "$arg1" | grep -q '^[0-9]\{1,\}$'; then
+    arg1type=1
+  else
+    arg1type=-1
+  fi
+  if [ -z "$arg2" ]; then
+    arg2type=0
+  elif printf '%s\n' "$arg2" | grep -q '^[0-9]\{1,\}$'; then
+    arg2type=1
+  else
+    arg2type=-1
+  fi
+  if [ \( $arg1type -lt 0 \) -o \( $arg2type -lt 0 \) ]; then
+    break
+  fi
+  # generate the string for the AWK-print
+  if [ $arg2type -eq 0 ]; then
+    if [ $stpos -eq 0 ]; then
+      if [ $arg1type -eq 1 ]; then
+        fldstr="$fldstr$dlm\$$arg1"
+      else
+        fldstr="$fldstr$dlm\$($arg1)"
+      fi
+    else
+      if [ $arg1type -eq 1 ]; then
+        fldstr="$fldstr${dlm}getsubf(\$$arg1,$stpos,$edpos)"
+      else
+        fldstr="$fldstr${dlm}getsubf(\$($arg1),$stpos,$edpos)"
+      fi
+    fi
+  else
+    if [ \( $stpos -eq 0 \) -a \( $arg1 -le $arg2 \) ]; then
+      j=$arg1
+      while [ $j -le $arg2 ]; do
+        fldstr="$fldstr${dlm}\$$j"
+        dlm=' "\001" '
+        j=$((j+1))
+      done
+    elif [ \( $stpos -eq 0 \) -a \( $arg1 -ge $arg2 \) ]; then
+      j=$arg1
+      while [ $j -ge $arg2 ]; do
+        fldstr="$fldstr${dlm}\$$j"
+        dlm=' "\001" '
+        j=$((j-1))
+      done
+    elif [ \( $stpos -ne 0 \) -a \( $arg1 -le $arg2 \) ]; then
+      j=$arg1
+      while [ $j -le $arg2 ]; do
+        fldstr="$fldstr${dlm}getsubf(\$$j,$stpos,$edpos)"
+        dlm=' "\001" '
+        j=$((j+1))
+      done
+    elif [ \( $stpos -ne 0 \) -a \( $arg1 -ge $arg2 \) ]; then
+      j=$arg1
+      while [ $j -ge $arg2 ]; do
+        fldstr="$fldstr${dlm}getsubf(\$$j,$stpos,$edpos)"
+        dlm=' "\001" '
+        j=$((j-1))
+      done
+    fi
+  fi
+  # loop
+  arg=''
+  dlm=' "\001" '
+done
+case "$fldstr" in '') print_usage_and_exit;; esac
+
+
+# up3
+export masterfile tranfile
+exec awk \
+'
+  # the alternative length function for array variable
+  function arlen(ar,i,l){for(i in ar){l++;}return l;}
+  # strlen for UTF-8 (main)
+  function utf8strlen(str, len,i,l1,l2,l3) {
+    len = 0;
+    for (i = 1; i <= length(str); i++) {
+      len++;
+      l1=substr(str, i, 1);
+      if        (l1 < "\200") {      continue;
+      } else if (l1 < "\300") {len--; continue;
+      } else if (l1 < "\340") {i++;
+      } else if (l1 < "\360") {
+        if (l1 == "\357") {
+          l2 = substr(str, i+1, 1);
+          if (l2 == "\275") {
+            l3 = substr(str, i+2, 1);
+            if ((l3 >= "\240") && (l3 < "\300")) {len--;}
+          } else if (l2 == "\276") {
+            l3 = substr(str, i+2, 1);
+            if ((l3 >= "\200") && (l3 < "\240")) {len--;}
+          }
+        }
+        i += 2;
+      } else if (l1 < "\370") {i += 3;
+      } else if (l1 < "\374") {i += 4;
+      } else if (l1 < "\376") {i += 5;
+      } else                  {len-- ; continue;}
+      len++;
+    }
+    return len;
+  }
+  # return the substr in accordance with the counting rule of self command
+  function getsubf(str, startpos, len  ,i,p,l,l2,l3,st,ed) {
+    # - "st" is a byte offset (start from 1) which the
+    #   "startpos" suggests by the Japanese text position (zenkaku-hankaku;
+    #   start from 1)
+    # - "ed" is a byte offset + 1 (start from 1) which the
+    #   "len" suggests by the Japanese text width (zenkaku-hankaku;
+    #   start from 1; -1 means "to the end")
+    st = 0;
+    ed = 0;
+    #
+    # - "i" is a byte offset (start from 1) from which the function
+    #   will read now
+    # - "l" is a Japanese text position (zenkaku-hankaku; start
+    #   from 1) of the letter which the function will read
+    i = 1;
+    p = 1;
+    while (i <= length(str)) {
+      if (st == 0) {
+        if (startpos == p) {
+          st = i;
+          if (len == -1) {break;}
+        } else if (startpos < p) {
+          _assert_exit = 1;
+          exit _assert_exit;
+        }
+      }
+      l = substr(str, i, 1);
+      if        (l < "\200") {i++; p++;
+      } else if (l < "\300") {i++; # invalid UTF-8
+      } else if (l < "\340") {i += 2; p += 2;
+      } else if (l < "\360") {
+        if (l == "\357") {
+          l2 = substr(str, i+1, 1);
+          if        (l2 == "\275") {
+            l3 = substr(str, i+2, 1);
+            if ((l3 >= "\240") && (l3 < "\300")) {p += 1;
+            } else                               {p += 2;}
+          } else if (l2 == "\276") {
+            l3 = substr(str, i+2, 1);
+            if ((l3 >= "\200") && (l3 < "\240")) {p += 1;
+            } else                               {p += 2;}
+          } else                   {p += 2;               }
+        } else           {p += 2;                          }
+        i += 3;
+      } else if (l < "\370") {i += 4; p += 2;
+      } else if (l < "\374") {i += 5; p += 2;
+      } else if (l < "\376") {i += 6; p += 2;
+      } else                 {i++;                          } # invalidUTF-8
+      if (st > 0) {
+        if        ((startpos + len) == p) {ed = i ; break;
+        } else if (len == 0)              {ed = st; break;
+        } else if ((startpos + len) <  p) {_assert_exit = 1; exit _assert_exit;}
+      }
+    }
+    if (st == 0) {_assert_exit = 1; exit _assert_exit;}
+    return (ed == 0) ? substr(str,st) : substr(str,st,ed-st);
+  }
+
+  # ==================================================================
+
+  # do "up3"
+  BEGIN {
+    mfile = ENVIRON["masterfile"]; mline = ""; m_key = ""; m_eof = 0;
+    tfile = ENVIRON["tranfile"  ]; tline = ""; t_key = ""; t_eof = 0;
+
+    if (getline < mfile) {mline = $0; m_key = '"$fldstr"';} else {m_eof=1;}
+    if (getline < tfile) {tline = $0; t_key = '"$fldstr"';} else {t_eof=1;}
+
+    while ((m_eof+t_eof) == 0) {
+      if (t_key < m_key) {
+        print tline;
+        if (!(getline < tfile)) {t_eof=1; break;}
+        tline = $0;
+        t_key = '"$fldstr"';
+      } else             {
+        print mline;
+        if (!(getline < mfile)) {m_eof=1; break;}
+        mline = $0;
+        m_key = '"$fldstr"';
+      }
+    }
+
+    if        (! m_eof) {
+      print mline;
+      while (getline mline < mfile) {print mline;}
+    } else if (! t_eof) {
+      print tline;
+      while (getline tline < tfile) {print tline;}
+    }
+  }
+'

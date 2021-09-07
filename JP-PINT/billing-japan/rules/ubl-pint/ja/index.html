@@ -18,24 +18,11 @@
 	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
 	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
 
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-			var id = getUrlParameter('id')
-			initModule(id);
-		});
-	</script>
-
 </head>
 <body>
 	<!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
 	<div id="ie-warning" class="container h-100" style="display:none">
-		<div class="row align-items-center h-100">
-			<div class="col-6 mx-auto">
-				<div>
-					<h1>インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません</h1>Edge, Google Chrome, Safari, FireFox をご使用ください。				
-				</div>
-			</div>
-		</div>
+	インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません。Edge, Google Chrome, Safari, FireFox をご使用ください。
 	</div>
 	<div id="infoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-sm" role="document">
@@ -57,13 +44,13 @@
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="戻る"></i></button>
 		<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
-		<input class="search form-control mr-0" type="search" placeholder="Search" aria-label="Search" data-toggle="tooltip" title="IDまたは用語/説明文が含む単語">
+		<input type="search" onsearch="lookupTerm(this)" class="search form-control mr-0" placeholder="検索" aria-label="Search" data-toggle="tooltip" title="IDまたは用語/説明文が含む単語を入力し、左のアイコンをクリックすると検索します。">
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" >English</option>
 			<option value="ja" selected>日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="前のページに戻る"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を説明するウィンドウを表示"></i>
 		</button>
@@ -108,7 +95,7 @@
 
 	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">電子インボイス 国内標準仕様 - ドラフト 第一版</a>
 	</nav>
 	<div class="container">
 		<div class="syntax">
@@ -485,5 +472,19 @@
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			alertText = document.getElementById('ie-warning').innerText.trim();
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				confirm(alertText);
+				var expands = document.getElementsByClassName('expand');
+				for (var i = 0; i < expands.length; i++) {
+					expands[i].style.display = 'none';
+				}
+			}
+
+			initModule();
+		});
+	</script>
+</body></html>

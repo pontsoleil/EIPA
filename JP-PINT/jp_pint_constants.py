@@ -32,8 +32,8 @@ RULES_UBL_PINT_BASE = APP_BASE+'rules/ubl-pint/'
 RULES_EN_PEPPOL = APP_BASE+'rules/en-peppol/'
 RULES_EN_CEN = APP_BASE+'rules/en-cen/'
 
-SPEC_TITLE_en = 'Japanese PEPPOL BIS Documentation'
-SPEC_TITLE_ja = '日本版 PEPPOL ビジネス相互運用性仕様'
+SPEC_TITLE_en = 'The first draft of Japanese PEPPOL BIS Documentation'
+SPEC_TITLE_ja = '電子インボイス 国内標準仕様 - ドラフト 第一版'
 SEMANTICS_MESSAGE_TITLE_en = profiles[MESSAGE]['title_en']+', semantc data model'
 SEMANTICS_MESSAGE_TITLE_ja = profiles[MESSAGE]['title_ja']+'モデル'
 SEMANTICS_LEGEND_TITLE_en = 'Semantic data model'
@@ -52,6 +52,10 @@ cen_rule_MESSAGE_TITLE_en = 'EN16931 model bound to UBL'
 cen_rule_MESSAGE_TITLE_ja = 'EN16931モデルをUBLで表すためのルール'
 HOME_en = '<i class="fa fa-square mr-2" aria-hidden="true"> Home</i>'
 HOME_ja = '<i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i>'
+warning_ja = '<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)、仕様ID (Customization ID)、及び請求書タイプコードです。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'
+warning_en = '<p class="lead">NOTE: All element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, the same items are used in standard commercial invoice, summarised invoice and delivery note (debit note). The difference is Business process type (Profile ID), Specification identifier (Customization ID), and Invoice type code. The tag names are correct according to the UBL 2.1 Invoice schema.</p>'
+searchLegend_ja = 'IDまたは用語/説明文が含む単語を入力し、左のアイコンをクリックすると検索します。'
+searchLegend_en = 'Enter the key word that contains the ID or term/description and click the icon on the left to search.' 
 
 variables = {
 	'/Invoice/cbc:DocumentCurrencyCode/text()':'$documentcurrency',
@@ -81,27 +85,33 @@ html_head = '''
 javascript_html = '''
 	<script type="text/javascript" class="init">
 		$(document).ready(function() {
-			var id = getUrlParameter('id')
-			initModule(id);
+			alertText = document.getElementById('ie-warning').innerText.trim();
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				confirm(alertText);
+				var expands = document.getElementsByClassName('expand');
+				for (var i = 0; i < expands.length; i++) {
+					expands[i].style.display = 'none';
+				}
+			}
+
+			initModule();
 		});
 	</script>
 '''
 # 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
 # 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang 14.NOT_SUPPORTED  15.gobacktext
-NOT_SUPPORTED_en = "<h1>This service doesn't support Internet Explorer (IE).</h1>Please use either Edge, Chrome, Safari, FireFox, etc."
-NOT_SUPPORTED_ja = "<h1>インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません</h1>Edge, Google Chrome, Safari, FireFox をご使用ください。"
+NOT_SUPPORTED_en = "This service doesn't support Internet Explorer (IE). Please use either Edge, Chrome, Safari, FireFox, etc."
+NOT_SUPPORTED_ja = "インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません。Edge, Google Chrome, Safari, FireFox をご使用ください。"
+
+# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+# 14.NOT_SUPPORTED  15.gobacktext 16.SearchText
 navbar_html = '''
 </head>
 <body>
 	<!-- check https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap-4 -->
 	<div id="ie-warning" class="container h-100" style="display:none">
-		<div class="row align-items-center h-100">
-			<div class="col-6 mx-auto">
-				<div>
-					{14}				
-				</div>
-			</div>
-		</div>
+	{14}
 	</div>
 	<div id="infoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog {10}" role="document">
@@ -121,13 +131,13 @@ navbar_html = '''
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{15}"></i></button>
 		<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
-		<input class="search form-control mr-0" type="search" placeholder="Search" aria-label="Search" data-toggle="tooltip" title="{9}">
+		<input type="search" onsearch="lookupTerm(this)" class="search form-control mr-0" placeholder="{16}" aria-label="Search" data-toggle="tooltip" title="{9}">
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" {1}>English</option>
 			<option value="ja" {2}>日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{15}"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{7}"></i>
 		</button>
@@ -162,8 +172,6 @@ trailer = '''
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="{0}">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
 '''
 item_head = '''
 <!DOCTYPE html>
@@ -189,8 +197,11 @@ item_head = '''
 	<link rel="stylesheet" href="{1}css/main.css" crossorigin="anonymous">
 	<script src="{1}js/main.js" crossorigin="anonymous"></script>
 '''
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText 9.gobcckText
+# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.APP_BASE 4.lang 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText 9.size 10.gobcckText 11.warning
 item_navbar = '''
+	<div id="ie-warning" class="container h-100" style="display:none">
+	{11}
+	</div>
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog {9}" role="document">
 			<div class="modal-content">
@@ -209,18 +220,18 @@ item_navbar = '''
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{9}"></i></button>
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" {1}>English</option>
 			<option value="ja" {2}>日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{10}"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{8}"></i>
 		</button>
 		{7}
 	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="{4}{3}">{0}</a>
+		<a class="navbar-brand col-8 mr-auto" href="{3}{4}">{0}</a>
 	</nav>
 	<div class="container">
 		<div class="item-syntax">
@@ -239,8 +250,6 @@ item_trailer = '''
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="{0}">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
 '''
 dropdown_menu_ja = '''
 		<li class="nav-item dropdown ja p-0" data-toggle="tooltip" data-placement="bottom" title="遷移メニュー">

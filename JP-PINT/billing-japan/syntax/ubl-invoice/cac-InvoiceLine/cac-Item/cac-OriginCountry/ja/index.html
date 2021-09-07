@@ -21,13 +21,6 @@
 	<!-- this page -->
 	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
 	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
-
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-			var id = getUrlParameter('id')
-			initModule(id);
-		});
-	</script>
 </head><body>
 	<div id="infoCAR_Modal" class="modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
@@ -84,8 +77,11 @@
 		</div>
 	</div>
 
+	<div id="ie-warning" class="container h-100" style="display:none">
+	<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)と仕様ID (Customization ID)です。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>
+	</div>
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
 				<div class="modal-header">凡例</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -95,7 +91,7 @@
 				<div class="modal-body">
 					
 	<h5>CEN/TS 16931-3-2</h5>
-		<p>Electronic invoicing - Part 3-2:Syntax binding for ISO/IEC 19845(UBL 2.1) invoice and credit note</p>
+	<p>Electronic invoicing - Part 3-2:Syntax binding for ISO/IEC 19845(UBL 2.1) invoice and credit note</p>
 	<h6>4.2 Data types</h6>
 	<p class="text-center">Table 1 -- UBL data types</p>
 	<table class="syntax table table-sm table-hover" style="table-layout: fixed; width: 100%;">
@@ -108,7 +104,6 @@
 			<th>UBL unqualified data type</th>
 		</thead>
 		<tbody class="table-striped">
-			<tr><td>Smantic data typee</td><td>UBL unqualified data type</td></tr>
 			<tr><td>Amount</td><td>AmountType</td></tr>
 			<tr><td>Code</td><td>CodeType<br />IdentifierType<br />TextType</td></tr>
 			<tr><td>Date</td><td>DateType</td></tr>
@@ -119,10 +114,56 @@
 			<tr><td>Unit Price Amount</td><td>AmountType</td></tr>
 			<tr><td>BinaryObject</td><td>BinaryObjectType</td></tr>
 			<tr><td>Document Reference Type</td><td>IdentifierType</td></tr>
-			<tr><td>Attributes</td><td>Identifier<br />Code<br />Text</td></tr>
+			<tr><td>Attributes</td><td>IdentifierType<br />CodeType<br />TextType</td></tr>
 		</tbody>
 	</table>
 
+		<br />
+		<hr>
+		<h5>UBL 2.1</h5>
+		<h6>UBL-UnqualifiedDataTypes-2.1</h6>
+		<p class="namespace text-center">Table 2 -- urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2</p>
+		<table class="syntax table table-sm table-hover" style="table-layout: fixed; width: 100%;">
+			<colgroup>
+				<col span="1" style="width: 15%;">
+				<col span="1" style="width: 15%;">
+				<col span="1" style="width: 18%;">
+				<col span="1" style="width: 12%;">
+				<col span="1" style="width: 8%;">
+				<col span="1" style="width: 32%;">
+			</colgroup>
+			<thead class="thead-light">
+				<th>UniqueID</th>
+				<th>name</th>
+				<th>base / type</th>
+				<th>PrimitiveType</th>
+				<th>use</th>
+				<th>Definition</th>
+			</thead>
+			<tbody class="table-striped">
+	<tr><td>UBLUDT000001</td><td><strong>AmountType</strong></td><td>ccts-cct:AmountType</td><td>&nbsp;</td><td>&nbsp;</td><td>A number of monetary units specified using a given unit of currency.</td></tr><tr><td>UNDT000001-SC2</td><td>@currencyID</td><td>xsd:normalizedString</td><td>string</td><td>required</td><td>The currency of the amount.<br />Reference UNECE Rec 9, using 3-letter alphabetic codes.</td></tr><tr><td>UBLUDT000002</td><td><strong>BinaryObjectType</strong></td><td>ccts-cct:BinaryObjectType</td><td>&nbsp;</td><td>&nbsp;</td><td>A set of finite-length sequences of binary octets.</td></tr><tr><td>UNDT000002-SC3</td><td>@mimeCode</td><td>xsd:normalizedString</td><td>string</td><td>required</td><td>The mime type of the binary object.</td></tr><tr><td>UBLUDT000008</td><td><strong>DateTimeType</strong></td><td>xsd:dateTime</td><td>&nbsp;</td><td>&nbsp;</td><td>A particular point in the progression of time, together with relevant supplementary information.</td></tr><tr><td>UBLUDT000009</td><td><strong>DateType</strong></td><td>xsd:date</td><td>&nbsp;</td><td>&nbsp;</td><td>One calendar day according the Gregorian calendar.</td></tr><tr><td>UBLUDT0000010</td><td><strong>TimeType</strong></td><td>xsd:time</td><td>&nbsp;</td><td>&nbsp;</td><td>An instance of time that occurs every day.</td></tr><tr><td>UBLUDT0000011</td><td><strong>IdentifierType</strong></td><td>ccts-cct:IdentifierType</td><td>&nbsp;</td><td>&nbsp;</td><td>A character string to identify and uniquely distinguish one instance of an object in an identification scheme from all other objects in the same scheme, together with relevant supplementary information.</td></tr><tr><td>UBLUDT0000012</td><td><strong>IndicatorType</strong></td><td>xsd:boolean</td><td>&nbsp;</td><td>&nbsp;</td><td>A list of two mutually exclusive Boolean values that express the only possible states of a property.</td></tr><tr><td>UBLUDT0000014</td><td><strong>NumericType</strong></td><td>ccts-cct:NumericType</td><td>&nbsp;</td><td>&nbsp;</td><td>Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.</td></tr><tr><td>UBLUDT0000016</td><td><strong>PercentType</strong></td><td>ccts-cct:NumericType</td><td>&nbsp;</td><td>&nbsp;</td><td>Numeric information that is assigned or is determined by calculation, counting, or sequencing and is expressed as a percentage. It does not require a unit of quantity or unit of measure.</td></tr><tr><td>UBLUDT0000018</td><td><strong>QuantityType</strong></td><td>ccts-cct:QuantityType</td><td>&nbsp;</td><td>&nbsp;</td><td>A counted number of non-monetary units, possibly including a fractional part.</td></tr><tr><td>UBLUDT0000019</td><td><strong>TextType</strong></td><td>ccts-cct:TextType</td><td>&nbsp;</td><td>&nbsp;</td><td>A character string (i.e. a finite set of characters), generally in the form of words of a language.</td></tr><tr><td>UBLUDT0000020</td><td><strong>NameType</strong></td><td>ccts-cct:TextType</td><td>&nbsp;</td><td>&nbsp;</td><td>A character string that constitutes the distinctive designation of a person, place, thing or concept.</td></tr></tbody></table>
+		<br />
+		<h6>CCTS_CCT_SchemaModule-2.1.xsd</h6>
+		<p class="text-center">Table 3 -- ccts-cct urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2</p>
+		<table class="syntax table table-sm table-hover" style="table-layout: fixed; width: 100%;">
+			<colgroup>
+				<col span="1" style="width: 15%;">
+				<col span="1" style="width: 20%;">
+				<col span="1" style="width: 15%;">
+				<col span="1" style="width: 10%;">
+				<col span="1" style="width: 8%;">
+				<col span="1" style="width: 32%;">
+			</colgroup>
+			<thead class="thead-light">
+				<th>UniqueID</th>
+				<th>name</th>
+				<th>base / type</th>
+				<th>PrimitiveType</th>
+				<th>use</th>
+				<th>Definition</th>
+			</thead>
+			<tbody class="table-striped">
+	<tr><td>UNDT000001</td><td><strong>AmountType</strong></td><td>xsd:decimal</td><td>decimal</td><td>&nbsp;</td><td>A number of monetary units specified in a currency where the unit of the currency is explicit or implied.</td></tr><tr><td>UNDT000001-SC2</td><td>@currencyID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The currency of the amount.<br />Reference UNECE Rec 9, using 3-letter alphabetic codes.</td></tr><tr><td>UNDT000001-SC3</td><td>@currencyCodeListVersionID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The VersionID of the UN/ECE Rec9 code list.</td></tr><tr><td>UNDT000002</td><td><strong>BinaryObjectType</strong></td><td>xsd:base64Binary</td><td>binary</td><td>&nbsp;</td><td>A set of finite-length sequences of binary octets.</td></tr><tr><td>UNDT000002-SC2</td><td>@format</td><td>xsd:string</td><td>string</td><td>optional</td><td>The format of the binary content.</td></tr><tr><td>UNDT000002-SC3</td><td>@mimeCode</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The mime type of the binary object.</td></tr><tr><td>UNDT000002-SC4</td><td>@encodingCode</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>Specifies the decoding algorithm of the binary object.</td></tr><tr><td>UNDT000002-SC5</td><td>@characterSetCode</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The character set of the binary object if the mime type is text.</td></tr><tr><td>UNDT000002-SC6</td><td>@uri</td><td>xsd:anyURI</td><td>string</td><td>optional</td><td>The Uniform Resource Identifier that identifies where the binary object is located.</td></tr><tr><td>UNDT000002-SC7</td><td>@filename</td><td>xsd:string</td><td>string</td><td>optional</td><td>The filename of the binary object.</td></tr><tr><td>UNDT000007</td><td><strong>CodeType</strong></td><td>xsd:normalizedString</td><td>string</td><td>&nbsp;</td><td>A character string (letters, figures, or symbols) that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute together with relevant supplementary information.</td></tr><tr><td>UNDT000007-SC2</td><td>@listID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The identification of a list of codes.</td></tr><tr><td>UNDT000007-SC3</td><td>@listAgencyID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>An agency that maintains one or more lists of codes.<br />Defaults to the UN/EDIFACT data element 3055 code list.</td></tr><tr><td>UNDT000007-SC4</td><td>@listAgencyName</td><td>xsd:string</td><td>string</td><td>optional</td><td>The name of the agency that maintains the list of codes.</td></tr><tr><td>UNDT000007-SC5</td><td>@listName</td><td>xsd:string</td><td>string</td><td>optional</td><td>The name of a list of codes.</td></tr><tr><td>UNDT000007-SC6</td><td>@listVersionID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The version of the list of codes.</td></tr><tr><td>UNDT000007-SC7</td><td>@name</td><td>xsd:string</td><td>string</td><td>optional</td><td>The textual equivalent of the code content component.</td></tr><tr><td>UNDT000007-SC8</td><td>@languageID</td><td>xsd:language</td><td>string</td><td>optional</td><td>The identifier of the language used in the code name.</td></tr><tr><td>UNDT000007-SC9</td><td>@listURI</td><td>xsd:anyURI</td><td>string</td><td>optional</td><td>The Uniform Resource Identifier that identifies where the code list is located.</td></tr><tr><td>UNDT000007-SC10</td><td>@listSchemeURI</td><td>xsd:anyURI</td><td>string</td><td>optional</td><td>The Uniform Resource Identifier that identifies where the code list scheme is located.</td></tr><tr><td>UNDT000008</td><td><strong>DateTimeType</strong></td><td>xsd:string</td><td>string</td><td>&nbsp;</td><td>A particular point in the progression of time together with the relevant supplementary information.</td></tr><tr><td>UNDT000008-SC1</td><td>@format</td><td>xsd:string</td><td>string</td><td>optional</td><td>The format of the date time content</td></tr><tr><td>UNDT000011</td><td><strong>IdentifierType</strong></td><td>xsd:normalizedString</td><td>string</td><td>&nbsp;</td><td>A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.</td></tr><tr><td>UNDT000011-SC2</td><td>@schemeID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The identification of the identification scheme.</td></tr><tr><td>UNDT000011-SC3</td><td>@schemeName</td><td>xsd:string</td><td>string</td><td>optional</td><td>The name of the identification scheme.</td></tr><tr><td>UNDT000011-SC4</td><td>@schemeAgencyID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The identification of the agency that maintains the identification scheme.<br />Defaults to the UN/EDIFACT data element 3055 code list.</td></tr><tr><td>UNDT000011-SC5</td><td>@schemeAgencyName</td><td>xsd:string</td><td>string</td><td>optional</td><td>The name of the agency that maintains the identification scheme.</td></tr><tr><td>UNDT000011-SC6</td><td>@schemeVersionID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The version of the identification scheme.</td></tr><tr><td>UNDT000011-SC7</td><td>@schemeDataURI</td><td>xsd:anyURI</td><td>string</td><td>optional</td><td>The Uniform Resource Identifier that identifies where the identification scheme data is located.</td></tr><tr><td>UNDT000011-SC8</td><td>@schemeURI</td><td>xsd:anyURI</td><td>string</td><td>optional</td><td>The Uniform Resource Identifier that identifies where the identification scheme is located.</td></tr><tr><td>UNDT000012</td><td><strong>IndicatorType</strong></td><td>xsd:string</td><td>string</td><td>&nbsp;</td><td>A list of two mutually exclusive Boolean values that express the only possible states of a Property.</td></tr><tr><td>UNDT000012-SC2</td><td>@format</td><td>xsd:string</td><td>string</td><td>optional</td><td>Whether the indicator is numeric, textual or binary.</td></tr><tr><td>UNDT000013</td><td><strong>MeasureType</strong></td><td>xsd:decimal</td><td>decimal</td><td>&nbsp;</td><td>A numeric value determined by measuring an object along with the specified unit of measure.</td></tr><tr><td>UNDT000013-SC2</td><td>@unitCode</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The type of unit of measure.<br />Reference UNECE Rec. 20 and X12 355</td></tr><tr><td>UNDT000013-SC3</td><td>@unitCodeListVersionID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The version of the measure unit code list.</td></tr><tr><td>UNDT000014</td><td><strong>NumericType</strong></td><td>xsd:decimal</td><td>string</td><td>&nbsp;</td><td>Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.</td></tr><tr><td>UNDT000014-SC2</td><td>@format</td><td>xsd:string</td><td>string</td><td>optional</td><td>Whether the number is an integer, decimal, real number or percentage.</td></tr><tr><td>UNDT000018</td><td><strong>QuantityType</strong></td><td>xsd:decimal</td><td>decimal</td><td>&nbsp;</td><td>A counted number of non-monetary units possibly including fractions.</td></tr><tr><td>UNDT000018-SC2</td><td>@unitCode</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The unit of the quantity</td></tr><tr><td>UNDT000018-SC3</td><td>@unitCodeListID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The quantity unit code list.</td></tr><tr><td>UNDT000018-SC4</td><td>@unitCodeListAgencyID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The identification of the agency that maintains the quantity unit code list<br />Defaults to the UN/EDIFACT data element 3055 code list.</td></tr><tr><td>UNDT000018-SC5</td><td>@unitCodeListAgencyName</td><td>xsd:string</td><td>string</td><td>optional</td><td>The name of the agency which maintains the quantity unit code list.</td></tr><tr><td>UNDT000019</td><td><strong>TextType</strong></td><td>xsd:string</td><td>string</td><td>&nbsp;</td><td>A character string (i.e. a finite set of characters) generally in the form of words of a language.</td></tr><tr><td>UNDT000019-SC2</td><td>@languageID</td><td>xsd:language</td><td>string</td><td>optional</td><td>The identifier of the language used in the content component.</td></tr><tr><td>UNDT000019-SC3</td><td>@languageLocaleID</td><td>xsd:normalizedString</td><td>string</td><td>optional</td><td>The identification of the locale of the language.</td></tr></tbody></table>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -131,11 +172,11 @@
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="modal-lg"></i></button>
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" >English</option>
 			<option value="ja" selected>日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="前のページに戻る"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を表示"></i>
 		</button>
@@ -180,7 +221,7 @@
 
 	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">電子インボイス 国内標準仕様 - ドラフト 第一版</a>
 	</nav>
 	<div class="container">
 		<div class="item-syntax">
@@ -193,16 +234,18 @@
 
 				<dt class="col-2">ネームスペース</dt><dd class="col-10"><code>cac</code> urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</dd>
 				<dt class="col-2">XPath</dt><dd class="col-10">/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry</dd>
-				<dt class="col-2">データ型</dt><dd class="col-10">OriginCountryType</dd>
-				<dt class="col-2">繰返し</dt><dd class="col-10">&nbsp;</dd>
-				<dt class="col-2">ビジネス用語ID</dt><dd class="col-10"><a href="/billing-japan/semantic/invoice//ja/"><h5></h5></a></dd>
+				<dt class="col-2">UBL データ型</dt><dd class="col-10">OriginCountryType</dd>
+				<dt class="col-2">UBL要素の繰返し</dt><dd class="col-10">0..1</dd>
+				<dt class="col-2">ビジネス用語ID</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 				<dt class="col-2">ビジネス用語</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">セマンティックデータ型</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
+				<dt class="col-2">繰返し</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 				<dt class="col-2">追加説明</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 				<dt class="col-2">例</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 
 				<dt class="col-2">ビジネスルール</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 
-		<dt class="col-2">下位要素</dt>
+		<dt class="col-2">下位要素 / 属性</dt>
 		<dd class="col-10">
 			<div class="table-responsive">
 
@@ -217,7 +260,7 @@
 					<thead>
 						<th>&nbsp;</th>
 						<th>XML</th>
-						<th>データ型</th>
+						<th>UBL データ型</th>
 						<th>繰返</th>
 						<th>ビジネス用語 / 説明</th>
 					</thead>
@@ -283,5 +326,19 @@
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			alertText = document.getElementById('ie-warning').innerText.trim();
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				confirm(alertText);
+				var expands = document.getElementsByClassName('expand');
+				for (var i = 0; i < expands.length; i++) {
+					expands[i].style.display = 'none';
+				}
+			}
+
+			initModule();
+		});
+	</script>
+</body></html>

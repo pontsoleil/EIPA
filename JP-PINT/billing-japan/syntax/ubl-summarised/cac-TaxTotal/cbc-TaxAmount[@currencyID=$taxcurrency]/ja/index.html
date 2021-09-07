@@ -21,13 +21,6 @@
 	<!-- this page -->
 	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
 	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
-
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-			var id = getUrlParameter('id')
-			initModule(id);
-		});
-	</script>
 </head><body>
 	<div id="infoCAR_Modal" class="modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
@@ -84,6 +77,9 @@
 		</div>
 	</div>
 
+	<div id="ie-warning" class="container h-100" style="display:none">
+	<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)と仕様ID (Customization ID)です。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>
+	</div>
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -131,11 +127,11 @@
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="modal-lg"></i></button>
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" >English</option>
 			<option value="ja" selected>日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="前のページに戻る"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="凡例を表示"></i>
 		</button>
@@ -180,7 +176,7 @@
 
 	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">日本版 PEPPOL ビジネス相互運用性仕様</a>
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">電子インボイス 国内標準仕様 - ドラフト 第一版</a>
 	</nav>
 	<div class="container">
 		<div class="item-syntax">
@@ -193,10 +189,12 @@
 
 				<dt class="col-2">ネームスペース</dt><dd class="col-10"><code>cbc</code> urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</dd>
 				<dt class="col-2">XPath</dt><dd class="col-10">/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]</dd>
-				<dt class="col-2">データ型</dt><dd class="col-10">AmountType</dd>
-				<dt class="col-2">繰返し</dt><dd class="col-10">0..1 &nbsp;</dd>
-				<dt class="col-2">ビジネス用語ID</dt><dd class="col-10"><a href="/billing-japan/semantic/invoice/ibt-111/ja/"><h5>ibt-111</h5></a></dd>
+				<dt class="col-2">UBL データ型</dt><dd class="col-10">AmountType</dd>
+				<dt class="col-2">UBL要素の繰返し</dt><dd class="col-10">1..1</dd>
+				<dt class="col-2">ビジネス用語ID</dt><dd class="col-10"><a href="/billing-japan/semantic/summarised/ibt-111/ja/"><h5>ibt-111</h5></a></dd>
 				<dt class="col-2">ビジネス用語</dt><dd class="col-10">会計通貨での請求書消費税合計金額</dd>
+				<dt class="col-2">セマンティックデータ型</dt><dd class="col-10">Amount</dd>
+				<dt class="col-2">繰返し</dt><dd class="col-10">0..1 </dd>
 				<dt class="col-2">追加説明</dt><dd class="col-10">通貨コードは、ISO 4217 Currency codes で定められているものを使用しなければならない。数値表現は、データ型 Amount については、整数、整数部分の1000単位の区切りはなし。</dd>
 				<dt class="col-2">例</dt><dd class="col-10"><i class="fa fa-minus" aria-hidden="true"></i></dd>
 
@@ -256,5 +254,19 @@
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="先頭に戻る">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			alertText = document.getElementById('ie-warning').innerText.trim();
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				confirm(alertText);
+				var expands = document.getElementsByClassName('expand');
+				for (var i = 0; i < expands.length; i++) {
+					expands[i].style.display = 'none';
+				}
+			}
+
+			initModule();
+		});
+	</script>
+</body></html>

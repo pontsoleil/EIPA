@@ -22,13 +22,9 @@
 	<link rel="stylesheet" href="/billing-japan/css/main.css" crossorigin="anonymous">
 	<script src="/billing-japan/js/main.js" crossorigin="anonymous"></script>
 
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-			var id = getUrlParameter('id')
-			initModule(id);
-		});
-	</script>
-
+	<div id="ie-warning" class="container h-100" style="display:none">
+	<p class="lead">NOTE: All element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, the same items are used in standard commercial invoice, summarised invoice and delivery note (debit note). The difference is Business process type (Profile ID) and Specification identifier (Customization ID). The tag names are correct according to the UBL 2.1 Invoice schema.</p>
+	</div>
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
@@ -57,11 +53,11 @@ The <strong>flag</strong> attribute allows more detailed outcomes.
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="modal-lg"></i></button>
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" selected>English</option>
 			<option value="ja" >日本語</option>
 		</select>
+		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="Go back to the previous page,"></i></button>
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="Show Legend"></i>
 		</button>
@@ -105,7 +101,7 @@ The <strong>flag</strong> attribute allows more detailed outcomes.
 
 	</form>
 	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">Japanese PEPPOL BIS Documentation</a>
+		<a class="navbar-brand col-8 mr-auto" href="https://test-docs.peppol.eu/poacc/billing-japan/">The first draft of Japanese PEPPOL BIS Documentation</a>
 	</nav>
 	<div class="container">
 		<div class="item-syntax">
@@ -163,5 +159,19 @@ The <strong>flag</strong> attribute allows more detailed outcomes.
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Go to top">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
 	</button>
-</body>
-</html>
+
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			alertText = document.getElementById('ie-warning').innerText.trim();
+			if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
+				confirm(alertText);
+				var expands = document.getElementsByClassName('expand');
+				for (var i = 0; i < expands.length; i++) {
+					expands[i].style.display = 'none';
+				}
+			}
+
+			initModule();
+		});
+	</script>
+</body></html>

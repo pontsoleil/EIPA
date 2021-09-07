@@ -33,18 +33,6 @@ function goBack() {
   window.history.back();
 }
 
-function getUrlParameter(sParam) {
-  var pageURL = window.location.search.substring(1),
-      variables = pageURL.split('&'),
-      name, i, tab1, tab2, file;
-  for (i = 0; i < variables.length; i++) {
-    name = variables[i].split('=');
-    if (name[0] === sParam) {
-      return name[1] === undefined ? true : decodeURIComponent(name[1]);
-    }
-  }
-};
-
 function tableInit() {
   var rows, fold, expand,i, level, num,
       idxLevel = [];
@@ -239,8 +227,24 @@ function showSyntaxAncestor(found_num, rows) {
   }
 }
 
+function notFound(key) {
+  var title, message,modaldiv;
+  if (LANG == 'ja') {
+    title = '検索'
+    message = key+'　は、見当たりません。'
+  }
+  else {
+    title = 'Search'
+    message = key+' not found.'
+  }
+  modaldiv='<div class="modal" tabindex="-1" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">'+title+'</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><p>'+message+'</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div></div></div></div>';
+  $(modaldiv).modal('show');
+
+  return false;
+}
+
 function lookupTerm(key) {
-  var num, i, rows, row, tr, text, text2, text4,
+  var num, i, rows, row, tr, text, text2, text3, text4,
       _text, _key, loc,
       rgx, rgx2, rgxG, found, founds, rect, found_num, needle, founds,
       TIMEOUT = 12000;
@@ -298,7 +302,7 @@ function lookupTerm(key) {
       }
     }
     if (!found && !founds && 0 == founds.length) {
-      alert(key+' not found.');
+      notFound(key);
       return false;
     }
     if (found) {
@@ -345,43 +349,47 @@ function lookupTerm(key) {
       pint_id = dataset.pint_id;
       en_id = dataset.en_id;
       text = row.cells[4].innerHTML;
-      location = row.dataset.location;
+      xpath = row.dataset.xpath;
       if (pint_id.match(rgx) || pint_id.match(rgx2) ||
           en_id.match(rgx) || en_id.match(rgx2) ||
-          location.toLowerCase().match(rgx) ||
+          xpath.toLowerCase().match(rgx) ||
           text.match(rgx2)) {
         founds.push(row);
       }
     }
     if (0 == founds.length) {
-      alert(key+' not found.');
+      notFound(key);
       return false;
     }
     for (tr of founds) {
       _key = key.toLowerCase()
       rgx = RegExp(_key);
-      if (tr.dataset.location.toLowerCase().match(rgx)) {
+      if (tr.dataset.xpath.toLowerCase().match(rgx)) {
         text = tr.cells[1].innerHTML;
-        text2 = text.toLowerCase();
-        loc = text2.indexOf(_key);
-        text2 = text2.substr(loc)+'<span class="found">'+text2.substr(loc,_key.length)+'</span>'+text2.substr(loc+_key.length);
-        // text = '<span class="found">'+text+'</span>';
-        tr.cells[1].innerHTML = text2;        
+        m = text.match(/^.*(<a href=".*">)(.*)(<\/a>)$/);
+        if (m) {
+          text2 = m[2];
+          text3 = text2.toLowerCase();
+          loc = text3.indexOf(_key);
+          text4 = text2.substr(0,loc)+'<span class="found">'+text2.substr(loc,_key.length)+'</span>'+text2.substr(loc+_key.length);
+          tr.cells[1].innerHTML = m[1]+text4+m[3];   
+        }
       }
       text2 = tr.cells[4].innerHTML;
-      loc = text2.toLowerCase().indexOf(_key);
+      text3 = text2.toLowerCase();
+      loc = text3.indexOf(_key);
       if (loc >= 0) {
-        text2 = text2.substr(loc)+'<span class="found">'+text2.substr(loc,_key.length)+'</span>'+text2.substr(loc+k_ey.length);
-        tr.cells[4].innerHTML = text2;
+        text4 = text2.substr(0,loc)+'<span class="found">'+text2.substr(loc,_key.length)+'</span>'+text2.substr(loc+_key.length);
+        tr.cells[4].innerHTML = text4;
       }
       found_num = tr.dataset.num;
 
       showSyntaxAncestor(found_num, rows);
     }
+    found = founds[0];
     setTimeout(function() {
       clearFounds();
     }, TIMEOUT);
-    found = founds[0];
   }
   else if (IS_RULES) {
     for (row of rows) {
@@ -406,7 +414,7 @@ function lookupTerm(key) {
       }
     }
     if (!found && !founds && 0 == founds.length) {
-      alert(key+' not found.');
+      notFound(key);
       return false;
     }
     if (found) {
@@ -438,24 +446,14 @@ function lookupTerm(key) {
     scrollTo(0, rect.top);  
   }
   else {
-    alert(key+' not found.');
+    notFound(key);
   }
   return false;
 }
 
 function initModule(id) {
-  if (/Trident\/|MSIE /.test(window.navigator.userAgent)) {
-    $('#ie-warning').css('display','block');
-    $('td i.fold, td i.expand').hide();
-    setTimeout(function() {
-      $('#ie-warning').css('display','none');
-    },60000)
-    return;
-  }
-  $('#ie-warning').css('display','none');
-
   var m;
-  m=location.pathname.match(/^(.*billing-japan\/).*(en|ja)(\/.*)?$/);
+  m = location.pathname.match(/^(.*billing-japan\/).*(en|ja)(\/.*)?$/);
   APP_BASE = m[1];
   LANG = m[2];
   IS_SEMANTICS = location.pathname.match(/^.*\/semantic\/[\-a-zA-Z]*\/tree\/(en|ja)/);
@@ -473,7 +471,7 @@ function initModule(id) {
   });
 
   $('table tbody').on('click', 'td.expand-control', function (event) {
-    event.stopPropagation();
+    // event.stopPropagation();
     var tr, data, rect;
     tr = $(this).closest('tr')[0];
     expandCollapse(tr);
@@ -481,10 +479,28 @@ function initModule(id) {
   });
 
   $('#nav-menu button.search').on('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation()
     var key = $('#nav-menu input.search').val();
     lookupTerm(key);
     return false;
   });
+
+  // $('#nav-menu input.search').on('search clink', function(event){
+  //   // event.preventDefault();
+  //   // event.stopPropagation();
+  //   // event.stopImmediatePropagation()
+  //   var key = $('#nav-menu input.search').val();
+  //   lookupTerm(key);
+  //   return false;
+  // });
+ 
+  // $('#nav-menu input.search').on('search', function(event) {
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   return false;
+  // });
 
   $('button.back').on('click', function(event) {
     var m, _id, path, _path, url;
