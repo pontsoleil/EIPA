@@ -1,0 +1,14 @@
++ case "$# ${1:-}" in
++ optlf=
++ bsesc='\\'
++ unoptc='#'
++ unoptn='#'
++ file=
++ for arg in '${1+"$@"}'
++ '[' _JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd '!=' _JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd ']'
++ '[' _JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd '!=' _JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd ']'
++ '[' _JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd = _- ']'
++ '[' -f JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd ']'
++ '[' -z '' ']'
++ file=JP-PINT/data/common/CCTS_CCT_SchemaModule-2.1.xsd
+pint_ja/bin/parsrx.sh: line 119: syntax error near unexpected token `}'

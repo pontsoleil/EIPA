@@ -61,8 +61,8 @@ from jp_pint_constants import SPEC_TITLE_ja
 
 from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_en
 from jp_pint_constants import SEMANTICS_MESSAGE_TITLE_ja
-from jp_pint_constants import SEMANTICS_LEGEND_TITLE_en
-from jp_pint_constants import SEMANTICS_LEGEND_TITLE_ja
+# from jp_pint_constants import SEMANTICS_LEGEND_TITLE_en
+# from jp_pint_constants import SEMANTICS_LEGEND_TITLE_ja
 # from jp_pint_constants import SYNTAX_MESSAGE_TITLE_en
 # from jp_pint_constants import SYNTAX_MESSAGE_TITLE_ja
 # from jp_pint_constants import SYNTAX_LEGEND_TITLE_en
@@ -176,10 +176,10 @@ from jp_pint_constants import trailer
 from jp_pint_constants import item_head
 info_item_modal_en = '''
           <dl class="row">
-            <dt class="col-3"><strong>Data type</strong></dt>
+            <dt class="col-3"><strong>Semantic datatype</strong></dt>
             <dd class="col-9">
 							<a href="https://docs.peppol.eu/poacc/billing/3.0/bis/#_semantic_datatypes">Semantic datatypes</a><br />
-							Semantic data types are used to bridge the gap between the semantic concepts expressed by the information elements defined in the semantic model from EN 16931 and the technical implementation. The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
+							Semantic datatypes are used to bridge the gap between the semantic concepts expressed by the information elements defined in the semantic model from EN 16931 and the technical implementation. The semantic data types define the allowed value domain for the content, and any additional information components (attributes) needed in order to ensure its precise interpretation.
             </dd>
             <dt class="col-3"><strong>Section</strong></dt>
             <dd class="col-9">
@@ -212,9 +212,9 @@ info_item_modal_en = '''
             <dd class="col-9">
 							XPath location of this data element
             </dd>
-            <dt class="col-3"><strong>XML Attribute</strong></dt>
+            <dt class="col-3"><strong>Specific requirements</strong></dt>
             <dd class="col-9">
-							Specific requirements on XML attribute for this data element.
+							Specific requirements for this data element.
             </dd>
 						<dt class="col-3"><strong>Rules</strong></dt>
             <dd class="col-9">
@@ -228,7 +228,7 @@ info_item_modal_en = '''
 '''
 info_item_modal_ja = '''
           <dl class="row">
-            <dt class="col-3"><strong>データ型</strong></dt>
+            <dt class="col-3"><strong>セマンティックデータ型</strong></dt>
             <dd class="col-9">
 							<a href="https://docs.peppol.eu/poacc/billing/3.0/bis/#_semantic_datatypes">Semantic datatypes</a><br />
 								セマンティックデータ型は、EN16931のセマンティックモデルで定義された情報要素によって表現されるセマンティック概念と技術的な実装との間のギャップを埋めるために使用される。 セマンティックデータ型は、内容とする値の許容値の範囲と、その正確な解釈を保証するために必要な追加の情報構成要素（属性）を定義する。
@@ -264,9 +264,9 @@ info_item_modal_ja = '''
             <dd class="col-9">
 							この要素のXPath
             </dd>
-            <dt class="col-3"><strong>XML属性</strong></dt>
+            <dt class="col-3"><strong>特定の使用条件</strong></dt>
             <dd class="col-9">
-							この要素に関連するXML属性の使用条件
+							この要素に関連した特定の使用条件
             </dd>
 						<dt class="col-3"><strong>ビジネスルール</strong></dt>
             <dd class="col-9">
@@ -290,6 +290,7 @@ item_data_detail = '''
 				<dt class="col-2">{10}</dt><dd class="col-10">{11}</dd>
 				<dt class="col-2">{12}</dt><dd class="col-10">{13}</dd>
 				<dt class="col-2">{14}</dt><dd class="col-10">{15}</dd>
+				<dt class="col-2">{16}</dt><dd class="col-10">{17}</dd>
 '''
 item_data = '''
 				<dt class="col-2">{0}</dt><dd class="col-10">{1}</dd>
@@ -299,6 +300,7 @@ item_data = '''
 				<dt class="col-2">{8}</dt><dd class="col-10">{9}</dd>
 				<dt class="col-2">{10}</dt><dd class="col-10">{11}</dd>
 				<dt class="col-2">{12}</dt><dd class="col-10">{13}</dd>
+				<dt class="col-2">{14}</dt><dd class="col-10">{15}</dd>
 '''
 
 rule_table_head = '''
@@ -323,6 +325,11 @@ childelements_dt = '''
 			<div class="table-responsive semantics">
 '''
 from jp_pint_constants import item_trailer
+
+from jp_pint_constants import warning_ja
+from jp_pint_constants import warning_en
+from jp_pint_constants import searchLegend_ja
+from jp_pint_constants import searchLegend_en
 
 datatypeDict = {
 	'ID': 'Identifier',
@@ -512,7 +519,7 @@ def writeBreadcrumb(f,num,lang):
 	else:
 		home_str = HOME_en
 		name = SEMANTICS_MESSAGE_TITLE_en	
-	f.write(tabs+'\t<li class="breadcrumb-item"><a href="https://test-docs.peppol.eu/poacc/billing-japan/">'+home_str+'</a></li>')
+	f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+OP_BASE+'">'+home_str+'</a></li>')
 	f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+SEMANTIC_BASE+'tree/'+lang+'/">'+name+'</a></li>')
 	for id in nums:
 		item_dir = SEMANTIC_BASE+id+'/'
@@ -838,15 +845,13 @@ if __name__ == '__main__':
 	with open(semantic_en_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'en'
 		f.write(html_head.format(lang,APP_BASE))
-		f.write(javascript_html)
-		warning_en = '<p class="lead">NOTE: All element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, the same items are used in standard commercial invoice, summarised invoice and delivery note (debit note). The difference is Business process type (Profile ID) and Specification identifier (Customization ID). The tag names are correct according to the UBL 2.1 Invoice schema.</p>'
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
-# 14.NOT_SUPPORTED  15.gobacktext
+		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+		# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+		# 14.NOT_SUPPORTED  15.gobacktext 16.SearchText
 		html = navbar_html.format(SPEC_TITLE_en,'selected','',HOME_en,SEMANTICS_MESSAGE_TITLE_en,
 															'Legend',legend_en,'Shows a modal window of legend information.',
-															dropdown_menu_en,'ID or word in Term/Description','modal-lg',warning_en,OP_BASE,'',
-															NOT_SUPPORTED_en,'Return to previous page.')
+															dropdown_menu_en,searchLegend_en,'modal-lg',warning_en,OP_BASE,'',
+															NOT_SUPPORTED_en,'Return to previous page.','Search')
 		f.write(html)
 		f.write(table_html.format('Business Term','Card','Description','3%','22%'))
 		for data in pint_list:
@@ -862,6 +867,8 @@ if __name__ == '__main__':
 						children[_id] = set()
 					children[_id].add(json.dumps(data))
 		f.write(trailer.format('Go to top'))
+		f.write(javascript_html)
+		f.write('</body></html>')
 
 	for data in pint_list:
 		if not data or not data['PINT_ID']:
@@ -875,18 +882,19 @@ if __name__ == '__main__':
 
 			with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 				f.write(item_head.format(lang,APP_BASE))
-				f.write(javascript_html)
 				f.write('</head><body>')
 				ID = id.upper()
 				name = id+'&nbsp;'+data['BT']
 				Desc = '<br />'.join(data['Desc'].split('\\n'))
-				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en 8.tooltipText 9.gobacktext
+				
+				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en 8.tooltipText 9.gobacktext 10.warning
 				f.write(item_navbar.format(SPEC_TITLE_en,'selected','',OP_BASE,'',
-																	'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg','Go Back'))
+																	'Legend',info_item_modal_en,dropdown_menu_en,'Show Legend','modal-lg','Go Back',warning_en))
 
 				writeBreadcrumb(f,data['num'],lang)
 
 				f.write(item_header.format(name,Desc))
+
 				DT = data['DT']
 				if DT in datatypeDict:
 					DT = datatypeDict[DT]
@@ -902,30 +910,39 @@ if __name__ == '__main__':
 					if len(Path) > 0 and re.match(r'^\/Invoice',Path):
 						_path = Path[9:].replace(':','-')
 						if '' == _path:
-							Path = '<a href="'+APP_BASE+'syntax/ubl-invoice/'+lang+'/"><h5>'+xpath+'</h5></a>'
+							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
+						elif not '@' in _path:
+							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
 						else:
-							Path = '<a href="'+APP_BASE+'syntax/ubl-invoice/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
-				else:
-					Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
+							m = re.match(r'^.*(\/@.*)$',xpath)
+							if m:
+								attr = m.groups()[0]
+								_path = _path[:-(len(attr))]
+								Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
+							else: Path = '<h5>'+xpath+'</h5>'
+					else: Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				else: Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				UBLdatatype = blank2fa_minus(data['Datatype'])
 				Attr = blank2fa_minus(data['Attr'])
-
 				Rules = blank2fa_minus(checkRules(data,lang))
-				BIS_Rules = blank2fa_minus(checkBIS_Rules(data,lang))
-
+				if detail:
+					BIS_Rules = blank2fa_minus(checkBIS_Rules(data,lang))
 				Explanation = '<br />'.join(data['Exp'].split('\\n'))
 				if len(Explanation) > 0:
 					pass
 				else:
 					Explanation = '<i class="fa fa-minus" aria-hidden="true"></i>'
 				if detail:
-					html = item_data_detail.format('Data type',DT,'Section',Section,'Extension',Extension,
+					html = item_data_detail.format('Semantic datatype',DT,'Section',Section,'Extension',Extension,
 																	'Additional explanation',Explanation,'XPath',Path,
-																	'XML Attribute',Attr,'Transaction Business Rules',Rules,
+																	'UBL datatype',UBLdatatype,
+																	'Specific requirements',Attr,'Transaction Business Rules',Rules,
 																	'Rules for BIS 3.0 Billing (informative)',BIS_Rules)
 				else:
-					html = item_data.format('Data type',DT,'Section',Section,'Extension',Extension,
+					html = item_data.format('Semantic datatype',DT,'Section',Section,'Extension',Extension,
 																	'Additional explanation',Explanation,'XPath',Path,
-																	'XML Attribute',Attr,'Transaction Business Rules',Rules)
+																	'UBL datatype',UBLdatatype,
+																	'Specific requirements',Attr,'Transaction Business Rules',Rules)
 				f.write(html)												
 				if re.match(r'^IBG-[0-9]+$',ID):
 					html = ''
@@ -949,19 +966,19 @@ if __name__ == '__main__':
 						f.write(table_trailer)
 
 				f.write(item_trailer.format('Go to top'))
+				f.write(javascript_html)
+				f.write('</body></html>')
 
 	with open(semantic_ja_html,'w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 		lang = 'ja'
 		f.write(html_head.format(lang,APP_BASE))
-		f.write(javascript_html)
-		warning_ja = '<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)と仕様ID (Customization ID)です。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
-# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
-# 14.NOT_SUPPORTED  15.gobacktext
+		# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
+		# 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
+		# 14.NOT_SUPPORTED  15.gobacktext 16.SearchText
 		html = navbar_html.format(SPEC_TITLE_ja,'','selected',HOME_ja,SEMANTICS_MESSAGE_TITLE_ja,
 															'凡例',legend_ja,'凡例を説明するウィンドウを表示',
-															dropdown_menu_ja,'IDまたは用語/説明文が含む単語','modal-lg',warning_ja,OP_BASE,'',
-															NOT_SUPPORTED_ja,'前のページに戻る')
+															dropdown_menu_ja,searchLegend_ja,'modal-lg',warning_ja,OP_BASE,'',
+															NOT_SUPPORTED_ja,'前のページに戻る','検索')
 		f.write(html)
 		f.write(table_html.format('ビジネス用語','繰返','説明','3%','22%'))
 		for data in pint_list:
@@ -969,6 +986,8 @@ if __name__ == '__main__':
 			if re.match(r'^ib[tg]-[0-9]*$',id):
 				writeTr_ja(f,data)
 		f.write(trailer.format('先頭に戻る'))
+		f.write(javascript_html)
+		f.write('</body></html>')
 
 	for data in pint_list:
 		if not data or not data['PINT_ID']:
@@ -982,17 +1001,18 @@ if __name__ == '__main__':
 
 			with open(item_dir0+'/index.html','w',encoding='utf-8',buffering=1,errors='xmlcharrefreplace',newline='') as f:
 				f.write(item_head.format(lang,APP_BASE))
-				f.write(javascript_html)
+				# f.write(javascript_html)
 				ID = id.upper()
 				name = id+'&nbsp;'+data['BT_ja']
 				Desc = '<br />'.join(data['Desc_ja'].split('\\n'))
-				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_ja 8.tooltipText 9.gobacktext
+				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_ja 8.tooltipText 9.gobacktext 10.warning
 				f.write(item_navbar.format(SPEC_TITLE_ja,'','selected',OP_BASE,'',
-																	'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg','戻る'))
+																	'凡例',info_item_modal_ja,dropdown_menu_ja,'凡例を表示','modal-lg','戻る',warning_ja))
 
 				writeBreadcrumb(f,data['num'],lang)
 
 				f.write(item_header.format(name,Desc))
+
 				DT = data['DT']
 				if DT in datatypeDict:
 					DT = datatypeDict[DT]
@@ -1008,29 +1028,39 @@ if __name__ == '__main__':
 					if len(Path) > 0 and re.match(r'^\/Invoice',Path):
 						_path = Path[9:].replace(':','-')
 						if '' == _path:
-							Path = '<a href="'+APP_BASE+'syntax/ubl-invoice/'+lang+'/"><h5>'+xpath+'</h5></a>'
+							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
+						elif not '@' in _path:
+							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
 						else:
-							Path = '<a href="'+APP_BASE+'syntax/ubl-invoice/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
-				else:
-					Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
+							m = re.match(r'^.*(\/@.*)$',xpath)
+							if m:
+								attr = m.groups()[0]
+								_path = _path[:-(len(attr))]
+								Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
+							else: Path = '<h5>'+xpath+'</h5>'
+					else: Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				else: Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
+				UBLdatatype = blank2fa_minus(data['Datatype'])
 				Attr = blank2fa_minus(data['Attr'])
-
 				Rules = blank2fa_minus(checkRules(data,lang))
 				if detail:
 					BIS_Rules = blank2fa_minus(checkBIS_Rules(data,lang))
-
 				Explanation = '<br />'.join(data['Exp_ja'].split('\\n'))
 				if len(Explanation) > 0:
 					pass
 				else:
 					Explanation = '<i class="fa fa-minus" aria-hidden="true"></i>'
 				if detail:
-					html = item_data_detail.format('データ型',DT,'使用条件(Section)',Section,'欧州規格の拡張',Extension,
-																	'追加説明',Explanation,'XPath',Path,'XML属性',Attr,'ビジネスルール',Rules,
+					html = item_data_detail.format('セマンティックデータ型',DT,'使用条件(Section)',Section,'欧州規格の拡張',Extension,
+																	'追加説明',Explanation,'XPath',Path,
+																	'UBLデータ型',UBLdatatype,
+																	'特定の条件',Attr,'ビジネスルール',Rules,
 																	'（参考）BIS 3.0 Billing ルール',BIS_Rules)
 				else:
-					html = item_data.format('データ型',DT,'使用条件(Section)',Section,'欧州規格の拡張',Extension,
-																	'追加説明',Explanation,'XPath',Path,'XML属性',Attr,'ビジネスルール',Rules)
+					html = item_data.format('セマンティックデータ型',DT,'使用条件(Section)',Section,'欧州規格の拡張',Extension,
+																	'追加説明',Explanation,'XPath',Path,
+																	'UBLデータ型',UBLdatatype,
+																	'特定の条件',Attr,'ビジネスルール',Rules)
 				f.write(html)
 				if re.match(r'^IBG-[0-9]+$',ID):
 					html = ''
@@ -1054,6 +1084,8 @@ if __name__ == '__main__':
 						f.write(table_trailer)
 
 				f.write(item_trailer.format('先頭に戻る'))
+				f.write(javascript_html)
+				f.write('</body></html>')
 
 	if verbose:
 		print(f'** END ** {semantic_en_html} {semantic_ja_html}')
