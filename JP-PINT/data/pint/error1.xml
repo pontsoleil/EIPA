@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+
+  <file done="true" is_schema="false" path="D:\Users\pontsoleil\Documents\GitHub\EIPA\JP-PINT\data\pint\Annex.xml" schema_dtd_ref="false" time="09/17/21 05:59:15" valid="false">
+    <general>Checked against D:\Users\pontsoleil\Documents\GitHub\EIPA\pint_ja\data\sch\Japan-UBL-validation-preprocessed_revised.sch</general>
+    <results>
+      <result type="error">
+        <position col="0" line="0"/>
+        <description><![CDATA[[ibr-06]-An Invoice shall contain the Seller name (ibt-027).]]></description>
+        <xpath>/*:Invoice[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'][1]</xpath>
+      </result>
+      <result type="error">
+        <position col="0" line="0"/>
+        <description><![CDATA[[ibr-co-15]-Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).]]></description>
+        <xpath>/*:Invoice[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'][1]</xpath>
+      </result>
+      <result type="error">
+        <position col="0" line="0"/>
+        <description><![CDATA[[ibr-co-14]-Invoice total Tax amount (ibt-110) = ƒ° Tax category tax amount (ibt-117).]]></description>
+        <xpath>/*:Invoice[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'][1]/*:TaxTotal[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'][1]</xpath>
+      </result>
+      <result type="error">
+        <position col="0" line="0"/>
+        <description><![CDATA[[ibr-co-10]-Sum of Invoice line net amount (ibt-106) = ƒ° Invoice line net amount (ibt-131).]]></description>
+        <xpath>/*:Invoice[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'][1]/*:LegalMonetaryTotal[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'][1]</xpath>
+      </result>
+      <result type="error">
+        <position col="0" line="0"/>
+        <description><![CDATA[[JP-BR-CO-17]- VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.]]></description>
+        <xpath>/*:Invoice[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:Invoice-2'][1]/*:TaxTotal[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'][1]/*:TaxSubtotal[namespace-uri()='urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2'][2]</xpath>
+      </result>
+    </results>
+  </file>
+
+</log>
