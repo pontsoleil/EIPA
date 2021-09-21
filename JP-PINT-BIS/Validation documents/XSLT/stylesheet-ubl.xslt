@@ -644,7 +644,6 @@
 				<t id="no">Jordan</t>
 			</c>
 			<c id="JP">
-				<t id="ja">日本</t>
 				<t id="en">Japan</t>
 				<t id="no">Japan</t>
 			</c>
@@ -1278,7 +1277,7 @@
 		</g>
 		<g id="delivery">
 			<f id="Address">
-				<t id="ja">住所</t>
+				<t id="en">住所</t>
 				<t id="en">Address</t>
 				<t id="no">Adresse</t>
 			</f>
@@ -1488,7 +1487,7 @@
 				<t id="no">Bankidentifikator</t>
 			</f>
 			<f id="Customer">
-				<t id="ja">カスタマ</t>
+				<t id="ja">顧客</t>
 				<t id="en">Customer</t>
 				<t id="no">Kunde</t>
 			</f>
@@ -1503,12 +1502,12 @@
 				<t id="no">Aktøridentifikator</t>
 			</f>
 			<f id="PartyTaxScheme">
-				<t id="ja">適格請求書発行者登録番号</t>
+				<t id="ja">納税事業者登録番号</t>
 				<t id="en">Tax Identification</t>
 				<t id="no">MVA-identifikator</t>
 			</f>
 			<f id="Supplier">
-				<t id="ja">サプライヤ</t>
+				<t id="ja">納入事業者</t>
 				<t id="en">Supplier</t>
 				<t id="no">Leverandør</t>
 			</f>
@@ -1532,7 +1531,7 @@
 				<t id="no">Merverdiavgift</t>
 			</f>
 			<f id="TaxableAmount">
-				<t id="ja">課税対象金額</t>
+				<t id="ja">課税対象額</t>
 				<t id="en">Taxable</t>
 				<t id="no">Grunnlag</t>
 			</f>
@@ -1542,24 +1541,24 @@
 				<t id="no">MVA</t>
 			</f>
 			<f id="Total">
-				<t id="ja">合計金額</t>
+				<t id="ja">合計</t>
 				<t id="en">Total</t>
 				<t id="no">Total</t>
 			</f>
 		</g>
 		<g id="total">
 			<f id="PayableAmount">
-				<t id="ja">未払金額</t>
+				<t id="ja">請求額</t>
 				<t id="en">Payable</t>
 				<t id="no">Payable</t>
 			</f>
 			<f id="PayableRoundingAmount">
-				<t id="ja">丸めた未払金額</t>
+				<t id="ja">請求額まるめ金額</t>
 				<t id="en">Rounding Amount</t>
 				<t id="no">Avrunding</t>
 			</f>
 			<f id="PrepaidAmount">
-				<t id="ja">前払い金額</t>
+				<t id="ja">前払額</t>
 				<t id="en">Prepaid</t>
 				<t id="no">Forhåndsbetalt</t>
 			</f>
@@ -1569,12 +1568,12 @@
 				<t id="no">Før MVA</t>
 			</f>
 			<f id="TaxInclusiveAmount">
-				<t id="ja">税込み金額</t>
+				<t id="ja">税込金額</t>
 				<t id="en">Tax Inclusive</t>
 				<t id="no">Etter MVA</t>
 			</f>
 			<f id="Totals">
-				<t id="ja">総合計金額</t>
+				<t id="ja">総合計</t>
 				<t id="en">Totals</t>
 				<t id="no">Totaler</t>
 			</f>
