@@ -1,0 +1,360 @@
+#!/usr/bin/env python3
+#coding: utf-8
+#
+# generate CSV from Open Peoopl e-Invoice (UBL 2.1)
+# 
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+import xml.etree.ElementTree as ET
+from operator import itemgetter
+import pandas as pd
+import csv
+import re
+import json
+import sys 
+import os
+import argparse
+import numpy as np
+
+from dic2etree import *
+
+DEBUG = True
+
+DocumentCurrencyCode = ''
+TaxCurrencyCode = ''
+pintLst = []
+pintDict = {}
+
+def file_path(pathname):
+  if '/' == pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+
+
+if __name__ == '__main__':
+  # Create the parser
+  parser = argparse.ArgumentParser(prog='invoice2csv',
+                                    usage='%(prog)s [options] infile -o outfile',
+                                    description='電子インボイスXMLファイルをSVファイルに変換')
+  # Add the arguments
+  parser.add_argument('inFile', metavar='infile', type=str, help='入力XMLファイル')
+  parser.add_argument('-o', '--outfile')
+  parser.add_argument('-e', '--encoding')  # 'Shift_JIS' 'cp932'
+  parser.add_argument('-v', '--verbose', action='store_true')
+
+  args = parser.parse_args()
+  in_file = file_path(args.inFile)
+  pre, ext = os.path.splitext(in_file)
+  tmp_file = pre+'.txt'
+  if args.outfile:
+    out_file = args.outfile.lstrip()
+    out_file = file_path(out_file)
+  else:
+    out_file = pre+'.csv'
+  ncdng = args.encoding
+  if ncdng:
+    ncdng = ncdng.lstrip()
+  else:
+    ncdng = 'UTF-8'
+  verbose = args.verbose
+  # Check if infile exists
+  if not os.path.isfile(in_file):
+    print('入力ファイルがありません')
+    sys.exit()
+  if verbose:
+    print(f'** START ** {__file__}')
+
+  if verbose:
+    print(f'*** Input file {in_file}')
+  tree = ET.parse(in_file)
+  root = tree.getroot()
+
+  DocumentCurrencyCode = root.findtext(".//{"+ns['cbc']+"}DocumentCurrencyCode")
+  TaxCurrencyCode = root.findtext(".//{"+ns['cbc']+"}TaxCurrencyCode")
+
+  pint_file = file_path('data/common/xpath.csv')
+  # SemanticSort paent ID Level BusinessTerm BusinessTermJP Card DataType SyntaxSort xPath
+  # 0            1     2  3     4            5              6     7        8          9
+  COL_SemanticSort = 0
+  # COL_parent = 1
+  COL_ID = 2
+  COL_level = 3
+  COL_BT = 4
+  COL_BT_ja = 5
+  COL_card = 6
+  COL_datatype = 7
+  COL_SyntaxSort = 8
+  COL_xpath = 9
+  # parents = {}
+  if verbose: print(f'*** XPath file {pint_file}')
+  with open(pint_file, encoding='utf-8', newline='') as f0:
+    reader = csv.reader(f0) #, delimiter='\t')
+    header = next(reader)
+    for v in reader:
+      # parent = v[COL_parent].strip()
+      id = v[COL_ID].strip()
+      # if 'ibg-' in id:
+      #   parents[id] = parent+'_'+id
+      # else:
+      #   parents[id] = parent
+      if id:
+        xpath = v[COL_xpath]
+        syntaxSort = v[COL_SyntaxSort]
+        if not syntaxSort:
+          syntaxSort = '9999'
+        if not xpath:
+          xpath = '/'+id
+
+        if len(v) > 7 and '/' in xpath:
+          if '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]' == xpath:
+            xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+DocumentCurrencyCode+'"]'
+          elif '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]' == xpath:
+            if TaxCurrencyCode:
+              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+TaxCurrencyCode+'"]'
+            else:
+              continue
+          elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
+            xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
+          elif "[cbc:DocumentTypeCode='130']" in xpath:
+            xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
+          semanticSort = v[COL_SemanticSort]
+          if v[COL_BT]: BT = v[COL_BT]
+          else: BT = None
+          if v[COL_BT_ja]: BT_ja = v[COL_BT_ja]
+          else: BT_ja = None
+          level = v[COL_level]
+          card = ''+v[COL_card].strip()
+          datatype = ''+v[COL_datatype].strip()
+          data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath}
+          pintLst.append(data)
+          pintDict[semanticSort] = data
+
+  def formatXPath(xpath):
+    xpath = re.sub(r'cac:','{'+ns['cac']+'}',xpath)
+    xpath = re.sub(r'cbc:','{'+ns['cbc']+'}',xpath)
+    if '@' in xpath:
+      path = re.sub(r'(.*)/@.*$','\\1',xpath)
+      attr = re.sub(r'.*/@(.*)$','\\1',xpath)
+      xpath = [path,attr]
+    else:
+      xpath = re.sub(r'false\(\)',"'false'",xpath)
+      xpath = re.sub(r'true\(\)',"'true'",xpath)
+    return xpath
+
+  def fillData(parent,parentXPath,i,n):
+    data = pintLst[i]
+    semSort = data['semSort']
+    id = data['id']
+    level = data['level']
+    BT = data['BT']
+    xpath = data['xpath']
+    xpath = xpath[9:]
+    if not xpath:
+      return
+    xpath = formatXPath(xpath)
+    text = None
+    try:
+      if isinstance(xpath,list):
+        element = root.find(xpath[0])
+        if ET.iselement(element):
+          if xpath[1] in element.attrib:
+            text = element.attrib[xpath[1]]
+      else:
+        if parentXPath:
+          _xpath = xpath.replace(parentXPath+'/','')
+        else:
+          _xpath = xpath
+        text = parent.findtext(_xpath)
+    except SyntaxError:
+      print (f'-- SyntaxError .//{xpath}')
+    if text:
+      rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':text}
+      if DEBUG: print(f'* fillData i={i} {id} {BT} {text}')
+
+  def fillAggregate(parent,parentPath,i,n,level):
+    data = pintLst[i]
+    semSort = data['semSort']
+    id = data['id']
+    level = data['level']
+    BT = data['BT']
+    if DEBUG: print(f'* fillAggregate i={i} {id} {BT}')
+    xpath = data['xpath']
+    xpath = xpath[9:]
+    if not xpath:
+      return
+    xpath = formatXPath(xpath)
+    xpath = re.sub(parentPath+'/', '', xpath)
+    if re.match(r'^ibg-',id):
+      aggregate = parent.findall(xpath)
+      _i = i
+      if len(aggregate) > 0:
+        rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':''}
+        for _element in aggregate:
+          if len(aggregate) > 1:
+            n += 1
+            rows[n] = {'0000':id,'0001':BT}
+          _i = i + 1
+          _data = pintLst[_i]
+          _id = _data['id']
+          _level = _data['level']
+          _BT = _data['BT']
+          if DEBUG: print(f'* fillAggregate _i={_i} {_id} {_BT}')
+          while level < _level and _i < len(pintLst):
+            if re.match(r'^ibg-',_id):
+              fillAggregate(_element,xpath,_i,n,_level)
+            else:
+              fillData(_element,xpath,_i,n)
+            if _i < len(pintLst):
+              _data = pintLst[_i]
+              _id = _data['id']
+              _level = _data['level']
+              _BT = _data['BT']
+              if DEBUG: print(f'* fillAggregate _i={_i} {_id} {_BT}')
+            _i += 1
+      i = _i
+    else:
+      fillData(parent,parentPath,i,n)
+
+  n = 0
+  rows = {}
+  rows[0] = {'0000':'ibg-00','0001':'CONTENT'}
+  parent_xpath = None
+  i = 0
+  while i < len(pintLst):
+    data = pintLst[i]
+    semSort = data['semSort']
+    id = data['id']
+    BT = data['BT']
+    level = data['level']
+    if DEBUG: print(f'i={i} {id} {BT}')
+    xpath = data['xpath']
+    xpath = xpath[9:]
+    if not xpath:
+      i += 1
+      continue
+    xpath = formatXPath(xpath)
+    if re.match(r'^ibg-',id):
+      aggregate = root.findall(xpath)
+      _i = i
+      if len(aggregate) > 0:
+        rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':''}
+        addcolumn = False
+        for element in aggregate:
+          if len(aggregate) > 1:
+            n += 1
+            rows[n] = {'0000':id,'0001':BT}
+            addcolumn = True
+          _i = i + 1
+          _data = pintLst[_i]
+          _id = _data['id']
+          _level = _data['level']
+          _BT = _data['BT']
+          if DEBUG: print(f'_i={_i} {_id} {_BT}')
+          while level < _level and _i < len(pintLst):
+            if re.match(r'^ibg-',_id):
+              fillAggregate(element,xpath,_i,n,_level)
+            else:
+              fillData(element,xpath,_i,n)
+            _i += 1
+            if _i < len(pintLst):
+              _data = pintLst[_i]
+              _semSort = _data['semSort']
+              _id = _data['id']
+              _level = _data['level']
+              _BT = _data['BT']
+              if DEBUG: print(f'_i={_i} {_id} {_BT}')
+              if not addcolumn and 'ibg-23' == _id:
+                n += 1
+                rows[n] = {'0000':_id,'0001':_BT}
+              if re.match(r'^ibg-',_id):
+                _xpath = formatXPath(_data['xpath'][9:])
+                _aggregate = root.findall(_xpath)
+                if len(_aggregate) > 0:
+                  rows[n][_semSort] = {'id':_id,'level':_level,'BT':_BT,'text':''}
+          _i -= 1
+      i = _i
+    else:
+      fillData(root,'',i,n)
+    i += 1
+
+
+  idx = {}
+  lookup = {}
+  max_idx = 0
+  for k,v in rows.items():
+    for i,d in v.items():
+      if not i in idx:
+        last = len(idx)
+        idx[i] = last
+        lookup[last] = i
+        max_idx += 1
+
+  # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
+  transposed = {}
+  for k,index in idx.items():
+    transposed[index] = {}
+  len = 0
+  for k,v in rows.items():
+    len += 1
+    for i,d in v.items():
+      index = idx[i]
+      if 'text' in d:
+        transposed[index][k] = d['text']
+      else:
+        transposed[index][k] = v[i]
+
+  lst = []
+  for i in range(max_idx):
+    column = []
+    for j in range(len):
+      if i in transposed:
+        if j in transposed[i]:
+          column.append(transposed[i][j])
+        else:
+          column.append('')
+      else:
+        column.append('')
+    lst.append(column)
+
+  for i in range(len):
+    lst[0][i] = rows[i]['0000']
+
+  with open(out_file, 'w', encoding=ncdng) as f:
+    writer = csv.writer(f)#, delimiter='\t')
+    i = 0
+    for l in lst:
+      if lookup[i] in pintDict:
+        d = pintDict[lookup[i]]
+        writer.writerow([d['id'],d['level'],d['card'],d['BT']]+l)
+      else:
+        writer.writerow((['']*4)+l)
+      i += 1
+
+  if verbose:
+    print(f'** END ** {out_file}')

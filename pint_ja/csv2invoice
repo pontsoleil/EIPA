@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #coding: utf-8
 #
-# generate Open Peoopl e-Invoice (UBL 2.1) fron TSV file
+# generate Open Peoopl e-Invoice (UBL 2.1) fron CSV file
 # 
 # designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 # written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
@@ -38,16 +38,12 @@ import argparse
 
 from dic2etree import * 
 
-Charges = {
-  'ibg-21','ibt-099a','ibt-103a','ibt-105','ibt-104','ibt-101','ibt-099','ibt-099-1','ibt-100','ibt-100-1','ibt-102','ibt-103','ibt-103a',
-  'ibg-28','ibt-141a','ibt-145','ibt-144','ibt-143','ibt-141','ibt-141-1','ibt-142','ibt-142-1','ibt-142a','ibt-142b','ibt-142c'
-}
+DEBUG = True
 
-Allowances = {
-  'ibg-20','ibt-092a','ibt-096a','ibt-098','ibt-097','ibt-094','ibt-092','ibt-092-1','ibt-093','ibt-093-1','ibt-095','ibt-096','ibt-096a',
-  'ibg-27','ibt-136a','ibt-140','ibt-139','ibt-138','ibt-136','ibt-136-1','ibt-137','ibt-137-1','ibt-137a','ibt-138','ibt-137c',
-  'ibt-147','ibt-147-1'
-}
+DocumentCurrencyCode = ''
+TaxCurrencyCode = ''
+pintLst = []
+pintDict = {}
 
 def clean_list(Dic):
   for k, v in Dic.items():
@@ -216,7 +212,7 @@ if __name__ == '__main__':
   # Create the parser
   parser = argparse.ArgumentParser(prog='genInvoice',
                                   usage='%(prog)s [options] infile outfile',
-                                  description='TSVファイルから電子インボイスXMLを作成')
+                                  description='CSVファイルから電子インボイスXMLを作成')
   # Add the arguments
   parser.add_argument('inFile', metavar='infile', type=str, help='入力TSVファイル')
   parser.add_argument('-o', '--out')
@@ -244,20 +240,18 @@ if __name__ == '__main__':
   if verbose:
     print('** START ** ', __file__)
 
-  # initialize globals
+  # # initialize globals
   Dic = defaultdict(type(''))
   Dic['Invoice'] = {}
-
   dictID = defaultdict(type(''))
   dictXpath = defaultdict(type(''))
 
-  xpath_file = file_path('data/common/xpath.txt')
-  if verbose:
-    print(f'*** XPath file {xpath_file}')
-  # SemanticSort paent ID Level BusinessTerm BusinessTermJP Card. DataType SyntaxSort xPath
+
+  pint_file = file_path('data/common/xpath.csv')
+  # SemanticSort paent ID Level BusinessTerm BusinessTermJP Card DataType SyntaxSort xPath
   # 0            1     2  3     4            5              6     7        8          9
   COL_SemanticSort = 0
-  COL_parent = 1
+  # COL_parent = 1
   COL_ID = 2
   COL_level = 3
   COL_BT = 4
@@ -266,82 +260,66 @@ if __name__ == '__main__':
   COL_datatype = 7
   COL_SyntaxSort = 8
   COL_xpath = 9
-  parents = {}
-  check = {''}
-  with open(xpath_file, encoding='utf-8', newline='') as f0:
-    reader = csv.reader(f0, delimiter='\t')
+  # parents = {}
+  if verbose: print(f'*** XPath file {pint_file}')
+  with open(pint_file, encoding='utf-8', newline='') as f0:
+    reader = csv.reader(f0) #, delimiter='\t')
     header = next(reader)
     for v in reader:
-      parent = v[COL_parent].strip()
+      # parent = v[COL_parent].strip()
       id = v[COL_ID].strip()
-      if 'ibg-' in id:
-        parents[id] = parent+'_'+id
-      else:
-        parents[id] = parent
+      # if 'ibg-' in id:
+      #   parents[id] = parent+'_'+id
+      # else:
+      #   parents[id] = parent
       if id:
         xpath = v[COL_xpath]
+        syntaxSort = v[COL_SyntaxSort]
+        if not syntaxSort:
+          syntaxSort = '9999'
+        if not xpath:
+          xpath = '/'+id
+
         if len(v) > 7 and '/' in xpath:
+          if '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]' == xpath:
+            xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+DocumentCurrencyCode+'"]'
+          elif '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]' == xpath:
+            if TaxCurrencyCode:
+              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+TaxCurrencyCode+'"]'
+            else:
+              continue
+          elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
+            xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
+          elif "[cbc:DocumentTypeCode='130']" in xpath:
+            xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
           semanticSort = v[COL_SemanticSort]
-          BT = v[COL_BT]
-          BT_ja = v[COL_BT_ja]
+          if v[COL_BT]: BT = v[COL_BT]
+          else: BT = None
+          if v[COL_BT_ja]: BT_ja = v[COL_BT_ja]
+          else: BT_ja = None
           level = v[COL_level]
-          card = v[COL_card].strip()
-          datatype = v[COL_datatype]
-          syntaxSort = v[COL_SyntaxSort]
-          data = {'level':level,'parent':parent,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath }
-          if xpath.count('/') > 1 and xpath in dictID:
-            if dictID[xpath] != id or id in Charges or id in Allowances:
-              if isinstance(dictID[xpath], str):
-                dictID[xpath] = {dictID[xpath], id}
-              else:
-                dictID[xpath].add(id)
-          else:
-            if id in Charges or id in Allowances:
-              dictID[xpath] = {id}
-            dictID[xpath] = id
-          dictXpath[id] = data
-          if 'Amount' == datatype or 'Unit' == datatype:
-            level = str(int(level)+1)
-            xpath = xpath+'/@currencyID'
-            if not xpath in dictID:
-              data = {'id':id,'syntaxSort':syntaxSort,'level':level,'parent':parent,'BT':None,'card':None,'datatype':None,'xpath':xpath}
-              check.add(json.dumps(data))
-          elif 'Quantity' == datatype:
-            level = str(int(level)+1)
-            xpath = xpath+'/@unitCode'
-            if not xpath in dictID:
-              data = {'id':id,'syntaxSort':syntaxSort,'level':level,'parent':parent,'BT':None,'card':None,'datatype':None,'xpath':xpath}
-              check.add(json.dumps(data))
-    check_ = list(check)
-    for data in check_:
-      if not data:
-        continue
-      data_ = json.loads(data)
-      if not data_:
-        continue
-      id = data_['id']
-      xpath = data_['xpath']
-      if not xpath in dictID:
-        id = id+'-1'
-        syntaxSort = data_['syntaxSort']
-        dictID[xpath] = id
-        dictXpath[id] = data
+          card = ''+v[COL_card].strip()
+          datatype = ''+v[COL_datatype].strip()
+          data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath}
+          # pintLst.append(data)
+          pintDict[id] = data
 
   if verbose:
     print(f'*** Input file {in_file}')
+
   if transpose:
     with open(in_file, encoding=encoding, newline='') as f:
-      reader = csv.reader(f, delimiter='\t')
+      reader = csv.reader(f)#, delimiter='\t')
       rows = []
       for record in reader:
-        row = [record[0]]+record[6:]
+        row = [record[0]]+record[4:]
         rows.append(row)
     # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
     transposed_row = [list(i) for i in zip(*rows)]
     record = transposed_row[0]
-    header = [record[0]]+record[2:4]+record[5:]
+    header = [record[0]]+record[4:]
     for i in range(1,len(transposed_row)):
-      record = transposed_row[i]
+      row = transposed_row[i]
       row = [record[0]]+record[2:4]+record[5:]
       set_record(Dic, header, row)
   else:
@@ -349,7 +327,7 @@ if __name__ == '__main__':
       reader = csv.reader(f, delimiter='\t')
       header = next(reader)
       for record in reader:
-        row = record[0:4]+record[6:]# column 0 ~ 3 for bough and twig 4,5 BG name for bough and twig
+        row = record[0:4]+record[6:]
         set_record(Dic, header, record)
 
   clean_list(Dic)
@@ -372,6 +350,7 @@ if __name__ == '__main__':
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
   ''')  # this step adds xsi:schemaLocation attribute
+
   tree = dict_to_etree(dic2, root)
 
   with open(out_file, 'wb') as f:
