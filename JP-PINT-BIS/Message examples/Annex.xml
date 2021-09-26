@@ -95,16 +95,18 @@
 		</cac:DeliveryParty>
 	</cac:Delivery>
 	<cac:PaymentMeans>
+		<cbc:ID>1a2b3c</cbc:ID>
 		<cbc:PaymentMeansCode name="Credit transfer">30</cbc:PaymentMeansCode>
 		<cbc:PaymentID>Snippet1</cbc:PaymentID>
 		<cac:PayeeFinancialAccount>
 			<cbc:ID>1234:12:1:123456789</cbc:ID>
 			<cbc:Name>株式会社〇〇商事</cbc:Name>
-			<cac:FinancialInstitutionBranch>
-				<cbc:ID>AAA-BB-CC-123</cbc:ID>
-			</cac:FinancialInstitutionBranch>
 		</cac:PayeeFinancialAccount>
 	</cac:PaymentMeans>
+	<cac:PaymentTerms>
+		<cbc:PaymentMeansID>1a2b3c</cbc:PaymentMeansID>
+		<cbc:Note>振込手数料控除</cbc:Note>
+	</cac:PaymentTerms>
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
 		<cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
