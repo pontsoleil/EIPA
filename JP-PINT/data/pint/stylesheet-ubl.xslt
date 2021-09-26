@@ -88,7 +88,7 @@
 					</div>
 					<hr/>
 					<div id="details">
-						<h3>Details</h3>
+						<h3>明細行</h3>
 						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=true()]" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount" mode="line"/>
 						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=false()]" mode="line"/>
@@ -164,7 +164,7 @@
 					</div>
 					<hr/>
 					<div id="details">
-						<h3>Details</h3>
+						<h3>明細行</h3>
 						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=true()]" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount" mode="line"/>
 						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=false()]" mode="line"/>
@@ -2039,7 +2039,7 @@
 	<xsl:template match="cac:Price" mode="line">
 		<div class="linesupport">
 			<div class="row">
-				<div class="col-sm-9">Price @ <xsl:apply-templates select="cbc:BaseQuantity" mode="common"/>
+				<div class="col-sm-9">単価 @ <xsl:apply-templates select="cbc:BaseQuantity" mode="common"/>
 				</div>
 				<div class="col-sm-3 text-right">
 					<xsl:apply-templates select="cbc:PriceAmount" mode="common"/>

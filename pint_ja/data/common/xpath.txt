@@ -1,292 +1,315 @@
-SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSort	xPath		
-1230	ibg-00	ibg-02	1	PROCESS CONTROL	プロセスコントロール	1..1	Group	1000	/		
-1250	ibg-00	ibt-024	2	Specification identifier	仕様識別子	1..1	ID	1010	/Invoice/cbc:CustomizationID		
-1240	ibg-00	ibt-023	2	Business process type	ビジネスプロセスタイプ	0..1	Text	1020	/Invoice/cbc:ProfileID		
-1000	ibg-00	ibt-001	1	Invoice number 	請求書番号	1..1	ID	1030	/Invoice/cbc:ID		
-1010	ibg-00	ibt-002	1	Invoice issue date 	請求書発行日	1..1	Date	1040	/Invoice/cbc:IssueDate		
-1015	ibg-00	ibt-168	1	Invoice issue time	請求書発行時刻	0..1	Time	1050	/Invoice/cbc:IssueTime		
-1070	ibg-00	ibt-009	1	Payment due date 	支払期日	0..1	Date	1060	/Invoice/cbc:DueDate		
-1020	ibg-00	ibt-003	1	Invoice type code 	請求書タイプコード	1..1	Code	1070	/Invoice/cbc:InvoiceTypeCode		
-1200	ibg-00	ibg-01	1	INVOICE NOTE	請求書注釈	0..n	Group	1080	/		
-1210	ibg-01	ibt-021	2	Invoice note subject code	請求書注釈表題コード	0..1	Text	1090	/Invoice/cbc:Note		
-1220	ibg-01	ibt-022	2	Invoice note	請求書注釈内容	0..1	Text	1100	/Invoice/cbc:Note		
-1050	ibg-00	ibt-007	1	TAX point date	課税基準日	0..1	Date	1110	/Invoice/cbc:TaxPointDate		
-1030	ibg-00	ibt-005	1	Invoice currency code	請求書通貨コード	1..1	Code	1120	/Invoice/cbc:DocumentCurrencyCode		
-1040	ibg-00	ibt-006	1	Tax accounting currency.	税会計報告用通貨コード	0..1	Code	1130	/Invoice/cbc:TaxCurrencyCode		
-1180	ibg-00	ibt-019	1	Buyer accounting reference	発注者会計参照	0..1	Text	1140	/Invoice/cbc:AccountingCost		
-1080	ibg-00	ibt-010	1	Buyer reference 	発注者参照	0..1	Text	1150	/Invoice/cbc:BuyerReference		
-1970	ibg-00	ibg-14	1	INVOICING PERIOD 	請求期間	0..1	Group	1160	/Invoice/cac:InvoicePeriod		
-1980	ibg-14	ibt-073	2	Invoicing period start date	請求期間開始日	0..1	Date	1170	/Invoice/cac:InvoicePeriod/cbc:StartDate		
-1990	ibg-14	ibt-074	2	Invoicing period end date	請求期間終了日	0..1	Date	1180	/Invoice/cac:InvoicePeriod/cbc:EndDate		
-1060	ibg-00	ibt-008	1	TAX point date code	課税基準日コード	0..1	Code	1190	/Invoice/cac:InvoicePeriod/cbc:DescriptionCode		
-1110	ibg-00	ibt-013	1	Purchase order reference	購買発注参照	0..1	REF	1200	/Invoice/cac:OrderReference/cbc:ID		
-1120	ibg-00	ibt-014	1	Sales order reference	受注参照	0..1	REF	1210	/Invoice/cac:OrderReference/cbc:SalesOrderID		
-1090	ibg-00	ibt-011	1	Project reference 	プロジェクト参照	0..1	REF	1380	/Invoice/cac:ProjectReference/cbc:ID		
-1260	ibg-00	ibg-03	1	PRECEDING INVOICE REFERENCE	先行請求書への参照	0..n	Group	1220	/Invoice/cac:BillingReference		
-1270	ibg-03	ibt-025	2	Preceding Invoice reference	先行請求書参照	1..1	REF	1230	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID		
-1280	ibg-03	ibt-026	2	Preceding Invoice issue date	先行請求書発行日	0..1	Date	1240	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate		
-1140	ibg-00	ibt-016	1	Despatch advice reference	出荷案内書(納品書)参照	0..n	REF	1250	/Invoice/cac:DespatchDocumentReference/cbc:ID		
-1130	ibg-00	ibt-015	1	Receiving advice reference	受取通知書(検収書)参照	0..1	REF	1260	/Invoice/cac:ReceiptDocumentReference/cbc:ID		
-1150	ibg-00	ibt-017	1	Tender or lot reference	入札又はロット参照	0..1	REF	1270	/Invoice/cac:OriginatorDocumentReference/cbc:ID		
-1100	ibg-00	ibt-012	1	Contract reference 	契約書参照	0..1	REF	1280	/Invoice/cac:ContractDocumentReference/cbc:ID		
-2570	ibg-00	ibg-24	1	ADDITIONAL SUPPORTING DOCUMENTS	添付書類	0..n	Group	1290	/Invoice/cac:AdditionalDocumentReference		
-2580	ibg-24	ibt-122	2	Supporting document reference	添付書類への参照	1..1	REF	1300	/Invoice/cac:AdditionalDocumentReference/cbc:ID		
-1160	ibg-24	ibt-018	2	Invoiced object identifier	請求済みオブジェクト識別子	0..1	ID	1320	/Invoice/cac:AdditionalDocumentReference/cbc:ID		
-2585	ibg-24	ibt-018-1	3	Scheme identifier	請求済みオブジェクト識別子のスキーマの識別子	1..1	Scheme	1310	/Invoice/cac:AdditionalDocumentReference/cbc:ID/@schemeID		
-2586	ibg-24	ibt-189	2	Supporting document type code	添付書類の説明	0..1	Code	1355	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode		
-2590	ibg-24	ibt-123	2	Supporting document description	添付書類のタイプコード	0..1	Text	1330	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription		
-2610	ibg-24	ibt-125	2	Attached document	添付書類	0..1	Binary	1340	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject		
-2620	ibg-24	ibt-125-1	3	Attached document Mime code	添付書類MIMEコード	1..1	Scheme	1350	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@mimeCode		
-2630	ibg-24	ibt-125-2	3	Attached document Filename	添付書類ファイル名	1..1	Scheme	1360	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@filename		
-2600	ibg-24	ibt-124	2	External document location	添付書類の保管場所(外部)	0..1	Text	1370	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI		
-1290	ibg-00	ibg-04	1	SELLER	販売者	1..1	Group	1390	/Invoice/cac:AccountingSupplierParty		
-1400	ibg-04	ibt-034	2	Seller electronic address	販売者電子アドレス	0..1	ID	1400	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID		
-1410	ibg-04	ibt-034-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	1410	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID		
-1330	ibg-04	ibt-029	2	Seller identifier 	販売者コード	0..n	ID	1420	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID		
-1340	ibg-04	ibt-029-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	1430	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID		
-2210	ibg-04	ibt-090	2	Bank assigned creditor identifier	銀行が割り当てた債権者識別子	0..1	ID	1440	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID		
-1320	ibg-04	ibt-028	2	Seller trading name	販売者の商号	0..1	Text	1450	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name		
-1415	ibg-04	ibg-05	2	SELLER POSTAL ADDRESS	販売者の住所	1..1	Group	1460	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress		
-1420	ibg-04	ibt-035	3	Seller address line 1 	販売者住所欄1	0..1	Text	1470	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName		
-1430	ibg-04	ibt-036	3	Seller address line 2	販売者住所欄2	0..1	Text	1480	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName		
-1450	ibg-04	ibt-037	3	Seller city	販売者住所 市区町村	0..1	Text	1490	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName		
-1460	ibg-04	ibt-038	3	Seller post code	販売者郵便番号	0..1	Text	1500	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone		
-1470	ibg-04	ibt-039	3	Seller country subdivision 	販売者住所 都道府県	0..1	Text	1510	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity		
-1440	ibg-04	ibt-162	3	Seller address line 3	販売者住所欄3	0..1	Text	1520	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line		
-1480	ibg-04	ibt-040	3	Seller country code 	販売者国コード	1..1	Code	1530	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode		
-1370	ibg-04	ibg-42	2	SELLER TAX REGISTRATION	販売者VAT登録情報		Group	1540	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme		
-1370	ibg-04	ibt-031	3	Seller TAX identifier	販売者 TAX ID	0..1	ID	1550	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID		
-1380	ibg-04	ibt-032	3	Seller TAX registration identifier	販売者の適格請求書発行事業者登録番号	0..1	ID	1580	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID		
-1385	ibg-04	ibt-032-1	3	Tax Scheme	税スキーマ	0..1	Code	1590	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		
-1310	ibg-04	ibg-37	2	SELLER LEGAL REGISTRATION	販売者登録情報	0..1	Group	1600	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity		
-1310	ibg-04	ibt-027	3	Seller name	販売者名称	1..1	Text	1610	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName		
-1350	ibg-04	ibt-030	3	Seller legal registration identifier	販売者国際企業コード	0..1	ID	1620	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID		
-1360	ibg-04	ibt-030-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme	1630	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID		
-1390	ibg-04	ibt-033	3	Seller additional legal information	販売者追加法的情報	0..1	Text	1640	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm		
-1490	ibg-04	ibg-06	2	SELLER CONTACT 	販売者の連絡先	0..1	Group	1650	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact		
-1500	ibg-04	ibt-041	3	Seller contact point 	販売者連絡先	0..1	Text	1660	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name		
-1510	ibg-04	ibt-042	3	Seller contact telephone number	販売者連絡先電話番号	0..1	Text	1670	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone		
-1520	ibg-04	ibt-043	3	Seller contact email address	販売者連絡先電子メールアドレス	0..1	Text	1680	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail		
-1530	ibg-00	ibg-07	1	BUYER 	発注者	1..1	Group	1690	/Invoice/cac:AccountingCustomerParty		
-1610	ibg-07	ibt-049	2	Buyer electronic address	発注者の電子アドレス	0..1	ID	1700	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID		
-1620	ibg-07	ibt-049-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	1710	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID		
-1560	ibg-07	ibt-046	2	Buyer identifier 	発注者コード	0..n	ID	1720	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID		
-1570	ibg-07	ibt-046-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	1730	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID		
-1550	ibg-07	ibt-045	2	Buyer trading name	発注者の商号	0..1	Text	1740	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name		
-1630	ibg-07	ibg-08	2	BUYER POSTAL ADDRESS	発注者の住所	1..1	Group	1750	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress		
-1640	ibg-07	ibt-050	3	Buyer address line 1 	発注者住所欄1	0..1	Text	1760	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName		
-1650	ibg-07	ibt-051	3	Buyer address line 2	発注者住所欄2	0..1	Text	1770	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName		
-1670	ibg-07	ibt-052	3	Buyer city	発注者住所 市区町村	0..1	Text	1780	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName		
-1680	ibg-07	ibt-053	3	Buyer post code	発注者郵便番号	0..1	Text	1790	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone		
-1690	ibg-07	ibt-054	3	Buyer country subdivision 	発注者住所 都道府県	0..1	Text	1800	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity		
-1660	ibg-07	ibt-163	3	Buyer address line 3	発注者住所欄3	0..1	Text	1810	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line		
-1700	ibg-07	ibt-055	3	Buyer country code 	発注者国コード	1..1	Code	1820	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode		
-1600	ibg-07	ibg-41	2	BUYER TAX REGISTRATION	発注者税登録情報		Group	1830	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme		
-1600	ibg-07	ibt-048	2	Buyer TAX identifier	発注者の適格請求書発行事業者登録番号	0..1	ID	1840	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID		
-1605	ibg-07	ibt-048-1	2	Tax Scheme	税スキーマ	0..1	Code	1850	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		
-1540	ibg-07	ibg-38	2	BUYER LEGAL REGISTRATION	発注者登録情報	0..1	Group	1860	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity		
-1540	ibg-07	ibt-044	3	Buyer name 	発注者名称	1..1	Text	1870	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName		
-1580	ibg-07	ibt-047	3	Buyer legal registration identifier	発注者国際企業コード	0..1	ID	1880	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID		
-1590	ibg-07	ibt-047-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme	1890	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID		
-1710	ibg-07	ibg-09	2	BUYER CONTACT	発注者の連絡先	0..1	Group	1900	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact		
-1720	ibg-07	ibt-056	3	Buyer contact point 	発注者連絡先	0..1	Text	1910	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name		
-1730	ibg-07	ibt-057	3	Buyer contact telephone number	発注者連絡先電話番号	0..1	Text	1920	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone		
-1740	ibg-07	ibt-058	3	Buyer contact email address	発注者連絡先電子メールアドレス	0..1	Text	1930	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail		
-1750	ibg-00	ibg-10	1	PAYEE	支払先	0..1	Group	1940	/Invoice/cac:PayeeParty		
-1770	ibg-10	ibt-060	2	Payee identifier 	支払先コード	0..1	ID	1950	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID		
-1780	ibg-10	ibt-060-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	1960	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID		
-1760	ibg-10	ibt-059	2	Payee name 	支払先名称	1..1	Text	1970	/Invoice/cac:PayeeParty/cac:PartyName/cbc:Name		
-1790	ibg-10	ibt-061	2	Payee legal registration identifier	支払先国際企業コード	0..1	ID	1980	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID		
-1800	ibg-10	ibt-061-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	1990	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID		
-1810	ibg-00	ibg-11	1	SELLER TAX REPRESENTATIVE PARTY	販売者の納税管理人	0..1	Group	2000	/Invoice/cac:TaxRepresentativeParty		
-1820	ibg-11	ibt-062	2	Seller tax representative name	納税管理人名称	1..1	Text	2010	/Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name		
-1840	ibg-11	ibg-12	2	SELLER TAX REPRESENTATIVE POSTAL ADDRESS	納税管理人住所	1..1	Group	2020	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress		
-1850	ibg-11	ibt-064	3	Tax representative address line 1 	納税管理人住所欄1	0..1	Text	2030	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName		
-1860	ibg-11	ibt-065	3	Tax representative address line 2	納税管理人住所欄2	0..1	Text	2040	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName		
-1880	ibg-11	ibt-066	3	Tax representative city	納税管理人住所 市区町村	0..1	Text	2050	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName		
-1890	ibg-11	ibt-067	3	Tax representative post code	納税管理人郵便番号	0..1	Text	2060	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone		
-1900	ibg-11	ibt-068	3	Tax representative country subdivision 	納税管理人住所 都道府県	0..1	Text	2070	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity		
-1870	ibg-11	ibt-164	3	Tax representative address line 3	納税管理人住所欄3	0..1	Text	2080	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine/cbc:Line		
-1910	ibg-11	ibt-069	3	Tax representative country code 	納税管理人国コード	1..1	Code	2090	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode		
-1830	ibg-11	ibg-43	2	TAX REPRESENTATIVE TAX REGISTRATION	販売者の納税管理人の登録情報		Group	2100	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme		
-1830	ibg-11	ibt-063	3	Seller tax representative TAX identifier	納税管理人の税番号	1..1	ID	2110	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID		
-1835	ibg-11	ibt-063-1	3	Tax Scheme	税スキーマ	0..1	Code	2120	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID		
-1920	ibg-00	ibg-13	1	DELIVERY INFORMATION	納入先	0..1	Group	2130	/Invoice/cac:Delivery		
-1960	ibg-13	ibt-072	2	Actual delivery date	実際の納入日	0..1	Date	2140	/Invoice/cac:Delivery/cbc:ActualDeliveryDate		
-1940	ibg-13	ibt-071	2	Deliver to location identifier	納入先コード	0..1	ID	2150	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID		
-1950	ibg-13	ibt-071-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	2160	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID/@schemeID		
-2000	ibg-13	ibg-15	2	DELIVER TO ADDRESS	納入先住所	0..1	Group	2170	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address		
-2010	ibg-13	ibt-075	3	Deliver to address line 1 	納入先住所欄1	0..1	Text	2180	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName		
-2020	ibg-13	ibt-076	3	Deliver to address line 2	納入先住所欄2	0..1	Text	2190	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName		
-2040	ibg-13	ibt-077	3	Deliver to city	納入先住所 市区町村	0..1	Text	2200	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName		
-2050	ibg-13	ibt-078	3	Deliver to post code	納入先郵便番号	0..1	Text	2210	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone		
-2060	ibg-13	ibt-079	3	Deliver to country subdivision 	納入先住所 都道府県	0..1	Text	2220	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity		
-2030	ibg-13	ibt-165	3	Deliver to address line 3	納入先住所欄3	0..1	Text	2230	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line		
-2070	ibg-13	ibt-080	3	Deliver to country code 	納入先国コード	1..1	Code	2240	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode		
-1930	ibg-13	ibt-070	2	Deliver to party name	納入先名称	0..1	Text	2250	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name		
-2080	ibg-00	ibg-16	1	PAYMENT INSTRUCTIONS	支払手段	0..n	Group	2260	/Invoice/cac:PaymentMeans		
-2089	ibg-16	ibt-178	2	Payment Instructions ID	支払手段ID	0..1	ID	2270	/Invoice/cac:PaymentMeans/cbc:ID		
-2090	ibg-16	ibt-081	2	Payment means type code	支払手段タイプコード	1..1	Code	2280	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode		
-2100	ibg-16	ibt-082	2	Payment means text	支払手段内容説明	0..1	Text	2290	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode/@name		
-2110	ibg-16	ibt-083	2	Remittance information	送金情報	0..n	Text	2300	/Invoice/cac:PaymentMeans/cbc:PaymentID		
-2111	ibg-16	ibt-083-1	3	Scheme identifier	スキーマ識別子	0..1	Code	2310	/Invoice/cac:PaymentMeans/cbc:PaymentID/@SchemeID		
-2120	ibg-16	ibg-17	2	CREDIT TRANSFER 	銀行振込	0..n	Group	2320	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount		
-2130	ibg-17	ibt-084	3	Payment account identifier	支払先口座番号	1..1	ID	2330	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID		
-2131	ibg-17	ibt-084-1	3	Scheme identifier	スキーマ識別子	0..1	Code	2340	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID/@SchemeID		
-2140	ibg-17	ibt-085	3	Payment account name	支払先口座名義人名	0..1	Text	2350	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name		
-2149	ibg-17	ibt-086	3	Payment service provider identifier	支払先金融機関番号	0..1	ID	2360	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID		
-2150	ibg-17	ibg-34	3	ADDRESS	支払先住所	0..1	Group	2370	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address		
-2151	ibg-17	ibt-169	4	Account address line 1 	支払口座住所欄1	0..1	Text	2380	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:StreetName		
-2152	ibg-17	ibt-170	4	Account address line 2	支払先口座住所欄2	0..1	Text	2390	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:AdditionalStreetName		
-2153	ibg-17	ibt-171	4	Account city	支払先口座住所 市区町村	0..1	Text	2400	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:CityName		
-2154	ibg-17	ibt-172	4	Account post code	支払先口座郵便番号	0..1	Text	2410	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:PostalZone		
-2155	ibg-17	ibt-173	4	Account country subdivision 	支払先口座住所 都道府県	0..1	Text	2420	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:CountrySubentity		
-2157	ibg-17	ibt-174	4	Account address line 3	支払先口座住所欄3	0..1	Text	2430	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:AddressLine/cbc:Line		
-2159	ibg-17	ibt-175	4	Account country code 	支払先口座国コード	0..1	Code	2440	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:Country/cbc:IdentificationCode		
-2160	ibg-16	ibg-18	2	PAYMENT CARD INFORMATION	支払カード情報	0..1	Group	2450	/Invoice/cac:PaymentMeans/cac:CardAccount		
-2170	ibg-18	ibt-087	3	Payment card primary account number	支払カード主要口座番号	1..1	Text	2460	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID		
-2180	ibg-18	ibt-088	3	Payment card holder name	カード名義人氏名	0..1	Text	2470	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName		
-2190	ibg-16	ibg-19	2	DIRECT DEBIT 	自動口座引落	0..1	Group	2480	/Invoice/cac:PaymentMeans/cac:PaymentMandate		
-2200	ibg-19	ibt-089	3	Mandate reference identifier	マンデーションリファレンス識別子	0..1	ID	2490	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID		
-2220	ibg-19	ibt-091	3	Debited account identifier	自動引落口座識別子	0..1	ID	2500	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID		
-1189	ibg-00	ibg-33	1	INVOICE TERMS	支払条件	0..n	Group	2510	/Invoice/cac:PaymentTerms		
-1191	ibg-33	ibt-020	2	Payment terms	支払条件	0..1	Text	2520	/Invoice/cac:PaymentTerms/cbc:Note		
-1192	ibg-33	ibt-187	2	Terms payment instructions ID	支払条件指示ID	0..1	ID	2530	/Invoice/cac:PaymentTerms/cbc:PaymentMeansID		
-1193	ibg-33	ibt-176	2	Terms amount	支払条件金額	0..1	Amount	2540	/Invoice/cac:PaymentTerms/cbc:Amount		
-1193	ibg-33	ibt-176-1	3	Currency code	通貨コード	1..1	Code	2550	/Invoice/cac:PaymentTerms/cbc:Amount/@currencyID		
-1194	ibg-33	ibt-177	2	Terms installment due date	分割支払支払期日	0..1	Date	2560	/Invoice/cac:PaymentTerms/cbc:InstallmentDueDate		
-2221	ibg-00	ibg-35	1	PAID AMOUNTS	支払済金額	0..n	Group	2570	/Invoice/cac:PrepaidPayment		
-2222	ibg-35	ibt-179	2	Payment identifier	支払ID	0..1	ID	2580	/Invoice/cac:PrepaidPayment/cbc:ID		
-2223	ibg-35	ibt-180	2	Paid amount	支払済金額	1..1	Amount	2590	/Invoice/cac:PrepaidPayment/cbc:PaidAmount		
-2223	ibg-35	ibt-180-1	3	Currency code	通貨コード	1..1	Code	2600	/Invoice/cac:PrepaidPayment/cbc:PaidAmount/@currencyID		
-2224	ibg-35	ibt-181	2	The date when the paid amount is debited to the invoice.	支払済金額が請求書に差引記載される日	0..1	Date	2610	/Invoice/cac:PrepaidPayment/cbc:ReceivedDate		
-2225	ibg-35	ibt-182	2	Payment type	支払タイプ	0..1	Code	2620	/Invoice/cac:PrepaidPayment/cbc:InstructionID		
-2230	ibg-00	ibg-20	1	DOCUMENT LEVEL ALLOWANCES	ドキュメントレベルの返還請求	0..n	Group	2630	/Invoice/cac:AllowanceCharge		
-2235	ibg-20	ibt-092a	2	Charge indicator	追加請求フラグ	1..1	Indicator	2640	/Invoice/cac:AllowanceCharge/cbc:ChargeIndicator		
-2300	ibg-20	ibt-098	2	Document level allowance reason code	ドキュメントレベルの返還請求の理由コード	0..1	Code	2650	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode		
-2290	ibg-20	ibt-097	2	Document level allowance reason	ドキュメントレベルの返還請求の理由	0..1	Text	2660	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason		
-2260	ibg-20	ibt-094	2	Document level allowance percentage	ドキュメントレベルの返還請求の率	0..1	Percent	2670	/Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric		
-2240	ibg-20	ibt-092	2	Document level allowance amount	ドキュメントレベルの返還請求金額	1..1	Amount	2680	/Invoice/cac:AllowanceCharge/cbc:Amount		
-2245	ibg-20	ibt-092-1	3	Currency code	通貨コード	1..1	Code	2690	/Invoice/cac:AllowanceCharge/cbc:Amount/@currencyID		
-2250	ibg-20	ibt-093	2	Document level allowance base amount	ドキュメントレベルの返還請求金額の基準となる金額	0..1	Amount	2700	/Invoice/cac:AllowanceCharge/cbc:BaseAmount		
-2255	ibg-20	ibt-093-1	3	Currency code	通貨コード	1..1	Code	2710	/Invoice/cac:AllowanceCharge/cbc:BaseAmount/@currencyID		
-2270	ibg-20	ibt-095	2	Document level allowance TAX category code	ドキュメントレベルの返還請求の課税分類コード	1..1	Code	2720	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID		
-2280	ibg-20	ibt-096	2	Document level allowance TAX rate	ドキュメントレベルの返還請求の税率	0..1	Percent	2730	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
-2285	ibg-20	ibt-096a	2	Tax Scheme	税スキーマ	0..1	Code	2740	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		
-2310	ibg-00	ibg-21	1	DOCUMENT LEVEL CHARGES	ドキュメントレベルの追加請求	0..n	Group	2750	/Invoice/cac:AllowanceCharge		
-2315	ibg-21	ibt-099a	2	Charge indicator	追加請求フラグ	1..1	Indicator	2760	/Invoice/cac:AllowanceCharge/cbc:ChargeIndicator		
-2380	ibg-21	ibt-105	2	Document level charge reason code	ドキュメントレベルの追加請求の理由コード	0..1	Code	2770	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode		
-2370	ibg-21	ibt-104	2	Document level charge reason	ドキュメントレベルの追加請求の理由	0..1	Text	2780	/Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason		
-2340	ibg-21	ibt-101	2	Document level charge percentage	ドキュメントレベルの追加請求の率	0..1	Percent	2790	/Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric		
-2320	ibg-21	ibt-099	2	Document level charge amount	ドキュメントレベルの追加請求金額	1..1	Amount	2800	/Invoice/cac:AllowanceCharge/cbc:Amount		
-2325	ibg-21	ibt-099-1	3	Currency code	通貨コード	1..1	Code	2810	/Invoice/cac:AllowanceCharge/cbc:Amount/@currencyID		
-2330	ibg-21	ibt-100	2	Document level charge base amount	ドキュメントレベルの追加請求金額の基準となる金額	0..1	Amount	2820	/Invoice/cac:AllowanceCharge/cbc:BaseAmount		
-2335	ibg-21	ibt-100-1	3	Currency code	通貨コード	1..1	Code	2830	/Invoice/cac:AllowanceCharge/cbc:BaseAmount/@currencyID		
-2350	ibg-21	ibt-102	2	Document level charge TAX category code	ドキュメントレベルの追加請求の課税分類コード	1..1	Code	2840	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID		
-2360	ibg-21	ibt-103	2	Document level charge TAX rate	ドキュメントレベルの追加請求の税率	0..1	Percent	2850	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
-2365	ibg-21	ibt-103a	2	Tax Scheme	税スキーマ	0..1	Code	2860	/Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		
-2440	ibg-00	ibg-39	1	INVOICE TOTAL TAX	消費税合計金額	0..1	Group	2870	/Invoice/cac:TaxTotal		
-2440	ibg-39	ibt-110	2	Invoice total TAX amount	消費税合計金額	1..1	Amount	2880	/Invoice/cac:TaxTotal/cbc:TaxAmount		
-2445	ibg-39	ibt-110-1	3	Currency code	通貨コード	1..1	Code	2890	/Invoice/cac:TaxTotal/cbc:TaxAmount/@currencyID		
-2450	ibg-39	ibt-111	2	Invoice total TAX amount in accounting currency	会計通貨での消費税合計金額	0..1	Amount	2900	/Invoice/cac:TaxTotal/cbc:TaxAmount		
-2455	ibg-39	ibt-111-1	3	Currency code	通貨コード	1..1	Code	2910	/Invoice/cac:TaxTotal/cbc:TaxAmount/@currencyID		
-2500	ibg-00	ibg-23	1	TAX BREAKDOWN	消費税内訳情報	1..n	Group	2920	/Invoice/cac:TaxTotal/cac:TaxSubtotal		
-2510	ibg-23	ibt-116	2	TAX category taxable amount	課税分類毎の課税基準額	1..1	Amount	2930	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount		
-2515	ibg-23	ibt-116-1	3	Currency code	通貨コード	1..1	Code	2940	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount/@currencyID		
-2520	ibg-23	ibt-117	2	TAX category tax amount	課税分類毎の消費税額	1..1	Amount	2950	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount		
-2525	ibg-23	ibt-117-1	3	Currency code	通貨コード	1..1	Code	2960	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount/@currencyID		
-2530	ibg-23	ibt-118	2	TAX category code 	課税分類コード	1..1	Code	2970	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID		
-2540	ibg-23	ibt-119	2	TAX category rate	課税分類毎の税率	0..1	Percent	2980	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent		
-2560	ibg-23	ibt-121	2	TAX exemption reason code	非課税/不課税理由コード	0..1	Code	2990	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode		
-2550	ibg-23	ibt-120	2	TAX exemption reason text	非課税/不課税理由	0..1	Text	3000	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason		
-2535	ibg-23	ibt-188	2	Tax Scheme	税スキーマ	0..1	Code	3010	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID		
-2390	ibg-00	ibg-22	1	DOCUMENT TOTALS	請求書総合計金額	1..1	Group	3020	/Invoice/cac:LegalMonetaryTotal		
-2400	ibg-22	ibt-106	2	Sum of Invoice line net amount	明細行金額(税抜)の合計	1..1	Amount	3030	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount		
-2405	ibg-22	ibt-106-1	3	Currency code	通貨コード	1..1	Code	3040	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID		
-2430	ibg-22	ibt-109	2	Invoice total amount without TAX	請求書合計金額(税抜)	1..1	Amount	3050	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount		
-2435	ibg-22	ibt-109-1	3	Currency code	通貨コード	1..1	Code	3060	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount/@currencyID		
-2460	ibg-22	ibt-112	2	Invoice total amount with TAX	請求書合計金額(税込)	1..1	Amount	3070	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount		
-2465	ibg-22	ibt-112-1	3	Currency code	通貨コード	1..1	Code	3080	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount/@currencyID		
-2410	ibg-22	ibt-107	2	Sum of allowances on document level	ドキュメントレベルの返還請求の合計	0..1	Amount	3090	/Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount		
-2415	ibg-22	ibt-107-1	3	Currency code	通貨コード	1..1	Code	3100	/Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID		
-2420	ibg-22	ibt-108	2	Sum of charges on document level	ドキュメントレベルの追加請求の合計	0..1	Amount	3110	/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount		
-2425	ibg-22	ibt-108-1	3	Currency code	通貨コード	1..1	Code	3120	/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID		
-2470	ibg-22	ibt-113	2	Paid amount 	支払済金額	0..1	Amount	3130	/Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount		
-2475	ibg-22	ibt-113-1	3	Currency code	通貨コード	1..1	Code	3140	/Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount/@currencyID		
-2480	ibg-22	ibt-114	2	Rounding amount	端数処理金額	0..1	Amount	3150	/Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount		
-2485	ibg-22	ibt-114-1	3	Currency code	通貨コード	1..1	Code	3160	/Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount/@currencyID		
-2490	ibg-22	ibt-115	2	Amount due for payment	未払金額	1..1	Amount	3170	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount		
-2495	ibg-22	ibt-115-1	3	Currency code	通貨コード	1..1	Code	3180	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID		
-2640	ibg-00	ibg-25	1	INVOICE LINE	明細行	1..n	Group	3190	/Invoice/cac:InvoiceLine		
-2650	ibg-25	ibt-126	2	Invoice line identifier	明細行番号	1..1	ID	3200	/Invoice/cac:InvoiceLine/cbc:ID		
-2660	ibg-25	ibt-127	2	Invoice line note	明細行注釈	0..1	Text	3210	/Invoice/cac:InvoiceLine/cbc:Note		
-2690	ibg-25	ibt-129	2	Invoiced quantity	請求済数量	1..1	Quantity	3220	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity		
-2700	ibg-25	ibt-130	2	Invoiced quantity unit of measure code	請求済数量の数量単位コード	1..1	Code	3230	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode		
-2710	ibg-25	ibt-131	2	Invoice line net amount 	明細行金額(税抜)	1..1	Amount	3240	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount		
-2715	ibg-25	ibt-131-1	3	Currency code	通貨コード	1..1	Code	3250	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount/@currencyID		
-2730	ibg-25	ibt-133	2	Invoice line Buyer accounting reference	明細行バイヤー会計参照	0..1	Text	3260	/Invoice/cac:InvoiceLine/cbc:AccountingCost		
-2740	ibg-25	ibg-26	2	INVOICE LINE PERIOD	明細行の期間	0..1	Group	3270	/Invoice/cac:InvoiceLine/cac:InvoicePeriod		
-2750	ibg-26	ibt-134	3	Invoice line period start date	明細行の期間開始日	0..1	Date	3280	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate		
-2760	ibg-26	ibt-135	3	Invoice line period end date	明細行の期間終了日	0..1	Date	3290	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate		
-2719	ibg-25	ibg-36	2	Referenced purchase order line reference	発注明細行参照	0..1	Group	3300	/Invoice/cac:InvoiceLine/cac:OrderLineReference		
-2720	ibg-36	ibt-132a	3	Referenced purchase order line identifier	発注明細行番号	1..1	REF	3310	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID		
-2721	ibg-36	ibt-132b	3	Referenced purchase order identifier	発注書番号	0..1	REF	3320	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cac:OrderReference/cbc:ID		
-2722	ibg-36	ibt-184	2	Despatch advice reference	出荷案内書(納品書)参照	0..1	REF	3330	/Invoice/cac:InvoiceLine/cac:DespatchLineReference/cac:DocumentReference/cbc:ID		
-2670	ibg-36	ibt-128	2	Invoice line object identifier	請求書明細オブジェクト識別子	0..1	ID	3340	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID		
-2680	ibg-36	ibt-128-1	3	Scheme identifier	スキーマ識別子	1..1	Scheme	3350	/Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID/@schemeID		
-2770	ibg-25	ibg-27	2	INVOICE LINE ALLOWANCES	明細行の返還請求	0..n	Group	3360	/Invoice/cac:InvoiceLine/cac:AllowanceCharge		
-2775	ibg-27	ibt-136a	3	Charge indicator	追加請求フラグ	1..1	Indicator	3370	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator		
-2820	ibg-27	ibt-140	3	Invoice line allowance reason code	明細行の返還請求理由コード	0..1	Code	3380	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode		
-2810	ibg-27	ibt-139	3	Invoice line allowance reason	明細行の返還請求理由	0..1	Text	3390	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason		
-2800	ibg-27	ibt-139a	3	Invoice line allowance percentage	明細行の返還請求の率	0..1	Percent	3400	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric		
-2780	ibg-27	ibt-136	3	Invoice line allowance amount	明細行の返還請求金額(税抜)	1..1	Amount	3410	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount		
-2785	ibg-27	ibt-136-1	4	Currency code	通貨コード	1..1	Code	3420	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount/@currencyID		
-2790	ibg-27	ibt-137	3	Invoice line allowance base amount	明細行の返還請求の基準金額	0..1	Amount	3430	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount		
-2795	ibg-27	ibt-137-1	4	Currency code	通貨コード	1..1	Code	3440	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount/@currencyID		
-2796	ibg-27	ibt-137a	3	Invoice line allowance TAX category code	明細行の返還請求の課税分類コード	1..1 	Code	3402	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:ID		
-2787	ibg-27	ibt-138	3	Invoice line allowance TAX rate	明細行の返還請求の税率	0..1 	Percent	3403	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
-2788	ibg-27	ibt-137c	3	Tax Scheme	税スキーマ	1..1	Code	3405	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		
-2830	ibg-25	ibg-28	2	INVOICE LINE CHARGES	明細行の追加請求	0..n	Group	3450	/Invoice/cac:InvoiceLine/cac:AllowanceCharge		
-2835	ibg-28	ibt-141a	3	Charge indicator	追加請求フラグ	1..1	Indicator	3460	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator		
-2880	ibg-28	ibt-145	3	Invoice line charge reason code	明細行の追加請求理由コード	0..1	Code	3470	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode		
-2870	ibg-28	ibt-144	3	Invoice line charge reason	明細行の追加請求理由	0..1	Text	3480	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason		
-2860	ibg-28	ibt-143	3	Invoice line charge percentage	明細行の追加請求の率	0..1	Percent	3490	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric		
-2840	ibg-28	ibt-141	3	Invoice line charge amount	明細行の追加請求金額(税抜)	1..1	Amount	3500	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount		
-2845	ibg-28	ibt-141-1	4	Currency code	通貨コード	1..1	Code	3510	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount/@currencyID		
-2850	ibg-28	ibt-142	3	Invoice line charge base amount	明細行の追加請求の基準金額	0..1	Amount	3520	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount		
-2855	ibg-28	ibt-142-1	4	Currency code	通貨コード	1..1	Code	3530	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount/@currencyID		
-2856	ibg-28	ibt-142a	3	Invoice line charge TAX category code	明細行の追加請求の課税分類コード	1..1 	Code	3462	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:ID		
-2857	ibg-28	ibt-142b	3	Invoice line charge TAX rate	明細行の追加請求の税率	0..1 	Percent	3463	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent		
-2858	ibg-28	ibt-142c	3	Tax Scheme	税スキーマ	1..1	Code	3465	/Invoice/cac:InvoiceLine/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID		
-2950	ibg-25	ibg-30	2	LINE TAX INFORMATION	明細行税額情報	1..n	Group	3590	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory		
-2960	ibg-30	ibt-151	3	Invoiced item TAX category code	請求される品目に対する課税分類コード	1..1	Code	3600	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID		
-2970	ibg-30	ibt-152	3	Invoiced item TAX rate	請求される品目に対する税率	0..1	Percent	3610	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent		
-2974	ibg-30	ibt-166	3	Unit TAX	単位税額	0..1	Amount	3620	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:PerUnitAmount		
-2975	ibg-30	ibt-166-1	4	Currency code	通貨コード	1..1	Code	3630	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:PerUnitAmount/@currencyID		
-2971	ibg-30	ibt-185	3	TAX exemption reason text	非課税/不課税理由コード	0..1	Code	3640	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode		
-2972	ibg-30	ibt-186	3	TAX exemption reason code	非課税/不課税理由	0..1	Text	3650	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReason		
-2976	ibg-30	ibt-167	3	Tax Scheme	税スキーマ	0..1	Code	3660	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID		
-2980	ibg-25	ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group	3540	/Invoice/cac:InvoiceLine/cac:Item		
-3000	ibg-31	ibt-154	3	Item description 	品目摘要	0..n	Text	3550	/Invoice/cac:InvoiceLine/cac:Item/cbc:Description		
-2990	ibg-31	ibt-153	3	Item name 	品名	1..1	Text	3560	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name		
-3020	ibg-31	ibt-156	3	Item Buyer's identifier	発注者による品目識別子	0..1	ID	3570	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID		
-3010	ibg-31	ibt-155	3	Item Seller's identifier	販売者による品目識別子	0..1	ID	3580	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID		
-3030	ibg-30	ibt-157	3	Item standard identifier	品目標準識別子	0..1	ID	3670	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID		
-3040	ibg-30	ibt-157-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme	3680	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID		
-3050	ibg-25	ibt-158	3	Item classification identifier	品目分類識別子	0..n	ID	3700	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode		
-3060	ibt-158	ibt-158-1	4	Scheme identifier	スキーマ識別子	1..1	Scheme	3710	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID		
-3070	ibt-158	ibt-158-2	4	Scheme version identifier	スキーマのバージョン識別子	1..1	Scheme	3720	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID		
-3080	ibg-30	ibt-159	3	Item country of origin	品目の原産国	0..1	Code	3690	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode		
-3090	ibg-25	ibg-32	2	ITEM ATTRIBUTES	品目属性	0..n	Group	3730	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty		
-3100	ibg-32	ibt-160	3	Item attribute name	品目属性名	1..1	Text	3740	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name		
-3110	ibg-32	ibt-161	3	Item attribute value 	品目属性値	1..1	Text	3750	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value		
-2890	ibg-25	ibg-29	2	PRICE DETAILS	取引価格詳細	1..1	Group	3760	/Invoice/cac:InvoiceLine/cac:Price		
-2900	ibg-29	ibt-146	3	Item net price	品目単価(割引後)(税抜)	1..1	Unit	3770	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount		
-2905	ibg-29	ibt-146-1	4	Currency code	通貨コード	1..1	Code	3780	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount/@currencyID		
-2930	ibg-29	ibt-149	3	Item price base quantity	品目単価基準数量	0..1	Quantity	3790	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity		
-2940	ibg-29	ibt-150	3	Item price base quantity unit of measure code	品目単価基準数量の数量単位コード	0..1	Code	3800	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode		
-2907	ibg-29	ibt-147a	3	Charge indicator	追加請求フラグ	1..1	Indicator	3810	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator		
-2910	ibg-29	ibt-147	3	Item price discount	品目単価割引(税抜)	0..1	Unit	3820	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount		
-2915	ibg-29	ibt-147-1	4	Currency code	通貨コード	1..1	Code	3830	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount/@currencyID		
-2920	ibg-29	ibt-148	3	Item gross price	品目単価(割引前)(税抜)	0..1	Unit	3840	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount		
-2925	ibg-29	ibt-148-1	4	Currency code	通貨コード	1..1	Code	3850	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount/@currencyID		
+SemanticSort	prent	ID	Level	BusinessTerm	BusinessTermJP	Card.	Data Type	SyntaxSort	xPath
+3	ibg-00	ibt-001	1	Invoice number	請求書番号	1..1	Identifier	1020	/Invoice/cbc:ID
+4	ibg-00	ibt-002	1	Invoice issue date	請求書発行日	1..1	Date	1030	/Invoice/cbc:IssueDate
+5	ibg-00	ibt-168	1	Invoice issue time	請求書発行時刻	0..1	Time	1035	/Invoice/cbc:IssueTime
+6	ibg-00	ibt-003	1	Invoice type code	請求書タイプコード	1..1	Code	1050	/Invoice/cbc:InvoiceTypeCode
+7	ibg-00	ibt-005	1	Invoice currency code	請求書通貨コード	1..1	Code	1090	/Invoice/cbc:DocumentCurrencyCode
+8	ibg-00	ibt-006	1	Tax accounting currency	税会計報告用通貨コード	0..1	Code	1100	/Invoice/cbc:TaxCurrencyCode
+9	ibg-00	ibt-007	1	TAX point date	課税基準日	0..1	Date	1080	/Invoice/cbc:TaxPointDate
+10	ibg-00	ibt-008	1	TAX point date code	課税基準日コード	0..1	Code	1160	/Invoice/cac:InvoicePeriod/cbc:DescriptionCode
+11	ibg-00	ibt-009	1	Payment due date	支払期日	0..1	Date	1040	/Invoice/cbc:DueDate
+12	ibg-00	ibt-010	1	Buyer reference	買い手参照	0..1	Text	1120	/Invoice/cbc:BuyerReference
+								1430	/Invoice/cac:ProjectReference
+14	ibg-00	ibt-011	1	Project reference	プロジェクト参照	0..1	Document Reference	1440	/Invoice/cac:ProjectReference/cbc:ID
+								1300	/Invoice/cac:ContractDocumentReference
+16	ibg-00	ibt-012	1	Contract reference	契約書参照	0..1	Document Reference	1310	/Invoice/cac:ContractDocumentReference/cbc:ID
+								1170	/Invoice/cac:OrderReference
+18	ibg-00	ibt-013	1	Purchase order reference	購買発注参照	0..1	Document Reference	1180	/Invoice/cac:OrderReference/cbc:ID
+19	ibg-00	ibt-014	1	Sales order reference	受注参照	0..1	Document Reference	1190	/Invoice/cac:OrderReference/cbc:SalesOrderID
+								1260	/Invoice/cac:ReceiptDocumentReference
+21	ibg-00	ibt-015	1	Receiving advice reference	受取通知書(検収書)参照	0..1	Document Reference	1270	/Invoice/cac:ReceiptDocumentReference/cbc:ID
+								1240	/Invoice/cac:DespatchDocumentReference
+23	ibg-00	ibt-016	1	Despatch advice reference	出荷案内書(納品書)参照	0..n	Document Reference	1250	/Invoice/cac:DespatchDocumentReference/cbc:ID
+								1280	/Invoice/cac:OriginatorDocumentReference[not(cbc:DocumentTypeCode='130')]
+25	ibg-00	ibt-017	1	Tender or lot reference	入札又はロット参照	0..1	Document Reference	1290	/Invoice/cac:OriginatorDocumentReference[not(cbc:DocumentTypeCode='130')]/cbc:ID
+								1340	/Invoice/cac:OriginatorDocumentReference[cbc:DocumentTypeCode='130']
+27	ibg-00	ibt-018	1	Invoiced object identifier	請求されるオブジェクトID	0..1	Identifier	1345	/Invoice/cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']/cbc:ID
+28	ibt-018	ibt-018-1	2	The identification scheme identifier of the Invoiced object identifier	請求されるオブジェクトIDのスキーマID	0..1	Scheme	1350	/Invoice/cac:AdditionalDocumentReference/cbc:ID/@schemeID
+								1355	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode
+30	ibg-00	ibt-019	1	Buyer accounting reference	買い手会計参照	0..1	Text	1110	/Invoice/cbc:AccountingCost
+31	ibg-00	ibg-33	1	INVOICE TERMS	支払条件	0..n	Group	2700	/Invoice/cac:PaymentTerms
+32	ibg-33	ibt-020	2	Payment terms	支払条件	0..1	Text	2710	/Invoice/cac:PaymentTerms/cbc:Note
+33	ibg-33	ibt-187	2	Terms payment instructions ID	支払条件指示ID	0..1	Identifier	2712	/Invoice/cac:PaymentTerms/cbc:PaymentMeansID
+34	ibg-33	ibt-176	2	Terms amount	支払条件金額	0..1	Amount	2713	/Invoice/cac:PaymentTerms/cbc:Amount
+35	ibg-33	ibt-177	2	Terms installment due date	分割支払支払期日	0..1	Date	2714	/Invoice/cac:PaymentTerms/cbc:InstallmentDueDate
+36	ibg-00	ibg-01	1	INVOICE NOTE	請求書注釈	0..n	Group		
+37	ibg-01	ibt-021	2	Invoice note subject code	請求書注釈表題コード	0..1	Text	1060	/Invoice/cbc:Note
+38	ibg-01	ibt-022	2	Invoice note	請求書注釈内容	0..1	Text	1070	/Invoice/cbc:Note
+39	ibg-00	ibg-02	1	PROCESS CONTROL	プロセスコントロール	1..1	Group		
+40	ibg-02	ibt-023	2	Business process type (Profile ID)	ビジネスプロセスタイプ  (Profile ID)	0..1	Text	1010	/Invoice/cbc:ProfileID
+41	ibg-02	ibt-024	2	Specification identifier (Customization ID)	仕様ID (Customization ID)	1..1	Identifier	1000	/Invoice/cbc:CustomizationID
+42	ibg-00	ibg-03	1	PRECEDING INVOICE REFERENCE	先行請求書への参照	0..n	Group	1200	/Invoice/cac:BillingReference
+								1210	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference
+44	ibg-03	ibt-025	2	Preceding Invoice reference	先行請求書への参照	1..1	Document Reference	1220	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID
+45	ibg-03	ibt-026	2	Preceding Invoice issue date	先行請求書発行日	0..1	Date	1230	/Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate
+46	ibg-00	ibg-04	1	SELLER	売り手		Group	1450	/Invoice/cac:AccountingSupplierParty
+								1460	/Invoice/cac:AccountingSupplierParty/cac:Party
+								1700	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity
+49	ibg-04	ibt-027	2	Seller name	売り手名称	1..1	Text	1710	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName
+								1530	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName
+51	ibg-04	ibt-028	2	Seller trading name	売り手商号	0..1	Text	1540	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name
+								1490	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification
+53	ibg-04	ibt-029	2	Seller identifier	売り手ID	0..n	Identifier	1500	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID
+54	ibt-029	ibt-090	3	Bank assigned creditor identifier	銀行が割り当てた債権者ID	0..1	Identifier	1520	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID
+55	ibt-029	ibt-029-1	3	Scheme identifier	スキーマID	0..1	Scheme	1510	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID
+56		ibt-090-1	4	Scheme identifier	スキーマID	0..1	Scheme	1522	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID
+57	ibg-04	ibt-030	2	Seller legal registration identifier	売り手法的企業ID	0..1	Identifier	1720	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID
+58	ibt-030	ibt-030-1	3	Scheme identifier	スキーマID	0..1	Scheme	1730	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID
+								1650	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme
+60	ibg-04	ibt-031	2	Seller TAX identifier	売り手税ID	0..1	Identifier	1660	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID
+61	ibg-04	ibt-032	2	Seller TAX registration identifier	売り手税登録ID	0..1	Identifier	1670	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID
+								1680	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme
+63	ibg-04	ibt-032a	2	Tax Scheme	税スキーマ	0..1	Scheme	1690	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID
+64	ibg-04	ibt-033	2	Seller additional legal information	売り手追加法的情報	0..1	Text	1740	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm
+65	ibg-04	ibt-034	2	Seller electronic address	売り手電子アドレス	0..1	Identifier	1470	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID
+66	ibt-034	ibt-034-1	3	Scheme identifier	スキーマID	1..1	Scheme	1480	/Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID
+67	ibg-04	ibg-05	2	SELLER POSTAL ADDRESS	売り手住所	1..1	Group	1550	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress
+68	ibg-05	ibt-035	3	Seller address line 1	売り手住所欄1	0..1	Text	1560	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName
+69	ibg-05	ibt-036	3	Seller address line 2	売り手住所欄2	0..1	Text	1570	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName
+								1600	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine
+71	ibg-05	ibt-162	3	Seller address line 3	売り手住所欄3	0..1	Text	1610	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line
+72	ibg-05	ibt-037	3	Seller city	売り手住所 市区町村	0..1	Text	1580	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName
+73	ibg-05	ibt-038	3	Seller post code	売り手郵便番号	0..1	Text	1590	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone
+74	ibg-05	ibt-039	3	Seller country subdivision	売り手住所 都道府県	0..1	Text	1595	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity
+								1630	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country
+76	ibg-05	ibt-040	3	Seller country code	売り手国コード	1..1	Code	1640	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode
+77	ibg-04	ibg-06	2	SELLER CONTACT	売り手連絡先	0..1	Group	1750	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact
+78	ibg-06	ibt-041	3	Seller contact point	売り手連絡先	0..1	Text	1760	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name
+79	ibg-06	ibt-042	3	Seller contact telephone number	売り手連絡先電話番号	0..1	Text	1770	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone
+80	ibg-06	ibt-043	3	Seller contact email address	売り手連絡先電子メールアドレス	0..1	Text	1780	/Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail
+81	ibg-00	ibg-07	1	BUYER	買い手	1..1	Group	1790	/Invoice/cac:AccountingCustomerParty
+								1800	/Invoice/cac:AccountingCustomerParty/cac:Party
+								2020	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity
+84	ibg-07	ibt-044	2	Buyer name	買い手名称	1..1	Text	2030	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName
+								1860	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName
+86	ibg-07	ibt-045	2	Buyer trading name	買い手商号	0..1	Text	1870	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name
+								1830	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification
+88	ibg-07	ibt-046	2	Buyer identifier	買い手ID	0..n	Identifier	1840	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID
+89	ibt-046	ibt-046-1	3	Scheme identifier	スキーマID	0..1	Scheme	1850	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID
+90	ibg-07	ibt-047	2	Buyer legal registration identifier	買い手法的企業ID	0..1	Identifier	2040	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID
+91	ibt-047	ibt-047-1	3	Scheme identifier	スキーマID	0..1	Scheme	2050	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID
+								1980	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme
+93	ibg-07	ibt-048	2	Buyer TAX identifier	買い手税ID	0..1	Identifier	1990	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID
+								2000	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme
+95	ibt-048	ibt-048-1	3	Tax Scheme	税スキーマ	0..1	Scheme	2010	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID
+96	ibg-07	ibt-049	2	Buyer electronic address	買い手電子アドレス	0..1	Identifier	1810	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID
+97	ibt-049	ibt-049-1	3	Scheme identifier	スキーマID	1..1	Scheme	1820	/Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID
+98	ibg-07	ibg-08	2	BUYER POSTAL ADDRESS	買い手住所	1..1	Group	1880	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress
+99	ibg-08	ibt-050	3	Buyer address line 1	買い手住所欄1	0..1	Text	1890	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName
+100	ibg-08	ibt-051	3	Buyer address line 2	買い手住所欄2	0..1	Text	1900	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName
+								1940	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine
+102	ibg-08	ibt-163	3	Buyer address line 3	買い手住所欄3	0..1	Text	1950	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line
+103	ibg-08	ibt-052	3	Buyer city	買い手住所 市区町村	0..1	Text	1910	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName
+104	ibg-08	ibt-053	3	Buyer post code	買い手郵便番号	0..1	Text	1920	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone
+105	ibg-08	ibt-054	3	Buyer country subdivision	買い手住所 都道府県	0..1	Text	1930	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity
+								1960	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country
+107	ibg-08	ibt-055	3	Buyer country code	買い手国コード	1..1	Code	1970	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode
+108	ibg-07	ibg-09	2	BUYER CONTACT	買い手連絡先	0..1	Group	2060	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact
+109	ibg-09	ibt-056	3	Buyer contact point	買い手連絡先	0..1	Text	2070	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name
+110	ibg-09	ibt-057	3	Buyer contact telephone number	買い手連絡先電話番号	0..1	Text	2080	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Telephone
+111	ibg-09	ibt-058	3	Buyer contact email address	買い手連絡先電子メールアドレス	0..1	Text	2090	/Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail
+112	ibg-00	ibg-10	1	PAYEE	支払先	0..1	Group	2100	/Invoice/cac:PayeeParty
+								2130	/Invoice/cac:PayeeParty/cac:PartyName
+114	ibg-10	ibt-059	2	Payee name	支払先名称	1..1	Text	2140	/Invoice/cac:PayeeParty/cac:PartyName/cbc:Name
+								2110	/Invoice/cac:PayeeParty/cac:PartyIdentification
+116	ibg-10	ibt-060	2	Payee identifier	支払先ID	0..1	Identifier	2120	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID
+117	ibt-060	ibt-060-1	3	Scheme identifier	スキーマID	0..1	Scheme	2125	/Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID
+								2160	/Invoice/cac:PayeeParty/cac:PartyLegalEntity
+119	ibg-10	ibt-061	2	Payee legal registration identifier	支払先登録企業ID	0..1	Identifier	2170	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID
+120	ibt-061	ibt-061-1	3	Scheme identifier	スキーマID	0..1	Scheme	2180	/Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID
+121	ibg-00	ibg-11	1	SELLER TAX REPRESENTATIVE PARTY	売り手納税管理人	0..1	Group	2190	/Invoice/cac:TaxRepresentativeParty
+								2200	/Invoice/cac:TaxRepresentativeParty/cac:PartyName
+123	ibg-11	ibt-062	2	Seller tax representative name	売り手納税管理人名称	1..1	Text	2210	/Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name
+								2352	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme
+125	ibg-11	ibt-063	2	Seller tax representative TAX identifier	売り手納税管理人税ID	1..1	Identifier	2354	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID
+								2356	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme
+127	ibg-11	ibt-063-1	2	Tax Scheme	税スキーマ	0..1	Scheme	2358	/Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID
+128	ibg-11	ibg-12	2	SELLER TAX REPRESENTATIVE POSTAL ADDRESS	売り手納税管理人住所	1..1	Group	2260	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress
+129	ibg-12	ibt-064	3	Tax representative address line 1	納税管理人住所欄1	0..1	Text	2270	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName
+130	ibg-12	ibt-065	3	Tax representative address line 2	納税管理人住所欄2	0..1	Text	2280	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName
+								2320	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine
+132	ibg-12	ibt-164	3	Tax representative address line 3	納税管理人住所欄3	0..1	Text	2330	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine/cbc:Line
+133	ibg-12	ibt-066	3	Tax representative city	納税管理人住所 市区町村	0..1	Text	2290	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName
+134	ibg-12	ibt-067	3	Tax representative post code	納税管理人郵便番号	0..1	Text	2300	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone
+135	ibg-12	ibt-068	3	Tax representative country subdivision	納税管理人住所 都道府県	0..1	Text	2310	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity
+								2340	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country
+137	ibg-12	ibt-069	3	Tax representative country code	納税管理人国コード	1..1	Code	2350	/Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode
+138	ibg-00	ibg-13	1	DELIVERY INFORMATION	納入先	0..1	Group	2360	/Invoice/cac:Delivery
+								2510	/Invoice/cac:Delivery/cac:DeliveryParty
+								2520	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName
+141	ibg-13	ibt-070	2	Deliver to party name	納入先名称	0..1	Text	2530	/Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name
+								2380	/Invoice/cac:Delivery/cac:DeliveryLocation
+143	ibg-13	ibt-071	2	Deliver to location identifier	納入先ID	0..1	Identifier	2390	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID
+144	ibt-071	ibt-071-1	3	Scheme identifier	スキーマID	0..1	Scheme	2400	/Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID/@schemeID
+145	ibg-13	ibt-072	2	Actual delivery date	実際納入日	0..1	Date	2370	/Invoice/cac:Delivery/cbc:ActualDeliveryDate
+146	ibg-13	ibg-14	2	INVOICING PERIOD	請求期間	0..1	Group	1130	/Invoice/cac:InvoicePeriod
+147	ibg-14	ibt-073	3	Invoicing period start date	請求期間開始日	0..1	Date	1140	/Invoice/cac:InvoicePeriod/cbc:StartDate
+148	ibg-14	ibt-074	3	Invoicing period end date	請求期間終了日	0..1	Date	1150	/Invoice/cac:InvoicePeriod/cbc:EndDate
+149	ibg-13	ibg-15	2	DELIVER TO ADDRESS	納入先住所	0..1	Group	2410	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address
+150	ibg-15	ibt-075	3	Deliver to address line 1	納入先住所欄1	0..1	Text	2420	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName
+151	ibg-15	ibt-076	3	Deliver to address line 2	納入先住所欄2	0..1	Text	2430	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName
+152	ibg-15	ibt-165	3	Deliver to address line 3	納入先住所欄3	0..1	Text	2480	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line
+153	ibg-15	ibt-077	3	Deliver to city	納入先住所 市区町村	0..1	Text	2440	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName
+154	ibg-15	ibt-078	3	Deliver to post code	納入先郵便番号	0..1	Text	2450	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone
+155	ibg-15	ibt-079	3	Deliver to country subdivision	納入先住所 都道府県	0..1	Text	2460	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity
+								2490	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country
+157	ibg-15	ibt-080	3	Deliver to country code	納入先国コード	1..1	Code	2500	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode
+158	ibg-00	ibg-16	1	PAYMENT INSTRUCTIONS	支払指示	0..n	Group	2540	/Invoice/cac:PaymentMeans
+159	ibg-16	ibt-178	2	Payment Instructions ID	支払指示ID	0..1	Identifier	2545	/Invoice/cac:PaymentMeans/cbc:ID
+160	ibg-16	ibt-081	2	Payment means type code	支払手段タイプコード	1..1	Code	2550	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode
+161	ibg-16	ibt-082	2	Payment means text	支払手段内容説明	0..1	Text	2560	/Invoice/cac:PaymentMeans/cbc:PaymentMeansCode/@Name
+162	ibg-16	ibt-083	2	Remittance information	送金情報	0..n	Text	2570	/Invoice/cac:PaymentMeans/cbc:PaymentID
+163	ibt-083	ibt-083-1	3	Scheme identifier	スキーマID	0..1	Code	2571	/Invoice/cac:PaymentMeans/cbc:PaymentID/@SchemeID
+164	ibg-16	ibg-17	2	CREDIT TRANSFER	銀行振込	0..n	Group	2580	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount
+165	ibg-17	ibt-084	3	Payment account identifier	支払先口座ID	1..1	Identifier	2590	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID
+166	ibg-17	ibt-084-1	3	Scheme identifier	スキーマID	0..1	Code	2591	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID/@SchemeID
+167	ibg-17	ibt-085	3	Payment account name	支払先口座名義人名	0..1	Text	2600	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name
+								2610	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch
+169	ibg-17	ibt-086	3	Payment service provider identifier	支払先金融機関ID	0..1	Identifier	2619	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID
+170	ibg-17	ibg-34	3	ADDRESS	住所	0..1	Group	2620	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address
+171	ibg-34	ibt-169	4	Account address line 1	支払先口座住所欄1	0..1	Text	2621	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:StreetName
+172	ibg-34	ibt-170	4	Account address line 2	支払先口座住所欄2	0..1	Text	2622	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:AdditionalStreetName
+173	ibg-34	ibt-171	4	Account city	支払先口座住所 市区町村	0..1	Text	2623	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:CityName
+174	ibg-34	ibt-172	4	Account post code	支払先口座郵便番号	0..1	Text	2624	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:PostalZone
+175	ibg-34	ibt-173	4	Account country subdivision	支払先口座住所 都道府県	0..1	Text	2625	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cbc:CountrySubentity
+								2626	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:AddressLine
+177	ibg-34	ibt-174	4	Account address line 3	支払先口座住所欄3	0..1	Text	2627	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:AddressLine/cbc:Line
+								2628	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:Country
+179	ibg-34	ibt-175	4	Account country code	支払先口座国コード	0..1	Code	2629	/Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:Address/cac:Country/cbc:IdentificationCode
+180	ibg-16	ibg-18	2	PAYMENT CARD INFORMATION	支払カード情報	0..1	Group	2630	/Invoice/cac:PaymentMeans/cac:CardAccount
+181	ibg-18	ibt-087	3	Payment card primary account number	支払カード番号	1..1	Text	2640	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID
+								2650	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID
+183	ibg-18	ibt-088	3	Payment card holder name	カード名義人氏名	0..1	Text	2660	/Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName
+184	ibg-16	ibg-19	2	DIRECT DEBIT	自動口座引落	0..1	Group	2670	/Invoice/cac:PaymentMeans/cac:PaymentMandate
+185	ibg-19	ibt-089	3	Mandate reference identifier	マンデーション参照ID	0..1	Identifier	2680	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID
+								2685	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount
+187	ibg-19	ibt-091	3	Debited account identifier	自動引落口座ID	0..1	Identifier	2690	/Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID
+188	ibg-00	ibg-35	1	PAID AMOUNTS	支払済金額	0..n	Group	2720	/Invoice/cac:PrepaidPayment
+189	ibg-35	ibt-179	2	Payment identifier	支払ID	0..1	Identifier	2721	/Invoice/cac:PrepaidPayment/cbc:ID
+190	ibg-35	ibt-180	2	Paid amount	支払済金額	1..1	Amount	2722	/Invoice/cac:PrepaidPayment/cbc:PaidAmount
+191	ibg-35	ibt-181	2	The date when the paid amount is debited to the invoice	支払済金額が請求書に差引記載される日	0..1	Date	2723	/Invoice/cac:PrepaidPayment/cbc:ReceivedDate
+192	ibg-35	ibt-182	2	Payment type	支払タイプ	0..1	Code	2724	/Invoice/cac:PrepaidPayment/cbc:InstructionID
+193	ibg-00	ibg-20	1	DOCUMENT LEVEL ALLOWANCES	ドキュメントレベルの返還請求	0..n	Group	2730	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]
+194	ibg-20	ibt-092	2	Document level allowance amount	ドキュメントレベルの返還請求金額(税抜き)	1..1	Amount	2780	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount
+195	ibg-20	ibt-093	2	Document level allowance base amount	ドキュメントレベルの返還請求金額の基準となる金額	0..1	Amount	2790	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:BaseAmount
+196	ibg-20	ibt-094	2	Document level allowance percentage	ドキュメントレベルの返還請求の率	0..1	Percent	2770	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:MultiplierFactorNumeric
+								2800	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory
+198	ibg-20	ibt-095	2	Document level allowance TAX category code	ドキュメントレベルの返還請求の課税分類コード	1..1	Code	2810	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:ID
+199	ibg-20	ibt-096	2	Document level allowance TAX rate	ドキュメントレベルの返還請求の税率	0..1	Percent	2820	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:Percent
+								2830	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory/cac:TaxScheme
+201	ibt-096	ibt-096-1	3	Tax Scheme	税スキーマ	0..1	Scheme	2840	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory/cac:TaxScheme/cbc:ID
+202	ibg-20	ibt-097	2	Document level allowance reason	ドキュメントレベルの返還請求の理由	0..1	Text	2760	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:AllowanceChargeReason
+								2740	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:ChargeIndicator
+204	ibg-20	ibt-098	2	Document level allowance reason code	ドキュメントレベルの返還請求の理由コード	0..1	Code	2750	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:AllowanceChargeReasonCode
+205	ibg-00	ibg-21	1	DOCUMENT LEVEL CHARGES	ドキュメントレベルの追加請求	0..n	Group	2850	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]
+								2860	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:ChargeIndicator
+207	ibg-21	ibt-099	2	Document level charge amount	ドキュメントレベルの追加請求金額(税抜き)	1..1	Amount	2890	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount
+208	ibg-21	ibt-100	2	Document level charge base amount	ドキュメントレベルの追加請求金額の基準となる金額	0..1	Amount	2900	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:BaseAmount
+209	ibg-21	ibt-101	2	Document level charge percentage	ドキュメントレベルの追加請求の率	0..1	Percent	2880	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:MultiplierFactorNumeric
+								2910	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory
+211	ibg-21	ibt-102	2	Document level charge TAX category code	ドキュメントレベルの追加請求の課税分類コード	1..1	Code	2920	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:ID
+212	ibg-21	ibt-103	2	Document level charge TAX rate	ドキュメントレベルの追加請求の税率	0..1	Percent	2930	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:Percent
+								2940	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory/cac:TaxScheme
+214	ibt-103	ibt-103-1	3	Tax Scheme	税スキーマ	0..1	Scheme	2960	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory/cac:TaxScheme/cbc:ID
+215	ibg-21	ibt-104	2	Document level charge reason	ドキュメントレベルの追加請求の理由	0..1	Text	2870	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:AllowanceChargeReason
+216	ibg-21	ibt-105	2	Document level charge reason code	ドキュメントレベルの追加請求の理由コード	0..1	Code	2865	/Invoice/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:AllowanceChargeReasonCode
+217	ibg-00	ibg-22	1	DOCUMENT TOTALS	請求書総合計金額	1..1	Group	3090	/Invoice/cac:LegalMonetaryTotal
+218	ibg-22	ibt-106	2	Sum of Invoice line net amount	値引/割引後請求書明細行金額の合計	1..1	Amount	3100	/Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount
+219	ibg-22	ibt-107	2	Sum of allowances on document level	ドキュメントレベルの返還請求の合計	0..1	Amount	3130	/Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount
+220	ibg-22	ibt-108	2	Sum of charges on document level	ドキュメントレベルの追加請求の合計	0..1	Amount	3140	/Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount
+221	ibg-22	ibt-109	2	Invoice total amount without TAX	請求書合計金額(税抜き)	1..1	Amount	3110	/Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount
+								2980	/Invoice/cac:TaxTotal
+223	ibg-22	ibt-110	2	Invoice total TAX amount	請求書消費税合計金額	0..1	Amount	2990	/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]
+224	ibg-22	ibt-111	2	Invoice total TAX amount in accounting currency	会計通貨での請求書消費税合計金額	0..1	Amount	3000	/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]
+225	ibg-22	ibt-112	2	Invoice total amount with TAX	請求書合計金額(税込み)	1..1	Amount	3120	/Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount
+226	ibg-22	ibt-113	2	Paid amount	支払済金額	0..1	Amount	3150	/Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount
+227	ibg-22	ibt-114	2	Rounding amount	丸めるための金額	0..1	Amount	3160	/Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount
+228	ibg-22	ibt-115	2	Amount due for payment	差引請求金額	1..1	Amount	3170	/Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount
+229	ibg-00	ibg-23	1	TAX BREAKDOWN	税内訳情報	1..n	Group	3010	/Invoice/cac:TaxTotal/cac:TaxSubtotal
+230	ibg-23	ibt-116	2	TAX category taxable amount	課税分類毎の課税基準額	1..1	Amount	3020	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount
+231	ibg-23	ibt-117	2	TAX category tax amount	課税分類毎の消費税額	1..1	Amount	3030	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount
+								3040	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory
+233	ibg-23	ibt-118	2	TAX category code	課税分類コード	1..1	Code	3050	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID
+								3052	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme
+235	ibt-118	ibt-118-1	3	Tax Scheme	税スキーマ	0..1	Scheme	3054	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID
+236	ibg-23	ibt-119	2	TAX category rate	課税分類毎の税率	0..1	Percent	3060	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent
+237	ibg-23	ibt-120	2	TAX exemption reason text	非課税理由テキスト	0..1	Text	3080	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason
+238	ibg-23	ibt-121	2	TAX exemption reason code	非課税理由コード	0..1	Code	3070	/Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode
+239	ibg-00	ibg-24	1	ADDITIONAL SUPPORTING DOCUMENTS	添付書類	0..n	Group	1320	/Invoice/cac:AdditionalDocumentReference
+240	ibg-24	ibt-122	2	Supporting document reference	添付書類への参照	1..1	Document Reference	1330	/Invoice/cac:AdditionalDocumentReference/cbc:ID
+241	ibg-24	ibt-123	2	Supporting document description	添付書類の説明	0..1	Text	1360	/Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription
+								1370	/Invoice/cac:AdditionalDocumentReference/cac:Attachment
+								1410	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference
+244	ibg-24	ibt-124	2	External document location	添付書類の保管場所(外部)	0..1	Text	1420	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI
+245	ibg-24	ibt-125	2	Attached document	添付書類	0..1	Binary Objects	1380	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject
+246	ibt-125	ibt-125-1	3	Attached document Mime code	添付書類MIMEコード	1..1	Scheme	1390	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@mimeCode
+247	ibt-125	ibt-125-2	3	Attached document Filename	添付書類ファイル名	1..1	Scheme	1400	/Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@filename
+248	ibg-00	ibg-25	1	INVOICE LINE	請求書明細行	1..n	Group	3180	/Invoice/cac:InvoiceLine
+249	ibg-25	ibt-126	2	Invoice line identifier	請求書明細行ID	1..1	Identifier	3190	/Invoice/cac:InvoiceLine/cbc:ID
+250	ibg-25	ibt-127	2	Invoice line note	請求書明細行注釈	0..1	Text	3200	/Invoice/cac:InvoiceLine/cbc:Note
+								3270	/Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode='130']
+252	ibg-25	ibt-128	2	Invoice line object identifier	請求書明細行オブジェクトID	0..1	Identifier	3275	/Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode='130']/cbc:ID
+253	ibt-128	ibt-128-1	3	Scheme identifier	スキーマID	0..1	Scheme	2178	/Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode='130']/cbc:ID/@schemeID
+								3280	/Invoice/cac:InvoiceLine/cac:DocumentReference[not(cbc:DocumentTypeCode='130')]
+255	ibg-25	ibt-188	2	Invoice line document identifier	明細行文書参照	0..1	Document Reference	2185	/Invoice/cac:InvoiceLine/cac:DocumentReference[not(cbc:DocumentTypeCode='130')]/cbc:ID
+256	ibg-25	ibt-189	2	Document type code	文書タイプコード	0..1	Code	3290	/Invoice/cac:InvoiceLine/cac:DocumentReference[not(cbc:DocumentTypeCode='130')]/cbc:DocumentTypeCode
+257	ibg-25	ibt-129	2	Invoiced quantity	請求される数量	1..1	Quantity	3210	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity
+258	ibg-25	ibt-130	2	Invoiced quantity unit of measure code	請求される数量の数量単位コード	1..1	Code	3220	/Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode
+259	ibg-25	ibt-131	2	Invoice line net amount	値引/割引後請求書明細行金額(税抜き)	1..1	Amount	3230	/Invoice/cac:InvoiceLine/cbc:LineExtensionAmount
+								3250	/Invoice/cac:InvoiceLine/cac:OrderLineReference
+261	ibg-25	ibt-132	2	Referenced purchase order line reference	購買発注明細行参照	0..1	Document Reference	3260	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID
+262	ibg-25	ibt-183	2	Order reference	受注参照	0..1	Document Reference	3261	/Invoice/cac:InvoiceLine/cac:OrderLineReference/cac:OrderReference/cbc:ID
+263	ibg-25	ibt-184	2	Despatch advice reference	出荷案内書(納品書)参照	0..1	Document Reference	3265	/Invoice/cac:InvoiceLine/cac:DespatchLineReference/cac:DocumentReference/cbc:ID
+264	ibg-25	ibt-133	2	Invoice line Buyer accounting reference	請求書明細行買い手会計参照	0..1	Text	3240	/Invoice/cac:InvoiceLine/cbc:AccountingCost
+265	ibg-25	ibg-26	2	INVOICE LINE PERIOD	請求書明細行の期間	0..1	Group	3242	/Invoice/cac:InvoiceLine/cac:InvoicePeriod
+266	ibg-26	ibt-134	3	Invoice line period start date	請求書明細行の期間開始日	0..1	Date	3244	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate
+267	ibg-26	ibt-135	3	Invoice line period end date	請求書明細行の期間終了日	0..1	Date	3246	/Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate
+268	ibg-25	ibg-27	2	INVOICE LINE ALLOWANCES	請求書明細行の返還請求	0..n	Group	3330	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]
+						1..1	Indicator	3340	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:ChargeIndicator
+270	ibg-27	ibt-136	3	Invoice line allowance amount	請求書明細行の返還請求金額(税抜き)	1..1	Amount	3390	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount
+271	ibg-27	ibt-137	3	Invoice line allowance base amount	請求書明細行の返還請求金額の基準金額	0..1	Amount	3400	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:BaseAmount
+272	ibg-27	ibt-138	3	Invoice line allowance percentage	請求書明細行の返還請求の率	0..1	Percent	3370	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:MultiplierFactorNumeric
+273	ibg-27	ibt-139	3	Invoice line allowance reason	請求書明細行の返還請求理由	0..1	Text	3360	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:AllowanceChargeReason
+274	ibg-27	ibt-140	3	Invoice line allowance reason code	請求書明細行の返還請求理由コード	0..1	Code	3350	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:AllowanceChargeReasonCode
+275	ibg-25	ibg-28	2	INVOICE LINE CHARGES	請求書明細行の追加請求	0..n	Group	3410	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]
+						1..1	Indicator	3415	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:ChargeIndicator
+277	ibg-28	ibt-141	3	Invoice line charge amount	請求書明細行の追加請求金額(税抜き)	1..1	Amount	3450	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount
+278	ibg-28	ibt-142	3	Invoice line charge base amount	請求書明細行の追加請求の基準金額	0..1	Amount	3460	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:BaseAmount
+279	ibg-28	ibt-143	3	Invoice line charge percentage	請求書明細行の追加請求の率	0..1	Percent	3440	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:MultiplierFactorNumeric
+280	ibg-28	ibt-144	3	Invoice line charge reason	請求書明細行の追加請求理由	0..1	Text	3430	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:AllowanceChargeReason
+281	ibg-28	ibt-145	3	Invoice line charge reason code	請求書明細行の追加請求理由コード	0..1	Code	3420	/Invoice/cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:AllowanceChargeReasonCode
+282	ibg-25	ibg-29	2	PRICE DETAILS	取引価格詳細	1..1	Group	3690	/Invoice/cac:InvoiceLine/cac:Price
+283	ibg-29	ibt-146	3	Item net price	品目単価(値引/割引後)(税抜き)	1..1	Unit Price Amount	3710	/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount
+								3745	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:ChargeIndicator
+285	ibg-29	ibt-147	3	Item price discount	品目単価値引/割引(税抜き)	0..1	Unit Price Amount	3750	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount
+286	ibg-29	ibt-148	3	Item gross price	品目単価(値引/割引前)(税抜き)	0..1	Unit Price Amount	3760	/Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:BaseAmount
+								2470	/Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine
+288	ibg-29	ibt-149	3	Item price base quantity	品目単価基準数量	0..1	Quantity	3720	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity
+289	ibg-29	ibt-150	3	Item price base quantity unit of measure code	品目単価基準数量の数量単位コード	0..1	Code	3730	/Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode
+290	ibg-25	ibg-30	2	LINE TAX INFORMATION	請求書明細行税情報	1..n	Group	3540	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory
+291	ibg-30	ibt-151	3	Invoiced item TAX category code	請求される品目に対する課税分類コード	1..1	Code	3550	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID
+292	ibg-30	ibt-152	3	Invoiced item TAX rate	請求される品目に対する税率	0..1	Percent	3560	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent
+293	ibg-30	ibt-185	3	TAX exemption reason text	非課税理由テキスト	0..1	Code	3564	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode
+294	ibg-30	ibt-186	3	TAX exemption reason code	非課税理由コード	0..1	Text	3566	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReason
+295	ibg-30	ibt-166	3	Unit TAX	単位税額	0..1	Amount	3562	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:PerUnitAmount
+								3567	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme
+297	ibg-30	ibt-167	3	Tax Scheme	税スキーマ	0..1	Scheme	3568	/Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID
+298	ibg-25	ibg-31	2	ITEM INFORMATION	品目情報	1..1	Group	3470	/Invoice/cac:InvoiceLine/cac:Item
+299	ibg-31	ibt-153	3	Item name	品名	1..1	Text	3490	/Invoice/cac:InvoiceLine/cac:Item/cbc:Name
+300	ibg-31	ibt-154	3	Item description	品目摘要	0..n	Text	3480	/Invoice/cac:InvoiceLine/cac:Item/cbc:Description
+								3520	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification
+302	ibg-31	ibt-155	3	Item Seller's identifier	売り手による品目ID	0..1	Identifier	3530	/Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID
+								3500	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification
+304	ibg-31	ibt-156	3	Item Buyer's identifier	買い手による品目ID	0..1	Identifier	3510	/Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID
+								3570	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification
+306	ibg-31	ibt-157	3	Item standard identifier	品目標準ID	0..1	Identifier	3580	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID
+307	ibt-157	ibt-157-1	4	Scheme identifier	スキーマID	1..1	Scheme	3590	/Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID
+								3600	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification
+309	ibg-31	ibt-158	3	Item classification identifier	品目分類ID	0..n	Identifier	3610	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode
+310	ibt-158	ibt-158-1	4	Scheme identifier	スキーマID	1..1	Scheme	3620	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID
+311	ibt-158	ibt-158-2	4	Scheme version identifier	スキーマのバージョンID	0..1	Scheme	3630	/Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listVersionID
+								3594	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry
+313	ibg-31	ibt-159	3	Item country of origin	品目の原産国	0..1	Code	3596	/Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode
+314	ibg-31	ibg-32	3	ITEM ATTRIBUTES	品目属性	0..n	Group	3660	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty
+315	ibg-32	ibt-160	4	Item attribute name	品目属性名	1..1	Text	3670	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name
+316	ibg-32	ibt-161	4	Item attribute value	品目属性値	1..1	Text	3680	/Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value

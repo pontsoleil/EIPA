@@ -401,7 +401,7 @@ def setupTr(data,lang):
 		example = '例: <code>'+data['Example']+'</code>'
 	else:
 		example = ''
-	html += example+'</td></html>'
+	html += example+'</td>'
 	return html
 
 def writeTr_en(f,data):
