@@ -40,10 +40,12 @@ from dic2etree import *
 
 DEBUG = True
 
-DocumentCurrencyCode = ''
-TaxCurrencyCode = ''
-pintLst = []
+# DocumentCurrencyCode = ''
+# TaxCurrencyCode = ''
+# pintLst = []
 pintDict = {}
+header_id = None
+header_count = 0
 
 def clean_list(Dic):
   for k, v in Dic.items():
@@ -98,27 +100,31 @@ def set_path_value(base, path, value, datatype):
     return None
   key = path[0]
   if len(path) > 1:
-    try:
-      index = int(path[1])
-      if not key in base:
-        base[key] = {}
-      if not isinstance(base[key], list):
-        base[key] = [{}]
-      else:
-        pass
-      if index >= len(base[key]):
-        for i in range(index - len(base[key]) + 1):
-          base[key].append({})
+    if not base and 2==len(path) and '@'==path[1][:1]:
+      base[path[0]] = {}
+      base[path[0]][path[1]] = str(value)
+    else:
       try:
-        base = base[key][index]
-      except Exception:
+        index = int(path[1])
+        if not key in base:
+          base[key] = {}
+        if not isinstance(base[key], list):
+          base[key] = [{}]
+        else:
+          pass
+        if index >= len(base[key]):
+          for i in range(index - len(base[key]) + 1):
+            base[key].append({})
+        try:
+          base = base[key][index]
+        except Exception:
+          pass
+        path.pop(0)
+        path.pop(0)
+        p = set_path_value(base, path, value, datatype)
+        return p
+      except ValueError:
         pass
-      path.pop(0)
-      path.pop(0)
-      p = set_path_value(base, path, value, datatype)
-      return p
-    except ValueError:
-      pass
   if isinstance(base, list):
     base = base[-1]
   if isinstance(base, dict):
@@ -126,10 +132,16 @@ def set_path_value(base, path, value, datatype):
       if not key in base.keys():
         base[key] = {}
       if 'Amount' == datatype or 'Unit' == datatype:
-        value = {'#text': str(value), '@currencyID': 'JPY'}
+        if 'cbc:DocumentCurrencyCode' in Dic['Invoice']:
+          DocumentCurrencyCode = Dic['Invoice']['cbc:DocumentCurrencyCode']
+        else:
+          DocumentCurrencyCode = 'JPY'
+        value = {'#text': str(value), '@currencyID': DocumentCurrencyCode}
+        base[key] = value
       elif 'Quantity' == datatype:
-        value = {'#text': str(value), '@unitCode': 'EA'}
-      base[key] = value  # when Amount/Unit/Quantity is already set
+        base[key]['#text'] = str(value)#, '@unitCode': 'EA'}
+      else:
+        base[key] = value  # when Amount/Unit/Quantity is already set
       return {'k':key, 'v':base[key]}
     elif '@' == path[1][:1]:
       if not key in base.keys():
@@ -154,58 +166,51 @@ def set_path_value(base, path, value, datatype):
       return p
 
 def set_record(Dic, header, record):
-  base0 = dictXpath[record[0]] and dictXpath[record[0]]['xpath']
-  base1 = dictXpath[record[2]] and dictXpath[record[2]]['xpath']
-  base2 = dictXpath[record[4]] and dictXpath[record[4]]['xpath']
+  head = record[0]
+  base0 = pintDict[head]
   seq0 = record[1]
-  seq1 = record[3]
-  seq2 = record[5]
-
   root = '/Invoice'
-  if '' == base0 or '/' == base0:
+  if '' == base0 or '/' == base0 or 'ibg-00' == base0:
     base = root
   else:
-    base = base0
-
+    if 'xpath' in pintDict[head]:
+      base = base0['xpath']
+    else:
+      return
   base_path = base[1:].split('/')
-  if seq0 and '-' != seq0 and '' != seq0 and '/Invoice' != base:
+  if '' != seq0 and '/Invoice' != base:
     try:
       base_path += [int(seq0)]
     except ValueError:
       pass
-  if len(base1) > 0:
-    baseList1 = re.sub(base, '', base1)[1:].split('/')
-    base = base1
-    base_path += baseList1
-    if seq1 and '-' != seq1 and '' != seq1:
-      try:
-        base_path += [int(seq1)]
-      except ValueError:
-        pass
-    if len(base2) > 0:
-      baseList2 = re.sub(base, '', base2)[1:].split('/')
-      base = base2
-      base_path += baseList2
-      if seq2 and '-' != seq2 and '' != seq2:
-        try:
-          base_path += [int(seq2)]
-        except ValueError:
-          pass
-  print(base_path)
-  N = 3 # column 0 ~ 3 for bough and twig
+  N = 1
   n = 0
   for cell in record:  # traverse field in a record
-    if n > N and cell:
+    if n > N and n < len(header) and cell:
       id = header[n]
       if id:
-        _dictxpath = dictXpath[id]
-        if _dictxpath:
-          xpath = _dictxpath['xpath']
+        data = pintDict[id]
+        if data:
+          xpath = data['xpath']
+          datatype = data['datatype']
           if xpath:
-            pathList = re.sub(base, '', xpath)[1:].split('/')
-            path = base_path + pathList
-            datatype = _dictxpath['datatype']
-            set_path_value(Dic, path, cell, datatype)
+            if '/Invoice/cac:TaxTotal/cbc:TaxAmount' in xpath:
+              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount'
+            elif 'ChargeIndicator=' in xpath:
+              allowanceCharge = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)','\\1',xpath)
+              chargeIndicator = re.sub(r'.*\[cbc:ChargeIndicator=(true|false)\(\)\](.*)','\\1',xpath)
+              pathList = re.sub(base, '', allowanceCharge)[1:].split('/')
+              path = base_path + pathList
+              path.append('cbc:ChargeIndicator')
+              set_path_value(Dic, path, chargeIndicator, 'Indicator')
+              _xpath = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)','\\1\\3',xpath)
+              pathList = re.sub(base, '', _xpath)[1:].split('/')
+              path = base_path + pathList
+              set_path_value(Dic, path, cell, datatype)
+            else:
+              pathList = re.sub(base, '', xpath)[1:].split('/')
+              path = base_path + pathList
+              set_path_value(Dic, path, cell, datatype)
     n += 1
 
 if __name__ == '__main__':
@@ -244,34 +249,29 @@ if __name__ == '__main__':
   Dic = defaultdict(type(''))
   Dic['Invoice'] = {}
   dictID = defaultdict(type(''))
-  dictXpath = defaultdict(type(''))
+  pintDict = defaultdict(type(''))
 
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemanticSort paent ID Level BusinessTerm BusinessTermJP Card DataType SyntaxSort xPath
-  # 0            1     2  3     4            5              6     7        8          9
+  # SemSort,BT_ID,ID,Level,BT,BT_ja,Definition,Definition_ja,Explanation,Explanation_ja,Example,
+  # 0       1     2  3     4  5     6          7             8           9              10      
+  # Card,DataType,Section,Extension,SyntSort,XPath,Attributes,Rules,UBL_DataType,Cardinality,Alignment
+  # 11   12       13      14        15       16    17         18    19           20          21
   COL_SemanticSort = 0
-  # COL_parent = 1
   COL_ID = 2
   COL_level = 3
   COL_BT = 4
   COL_BT_ja = 5
-  COL_card = 6
-  COL_datatype = 7
-  COL_SyntaxSort = 8
-  COL_xpath = 9
-  # parents = {}
+  COL_card = 11
+  COL_datatype = 12
+  COL_SyntaxSort = 15
+  COL_xpath = 16
   if verbose: print(f'*** XPath file {pint_file}')
   with open(pint_file, encoding='utf-8', newline='') as f0:
     reader = csv.reader(f0) #, delimiter='\t')
     header = next(reader)
     for v in reader:
-      # parent = v[COL_parent].strip()
       id = v[COL_ID].strip()
-      # if 'ibg-' in id:
-      #   parents[id] = parent+'_'+id
-      # else:
-      #   parents[id] = parent
       if id:
         xpath = v[COL_xpath]
         syntaxSort = v[COL_SyntaxSort]
@@ -279,13 +279,14 @@ if __name__ == '__main__':
           syntaxSort = '9999'
         if not xpath:
           xpath = '/'+id
-
-        if len(v) > 7 and '/' in xpath:
-          if '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]' == xpath:
-            xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+DocumentCurrencyCode+'"]'
-          elif '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]' == xpath:
-            if TaxCurrencyCode:
-              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+TaxCurrencyCode+'"]'
+        if len(v) > COL_xpath and '/' in xpath:
+          if 'cbc:DocumentCurrencyCode' in Dic['Invoice'] and \
+              '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]' == xpath:
+            xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+Dic['Invoice']['cbc:DocumentCurrencyCode']+'"]'
+          elif 'cbc:TaxCurrencyCode' in Dic['Invoice'] and \
+              '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]' == xpath:
+            if Dic['Invoice']['cbc:TaxCurrencyCode']:
+              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+Dic['Invoice']['cbc:TaxCurrencyCode']+'"]'
             else:
               continue
           elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
@@ -301,7 +302,6 @@ if __name__ == '__main__':
           card = ''+v[COL_card].strip()
           datatype = ''+v[COL_datatype].strip()
           data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath}
-          # pintLst.append(data)
           pintDict[id] = data
 
   if verbose:
@@ -312,22 +312,39 @@ if __name__ == '__main__':
       reader = csv.reader(f)#, delimiter='\t')
       rows = []
       for record in reader:
-        row = [record[0]]+record[4:]
+        row = record[:1]+record[4:]
         rows.append(row)
     # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
     transposed_row = [list(i) for i in zip(*rows)]
-    record = transposed_row[0]
-    header = [record[0]]+record[4:]
+    header = transposed_row[0]
+    # header = record[2:]
+    multiple = {}
     for i in range(1,len(transposed_row)):
-      row = transposed_row[i]
-      row = [record[0]]+record[2:4]+record[5:]
-      set_record(Dic, header, row)
+      record = transposed_row[i]
+      if header_id != record[0]:
+        header_id = record[0]
+      else:
+        multiple[header_id] = True
+    for i in range(1,len(transposed_row)):
+      record = transposed_row[i]
+      if header_id != record[0]:
+        header_id = record[0]
+        if header_id in multiple:
+          record[1] = 0
+        else:
+          record[1] = ''
+      else:
+        header_count += 1
+        record[1] = header_count
+        # record = record[:1]+[header_count]+record[2:]
+      set_record(Dic, header, record)
   else:
     with open(in_file, encoding=encoding, newline='') as f:
       reader = csv.reader(f, delimiter='\t')
       header = next(reader)
       for record in reader:
         row = record[0:4]+record[6:]
+        record = record[:1]+ record[2:]
         set_record(Dic, header, record)
 
   clean_list(Dic)

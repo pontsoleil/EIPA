@@ -99,30 +99,25 @@ if __name__ == '__main__':
   TaxCurrencyCode = root.findtext(".//{"+ns['cbc']+"}TaxCurrencyCode")
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemanticSort paent ID Level BusinessTerm BusinessTermJP Card DataType SyntaxSort xPath
-  # 0            1     2  3     4            5              6     7        8          9
+  # SemSort,BT_ID,ID,Level,BT,BT_ja,Definition,Definition_ja,Explanation,Explanation_ja,Example,
+  # 0       1     2  3     4  5     6          7             8           9              10      
+  # Card,DataType,Section,Extension,SyntSort,XPath,Attributes,Rules,UBL_DataType,Cardinality,Alignment
+  # 11   12       13      14        15       16    17         18    19           20          21
   COL_SemanticSort = 0
-  # COL_parent = 1
   COL_ID = 2
   COL_level = 3
   COL_BT = 4
   COL_BT_ja = 5
-  COL_card = 6
-  COL_datatype = 7
-  COL_SyntaxSort = 8
-  COL_xpath = 9
-  # parents = {}
+  COL_card = 11
+  COL_datatype = 12
+  COL_SyntaxSort = 15
+  COL_xpath = 16
   if verbose: print(f'*** XPath file {pint_file}')
   with open(pint_file, encoding='utf-8', newline='') as f0:
     reader = csv.reader(f0) #, delimiter='\t')
     header = next(reader)
     for v in reader:
-      # parent = v[COL_parent].strip()
       id = v[COL_ID].strip()
-      # if 'ibg-' in id:
-      #   parents[id] = parent+'_'+id
-      # else:
-      #   parents[id] = parent
       if id:
         xpath = v[COL_xpath]
         syntaxSort = v[COL_SyntaxSort]
@@ -130,7 +125,6 @@ if __name__ == '__main__':
           syntaxSort = '9999'
         if not xpath:
           xpath = '/'+id
-
         if len(v) > 7 and '/' in xpath:
           if '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]' == xpath:
             xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+DocumentCurrencyCode+'"]'
@@ -167,7 +161,7 @@ if __name__ == '__main__':
       xpath = re.sub(r'true\(\)',"'true'",xpath)
     return xpath
 
-  def fillData(parent,parentXPath,i,n):
+  def fillData(parent,parentXPath,i,n,count):
     data = pintLst[i]
     semSort = data['semSort']
     id = data['id']
@@ -181,10 +175,20 @@ if __name__ == '__main__':
     text = None
     try:
       if isinstance(xpath,list):
-        element = root.find(xpath[0])
+        if None == count:
+          element = root.find(xpath[0])
+        else:
+          element = root.findall(xpath[0])
+          if count < len(element):
+            if xpath[1] in element[count].attrib:
+              text = element[count].attrib[xpath[1]]
+            else:
+              text = element[count].findtext('.')
         if ET.iselement(element):
           if xpath[1] in element.attrib:
             text = element.attrib[xpath[1]]
+          else:
+            text = element.findtext('.')
       else:
         if parentXPath:
           _xpath = xpath.replace(parentXPath+'/','')
@@ -215,6 +219,7 @@ if __name__ == '__main__':
       _i = i
       if len(aggregate) > 0:
         rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':''}
+        count = 0
         for _element in aggregate:
           if len(aggregate) > 1:
             n += 1
@@ -229,7 +234,7 @@ if __name__ == '__main__':
             if re.match(r'^ibg-',_id):
               fillAggregate(_element,xpath,_i,n,_level)
             else:
-              fillData(_element,xpath,_i,n)
+              fillData(_element,xpath,_i,n,count)
             if _i < len(pintLst):
               _data = pintLst[_i]
               _id = _data['id']
@@ -237,9 +242,10 @@ if __name__ == '__main__':
               _BT = _data['BT']
               if DEBUG: print(f'* fillAggregate _i={_i} {_id} {_BT}')
             _i += 1
+          count += 1
       i = _i
     else:
-      fillData(parent,parentPath,i,n)
+      fillData(parent,parentPath,i,n,None)
 
   n = 0
   rows = {}
@@ -265,6 +271,7 @@ if __name__ == '__main__':
       if len(aggregate) > 0:
         rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':''}
         addcolumn = False
+        count = 0
         for element in aggregate:
           if len(aggregate) > 1:
             n += 1
@@ -280,7 +287,7 @@ if __name__ == '__main__':
             if re.match(r'^ibg-',_id):
               fillAggregate(element,xpath,_i,n,_level)
             else:
-              fillData(element,xpath,_i,n)
+              fillData(element,xpath,_i,n,count)
             _i += 1
             if _i < len(pintLst):
               _data = pintLst[_i]
@@ -297,10 +304,11 @@ if __name__ == '__main__':
                 _aggregate = root.findall(_xpath)
                 if len(_aggregate) > 0:
                   rows[n][_semSort] = {'id':_id,'level':_level,'BT':_BT,'text':''}
-          _i -= 1
+          # _i -= 1
+          count += 1
       i = _i
     else:
-      fillData(root,'',i,n)
+      fillData(root,'',i,n,None)
     i += 1
 
 
