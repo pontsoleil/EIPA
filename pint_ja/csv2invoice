@@ -38,14 +38,11 @@ import argparse
 
 from dic2etree import * 
 
-DEBUG = True
-
-# DocumentCurrencyCode = ''
-# TaxCurrencyCode = ''
-# pintLst = []
 pintDict = {}
 header_id = None
 header_count = 0
+DocumentCurrencyCode = None
+TaxCurrencyCode = None
 
 def clean_list(Dic):
   for k, v in Dic.items():
@@ -131,11 +128,7 @@ def set_path_value(base, path, value, datatype):
     if 1 == len(path):
       if not key in base.keys():
         base[key] = {}
-      if 'Amount' == datatype or 'Unit' == datatype:
-        if 'cbc:DocumentCurrencyCode' in Dic['Invoice']:
-          DocumentCurrencyCode = Dic['Invoice']['cbc:DocumentCurrencyCode']
-        else:
-          DocumentCurrencyCode = 'JPY'
+      if 'Amount' == datatype or 'Unit Price Amount' == datatype:
         value = {'#text': str(value), '@currencyID': DocumentCurrencyCode}
         base[key] = value
       elif 'Quantity' == datatype:
@@ -203,14 +196,11 @@ def set_record(Dic, header, record):
               path = base_path + pathList
               path.append('cbc:ChargeIndicator')
               set_path_value(Dic, path, chargeIndicator, 'Indicator')
-              _xpath = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)','\\1\\3',xpath)
-              pathList = re.sub(base, '', _xpath)[1:].split('/')
-              path = base_path + pathList
-              set_path_value(Dic, path, cell, datatype)
-            else:
-              pathList = re.sub(base, '', xpath)[1:].split('/')
-              path = base_path + pathList
-              set_path_value(Dic, path, cell, datatype)
+              xpath = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)','\\1\\3',xpath)
+            # else:
+            pathList = re.sub(base, '', xpath)[1:].split('/')
+            path = base_path + pathList
+            set_path_value(Dic, path, cell, datatype)
     n += 1
 
 if __name__ == '__main__':
@@ -219,11 +209,12 @@ if __name__ == '__main__':
                                   usage='%(prog)s [options] infile outfile',
                                   description='CSVファイルから電子インボイスXMLを作成')
   # Add the arguments
-  parser.add_argument('inFile', metavar='infile', type=str, help='入力TSVファイル')
+  parser.add_argument('inFile', metavar='infile', type=str, help='入力CSVファイル')
   parser.add_argument('-o', '--out')
   parser.add_argument('-e', '--encoding')  # 'Shift_JIS' 'cp932'
-  parser.add_argument('-t', '--transpose', action='store_true')
   parser.add_argument('-v', '--verbose', action='store_true')
+  parser.add_argument('-d', '--debug', action='store_true')
+
   args = parser.parse_args()
   in_file = file_path(args.inFile)
   pre, ext = os.path.splitext(in_file)
@@ -236,8 +227,9 @@ if __name__ == '__main__':
   encoding = args.encoding.lstrip()
   if not encoding:
     encoding = 'UTF-8'
-  transpose = args.transpose
   verbose = args.verbose
+  DEBUG = args.debug
+
   # Check if infile exists
   if not os.path.isfile(in_file):
     print('入力ファイルがありません')
@@ -280,20 +272,11 @@ if __name__ == '__main__':
         if not xpath:
           xpath = '/'+id
         if len(v) > COL_xpath and '/' in xpath:
-          if 'cbc:DocumentCurrencyCode' in Dic['Invoice'] and \
-              '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]' == xpath:
-            xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+Dic['Invoice']['cbc:DocumentCurrencyCode']+'"]'
-          elif 'cbc:TaxCurrencyCode' in Dic['Invoice'] and \
-              '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]' == xpath:
-            if Dic['Invoice']['cbc:TaxCurrencyCode']:
-              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+Dic['Invoice']['cbc:TaxCurrencyCode']+'"]'
-            else:
-              continue
-          elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
+          if "[not(cbc:DocumentTypeCode='130')]" in xpath:
             xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
           elif "[cbc:DocumentTypeCode='130']" in xpath:
             xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
-          semanticSort = v[COL_SemanticSort]
+          # semanticSort = v[COL_SemanticSort]
           if v[COL_BT]: BT = v[COL_BT]
           else: BT = None
           if v[COL_BT_ja]: BT_ja = v[COL_BT_ja]
@@ -301,33 +284,61 @@ if __name__ == '__main__':
           level = v[COL_level]
           card = ''+v[COL_card].strip()
           datatype = ''+v[COL_datatype].strip()
-          data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath}
+          data = {'syntaxSort':syntaxSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath}
           pintDict[id] = data
 
   if verbose:
     print(f'*** Input file {in_file}')
 
-  if transpose:
-    with open(in_file, encoding=encoding, newline='') as f:
-      reader = csv.reader(f)#, delimiter='\t')
-      rows = []
-      for record in reader:
-        row = record[:1]+record[4:]
-        rows.append(row)
-    # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
-    transposed_row = [list(i) for i in zip(*rows)]
-    header = transposed_row[0]
-    # header = record[2:]
-    multiple = {}
-    for i in range(1,len(transposed_row)):
-      record = transposed_row[i]
-      if header_id != record[0]:
-        header_id = record[0]
+  with open(in_file, encoding=encoding, newline='') as f:
+    reader = csv.reader(f)#, delimiter='\t')
+    rows = []
+    i = 0
+    for record in reader:
+      id = record[0]
+      if id:
+        data = pintDict[id]
+        syntaxSort = data['syntaxSort']
+        if 'ibt-005'==id:
+          DocumentCurrencyCode = record[4]
+        elif 'ibt-006'==id:
+          TaxCurrencyCode = record[4]
       else:
-        multiple[header_id] = True
-    for i in range(1,len(transposed_row)):
-      record = transposed_row[i]
+        syntaxSort = '000'+str(i)
+        i += 1
+      row = [syntaxSort,id]+record[4:]
+      rows.append(row)
+
+  # https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
+  # https://www.delftstack.com/ja/howto/python/sort-list-of-lists-in-python/
+  sorted_rows = sorted(rows, key=lambda x:x[0])
+  sorted_rows = [d[1:] for d in sorted_rows]
+
+  # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
+  # transposed_rows = [list(i) for i in zip(*sorted_rows)]
+  rows = len(sorted_rows)
+  cols = len(sorted_rows[0])
+  transposed_rows = []
+  while len(transposed_rows) < cols:
+    transposed_rows.append([])
+    while len(transposed_rows[-1]) < rows:
+      transposed_rows[-1].append(0)
+  for i in range(rows):
+    for j in range(cols):
+      transposed_rows[j][i] = sorted_rows[i][j]
+
+  header = transposed_rows[0]
+  multiple = {}
+  for i in range(1,len(transposed_rows)):
+    record = transposed_rows[i]
+    if header_id != record[0]:
+      header_id = record[0]
+    else:
+      multiple[header_id] = True
+  for i in range(1,len(transposed_rows)):
+      record = transposed_rows[i]
       if header_id != record[0]:
+        header_count = 0
         header_id = record[0]
         if header_id in multiple:
           record[1] = 0
@@ -336,16 +347,7 @@ if __name__ == '__main__':
       else:
         header_count += 1
         record[1] = header_count
-        # record = record[:1]+[header_count]+record[2:]
       set_record(Dic, header, record)
-  else:
-    with open(in_file, encoding=encoding, newline='') as f:
-      reader = csv.reader(f, delimiter='\t')
-      header = next(reader)
-      for record in reader:
-        row = record[0:4]+record[6:]
-        record = record[:1]+ record[2:]
-        set_record(Dic, header, record)
 
   clean_list(Dic)
 
