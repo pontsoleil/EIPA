@@ -101,8 +101,8 @@
       <assert id="ibr-co-10" flag="fatal" test="(xs:decimal(cbc:LineExtensionAmount) = sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount)))">[ibr-co-10]-Sum of Invoice line net amount (iibt-106) = Σ Invoice line net amount (iibt-131).</assert>
       <assert id="ibr-co-11" flag="fatal" test="xs:decimal(cbc:AllowanceTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount)) or  (not(cbc:AllowanceTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]))">[ibr-co-11]-Sum of allowances on document level (iibt-107) = Σ Document level allowance amount (iibt-092).</assert>
       <assert id="ibr-co-12" flag="fatal" test="xs:decimal(cbc:ChargeTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount)) or (not(cbc:ChargeTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]))">[ibr-co-12]-Sum of charges on document level (iibt-108) = Σ Document level charge amount (iibt-099).</assert>
-      <assert id="ibr-co-13" flag="fatal" test="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)))  or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount))) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount))) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)))">[ibr-co-13]-Invoice total amount without Tax (iibt-109) = Σ Invoice line net amount (iibt-131) - Sum of allowances on document level (iibt-107) + Sum of charges on document level (iibt-108).</assert>
-      <assert id="ibr-co-16" flag="fatal" test="(xs:decimal(cbc:PrepaidAmount) and not(xs:decimal(cbc:PayableRoundingAmount)) and (xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and not(xs:decimal(cbc:PayableRoundingAmount)) and xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)) or (xs:decimal(cbc:PrepaidAmount) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount)))">[ibr-co-16]-Amount due for payment (iibt-115) = Invoice total amount with Tax (iibt-112) - Paid amount (iibt-113) + Rounding amount (iibt-114).</assert>
+      <!--<assert id="ibr-co-13" flag="fatal" test="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)))  or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount))) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount))) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)))">[ibr-co-13]-Invoice total amount without Tax (iibt-109) = Σ Invoice line net amount (iibt-131) - Sum of allowances on document level (iibt-107) + Sum of charges on document level (iibt-108).</assert>-->
+      <!--<assert id="ibr-co-16" flag="fatal" test="(xs:decimal(cbc:PrepaidAmount) and not(xs:decimal(cbc:PayableRoundingAmount)) and (xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and not(xs:decimal(cbc:PayableRoundingAmount)) and xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)) or (xs:decimal(cbc:PrepaidAmount) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount)))">[ibr-co-16]-Amount due for payment (iibt-115) = Invoice total amount with Tax (iibt-112) - Paid amount (iibt-113) + Rounding amount (iibt-114).</assert>-->
     </rule>
     <rule context="/ubl-invoice:Invoice | /ubl-creditnote:CreditNote">
       <assert id="ibr-01" flag="fatal" test="(cbc:CustomizationID) != ''">[ibr-01]-An Invoice shall have a Specification identifier (iibt-024).   </assert>
@@ -116,7 +116,7 @@
       <assert id="ibr-10" flag="fatal" test="exists(cac:AccountingCustomerParty/cac:Party/cac:PostalAddress)">[ibr-10]-An Invoice shall contain the Buyer postal address (ibg-08).</assert>
       <assert id="ibr-16" flag="fatal" test="exists(cac:InvoiceLine) or exists(cac:CreditNoteLine)">[ibr-16]-An Invoice shall have at least one Invoice line (ibg-25)</assert>
       <assert id="ibr-53" flag="fatal" test="every $taxcurrency in cbc:TaxCurrencyCode satisfies exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])">[ibr-53]-If the Tax accounting currency code (iibt-006) is present, then the Invoice total Tax amount in accounting currency (iibt-111) shall be provided.</assert>
-      <assert id="ibr-co-15" flag="fatal" test="every $Currency in cbc:DocumentCurrencyCode satisfies cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount) = cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount) + cac:TaxTotal/xs:decimal(cbc:TaxAmount)">[ibr-co-15]-Invoice total amount with Tax (iibt-112) = Invoice total amount without Tax (iibt-109) + Invoice total Tax amount (iibt-110).</assert>
+      <!--<assert id="ibr-co-15" flag="fatal" test="every $Currency in cbc:DocumentCurrencyCode satisfies cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount) = cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount) + cac:TaxTotal/xs:decimal(cbc:TaxAmount)">[ibr-co-15]-Invoice total amount with Tax (iibt-112) = Invoice total amount without Tax (iibt-109) + Invoice total Tax amount (iibt-110).</assert>-->
     </rule>
     <rule context="cac:InvoiceLine | cac:CreditNoteLine">
       <assert id="ibr-21" flag="fatal" test="(cbc:ID) != ''">[ibr-21]-Each Invoice line (ibg-25) shall have an Invoice line identifier (iibt-126).</assert>
@@ -245,12 +245,13 @@
   <pattern id="Japan">
     <!-- Empty elements -->
     <rule context="//*[not(*) and not(normalize-space())]">
-      <assert id="PINT-EN16931-R008" test="false()" flag="fatal">Document MUST not contain empty elements.</assert>
+      <assert id="PINT-EN16931-R008" test="false()" flag="fatal">[PINT-EN16931-R008] Document MUST not contain empty elements.</assert>
     </rule>
 
     <!-- JCT Registration Number Rules -->
     <rule context="ubl-invoice:Invoice[$taxCurrencyCode = 'JPY']/cac:AccountingSupplierParty">
-      <assert id="JP-R-001" test="cac:Party/cac:PartyTaxScheme[normalize-space(cac:TaxScheme/cbc:ID) = 'VAT']/matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')" flag="fatal">
+      <assert id="JP-R-001" 
+        test="cac:Party/cac:PartyTaxScheme/matches(normalize-space(cbc:CompanyID),'T[0-9]{13}$')" flag="fatal">
         [JP-R-001]- For the Japanese Suppliers, the VAT registration number must start with 'T' and be followed by 13-digit number.</assert>
     </rule>
     <rule context="ubl-invoice:Invoice[$taxCurrencyCode = 'JPY']/cac:AccountingBuyerParty">
@@ -265,7 +266,7 @@
       <assert id="JP-R-003" test="matches(normalize-space(.),'^-?[1-9][0-9]*$')" flag="fatal">
         [JP-R-003]- Amount shall be integer.</assert>
     </rule>
-    <rule context="cac:TaxTotal/cac:TaxSubtotal">
+<!--    <rule context="cac:TaxTotal/cac:TaxSubtotal">
         <assert id="BR-CO-17-AUNZ" flag="fatal" 
           test="(
             cac:TaxCategory[cac:TaxScheme/cbc:ID='VAT']/xs:decimal(cbc:Percent) = 0 and  
@@ -278,54 +279,41 @@
             )
           ) or (
             not(exists(cac:TaxCategory[cac:TaxScheme/cbc:ID='VAT']/xs:decimal(cbc:Percent))) and xs:decimal(cbc:TaxAmount) = 0)">[BR-CO-17-AUNZ]-Tax category tax amount (BT-117) = Tax category taxable amount (BT-116) x (Tax category rate (BT-119) / 100), rounded to two decimals.</assert>
-    </rule>
+    </rule>-->
     
     <rule context="ubl-invoice:Invoice[cbc:TaxCurrencyCode='JPY']/cac:TaxTotal/cac:TaxSubtotal[cbc:TaxAmount/@currencyID='JPY']/cac:TaxCategory[cbc:ID='S']">
       <!-- VAT Category TaxTotal Amount Rounding Rules -->
-      <assert id="JP-BR-CO-17-S" test="
+      <assert id="JP-BR-CO-17" test="
         cac:TaxCategory/xs:decimal(cbc:Percent) != 0 
         and (
           xs:decimal(cbc:TaxAmount) &gt;= floor(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
         ) and (
           xs:decimal(cbc:TaxAmount) &lt;= ceiling(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
         )" 
-        flag="fatal">[JP-BR-CO-17-S]- VAT category tax amount (ibt-117) = VAT category taxable amount (ibt-116) x (VAT category rate (ibt-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.</assert>
-    </rule>
-    <rule context="ubl-invoice:Invoice[cbc:TaxCurrencyCode='JPY']/cac:TaxTotal/cac:TaxSubtotal[cbc:TaxAmount/@currencyID='JPY']/cac:TaxCategory[cbc:ID='AA']">
-      <!-- VAT Category TaxTotal Amount Rounding Rules -->
-      <assert id="JP-BR-CO-17-AA" test="
-        cac:TaxCategory/xs:decimal(cbc:Percent) != 0 
-        and (
-          xs:decimal(cbc:TaxAmount) &gt;= floor(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
-        ) and (
-          xs:decimal(cbc:TaxAmount) &lt;= ceiling(xs:decimal(cbc:TaxableAmount) * (cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
-        )" 
-        flag="fatal">[JP-BR-CO-17-AA]- VAT category tax amount (ibt-117) = VAT category taxable amount (ibt-116) x (VAT category rate (ibt-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.</assert>
+        flag="fatal">[JP-BR-CO-17]- VAT category tax amount (ibt-117) = VAT category taxable amount (ibt-116) x (VAT category rate (ibt-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.</assert>
     </rule>
     <!-- Document level -->
     <rule context="ubl-creditnote:CreditNote | ubl-invoice:Invoice">
-      <let name="lineNetAmountsTotal" value="
-        sum(cac:InvoiceLine/cbc:LineExtensionAmount/xs:decimal(.))
-        "/>
+      <let name="lineNetAmountsTotal" value="sum(cac:InvoiceLine/cbc:LineExtensionAmount/xs:decimal(.))"/>
       <let name="allowancesTotal" value="
         if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'false']) then
-        sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'false']/cbc:Amount/xs:decimal(.))
+          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'false']/cbc:Amount/xs:decimal(.))
         else
         0"/>
       <let name="chargesTotal" value="
         if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'true']) then
-        sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'true']/cbc:Amount/xs:decimal(.))
+          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'true']/cbc:Amount/xs:decimal(.))
         else
         0"/>
-      <!--<assert id="PINT-EN16931-R001" 
+      <assert id="PINT-EN16931-R001" 
         test="cbc:ProfileID" 
-        flag="fatal">Business process MUST be provided.</assert>
-      <!-\-<assert id="PINT-EN16931-R007" 
+        flag="fatal">[PINT-EN16931-R001] Business process MUST be provided.</assert>
+      <!--<assert id="PINT-EN16931-R007" 
         test="$profile != 'Unknown'" 
-        flag="fatal">Business process MUST be in the format 'urn:fdc:peppol.eu:2017:poacc:billing:NN:1.0' where NN indicates the process number.</assert>-\->-->
+        flag="fatal">Business process MUST be in the format 'urn:fdc:peppol.eu:2017:poacc:billing:NN:1.0' where NN indicates the process number.</assert>-->
       <assert id="PINT-EN16931-R002" 
         test="count(cbc:Note) &lt;= 1" 
-        flag="fatal">No more than one note is allowed on document level.</assert>
+        flag="fatal">[PINT-EN16931-R002] No more than one note is allowed on document level.</assert>
       <assert id="PINT-EN16931-R003" 
         test="cbc:BuyerReference or cac:OrderReference/cbc:ID" 
         flag="fatal">A buyer reference or purchase order reference MUST be provided.</assert>
@@ -333,11 +321,11 @@
         test="starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:cen.eu:en16931:2017#conformant#urn:fdc:peppol.eu:2017:poacc:billing:international:aunz:3.0')" 
         flag="fatal">Specification identifier MUST have the value 'urn:cen.eu:en16931:2017#conformant#urn:fdc:peppol.eu:2017:poacc:billing:international:aunz:3.0'.</assert>-->
       <assert id="PINT-EN16931-R053" 
-        test="count(cac:TaxTotal[cac:TaxSubtotal]) = 1" 
-        flag="fatal">Only one tax total with tax subtotals MUST be provided.</assert>
+        test="count(cac:TaxTotal[cac:TaxSubtotal/cac:TaxAmount/@currencyID='JPY']) = 1" 
+        flag="fatal">[PINT-EN16931-R053] Only one tax total with tax subtotals for tax currency code MUST be provided.</assert>
       <!--<assert id="PINT-EN16931-R054" 
         test="count(cac:TaxTotal[not(cac:TaxSubtotal)]) = (if (cbc:TaxCurrencyCode) then 1 else 0)" 
-        flag="fatal">Only one tax total without tax subtotals MUST be provided when tax currency code is provided.</assert>-->
+        flag="fatal">[PINT-EN16931-R054] Only one tax total without tax subtotals MUST be provided when tax currency code is provided.</assert>-->
       <assert id="PINT-EN16931-R055-JP" 
         test="not(cbc:TaxCurrencyCode
         ) or (
@@ -350,10 +338,10 @@
         flag="fatal">Invoice total tax amount and Invoice total tax amount in accounting currency MUST have the same operational sign</assert>
       <assert id="PINT-EN16931-R006" 
         test="(count(cac:AdditionalDocumentReference[cbc:DocumentTypeCode='130']) &lt;= 1)" 
-        flag="fatal">Only one invoiced object is allowed on document level</assert>
+        flag="fatal">[PINT-EN16931-R006] Only one invoiced object is allowed on document level</assert>
       <assert id="PINT-EN16931-R080" 
         test="(count(cac:AdditionalDocumentReference[cbc:DocumentTypeCode='50']) &lt;= 1)" 
-        flag="fatal">Only one project reference is allowed on document level</assert>
+        flag="fatal">[PINT-EN16931-R080] Only one project reference is allowed on document level</assert>
     </rule>
     <rule context="cbc:TaxCurrencyCode">
       <assert id="PINT-EN16931-R005-JP" 
@@ -387,22 +375,22 @@
           sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'true']/cbc:Amount/xs:decimal(.))
         else
         0"/>
-<!--      <assert id="PINT-EN16931-R120" 
+      <assert id="PINT-EN16931-R120" 
         test="u:slack(
           $lineExtensionAmount, 
           (($quantity * ($priceAmount div $baseQuantity)) + $chargesTotal - $allowancesTotal),
           0
         )" 
-        flag="fatal">Invoice line net amount MUST equal (Invoiced quantity * (Item net price/item price base quantity) + Sum of invoice line charge amount - sum of invoice line allowance amount</assert>-->
+        flag="fatal">Invoice line net amount MUST equal (Invoiced quantity * (Item net price/item price base quantity) + Sum of invoice line charge amount - sum of invoice line allowance amount</assert>
       <assert id="PINT-EN16931-R121"
         test="not(cac:Price/cbc:BaseQuantity) or xs:decimal(cac:Price/cbc:BaseQuantity) &gt; 0" 
-        flag="fatal">Base quantity MUST be a positive number above zero.</assert>
-      <assert id="PNT-EN16931-R100" 
+        flag="fatal">[PINT-EN16931-R121] Base quantity MUST be a positive number above zero.</assert>
+      <assert id="PINT-EN16931-R100" 
         test="(count(cac:DocumentReference) &lt;= 1)" 
-        flag="fatal">Only one invoiced object is allowed pr line</assert>
-      <assert id="PINT-EN16931-R101" 
+        flag="fatal">[PINT-EN16931-R100] Only one invoiced object is allowed pr line</assert>
+<!--      <assert id="PINT-EN16931-R101" 
         test="(not(cac:DocumentReference) or (cac:DocumentReference/cbc:DocumentTypeCode='130'))" 
-        flag="fatal">Element Document reference can only be used for Invoice line object</assert>
+        flag="fatal">[PINT-EN16931-R101] Element Document reference can only be used for Invoice line object</assert>-->
     </rule>
 
   </pattern>
