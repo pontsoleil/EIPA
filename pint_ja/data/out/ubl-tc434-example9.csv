@@ -1,0 +1,80 @@
+ibt-001,1,1..1,Invoice number,20150483
+ibt-002,1,1..1,Invoice issue date,2015-04-01
+ibt-003,1,1..1,Invoice type code,380
+ibt-005,1,1..1,Invoice currency code,EUR
+ibt-009,1,0..1,Payment due date,2015-04-14
+ibt-012,1,0..1,Contract reference,iExpress 20110412
+ibg-01,1,0..n,INVOICE NOTE,
+ibt-021,2,0..1,Invoice note subject code,"Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van
+        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen
+        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden."
+ibt-022,2,0..1,Invoice note,"Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van
+        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen
+        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden."
+ibg-02,1,1..1,PROCESS CONTROL,
+ibt-024,2,1..1,Specification identifier (Customization ID),urn:cen.eu:en16931:2017
+ibg-04,1,1..1,SELLER,
+ibt-027,2,1..1,Seller name,Bluem BV
+ibt-030,2,0..1,Seller legal registration identifier,32081330 Amersfoort
+ibt-031,2,0..1,Seller TAX identifier,NL809163160B01
+ibt-032-1,2,0..1,Tax Scheme,VAT
+ibg-05,2,1..1,SELLER POSTAL ADDRESS,
+ibt-035,3,0..1,Seller address line 1,Lindeboomseweg 41
+ibt-037,3,0..1,Seller city,Amersfoort
+ibt-038,3,0..1,Seller post code,3825 AL
+ibt-040,3,1..1,Seller country code,NL
+ibg-06,2,0..1,SELLER CONTACT,
+ibt-042,3,0..1,Seller contact telephone number,033-4549055
+ibt-043,3,0..1,Seller contact email address,info@bluem.nl
+ibg-07,1,1..1,BUYER,
+ibt-044,2,1..1,Buyer name,Provide Verzekeringen
+ibg-08,2,1..1,BUYER POSTAL ADDRESS,
+ibt-050,3,0..1,Buyer address line 1,Henry Dunantweg 42
+ibt-052,3,0..1,Buyer city,Alphen aan den Rijn
+ibt-053,3,0..1,Buyer post code,2402 NR
+ibt-055,3,1..1,Buyer country code,NL
+ibg-13,1,0..1,DELIVERY INFORMATION,
+ibg-14,2,0..1,INVOICING PERIOD,
+ibt-073,3,0..1,Invoicing period start date,2016-04-01
+ibt-074,3,0..1,Invoicing period end date,2016-06-30
+ibg-16,1,0..n,PAYMENT INSTRUCTIONS,
+ibt-178,2,0..1,Payment Instructions ID,20150483
+ibt-081,2,1..1,Payment means type code,30
+ibt-083,2,0..n,Remittance information,2015 0483 0000 0000
+ibg-17,2,0..n,CREDIT TRANSFER,
+ibt-084,3,1..1,Payment account identifier,NL13RABO0377815500
+ibt-086,3,0..1,Payment service provider identifier,RABONL2U
+ibg-22,1,1..1,DOCUMENT TOTALS,
+ibt-106,2,1..1,Sum of Invoice line net amount,147.00
+ibt-109,2,1..1,Invoice total amount without TAX,147.00
+ibt-110,2,0..1,Invoice total TAX amount,30.87
+ibt-112,2,1..1,Invoice total amount with TAX,177.87
+ibt-115,2,1..1,Amount due for payment,177.87
+ibg-23,1,1..n,TAX BREAKDOWN,
+ibt-116,2,1..1,TAX category taxable amount,147.00
+ibt-117,2,1..1,TAX category tax amount,30.87
+ibt-118,2,1..1,TAX category code,S
+ibt-118-1,3,0..1,Tax Scheme,VAT
+ibt-119,2,0..1,TAX category rate,21
+ibg-25,1,1..n,INVOICE LINE,
+ibt-126,2,1..1,Invoice line identifier,1
+ibt-127,2,0..1,Invoice line note,"Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van
+        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen
+        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden."
+ibt-129,2,1..1,Invoiced quantity,3
+ibt-131,2,1..1,Invoice line net amount,147.00
+ibg-26,2,0..1,INVOICE LINE PERIOD,
+ibt-134,3,0..1,Invoice line period start date,2016-04-01
+ibt-135,3,0..1,Invoice line period end date,2016-06-30
+ibg-29,2,1..1,PRICE DETAILS,
+ibt-146,3,1..1,Item net price,49.00
+ibt-149,3,0..1,Item price base quantity,1
+ibg-30,2,1..n,LINE TAX INFORMATION,
+ibt-151,3,1..1,Invoiced item TAX category code,S
+ibt-152,3,0..1,Invoiced item TAX rate,21
+ibt-167,3,0..1,Tax Scheme,VAT
+ibg-31,2,1..1,ITEM INFORMATION,
+ibt-153,3,1..1,Item name,IExpress licentiekosten
+ibg-32,3,0..n,ITEM ATTRIBUTES,
+ibt-160,4,1..1,Item attribute name,Verbruikscategorie
+ibt-161,4,1..1,Item attribute value,Start

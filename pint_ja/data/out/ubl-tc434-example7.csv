@@ -1,0 +1,82 @@
+,,,,,ibg-25,ibg-25
+,,,,,INVOICE LINE,INVOICE LINE
+,,,,,0,1
+ibt-001,1,1..1,Invoice number,INVOICE_test_7,,
+ibt-002,1,1..1,Invoice issue date,2013-03-11,,
+ibt-003,1,1..1,Invoice type code,380,,
+ibt-005,1,1..1,Invoice currency code,SEK,,
+ibt-013,1,0..1,Purchase order reference,Order_9988_x,,
+ibg-33,1,0..n,INVOICE TERMS,,,
+ibt-020,2,0..1,Payment terms,Payment within 30 days,,
+ibg-01,1,0..n,INVOICE NOTE,,,
+ibt-021,2,0..1,Invoice note subject code,Testscenario 7,,
+ibt-022,2,0..1,Invoice note,Testscenario 7,,
+ibg-02,1,1..1,PROCESS CONTROL,,,
+ibt-024,2,1..1,Specification identifier (Customization ID),urn:cen.eu:en16931:2017,,
+ibg-04,1,1..1,SELLER,,,
+ibt-027,2,1..1,Seller name,The Sellercompany Incorporated,,
+ibt-028,2,0..1,Seller trading name,Civic Service Centre,,
+ibt-029,2,0..n,Seller identifier,5532331183,,
+ibg-05,2,1..1,SELLER POSTAL ADDRESS,,,
+ibt-035,3,0..1,Seller address line 1,"Main street 2, Building 4",,
+ibt-037,3,0..1,Seller city,Big city,,
+ibt-038,3,0..1,Seller post code,54321,,
+ibt-040,3,1..1,Seller country code,SE,,
+ibg-06,2,0..1,SELLER CONTACT,,,
+ibt-041,3,0..1,Seller contact point,Anthon Larsen,,
+ibt-042,3,0..1,Seller contact telephone number,4698989898,,
+ibt-043,3,0..1,Seller contact email address,Anthon@SellerCompany.se,,
+ibg-07,1,1..1,BUYER,,,
+ibt-044,2,1..1,Buyer name,THe Buyercompany,,
+ibg-08,2,1..1,BUYER POSTAL ADDRESS,,,
+ibt-050,3,0..1,Buyer address line 1,Anystreet 8,,
+ibt-051,3,0..1,Buyer address line 2,Back door,,
+ibt-052,3,0..1,Buyer city,Anytown,,
+ibt-053,3,0..1,Buyer post code,101,,
+ibt-054,3,0..1,Buyer country subdivision,RegionB,,
+ibt-055,3,1..1,Buyer country code,SE,,
+ibg-09,2,0..1,BUYER CONTACT,,,
+ibt-056,3,0..1,Buyer contact point,A3150bdn,,
+ibt-057,3,0..1,Buyer contact telephone number,5121230,,
+ibt-058,3,0..1,Buyer contact email address,john@buyercompany.no,,
+ibg-13,1,0..1,DELIVERY INFORMATION,,,
+ibg-14,2,0..1,INVOICING PERIOD,,,
+ibt-073,3,0..1,Invoicing period start date,2013-01-01,,
+ibt-074,3,0..1,Invoicing period end date,2013-12-31,,
+ibg-16,1,0..n,PAYMENT INSTRUCTIONS,,,
+ibt-178,2,0..1,Payment Instructions ID,INVOICE_test_7,,
+ibt-081,2,1..1,Payment means type code,30,,
+ibg-17,2,0..n,CREDIT TRANSFER,,,
+ibt-084,3,1..1,Payment account identifier,SE1212341234123412,,
+ibt-086,3,0..1,Payment service provider identifier,SEXDABCD,,
+ibt-090,3,0..1,Bank assigned creditor identifier,5532331183,,
+ibg-22,1,1..1,DOCUMENT TOTALS,,,
+ibt-106,2,1..1,Sum of Invoice line net amount,3200.00,,
+ibt-109,2,1..1,Invoice total amount without TAX,3200.00,,
+ibt-110,2,0..1,Invoice total TAX amount,0.00,,
+ibt-112,2,1..1,Invoice total amount with TAX,3200.00,,
+ibt-115,2,1..1,Amount due for payment,3200.00,,
+ibg-23,1,1..n,TAX BREAKDOWN,,,
+ibt-116,2,1..1,TAX category taxable amount,3200.00,,
+ibt-117,2,1..1,TAX category tax amount,0.00,,
+ibt-118,2,1..1,TAX category code,O,,
+ibt-118-1,3,0..1,Tax Scheme,VAT,,
+ibt-120,2,0..1,TAX exemption reason text,Tax,,
+ibg-25,1,1..n,INVOICE LINE,,,
+ibt-126,2,1..1,Invoice line identifier,,1,2
+ibt-127,2,0..1,Invoice line note,,Testscenario 7,Testscenario 7
+ibt-129,2,1..1,Invoiced quantity,,1,1
+ibt-131,2,1..1,Invoice line net amount,,2500.00,700.00
+ibt-132,2,0..1,Referenced purchase order line reference,,1,
+ibg-26,2,0..1,INVOICE LINE PERIOD,,,
+ibt-134,3,0..1,Invoice line period start date,,2013-01-01,2013-01-01
+ibt-135,3,0..1,Invoice line period end date,,2013-12-31,2013-12-31
+ibg-29,2,1..1,PRICE DETAILS,,,
+ibt-146,3,1..1,Item net price,,2500.00,700.00
+ibg-30,2,1..n,LINE TAX INFORMATION,,,
+ibt-151,3,1..1,Invoiced item TAX category code,,O,O
+ibt-167,3,0..1,Tax Scheme,,VAT,VAT
+ibg-31,2,1..1,ITEM INFORMATION,,,
+ibt-153,3,1..1,Item name,,Road tax,Road Register fee
+ibt-154,3,0..n,Item description,,"Weight-based tax, vehicles >3000 KGM",Annual registration fee
+ibt-155,3,0..1,Item Seller's identifier,,RT3000,REG

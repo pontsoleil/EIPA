@@ -1,0 +1,88 @@
+,,,,,ibg-23,ibg-23,ibg-25,ibg-25
+,,,,,TAX BREAKDOWN,TAX BREAKDOWN,INVOICE LINE,INVOICE LINE
+,,,,,0,1,0,1
+ibt-001,1,1..1,Invoice number,TOSL108,,,,
+ibt-002,1,1..1,Invoice issue date,2013-04-10,,,,
+ibt-003,1,1..1,Invoice type code,380,,,,
+ibt-005,1,1..1,Invoice currency code,DKK,,,,
+ibt-009,1,0..1,Payment due date,2013-05-10,,,,
+ibt-012,1,0..1,Contract reference,SUBSCR571,,,,
+ibg-01,1,0..n,INVOICE NOTE,,,,,
+ibt-021,2,0..1,Invoice note subject code,Contract was established through our website,,,,
+ibt-022,2,0..1,Invoice note,Contract was established through our website,,,,
+ibg-02,1,1..1,PROCESS CONTROL,,,,,
+ibt-024,2,1..1,Specification identifier (Customization ID),urn:cen.eu:en16931:2017,,,,
+ibg-04,1,1..1,SELLER,,,,,
+ibt-027,2,1..1,Seller name,SubscriptionSeller,,,,
+ibt-029,2,0..n,Seller identifier,1238764941386,,,,
+ibt-030,2,0..1,Seller legal registration identifier,DK16356706,,,,
+ibt-031,2,0..1,Seller TAX identifier,DK16356706,,,,
+ibt-032-1,2,0..1,Tax Scheme,VAT,,,,
+ibg-05,2,1..1,SELLER POSTAL ADDRESS,,,,,
+ibt-035,3,0..1,Seller address line 1,"Main street 2, Building 4",,,,
+ibt-037,3,0..1,Seller city,Big city,,,,
+ibt-038,3,0..1,Seller post code,54321,,,,
+ibt-040,3,1..1,Seller country code,DK,,,,
+ibg-06,2,0..1,SELLER CONTACT,,,,,
+ibt-043,3,0..1,Seller contact email address,antonio@SubscriptionsSeller.dk,,,,
+ibg-07,1,1..1,BUYER,,,,,
+ibt-044,2,1..1,Buyer name,Buyercompany ltd,,,,
+ibt-046,2,0..n,Buyer identifier,5790000435975,,,,
+ibt-047,2,0..1,Buyer legal registration identifier,987654321,,,,
+ibt-048,2,0..1,Buyer TAX identifier,NO987654321MVA,,,,
+ibt-048-1,3,0..1,Tax Scheme,VAT,,,,
+ibg-08,2,1..1,BUYER POSTAL ADDRESS,,,,,
+ibt-050,3,0..1,Buyer address line 1,"Anystreet, Building 1",,,,
+ibt-052,3,0..1,Buyer city,Anytown,,,,
+ibt-053,3,0..1,Buyer post code,101,,,,
+ibt-055,3,1..1,Buyer country code,DK,,,,
+ibg-13,1,0..1,DELIVERY INFORMATION,,,,,
+ibg-14,2,0..1,INVOICING PERIOD,,,,,
+ibt-073,3,0..1,Invoicing period start date,2013-01-01,,,,
+ibt-074,3,0..1,Invoicing period end date,2013-04-01,,,,
+ibg-16,1,0..n,PAYMENT INSTRUCTIONS,,,,,
+ibt-178,2,0..1,Payment Instructions ID,TOSL108,,,,
+ibt-081,2,1..1,Payment means type code,30,,,,
+ibt-083,2,0..n,Remittance information,Payref1,,,,
+ibg-17,2,0..n,CREDIT TRANSFER,,,,,
+ibt-084,3,1..1,Payment account identifier,DK1212341234123412,,,,
+ibt-090,3,0..1,Bank assigned creditor identifier,1238764941386,,,,
+ibg-21,1,0..n,DOCUMENT LEVEL CHARGES,,,,,
+ibt-099,2,1..1,Document level charge amount,100.00,,,,
+ibt-102,2,1..1,Document level charge TAX category code,S,,,,
+ibt-103,2,0..1,Document level charge TAX rate,25,,,,
+ibt-103-1,3,0..1,Tax Scheme,VAT,,,,
+ibt-104,2,0..1,Document level charge reason,Freight charge,,,,
+ibg-22,1,1..1,DOCUMENT TOTALS,,,,,
+ibt-106,2,1..1,Sum of Invoice line net amount,1600.00,,,,
+ibt-108,2,0..1,Sum of charges on document level,100.00,,,,
+ibt-109,2,1..1,Invoice total amount without TAX,1700.00,,,,
+ibt-110,2,0..1,Invoice total TAX amount,305.00,,,,
+ibt-112,2,1..1,Invoice total amount with TAX,2005.00,,,,
+ibt-115,2,1..1,Amount due for payment,2005.00,,,,
+ibg-23,1,1..n,TAX BREAKDOWN,,,,,
+ibt-116,2,1..1,TAX category taxable amount,,900.00,800.00,,
+ibt-117,2,1..1,TAX category tax amount,,225.00,80.00,,
+ibt-118,2,1..1,TAX category code,,S,S,,
+ibt-118-1,3,0..1,Tax Scheme,,VAT,VAT,,
+ibt-119,2,0..1,TAX category rate,,25,10,,
+ibg-25,1,1..n,INVOICE LINE,,,,,
+ibt-126,2,1..1,Invoice line identifier,,,,1,2
+ibt-127,2,0..1,Invoice line note,,,,Contract was established through our website,Contract was established through our website
+ibt-129,2,1..1,Invoiced quantity,,,,2,2
+ibt-131,2,1..1,Invoice line net amount,,,,800.00,800.00
+ibg-26,2,0..1,INVOICE LINE PERIOD,,,,,
+ibt-134,3,0..1,Invoice line period start date,,,,2013-01-01,2013-01-01
+ibt-135,3,0..1,Invoice line period end date,,,,2013-04-01,2013-04-01
+ibg-28,2,0..n,INVOICE LINE CHARGES,,,,,
+ibt-141,3,1..1,Invoice line charge amount,,,,100.00,100.00
+ibt-144,3,0..1,Invoice line charge reason,,,,Freight charge,Freight charge
+ibg-29,2,1..1,PRICE DETAILS,,,,,
+ibt-146,3,1..1,Item net price,,,,800.00,800.00
+ibg-30,2,1..n,LINE TAX INFORMATION,,,,,
+ibt-151,3,1..1,Invoiced item TAX category code,,,,S,S
+ibt-152,3,0..1,Invoiced item TAX rate,,,,25,10
+ibt-167,3,0..1,Tax Scheme,,,,VAT,VAT
+ibg-31,2,1..1,ITEM INFORMATION,,,,,
+ibt-153,3,1..1,Item name,,,,Paper subscription,Paper subscription
+ibt-154,3,0..n,Item description,,,,Subscription fee 1st quarter,Subscription fee 1st quarter

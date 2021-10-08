@@ -366,13 +366,13 @@
         else
         1"/>
       <let name="allowancesTotal" value="
-        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'false']) then
-          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'false']/cbc:Amount/xs:decimal(.))
+        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false']) then
+          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false']/cbc:Amount/xs:decimal(.))
         else
         0"/>
       <let name="chargesTotal" value="
-        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'true']) then
-          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator) = 'true']/cbc:Amount/xs:decimal(.))
+        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true']) then
+          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true']/cbc:Amount/xs:decimal(.))
         else
         0"/>
       <assert id="PINT-EN16931-R120" 
