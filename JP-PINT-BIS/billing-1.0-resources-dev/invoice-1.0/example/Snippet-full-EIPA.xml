@@ -253,8 +253,8 @@
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
         <cbc:AllowanceChargeReasonCode>FC</cbc:AllowanceChargeReasonCode>
         <cbc:AllowanceChargeReason>Freight service</cbc:AllowanceChargeReason>
-        <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
-        <cbc:Amount currencyID="JPY">200</cbc:Amount>
+        <cbc:MultiplierFactorNumeric>5</cbc:MultiplierFactorNumeric>
+        <cbc:Amount currencyID="JPY">50</cbc:Amount>
         <cbc:BaseAmount currencyID="JPY">1000</cbc:BaseAmount>
         <cac:TaxCategory>
             <cbc:ID>S</cbc:ID>
@@ -280,11 +280,11 @@
     <!-- tag::vat-curr2[] -->
 
     <cac:TaxTotal>
-        <cbc:TaxAmount currencyID="JPY">560</cbc:TaxAmount>
+        <cbc:TaxAmount currencyID="JPY">583</cbc:TaxAmount>
         <!--3-->
         <cac:TaxSubtotal>
-            <cbc:TaxableAmount currencyID="JPY">4000</cbc:TaxableAmount>
-            <cbc:TaxAmount currencyID="JPY">400</cbc:TaxAmount>
+            <cbc:TaxableAmount currencyID="JPY">4150</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="JPY">415</cbc:TaxAmount>
             <cac:TaxCategory>
                 <cbc:ID>S</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
@@ -294,8 +294,8 @@
             </cac:TaxCategory>
         </cac:TaxSubtotal>
         <cac:TaxSubtotal>
-            <cbc:TaxableAmount currencyID="JPY">2000</cbc:TaxableAmount>
-            <cbc:TaxAmount currencyID="JPY">160</cbc:TaxAmount>
+            <cbc:TaxableAmount currencyID="JPY">2100</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="JPY">168</cbc:TaxAmount>
             <cac:TaxCategory>
                 <cbc:ID>AA</cbc:ID>
                 <cbc:Percent>8</cbc:Percent>
@@ -322,7 +322,7 @@
     <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
         <cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="JPY">4100</cbc:LineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="JPY">4400</cbc:LineExtensionAmount>
         <cbc:AccountingCost>Konteringsstreng</cbc:AccountingCost>
         <cac:InvoicePeriod>
             <cbc:StartDate>2017-12-01</cbc:StartDate>
@@ -342,14 +342,14 @@
             <cbc:AllowanceChargeReasonCode>CG</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Cleaning</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>10</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="JPY">100</cbc:Amount>
-            <cbc:BaseAmount currencyID="JPY">1000</cbc:BaseAmount>
+            <cbc:Amount currencyID="JPY">410</cbc:Amount>
+            <cbc:BaseAmount currencyID="JPY">4100</cbc:BaseAmount>
         </cac:AllowanceCharge>
         <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
             <cbc:AllowanceChargeReasonCode>95</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Discount</cbc:AllowanceChargeReason>
-            <cbc:Amount currencyID="JPY">100</cbc:Amount>
+            <cbc:Amount currencyID="JPY">110</cbc:Amount>
         </cac:AllowanceCharge>
         <!-- end::charge-line[] -->
         <cac:Item>
@@ -403,7 +403,7 @@
     <cac:InvoiceLine>
         <cbc:ID>2</cbc:ID>
         <cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
-        <cbc:LineExtensionAmount currencyID="JPY">2000</cbc:LineExtensionAmount>
+        <cbc:LineExtensionAmount currencyID="JPY">2100</cbc:LineExtensionAmount>
         <cbc:AccountingCost>Konteringsstreng</cbc:AccountingCost>
         <cac:InvoicePeriod>
             <cbc:StartDate>2017-12-01</cbc:StartDate>
@@ -423,8 +423,8 @@
             <cbc:AllowanceChargeReasonCode>CG</cbc:AllowanceChargeReasonCode>
             <cbc:AllowanceChargeReason>Cleaning</cbc:AllowanceChargeReason>
             <cbc:MultiplierFactorNumeric>10</cbc:MultiplierFactorNumeric>
-            <cbc:Amount currencyID="JPY">100</cbc:Amount>
-            <cbc:BaseAmount currencyID="JPY">1000</cbc:BaseAmount>
+            <cbc:Amount currencyID="JPY">200</cbc:Amount>
+            <cbc:BaseAmount currencyID="JPY">2000</cbc:BaseAmount>
         </cac:AllowanceCharge>
         <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>

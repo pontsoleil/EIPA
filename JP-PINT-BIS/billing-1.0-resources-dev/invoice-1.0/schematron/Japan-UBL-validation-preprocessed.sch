@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <ns prefix="ext" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"/>
   <ns prefix="cbc" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
   <ns prefix="cac" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
@@ -38,7 +39,7 @@
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[cbc:ID/normalize-space(.)='S' or cbc:ID/normalize-space(.)='AA'][cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
       <assert id="jp-s-07" flag="fatal" test="(cbc:Percent) &gt; 0">[jp-s-07]-In a Document level charge (IBG-21) where the Document level charge Consumption Tax category code (IBT-102) is "Standard rated" or "Reduced rate" the Document level charge Consumption Tax rate (IBT-103) shall be greater than zero.  </assert>
     </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
+    <rule context="//cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
       <let name="invoiceLineStandard" value="../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
       <let name="allowanceChargeStandard" value="../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
       <let name="allowanceStandard" value="../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
@@ -55,14 +56,19 @@
         )">
         [jp-s-08s]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
       </assert>
-      <assert id="jp-s-08aa" flag="fatal" test="(
+ <!--     <assert id="jp-s-08aa" flag="fatal" test="(
           exists($invoiceLineReduced/cbc:LineExtensionAmount/xs:decimal(.)) or exists($allowanceChargeReduced)
         ) and (
           ../cbc:TaxableAmount/xs:decimal(.) = sum($invoiceLineReduced/cbc:LineExtensionAmount/xs:decimal(.)) +
           sum($chargeReduced/cbc:Amount/xs:decimal(.)) - sum($allowanceReduced/cbc:Amount/xs:decimal(.))
         )"> 
+<<<<<<< Updated upstream
         [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where t44005he Consumption Tax category code (IBT-118) is "Reduced rate", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Reduced rate" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
       </assert>
+=======
+        [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Reduced rate", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Reduced rate" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
+      </assert>-->
+>>>>>>> Stashed changes
     </rule>
     <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
       <assert id="jp-s-09" flag="fatal" test="
