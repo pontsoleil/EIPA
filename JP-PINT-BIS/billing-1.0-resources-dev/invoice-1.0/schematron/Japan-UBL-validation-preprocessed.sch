@@ -39,25 +39,11 @@
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[cbc:ID/normalize-space(.)='S' or cbc:ID/normalize-space(.)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-07" flag="fatal" test="(cbc:Percent) &gt; 0">[jp-s-07]-In a Document level charge (IBG-21) where the Document level charge Consumption Tax category code (IBT-102) is "Standard rated" or "Reduced rate" the Document level charge Consumption Tax rate (IBT-103) shall be greater than zero.  </assert>
     </rule>
-<<<<<<< HEAD
     <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cbc:ID/normalize-space(.)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-08s" flag="fatal" test="every $rate in xs:decimal(cbc:Percent) satisfies (
         (
         exists(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) or
         exists(../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate])
-=======
-    <rule context="//cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
-      <let name="invoiceLineStandard" value="../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
-      <let name="allowanceChargeStandard" value="../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
-      <let name="allowanceStandard" value="../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
-      <let name="chargeStandard" value="../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=10]"/>
-      <let name="invoiceLineReduced" value="../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=8]"/>
-      <let name="allowanceChargeReduced" value="../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=8]"/>
-      <let name="allowanceReduced" value="../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=8]"/>
-      <let name="chargeReduced" value="../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=8]"/>
-      <assert id="jp-s-08s" flag="fatal" test="(
-          exists($invoiceLineStandard/cbc:LineExtensionAmount/xs:decimal(.)) or exists($allowanceChargeStandard)
->>>>>>> f1de23c1f3b5c4573c48798cfca2f94bf765cfd7
         ) and (
         ../cbc:TaxableAmount/xs:decimal(.) = sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) +
         sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.)) - 
@@ -67,14 +53,10 @@
         [jp-s-08]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
       </assert>
       <assert id="jp-s-09s" flag="fatal" test="
-        (
-          ../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))
-        ) and (
-          ../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))
-        )">
+          ../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100)) and
+          ../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))">
         [jp-s-09s]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
       </assert>
-<<<<<<< HEAD
     </rule>
   <!--
     <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cbc:ID/normalize-space(.)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
@@ -82,10 +64,6 @@
         (
          exists(../../../cac:InvoiceLine[ cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) or
          exists(cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
-=======
- <!--     <assert id="jp-s-08aa" flag="fatal" test="(
-          exists($invoiceLineReduced/cbc:LineExtensionAmount/xs:decimal(.)) or exists($allowanceChargeReduced)
->>>>>>> f1de23c1f3b5c4573c48798cfca2f94bf765cfd7
         ) and (
          ../xs:decimal(cbc:TaxableAmount) ＝
          sum(../../../cac:InvoiceLine[ cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) +
@@ -93,7 +71,6 @@
          sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
         )
         )"> 
-<<<<<<< HEAD
         [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated" or "Reduced rate", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" or "Reduced rate" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
       </assert>
       <assert id="jp-s-09aa" flag="fatal" test="
@@ -103,21 +80,6 @@
         ../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))
         )">
         [jp-s-09aa]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Reduced rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
-=======
-<<<<<<< Updated upstream
-        [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where t44005he Consumption Tax category code (IBT-118) is "Reduced rate", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Reduced rate" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
-      </assert>
-=======
-        [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Reduced rate", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Reduced rate" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
-      </assert>-->
->>>>>>> Stashed changes
-    </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
-      <assert id="jp-s-09" flag="fatal" test="
-        ../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (cbc:Percent/xs:decimal(.) div 100)) and
-        ../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (cbc:Percent/xs:decimal(.) div 100))">
-        [jp-s-09]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Reduced rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
->>>>>>> f1de23c1f3b5c4573c48798cfca2f94bf765cfd7
       </assert>
     </rule>
   -->
