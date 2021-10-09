@@ -42,15 +42,15 @@
     <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cbc:ID/normalize-space(.)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-08s" flag="fatal" test="every $rate in xs:decimal(cbc:Percent) satisfies (
         (
-        exists(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) or
-        exists(../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate])
+			exists(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) or
+			exists(../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate])
         ) and (
-        ../cbc:TaxableAmount/xs:decimal(.) = sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) +
-        sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.)) - 
-        sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.))
+			../cbc:TaxableAmount/xs:decimal(.) = sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='S'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) +
+			sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.)) - 
+			sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='S'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.))
         )
       )">
-        [jp-s-08]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
+        [jp-s-08s]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
       </assert>
       <assert id="jp-s-09s" flag="fatal" test="
           ../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100)) and
@@ -58,31 +58,36 @@
         [jp-s-09s]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
       </assert>
     </rule>
-  <!--
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cbc:ID/normalize-space(.)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+	<rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cbc:ID/normalize-space(.)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-08aa" flag="fatal" test="every $rate in xs:decimal(cbc:Percent) satisfies (
         (
-         exists(../../../cac:InvoiceLine[ cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) or
-         exists(cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
+			exists(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) or
+			exists(../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate])
         ) and (
-         ../xs:decimal(cbc:TaxableAmount) ＝
-         sum(../../../cac:InvoiceLine[ cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) +
-         sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
-         sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+			../cbc:TaxableAmount/xs:decimal(.) = sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) +
+			sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.)) - 
+			sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.))
         )
-        )"> 
-        [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated" or "Reduced rate", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" or "Reduced rate" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
+      )">
+        [jp-s-08aa]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
       </assert>
       <assert id="jp-s-09aa" flag="fatal" test="
-        (
-        ../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))
-        ) and (
-        ../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))
-        )">
-        [jp-s-09aa]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Reduced rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
+          ../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100)) and
+          ../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))">
+        [jp-s-09aa]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
       </assert>
     </rule>
-  -->
+    <rule context="cac:LegalMonetaryTotal">
+      <assert id="ibr-12" flag="fatal" test="exists(cbc:LineExtensionAmount)">[ibr-12]-An Invoice shall have the Sum of Invoice line net amount (iibt-106).</assert>
+      <assert id="ibr-13" flag="fatal" test="exists(cbc:TaxExclusiveAmount)">[ibr-13]-An Invoice shall have the Invoice total amount without Tax (iibt-109).</assert>
+      <assert id="ibr-14" flag="fatal" test="exists(cbc:TaxInclusiveAmount)">[ibr-14]-An Invoice shall have the Invoice total amount with Tax (iibt-112).</assert>
+      <assert id="ibr-15" flag="fatal" test="exists(cbc:PayableAmount)">[ibr-15]-An Invoice shall have the Amount due for payment (iibt-115).</assert>
+      <assert id="ibr-co-10" flag="fatal" test="(xs:decimal(cbc:LineExtensionAmount) = sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount)))">[ibr-co-10]-Sum of Invoice line net amount (iibt-106) = Σ Invoice line net amount (iibt-131).</assert>
+      <assert id="ibr-co-11" flag="fatal" test="xs:decimal(cbc:AllowanceTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount)) or  (not(cbc:AllowanceTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]))">[ibr-co-11]-Sum of allowances on document level (iibt-107) = Σ Document level allowance amount (iibt-092).</assert>
+      <assert id="ibr-co-12" flag="fatal" test="xs:decimal(cbc:ChargeTotalAmount) = sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount)) or (not(cbc:ChargeTotalAmount) and not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]))">[ibr-co-12]-Sum of charges on document level (iibt-108) = Σ Document level charge amount (iibt-099).</assert>
+      <assert id="ibr-co-13" flag="fatal" test="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)))  or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount))) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount))) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)))">[ibr-co-13]-Invoice total amount without Tax (iibt-109) = Σ Invoice line net amount (iibt-131) - Sum of allowances on document level (iibt-107) + Sum of charges on document level (iibt-108).</assert>
+      <assert id="ibr-co-16" flag="fatal" test="(xs:decimal(cbc:PrepaidAmount) and not(xs:decimal(cbc:PayableRoundingAmount)) and (xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and not(xs:decimal(cbc:PayableRoundingAmount)) and xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)) or (xs:decimal(cbc:PrepaidAmount) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount))) or (not(xs:decimal(cbc:PrepaidAmount)) and xs:decimal(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:PayableAmount) - xs:decimal(cbc:PayableRoundingAmount)) = xs:decimal(cbc:TaxInclusiveAmount)))">[ibr-co-16]-Amount due for payment (iibt-115) = Invoice total amount with Tax (iibt-112) - Paid amount (iibt-113) + Rounding amount (iibt-114).</assert>
+    </rule>
   </pattern>
   <pattern id="Codesmodel">
     <rule flag="fatal" context="cbc:InvoiceTypeCode | cbc:CreditNoteTypeCode">
