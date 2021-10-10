@@ -2,12 +2,12 @@
 ,,,,,TAX BREAKDOWN,TAX BREAKDOWN,ADDITIONAL SUPPORTING DOCUMENTS,ADDITIONAL SUPPORTING DOCUMENTS,ADDITIONAL SUPPORTING DOCUMENTS,INVOICE LINE,INVOICE LINE
 ,,,,,0,1,0,1,2,0,1
 ibt-001,1,1..1,Invoice number,Snippet1,,,,,,,
-ibt-002,1,1..1,Invoice issue date,2017-11-13,,,,,,,
+ibt-002,1,1..1,Invoice issue date,2017/11/13,,,,,,,
 ibt-003,1,1..1,Invoice type code,380,,,,,,,
 ibt-005,1,1..1,Invoice currency code,JPY,,,,,,,
 ibt-006,1,0..1,Tax accounting currency,SEK,,,,,,,
-ibt-007,1,0..1,TAX point date,2017-12-01,,,,,,,
-ibt-009,1,0..1,Payment due date,2017-12-01,,,,,,,
+ibt-007,1,0..1,TAX point date,2017/12/1,,,,,,,
+ibt-009,1,0..1,Payment due date,2017/12/1,,,,,,,
 ibt-010,1,0..1,Buyer reference,0150abc,,,,,,,
 ibt-011,1,0..1,Project reference,project333,,,,,,,
 ibt-012,1,0..1,Contract reference,framework no 1,,,,,,,
@@ -84,11 +84,11 @@ ibt-068,3,0..1,Tax representative country subdivision,Subentity,,,,,,,
 ibt-069,3,1..1,Tax representative country code,GB,,,,,,,
 ibg-13,1,0..1,DELIVERY INFORMATION,,,,,,,,
 ibt-070,2,0..1,Deliver to party name,Delivery party Name,,,,,,,
-ibt-071,2,0..1,Deliver to location identifier,7300010000001,,,,,,,
-ibt-072,2,0..1,Actual delivery date,2017-11-01,,,,,,,
+ibt-071,2,0..1,Deliver to location identifier,7.30001E+12,,,,,,,
+ibt-072,2,0..1,Actual delivery date,2017/11/1,,,,,,,
 ibg-14,2,0..1,INVOICING PERIOD,,,,,,,,
-ibt-073,3,0..1,Invoicing period start date,2017-11-01,,,,,,,
-ibt-074,3,0..1,Invoicing period end date,2017-12-31,,,,,,,
+ibt-073,3,0..1,Invoicing period start date,2017/11/1,,,,,,,
+ibt-074,3,0..1,Invoicing period end date,2017/12/31,,,,,,,
 ibg-15,2,0..1,DELIVER TO ADDRESS,,,,,,,,
 ibt-075,3,0..1,Deliver to address line 1,Delivery street 2,,,,,,,
 ibt-076,3,0..1,Deliver to address line 2,Building 56,,,,,,,
@@ -113,9 +113,9 @@ ibt-096-1,3,0..1,Tax Scheme,VAT,,,,,,,
 ibt-097,2,0..1,Document level allowance reason,Production error discount,,,,,,,
 ibt-098,2,0..1,Document level allowance reason code,65,,,,,,,
 ibg-21,1,0..n,DOCUMENT LEVEL CHARGES,,,,,,,,
-ibt-099,2,1..1,Document level charge amount,200,,,,,,,
+ibt-099,2,1..1,Document level charge amount,50,,,,,,,
 ibt-100,2,0..1,Document level charge base amount,1000,,,,,,,
-ibt-101,2,0..1,Document level charge percentage,20,,,,,,,
+ibt-101,2,0..1,Document level charge percentage,5,,,,,,,
 ibt-102,2,1..1,Document level charge TAX category code,S,,,,,,,
 ibt-103,2,0..1,Document level charge TAX rate,10,,,,,,,
 ibt-103-1,3,0..1,Tax Scheme,VAT,,,,,,,
@@ -124,16 +124,16 @@ ibt-105,2,0..1,Document level charge reason code,FC,,,,,,,
 ibg-22,1,1..1,DOCUMENT TOTALS,,,,,,,,
 ibt-106,2,1..1,Sum of Invoice line net amount,6100,,,,,,,
 ibt-107,2,0..1,Sum of allowances on document level,300,,,,,,,
-ibt-108,2,0..1,Sum of charges on document level,200,,,,,,,
-ibt-109,2,1..1,Invoice total amount without TAX,6100,,,,,,,
-ibt-110,2,0..1,Invoice total TAX amount,560,,,,,,,
-ibt-111,2,0..1,Invoice total TAX amount in accounting currency,44.01,,,,,,,
-ibt-112,2,1..1,Invoice total amount with TAX,6660,,,,,,,
+ibt-108,2,0..1,Sum of charges on document level,50,,,,,,,
+ibt-109,2,1..1,Invoice total amount without TAX,5850,,,,,,,
+ibt-110,2,0..1,Invoice total TAX amount,583,,,,,,,
+ibt-111,2,0..1,Invoice total TAX amount in accounting currency,45.82,,,,,,,
+ibt-112,2,1..1,Invoice total amount with TAX,6433,,,,,,,
 ibt-113,2,0..1,Paid amount,1000,,,,,,,
-ibt-115,2,1..1,Amount due for payment,4000,,,,,,,
+ibt-115,2,1..1,Amount due for payment,5433,,,,,,,
 ibg-23,1,1..n,TAX BREAKDOWN,,,,,,,,
-ibt-116,2,1..1,TAX category taxable amount,,4000,2000,,,,,
-ibt-117,2,1..1,TAX category tax amount,,400,160,,,,,
+ibt-116,2,1..1,TAX category taxable amount,,4150,2100,,,,,
+ibt-117,2,1..1,TAX category tax amount,,415,168,,,,,
 ibt-118,2,1..1,TAX category code,,S,AA,,,,,
 ibt-118-1,3,0..1,Tax Scheme,,VAT,VAT,,,,,
 ibt-119,2,0..1,TAX category rate,,10,8,,,,,
@@ -149,19 +149,19 @@ ibt-128,2,0..1,Invoice line object identifier,,,,,,,Mobile number 1223432432,Mob
 ibt-188,2,0..1,Invoice line document identifier,,,,,,,Mobile number 1223432432,Mobile number 1223432432
 ibt-189,2,0..1,Document type code,,,,,,,130,130
 ibt-129,2,1..1,Invoiced quantity,,,,,,,1,1
-ibt-131,2,1..1,Invoice line net amount,,,,,,,4100,2000
+ibt-131,2,1..1,Invoice line net amount,,,,,,,4400,2100
 ibt-132,2,0..1,Referenced purchase order line reference,,,,,,,123,124
 ibt-133,2,0..1,Invoice line Buyer accounting reference,,,,,,,Konteringsstreng,Konteringsstreng
 ibg-26,2,0..1,INVOICE LINE PERIOD,,,,,,,,
-ibt-134,3,0..1,Invoice line period start date,,,,,,,2017-12-01,2017-12-01
-ibt-135,3,0..1,Invoice line period end date,,,,,,,2017-12-05,2017-12-05
+ibt-134,3,0..1,Invoice line period start date,,,,,,,2017/12/1,2017/12/1
+ibt-135,3,0..1,Invoice line period end date,,,,,,,2017/12/5,2017/12/5
 ibg-27,2,0..n,INVOICE LINE ALLOWANCES,,,,,,,,
-ibt-136,3,1..1,Invoice line allowance amount,,,,,,,100,100
+ibt-136,3,1..1,Invoice line allowance amount,,,,,,,110,100
 ibt-139,3,0..1,Invoice line allowance reason,,,,,,,Discount,Discount
 ibt-140,3,0..1,Invoice line allowance reason code,,,,,,,95,95
 ibg-28,2,0..n,INVOICE LINE CHARGES,,,,,,,,
-ibt-141,3,1..1,Invoice line charge amount,,,,,,,100,100
-ibt-142,3,0..1,Invoice line charge base amount,,,,,,,1000,1000
+ibt-141,3,1..1,Invoice line charge amount,,,,,,,410,200
+ibt-142,3,0..1,Invoice line charge base amount,,,,,,,4100,2000
 ibt-143,3,0..1,Invoice line charge percentage,,,,,,,10,10
 ibt-144,3,0..1,Invoice line charge reason,,,,,,,Cleaning,Cleaning
 ibt-145,3,0..1,Invoice line charge reason code,,,,,,,CG,CG
@@ -179,8 +179,8 @@ ibt-153,3,1..1,Item name,,,,,,,item name,item name
 ibt-154,3,0..n,Item description,,,,,,,Description of item,Description of item
 ibt-155,3,0..1,Item Seller's identifier,,,,,,,97iugug876,97iugug877
 ibt-156,3,0..1,Item Buyer's identifier,,,,,,,lfjsdlfkj,lfjsdlfkk
-ibt-157,3,0..1,Item standard identifier,,,,,,,7300010000001,7300010000002
-ibt-158,3,0..n,Item classification identifier,,,,,,,09348023,09348023
+ibt-157,3,0..1,Item standard identifier,,,,,,,7300010000001 ,7300010000002 
+ibt-158,3,0..n,Item classification identifier,,,,,,,9348023,9348023
 ibt-159,3,0..1,Item country of origin,,,,,,,NO,NO
 ibg-32,3,0..n,ITEM ATTRIBUTES,,,,,,,,
 ibt-160,4,1..1,Item attribute name,,,,,,,AdditionalItemName,AdditionalItemName
