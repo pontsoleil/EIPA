@@ -46,24 +46,35 @@ $ ./invoice2tsv infile -o outfile -e encoding -v
 
 ```
 .
-├── LICENSE
-├── README.md
-├── bin
+├── csv2invoice
 ├── data
 │   ├── common
-│   │   └── xpath.tsv
+│   │   ├── uncl4451.txt
+│   │   └── xpath.csv
 │   ├── in
-│   │   └── pint_ex6.txt
-│   └── out
-│       └── pint_ex6.xml
+│   │   ├── ubl-tc434-example1.xml
+│   │   ├── ubl-tc434-example2.xml
+...
+│   │   └── ubl-tc434-example9.xml
+│   ├── out
+│   │   ├── ubl-tc434-example1.csv
+│   │   ├── ubl-tc434-example1.txt
+│   │   ├── ubl-tc434-example1.xml
+│   │   ├── ubl-tc434-example2.csv
+│   │   ├── ubl-tc434-example2.txt
+│   │   ├── ubl-tc434-example2.xml
+...
+│   │   ├── ubl-tc434-example9.csv
+│   │   ├── ubl-tc434-example9.txt
+│   │   └── ubl-tc434-example9.xml
 ├── dic2etree
 │   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   └── dic2etree.cpython-36.pyc
 │   └── dic2etree.py
-├── docs
-│   └── dic2etree.md
-├── genInvoice
-├── invoice2tsv
-└── transpose
+└── invoice2csv
+
 ```
 
 ## 参考
