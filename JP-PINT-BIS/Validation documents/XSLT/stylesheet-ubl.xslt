@@ -424,6 +424,7 @@
 				<t id="no">Djibouti</t>
 			</c>
 			<c id="DK">
+				<t id="ja">デンマーク</t>
 				<t id="en">Denmark</t>
 				<t id="no">Danmark</t>
 			</c>
@@ -496,6 +497,7 @@
 				<t id="no">Gabon</t>
 			</c>
 			<c id="GB">
+				<t id="ja">英国</t>
 				<t id="en">United Kingdom of Great Britain and Northern Ireland</t>
 				<t id="no">Storbritannia</t>
 			</c>
@@ -852,10 +854,12 @@
 				<t id="no">Nicaragua</t>
 			</c>
 			<c id="NL">
+				<t id="ja">オランダ</t>
 				<t id="en">Netherlands</t>
 				<t id="no">Nederland</t>
 			</c>
 			<c id="NO">
+				<t id="ja">ノルウェー</t>
 				<t id="en">Norway</t>
 				<t id="no">Norge</t>
 			</c>
@@ -976,6 +980,7 @@
 				<t id="no">Sudan</t>
 			</c>
 			<c id="SE">
+				<t id="ja">スウェーデン</t>
 				<t id="en">Sweden</t>
 				<t id="no">Sverige</t>
 			</c>
@@ -1270,14 +1275,14 @@
 				<t id="no">Last ned</t>
 			</f>
 			<f id="Embedded">
-				<t id="en">組み込み</t>
+				<t id="ja">組込</t>
 				<t id="en">Embedded</t>
 				<t id="no">Innebygd</t>
 			</f>
 		</g>
 		<g id="delivery">
 			<f id="Address">
-				<t id="en">住所</t>
+				<t id="ja">住所</t>
 				<t id="en">Address</t>
 				<t id="no">Adresse</t>
 			</f>
@@ -1338,17 +1343,17 @@
 		</g>
 		<g id="line">
 			<f id="Allowance">
-				<t id="ja">返還請求</t>
+				<t id="ja">返金</t>
 				<t id="en">Allowance</t>
 				<t id="no">Rabatt</t>
 			</f>
 			<f id="AllowanceIncluded">
-				<t id="ja">明細行返還請求</t>
+				<t id="ja">明細行返金</t>
 				<t id="en">Included allowance</t>
 				<t id="no">Inkludert rabatt</t>
 			</f>
 			<f id="AllowanceTotalAmount">
-				<t id="ja">返還請求合計</t>
+				<t id="ja">返金合計</t>
 				<t id="en">Allowance Total</t>
 				<t id="no">Rabattotal</t>
 			</f>

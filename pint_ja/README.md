@@ -29,17 +29,23 @@ Business term groupとしてのIDを指定する領域では、IDと出現順の
 
 ## プログラムの実行
 
-$ ./csv2nvoice infile -o outfile -e encoding -t -v
+$ ./csv2nvoice infile -o outfile -e encoding -v -d
 - infile 入力ファイル(.tsv)   
-- outfile 出力ファイル(.xml)  
+- -o outfile 出力ファイル(.xml)  
 - -e (--encoding) 入力ファイルのエンコーディングを指定する。省略時は、UTF-8  
 - -v 処理状況を標準出力に出力する  
+- -d デバッグ情報を標準出力に出力する  
+実行例  
+./csv2invoice Snippet-full-EIPA.csv -o Snippet-full-EIPA.xml -e Shift_JIS -v -d
 
 $ ./invoice2csv infile -o outfile -e encoding -v
 - infile 入力ファイル(.xml)   
-- outfile 出力ファイル(.tsv)  
+- -o outfile 出力ファイル(.tsv)  
 - -e (--encoding) 入力ファイルのエンコーディングを指定する。省略時は、UTF-8  
 - -v 処理状況を標準出力に出力する  
+- -d デバッグ情報を標準出力に出力する  
+実行例  
+./invoice2csv Snippet-full-EIPA.xml -o Snippet-full-EIPA.csv -e Shift_JIS -v -d
 
 ## ディレクトリ階層
 

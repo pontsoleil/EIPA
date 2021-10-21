@@ -379,7 +379,7 @@ def set_record(Dic, header, record):
 if __name__ == '__main__':
   # Create the parser
   parser = argparse.ArgumentParser(prog='genInvoice',
-                                  usage='%(prog)s [options] infile outfile',
+                                  usage='%(prog)s [options] infile -o outfile',
                                   description='CSVファイルから電子インボイスXMLを作成')
   # Add the arguments
   parser.add_argument('inFile', metavar='infile', type=str, help='入力CSVファイル')
