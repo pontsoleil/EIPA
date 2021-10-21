@@ -29,14 +29,13 @@ Business term groupとしてのIDを指定する領域では、IDと出現順の
 
 ## プログラムの実行
 
-$ ./genInvoice infile -o outfile -e encoding -t -v
+$ ./csv2nvoice infile -o outfile -e encoding -t -v
 - infile 入力ファイル(.tsv)   
 - outfile 出力ファイル(.xml)  
 - -e (--encoding) 入力ファイルのエンコーディングを指定する。省略時は、UTF-8  
-- -t 行列の入れ替え。指定しないときには、入力ファイルは、先頭行が項目ID。指定時は、最初の欄に項目IDのファイルを行列入れ替えて処理する。  
 - -v 処理状況を標準出力に出力する  
 
-$ ./invoice2tsv infile -o outfile -e encoding -v
+$ ./invoice2csv infile -o outfile -e encoding -v
 - infile 入力ファイル(.xml)   
 - outfile 出力ファイル(.tsv)  
 - -e (--encoding) 入力ファイルのエンコーディングを指定する。省略時は、UTF-8  
