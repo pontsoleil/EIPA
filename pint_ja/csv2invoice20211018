@@ -1,0 +1,537 @@
+#!/usr/bin/env python3
+#coding: utf-8
+#
+# generate Open Peoopl e-Invoice (UBL 2.1) fron CSV file
+# 
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+import csv
+import re
+import json
+import sys 
+import os
+import argparse
+
+from dic2etree import * 
+from templateUBL import *
+
+tmpltInvoice = json.dumps(Invoice)
+tmpltOrderReference = json.dumps(OrderReference)
+tmpltAdditionalDocumentReference = json.dumps(AdditionalDocumentReference)
+tmpltAccountingSupplierParty = json.dumps(AccountingSupplierParty)
+tmpltAccountingCustomerParty = json.dumps(AccountingCustomerParty)
+tmpltPayeeParty = json.dumps(PayeeParty)
+tmpltTaxRepresentativeParty = json.dumps(TaxRepresentativeParty)
+tmpltDelivery = json.dumps(Delivery)
+tmpltPaymentMeans = json.dumps(PaymentMeans)
+tmpltPaymentTerms = json.dumps(PaymentTerms)
+tmpltPrepaidPayment = json.dumps(PrepaidPayment)
+tmpltAllowanceCharge = json.dumps(AllowanceCharge)
+tmpltTaxTotal = json.dumps(TaxTotal)
+tmpltTaxSubtotal = json.dumps(TaxSubtotal)
+tmpltTaxCategory = json.dumps(TaxCategory)
+tmpltLegalMonetaryTotal = json.dumps(LegalMonetaryTotal)
+tmpltInvoiceLine = json.dumps(InvoiceLine)
+tmpltItem = json.dumps(Item)
+tmpltCommodityClassification = json.dumps(CommodityClassification)
+tmpltClassifiedTaxCategory = json.dumps(ClassifiedTaxCategory)
+tmpltAdditionalItemProperty = json.dumps(AdditionalItemProperty)
+tmpltPrice = json.dumps(Price)
+
+# https://stackoverflow.com/questions/32180969/how-to-delete-empty-dict-inside-list-of-dictionary/41870680
+def trimmer(data):
+  if isinstance(data,dict):
+    new_data = {}
+    for key,value in data.items():
+      if value:
+        new_data[key] = trimmer(value)
+    return new_data
+  elif isinstance(data,list):
+    new_data = []
+    for index in range(len(data)):
+      if data[index]:
+        new_data.append(trimmer(data[index]))
+    return new_data
+  else:
+    return data
+
+def file_path(pathname):
+  if '/' == pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+# ref https://stackoverflow.com/questions/15210148/get-parents-keys-from-nested-dictionary
+# breadcrumb(json_dict_or_list, value)
+def get_path_value(base, path):
+  key = path[0]
+  if isinstance(base, dict):
+    if 1 == len(path):
+      if key in base.keys():
+        return {'k':key, 'v':base[key]}
+    else:
+      path.pop(0)
+      for k, v in base.items():
+        if isinstance(base, dict):
+          if key == k:
+            p = get_path_value(v, path)
+            return p
+  elif isinstance(base, list):
+    try:
+      key = int(key)
+      if key < len(base):
+        path.pop(0)
+        p = get_path_value(base[key], path)
+        return p
+    except ValueError:
+      pass
+
+def set_path_value(base,path,value,datatype):
+  if isinstance(base,str) or not path:
+    return None
+  key = path[0]
+  if len(path) > 1:
+    if not base and 2==len(path) and '@'==path[1][:1]:
+      base[path[0]] = {}
+      base[path[0]][path[1]] = str(value)
+    else:
+      try:
+        index = int(path[1])
+        if isinstance(base,list):
+          base = base[-1]
+        if not key in base:
+          base[key] = None
+        if isinstance(base[key], list):
+          pass
+        else:
+          base[key] = [{}]
+        if index >= len(base[key]):
+          for i in range(index - len(base[key]) + 1):
+            base[key].append({})
+        try:
+          base = base[key][index]
+        except Exception:
+          pass
+        path.pop(0)
+        path.pop(0)
+        p = set_path_value(base,path,value,datatype)
+        return p
+      except ValueError:
+        pass
+  if isinstance(base, list):
+    base = base[-1]
+  if isinstance(base, dict):
+    if 1 == len(path):
+      if not key in base.keys():
+        base[key] = {}
+      if 'Amount' == datatype or 'Unit Price Amount' == datatype:
+        value = {'#text': str(value), '@currencyID': DocumentCurrencyCode}
+        base[key] = value
+      elif 'Quantity' == datatype:
+        base[key]['#text'] = str(value) #, '@unitCode': 'EA'}
+      else:
+        base[key] = value  # when Amount/Unit/Quantity is already set
+      return {'k':key, 'v':base[key]}
+    elif '@' == path[1][:1]:
+      if not key in base.keys():
+        base[key] = {}
+      if isinstance(base[key], str):
+        v = base[key]
+        base[key] = {}
+        base[key]['#text'] = v
+      base[key][path[1]] = value
+      return {'k':key, 'v': base[key]}
+    else:
+      path.pop(0)
+      if key in base.keys():
+        if isinstance(base, dict):
+          v = base[key]
+        elif isinstance(base, list):
+          v = base[key][-1]
+      else:
+        if 'cac:Invoice' == key:
+          base[key] = json.loads(tmpltInvoice)
+        elif 'cac:OrderReference' == key:
+          base[key] = json.loads(tmpltOrderReference)
+        elif 'cac:AdditionalDocumentReference' == key:
+          base[key] = json.loads(tmpltAdditionalDocumentReference)
+        elif 'cac:AccountingSupplierParty' == key:
+          base[key] = json.loads(tmpltAccountingSupplierParty)
+        elif 'cac:AccountingCustomerParty' == key:
+          base[key] = json.loads(tmpltAccountingCustomerParty)
+        elif 'cac:PayeeParty' == key:
+          base[key] = json.loads(tmpltPayeeParty)
+        elif 'cac:TaxRepresentativeParty' == key:
+          base[key] = json.loads(tmpltTaxRepresentativeParty)
+        elif 'cac:Delivery' == key:
+          base[key] = json.loads(tmpltDelivery)
+        elif 'cac:PaymentMeans' == key:
+          base[key] = json.loads(tmpltPaymentMeans)
+        elif 'cac:PaymentTerms' == key:
+          base[key] = json.loads(tmpltPaymentTerms)
+        elif 'cac:PrepaidPayment' == key:
+          base[key] = json.loads(tmpltPrepaidPayment)
+        elif 'cac:AllowanceCharge' == key:
+          base[key] = json.loads(tmpltAllowanceCharge)
+        elif 'cac:TaxTotal' == key:
+          base[key] = json.loads(tmpltTaxTotal)
+        elif 'cac:TaxSubtotal' == key:
+          base[key] = json.loads(tmpltTaxSubtotal)
+        elif 'cac:TaxCategory' == key:
+          base[key] = json.loads(tmpltTaxCategory)
+        elif 'cac:LegalMonetaryTotal' == key:
+          base[key] = json.loads(tmpltLegalMonetaryTotal)
+        elif 'cac:InvoiceLine' == key:
+          base[key] = json.loads(tmpltInvoiceLine)
+        elif 'cac:Item' == key:
+          base[key] = json.loads(tmpltItem)
+        elif 'cac:CommodityClassification' == key:
+          base[key] = json.loads(tmpltCommodityClassification)
+        elif 'cac:ClassifiedTaxCategory' == key:
+          base[key] = json.loads(tmpltClassifiedTaxCategory)
+        elif 'cac:AdditionalItemProperty' == key:
+          base[key] = json.loads(tmpltAdditionalItemProperty)
+        elif 'cac:Price' == key:
+          base[key] = json.loads(tmpltPrice)
+        else:
+          base[key] = {}
+        v = base[key]
+      p = set_path_value(v,path,value,datatype)
+      return p
+
+def set_record(Dic, header, record):
+  root = '/Invoice'
+  head_id = record[0]
+  if head_id and 'xpath' in pintDict[head_id]:
+    head_xpath = pintDict[head_id]['xpath']
+  else:
+    head_xpath = root
+  head_pathList = head_xpath[1:].split('/')
+  head_id = record[0]
+  if head_id and head_id in pintDict and 'xpath' in pintDict[head_id]:
+    head_xpath = pintDict[head_id]['xpath']
+    head_pathList = head_xpath[1:].split('/')
+  seq0 = record[2]
+  if ''!= seq0:
+    if 'ibt'==head_id[:3]:
+      head_pathList = head_pathList[:-1]+[seq0]+head_pathList[-1:]
+      base_path = head_pathList[:-1]
+    else:
+      head_pathList = head_pathList+[seq0]
+      base_path = head_pathList
+  if len(head_xpath[1:].split('/')) > 1:
+    base = '/'+'/'.join(base_path[:-1]) # head_xpath
+  else:
+    base = '/Invoice'
+    base_path = ['Invoice']
+  N = boughLvl*3-1
+  n = 0
+  for cell in record:  # traverse field in a record
+    if n > N and n < len(header) and cell:
+      id = header[n]
+      if id in pintDict:
+        data = pintDict[id]
+        xpath = data['xpath']
+        xpath_ = None # remove [...] from xpath
+        if re.match(r'^(.*)\[.*\](.*)$',xpath): xpath_ = re.sub(r'^(.*)\[.*\](.*)$',r'\1\2',xpath)
+        datatype = data['datatype']
+        if xpath_: pathList = xpath_[1:].split('/')
+        else: pathList = xpath[1:].split('/')
+      if '/Invoice/cac:TaxTotal' in xpath: ##TODO TaxCurrencyCode
+        if 'DocumentCurrencyCode' in xpath:
+          _xpath = re.sub(r'(.*)\[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text\(\)\](.*)',r'\1\2',xpath)
+          path = _xpath[1:].split('/')
+          set_path_value(Dic, path, cell, datatype)
+        elif 'TaxCurrencyCode' in xpath:
+          if 'cbc:TaxAmount' in xpath:
+            TaxTotal = Dic['Invoice']['cac:TaxTotal']
+            Dic['Invoice']['cac:TaxTotal'] = []
+            Dic['Invoice']['cac:TaxTotal'].append(TaxTotal)
+          _xpath = re.sub(r'(.*)\[@currencyID=/Invoice/cbc:TaxCurrencyCode/text\(\)\](.*)',r'\1\2',xpath)
+          path = _xpath[1:].split('/')
+          path = path[:2]+['1']+path[2:]
+          set_path_value(Dic, path, cell, datatype)
+          Dic['Invoice']['cac:TaxTotal'][1]['cbc:TaxAmount']['@currencyID'] = TaxCurrencyCode
+        else:
+          if 'cac:TaxTotal' in Dic['Invoice'] and isinstance(Dic['Invoice']['cac:TaxTotal'],list):
+            if DocumentCurrencyCode == record[header.index('ibt-117-1')]: loc = '0'
+            else: loc = '1'
+            pathList = xpath[1:].split('/')
+            path = pathList[:2]+[loc]+pathList[2:]
+            path = path[:4]+[seq0]+path[4:]
+            set_path_value(Dic, path, cell, datatype)
+          else:
+            pathList = re.sub(base, '', xpath)[1:].split('/')
+            path = base_path+pathList
+            set_path_value(Dic, path, cell, datatype)
+      elif 'ChargeIndicator=' in xpath:
+        allowanceCharge = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)',r'\1',xpath)
+        chargeIndicator = re.sub(r'.*\[cbc:ChargeIndicator=(true|false)\(\)\](.*)',r'\1',xpath)
+        pathList = re.sub(base, '', allowanceCharge)[1:].split('/')
+        if 'cac:Price' in pathList:
+          path = base_path+pathList
+          path.append('cbc:ChargeIndicator')
+          set_path_value(Dic, path, chargeIndicator, 'Indicator')
+          path = re.sub(r'(.*)\[cbc:ChargeIndicator=false\(\)\](.*)',r'\1\2',xpath)[1:].split('/')
+          set_path_value(Dic, path, cell, datatype)
+        else:
+          if 'true'==chargeIndicator: seq = '1'
+          else: seq = '0'
+          path = base_path+pathList+[seq]
+          path.append('cbc:ChargeIndicator')
+          set_path_value(Dic, path, chargeIndicator, 'Indicator')
+          xpath = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)',r'\1\3',xpath)
+          pathList = re.sub(base, '', xpath)[1:].split('/')
+          path = base_path+pathList[:1]+[seq]+pathList[1:]
+          set_path_value(Dic, path, cell, datatype)
+      else:
+        pathL = None
+        for i in range(1,boughLvl):
+          bough_id = record[i*3]
+          seq = record[i*3+2]
+          if bough_id and 'xpath' in pintDict[bough_id]:
+            bough_xpath = pintDict[id]['xpath']
+            pathL = bough_xpath[1:].split('/')
+            if '@'==pathL[-1][:1]: name = pathL[-2]
+            else: name = pathL[-1]
+            if name in pathList:
+              headLength = len(head_pathList) - 1
+              loc = pathList.index(name) - headLength
+              pathL = pathL[headLength:]
+              if loc:
+                pathL = head_pathList+pathL[:loc]+[seq]+pathL[loc:]
+        if pathL:
+          path = pathL
+        elif base in xpath:
+          pathList = re.sub(base,'', xpath)[1:].split('/')
+          path = base_path+pathList
+        else:
+          path = pathList
+        set_path_value(Dic, path, cell, datatype)
+    n += 1
+
+if __name__ == '__main__':
+  # Create the parser
+  parser = argparse.ArgumentParser(prog='genInvoice',
+                                  usage='%(prog)s [options] infile outfile',
+                                  description='CSVファイルから電子インボイスXMLを作成')
+  # Add the arguments
+  parser.add_argument('inFile', metavar='infile', type=str, help='入力CSVファイル')
+  parser.add_argument('-o', '--out')
+  parser.add_argument('-e', '--encoding')  # 'Shift_JIS' 'cp932'
+  parser.add_argument('-v', '--verbose', action='store_true')
+  parser.add_argument('-d', '--debug', action='store_true')
+
+  args = parser.parse_args()
+  in_file = file_path(args.inFile)
+  pre, ext = os.path.splitext(in_file)
+  if args.out:
+    out_file = args.out.lstrip()
+    out_file = file_path(out_file)
+  else:
+    out_file = pre+'.xml'
+  tmp_file = pre+'.txt'
+  ncdng = args.encoding.lstrip()
+  if not ncdng:
+    ncdng = 'UTF-8'
+  verbose = args.verbose
+  DEBUG = args.debug
+
+  # Check if infile exists
+  if not os.path.isfile(in_file):
+    print('入力ファイルがありません')
+    sys.exit()
+  if verbose:
+    print('** START ** ', __file__)
+
+  # # initialize globals
+  pintDict = {}
+  header_id = None
+  header_count = 0
+  DocumentCurrencyCode = None
+  TaxCurrencyCode = None
+  Dic = defaultdict(type(''))
+  Dic['Invoice'] = {}
+  sortedDic = defaultdict(type(''))
+  sortedDic['Invoice'] = {}
+  pintDict = defaultdict(type(''))
+  pintL1 = []
+  multipleBG = []
+
+  pint_file = file_path('data/common/xpath.csv')
+  # SemSort,ID,Level,BT,BT_ja,Definition,Definition_ja,Explanation,Explanation_ja,Example,Card,DataType,Section,Extension,SyntSort,XPath,Attributes,Rules,UBL_DataType,Cardinality,Alignment
+  # 0       1  2     3  4     5          6             7           8              9       10   11       12      13        14       15    16         17    18           19          20
+  COL_SemanticSort = 0
+  COL_ID = 1
+  COL_level = 2
+  COL_BT = 3
+  COL_BT_ja = 4
+  COL_card = 10
+  COL_datatype = 11
+  COL_SyntaxSort = 14
+  COL_xpath = 15
+  COL_ubl_card = 19
+  if verbose:
+    print(f'*** XPath file {pint_file}')
+  with open(pint_file, encoding='utf-8', newline='') as f0:
+    reader = csv.reader(f0) #, delimiter='\t')
+    header = next(reader)
+    for v in reader:
+      id = v[COL_ID].strip()
+      if id:
+        xpath = v[COL_xpath]
+        syntaxSort = v[COL_SyntaxSort]
+        if not syntaxSort:
+          syntaxSort = '9999'
+        if not xpath:
+          xpath = '/'+id
+        if len(v) > COL_xpath and '/' in xpath:
+          if "[not(cbc:DocumentTypeCode='130')]" in xpath:
+            xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
+          elif "[cbc:DocumentTypeCode='130']" in xpath:
+            xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
+          if v[COL_BT]: BT = v[COL_BT]
+          else: BT = None
+          if v[COL_BT_ja]: BT_ja = v[COL_BT_ja]
+          else: BT_ja = None
+          level = v[COL_level]
+          card = ''+v[COL_card].strip()
+          datatype = ''+v[COL_datatype].strip()
+          ubl_card = ''+v[COL_ubl_card].strip()
+          data = {'syntaxSort':syntaxSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'ubl_card':ubl_card,'xpath':xpath}
+          pintDict[id] = data
+
+  if verbose:
+    print(f'*** Input file {in_file}')
+  with open(in_file, encoding=ncdng, newline='') as f:
+    reader = csv.reader(f)#, delimiter='\t')
+    rows = []
+    i = 0
+    for record in reader:
+      id = record[0]
+      if id:
+        data = pintDict[id]
+        syntaxSort = data['syntaxSort']
+        if 'ibt-005'==id:
+          DocumentCurrencyCode = record[4]
+        elif 'ibt-006'==id:
+          TaxCurrencyCode = record[4]
+      else:
+        syntaxSort = '000'+str(i)
+        i += 1
+      row = [syntaxSort,id]+record[4:]
+      rows.append(row)
+  boughLvl = int(str(i/3)[:-2])
+
+  # https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
+  # https://www.delftstack.com/ja/howto/python/sort-list-of-lists-in-python/
+  sorted_rows = sorted(rows, key=lambda x:x[0])
+  sorted_rows = [d[1:] for d in sorted_rows]
+
+  for row in sorted_rows:
+    id = row[0]
+    if not id: continue
+    data = pintDict[id]
+    xpath = data['xpath']
+    level = data['level']
+    card = data['card']
+    if re.match(r'^/Invoice/[^\/]*$',xpath) or '1'==level:
+      elementId = re.sub(r'^/Invoice/([^\/]*)(\/.*)?',r'\1',xpath)
+      pintL1.append(elementId)
+
+  for k,data in pintDict.items():
+    xpath = data['xpath']
+    card = data['card']
+    ubl_card = data['ubl_card']
+    if 'Invoice'==xpath[1:8] and 'n'==card[-1:] and re.match(r'^.*/(cac:.+)+(cbc:.+)?$',xpath):
+      elementId = re.sub(r'^(.*)/(cbc:.+)?$',r'\1',xpath)
+      elementIds = elementId[9:].split('/')
+      for id in elementIds:
+        _id = re.sub(r'^([^\[]*)(\[.*\])?',r'\1',id)
+        multipleBG.append(_id)
+  multipleBG = list(set(multipleBG))
+
+  # see https://stackoverflow.com/questions/6473679/transpose-list-of-lists
+  # transposed_rows = [list(i) for i in zip(*sorted_rows)]
+  row_count = len(sorted_rows)
+  col_count = len(sorted_rows[0])
+  transposed_rows = []
+  while len(transposed_rows) < col_count:
+    transposed_rows.append([])
+    while len(transposed_rows[-1]) < row_count:
+      transposed_rows[-1].append(0)
+  for i in range(row_count):
+    for j in range(col_count):
+      transposed_rows[j][i] = sorted_rows[i][j]
+
+  with open(tmp_file,'w',encoding=ncdng) as f:
+    writer = csv.writer(f)#,delimiter='\t')
+    for l in transposed_rows:
+      writer.writerow(l)
+
+  header = transposed_rows[0]
+  for i in range(1,len(transposed_rows)):
+    record = transposed_rows[i]
+    set_record(Dic, header, record)
+
+  for i in range(5):
+    Dic = trimmer(Dic)
+
+  for elementId in pintL1:
+    elementName = re.sub(r'^([^\[]*)(\[.*\])?',r'\1',elementId)
+    if elementName in Dic['Invoice'].keys():
+      sortedDic['Invoice'][elementName] = Dic['Invoice'][elementName]
+
+  dicJson = json.dumps(sortedDic)
+  dicJson = re.sub('"Invoice"', '"{'+ns['']+'}Invoice"', dicJson)
+  dicJson = re.sub('xsi:', '{'+ns['xsi']+'}', dicJson)
+  dicJson = re.sub('cac:', '{'+ns['cac']+'}', dicJson)
+  dicJson = re.sub('cbc:', '{'+ns['cbc']+'}', dicJson)
+  dicJson = re.sub('qdt:', '{'+ns['qdt']+'}', dicJson)
+  dicJson = re.sub('udt:', '{'+ns['udt']+'}', dicJson)
+  dicJson = re.sub('ccts:', '{'+ns['ccts']+'}', dicJson)
+  dic2 = json.loads(dicJson)
+
+  root = ET.XML('''
+  <Invoice 
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
+  ''')  # this step adds xsi:schemaLocation attribute
+
+  tree = dict_to_etree(dic2, root)
+
+  with open(out_file, 'wb') as f:
+    t = ET.ElementTree(tree)
+    t.write(f, encoding='UTF-8')
+
+  if verbose:
+    print(f'** END ** {out_file}')

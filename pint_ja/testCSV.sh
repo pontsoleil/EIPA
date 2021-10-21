@@ -12,6 +12,8 @@
 ./invoice2csv data/in/ubl-tc434-example8.xml -o data/out/ubl-tc434-example8.csv -e Shift_JIS
 ./invoice2csv data/in/ubl-tc434-example9.xml -o data/out/ubl-tc434-example9.csv -e Shift_JIS
 
+./invoice2csv data/in/Snippet-full-EIPA.xml -o data/out/Snippet-full-EIPA.csv -e Shift_JIS
+
 ./csv2invoice data/out/discount.csv -o data/out/discount.xml -e Shift_JIS
 ./csv2invoice data/out/allowance1.csv -o data/out/allowance1.xml -e Shift_JIS
 ./csv2invoice data/out/allowance2.csv -o data/out/allowance2.xml -e Shift_JIS
@@ -25,4 +27,6 @@
 ./csv2invoice data/out/ubl-tc434-example7.csv -o data/out/ubl-tc434-example7.xml -e Shift_JIS
 ./csv2invoice data/out/ubl-tc434-example8.csv -o data/out/ubl-tc434-example8.xml -e Shift_JIS
 ./csv2invoice data/out/ubl-tc434-example9.csv -o data/out/ubl-tc434-example9.xml -e Shift_JIS
+
+./csv2invoice data/out/Snippet-full-EIPA.csv -o data/out/Snippet-full-EIPA.xml -e Shift_JIS
 

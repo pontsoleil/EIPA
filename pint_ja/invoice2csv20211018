@@ -1,0 +1,622 @@
+#!/usr/bin/env python3
+#coding: utf-8
+#
+# generate CSV from Open Peoopl e-Invoice (UBL 2.1)
+# 
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+import xml.etree.ElementTree as ET
+import csv
+import re
+import sys 
+import os
+import argparse
+import collections
+
+from dic2etree import *
+
+DocumentCurrencyCode = ''
+TaxCurrencyCode = ''
+SupplierTaxScheme = ''
+uncl4451 = {}
+pintLst = []
+pintDct = {}
+pintSemSort = {}
+
+boughLvl = 0
+bough0 = {'level':boughLvl,'id':'ibg-00', 'count':''}
+boughs = {}
+boughs[0] = [bough0]
+
+def file_path(pathname):
+  if '/'==pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+def formatXPath(xpath):
+  xpath = re.sub(r'cac:','{'+ns['cac']+'}',xpath)
+  xpath = re.sub(r'cbc:','{'+ns['cbc']+'}',xpath)
+  if re.match(r'^.*/@[a-zA-Z]*$',xpath):
+    path = re.sub(r'(.*)/@.*$','\\1',xpath)
+    attr = re.sub(r'.*/@(.*)$','\\1',xpath)
+    xpath = [path,attr]
+  else:
+    xpath = re.sub(r'false\(\)',"'false'",xpath)
+    xpath = re.sub(r'true\(\)',"'true'",xpath)
+  return xpath
+
+def updateBough(n,i,count,boughLvl):
+  data = pintLst[i]
+  id = data['id']
+  BT = data['BT']
+  n = len(rows) - 1
+  if id in L1multipleBG or n > 0:
+    n = n + 1
+  if len(boughs[n-1]) > boughLvl:
+    _boughs = boughs[n-1][:boughLvl]
+  else:
+    _boughs = boughs[n-1]
+  rows[n] = {'0000':id,'0001':BT}
+  # if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} i={i} - updateBough rows[{n}] {rows[n]["0001"]}({rows[n]["0000"]})[{count}]')
+  boughs[n] = _boughs + [{'level':boughLvl,'id':id, 'count':count}]
+  if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: boughs[{n}] {boughs[n]}')
+  return n
+
+def fillData(parent,parentXPath,i,n,count):
+  data = pintLst[i]
+  semSort = data['semSort']
+  id = data['id']
+  if id in alignment_attr:
+    return i + 1
+  level = data['level']
+  BT = data['BT']
+  xpath = data['xpath']
+  if not xpath or len(xpath) < 9:
+    return
+  xpath = xpath[9:]
+  xpath = formatXPath(xpath)
+  text = None
+  try:
+    if isinstance(xpath,list):
+      element = None
+      if parentXPath:
+        _xpath = xpath[0].replace(parentXPath+'/','')
+      else:
+        _xpath = xpath[0]
+      element = parent.find(_xpath)
+      if not None==element and element.tag: # and ET.iselement(element):
+        if isinstance(xpath,list) and xpath[1]:
+          attrib = xpath[1]
+          if attrib and attrib in element.attrib:
+            text = element.attrib[attrib]
+        else:
+          text = element.findtext('.')
+    else:
+      if re.match(r'{.*}TaxAmount\[@.*\]',xpath):
+        text = root.findtext(xpath)
+      else:
+        if parentXPath:
+          _xpath = xpath.replace(parentXPath+'/','')
+        else:
+          _xpath = xpath
+        if 'TaxSubtotal' in xpath:
+          if not n:
+            text = root.findtext(xpath)
+          else:
+            text = parent.findtext(_xpath)
+            if not text:
+              text = root.findtext(parentXPath+'['+str(n)+']/'+_xpath)
+        else:
+          if not id in alignment:
+            text = parent.findtext(_xpath)
+          else:
+            elements = parent.findall(_xpath)
+            if len(elements) == 1:
+              text = parent.findtext(_xpath)
+            elif len(elements) > 1:
+              attr_i = None
+              next_i = None
+              if id in ['ibt-031','ibt-063']:
+                xpath_ = re.sub(r'^(.*){'+ns['cbc']+'}CompanyID$',r'\1{'+ns['cac']+'}TaxScheme/{'+ns['cbc']+'}ID',_xpath)
+                elements_ = parent.findall(xpath_)
+                if 'ibt-031'==id:
+                  next_id = 'ibt-032-1'
+                elif 'ibt-063':
+                  next_id = 'ibt-063-1'
+                d = [v for k,v in pintDct.items() if next_id==v['id']][0]
+                id_ = d['id']
+                semSort_ = d['semSort']
+                level_ = d['level']
+                BT_ = d['BT']
+              for _i in range(len(elements)):
+                index = n+_i+1
+                rows[index] = {'0000':id,'0001':BT}
+                element = elements[_i]
+                text = element.text
+                rows[index][semSort] = {'id':id,'level':level,'BT':BT,'text':text}
+                _bough = boughs[n]
+                boughLvl = len(_bough)
+                boughs[index] = _bough+[{'level':boughLvl,'id':id,'count':_i}]
+                if id in ['ibt-031','ibt-063']:
+                  element_ = elements_[_i]
+                  text_ = element_.text
+                  rows[index][semSort_] = {'id':id_,'level':level_,'BT':BT_,'text':text_}
+                  for i_ in range(len(pintLst)):
+                    d_ = pintLst[i_]
+                    if semSort_ == d_['semSort']:
+                      next_i = i_
+                      break
+                  if next_i:
+                    i = next_i
+                else:
+                  elementName = re.sub(r'^.*}([a-zA-Z]*)$',r'\1',_xpath)
+                  attr = element.attrib
+                  ks = [x for x in attr.keys()]
+                  for k in ks:
+                    attrName = elementName+'/@'+k
+                    d = [v for k,v in pintDct.items() if attrName in v['xpath']][0]
+                    semSort_ = d['semSort']
+                    id_ = d['id']
+                    BT_ = d['BT']
+                    text_ = attr[k]
+                    rows[index][semSort_] = {'id':id_,'level':str(int(level)+1),'BT':BT_,'text':text_}
+                    for i_ in range(len(pintLst)):
+                      d = pintLst[i_]
+                      if semSort_ == d['semSort']:
+                        attr_i = i_
+                        break
+                  if attr_i:
+                    i = attr_i
+              return i + 1
+            else:
+              return i + 1
+  except SyntaxError:
+    print (f'-- SyntaxError .//{xpath}')
+  if text:
+    if re.match(r'ibg-',id):
+      text = ''
+    elif 'ibt-021'==id:
+      key = text.strip()
+      if key in uncl4451.keys():
+        text = key
+      else:
+        text = ''
+    elif 'ibt-022'==id and text.strip() in uncl4451.keys():
+      text = ''
+    text = text.strip()
+
+    rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':text}
+    if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} i={i} * {rows[n][semSort]}')
+  return i + 1
+
+def fillGroup(parent,parentPath,i,n,parentCount,boughLvl):
+  boughLvl = len(boughs[n])
+  data = pintLst[i]
+  id = data['id']
+  level = data['level']
+  BT = data['BT']
+  if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} i={i} - fillGroup {BT}({id}) boughLvl={boughLvl}')
+  xpath = data['xpath']
+  if not xpath or len(xpath) < 9:
+    return
+  while i < len(pintLst):
+    xpath = xpath[9:]
+    xpath = formatXPath(xpath)
+    if parentPath:
+      _xpath = re.sub(parentPath+'/', '', xpath)
+    if re.match(r'ibt-',id):
+      return None
+    elif re.match(r'ibg-',id):
+      elements = parent.findall(_xpath)
+      if not len(elements) and not 'InvoiceLine' in xpath and not id in ['ibg-27','ibg-28','ibg-32']:#,'ibg-29','ibg-30','ibg-31']:
+        elements = root.findall(xpath)
+      _i = i
+      next_i = None
+      if not elements or 0==len(elements):
+        count = ''
+      elif len(elements) > 0:
+        if len(elements) > 1 or id in ['ibg-23','ibg-25']:
+          count = 0
+          n = updateBough(n,i,count,boughLvl)
+        else:
+          count = ''
+          if not id in ['ibg-32','ibt-160','ibt-161']:
+            n = len(rows) - 1
+          if id in L12singleBTG:
+            n = 0
+        for element in elements:
+          _i = i + 1
+          _data = pintLst[_i]
+          _id = _data['id']
+          _level = _data['level']
+          _BT = _data['BT']
+          # if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} i={_i} - fillGroup try {BT}({id})[{count}] -> {_BT}({_id})')
+          if isinstance(count,int) and count > 0 and count < len(elements):
+            n = updateBough(n,i,count,boughLvl)
+          while _level > level and _i < len(pintLst):
+            current = None
+            next_i = None
+            if re.match(r'^ibg-',_id):
+              current = fillGroup(element,xpath,_i,n,count,boughLvl)
+              next_i = current['next_i']
+              n = current['n']
+            elif re.match(r'^ibt-',_id):
+              if _id in L12singleBTG:
+                n = 0
+              next_i = fillData(element,xpath,_i,n,count)
+            if next_i:
+              if next_i < len(pintLst):
+                next_data = pintLst[next_i]
+                _id = next_data['id']
+                _level = next_data['level']
+                _i = next_i
+              if next_i == len(pintLst):
+                _i = next_i
+            else:
+              _i += 1
+          if isinstance(count,int):
+            count += 1
+      if next_i:
+        i = next_i
+        next_i = None
+      else:
+        i = _i + 1
+    return {'n':n,'next_i':i}
+
+if __name__=='__main__':
+  # Create the parser
+  parser = argparse.ArgumentParser(prog='invoice2csv',
+                                    usage='%(prog)s [options] infile -o outfile -e encoding',
+                                    description='電子インボイスXMLファイルをCSVファイルに変換')
+  # Add the arguments
+  parser.add_argument('inFile',metavar='infile',type=str,help='入力XMLファイル')
+  parser.add_argument('-o','--outfile')
+  parser.add_argument('-e','--encoding')  # 'Shift_JIS' 'cp932'
+  parser.add_argument('-v','--verbose',action='store_true')
+  parser.add_argument('-d','--debug',action='store_true')
+
+  args = parser.parse_args()
+  in_file = file_path(args.inFile)
+  pre,ext = os.path.splitext(in_file)
+  tmp_file = pre+'.txt'
+  if args.outfile:
+    out_file = args.outfile.lstrip()
+    out_file = file_path(out_file)
+  else:
+    out_file = pre+'.csv'
+  ncdng = args.encoding
+  if ncdng:
+    ncdng = ncdng.lstrip()
+  else:
+    ncdng = 'UTF-8'
+  verbose = args.verbose
+  DEBUG = args.debug
+  if DEBUG:
+    from inspect import currentframe,getframeinfo
+  # Check if infile exists
+  if not os.path.isfile(in_file):
+    print('入力ファイルがありません')
+    sys.exit()
+  if verbose:
+    print(f'** START ** {__file__}')
+    print(f'*** Input file {in_file}')
+
+  uncl4451_file = file_path('data/common/uncl4451.txt')
+  with open(uncl4451_file,encoding='utf-8',newline='') as f:
+    reader = csv.reader(f,delimiter='|',quoting=csv.QUOTE_NONE)
+    n = 0
+    for v in reader:
+      id = v[0]
+      name = v[1]
+      desc = v[2]
+      uncl4451[id] = {'id':id,'name':name,'desc':desc}
+      n += 1
+
+  tree = ET.parse(in_file)
+  root = tree.getroot()
+  DocumentCurrencyCode = root.findtext(".//{"+ns['cbc']+"}DocumentCurrencyCode")
+  TaxCurrencyCode = root.findtext(".//{"+ns['cbc']+"}TaxCurrencyCode")
+  SupplierTaxScheme = root.findtext(".//{"+ns['cac']+"}AccountingSupplierParty/"+
+    "{"+ns['cac']+"}Party/{"+ns['cac']+"}PartyTaxScheme/{"+ns['cac']+"}TaxScheme/{"+ns['cbc']+"}ID")
+
+  pint_file = file_path('data/common/xpath.csv')
+  # SemSort,ID,Level,BT,BT_ja,Definition,Definition_ja,Explanation,Explanation_ja,Example,Card,DataType,Section,Extension,SyntSort,XPath,Attributes,Rules,UBL_DataType,Cardinality,Alignment
+  # 0       1  2     3  4     5          6             7           8              9       10   11       12      13        14       15    16         17    18           19          20
+  COL_SemanticSort = 0
+  COL_ID = 1
+  COL_level = 2
+  COL_BT = 3
+  COL_BT_ja = 4
+  COL_card = 10
+  COL_datatype = 11
+  COL_SyntaxSort = 14
+  COL_xpath = 15
+  COL_alignment = 20
+  if verbose: print(f'*** XPath file {pint_file}')
+  with open(pint_file,encoding='utf-8',newline='') as f0:
+    reader = csv.reader(f0) #,delimiter='\t')
+    header = next(reader)
+    for v in reader:
+      id = v[COL_ID].strip()
+      if id:
+        if 'VAT'==SupplierTaxScheme:
+          if 'ibt-032'==id:
+            continue
+        else:
+          if 'ibt-031'==id:
+            continue
+        xpath = v[COL_xpath]
+        syntaxSort = v[COL_SyntaxSort]
+        if not syntaxSort:
+          syntaxSort = '9999'
+        if not xpath:
+          xpath = '/'+id
+        if len(v) > COL_xpath and '/' in xpath:
+          if '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]'==xpath:
+            xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+DocumentCurrencyCode+'"]'
+          elif '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]'==xpath:
+            if TaxCurrencyCode:
+              xpath = '/Invoice/cac:TaxTotal/cbc:TaxAmount[@currencyID="'+TaxCurrencyCode+'"]'
+            else:
+              continue
+          elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
+            xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
+          elif "[cbc:DocumentTypeCode='130']" in xpath:
+            xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
+          semanticSort = v[COL_SemanticSort]
+          if v[COL_BT]: BT = v[COL_BT]
+          else: BT = None
+          if v[COL_BT_ja]: BT_ja = v[COL_BT_ja]
+          else: BT_ja = None
+          level = v[COL_level]
+          card = ''+v[COL_card].strip()
+          datatype = ''+v[COL_datatype].strip()
+          alignment = ''+v[COL_alignment].strip()
+          data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath,'alignment':alignment}
+          pintLst.append(data)
+          pintDct[semanticSort] = data
+          pintSemSort[id] = semanticSort
+
+  idxLevel = {}
+  idxLevel[0] = []
+  parents = {}
+  for i in range(len(pintLst)):
+    data = pintLst[i]
+    level = int(data['level'])
+    id = data['id']
+    num = id
+    if level > 0:
+      num =  [id] + idxLevel[level - 1]
+    idxLevel[level] = num
+    parents[id] = num
+
+  L12singleBTG = ['ibt-006','ibt-007','ibt-008','ibt-009','ibt-010','ibt-011','ibt-012','ibt-013','ibt-014','ibt-015','ibt-016','ibt-017','ibt-018','ibt-018-1','ibt-019','ibg-02','ibt-023','ibt-024','ibg-04','ibt-027','ibt-028','ibt-029','ibt-029-1','ibt-090','ibt-090-1','ibt-030','ibt-030-1','ibt-031','ibt-032','ibt-032-1','ibt-033','ibt-034','ibt-034-1','ibg-05','ibt-035','ibt-036','ibt-162','ibt-037','ibt-038','ibt-039','ibt-040','ibg-06','ibt-041','ibt-042','ibt-043','ibg-07','ibt-044','ibt-045','ibt-046','ibt-046-1','ibt-047','ibt-047-1','ibt-048','ibt-048-1','ibt-049','ibt-049-1','ibg-08','ibt-050','ibt-051','ibt-163','ibt-052','ibt-053','ibt-054','ibt-055','ibg-09','ibt-056','ibt-057','ibt-058','ibg-10','ibt-059','ibt-060','ibt-060-1','ibt-061','ibt-061-1','ibg-11','ibt-062','ibt-063','ibt-063-1','ibg-12','ibt-064','ibt-065','ibt-164','ibt-066','ibt-067','ibt-068','ibt-069','ibg-13','ibt-070','ibt-071','ibt-071-1','ibt-072','ibg-14','ibt-073','ibt-074','ibg-15','ibt-075','ibt-076','ibt-165','ibt-077','ibt-078','ibt-079','ibt-080','ibg-22','ibt-106','ibt-107','ibt-108','ibt-109','ibt-110','ibt-111','ibt-112','ibt-113','ibt-114','ibt-115']
+  L1multipleBG = [x['id'] for x in pintLst if '1'==x['level'] and re.match(r'ibg-',x['id']) and 'n'==x['card'][3:]]
+  alignment = ['ibt-029','ibt-031','ibt-047','ibt-048','ibt-158'] # Cardinality alignment for Party tax scheme, Party identification, and Commodity classification
+  alignment_attr = ['ibt-158-1','ibt-158-2']
+
+  # https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
+  # https://www.delftstack.com/ja/howto/python/sort-list-of-lists-in-python/
+  sorted_rows = sorted(pintLst,key=lambda x:x['semSort'])
+  pintLst = sorted_rows
+
+  n = 0
+  rows = {}
+  rows[0] = {'0000':'ibg-00','0001':'CONTENT'}
+  parent_xpath = None
+  count = ''
+  i = 0
+  next_i = None
+  boughLvl = 1
+  while i < len(pintLst):
+    data = pintLst[i]
+    semSort = data['semSort']
+    id = data['id']
+    if id in alignment_attr:
+      continue
+    BT = data['BT']
+    level = data['level']
+    xpath = data['xpath']
+    if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} pintLst[{i}] {BT}({id})')
+    xpath = xpath[9:]
+    xpath = formatXPath(xpath)
+    if re.match(r'^ibt-',id):
+      i = fillData(root,'',i,n,None)
+    elif re.match(r'^ibg-',id):
+      if id in L12singleBTG:
+        n = 0
+      elements = root.findall(xpath)
+      _i = i
+      if not elements or 0==len(elements):
+        count = ''          
+      elif len(elements) > 0:
+        if len(elements) > 1 or id in ['ibg-23','ibg-25']:
+          count = 0
+          n = updateBough(n,i,count,boughLvl)
+        else:
+          count = ''
+          if id in L1multipleBG:
+            n = 0
+        for element in elements:
+          _i = i + 1
+          _data = pintLst[_i]
+          _id = _data['id']
+          _level = _data['level']
+          _BT = _data['BT']
+          # if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} _i={_i} try {BT}({id})[{count}] -> {_BT}({_id})')
+          if isinstance(count,int) and count > 0 and count < len(elements):
+            n = updateBough(n,i,count,boughLvl)
+          while _level > level and _i < len(pintLst):
+            _data = pintLst[_i]
+            _id = _data['id']
+            _level = _data['level']
+            _BT = _data['BT']
+            # if DEBUG: print(f'{getframeinfo(currentframe()).lineno}: n={n} i={_i} try {BT}({id})[{count}] -> {_BT}({_id})')
+            current = None
+            next_i = None
+            if re.match(r'^ibg-',_id):
+              current = fillGroup(element,xpath,_i,n,count,boughLvl)
+              next_i = current['next_i']
+              n = current['n']
+            else:
+              next_i = fillData(element,xpath,_i,n,count)
+            if next_i:
+              if next_i < len(pintLst):
+                next_data = pintLst[next_i]
+                _level = next_data['level']
+                _i = next_i
+              elif next_i == len(pintLst):
+                _i = next_i
+            else:
+              _i += 1
+          if isinstance(count,int):
+            count += 1
+      if next_i:
+        i = next_i
+        next_i = None
+      else:
+        i = _i + 1
+
+  checkedParents = []
+  for id in rows[0].keys():
+    if re.match(r'^ibg-',id):
+      if not id in checkedParents:
+        checkedParents.append(id)
+
+  checkedData = []
+  for k,v in rows.items():
+    for semanticSort,data in v.items():
+      if semanticSort < '1000': continue
+      id = data['id']
+      parentIDs = parents[id][1:]
+      for parentID in parentIDs:
+        if re.match(r'ibg-',parentID) and not parentID in checkedData and not parentID in checkedParents:
+          semanticSort = pintSemSort[parentID]
+          data = {'id':parentID,'semanticSort':semanticSort}
+          if not data in checkedData:
+            checkedData.append(data)
+
+  for parent in checkedData:
+    id = parent['id']
+    semanticSort = parent['semanticSort']
+    data = pintDct[semanticSort]
+    if not semanticSort in rows[0].keys():
+      rows[0][semanticSort] = {'id':data['id'],'level':data['level'],'BT':data['BT'],'text':''}
+
+  maxBoughLvl = 1
+  for n,data in boughs.items():
+    for bough in data:
+      level = int(bough['level'])
+      if level > maxBoughLvl:
+        maxBoughLvl = level
+
+  bough_rows = {}
+  for n in rows.keys():
+    bough_rows[n] = {}
+    for bough in boughs[n]:
+      level = int(bough['level'])
+      id = bough['id']
+      if 'ibg-00'==id:
+        BT = 'INVOICE'
+      else:
+        semSort = pintSemSort[id]
+        data = pintDct[semSort]
+        BT = data['BT']
+      count = str(bough['count'])
+      bough_rows[n]['000'+str(3*level)] = id
+      bough_rows[n]['000'+str(1+3*level)] = BT
+      bough_rows[n]['000'+str(2+3*level)] = count
+
+  for n,row in rows.items():
+    for semSort,data in row.items():
+      if int(semSort) < 1000:
+        continue
+      bough_rows[n][semSort] = data
+
+  max_col = len(bough_rows)
+  transposed = {}
+  lookup = {}
+  index = 0
+  for col,row in bough_rows.items():
+    for semSort,data in row.items():
+      if not semSort in transposed:
+        transposed[semSort] = {}
+        if semSort in pintDct:
+          d = pintDct[semSort]
+          transposed[semSort][0] = d['id']
+          transposed[semSort][1] = d['level']
+          transposed[semSort][2] = d['card']
+          transposed[semSort][3] = d['BT']
+        else:
+          transposed[semSort][0] = ''
+          transposed[semSort][1] = ''
+          transposed[semSort][2] = ''
+          transposed[semSort][3] = ''
+      if int(semSort) < 1000: # '0000'==semSort or '0001'==semSort:
+        transposed[semSort][4+col] = data
+      elif data['text']:
+        transposed[semSort][4+col] = data['text']
+
+  od_transposed = collections.OrderedDict(sorted(transposed.items()))
+    
+  del_list = []
+  for semSort,data in od_transposed.items():
+    check = ''
+    for k,v in data.items():
+      if k > 3:
+        check += v
+    if not check and not re.match(r'^ibg-',data[0]):
+      del_list.append(semSort)
+
+  for semSort in del_list:
+    del transposed[semSort]
+
+  max_col += 4
+  lst = []
+  i = 0
+  for row in od_transposed:
+    lst.append(['']*max_col)
+
+  i = 0
+  for semSort,data in od_transposed.items():
+    for j in range(max_col):
+      if j in od_transposed[semSort]:
+        lst[i][j] = od_transposed[semSort][j]
+    i += 1
+
+  with open(out_file,'w',encoding=ncdng) as f:
+    writer = csv.writer(f)#,delimiter='\t')
+    n = 0
+    for l in lst:
+      if n < 3:
+        n += 1
+        continue
+      writer.writerow(l)
+
+  if verbose:
+    print(f'** END ** {out_file}')

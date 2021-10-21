@@ -1,0 +1,260 @@
+Invoice = {
+  'cbc:CustomizationID':None,
+  'cbc:ProfileID':None,
+  'cbc:ID':None,
+  'cbc:IssueDate':None,
+  'cbc:IssueTime':None,
+  'cbc:DueDate':None,
+  'cbc:InvoiceTypeCode':None,
+  'cbc:Note':None,
+  'cbc:Note':None,
+  'cbc:TaxPointDate':None,
+  'cbc:DocumentCurrencyCode':None,
+  'cbc:TaxCurrencyCode':None,
+  'cbc:AccountingCost':None,
+  'cbc:BuyerReference':None,
+  'cac:InvoicePeriod':{},
+  'cac:OrderReference':{},
+  'cac:BillingReference':{},
+  'cac:DespatchDocumentReference':{},
+  'cac:ReceiptDocumentReference':{},
+  'cac:OriginatorDocumentReference':{},
+  'cac:ContractDocumentReference':{},
+  'cac:AdditionalDocumentReference':[{}],
+  'cac:ProjectReference':{},
+  'cac:AccountingSupplierParty':{},
+  'cac:AccountingCustomerParty':{},
+  'cac:PayeeParty':{},
+  'cac:TaxRepresentativeParty':{},
+  'cac:Delivery':{},
+  'cac:PaymentMeans':{},
+  'cac:PaymentTerms':{},
+  'cac:PrepaidPayment':{},
+  'cac:AllowanceCharge':[{}],
+  'cac:TaxTotal':{},
+  'cac:LegalMonetaryTotal':{},
+  'cac:InvoiceLine':[{}]
+}
+OrderReference = {
+  'cbc:ID':None,
+  'cbc:SalesOrderID':None
+}
+AdditionalDocumentReference = {
+  'cbc:ID':{'#text':None,'@schemeID':None},
+  'cbc:DocumentDescription':None,
+  'cac:Attachment':{
+    'cbc:EmbeddedDocumentBinaryObject':None,
+    'cac:ExternalReference':{'cbc:URI':None}
+  }
+}
+AccountingSupplierParty = {
+  'cac:Party':{
+    'cbc:EndpointID':None,
+    'cac:PartyIdentification':{},
+    'cac:PartyName':{},
+    'cac:PostalAddress':{},
+    'cac:PartyTaxScheme':{},
+    'cac:PartyLegalEntity':{},
+    'cac:Contact':{}
+  }
+}
+PostalAddress = {
+  'cbc:StreetName':None,
+  'cbc:AdditionalStreetName':None,
+  'cbc:CityName':None,
+  'cbc:PostalZone':None,
+  'cbc:CountrySubentity':None,
+  'cac:AddressLine':{'cbc:Line':None},
+  'cac:Country':{'cbc:IdentificationCode':None}
+}
+AccountingCustomerParty = {
+  'cac:Party':{
+    'cbc:EndpointID':None,
+    'cac:PartyIdentification':{},
+    'cac:PartyName':{},
+    'cac:PostalAddress':{},
+    'cac:PartyTaxScheme':{},
+    'cac:PartyLegalEntity':{},
+    'cac:Contact':{}
+  }
+}
+PayeeParty = {
+  'cac:PartyIdentification':{'cbc:ID':None},
+  'cac:PartyName':{'cbc:Name':None},
+  'cac:PartyLegalEntity':{'cbc:CompanyID':None}
+}
+TaxRepresentativeParty = {
+  'cac:PartyName':{'cbc:Name':None},
+  'cac:PostalAddress':{},
+  'cac:PartyTaxScheme':{
+    'cbc:CompanyID':None,
+    'cac:TaxScheme':{'cbc:ID':None}
+  }
+}
+Delivery = {
+  'cbc:ActualDeliveryDate':None,
+  'cac:DeliveryLocation':{'cbc:ID':None},
+  'cac:DeliveryLocation':{
+    'cbc:ID':None,
+    'cac:Address':{}    
+  },
+  'cac:DeliveryParty':{
+    'cac:PartyName':{'cbc:Name':None}
+  }
+}
+Address = {
+  'cbc:StreetName':None,
+  'cbc:AdditionalStreetName':None,
+  'cbc:CityName':None,
+  'cbc:PostalZone':None,
+  'cbc:CountrySubentity':None,
+  'cac:AddressLine':{'cbc:Line':None},
+  'cac:Country':{'cbc:IdentificationCode':None}
+}
+PaymentMeans = {
+  'cbc:ID':None,
+  'cbc:PaymentMeansCode':{'@name':None},
+  'cbc:PaymentID':None,
+  'cac:PayeeFinancialAccount':{
+    'cbc:ID':None,
+    'cbc:Name':None,
+    'cac:FinancialInstitutionBranch':{
+      'cbc:ID':None,
+      'cac:Address':{
+        'cbc:StreetName':None,
+        'cbc:AdditionalStreetName':None,
+        'cbc:CityName':None,
+        'cbc:PostalZone':None,
+        'cbc:CountrySubentity':None,
+        'cac:AddressLine':{'cbc:Line':None},
+        'cac:Country':{'cbc:IdentificationCode':None}
+      }
+    }
+  },
+  'cac:CardAccount':{
+    'cbc:PrimaryAccountNumberID':None,
+    'cbc:NetworkID':None,
+    'cbc:HolderName':None,
+  },
+  'cac:PaymentMandate':{
+    'cbc:ID':None,
+    'cac:PayerFinancialAccount':{'cbc:ID':None}
+  }
+}
+PaymentTerms = {
+  'cbc:PaymentMeansID':None,
+  'cbc:Note':None,
+  'cbc:Amount':None,
+  'cbc:InstallmentDueDate':{},
+}
+PrepaidPayment = {
+  'cbc:ID':None,
+  'cbc:PaidAmount':None,
+  'cbc:ReceivedDate':None,
+  'cbc:InstructionID':None,
+}
+AllowanceCharge = {
+  'cbc:ChargeIndicator':None,
+  'cbc:AllowanceChargeReasonCode':None,
+  'cbc:AllowanceChargeReason':None,
+  'cbc:MultiplierFactorNumeric':None,
+  'cbc:Amount':None,
+  'cbc:BaseAmount':None,
+  'cac:TaxCategory':{}
+}
+TaxTotal = {
+  'cbc:TaxAmount':None,
+  'cac:TaxSubtotal':[{}]
+}
+TaxSubtotal = {
+  'cbc:TaxableAmount':None,
+  'cbc:TaxAmount':None,
+  'cac:TaxCategory':{}
+}
+TaxCategory = {
+  'cbc:ID':None,
+  'cbc:Percent':None,
+  'cbc:TaxExemptionReasonCode':None,
+  'cbc:TaxExemptionReason':None
+}
+LegalMonetaryTotal = {
+  'cbc:LineExtensionAmount':None,
+  'cbc:TaxExclusiveAmount':None,
+  'cbc:TaxInclusiveAmount':None,
+  'cbc:AllowanceTotalAmount':None,
+  'cbc:ChargeTotalAmount':None,
+  'cbc:PrepaidAmount':None,
+  'cbc:PayableRoundingAmount':None,
+  'cbc:PayableAmount':None,
+}
+InvoiceLine = {
+  'cbc:ID':None,
+  'cbc:Note':None,
+  'cbc:InvoicedQuantity':{'#text':None,'@unitCode':None},
+  'cbc:LineExtensionAmount':None,
+  'cbc:AccountingCost':None,
+  'cac:InvoicePeriod':{},
+  'cac:OrderLineReference':{
+    'cbc:LineID':None,
+    'cac:OrderReference':{'cbc:ID':None}
+  },
+  'cac:DespatchLineReference':{'cac:DocumentReference':{'cbc:ID':{'#text':None,'@schemeID':None}}},
+  'cac:DocumentReference':{'cbc:ID':None,'cbc:DocumentTypeCode':None},
+  'cac:AllowanceCharge':[{}],
+  'cac:Item':{},
+  'cac:Price':{}
+}
+Item = {
+  'cbc:Description':None,
+  'cbc:Name':None,
+  'cac:BuyersItemIdentification':{
+    'cbc:ID':None
+  },
+  'cac:SellersItemIdentification':{
+    'cbc:ID':None
+  },
+  'cac:StandardItemIdentification':{
+    'cbc:ID':{
+      '#text':None,
+      '@schemeID':None
+    }
+  },
+  'cac:OriginCountry':{
+    'cbc:IdentificationCode':None
+  },
+  'cac:CommodityClassification':[{}],
+  'cac:ClassifiedTaxCategory':[{}],
+  'cac:AdditionalItemProperty':[{}]
+}
+CommodityClassification = {
+  'cbc:ItemClassificationCode':{
+    '#text':None,
+    '@listID':None,
+    '@listVersionID':None
+  }
+}
+ClassifiedTaxCategory = {
+  'cbc:ID':None,
+  'cbc:Percent':None,
+  'cbc:PerUnitAmount':None,
+  'cbc:TaxExemptionReasonCode':None,
+  'cbc:TaxExemptionReason':None,
+  'cac:TaxScheme':{
+    'cbc:ID':None
+  }
+}
+AdditionalItemProperty = {
+  'cbc:Name':None,
+  'cbc:Value':None
+}
+Price = {
+  'cbc:PriceAmount':{
+    '#text':None,
+    '@currencyID':None
+  },
+  'cbc:BaseQuantity':{
+    '#text':None,
+    '@unitCode':None
+  },
+  'cac:AllowanceCharge':{}
+}

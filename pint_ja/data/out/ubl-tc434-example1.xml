@@ -52,6 +52,19 @@
       </cac:Contact>
     </cac:Party>
   </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
+    <cbc:PaymentID>Deb. 10202 / Fact. 12115118</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>NL57 RABO 0107307510</cbc:ID>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>NL03 INGB 0004489902</cbc:ID>
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="EUR">20.73</cbc:TaxAmount>
     <cac:TaxSubtotal>
@@ -59,10 +72,10 @@
       <cbc:TaxAmount currencyID="EUR">10.99</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
+        <cbc:Percent>6</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>6</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
@@ -70,10 +83,10 @@
       <cbc:TaxAmount currencyID="EUR">9.74</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
+        <cbc:Percent>21</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>21</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
@@ -83,25 +96,9 @@
     <cbc:TaxInclusiveAmount currencyID="EUR">250.33</cbc:TaxInclusiveAmount>
     <cbc:PayableAmount currencyID="EUR">250.33</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
-  <cac:PaymentMeans>
-    <cbc:ID>12115118</cbc:ID>
-    <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
-    <cbc:PaymentID>Deb. 10202 / Fact. 12115118</cbc:PaymentID>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID>NL57 RABO 0107307510</cbc:ID>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
-  <cac:PaymentMeans>
-    <cbc:ID>12115118</cbc:ID>
-    <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID>NL03 INGB 0004489902</cbc:ID>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">19.90</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>PATAT FRITES 10MM 10KG</cbc:Name>
@@ -122,8 +119,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">9.85</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>PKAAS 50PL. JONG BEL. 1KG</cbc:Name>
@@ -144,8 +140,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">8.29</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>POT KETCHUP 3 LT</cbc:Name>
@@ -166,8 +161,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>4</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">14.46</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>FRITESSAUS 3 LRR</cbc:Name>
@@ -188,8 +182,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>5</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">35.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>KOFFIE BLIK 3,5KG SNELF</cbc:Name>
@@ -210,8 +203,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>6</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">35.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>KOFFIE 3.5 KG BLIK STAND</cbc:Name>
@@ -232,8 +224,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>7</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">10.65</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>SUIKERKLONT</cbc:Name>
@@ -254,8 +245,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>8</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">1.55</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>1 KG UL BLOKJES</cbc:Name>
@@ -276,8 +266,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>9</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>3</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">3</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">14.37</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>BLOCKNOTE A5</cbc:Name>
@@ -298,8 +287,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>10</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">8.29</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>CHIPS NAT KLEIN ZAKJES</cbc:Name>
@@ -320,8 +308,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>11</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">16.58</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>CHIPS PAP KLEINE ZAKJES</cbc:Name>
@@ -342,8 +329,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>12</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">9.95</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>TR KL PAKJES APPELSAP</cbc:Name>
@@ -364,8 +350,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>13</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">3.30</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>PK CHOCOLADEMEL</cbc:Name>
@@ -386,8 +371,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>14</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">10.80</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>KRAT BIER</cbc:Name>
@@ -408,8 +392,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>15</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">3.90</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>STATIEGELD</cbc:Name>
@@ -430,8 +413,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>16</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">7.60</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>BLEEK 3 X 750 ML</cbc:Name>
@@ -452,8 +434,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>17</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>2</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">2</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">9.34</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>WC PAPIER</cbc:Name>
@@ -474,8 +455,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>18</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">18.63</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>BALPENNEN 50 ST BLAUW</cbc:Name>
@@ -496,8 +476,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>19</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">102.12</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>EM FRITUURVET</cbc:Name>
@@ -518,8 +497,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>20</cbc:ID>
-    <cbc:Note>Alle leveringen zijn franco. Alle prijzen zijn incl. BTW. Betalingstermijn: 14 dagen netto. Prijswijzigingen voorbehouden. Op al onze aanbiedingen, leveringen en overeenkomsten zijn van toepassing in de algemene verkoop en leveringsvoorwaarden. Gedeponeerd bij de K.v.K. te Amsterdam 25-04-'85##Delivery terms</cbc:Note>
-    <cbc:InvoicedQuantity>6</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">6</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="EUR">-109.98</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>FRITUUR VET 10 KG RETOUR</cbc:Name>

@@ -45,10 +45,10 @@
       <cbc:TaxAmount currencyID="DKK">375.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>25</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
@@ -56,10 +56,10 @@
       <cbc:TaxAmount currencyID="DKK">300.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
+        <cbc:Percent>12</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:Percent>12</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
@@ -71,7 +71,7 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:InvoicedQuantity>1000</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1000</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="DKK">1000.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>Printing paper</cbc:Name>
@@ -89,7 +89,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:InvoicedQuantity>100</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">100</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="DKK">500.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>Parker Pen</cbc:Name>
@@ -107,7 +107,7 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>3</cbc:ID>
-    <cbc:InvoicedQuantity>500</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">500</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="DKK">2500.00</cbc:LineExtensionAmount>
     <cac:Item>
       <cbc:Name>American Cookies</cbc:Name>

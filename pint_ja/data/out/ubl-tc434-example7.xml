@@ -64,7 +64,6 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:PaymentMeans>
-    <cbc:ID>INVOICE_test_7</cbc:ID>
     <cbc:PaymentMeansCode>30</cbc:PaymentMeansCode>
     <cac:PayeeFinancialAccount>
       <cbc:ID>SE1212341234123412</cbc:ID>
@@ -83,10 +82,10 @@
       <cbc:TaxAmount currencyID="SEK">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>O</cbc:ID>
+        <cbc:TaxExemptionReason>Tax</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
-        <cbc:TaxExemptionReason>Tax</cbc:TaxExemptionReason>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
@@ -98,13 +97,8 @@
   </cac:LegalMonetaryTotal>
   <cac:InvoiceLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:Note>Testscenario 7</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="SEK">2500.00</cbc:LineExtensionAmount>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2013-01-01</cbc:StartDate>
-      <cbc:EndDate>2013-12-31</cbc:EndDate>
-    </cac:InvoicePeriod>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
@@ -127,13 +121,8 @@
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>2</cbc:ID>
-    <cbc:Note>Testscenario 7</cbc:Note>
-    <cbc:InvoicedQuantity>1</cbc:InvoicedQuantity>
+    <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="SEK">700.00</cbc:LineExtensionAmount>
-    <cac:InvoicePeriod>
-      <cbc:StartDate>2013-01-01</cbc:StartDate>
-      <cbc:EndDate>2013-12-31</cbc:EndDate>
-    </cac:InvoicePeriod>
     <cac:Item>
       <cbc:Description>Annual registration fee</cbc:Description>
       <cbc:Name>Road Register fee</cbc:Name>
