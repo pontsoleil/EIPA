@@ -160,11 +160,11 @@
       </assert>
     </rule>
     
-    <rule context="/*/cac:TaxTotal[cbc:TaxAmount/@currencyID='JPY']/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
+    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
       <assert id="jp-s-08" flag="fatal" test="
         every $rate in xs:decimal(cbc:Percent) satisfies (
         (
-          not(exists(//cac:InvoiceLine/cac:Item[cbc:LineExtensionAmount/pcurrencyID='JPY'][cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate])) and
+          not(exists(//cac:InvoiceLine/cac:Item[cbc:LineExtensionAmount/@currencyID='JPY'][cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate])) and
           not(exists(//cac:AllowanceCharge[cbc:Amount/@currencyID='JPY'][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]))
         ) or (
           (
@@ -259,21 +259,21 @@
       </assert>
     </rule>
     
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
       <assert id="jp-aa-08" flag="fatal" test="
         every $rate in xs:decimal(cbc:Percent) satisfies (
         (
-          not(exists(//cac:InvoiceLine/cac:Item[cbc:LineExtensionAmount/pcurrencyID='JPY'][cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate])) and
+          not(exists(//cac:InvoiceLine/cac:Item[cbc:LineExtensionAmount/@currencyID='JPY'][cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate])) and
           not(exists(//cac:AllowanceCharge[cbc:Amount/@currencyID='JPY'][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]))
         ) or (
           (
             exists(//cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]) or
             exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
           ) and (
-            xs:decimal(../cbc:TaxableAmount) =
-              sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) +
-              sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) -
-              sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+            xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) =
+              sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY'])) +
+              sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount[@currencyID='JPY'])) -
+              sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount[@currencyID='JPY']))
           )
         ) or (
           (
@@ -301,10 +301,10 @@
         ) or (
           (
             abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) - 1 &lt;  
-            round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100 
+              round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100 
           ) and (
             abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) + 1 &gt;
-            round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100 
+              round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100 
           )
         )
       ">

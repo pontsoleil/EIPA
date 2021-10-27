@@ -92,15 +92,17 @@
   </rule>
   
   <rule context="cac:TaxCategory/cbc:ID" flag="fatal">
+  <!-- add "AA" -->
     <assert
-      test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" 
+      test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" 
       id="BR-CL-17" 
       flag="fatal">[BR-CL-17]-Invoice tax categories MUST be coded using UNCL5305 code list</assert>
   </rule>
   
   <rule context="cac:ClassifiedTaxCategory/cbc:ID" flag="fatal">
+  <!-- add "AA" -->
     <assert
-      test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" 
+      test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" 
       id="BR-CL-18" 
       flag="fatal">[BR-CL-18]-Invoice tax categories MUST be coded using UNCL5305 code list</assert>
   </rule>

@@ -28,13 +28,13 @@
   </phase>
   <!-- Abstract CEN BII patterns -->
   <!-- ========================= -->
-  <include href="abstract/EN16931-model.sch"/>
-  <include href="abstract/EN16931-syntax.sch"/>
+  <include href="eInvoicing-EN16931-validation-1.3.2/ubl/schematron/abstract/EN16931-model.sch"/>
+  <include href="eInvoicing-EN16931-validation-1.3.2/ubl/schematron/abstract/EN16931-syntax.sch"/>
   <!-- Data Binding parameters -->
   <!-- ======================= -->
-  <include href="UBL/EN16931-UBL-model.sch"/>
-  <include href="UBL/EN16931-UBL-syntax.sch"/>
+  <include href="eInvoicing-EN16931-validation-1.3.2/ubl/schematron/UBL/EN16931-UBL-model.sch"/>
+  <include href="eInvoicing-EN16931-validation-1.3.2/ubl/schematron/UBL/EN16931-UBL-syntax.sch"/>
   <!-- Code Lists Binding rules -->
   <!-- ======================== -->
-  <include href="codelist/EN16931-UBL-codes.sch"/>
+  <include href="eInvoicing-EN16931-validation-1.3.2/ubl/schematron/codelist/EN16931-UBL-codes.sch"/>
 </schema>

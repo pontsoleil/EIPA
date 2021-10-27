@@ -364,11 +364,11 @@
       ">
       [ibr-30]-If both Invoice line period start date (ibt-134) and Invoice line period end date (ibt-135) are given then the Invoice line period end date (ibt-135) shall be later or equal to the Invoice line period start date (ibt-134).
       </assert>
-      <assert id="ibr-co-20*" flag="fatal" test="
+      <assert id="ibr-co-20T" flag="fatal" test="
         exists(cbc:StartDate) and 
         exists(cbc:EndDate)
       ">
-      [ibr-co-20*]-If Invoice line period (ibg-26) is used, both the Invoice line period start date (ibt-134) and the Invoice line period end date (ibt-135) shall be filled.
+      [ibr-co-20T]-If Invoice line period (ibg-26) is used, both the Invoice line period start date (ibt-134) and the Invoice line period end date (ibt-135) shall be filled.
       </assert>
     </rule>
     <rule context="cac:InvoicePeriod">
@@ -383,11 +383,11 @@
       ">
       [ibr-29]-If both Invoicing period start date (ibt-073) and Invoicing period end date (ibt-074) are given then the Invoicing period end date (ibt-074) shall be later or equal to the Invoicing period start date (ibt-073).
       </assert>
-      <assert id="ibr-co-19*" flag="fatal" test="
+      <assert id="ibr-co-19T" flag="fatal" test="
         exists(cbc:StartDate) and 
         exists(cbc:EndDate)
       ">
-      [ibr-co-19*]-If Invoicing period (ibg-14) is used, both the Invoicing period start date (ibt-073) and the Invoicing period end date (ibt-074) shall be filled.
+      [ibr-co-19T]-If Invoicing period (ibg-14) is used, both the Invoicing period start date (ibt-073) and the Invoicing period end date (ibt-074) shall be filled.
       </assert>
     </rule>
     <rule context="//cac:AdditionalItemProperty">
