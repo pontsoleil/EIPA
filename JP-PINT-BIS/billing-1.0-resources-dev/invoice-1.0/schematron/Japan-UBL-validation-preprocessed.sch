@@ -198,7 +198,7 @@
 		</rule>
 		
 		<rule context="/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cbc:ID/normalize-space(.)='AA'][cac:TaxScheme/cbc:ID/normalize-space(.)='VAT']">
-			<assert id="jp-s-08AA" flag="fatal" test="every $rate in xs:decimal(cbc:Percent) satisfies (
+			<assert id="jp-aa-08" flag="fatal" test="every $rate in xs:decimal(cbc:Percent) satisfies (
 					(
 						exists(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/cbc:ID/normalize-space(.)='AA'][cac:Item/cac:ClassifiedTaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:LineExtensionAmount/xs:decimal(.)) or
 						exists(../../../cac:AllowanceCharge[cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate])
@@ -208,12 +208,12 @@
 						sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID/normalize-space(.)='AA'][cac:TaxCategory/cbc:Percent/xs:decimal(.)=$rate]/cbc:Amount/xs:decimal(.))
 					)
 				)">
-				[*jp-s-08AA]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
+				[jp-aa-08]-For each different value of Consumption Tax category rate (IBT-119) where the Consumption Tax category code (IBT-118) is "Standard rated", the Consumption Tax category taxable amount (IBT-116) in a Consumption Tax breakdown (IBG-23) shall equal the sum of Invoice line net amounts (IBT-131) plus the sum of document level charge amounts (IBT-99) minus the sum of document level allowance amounts (IBT-92) where the Consumption Tax category code (IBT-151, IBT-102, IBT-95) is "Standard rated" and the Consumption Tax rate (IBT-152, IBT-103, IBT-96) equals the Consumption Tax category rate (IBT-119).
 			</assert>
-			<assert id="jp-s-09AA" flag="fatal" test="
+			<assert id="jp-aa-09" flag="fatal" test="
 				../cbc:TaxAmount/xs:decimal(.) &lt;= ceiling(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100)) and
 				../cbc:TaxAmount/xs:decimal(.) &gt;= floor(../cbc:TaxableAmount/xs:decimal(.) * (xs:decimal(cbc:Percent) div 100))">
-				[jp-s-09AA]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
+				[jp-aa-09]-The Consumption Tax category tax amount (IBT-117) in a Consumption Tax breakdown (IBG-23) where Consumption Tax category code (IBT-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (IBT-116) multiplied by the Consumption Tax category rate (IBT-119).
 			</assert>
 		</rule>
 		

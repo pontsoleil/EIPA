@@ -50,6 +50,7 @@
 		<variable name="weightedSum" select="sum(for $i in (0 to $length - 1) return $digits[$i + 1] * (1 + ((($i + 1) mod 2) * 2)))"/>
 		<value-of select="(10 - ($weightedSum mod 10)) mod 10 = number(substring($val, $length + 1, 1))"/>
 	</function>
+-->
 	<function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:slack" as="xs:boolean">
 		<param name="exp" as="xs:decimal"/>
 		<param name="val" as="xs:decimal"/>
@@ -59,6 +60,7 @@
     xs:decimal($exp - $slack) &lt;= $val
   "/>
 	</function>
+ <!--
 	<function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:mod11" as="xs:boolean">
 		<param name="val"/>
 		<variable name="length" select="string-length($val) - 1"/>
@@ -286,10 +288,10 @@
       "/>
       <assert id="PEPPOL-EN16931-R120" flag="fatal" test="
       (
-        u:slack($lineExtensionAmountJPY, ($quantity * ($priceAmountJPY div $baseQuantity)) + $chargesTotalJPY - $allowancesTotalJPY, 0.02)
-      ) or {
+        u:slack($lineExtensionAmountJPY, ($quantity * ($priceAmountJPY div $baseQuantity)) + $chargesTotalJPY - $allowancesTotalJPY, 0)
+      ) or (
         u:slack($lineExtensionAmount, ($quantity * ($priceAmount div $baseQuantity)) + $chargesTotal - $allowancesTotal, 0.02)
-      }
+      )
       ">
       [PEPPOL-EN16931-R120 (JP-22)]-Invoice line net amount MUST equal (Invoiced quantity * (Item net price/item price base quantity) + Sum of invoice line charge amount - sum of invoice line allowance amount
       </assert>
