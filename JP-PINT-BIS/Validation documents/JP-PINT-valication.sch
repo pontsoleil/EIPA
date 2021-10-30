@@ -110,7 +110,7 @@
       </assert>
     </rule>
     <!-- JP-04 -->
-    <rule context="/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
+    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
       <assert id="BR-32" flag="fatal" test="
       exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
       ">
@@ -118,7 +118,7 @@
       </assert>
     </rule>
     <!-- JP-05 -->
-    <rule context="/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
+    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
       <assert id="BR-37" flag="fatal" test="
       exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
       ">
@@ -167,7 +167,7 @@
       [JP-10]-Tax breakdown (ibg-23) shall hove Tax scheme (ibt-118-1).
       </assert>
     </rule>
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <!-- JP-16 -->
       <assert id="JP-16" flag="fatal" test="
       exists(cac:InvoicePeriod) or 
@@ -214,13 +214,13 @@
       [PEPPOL-EN16931-R046 (JP-21)]-Item net price MUST equal (Gross price - Allowance amount) when gross price is provided.</assert>
     </rule>
     <!-- Price -->
-    <rule context="cac:Price/cbc:BaseQuantity[@unitCode]">
+    <rule context="//cac:Price/cbc:BaseQuantity[@unitCode]">
       <let name="hasQuantity" value="
       ../../cbc:InvoicedQuantity or 
       ../../cbc:CreditedQuantity
       "/>
       <let name="quantity" value="
-      if (/ubl:Invoice) then
+      if (ubl:Invoice) then
         ../../cbc:InvoicedQuantity
       else
         ../../cbc:CreditedQuantity
@@ -247,7 +247,7 @@
         0
       "/>
       <let name="quantity" value="
-      if (/ubl:Invoice) then
+      if (ubl:Invoice) then
         (if (cbc:InvoicedQuantity) then
           xs:decimal(cbc:InvoicedQuantity)
         else
@@ -320,26 +320,26 @@
       <assert id="PEPPOL-EN16931-R101" test="(not(cac:DocumentReference) or (cac:DocumentReference/cbc:DocumentTypeCode='130'))" flag="fatal">Element Document reference can only be used for Invoice line object</assert>
       -->
     </rule>
-    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | /cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-br-01" flag="fatal" test="
       matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')
       ">
       [jp-br-01]- For the Japanese Suppliers, the Tax identifier must start with 'T' and must be 13 digits.
       </assert>
     </rule>
-    <rule context="/ubl:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
-      /ubl:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
-      /ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount[@currencyID='JPY'] |
-      /cn:CreditNote/*[local-name()!='CreditNoteLine']/*[@currencyID='JPY'] |
-      /cn:CreditNote/*[local-name()!='CreditNoteLine']/*/*[@currencyID='JPY'] |
-      /cn:CreditNote/cac:CreditNoteLine/cbc:LineExtensionAmount[@currencyID='JPY']">
+    <rule context="ubl:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
+      ubl:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
+      ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount[@currencyID='JPY'] |
+      cn:CreditNote/*[local-name()!='CreditNoteLine']/*[@currencyID='JPY'] |
+      cn:CreditNote/*[local-name()!='CreditNoteLine']/*/*[@currencyID='JPY'] |
+      cn:CreditNote/cac:CreditNoteLine/cbc:LineExtensionAmount[@currencyID='JPY']">
       <assert id="jp-br-02" flag="fatal" test="
       matches(normalize-space(.),'^-?[1-9][0-9]*$')
       ">
       [jp-br-02]- Amount shall be integer.
       </assert>
     </rule>
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="jp-br-03" flag="fatal" test="
       (
         not(exists(cac:InvoicePeriod))
@@ -352,7 +352,7 @@
       </assert>
     </rule>
     <!-- JP-06 -->
-    <rule context="/ubl:Invoice/cac:InvoiceLine | /cn:CreditNote/cac:CreditNoteLine">
+    <rule context="ubl:Invoice/cac:InvoiceLine | cn:CreditNote/cac:CreditNoteLine">
       <assert id="jp-br-04" flag="fatal" test="
       (
         count(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) = 0
@@ -365,7 +365,7 @@
       [jp-br-04]-INVOICE LINE ALLOWANCES shall be categorized by Invoiced item TAX category code (ibt-151) and Invoiced item TAX rate (ibt-152)
       </assert>
     </rule>
-    <rule context="/ubl:Invoice/cac:AllowanceCharge | /cn:CreditNote/cac:AllowanceCharge">
+    <rule context="ubl:Invoice/cac:AllowanceCharge | cn:CreditNote/cac:AllowanceCharge">
       <assert id="jp-br-05" flag="fatal" test="
       exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:ID[normalize-space(.)='S' or normalize-space(.)='AA']) and
       xs:decimal(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:Percent) &gt; 0
@@ -395,7 +395,7 @@
       [jp-br-08]-In a DOCUMENT LEVEL CHARGE (ibg-21) shall be categorized by the document level charge TAX category code (ibt-102) and the document level charge TAX rate (ibt-103).
       </assert>
     </rule>
-    <rule context="/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP'] | /cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']">
+    <rule context="ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP'] | cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']">
       <assert id="jp-br-co-01" flag="fatal" test="
       (
         round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) != 0 and
@@ -417,7 +417,7 @@
       [jp-br-co-02]-In an Invoice line (BG-25) where the Invoiced item Consumption Tax category code (BT-151) is "Standard rated" or "Reduced tate" the Invoiced item Consumption Tax rate (BT-152) shall be greater than zero.
       </assert>
     </rule>
-    <rule context="/ubl:Invoice/cac:InvoicePeriod | /cn:CreditNote/cac:InvoicePeriod">
+    <rule context="ubl:Invoice/cac:InvoicePeriod | cn:CreditNote/cac:InvoicePeriod">
       <!-- JP-18 -->
       <assert id="jp-br-co-03" flag="fatal" test="
       exists(cbc:StartDate) and exists(cbc:EndDate)
@@ -434,7 +434,7 @@
       </assert>
     </rule>
     <!-- Standard rate -->
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="jp-s-01" flag="fatal" test="
       (
         (
@@ -587,7 +587,7 @@
       </assert>    
     </rule>
     <!-- Reduced rate -->
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="jp-aa-01" flag="fatal" test="
       (
         (
@@ -648,14 +648,14 @@
       [jp-aa-04]-An Invoice that contains a Document level charge (BG-21) where the Document level charge Consumption Tax category code (BT-102) is "Standard rated" shall contain the Seller Consumption Tax Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative Consumption Tax identifier (BT-63).
       </assert>
     </rule>
-    <rule context="//cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-aa-06" flag="fatal" test="
       xs:decimal(cbc:Percent) &gt; 0
       ">
       [jp-aa-06]-In a Document level allowance (BG-20) where the Document level allowance Consumption Tax category code (BT-95) is "Reduced rated" the Document level allowance Consumption Tax rate (BT-96) shall be greater than zero.
       </assert>
     </rule>
-    <rule context="//cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-aa-07" flag="fatal" test="
       xs:decimal(cbc:Percent) &gt; 0
       ">
@@ -720,7 +720,7 @@
       [jp-aa-10]-A Consumption Tax breakdown (BG-23) with Consumption Tax Category code (BT-118) "Reduced rate" shall not have a Consumption Tax exemption reason code (BT-121) or Consumption Tax exemption reason text (BT-120).
       </assert>
     </rule>
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <!-- E: Exempt from VAT -->
       <assert id="BR-E-01" flag="fatal" test="
       (
@@ -768,7 +768,7 @@
       </assert>
     </rule>
     <!-- E: Exempt from VAT -->
-    <rule context="cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
+    <rule context="//cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
         cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-E-05" flag="fatal" test="
       xs:decimal(cbc:Percent) = 0
@@ -858,7 +858,7 @@
 
   <pattern id="JP-Codesmodel">
 
-    <rule flag="fatal" context="cbc:InvoiceTypeCode | cbc:CreditNoteTypeCode">
+    <rule context="cbc:InvoiceTypeCode | cbc:CreditNoteTypeCode">
       <assert id="jp-cl-01" flag="fatal" test="
       (
         self::cbc:InvoiceTypeCode and (
@@ -878,7 +878,7 @@
       [jp-cl-01]-The document type code MUST be coded by the Japanese invoice and Japanese credit note related code lists of UNTDID 1001.
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:PaymentMeans/cbc:PaymentMeansCode">
+    <rule context="cac:PaymentMeans/cbc:PaymentMeansCode">
       <assert id="jp-cl-02" flag="fatal" test="
       (
         (
@@ -889,7 +889,7 @@
       [jp-cl-02]-Payment means in a Japanese invoice MUST be coded using a restricted version of the UNCL4461 code list (adding Z01 and Z02)
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:TaxCategory/cbc:ID | cac:ClassifiedTaxCategory/cbc:ID">
+    <rule context="cac:TaxCategory/cbc:ID | cac:ClassifiedTaxCategory/cbc:ID">
       <assert id="jp-cl-03" flag="fatal" test="
       (
         (
@@ -900,7 +900,7 @@
       [jp-cl-03]- Japanese invoice tax categories MUST be coded using UNCL5305 code list
       </assert>
     </rule>  
-    <rule flag="fatal" context="cbc:TaxExemptionReasonCode">
+    <rule context="cbc:TaxExemptionReasonCode">
       <assert id="jp-cl-04" flag="fatal" test="
       (
         (
@@ -911,7 +911,7 @@
       [jp-cl-04]-Tax exemption reason code identifier scheme identifier MUST belong to the ????</assert>
     </rule>
 
-    <rule context="/ubl:Invoice | cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="jp-ibr-53" flag="fatal" test="
       every $taxcurrency in cbc:TaxCurrencyCode satisfies (
         exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])
@@ -1031,8 +1031,8 @@
       [ibr-57]-Each Deliver to address (ibg-15) shall contain a Deliver to country code (ibt-080).
       </assert>
     </rule>
-    <rule context="/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] |
-        /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
+    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] |
+        cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
       <assert id="ibr-31" flag="fatal" test="
       exists(cbc:Amount)
       ">
@@ -1052,7 +1052,7 @@
       [ibr-co-21]-Each Document level allowance (ibg-20) shall contain a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098), or both.
       </assert>
     </rule>
-    <rule context="/ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | /cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
+    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
       <assert id="ibr-36" flag="fatal" test="
       exists(cbc:Amount)
       ">
@@ -1264,7 +1264,7 @@
 
     </rule>
 
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="ibr-01" flag="fatal" test="
       (cbc:CustomizationID) != ''
       ">
@@ -1356,7 +1356,7 @@
       [ibr-28]-The Item gross price (ibt-148) shall NOT be negative.
       </assert>
     </rule>
-    <rule context="//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
+    <rule context="cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
       <assert id="ibr-41" flag="fatal" test="
       exists(cbc:Amount)
       ">
@@ -1371,7 +1371,7 @@
       <!--      <assert id="ibr-co-07" flag="fatal" test="true()">[ibr-co-07]-When both Invoice line allowance reason code (ibt-140) and Invoice line allowance reason (ibt-139) the definition of the code is normative.</assert>
       -->
     </rule>
-    <rule context="//cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
+    <rule context="cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
       <assert id="ibr-43" flag="fatal" test="
       exists(cbc:Amount)
       ">
@@ -1432,7 +1432,7 @@
       [ibr-co-19]-If Invoicing period (ibg-14) is used, the Invoicing period start date (ibt-073) or the Invoicing period end date (ibt-074) shall be filled, or both.
       </assert>
     </rule>
-    <rule context="//cac:AdditionalItemProperty">
+    <rule context="cac:AdditionalItemProperty">
       <assert id="ibr-54" flag="fatal" test="
       exists(cbc:Name) and exists(cbc:Value)
       ">
@@ -1528,7 +1528,7 @@
       [ibr-20]-The Seller tax representative postal address (ibg-12) shall contain a Tax representative country code (ibt-069), if the Seller (ibg-04) has a Seller tax representative party (ibg-11).
       </assert>
     </rule>
-    <rule context="/ubl:Invoice/cac:TaxTotal | /cn:CreditNote/cac:Taxtotal">
+    <rule context="ubl:Invoice/cac:TaxTotal | cn:CreditNote/cac:Taxtotal">
       <assert id="ibr-co-14" flag="fatal" test="
       (
         xs:decimal(child::cbc:TaxAmount[@currencyID='JPY']) =
@@ -1578,28 +1578,28 @@
       ">
       [ibr-cl-01][PEPPOL-EN16931-P0101]-Credit note type code MUST be coded by the credit note related code lists of UNTDID 1001.</assert>
     </rule>
-    <rule flag="fatal" context="cbc:Amount | cbc:BaseAmount | cbc:PriceAmount | cbc:TaxAmount | cbc:TaxableAmount | cbc:LineExtensionAmount | cbc:TaxExclusiveAmount | cbc:TaxInclusiveAmount | cbc:AllowanceTotalAmount | cbc:ChargeTotalAmount | cbc:PrepaidAmount | cbc:PayableRoundingAmount | cbc:PayableAmount">
+    <rule context="cbc:Amount | cbc:BaseAmount | cbc:PriceAmount | cbc:TaxAmount | cbc:TaxableAmount | cbc:LineExtensionAmount | cbc:TaxExclusiveAmount | cbc:TaxInclusiveAmount | cbc:AllowanceTotalAmount | cbc:ChargeTotalAmount | cbc:PrepaidAmount | cbc:PayableRoundingAmount | cbc:PayableAmount">
       <assert id="br-cl-03" flag="fatal" test="
         some $code in $ISO4217 satisfies normalize-space(@currencyID) = $code
       ">
       [ibr-cl-03][PEPPOL-EN16931-CL007]-currencyID MUST be coded using ISO code list 4217 alpha-3.
       </assert>
     </rule>
-    <rule flag="fatal" context="cbc:DocumentCurrencyCode">
+    <rule context="cbc:DocumentCurrencyCode">
       <assert id="ibr-cl-04" flag="fatal" test="
         some $code in $ISO4217 satisfies normalize-space(text()) = $code
        ">
       [ibr-cl-04]-Invoice currency code MUST be coded using ISO code list 4217 alpha-3
       </assert>
     </rule>
-    <rule flag="fatal" context="cbc:TaxCurrencyCode">
+    <rule context="cbc:TaxCurrencyCode">
       <assert id="ibr-cl-05" flag="fatal" test="
         some $code in $ISO4217 satisfies normalize-space(text()) = $code
        ">
       [ibr-cl-05]-Tax currency code MUST be coded using ISO code list 4217 alpha-3
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:AdditionalDocumentReference[cbc:DocumentTypeCode = '130']/cbc:ID[@schemeID] |
+    <rule context="cac:AdditionalDocumentReference[cbc:DocumentTypeCode = '130']/cbc:ID[@schemeID] |
         cac:DocumentReference[cbc:DocumentTypeCode = '130']/cbc:ID[@schemeID]">
       <assert id="ibr-cl-07" flag="fatal" test="
         some $code in $UNTDID1153 satisfies normalize-space(@schemeID) = $code
@@ -1608,7 +1608,7 @@
       </assert>
     </rule>
 
-    <rule flag="fatal" context="cac:PartyIdentification/cbc:ID[@schemeID]">
+    <rule context="cac:PartyIdentification/cbc:ID[@schemeID]">
       <assert id="ibr-cl-10" flag="fatal" test="
       (
         some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
@@ -1625,84 +1625,84 @@
       [ibr-cl-10]-Any identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:PartyLegalEntity/cbc:CompanyID[@schemeID]">
+    <rule context="cac:PartyLegalEntity/cbc:CompanyID[@schemeID]">
       <assert id="ibr-cl-11" flag="fatal" test="
       some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
       ">
       [ibr-cl-11]-Any registration identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:CommodityClassification/cbc:ItemClassificationCode[@listID]">
+    <rule context="cac:CommodityClassification/cbc:ItemClassificationCode[@listID]">
       <assert id="ibr-cl-13" flag="fatal" test="
       some $code in $UNTDID7143 satisfies normalize-space(@listID) = $code
       ">
       [ibr-cl-13]-Item classification identifier identification scheme MUST be coded using one of the UNTDID 7143 list.
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:Country/cbc:IdentificationCode">
+    <rule context="cac:Country/cbc:IdentificationCode">
       <assert id="ibr-cl-14" flag="fatal" test="
       some $code in $ISO3166 satisfies normalize-space(text()) = $code
       ">
       [ibr-cl-14]-Country codes in an invoice MUST be coded using ISO code list 3166-1
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:OriginCountry/cbc:IdentificationCode">
+    <rule context="cac:OriginCountry/cbc:IdentificationCode">
       <assert id="ibr-cl-15" flag="fatal" test="
       some $code in $ISO3166 satisfies normalize-space(text()) = $code
       ">
       [ibr-cl-15]-Origin country codes in an invoice MUST be coded using ISO code list 3166-1
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:PaymentMeans/cbc:PaymentMeansCode">
+    <rule context="cac:PaymentMeans/cbc:PaymentMeansCode">
       <assert id="ibr-cl-16" flag="fatal" test="
       some $code in $UNCL4461 satisfies normalize-space(text()) = $code
       ">
       [ibr-cl-16]-Payment means in an invoice MUST be coded using UNCL4461 code list (adding Z01 and Z02)
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:AllowanceCharge[cbc:ChargeIndicator = false()]/cbc:AllowanceChargeReasonCode">
+    <rule context="cac:AllowanceCharge[cbc:ChargeIndicator = false()]/cbc:AllowanceChargeReasonCode">
       <assert id="ibr-cl-19" flag="fatal" test="
       some $code in $UNCL5189 satisfies normalize-space(text()) = $code
       ">
       [ibr-cl-19]-Coded allowance reasons MUST belong to the UNCL 5189 code list
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:AllowanceCharge[cbc:ChargeIndicator = true()]/cbc:AllowanceChargeReasonCode">
+    <rule context="cac:AllowanceCharge[cbc:ChargeIndicator = true()]/cbc:AllowanceChargeReasonCode">
       <assert id="ibr-cl-20" flag="fatal" test="
       some $code in $UNCL7161 satisfies normalize-space(text()) = $code
       ">
       [ibr-cl-20]-Coded charge reasons MUST belong to the UNCL 7161 code list
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:StandardItemIdentification/cbc:ID[@schemeID]">
+    <rule context="cac:StandardItemIdentification/cbc:ID[@schemeID]">
       <assert id="ibr-cl-21" flag="fatal" test="
       some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
       ">
       [ibr-cl-21]-Item standard identifier scheme identifier MUST belong to the ISO 6523 ICD list.
       </assert>
     </rule>
-    <rule flag="fatal" context="cbc:InvoicedQuantity[@unitCode] | cbc:BaseQuantity[@unitCode]">
+    <rule context="cbc:InvoicedQuantity[@unitCode] | cbc:BaseQuantity[@unitCode]">
       <assert id="ibr-cl-23" flag="fatal" test="
       some $code in $UNECE_REC20 satisfies normalize-space(@unitCode) = $code
       ">
       [ibr-cl-23]-Unit code MUST be coded according to the UN/ECE Recommendation 20 with Rec 21 extension
       </assert>
     </rule>
-    <rule flag="fatal" context="cbc:EmbeddedDocumentBinaryObject[@mimeCode]">
+    <rule context="cbc:EmbeddedDocumentBinaryObject[@mimeCode]">
       <assert id="ibr-cl-24" flag="fatal" test="
       some $code in $MIMECODE satisfies normalize-space(@mimeCode) = $code
       ">
       [ibr-cl-24][EN16931-CL001(JP-37)]-Mime code must be according to subset of IANA code list.
       </assert>
     </rule>
-    <rule flag="fatal" context="cbc:EndpointID[@schemeID]">
+    <rule context="cbc:EndpointID[@schemeID]">
       <assert id="ibr-cl-25" flag="fatal" test="
       some $code in $CEF_EAS satisfies normalize-space(@schemeID) = $code
       ">
       [ibr-cl-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list
       </assert>
     </rule>
-    <rule flag="fatal" context="cac:DeliveryLocation/cbc:ID[@schemeID]">
+    <rule context="cac:DeliveryLocation/cbc:ID[@schemeID]">
       <assert id="ibr-cl-26" flag="fatal" test="
         some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
       ">
@@ -1742,7 +1742,7 @@
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
       <assert id="UBL-SR-31" flag="fatal" test="(count(cbc:AllowanceChargeReason) &lt;= 1)">[UBL-SR-31]-Document level charge reason shall occur maximum once</assert>
     </rule>
-    <rule context="/ubl:Invoice | /cn:CreditNote">
+    <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="UBL-CR-001" flag="warning" test="not(ext:UBLExtensions)">[UBL-CR-001]-warning-A UBL invoice should not include extensions</assert>
       <assert id="UBL-CR-002" flag="warning" test="not(cbc:UBLVersionID) or cbc:UBLVersionID = '2.1'">[UBL-CR-002]-warning-A UBL invoice should not include the UBLVersionID or it should be 2.1</assert>
       <assert id="UBL-CR-003" flag="warning" test="not(cbc:ProfileExecutionID)">[UBL-CR-003]-warning-A UBL invoice should not include the ProfileExecutionID </assert>
