@@ -38,9 +38,12 @@
     else
       'XX'
   "/>
-	<!-- -->
-	<let name="documentCurrencyCode" value="/*/cbc:DocumentCurrencyCode"/>
-	<let name="taxCurrencyCode" value="/*/cbc:TaxCurrencyCode"/>
+	<let name="documentCurrencyCode" value="
+  /*/cbc:DocumentCurrencyCode
+  "/>
+	<let name="taxCurrencyCode" value="
+  /*/cbc:TaxCurrencyCode
+  "/>
 	<!-- Functions -->
 	<function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:gln" as="xs:boolean">
 		<param name="val"/>
@@ -68,7 +71,7 @@
 		<value-of select="
     xs:decimal($exp + $slack) &gt;= $val and 
     xs:decimal($exp - $slack) &lt;= $val
-  "/>
+    "/>
 	</function>
  <!--
 	<function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:mod11" as="xs:boolean">
@@ -183,22 +186,23 @@
       (
         string(.) castable as xs:date
       )">
-      [PEPPOL-EN16931-F001(JP-17)]-A date MUST be formatted YYYY-MM-DD.
+      [PEPPOL-EN16931-F001 (JP-17)]-A date MUST be formatted YYYY-MM-DD.
       </assert>
     </rule>
     <!-- Line level - invoice period -->
-    <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:StartDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate | cn:CreditNote[cac:InvoicePeriod/cbc:StartDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:StartDate">
+    <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:StartDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate |
+        cn:CreditNote[cac:InvoicePeriod/cbc:StartDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:StartDate">
       <assert id="PEPPOL-EN16931-R110" flag="fatal" test="
       xs:date(text()) &gt;= xs:date(../../../cac:InvoicePeriod/cbc:StartDate)
       ">
-      [PEPPOL-EN16931-R110(JP-20)]-Start date of line period MUST be within invoice period.
+      [PEPPOL-EN16931-R110 (JP-20)]-Start date of line period MUST be within invoice period.
       </assert>
     </rule>
     <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:EndDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate | cn:CreditNote[cac:InvoicePeriod/cbc:EndDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:EndDate">
       <assert id="PEPPOL-EN16931-R111" flag="fatal" test="
       xs:date(text()) &lt;= xs:date(../../../cac:InvoicePeriod/cbc:EndDate)
       ">
-      [PEPPOL-EN16931-R111(JP-20)]-End date of line period MUST be within invoice period.</assert>
+      [PEPPOL-EN16931-R111 (JP-20)]-End date of line period MUST be within invoice period.</assert>
     </rule>
     <!-- Allowance (price level) -->
     <rule context="cac:Price/cac:AllowanceCharge">
@@ -214,21 +218,10 @@
       [PEPPOL-EN16931-R046 (JP-21)]-Item net price MUST equal (Gross price - Allowance amount) when gross price is provided.</assert>
     </rule>
     <!-- Price -->
-    <rule context="//cac:Price/cbc:BaseQuantity[@unitCode]">
-      <let name="hasQuantity" value="
-      ../../cbc:InvoicedQuantity or 
-      ../../cbc:CreditedQuantity
-      "/>
-      <let name="quantity" value="
-      if (ubl:Invoice) then
-        ../../cbc:InvoicedQuantity
-      else
-        ../../cbc:CreditedQuantity
-      "/>
-      <assert id="PEPPOL-EN16931-R130" flag="fatal" test="
-      not($hasQuantity) or 
-      @unitCode = $quantity/@unitCode
-      ">
+    <rule context="cac:Price/cbc:BaseQuantity[@unitCode]">
+      <let name="hasQuantity" value="exists(../../cbc:InvoicedQuantity) or exists(../../cbc:CreditedQuantity)"/>
+      <let name="quantity" value="if (../../cbc:InvoicedQuantity) then ../../cbc:InvoicedQuantity else ../../cbc:CreditedQuantity"/>
+      <assert id="PEPPOL-EN16931-R130" flag="fatal" test="not($hasQuantity) or @unitCode = $quantity/@unitCode">
       [EPPOL-EN16931-R130]-Unit code of price base quantity MUST be same as invoiced quantity.
       </assert>
     </rule>
