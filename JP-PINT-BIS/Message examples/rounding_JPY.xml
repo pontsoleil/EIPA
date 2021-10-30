@@ -30,7 +30,8 @@
   </cac:ContractDocumentReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cac:PostalAddress>
+       <cbc:EndpointID schemeID="0188">T1234567890123</cbc:EndpointID>
+       <cac:PostalAddress>
         <cbc:StreetName>Lindeboomseweg 41</cbc:StreetName>
         <cbc:CityName>Amersfoort</cbc:CityName>
         <cbc:PostalZone>3825 AL</cbc:PostalZone>
@@ -56,6 +57,7 @@
   </cac:AccountingSupplierParty>
   <cac:AccountingCustomerParty>
     <cac:Party>
+      <cbc:EndpointID schemeID="0188">T0123123456789</cbc:EndpointID>
       <cac:PostalAddress>
         <cbc:StreetName>Henry Dunantweg 42</cbc:StreetName>
         <cbc:CityName>Alphen aan den Rijn</cbc:CityName>
