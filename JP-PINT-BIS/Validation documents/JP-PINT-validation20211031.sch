@@ -9,68 +9,71 @@
   <ns prefix="ubl" uri="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"/>
   <ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
   <ns prefix="u" uri="utils"/>
-  <!-- Parameters -->
+  <!--
+    Parameters
+  -->
   <let name="profile" value="
-  if (/*/cbc:ProfileID and 
-  matches(normalize-space(/*/cbc:ProfileID), 'urn:fdc:peppol.eu:2017:poacc:billing:([0-9]{2}):1.0')) then
-    tokenize(normalize-space(/*/cbc:ProfileID), ':')[7]
-  else
-    'Unknown'
+    if (/*/cbc:ProfileID and 
+    matches(normalize-space(/*/cbc:ProfileID), 'urn:fdc:peppol.eu:2017:poacc:billing:([0-9]{2}):1.0')) then
+      tokenize(normalize-space(/*/cbc:ProfileID), ':')[7]
+    else
+      'Unknown'
   "/>
   <let name="supplierCountry" value="
-  if (/*/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
-    upper-case(normalize-space(/*/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
-  else
-    if (/*/cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
-      upper-case(normalize-space(/*/cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
+    if (/*/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
+      upper-case(normalize-space(/*/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
     else
-      if (/*/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) then
-        upper-case(normalize-space(/*/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode))
+      if (/*/cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
+        upper-case(normalize-space(/*/cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
+      else
+        if (/*/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) then
+          upper-case(normalize-space(/*/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode))
+        else
+          'XX'
+  "/>
+	<let name="customerCountry" value="
+    if (/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
+      upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
+    else
+      if (/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) then
+        upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode))
       else
         'XX'
   "/>
-	<let name="customerCountry" value="
-  if (/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)) then
-    upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/cbc:ID = 'VAT']/substring(cbc:CompanyID, 1, 2)))
-  else
-    if (/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode) then
-      upper-case(normalize-space(/*/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode))
-    else
-      'XX'
-  "/>
 	<let name="documentCurrencyCode" value="
-  /*/cbc:DocumentCurrencyCode
+    /*/cbc:DocumentCurrencyCode
   "/>
 	<let name="taxCurrencyCode" value="
-  /*/cbc:TaxCurrencyCode
+    /*/cbc:TaxCurrencyCode
   "/>
-	<!-- Functions -->
+	<!--
+    Functions
+  -->
 	<function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:gln" as="xs:boolean">
 		<param name="val"/>
 		<variable name="length" select="
-    string-length($val) - 1
+      string-length($val) - 1
     "/>
 		<variable name="digits" select="
-    reverse(for $i in string-to-codepoints(substring($val, 0, $length + 1)) return $i - 48)
+      reverse(for $i in string-to-codepoints(substring($val, 0, $length + 1)) return $i - 48)
     "/>
 		<variable name="weightedSum" select="
-    sum(
-      for $i in (0 to $length - 1) 
-      return $digits[$i + 1] * (1 + ((($i + 1) mod 2) * 2))
-    )
+      sum(
+        for $i in (0 to $length - 1) 
+        return $digits[$i + 1] * (1 + ((($i + 1) mod 2) * 2))
+      )
     "/>
 		<value-of select="
-    (
-      10 - ($weightedSum mod 10)) mod 10 = number(substring($val, $length + 1, 1)
-    )"/>
+      (10 - ($weightedSum mod 10)) mod 10 = number(substring($val, $length + 1, 1))
+    "/>
 	</function>
 	<function xmlns="http://www.w3.org/1999/XSL/Transform" name="u:slack" as="xs:boolean">
 		<param name="exp" as="xs:decimal"/>
 		<param name="val" as="xs:decimal"/>
 		<param name="slack" as="xs:decimal"/>
 		<value-of select="
-    xs:decimal($exp + $slack) &gt;= $val and 
-    xs:decimal($exp - $slack) &lt;= $val
+      xs:decimal($exp + $slack) &gt;= $val and 
+      xs:decimal($exp - $slack) &lt;= $val
     "/>
 	</function>
  <!--
@@ -105,402 +108,343 @@
   </phase>
 
   <pattern id="JP-UBL-model">
-    <!-- JP-03 -->
-    <rule context="cbc:TaxCurrencyCode">
-      <assert id="PEPPOL-EN16931-R005" flag="fatal" test="
-      not(normalize-space(text()) = normalize-space(../cbc:DocumentCurrencyCode/text()))
-      ">[PEPPOL-EN16931-R005]-VAT accounting currency code MUST be different from invoice currency code when provided.
-      </assert>
-    </rule>
-    <!-- JP-04 -->
-    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
-      <assert id="BR-32" flag="fatal" test="
-      exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
-      ">
-      [BR-32]-Each Document level allowance (BG-20) shall have a Document level allowance VAT category code (BT-95).
-      </assert>
-    </rule>
-    <!-- JP-05 -->
-    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
-      <assert id="BR-37" flag="fatal" test="
-      exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
-      ">
-      [BR-37]-Each Document level charge (BG-21) shall have a Document level charge VAT category code (BT-102).
-      </assert>
-    </rule>
-    <!-- JP-06 -->
-    <rule context="ubl:InvoiceLine">
-      <assert id="BR-CO-04" flag="fatal" test="
-      (
-        cac:Item/cac:ClassifiedTaxCategory[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:ID
-      )">
-      [BR-CO-04]-Each Invoice line (BG-25) shall be categorized with an Invoiced item VAT category code (BT-151).
-      </assert>
-    </rule>
-    <rule context="cac:TaxTotal/cac:TaxSubtotal">
-      <!-- JP-07 -->
-      <assert id="BR-45" flag="fatal" test="
-      exists(cbc:TaxableAmount)
-      ">
-      [BR-45]-Each VAT breakdown (BG-23) shall have a VAT category taxable amount (BT-116).
-      </assert>
-      <assert id="BR-46" flag="fatal" test="
-      exists(cbc:TaxAmount)
-      ">
-      [BR-46]-Each VAT breakdown (BG-23) shall have a VAT category tax amount (BT-117).
-      </assert>
-      <!-- JP-08 -->
-      <assert id="BR-47" flag="fatal" test="
-      exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
-      ">
-      [BR-47]-Each VAT breakdown (BG-23) shall be defined through a VAT category code (BT-118).
-      </assert>
-      <!-- JP-09 -->
-      <assert id="BR-48" flag="fatal" test="
-      exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent) or 
-      (
-        cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/normalize-space(cbc:ID)='O'
-      )">
-      [BR-48]-Each VAT breakdown (BG-23) shall have a VAT category rate (BT-119), except if the Invoice is Outside of scope of VAT.
-      </assert>
-      <!-- JP-10 -->
-      <assert id="JP-10" flag="fatal" test="
-      exists(cac:TaxCategory/cac:TaxScheme/cbc:ID)
-      ">
-      [JP-10]-Tax breakdown (ibg-23) shall hove Tax scheme (ibt-118-1).
-      </assert>
-    </rule>
-    <rule context="ubl:Invoice | cn:CreditNote">
-      <!-- JP-16 -->
-      <assert id="JP-16" flag="fatal" test="
-      exists(cac:InvoicePeriod) or 
-      exists(cac:InvoiceLine/cac:InvoicePeriod)
-      ">
-      [JP-16]-An Invoice shall have “Invoice period” (ibg-14) or “Invoice line period” (ibg-26).
-      </assert>
-    </rule>
-    <rule context="cbc:IssueDate | cbc:DueDate | cbc:TaxPointDate | cbc:StartDate | cbc:EndDate | cbc:ActualDeliveryDate">
+    <!--
+      Document level
+    -->
+    <rule context="
+      cbc:IssueDate | 
+      cbc:DueDate | 
+      cbc:TaxPointDate | 
+      cbc:StartDate | 
+      cbc:EndDate | 
+      cbc:ActualDeliveryDate
+    ">
       <!-- JP-17 -->
       <assert id="PEPPOL-EN16931-F001" flag="fatal" test="
-      string-length(text()) = 10 and 
-      (
+        string-length(text()) = 10 and 
         string(.) castable as xs:date
-      )">
-      [PEPPOL-EN16931-F001 (JP-17)]-A date MUST be formatted YYYY-MM-DD.
+      ">
+        [PEPPOL-EN16931-F001 (JP-17)]-A date MUST be formatted YYYY-MM-DD.
       </assert>
     </rule>
-    <!-- Line level - invoice period -->
-    <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:StartDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate |
-        cn:CreditNote[cac:InvoicePeriod/cbc:StartDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:StartDate">
-      <assert id="PEPPOL-EN16931-R110" flag="fatal" test="
-      xs:date(text()) &gt;= xs:date(../../../cac:InvoicePeriod/cbc:StartDate)
-      ">
-      [PEPPOL-EN16931-R110 (JP-20)]-Start date of line period MUST be within invoice period.
-      </assert>
-    </rule>
-    <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:EndDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate | cn:CreditNote[cac:InvoicePeriod/cbc:EndDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:EndDate">
-      <assert id="PEPPOL-EN16931-R111" flag="fatal" test="
-      xs:date(text()) &lt;= xs:date(../../../cac:InvoicePeriod/cbc:EndDate)
-      ">
-      [PEPPOL-EN16931-R111 (JP-20)]-End date of line period MUST be within invoice period.</assert>
-    </rule>
-    <!-- Allowance (price level) -->
-    <rule context="cac:Price/cac:AllowanceCharge">
-      <assert id="PEPPOL-EN16931-R044" flag="fatal" test="
-      normalize-space(cbc:ChargeIndicator) = 'false'
-      ">
-      [PEPPOL-EN16931-R044]-Charge on price level is NOT allowed. Only value 'false' allowed.
-      </assert>
-      <assert id="PEPPOL-EN16931-R046" flag="fatal" test="
-      not(cbc:BaseAmount) or 
-      xs:decimal(../cbc:PriceAmount) = xs:decimal(cbc:BaseAmount) - xs:decimal(cbc:Amount)
-      ">
-      [PEPPOL-EN16931-R046 (JP-21)]-Item net price MUST equal (Gross price - Allowance amount) when gross price is provided.</assert>
-    </rule>
-    <!-- Price -->
-    <rule context="cac:Price/cbc:BaseQuantity[@unitCode]">
-      <let name="hasQuantity" value="exists(../../cbc:InvoicedQuantity) or exists(../../cbc:CreditedQuantity)"/>
-      <let name="quantity" value="if (../../cbc:InvoicedQuantity) then ../../cbc:InvoicedQuantity else ../../cbc:CreditedQuantity"/>
-      <assert id="PEPPOL-EN16931-R130" flag="fatal" test="not($hasQuantity) or @unitCode = $quantity/@unitCode">
-      [EPPOL-EN16931-R130]-Unit code of price base quantity MUST be same as invoiced quantity.
-      </assert>
-    </rule>
-    <!-- Line level - line extension amount -->
-    <rule context="cac:InvoiceLine | cac:CreditNoteLine">
-      <let name="lineExtensionAmountJPY" value="
-      if (cbc:LineExtensionAmount[@currencyID='JPY']) then
-        xs:decimal(cbc:LineExtensionAmount)
-      else
-        0
-      "/>
-      <let name="lineExtensionAmount" value="
-      if (cbc:LineExtensionAmount[not(@currencyID='JPY')]) then
-        xs:decimal(cbc:LineExtensionAmount)
-      else
-        0
-      "/>
-      <let name="quantity" value="
-      if (ubl:Invoice) then
-        (if (cbc:InvoicedQuantity) then
-          xs:decimal(cbc:InvoicedQuantity)
-        else
-          1)
-      else
-        (if (cbc:CreditedQuantity) then
-          xs:decimal(cbc:CreditedQuantity)
-        else
-          1)
-      "/>
-      <let name="priceAmountJPY" value="
-      if (cac:Price/cbc:PriceAmount[@currencyID='JPY']) then
-        xs:decimal(cac:Price/cbc:PriceAmount)
-      else
-        0
-      "/>
-      <let name="priceAmount" value="
-      if (cac:Price/cbc:PriceAmount[not(@currencyID='JPY')]) then
-        xs:decimal(cac:Price/cbc:PriceAmount)
-      else
-        0
-      "/>
-      <let name="baseQuantity" value="
-      if (cac:Price/cbc:BaseQuantity and xs:decimal(cac:Price/cbc:BaseQuantity) != 0) then
-        xs:decimal(cac:Price/cbc:BaseQuantity)
-      else
-        1
-      "/>
-      <let name="allowancesTotalJPY" value="
-      if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false'][@currencyID='JPY']) then
-        sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false']/cbc:Amount/xs:decimal(.))
-      else
-        0
-      "/>
-      <let name="allowancesTotal" value="
-      if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false'][not(@currencyID='JPY')]) then
-        round(sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false']/cbc:Amount/xs:decimal(.)) * 10 * 10) div 100
-      else
-        0
-      "/>
-      <let name="chargesTotalJPY" value="
-      if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true'][@currencyID='JPY']) then
-        round(sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true']/cbc:Amount/xs:decimal(.)) * 10 * 10) div 100
-      else
-        0
-      "/>
-      <let name="chargesTotal" value="
-      if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true'][not(@currencyID='JPY')]) then
-        round(sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true']/cbc:Amount/xs:decimal(.)) * 10 * 10) div 100
-      else
-        0
-      "/>
-      <assert id="PEPPOL-EN16931-R120" flag="fatal" test="
-      (
-        u:slack($lineExtensionAmountJPY, ($quantity * ($priceAmountJPY div $baseQuantity)) + $chargesTotalJPY - $allowancesTotalJPY, 0)
-      ) or (
-        u:slack($lineExtensionAmount, ($quantity * ($priceAmount div $baseQuantity)) + $chargesTotal - $allowancesTotal, 0.02)
-      )
-      ">
-      [PEPPOL-EN16931-R120 (JP-22)]-Invoice line net amount MUST equal (Invoiced quantity * (Item net price/item price base quantity) + Sum of invoice line charge amount - sum of invoice line allowance amount
-      </assert>
-      <assert id="PEPPOL-EN16931-R121" flag="fatal" test="
-      not(cac:Price/cbc:BaseQuantity) or 
-      xs:decimal(cac:Price/cbc:BaseQuantity) &gt; 0
-      ">
-      [PEPPOL-EN16931-R121]-Base quantity MUST be a positive number above zero.
-      </assert>
-      <!--
-      <assert id="PEPPOL-EN16931-R100" test="(count(cac:DocumentReference) &lt;= 1)" flag="fatal">Only one invoiced object is allowed pr line</assert>
-      <assert id="PEPPOL-EN16931-R101" test="(not(cac:DocumentReference) or (cac:DocumentReference/cbc:DocumentTypeCode='130'))" flag="fatal">Element Document reference can only be used for Invoice line object</assert>
-      -->
-    </rule>
-    <rule context="ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
-      <assert id="jp-br-01" flag="fatal" test="
-      matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')
-      ">
-      [jp-br-01]- For the Japanese Suppliers, the Tax identifier must start with 'T' and must be 13 digits.
-      </assert>
-    </rule>
-    <rule context="ubl:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
+    <rule context="
+      ubl:Invoice/*[local-name()!='InvoiceLine']/*[@currencyID='JPY'] |
       ubl:Invoice/*[local-name()!='InvoiceLine']/*/*[@currencyID='JPY'] |
       ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount[@currencyID='JPY'] |
       cn:CreditNote/*[local-name()!='CreditNoteLine']/*[@currencyID='JPY'] |
       cn:CreditNote/*[local-name()!='CreditNoteLine']/*/*[@currencyID='JPY'] |
-      cn:CreditNote/cac:CreditNoteLine/cbc:LineExtensionAmount[@currencyID='JPY']">
+      cn:CreditNote/cac:CreditNoteLine/cbc:LineExtensionAmount[@currencyID='JPY']
+    ">
       <assert id="jp-br-02" flag="fatal" test="
-      matches(normalize-space(.),'^-?[1-9][0-9]*$')
+        matches(normalize-space(.),'^-?[1-9][0-9]*$')
       ">
-      [jp-br-02]- Amount shall be integer.
+        [jp-br-02]- Amount shall be integer.
+      </assert>
+    </rule>
+    <rule context="cbc:TaxCurrencyCode">
+      <!-- JP-03 -->
+      <assert id="PEPPOL-EN16931-R005" flag="fatal" test="
+        not(normalize-space(text()) = normalize-space(../cbc:DocumentCurrencyCode/text()))
+      ">
+      [PEPPOL-EN16931-R005]-VAT accounting currency code MUST be different from invoice currency code when provided.
+      </assert>
+    </rule>
+    <!--
+      Accounting supplier
+    -->
+    <rule context="ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+      <assert id="jp-br-01" flag="fatal" test="
+        matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')
+      ">
+        [jp-br-01]- For the Japanese Suppliers, the Tax identifier must start with 'T' and must be 13 digits.
+      </assert>
+    </rule>
+    <!--
+      Accounting customer
+    -->
+    <!--
+      Period
+    -->
+    <rule context="ubl:Invoice | cn:CreditNote">
+      <assert id="jp-br-03" flag="fatal" test="
+        (
+          not(exists(cac:InvoicePeriod))
+        ) or (
+          exists(cac:InvoicePeriod) or
+          exists(cac:InvoiceLine/cac:InvoicePeriod) or
+          exists(cac:CredotNoteLine/cac:InvoicePeriod)
+        )
+      ">
+        [jp-br-03]-An Invoice shall have INVOICE PERIOD (ibg-14) or INVOICE LINE PERIOD (ibg-26)
+      </assert>
+    </rule>
+    <rule context="ubl:Invoice/cac:InvoicePeriod |
+        cn:CreditNote/cac:InvoicePeriod">
+      <!-- JP-18 -->
+      <assert id="jp-br-co-03" flag="fatal" test="
+        exists(cbc:StartDate) and exists(cbc:EndDate)
+      ">
+        [jp-br-co-03]-If INVOICING PERIOD (ibg-14) is used, both the Invoicing period start date (ibt-073) and the Invoicing period end date (ibt-074) shall be filled.
       </assert>
     </rule>
     <rule context="ubl:Invoice | cn:CreditNote">
-      <assert id="jp-br-03" flag="fatal" test="
-      (
-        not(exists(cac:InvoicePeriod))
-      ) or (
-        exists(cac:InvoicePeriod) or
+      <!-- JP-16 -->
+      <assert id="jp-br-05" flag="fatal" test="
+        exists(cac:InvoicePeriod) or 
         exists(cac:InvoiceLine/cac:InvoicePeriod) or
-        exists(cac:CredotNoteLine/cac:InvoicePeriod)
-      )
-      ">[jp-br-03]-An Invoice shall have INVOICE PERIOD (ibg-14) or INVOICE LINE PERIOD (ibg-26)
-      </assert>
-    </rule>
-    <!-- JP-06 -->
-    <rule context="ubl:Invoice/cac:InvoiceLine | cn:CreditNote/cac:CreditNoteLine">
-      <assert id="jp-br-04" flag="fatal" test="
-      (
-        count(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) = 0
-      ) or (
-        count(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) &gt;= 1 and
-        exists(cac:Item/cac:ClassifiedTaxcategory/cbc:ID) and
-        exists(cac:Item/cac:ClassifiedTaxcategory/cbc:Percent)
-      )
+        exists(cac:CreditNoteLine/cac:InvoicePeriod)
       ">
-      [jp-br-04]-INVOICE LINE ALLOWANCES shall be categorized by Invoiced item TAX category code (ibt-151) and Invoiced item TAX rate (ibt-152)
+        [jp-br-05]-An Invoice shall have “Invoice period” (ibg-14) or “Invoice line period” (ibg-26).
       </assert>
     </rule>
+    <!--
+      Line level - period
+    -->
+    <rule context="cac:InvoiceLine/cac:InvoicePeriod |
+        cac:CreditNoteLine/cac:InvoicePeriod">
+      <!-- JP-19 -->
+      <assert id="jp-br-co-04" flag="fatal" test="
+        exists(cbc:StartDate) and exists(cbc:EndDate)
+      ">
+      [jp-br-co-04]-If INVOICE LINE PERIOD (ibg-26) is used, both the Invoice line period start date (ibt-134) and the Invoice line period end date (ibt-135) shall be filled.
+      </assert>
+    </rule>
+    <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:StartDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate |
+        cn:CreditNote[cac:InvoicePeriod/cbc:StartDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:StartDate">
+      <assert id="PEPPOL-EN16931-R110" flag="fatal" test="
+        xs:date(text()) &gt;= xs:date(../../../cac:InvoicePeriod/cbc:StartDate)
+      ">
+      [PEPPOL-EN16931-R110 (JP-20)]-Start date of line period MUST be within invoice period.
+      </assert>
+    </rule>
+    <rule context="ubl:Invoice[cac:InvoicePeriod/cbc:EndDate]/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate |
+        cn:CreditNote[cac:InvoicePeriod/cbc:EndDate]/cac:CreditNoteLine/cac:InvoicePeriod/cbc:EndDate">
+      <assert id="PEPPOL-EN16931-R111" flag="fatal" test="
+        xs:date(text()) &gt;= xs:date(../../../cac:InvoicePeriod/cbc:StartDate) and
+        xs:date(text()) &lt;= xs:date(../../../cac:InvoicePeriod/cbc:EndDate)
+      ">
+      [PEPPOL-EN16931-R111 (JP-20)]-End date of line period MUST be within invoice period.</assert>
+    </rule>
+    <!--
+      Allowance/Charge (document and line)
+    -->
     <rule context="ubl:Invoice/cac:AllowanceCharge | cn:CreditNote/cac:AllowanceCharge">
       <assert id="jp-br-05" flag="fatal" test="
-      exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:ID[normalize-space(.)='S' or normalize-space(.)='AA']) and
-      xs:decimal(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:Percent) &gt; 0
+        exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:ID[normalize-space(.)='S' or normalize-space(.)='AA']) and
+        xs:decimal(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:Percent) &gt; 0
       ">
       [jp-br-05]-In a DOCUMENT LEVEL ALLOWANE (ibg-20) where the Document level allowance consumption tax category code (ibt-095) is either "Standard rate" or "Reduced rate" the Document level allowance TAX rate (ibt-096) shall be greater than zero.
       </assert>
       <assert id="jp-br-06" flag="fatal" test="
-      exists(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:ID[normalize-space(.)='S' or normalize-space(.)='AA']) and
-      xs:decimal(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:Percent) &gt; 0
+        exists(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:ID[normalize-space(.)='S' or normalize-space(.)='AA']) and
+        xs:decimal(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:Percent) &gt; 0
       ">
       [jp-br-06]-In a DOCUMENT LEVEL CHARGE (ibg-21) where the document level charge consumption tax category code (ibt-102) is either "Standard rate" or "Reduced rate" the document level charge TAX rate (ibt-103) shall be greater than zero.
       </assert>
       <!-- JP-04 -->
       <assert id="jp-br-07" flag="fatal" test="
-      exists(.[cbc:ChargeIndicator=false()]) and
-      exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:ID) and
-      exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:Percent)
+        exists(.[cbc:ChargeIndicator=false()]) and
+        exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:ID) and
+        exists(.[cbc:ChargeIndicator=false()]/cac:TaxCategory/cbc:Percent)
       ">
       [jp-br-07]-In a DOCUMENT LEVEL ALLOWANE (ibg-20) shall be categorized by the document level allowance TAX category code (ibt-095) and the document level TAX rate (ibt-096).
       </assert>
       <!-- JP-05 -->
       <assert id="jp-br-08" flag="fatal" test="
-      exists(.[cbc:ChargeIndicator=true()]) and
-      exists(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:ID) and
-      exists(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:Percent)
+        exists(.[cbc:ChargeIndicator=true()]) and
+        exists(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:ID) and
+        exists(.[cbc:ChargeIndicator=true()]/cac:TaxCategory/cbc:Percent)
       ">
       [jp-br-08]-In a DOCUMENT LEVEL CHARGE (ibg-21) shall be categorized by the document level charge TAX category code (ibt-102) and the document level charge TAX rate (ibt-103).
       </assert>
     </rule>
-    <rule context="ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP'] | cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']">
-      <assert id="jp-br-co-01" flag="fatal" test="
-      (
-        round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) != 0 and
+    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
+      <!-- JP-04 -->
+      <assert id="BR-32" flag="fatal" test="
+        exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
+      ">
+      [BR-32 (JP-04)]-Each Document level allowance (BG-20) shall have a Document level allowance VAT category code (BT-95).
+      </assert>
+    </rule>
+    <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
+      <!-- JP-05 -->
+      <assert id="BR-37" flag="fatal" test="
+        exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
+      ">
+      [BR-37]-Each Document level charge (BG-21) shall have a Document level charge VAT category code (BT-102).
+      </assert>
+    </rule>
+    <!--
+      Allowance (price level)
+    -->
+    <rule context="cac:Price/cac:AllowanceCharge">
+      <assert id="PEPPOL-EN16931-R044" flag="fatal" test="
+        normalize-space(cbc:ChargeIndicator) = 'false'
+      ">
+      [PEPPOL-EN16931-R044]-Charge on price level is NOT allowed. Only value 'false' allowed.
+      </assert>
+      <assert id="PEPPOL-EN16931-R046" flag="fatal" test="
+        not(cbc:BaseAmount) or 
+        xs:decimal(../cbc:PriceAmount) = xs:decimal(cbc:BaseAmount) - xs:decimal(cbc:Amount)
+      ">
+      [PEPPOL-EN16931-R046 (JP-21)]-Item net price MUST equal (Gross price - Allowance amount) when gross price is provided.</assert>
+    </rule>
+    <rule context="ubl:Invoice/cac:InvoiceLine | cn:CreditNote/cac:CreditNoteLine">
+      <!-- JP-06 -->
+      <assert id="jp-br-04" flag="fatal" test="
         (
-          xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &gt;=
-          floor(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
-        ) and
-        xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &lt;=
-        ceiling(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
-      )">
+          count(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) = 0
+        ) or (
+          count(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) &gt;= 1 and
+          exists(cac:Item/cac:ClassifiedTaxcategory/cbc:ID) and
+          exists(cac:Item/cac:ClassifiedTaxcategory/cbc:Percent)
+        )
+      ">
+      [jp-br-04]-INVOICE LINE ALLOWANCES shall be categorized by Invoiced item TAX category code (ibt-151) and Invoiced item TAX rate (ibt-152)
+      </assert>
+    </rule>
+    <!--
+      TAX
+    -->
+    <rule context="ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP'] | 
+        cn:CreditNote[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode='JP']">
+      <assert id="jp-br-co-01" flag="fatal" test="
+        (
+          round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) != 0 and
+          (
+            xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &gt;=
+            floor(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
+          ) and
+          xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) &lt;=
+          ceiling(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100))
+        )
+      ">
       [jp-br-co-01]-Consumption Tax category tax amount (BT-117) = Consumption Tax category taxable amount (BT-116) x (Consumption Tax category rate (BT-119) / 100), rounded to integer. The rounded result amount SHALL be between the floor and the ceiling.
       </assert>
     </rule>
-    <rule context="cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory [normalize-space(cbc:ID)='S' or normalize-space(cbc:ID)='AA'] [cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] |
-        cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory [normalize-space(cbc:ID)='S' or normalize-space(cbc:ID)='AA'] [cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="cac:TaxTotal/cac:TaxSubtotal">
+      <!-- JP-07 -->
+      <assert id="BR-45" flag="fatal" test="
+        exists(cbc:TaxableAmount)
+      ">
+      [BR-45]-Each VAT breakdown (BG-23) shall have a VAT category taxable amount (BT-116).
+      </assert>
+      <assert id="BR-46" flag="fatal" test="
+        exists(cbc:TaxAmount)
+      ">
+      [BR-46]-Each VAT breakdown (BG-23) shall have a VAT category tax amount (BT-117).
+      </assert>
+      <!-- JP-08 -->
+      <assert id="BR-47" flag="fatal" test="
+        exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID)
+      ">
+      [BR-47]-Each VAT breakdown (BG-23) shall be defined through a VAT category code (BT-118).
+      </assert>
+      <!-- JP-09 -->
+      <assert id="BR-48" flag="fatal" test="
+        exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent) or 
+        (
+          cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/normalize-space(cbc:ID)='O'
+        )
+      ">
+      [BR-48]-Each VAT breakdown (BG-23) shall have a VAT category rate (BT-119), except if the Invoice is Outside of scope of VAT.
+      </assert>
+      <!-- JP-10 -->
+      <assert id="JP-10" flag="fatal" test="
+        exists(cac:TaxCategory/cac:TaxScheme/cbc:ID)
+      ">
+      [JP-10]-Tax breakdown (ibg-23) shall hove Tax scheme (ibt-118-1).
+      </assert>
+    </rule>
+    <!--
+      Line TAX
+    -->
+    <rule context="cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S' or normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] |
+        cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S' or normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-br-co-02" flag="fatal" test="
-      xs:decimal(cbc:Percent) &gt; 0
+        xs:decimal(cbc:Percent) &gt; 0
       ">
       [jp-br-co-02]-In an Invoice line (BG-25) where the Invoiced item Consumption Tax category code (BT-151) is "Standard rated" or "Reduced tate" the Invoiced item Consumption Tax rate (BT-152) shall be greater than zero.
       </assert>
     </rule>
-    <rule context="ubl:Invoice/cac:InvoicePeriod | cn:CreditNote/cac:InvoicePeriod">
-      <!-- JP-18 -->
-      <assert id="jp-br-co-03" flag="fatal" test="
-      exists(cbc:StartDate) and exists(cbc:EndDate)
-      ">
-      [jp-br-co-03]-If INVOICING PERIOD (ibg-14) is used, both the Invoicing period start date (ibt-073) and the Invoicing period end date (ibt-074) shall be filled.
-      </assert>
-    </rule>
-    <rule context="cac:InvoiceLine/cac:InvoicePeriod | cac:CreditNoteLine/cac:InvoicePeriod">
-      <!-- JP-19 -->
-      <assert id="jp-br-co-04" flag="fatal" test="
-      exists(cbc:StartDate) and exists(cbc:EndDate)
-      ">
-      [jp-br-co-04]-If INVOICE LINE PERIOD (ibg26) is used, both the Invoice line period start date (ibt-134) and the Invoice line period end date (ibt-135) shall be filled.
-      </assert>
-    </rule>
-    <!-- Standard rate -->
+    <!-- S: Standard rate -->
     <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="jp-s-01" flag="fatal" test="
-      (
         (
-          count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='S']) +
-          count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])
-        ) &gt; 0 and
-        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S']) &gt; 0
-      ) or (
-        (
-          count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='S']) +
-          count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])
-        ) = 0 and
-        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S']) = 0
-      )">
+          (
+            count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='S']) +
+            count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])
+          ) &gt; 0 and
+          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S']) &gt; 0
+        ) or (
+          (
+            count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='S']) +
+            count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])
+          ) = 0 and
+          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S']) = 0
+        )
+      ">
       <!-- Stabdard rate -->
       [jp-s-01]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the Consumption Tax category code (BT-151, BT-95 or BT-102) is "Standard rated" shall contain in the Consumption Tax breakdown (BG-23) at least one Consumption Tax category code (BT-118) equal with "Standard rated".
       </assert>
       <assert id="jp-s-02" flag="fatal" test="
-      (
-        exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
         (
-          exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
-        )
-      ) or
-        not(exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S']))
+          exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
+          (
+            exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
+            exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
+          )
+        ) or
+          not(
+            exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='S'])
+          )
       ">
       [jp-s-02]-An Invoice that contains an Invoice line (BG-25) where the Invoiced item Consumption Tax category code (BT-151) is "Standard rated" shall contain the Seller Consumption Tax Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative Consumption Tax identifier (BT-63).
       </assert>
       <assert id="jp-s-03" flag="fatal" test="
-      (
-        exists(//cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
         (
-          exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
-        )
-      ) or
-        not(
-          exists(//cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'])
-        )
+          exists(//cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
+          (
+            exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
+            exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
+          )
+        ) or
+          not(
+            exists(//cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'])
+          )
       ">
       [jp-s-03]-An Invoice that contains a Document level allowance (BG-20) where the Document level allowance Consumption Tax category code (BT-95) is "Standard rated" shall contain the Seller Consumption Tax Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative Consumption Tax identifier (BT-63).
       </assert>
       <assert id="jp-s-04" flag="fatal" test="
-      (
-        exists(//cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
         (
-          exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
-        )
-      ) or
-        not(
-          exists(//cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'])
-        )
+          exists(//cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
+          (
+            exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
+            exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
+          )
+        ) or
+          not(
+            exists(//cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'])
+          )
       ">
       [jp-s-04]-An Invoice that contains a Document level charge (BG-21) where the Document level charge Consumption Tax category code (BT-102) is "Standard rated" shall contain the Seller Consumption Tax Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative Consumption Tax identifier (BT-63).
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-06" flag="fatal" test="
-      (cbc:Percent) &gt; 0
+        (cbc:Percent) &gt; 0
       ">
       [jp-s-06]-In a Document level allowance (BG-20) where the Document level allowance Consumption Tax category code (BT-95) is "Standard rated" the Document level allowance Consumption Tax rate (BT-96) shall be greater than zero.
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-s-07" flag="fatal" test="
-      (cbc:Percent) &gt; 0
+        (cbc:Percent) &gt; 0
       ">
       [jp-s-07]-In a Document level charge (BG-21) where the Document level charge Consumption Tax category code (BT-102) is "Standard rated" the Document level charge Consumption Tax rate (BT-103) shall be greater than zero.
       </assert>
     </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
+    <rule context="cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
       <assert id="jp-s-08" flag="fatal" test="
       every $rate in xs:decimal(cbc:Percent) satisfies (
         (
@@ -553,62 +497,63 @@
       [jp-s-08]-For each different value of Consumption Tax category rate (BT-119) where the Consumption Tax category code (BT-118) is "Standard rated", the Consumption Tax category taxable amount (BT-116) in a Consumption Tax breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the Consumption Tax category code (BT-151, BT-102, BT-95) is "Standard rated" and the Consumption Tax rate (BT-152, BT-103, BT-96) equals the Consumption Tax category rate (BT-119).
       </assert>      
       <assert id="jp-s-09" flag="fatal" test="
-      (
         (
-          xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &lt;=
-          ceiling(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
-        ) and (
-          xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &gt;=
-          floor(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
+          (
+            xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &lt;=
+            ceiling(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
+          ) and (
+            xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &gt;=
+            floor(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
+          )
+        ) or (
+          (
+            abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) - 1 &lt;  
+            round(abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')]) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
+          ) and (
+            abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) + 1 &gt;
+            round(abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')]) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
+          )
         )
-      ) or (
-        (
-          abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) - 1 &lt;  
-          round(abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')]) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
-        ) and (
-          abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) + 1 &gt;
-          round(abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')]) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
-        )
-      )">
+      ">
       [jp-s-09]-The Consumption Tax category tax amount (BT-117) in a Consumption Tax breakdown (BG-23) where Consumption Tax category code (BT-118) is "Standard rated" shall equal the Consumption Tax category taxable amount (BT-116) multiplied by the Consumption Tax category rate (BT-119).
       </assert>
       <assert id="jp-s-10" flag="fatal" test="
-      not(cbc:TaxExemptionReason) and
-      not(cbc:TaxExemptionReasonCode)
+        not(cbc:TaxExemptionReason) and
+        not(cbc:TaxExemptionReasonCode)
       ">
       [jp-s-10]-A Consumption Tax breakdown (BG-23) with Consumption Tax Category code (BT-118) "Standard rate" shall not have a Consumption Tax exemption reason code (BT-121) or Consumption Tax exemption reason text (BT-120).
       </assert>    
     </rule>
-    <!-- Reduced rate -->
+    <!-- AA: Reduced rate -->
     <rule context="ubl:Invoice | cn:CreditNote">
       <assert id="jp-aa-01" flag="fatal" test="
-      (
         (
-          count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='AA']) +
-          count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'])
-        ) &gt; 0 and
-        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA']) &gt; 0
-      ) or (
-        (
-          count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='AA']) +
-          count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'])
-        ) = 0 and
-        count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA']) = 0
-      )
+          (
+            count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='AA']) +
+            count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'])
+          ) &gt; 0 and
+          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA']) &gt; 0
+        ) or (
+          (
+            count(//cac:AllowanceCharge/cac:TaxCategory[normalize-space(cbc:ID)='AA']) +
+            count(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'])
+          ) = 0 and
+          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA']) = 0
+        )
       ">
       [jp-aa-01]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the Consumption Tax category code (BT-151, BT-95 or BT-102) is "Standard rated" shall contain in the Consumption Tax breakdown (BG-23) at least one Consumption Tax category code (BT-118) equal with "Standard rated".
       </assert>
       <assert id="jp-aa-02" flag="fatal" test="
-      (
-        exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
         (
-          exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
-          exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
-        )
-      ) or
-        not(
-          exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'])
-        )
+          exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']) and
+          (
+            exists(//cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or
+            exists(//cac:TaxRepresentativeParty/cac:PartyTaxScheme[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:CompanyID)
+          )
+        ) or
+          not(
+            exists(//cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='AA'])
+          )
       ">
       [jp-aa-02]-An Invoice that contains an Invoice line (BG-25) where the Invoiced item Consumption Tax category code (BT-151) is "Standard rated" shall contain the Seller Consumption Tax Identifier (BT-31), the Seller tax registration identifier (BT-32) and/or the Seller tax representative Consumption Tax identifier (BT-63).
       </assert>
@@ -643,19 +588,19 @@
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-aa-06" flag="fatal" test="
-      xs:decimal(cbc:Percent) &gt; 0
+        xs:decimal(cbc:Percent) &gt; 0
       ">
       [jp-aa-06]-In a Document level allowance (BG-20) where the Document level allowance Consumption Tax category code (BT-95) is "Reduced rated" the Document level allowance Consumption Tax rate (BT-96) shall be greater than zero.
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="jp-aa-07" flag="fatal" test="
-      xs:decimal(cbc:Percent) &gt; 0
+        xs:decimal(cbc:Percent) &gt; 0
       ">
       [jp-aa-07]-In a Document level charge (BG-21) where the Document level charge Consumption Tax category code (BT-102) is "Reduced rated" the Document level charge Consumption Tax rate (BT-103) shall be greater than zero.
       </assert>
     </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
+    <rule context="cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']">
       <assert id="jp-aa-08" flag="fatal" test="
         every $rate in xs:decimal(cbc:Percent) satisfies (
         (
@@ -686,29 +631,29 @@
       [jp-aa-08]-For each different value of Consumption Tax category rate (BT-119) where the Consumption Tax category code (BT-118) is "Reduced rated", the Consumption Tax category taxable amount (BT-116) in a Consumption Tax breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the Consumption Tax category code (BT-151, BT-102, BT-95) is "Standard rated" and the Consumption Tax rate (BT-152, BT-103, BT-96) equals the Consumption Tax category rate (BT-119).
       </assert>      
       <assert id="jp-aa-09" flag="fatal" test="
-      (
         (
-          xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &lt;=
-          ceiling(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
-        ) and (
-          xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &gt;=
-          floor(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
+          (
+            xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &lt;=
+            ceiling(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
+          ) and (
+            xs:decimal(../cbc:TaxAmount[@currencyID='JPY']) &gt;=
+            floor(xs:decimal(../cbc:TaxableAmount[@currencyID='JPY']) * xs:decimal(cbc:Percent) div 100)
+          )
+        ) or (
+          (
+            abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) - 1 &lt;  
+            round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
+          ) and (
+            abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) + 1 &gt;
+            round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
+          )
         )
-      ) or (
-        (
-          abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) - 1 &lt;  
-          round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
-        ) and (
-          abs(xs:decimal(../cbc:TaxAmount[not(@currencyID='JPY')])) + 1 &gt;
-          round((abs(xs:decimal(../cbc:TaxableAmount[not(@currencyID='JPY')])) * (xs:decimal(cbc:Percent) div 100)) * 10 * 10) div 100
-        )
-      )
       ">
       [jp-aa-09]-The Consumption Tax category tax amount (BT-117) in a Consumption Tax breakdown (BG-23) where Consumption Tax category code (BT-118) is "Reduced rated" shall equal the Consumption Tax category taxable amount (BT-116) multiplied by the Consumption Tax category rate (BT-119).
       </assert>
       <assert id="jp-aa-10" flag="fatal" test="
-      not(cbc:TaxExemptionReason) and
-      not(cbc:TaxExemptionReasonCode)
+        not(cbc:TaxExemptionReason) and
+        not(cbc:TaxExemptionReasonCode)
       ">
       [jp-aa-10]-A Consumption Tax breakdown (BG-23) with Consumption Tax Category code (BT-118) "Reduced rate" shall not have a Consumption Tax exemption reason code (BT-121) or Consumption Tax exemption reason text (BT-120).
       </assert>
@@ -716,346 +661,661 @@
     <rule context="ubl:Invoice | cn:CreditNote">
       <!-- E: Exempt from VAT -->
       <assert id="BR-E-01" flag="fatal" test="
-      (
         (
-          exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E']) or 
-          exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E'])
-        ) and (
-          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E']) = 1
+          (
+            exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E']) or 
+            exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E'])
+          ) and (
+            count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E']) = 1
+          )
+        ) or (
+          not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E']) and
+          not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E'])
         )
-      ) or (
-        not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E']) and
-        not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='E'])
-      )">
-      [BR-E-01(JP-27)]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is "Exempt from VAT" shall contain exactly one VAT breakdown (BG-23) with the VAT category code (BT-118) equal to "Exempt from VAT".
+      ">
+      [BR-E-01 (JP-27)]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is "Exempt from VAT" shall contain exactly one VAT breakdown (BG-23) with the VAT category code (BT-118) equal to "Exempt from VAT".
       </assert>
       <!-- G: Export outside the EU" -->
       <assert id="BR-G-01" flag="fatal" test="
-      (
         (
-          exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G']) or
-          exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G'])
-        ) and (
-          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G']) = 1
+          (
+            exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G']) or
+            exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G'])
+          ) and (
+            count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G']) = 1
+          )
+        ) or (
+          not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G']) and 
+          not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G'])
         )
-      ) or (
-        not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G']) and 
-        not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='G'])
-      )">
-      [BR-G-01(JP-30)]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is "Export outside the EU" shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with "Export outside the EU".
+      ">
+      [BR-G-01 (JP-30)]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is "Export outside the EU" shall contain in the VAT breakdown (BG-23) exactly one VAT category code (BT-118) equal with "Export outside the EU".
       </assert>
       <!-- O: Outside of scope of VAT -->
       <assert id="BR-O-01" flag="fatal" test="
-      (
         (
-          exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O']) or 
-          exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O'])
-        ) and (
-          count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O']) = 1
+          (
+            exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O']) or 
+            exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O'])
+          ) and (
+            count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O']) = 1
+          )
+        ) or (
+          not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O']) and
+          not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O'])
         )
-      ) or (
-        not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O']) and
-        not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.)='O'])
-      )">
-      [BR-O-01(JP-33)]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is "Outside of scope of VAT" shall contain exactly one VAT breakdown group (BG-23) with the VAT category code (BT-118) equal to "Outside of scope of VAT".
+      ">
+      [BR-O-01 (JP-33)]-An Invoice that contains an Invoice line (BG-25), a Document level allowance (BG-20) or a Document level charge (BG-21) where the VAT category code (BT-151, BT-95 or BT-102) is "Outside of scope of VAT" shall contain exactly one VAT breakdown group (BG-23) with the VAT category code (BT-118) equal to "Outside of scope of VAT".
       </assert>
     </rule>
     <!-- E: Exempt from VAT -->
     <rule context="//cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
         cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-E-05" flag="fatal" test="
-      xs:decimal(cbc:Percent) = 0
+        xs:decimal(cbc:Percent) = 0
       ">
-      [BR-E-05(JP-28)]-In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is "Exempt from VAT", the Invoiced item VAT rate (BT-152) shall be 0 (zero).</assert>
+      [BR-E-05 (JP-28)]-In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is "Exempt from VAT", the Invoiced item VAT rate (BT-152) shall be 0 (zero).</assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-E-06" flag="fatal" test="
-      xs:decimal(cbc:Percent) = 0
+        xs:decimal(cbc:Percent) = 0
       ">
-      [BR-E-06(JP-28)]-In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is "Exempt from VAT", the Document level allowance VAT rate (BT-96) shall be 0 (zero).
+      [BR-E-06 (JP-28)]-In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is "Exempt from VAT", the Document level allowance VAT rate (BT-96) shall be 0 (zero).
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-E-07" flag="fatal" test="
-      xs:decimal(cbc:Percent) = 0
+        xs:decimal(cbc:Percent) = 0
       ">
-      [BR-E-07(JP-28)]-In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is "Exempt from VAT", the Document level charge VAT rate (BT-103) shall be 0 (zero).
+      [BR-E-07 (JP-28)]-In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is "Exempt from VAT", the Document level charge VAT rate (BT-103) shall be 0 (zero).
       </assert>
     </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-E-09" flag="fatal" test="
-      xs:decimal(../cbc:TaxAmount) = 0
+        xs:decimal(../cbc:TaxAmount) = 0
       ">
-      [BR-E-09(JP-29)]-The VAT category tax amount (BT-117) In a VAT breakdown (BG-23) where the VAT category code (BT-118) equals "Exempt from VAT" shall equal 0 (zero).</assert>
+      [BR-E-09 (JP-29)]-The VAT category tax amount (BT-117) In a VAT breakdown (BG-23) where the VAT category code (BT-118) equals "Exempt from VAT" shall equal 0 (zero).</assert>
     </rule>
     <!-- G: Export outside the EU" -->
     <rule context="cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
         cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-G-05" flag="fatal" test="
-      xs:decimal(cbc:Percent) = 0
+        xs:decimal(cbc:Percent) = 0
       ">
-      [BR-G-05(JP-31)]-In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is "Export outside the EU" the Invoiced item VAT rate (BT-152) shall be 0 (zero).
+      [BR-G-05 (JP-31)]-In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is "Export outside the EU" the Invoiced item VAT rate (BT-152) shall be 0 (zero).
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-G-06" flag="fatal" test="
-      xs:decimal(cbc:Percent) = 0
+        xs:decimal(cbc:Percent) = 0
       ">
-      [BR-G-06(JP-31)]-In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is "Export outside the EU" the Document level allowance VAT rate (BT-96) shall be 0 (zero).
+      [BR-G-06 (JP-31)]-In a Document level allowance (BG-20) where the Document level allowance VAT category code (BT-95) is "Export outside the EU" the Document level allowance VAT rate (BT-96) shall be 0 (zero).
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-G-07" flag="fatal" test="
-      xs:decimal(cbc:Percent) = 0
+        xs:decimal(cbc:Percent) = 0
       ">
-      [BR-G-07(JP-31)]-In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is "Export outside the EU" the Document level charge VAT rate (BT-103) shall be 0 (zero).
+      [BR-G-07 (JP-31)]-In a Document level charge (BG-21) where the Document level charge VAT category code (BT-102) is "Export outside the EU" the Document level charge VAT rate (BT-103) shall be 0 (zero).
       </assert>
     </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-G-09" flag="fatal" test="
-      xs:decimal(../cbc:TaxAmount) = 0
+        xs:decimal(../cbc:TaxAmount) = 0
       ">
-      [BR-G-09(JP-32)]-The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is "Export outside the EU" shall be 0 (zero).
+      [BR-G-09 (JP-32)]-The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is "Export outside the EU" shall be 0 (zero).
       </assert>
     </rule>
     <!-- O: Outside of scope of VAT -->
     <rule context="cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | 
         cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-O-05" flag="fatal" test="
-      not(cbc:Percent)
-      ">[BR-O-05(JP-34)]-An Invoice line (BG-25) where the VAT category code (BT-151) is "Outside of scope of VAT" shall not contain an Invoiced item VAT rate (BT-152).
+        not(cbc:Percent)
+      ">
+      [BR-O-05 (JP-34)]-An Invoice line (BG-25) where the VAT category code (BT-151) is "Outside of scope of VAT" shall not contain an Invoiced item VAT rate (BT-152).
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-O-06" flag="fatal" test="
-      not(cbc:Percent)
-      ">[BR-O-06(JP-34)]-A Document level allowance (BG-20) where VAT category code (BT-95) is "Outside of scope of VAT" shall not contain a Document level allowance VAT rate (BT-96).
+        not(cbc:Percent)
+      ">
+      [BR-O-06 (JP-34)]-A Document level allowance (BG-20) where VAT category code (BT-95) is "Outside of scope of VAT" shall not contain a Document level allowance VAT rate (BT-96).
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-O-07" flag="fatal" test="
       not(cbc:Percent)
       ">
-      [BR-O-07(JP-34)]-A Document level charge (BG-21) where the VAT category code (BT-102) is "Outside of scope of VAT" shall not contain a Document level charge VAT rate (BT-103).
+      [BR-O-07 (JP-34)]-A Document level charge (BG-21) where the VAT category code (BT-102) is "Outside of scope of VAT" shall not contain a Document level charge VAT rate (BT-103).
       </assert>
     </rule>
-    <rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+    <rule context="cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
       <assert id="BR-O-09" flag="fatal" test="
-      xs:decimal(../cbc:TaxAmount) = 0
+        xs:decimal(../cbc:TaxAmount) = 0
       ">
       [BR-O-09(JP-35)]-The VAT category tax amount (BT-117) in a VAT breakdown (BG-23) where the VAT category code (BT-118) is "Outside of scope of VAT" shall be 0 (zero).
+      </assert>
+    </rule>
+    <!-- Document total -->
+    <rule context="ubl:Invoice | cn:CreditNote">
+      <assert id="jp-ibr-53" flag="fatal" test="
+        every $taxcurrency in cbc:TaxCurrencyCode satisfies (
+          exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])
+        )
+      ">
+      [jp-ibr-53]-If the Tax accounting currency code (ibt-006) is present, then the Invoice total Tax amount in accounting currency (ibt-111) shall be provided.
+      </assert>
+      <assert id="jp-ibr-co-15" flag="fatal" test="
+        (
+          not(exists(cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY'])))
+        ) or (
+          cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY']) = 
+          cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) + cac:TaxTotal/xs:decimal(cbc:TaxAmount[@currencyID='JPY'])
+        )
+      ">
+      [jp-ibr-co-15]-Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).
+      </assert>
+    </rule>
+    <rule context="cac:LegalMonetaryTotal/cbc:PayableAmount">
+      <assert id="ibr-67" flag="fatal" test="
+        string-length(substring-after(., '.')) &lt;= 2
+      ">
+      [ibr-67]-Invoice amount due for payment (ibt-115) shall have no more than 2 decimals.
+      </assert>
+      <assert id="ibr-co-25" flag="fatal" test="
+        (
+          (
+            . &gt; 0
+          ) and (
+            exists(//cbc:DueDate) or
+            exists(//cac:PaymentTerms/cbc:Note)
+          )
+        ) or (
+          . &lt;= 0
+        )
+      ">
+      [ibr-co-25]-In case the Amount due for payment (ibt-115) is positive, either the Payment due date (ibt-009) or the Payment terms (ibt-020) shall be present.
+      </assert>
+    </rule>
+    <rule context="cac:LegalMonetaryTotal">
+      <assert id="ibr-12" flag="fatal" test="
+        exists(cbc:LineExtensionAmount)
+      ">
+      [ibr-12]-An Invoice shall have the Sum of Invoice line net amount (ibt-106).
+      </assert>
+      <assert id="ibr-13" flag="fatal" test="
+        exists(cbc:TaxExclusiveAmount)
+      ">
+      [ibr-13]-An Invoice shall have the Invoice total amount without Tax (ibt-109).
+      </assert>
+      <assert id="ibr-14" flag="fatal" test="
+        exists(cbc:TaxInclusiveAmount)
+      ">
+      [ibr-14]-An Invoice shall have the Invoice total amount with Tax (ibt-112).
+      </assert>
+      <assert id="ibr-15" flag="fatal" test="
+        exists(cbc:PayableAmount)
+      ">
+      [ibr-15]-An Invoice shall have the Amount due for payment (ibt-115).
+      </assert>
+      <assert id="ibr-co-10" flag="fatal" test="
+        (
+          xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) =
+          sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']))
+        ) or (
+          xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) =
+          round(sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')])) * 10 * 10) div 100
+        )
+      ">
+      [ibr-co-10]-Sum of Invoice line net amount (ibt-106) = Σ Invoice line net amount (ibt-131).
+      </assert>
+      <assert id="ibr-co-11" flag="fatal" test="
+        (
+          xs:decimal(cbc:AllowanceTotalAmount[@currencyID='JPY']) =
+          sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount[@currencyID='JPY']))
+        ) or (
+          xs:decimal(cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) =
+          round(sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount[not(@currencyID='JPY')])) * 10 * 10) div 100
+        ) or (
+          not(cbc:AllowanceTotalAmount) and
+          not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()])
+        )
+      ">
+      [ibr-co-11]-Sum of allowances on document level (ibt-107) = Σ Document level allowance amount (ibt-092).
+      </assert>
+      <assert id="ibr-co-12" flag="fatal" test="
+        (
+          xs:decimal(cbc:ChargeTotalAmount[@currencyID='JPY']) =
+          sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount[@currencyID='JPY']))
+        ) or
+        (
+          xs:decimal(cbc:ChargeTotalAmount[not(@currencyID='JPY')]) =
+          round(sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount[not(@currencyID='JPY')])) * 10 * 10) div 100
+        ) or (
+          not(cbc:ChargeTotalAmount) and
+          not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()])
+        )
+      ">
+      [ibr-co-12]-Sum of charges on document level (ibt-108) = Σ Document level charge amount (ibt-099).
+      </assert>
+      <assert id="ibr-co-13" flag="fatal" test="
+        (
+          (cbc:ChargeTotalAmount[@currencyID='JPY']) and
+          (cbc:AllowanceTotalAmount[@currencyID='JPY']) and
+          (
+            xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) =
+            xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) +
+            xs:decimal(cbc:ChargeTotalAmount[@currencyID='JPY']) -
+            xs:decimal(cbc:AllowanceTotalAmount[@currencyID='JPY'])
+          )
+        ) or (
+          not(cbc:ChargeTotalAmount[@currencyID='JPY']) and
+          (cbc:AllowanceTotalAmount[@currencyID='JPY']) and
+          (
+            xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) =
+            xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) -
+            xs:decimal(cbc:AllowanceTotalAmount[@currencyID='JPY'])
+          )
+        ) or (
+          (cbc:ChargeTotalAmount[@currencyID='JPY']) and
+          not(cbc:AllowanceTotalAmount[@currencyID='JPY']) and
+          (
+            xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) =
+            xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) +
+            xs:decimal(cbc:ChargeTotalAmount[@currencyID='JPY'])
+          )
+        ) or (
+          (cbc:ChargeTotalAmount[not(@currencyID='JPY')]) and
+          (cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) and
+          (
+            xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) =
+            round(
+              (
+                xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) +
+                xs:decimal(cbc:ChargeTotalAmount[not(@currencyID='JPY')]) -
+                xs:decimal(cbc:AllowanceTotalAmount[not(@currencyID='JPY')])
+              ) * 10 * 10
+            ) div 100
+          )
+        ) or (
+          not(cbc:ChargeTotalAmount[not(@currencyID='JPY')]) and
+          (cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) and
+          (
+            xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) =
+            round(
+              (
+                xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) -
+                xs:decimal(cbc:AllowanceTotalAmount[not(@currencyID='JPY')])
+              ) * 10 * 10
+            ) div 100
+          )
+        ) or (
+          (cbc:ChargeTotalAmount[not(@currencyID='JPY')]) and
+          not(cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) and
+          (
+            xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) =
+            round(
+              (
+                xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) +
+                xs:decimal(cbc:ChargeTotalAmount[not(@currencyID='JPY')])
+              ) * 10 * 10
+            ) div 100
+          )
+        ) or (
+          not(cbc:ChargeTotalAmount) and
+          not(cbc:AllowanceTotalAmount)
+          and (
+            xs:decimal(cbc:TaxExclusiveAmount) =
+            xs:decimal(cbc:LineExtensionAmount)
+          )
+        )
+      ">
+      [ibr-co-13]-Invoice total amount without Tax (ibt-109) = Σ Invoice line net amount (ibt-131) - Sum of allowances on document level (ibt-107) + Sum of charges on document level (ibt-108).
+      </assert>
+      <assert id="ibr-co-16" flag="fatal" test="
+        (
+          not(xs:decimal(cbc:PrepaidAmount)) and
+          not(xs:decimal(cbc:PayableRoundingAmount)) and
+          xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)
+        ) or (
+          xs:decimal(cbc:PrepaidAmount[@currencyID='JPY']) and
+          not(xs:decimal(cbc:PayableRoundingAmount[@currencyID='JPY'])) and
+          (
+            xs:decimal(cbc:PayableAmount[@currencyID='JPY']) =
+            xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY']) - xs:decimal(cbc:PrepaidAmount[@currencyID='JPY'])
+          )
+        ) or (
+          xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')]) and
+          not(xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')])) and
+          (
+            xs:decimal(cbc:PayableAmount[not(@currencyID='JPY')]) =
+            round(
+              (
+                xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')])
+              ) * 10 * 10
+            ) div 100
+          )
+        ) or (
+          xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')]) and
+          xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')]) and
+          (
+            (
+              round(
+                (
+                  xs:decimal(cbc:PayableAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')])
+                ) * 10 * 10
+              ) div 100
+            ) = (
+              round(
+                (
+                  xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')])
+                ) * 10 * 10
+              ) div 100
+            )
+          )
+        ) or (
+          not(xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')])) and
+          xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')]) and
+          (
+            (
+              round(
+                (
+                  xs:decimal(cbc:PayableAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')])
+                ) * 10 * 10
+              ) div 100
+            ) =
+            xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')])
+          )
+        )
+      ">
+      [ibr-co-16]-Amount due for payment (ibt-115) = Invoice total amount with Tax (ibt-112) - Paid amount (ibt-113) + Rounding amount (ibt-114).
+      </assert>
+    </rule>
+    <!-- Payment -->
+    <!-- Additonal document reference -->
+    <!-- Line level -->
+    <rule context="ubl:InvoiceLine">
+      <!-- JP-06 -->
+      <assert id="BR-CO-04" flag="fatal" test="
+        cac:Item/cac:ClassifiedTaxCategory[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:ID
+      ">
+      [BR-CO-04]-Each Invoice line (BG-25) shall be categorized with an Invoiced item VAT category code (BT-151).
+      </assert>
+    </rule>
+    <!-- Line level - line extension amount -->
+    <rule context="cac:InvoiceLine | cac:CreditNoteLine">
+      <let name="lineExtensionAmountJPY" value="
+        if (cbc:LineExtensionAmount[@currencyID='JPY']) then
+          xs:decimal(cbc:LineExtensionAmount)
+        else
+          0
+      "/>
+      <let name="lineExtensionAmount" value="
+        if (cbc:LineExtensionAmount[not(@currencyID='JPY')]) then
+          xs:decimal(cbc:LineExtensionAmount)
+        else
+          0
+      "/>
+      <let name="quantity" value="
+        if (ubl:Invoice) then
+          (if (cbc:InvoicedQuantity) then
+            xs:decimal(cbc:InvoicedQuantity)
+          else
+            1)
+        else
+          (if (cbc:CreditedQuantity) then
+            xs:decimal(cbc:CreditedQuantity)
+          else
+            1)
+      "/>
+      <let name="priceAmountJPY" value="
+        if (cac:Price/cbc:PriceAmount[@currencyID='JPY']) then
+          xs:decimal(cac:Price/cbc:PriceAmount)
+        else
+          0
+      "/>
+      <let name="priceAmount" value="
+        if (cac:Price/cbc:PriceAmount[not(@currencyID='JPY')]) then
+          xs:decimal(cac:Price/cbc:PriceAmount)
+        else
+          0
+      "/>
+      <let name="baseQuantity" value="
+        if (cac:Price/cbc:BaseQuantity and xs:decimal(cac:Price/cbc:BaseQuantity) != 0) then
+          xs:decimal(cac:Price/cbc:BaseQuantity)
+        else
+          1
+      "/>
+      <let name="allowancesTotalJPY" value="
+        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false'][@currencyID='JPY']) then
+          sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false']/cbc:Amount/xs:decimal(.))
+        else
+          0
+      "/>
+      <let name="allowancesTotal" value="
+        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false'][not(@currencyID='JPY')]) then
+          round(sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='false']/cbc:Amount/xs:decimal(.)) * 10 * 10) div 100
+        else
+          0
+      "/>
+      <let name="chargesTotalJPY" value="
+        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true'][@currencyID='JPY']) then
+          round(sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true']/cbc:Amount/xs:decimal(.)) * 10 * 10) div 100
+        else
+          0
+      "/>
+      <let name="chargesTotal" value="
+        if (cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true'][not(@currencyID='JPY')]) then
+          round(sum(cac:AllowanceCharge[normalize-space(cbc:ChargeIndicator)='true']/cbc:Amount/xs:decimal(.)) * 10 * 10) div 100
+        else
+          0
+      "/>
+      <assert id="PEPPOL-EN16931-R120" flag="fatal" test="
+        (
+          u:slack($lineExtensionAmountJPY, ($quantity * ($priceAmountJPY div $baseQuantity)) + $chargesTotalJPY - $allowancesTotalJPY, 0)
+        ) or (
+          u:slack($lineExtensionAmount, ($quantity * ($priceAmount div $baseQuantity)) + $chargesTotal - $allowancesTotal, 0.02)
+        )
+      ">
+        [PEPPOL-EN16931-R120 (JP-22)]-Invoice line net amount MUST equal (Invoiced quantity * (Item net price/item price base quantity) + Sum of invoice line charge amount - sum of invoice line allowance amount
+      </assert>
+      <assert id="PEPPOL-EN16931-R121" flag="fatal" test="
+        not(cac:Price/cbc:BaseQuantity) or 
+        xs:decimal(cac:Price/cbc:BaseQuantity) &gt; 0
+      ">
+        [PEPPOL-EN16931-R121]-Base quantity MUST be a positive number above zero.
+      </assert>
+      <!--
+      <assert id="PEPPOL-EN16931-R100" test="(count(cac:DocumentReference) &lt;= 1)" flag="fatal">Only one invoiced object is allowed pr line</assert>
+      <assert id="PEPPOL-EN16931-R101" test="(not(cac:DocumentReference) or (cac:DocumentReference/cbc:DocumentTypeCode='130'))" flag="fatal">Element Document reference can only be used for Invoice line object</assert>
+      -->
+    </rule>
+    <!-- Price -->
+    <rule context="cac:Price/cbc:BaseQuantity[@unitCode]">
+      <let name="hasQuantity" value="
+        exists(../../cbc:InvoicedQuantity) or exists(../../cbc:CreditedQuantity)
+      "/>
+      <let name="quantity" value="
+        if (../../cbc:InvoicedQuantity) then ../../cbc:InvoicedQuantity else ../../cbc:CreditedQuantity
+      "/>
+      <assert id="PEPPOL-EN16931-R130" flag="fatal" test="
+        not($hasQuantity) or @unitCode = $quantity/@unitCode
+      ">
+        [EPPOL-EN16931-R130]-Unit code of price base quantity MUST be same as invoiced quantity.
       </assert>
     </rule>
 
   </pattern>
 
   <pattern id="JP-Codesmodel">
-
     <rule context="cbc:InvoiceTypeCode | cbc:CreditNoteTypeCode">
       <assert id="jp-cl-01" flag="fatal" test="
-      (
-        self::cbc:InvoiceTypeCode and (
-          (
-            not(contains(normalize-space(.), ' ')) and
-            contains(' 80 82 84 380 383 386 393 395 575 623 780 ', concat(' ', normalize-space(.), ' '))
+        (
+          self::cbc:InvoiceTypeCode and (
+            (
+              not(contains(normalize-space(.), ' ')) and
+              contains(' 80 82 84 380 383 386 393 395 575 623 780 ', concat(' ', normalize-space(.), ' '))
+            )
+          )
+        ) or (
+          self::cbc:CreditNoteTypeCode and (
+            (
+              not(contains(normalize-space(.), ' ')) and
+              contains(' 81 83 381 396 532 ', concat(' ', normalize-space(.), ' '))
+            )
           )
         )
-      ) or (
-        self::cbc:CreditNoteTypeCode and (
-          (
-            not(contains(normalize-space(.), ' ')) and
-            contains(' 81 83 381 396 532 ', concat(' ', normalize-space(.), ' '))
-          )
-        )
-      )">
-      [jp-cl-01]-The document type code MUST be coded by the Japanese invoice and Japanese credit note related code lists of UNTDID 1001.
+      ">
+        [jp-cl-01]-The document type code MUST be coded by the Japanese invoice and Japanese credit note related code lists of UNTDID 1001.
       </assert>
     </rule>
     <rule context="cac:PaymentMeans/cbc:PaymentMeansCode">
       <assert id="jp-cl-02" flag="fatal" test="
-      (
         (
-          not(contains(normalize-space(.),' ')) and
-          contains( ' 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 70 74 75 76 77 78 91 92 93 94 95 96 97 ZZZ Z01 Z02 ',concat(' ',normalize-space(.),' '))
+          (
+            not(contains(normalize-space(.),' ')) and
+            contains( ' 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 70 74 75 76 77 78 91 92 93 94 95 96 97 ZZZ Z01 Z02 ',concat(' ',normalize-space(.),' '))
+          )
         )
-      )">
+      ">
       [jp-cl-02]-Payment means in a Japanese invoice MUST be coded using a restricted version of the UNCL4461 code list (adding Z01 and Z02)
       </assert>
     </rule>
     <rule context="cac:TaxCategory/cbc:ID | cac:ClassifiedTaxCategory/cbc:ID">
       <assert id="jp-cl-03" flag="fatal" test="
-      (
         (
-          not(contains(normalize-space(.),' ')) and
-          contains( ' AA S Z G O E ',concat(' ',normalize-space(.),' '))
+          (
+            not(contains(normalize-space(.),' ')) and
+            contains( ' AA S Z G O E ',concat(' ',normalize-space(.),' '))
+          )
         )
-      )">
-      [jp-cl-03]- Japanese invoice tax categories MUST be coded using UNCL5305 code list
+      ">
+        [jp-cl-03]- Japanese invoice tax categories MUST be coded using UNCL5305 code list
       </assert>
     </rule>  
     <rule context="cbc:TaxExemptionReasonCode">
       <assert id="jp-cl-04" flag="fatal" test="
-      (
         (
-          not(contains(normalize-space(.), ' ')) and
-          contains(' ZZZ ', concat(' ', normalize-space(upper-case(.)), ' '))
+          (
+            not(contains(normalize-space(.), ' ')) and
+            contains(' ZZZ ', concat(' ', normalize-space(upper-case(.)), ' '))
+          )
         )
-      )">
-      [jp-cl-04]-Tax exemption reason code identifier scheme identifier MUST belong to the ????</assert>
+      ">
+        [jp-cl-04]-Tax exemption reason code identifier scheme identifier MUST belong to the ????</assert>
     </rule>
-
-    <rule context="ubl:Invoice | cn:CreditNote">
-      <assert id="jp-ibr-53" flag="fatal" test="
-      every $taxcurrency in cbc:TaxCurrencyCode satisfies (
-        exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])
-      )">
-      [jp-ibr-53]-If the Tax accounting currency code (ibt-006) is present, then the Invoice total Tax amount in accounting currency (ibt-111) shall be provided.
-      </assert>
-      <assert id="jp-ibr-co-15" flag="fatal" test="
-      (
-        not(exists(cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY'])))
-      ) or (
-        cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY']) = 
-        cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) + cac:TaxTotal/xs:decimal(cbc:TaxAmount[@currencyID='JPY'])
-      )">
-      [jp-ibr-co-15]-Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).
-      </assert>
-    </rule>
-
     <!-- Validation of ICD -->
-    <rule context="cbc:EndpointID[@schemeID = '0088'] | cac:PartyIdentification/cbc:ID[@schemeID = '0088'] | cbc:CompanyID[@schemeID = '0088']">
+    <rule context="cbc:EndpointID[@schemeID = '0088'] |
+        cac:PartyIdentification/cbc:ID[@schemeID = '0088'] |
+        cbc:CompanyID[@schemeID = '0088']">
       <assert id="PEPPOL-COMMON-R040" flag="fatal" test="
-      matches(normalize-space(), '^[0-9]+$') and 
-      u:gln(normalize-space())
-      ">[PEPPOL-COMMON-R040(JP-36)]-GLN must have a valid format according to GS1 rules.</assert>
+        matches(normalize-space(), '^[0-9]+$') and 
+        u:gln(normalize-space())
+      ">
+        [PEPPOL-COMMON-R040(JP-36)]-GLN must have a valid format according to GS1 rules.</assert>
     </rule>
-
   </pattern>
 
   <pattern id="UBL-model">
-
     <rule context="cac:AdditionalDocumentReference">
       <assert id="ibr-52" flag="fatal" test="
-      (cbc:ID) != ''
+        (cbc:ID) != ''
       ">
-      [ibr-52]-Each Additional supporting document (ibg-24) shall contain a Supporting document reference (ibt-122).
-      </assert>
-    </rule>
-    <rule context="cac:LegalMonetaryTotal/cbc:PayableAmount">
-      <assert id="ibr-67" flag="fatal" test="
-      string-length(substring-after(., '.')) &lt;= 2
-      ">
-      [ibr-67]-Invoice amount due for payment (ibt-115) shall have no more than 2 decimals.
-      </assert>
-      <assert id="ibr-co-25" flag="fatal" test="
-      (
-        (
-          . &gt; 0
-        ) and (
-          exists(//cbc:DueDate) or
-          exists(//cac:PaymentTerms/cbc:Note)
-        )
-      ) or (
-        . &lt;= 0
-      )">
-      [ibr-co-25]-In case the Amount due for payment (ibt-115) is positive, either the Payment due date (ibt-009) or the Payment terms (ibt-020) shall be present.
+        [ibr-52]-Each Additional supporting document (ibg-24) shall contain a Supporting document reference (ibt-122).
       </assert>
     </rule>
     <!-- Accounting supplier -->
     <rule context="cac:AccountingSupplierParty/cac:Party">
       <assert id="PEPPOL-EN16931-R020" flag="fatal" test="
-      cbc:EndpointID
+        cbc:EndpointID
       ">
-      [PEPPOL-EN16931-R020(JP-47)]-Seller electronic address (ibt-034) MUST be provided
+        [PEPPOL-EN16931-R020(JP-47)]-Seller electronic address (ibt-034) MUST be provided
       </assert>
       <assert id="ibr-6a" flag="fatal" test="
-      exists(cbc:EndpointID/@schemeID)
+        exists(cbc:EndpointID/@schemeID)
       ">
-      [ibr-6a]-The Seller electronic address (ibt-034) shall have a Scheme identifier.
+        [ibr-6a]-The Seller electronic address (ibt-034) shall have a Scheme identifier.
       </assert>
       <assert id="ibr-06" flag="fatal" test="
-      (cac:PartyLegalEntity/cbc:RegistrationName) !=''
+        (cac:PartyLegalEntity/cbc:RegistrationName) != ''
       ">
-      [ibr-06]-An Invoice shall contain the Seller name (ibt-027).
+        [ibr-06]-An Invoice shall contain the Seller name (ibt-027).
       </assert>
       <assert id="ibr-08" flag="fatal" test="
-      exists(cac:PostalAddress)
+        exists(cac:PostalAddress)
       ">
-      [ibr-08]-An Invoice shall contain the Seller postal address (ibg-05).
+        [ibr-08]-An Invoice shall contain the Seller postal address (ibg-05).
       </assert>
     </rule>    
     <!-- Accounting customer -->
     <rule context="cac:AccountingCustomerParty/cac:Party">
       <assert id="PEPPOL-EN16931-R010" flag="fatal" test="
-      cbc:EndpointID
+        cbc:EndpointID
       ">
-      [PEPPOL-EN16931-R010(JP-46)]-Buyer electronic address MUST be provided
+        [PEPPOL-EN16931-R010(JP-46)]-Buyer electronic address MUST be provided
       </assert>
       <assert id="ibr-63" flag="fatal" test="
-      exists(cbc:EndpointID/@schemeID)
+        exists(cbc:EndpointID/@schemeID)
       ">
-      [ibr-63]-The Buyer electronic address (ibt-049) shall have a Scheme identifier.
+        [ibr-63]-The Buyer electronic address (ibt-049) shall have a Scheme identifier.
       </assert>
       <assert id="ibr-07" flag="fatal" test="
-      (cac:PartyLegalEntity/cbc:RegistrationName) != ''
+        (cac:PartyLegalEntity/cbc:RegistrationName) != ''
       ">
-      [ibr-07]-An Invoice shall contain the Buyer name (ibt-044).
+        [ibr-07]-An Invoice shall contain the Buyer name (ibt-044).
       </assert>
       <assert id="ibr-10" flag="fatal" test="
-      exists(cac:PostalAddress)
+        exists(cac:PostalAddress)
       ">
-      [ibr-10]-An Invoice shall contain the Buyer postal address (ibg-08).
+        [ibr-10]-An Invoice shall contain the Buyer postal address (ibg-08).
       </assert>
-    </rule>
-    <rule context="cac:AccountingCustomerParty/cac:Party/cbc:EndpointID">
-
     </rule>
     <rule context="cac:AccountingCustomerParty/cac:Party/cac:PostalAddress">
       <assert id="ibr-11" flag="fatal" test="
-      exists(cac:Country/cbc:IdentificationCode)
+        exists(cac:Country/cbc:IdentificationCode)
       ">
-      [ibr-11]-The Buyer postal address (ibg-08) shall contain a Buyer country code (ibt-055).
+        [ibr-11]-The Buyer postal address (ibg-08) shall contain a Buyer country code (ibt-055).
       </assert>
     </rule>
     <rule context="cac:Delivery/cac:DeliveryLocation/cac:Address">
       <assert id="ibr-57" flag="fatal" test="
-      exists(cac:Country/cbc:IdentificationCode)
+        exists(cac:Country/cbc:IdentificationCode)
       ">
-      [ibr-57]-Each Deliver to address (ibg-15) shall contain a Deliver to country code (ibt-080).
+        [ibr-57]-Each Deliver to address (ibg-15) shall contain a Deliver to country code (ibt-080).
       </assert>
     </rule>
     <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = false()] |
         cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
       <assert id="ibr-31" flag="fatal" test="
-      exists(cbc:Amount)
+        exists(cbc:Amount)
       ">
-      [ibr-31]-Each Document level allowance (ibg-20) shall have a Document level allowance amount (ibt-092).
+        [ibr-31]-Each Document level allowance (ibg-20) shall have a Document level allowance amount (ibt-092).
       </assert>
       <assert id="ibr-33" flag="fatal" test="
-      exists(cbc:AllowanceChargeReason) or 
-      exists(cbc:AllowanceChargeReasonCode)
+        exists(cbc:AllowanceChargeReason) or 
+        exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-33]-Each Document level allowance (ibg-20) shall have a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098).
+        [ibr-33]-Each Document level allowance (ibg-20) shall have a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098).
       </assert>
       <!--      <assert id="ibr-co-05" flag="fatal" test="true()">[ibr-co-05]-Document level allowance reason code (ibt-098) and Document level allowance reason (ibt-097) shall indicate the same type of allowance.</assert>
       -->
       <assert id="ibr-co-21" flag="fatal" test="
-      exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)
+        exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-co-21]-Each Document level allowance (ibg-20) shall contain a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098), or both.
+        [ibr-co-21]-Each Document level allowance (ibg-20) shall contain a Document level allowance reason (ibt-097) or a Document level allowance reason code (ibt-098), or both.
       </assert>
     </rule>
     <rule context="ubl:Invoice/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | cn:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
       <assert id="ibr-36" flag="fatal" test="
       exists(cbc:Amount)
       ">
-      [ibr-36]-Each Document level charge (ibg-21) shall have a Document level charge amount (ibt-099).
+        [ibr-36]-Each Document level charge (ibg-21) shall have a Document level charge amount (ibt-099).
       </assert>
       <assert id="ibr-38" flag="fatal" test="
       exists(cbc:AllowanceChargeReason) or 
       exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-38]-Each Document level charge (ibg-21) shall have a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105).
+        [ibr-38]-Each Document level charge (ibg-21) shall have a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105).
       </assert>
       <!--      <assert id="ibr-co-06" flag="fatal" test="true()">[ibr-co-06]-Document level charge reason code (ibt-105) and Document level charge reason (ibt-104) shall indicate the same type of charge.</assert>
       -->
@@ -1063,481 +1323,331 @@
       exists(cbc:AllowanceChargeReason) or 
       exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-co-22]-Each Document level charge (ibg-21) shall contain a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105), or both.
+        [ibr-co-22]-Each Document level charge (ibg-21) shall contain a Document level charge reason (ibt-104) or a Document level charge reason code (ibt-105), or both.
       </assert>
     </rule>
-    <rule context="cac:LegalMonetaryTotal">
-      <assert id="ibr-12" flag="fatal" test="
-      exists(cbc:LineExtensionAmount)
+    <!-- Document -->
+    <rule context="ubl:Invoice | cn:CreditNote">
+      <assert id="ibr-01" flag="fatal" test="
+        (cbc:CustomizationID) != ''
       ">
-      [ibr-12]-An Invoice shall have the Sum of Invoice line net amount (ibt-106).
+        [ibr-01]-An Invoice shall have a Specification identifier (ibt-024).
       </assert>
-      <assert id="ibr-13" flag="fatal" test="
-      exists(cbc:TaxExclusiveAmount)
+      <assert id="ibr-02" flag="fatal" test="
+        (cbc:ID) !=''
       ">
-      [ibr-13]-An Invoice shall have the Invoice total amount without Tax (ibt-109).
+        [ibr-02]-An Invoice shall have an Invoice number (ibt-001).
       </assert>
-      <assert id="ibr-14" flag="fatal" test="
-      exists(cbc:TaxInclusiveAmount)
+      <assert id="ibr-03" flag="fatal" test="
+        (cbc:IssueDate) !=''
       ">
-      [ibr-14]-An Invoice shall have the Invoice total amount with Tax (ibt-112).
+        [ibr-03]-An Invoice shall have an Invoice issue date (ibt-002).
       </assert>
-      <assert id="ibr-15" flag="fatal" test="
-      exists(cbc:PayableAmount)
+      <assert id="ibr-04" flag="fatal" test="
+        (cbc:InvoiceTypeCode) != '' or
+        (cbc:CreditNoteTypeCode) != ''
       ">
-      [ibr-15]-An Invoice shall have the Amount due for payment (ibt-115).
+        [ibr-04]-An Invoice shall have an Invoice type code (ibt-003).
       </assert>
-      <assert id="ibr-co-10" flag="fatal" test="
-      (
-        xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) =
-        sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']))
-      ) or (
-        xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) =
-        round(sum(//(cac:InvoiceLine|cac:CreditNoteLine)/xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')])) * 10 * 10) div 100
-      )">
-      [ibr-co-10]-Sum of Invoice line net amount (ibt-106) = Σ Invoice line net amount (ibt-131).
+      <assert id="ibr-05" flag="fatal" test="
+        (cbc:DocumentCurrencyCode) != ''
+      ">
+        [ibr-05]-An Invoice shall have an Invoice currency code (ibt-005).
       </assert>
-      <assert id="ibr-co-11" flag="fatal" test="
-      (
-        xs:decimal(cbc:AllowanceTotalAmount[@currencyID='JPY']) =
-        sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount[@currencyID='JPY']))
-      ) or (
-        xs:decimal(cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) =
-        round(sum(../cac:AllowanceCharge[cbc:ChargeIndicator=false()]/xs:decimal(cbc:Amount[not(@currencyID='JPY')])) * 10 * 10) div 100
-      ) or (
-        not(cbc:AllowanceTotalAmount) and
-        not(../cac:AllowanceCharge[cbc:ChargeIndicator=false()])
-      )">
-      [ibr-co-11]-Sum of allowances on document level (ibt-107) = Σ Document level allowance amount (ibt-092).
+      <assert id="ibr-16" flag="fatal" test="
+        exists(cac:InvoiceLine) or
+        exists(cac:CreditNoteLine)
+      ">
+        [ibr-16]-An Invoice shall have at least one Invoice line (ibg-25)
       </assert>
-      <assert id="ibr-co-12" flag="fatal" test="
-      (
-        xs:decimal(cbc:ChargeTotalAmount[@currencyID='JPY']) =
-        sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount[@currencyID='JPY']))
-      ) or
-      (
-        xs:decimal(cbc:ChargeTotalAmount[not(@currencyID='JPY')]) =
-        round(sum(../cac:AllowanceCharge[cbc:ChargeIndicator=true()]/xs:decimal(cbc:Amount[not(@currencyID='JPY')])) * 10 * 10) div 100
-      ) or (
-        not(cbc:ChargeTotalAmount) and
-        not(../cac:AllowanceCharge[cbc:ChargeIndicator=true()])
-      )">
-      [ibr-co-12]-Sum of charges on document level (ibt-108) = Σ Document level charge amount (ibt-099).
+      <assert id="ibr-53" flag="fatal" test="
+        every $taxcurrency in cbc:TaxCurrencyCode satisfies (
+          exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])
+        )
+      ">
+        [ibr-53]-If the Tax accounting currency code (ibt-006) is present, then the Invoice total Tax amount in accounting currency (ibt-111) shall be provided.
       </assert>
-      <assert id="ibr-co-13" flag="fatal" test="
-      (
-        (cbc:ChargeTotalAmount[@currencyID='JPY']) and
-        (cbc:AllowanceTotalAmount[@currencyID='JPY']) and
-        (
-          xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) =
-          xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) +
-          xs:decimal(cbc:ChargeTotalAmount[@currencyID='JPY']) -
-          xs:decimal(cbc:AllowanceTotalAmount[@currencyID='JPY'])
-        )
-      ) or (
-        not(cbc:ChargeTotalAmount[@currencyID='JPY']) and
-        (cbc:AllowanceTotalAmount[@currencyID='JPY']) and
-        (
-          xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) =
-          xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) -
-          xs:decimal(cbc:AllowanceTotalAmount[@currencyID='JPY'])
-        )
-      ) or (
-        (cbc:ChargeTotalAmount[@currencyID='JPY']) and
-        not(cbc:AllowanceTotalAmount[@currencyID='JPY']) and
-        (
-          xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) =
-          xs:decimal(cbc:LineExtensionAmount[@currencyID='JPY']) +
-          xs:decimal(cbc:ChargeTotalAmount[@currencyID='JPY'])
-        )
-      ) or (
-        (cbc:ChargeTotalAmount[not(@currencyID='JPY')]) and
-        (cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) and
-        (
-          xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) =
-          round(
-            (
-              xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) +
-              xs:decimal(cbc:ChargeTotalAmount[not(@currencyID='JPY')]) -
-              xs:decimal(cbc:AllowanceTotalAmount[not(@currencyID='JPY')])
-            ) * 10 * 10
-          ) div 100
-        )
-      ) or (
-        not(cbc:ChargeTotalAmount[not(@currencyID='JPY')]) and
-        (cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) and
-        (
-          xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) =
-          round(
-            (
-              xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) -
-              xs:decimal(cbc:AllowanceTotalAmount[not(@currencyID='JPY')])
-            ) * 10 * 10
-          ) div 100
-        )
-      ) or (
-        (cbc:ChargeTotalAmount[not(@currencyID='JPY')]) and
-        not(cbc:AllowanceTotalAmount[not(@currencyID='JPY')]) and
-        (
-          xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) =
-          round(
-            (
-              xs:decimal(cbc:LineExtensionAmount[not(@currencyID='JPY')]) +
-              xs:decimal(cbc:ChargeTotalAmount[not(@currencyID='JPY')])
-            ) * 10 * 10
-          ) div 100
-        )
-      ) or (
-        not(cbc:ChargeTotalAmount) and
-        not(cbc:AllowanceTotalAmount)
-        and (
-          xs:decimal(cbc:TaxExclusiveAmount) =
-          xs:decimal(cbc:LineExtensionAmount)
-        )
-      )">
-      [ibr-co-13]-Invoice total amount without Tax (ibt-109) = Σ Invoice line net amount (ibt-131) - Sum of allowances on document level (ibt-107) + Sum of charges on document level (ibt-108).
-      </assert>
-      <assert id="ibr-co-16" flag="fatal" test="
-      (
-        not(xs:decimal(cbc:PrepaidAmount)) and
-        not(xs:decimal(cbc:PayableRoundingAmount)) and
-        xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)
-      ) or (
-        xs:decimal(cbc:PrepaidAmount[@currencyID='JPY']) and
-        not(xs:decimal(cbc:PayableRoundingAmount[@currencyID='JPY'])) and
-        (
-          xs:decimal(cbc:PayableAmount[@currencyID='JPY']) =
-          xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY']) - xs:decimal(cbc:PrepaidAmount[@currencyID='JPY'])
-        )
-      ) or (
-        xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')]) and
-        not(xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')])) and
-        (
-          xs:decimal(cbc:PayableAmount[not(@currencyID='JPY')]) =
-          round(
-            (
-              xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')])
-            ) * 10 * 10
-          ) div 100
-        )
-      ) or (
-        xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')]) and
-        xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')]) and
-        (
+      <assert id="ibr-co-15" flag="fatal" test="
+        every $Currency in cbc:DocumentCurrencyCode satisfies (
           (
+            cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount[@currencyID='JPY']) = 
+            cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount[@currencyID='JPY']) + 
+            cac:TaxTotal/xs:decimal(cbc:TaxAmount[@currencyID=$Currency][@currencyID='JPY'])
+          ) or (
+            cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')]) = 
             round(
               (
-                xs:decimal(cbc:PayableAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')])
-              ) * 10 * 10
-            ) div 100
-          ) = (
-            round(
-              (
-                xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')])
+                cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount[not(@currencyID='JPY')]) + 
+                cac:TaxTotal/xs:decimal(cbc:TaxAmount[@currencyID=$Currency][not(@currencyID='JPY')])
               ) * 10 * 10
             ) div 100
           )
         )
-      ) or (
-        not(xs:decimal(cbc:PrepaidAmount[not(@currencyID='JPY')])) and
-        xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')]) and
-        (
-          (
-            round(
-              (
-                xs:decimal(cbc:PayableAmount[not(@currencyID='JPY')]) - xs:decimal(cbc:PayableRoundingAmount[not(@currencyID='JPY')])
-              ) * 10 * 10
-            ) div 100
-          ) =
-          xs:decimal(cbc:TaxInclusiveAmount[not(@currencyID='JPY')])
-        )
-      )">
-      [ibr-co-16]-Amount due for payment (ibt-115) = Invoice total amount with Tax (ibt-112) - Paid amount (ibt-113) + Rounding amount (ibt-114).
-      </assert>
-
-    </rule>
-
-    <rule context="ubl:Invoice | cn:CreditNote">
-      <assert id="ibr-01" flag="fatal" test="
-      (cbc:CustomizationID) != ''
       ">
-      [ibr-01]-An Invoice shall have a Specification identifier (ibt-024).
-      </assert>
-      <assert id="ibr-02" flag="fatal" test="
-      (cbc:ID) !=''
-      ">
-      [ibr-02]-An Invoice shall have an Invoice number (ibt-001).
-      </assert>
-      <assert id="ibr-03" flag="fatal" test="
-      (cbc:IssueDate) !=''
-      ">
-      [ibr-03]-An Invoice shall have an Invoice issue date (ibt-002).
-      </assert>
-      <assert id="ibr-04" flag="fatal" test="
-      (cbc:InvoiceTypeCode) !='' or
-      (cbc:CreditNoteTypeCode) !=''
-      ">
-      [ibr-04]-An Invoice shall have an Invoice type code (ibt-003).
-      </assert>
-      <assert id="ibr-05" flag="fatal" test="
-      (cbc:DocumentCurrencyCode) !=''
-      ">
-      [ibr-05]-An Invoice shall have an Invoice currency code (ibt-005).
-      </assert>
-      
-      <assert id="ibr-16" flag="fatal" test="
-      exists(cac:InvoiceLine) or
-      exists(cac:CreditNoteLine)
-      ">
-      [ibr-16]-An Invoice shall have at least one Invoice line (ibg-25)
-      </assert>
-      <assert id="ibr-53" flag="fatal" test="
-      every $taxcurrency in cbc:TaxCurrencyCode satisfies (
-        exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])
-      )">
-      [ibr-53]-If the Tax accounting currency code (ibt-006) is present, then the Invoice total Tax amount in accounting currency (ibt-111) shall be provided.
-      </assert>
-      <assert id="ibr-co-15" flag="fatal" test="
-      every $Currency in cbc:DocumentCurrencyCode satisfies (
-        cac:LegalMonetaryTotal/xs:decimal(cbc:TaxInclusiveAmount) = round( (cac:LegalMonetaryTotal/xs:decimal(cbc:TaxExclusiveAmount) + cac:TaxTotal/xs:decimal(cbc:TaxAmount[@currencyID=$Currency])) * 10 * 10) div 100
-      )">
-      [ibr-co-15]-Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).
+        [ibr-co-15]-Invoice total amount with Tax (ibt-112) = Invoice total amount without Tax (ibt-109) + Invoice total Tax amount (ibt-110).
       </assert>
     </rule>
     <rule context="cac:InvoiceLine | cac:CreditNoteLine">
       <assert id="ibr-21" flag="fatal" test="
-      (cbc:ID) != ''
+        (cbc:ID) != ''
       ">
-      [ibr-21]-Each Invoice line (ibg-25) shall have an Invoice line identifier (ibt-126).
+        [ibr-21]-Each Invoice line (ibg-25) shall have an Invoice line identifier (ibt-126).
       </assert>
       <assert id="ibr-22" flag="fatal" test="
-      exists(cbc:InvoicedQuantity) or
-      exists(cbc:CreditedQuantity)
+        exists(cbc:InvoicedQuantity) or
+        exists(cbc:CreditedQuantity)
       ">
-      [ibr-22]-Each Invoice line (ibg-25) shall have an Invoiced quantity (ibt-129).
+        [ibr-22]-Each Invoice line (ibg-25) shall have an Invoiced quantity (ibt-129).
       </assert>
       <assert id="ibr-23" flag="fatal" test="
-      exists(cbc:InvoicedQuantity/@unitCode) or
-      exists(cbc:CreditedQuantity/@unitCode)
+        exists(cbc:InvoicedQuantity/@unitCode) or
+        exists(cbc:CreditedQuantity/@unitCode)
       ">
-      [ibr-23]-An Invoice line (ibg-25) shall have an Invoiced quantity unit of measure code (ibt-130).
+        [ibr-23]-An Invoice line (ibg-25) shall have an Invoiced quantity unit of measure code (ibt-130).
       </assert>
       <assert id="ibr-24" flag="fatal" test="
-      exists(cbc:LineExtensionAmount)
+        exists(cbc:LineExtensionAmount)
       ">
-      [ibr-24]-Each Invoice line (ibg-25) shall have an Invoice line net amount (ibt-131).
+        [ibr-24]-Each Invoice line (ibg-25) shall have an Invoice line net amount (ibt-131).
       </assert>
       <assert id="ibr-25" flag="fatal" test="
-      (cac:Item/cbc:Name) != ''
+        (cac:Item/cbc:Name) != ''
       ">
-      [ibr-25]-Each Invoice line (ibg-25) shall contain the Item name (ibt-153).
+        [ibr-25]-Each Invoice line (ibg-25) shall contain the Item name (ibt-153).
       </assert>
       <assert id="ibr-26" flag="fatal" test="
-      exists(cac:Price/cbc:PriceAmount)
+        exists(cac:Price/cbc:PriceAmount)
       ">
-      [ibr-26]-Each Invoice line (ibg-25) shall contain the Item net price (ibt-146).
+        [ibr-26]-Each Invoice line (ibg-25) shall contain the Item net price (ibt-146).
       </assert>
       <assert id="ibr-27" flag="fatal" test="
-      (cac:Price/cbc:PriceAmount) &gt;= 0
+        (cac:Price/cbc:PriceAmount) &gt;= 0
       ">
-      [ibr-27]-The Item net price (ibt-146) shall NOT be negative.
+        [ibr-27]-The Item net price (ibt-146) shall NOT be negative.
       </assert>
       <assert id="ibr-28" flag="fatal" test="
-      (cac:Price/cac:AllowanceCharge/cbc:BaseAmount) &gt;= 0 or 
-      not(exists(cac:Price/cac:AllowanceCharge/cbc:BaseAmount))
+        (cac:Price/cac:AllowanceCharge/cbc:BaseAmount) &gt;= 0 or 
+        not(exists(cac:Price/cac:AllowanceCharge/cbc:BaseAmount))
       ">
-      [ibr-28]-The Item gross price (ibt-148) shall NOT be negative.
+        [ibr-28]-The Item gross price (ibt-148) shall NOT be negative.
       </assert>
     </rule>
-    <rule context="cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]">
+    <rule context="
+      cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()] | 
+      cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = false()]
+    ">
       <assert id="ibr-41" flag="fatal" test="
-      exists(cbc:Amount)
+        exists(cbc:Amount)
       ">
-      [ibr-41]-Each Invoice line allowance (ibg-27) shall have an Invoice line allowance amount (ibt-136).
+        [ibr-41]-Each Invoice line allowance (ibg-27) shall have an Invoice line allowance amount (ibt-136).
       </assert>
       <assert id="ibr-42" flag="fatal" test="
-      exists(cbc:AllowanceChargeReason) or 
-      exists(cbc:AllowanceChargeReasonCode)
+        exists(cbc:AllowanceChargeReason) or 
+        exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-42]-Each Invoice line allowance (ibg-27) shall have an Invoice line allowance reason (ibt-139) or an Invoice line allowance reason code (ibt-140).
+        [ibr-42]-Each Invoice line allowance (ibg-27) shall have an Invoice line allowance reason (ibt-139) or an Invoice line allowance reason code (ibt-140).
       </assert>
       <!--      <assert id="ibr-co-07" flag="fatal" test="true()">[ibr-co-07]-When both Invoice line allowance reason code (ibt-140) and Invoice line allowance reason (ibt-139) the definition of the code is normative.</assert>
       -->
     </rule>
-    <rule context="cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | //cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]">
+    <rule context="
+      cac:InvoiceLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()] | 
+      cac:CreditNoteLine/cac:AllowanceCharge[cbc:ChargeIndicator = true()]
+    ">
       <assert id="ibr-43" flag="fatal" test="
-      exists(cbc:Amount)
+        exists(cbc:Amount)
       ">
-      [ibr-43]-Each Invoice line charge (ibg-28) shall have an Invoice line charge amount (ibt-141).
+        [ibr-43]-Each Invoice line charge (ibg-28) shall have an Invoice line charge amount (ibt-141).
       </assert>
       <assert id="ibr-44" flag="fatal" test="
-      exists(cbc:AllowanceChargeReason) or 
-      exists(cbc:AllowanceChargeReasonCode)
+        exists(cbc:AllowanceChargeReason) or 
+        exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-44]-Each Invoice line charge (ibg-28) shall have an Invoice line charge reason (ibt-144) or an invoice line allowance reason code (ibt-145).
+        [ibr-44]-Each Invoice line charge (ibg-28) shall have an Invoice line charge reason (ibt-144) or an invoice line allowance reason code (ibt-145).
       </assert>
       <!--      <assert id="ibr-co-08" flag="fatal" test="true()">[ibr-co-08]-When both Invoice line charge reason code (ibt-145) and Invoice line charge reason (ibt-144) the definition of the code is normative.</assert>
       -->
       <assert id="ibr-co-24" flag="fatal" test="
-      exists(cbc:AllowanceChargeReason) or exists(cbc:AllowanceChargeReasonCode)
+        exists(cbc:AllowanceChargeReason) or 
+        exists(cbc:AllowanceChargeReasonCode)
       ">
-      [ibr-co-24]-Each Invoice line charge (ibg-28) shall contain an Invoice line charge reason (ibt-144) or an Invoice line charge reason code (ibt-145), or both.
+        [ibr-co-24]-Each Invoice line charge (ibg-28) shall contain an Invoice line charge reason (ibt-144) or an Invoice line charge reason code (ibt-145), or both.
       </assert>
     </rule>
-    <rule context="cac:InvoiceLine/cac:InvoicePeriod | cac:CreditNoteLine/cac:InvoicePeriod">
+    <rule context="
+      cac:InvoiceLine/cac:InvoicePeriod | 
+      cac:CreditNoteLine/cac:InvoicePeriod
+    ">
       <assert id="ibr-30" flag="fatal" test="
-      (
-        exists(cbc:EndDate) and
-        exists(cbc:StartDate) and
-        xs:date(cbc:EndDate) &gt;= xs:date(cbc:StartDate)
-      ) or
-      not(
-        exists(cbc:StartDate)
-      ) or
-      not(
-        exists(cbc:EndDate)
-      )
-      ">
-      [ibr-30]-If both Invoice line period start date (ibt-134) and Invoice line period end date (ibt-135) are given then the Invoice line period end date (ibt-135) shall be later or equal to the Invoice line period start date (ibt-134).
-      </assert>
-      <assert id="ibr-co-20" flag="fatal" test="
-      exists(cbc:StartDate) or exists(cbc:EndDate)
-      ">
-      [ibr-co-20]-If Invoice line period (ibg-26) is used, the Invoice line period start date (ibt-134) or the Invoice line period end date (ibt-135) shall be filled, or both.
-      </assert>
-    </rule>
-
-    <rule context="cac:InvoicePeriod">
-      <assert id="ibr-29" flag="fatal" test="(exists(cbc:EndDate) and exists(cbc:StartDate) and xs:date(cbc:EndDate) &gt;= xs:date(cbc:StartDate)) or not(exists(cbc:StartDate)) or not(exists(cbc:EndDate))">[ibr-29]-If both Invoicing period start date (ibt-073) and Invoicing period end date (ibt-074) are given then the Invoicing period end date (ibt-074) shall be later or equal to the Invoicing period start date (ibt-073).</assert>
-      <assert id="ibr-co-19" flag="fatal" test="
-      exists(cbc:StartDate) or
-      exists(cbc:EndDate) or
-      (
-        exists(cbc:DescriptionCode) and
+        (
+          exists(cbc:EndDate) and
+          exists(cbc:StartDate) and
+          xs:date(cbc:EndDate) &gt;= xs:date(cbc:StartDate)
+        ) or
         not(
           exists(cbc:StartDate)
-        ) and
+        ) or
         not(
           exists(cbc:EndDate)
         )
-      )
       ">
-      [ibr-co-19]-If Invoicing period (ibg-14) is used, the Invoicing period start date (ibt-073) or the Invoicing period end date (ibt-074) shall be filled, or both.
+        [ibr-30]-If both Invoice line period start date (ibt-134) and Invoice line period end date (ibt-135) are given then the Invoice line period end date (ibt-135) shall be later or equal to the Invoice line period start date (ibt-134).
+      </assert>
+      <assert id="ibr-co-20" flag="fatal" test="
+        exists(cbc:StartDate) or exists(cbc:EndDate)
+      ">
+        [ibr-co-20]-If Invoice line period (ibg-26) is used, the Invoice line period start date (ibt-134) or the Invoice line period end date (ibt-135) shall be filled, or both.
+      </assert>
+    </rule>
+    <rule context="cac:InvoicePeriod">
+      <assert id="ibr-29" flag="fatal" test="
+        (
+          exists(cbc:EndDate) and 
+          exists(cbc:StartDate) and 
+          xs:date(cbc:EndDate) &gt;= xs:date(cbc:StartDate)
+        ) or 
+        not(exists(cbc:StartDate)) or 
+        not(exists(cbc:EndDate))
+      ">
+        [ibr-29]-If both Invoicing period start date (ibt-073) and Invoicing period end date (ibt-074) are given then the Invoicing period end date (ibt-074) shall be later or equal to the Invoicing period start date (ibt-073).
+      </assert>
+      <assert id="ibr-co-19" flag="fatal" test="
+        exists(cbc:StartDate) or
+        exists(cbc:EndDate) or
+        (
+          exists(cbc:DescriptionCode) and
+          not(exists(cbc:StartDate)) and
+          not(exists(cbc:EndDate))
+        )
+      ">
+        [ibr-co-19]-If Invoicing period (ibg-14) is used, the Invoicing period start date (ibt-073) or the Invoicing period end date (ibt-074) shall be filled, or both.
       </assert>
     </rule>
     <rule context="cac:AdditionalItemProperty">
       <assert id="ibr-54" flag="fatal" test="
-      exists(cbc:Name) and exists(cbc:Value)
+        exists(cbc:Name) and 
+        exists(cbc:Value)
       ">
-      [ibr-54]-Each Item attribute (ibg-32) shall contain an Item attribute name (ibt-160) and an Item attribute value (ibt-161).
+        [ibr-54]-Each Item attribute (ibg-32) shall contain an Item attribute name (ibt-160) and an Item attribute value (ibt-161).
       </assert>
     </rule>
-    <rule context="cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode | cac:CreditNoteLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode">
+    <rule context="
+      cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode | 
+      cac:CreditNoteLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode
+    ">
       <assert id="ibr-65" flag="fatal" test="
-      exists(@listID)
+        exists(@listID)
       ">
-      [ibr-65]-The Item classification identifier (ibt-158) shall have a Scheme identifier.
+        [ibr-65]-The Item classification identifier (ibt-158) shall have a Scheme identifier.
       </assert>
     </rule>
-    <rule context="cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID | cac:CreditNoteLine/cac:Item/cac:StandardItemIdentification/cbc:ID">
+    <rule context="
+      cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID | 
+      cac:CreditNoteLine/cac:Item/cac:StandardItemIdentification/cbc:ID
+    ">
       <assert id="ibr-64" flag="fatal" test="
-      exists(@schemeID)
+        exists(@schemeID)
       ">
-      [ibr-64]-The Item standard identifier (ibt-157) shall have a Scheme identifier.
+          [ibr-64]-The Item standard identifier (ibt-157) shall have a Scheme identifier.
       </assert>
     </rule>
     <rule context="cac:PayeeParty">
       <assert id="ibr-17" flag="fatal" test="
-      exists(cac:PartyName/cbc:Name) and
-      (
-        not(
-          cac:PartyName/cbc:Name = ../cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name
-        ) and
-        not(
-          cac:PartyIdentification/cbc:ID = ../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID
+        exists(cac:PartyName/cbc:Name) and
+        (
+          not(
+            cac:PartyName/cbc:Name = ../cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name
+          ) and
+          not(
+            cac:PartyIdentification/cbc:ID = ../cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID
+          )
         )
-      )">
-      [ibr-17]-The Payee name (ibt-059) shall be provided in the Invoice, if the Payee (ibg-10) is different from the Seller (ibg-04).
+      ">
+        [ibr-17]-The Payee name (ibt-059) shall be provided in the Invoice, if the Payee (ibg-10) is different from the Seller (ibg-04).
       </assert>
     </rule>
     <rule context="cac:PaymentMeans">
       <assert id="ibr-49" flag="fatal" test="
-      exists(cbc:PaymentMeansCode)
+        exists(cbc:PaymentMeansCode)
       ">
-      [ibr-49]-A Payment instruction (ibg-16) shall specify the Payment means type code (ibt-081).
+        [ibr-49]-A Payment instruction (ibg-16) shall specify the Payment means type code (ibt-081).
       </assert>
     </rule>
     <rule context="cac:BillingReference">
       <assert id="ibr-55" flag="fatal" test="
-      exists(cac:InvoiceDocumentReference/cbc:ID)
+        exists(cac:InvoiceDocumentReference/cbc:ID)
       ">
-      [ibr-55]-Each Preceding Invoice reference (ibg-03) shall contain a Preceding Invoice reference (ibt-025).
+        [ibr-55]-Each Preceding Invoice reference (ibg-03) shall contain a Preceding Invoice reference (ibt-025).
       </assert>
     </rule>
     <rule context="cac:AccountingSupplierParty">
       <assert id="ibr-co-26" flag="fatal" test="
-      exists(cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or 
-      exists(cac:Party/cac:PartyIdentification/cbc:ID) or 
-      exists(cac:Party/cac:PartyLegalEntity/cbc:CompanyID)
+        exists(cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or 
+        exists(cac:Party/cac:PartyIdentification/cbc:ID) or 
+        exists(cac:Party/cac:PartyLegalEntity/cbc:CompanyID)
       ">
-      [ibr-co-26]-In order for the buyer to automatically identify a supplier, the Seller identifier (ibt-029), the Seller legal registration identifier (ibt-030) and/or the Seller Tax identifier (ibt-031) shall be present.
+        [ibr-co-26]-In order for the buyer to automatically identify a supplier, the Seller identifier (ibt-029), the Seller legal registration identifier (ibt-030) and/or the Seller Tax identifier (ibt-031) shall be present.
       </assert>
     </rule>
     <rule context="cac:AccountingSupplierParty/cac:Party/cbc:EndpointID">
       <assert id="ibr-62" flag="fatal" test="
-      exists(@schemeID)
+        exists(@schemeID)
       ">
-      [ibr-62]-The Seller electronic address (ibt-034) shall have a Scheme identifier.
+        [ibr-62]-The Seller electronic address (ibt-034) shall have a Scheme identifier.
       </assert>
     </rule>
     <rule context="cac:AccountingSupplierParty/cac:Party/cac:PostalAddress">
       <assert id="ibr-09" flag="fatal" test="
-      (cac:Country/cbc:IdentificationCode) != ''
+        (cac:Country/cbc:IdentificationCode) != ''
       ">
-      [ibr-09]-The Seller postal address (ibg-05) shall contain a Seller country code (ibt-040).
+        [ibr-09]-The Seller postal address (ibg-05) shall contain a Seller country code (ibt-040).
       </assert>
     </rule>
     <rule context="cac:TaxRepresentativeParty">
       <assert id="ibr-18" flag="fatal" test="
-      (cac:PartyName/cbc:Name) != ''
+        (cac:PartyName/cbc:Name) != ''
       ">
-      [ibr-18]-The Seller tax representative name (ibt-062) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11)
+        [ibr-18]-The Seller tax representative name (ibt-062) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11)
       </assert>
       <assert id="ibr-19" flag="fatal" test="
-      exists(cac:PostalAddress)
+        exists(cac:PostalAddress)
       ">
-      [ibr-19]-The Seller tax representative postal address (ibg-12) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11).
+        [ibr-19]-The Seller tax representative postal address (ibg-12) shall be provided in the Invoice, if the Seller (ibg-04) has a Seller tax representative party (ibg-11).
       </assert>
       <assert id="ibr-56" flag="fatal" test="
-      exists(cac:PartyTaxScheme/cbc:CompanyID)
+        exists(cac:PartyTaxScheme/cbc:CompanyID)
       ">
-      [ibr-56]-Each Seller tax representative party (ibg-11) shall have a Seller tax representative Tax identifier (ibt-063).
+        [ibr-56]-Each Seller tax representative party (ibg-11) shall have a Seller tax representative Tax identifier (ibt-063).
       </assert>
     </rule>
     <rule context="cac:TaxRepresentativeParty/cac:PostalAddress">
       <assert id="ibr-20" flag="fatal" test="
-      (cac:Country/cbc:IdentificationCode) != ''
+        (cac:Country/cbc:IdentificationCode) != ''
       ">
-      [ibr-20]-The Seller tax representative postal address (ibg-12) shall contain a Tax representative country code (ibt-069), if the Seller (ibg-04) has a Seller tax representative party (ibg-11).
+        [ibr-20]-The Seller tax representative postal address (ibg-12) shall contain a Tax representative country code (ibt-069), if the Seller (ibg-04) has a Seller tax representative party (ibg-11).
       </assert>
     </rule>
-    <rule context="ubl:Invoice/cac:TaxTotal | cn:CreditNote/cac:Taxtotal">
+    <rule context="
+      ubl:Invoice/cac:TaxTotal | 
+      cn:CreditNote/cac:Taxtotal
+    ">
       <assert id="ibr-co-14" flag="fatal" test="
-      (
-        xs:decimal(child::cbc:TaxAmount[@currencyID='JPY']) =
-        sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount[@currencyID='JPY']))
-      ) or (
-        xs:decimal(child::cbc:TaxAmount[not(@currencyID='JPY')]) =
-        round(
-          (
-            sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount[not(@currencyID='JPY')])) * 10 * 10
-          )
-        ) div 100
-      ) or 
-      not(
-        cac:TaxSubtotal
-      )">
-      [ibr-co-14]-Invoice total Tax amount (ibt-110) = Σ Tax category tax amount (ibt-117).
+        (
+          xs:decimal(child::cbc:TaxAmount[@currencyID='JPY']) =
+          sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount[@currencyID='JPY']))
+        ) or (
+          xs:decimal(child::cbc:TaxAmount[not(@currencyID='JPY')]) =
+          round(
+            (
+              sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount[not(@currencyID='JPY')])) * 10 * 10
+            )
+          ) div 100
+        ) or 
+        not(
+          cac:TaxSubtotal
+        )
+      ">
+        [ibr-co-14]-Invoice total Tax amount (ibt-110) = Σ Tax category tax amount (ibt-117).
       </assert>
     </rule>
   </pattern>
@@ -1615,98 +1725,91 @@
         )
       )
       ">
-      [ibr-cl-10]-Any identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.
+        [ibr-cl-10]-Any identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.
       </assert>
     </rule>
     <rule context="cac:PartyLegalEntity/cbc:CompanyID[@schemeID]">
       <assert id="ibr-cl-11" flag="fatal" test="
       some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
       ">
-      [ibr-cl-11]-Any registration identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.
+        [ibr-cl-11]-Any registration identifier identification scheme MUST be coded using one of the ISO 6523 ICD list.
       </assert>
     </rule>
     <rule context="cac:CommodityClassification/cbc:ItemClassificationCode[@listID]">
       <assert id="ibr-cl-13" flag="fatal" test="
       some $code in $UNTDID7143 satisfies normalize-space(@listID) = $code
       ">
-      [ibr-cl-13]-Item classification identifier identification scheme MUST be coded using one of the UNTDID 7143 list.
+        [ibr-cl-13]-Item classification identifier identification scheme MUST be coded using one of the UNTDID 7143 list.
       </assert>
     </rule>
     <rule context="cac:Country/cbc:IdentificationCode">
       <assert id="ibr-cl-14" flag="fatal" test="
       some $code in $ISO3166 satisfies normalize-space(text()) = $code
       ">
-      [ibr-cl-14]-Country codes in an invoice MUST be coded using ISO code list 3166-1
+        [ibr-cl-14]-Country codes in an invoice MUST be coded using ISO code list 3166-1
       </assert>
     </rule>
     <rule context="cac:OriginCountry/cbc:IdentificationCode">
       <assert id="ibr-cl-15" flag="fatal" test="
       some $code in $ISO3166 satisfies normalize-space(text()) = $code
       ">
-      [ibr-cl-15]-Origin country codes in an invoice MUST be coded using ISO code list 3166-1
+        [ibr-cl-15]-Origin country codes in an invoice MUST be coded using ISO code list 3166-1
       </assert>
     </rule>
     <rule context="cac:PaymentMeans/cbc:PaymentMeansCode">
       <assert id="ibr-cl-16" flag="fatal" test="
       some $code in $UNCL4461 satisfies normalize-space(text()) = $code
       ">
-      [ibr-cl-16]-Payment means in an invoice MUST be coded using UNCL4461 code list (adding Z01 and Z02)
+        [ibr-cl-16]-Payment means in an invoice MUST be coded using UNCL4461 code list (adding Z01 and Z02)
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator = false()]/cbc:AllowanceChargeReasonCode">
       <assert id="ibr-cl-19" flag="fatal" test="
       some $code in $UNCL5189 satisfies normalize-space(text()) = $code
       ">
-      [ibr-cl-19]-Coded allowance reasons MUST belong to the UNCL 5189 code list
+        [ibr-cl-19]-Coded allowance reasons MUST belong to the UNCL 5189 code list
       </assert>
     </rule>
     <rule context="cac:AllowanceCharge[cbc:ChargeIndicator = true()]/cbc:AllowanceChargeReasonCode">
       <assert id="ibr-cl-20" flag="fatal" test="
       some $code in $UNCL7161 satisfies normalize-space(text()) = $code
       ">
-      [ibr-cl-20]-Coded charge reasons MUST belong to the UNCL 7161 code list
+        [ibr-cl-20]-Coded charge reasons MUST belong to the UNCL 7161 code list
       </assert>
     </rule>
     <rule context="cac:StandardItemIdentification/cbc:ID[@schemeID]">
       <assert id="ibr-cl-21" flag="fatal" test="
       some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
       ">
-      [ibr-cl-21]-Item standard identifier scheme identifier MUST belong to the ISO 6523 ICD list.
+        [ibr-cl-21]-Item standard identifier scheme identifier MUST belong to the ISO 6523 ICD list.
       </assert>
     </rule>
     <rule context="cbc:InvoicedQuantity[@unitCode] | cbc:BaseQuantity[@unitCode]">
       <assert id="ibr-cl-23" flag="fatal" test="
       some $code in $UNECE_REC20 satisfies normalize-space(@unitCode) = $code
       ">
-      [ibr-cl-23]-Unit code MUST be coded according to the UN/ECE Recommendation 20 with Rec 21 extension
+        [ibr-cl-23]-Unit code MUST be coded according to the UN/ECE Recommendation 20 with Rec 21 extension
       </assert>
     </rule>
     <rule context="cbc:EmbeddedDocumentBinaryObject[@mimeCode]">
       <assert id="ibr-cl-24" flag="fatal" test="
       some $code in $MIMECODE satisfies normalize-space(@mimeCode) = $code
       ">
-      [ibr-cl-24][EN16931-CL001(JP-37)]-Mime code must be according to subset of IANA code list.
+        [ibr-cl-24][EN16931-CL001(JP-37)]-Mime code must be according to subset of IANA code list.
       </assert>
     </rule>
     <rule context="cbc:EndpointID[@schemeID]">
       <assert id="ibr-cl-25" flag="fatal" test="
       some $code in $CEF_EAS satisfies normalize-space(@schemeID) = $code
       ">
-      [ibr-cl-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list
+        [ibr-cl-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list
       </assert>
     </rule>
     <rule context="cac:DeliveryLocation/cbc:ID[@schemeID]">
       <assert id="ibr-cl-26" flag="fatal" test="
         some $code in $ISO6523 satisfies normalize-space(@schemeID) = $code
       ">
-      <!--<assert id="ibr-cl-26" flag="fatal" test="
-      (
-        (
-          not(contains(normalize-space(@schemeID), ' ')) and
-          contains(' 0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012 0013 0014 0015 0016 0017 0018 0019 0020 0021 0022 0023 0024 0025 0026 0027 0028 0029 0030 0031 0032 0033 0034 0035 0036 0037 0038 0039 0040 0041 0042 0043 0044 0045 0046 0047 0048 0049 0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060 0061 0062 0063 0064 0065 0066 0067 0068 0069 0070 0071 0072 0073 0074 0075 0076 0077 0078 0079 0080 0081 0082 0083 0084 0085 0086 0087 0088 0089 0090 0091 0093 0094 0095 0096 0097 0098 0099 0100 0101 0102 0104 0105 0106 0107 0108 0109 0110 0111 0112 0113 0114 0115 0116 0117 0118 0119 0120 0121 0122 0123 0124 0125 0126 0127 0128 0129 0130 0131 0132 0133 0134 0135 0136 0137 0138 0139 0140 0141 0142 0143 0144 0145 0146 0147 0148 0149 0150 0151 0152 0153 0154 0155 0156 0157 0158 0159 0160 0161 0162 0163 0164 0165 0166 0167 0168 0169 0170 0171 0172 0173 0174 0175 0176 0177 0178 0179 0180 0183 0184 0185 0186 0187 0188 0189 0190 0191 0192 0193 0194 0195 0196 0197 0198 0199 0200 0201 0202 0203 0204 0205 0206 0207 0208 0209 0210 0211 0212 0213 ', concat(' ', normalize-space(@schemeID), ' '))
-        )
-      )">-->
-      [ibr-cl-26]-Delivery location identifier scheme identifier MUST belong to the ISO 6523 ICD code list
+        [ibr-cl-26]-Delivery location identifier scheme identifier MUST belong to the ISO 6523 ICD code list
       </assert>
     </rule>
   </pattern>
@@ -1741,7 +1844,9 @@
       <assert id="UBL-CR-003" flag="warning" test="not(cbc:ProfileExecutionID)">[UBL-CR-003]-warning-A UBL invoice should not include the ProfileExecutionID </assert>
       <assert id="UBL-CR-004" flag="warning" test="not(cbc:CopyIndicator)">[UBL-CR-004]-warning-A UBL invoice should not include the CopyIndicator </assert>
       <assert id="UBL-CR-005" flag="warning" test="not(cbc:UUID)">[UBL-CR-005]-warning-A UBL invoice should not include the UUID </assert>
+      <!--
       <assert id="UBL-CR-006" flag="warning" test="not(cbc:IssueTime)">[UBL-CR-006]-warning-A UBL invoice should not include the IssueTime </assert>
+      -->
       <assert id="UBL-CR-007" flag="warning" test="not(cbc:PricingCurrencyCode)">[UBL-CR-007]-warning-A UBL invoice should not include the PricingCurrencyCode</assert>
       <assert id="UBL-CR-008" flag="warning" test="not(cbc:PaymentCurrencyCode)">[UBL-CR-008]-warning-A UBL invoice should not include the PaymentCurrencyCode</assert>
       <assert id="UBL-CR-009" flag="warning" test="not(cbc:PaymentAlternativeCurrencyCode)">[UBL-CR-009]-warning-A UBL invoice should not include the PaymentAlternativeCurrencyCode</assert>
