@@ -21,13 +21,13 @@
   queryBinding="xslt2">-->
   <!-- ========================= -->
   
-  <include href="./Japan-UBL-model.sch"/>
-  <include href="./Japan-Codesmode.sch "/>
+  <include href="../../../Documents/GitHub/EIPA/JP-PINT-BIS/Validation documents/Japan-UBL-model.sch"/>
+  <include href="../../../Documents/GitHub/EIPA/JP-PINT-BIS/Validation documents/Japan-Codesmode.sch "/>
   
-  <include href="./PINT-UBL-model.sch"/>
-  <include href="./PINT-Codesmodel.sch"/>
+  <include href="../../../Documents/GitHub/EIPA/JP-PINT-BIS/Validation documents/PINT-UBL-model.sch"/>
+  <include href="../../../Documents/GitHub/EIPA/JP-PINT-BIS/Validation documents/PINT-Codesmodel.sch"/>
   
-  <include href="./UBL-syntax.sch"/>
+  <include href="../../../Documents/GitHub/EIPA/JP-PINT-BIS/Validation documents/UBL-syntax.sch"/>
   
   <phase id="UBL-phase">
     <active pattern="UBL-syntax"/>
