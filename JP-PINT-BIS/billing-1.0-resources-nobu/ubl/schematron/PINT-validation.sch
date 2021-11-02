@@ -15,7 +15,7 @@
   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
   xmlns:cn="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" 
-  xmlns:UBL="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+  xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
   queryBinding="xslt2">
   <title>EN16931  model bound to UBL</title>
   <ns prefix="ext" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"/>
@@ -29,7 +29,7 @@
   <phase id="PINTmodel_phase">
      <active pattern="PINT-model"/>
   </phase>
-   <phase id="EPINTsyntax_phase">
+   <phase id="PINTsyntax_phase">
      <active pattern="PINT-syntax"/>
   </phase>
   <phase id="PINTcodelist_phase">
