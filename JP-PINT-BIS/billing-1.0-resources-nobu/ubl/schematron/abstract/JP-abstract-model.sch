@@ -11,8 +11,8 @@
   <rule context="$Seller">
     <assert id="jp-br-01" flag="fatal" test="$jp-br-01">[jp-br-01]-From October 1st 2023, Seller Tax identifier (ibt-031) shall be coded by using a Registration number for Qualified Invoice in Japan, which consists of 14 digits that starts with "T".</assert>
   </rule>
-  <rule context="$Amount_data_type">
-    <assert id="jp-br-02" flag="fatal" test="$jp-br-02">[jp-br-02]-Amount shall be integer.</assert>
+  <rule context="$Tax_Totalamount_JPY">
+    <assert id="jp-br-02" flag="fatal" test="$jp-br-02">[jp-br-02]-Tax Total Amount shall be integer.</assert>
   </rule>
   <rule context="$Tax_identifiers">
     <assert id="jp-br-03" flag="fatal" test="$jp-br-03">[jp-br-03]-Tax scheme (ibt-118-1) shall use VAT from UNECE 5153 code list. VAT means Consumption Tax in Japan.</assert>
@@ -78,6 +78,12 @@
   </rule>
 
   <!-- Tax rules -->
+  <rule context="$VAT_S">
+    <assert test="$BR-S-08" flag="fatal" id="BR-S-08">[BR-S-08]-For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is "Standard rated", the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is "Standard rated" and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).</assert>
+  </rule>
+  <rule context="$VAT_AA">
+    <assert test="$BR-AA-08" flag="fatal" id="BR-AA-08">[BR-AA-08]-For each different value of VAT category rate (BT-119) where the VAT category code (BT-118) is "Reduced rate", the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is "Reduced rated" and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).</assert>
+  </rule>
 
   <rule context="$Invoice">
     <assert id="jp-s-01" flag="fatal" test="$jp-s-01">[jp-s-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) or a Document level charge (ibg-21) where the Consumption Tax category code (ibt-151, ibt-95 or ibt-102) is "Standard rated" shall contain in the Consumption Tax breakdown (ibg-23) at least one Consumption Tax category code (ibt-118) equal with "Standard rated".</assert>
@@ -120,7 +126,7 @@
   </rule>
   
   <rule context="$Invoice">
-    <assert id="jp-g-01" flag="fatal" test="$jp-g-01">[jp-g-01]-An Invoice that contains an invoice line (ibg-25) where the tax category code (ibt-151) is “G (Free export item, tax not charged)” shall contain exactly one tax breakdown (ibg-23) with tax category code (ibt-118) equals to “G”.</assert>
+    <assert id="jp-g-01" flag="fatal" test="$jp-g-01">[jp-g-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) and a Document level charge (ibg-21) where the tax category code (ibt-151, ibt-095, ibt-102) is “G (Free export item, tax not charged)” shall contain exactly one “Tax breakdown” (ibg-23) with “Tax category code” (ibt-118) equal to “G”. </assert>
     <assert id="jp-g-05" flag="fatal" test="$jp-g-05">[jp-g-05]-In an invoice line (ibg-25) where the invoiced item tax category code (ibt-151) is “G (Free export item, tax not charged)” the invoiced item tax rate (ibt-152) shall be 0 (zero).</assert>
     <assert id="jp-g-06" flag="fatal" test="$jp-g-06">[jp-g-06]-In a document level allowance (ibg-20) where the Document level allowance tax category code (ibt-95) is “G (Free export item, tax not charged)” the document level allowance tax rate (ibt-96) shall be 0 (zero).</assert>
     <assert id="jp-g-07" flag="fatal" test="$jp-g-07">[jp-g-07]-In a document level charge (ibg-21) where the Document level charge tax category code (ibt-102) is “G (Free export item, tax not charged)” the document level charge tax rate (ibt-103) shall be 0 (zero).</assert>

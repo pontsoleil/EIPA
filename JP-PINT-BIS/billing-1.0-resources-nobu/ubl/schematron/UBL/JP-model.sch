@@ -9,7 +9,7 @@
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron" is-a="JP-model" id="JP-PINT-model">
   <!-- Japanese ruleset -->
   <param name="jp-br-01" value="matches(normalize-space(cac:Party/cac:PartyTaxScheme/cbc:CompanyID),'^T[0-9]{13}$')"/>
-  <param name="jp-br-02" value="matches(normalize-space(.),'^-?[1-9][0-9]*$')"/>
+  <param name="jp-br-02" value="not(.[@currencyID='JPY']) or matches(normalize-space(.),'^-?[1-9][0-9]*$')"/>
   <param name="jp-br-03" value="exists(cac:TaxScheme[normalize-space(upper-case(cbc:ID))='VAT'])"/>
   <param name="jp-br-04" value="exists(cac:Party/cac:PartyTaxScheme/cbc:CompanyID)"/>
   <param name="jp-br-05" value="(
@@ -88,10 +88,12 @@
     )
   "/>
   <param name="jp-br-co-01" value="
-    (
-      xs:decimal(child::cbc:TaxAmount[@currencyID='JPY']) =
-      sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount[@currencyID='JPY']))
-    )
+  (
+    not(cbc:TaxAmount[@currencyID='JPY'])
+  ) or  (
+    xs:decimal(cbc:TaxAmount[@currencyID='JPY']) =
+    sum(cac:TaxSubtotal/xs:decimal(cbc:TaxAmount[@currencyID='JPY']))
+  )
   "/>
   <param name="jp-br-co-02" value="
     every $taxcurrency in cbc:TaxCurrencyCode satisfies exists(//cac:TaxTotal/cbc:TaxAmount[@currencyID=$taxcurrency])
@@ -99,6 +101,54 @@
   <param name="jp-br-co-03" value="not(.) or ./text() = 'JPY'"/>
   <param name="jp-br-co-04" value="exists(cac:ClassifiedTaxCategory/cbc:ID) and exists(cac:ClassifiedTaxCategory/cbc:Percent)"/>
   
+    <param name="BR-AA-08" value="every $rate in xs:decimal(cbc:Percent) satisfies (
+    (
+      (
+        exists(//cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]) or 
+        exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
+      ) and (
+        (
+          ../xs:decimal(cbc:TaxableAmount[@currencyID=//cbc:DocumentCurrencyCode]) - 1 &lt; 
+          (
+            sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+          )
+        ) and (
+          ../xs:decimal(cbc:TaxableAmount[@currencyID=//cbc:DocumentCurrencyCode]) + 1 &gt; 
+          (
+            sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='AA'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='AA'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+          )
+        )
+      )
+    )
+  )"/>
+  <param name="BR-S-08" value="every $rate in xs:decimal(cbc:Percent) satisfies (
+    (
+      (
+        exists(//cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]) or 
+        exists(//cac:AllowanceCharge[cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate])
+      ) and (
+        (
+          ../xs:decimal(cbc:TaxableAmount[@currencyID=//cbc:DocumentCurrencyCode]) - 1 &lt; 
+          (
+            sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+          )
+        ) and (
+          ../xs:decimal(cbc:TaxableAmount[@currencyID=//cbc:DocumentCurrencyCode]) + 1 &gt; 
+          (
+            sum(../../../cac:InvoiceLine[cac:Item/cac:ClassifiedTaxCategory/normalize-space(cbc:ID)='S'][cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:LineExtensionAmount)) + 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount)) - 
+            sum(../../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='S'][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+          )
+        )
+      )
+    )
+  )"/>
   <!-- Tax rules-->
   <param name="jp-s-01" value="
     (
@@ -440,7 +490,10 @@
   <param name="Percent" value="(//cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent | //cac:AllowanceCharge/cac:TaxCategory/cbc:Percent)"/>
   
   <param name="Tax_Total" value="/ubl:Invoice/cac:TaxTotal | /cn:CreditNote/cac:Taxtotal"/>
+  <param name="Tax_Total_Amount" value="/ubl:Invoice/cac:TaxTotal/cbc:TaxAmount | /cn:CreditNote/cac:Taxtotal/cbc:TaxAmount"/>
   <param name="Tax_breakdown" value="cac:TaxTotal/cac:TaxSubtotal"/>
+  <param name="VAT_S" value="cac:TaxTotal[cbc:TaxAmount/@currencyID=//cbc:DocumentCurrencyCode]/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']"/>
+  <param name="VAT_AA" value="cac:TaxTotal[cbc:TaxAmount/@currencyID=//cbc:DocumentCurrencyCode]/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='AA'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']"/>
   <param name="Tax_S_breakdown_category" value="cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'][../cbc:TaxAmount/@currencyID='JPY']"/>
   <param name="Tax_S_Allowance" value="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']"/>
   <param name="Tax_S_Charge" value="cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='S'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']"/>
