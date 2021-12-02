@@ -35,6 +35,7 @@ import json
 import sys 
 import os
 import argparse
+import math
 
 from dic2etree import * 
 from templateUBL import *
@@ -115,6 +116,7 @@ def get_path_value(base, path):
       pass
 
 def set_path_value(base,path,value,datatype):
+  global CurrencyCode
   if isinstance(base,str) or not path:
     return None
   key = path[0]
@@ -161,7 +163,7 @@ def set_path_value(base,path,value,datatype):
       if not key in base.keys():
         base[key] = {}
       if 'Amount' == datatype or 'Unit Price Amount' == datatype:
-        value = {'#text': str(value), '@currencyID': DocumentCurrencyCode}
+        value = {'#text': str(value), '@currencyID': CurrencyCode}
         base[key] = value
       elif 'Quantity' == datatype:
         base[key]['#text'] = str(value) #, '@unitCode': 'EA'}
@@ -240,6 +242,7 @@ def set_path_value(base,path,value,datatype):
       return p
 
 def set_record(Dic, header, record):
+  global CurrencyCode
   root = '/Invoice'
   head_id = record[0]
   if head_id and 'xpath' in pintDict[head_id]:
@@ -252,6 +255,7 @@ def set_record(Dic, header, record):
     head_xpath = pintDict[head_id]['xpath']
     head_pathList = head_xpath[1:].split('/')
   seq0 = record[2]
+  seq1 = record[5]
   if ''!= seq0:
     if 'ibt'==head_id[:3]:
       head_pathList = head_pathList[:-1]+[seq0]+head_pathList[-1:]
@@ -287,10 +291,12 @@ def set_record(Dic, header, record):
         if 'cac:InvoiceLine' in pathList:
           pathList = pathList[:2]+[seq0]+pathList[2:]
         path = pathList
+        CurrencyCode = DocumentCurrencyCode
         set_path_value(Dic, path, cell, datatype)
         pathList = xpath[1:].split('/')
         if not '@schemeID' in pathList:
           path = pathList[:-1]+['cbc:DocumentTypeCode']
+          CurrencyCode = DocumentCurrencyCode
           set_path_value(Dic, path, '130', datatype)
       elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
         xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
@@ -303,33 +309,48 @@ def set_record(Dic, header, record):
         if 'cac:InvoiceLine' in pathList:
           pathList = pathList[:2]+[seq]+pathList[2:]
           path = pathList
+        CurrencyCode = DocumentCurrencyCode
         set_path_value(Dic, path, cell, datatype)
       elif '/Invoice/cac:TaxTotal' in xpath:
         if 'DocumentCurrencyCode' in xpath:
-          _xpath = re.sub(r'(.*)\[@currencyID=/Invoice/cbc:DocumentCurrencyCode/text\(\)\](.*)',r'\1\2',xpath)
-          path = _xpath[1:].split('/')
-          set_path_value(Dic, path, cell, datatype)
+          _xpath = xpath.replace('[cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()]','')
+          path = _xpath.split('/')
+          if 'cac:TaxSubtotal' in path:
+            path = ['Invoice','cac:TaxTotal','0','cac:TaxSubtotal']+[str(seq0)]+path[-1:]
+            CurrencyCode = DocumentCurrencyCode
+            set_path_value(Dic, path, cell, datatype)
+          else:
+            path = ['Invoice','cac:TaxTotal','0']+path[-1:]
+            CurrencyCode = DocumentCurrencyCode
+            set_path_value(Dic, path, cell, datatype)
         elif 'TaxCurrencyCode' in xpath:
-          if 'cbc:TaxAmount' in xpath:
-            TaxTotal = Dic['Invoice']['cac:TaxTotal']
-            Dic['Invoice']['cac:TaxTotal'] = []
-            Dic['Invoice']['cac:TaxTotal'].append(TaxTotal)
-          _xpath = re.sub(r'(.*)\[@currencyID=/Invoice/cbc:TaxCurrencyCode/text\(\)\](.*)',r'\1\2',xpath)
-          path = _xpath[1:].split('/')
-          path = path[:2]+['1']+path[2:]
-          set_path_value(Dic, path, cell, datatype)
-          Dic['Invoice']['cac:TaxTotal'][1]['cbc:TaxAmount']['@currencyID'] = TaxCurrencyCode
+          _xpath = xpath.replace('[cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]','')
+          path = _xpath.split('/')
+          if 'cac:TaxSubtotal' in path:
+            path = ['Invoice','cac:TaxTotal','1','cac:TaxSubtotal']+[str(seq1)]+path[-1:]
+            CurrencyCode = TaxCurrencyCode
+            set_path_value(Dic, path, cell, datatype)
+          else:
+            path = ['Invoice','cac:TaxTotal','1']+path[-1:]
+            CurrencyCode = TaxCurrencyCode
+            set_path_value(Dic, path, cell, datatype)
         else:
           if 'cac:TaxTotal' in Dic['Invoice'] and isinstance(Dic['Invoice']['cac:TaxTotal'],list):
-            if DocumentCurrencyCode == record[header.index('ibt-117-1')]: loc = '0'
-            else: loc = '1'
+            if 'ibt-117-1' in header:
+              if DocumentCurrencyCode == record[header.index('ibt-117-1')]:
+                loc = '0'
+              else: loc = '1'
+            else:
+              loc = '0'
             pathList = xpath[1:].split('/')
             path = pathList[:2]+[loc]+pathList[2:]
             path = path[:4]+[seq0]+path[4:]
+            CurrencyCode = DocumentCurrencyCode
             set_path_value(Dic, path, cell, datatype)
           else:
             pathList = re.sub(base, '', xpath)[1:].split('/')
             path = base_path+pathList
+            CurrencyCode = DocumentCurrencyCode
             set_path_value(Dic, path, cell, datatype)
       elif 'ChargeIndicator=' in xpath:
         allowanceCharge = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)',r'\1',xpath)
@@ -340,6 +361,7 @@ def set_record(Dic, header, record):
           path.append('cbc:ChargeIndicator')
           set_path_value(Dic, path, chargeIndicator, 'Indicator')
           path = re.sub(r'(.*)\[cbc:ChargeIndicator=false\(\)\](.*)',r'\1\2',xpath)[1:].split('/')
+          CurrencyCode = DocumentCurrencyCode
           set_path_value(Dic, path, cell, datatype)
         else:
           if 'true'==chargeIndicator: seq = '1'
@@ -350,6 +372,7 @@ def set_record(Dic, header, record):
           xpath = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)',r'\1\3',xpath)
           pathList = re.sub(base, '', xpath)[1:].split('/')
           path = base_path+pathList[:1]+[seq]+pathList[1:]
+          CurrencyCode = DocumentCurrencyCode
           set_path_value(Dic, path, cell, datatype)
       else:
         pathL = None
@@ -374,6 +397,7 @@ def set_record(Dic, header, record):
           path = base_path+pathList
         else:
           path = pathList
+        CurrencyCode = DocumentCurrencyCode
         set_path_value(Dic, path, cell, datatype)
 
 if __name__ == '__main__':
@@ -418,6 +442,7 @@ if __name__ == '__main__':
   header_count = 0
   DocumentCurrencyCode = None
   TaxCurrencyCode = None
+  CurrencyCode = None
   Dic = defaultdict(type(''))
   Dic['Invoice'] = {}
   sortedDic = defaultdict(type(''))
@@ -427,18 +452,19 @@ if __name__ == '__main__':
   multipleBG = []
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,BT_ja,Definition,Definition_ja,Explanation,Explanation_ja,Example,Card,DataType,Section,Extension,SyntSort,XPath,Attributes,Rules,UBL_DataType,Cardinality,Alignment
-  # 0       1  2     3  4     5          6             7           8              9       10   11       12      13        14       15    16         17    18           19          20
-  COL_SemanticSort = 0
-  COL_ID = 1
-  COL_level = 2
-  COL_BT = 3
-  COL_BT_ja = 4
-  COL_card = 10
-  COL_datatype = 11
-  COL_SyntaxSort = 14
-  COL_xpath = 15
-  COL_ubl_card = 19
+  # seq,SemSort,ID,Level,BT,BT_ja,Definition,Definition_ja,Card,DataType,Section,Extension,SyntSort,XPath,minOccurs,maxOccurs 
+  # 0   1       2  3     4  5     6          7             8    9        10      11        12       13    14        15
+  COL_SemanticSort = 1
+  COL_ID = 2
+  COL_level = 3
+  COL_BT = 4
+  COL_BT_ja = 5
+  COL_card = 8
+  COL_datatype = 9
+  COL_SyntaxSort = 12
+  COL_xpath = 13
+  COL_min = 14
+  COL_max = 15
   if VERBOSE:
     print(f'*** XPath file {pint_file}')
   with open(pint_file, encoding='utf-8', newline='') as f0:
@@ -454,10 +480,6 @@ if __name__ == '__main__':
         if not xpath:
           xpath = '/'+id
         if len(v) > COL_xpath and '/' in xpath:
-          # if "[not(cbc:DocumentTypeCode='130')]" in xpath:
-          #   xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
-          # elif "[cbc:DocumentTypeCode='130']" in xpath:
-          #   xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
           if v[COL_BT]: BT = v[COL_BT]
           else: BT = None
           if v[COL_BT_ja]: BT_ja = v[COL_BT_ja]
@@ -465,8 +487,9 @@ if __name__ == '__main__':
           level = v[COL_level]
           card = ''+v[COL_card].strip()
           datatype = ''+v[COL_datatype].strip()
-          ubl_card = ''+v[COL_ubl_card].strip()
-          data = {'syntaxSort':syntaxSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'ubl_card':ubl_card,'xpath':xpath}
+          min = ''+v[COL_min].strip()
+          max = ''+v[COL_max].strip()
+          data = {'syntaxSort':syntaxSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath,'min':min,'max':max}
           pintDict[id] = data
 
   if VERBOSE:
@@ -478,7 +501,7 @@ if __name__ == '__main__':
     i = 0
     for record in reader:
       id = record[0]
-      if id:
+      if id and id in pintDict: #\ufeff
         data = pintDict[id]
         syntaxSort = data['syntaxSort']
         if 'ibt-005'==id:
@@ -487,10 +510,13 @@ if __name__ == '__main__':
           TaxCurrencyCode = record[4]
       else:
         syntaxSort = '000'+str(i)
+        if '\ufeff'==id:
+          id = ''
         i += 1
       row = [syntaxSort,id]+record[4:]
       rows.append(row)
-  boughLvl = int(str(i/3)[:-2])
+
+  boughLvl = math.ceil(i/3)
 
   # https://www.geeksforgeeks.org/ways-sort-list-dictionaries-values-python-using-itemgetter/ 
   # https://www.delftstack.com/ja/howto/python/sort-list-of-lists-in-python/
@@ -501,17 +527,21 @@ if __name__ == '__main__':
     id = row[0]
     if not id: continue
     data = pintDict[id]
-    xpath = data['xpath']
     level = data['level']
     card = data['card']
-    if re.match(r'^/Invoice/[^\/]*$',xpath) or '1'==level:
+    xpath = data['xpath']
+    if re.match(r'.*\[cbc:TaxAmount/@currencyID.*\]',xpath):
+      xpath = xpath.replace('/Invoice/cbc:DocumentCurrencyCode/text()',"'"+DocumentCurrencyCode+"'")
+      xpath = xpath.replace('/Invoice/cbc:TaxCurrencyCode/text()',"'"+TaxCurrencyCode+"'")
+      elementId = re.sub(r'^/Invoice/(.*\])(\/.*)?',r'\1',xpath)
+      if not elementId in pintL1:
+        pintL1.append(elementId)
+    elif re.match(r'^/Invoice/[^\/]*$',xpath) or '1'==level:
       elementId = re.sub(r'^/Invoice/([^\/]*)(\/.*)?',r'\1',xpath)
       pintL1.append(elementId)
-
   for k,data in pintDict.items():
     xpath = data['xpath']
     card = data['card']
-    ubl_card = data['ubl_card']
     if 'Invoice'==xpath[1:8] and 'n'==card[-1:] and re.match(r'^.*/(cac:.+)+(cbc:.+)?$',xpath):
       elementId = re.sub(r'^(.*)/(cbc:.+)?$',r'\1',xpath)
       elementIds = elementId[9:].split('/')
@@ -546,10 +576,6 @@ if __name__ == '__main__':
 
   for i in range(5):
     Dic = trimmer(Dic)
-
-  for i in range(len(Dic['Invoice']['cac:TaxTotal'])):
-    for j in range(len(Dic['Invoice']['cac:TaxTotal'][i])):
-      Dic['Invoice']['cac:TaxTotal'][i]['cac:TaxSubtotal'][j]['cbc:TaxableAmount']['@currencyID'] = Dic['Invoice']['cac:TaxTotal'][i]['cac:TaxSubtotal'][j]['cbc:TaxAmount']['@currencyID'] 
 
   for elementId in pintL1:
     elementName = re.sub(r'^([^\[]*)(\[.*\])?',r'\1',elementId)

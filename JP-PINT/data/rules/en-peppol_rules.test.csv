@@ -1,3 +1,0 @@
-﻿context,id,flag,test,text
-cbc:EndpointID[@schemeID = '0088'] | cac:PartyIdentification/cbc:ID[@schemeID = '0088'] | cbc:CompanyID[@schemeID = '0088'],PEPPOL-COMMON-R040,fatal,"matches(normalize-space(), '^[0-9]+$') and u:gln(normalize-space())",GLN must have a valid format according to GS1 rules.
-cbc:EmbeddedDocumentBinaryObject[@mimeCode],PEPPOL-EN16931-CL001,fatal, some $code in $MIMECODE satisfies @mimeCode = $code,Mime code must be according to subset of IANA code list.

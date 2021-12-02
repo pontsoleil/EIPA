@@ -50,7 +50,8 @@ def file_path(pathname):
     new_path = os.path.join(dir, pathname)
     return new_path
 
-def dict_to_tsv(tsv, root):
+def dict_to_tsv(root):
+  global tsv
   def setup_record(ct, id, flag, test, text):
     test = test.strip()
     test = ' '.join(test.split())
@@ -65,7 +66,8 @@ def dict_to_tsv(tsv, root):
     record = [ct, id, flag, test, text, groups, terms]
     return record
 
-  def process_pattern(tsv, pattern):
+  def process_pattern(pattern):
+    global tsv
     rules = pattern['sch:rule']
     if isinstance(rules, dict):
       try:
@@ -101,12 +103,12 @@ def dict_to_tsv(tsv, root):
   tsv.append(record)
   if 'sch:pattern' in root:
     pattern = root['sch:pattern']
-    tsv = process_pattern(tsv, pattern)
+    process_pattern(pattern)
   elif root['sch:schema'] and isinstance(root['sch:schema'], dict):
     for tag, body in root['sch:schema'].items():
       if 'sch:pattern' == tag:
-        for pattern in body:
-          tsv = process_pattern(tsv, pattern)
+        for data in body:
+          process_pattern(data)
           # rules = pattern['sch:rule']
           # if isinstance(rules, dict):
           #   try:
@@ -139,7 +141,7 @@ def dict_to_tsv(tsv, root):
 
 if __name__ == '__main__':
   # Create the parser
-  parser = argparse.ArgumentParser(prog='invoice2tsv',
+  parser = argparse.ArgumentParser(prog='schematron2tsv',
                                   usage='%(prog)s [options] infile -o outfile',
                                   description='電子インボイスXMLファイルをTSVファイルに変換')
   # Add the arguments
@@ -175,7 +177,7 @@ if __name__ == '__main__':
   dic2 = json.loads(dicJson)
 
   tsv = []
-  dict_to_tsv(tsv, dic2)
+  dict_to_tsv(dic2)
 
   with open(out_file, 'w') as f:
     writer = csv.writer(f, delimiter='\t')

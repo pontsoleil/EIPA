@@ -508,7 +508,7 @@ if __name__ == '__main__':
 	with open(in_file,'r',encoding='utf-8') as f:
 		reader = csv.DictReader(f,keys)
 		header = next(reader)
-		header = next(reader)
+		# header = next(reader)
 		for row in reader:
 			csv_list.append(row)
 

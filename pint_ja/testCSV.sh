@@ -29,4 +29,4 @@
 ./csv2invoice data/out/ubl-tc434-example9.csv -o data/out/ubl-tc434-example9.xml -e Shift_JIS
 
 ./csv2invoice data/out/Snippet-full-EIPA.csv -o data/out/Snippet-full-EIPA.xml -e Shift_JIS
-
+./csv2invoice data/in/AWS_Tax_Invoice202110.csv -o data/out/AWS_Tax_Invoice202110.xml -e UTF-8

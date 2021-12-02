@@ -59,6 +59,11 @@ def file_path(pathname):
     return new_path
 
 def formatXPath(xpath):
+  if re.match(r'.*\[cbc:TaxAmount/@currencyID.*\]',xpath):
+    xpath = re.sub(r'\[cbc:TaxAmount/@currencyID=(.*)\]','/cbc:TaxAmount[@currencyID=\\1]/..',xpath)
+    xpath = xpath.replace('/Invoice/cbc:DocumentCurrencyCode/text()',"'"+DocumentCurrencyCode+"'")
+    xpath = xpath.replace('/Invoice/cbc:TaxCurrencyCode/text()',"'"+TaxCurrencyCode+"'")
+  xpath = re.sub(r'/Invoice','/{'+ns['ubl-invoice']+'}Invoice',xpath)
   xpath = re.sub(r'cac:','{'+ns['cac']+'}',xpath)
   xpath = re.sub(r'cbc:','{'+ns['cbc']+'}',xpath)
   if re.match(r'^.*/@[a-zA-Z]*$',xpath):
@@ -117,21 +122,18 @@ def fillData(parent,parentXPath,i,n,count):
         else:
           text = element.findtext('.')
     else:
-      if re.match(r'{.*}TaxAmount\[@.*\]',xpath):
-        text = root.findtext(xpath)
+      if parentXPath:
+        _xpath = xpath.replace(parentXPath+'/','')
       else:
-        if parentXPath:
-          _xpath = xpath.replace(parentXPath+'/','')
+        _xpath = xpath
+      if 'TaxSubtotal' in _xpath:
+        if not n:
+          text = root.findtext(_xpath)
         else:
-          _xpath = xpath
-        if 'TaxSubtotal' in xpath:
-          if not n:
-            text = root.findtext(xpath)
-          else:
-            text = parent.findtext(_xpath)
-            if not text:
-              text = root.findtext(parentXPath+'['+str(n)+']/'+_xpath)
-        else:
+          text = parent.findtext(_xpath)
+          if not text:
+            text = root.findtext(parentXPath+'['+str(n)+']/'+_xpath)
+      else:
           if not id in alignment:
             text = parent.findtext(_xpath)
           else:
@@ -228,7 +230,7 @@ def fillGroup(parent,parentPath,i,n,parentCount,boughLvl):
     xpath = xpath[9:]
     xpath = formatXPath(xpath)
     if parentPath:
-      _xpath = re.sub(parentPath+'/', '', xpath)
+      _xpath = xpath.replace(parentPath+'/', '')
     if re.match(r'ibt-',id):
       return None
     elif re.match(r'ibg-',id):
@@ -302,7 +304,7 @@ if __name__=='__main__':
 
   args = parser.parse_args()
   in_file = file_path(args.inFile)
-
+  pre, ext = os.path.splitext(in_file)
   if args.outfile:
     out_file = args.outfile.lstrip()
     out_file = file_path(out_file)
@@ -346,18 +348,19 @@ if __name__=='__main__':
     "{"+ns['cac']+"}Party/{"+ns['cac']+"}PartyTaxScheme/{"+ns['cac']+"}TaxScheme/{"+ns['cbc']+"}ID")
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,BT_ja,Definition,Definition_ja,Explanation,Explanation_ja,Example,Card,DataType,Section,Extension,SyntSort,XPath,Attributes,Rules,UBL_DataType,Cardinality,Alignment
-  # 0       1  2     3  4     5          6             7           8              9       10   11       12      13        14       15    16         17    18           19          20
-  COL_SemanticSort = 0
-  COL_ID = 1
-  COL_level = 2
-  COL_BT = 3
-  COL_BT_ja = 4
-  COL_card = 10
-  COL_datatype = 11
-  COL_SyntaxSort = 14
-  COL_xpath = 15
-  COL_alignment = 20
+  # seq,SemSort,ID,Level,BT,BT_ja,Definition,Definition_ja,Card,DataType,Section,Extension,SyntSort,XPath,minOccurs,maxOccurs 
+  # 0   1       2  3     4  5     6          7             8    9        10      11        12       13    14        15
+  COL_SemanticSort = 1
+  COL_ID = 2
+  COL_level = 3
+  COL_BT = 4
+  COL_BT_ja = 5
+  COL_card = 8
+  COL_datatype = 9
+  COL_SyntaxSort = 12
+  COL_xpath = 13
+  COL_min = 14
+  COL_max = 15
   if verbose: print(f'*** XPath file {pint_file}')
   with open(pint_file,encoding='utf-8',newline='') as f0:
     reader = csv.reader(f0) #,delimiter='\t')
@@ -393,8 +396,9 @@ if __name__=='__main__':
           level = v[COL_level]
           card = ''+v[COL_card].strip()
           datatype = ''+v[COL_datatype].strip()
-          alignment = ''+v[COL_alignment].strip()
-          data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath,'alignment':alignment}
+          min = ''+v[COL_min].strip()
+          max = ''+v[COL_max].strip()
+          data = {'semSort':semanticSort,'id':id,'level':level,'BT':BT,'BT_ja':BT_ja,'card':card,'datatype':datatype,'xpath':xpath,'min':min,'max':max}
           pintList.append(data)
           pintDict[semanticSort] = data
           pintSemSort[id] = semanticSort
@@ -462,7 +466,7 @@ if __name__=='__main__':
       if not elements or 0==len(elements):
         count = ''          
       elif len(elements) > 0:
-        if len(elements) > 1 or id in ['ibg-23','ibg-25']:
+        if len(elements) > 1 or id in ['ibg-23','ibg-25','ibg-37']:
           count = 0
           n = updateBough(n,i,count,boughLvl)
         else:
