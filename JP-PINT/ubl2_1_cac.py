@@ -1,2011 +1,2011 @@
-cac = {
+CAC = {
     "element": {
         "AcceptanceTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "AccessoryRelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "AccountingContact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "AccountingCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "AccountingSupplierParty": {
-            "@type": "SupplierPartyType"
+            "type": "SupplierPartyType"
         },
         "ActivityDataLine": {
-            "@type": "ActivityDataLineType"
+            "type": "ActivityDataLineType"
         },
         "ActivityFinalLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "ActivityOriginLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "ActivityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ActivityProperty": {
-            "@type": "ActivityPropertyType"
+            "type": "ActivityPropertyType"
         },
         "ActualArrivalTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "ActualDepartureTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "ActualPackage": {
-            "@type": "PackageType"
+            "type": "PackageType"
         },
         "ActualPickupTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "ActualWaypointTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "AdditionalCommodityClassification": {
-            "@type": "CommodityClassificationType"
+            "type": "CommodityClassificationType"
         },
         "AdditionalDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "AdditionalDocumentResponse": {
-            "@type": "DocumentResponseType"
+            "type": "DocumentResponseType"
         },
         "AdditionalInformationParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "AdditionalItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "AdditionalItemProperty": {
-            "@type": "ItemPropertyType"
+            "type": "ItemPropertyType"
         },
         "AdditionalQualifyingParty": {
-            "@type": "QualifyingPartyType"
+            "type": "QualifyingPartyType"
         },
         "AdditionalTemperature": {
-            "@type": "TemperatureType"
+            "type": "TemperatureType"
         },
         "AdditionalTransportationService": {
-            "@type": "TransportationServiceType"
+            "type": "TransportationServiceType"
         },
         "Address": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "AddressLine": {
-            "@type": "AddressLineType"
+            "type": "AddressLineType"
         },
         "AgentParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "AirTransport": {
-            "@type": "AirTransportType"
+            "type": "AirTransportType"
         },
         "AllowanceCharge": {
-            "@type": "AllowanceChargeType"
+            "type": "AllowanceChargeType"
         },
         "AllowedSubcontractTerms": {
-            "@type": "SubcontractTermsType"
+            "type": "SubcontractTermsType"
         },
         "AlternativeConditionPrice": {
-            "@type": "PriceType"
+            "type": "PriceType"
         },
         "AlternativeDeliveryLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "AlternativeLineItem": {
-            "@type": "LineItemType"
+            "type": "LineItemType"
         },
         "AnticipatedMonetaryTotal": {
-            "@type": "MonetaryTotalType"
+            "type": "MonetaryTotalType"
         },
         "AppealInformationParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "AppealReceiverParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "AppealTerms": {
-            "@type": "AppealTermsType"
+            "type": "AppealTermsType"
         },
         "ApplicableAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "ApplicablePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ApplicableRegulation": {
-            "@type": "RegulationType"
+            "type": "RegulationType"
         },
         "ApplicableTaxCategory": {
-            "@type": "TaxCategoryType"
+            "type": "TaxCategoryType"
         },
         "ApplicableTerritoryAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "ApplicableTransportMeans": {
-            "@type": "TransportMeansType"
+            "type": "TransportMeansType"
         },
         "AtLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "AttachedTransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "Attachment": {
-            "@type": "AttachmentType"
+            "type": "AttachmentType"
         },
         "AuctionTerms": {
-            "@type": "AuctionTermsType"
+            "type": "AuctionTermsType"
         },
         "AvailabilityTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "AwardedTenderedProject": {
-            "@type": "TenderedProjectType"
+            "type": "TenderedProjectType"
         },
         "AwardingCriterion": {
-            "@type": "AwardingCriterionType"
+            "type": "AwardingCriterionType"
         },
         "AwardingCriterionResponse": {
-            "@type": "AwardingCriterionResponseType"
+            "type": "AwardingCriterionResponseType"
         },
         "AwardingTerms": {
-            "@type": "AwardingTermsType"
+            "type": "AwardingTermsType"
         },
         "BeneficiaryParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "BillOfLadingHolderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "BillToParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "BillingReference": {
-            "@type": "BillingReferenceType"
+            "type": "BillingReferenceType"
         },
         "BillingReferenceLine": {
-            "@type": "BillingReferenceLineType"
+            "type": "BillingReferenceLineType"
         },
         "BonusPaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "Branch": {
-            "@type": "BranchType"
+            "type": "BranchType"
         },
         "BudgetAccount": {
-            "@type": "BudgetAccountType"
+            "type": "BudgetAccountType"
         },
         "BudgetAccountLine": {
-            "@type": "BudgetAccountLineType"
+            "type": "BudgetAccountLineType"
         },
         "BusinessClassificationScheme": {
-            "@type": "ClassificationSchemeType"
+            "type": "ClassificationSchemeType"
         },
         "BuyerContact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "BuyerCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "BuyerProposedSubstituteLineItem": {
-            "@type": "LineItemType"
+            "type": "LineItemType"
         },
         "BuyersItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "CallDuty": {
-            "@type": "DutyType"
+            "type": "DutyType"
         },
         "CallForTendersDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "CallForTendersLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "Capability": {
-            "@type": "CapabilityType"
+            "type": "CapabilityType"
         },
         "CardAccount": {
-            "@type": "CardAccountType"
+            "type": "CardAccountType"
         },
         "CarrierParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "CatalogueDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "CatalogueItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "CatalogueItemSpecificationUpdateLine": {
-            "@type": "CatalogueItemSpecificationUpdateLineType"
+            "type": "CatalogueItemSpecificationUpdateLineType"
         },
         "CatalogueLine": {
-            "@type": "CatalogueLineType"
+            "type": "CatalogueLineType"
         },
         "CatalogueLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "CataloguePricingUpdateLine": {
-            "@type": "CataloguePricingUpdateLineType"
+            "type": "CataloguePricingUpdateLineType"
         },
         "CatalogueReference": {
-            "@type": "CatalogueReferenceType"
+            "type": "CatalogueReferenceType"
         },
         "CatalogueRequestLine": {
-            "@type": "CatalogueRequestLineType"
+            "type": "CatalogueRequestLineType"
         },
         "CategorizesClassificationCategory": {
-            "@type": "ClassificationCategoryType"
+            "type": "ClassificationCategoryType"
         },
         "Certificate": {
-            "@type": "CertificateType"
+            "type": "CertificateType"
         },
         "CertificateOfOriginApplication": {
-            "@type": "CertificateOfOriginApplicationType"
+            "type": "CertificateOfOriginApplicationType"
         },
         "ChildConsignment": {
-            "@type": "ConsignmentType"
+            "type": "ConsignmentType"
         },
         "ClassificationCategory": {
-            "@type": "ClassificationCategoryType"
+            "type": "ClassificationCategoryType"
         },
         "ClassificationScheme": {
-            "@type": "ClassificationSchemeType"
+            "type": "ClassificationSchemeType"
         },
         "ClassifiedTaxCategory": {
-            "@type": "TaxCategoryType"
+            "type": "TaxCategoryType"
         },
         "Clause": {
-            "@type": "ClauseType"
+            "type": "ClauseType"
         },
         "CollectPaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "CollectedPayment": {
-            "@type": "PaymentType"
+            "type": "PaymentType"
         },
         "CommissionPaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "CommodityClassification": {
-            "@type": "CommodityClassificationType"
+            "type": "CommodityClassificationType"
         },
         "Communication": {
-            "@type": "CommunicationType"
+            "type": "CommunicationType"
         },
         "ComplementaryRelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "CompletedTask": {
-            "@type": "CompletedTaskType"
+            "type": "CompletedTaskType"
         },
         "ComponentRelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "Condition": {
-            "@type": "ConditionType"
+            "type": "ConditionType"
         },
         "ConsigneeParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "Consignment": {
-            "@type": "ConsignmentType"
+            "type": "ConsignmentType"
         },
         "ConsignorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ConsolidatedShipment": {
-            "@type": "ShipmentType"
+            "type": "ShipmentType"
         },
         "ConstitutionPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "Consumption": {
-            "@type": "ConsumptionType"
+            "type": "ConsumptionType"
         },
         "ConsumptionAverage": {
-            "@type": "ConsumptionAverageType"
+            "type": "ConsumptionAverageType"
         },
         "ConsumptionCorrection": {
-            "@type": "ConsumptionCorrectionType"
+            "type": "ConsumptionCorrectionType"
         },
         "ConsumptionHistory": {
-            "@type": "ConsumptionHistoryType"
+            "type": "ConsumptionHistoryType"
         },
         "ConsumptionLine": {
-            "@type": "ConsumptionLineType"
+            "type": "ConsumptionLineType"
         },
         "ConsumptionPoint": {
-            "@type": "ConsumptionPointType"
+            "type": "ConsumptionPointType"
         },
         "ConsumptionReport": {
-            "@type": "ConsumptionReportType"
+            "type": "ConsumptionReportType"
         },
         "ConsumptionReportReference": {
-            "@type": "ConsumptionReportReferenceType"
+            "type": "ConsumptionReportReferenceType"
         },
         "Contact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "ContactParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ContainedGoodsItem": {
-            "@type": "GoodsItemType"
+            "type": "GoodsItemType"
         },
         "ContainedInTransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "ContainedPackage": {
-            "@type": "PackageType"
+            "type": "PackageType"
         },
         "ContainingPackage": {
-            "@type": "PackageType"
+            "type": "PackageType"
         },
         "ContainingTransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "Contract": {
-            "@type": "ContractType"
+            "type": "ContractType"
         },
         "ContractAcceptancePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ContractDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ContractExecutionRequirement": {
-            "@type": "ContractExecutionRequirementType"
+            "type": "ContractExecutionRequirementType"
         },
         "ContractExtension": {
-            "@type": "ContractExtensionType"
+            "type": "ContractExtensionType"
         },
         "ContractFormalizationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ContractResponsibleParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ContractingActivity": {
-            "@type": "ContractingActivityType"
+            "type": "ContractingActivityType"
         },
         "ContractingParty": {
-            "@type": "ContractingPartyType"
+            "type": "ContractingPartyType"
         },
         "ContractingPartyType": {
-            "@type": "ContractingPartyTypeType"
+            "type": "ContractingPartyTypeType"
         },
         "ContractorCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "ContractualDelivery": {
-            "@type": "DeliveryType"
+            "type": "DeliveryType"
         },
         "ContractualDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "CorporateRegistrationScheme": {
-            "@type": "CorporateRegistrationSchemeType"
+            "type": "CorporateRegistrationSchemeType"
         },
         "Country": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "CreditAccount": {
-            "@type": "CreditAccountType"
+            "type": "CreditAccountType"
         },
         "CreditNoteDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "CreditNoteLine": {
-            "@type": "CreditNoteLineType"
+            "type": "CreditNoteLineType"
         },
         "CrewMemberPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "CurrentStatus": {
-            "@type": "StatusType"
+            "type": "StatusType"
         },
         "CustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "CustomsAgentParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "CustomsDeclaration": {
-            "@type": "CustomsDeclarationType"
+            "type": "CustomsDeclarationType"
         },
         "DebitNoteDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "DebitNoteLine": {
-            "@type": "DebitNoteLineType"
+            "type": "DebitNoteLineType"
         },
         "Declaration": {
-            "@type": "DeclarationType"
+            "type": "DeclarationType"
         },
         "DefaultLanguage": {
-            "@type": "LanguageType"
+            "type": "LanguageType"
         },
         "DeletedCatalogueReference": {
-            "@type": "CatalogueReferenceType"
+            "type": "CatalogueReferenceType"
         },
         "Delivery": {
-            "@type": "DeliveryType"
+            "type": "DeliveryType"
         },
         "DeliveryAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "DeliveryContact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "DeliveryCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "DeliveryLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "DeliveryParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "DeliveryPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "DeliveryTerms": {
-            "@type": "DeliveryTermsType"
+            "type": "DeliveryTermsType"
         },
         "DeliveryTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "DeliveryUnit": {
-            "@type": "DeliveryUnitType"
+            "type": "DeliveryUnitType"
         },
         "DependentLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "DependentPriceReference": {
-            "@type": "DependentPriceReferenceType"
+            "type": "DependentPriceReferenceType"
         },
         "Despatch": {
-            "@type": "DespatchType"
+            "type": "DespatchType"
         },
         "DespatchAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "DespatchContact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "DespatchDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "DespatchLine": {
-            "@type": "DespatchLineType"
+            "type": "DespatchLineType"
         },
         "DespatchLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "DespatchLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "DespatchParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "DespatchSupplierParty": {
-            "@type": "SupplierPartyType"
+            "type": "SupplierPartyType"
         },
         "DestinationCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "DetentionTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "DigitalSignatureAttachment": {
-            "@type": "AttachmentType"
+            "type": "AttachmentType"
         },
         "Dimension": {
-            "@type": "DimensionType"
+            "type": "DimensionType"
         },
         "DisbursementPaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "DischargeTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "DiscrepancyResponse": {
-            "@type": "ResponseType"
+            "type": "ResponseType"
         },
         "DocumentAvailabilityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "DocumentDistribution": {
-            "@type": "DocumentDistributionType"
+            "type": "DocumentDistributionType"
         },
         "DocumentProviderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "DocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "DocumentResponse": {
-            "@type": "DocumentResponseType"
+            "type": "DocumentResponseType"
         },
         "DocumentTenderRequirement": {
-            "@type": "TenderRequirementType"
+            "type": "TenderRequirementType"
         },
         "DriverPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "DropoffTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "DurationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "Duty": {
-            "@type": "DutyType"
+            "type": "DutyType"
         },
         "EconomicOperatorRole": {
-            "@type": "EconomicOperatorRoleType"
+            "type": "EconomicOperatorRoleType"
         },
         "EconomicOperatorShortList": {
-            "@type": "EconomicOperatorShortListType"
+            "type": "EconomicOperatorShortListType"
         },
         "EffectivePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "EmbassyEndorsement": {
-            "@type": "EndorsementType"
+            "type": "EndorsementType"
         },
         "EmergencyTemperature": {
-            "@type": "TemperatureType"
+            "type": "TemperatureType"
         },
         "EmissionCalculationMethod": {
-            "@type": "EmissionCalculationMethodType"
+            "type": "EmissionCalculationMethodType"
         },
         "EmploymentLegislationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "Endorsement": {
-            "@type": "EndorsementType"
+            "type": "EndorsementType"
         },
         "EndorserParty": {
-            "@type": "EndorserPartyType"
+            "type": "EndorserPartyType"
         },
         "EnergyTaxReport": {
-            "@type": "EnergyTaxReportType"
+            "type": "EnergyTaxReportType"
         },
         "EnergyWaterConsumptionCorrection": {
-            "@type": "ConsumptionCorrectionType"
+            "type": "ConsumptionCorrectionType"
         },
         "EnergyWaterSupply": {
-            "@type": "EnergyWaterSupplyType"
+            "type": "EnergyWaterSupplyType"
         },
         "EnvironmentalEmission": {
-            "@type": "EnvironmentalEmissionType"
+            "type": "EnvironmentalEmissionType"
         },
         "EnvironmentalLegislationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "EstimatedArrivalTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "EstimatedDeliveryPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "EstimatedDepartureTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "EstimatedDespatchPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "EstimatedDurationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "EstimatedTransitPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "EvaluationCriterion": {
-            "@type": "EvaluationCriterionType"
+            "type": "EvaluationCriterionType"
         },
         "Event": {
-            "@type": "EventType"
+            "type": "EventType"
         },
         "EventComment": {
-            "@type": "EventCommentType"
+            "type": "EventCommentType"
         },
         "EventLineItem": {
-            "@type": "EventLineItemType"
+            "type": "EventLineItemType"
         },
         "EventTactic": {
-            "@type": "EventTacticType"
+            "type": "EventTacticType"
         },
         "EventTacticEnumeration": {
-            "@type": "EventTacticEnumerationType"
+            "type": "EventTacticEnumerationType"
         },
         "Evidence": {
-            "@type": "EvidenceType"
+            "type": "EvidenceType"
         },
         "EvidenceDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "EvidenceIssuingParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "EvidenceSupplied": {
-            "@type": "EvidenceSuppliedType"
+            "type": "EvidenceSuppliedType"
         },
         "ExaminationTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "ExceptionCriteriaLine": {
-            "@type": "ExceptionCriteriaLineType"
+            "type": "ExceptionCriteriaLineType"
         },
         "ExceptionNotificationLine": {
-            "@type": "ExceptionNotificationLineType"
+            "type": "ExceptionNotificationLineType"
         },
         "ExceptionObservationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ExchangeRate": {
-            "@type": "ExchangeRateType"
+            "type": "ExchangeRateType"
         },
         "ExportCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "ExportationTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "ExporterParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ExternalReference": {
-            "@type": "ExternalReferenceType"
+            "type": "ExternalReferenceType"
         },
         "ExtraAllowanceCharge": {
-            "@type": "AllowanceChargeType"
+            "type": "AllowanceChargeType"
         },
         "FinalDeliveryParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "FinalDeliveryTransportationService": {
-            "@type": "TransportationServiceType"
+            "type": "TransportationServiceType"
         },
         "FinalDestinationCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "FinalFinancialGuarantee": {
-            "@type": "FinancialGuaranteeType"
+            "type": "FinancialGuaranteeType"
         },
         "FinancialAccount": {
-            "@type": "FinancialAccountType"
+            "type": "FinancialAccountType"
         },
         "FinancialCapability": {
-            "@type": "CapabilityType"
+            "type": "CapabilityType"
         },
         "FinancialEvaluationCriterion": {
-            "@type": "EvaluationCriterionType"
+            "type": "EvaluationCriterionType"
         },
         "FinancialGuarantee": {
-            "@type": "FinancialGuaranteeType"
+            "type": "FinancialGuaranteeType"
         },
         "FinancialInstitution": {
-            "@type": "FinancialInstitutionType"
+            "type": "FinancialInstitutionType"
         },
         "FinancialInstitutionBranch": {
-            "@type": "BranchType"
+            "type": "BranchType"
         },
         "FinancingFinancialAccount": {
-            "@type": "FinancialAccountType"
+            "type": "FinancialAccountType"
         },
         "FinancingParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "FirstArrivalPortLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "FiscalLegislationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "FlashpointTemperature": {
-            "@type": "TemperatureType"
+            "type": "TemperatureType"
         },
         "FloorSpaceMeasurementDimension": {
-            "@type": "DimensionType"
+            "type": "DimensionType"
         },
         "ForecastException": {
-            "@type": "ForecastExceptionType"
+            "type": "ForecastExceptionType"
         },
         "ForecastExceptionCriterionLine": {
-            "@type": "ForecastExceptionCriterionLineType"
+            "type": "ForecastExceptionCriterionLineType"
         },
         "ForecastLine": {
-            "@type": "ForecastLineType"
+            "type": "ForecastLineType"
         },
         "ForecastPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ForecastRevisionLine": {
-            "@type": "ForecastRevisionLineType"
+            "type": "ForecastRevisionLineType"
         },
         "ForeignExchangeContract": {
-            "@type": "ContractType"
+            "type": "ContractType"
         },
         "FrameworkAgreement": {
-            "@type": "FrameworkAgreementType"
+            "type": "FrameworkAgreementType"
         },
         "FreightAllowanceCharge": {
-            "@type": "AllowanceChargeType"
+            "type": "AllowanceChargeType"
         },
         "FreightChargeLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "FreightForwarderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "FrequencyPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "FromLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "GoodsItem": {
-            "@type": "GoodsItemType"
+            "type": "GoodsItemType"
         },
         "GoodsItemContainer": {
-            "@type": "GoodsItemContainerType"
+            "type": "GoodsItemContainerType"
         },
         "GuaranteeDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "GuarantorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "GuidanceDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "HandlingTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "HandlingUnitDespatchLine": {
-            "@type": "DespatchLineType"
+            "type": "DespatchLineType"
         },
         "HaulageTradingTerms": {
-            "@type": "TradingTermsType"
+            "type": "TradingTermsType"
         },
         "HazardousGoodsTransit": {
-            "@type": "HazardousGoodsTransitType"
+            "type": "HazardousGoodsTransitType"
         },
         "HazardousItem": {
-            "@type": "HazardousItemType"
+            "type": "HazardousItemType"
         },
         "HazardousItemNotificationParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "HeadOfficeParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "IdentityDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ImmobilizedSecurity": {
-            "@type": "ImmobilizedSecurityType"
+            "type": "ImmobilizedSecurityType"
         },
         "ImporterParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "InformationContentProviderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "InstructionForReturnsLine": {
-            "@type": "InstructionForReturnsLineType"
+            "type": "InstructionForReturnsLineType"
         },
         "InsuranceEndorsement": {
-            "@type": "EndorsementType"
+            "type": "EndorsementType"
         },
         "InsuranceParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "InterestedParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "InterestedProcurementProjectLot": {
-            "@type": "ProcurementProjectLotType"
+            "type": "ProcurementProjectLotType"
         },
         "InventoryLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "InventoryPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "InventoryReportLine": {
-            "@type": "InventoryReportLineType"
+            "type": "InventoryReportLineType"
         },
         "InventoryReportingParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "InvitationSubmissionPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "InvoiceDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "InvoiceLine": {
-            "@type": "InvoiceLineType"
+            "type": "InvoiceLineType"
         },
         "InvoicePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "IssuerEndorsement": {
-            "@type": "EndorsementType"
+            "type": "EndorsementType"
         },
         "IssuerParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "IssuingCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "Item": {
-            "@type": "ItemType"
+            "type": "ItemType"
         },
         "ItemComparison": {
-            "@type": "ItemComparisonType"
+            "type": "ItemComparisonType"
         },
         "ItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "ItemInformationRequestLine": {
-            "@type": "ItemInformationRequestLineType"
+            "type": "ItemInformationRequestLineType"
         },
         "ItemInstance": {
-            "@type": "ItemInstanceType"
+            "type": "ItemInstanceType"
         },
         "ItemLocationQuantity": {
-            "@type": "ItemLocationQuantityType"
+            "type": "ItemLocationQuantityType"
         },
         "ItemManagementProfile": {
-            "@type": "ItemManagementProfileType"
+            "type": "ItemManagementProfileType"
         },
         "ItemPriceExtension": {
-            "@type": "PriceExtensionType"
+            "type": "PriceExtensionType"
         },
         "ItemProperty": {
-            "@type": "ItemPropertyType"
+            "type": "ItemPropertyType"
         },
         "ItemPropertyGroup": {
-            "@type": "ItemPropertyGroupType"
+            "type": "ItemPropertyGroupType"
         },
         "ItemPropertyRange": {
-            "@type": "ItemPropertyRangeType"
+            "type": "ItemPropertyRangeType"
         },
         "ItemSpecificationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "JurisdictionRegionAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "KeywordItemProperty": {
-            "@type": "ItemPropertyType"
+            "type": "ItemPropertyType"
         },
         "Language": {
-            "@type": "LanguageType"
+            "type": "LanguageType"
         },
         "LastExitPortLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "LegalDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "LegalMonetaryTotal": {
-            "@type": "MonetaryTotalType"
+            "type": "MonetaryTotalType"
         },
         "LineItem": {
-            "@type": "LineItemType"
+            "type": "LineItemType"
         },
         "LineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "LineResponse": {
-            "@type": "LineResponseType"
+            "type": "LineResponseType"
         },
         "LineValidityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "LoadingLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "LoadingPortLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "LoadingProofParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "LoadingTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "Location": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "LocationAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "LocationCoordinate": {
-            "@type": "LocationCoordinateType"
+            "type": "LocationCoordinateType"
         },
         "LogisticsOperatorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "LotIdentification": {
-            "@type": "LotIdentificationType"
+            "type": "LotIdentificationType"
         },
         "MainCarriageShipmentStage": {
-            "@type": "ShipmentStageType"
+            "type": "ShipmentStageType"
         },
         "MainCommodityClassification": {
-            "@type": "CommodityClassificationType"
+            "type": "CommodityClassificationType"
         },
         "MainOnAccountPayment": {
-            "@type": "OnAccountPaymentType"
+            "type": "OnAccountPaymentType"
         },
         "MainPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "MainQualifyingParty": {
-            "@type": "QualifyingPartyType"
+            "type": "QualifyingPartyType"
         },
         "MainTransportationService": {
-            "@type": "TransportationServiceType"
+            "type": "TransportationServiceType"
         },
         "MandateDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ManufacturerParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ManufacturersItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "MaritimeTransport": {
-            "@type": "MaritimeTransportType"
+            "type": "MaritimeTransportType"
         },
         "MasterPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "MaximumDeliveryUnit": {
-            "@type": "DeliveryUnitType"
+            "type": "DeliveryUnitType"
         },
         "MaximumTemperature": {
-            "@type": "TemperatureType"
+            "type": "TemperatureType"
         },
         "MeasurementDimension": {
-            "@type": "DimensionType"
+            "type": "DimensionType"
         },
         "MeasurementFromLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "MeasurementToLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "MediationParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "Meter": {
-            "@type": "MeterType"
+            "type": "MeterType"
         },
         "MeterProperty": {
-            "@type": "MeterPropertyType"
+            "type": "MeterPropertyType"
         },
         "MeterReading": {
-            "@type": "MeterReadingType"
+            "type": "MeterReadingType"
         },
         "MinimumDeliveryUnit": {
-            "@type": "DeliveryUnitType"
+            "type": "DeliveryUnitType"
         },
         "MinimumTemperature": {
-            "@type": "TemperatureType"
+            "type": "TemperatureType"
         },
         "MinutesDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "MiscellaneousEvent": {
-            "@type": "MiscellaneousEventType"
+            "type": "MiscellaneousEventType"
         },
         "MonetaryTotal": {
-            "@type": "MonetaryTotalType"
+            "type": "MonetaryTotalType"
         },
         "MortgageHolderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "NominationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "NotaryParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "NoticeDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "NotificationLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "NotificationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "NotificationRequirement": {
-            "@type": "NotificationRequirementType"
+            "type": "NotificationRequirementType"
         },
         "NotifyParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "OccurenceLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "OfferedItemLocationQuantity": {
-            "@type": "ItemLocationQuantityType"
+            "type": "ItemLocationQuantityType"
         },
         "OnAccountPayment": {
-            "@type": "OnAccountPaymentType"
+            "type": "OnAccountPaymentType"
         },
         "OnCarriageShipmentStage": {
-            "@type": "ShipmentStageType"
+            "type": "ShipmentStageType"
         },
         "OpenTenderEvent": {
-            "@type": "EventType"
+            "type": "EventType"
         },
         "OperatingParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "OptionValidityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "OptionalTakeoverTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "OrderDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "OrderLine": {
-            "@type": "OrderLineType"
+            "type": "OrderLineType"
         },
         "OrderLineReference": {
-            "@type": "OrderLineReferenceType"
+            "type": "OrderLineReferenceType"
         },
         "OrderReference": {
-            "@type": "OrderReferenceType"
+            "type": "OrderReferenceType"
         },
         "OrderedShipment": {
-            "@type": "OrderedShipmentType"
+            "type": "OrderedShipmentType"
         },
         "OriginAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "OriginCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "OriginalDepartureCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "OriginalDespatchParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "OriginalDespatchTransportationService": {
-            "@type": "TransportationServiceType"
+            "type": "TransportationServiceType"
         },
         "OriginalDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "OriginalItemLocationQuantity": {
-            "@type": "ItemLocationQuantityType"
+            "type": "ItemLocationQuantityType"
         },
         "OriginatorCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "OriginatorDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "OriginatorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "OtherCommunication": {
-            "@type": "CommunicationType"
+            "type": "CommunicationType"
         },
         "OwnerParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "Package": {
-            "@type": "PackageType"
+            "type": "PackageType"
         },
         "PackagedTransportHandlingUnit": {
-            "@type": "TransportHandlingUnitType"
+            "type": "TransportHandlingUnitType"
         },
         "PalletSpaceMeasurementDimension": {
-            "@type": "DimensionType"
+            "type": "DimensionType"
         },
         "ParentDocumentLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "ParentDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ParticipatingLocationsLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "ParticipationRequestReceptionPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "Party": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "PartyIdentification": {
-            "@type": "PartyIdentificationType"
+            "type": "PartyIdentificationType"
         },
         "PartyLegalEntity": {
-            "@type": "PartyLegalEntityType"
+            "type": "PartyLegalEntityType"
         },
         "PartyName": {
-            "@type": "PartyNameType"
+            "type": "PartyNameType"
         },
         "PartyTaxScheme": {
-            "@type": "PartyTaxSchemeType"
+            "type": "PartyTaxSchemeType"
         },
         "PassengerPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "PayeeFinancialAccount": {
-            "@type": "FinancialAccountType"
+            "type": "FinancialAccountType"
         },
         "PayeeParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "PayerFinancialAccount": {
-            "@type": "FinancialAccountType"
+            "type": "FinancialAccountType"
         },
         "PayerParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "Payment": {
-            "@type": "PaymentType"
+            "type": "PaymentType"
         },
         "PaymentAlternativeExchangeRate": {
-            "@type": "ExchangeRateType"
+            "type": "ExchangeRateType"
         },
         "PaymentExchangeRate": {
-            "@type": "ExchangeRateType"
+            "type": "ExchangeRateType"
         },
         "PaymentMandate": {
-            "@type": "PaymentMandateType"
+            "type": "PaymentMandateType"
         },
         "PaymentMeans": {
-            "@type": "PaymentMeansType"
+            "type": "PaymentMeansType"
         },
         "PaymentReversalPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "PaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "PenaltyClause": {
-            "@type": "ClauseType"
+            "type": "ClauseType"
         },
         "PenaltyPaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "PenaltyPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "PerformanceDataLine": {
-            "@type": "PerformanceDataLineType"
+            "type": "PerformanceDataLineType"
         },
         "PerformingCarrierParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "Period": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "Person": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "PhysicalAttribute": {
-            "@type": "PhysicalAttributeType"
+            "type": "PhysicalAttributeType"
         },
         "PhysicalLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "Pickup": {
-            "@type": "PickupType"
+            "type": "PickupType"
         },
         "PickupLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "PickupParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "PickupTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PlannedArrivalTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PlannedDeliveryTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PlannedDepartureTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PlannedPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "PlannedPickupTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PlannedWaypointTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PositioningTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "PostalAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "PowerOfAttorney": {
-            "@type": "PowerOfAttorneyType"
+            "type": "PowerOfAttorneyType"
         },
         "PreCarriageShipmentStage": {
-            "@type": "ShipmentStageType"
+            "type": "ShipmentStageType"
         },
         "PreSelectedParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "PrepaidPayment": {
-            "@type": "PaymentType"
+            "type": "PaymentType"
         },
         "PrepaidPaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "PreparationParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "PresentationPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "PreviousDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "PreviousPriceList": {
-            "@type": "PriceListType"
+            "type": "PriceListType"
         },
         "Price": {
-            "@type": "PriceType"
+            "type": "PriceType"
         },
         "PriceExtension": {
-            "@type": "PriceExtensionType"
+            "type": "PriceExtensionType"
         },
         "PriceList": {
-            "@type": "PriceListType"
+            "type": "PriceListType"
         },
         "PricingExchangeRate": {
-            "@type": "ExchangeRateType"
+            "type": "ExchangeRateType"
         },
         "PricingReference": {
-            "@type": "PricingReferenceType"
+            "type": "PricingReferenceType"
         },
         "ProcessJustification": {
-            "@type": "ProcessJustificationType"
+            "type": "ProcessJustificationType"
         },
         "ProcurementLegislationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ProcurementProject": {
-            "@type": "ProcurementProjectType"
+            "type": "ProcurementProjectType"
         },
         "ProcurementProjectLot": {
-            "@type": "ProcurementProjectLotType"
+            "type": "ProcurementProjectLotType"
         },
         "ProjectReference": {
-            "@type": "ProjectReferenceType"
+            "type": "ProjectReferenceType"
         },
         "PromisedDeliveryPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "PromotionalEvent": {
-            "@type": "PromotionalEventType"
+            "type": "PromotionalEventType"
         },
         "PromotionalEventLineItem": {
-            "@type": "PromotionalEventLineItemType"
+            "type": "PromotionalEventLineItemType"
         },
         "PromotionalSpecification": {
-            "@type": "PromotionalSpecificationType"
+            "type": "PromotionalSpecificationType"
         },
         "ProviderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "QualificationResolution": {
-            "@type": "QualificationResolutionType"
+            "type": "QualificationResolutionType"
         },
         "QualifyingParty": {
-            "@type": "QualifyingPartyType"
+            "type": "QualifyingPartyType"
         },
         "QuarantineTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "QuotationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "QuotationLine": {
-            "@type": "QuotationLineType"
+            "type": "QuotationLineType"
         },
         "QuotationLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "QuotedMonetaryTotal": {
-            "@type": "MonetaryTotalType"
+            "type": "MonetaryTotalType"
         },
         "RailTransport": {
-            "@type": "RailTransportType"
+            "type": "RailTransportType"
         },
         "RangeDimension": {
-            "@type": "DimensionType"
+            "type": "DimensionType"
         },
         "RealizedLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "ReceiptDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ReceiptLine": {
-            "@type": "ReceiptLineType"
+            "type": "ReceiptLineType"
         },
         "ReceiptLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "ReceiptTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "ReceivedHandlingUnitReceiptLine": {
-            "@type": "ReceiptLineType"
+            "type": "ReceiptLineType"
         },
         "ReceiverParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "RecipientCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "RecipientParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ReferencedConsignment": {
-            "@type": "ConsignmentType"
+            "type": "ConsignmentType"
         },
         "ReferencedContract": {
-            "@type": "ContractType"
+            "type": "ContractType"
         },
         "ReferencedGoodsItem": {
-            "@type": "GoodsItemType"
+            "type": "GoodsItemType"
         },
         "ReferencedPackage": {
-            "@type": "PackageType"
+            "type": "PackageType"
         },
         "ReferencedShipment": {
-            "@type": "ShipmentType"
+            "type": "ShipmentType"
         },
         "ReferencedTransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "RegistrationAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "RegistryCertificateDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "RegistryPortLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "Regulation": {
-            "@type": "RegulationType"
+            "type": "RegulationType"
         },
         "RelatedCatalogueReference": {
-            "@type": "CatalogueReferenceType"
+            "type": "CatalogueReferenceType"
         },
         "RelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "ReminderDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ReminderLine": {
-            "@type": "ReminderLineType"
+            "type": "ReminderLineType"
         },
         "ReminderPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "RemittanceAdviceLine": {
-            "@type": "RemittanceAdviceLineType"
+            "type": "RemittanceAdviceLineType"
         },
         "Renewal": {
-            "@type": "RenewalType"
+            "type": "RenewalType"
         },
         "ReplacedNoticeDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ReplacedRelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "ReplacementRelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "ReportedShipment": {
-            "@type": "ShipmentType"
+            "type": "ShipmentType"
         },
         "ReportingPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "RequestForQuotationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "RequestForQuotationLine": {
-            "@type": "RequestForQuotationLineType"
+            "type": "RequestForQuotationLineType"
         },
         "RequestForTenderLine": {
-            "@type": "RequestForTenderLineType"
+            "type": "RequestForTenderLineType"
         },
         "RequestLineReference": {
-            "@type": "LineReferenceType"
+            "type": "LineReferenceType"
         },
         "RequestedArrivalTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "RequestedCatalogueReference": {
-            "@type": "CatalogueReferenceType"
+            "type": "CatalogueReferenceType"
         },
         "RequestedClassificationScheme": {
-            "@type": "ClassificationSchemeType"
+            "type": "ClassificationSchemeType"
         },
         "RequestedDeliveryPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "RequestedDeliveryTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "RequestedDepartureTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "RequestedDespatchPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "RequestedDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "RequestedLanguage": {
-            "@type": "LanguageType"
+            "type": "LanguageType"
         },
         "RequestedMonetaryTotal": {
-            "@type": "MonetaryTotalType"
+            "type": "MonetaryTotalType"
         },
         "RequestedPickupTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "RequestedStatusLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "RequestedStatusPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "RequestedTenderTotal": {
-            "@type": "RequestedTenderTotalType"
+            "type": "RequestedTenderTotalType"
         },
         "RequestedValidityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "RequestedWaypointTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "RequiredBusinessClassificationScheme": {
-            "@type": "ClassificationSchemeType"
+            "type": "ClassificationSchemeType"
         },
         "RequiredClassificationScheme": {
-            "@type": "ClassificationSchemeType"
+            "type": "ClassificationSchemeType"
         },
         "RequiredFinancialGuarantee": {
-            "@type": "FinancialGuaranteeType"
+            "type": "FinancialGuaranteeType"
         },
         "RequiredItemLocationQuantity": {
-            "@type": "ItemLocationQuantityType"
+            "type": "ItemLocationQuantityType"
         },
         "RequiredRelatedItem": {
-            "@type": "RelatedItemType"
+            "type": "RelatedItemType"
         },
         "ResidenceAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "ResolutionDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "Response": {
-            "@type": "ResponseType"
+            "type": "ResponseType"
         },
         "ResponsibleTransportServiceProviderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ResultOfVerification": {
-            "@type": "ResultOfVerificationType"
+            "type": "ResultOfVerificationType"
         },
         "RetailPlannedImpact": {
-            "@type": "RetailPlannedImpactType"
+            "type": "RetailPlannedImpactType"
         },
         "RetailerCustomerParty": {
-            "@type": "CustomerPartyType"
+            "type": "CustomerPartyType"
         },
         "ReturnAddress": {
-            "@type": "AddressType"
+            "type": "AddressType"
         },
         "RoadTransport": {
-            "@type": "RoadTransportType"
+            "type": "RoadTransportType"
         },
         "SalesItem": {
-            "@type": "SalesItemType"
+            "type": "SalesItemType"
         },
         "ScheduledServiceFrequency": {
-            "@type": "ServiceFrequencyType"
+            "type": "ServiceFrequencyType"
         },
         "SecondaryHazard": {
-            "@type": "SecondaryHazardType"
+            "type": "SecondaryHazardType"
         },
         "SecurityOfficerPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "SelfBilledCreditNoteDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "SelfBilledInvoiceDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "SellerContact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "SellerProposedSubstituteLineItem": {
-            "@type": "LineItemType"
+            "type": "LineItemType"
         },
         "SellerSubstitutedLineItem": {
-            "@type": "LineItemType"
+            "type": "LineItemType"
         },
         "SellerSupplierParty": {
-            "@type": "SupplierPartyType"
+            "type": "SupplierPartyType"
         },
         "SellersItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "SenderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ServiceAllowanceCharge": {
-            "@type": "AllowanceChargeType"
+            "type": "AllowanceChargeType"
         },
         "ServiceChargePaymentTerms": {
-            "@type": "PaymentTermsType"
+            "type": "PaymentTermsType"
         },
         "ServiceEndTimePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ServiceFrequency": {
-            "@type": "ServiceFrequencyType"
+            "type": "ServiceFrequencyType"
         },
         "ServiceProviderParty": {
-            "@type": "ServiceProviderPartyType"
+            "type": "ServiceProviderPartyType"
         },
         "ServiceStartTimePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "SettlementPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "ShareholderParty": {
-            "@type": "ShareholderPartyType"
+            "type": "ShareholderPartyType"
         },
         "Shipment": {
-            "@type": "ShipmentType"
+            "type": "ShipmentType"
         },
         "ShipmentDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "ShipmentStage": {
-            "@type": "ShipmentStageType"
+            "type": "ShipmentStageType"
         },
         "ShipsSurgeonPerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "SignatoryContact": {
-            "@type": "ContactType"
+            "type": "ContactType"
         },
         "SignatoryParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "Signature": {
-            "@type": "SignatureType"
+            "type": "SignatureType"
         },
         "SourceCatalogueReference": {
-            "@type": "CatalogueReferenceType"
+            "type": "CatalogueReferenceType"
         },
         "SourceIssuerParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "SpecificTendererRequirement": {
-            "@type": "TendererRequirementType"
+            "type": "TendererRequirementType"
         },
         "StandardItemIdentification": {
-            "@type": "ItemIdentificationType"
+            "type": "ItemIdentificationType"
         },
         "StatementDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "StatementLine": {
-            "@type": "StatementLineType"
+            "type": "StatementLineType"
         },
         "StatementPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "Status": {
-            "@type": "StatusType"
+            "type": "StatusType"
         },
         "StatusLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "StatusPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "StockAvailabilityReportLine": {
-            "@type": "StockAvailabilityReportLineType"
+            "type": "StockAvailabilityReportLineType"
         },
         "StorageLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "StorageTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "Stowage": {
-            "@type": "StowageType"
+            "type": "StowageType"
         },
         "SubCreditNoteLine": {
-            "@type": "CreditNoteLineType"
+            "type": "CreditNoteLineType"
         },
         "SubDebitNoteLine": {
-            "@type": "DebitNoteLineType"
+            "type": "DebitNoteLineType"
         },
         "SubInvoiceLine": {
-            "@type": "InvoiceLineType"
+            "type": "InvoiceLineType"
         },
         "SubLineItem": {
-            "@type": "LineItemType"
+            "type": "LineItemType"
         },
         "SubRequestForTenderLine": {
-            "@type": "RequestForTenderLineType"
+            "type": "RequestForTenderLineType"
         },
         "SubTenderLine": {
-            "@type": "TenderLineType"
+            "type": "TenderLineType"
         },
         "SubcontractTerms": {
-            "@type": "SubcontractTermsType"
+            "type": "SubcontractTermsType"
         },
         "SubcontractorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "SubordinateAwardingCriterion": {
-            "@type": "AwardingCriterionType"
+            "type": "AwardingCriterionType"
         },
         "SubordinateAwardingCriterionResponse": {
-            "@type": "AwardingCriterionResponseType"
+            "type": "AwardingCriterionResponseType"
         },
         "SubscriberConsumption": {
-            "@type": "SubscriberConsumptionType"
+            "type": "SubscriberConsumptionType"
         },
         "SubscriberParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "SubsequentProcessTenderRequirement": {
-            "@type": "TenderRequirementType"
+            "type": "TenderRequirementType"
         },
         "SubsidiaryLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "SubstituteCarrierParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "SuggestedEvidence": {
-            "@type": "EvidenceType"
+            "type": "EvidenceType"
         },
         "SupplierConsumption": {
-            "@type": "SupplierConsumptionType"
+            "type": "SupplierConsumptionType"
         },
         "SupplierParty": {
-            "@type": "SupplierPartyType"
+            "type": "SupplierPartyType"
         },
         "SupplyChainActivityDataLine": {
-            "@type": "ActivityDataLineType"
+            "type": "ActivityDataLineType"
         },
         "SupplyItem": {
-            "@type": "ItemType"
+            "type": "ItemType"
         },
         "SupportedCommodityClassification": {
-            "@type": "CommodityClassificationType"
+            "type": "CommodityClassificationType"
         },
         "SupportedTransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "SupportingDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TakeoverTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "TaxCategory": {
-            "@type": "TaxCategoryType"
+            "type": "TaxCategoryType"
         },
         "TaxExchangeRate": {
-            "@type": "ExchangeRateType"
+            "type": "ExchangeRateType"
         },
         "TaxExclusivePrice": {
-            "@type": "PriceType"
+            "type": "PriceType"
         },
         "TaxInclusivePrice": {
-            "@type": "PriceType"
+            "type": "PriceType"
         },
         "TaxRepresentativeParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TaxScheme": {
-            "@type": "TaxSchemeType"
+            "type": "TaxSchemeType"
         },
         "TaxSubtotal": {
-            "@type": "TaxSubtotalType"
+            "type": "TaxSubtotalType"
         },
         "TaxTotal": {
-            "@type": "TaxTotalType"
+            "type": "TaxTotalType"
         },
         "TechnicalCapability": {
-            "@type": "CapabilityType"
+            "type": "CapabilityType"
         },
         "TechnicalCommitteePerson": {
-            "@type": "PersonType"
+            "type": "PersonType"
         },
         "TechnicalDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TechnicalEvaluationCriterion": {
-            "@type": "EvaluationCriterionType"
+            "type": "EvaluationCriterionType"
         },
         "TelecommunicationsService": {
-            "@type": "TelecommunicationsServiceType"
+            "type": "TelecommunicationsServiceType"
         },
         "TelecommunicationsSupply": {
-            "@type": "TelecommunicationsSupplyType"
+            "type": "TelecommunicationsSupplyType"
         },
         "TelecommunicationsSupplyLine": {
-            "@type": "TelecommunicationsSupplyLineType"
+            "type": "TelecommunicationsSupplyLineType"
         },
         "Temperature": {
-            "@type": "TemperatureType"
+            "type": "TemperatureType"
         },
         "TemplateDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TenderDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TenderEvaluationParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TenderLine": {
-            "@type": "TenderLineType"
+            "type": "TenderLineType"
         },
         "TenderPreparation": {
-            "@type": "TenderPreparationType"
+            "type": "TenderPreparationType"
         },
         "TenderRecipientParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TenderRequirement": {
-            "@type": "TenderRequirementType"
+            "type": "TenderRequirementType"
         },
         "TenderResult": {
-            "@type": "TenderResultType"
+            "type": "TenderResultType"
         },
         "TenderSubmissionDeadlinePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "TenderValidityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "TenderedProject": {
-            "@type": "TenderedProjectType"
+            "type": "TenderedProjectType"
         },
         "TendererParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TendererPartyQualification": {
-            "@type": "TendererPartyQualificationType"
+            "type": "TendererPartyQualificationType"
         },
         "TendererQualificationDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TendererQualificationRequest": {
-            "@type": "TendererQualificationRequestType"
+            "type": "TendererQualificationRequestType"
         },
         "TendererRequirement": {
-            "@type": "TendererRequirementType"
+            "type": "TendererRequirementType"
         },
         "TenderingProcess": {
-            "@type": "TenderingProcessType"
+            "type": "TenderingProcessType"
         },
         "TenderingTerms": {
-            "@type": "TenderingTermsType"
+            "type": "TenderingTermsType"
         },
         "TerminalOperatorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TimeDuty": {
-            "@type": "DutyType"
+            "type": "DutyType"
         },
         "ToLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "TotalCapacityDimension": {
-            "@type": "DimensionType"
+            "type": "DimensionType"
         },
         "TradeFinancing": {
-            "@type": "TradeFinancingType"
+            "type": "TradeFinancingType"
         },
         "TradingTerms": {
-            "@type": "TradingTermsType"
+            "type": "TradingTermsType"
         },
         "TransactionConditions": {
-            "@type": "TransactionConditionsType"
+            "type": "TransactionConditionsType"
         },
         "TransitCountry": {
-            "@type": "CountryType"
+            "type": "CountryType"
         },
         "TransitPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "TransportAdvisorParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TransportContract": {
-            "@type": "ContractType"
+            "type": "ContractType"
         },
         "TransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "TransportEquipmentSeal": {
-            "@type": "TransportEquipmentSealType"
+            "type": "TransportEquipmentSealType"
         },
         "TransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "TransportExecutionPlanDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TransportExecutionPlanRequestDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TransportExecutionTerms": {
-            "@type": "TransportExecutionTermsType"
+            "type": "TransportExecutionTermsType"
         },
         "TransportHandlingUnit": {
-            "@type": "TransportHandlingUnitType"
+            "type": "TransportHandlingUnitType"
         },
         "TransportMeans": {
-            "@type": "TransportMeansType"
+            "type": "TransportMeansType"
         },
         "TransportProgressStatusRequestDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TransportSchedule": {
-            "@type": "TransportScheduleType"
+            "type": "TransportScheduleType"
         },
         "TransportServiceDescriptionDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TransportServiceDescriptionRequestDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TransportServiceProviderParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TransportServiceProviderResponseDeadlinePeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "TransportServiceProviderResponseRequiredPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "TransportUserParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "TransportUserResponseRequiredPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "TransportationSegment": {
-            "@type": "TransportationSegmentType"
+            "type": "TransportationSegmentType"
         },
         "TransportationService": {
-            "@type": "TransportationServiceType"
+            "type": "TransportationServiceType"
         },
         "TransportationStatusRequestDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "TransshipPortLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "UnloadingLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "UnloadingPortLocation": {
-            "@type": "LocationType"
+            "type": "LocationType"
         },
         "UnstructuredPrice": {
-            "@type": "UnstructuredPriceType"
+            "type": "UnstructuredPriceType"
         },
         "UnsupportedCommodityClassification": {
-            "@type": "CommodityClassificationType"
+            "type": "CommodityClassificationType"
         },
         "UnsupportedTransportEquipment": {
-            "@type": "TransportEquipmentType"
+            "type": "TransportEquipmentType"
         },
         "UpdatedDeliveryTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "UpdatedPickupTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "UsabilityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "UtilityConsumptionPoint": {
-            "@type": "ConsumptionPointType"
+            "type": "ConsumptionPointType"
         },
         "UtilityCustomerParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "UtilityItem": {
-            "@type": "UtilityItemType"
+            "type": "UtilityItemType"
         },
         "UtilityMeter": {
-            "@type": "MeterType"
+            "type": "MeterType"
         },
         "UtilitySupplierParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "ValidityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "WarehousingTransportEvent": {
-            "@type": "TransportEventType"
+            "type": "TransportEventType"
         },
         "WarrantyParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "WarrantyValidityPeriod": {
-            "@type": "PeriodType"
+            "type": "PeriodType"
         },
         "WebSiteAccess": {
-            "@type": "WebSiteAccessType"
+            "type": "WebSiteAccessType"
         },
         "WinningParty": {
-            "@type": "WinningPartyType"
+            "type": "WinningPartyType"
         },
         "WithholdingTaxTotal": {
-            "@type": "TaxTotalType"
+            "type": "TaxTotalType"
         },
         "WitnessParty": {
-            "@type": "PartyType"
+            "type": "PartyType"
         },
         "WorkOrderDocumentReference": {
-            "@type": "DocumentReferenceType"
+            "type": "DocumentReferenceType"
         },
         "WorkPhaseReference": {
-            "@type": "WorkPhaseReferenceType"
+            "type": "WorkPhaseReferenceType"
         }
     },
     "complexType": {
@@ -10171,7 +10171,8 @@ cac = {
             "DictionaryEntryName": "Document Reference. Details",
             "Definition": "A class to define a reference to a document.",
             "ObjectClass": "Document Reference",
-            "element": {"cbc:ID": {
+            "element": {
+                "cbc:ID": {
                 "@minOccurs": 1,
                 "@maxOccurs": 1,
                 "ComponentType": "BBIE",
@@ -18961,7 +18962,8 @@ cac = {
             "DictionaryEntryName": "Period. Details",
             "Definition": "A class to describe a period of time.",
             "ObjectClass": "Period",
-            "element": {"cbc:StartDate": {
+            "element": {
+              "cbc:StartDate": {
                 "@minOccurs": 0,
                 "@maxOccurs": 1,
                 "ComponentType": "BBIE",
@@ -18973,7 +18975,7 @@ cac = {
                 "RepresentationTerm": "Date",
                 "DataType": "Date. Type"
             },
-                "cbc:StartTime": {
+              "cbc:StartTime": {
                 "@minOccurs": 0,
                 "@maxOccurs": 1,
                 "ComponentType": "BBIE",

@@ -1,0 +1,2724 @@
+[
+    {
+        "Identifier": "BASIC-00001",
+        "Message": "1 instance(s) of cbc:CustomizationID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:CustomizationID[1] and not(cbc:CustomizationID[2])",
+        "Syntax binding": "ubl:Invoice/cbc:CustomizationID"
+    },
+    {
+        "Identifier": "BASIC-00002",
+        "Message": "Minimum 1 and maximum 3 instances of cbc:ProfileID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:ProfileID[1] and not(cbc:ProfileID[4])",
+        "Syntax binding": "ubl:Invoice/cbc:ProfileID"
+    },
+    {
+        "Identifier": "BASIC-00003",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00004",
+        "Message": "1 instance(s) of cbc:IssueDate is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:IssueDate[1] and not(cbc:IssueDate[2])",
+        "Syntax binding": "ubl:Invoice/cbc:IssueDate"
+    },
+    {
+        "Identifier": "BASIC-00005",
+        "Message": "No more than 1 instance(s) of cbc:IssueTime are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:IssueTime[2])",
+        "Syntax binding": "ubl:Invoice/cbc:IssueTime"
+    },
+    {
+        "Identifier": "BASIC-00006",
+        "Message": "No more than 1 instance(s) of cbc:DueDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:DueDate[2])",
+        "Syntax binding": "ubl:Invoice/cbc:DueDate"
+    },
+    {
+        "Identifier": "BASIC-00007",
+        "Message": "1 instance(s) of cbc:InvoiceTypeCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:InvoiceTypeCode[1] and not(cbc:InvoiceTypeCode[2])",
+        "Syntax binding": "ubl:Invoice/cbc:InvoiceTypeCode"
+    },
+    {
+        "Identifier": "BASIC-00008",
+        "Message": "No more than 1 instance(s) of cbc:Note are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:Note[2])"
+    },
+    {
+        "Identifier": "BASIC-00009",
+        "Message": "No more than 1 instance(s) of cbc:Note are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:Note[2])",
+        "Syntax binding": "ubl:Invoice/cbc:Note"
+    },
+    {
+        "Identifier": "BASIC-00010",
+        "Message": "No more than 1 instance(s) of cbc:TaxPointDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:TaxPointDate[2])",
+        "Syntax binding": "ubl:Invoice/cbc:TaxPointDate"
+    },
+    {
+        "Identifier": "BASIC-00011",
+        "Message": "1 instance(s) of cbc:DocumentCurrencyCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:DocumentCurrencyCode[1] and not(cbc:DocumentCurrencyCode[2])",
+        "Syntax binding": "ubl:Invoice/cbc:DocumentCurrencyCode"
+    },
+    {
+        "Identifier": "BASIC-00012",
+        "Message": "No more than 1 instance(s) of cbc:TaxCurrencyCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:TaxCurrencyCode[2])",
+        "Syntax binding": "ubl:Invoice/cbc:TaxCurrencyCode"
+    },
+    {
+        "Identifier": "BASIC-00013",
+        "Message": "No more than 1 instance(s) of cbc:AccountingCost are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:AccountingCost[2])",
+        "Syntax binding": "ubl:Invoice/cbc:AccountingCost"
+    },
+    {
+        "Identifier": "BASIC-00014",
+        "Message": "No more than 1 instance(s) of cbc:BuyerReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cbc:BuyerReference[2])",
+        "Syntax binding": "ubl:Invoice/cbc:BuyerReference"
+    },
+    {
+        "Identifier": "BASIC-00015",
+        "Message": "No more than 1 instance(s) of cac:InvoicePeriod are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:InvoicePeriod[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod"
+    },
+    {
+        "Identifier": "BASIC-00016",
+        "Message": "No more than 1 instance(s) of cac:OrderReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:OrderReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:OrderReference"
+    },
+    {
+        "Identifier": "BASIC-00017",
+        "Message": "No more than 1 instance(s) of cac:ReceiptDocumentReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:ReceiptDocumentReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:ReceiptDocumentReference"
+    },
+    {
+        "Identifier": "BASIC-00018",
+        "Message": "No more than 1 instance(s) of cac:OriginatorDocumentReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:OriginatorDocumentReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:OriginatorDocumentReference"
+    },
+    {
+        "Identifier": "BASIC-00019",
+        "Message": "No more than 1 instance(s) of cac:ContractDocumentReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:ContractDocumentReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:ContractDocumentReference"
+    },
+    {
+        "Identifier": "BASIC-00020",
+        "Message": "No more than 1 instance(s) of cac:ProjectReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:ProjectReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:ProjectReference"
+    },
+    {
+        "Identifier": "BASIC-00021",
+        "Message": "1 instance(s) of cac:AccountingSupplierParty is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:AccountingSupplierParty[1] and not(cac:AccountingSupplierParty[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty"
+    },
+    {
+        "Identifier": "BASIC-00022",
+        "Message": "1 instance(s) of cac:AccountingCustomerParty is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:AccountingCustomerParty[1] and not(cac:AccountingCustomerParty[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty"
+    },
+    {
+        "Identifier": "BASIC-00023",
+        "Message": "No more than 1 instance(s) of cac:PayeeParty are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:PayeeParty[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty"
+    },
+    {
+        "Identifier": "BASIC-00024",
+        "Message": "1 instance(s) of cac:TaxRepresentativeParty is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:TaxRepresentativeParty[1] and not(cac:TaxRepresentativeParty[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty"
+    },
+    {
+        "Identifier": "BASIC-00025",
+        "Message": "No more than 1 instance(s) of cac:Delivery are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "not(cac:Delivery[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery"
+    },
+    {
+        "Identifier": "BASIC-00026",
+        "Message": "1 instance(s) of cac:TaxTotal is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:TaxTotal[1] and not(cac:TaxTotal[2])"
+    },
+    {
+        "Identifier": "BASIC-00027",
+        "Message": "1 instance(s) of cac:TaxTotal is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:TaxTotal[1] and not(cac:TaxTotal[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal"
+    },
+    {
+        "Identifier": "BASIC-00028",
+        "Message": "1 instance(s) of cac:LegalMonetaryTotal is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:LegalMonetaryTotal[1] and not(cac:LegalMonetaryTotal[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal"
+    },
+    {
+        "Identifier": "BASIC-00029",
+        "Message": "Minimum 1 instance(s) of cac:InvoiceLine is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cac:InvoiceLine[1]",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine"
+    },
+    {
+        "Identifier": "BASIC-00030",
+        "Message": "Content must contain minimum 3 characters.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cbc:ID",
+        "Test": "string-length(normalize-space()) >= 3",
+        "Syntax binding": "ubl:Invoice/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00031",
+        "Message": "Content must match \"\\w+\".",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cbc:ID",
+        "Test": "matches(normalize-space(), '\\w+')",
+        "Syntax binding": "ubl:Invoice/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00032",
+        "Message": "This element must have value from codelist UNCL1001-inv.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cbc:InvoiceTypeCode",
+        "Test": "(some $code in $clUNCL1001-inv satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cbc:InvoiceTypeCode",
+        "Codelist": "Document name code (Subset: Invoice type code)"
+    },
+    {
+        "Identifier": "BASIC-00033",
+        "Message": "This element must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cbc:DocumentCurrencyCode",
+        "Test": "(some $code in $clISO4217 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cbc:DocumentCurrencyCode",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00034",
+        "Message": "This element must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cbc:TaxCurrencyCode",
+        "Test": "(some $code in $clISO4217 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cbc:TaxCurrencyCode",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00035",
+        "Message": "No more than 1 instance(s) of cbc:StartDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoicePeriod",
+        "Test": "not(cbc:StartDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:StartDate"
+    },
+    {
+        "Identifier": "BASIC-00036",
+        "Message": "No more than 1 instance(s) of cbc:EndDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoicePeriod",
+        "Test": "not(cbc:EndDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:EndDate"
+    },
+    {
+        "Identifier": "BASIC-00037",
+        "Message": "No more than 1 instance(s) of cbc:DescriptionCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoicePeriod",
+        "Test": "not(cbc:DescriptionCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:DescriptionCode"
+    },
+    {
+        "Identifier": "BASIC-00038",
+        "Message": "This element must have value from codelist UNCL2005.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoicePeriod/cbc:DescriptionCode",
+        "Test": "(some $code in $clUNCL2005 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:DescriptionCode",
+        "Codelist": "Date or time or period function code qualifier (Subset: Peppol)"
+    },
+    {
+        "Identifier": "BASIC-00039",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:OrderReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:OrderReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00040",
+        "Message": "No more than 1 instance(s) of cbc:SalesOrderID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:OrderReference",
+        "Test": "not(cbc:SalesOrderID[2])",
+        "Syntax binding": "ubl:Invoice/cac:OrderReference/cbc:SalesOrderID"
+    },
+    {
+        "Identifier": "BASIC-00041",
+        "Message": "1 instance(s) of cac:InvoiceDocumentReference is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:BillingReference",
+        "Test": "cac:InvoiceDocumentReference[1] and not(cac:InvoiceDocumentReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference"
+    },
+    {
+        "Identifier": "BASIC-00042",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00043",
+        "Message": "No more than 1 instance(s) of cbc:IssueDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference",
+        "Test": "not(cbc:IssueDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate"
+    },
+    {
+        "Identifier": "BASIC-00044",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:DespatchDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:DespatchDocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00045",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:ReceiptDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:ReceiptDocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00046",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:OriginatorDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00047",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:ContractDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:ContractDocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00048",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])"
+    },
+    {
+        "Identifier": "BASIC-00049",
+        "Message": "No more than 1 instance(s) of cbc:DocumentTypeCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
+        "Test": "not(cbc:DocumentTypeCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode"
+    },
+    {
+        "Identifier": "BASIC-00050",
+        "Message": "This attribute must have value from codelist UNCL1153.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clUNCL1153 satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID/@schemeID",
+        "Codelist": "Invoiced object identifier scheme"
+    },
+    {
+        "Identifier": "BASIC-00051",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00052",
+        "Message": "No more than 1 instance(s) of cbc:DocumentDescription are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
+        "Test": "not(cbc:DocumentDescription[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription"
+    },
+    {
+        "Identifier": "BASIC-00053",
+        "Message": "No more than 1 instance(s) of cac:Attachment are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
+        "Test": "not(cac:Attachment[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment"
+    },
+    {
+        "Identifier": "BASIC-00054",
+        "Message": "No more than 1 instance(s) of cbc:EmbeddedDocumentBinaryObject are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment",
+        "Test": "not(cbc:EmbeddedDocumentBinaryObject[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject"
+    },
+    {
+        "Identifier": "BASIC-00055",
+        "Message": "No more than 1 instance(s) of cac:ExternalReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment",
+        "Test": "not(cac:ExternalReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference"
+    },
+    {
+        "Identifier": "BASIC-00056",
+        "Message": "This attribute must have value from codelist MimeCode.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject",
+        "Test": "not(@mimeCode) or (some $code in $clMimeCode satisfies $code = normalize-space(@mimeCode))",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@mimeCode",
+        "Codelist": "Media Types (Subset: Peppol)"
+    },
+    {
+        "Identifier": "BASIC-00057",
+        "Message": "1 instance(s) of cbc:URI is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference",
+        "Test": "cbc:URI[1] and not(cbc:URI[2])",
+        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"
+    },
+    {
+        "Identifier": "BASIC-00058",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:ProjectReference",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:ProjectReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00059",
+        "Message": "1 instance(s) of cac:Party is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty",
+        "Test": "cac:Party[1] and not(cac:Party[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party"
+    },
+    {
+        "Identifier": "BASIC-00060",
+        "Message": "1 instance(s) of cbc:EndpointID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "cbc:EndpointID[1] and not(cbc:EndpointID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"
+    },
+    {
+        "Identifier": "BASIC-00061",
+        "Message": "No more than 1 instance(s) of cac:PartyIdentification are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "not(cac:PartyIdentification[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification"
+    },
+    {
+        "Identifier": "BASIC-00062",
+        "Message": "No more than 1 instance(s) of cac:PartyName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "not(cac:PartyName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName"
+    },
+    {
+        "Identifier": "BASIC-00063",
+        "Message": "1 instance(s) of cac:PostalAddress is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress"
+    },
+    {
+        "Identifier": "BASIC-00064",
+        "Message": "No more than 1 instance(s) of cac:PartyTaxScheme are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "not(cac:PartyTaxScheme[2])"
+    },
+    {
+        "Identifier": "BASIC-00065",
+        "Message": "No more than 1 instance(s) of cac:PartyTaxScheme are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "not(cac:PartyTaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00066",
+        "Message": "1 instance(s) of cac:PartyLegalEntity is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "cac:PartyLegalEntity[1] and not(cac:PartyLegalEntity[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity"
+    },
+    {
+        "Identifier": "BASIC-00067",
+        "Message": "No more than 1 instance(s) of cac:Contact are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
+        "Test": "not(cac:Contact[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact"
+    },
+    {
+        "Identifier": "BASIC-00068",
+        "Message": "Attribute schemeID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID",
+        "Test": "@schemeID",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"
+    },
+    {
+        "Identifier": "BASIC-00069",
+        "Message": "This attribute must have value from codelist eas.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID",
+        "Test": "not(@schemeID) or (some $code in $cleas satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID",
+        "Codelist": "Electronic Address Scheme (EAS)"
+    },
+    {
+        "Identifier": "BASIC-00070",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])"
+    },
+    {
+        "Identifier": "BASIC-00071",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00072",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00073",
+        "Message": "This attribute must have value from codelist SEPA.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clSEPA satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID",
+        "Codelist": "SEPA indicator"
+    },
+    {
+        "Identifier": "BASIC-00074",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00075",
+        "Message": "No more than 1 instance(s) of cbc:StreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:StreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName"
+    },
+    {
+        "Identifier": "BASIC-00076",
+        "Message": "No more than 1 instance(s) of cbc:AdditionalStreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:AdditionalStreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName"
+    },
+    {
+        "Identifier": "BASIC-00077",
+        "Message": "No more than 1 instance(s) of cbc:CityName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:CityName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName"
+    },
+    {
+        "Identifier": "BASIC-00078",
+        "Message": "No more than 1 instance(s) of cbc:PostalZone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:PostalZone[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone"
+    },
+    {
+        "Identifier": "BASIC-00079",
+        "Message": "No more than 1 instance(s) of cbc:CountrySubentity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:CountrySubentity[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity"
+    },
+    {
+        "Identifier": "BASIC-00080",
+        "Message": "No more than 1 instance(s) of cac:AddressLine are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cac:AddressLine[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine"
+    },
+    {
+        "Identifier": "BASIC-00081",
+        "Message": "1 instance(s) of cac:Country is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
+        "Test": "cac:Country[1] and not(cac:Country[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country"
+    },
+    {
+        "Identifier": "BASIC-00082",
+        "Message": "1 instance(s) of cbc:Line is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine",
+        "Test": "cbc:Line[1] and not(cbc:Line[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line"
+    },
+    {
+        "Identifier": "BASIC-00083",
+        "Message": "1 instance(s) of cbc:IdentificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country",
+        "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+    },
+    {
+        "Identifier": "BASIC-00084",
+        "Message": "This element must have value from codelist ISO3166.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Codelist": "Country codes"
+    },
+    {
+        "Identifier": "BASIC-00085",
+        "Message": "1 instance(s) of cbc:CompanyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme",
+        "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])"
+    },
+    {
+        "Identifier": "BASIC-00086",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])"
+    },
+    {
+        "Identifier": "BASIC-00087",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])"
+    },
+    {
+        "Identifier": "BASIC-00088",
+        "Message": "1 instance(s) of cbc:CompanyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme",
+        "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"
+    },
+    {
+        "Identifier": "BASIC-00089",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00090",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00091",
+        "Message": "1 instance(s) of cbc:RegistrationName is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity",
+        "Test": "cbc:RegistrationName[1] and not(cbc:RegistrationName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName"
+    },
+    {
+        "Identifier": "BASIC-00092",
+        "Message": "No more than 1 instance(s) of cbc:CompanyID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity",
+        "Test": "not(cbc:CompanyID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID"
+    },
+    {
+        "Identifier": "BASIC-00093",
+        "Message": "No more than 1 instance(s) of cbc:CompanyLegalForm are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity",
+        "Test": "not(cbc:CompanyLegalForm[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm"
+    },
+    {
+        "Identifier": "BASIC-00094",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00095",
+        "Message": "No more than 1 instance(s) of cbc:Name are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact",
+        "Test": "not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00096",
+        "Message": "No more than 1 instance(s) of cbc:Telephone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact",
+        "Test": "not(cbc:Telephone[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone"
+    },
+    {
+        "Identifier": "BASIC-00097",
+        "Message": "No more than 1 instance(s) of cbc:ElectronicMail are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact",
+        "Test": "not(cbc:ElectronicMail[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail"
+    },
+    {
+        "Identifier": "BASIC-00098",
+        "Message": "1 instance(s) of cac:Party is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty",
+        "Test": "cac:Party[1] and not(cac:Party[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party"
+    },
+    {
+        "Identifier": "BASIC-00099",
+        "Message": "1 instance(s) of cbc:EndpointID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
+        "Test": "cbc:EndpointID[1] and not(cbc:EndpointID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID"
+    },
+    {
+        "Identifier": "BASIC-00100",
+        "Message": "No more than 1 instance(s) of cac:PartyName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
+        "Test": "not(cac:PartyName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName"
+    },
+    {
+        "Identifier": "BASIC-00101",
+        "Message": "1 instance(s) of cac:PostalAddress is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
+        "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress"
+    },
+    {
+        "Identifier": "BASIC-00102",
+        "Message": "No more than 1 instance(s) of cac:PartyTaxScheme are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
+        "Test": "not(cac:PartyTaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00103",
+        "Message": "1 instance(s) of cac:PartyLegalEntity is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
+        "Test": "cac:PartyLegalEntity[1] and not(cac:PartyLegalEntity[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity"
+    },
+    {
+        "Identifier": "BASIC-00104",
+        "Message": "Attribute schemeID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID",
+        "Test": "@schemeID",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"
+    },
+    {
+        "Identifier": "BASIC-00105",
+        "Message": "This attribute must have value from codelist eas.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID",
+        "Test": "not(@schemeID) or (some $code in $cleas satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID",
+        "Codelist": "Electronic Address Scheme (EAS)"
+    },
+    {
+        "Identifier": "BASIC-00106",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00107",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00108",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00109",
+        "Message": "No more than 1 instance(s) of cbc:StreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:StreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName"
+    },
+    {
+        "Identifier": "BASIC-00110",
+        "Message": "No more than 1 instance(s) of cbc:AdditionalStreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:AdditionalStreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName"
+    },
+    {
+        "Identifier": "BASIC-00111",
+        "Message": "No more than 1 instance(s) of cbc:CityName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:CityName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName"
+    },
+    {
+        "Identifier": "BASIC-00112",
+        "Message": "No more than 1 instance(s) of cbc:PostalZone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:PostalZone[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone"
+    },
+    {
+        "Identifier": "BASIC-00113",
+        "Message": "No more than 1 instance(s) of cbc:CountrySubentity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cbc:CountrySubentity[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity"
+    },
+    {
+        "Identifier": "BASIC-00114",
+        "Message": "No more than 1 instance(s) of cac:AddressLine are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "not(cac:AddressLine[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine"
+    },
+    {
+        "Identifier": "BASIC-00115",
+        "Message": "1 instance(s) of cac:Country is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
+        "Test": "cac:Country[1] and not(cac:Country[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country"
+    },
+    {
+        "Identifier": "BASIC-00116",
+        "Message": "1 instance(s) of cbc:Line is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine",
+        "Test": "cbc:Line[1] and not(cbc:Line[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line"
+    },
+    {
+        "Identifier": "BASIC-00117",
+        "Message": "1 instance(s) of cbc:IdentificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country",
+        "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+    },
+    {
+        "Identifier": "BASIC-00118",
+        "Message": "This element must have value from codelist ISO3166.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Codelist": "Country codes"
+    },
+    {
+        "Identifier": "BASIC-00119",
+        "Message": "1 instance(s) of cbc:CompanyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme",
+        "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"
+    },
+    {
+        "Identifier": "BASIC-00120",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00121",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00122",
+        "Message": "1 instance(s) of cbc:RegistrationName is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity",
+        "Test": "cbc:RegistrationName[1] and not(cbc:RegistrationName[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName"
+    },
+    {
+        "Identifier": "BASIC-00123",
+        "Message": "No more than 1 instance(s) of cbc:CompanyID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity",
+        "Test": "not(cbc:CompanyID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID"
+    },
+    {
+        "Identifier": "BASIC-00124",
+        "Message": "No more than 1 instance(s) of cac:Contact are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity",
+        "Test": "not(cac:Contact[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact"
+    },
+    {
+        "Identifier": "BASIC-00125",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00126",
+        "Message": "No more than 1 instance(s) of cbc:Name are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact",
+        "Test": "not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00127",
+        "Message": "No more than 1 instance(s) of cbc:Telephone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact",
+        "Test": "not(cbc:Telephone[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact/cbc:Telephone"
+    },
+    {
+        "Identifier": "BASIC-00128",
+        "Message": "No more than 1 instance(s) of cbc:ElectronicMail are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact",
+        "Test": "not(cbc:ElectronicMail[2])",
+        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact/cbc:ElectronicMail"
+    },
+    {
+        "Identifier": "BASIC-00129",
+        "Message": "No more than 1 instance(s) of cac:PartyIdentification are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty",
+        "Test": "not(cac:PartyIdentification[2])"
+    },
+    {
+        "Identifier": "BASIC-00130",
+        "Message": "No more than 1 instance(s) of cac:PartyIdentification are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty",
+        "Test": "not(cac:PartyIdentification[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification"
+    },
+    {
+        "Identifier": "BASIC-00131",
+        "Message": "1 instance(s) of cac:PartyName is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty",
+        "Test": "cac:PartyName[1] and not(cac:PartyName[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyName"
+    },
+    {
+        "Identifier": "BASIC-00132",
+        "Message": "No more than 1 instance(s) of cac:PartyLegalEntity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty",
+        "Test": "not(cac:PartyLegalEntity[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity"
+    },
+    {
+        "Identifier": "BASIC-00133",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])"
+    },
+    {
+        "Identifier": "BASIC-00134",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00135",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00136",
+        "Message": "This attribute must have value from codelist ICD, SEPA.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID)) or (some $code in $clSEPA satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID",
+        "Codelist": "ISO 6523 ICD list\nSEPA indicator"
+    },
+    {
+        "Identifier": "BASIC-00137",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyName",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00138",
+        "Message": "1 instance(s) of cbc:CompanyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity",
+        "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID"
+    },
+    {
+        "Identifier": "BASIC-00139",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00140",
+        "Message": "1 instance(s) of cac:PartyName is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty",
+        "Test": "cac:PartyName[1] and not(cac:PartyName[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName"
+    },
+    {
+        "Identifier": "BASIC-00141",
+        "Message": "1 instance(s) of cac:PostalAddress is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty",
+        "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress"
+    },
+    {
+        "Identifier": "BASIC-00142",
+        "Message": "1 instance(s) of cac:PartyTaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty",
+        "Test": "cac:PartyTaxScheme[1] and not(cac:PartyTaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00143",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00144",
+        "Message": "No more than 1 instance(s) of cbc:StreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "not(cbc:StreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName"
+    },
+    {
+        "Identifier": "BASIC-00145",
+        "Message": "No more than 1 instance(s) of cbc:AdditionalStreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "not(cbc:AdditionalStreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName"
+    },
+    {
+        "Identifier": "BASIC-00146",
+        "Message": "No more than 1 instance(s) of cbc:CityName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "not(cbc:CityName[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName"
+    },
+    {
+        "Identifier": "BASIC-00147",
+        "Message": "No more than 1 instance(s) of cbc:PostalZone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "not(cbc:PostalZone[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone"
+    },
+    {
+        "Identifier": "BASIC-00148",
+        "Message": "No more than 1 instance(s) of cbc:CountrySubentity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "not(cbc:CountrySubentity[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity"
+    },
+    {
+        "Identifier": "BASIC-00149",
+        "Message": "No more than 1 instance(s) of cac:AddressLine are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "not(cac:AddressLine[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine"
+    },
+    {
+        "Identifier": "BASIC-00150",
+        "Message": "1 instance(s) of cac:Country is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
+        "Test": "cac:Country[1] and not(cac:Country[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country"
+    },
+    {
+        "Identifier": "BASIC-00151",
+        "Message": "1 instance(s) of cbc:Line is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine",
+        "Test": "cbc:Line[1] and not(cbc:Line[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine/cbc:Line"
+    },
+    {
+        "Identifier": "BASIC-00152",
+        "Message": "1 instance(s) of cbc:IdentificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country",
+        "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+    },
+    {
+        "Identifier": "BASIC-00153",
+        "Message": "This element must have value from codelist ISO3166.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Codelist": "Country codes"
+    },
+    {
+        "Identifier": "BASIC-00154",
+        "Message": "1 instance(s) of cbc:CompanyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme",
+        "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID"
+    },
+    {
+        "Identifier": "BASIC-00155",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00156",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00157",
+        "Message": "No more than 1 instance(s) of cbc:ActualDeliveryDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery",
+        "Test": "not(cbc:ActualDeliveryDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate"
+    },
+    {
+        "Identifier": "BASIC-00158",
+        "Message": "No more than 1 instance(s) of cac:DeliveryLocation are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery",
+        "Test": "not(cac:DeliveryLocation[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation"
+    },
+    {
+        "Identifier": "BASIC-00159",
+        "Message": "No more than 1 instance(s) of cac:DeliveryParty are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery",
+        "Test": "not(cac:DeliveryParty[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryParty"
+    },
+    {
+        "Identifier": "BASIC-00160",
+        "Message": "No more than 1 instance(s) of cbc:ID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation",
+        "Test": "not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00161",
+        "Message": "No more than 1 instance(s) of cac:Address are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation",
+        "Test": "not(cac:Address[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address"
+    },
+    {
+        "Identifier": "BASIC-00162",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID/@schemeID",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00163",
+        "Message": "No more than 1 instance(s) of cbc:StreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "not(cbc:StreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName"
+    },
+    {
+        "Identifier": "BASIC-00164",
+        "Message": "No more than 1 instance(s) of cbc:AdditionalStreetName[../cbc:StreetName] are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "not(cbc:AdditionalStreetName[../cbc:StreetName][2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName"
+    },
+    {
+        "Identifier": "BASIC-00165",
+        "Message": "No more than 1 instance(s) of cbc:CityName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "not(cbc:CityName[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName"
+    },
+    {
+        "Identifier": "BASIC-00166",
+        "Message": "No more than 1 instance(s) of cbc:PostalZone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "not(cbc:PostalZone[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone"
+    },
+    {
+        "Identifier": "BASIC-00167",
+        "Message": "No more than 1 instance(s) of cbc:CountrySubentity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "not(cbc:CountrySubentity[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity"
+    },
+    {
+        "Identifier": "BASIC-00168",
+        "Message": "No more than 1 instance(s) of cac:AddressLine are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "not(cac:AddressLine[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine"
+    },
+    {
+        "Identifier": "BASIC-00169",
+        "Message": "1 instance(s) of cac:Country is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
+        "Test": "cac:Country[1] and not(cac:Country[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country"
+    },
+    {
+        "Identifier": "BASIC-00170",
+        "Message": "1 instance(s) of cbc:Line is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine",
+        "Test": "cbc:Line[1] and not(cbc:Line[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line"
+    },
+    {
+        "Identifier": "BASIC-00171",
+        "Message": "1 instance(s) of cbc:IdentificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country",
+        "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode"
+    },
+    {
+        "Identifier": "BASIC-00172",
+        "Message": "This element must have value from codelist ISO3166.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode",
+        "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode",
+        "Codelist": "Country codes"
+    },
+    {
+        "Identifier": "BASIC-00173",
+        "Message": "1 instance(s) of cac:PartyName is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryParty",
+        "Test": "cac:PartyName[1] and not(cac:PartyName[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName"
+    },
+    {
+        "Identifier": "BASIC-00174",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00175",
+        "Message": "No more than 1 instance(s) of cbc:ID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans",
+        "Test": "not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00176",
+        "Message": "1 instance(s) of cbc:PaymentMeansCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans",
+        "Test": "cbc:PaymentMeansCode[1] and not(cbc:PaymentMeansCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode"
+    },
+    {
+        "Identifier": "BASIC-00177",
+        "Message": "No more than 1 instance(s) of cbc:PaymentID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans",
+        "Test": "not(cbc:PaymentID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentID"
+    },
+    {
+        "Identifier": "BASIC-00178",
+        "Message": "No more than 1 instance(s) of cac:CardAccount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans",
+        "Test": "not(cac:CardAccount[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount"
+    },
+    {
+        "Identifier": "BASIC-00179",
+        "Message": "No more than 1 instance(s) of cac:PayeeFinancialAccount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans",
+        "Test": "not(cac:PayeeFinancialAccount[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount"
+    },
+    {
+        "Identifier": "BASIC-00180",
+        "Message": "1 instance(s) of cac:PaymentMandate is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans",
+        "Test": "cac:PaymentMandate[1] and not(cac:PaymentMandate[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate"
+    },
+    {
+        "Identifier": "BASIC-00181",
+        "Message": "This element must have value from codelist UNCL4461.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode",
+        "Test": "(some $code in $clUNCL4461 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode",
+        "Codelist": "Payment means code"
+    },
+    {
+        "Identifier": "BASIC-00182",
+        "Message": "1 instance(s) of cbc:PrimaryAccountNumberID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount",
+        "Test": "cbc:PrimaryAccountNumberID[1] and not(cbc:PrimaryAccountNumberID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID"
+    },
+    {
+        "Identifier": "BASIC-00183",
+        "Message": "1 instance(s) of cbc:NetworkID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount",
+        "Test": "cbc:NetworkID[1] and not(cbc:NetworkID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID"
+    },
+    {
+        "Identifier": "BASIC-00184",
+        "Message": "No more than 1 instance(s) of cbc:HolderName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount",
+        "Test": "not(cbc:HolderName[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName"
+    },
+    {
+        "Identifier": "BASIC-00185",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00186",
+        "Message": "No more than 1 instance(s) of cbc:Name are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount",
+        "Test": "not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00187",
+        "Message": "No more than 1 instance(s) of cac:FinancialInstitutionBranch are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount",
+        "Test": "not(cac:FinancialInstitutionBranch[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch"
+    },
+    {
+        "Identifier": "BASIC-00188",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00189",
+        "Message": "1 instance(s) of cac:PostalAddress is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch",
+        "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress"
+    },
+    {
+        "Identifier": "BASIC-00190",
+        "Message": "No more than 1 instance(s) of cbc:StreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "not(cbc:StreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:StreetName"
+    },
+    {
+        "Identifier": "BASIC-00191",
+        "Message": "No more than 1 instance(s) of cbc:AdditionalStreetName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "not(cbc:AdditionalStreetName[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:AdditionalStreetName"
+    },
+    {
+        "Identifier": "BASIC-00192",
+        "Message": "No more than 1 instance(s) of cbc:CityName are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "not(cbc:CityName[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:CityName"
+    },
+    {
+        "Identifier": "BASIC-00193",
+        "Message": "No more than 1 instance(s) of cbc:PostalZone are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "not(cbc:PostalZone[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:PostalZone"
+    },
+    {
+        "Identifier": "BASIC-00194",
+        "Message": "No more than 1 instance(s) of cbc:CountrySubentity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "not(cbc:CountrySubentity[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:CountrySubentity"
+    },
+    {
+        "Identifier": "BASIC-00195",
+        "Message": "No more than 1 instance(s) of cac:AddressLine are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "not(cac:AddressLine[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:AddressLine"
+    },
+    {
+        "Identifier": "BASIC-00196",
+        "Message": "1 instance(s) of cac:Country is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
+        "Test": "cac:Country[1] and not(cac:Country[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country"
+    },
+    {
+        "Identifier": "BASIC-00197",
+        "Message": "1 instance(s) of cbc:Line is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:AddressLine",
+        "Test": "cbc:Line[1] and not(cbc:Line[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:AddressLine/cbc:Line"
+    },
+    {
+        "Identifier": "BASIC-00198",
+        "Message": "1 instance(s) of cbc:IdentificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country",
+        "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+    },
+    {
+        "Identifier": "BASIC-00199",
+        "Message": "This element must have value from codelist ISO3166.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
+        "Codelist": "Country codes"
+    },
+    {
+        "Identifier": "BASIC-00200",
+        "Message": "No more than 1 instance(s) of cbc:ID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate",
+        "Test": "not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00201",
+        "Message": "No more than 1 instance(s) of cac:PayerFinancialAccount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate",
+        "Test": "not(cac:PayerFinancialAccount[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount"
+    },
+    {
+        "Identifier": "BASIC-00202",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00203",
+        "Message": "No more than 1 instance(s) of cbc:PaymentMeansID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentTerms",
+        "Test": "not(cbc:PaymentMeansID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:PaymentMeansID"
+    },
+    {
+        "Identifier": "BASIC-00204",
+        "Message": "No more than 1 instance(s) of cbc:Note are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentTerms",
+        "Test": "not(cbc:Note[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:Note"
+    },
+    {
+        "Identifier": "BASIC-00205",
+        "Message": "No more than 1 instance(s) of cbc:Amount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentTerms",
+        "Test": "not(cbc:Amount[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:Amount"
+    },
+    {
+        "Identifier": "BASIC-00206",
+        "Message": "No more than 1 instance(s) of cbc:InstallmentDueDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PaymentTerms",
+        "Test": "not(cbc:InstallmentDueDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:InstallmentDueDate"
+    },
+    {
+        "Identifier": "BASIC-00207",
+        "Message": "No more than 1 instance(s) of cbc:ID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PrepaidPayment",
+        "Test": "not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00208",
+        "Message": "No more than 1 instance(s) of cbc:PaidAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PrepaidPayment",
+        "Test": "not(cbc:PaidAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:PaidAmount"
+    },
+    {
+        "Identifier": "BASIC-00209",
+        "Message": "No more than 1 instance(s) of cbc:ReceivedDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PrepaidPayment",
+        "Test": "not(cbc:ReceivedDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:ReceivedDate"
+    },
+    {
+        "Identifier": "BASIC-00210",
+        "Message": "No more than 1 instance(s) of cbc:InstructionID are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:PrepaidPayment",
+        "Test": "not(cbc:InstructionID[2])",
+        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:InstructionID"
+    },
+    {
+        "Identifier": "BASIC-00211",
+        "Message": "1 instance(s) of cbc:ChargeIndicator is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "cbc:ChargeIndicator[1] and not(cbc:ChargeIndicator[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator"
+    },
+    {
+        "Identifier": "BASIC-00212",
+        "Message": "No more than 1 instance(s) of cbc:AllowanceChargeReasonCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "not(cbc:AllowanceChargeReasonCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode"
+    },
+    {
+        "Identifier": "BASIC-00213",
+        "Message": "No more than 1 instance(s) of cbc:AllowanceChargeReason are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "not(cbc:AllowanceChargeReason[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason"
+    },
+    {
+        "Identifier": "BASIC-00214",
+        "Message": "No more than 1 instance(s) of cbc:MultiplierFactorNumeric are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "not(cbc:MultiplierFactorNumeric[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric"
+    },
+    {
+        "Identifier": "BASIC-00215",
+        "Message": "1 instance(s) of cbc:Amount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "cbc:Amount[1] and not(cbc:Amount[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:Amount"
+    },
+    {
+        "Identifier": "BASIC-00216",
+        "Message": "No more than 1 instance(s) of cbc:BaseAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "not(cbc:BaseAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount"
+    },
+    {
+        "Identifier": "BASIC-00217",
+        "Message": "1 instance(s) of cac:TaxCategory is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge",
+        "Test": "cac:TaxCategory[1] and not(cac:TaxCategory[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory"
+    },
+    {
+        "Identifier": "BASIC-00218",
+        "Message": "This element must have value from codelist UNCL5189, UNCL7161.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
+        "Test": "(some $code in $clUNCL5189 satisfies $code = normalize-space()) or (some $code in $clUNCL7161 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
+        "Codelist": "Allowance or charge identification code (Subset: Peppol)\nCharge reason code"
+    },
+    {
+        "Identifier": "BASIC-00219",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cbc:Amount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:Amount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00220",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00221",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00222",
+        "Message": "No more than 1 instance(s) of cbc:Percent are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory",
+        "Test": "not(cbc:Percent[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent"
+    },
+    {
+        "Identifier": "BASIC-00223",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00224",
+        "Message": "This element must have value from codelist UNCL5305.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID",
+        "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID",
+        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+    },
+    {
+        "Identifier": "BASIC-00225",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00226",
+        "Message": "1 instance(s) of cbc:TaxAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal",
+        "Test": "cbc:TaxAmount[1] and not(cbc:TaxAmount[2])"
+    },
+    {
+        "Identifier": "BASIC-00227",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00228",
+        "Message": "1 instance(s) of cbc:TaxableAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
+        "Test": "cbc:TaxableAmount[1] and not(cbc:TaxableAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount"
+    },
+    {
+        "Identifier": "BASIC-00229",
+        "Message": "1 instance(s) of cbc:TaxAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
+        "Test": "cbc:TaxAmount[1] and not(cbc:TaxAmount[2])"
+    },
+    {
+        "Identifier": "BASIC-00230",
+        "Message": "1 instance(s) of cac:TaxCategory is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
+        "Test": "cac:TaxCategory[1] and not(cac:TaxCategory[2])"
+    },
+    {
+        "Identifier": "BASIC-00231",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00232",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00233",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])"
+    },
+    {
+        "Identifier": "BASIC-00234",
+        "Message": "No more than 1 instance(s) of cbc:Percent are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "not(cbc:Percent[2])"
+    },
+    {
+        "Identifier": "BASIC-00235",
+        "Message": "No more than 1 instance(s) of cbc:TaxExemptionReasonCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "not(cbc:TaxExemptionReasonCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode"
+    },
+    {
+        "Identifier": "BASIC-00236",
+        "Message": "No more than 1 instance(s) of cbc:TaxExemptionReason are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "not(cbc:TaxExemptionReason[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason"
+    },
+    {
+        "Identifier": "BASIC-00237",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])"
+    },
+    {
+        "Identifier": "BASIC-00238",
+        "Message": "This element must have value from codelist UNCL5305.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID",
+        "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
+        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+    },
+    {
+        "Identifier": "BASIC-00239",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])"
+    },
+    {
+        "Identifier": "BASIC-00240",
+        "Message": "1 instance(s) of cbc:TaxAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal",
+        "Test": "cbc:TaxAmount[1] and not(cbc:TaxAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount"
+    },
+    {
+        "Identifier": "BASIC-00241",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00242",
+        "Message": "1 instance(s) of cbc:TaxAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
+        "Test": "cbc:TaxAmount[1] and not(cbc:TaxAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount"
+    },
+    {
+        "Identifier": "BASIC-00243",
+        "Message": "1 instance(s) of cac:TaxCategory is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
+        "Test": "cac:TaxCategory[1] and not(cac:TaxCategory[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory"
+    },
+    {
+        "Identifier": "BASIC-00244",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00245",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00246",
+        "Message": "No more than 1 instance(s) of cbc:Percent are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "not(cbc:Percent[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent"
+    },
+    {
+        "Identifier": "BASIC-00247",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00248",
+        "Message": "This element must have value from codelist UNCL5305.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID",
+        "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID",
+        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+    },
+    {
+        "Identifier": "BASIC-00249",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00250",
+        "Message": "1 instance(s) of cbc:LineExtensionAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "cbc:LineExtensionAmount[1] and not(cbc:LineExtensionAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount"
+    },
+    {
+        "Identifier": "BASIC-00251",
+        "Message": "1 instance(s) of cbc:TaxExclusiveAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "cbc:TaxExclusiveAmount[1] and not(cbc:TaxExclusiveAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"
+    },
+    {
+        "Identifier": "BASIC-00252",
+        "Message": "1 instance(s) of cbc:TaxInclusiveAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "cbc:TaxInclusiveAmount[1] and not(cbc:TaxInclusiveAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"
+    },
+    {
+        "Identifier": "BASIC-00253",
+        "Message": "No more than 1 instance(s) of cbc:AllowanceTotalAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "not(cbc:AllowanceTotalAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"
+    },
+    {
+        "Identifier": "BASIC-00254",
+        "Message": "No more than 1 instance(s) of cbc:ChargeTotalAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "not(cbc:ChargeTotalAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"
+    },
+    {
+        "Identifier": "BASIC-00255",
+        "Message": "No more than 1 instance(s) of cbc:PrepaidAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "not(cbc:PrepaidAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount"
+    },
+    {
+        "Identifier": "BASIC-00256",
+        "Message": "No more than 1 instance(s) of cbc:PayableRoundingAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "not(cbc:PayableRoundingAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"
+    },
+    {
+        "Identifier": "BASIC-00257",
+        "Message": "1 instance(s) of cbc:PayableAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
+        "Test": "cbc:PayableAmount[1] and not(cbc:PayableAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount"
+    },
+    {
+        "Identifier": "BASIC-00258",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00259",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00260",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00261",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00262",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00263",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00264",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00265",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00266",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00267",
+        "Message": "No more than 1 instance(s) of cbc:Note are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "not(cbc:Note[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:Note"
+    },
+    {
+        "Identifier": "BASIC-00268",
+        "Message": "1 instance(s) of cbc:InvoicedQuantity is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "cbc:InvoicedQuantity[1] and not(cbc:InvoicedQuantity[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity"
+    },
+    {
+        "Identifier": "BASIC-00269",
+        "Message": "1 instance(s) of cbc:LineExtensionAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "cbc:LineExtensionAmount[1] and not(cbc:LineExtensionAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount"
+    },
+    {
+        "Identifier": "BASIC-00270",
+        "Message": "No more than 1 instance(s) of cbc:AccountingCost are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "not(cbc:AccountingCost[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:AccountingCost"
+    },
+    {
+        "Identifier": "BASIC-00271",
+        "Message": "No more than 1 instance(s) of cac:InvoicePeriod are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "not(cac:InvoicePeriod[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod"
+    },
+    {
+        "Identifier": "BASIC-00272",
+        "Message": "No more than 1 instance(s) of cac:OrderLineReference are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "not(cac:OrderLineReference[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference"
+    },
+    {
+        "Identifier": "BASIC-00273",
+        "Message": "No more than 1 instance(s) of cac:DocumentReference[cbc:DocumentTypeCode != 130] are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "not(cac:DocumentReference[cbc:DocumentTypeCode != 130][2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference"
+    },
+    {
+        "Identifier": "BASIC-00274",
+        "Message": "No more than 1 instance(s) of cac:DocumentReference[cbc:DocumentTypeCode = 130] are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "not(cac:DocumentReference[cbc:DocumentTypeCode = 130][2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference"
+    },
+    {
+        "Identifier": "BASIC-00275",
+        "Message": "1 instance(s) of cac:Item is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "cac:Item[1] and not(cac:Item[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item"
+    },
+    {
+        "Identifier": "BASIC-00276",
+        "Message": "1 instance(s) of cac:Price is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine",
+        "Test": "cac:Price[1] and not(cac:Price[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price"
+    },
+    {
+        "Identifier": "BASIC-00277",
+        "Message": "This attribute must have value from codelist UNECERec20.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity",
+        "Test": "not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = normalize-space(@unitCode))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode",
+        "Codelist": "Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)"
+    },
+    {
+        "Identifier": "BASIC-00278",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00279",
+        "Message": "No more than 1 instance(s) of cbc:StartDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod",
+        "Test": "not(cbc:StartDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate"
+    },
+    {
+        "Identifier": "BASIC-00280",
+        "Message": "No more than 1 instance(s) of cbc:EndDate are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod",
+        "Test": "not(cbc:EndDate[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate"
+    },
+    {
+        "Identifier": "BASIC-00281",
+        "Message": "1 instance(s) of cbc:LineID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference",
+        "Test": "cbc:LineID[1] and not(cbc:LineID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID"
+    },
+    {
+        "Identifier": "BASIC-00282",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode != 130]",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00283",
+        "Message": "1 instance(s) of cbc:DocumentTypeCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode != 130]",
+        "Test": "cbc:DocumentTypeCode[1] and not(cbc:DocumentTypeCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode"
+    },
+    {
+        "Identifier": "BASIC-00284",
+        "Message": "This element must have value from codelist UNCL1001.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode != 130]/cbc:DocumentTypeCode",
+        "Test": "(some $code in $clUNCL1001 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode",
+        "Codelist": "Document name code"
+    },
+    {
+        "Identifier": "BASIC-00285",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode = 130]",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00286",
+        "Message": "1 instance(s) of cbc:DocumentTypeCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode = 130]",
+        "Test": "cbc:DocumentTypeCode[1] and not(cbc:DocumentTypeCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode"
+    },
+    {
+        "Identifier": "BASIC-00287",
+        "Message": "This attribute must have value from codelist UNCL1153.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode = 130]/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clUNCL1153 satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID/@schemeID",
+        "Codelist": "Invoiced object identifier scheme"
+    },
+    {
+        "Identifier": "BASIC-00288",
+        "Message": "1 instance(s) of cbc:ChargeIndicator is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
+        "Test": "cbc:ChargeIndicator[1] and not(cbc:ChargeIndicator[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator"
+    },
+    {
+        "Identifier": "BASIC-00289",
+        "Message": "No more than 1 instance(s) of cbc:AllowanceChargeReasonCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
+        "Test": "not(cbc:AllowanceChargeReasonCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode"
+    },
+    {
+        "Identifier": "BASIC-00290",
+        "Message": "No more than 1 instance(s) of cbc:AllowanceChargeReason are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
+        "Test": "not(cbc:AllowanceChargeReason[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason"
+    },
+    {
+        "Identifier": "BASIC-00291",
+        "Message": "No more than 1 instance(s) of cbc:MultiplierFactorNumeric are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
+        "Test": "not(cbc:MultiplierFactorNumeric[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric"
+    },
+    {
+        "Identifier": "BASIC-00292",
+        "Message": "1 instance(s) of cbc:Amount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
+        "Test": "cbc:Amount[1] and not(cbc:Amount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount"
+    },
+    {
+        "Identifier": "BASIC-00293",
+        "Message": "No more than 1 instance(s) of cbc:BaseAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
+        "Test": "not(cbc:BaseAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount"
+    },
+    {
+        "Identifier": "BASIC-00294",
+        "Message": "This element must have value from codelist UNCL5189, UNCL7161.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
+        "Test": "(some $code in $clUNCL5189 satisfies $code = normalize-space()) or (some $code in $clUNCL7161 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
+        "Codelist": "Allowance or charge identification code (Subset: Peppol)\nCharge reason code"
+    },
+    {
+        "Identifier": "BASIC-00295",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00296",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00297",
+        "Message": "No more than 1 instance(s) of cbc:Description are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "not(cbc:Description[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description"
+    },
+    {
+        "Identifier": "BASIC-00298",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00299",
+        "Message": "No more than 1 instance(s) of cac:BuyersItemIdentification are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "not(cac:BuyersItemIdentification[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification"
+    },
+    {
+        "Identifier": "BASIC-00300",
+        "Message": "No more than 1 instance(s) of cac:SellersItemIdentification are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "not(cac:SellersItemIdentification[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification"
+    },
+    {
+        "Identifier": "BASIC-00301",
+        "Message": "No more than 1 instance(s) of cac:StandardItemIdentification are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "not(cac:StandardItemIdentification[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification"
+    },
+    {
+        "Identifier": "BASIC-00302",
+        "Message": "No more than 1 instance(s) of cac:OriginCountry are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "not(cac:OriginCountry[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry"
+    },
+    {
+        "Identifier": "BASIC-00303",
+        "Message": "1 instance(s) of cac:ClassifiedTaxCategory is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
+        "Test": "cac:ClassifiedTaxCategory[1] and not(cac:ClassifiedTaxCategory[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory"
+    },
+    {
+        "Identifier": "BASIC-00304",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00305",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00306",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00307",
+        "Message": "This attribute must have value from codelist ICD.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID",
+        "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID",
+        "Codelist": "ISO 6523 ICD list"
+    },
+    {
+        "Identifier": "BASIC-00308",
+        "Message": "1 instance(s) of cbc:IdentificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry",
+        "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode"
+    },
+    {
+        "Identifier": "BASIC-00309",
+        "Message": "This element must have value from codelist ISO3166.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode",
+        "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode",
+        "Codelist": "Country codes"
+    },
+    {
+        "Identifier": "BASIC-00310",
+        "Message": "1 instance(s) of cbc:ItemClassificationCode is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification",
+        "Test": "cbc:ItemClassificationCode[1] and not(cbc:ItemClassificationCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode"
+    },
+    {
+        "Identifier": "BASIC-00311",
+        "Message": "This attribute must have value from codelist UNCL7143.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode",
+        "Test": "not(@listID) or (some $code in $clUNCL7143 satisfies $code = normalize-space(@listID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID",
+        "Codelist": "Item type identification code"
+    },
+    {
+        "Identifier": "BASIC-00312",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00313",
+        "Message": "No more than 1 instance(s) of cbc:Percent are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
+        "Test": "not(cbc:Percent[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent"
+    },
+    {
+        "Identifier": "BASIC-00314",
+        "Message": "No more than 1 instance(s) of cbc:PerUnitAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
+        "Test": "not(cbc:PerUnitAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:PerUnitAmount"
+    },
+    {
+        "Identifier": "BASIC-00315",
+        "Message": "No more than 1 instance(s) of cbc:TaxExemptionReasonCode are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
+        "Test": "not(cbc:TaxExemptionReasonCode[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode"
+    },
+    {
+        "Identifier": "BASIC-00316",
+        "Message": "No more than 1 instance(s) of cbc:TaxExemptionReason are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
+        "Test": "not(cbc:TaxExemptionReason[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReason"
+    },
+    {
+        "Identifier": "BASIC-00317",
+        "Message": "1 instance(s) of cac:TaxScheme is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
+        "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme"
+    },
+    {
+        "Identifier": "BASIC-00318",
+        "Message": "This element must have value from codelist UNCL5305.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID",
+        "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID",
+        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+    },
+    {
+        "Identifier": "BASIC-00319",
+        "Message": "1 instance(s) of cbc:ID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme",
+        "Test": "cbc:ID[1] and not(cbc:ID[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID"
+    },
+    {
+        "Identifier": "BASIC-00320",
+        "Message": "1 instance(s) of cbc:Name is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty",
+        "Test": "cbc:Name[1] and not(cbc:Name[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name"
+    },
+    {
+        "Identifier": "BASIC-00321",
+        "Message": "1 instance(s) of cbc:Value is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty",
+        "Test": "cbc:Value[1] and not(cbc:Value[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value"
+    },
+    {
+        "Identifier": "BASIC-00322",
+        "Message": "1 instance(s) of cbc:PriceAmount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price",
+        "Test": "cbc:PriceAmount[1] and not(cbc:PriceAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount"
+    },
+    {
+        "Identifier": "BASIC-00323",
+        "Message": "No more than 1 instance(s) of cbc:BaseQuantity are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price",
+        "Test": "not(cbc:BaseQuantity[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity"
+    },
+    {
+        "Identifier": "BASIC-00324",
+        "Message": "No more than 1 instance(s) of cac:AllowanceCharge are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price",
+        "Test": "not(cac:AllowanceCharge[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge"
+    },
+    {
+        "Identifier": "BASIC-00325",
+        "Message": "Attribute currencyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount",
+        "Test": "@currencyID",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount/@currencyID"
+    },
+    {
+        "Identifier": "BASIC-00326",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00327",
+        "Message": "This attribute must have value from codelist UNECERec20.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity",
+        "Test": "not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = normalize-space(@unitCode))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode",
+        "Codelist": "Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)"
+    },
+    {
+        "Identifier": "BASIC-00328",
+        "Message": "1 instance(s) of cbc:ChargeIndicator is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge",
+        "Test": "cbc:ChargeIndicator[1] and not(cbc:ChargeIndicator[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator"
+    },
+    {
+        "Identifier": "BASIC-00329",
+        "Message": "1 instance(s) of cbc:Amount is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge",
+        "Test": "cbc:Amount[1] and not(cbc:Amount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount"
+    },
+    {
+        "Identifier": "BASIC-00330",
+        "Message": "No more than 1 instance(s) of cbc:BaseAmount are allowed.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge",
+        "Test": "not(cbc:BaseAmount[2])",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount"
+    },
+    {
+        "Identifier": "BASIC-00331",
+        "Message": "This element must have value 'false'.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator",
+        "Test": "normalize-space() = 'false'",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator"
+    },
+    {
+        "Identifier": "BASIC-00332",
+        "Message": "Attribute currencyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount",
+        "Test": "@currencyID",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount/@currencyID"
+    },
+    {
+        "Identifier": "BASIC-00333",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00334",
+        "Message": "Attribute currencyID is mandatory.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount",
+        "Test": "@currencyID",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount/@currencyID"
+    },
+    {
+        "Identifier": "BASIC-00335",
+        "Message": "This attribute must have value from codelist ISO4217.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount",
+        "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
+        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount/@currencyID",
+        "Codelist": "Currency codes"
+    },
+    {
+        "Identifier": "BASIC-00336",
+        "Message": "Element not part of syntax binding.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice//*",
+        "Test": "false()"
+    }
+]

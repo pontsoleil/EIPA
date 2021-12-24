@@ -1,27 +1,27 @@
-import jp_pint_base
+# import jp_pint_base
 from jp_pint_base import OP_BASE
 from jp_pint_base import APP_BASE
 from jp_pint_base import MESSAGE # invoice debitnote summarized
 
 profiles = {
 	'invoice': {
-		'title_en':'Japanese Commercial Invoice',
+		'title_en':'Peppol BIS Billing JP 0.9',
 		'title_ja':'都度請求書',
 		'ProfileID':'urn:peppol:bis:billing',
 		'CustomizationID':'urn:peppol:pint:billing-3.0@jp:peppol-1'
-	},
-	'debitnote': {
-		'title_en':'Japanese Debit Note',
-		'title_ja':'納品書',
-		'ProfileID':'urn:peppol:bis:debitnote',
-		'CustomizationID':'urn:peppol:pint:debitnote-3.0@jp:peppol-1'
-	},
-	'summarised': {
-		'title_en':'Japanese Summary Invoice, pattern 1',
-		'title_ja':'合算請求書パターン１',
-		'ProfileID':'urn:peppol:bis:billing',
-		'CustomizationID':'urn:peppol:pint:billing-3.0@jp:peppol-1@jp:suminvpt1-1'
 	}
+	# 'debitnote': {
+	# 	'title_en':'Japanese Debit Note',
+	# 	'title_ja':'納品書',
+	# 	'ProfileID':'urn:peppol:bis:debitnote',
+	# 	'CustomizationID':'urn:peppol:pint:debitnote-3.0@jp:peppol-1'
+	# },
+	# 'summarised': {
+	# 	'title_en':'Japanese Summary Invoice, pattern 1',
+	# 	'title_ja':'合算請求書パターン１',
+	# 	'ProfileID':'urn:peppol:bis:billing',
+	# 	'CustomizationID':'urn:peppol:pint:billing-3.0@jp:peppol-1@jp:suminvpt1-1'
+	# }
 }
 
 SEMANTIC_BASE = APP_BASE+'semantic/'+MESSAGE+'/'
@@ -32,30 +32,30 @@ RULES_UBL_PINT_BASE = APP_BASE+'rules/ubl-pint/'
 RULES_EN_PEPPOL = APP_BASE+'rules/en-peppol/'
 RULES_EN_CEN = APP_BASE+'rules/en-cen/'
 
-SPEC_TITLE_en = 'The first draft of Japanese PEPPOL BIS Documentation'
-SPEC_TITLE_ja = '電子インボイス 国内標準仕様 - ドラフト 第一版'
-SEMANTICS_MESSAGE_TITLE_en = profiles[MESSAGE]['title_en']+', semantc data model'
-SEMANTICS_MESSAGE_TITLE_ja = profiles[MESSAGE]['title_ja']+'モデル'
-SEMANTICS_LEGEND_TITLE_en = 'Semantic data model'
-SEMANTICS_LEGEND_TITLE_ja = 'コアインボイスモデル'
-SYNTAX_MESSAGE_TITLE_en = profiles[MESSAGE]['title_en']+', message specification'
-SYNTAX_MESSAGE_TITLE_ja = profiles[MESSAGE]['title_ja']+'XML構文'
-SYNTAX_LEGEND_TITLE_en = 'Message specification'
-SYNTAX_LEGEND_TITLE_ja = 'XML構文'
+SPEC_TITLE_en = 'Peppol Specifications for Japan (Candidate)'
+SPEC_TITLE_ja = ''#'電子インボイス 国内標準仕様 - ドラフト 第一版'
+SEMANTICS_MESSAGE_TITLE_en = profiles[MESSAGE]['title_en']+', Semantc Model'
+SEMANTICS_MESSAGE_TITLE_ja = ''#profiles[MESSAGE]['title_ja']+'モデル'
+SEMANTICS_LEGEND_TITLE_en = 'Semantic Model'
+SEMANTICS_LEGEND_TITLE_ja = ''#'コアインボイスモデル'
+SYNTAX_MESSAGE_TITLE_en = profiles[MESSAGE]['title_en']+', Syntax Binding'
+SYNTAX_MESSAGE_TITLE_ja = ''#profiles[MESSAGE]['title_ja']+'XML構文'
+SYNTAX_LEGEND_TITLE_en = 'Syntax Binding'
+SYNTAX_LEGEND_TITLE_ja = ''#'XML構文'
 PINT_RULE_MESSAGE_TITLE_en = 'Rules for PEPPOL PINT'
-PINT_RULE_MESSAGE_TITLE_ja = 'PEPPOL PINTルール'
+PINT_RULE_MESSAGE_TITLE_ja = ''#'PEPPOL PINTルール'
 JP_RULE_MESSAGE_TITLE_en = 'Rules for Japanese Standard Commercial Invoice'
-JP_RULE_MESSAGE_TITLE_ja = '都度請求書ルール'
+JP_RULE_MESSAGE_TITLE_ja = ''#'都度請求書ルール'
 peppol_rule_MESSAGE_TITLE_en = 'Rules for PEPPOL BIS 3.0 Billing'
-peppol_rule_MESSAGE_TITLE_ja = 'PEPPOL BIS 3.0 Billing ルール'
+peppol_rule_MESSAGE_TITLE_ja = ''#'PEPPOL BIS 3.0 Billing ルール'
 cen_rule_MESSAGE_TITLE_en = 'EN16931 model bound to UBL'
-cen_rule_MESSAGE_TITLE_ja = 'EN16931モデルをUBLで表すためのルール'
+cen_rule_MESSAGE_TITLE_ja = ''#'EN16931モデルをUBLで表すためのルール'
 HOME_en = '<i class="fa fa-square mr-2" aria-hidden="true"> Home</i>'
-HOME_ja = '<i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i>'
-warning_ja = '<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)、仕様ID (Customization ID)、及び請求書タイプコードです。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'
-warning_en = '<p class="lead">NOTE: All element names are inhereted from Peppol International Invoicing (PINT) and naming use the term invoice, the same items are used in standard commercial invoice, summarised invoice and delivery note (debit note). The difference is Business process type (Profile ID), Specification identifier (Customization ID), and Invoice type code. The tag names are correct according to the UBL 2.1 Invoice schema.</p>'
-searchLegend_ja = 'IDまたは用語/説明文が含む単語を入力し、左のアイコンをクリックすると検索します。'
+HOME_ja = ''#'<i class="fa fa-square mr-2" aria-hidden="true"> ホーム</i>'
+warning_en = '<p class="lead">A DRAFT version of a Peppol Business Interoperability Specification (BIS) for a Japanese Billing process that contains two transactions that may be sent from a seller to a buyer. An Invoice and, if needed, a Credit Note. This draft only includes the Invoice transaction with syntax binding to the UBL Invoice document type. The Credit Note will be added into the final release. The semantic data model of the Credit Note is the same as for the Invoice but it will be mapped to the UBL Credit Note document type.</p>'
+warning_ja = ''#<p class="lead">注：すべての項目名は、Peppol International Invoicing (PINT)からのものです。共通して同じ名称が、都度請求書、合算請求書、納品書で使われています。違いは、ビジネスプロセスタイプ (Profile ID)、仕様ID (Customization ID)、及び請求書タイプコードです。XML要素名、属性名は、UBL 2.1 Invoice に基づいています。</p>'
 searchLegend_en = 'Enter the key word that contains the ID or term/description and click the icon on the left to search.' 
+searchLegend_ja = ''#IDまたは用語/説明文が含む単語を入力し、左のアイコンをクリックすると検索します。'
 
 variables = {
 	'/Invoice/cbc:DocumentCurrencyCode/text()':'$documentcurrency',
@@ -101,7 +101,7 @@ javascript_html = '''
 # 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
 # 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang 14.NOT_SUPPORTED  15.gobacktext
 NOT_SUPPORTED_en = "This service doesn't support Internet Explorer (IE). Please use either Edge, Chrome, Safari, FireFox, etc."
-NOT_SUPPORTED_ja = "インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません。Edge, Google Chrome, Safari, FireFox をご使用ください。"
+NOT_SUPPORTED_ja = ''#"インターネットエクスプローラ(IE)では、一部の機能が正しく動作しません。Edge, Google Chrome, Safari, FireFox をご使用ください。"
 
 # 0.SPEC_TITLE_en 1.'selected' 2.'' 3.HOME_en 4.SYNTAX_MESSAGE_TITLE_en 5.'Legend' 
 # 6.legend_en 7.'Shows a ...' 8.dropdown_menu 9.tooltipTextForSearch, 10.size 11.warning 12.APP_BASE 13.jang
@@ -130,28 +130,33 @@ navbar_html = '''
 			</div>
 		</div>
 	</div>
-	<form id="nav-menu" class="form-inline flex-nowrap">
-		<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
-		<input type="search" onsearch="lookupTerm(this)" class="search form-control mr-0" placeholder="{16}" aria-label="Search" data-toggle="tooltip" title="{9}">
-		<select id="language" class="form-control mr-0 border-0">
-			<option value="en" {1}>English</option>
-			<option value="ja" {2}>日本語</option>
-		</select>
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{15}"></i></button>
-		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
-			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{7}"></i>
-		</button>
-		{8}
-	</form>
-	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
-		<a class="navbar-brand col-8 mr-auto" href="{12}{13}">{0}</a>
-	</nav>
+	<header class="sticky-top bg-white px-0 py-2">
+		<form id="nav-menu" class="form-inline flex-nowrap">
+	<!--
+			<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
+			<input type="search" onsearch="lookupTerm(this)" class="search form-control mr-0" placeholder="{16}" aria-label="Search" data-toggle="tooltip" title="{9}">
+			<select id="language" class="form-control mr-0 border-0">
+				<option value="en" {1}>English</option>
+				<option value="ja" {2}>日本語</option>
+			</select>
+			<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{15}"></i></button>
+	-->
+			<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
+				<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{7}"></i>
+			</button>
+			{8}
+		</form>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light p-0 mb-1">
+			<a class="navbar-brand col-8 mr-auto" href="{12}{13}">{0}</a>
+		</nav>
+		<ol class="breadcrumb pt-1 pb-1">
+			<li class="breadcrumb-item"><a href="{12}{13}">{3}</a></li>
+			<li class="breadcrumb-item active">{4}</li>
+		</ol>
+	</header>
 	<div class="container">
 		<div class="syntax">
-			<ol class="breadcrumb pt-1 pb-1">
-				<li class="breadcrumb-item"><a href="{12}{13}">{3}</a></li>
-				<li class="breadcrumb-item active">{4}</li>
-			</ol>
+
 			<div class="page-header">
 				<h1>{4}</h1>
 				{11}
@@ -168,6 +173,10 @@ trailer = '''
 				</table>
 			</div>
 		</div>
+		<p>This site is provided by <a href="https://www.sambuichi.jp/?page_id=670&lang=en">Sambuichi Profssional Engineers Office</a> for verification.</p>
+		<p>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> CC BY-SA 4.0 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+		</p>
 	</div>
 	<button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="{0}">
   	<i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
@@ -220,29 +229,30 @@ item_navbar = '''
 		</div>
 	</div>
 	<form id="nav-menu" class="form-inline flex-nowrap">
+<!--
 		<select id="language" class="form-control mr-0 border-0">
 			<option value="en" {1}>English</option>
 			<option value="ja" {2}>日本語</option>
 		</select>
 		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{10}"></i></button>
+-->
 		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
 			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{8}"></i>
 		</button>
 		{7}
 	</form>
-	<nav class="syntax navbar navbar-expand-lg navbar-light bg-light mb-3">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light p-0 mb-1">
 		<a class="navbar-brand col-8 mr-auto" href="{3}{4}">{0}</a>
 	</nav>
-	<div class="container">
-		<div class="item-syntax">
+	<div class="item-syntax">
 '''
-item_header = '''
-			<div class="page-header">
-				<h1>{0}</h1>
-			</div>
-			<p class="lead">{1}</p>
-			<dl class="row">
-'''
+# item_header = '''
+# 			<div class="page-header">
+# 				<h1>{0}</h1>
+# 			</div>
+# 			<p class="lead">{1}</p>
+# 			<dl class="row">
+# '''
 item_trailer = '''
 			</dl>
 		</div>
@@ -295,6 +305,7 @@ dropdown_menu_en = '''
 			<a class="nav-link dropdown-toggle fa fa-list" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			</a>
 			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<!--
 				<a class="dropdown-item" href="{0}en"><i class="fa fa-square mr-2" aria-hidden="true"> Home</i></a>
 				<div class="dropdown-divider"></div>
 				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
@@ -313,18 +324,34 @@ dropdown_menu_en = '''
 					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
 				</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="{0}semantic/invoice/tree/en/">Commercial Invoice, Semantic Data Model</a>
+-->
+				<a class="dropdown-item" href="{0}semantic/invoice/tree/en/">Standard Commercial Invoice, Semantic Model</a>
+<!--
 				<a class="dropdown-item" href="{0}semantic/summarised/tree/en/">Summary Invoice, pattern 1, Semantic Data Model</a>
 				<a class="dropdown-item" href="{0}semantic/debitnote/tree/en/">Debit Note, Semantic Data Model</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/en/">Invoice, UBL Syntax</a>
+-->
+				<a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/en/">Standard Commercial Invoice, Syntax Binding</a>
+<!--
 				<a class="dropdown-item" href="{0}syntax/ubl-summarised/tree/en/">Summary Invoice, pattern 1, UBL Syntax</a>
 				<a class="dropdown-item" href="{0}syntax/ubl-debitnote/tree/en/">Debit Note, UBL Syntax</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="{0}rules/ubl-pint/en/">Rules for PEPPOL PINT</a>
 				<a class="dropdown-item" href="{0}rules/ubl-japan/en/">rules for Commercial Invoice</a>
+-->
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="https://www.eipa.jp/">E-Invoice Promotion Association</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://test-docs.peppol.eu/japan/master/">Peppol BIS Billing JP 0.9 (test-docs.peppol.eu)</a>
+				<a class="dropdown-item" href="https://test-docs.peppol.eu/japan/master/billing-1.0/#:~:text=Documentation-,Peppol%20BIS%20Japan%20Billing,-The%20Peppol%20BIS"> -- Peppol BIS Japan Billing</a>
+				<a class="dropdown-item" href="https://test-docs.peppol.eu/japan/master/billing-1.0/#:~:text=Invoice%20transaction-,Semantic%20model,-Syntax%20binding%20Code"> -- Semantic model</a>
+				<a class="dropdown-item" href="https://test-docs.peppol.eu/japan/master/billing-1.0/#:~:text=Semantic%20model-,Syntax%20binding,-Code%20lists%20Rules"> -- Syntax binding</a>
+				<a class="dropdown-item" href="https://test-docs.peppol.eu/poacc/billing-japan/codelist/"> -- code lists</a>
+				<a class="dropdown-item" href="https://test-docs.peppol.eu/japan/master/billing-1.0/#:~:text=binding%20Code%20lists-,Rules"> -- Rules</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://docs.peppol.eu/poacc/billing/3.0/">PEPPOL BIS Billing 3.0</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="http://www.datypic.com/sc/ubl21/ss.html">Schema Central &gt; UBL 2.1</a>
 			</div>
 		</li>
 '''

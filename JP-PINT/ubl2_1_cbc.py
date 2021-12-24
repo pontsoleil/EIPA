@@ -1,5244 +1,5244 @@
-cbc = {
+CBC = {
 	"element":{
 		"AcceptedIndicator":{
-		"@type":"AcceptedIndicatorType"
+		"type":"AcceptedIndicatorType"
 		},
 		"AcceptedVariantsDescription":{
-		"@type":"AcceptedVariantsDescriptionType"
+		"type":"AcceptedVariantsDescriptionType"
 		},
 		"AccountFormatCode":{
-		"@type":"AccountFormatCodeType"
+		"type":"AccountFormatCodeType"
 		},
 		"AccountID":{
-		"@type":"AccountIDType"
+		"type":"AccountIDType"
 		},
 		"AccountTypeCode":{
-		"@type":"AccountTypeCodeType"
+		"type":"AccountTypeCodeType"
 		},
 		"AccountingCost":{
-		"@type":"AccountingCostType"
+		"type":"AccountingCostType"
 		},
 		"AccountingCostCode":{
-		"@type":"AccountingCostCodeType"
+		"type":"AccountingCostCodeType"
 		},
 		"ActionCode":{
-		"@type":"ActionCodeType"
+		"type":"ActionCodeType"
 		},
 		"ActivityType":{
-		"@type":"ActivityTypeType"
+		"type":"ActivityTypeType"
 		},
 		"ActivityTypeCode":{
-		"@type":"ActivityTypeCodeType"
+		"type":"ActivityTypeCodeType"
 		},
 		"ActualDeliveryDate":{
-		"@type":"ActualDeliveryDateType"
+		"type":"ActualDeliveryDateType"
 		},
 		"ActualDeliveryTime":{
-		"@type":"ActualDeliveryTimeType"
+		"type":"ActualDeliveryTimeType"
 		},
 		"ActualDespatchDate":{
-		"@type":"ActualDespatchDateType"
+		"type":"ActualDespatchDateType"
 		},
 		"ActualDespatchTime":{
-		"@type":"ActualDespatchTimeType"
+		"type":"ActualDespatchTimeType"
 		},
 		"ActualPickupDate":{
-		"@type":"ActualPickupDateType"
+		"type":"ActualPickupDateType"
 		},
 		"ActualPickupTime":{
-		"@type":"ActualPickupTimeType"
+		"type":"ActualPickupTimeType"
 		},
 		"ActualTemperatureReductionQuantity":{
-		"@type":"ActualTemperatureReductionQuantityType"
+		"type":"ActualTemperatureReductionQuantityType"
 		},
 		"AdValoremIndicator":{
-		"@type":"AdValoremIndicatorType"
+		"type":"AdValoremIndicatorType"
 		},
 		"AdditionalAccountID":{
-		"@type":"AdditionalAccountIDType"
+		"type":"AdditionalAccountIDType"
 		},
 		"AdditionalConditions":{
-		"@type":"AdditionalConditionsType"
+		"type":"AdditionalConditionsType"
 		},
 		"AdditionalInformation":{
-		"@type":"AdditionalInformationType"
+		"type":"AdditionalInformationType"
 		},
 		"AdditionalStreetName":{
-		"@type":"AdditionalStreetNameType"
+		"type":"AdditionalStreetNameType"
 		},
 		"AddressFormatCode":{
-		"@type":"AddressFormatCodeType"
+		"type":"AddressFormatCodeType"
 		},
 		"AddressTypeCode":{
-		"@type":"AddressTypeCodeType"
+		"type":"AddressTypeCodeType"
 		},
 		"AdjustmentReasonCode":{
-		"@type":"AdjustmentReasonCodeType"
+		"type":"AdjustmentReasonCodeType"
 		},
 		"AdmissionCode":{
-		"@type":"AdmissionCodeType"
+		"type":"AdmissionCodeType"
 		},
 		"AdvertisementAmount":{
-		"@type":"AdvertisementAmountType"
+		"type":"AdvertisementAmountType"
 		},
 		"AgencyID":{
-		"@type":"AgencyIDType"
+		"type":"AgencyIDType"
 		},
 		"AgencyName":{
-		"@type":"AgencyNameType"
+		"type":"AgencyNameType"
 		},
 		"AirFlowPercent":{
-		"@type":"AirFlowPercentType"
+		"type":"AirFlowPercentType"
 		},
 		"AircraftID":{
-		"@type":"AircraftIDType"
+		"type":"AircraftIDType"
 		},
 		"AliasName":{
-		"@type":"AliasNameType"
+		"type":"AliasNameType"
 		},
 		"AllowanceChargeReason":{
-		"@type":"AllowanceChargeReasonType"
+		"type":"AllowanceChargeReasonType"
 		},
 		"AllowanceChargeReasonCode":{
-		"@type":"AllowanceChargeReasonCodeType"
+		"type":"AllowanceChargeReasonCodeType"
 		},
 		"AllowanceTotalAmount":{
-		"@type":"AllowanceTotalAmountType"
+		"type":"AllowanceTotalAmountType"
 		},
 		"AltitudeMeasure":{
-		"@type":"AltitudeMeasureType"
+		"type":"AltitudeMeasureType"
 		},
 		"Amount":{
-		"@type":"AmountType"
+		"type":"AmountType"
 		},
 		"AmountRate":{
-		"@type":"AmountRateType"
+		"type":"AmountRateType"
 		},
 		"AnimalFoodApprovedIndicator":{
-		"@type":"AnimalFoodApprovedIndicatorType"
+		"type":"AnimalFoodApprovedIndicatorType"
 		},
 		"AnimalFoodIndicator":{
-		"@type":"AnimalFoodIndicatorType"
+		"type":"AnimalFoodIndicatorType"
 		},
 		"AnnualAverageAmount":{
-		"@type":"AnnualAverageAmountType"
+		"type":"AnnualAverageAmountType"
 		},
 		"ApplicationStatusCode":{
-		"@type":"ApplicationStatusCodeType"
+		"type":"ApplicationStatusCodeType"
 		},
 		"ApprovalDate":{
-		"@type":"ApprovalDateType"
+		"type":"ApprovalDateType"
 		},
 		"ApprovalStatus":{
-		"@type":"ApprovalStatusType"
+		"type":"ApprovalStatusType"
 		},
 		"AttributeID":{
-		"@type":"AttributeIDType"
+		"type":"AttributeIDType"
 		},
 		"AuctionConstraintIndicator":{
-		"@type":"AuctionConstraintIndicatorType"
+		"type":"AuctionConstraintIndicatorType"
 		},
 		"AuctionURI":{
-		"@type":"AuctionURIType"
+		"type":"AuctionURIType"
 		},
 		"AvailabilityDate":{
-		"@type":"AvailabilityDateType"
+		"type":"AvailabilityDateType"
 		},
 		"AvailabilityStatusCode":{
-		"@type":"AvailabilityStatusCodeType"
+		"type":"AvailabilityStatusCodeType"
 		},
 		"AverageAmount":{
-		"@type":"AverageAmountType"
+		"type":"AverageAmountType"
 		},
 		"AverageSubsequentContractAmount":{
-		"@type":"AverageSubsequentContractAmountType"
+		"type":"AverageSubsequentContractAmountType"
 		},
 		"AwardDate":{
-		"@type":"AwardDateType"
+		"type":"AwardDateType"
 		},
 		"AwardTime":{
-		"@type":"AwardTimeType"
+		"type":"AwardTimeType"
 		},
 		"AwardingCriterionDescription":{
-		"@type":"AwardingCriterionDescriptionType"
+		"type":"AwardingCriterionDescriptionType"
 		},
 		"AwardingCriterionID":{
-		"@type":"AwardingCriterionIDType"
+		"type":"AwardingCriterionIDType"
 		},
 		"AwardingCriterionTypeCode":{
-		"@type":"AwardingCriterionTypeCodeType"
+		"type":"AwardingCriterionTypeCodeType"
 		},
 		"AwardingMethodTypeCode":{
-		"@type":"AwardingMethodTypeCodeType"
+		"type":"AwardingMethodTypeCodeType"
 		},
 		"BackOrderAllowedIndicator":{
-		"@type":"BackOrderAllowedIndicatorType"
+		"type":"BackOrderAllowedIndicatorType"
 		},
 		"BackorderQuantity":{
-		"@type":"BackorderQuantityType"
+		"type":"BackorderQuantityType"
 		},
 		"BackorderReason":{
-		"@type":"BackorderReasonType"
+		"type":"BackorderReasonType"
 		},
 		"BalanceAmount":{
-		"@type":"BalanceAmountType"
+		"type":"BalanceAmountType"
 		},
 		"BalanceBroughtForwardIndicator":{
-		"@type":"BalanceBroughtForwardIndicatorType"
+		"type":"BalanceBroughtForwardIndicatorType"
 		},
 		"BarcodeSymbologyID":{
-		"@type":"BarcodeSymbologyIDType"
+		"type":"BarcodeSymbologyIDType"
 		},
 		"BaseAmount":{
-		"@type":"BaseAmountType"
+		"type":"BaseAmountType"
 		},
 		"BaseQuantity":{
-		"@type":"BaseQuantityType"
+		"type":"BaseQuantityType"
 		},
 		"BaseUnitMeasure":{
-		"@type":"BaseUnitMeasureType"
+		"type":"BaseUnitMeasureType"
 		},
 		"BasedOnConsensusIndicator":{
-		"@type":"BasedOnConsensusIndicatorType"
+		"type":"BasedOnConsensusIndicatorType"
 		},
 		"BasicConsumedQuantity":{
-		"@type":"BasicConsumedQuantityType"
+		"type":"BasicConsumedQuantityType"
 		},
 		"BatchQuantity":{
-		"@type":"BatchQuantityType"
+		"type":"BatchQuantityType"
 		},
 		"BestBeforeDate":{
-		"@type":"BestBeforeDateType"
+		"type":"BestBeforeDateType"
 		},
 		"BindingOnBuyerIndicator":{
-		"@type":"BindingOnBuyerIndicatorType"
+		"type":"BindingOnBuyerIndicatorType"
 		},
 		"BirthDate":{
-		"@type":"BirthDateType"
+		"type":"BirthDateType"
 		},
 		"BirthplaceName":{
-		"@type":"BirthplaceNameType"
+		"type":"BirthplaceNameType"
 		},
 		"BlockName":{
-		"@type":"BlockNameType"
+		"type":"BlockNameType"
 		},
 		"BrandName":{
-		"@type":"BrandNameType"
+		"type":"BrandNameType"
 		},
 		"BrokerAssignedID":{
-		"@type":"BrokerAssignedIDType"
+		"type":"BrokerAssignedIDType"
 		},
 		"BudgetYearNumeric":{
-		"@type":"BudgetYearNumericType"
+		"type":"BudgetYearNumericType"
 		},
 		"BuildingName":{
-		"@type":"BuildingNameType"
+		"type":"BuildingNameType"
 		},
 		"BuildingNumber":{
-		"@type":"BuildingNumberType"
+		"type":"BuildingNumberType"
 		},
 		"BulkCargoIndicator":{
-		"@type":"BulkCargoIndicatorType"
+		"type":"BulkCargoIndicatorType"
 		},
 		"BusinessClassificationEvidenceID":{
-		"@type":"BusinessClassificationEvidenceIDType"
+		"type":"BusinessClassificationEvidenceIDType"
 		},
 		"BusinessIdentityEvidenceID":{
-		"@type":"BusinessIdentityEvidenceIDType"
+		"type":"BusinessIdentityEvidenceIDType"
 		},
 		"BuyerEventID":{
-		"@type":"BuyerEventIDType"
+		"type":"BuyerEventIDType"
 		},
 		"BuyerProfileURI":{
-		"@type":"BuyerProfileURIType"
+		"type":"BuyerProfileURIType"
 		},
 		"BuyerReference":{
-		"@type":"BuyerReferenceType"
+		"type":"BuyerReferenceType"
 		},
 		"CV2ID":{
-		"@type":"CV2IDType"
+		"type":"CV2IDType"
 		},
 		"CalculationExpression":{
-		"@type":"CalculationExpressionType"
+		"type":"CalculationExpressionType"
 		},
 		"CalculationExpressionCode":{
-		"@type":"CalculationExpressionCodeType"
+		"type":"CalculationExpressionCodeType"
 		},
 		"CalculationMethodCode":{
-		"@type":"CalculationMethodCodeType"
+		"type":"CalculationMethodCodeType"
 		},
 		"CalculationRate":{
-		"@type":"CalculationRateType"
+		"type":"CalculationRateType"
 		},
 		"CalculationSequenceNumeric":{
-		"@type":"CalculationSequenceNumericType"
+		"type":"CalculationSequenceNumericType"
 		},
 		"CallBaseAmount":{
-		"@type":"CallBaseAmountType"
+		"type":"CallBaseAmountType"
 		},
 		"CallDate":{
-		"@type":"CallDateType"
+		"type":"CallDateType"
 		},
 		"CallExtensionAmount":{
-		"@type":"CallExtensionAmountType"
+		"type":"CallExtensionAmountType"
 		},
 		"CallTime":{
-		"@type":"CallTimeType"
+		"type":"CallTimeType"
 		},
 		"CancellationNote":{
-		"@type":"CancellationNoteType"
+		"type":"CancellationNoteType"
 		},
 		"CandidateReductionConstraintIndicator":{
-		"@type":"CandidateReductionConstraintIndicatorType"
+		"type":"CandidateReductionConstraintIndicatorType"
 		},
 		"CandidateStatement":{
-		"@type":"CandidateStatementType"
+		"type":"CandidateStatementType"
 		},
 		"CanonicalizationMethod":{
-		"@type":"CanonicalizationMethodType"
+		"type":"CanonicalizationMethodType"
 		},
 		"CapabilityTypeCode":{
-		"@type":"CapabilityTypeCodeType"
+		"type":"CapabilityTypeCodeType"
 		},
 		"CardChipCode":{
-		"@type":"CardChipCodeType"
+		"type":"CardChipCodeType"
 		},
 		"CardTypeCode":{
-		"@type":"CardTypeCodeType"
+		"type":"CardTypeCodeType"
 		},
 		"CargoTypeCode":{
-		"@type":"CargoTypeCodeType"
+		"type":"CargoTypeCodeType"
 		},
 		"CarrierAssignedID":{
-		"@type":"CarrierAssignedIDType"
+		"type":"CarrierAssignedIDType"
 		},
 		"CarrierServiceInstructions":{
-		"@type":"CarrierServiceInstructionsType"
+		"type":"CarrierServiceInstructionsType"
 		},
 		"CatalogueIndicator":{
-		"@type":"CatalogueIndicatorType"
+		"type":"CatalogueIndicatorType"
 		},
 		"CategoryName":{
-		"@type":"CategoryNameType"
+		"type":"CategoryNameType"
 		},
 		"CertificateType":{
-		"@type":"CertificateTypeType"
+		"type":"CertificateTypeType"
 		},
 		"CertificateTypeCode":{
-		"@type":"CertificateTypeCodeType"
+		"type":"CertificateTypeCodeType"
 		},
 		"ChangeConditions":{
-		"@type":"ChangeConditionsType"
+		"type":"ChangeConditionsType"
 		},
 		"Channel":{
-		"@type":"ChannelType"
+		"type":"ChannelType"
 		},
 		"ChannelCode":{
-		"@type":"ChannelCodeType"
+		"type":"ChannelCodeType"
 		},
 		"CharacterSetCode":{
-		"@type":"CharacterSetCodeType"
+		"type":"CharacterSetCodeType"
 		},
 		"Characteristics":{
-		"@type":"CharacteristicsType"
+		"type":"CharacteristicsType"
 		},
 		"ChargeIndicator":{
-		"@type":"ChargeIndicatorType"
+		"type":"ChargeIndicatorType"
 		},
 		"ChargeTotalAmount":{
-		"@type":"ChargeTotalAmountType"
+		"type":"ChargeTotalAmountType"
 		},
 		"ChargeableQuantity":{
-		"@type":"ChargeableQuantityType"
+		"type":"ChargeableQuantityType"
 		},
 		"ChargeableWeightMeasure":{
-		"@type":"ChargeableWeightMeasureType"
+		"type":"ChargeableWeightMeasureType"
 		},
 		"ChildConsignmentQuantity":{
-		"@type":"ChildConsignmentQuantityType"
+		"type":"ChildConsignmentQuantityType"
 		},
 		"ChipApplicationID":{
-		"@type":"ChipApplicationIDType"
+		"type":"ChipApplicationIDType"
 		},
 		"CityName":{
-		"@type":"CityNameType"
+		"type":"CityNameType"
 		},
 		"CitySubdivisionName":{
-		"@type":"CitySubdivisionNameType"
+		"type":"CitySubdivisionNameType"
 		},
 		"CodeValue":{
-		"@type":"CodeValueType"
+		"type":"CodeValueType"
 		},
 		"CollaborationPriorityCode":{
-		"@type":"CollaborationPriorityCodeType"
+		"type":"CollaborationPriorityCodeType"
 		},
 		"Comment":{
-		"@type":"CommentType"
+		"type":"CommentType"
 		},
 		"CommodityCode":{
-		"@type":"CommodityCodeType"
+		"type":"CommodityCodeType"
 		},
 		"CompanyID":{
-		"@type":"CompanyIDType"
+		"type":"CompanyIDType"
 		},
 		"CompanyLegalForm":{
-		"@type":"CompanyLegalFormType"
+		"type":"CompanyLegalFormType"
 		},
 		"CompanyLegalFormCode":{
-		"@type":"CompanyLegalFormCodeType"
+		"type":"CompanyLegalFormCodeType"
 		},
 		"CompanyLiquidationStatusCode":{
-		"@type":"CompanyLiquidationStatusCodeType"
+		"type":"CompanyLiquidationStatusCodeType"
 		},
 		"ComparedValueMeasure":{
-		"@type":"ComparedValueMeasureType"
+		"type":"ComparedValueMeasureType"
 		},
 		"ComparisonDataCode":{
-		"@type":"ComparisonDataCodeType"
+		"type":"ComparisonDataCodeType"
 		},
 		"ComparisonDataSourceCode":{
-		"@type":"ComparisonDataSourceCodeType"
+		"type":"ComparisonDataSourceCodeType"
 		},
 		"ComparisonForecastIssueDate":{
-		"@type":"ComparisonForecastIssueDateType"
+		"type":"ComparisonForecastIssueDateType"
 		},
 		"ComparisonForecastIssueTime":{
-		"@type":"ComparisonForecastIssueTimeType"
+		"type":"ComparisonForecastIssueTimeType"
 		},
 		"CompletionIndicator":{
-		"@type":"CompletionIndicatorType"
+		"type":"CompletionIndicatorType"
 		},
 		"Condition":{
-		"@type":"ConditionType"
+		"type":"ConditionType"
 		},
 		"ConditionCode":{
-		"@type":"ConditionCodeType"
+		"type":"ConditionCodeType"
 		},
 		"Conditions":{
-		"@type":"ConditionsType"
+		"type":"ConditionsType"
 		},
 		"ConditionsDescription":{
-		"@type":"ConditionsDescriptionType"
+		"type":"ConditionsDescriptionType"
 		},
 		"ConsigneeAssignedID":{
-		"@type":"ConsigneeAssignedIDType"
+		"type":"ConsigneeAssignedIDType"
 		},
 		"ConsignmentQuantity":{
-		"@type":"ConsignmentQuantityType"
+		"type":"ConsignmentQuantityType"
 		},
 		"ConsignorAssignedID":{
-		"@type":"ConsignorAssignedIDType"
+		"type":"ConsignorAssignedIDType"
 		},
 		"ConsolidatableIndicator":{
-		"@type":"ConsolidatableIndicatorType"
+		"type":"ConsolidatableIndicatorType"
 		},
 		"ConstitutionCode":{
-		"@type":"ConstitutionCodeType"
+		"type":"ConstitutionCodeType"
 		},
 		"ConsumerIncentiveTacticTypeCode":{
-		"@type":"ConsumerIncentiveTacticTypeCodeType"
+		"type":"ConsumerIncentiveTacticTypeCodeType"
 		},
 		"ConsumerUnitQuantity":{
-		"@type":"ConsumerUnitQuantityType"
+		"type":"ConsumerUnitQuantityType"
 		},
 		"ConsumersEnergyLevel":{
-		"@type":"ConsumersEnergyLevelType"
+		"type":"ConsumersEnergyLevelType"
 		},
 		"ConsumersEnergyLevelCode":{
-		"@type":"ConsumersEnergyLevelCodeType"
+		"type":"ConsumersEnergyLevelCodeType"
 		},
 		"ConsumptionEnergyQuantity":{
-		"@type":"ConsumptionEnergyQuantityType"
+		"type":"ConsumptionEnergyQuantityType"
 		},
 		"ConsumptionID":{
-		"@type":"ConsumptionIDType"
+		"type":"ConsumptionIDType"
 		},
 		"ConsumptionLevel":{
-		"@type":"ConsumptionLevelType"
+		"type":"ConsumptionLevelType"
 		},
 		"ConsumptionLevelCode":{
-		"@type":"ConsumptionLevelCodeType"
+		"type":"ConsumptionLevelCodeType"
 		},
 		"ConsumptionReportID":{
-		"@type":"ConsumptionReportIDType"
+		"type":"ConsumptionReportIDType"
 		},
 		"ConsumptionType":{
-		"@type":"ConsumptionTypeType"
+		"type":"ConsumptionTypeType"
 		},
 		"ConsumptionTypeCode":{
-		"@type":"ConsumptionTypeCodeType"
+		"type":"ConsumptionTypeCodeType"
 		},
 		"ConsumptionWaterQuantity":{
-		"@type":"ConsumptionWaterQuantityType"
+		"type":"ConsumptionWaterQuantityType"
 		},
 		"ContainerizedIndicator":{
-		"@type":"ContainerizedIndicatorType"
+		"type":"ContainerizedIndicatorType"
 		},
 		"Content":{
-		"@type":"ContentType"
+		"type":"ContentType"
 		},
 		"ContentUnitQuantity":{
-		"@type":"ContentUnitQuantityType"
+		"type":"ContentUnitQuantityType"
 		},
 		"ContractFolderID":{
-		"@type":"ContractFolderIDType"
+		"type":"ContractFolderIDType"
 		},
 		"ContractName":{
-		"@type":"ContractNameType"
+		"type":"ContractNameType"
 		},
 		"ContractSubdivision":{
-		"@type":"ContractSubdivisionType"
+		"type":"ContractSubdivisionType"
 		},
 		"ContractType":{
-		"@type":"ContractTypeType"
+		"type":"ContractTypeType"
 		},
 		"ContractTypeCode":{
-		"@type":"ContractTypeCodeType"
+		"type":"ContractTypeCodeType"
 		},
 		"ContractedCarrierAssignedID":{
-		"@type":"ContractedCarrierAssignedIDType"
+		"type":"ContractedCarrierAssignedIDType"
 		},
 		"ContractingSystemCode":{
-		"@type":"ContractingSystemCodeType"
+		"type":"ContractingSystemCodeType"
 		},
 		"CoordinateSystemCode":{
-		"@type":"CoordinateSystemCodeType"
+		"type":"CoordinateSystemCodeType"
 		},
 		"CopyIndicator":{
-		"@type":"CopyIndicatorType"
+		"type":"CopyIndicatorType"
 		},
 		"CorporateRegistrationTypeCode":{
-		"@type":"CorporateRegistrationTypeCodeType"
+		"type":"CorporateRegistrationTypeCodeType"
 		},
 		"CorporateStockAmount":{
-		"@type":"CorporateStockAmountType"
+		"type":"CorporateStockAmountType"
 		},
 		"CorrectionAmount":{
-		"@type":"CorrectionAmountType"
+		"type":"CorrectionAmountType"
 		},
 		"CorrectionType":{
-		"@type":"CorrectionTypeType"
+		"type":"CorrectionTypeType"
 		},
 		"CorrectionTypeCode":{
-		"@type":"CorrectionTypeCodeType"
+		"type":"CorrectionTypeCodeType"
 		},
 		"CorrectionUnitAmount":{
-		"@type":"CorrectionUnitAmountType"
+		"type":"CorrectionUnitAmountType"
 		},
 		"CountrySubentity":{
-		"@type":"CountrySubentityType"
+		"type":"CountrySubentityType"
 		},
 		"CountrySubentityCode":{
-		"@type":"CountrySubentityCodeType"
+		"type":"CountrySubentityCodeType"
 		},
 		"CreditLineAmount":{
-		"@type":"CreditLineAmountType"
+		"type":"CreditLineAmountType"
 		},
 		"CreditNoteTypeCode":{
-		"@type":"CreditNoteTypeCodeType"
+		"type":"CreditNoteTypeCodeType"
 		},
 		"CreditedQuantity":{
-		"@type":"CreditedQuantityType"
+		"type":"CreditedQuantityType"
 		},
 		"CrewQuantity":{
-		"@type":"CrewQuantityType"
+		"type":"CrewQuantityType"
 		},
 		"CurrencyCode":{
-		"@type":"CurrencyCodeType"
+		"type":"CurrencyCodeType"
 		},
 		"CurrentChargeType":{
-		"@type":"CurrentChargeTypeType"
+		"type":"CurrentChargeTypeType"
 		},
 		"CurrentChargeTypeCode":{
-		"@type":"CurrentChargeTypeCodeType"
+		"type":"CurrentChargeTypeCodeType"
 		},
 		"CustomerAssignedAccountID":{
-		"@type":"CustomerAssignedAccountIDType"
+		"type":"CustomerAssignedAccountIDType"
 		},
 		"CustomerReference":{
-		"@type":"CustomerReferenceType"
+		"type":"CustomerReferenceType"
 		},
 		"CustomizationID":{
-		"@type":"CustomizationIDType"
+		"type":"CustomizationIDType"
 		},
 		"CustomsClearanceServiceInstructions":{
-		"@type":"CustomsClearanceServiceInstructionsType"
+		"type":"CustomsClearanceServiceInstructionsType"
 		},
 		"CustomsImportClassifiedIndicator":{
-		"@type":"CustomsImportClassifiedIndicatorType"
+		"type":"CustomsImportClassifiedIndicatorType"
 		},
 		"CustomsStatusCode":{
-		"@type":"CustomsStatusCodeType"
+		"type":"CustomsStatusCodeType"
 		},
 		"CustomsTariffQuantity":{
-		"@type":"CustomsTariffQuantityType"
+		"type":"CustomsTariffQuantityType"
 		},
 		"DamageRemarks":{
-		"@type":"DamageRemarksType"
+		"type":"DamageRemarksType"
 		},
 		"DangerousGoodsApprovedIndicator":{
-		"@type":"DangerousGoodsApprovedIndicatorType"
+		"type":"DangerousGoodsApprovedIndicatorType"
 		},
 		"DataSendingCapability":{
-		"@type":"DataSendingCapabilityType"
+		"type":"DataSendingCapabilityType"
 		},
 		"DataSourceCode":{
-		"@type":"DataSourceCodeType"
+		"type":"DataSourceCodeType"
 		},
 		"Date":{
-		"@type":"DateType"
+		"type":"DateType"
 		},
 		"DebitLineAmount":{
-		"@type":"DebitLineAmountType"
+		"type":"DebitLineAmountType"
 		},
 		"DebitedQuantity":{
-		"@type":"DebitedQuantityType"
+		"type":"DebitedQuantityType"
 		},
 		"DeclarationTypeCode":{
-		"@type":"DeclarationTypeCodeType"
+		"type":"DeclarationTypeCodeType"
 		},
 		"DeclaredCarriageValueAmount":{
-		"@type":"DeclaredCarriageValueAmountType"
+		"type":"DeclaredCarriageValueAmountType"
 		},
 		"DeclaredCustomsValueAmount":{
-		"@type":"DeclaredCustomsValueAmountType"
+		"type":"DeclaredCustomsValueAmountType"
 		},
 		"DeclaredForCarriageValueAmount":{
-		"@type":"DeclaredForCarriageValueAmountType"
+		"type":"DeclaredForCarriageValueAmountType"
 		},
 		"DeclaredStatisticsValueAmount":{
-		"@type":"DeclaredStatisticsValueAmountType"
+		"type":"DeclaredStatisticsValueAmountType"
 		},
 		"DeliveredQuantity":{
-		"@type":"DeliveredQuantityType"
+		"type":"DeliveredQuantityType"
 		},
 		"DeliveryInstructions":{
-		"@type":"DeliveryInstructionsType"
+		"type":"DeliveryInstructionsType"
 		},
 		"DemurrageInstructions":{
-		"@type":"DemurrageInstructionsType"
+		"type":"DemurrageInstructionsType"
 		},
 		"Department":{
-		"@type":"DepartmentType"
+		"type":"DepartmentType"
 		},
 		"Description":{
-		"@type":"DescriptionType"
+		"type":"DescriptionType"
 		},
 		"DescriptionCode":{
-		"@type":"DescriptionCodeType"
+		"type":"DescriptionCodeType"
 		},
 		"DespatchAdviceTypeCode":{
-		"@type":"DespatchAdviceTypeCodeType"
+		"type":"DespatchAdviceTypeCodeType"
 		},
 		"DifferenceTemperatureReductionQuantity":{
-		"@type":"DifferenceTemperatureReductionQuantityType"
+		"type":"DifferenceTemperatureReductionQuantityType"
 		},
 		"DirectionCode":{
-		"@type":"DirectionCodeType"
+		"type":"DirectionCodeType"
 		},
 		"DisplayTacticTypeCode":{
-		"@type":"DisplayTacticTypeCodeType"
+		"type":"DisplayTacticTypeCodeType"
 		},
 		"DispositionCode":{
-		"@type":"DispositionCodeType"
+		"type":"DispositionCodeType"
 		},
 		"District":{
-		"@type":"DistrictType"
+		"type":"DistrictType"
 		},
 		"DocumentCurrencyCode":{
-		"@type":"DocumentCurrencyCodeType"
+		"type":"DocumentCurrencyCodeType"
 		},
 		"DocumentDescription":{
-		"@type":"DocumentDescriptionType"
+		"type":"DocumentDescriptionType"
 		},
 		"DocumentHash":{
-		"@type":"DocumentHashType"
+		"type":"DocumentHashType"
 		},
 		"DocumentID":{
-		"@type":"DocumentIDType"
+		"type":"DocumentIDType"
 		},
 		"DocumentStatusCode":{
-		"@type":"DocumentStatusCodeType"
+		"type":"DocumentStatusCodeType"
 		},
 		"DocumentStatusReasonCode":{
-		"@type":"DocumentStatusReasonCodeType"
+		"type":"DocumentStatusReasonCodeType"
 		},
 		"DocumentStatusReasonDescription":{
-		"@type":"DocumentStatusReasonDescriptionType"
+		"type":"DocumentStatusReasonDescriptionType"
 		},
 		"DocumentType":{
-		"@type":"DocumentTypeType"
+		"type":"DocumentTypeType"
 		},
 		"DocumentTypeCode":{
-		"@type":"DocumentTypeCodeType"
+		"type":"DocumentTypeCodeType"
 		},
 		"DocumentationFeeAmount":{
-		"@type":"DocumentationFeeAmountType"
+		"type":"DocumentationFeeAmountType"
 		},
 		"DueDate":{
-		"@type":"DueDateType"
+		"type":"DueDateType"
 		},
 		"DurationMeasure":{
-		"@type":"DurationMeasureType"
+		"type":"DurationMeasureType"
 		},
 		"Duty":{
-		"@type":"DutyType"
+		"type":"DutyType"
 		},
 		"DutyCode":{
-		"@type":"DutyCodeType"
+		"type":"DutyCodeType"
 		},
 		"EarliestPickupDate":{
-		"@type":"EarliestPickupDateType"
+		"type":"EarliestPickupDateType"
 		},
 		"EarliestPickupTime":{
-		"@type":"EarliestPickupTimeType"
+		"type":"EarliestPickupTimeType"
 		},
 		"EconomicOperatorRegistryURI":{
-		"@type":"EconomicOperatorRegistryURIType"
+		"type":"EconomicOperatorRegistryURIType"
 		},
 		"EffectiveDate":{
-		"@type":"EffectiveDateType"
+		"type":"EffectiveDateType"
 		},
 		"EffectiveTime":{
-		"@type":"EffectiveTimeType"
+		"type":"EffectiveTimeType"
 		},
 		"ElectronicDeviceDescription":{
-		"@type":"ElectronicDeviceDescriptionType"
+		"type":"ElectronicDeviceDescriptionType"
 		},
 		"ElectronicMail":{
-		"@type":"ElectronicMailType"
+		"type":"ElectronicMailType"
 		},
 		"EmbeddedDocumentBinaryObject":{
-		"@type":"EmbeddedDocumentBinaryObjectType"
+		"type":"EmbeddedDocumentBinaryObjectType"
 		},
 		"EmergencyProceduresCode":{
-		"@type":"EmergencyProceduresCodeType"
+		"type":"EmergencyProceduresCodeType"
 		},
 		"EmployeeQuantity":{
-		"@type":"EmployeeQuantityType"
+		"type":"EmployeeQuantityType"
 		},
 		"EncodingCode":{
-		"@type":"EncodingCodeType"
+		"type":"EncodingCodeType"
 		},
 		"EndDate":{
-		"@type":"EndDateType"
+		"type":"EndDateType"
 		},
 		"EndTime":{
-		"@type":"EndTimeType"
+		"type":"EndTimeType"
 		},
 		"EndpointID":{
-		"@type":"EndpointIDType"
+		"type":"EndpointIDType"
 		},
 		"EnvironmentalEmissionTypeCode":{
-		"@type":"EnvironmentalEmissionTypeCodeType"
+		"type":"EnvironmentalEmissionTypeCodeType"
 		},
 		"EstimatedAmount":{
-		"@type":"EstimatedAmountType"
+		"type":"EstimatedAmountType"
 		},
 		"EstimatedConsumedQuantity":{
-		"@type":"EstimatedConsumedQuantityType"
+		"type":"EstimatedConsumedQuantityType"
 		},
 		"EstimatedDeliveryDate":{
-		"@type":"EstimatedDeliveryDateType"
+		"type":"EstimatedDeliveryDateType"
 		},
 		"EstimatedDeliveryTime":{
-		"@type":"EstimatedDeliveryTimeType"
+		"type":"EstimatedDeliveryTimeType"
 		},
 		"EstimatedDespatchDate":{
-		"@type":"EstimatedDespatchDateType"
+		"type":"EstimatedDespatchDateType"
 		},
 		"EstimatedDespatchTime":{
-		"@type":"EstimatedDespatchTimeType"
+		"type":"EstimatedDespatchTimeType"
 		},
 		"EstimatedOverallContractAmount":{
-		"@type":"EstimatedOverallContractAmountType"
+		"type":"EstimatedOverallContractAmountType"
 		},
 		"EstimatedOverallContractQuantity":{
-		"@type":"EstimatedOverallContractQuantityType"
+		"type":"EstimatedOverallContractQuantityType"
 		},
 		"EvaluationCriterionTypeCode":{
-		"@type":"EvaluationCriterionTypeCodeType"
+		"type":"EvaluationCriterionTypeCodeType"
 		},
 		"EvidenceTypeCode":{
-		"@type":"EvidenceTypeCodeType"
+		"type":"EvidenceTypeCodeType"
 		},
 		"ExceptionResolutionCode":{
-		"@type":"ExceptionResolutionCodeType"
+		"type":"ExceptionResolutionCodeType"
 		},
 		"ExceptionStatusCode":{
-		"@type":"ExceptionStatusCodeType"
+		"type":"ExceptionStatusCodeType"
 		},
 		"ExchangeMarketID":{
-		"@type":"ExchangeMarketIDType"
+		"type":"ExchangeMarketIDType"
 		},
 		"ExclusionReason":{
-		"@type":"ExclusionReasonType"
+		"type":"ExclusionReasonType"
 		},
 		"ExecutionRequirementCode":{
-		"@type":"ExecutionRequirementCodeType"
+		"type":"ExecutionRequirementCodeType"
 		},
 		"ExemptionReason":{
-		"@type":"ExemptionReasonType"
+		"type":"ExemptionReasonType"
 		},
 		"ExemptionReasonCode":{
-		"@type":"ExemptionReasonCodeType"
+		"type":"ExemptionReasonCodeType"
 		},
 		"ExpectedOperatorQuantity":{
-		"@type":"ExpectedOperatorQuantityType"
+		"type":"ExpectedOperatorQuantityType"
 		},
 		"ExpectedQuantity":{
-		"@type":"ExpectedQuantityType"
+		"type":"ExpectedQuantityType"
 		},
 		"ExpenseCode":{
-		"@type":"ExpenseCodeType"
+		"type":"ExpenseCodeType"
 		},
 		"ExpiryDate":{
-		"@type":"ExpiryDateType"
+		"type":"ExpiryDateType"
 		},
 		"ExpiryTime":{
-		"@type":"ExpiryTimeType"
+		"type":"ExpiryTimeType"
 		},
 		"Expression":{
-		"@type":"ExpressionType"
+		"type":"ExpressionType"
 		},
 		"ExpressionCode":{
-		"@type":"ExpressionCodeType"
+		"type":"ExpressionCodeType"
 		},
 		"ExtendedID":{
-		"@type":"ExtendedIDType"
+		"type":"ExtendedIDType"
 		},
 		"Extension":{
-		"@type":"ExtensionType"
+		"type":"ExtensionType"
 		},
 		"FaceValueAmount":{
-		"@type":"FaceValueAmountType"
+		"type":"FaceValueAmountType"
 		},
 		"FamilyName":{
-		"@type":"FamilyNameType"
+		"type":"FamilyNameType"
 		},
 		"FeatureTacticTypeCode":{
-		"@type":"FeatureTacticTypeCodeType"
+		"type":"FeatureTacticTypeCodeType"
 		},
 		"FeeAmount":{
-		"@type":"FeeAmountType"
+		"type":"FeeAmountType"
 		},
 		"FeeDescription":{
-		"@type":"FeeDescriptionType"
+		"type":"FeeDescriptionType"
 		},
 		"FileName":{
-		"@type":"FileNameType"
+		"type":"FileNameType"
 		},
 		"FinancingInstrumentCode":{
-		"@type":"FinancingInstrumentCodeType"
+		"type":"FinancingInstrumentCodeType"
 		},
 		"FirstName":{
-		"@type":"FirstNameType"
+		"type":"FirstNameType"
 		},
 		"FirstShipmentAvailibilityDate":{
-		"@type":"FirstShipmentAvailibilityDateType"
+		"type":"FirstShipmentAvailibilityDateType"
 		},
 		"Floor":{
-		"@type":"FloorType"
+		"type":"FloorType"
 		},
 		"FollowupContractIndicator":{
-		"@type":"FollowupContractIndicatorType"
+		"type":"FollowupContractIndicatorType"
 		},
 		"ForecastPurposeCode":{
-		"@type":"ForecastPurposeCodeType"
+		"type":"ForecastPurposeCodeType"
 		},
 		"ForecastTypeCode":{
-		"@type":"ForecastTypeCodeType"
+		"type":"ForecastTypeCodeType"
 		},
 		"FormatCode":{
-		"@type":"FormatCodeType"
+		"type":"FormatCodeType"
 		},
 		"ForwarderServiceInstructions":{
-		"@type":"ForwarderServiceInstructionsType"
+		"type":"ForwarderServiceInstructionsType"
 		},
 		"FreeOfChargeIndicator":{
-		"@type":"FreeOfChargeIndicatorType"
+		"type":"FreeOfChargeIndicatorType"
 		},
 		"FreeOnBoardValueAmount":{
-		"@type":"FreeOnBoardValueAmountType"
+		"type":"FreeOnBoardValueAmountType"
 		},
 		"FreightForwarderAssignedID":{
-		"@type":"FreightForwarderAssignedIDType"
+		"type":"FreightForwarderAssignedIDType"
 		},
 		"FreightRateClassCode":{
-		"@type":"FreightRateClassCodeType"
+		"type":"FreightRateClassCodeType"
 		},
 		"Frequency":{
-		"@type":"FrequencyType"
+		"type":"FrequencyType"
 		},
 		"FrozenDocumentIndicator":{
-		"@type":"FrozenDocumentIndicatorType"
+		"type":"FrozenDocumentIndicatorType"
 		},
 		"FrozenPeriodDaysNumeric":{
-		"@type":"FrozenPeriodDaysNumericType"
+		"type":"FrozenPeriodDaysNumericType"
 		},
 		"FullnessIndicationCode":{
-		"@type":"FullnessIndicationCodeType"
+		"type":"FullnessIndicationCodeType"
 		},
 		"FullyPaidSharesIndicator":{
-		"@type":"FullyPaidSharesIndicatorType"
+		"type":"FullyPaidSharesIndicatorType"
 		},
 		"FundingProgram":{
-		"@type":"FundingProgramType"
+		"type":"FundingProgramType"
 		},
 		"FundingProgramCode":{
-		"@type":"FundingProgramCodeType"
+		"type":"FundingProgramCodeType"
 		},
 		"GasPressureQuantity":{
-		"@type":"GasPressureQuantityType"
+		"type":"GasPressureQuantityType"
 		},
 		"GenderCode":{
-		"@type":"GenderCodeType"
+		"type":"GenderCodeType"
 		},
 		"GeneralCargoIndicator":{
-		"@type":"GeneralCargoIndicatorType"
+		"type":"GeneralCargoIndicatorType"
 		},
 		"GovernmentAgreementConstraintIndicator":{
-		"@type":"GovernmentAgreementConstraintIndicatorType"
+		"type":"GovernmentAgreementConstraintIndicatorType"
 		},
 		"GrossTonnageMeasure":{
-		"@type":"GrossTonnageMeasureType"
+		"type":"GrossTonnageMeasureType"
 		},
 		"GrossVolumeMeasure":{
-		"@type":"GrossVolumeMeasureType"
+		"type":"GrossVolumeMeasureType"
 		},
 		"GrossWeightMeasure":{
-		"@type":"GrossWeightMeasureType"
+		"type":"GrossWeightMeasureType"
 		},
 		"GuaranteeTypeCode":{
-		"@type":"GuaranteeTypeCodeType"
+		"type":"GuaranteeTypeCodeType"
 		},
 		"GuaranteedDespatchDate":{
-		"@type":"GuaranteedDespatchDateType"
+		"type":"GuaranteedDespatchDateType"
 		},
 		"GuaranteedDespatchTime":{
-		"@type":"GuaranteedDespatchTimeType"
+		"type":"GuaranteedDespatchTimeType"
 		},
 		"HandlingCode":{
-		"@type":"HandlingCodeType"
+		"type":"HandlingCodeType"
 		},
 		"HandlingInstructions":{
-		"@type":"HandlingInstructionsType"
+		"type":"HandlingInstructionsType"
 		},
 		"HashAlgorithmMethod":{
-		"@type":"HashAlgorithmMethodType"
+		"type":"HashAlgorithmMethodType"
 		},
 		"HaulageInstructions":{
-		"@type":"HaulageInstructionsType"
+		"type":"HaulageInstructionsType"
 		},
 		"HazardClassID":{
-		"@type":"HazardClassIDType"
+		"type":"HazardClassIDType"
 		},
 		"HazardousCategoryCode":{
-		"@type":"HazardousCategoryCodeType"
+		"type":"HazardousCategoryCodeType"
 		},
 		"HazardousRegulationCode":{
-		"@type":"HazardousRegulationCodeType"
+		"type":"HazardousRegulationCodeType"
 		},
 		"HazardousRiskIndicator":{
-		"@type":"HazardousRiskIndicatorType"
+		"type":"HazardousRiskIndicatorType"
 		},
 		"HeatingType":{
-		"@type":"HeatingTypeType"
+		"type":"HeatingTypeType"
 		},
 		"HeatingTypeCode":{
-		"@type":"HeatingTypeCodeType"
+		"type":"HeatingTypeCodeType"
 		},
 		"HigherTenderAmount":{
-		"@type":"HigherTenderAmountType"
+		"type":"HigherTenderAmountType"
 		},
 		"HolderName":{
-		"@type":"HolderNameType"
+		"type":"HolderNameType"
 		},
 		"HumanFoodApprovedIndicator":{
-		"@type":"HumanFoodApprovedIndicatorType"
+		"type":"HumanFoodApprovedIndicatorType"
 		},
 		"HumanFoodIndicator":{
-		"@type":"HumanFoodIndicatorType"
+		"type":"HumanFoodIndicatorType"
 		},
 		"HumidityPercent":{
-		"@type":"HumidityPercentType"
+		"type":"HumidityPercentType"
 		},
 		"ID":{
-		"@type":"IDType"
+		"type":"IDType"
 		},
 		"IdentificationCode":{
-		"@type":"IdentificationCodeType"
+		"type":"IdentificationCodeType"
 		},
 		"IdentificationID":{
-		"@type":"IdentificationIDType"
+		"type":"IdentificationIDType"
 		},
 		"ImmobilizationCertificateID":{
-		"@type":"ImmobilizationCertificateIDType"
+		"type":"ImmobilizationCertificateIDType"
 		},
 		"ImportanceCode":{
-		"@type":"ImportanceCodeType"
+		"type":"ImportanceCodeType"
 		},
 		"IndicationIndicator":{
-		"@type":"IndicationIndicatorType"
+		"type":"IndicationIndicatorType"
 		},
 		"IndustryClassificationCode":{
-		"@type":"IndustryClassificationCodeType"
+		"type":"IndustryClassificationCodeType"
 		},
 		"Information":{
-		"@type":"InformationType"
+		"type":"InformationType"
 		},
 		"InformationURI":{
-		"@type":"InformationURIType"
+		"type":"InformationURIType"
 		},
 		"InhalationToxicityZoneCode":{
-		"@type":"InhalationToxicityZoneCodeType"
+		"type":"InhalationToxicityZoneCodeType"
 		},
 		"InhouseMail":{
-		"@type":"InhouseMailType"
+		"type":"InhouseMailType"
 		},
 		"InspectionMethodCode":{
-		"@type":"InspectionMethodCodeType"
+		"type":"InspectionMethodCodeType"
 		},
 		"InstallmentDueDate":{
-		"@type":"InstallmentDueDateType"
+		"type":"InstallmentDueDateType"
 		},
 		"InstructionID":{
-		"@type":"InstructionIDType"
+		"type":"InstructionIDType"
 		},
 		"InstructionNote":{
-		"@type":"InstructionNoteType"
+		"type":"InstructionNoteType"
 		},
 		"Instructions":{
-		"@type":"InstructionsType"
+		"type":"InstructionsType"
 		},
 		"InsurancePremiumAmount":{
-		"@type":"InsurancePremiumAmountType"
+		"type":"InsurancePremiumAmountType"
 		},
 		"InsuranceValueAmount":{
-		"@type":"InsuranceValueAmountType"
+		"type":"InsuranceValueAmountType"
 		},
 		"InventoryValueAmount":{
-		"@type":"InventoryValueAmountType"
+		"type":"InventoryValueAmountType"
 		},
 		"InvoiceTypeCode":{
-		"@type":"InvoiceTypeCodeType"
+		"type":"InvoiceTypeCodeType"
 		},
 		"InvoicedQuantity":{
-		"@type":"InvoicedQuantityType"
+		"type":"InvoicedQuantityType"
 		},
 		"InvoicingPartyReference":{
-		"@type":"InvoicingPartyReferenceType"
+		"type":"InvoicingPartyReferenceType"
 		},
 		"IssueDate":{
-		"@type":"IssueDateType"
+		"type":"IssueDateType"
 		},
 		"IssueNumberID":{
-		"@type":"IssueNumberIDType"
+		"type":"IssueNumberIDType"
 		},
 		"IssueTime":{
-		"@type":"IssueTimeType"
+		"type":"IssueTimeType"
 		},
 		"IssuerID":{
-		"@type":"IssuerIDType"
+		"type":"IssuerIDType"
 		},
 		"ItemClassificationCode":{
-		"@type":"ItemClassificationCodeType"
+		"type":"ItemClassificationCodeType"
 		},
 		"ItemUpdateRequestIndicator":{
-		"@type":"ItemUpdateRequestIndicatorType"
+		"type":"ItemUpdateRequestIndicatorType"
 		},
 		"JobTitle":{
-		"@type":"JobTitleType"
+		"type":"JobTitleType"
 		},
 		"JourneyID":{
-		"@type":"JourneyIDType"
+		"type":"JourneyIDType"
 		},
 		"Justification":{
-		"@type":"JustificationType"
+		"type":"JustificationType"
 		},
 		"JustificationDescription":{
-		"@type":"JustificationDescriptionType"
+		"type":"JustificationDescriptionType"
 		},
 		"Keyword":{
-		"@type":"KeywordType"
+		"type":"KeywordType"
 		},
 		"LanguageID":{
-		"@type":"LanguageIDType"
+		"type":"LanguageIDType"
 		},
 		"LastRevisionDate":{
-		"@type":"LastRevisionDateType"
+		"type":"LastRevisionDateType"
 		},
 		"LastRevisionTime":{
-		"@type":"LastRevisionTimeType"
+		"type":"LastRevisionTimeType"
 		},
 		"LatestDeliveryDate":{
-		"@type":"LatestDeliveryDateType"
+		"type":"LatestDeliveryDateType"
 		},
 		"LatestDeliveryTime":{
-		"@type":"LatestDeliveryTimeType"
+		"type":"LatestDeliveryTimeType"
 		},
 		"LatestMeterQuantity":{
-		"@type":"LatestMeterQuantityType"
+		"type":"LatestMeterQuantityType"
 		},
 		"LatestMeterReadingDate":{
-		"@type":"LatestMeterReadingDateType"
+		"type":"LatestMeterReadingDateType"
 		},
 		"LatestMeterReadingMethod":{
-		"@type":"LatestMeterReadingMethodType"
+		"type":"LatestMeterReadingMethodType"
 		},
 		"LatestMeterReadingMethodCode":{
-		"@type":"LatestMeterReadingMethodCodeType"
+		"type":"LatestMeterReadingMethodCodeType"
 		},
 		"LatestPickupDate":{
-		"@type":"LatestPickupDateType"
+		"type":"LatestPickupDateType"
 		},
 		"LatestPickupTime":{
-		"@type":"LatestPickupTimeType"
+		"type":"LatestPickupTimeType"
 		},
 		"LatestProposalAcceptanceDate":{
-		"@type":"LatestProposalAcceptanceDateType"
+		"type":"LatestProposalAcceptanceDateType"
 		},
 		"LatestSecurityClearanceDate":{
-		"@type":"LatestSecurityClearanceDateType"
+		"type":"LatestSecurityClearanceDateType"
 		},
 		"LatitudeDegreesMeasure":{
-		"@type":"LatitudeDegreesMeasureType"
+		"type":"LatitudeDegreesMeasureType"
 		},
 		"LatitudeDirectionCode":{
-		"@type":"LatitudeDirectionCodeType"
+		"type":"LatitudeDirectionCodeType"
 		},
 		"LatitudeMinutesMeasure":{
-		"@type":"LatitudeMinutesMeasureType"
+		"type":"LatitudeMinutesMeasureType"
 		},
 		"LeadTimeMeasure":{
-		"@type":"LeadTimeMeasureType"
+		"type":"LeadTimeMeasureType"
 		},
 		"LegalReference":{
-		"@type":"LegalReferenceType"
+		"type":"LegalReferenceType"
 		},
 		"LegalStatusIndicator":{
-		"@type":"LegalStatusIndicatorType"
+		"type":"LegalStatusIndicatorType"
 		},
 		"LiabilityAmount":{
-		"@type":"LiabilityAmountType"
+		"type":"LiabilityAmountType"
 		},
 		"LicensePlateID":{
-		"@type":"LicensePlateIDType"
+		"type":"LicensePlateIDType"
 		},
 		"LifeCycleStatusCode":{
-		"@type":"LifeCycleStatusCodeType"
+		"type":"LifeCycleStatusCodeType"
 		},
 		"LimitationDescription":{
-		"@type":"LimitationDescriptionType"
+		"type":"LimitationDescriptionType"
 		},
 		"Line":{
-		"@type":"LineType"
+		"type":"LineType"
 		},
 		"LineCountNumeric":{
-		"@type":"LineCountNumericType"
+		"type":"LineCountNumericType"
 		},
 		"LineExtensionAmount":{
-		"@type":"LineExtensionAmountType"
+		"type":"LineExtensionAmountType"
 		},
 		"LineID":{
-		"@type":"LineIDType"
+		"type":"LineIDType"
 		},
 		"LineNumberNumeric":{
-		"@type":"LineNumberNumericType"
+		"type":"LineNumberNumericType"
 		},
 		"LineStatusCode":{
-		"@type":"LineStatusCodeType"
+		"type":"LineStatusCodeType"
 		},
 		"ListValue":{
-		"@type":"ListValueType"
+		"type":"ListValueType"
 		},
 		"LivestockIndicator":{
-		"@type":"LivestockIndicatorType"
+		"type":"LivestockIndicatorType"
 		},
 		"LoadingLengthMeasure":{
-		"@type":"LoadingLengthMeasureType"
+		"type":"LoadingLengthMeasureType"
 		},
 		"LoadingSequenceID":{
-		"@type":"LoadingSequenceIDType"
+		"type":"LoadingSequenceIDType"
 		},
 		"LocaleCode":{
-		"@type":"LocaleCodeType"
+		"type":"LocaleCodeType"
 		},
 		"Location":{
-		"@type":"LocationType"
+		"type":"LocationType"
 		},
 		"LocationID":{
-		"@type":"LocationIDType"
+		"type":"LocationIDType"
 		},
 		"LocationTypeCode":{
-		"@type":"LocationTypeCodeType"
+		"type":"LocationTypeCodeType"
 		},
 		"Login":{
-		"@type":"LoginType"
+		"type":"LoginType"
 		},
 		"LogoReferenceID":{
-		"@type":"LogoReferenceIDType"
+		"type":"LogoReferenceIDType"
 		},
 		"LongitudeDegreesMeasure":{
-		"@type":"LongitudeDegreesMeasureType"
+		"type":"LongitudeDegreesMeasureType"
 		},
 		"LongitudeDirectionCode":{
-		"@type":"LongitudeDirectionCodeType"
+		"type":"LongitudeDirectionCodeType"
 		},
 		"LongitudeMinutesMeasure":{
-		"@type":"LongitudeMinutesMeasureType"
+		"type":"LongitudeMinutesMeasureType"
 		},
 		"LossRisk":{
-		"@type":"LossRiskType"
+		"type":"LossRiskType"
 		},
 		"LossRiskResponsibilityCode":{
-		"@type":"LossRiskResponsibilityCodeType"
+		"type":"LossRiskResponsibilityCodeType"
 		},
 		"LotNumberID":{
-		"@type":"LotNumberIDType"
+		"type":"LotNumberIDType"
 		},
 		"LowTendersDescription":{
-		"@type":"LowTendersDescriptionType"
+		"type":"LowTendersDescriptionType"
 		},
 		"LowerOrangeHazardPlacardID":{
-		"@type":"LowerOrangeHazardPlacardIDType"
+		"type":"LowerOrangeHazardPlacardIDType"
 		},
 		"LowerTenderAmount":{
-		"@type":"LowerTenderAmountType"
+		"type":"LowerTenderAmountType"
 		},
 		"MandateTypeCode":{
-		"@type":"MandateTypeCodeType"
+		"type":"MandateTypeCodeType"
 		},
 		"ManufactureDate":{
-		"@type":"ManufactureDateType"
+		"type":"ManufactureDateType"
 		},
 		"ManufactureTime":{
-		"@type":"ManufactureTimeType"
+		"type":"ManufactureTimeType"
 		},
 		"MarkAttention":{
-		"@type":"MarkAttentionType"
+		"type":"MarkAttentionType"
 		},
 		"MarkAttentionIndicator":{
-		"@type":"MarkAttentionIndicatorType"
+		"type":"MarkAttentionIndicatorType"
 		},
 		"MarkCare":{
-		"@type":"MarkCareType"
+		"type":"MarkCareType"
 		},
 		"MarkCareIndicator":{
-		"@type":"MarkCareIndicatorType"
+		"type":"MarkCareIndicatorType"
 		},
 		"MarketValueAmount":{
-		"@type":"MarketValueAmountType"
+		"type":"MarketValueAmountType"
 		},
 		"MarkingID":{
-		"@type":"MarkingIDType"
+		"type":"MarkingIDType"
 		},
 		"MathematicOperatorCode":{
-		"@type":"MathematicOperatorCodeType"
+		"type":"MathematicOperatorCodeType"
 		},
 		"MaximumAdvertisementAmount":{
-		"@type":"MaximumAdvertisementAmountType"
+		"type":"MaximumAdvertisementAmountType"
 		},
 		"MaximumAmount":{
-		"@type":"MaximumAmountType"
+		"type":"MaximumAmountType"
 		},
 		"MaximumBackorderQuantity":{
-		"@type":"MaximumBackorderQuantityType"
+		"type":"MaximumBackorderQuantityType"
 		},
 		"MaximumCopiesNumeric":{
-		"@type":"MaximumCopiesNumericType"
+		"type":"MaximumCopiesNumericType"
 		},
 		"MaximumMeasure":{
-		"@type":"MaximumMeasureType"
+		"type":"MaximumMeasureType"
 		},
 		"MaximumNumberNumeric":{
-		"@type":"MaximumNumberNumericType"
+		"type":"MaximumNumberNumericType"
 		},
 		"MaximumOperatorQuantity":{
-		"@type":"MaximumOperatorQuantityType"
+		"type":"MaximumOperatorQuantityType"
 		},
 		"MaximumOrderQuantity":{
-		"@type":"MaximumOrderQuantityType"
+		"type":"MaximumOrderQuantityType"
 		},
 		"MaximumPaidAmount":{
-		"@type":"MaximumPaidAmountType"
+		"type":"MaximumPaidAmountType"
 		},
 		"MaximumPaymentInstructionsNumeric":{
-		"@type":"MaximumPaymentInstructionsNumericType"
+		"type":"MaximumPaymentInstructionsNumericType"
 		},
 		"MaximumPercent":{
-		"@type":"MaximumPercentType"
+		"type":"MaximumPercentType"
 		},
 		"MaximumQuantity":{
-		"@type":"MaximumQuantityType"
+		"type":"MaximumQuantityType"
 		},
 		"MaximumValue":{
-		"@type":"MaximumValueType"
+		"type":"MaximumValueType"
 		},
 		"MaximumVariantQuantity":{
-		"@type":"MaximumVariantQuantityType"
+		"type":"MaximumVariantQuantityType"
 		},
 		"Measure":{
-		"@type":"MeasureType"
+		"type":"MeasureType"
 		},
 		"MedicalFirstAidGuideCode":{
-		"@type":"MedicalFirstAidGuideCodeType"
+		"type":"MedicalFirstAidGuideCodeType"
 		},
 		"MeterConstant":{
-		"@type":"MeterConstantType"
+		"type":"MeterConstantType"
 		},
 		"MeterConstantCode":{
-		"@type":"MeterConstantCodeType"
+		"type":"MeterConstantCodeType"
 		},
 		"MeterName":{
-		"@type":"MeterNameType"
+		"type":"MeterNameType"
 		},
 		"MeterNumber":{
-		"@type":"MeterNumberType"
+		"type":"MeterNumberType"
 		},
 		"MeterReadingComments":{
-		"@type":"MeterReadingCommentsType"
+		"type":"MeterReadingCommentsType"
 		},
 		"MeterReadingType":{
-		"@type":"MeterReadingTypeType"
+		"type":"MeterReadingTypeType"
 		},
 		"MeterReadingTypeCode":{
-		"@type":"MeterReadingTypeCodeType"
+		"type":"MeterReadingTypeCodeType"
 		},
 		"MiddleName":{
-		"@type":"MiddleNameType"
+		"type":"MiddleNameType"
 		},
 		"MimeCode":{
-		"@type":"MimeCodeType"
+		"type":"MimeCodeType"
 		},
 		"MinimumAmount":{
-		"@type":"MinimumAmountType"
+		"type":"MinimumAmountType"
 		},
 		"MinimumBackorderQuantity":{
-		"@type":"MinimumBackorderQuantityType"
+		"type":"MinimumBackorderQuantityType"
 		},
 		"MinimumImprovementBid":{
-		"@type":"MinimumImprovementBidType"
+		"type":"MinimumImprovementBidType"
 		},
 		"MinimumInventoryQuantity":{
-		"@type":"MinimumInventoryQuantityType"
+		"type":"MinimumInventoryQuantityType"
 		},
 		"MinimumMeasure":{
-		"@type":"MinimumMeasureType"
+		"type":"MinimumMeasureType"
 		},
 		"MinimumNumberNumeric":{
-		"@type":"MinimumNumberNumericType"
+		"type":"MinimumNumberNumericType"
 		},
 		"MinimumOrderQuantity":{
-		"@type":"MinimumOrderQuantityType"
+		"type":"MinimumOrderQuantityType"
 		},
 		"MinimumPercent":{
-		"@type":"MinimumPercentType"
+		"type":"MinimumPercentType"
 		},
 		"MinimumQuantity":{
-		"@type":"MinimumQuantityType"
+		"type":"MinimumQuantityType"
 		},
 		"MinimumValue":{
-		"@type":"MinimumValueType"
+		"type":"MinimumValueType"
 		},
 		"MiscellaneousEventTypeCode":{
-		"@type":"MiscellaneousEventTypeCodeType"
+		"type":"MiscellaneousEventTypeCodeType"
 		},
 		"ModelName":{
-		"@type":"ModelNameType"
+		"type":"ModelNameType"
 		},
 		"MonetaryScope":{
-		"@type":"MonetaryScopeType"
+		"type":"MonetaryScopeType"
 		},
 		"MovieTitle":{
-		"@type":"MovieTitleType"
+		"type":"MovieTitleType"
 		},
 		"MultipleOrderQuantity":{
-		"@type":"MultipleOrderQuantityType"
+		"type":"MultipleOrderQuantityType"
 		},
 		"MultiplierFactorNumeric":{
-		"@type":"MultiplierFactorNumericType"
+		"type":"MultiplierFactorNumericType"
 		},
 		"Name":{
-		"@type":"NameType"
+		"type":"NameType"
 		},
 		"NameCode":{
-		"@type":"NameCodeType"
+		"type":"NameCodeType"
 		},
 		"NameSuffix":{
-		"@type":"NameSuffixType"
+		"type":"NameSuffixType"
 		},
 		"NationalityID":{
-		"@type":"NationalityIDType"
+		"type":"NationalityIDType"
 		},
 		"NatureCode":{
-		"@type":"NatureCodeType"
+		"type":"NatureCodeType"
 		},
 		"NegotiationDescription":{
-		"@type":"NegotiationDescriptionType"
+		"type":"NegotiationDescriptionType"
 		},
 		"NetNetWeightMeasure":{
-		"@type":"NetNetWeightMeasureType"
+		"type":"NetNetWeightMeasureType"
 		},
 		"NetTonnageMeasure":{
-		"@type":"NetTonnageMeasureType"
+		"type":"NetTonnageMeasureType"
 		},
 		"NetVolumeMeasure":{
-		"@type":"NetVolumeMeasureType"
+		"type":"NetVolumeMeasureType"
 		},
 		"NetWeightMeasure":{
-		"@type":"NetWeightMeasureType"
+		"type":"NetWeightMeasureType"
 		},
 		"NetworkID":{
-		"@type":"NetworkIDType"
+		"type":"NetworkIDType"
 		},
 		"NominationDate":{
-		"@type":"NominationDateType"
+		"type":"NominationDateType"
 		},
 		"NominationTime":{
-		"@type":"NominationTimeType"
+		"type":"NominationTimeType"
 		},
 		"NormalTemperatureReductionQuantity":{
-		"@type":"NormalTemperatureReductionQuantityType"
+		"type":"NormalTemperatureReductionQuantityType"
 		},
 		"Note":{
-		"@type":"NoteType"
+		"type":"NoteType"
 		},
 		"NotificationTypeCode":{
-		"@type":"NotificationTypeCodeType"
+		"type":"NotificationTypeCodeType"
 		},
 		"OccurrenceDate":{
-		"@type":"OccurrenceDateType"
+		"type":"OccurrenceDateType"
 		},
 		"OccurrenceTime":{
-		"@type":"OccurrenceTimeType"
+		"type":"OccurrenceTimeType"
 		},
 		"OnCarriageIndicator":{
-		"@type":"OnCarriageIndicatorType"
+		"type":"OnCarriageIndicatorType"
 		},
 		"OneTimeChargeType":{
-		"@type":"OneTimeChargeTypeType"
+		"type":"OneTimeChargeTypeType"
 		},
 		"OneTimeChargeTypeCode":{
-		"@type":"OneTimeChargeTypeCodeType"
+		"type":"OneTimeChargeTypeCodeType"
 		},
 		"OntologyURI":{
-		"@type":"OntologyURIType"
+		"type":"OntologyURIType"
 		},
 		"OpenTenderID":{
-		"@type":"OpenTenderIDType"
+		"type":"OpenTenderIDType"
 		},
 		"OperatingYearsQuantity":{
-		"@type":"OperatingYearsQuantityType"
+		"type":"OperatingYearsQuantityType"
 		},
 		"OptionalLineItemIndicator":{
-		"@type":"OptionalLineItemIndicatorType"
+		"type":"OptionalLineItemIndicatorType"
 		},
 		"OptionsDescription":{
-		"@type":"OptionsDescriptionType"
+		"type":"OptionsDescriptionType"
 		},
 		"OrderIntervalDaysNumeric":{
-		"@type":"OrderIntervalDaysNumericType"
+		"type":"OrderIntervalDaysNumericType"
 		},
 		"OrderQuantityIncrementNumeric":{
-		"@type":"OrderQuantityIncrementNumericType"
+		"type":"OrderQuantityIncrementNumericType"
 		},
 		"OrderResponseCode":{
-		"@type":"OrderResponseCodeType"
+		"type":"OrderResponseCodeType"
 		},
 		"OrderTypeCode":{
-		"@type":"OrderTypeCodeType"
+		"type":"OrderTypeCodeType"
 		},
 		"OrderableIndicator":{
-		"@type":"OrderableIndicatorType"
+		"type":"OrderableIndicatorType"
 		},
 		"OrderableUnit":{
-		"@type":"OrderableUnitType"
+		"type":"OrderableUnitType"
 		},
 		"OrderableUnitFactorRate":{
-		"@type":"OrderableUnitFactorRateType"
+		"type":"OrderableUnitFactorRateType"
 		},
 		"OrganizationDepartment":{
-		"@type":"OrganizationDepartmentType"
+		"type":"OrganizationDepartmentType"
 		},
 		"OriginalContractingSystemID":{
-		"@type":"OriginalContractingSystemIDType"
+		"type":"OriginalContractingSystemIDType"
 		},
 		"OriginalJobID":{
-		"@type":"OriginalJobIDType"
+		"type":"OriginalJobIDType"
 		},
 		"OtherConditionsIndicator":{
-		"@type":"OtherConditionsIndicatorType"
+		"type":"OtherConditionsIndicatorType"
 		},
 		"OtherInstruction":{
-		"@type":"OtherInstructionType"
+		"type":"OtherInstructionType"
 		},
 		"OtherName":{
-		"@type":"OtherNameType"
+		"type":"OtherNameType"
 		},
 		"OutstandingQuantity":{
-		"@type":"OutstandingQuantityType"
+		"type":"OutstandingQuantityType"
 		},
 		"OutstandingReason":{
-		"@type":"OutstandingReasonType"
+		"type":"OutstandingReasonType"
 		},
 		"OversupplyQuantity":{
-		"@type":"OversupplyQuantityType"
+		"type":"OversupplyQuantityType"
 		},
 		"OwnerTypeCode":{
-		"@type":"OwnerTypeCodeType"
+		"type":"OwnerTypeCodeType"
 		},
 		"PackLevelCode":{
-		"@type":"PackLevelCodeType"
+		"type":"PackLevelCodeType"
 		},
 		"PackQuantity":{
-		"@type":"PackQuantityType"
+		"type":"PackQuantityType"
 		},
 		"PackSizeNumeric":{
-		"@type":"PackSizeNumericType"
+		"type":"PackSizeNumericType"
 		},
 		"PackageLevelCode":{
-		"@type":"PackageLevelCodeType"
+		"type":"PackageLevelCodeType"
 		},
 		"PackagingTypeCode":{
-		"@type":"PackagingTypeCodeType"
+		"type":"PackagingTypeCodeType"
 		},
 		"PackingCriteriaCode":{
-		"@type":"PackingCriteriaCodeType"
+		"type":"PackingCriteriaCodeType"
 		},
 		"PackingMaterial":{
-		"@type":"PackingMaterialType"
+		"type":"PackingMaterialType"
 		},
 		"PaidAmount":{
-		"@type":"PaidAmountType"
+		"type":"PaidAmountType"
 		},
 		"PaidDate":{
-		"@type":"PaidDateType"
+		"type":"PaidDateType"
 		},
 		"PaidTime":{
-		"@type":"PaidTimeType"
+		"type":"PaidTimeType"
 		},
 		"ParentDocumentID":{
-		"@type":"ParentDocumentIDType"
+		"type":"ParentDocumentIDType"
 		},
 		"ParentDocumentLineReferenceID":{
-		"@type":"ParentDocumentLineReferenceIDType"
+		"type":"ParentDocumentLineReferenceIDType"
 		},
 		"ParentDocumentTypeCode":{
-		"@type":"ParentDocumentTypeCodeType"
+		"type":"ParentDocumentTypeCodeType"
 		},
 		"ParentDocumentVersionID":{
-		"@type":"ParentDocumentVersionIDType"
+		"type":"ParentDocumentVersionIDType"
 		},
 		"PartPresentationCode":{
-		"@type":"PartPresentationCodeType"
+		"type":"PartPresentationCodeType"
 		},
 		"PartecipationPercent":{
-		"@type":"PartecipationPercentType"
+		"type":"PartecipationPercentType"
 		},
 		"PartialDeliveryIndicator":{
-		"@type":"PartialDeliveryIndicatorType"
+		"type":"PartialDeliveryIndicatorType"
 		},
 		"ParticipationPercent":{
-		"@type":"ParticipationPercentType"
+		"type":"ParticipationPercentType"
 		},
 		"PartyCapacityAmount":{
-		"@type":"PartyCapacityAmountType"
+		"type":"PartyCapacityAmountType"
 		},
 		"PartyType":{
-		"@type":"PartyTypeType"
+		"type":"PartyTypeType"
 		},
 		"PartyTypeCode":{
-		"@type":"PartyTypeCodeType"
+		"type":"PartyTypeCodeType"
 		},
 		"PassengerQuantity":{
-		"@type":"PassengerQuantityType"
+		"type":"PassengerQuantityType"
 		},
 		"Password":{
-		"@type":"PasswordType"
+		"type":"PasswordType"
 		},
 		"PayPerView":{
-		"@type":"PayPerViewType"
+		"type":"PayPerViewType"
 		},
 		"PayableAlternativeAmount":{
-		"@type":"PayableAlternativeAmountType"
+		"type":"PayableAlternativeAmountType"
 		},
 		"PayableAmount":{
-		"@type":"PayableAmountType"
+		"type":"PayableAmountType"
 		},
 		"PayableRoundingAmount":{
-		"@type":"PayableRoundingAmountType"
+		"type":"PayableRoundingAmountType"
 		},
 		"PayerReference":{
-		"@type":"PayerReferenceType"
+		"type":"PayerReferenceType"
 		},
 		"PaymentAlternativeCurrencyCode":{
-		"@type":"PaymentAlternativeCurrencyCodeType"
+		"type":"PaymentAlternativeCurrencyCodeType"
 		},
 		"PaymentChannelCode":{
-		"@type":"PaymentChannelCodeType"
+		"type":"PaymentChannelCodeType"
 		},
 		"PaymentCurrencyCode":{
-		"@type":"PaymentCurrencyCodeType"
+		"type":"PaymentCurrencyCodeType"
 		},
 		"PaymentDescription":{
-		"@type":"PaymentDescriptionType"
+		"type":"PaymentDescriptionType"
 		},
 		"PaymentDueDate":{
-		"@type":"PaymentDueDateType"
+		"type":"PaymentDueDateType"
 		},
 		"PaymentFrequencyCode":{
-		"@type":"PaymentFrequencyCodeType"
+		"type":"PaymentFrequencyCodeType"
 		},
 		"PaymentID":{
-		"@type":"PaymentIDType"
+		"type":"PaymentIDType"
 		},
 		"PaymentMeansCode":{
-		"@type":"PaymentMeansCodeType"
+		"type":"PaymentMeansCodeType"
 		},
 		"PaymentMeansID":{
-		"@type":"PaymentMeansIDType"
+		"type":"PaymentMeansIDType"
 		},
 		"PaymentNote":{
-		"@type":"PaymentNoteType"
+		"type":"PaymentNoteType"
 		},
 		"PaymentOrderReference":{
-		"@type":"PaymentOrderReferenceType"
+		"type":"PaymentOrderReferenceType"
 		},
 		"PaymentPercent":{
-		"@type":"PaymentPercentType"
+		"type":"PaymentPercentType"
 		},
 		"PaymentPurposeCode":{
-		"@type":"PaymentPurposeCodeType"
+		"type":"PaymentPurposeCodeType"
 		},
 		"PaymentTermsDetailsURI":{
-		"@type":"PaymentTermsDetailsURIType"
+		"type":"PaymentTermsDetailsURIType"
 		},
 		"PenaltyAmount":{
-		"@type":"PenaltyAmountType"
+		"type":"PenaltyAmountType"
 		},
 		"PenaltySurchargePercent":{
-		"@type":"PenaltySurchargePercentType"
+		"type":"PenaltySurchargePercentType"
 		},
 		"PerUnitAmount":{
-		"@type":"PerUnitAmountType"
+		"type":"PerUnitAmountType"
 		},
 		"Percent":{
-		"@type":"PercentType"
+		"type":"PercentType"
 		},
 		"PerformanceMetricTypeCode":{
-		"@type":"PerformanceMetricTypeCodeType"
+		"type":"PerformanceMetricTypeCodeType"
 		},
 		"PerformanceValueQuantity":{
-		"@type":"PerformanceValueQuantityType"
+		"type":"PerformanceValueQuantityType"
 		},
 		"PerformingCarrierAssignedID":{
-		"@type":"PerformingCarrierAssignedIDType"
+		"type":"PerformingCarrierAssignedIDType"
 		},
 		"PersonalSituation":{
-		"@type":"PersonalSituationType"
+		"type":"PersonalSituationType"
 		},
 		"PhoneNumber":{
-		"@type":"PhoneNumberType"
+		"type":"PhoneNumberType"
 		},
 		"PlacardEndorsement":{
-		"@type":"PlacardEndorsementType"
+		"type":"PlacardEndorsementType"
 		},
 		"PlacardNotation":{
-		"@type":"PlacardNotationType"
+		"type":"PlacardNotationType"
 		},
 		"PlannedDate":{
-		"@type":"PlannedDateType"
+		"type":"PlannedDateType"
 		},
 		"PlotIdentification":{
-		"@type":"PlotIdentificationType"
+		"type":"PlotIdentificationType"
 		},
 		"PositionCode":{
-		"@type":"PositionCodeType"
+		"type":"PositionCodeType"
 		},
 		"PostEventNotificationDurationMeasure":{
-		"@type":"PostEventNotificationDurationMeasureType"
+		"type":"PostEventNotificationDurationMeasureType"
 		},
 		"PostalZone":{
-		"@type":"PostalZoneType"
+		"type":"PostalZoneType"
 		},
 		"Postbox":{
-		"@type":"PostboxType"
+		"type":"PostboxType"
 		},
 		"PowerIndicator":{
-		"@type":"PowerIndicatorType"
+		"type":"PowerIndicatorType"
 		},
 		"PreCarriageIndicator":{
-		"@type":"PreCarriageIndicatorType"
+		"type":"PreCarriageIndicatorType"
 		},
 		"PreEventNotificationDurationMeasure":{
-		"@type":"PreEventNotificationDurationMeasureType"
+		"type":"PreEventNotificationDurationMeasureType"
 		},
 		"PreferenceCriterionCode":{
-		"@type":"PreferenceCriterionCodeType"
+		"type":"PreferenceCriterionCodeType"
 		},
 		"PrepaidAmount":{
-		"@type":"PrepaidAmountType"
+		"type":"PrepaidAmountType"
 		},
 		"PrepaidIndicator":{
-		"@type":"PrepaidIndicatorType"
+		"type":"PrepaidIndicatorType"
 		},
 		"PrepaidPaymentReferenceID":{
-		"@type":"PrepaidPaymentReferenceIDType"
+		"type":"PrepaidPaymentReferenceIDType"
 		},
 		"PreviousCancellationReasonCode":{
-		"@type":"PreviousCancellationReasonCodeType"
+		"type":"PreviousCancellationReasonCodeType"
 		},
 		"PreviousJobID":{
-		"@type":"PreviousJobIDType"
+		"type":"PreviousJobIDType"
 		},
 		"PreviousMeterQuantity":{
-		"@type":"PreviousMeterQuantityType"
+		"type":"PreviousMeterQuantityType"
 		},
 		"PreviousMeterReadingDate":{
-		"@type":"PreviousMeterReadingDateType"
+		"type":"PreviousMeterReadingDateType"
 		},
 		"PreviousMeterReadingMethod":{
-		"@type":"PreviousMeterReadingMethodType"
+		"type":"PreviousMeterReadingMethodType"
 		},
 		"PreviousMeterReadingMethodCode":{
-		"@type":"PreviousMeterReadingMethodCodeType"
+		"type":"PreviousMeterReadingMethodCodeType"
 		},
 		"PreviousVersionID":{
-		"@type":"PreviousVersionIDType"
+		"type":"PreviousVersionIDType"
 		},
 		"PriceAmount":{
-		"@type":"PriceAmountType"
+		"type":"PriceAmountType"
 		},
 		"PriceChangeReason":{
-		"@type":"PriceChangeReasonType"
+		"type":"PriceChangeReasonType"
 		},
 		"PriceEvaluationCode":{
-		"@type":"PriceEvaluationCodeType"
+		"type":"PriceEvaluationCodeType"
 		},
 		"PriceRevisionFormulaDescription":{
-		"@type":"PriceRevisionFormulaDescriptionType"
+		"type":"PriceRevisionFormulaDescriptionType"
 		},
 		"PriceType":{
-		"@type":"PriceTypeType"
+		"type":"PriceTypeType"
 		},
 		"PriceTypeCode":{
-		"@type":"PriceTypeCodeType"
+		"type":"PriceTypeCodeType"
 		},
 		"PricingCurrencyCode":{
-		"@type":"PricingCurrencyCodeType"
+		"type":"PricingCurrencyCodeType"
 		},
 		"PricingUpdateRequestIndicator":{
-		"@type":"PricingUpdateRequestIndicatorType"
+		"type":"PricingUpdateRequestIndicatorType"
 		},
 		"PrimaryAccountNumberID":{
-		"@type":"PrimaryAccountNumberIDType"
+		"type":"PrimaryAccountNumberIDType"
 		},
 		"PrintQualifier":{
-		"@type":"PrintQualifierType"
+		"type":"PrintQualifierType"
 		},
 		"Priority":{
-		"@type":"PriorityType"
+		"type":"PriorityType"
 		},
 		"PrivacyCode":{
-		"@type":"PrivacyCodeType"
+		"type":"PrivacyCodeType"
 		},
 		"PrizeDescription":{
-		"@type":"PrizeDescriptionType"
+		"type":"PrizeDescriptionType"
 		},
 		"PrizeIndicator":{
-		"@type":"PrizeIndicatorType"
+		"type":"PrizeIndicatorType"
 		},
 		"ProcedureCode":{
-		"@type":"ProcedureCodeType"
+		"type":"ProcedureCodeType"
 		},
 		"ProcessDescription":{
-		"@type":"ProcessDescriptionType"
+		"type":"ProcessDescriptionType"
 		},
 		"ProcessReason":{
-		"@type":"ProcessReasonType"
+		"type":"ProcessReasonType"
 		},
 		"ProcessReasonCode":{
-		"@type":"ProcessReasonCodeType"
+		"type":"ProcessReasonCodeType"
 		},
 		"ProcurementSubTypeCode":{
-		"@type":"ProcurementSubTypeCodeType"
+		"type":"ProcurementSubTypeCodeType"
 		},
 		"ProcurementTypeCode":{
-		"@type":"ProcurementTypeCodeType"
+		"type":"ProcurementTypeCodeType"
 		},
 		"ProductTraceID":{
-		"@type":"ProductTraceIDType"
+		"type":"ProductTraceIDType"
 		},
 		"ProfileExecutionID":{
-		"@type":"ProfileExecutionIDType"
+		"type":"ProfileExecutionIDType"
 		},
 		"ProfileID":{
-		"@type":"ProfileIDType"
+		"type":"ProfileIDType"
 		},
 		"ProfileStatusCode":{
-		"@type":"ProfileStatusCodeType"
+		"type":"ProfileStatusCodeType"
 		},
 		"ProgressPercent":{
-		"@type":"ProgressPercentType"
+		"type":"ProgressPercentType"
 		},
 		"PromotionalEventTypeCode":{
-		"@type":"PromotionalEventTypeCodeType"
+		"type":"PromotionalEventTypeCodeType"
 		},
 		"ProviderTypeCode":{
-		"@type":"ProviderTypeCodeType"
+		"type":"ProviderTypeCodeType"
 		},
 		"PublishAwardIndicator":{
-		"@type":"PublishAwardIndicatorType"
+		"type":"PublishAwardIndicatorType"
 		},
 		"Purpose":{
-		"@type":"PurposeType"
+		"type":"PurposeType"
 		},
 		"PurposeCode":{
-		"@type":"PurposeCodeType"
+		"type":"PurposeCodeType"
 		},
 		"QualityControlCode":{
-		"@type":"QualityControlCodeType"
+		"type":"QualityControlCodeType"
 		},
 		"Quantity":{
-		"@type":"QuantityType"
+		"type":"QuantityType"
 		},
 		"QuantityDiscrepancyCode":{
-		"@type":"QuantityDiscrepancyCodeType"
+		"type":"QuantityDiscrepancyCodeType"
 		},
 		"RadioCallSignID":{
-		"@type":"RadioCallSignIDType"
+		"type":"RadioCallSignIDType"
 		},
 		"RailCarID":{
-		"@type":"RailCarIDType"
+		"type":"RailCarIDType"
 		},
 		"Rank":{
-		"@type":"RankType"
+		"type":"RankType"
 		},
 		"Rate":{
-		"@type":"RateType"
+		"type":"RateType"
 		},
 		"ReceiptAdviceTypeCode":{
-		"@type":"ReceiptAdviceTypeCodeType"
+		"type":"ReceiptAdviceTypeCodeType"
 		},
 		"ReceivedDate":{
-		"@type":"ReceivedDateType"
+		"type":"ReceivedDateType"
 		},
 		"ReceivedElectronicTenderQuantity":{
-		"@type":"ReceivedElectronicTenderQuantityType"
+		"type":"ReceivedElectronicTenderQuantityType"
 		},
 		"ReceivedForeignTenderQuantity":{
-		"@type":"ReceivedForeignTenderQuantityType"
+		"type":"ReceivedForeignTenderQuantityType"
 		},
 		"ReceivedQuantity":{
-		"@type":"ReceivedQuantityType"
+		"type":"ReceivedQuantityType"
 		},
 		"ReceivedTenderQuantity":{
-		"@type":"ReceivedTenderQuantityType"
+		"type":"ReceivedTenderQuantityType"
 		},
 		"Reference":{
-		"@type":"ReferenceType"
+		"type":"ReferenceType"
 		},
 		"ReferenceDate":{
-		"@type":"ReferenceDateType"
+		"type":"ReferenceDateType"
 		},
 		"ReferenceEventCode":{
-		"@type":"ReferenceEventCodeType"
+		"type":"ReferenceEventCodeType"
 		},
 		"ReferenceID":{
-		"@type":"ReferenceIDType"
+		"type":"ReferenceIDType"
 		},
 		"ReferenceTime":{
-		"@type":"ReferenceTimeType"
+		"type":"ReferenceTimeType"
 		},
 		"ReferencedConsignmentID":{
-		"@type":"ReferencedConsignmentIDType"
+		"type":"ReferencedConsignmentIDType"
 		},
 		"RefrigeratedIndicator":{
-		"@type":"RefrigeratedIndicatorType"
+		"type":"RefrigeratedIndicatorType"
 		},
 		"RefrigerationOnIndicator":{
-		"@type":"RefrigerationOnIndicatorType"
+		"type":"RefrigerationOnIndicatorType"
 		},
 		"Region":{
-		"@type":"RegionType"
+		"type":"RegionType"
 		},
 		"RegisteredDate":{
-		"@type":"RegisteredDateType"
+		"type":"RegisteredDateType"
 		},
 		"RegisteredTime":{
-		"@type":"RegisteredTimeType"
+		"type":"RegisteredTimeType"
 		},
 		"RegistrationDate":{
-		"@type":"RegistrationDateType"
+		"type":"RegistrationDateType"
 		},
 		"RegistrationExpirationDate":{
-		"@type":"RegistrationExpirationDateType"
+		"type":"RegistrationExpirationDateType"
 		},
 		"RegistrationID":{
-		"@type":"RegistrationIDType"
+		"type":"RegistrationIDType"
 		},
 		"RegistrationName":{
-		"@type":"RegistrationNameType"
+		"type":"RegistrationNameType"
 		},
 		"RegistrationNationality":{
-		"@type":"RegistrationNationalityType"
+		"type":"RegistrationNationalityType"
 		},
 		"RegistrationNationalityID":{
-		"@type":"RegistrationNationalityIDType"
+		"type":"RegistrationNationalityIDType"
 		},
 		"RegulatoryDomain":{
-		"@type":"RegulatoryDomainType"
+		"type":"RegulatoryDomainType"
 		},
 		"RejectActionCode":{
-		"@type":"RejectActionCodeType"
+		"type":"RejectActionCodeType"
 		},
 		"RejectReason":{
-		"@type":"RejectReasonType"
+		"type":"RejectReasonType"
 		},
 		"RejectReasonCode":{
-		"@type":"RejectReasonCodeType"
+		"type":"RejectReasonCodeType"
 		},
 		"RejectedQuantity":{
-		"@type":"RejectedQuantityType"
+		"type":"RejectedQuantityType"
 		},
 		"RejectionNote":{
-		"@type":"RejectionNoteType"
+		"type":"RejectionNoteType"
 		},
 		"ReleaseID":{
-		"@type":"ReleaseIDType"
+		"type":"ReleaseIDType"
 		},
 		"ReliabilityPercent":{
-		"@type":"ReliabilityPercentType"
+		"type":"ReliabilityPercentType"
 		},
 		"Remarks":{
-		"@type":"RemarksType"
+		"type":"RemarksType"
 		},
 		"ReminderSequenceNumeric":{
-		"@type":"ReminderSequenceNumericType"
+		"type":"ReminderSequenceNumericType"
 		},
 		"ReminderTypeCode":{
-		"@type":"ReminderTypeCodeType"
+		"type":"ReminderTypeCodeType"
 		},
 		"ReplenishmentOwnerDescription":{
-		"@type":"ReplenishmentOwnerDescriptionType"
+		"type":"ReplenishmentOwnerDescriptionType"
 		},
 		"RequestForQuotationLineID":{
-		"@type":"RequestForQuotationLineIDType"
+		"type":"RequestForQuotationLineIDType"
 		},
 		"RequestedDeliveryDate":{
-		"@type":"RequestedDeliveryDateType"
+		"type":"RequestedDeliveryDateType"
 		},
 		"RequestedDespatchDate":{
-		"@type":"RequestedDespatchDateType"
+		"type":"RequestedDespatchDateType"
 		},
 		"RequestedDespatchTime":{
-		"@type":"RequestedDespatchTimeType"
+		"type":"RequestedDespatchTimeType"
 		},
 		"RequestedInvoiceCurrencyCode":{
-		"@type":"RequestedInvoiceCurrencyCodeType"
+		"type":"RequestedInvoiceCurrencyCodeType"
 		},
 		"RequestedPublicationDate":{
-		"@type":"RequestedPublicationDateType"
+		"type":"RequestedPublicationDateType"
 		},
 		"RequiredCurriculaIndicator":{
-		"@type":"RequiredCurriculaIndicatorType"
+		"type":"RequiredCurriculaIndicatorType"
 		},
 		"RequiredCustomsID":{
-		"@type":"RequiredCustomsIDType"
+		"type":"RequiredCustomsIDType"
 		},
 		"RequiredDeliveryDate":{
-		"@type":"RequiredDeliveryDateType"
+		"type":"RequiredDeliveryDateType"
 		},
 		"RequiredDeliveryTime":{
-		"@type":"RequiredDeliveryTimeType"
+		"type":"RequiredDeliveryTimeType"
 		},
 		"RequiredFeeAmount":{
-		"@type":"RequiredFeeAmountType"
+		"type":"RequiredFeeAmountType"
 		},
 		"ResidenceType":{
-		"@type":"ResidenceTypeType"
+		"type":"ResidenceTypeType"
 		},
 		"ResidenceTypeCode":{
-		"@type":"ResidenceTypeCodeType"
+		"type":"ResidenceTypeCodeType"
 		},
 		"ResidentOccupantsNumeric":{
-		"@type":"ResidentOccupantsNumericType"
+		"type":"ResidentOccupantsNumericType"
 		},
 		"Resolution":{
-		"@type":"ResolutionType"
+		"type":"ResolutionType"
 		},
 		"ResolutionCode":{
-		"@type":"ResolutionCodeType"
+		"type":"ResolutionCodeType"
 		},
 		"ResolutionDate":{
-		"@type":"ResolutionDateType"
+		"type":"ResolutionDateType"
 		},
 		"ResolutionTime":{
-		"@type":"ResolutionTimeType"
+		"type":"ResolutionTimeType"
 		},
 		"ResponseCode":{
-		"@type":"ResponseCodeType"
+		"type":"ResponseCodeType"
 		},
 		"ResponseDate":{
-		"@type":"ResponseDateType"
+		"type":"ResponseDateType"
 		},
 		"ResponseTime":{
-		"@type":"ResponseTimeType"
+		"type":"ResponseTimeType"
 		},
 		"RetailEventName":{
-		"@type":"RetailEventNameType"
+		"type":"RetailEventNameType"
 		},
 		"RetailEventStatusCode":{
-		"@type":"RetailEventStatusCodeType"
+		"type":"RetailEventStatusCodeType"
 		},
 		"ReturnabilityIndicator":{
-		"@type":"ReturnabilityIndicatorType"
+		"type":"ReturnabilityIndicatorType"
 		},
 		"ReturnableMaterialIndicator":{
-		"@type":"ReturnableMaterialIndicatorType"
+		"type":"ReturnableMaterialIndicatorType"
 		},
 		"ReturnableQuantity":{
-		"@type":"ReturnableQuantityType"
+		"type":"ReturnableQuantityType"
 		},
 		"RevisedForecastLineID":{
-		"@type":"RevisedForecastLineIDType"
+		"type":"RevisedForecastLineIDType"
 		},
 		"RevisionDate":{
-		"@type":"RevisionDateType"
+		"type":"RevisionDateType"
 		},
 		"RevisionStatusCode":{
-		"@type":"RevisionStatusCodeType"
+		"type":"RevisionStatusCodeType"
 		},
 		"RevisionTime":{
-		"@type":"RevisionTimeType"
+		"type":"RevisionTimeType"
 		},
 		"RoamingPartnerName":{
-		"@type":"RoamingPartnerNameType"
+		"type":"RoamingPartnerNameType"
 		},
 		"RoleCode":{
-		"@type":"RoleCodeType"
+		"type":"RoleCodeType"
 		},
 		"RoleDescription":{
-		"@type":"RoleDescriptionType"
+		"type":"RoleDescriptionType"
 		},
 		"Room":{
-		"@type":"RoomType"
+		"type":"RoomType"
 		},
 		"RoundingAmount":{
-		"@type":"RoundingAmountType"
+		"type":"RoundingAmountType"
 		},
 		"SalesOrderID":{
-		"@type":"SalesOrderIDType"
+		"type":"SalesOrderIDType"
 		},
 		"SalesOrderLineID":{
-		"@type":"SalesOrderLineIDType"
+		"type":"SalesOrderLineIDType"
 		},
 		"SchemeURI":{
-		"@type":"SchemeURIType"
+		"type":"SchemeURIType"
 		},
 		"SealIssuerTypeCode":{
-		"@type":"SealIssuerTypeCodeType"
+		"type":"SealIssuerTypeCodeType"
 		},
 		"SealStatusCode":{
-		"@type":"SealStatusCodeType"
+		"type":"SealStatusCodeType"
 		},
 		"SealingPartyType":{
-		"@type":"SealingPartyTypeType"
+		"type":"SealingPartyTypeType"
 		},
 		"SecurityClassificationCode":{
-		"@type":"SecurityClassificationCodeType"
+		"type":"SecurityClassificationCodeType"
 		},
 		"SecurityID":{
-		"@type":"SecurityIDType"
+		"type":"SecurityIDType"
 		},
 		"SellerEventID":{
-		"@type":"SellerEventIDType"
+		"type":"SellerEventIDType"
 		},
 		"SequenceID":{
-		"@type":"SequenceIDType"
+		"type":"SequenceIDType"
 		},
 		"SequenceNumberID":{
-		"@type":"SequenceNumberIDType"
+		"type":"SequenceNumberIDType"
 		},
 		"SequenceNumeric":{
-		"@type":"SequenceNumericType"
+		"type":"SequenceNumericType"
 		},
 		"SerialID":{
-		"@type":"SerialIDType"
+		"type":"SerialIDType"
 		},
 		"ServiceInformationPreferenceCode":{
-		"@type":"ServiceInformationPreferenceCodeType"
+		"type":"ServiceInformationPreferenceCodeType"
 		},
 		"ServiceName":{
-		"@type":"ServiceNameType"
+		"type":"ServiceNameType"
 		},
 		"ServiceNumberCalled":{
-		"@type":"ServiceNumberCalledType"
+		"type":"ServiceNumberCalledType"
 		},
 		"ServiceType":{
-		"@type":"ServiceTypeType"
+		"type":"ServiceTypeType"
 		},
 		"ServiceTypeCode":{
-		"@type":"ServiceTypeCodeType"
+		"type":"ServiceTypeCodeType"
 		},
 		"SettlementDiscountAmount":{
-		"@type":"SettlementDiscountAmountType"
+		"type":"SettlementDiscountAmountType"
 		},
 		"SettlementDiscountPercent":{
-		"@type":"SettlementDiscountPercentType"
+		"type":"SettlementDiscountPercentType"
 		},
 		"SharesNumberQuantity":{
-		"@type":"SharesNumberQuantityType"
+		"type":"SharesNumberQuantityType"
 		},
 		"ShippingMarks":{
-		"@type":"ShippingMarksType"
+		"type":"ShippingMarksType"
 		},
 		"ShippingOrderID":{
-		"@type":"ShippingOrderIDType"
+		"type":"ShippingOrderIDType"
 		},
 		"ShippingPriorityLevelCode":{
-		"@type":"ShippingPriorityLevelCodeType"
+		"type":"ShippingPriorityLevelCodeType"
 		},
 		"ShipsRequirements":{
-		"@type":"ShipsRequirementsType"
+		"type":"ShipsRequirementsType"
 		},
 		"ShortQuantity":{
-		"@type":"ShortQuantityType"
+		"type":"ShortQuantityType"
 		},
 		"ShortageActionCode":{
-		"@type":"ShortageActionCodeType"
+		"type":"ShortageActionCodeType"
 		},
 		"SignatureID":{
-		"@type":"SignatureIDType"
+		"type":"SignatureIDType"
 		},
 		"SignatureMethod":{
-		"@type":"SignatureMethodType"
+		"type":"SignatureMethodType"
 		},
 		"SizeTypeCode":{
-		"@type":"SizeTypeCodeType"
+		"type":"SizeTypeCodeType"
 		},
 		"SoleProprietorshipIndicator":{
-		"@type":"SoleProprietorshipIndicatorType"
+		"type":"SoleProprietorshipIndicatorType"
 		},
 		"SourceCurrencyBaseRate":{
-		"@type":"SourceCurrencyBaseRateType"
+		"type":"SourceCurrencyBaseRateType"
 		},
 		"SourceCurrencyCode":{
-		"@type":"SourceCurrencyCodeType"
+		"type":"SourceCurrencyCodeType"
 		},
 		"SourceForecastIssueDate":{
-		"@type":"SourceForecastIssueDateType"
+		"type":"SourceForecastIssueDateType"
 		},
 		"SourceForecastIssueTime":{
-		"@type":"SourceForecastIssueTimeType"
+		"type":"SourceForecastIssueTimeType"
 		},
 		"SourceValueMeasure":{
-		"@type":"SourceValueMeasureType"
+		"type":"SourceValueMeasureType"
 		},
 		"SpecialInstructions":{
-		"@type":"SpecialInstructionsType"
+		"type":"SpecialInstructionsType"
 		},
 		"SpecialSecurityIndicator":{
-		"@type":"SpecialSecurityIndicatorType"
+		"type":"SpecialSecurityIndicatorType"
 		},
 		"SpecialServiceInstructions":{
-		"@type":"SpecialServiceInstructionsType"
+		"type":"SpecialServiceInstructionsType"
 		},
 		"SpecialTerms":{
-		"@type":"SpecialTermsType"
+		"type":"SpecialTermsType"
 		},
 		"SpecialTransportRequirements":{
-		"@type":"SpecialTransportRequirementsType"
+		"type":"SpecialTransportRequirementsType"
 		},
 		"SpecificationID":{
-		"@type":"SpecificationIDType"
+		"type":"SpecificationIDType"
 		},
 		"SpecificationTypeCode":{
-		"@type":"SpecificationTypeCodeType"
+		"type":"SpecificationTypeCodeType"
 		},
 		"SplitConsignmentIndicator":{
-		"@type":"SplitConsignmentIndicatorType"
+		"type":"SplitConsignmentIndicatorType"
 		},
 		"StartDate":{
-		"@type":"StartDateType"
+		"type":"StartDateType"
 		},
 		"StartTime":{
-		"@type":"StartTimeType"
+		"type":"StartTimeType"
 		},
 		"StatementTypeCode":{
-		"@type":"StatementTypeCodeType"
+		"type":"StatementTypeCodeType"
 		},
 		"StatusAvailableIndicator":{
-		"@type":"StatusAvailableIndicatorType"
+		"type":"StatusAvailableIndicatorType"
 		},
 		"StatusCode":{
-		"@type":"StatusCodeType"
+		"type":"StatusCodeType"
 		},
 		"StatusReason":{
-		"@type":"StatusReasonType"
+		"type":"StatusReasonType"
 		},
 		"StatusReasonCode":{
-		"@type":"StatusReasonCodeType"
+		"type":"StatusReasonCodeType"
 		},
 		"StreetName":{
-		"@type":"StreetNameType"
+		"type":"StreetNameType"
 		},
 		"SubcontractingConditionsCode":{
-		"@type":"SubcontractingConditionsCodeType"
+		"type":"SubcontractingConditionsCodeType"
 		},
 		"SubmissionDate":{
-		"@type":"SubmissionDateType"
+		"type":"SubmissionDateType"
 		},
 		"SubmissionDueDate":{
-		"@type":"SubmissionDueDateType"
+		"type":"SubmissionDueDateType"
 		},
 		"SubmissionMethodCode":{
-		"@type":"SubmissionMethodCodeType"
+		"type":"SubmissionMethodCodeType"
 		},
 		"SubscriberID":{
-		"@type":"SubscriberIDType"
+		"type":"SubscriberIDType"
 		},
 		"SubscriberType":{
-		"@type":"SubscriberTypeType"
+		"type":"SubscriberTypeType"
 		},
 		"SubscriberTypeCode":{
-		"@type":"SubscriberTypeCodeType"
+		"type":"SubscriberTypeCodeType"
 		},
 		"SubstitutionStatusCode":{
-		"@type":"SubstitutionStatusCodeType"
+		"type":"SubstitutionStatusCodeType"
 		},
 		"SuccessiveSequenceID":{
-		"@type":"SuccessiveSequenceIDType"
+		"type":"SuccessiveSequenceIDType"
 		},
 		"SummaryDescription":{
-		"@type":"SummaryDescriptionType"
+		"type":"SummaryDescriptionType"
 		},
 		"SupplierAssignedAccountID":{
-		"@type":"SupplierAssignedAccountIDType"
+		"type":"SupplierAssignedAccountIDType"
 		},
 		"SupplyChainActivityTypeCode":{
-		"@type":"SupplyChainActivityTypeCodeType"
+		"type":"SupplyChainActivityTypeCodeType"
 		},
 		"TareWeightMeasure":{
-		"@type":"TareWeightMeasureType"
+		"type":"TareWeightMeasureType"
 		},
 		"TargetCurrencyBaseRate":{
-		"@type":"TargetCurrencyBaseRateType"
+		"type":"TargetCurrencyBaseRateType"
 		},
 		"TargetCurrencyCode":{
-		"@type":"TargetCurrencyCodeType"
+		"type":"TargetCurrencyCodeType"
 		},
 		"TargetInventoryQuantity":{
-		"@type":"TargetInventoryQuantityType"
+		"type":"TargetInventoryQuantityType"
 		},
 		"TargetServicePercent":{
-		"@type":"TargetServicePercentType"
+		"type":"TargetServicePercentType"
 		},
 		"TariffClassCode":{
-		"@type":"TariffClassCodeType"
+		"type":"TariffClassCodeType"
 		},
 		"TariffCode":{
-		"@type":"TariffCodeType"
+		"type":"TariffCodeType"
 		},
 		"TariffDescription":{
-		"@type":"TariffDescriptionType"
+		"type":"TariffDescriptionType"
 		},
 		"TaxAmount":{
-		"@type":"TaxAmountType"
+		"type":"TaxAmountType"
 		},
 		"TaxCurrencyCode":{
-		"@type":"TaxCurrencyCodeType"
+		"type":"TaxCurrencyCodeType"
 		},
 		"TaxEnergyAmount":{
-		"@type":"TaxEnergyAmountType"
+		"type":"TaxEnergyAmountType"
 		},
 		"TaxEnergyBalanceAmount":{
-		"@type":"TaxEnergyBalanceAmountType"
+		"type":"TaxEnergyBalanceAmountType"
 		},
 		"TaxEnergyOnAccountAmount":{
-		"@type":"TaxEnergyOnAccountAmountType"
+		"type":"TaxEnergyOnAccountAmountType"
 		},
 		"TaxEvidenceIndicator":{
-		"@type":"TaxEvidenceIndicatorType"
+		"type":"TaxEvidenceIndicatorType"
 		},
 		"TaxExclusiveAmount":{
-		"@type":"TaxExclusiveAmountType"
+		"type":"TaxExclusiveAmountType"
 		},
 		"TaxExemptionReason":{
-		"@type":"TaxExemptionReasonType"
+		"type":"TaxExemptionReasonType"
 		},
 		"TaxExemptionReasonCode":{
-		"@type":"TaxExemptionReasonCodeType"
+		"type":"TaxExemptionReasonCodeType"
 		},
 		"TaxIncludedIndicator":{
-		"@type":"TaxIncludedIndicatorType"
+		"type":"TaxIncludedIndicatorType"
 		},
 		"TaxInclusiveAmount":{
-		"@type":"TaxInclusiveAmountType"
+		"type":"TaxInclusiveAmountType"
 		},
 		"TaxLevelCode":{
-		"@type":"TaxLevelCodeType"
+		"type":"TaxLevelCodeType"
 		},
 		"TaxPointDate":{
-		"@type":"TaxPointDateType"
+		"type":"TaxPointDateType"
 		},
 		"TaxTypeCode":{
-		"@type":"TaxTypeCodeType"
+		"type":"TaxTypeCodeType"
 		},
 		"TaxableAmount":{
-		"@type":"TaxableAmountType"
+		"type":"TaxableAmountType"
 		},
 		"TechnicalCommitteeDescription":{
-		"@type":"TechnicalCommitteeDescriptionType"
+		"type":"TechnicalCommitteeDescriptionType"
 		},
 		"TechnicalName":{
-		"@type":"TechnicalNameType"
+		"type":"TechnicalNameType"
 		},
 		"TelecommunicationsServiceCall":{
-		"@type":"TelecommunicationsServiceCallType"
+		"type":"TelecommunicationsServiceCallType"
 		},
 		"TelecommunicationsServiceCallCode":{
-		"@type":"TelecommunicationsServiceCallCodeType"
+		"type":"TelecommunicationsServiceCallCodeType"
 		},
 		"TelecommunicationsServiceCategory":{
-		"@type":"TelecommunicationsServiceCategoryType"
+		"type":"TelecommunicationsServiceCategoryType"
 		},
 		"TelecommunicationsServiceCategoryCode":{
-		"@type":"TelecommunicationsServiceCategoryCodeType"
+		"type":"TelecommunicationsServiceCategoryCodeType"
 		},
 		"TelecommunicationsSupplyType":{
-		"@type":"TelecommunicationsSupplyTypeType"
+		"type":"TelecommunicationsSupplyTypeType"
 		},
 		"TelecommunicationsSupplyTypeCode":{
-		"@type":"TelecommunicationsSupplyTypeCodeType"
+		"type":"TelecommunicationsSupplyTypeCodeType"
 		},
 		"Telefax":{
-		"@type":"TelefaxType"
+		"type":"TelefaxType"
 		},
 		"Telephone":{
-		"@type":"TelephoneType"
+		"type":"TelephoneType"
 		},
 		"TenderEnvelopeID":{
-		"@type":"TenderEnvelopeIDType"
+		"type":"TenderEnvelopeIDType"
 		},
 		"TenderEnvelopeTypeCode":{
-		"@type":"TenderEnvelopeTypeCodeType"
+		"type":"TenderEnvelopeTypeCodeType"
 		},
 		"TenderResultCode":{
-		"@type":"TenderResultCodeType"
+		"type":"TenderResultCodeType"
 		},
 		"TenderTypeCode":{
-		"@type":"TenderTypeCodeType"
+		"type":"TenderTypeCodeType"
 		},
 		"TendererRequirementTypeCode":{
-		"@type":"TendererRequirementTypeCodeType"
+		"type":"TendererRequirementTypeCodeType"
 		},
 		"TendererRoleCode":{
-		"@type":"TendererRoleCodeType"
+		"type":"TendererRoleCodeType"
 		},
 		"TestMethod":{
-		"@type":"TestMethodType"
+		"type":"TestMethodType"
 		},
 		"Text":{
-		"@type":"TextType"
+		"type":"TextType"
 		},
 		"ThirdPartyPayerIndicator":{
-		"@type":"ThirdPartyPayerIndicatorType"
+		"type":"ThirdPartyPayerIndicatorType"
 		},
 		"ThresholdAmount":{
-		"@type":"ThresholdAmountType"
+		"type":"ThresholdAmountType"
 		},
 		"ThresholdQuantity":{
-		"@type":"ThresholdQuantityType"
+		"type":"ThresholdQuantityType"
 		},
 		"ThresholdValueComparisonCode":{
-		"@type":"ThresholdValueComparisonCodeType"
+		"type":"ThresholdValueComparisonCodeType"
 		},
 		"TierRange":{
-		"@type":"TierRangeType"
+		"type":"TierRangeType"
 		},
 		"TierRatePercent":{
-		"@type":"TierRatePercentType"
+		"type":"TierRatePercentType"
 		},
 		"TimeAmount":{
-		"@type":"TimeAmountType"
+		"type":"TimeAmountType"
 		},
 		"TimeDeltaDaysQuantity":{
-		"@type":"TimeDeltaDaysQuantityType"
+		"type":"TimeDeltaDaysQuantityType"
 		},
 		"TimeFrequencyCode":{
-		"@type":"TimeFrequencyCodeType"
+		"type":"TimeFrequencyCodeType"
 		},
 		"TimezoneOffset":{
-		"@type":"TimezoneOffsetType"
+		"type":"TimezoneOffsetType"
 		},
 		"TimingComplaint":{
-		"@type":"TimingComplaintType"
+		"type":"TimingComplaintType"
 		},
 		"TimingComplaintCode":{
-		"@type":"TimingComplaintCodeType"
+		"type":"TimingComplaintCodeType"
 		},
 		"Title":{
-		"@type":"TitleType"
+		"type":"TitleType"
 		},
 		"ToOrderIndicator":{
-		"@type":"ToOrderIndicatorType"
+		"type":"ToOrderIndicatorType"
 		},
 		"TotalAmount":{
-		"@type":"TotalAmountType"
+		"type":"TotalAmountType"
 		},
 		"TotalBalanceAmount":{
-		"@type":"TotalBalanceAmountType"
+		"type":"TotalBalanceAmountType"
 		},
 		"TotalConsumedQuantity":{
-		"@type":"TotalConsumedQuantityType"
+		"type":"TotalConsumedQuantityType"
 		},
 		"TotalCreditAmount":{
-		"@type":"TotalCreditAmountType"
+		"type":"TotalCreditAmountType"
 		},
 		"TotalDebitAmount":{
-		"@type":"TotalDebitAmountType"
+		"type":"TotalDebitAmountType"
 		},
 		"TotalDeliveredQuantity":{
-		"@type":"TotalDeliveredQuantityType"
+		"type":"TotalDeliveredQuantityType"
 		},
 		"TotalGoodsItemQuantity":{
-		"@type":"TotalGoodsItemQuantityType"
+		"type":"TotalGoodsItemQuantityType"
 		},
 		"TotalInvoiceAmount":{
-		"@type":"TotalInvoiceAmountType"
+		"type":"TotalInvoiceAmountType"
 		},
 		"TotalMeteredQuantity":{
-		"@type":"TotalMeteredQuantityType"
+		"type":"TotalMeteredQuantityType"
 		},
 		"TotalPackageQuantity":{
-		"@type":"TotalPackageQuantityType"
+		"type":"TotalPackageQuantityType"
 		},
 		"TotalPackagesQuantity":{
-		"@type":"TotalPackagesQuantityType"
+		"type":"TotalPackagesQuantityType"
 		},
 		"TotalPaymentAmount":{
-		"@type":"TotalPaymentAmountType"
+		"type":"TotalPaymentAmountType"
 		},
 		"TotalTaskAmount":{
-		"@type":"TotalTaskAmountType"
+		"type":"TotalTaskAmountType"
 		},
 		"TotalTaxAmount":{
-		"@type":"TotalTaxAmountType"
+		"type":"TotalTaxAmountType"
 		},
 		"TotalTransportHandlingUnitQuantity":{
-		"@type":"TotalTransportHandlingUnitQuantityType"
+		"type":"TotalTransportHandlingUnitQuantityType"
 		},
 		"TraceID":{
-		"@type":"TraceIDType"
+		"type":"TraceIDType"
 		},
 		"TrackingDeviceCode":{
-		"@type":"TrackingDeviceCodeType"
+		"type":"TrackingDeviceCodeType"
 		},
 		"TrackingID":{
-		"@type":"TrackingIDType"
+		"type":"TrackingIDType"
 		},
 		"TradeItemPackingLabelingTypeCode":{
-		"@type":"TradeItemPackingLabelingTypeCodeType"
+		"type":"TradeItemPackingLabelingTypeCodeType"
 		},
 		"TradeServiceCode":{
-		"@type":"TradeServiceCodeType"
+		"type":"TradeServiceCodeType"
 		},
 		"TradingRestrictions":{
-		"@type":"TradingRestrictionsType"
+		"type":"TradingRestrictionsType"
 		},
 		"TrainID":{
-		"@type":"TrainIDType"
+		"type":"TrainIDType"
 		},
 		"TransactionCurrencyTaxAmount":{
-		"@type":"TransactionCurrencyTaxAmountType"
+		"type":"TransactionCurrencyTaxAmountType"
 		},
 		"TransitDirectionCode":{
-		"@type":"TransitDirectionCodeType"
+		"type":"TransitDirectionCodeType"
 		},
 		"TransportAuthorizationCode":{
-		"@type":"TransportAuthorizationCodeType"
+		"type":"TransportAuthorizationCodeType"
 		},
 		"TransportEmergencyCardCode":{
-		"@type":"TransportEmergencyCardCodeType"
+		"type":"TransportEmergencyCardCodeType"
 		},
 		"TransportEquipmentTypeCode":{
-		"@type":"TransportEquipmentTypeCodeType"
+		"type":"TransportEquipmentTypeCodeType"
 		},
 		"TransportEventTypeCode":{
-		"@type":"TransportEventTypeCodeType"
+		"type":"TransportEventTypeCodeType"
 		},
 		"TransportExecutionPlanReferenceID":{
-		"@type":"TransportExecutionPlanReferenceIDType"
+		"type":"TransportExecutionPlanReferenceIDType"
 		},
 		"TransportExecutionStatusCode":{
-		"@type":"TransportExecutionStatusCodeType"
+		"type":"TransportExecutionStatusCodeType"
 		},
 		"TransportHandlingUnitTypeCode":{
-		"@type":"TransportHandlingUnitTypeCodeType"
+		"type":"TransportHandlingUnitTypeCodeType"
 		},
 		"TransportMeansTypeCode":{
-		"@type":"TransportMeansTypeCodeType"
+		"type":"TransportMeansTypeCodeType"
 		},
 		"TransportModeCode":{
-		"@type":"TransportModeCodeType"
+		"type":"TransportModeCodeType"
 		},
 		"TransportServiceCode":{
-		"@type":"TransportServiceCodeType"
+		"type":"TransportServiceCodeType"
 		},
 		"TransportServiceProviderRemarks":{
-		"@type":"TransportServiceProviderRemarksType"
+		"type":"TransportServiceProviderRemarksType"
 		},
 		"TransportServiceProviderSpecialTerms":{
-		"@type":"TransportServiceProviderSpecialTermsType"
+		"type":"TransportServiceProviderSpecialTermsType"
 		},
 		"TransportUserRemarks":{
-		"@type":"TransportUserRemarksType"
+		"type":"TransportUserRemarksType"
 		},
 		"TransportUserSpecialTerms":{
-		"@type":"TransportUserSpecialTermsType"
+		"type":"TransportUserSpecialTermsType"
 		},
 		"TransportationServiceDescription":{
-		"@type":"TransportationServiceDescriptionType"
+		"type":"TransportationServiceDescriptionType"
 		},
 		"TransportationServiceDetailsURI":{
-		"@type":"TransportationServiceDetailsURIType"
+		"type":"TransportationServiceDetailsURIType"
 		},
 		"TransportationStatusTypeCode":{
-		"@type":"TransportationStatusTypeCodeType"
+		"type":"TransportationStatusTypeCodeType"
 		},
 		"TypeCode":{
-		"@type":"TypeCodeType"
+		"type":"TypeCodeType"
 		},
 		"UBLVersionID":{
-		"@type":"UBLVersionIDType"
+		"type":"UBLVersionIDType"
 		},
 		"UNDGCode":{
-		"@type":"UNDGCodeType"
+		"type":"UNDGCodeType"
 		},
 		"URI":{
-		"@type":"URIType"
+		"type":"URIType"
 		},
 		"UUID":{
-		"@type":"UUIDType"
+		"type":"UUIDType"
 		},
 		"UnknownPriceIndicator":{
-		"@type":"UnknownPriceIndicatorType"
+		"type":"UnknownPriceIndicatorType"
 		},
 		"UpperOrangeHazardPlacardID":{
-		"@type":"UpperOrangeHazardPlacardIDType"
+		"type":"UpperOrangeHazardPlacardIDType"
 		},
 		"UrgencyCode":{
-		"@type":"UrgencyCodeType"
+		"type":"UrgencyCodeType"
 		},
 		"UtilityStatementTypeCode":{
-		"@type":"UtilityStatementTypeCodeType"
+		"type":"UtilityStatementTypeCodeType"
 		},
 		"ValidateProcess":{
-		"@type":"ValidateProcessType"
+		"type":"ValidateProcessType"
 		},
 		"ValidateTool":{
-		"@type":"ValidateToolType"
+		"type":"ValidateToolType"
 		},
 		"ValidateToolVersion":{
-		"@type":"ValidateToolVersionType"
+		"type":"ValidateToolVersionType"
 		},
 		"ValidationDate":{
-		"@type":"ValidationDateType"
+		"type":"ValidationDateType"
 		},
 		"ValidationResultCode":{
-		"@type":"ValidationResultCodeType"
+		"type":"ValidationResultCodeType"
 		},
 		"ValidationTime":{
-		"@type":"ValidationTimeType"
+		"type":"ValidationTimeType"
 		},
 		"ValidatorID":{
-		"@type":"ValidatorIDType"
+		"type":"ValidatorIDType"
 		},
 		"ValidityStartDate":{
-		"@type":"ValidityStartDateType"
+		"type":"ValidityStartDateType"
 		},
 		"Value":{
-		"@type":"ValueType"
+		"type":"ValueType"
 		},
 		"ValueAmount":{
-		"@type":"ValueAmountType"
+		"type":"ValueAmountType"
 		},
 		"ValueMeasure":{
-		"@type":"ValueMeasureType"
+		"type":"ValueMeasureType"
 		},
 		"ValueQualifier":{
-		"@type":"ValueQualifierType"
+		"type":"ValueQualifierType"
 		},
 		"ValueQuantity":{
-		"@type":"ValueQuantityType"
+		"type":"ValueQuantityType"
 		},
 		"VarianceQuantity":{
-		"@type":"VarianceQuantityType"
+		"type":"VarianceQuantityType"
 		},
 		"VariantConstraintIndicator":{
-		"@type":"VariantConstraintIndicatorType"
+		"type":"VariantConstraintIndicatorType"
 		},
 		"VariantID":{
-		"@type":"VariantIDType"
+		"type":"VariantIDType"
 		},
 		"VersionID":{
-		"@type":"VersionIDType"
+		"type":"VersionIDType"
 		},
 		"VesselID":{
-		"@type":"VesselIDType"
+		"type":"VesselIDType"
 		},
 		"VesselName":{
-		"@type":"VesselNameType"
+		"type":"VesselNameType"
 		},
 		"WarrantyInformation":{
-		"@type":"WarrantyInformationType"
+		"type":"WarrantyInformationType"
 		},
 		"WebsiteURI":{
-		"@type":"WebsiteURIType"
+		"type":"WebsiteURIType"
 		},
 		"WeekDayCode":{
-		"@type":"WeekDayCodeType"
+		"type":"WeekDayCodeType"
 		},
 		"Weight":{
-		"@type":"WeightType"
+		"type":"WeightType"
 		},
 		"WeightNumeric":{
-		"@type":"WeightNumericType"
+		"type":"WeightNumericType"
 		},
 		"WeightingAlgorithmCode":{
-		"@type":"WeightingAlgorithmCodeType"
+		"type":"WeightingAlgorithmCodeType"
 		},
 		"WorkPhase":{
-		"@type":"WorkPhaseType"
+		"type":"WorkPhaseType"
 		},
 		"WorkPhaseCode":{
-		"@type":"WorkPhaseCodeType"
+		"type":"WorkPhaseCodeType"
 		},
 		"XPath":{
-		"@type":"XPathType"
+		"type":"XPathType"
 		}
 	},
 	"complexType":{
 		"AcceptedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"AcceptedVariantsDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AccountFormatCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AccountIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AccountTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AccountingCostCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AccountingCostType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ActionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ActivityTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ActivityTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ActualDeliveryDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ActualDeliveryTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ActualDespatchDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ActualDespatchTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ActualPickupDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ActualPickupTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ActualTemperatureReductionQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"AdValoremIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"AdditionalAccountIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AdditionalConditionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AdditionalInformationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AdditionalStreetNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"AddressFormatCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AddressTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AdjustmentReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AdmissionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AdvertisementAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"AgencyIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AgencyNameType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AirFlowPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"AircraftIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AliasNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"AllowanceChargeReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AllowanceChargeReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AllowanceTotalAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"AltitudeMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"AmountRateType":{
-		"@base":"udt:RateType"
+		"base":"udt:RateType"
 		},
 		"AmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"AnimalFoodApprovedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"AnimalFoodIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"AnnualAverageAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"ApplicationStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ApprovalDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ApprovalStatusType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AttributeIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AuctionConstraintIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"AuctionURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AvailabilityDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"AvailabilityStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AverageAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"AverageSubsequentContractAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"AwardDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"AwardTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"AwardingCriterionDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"AwardingCriterionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"AwardingCriterionTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"AwardingMethodTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"BackOrderAllowedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"BackorderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"BackorderReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"BalanceAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"BalanceBroughtForwardIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"BarcodeSymbologyIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"BaseAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"BaseQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"BaseUnitMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"BasedOnConsensusIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"BasicConsumedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"BatchQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"BestBeforeDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"BindingOnBuyerIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"BirthDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"BirthplaceNameType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"BlockNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"BrandNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"BrokerAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"BudgetYearNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"BuildingNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"BuildingNumberType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"BulkCargoIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"BusinessClassificationEvidenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"BusinessIdentityEvidenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"BuyerEventIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"BuyerProfileURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"BuyerReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CV2IDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"CalculationExpressionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CalculationExpressionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CalculationMethodCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CalculationRateType":{
-		"@base":"udt:RateType"
+		"base":"udt:RateType"
 		},
 		"CalculationSequenceNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"CallBaseAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"CallDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"CallExtensionAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"CallTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"CancellationNoteType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CandidateReductionConstraintIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"CandidateStatementType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CanonicalizationMethodType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CapabilityTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CardChipCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CardTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CargoTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CarrierAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"CarrierServiceInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CatalogueIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"CategoryNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"CertificateTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CertificateTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ChangeConditionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ChannelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ChannelType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CharacterSetCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CharacteristicsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ChargeIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ChargeTotalAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"ChargeableQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ChargeableWeightMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"ChildConsignmentQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ChipApplicationIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"CityNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"CitySubdivisionNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"CodeValueType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CollaborationPriorityCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CommentType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CommodityCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CompanyIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"CompanyLegalFormCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CompanyLegalFormType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CompanyLiquidationStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ComparedValueMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"ComparisonDataCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ComparisonDataSourceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ComparisonForecastIssueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ComparisonForecastIssueTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"CompletionIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ConditionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ConditionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ConditionsDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ConditionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ConsigneeAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ConsignmentQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ConsignorAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ConsolidatableIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ConstitutionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ConsumerIncentiveTacticTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ConsumerUnitQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ConsumersEnergyLevelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ConsumersEnergyLevelType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ConsumptionEnergyQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ConsumptionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ConsumptionLevelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ConsumptionLevelType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ConsumptionReportIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ConsumptionTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ConsumptionTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ConsumptionWaterQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ContainerizedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ContentType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ContentUnitQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ContractFolderIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ContractNameType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ContractSubdivisionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ContractTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ContractTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ContractedCarrierAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ContractingSystemCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CoordinateSystemCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CopyIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"CorporateRegistrationTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CorporateStockAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"CorrectionAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"CorrectionTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CorrectionTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CorrectionUnitAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"CountrySubentityCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CountrySubentityType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CreditLineAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"CreditNoteTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CreditedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"CrewQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"CurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CurrentChargeTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CurrentChargeTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CustomerAssignedAccountIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"CustomerReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CustomizationIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"CustomsClearanceServiceInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"CustomsImportClassifiedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"CustomsStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"CustomsTariffQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"DamageRemarksType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DangerousGoodsApprovedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"DataSendingCapabilityType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DataSourceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"DebitLineAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"DebitedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"DeclarationTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DeclaredCarriageValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"DeclaredCustomsValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"DeclaredForCarriageValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"DeclaredStatisticsValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"DeliveredQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"DeliveryInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DemurrageInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DepartmentType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DescriptionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DespatchAdviceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DifferenceTemperatureReductionQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"DirectionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DisplayTacticTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DispositionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DistrictType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DocumentCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DocumentDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DocumentHashType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DocumentIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"DocumentStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DocumentStatusReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DocumentStatusReasonDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DocumentTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DocumentTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"DocumentationFeeAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"DueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"DurationMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"DutyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"DutyType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"EarliestPickupDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"EarliestPickupTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"EconomicOperatorRegistryURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"EffectiveDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"EffectiveTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ElectronicDeviceDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ElectronicMailType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"EmbeddedDocumentBinaryObjectType":{
-		"@base":"udt:BinaryObjectType"
+		"base":"udt:BinaryObjectType"
 		},
 		"EmergencyProceduresCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"EmployeeQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"EncodingCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"EndDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"EndTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"EndpointIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"EnvironmentalEmissionTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"EstimatedAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"EstimatedConsumedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"EstimatedDeliveryDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"EstimatedDeliveryTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"EstimatedDespatchDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"EstimatedDespatchTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"EstimatedOverallContractAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"EstimatedOverallContractQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"EvaluationCriterionTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"EvidenceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExceptionResolutionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExceptionStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExchangeMarketIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ExclusionReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ExecutionRequirementCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExemptionReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExemptionReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ExpectedOperatorQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ExpectedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ExpenseCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExpiryDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ExpiryTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ExpressionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ExpressionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ExtendedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ExtensionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"FaceValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"FamilyNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"FeatureTacticTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"FeeAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"FeeDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"FileNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"FinancingInstrumentCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"FirstNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"FirstShipmentAvailibilityDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"FloorType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"FollowupContractIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ForecastPurposeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ForecastTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"FormatCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ForwarderServiceInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"FreeOfChargeIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"FreeOnBoardValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"FreightForwarderAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"FreightRateClassCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"FrequencyType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"FrozenDocumentIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"FrozenPeriodDaysNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"FullnessIndicationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"FullyPaidSharesIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"FundingProgramCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"FundingProgramType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"GasPressureQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"GenderCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"GeneralCargoIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"GovernmentAgreementConstraintIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"GrossTonnageMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"GrossVolumeMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"GrossWeightMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"GuaranteeTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"GuaranteedDespatchDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"GuaranteedDespatchTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"HandlingCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"HandlingInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"HashAlgorithmMethodType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"HaulageInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"HazardClassIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"HazardousCategoryCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"HazardousRegulationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"HazardousRiskIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"HeatingTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"HeatingTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"HigherTenderAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"HolderNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"HumanFoodApprovedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"HumanFoodIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"HumidityPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"IDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"IdentificationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"IdentificationIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ImmobilizationCertificateIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ImportanceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"IndicationIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"IndustryClassificationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"InformationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"InformationURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"InhalationToxicityZoneCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"InhouseMailType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"InspectionMethodCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"InstallmentDueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"InstructionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"InstructionNoteType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"InstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"InsurancePremiumAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"InsuranceValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"InventoryValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"InvoiceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"InvoicedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"InvoicingPartyReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"IssueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"IssueNumberIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"IssueTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"IssuerIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ItemClassificationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ItemUpdateRequestIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"JobTitleType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"JourneyIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"JustificationDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"JustificationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"KeywordType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LanguageIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LastRevisionDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"LastRevisionTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"LatestDeliveryDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"LatestDeliveryTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"LatestMeterQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"LatestMeterReadingDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"LatestMeterReadingMethodCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LatestMeterReadingMethodType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LatestPickupDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"LatestPickupTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"LatestProposalAcceptanceDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"LatestSecurityClearanceDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"LatitudeDegreesMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"LatitudeDirectionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LatitudeMinutesMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"LeadTimeMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"LegalReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LegalStatusIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"LiabilityAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"LicensePlateIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LifeCycleStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LimitationDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LineCountNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"LineExtensionAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"LineIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LineNumberNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"LineStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LineType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ListValueType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LivestockIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"LoadingLengthMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"LoadingSequenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LocaleCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LocationIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LocationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LocationTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LoginType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LogoReferenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LongitudeDegreesMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"LongitudeDirectionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LongitudeMinutesMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"LossRiskResponsibilityCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"LossRiskType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LotNumberIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LowTendersDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"LowerOrangeHazardPlacardIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"LowerTenderAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"MandateTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ManufactureDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ManufactureTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"MarkAttentionIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"MarkAttentionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MarkCareIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"MarkCareType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MarketValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"MarkingIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"MathematicOperatorCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"MaximumAdvertisementAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"MaximumAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"MaximumBackorderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MaximumCopiesNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"MaximumMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"MaximumNumberNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"MaximumOperatorQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MaximumOrderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MaximumPaidAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"MaximumPaymentInstructionsNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"MaximumPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"MaximumQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MaximumValueType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MaximumVariantQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"MedicalFirstAidGuideCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"MeterConstantCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"MeterConstantType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MeterNameType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MeterNumberType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MeterReadingCommentsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MeterReadingTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"MeterReadingTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MiddleNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"MimeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"MinimumAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"MinimumBackorderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MinimumImprovementBidType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MinimumInventoryQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MinimumMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"MinimumNumberNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"MinimumOrderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MinimumPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"MinimumQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MinimumValueType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MiscellaneousEventTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ModelNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"MonetaryScopeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MovieTitleType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"MultipleOrderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"MultiplierFactorNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"NameCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"NameSuffixType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"NameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"NationalityIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"NatureCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"NegotiationDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"NetNetWeightMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"NetTonnageMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"NetVolumeMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"NetWeightMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"NetworkIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"NominationDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"NominationTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"NormalTemperatureReductionQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"NoteType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"NotificationTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"OccurrenceDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"OccurrenceTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"OnCarriageIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"OneTimeChargeTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"OneTimeChargeTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"OntologyURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"OpenTenderIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"OperatingYearsQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"OptionalLineItemIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"OptionsDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"OrderIntervalDaysNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"OrderQuantityIncrementNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"OrderResponseCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"OrderTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"OrderableIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"OrderableUnitFactorRateType":{
-		"@base":"udt:RateType"
+		"base":"udt:RateType"
 		},
 		"OrderableUnitType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"OrganizationDepartmentType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"OriginalContractingSystemIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"OriginalJobIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"OtherConditionsIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"OtherInstructionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"OtherNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"OutstandingQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"OutstandingReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"OversupplyQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"OwnerTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PackLevelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PackQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"PackSizeNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"PackageLevelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PackagingTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PackingCriteriaCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PackingMaterialType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PaidAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PaidDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"PaidTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ParentDocumentIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ParentDocumentLineReferenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ParentDocumentTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ParentDocumentVersionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PartPresentationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PartecipationPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"PartialDeliveryIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ParticipationPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"PartyCapacityAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PartyTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PartyTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PassengerQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"PasswordType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PayPerViewType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PayableAlternativeAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PayableAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PayableRoundingAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PayerReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PaymentAlternativeCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PaymentChannelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PaymentCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PaymentDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PaymentDueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"PaymentFrequencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PaymentIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PaymentMeansCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PaymentMeansIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PaymentNoteType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PaymentOrderReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PaymentPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"PaymentPurposeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PaymentTermsDetailsURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PenaltyAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PenaltySurchargePercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"PerUnitAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"PerformanceMetricTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PerformanceValueQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"PerformingCarrierAssignedIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PersonalSituationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PhoneNumberType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PlacardEndorsementType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PlacardNotationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PlannedDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"PlotIdentificationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PositionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PostEventNotificationDurationMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"PostalZoneType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PostboxType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PowerIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"PreCarriageIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"PreEventNotificationDurationMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"PreferenceCriterionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PrepaidAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PrepaidIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"PrepaidPaymentReferenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PreviousCancellationReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PreviousJobIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PreviousMeterQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"PreviousMeterReadingDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"PreviousMeterReadingMethodCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PreviousMeterReadingMethodType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PreviousVersionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PriceAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"PriceChangeReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PriceEvaluationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PriceRevisionFormulaDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PriceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PriceTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PricingCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PricingUpdateRequestIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"PrimaryAccountNumberIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"PrintQualifierType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PriorityType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PrivacyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PrizeDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"PrizeIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ProcedureCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ProcessDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ProcessReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ProcessReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ProcurementSubTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ProcurementTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ProductTraceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ProfileExecutionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ProfileIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ProfileStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ProgressPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"PromotionalEventTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ProviderTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PublishAwardIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"PurposeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"PurposeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"QualityControlCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"QuantityDiscrepancyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"QuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"RadioCallSignIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RailCarIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RankType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RateType":{
-		"@base":"udt:RateType"
+		"base":"udt:RateType"
 		},
 		"ReceiptAdviceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ReceivedDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ReceivedElectronicTenderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ReceivedForeignTenderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ReceivedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ReceivedTenderQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ReferenceDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ReferenceEventCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ReferenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ReferenceTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ReferenceType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ReferencedConsignmentIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RefrigeratedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"RefrigerationOnIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"RegionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RegisteredDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RegisteredTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"RegistrationDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RegistrationExpirationDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RegistrationIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RegistrationNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"RegistrationNationalityIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RegistrationNationalityType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RegulatoryDomainType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RejectActionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"RejectReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"RejectReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RejectedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"RejectionNoteType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ReleaseIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ReliabilityPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"RemarksType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ReminderSequenceNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"ReminderTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ReplenishmentOwnerDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RequestForQuotationLineIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RequestedDeliveryDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RequestedDespatchDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RequestedDespatchTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"RequestedInvoiceCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"RequestedPublicationDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RequiredCurriculaIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"RequiredCustomsIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RequiredDeliveryDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RequiredDeliveryTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"RequiredFeeAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"ResidenceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ResidenceTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ResidentOccupantsNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"ResolutionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ResolutionDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ResolutionTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ResolutionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ResponseCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ResponseDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ResponseTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"RetailEventNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"RetailEventStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ReturnabilityIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ReturnableMaterialIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ReturnableQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"RevisedForecastLineIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"RevisionDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"RevisionStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"RevisionTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"RoamingPartnerNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"RoleCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"RoleDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RoomType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"RoundingAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"SalesOrderIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SalesOrderLineIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SchemeURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SealIssuerTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SealStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SealingPartyTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SecurityClassificationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SecurityIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SellerEventIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SequenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SequenceNumberIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SequenceNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"SerialIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ServiceInformationPreferenceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ServiceNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"ServiceNumberCalledType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ServiceTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ServiceTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SettlementDiscountAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"SettlementDiscountPercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"SharesNumberQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ShippingMarksType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ShippingOrderIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ShippingPriorityLevelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ShipsRequirementsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ShortQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ShortageActionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SignatureIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SignatureMethodType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SizeTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SoleProprietorshipIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"SourceCurrencyBaseRateType":{
-		"@base":"udt:RateType"
+		"base":"udt:RateType"
 		},
 		"SourceCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SourceForecastIssueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"SourceForecastIssueTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"SourceValueMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"SpecialInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SpecialSecurityIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"SpecialServiceInstructionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SpecialTermsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SpecialTransportRequirementsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SpecificationIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SpecificationTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SplitConsignmentIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"StartDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"StartTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"StatementTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"StatusAvailableIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"StatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"StatusReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"StatusReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"StreetNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"SubcontractingConditionsCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SubmissionDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"SubmissionDueDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"SubmissionMethodCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SubscriberIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SubscriberTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SubscriberTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SubstitutionStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"SuccessiveSequenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SummaryDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"SupplierAssignedAccountIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"SupplyChainActivityTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TareWeightMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"TargetCurrencyBaseRateType":{
-		"@base":"udt:RateType"
+		"base":"udt:RateType"
 		},
 		"TargetCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TargetInventoryQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TargetServicePercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"TariffClassCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TariffCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TariffDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TaxAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TaxCurrencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TaxEnergyAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TaxEnergyBalanceAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TaxEnergyOnAccountAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TaxEvidenceIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"TaxExclusiveAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TaxExemptionReasonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TaxExemptionReasonType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TaxIncludedIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"TaxInclusiveAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TaxLevelCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TaxPointDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"TaxTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TaxableAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TechnicalCommitteeDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TechnicalNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"TelecommunicationsServiceCallCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TelecommunicationsServiceCallType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TelecommunicationsServiceCategoryCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TelecommunicationsServiceCategoryType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TelecommunicationsSupplyTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TelecommunicationsSupplyTypeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TelefaxType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TelephoneType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TenderEnvelopeIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"TenderEnvelopeTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TenderResultCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TenderTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TendererRequirementTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TendererRoleCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TestMethodType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TextType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ThirdPartyPayerIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"ThresholdAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"ThresholdQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ThresholdValueComparisonCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TierRangeType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TierRatePercentType":{
-		"@base":"udt:PercentType"
+		"base":"udt:PercentType"
 		},
 		"TimeAmountType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TimeDeltaDaysQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TimeFrequencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TimezoneOffsetType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TimingComplaintCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TimingComplaintType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TitleType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ToOrderIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"TotalAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalBalanceAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalConsumedQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TotalCreditAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalDebitAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalDeliveredQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TotalGoodsItemQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TotalInvoiceAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalMeteredQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TotalPackageQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TotalPackagesQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TotalPaymentAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalTaskAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalTaxAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TotalTransportHandlingUnitQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"TraceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"TrackingDeviceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TrackingIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"TradeItemPackingLabelingTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TradeServiceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TradingRestrictionsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TrainIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"TransactionCurrencyTaxAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"TransitDirectionCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportAuthorizationCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportEmergencyCardCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportEquipmentTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportEventTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportExecutionPlanReferenceIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"TransportExecutionStatusCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportHandlingUnitTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportMeansTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportModeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportServiceCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TransportServiceProviderRemarksType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TransportServiceProviderSpecialTermsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TransportUserRemarksType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TransportUserSpecialTermsType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TransportationServiceDescriptionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"TransportationServiceDetailsURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"TransportationStatusTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"TypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"UBLVersionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"UNDGCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"URIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"UUIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"UnknownPriceIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"UpperOrangeHazardPlacardIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"UrgencyCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"UtilityStatementTypeCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ValidateProcessType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ValidateToolType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ValidateToolVersionType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ValidationDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ValidationResultCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"ValidationTimeType":{
-		"@base":"udt:TimeType"
+		"base":"udt:TimeType"
 		},
 		"ValidatorIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"ValidityStartDateType":{
-		"@base":"udt:DateType"
+		"base":"udt:DateType"
 		},
 		"ValueAmountType":{
-		"@base":"udt:AmountType"
+		"base":"udt:AmountType"
 		},
 		"ValueMeasureType":{
-		"@base":"udt:MeasureType"
+		"base":"udt:MeasureType"
 		},
 		"ValueQualifierType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"ValueQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"ValueType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"VarianceQuantityType":{
-		"@base":"udt:QuantityType"
+		"base":"udt:QuantityType"
 		},
 		"VariantConstraintIndicatorType":{
-		"@base":"udt:IndicatorType"
+		"base":"udt:IndicatorType"
 		},
 		"VariantIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"VersionIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"VesselIDType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"VesselNameType":{
-		"@base":"udt:NameType"
+		"base":"udt:NameType"
 		},
 		"WarrantyInformationType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"WebsiteURIType":{
-		"@base":"udt:IdentifierType"
+		"base":"udt:IdentifierType"
 		},
 		"WeekDayCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"WeightNumericType":{
-		"@base":"udt:NumericType"
+		"base":"udt:NumericType"
 		},
 		"WeightType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"WeightingAlgorithmCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"WorkPhaseCodeType":{
-		"@base":"udt:CodeType"
+		"base":"udt:CodeType"
 		},
 		"WorkPhaseType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		},
 		"XPathType":{
-		"@base":"udt:TextType"
+		"base":"udt:TextType"
 		}
 	}
 }

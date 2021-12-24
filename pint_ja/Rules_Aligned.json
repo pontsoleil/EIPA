@@ -1,0 +1,375 @@
+[
+    {
+        "Identifier": "jp-br-01",
+        "Message": "[jp-br-01]-From October 1st2023, Seller Tax identifier (ibt-031) shall be coded by using a Registration number for Qualified Invoice in Japan, which consists of 14 digits that starts with T.",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "matches(normalize-space(cbc:CompanyID),'^T[0-9]{13}$')"
+    },
+    {
+        "Identifier": "jp-br-03",
+        "Message": "[jp-br-03]-Tax scheme (ibt-118-1) shall use VAT from UNECE 5153 code list. VAT means Consumption Tax in Japan.",
+        "Flag": "fatal",
+        "Context": "cac:TaxCategory/cac:TaxScheme/cbc:ID | cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID",
+        "Test": "matches(normalize-space(.),'VAT')"
+    },
+    {
+        "Identifier": "jp-br-04",
+        "Message": "[jp-br-04]-An Invoice shall have the Seller tax identifier (ibt-031).",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]",
+        "Test": "exists(cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID)"
+    },
+    {
+        "Identifier": "jp-br-05",
+        "Message": "[jp-br-05]-An Invoice shall have an Invoice period (ibg-14) or an Invoice line period (ibg-26).",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]",
+        "Test": "exists(cac:InvoicePeriod) or exists(cac:InvoiceLine/cac:InvoicePeriod)"
+    },
+    {
+        "Identifier": "jp-br-06",
+        "Message": "[jp-br-06]-Invoice period (ibg-14) shall have both Invoice period start date (ibt-073) and Invoice period end date (ibt-074).",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:InvoicePeriod",
+        "Test": "exists(cbc:StartDate) and exists(cbc:EndDate)"
+    },
+    {
+        "Identifier": "jp-br-07",
+        "Message": "[jp-br-07]-Invoice line period (ibg-26) shall have both Invoice line period start date (ibt-134) and Invoice line period end date (ibt-135).",
+        "Flag": "fatal",
+        "Context": "cac:InvoiceLine/cac:InvoicePeriod",
+        "Test": "exists(cbc:StartDate) and exists(cbc:EndDate)"
+    },
+    {
+        "Identifier": "jp-br-08",
+        "Message": "[jp-br-08]-Both start date and end date of line period must be within invoice period.",
+        "Flag": "fatal",
+        "Context": "cac:InvoiceLine/cac:InvoicePeriod",
+        "Test": "xs:date(cbc:StartDate) >= xs:date(../../cac:InvoicePeriod/cbc:StartDate) and xs:date(cbc:EndDate) <= xs:date(../../cac:InvoicePeriod/cbc:EndDate)"
+    },
+    {
+        "Identifier": "jp-br-09",
+        "Message": "[jp-br-09]-Invoice line net amount (ibt-131) = Item net price (ibt-146) X Invoiced quantity (ibt-129) \u00f7 Item price base quantity (ibt-149) + Invoice line charge amount (ibt-141) \u2013 Invoice line allowance amount (ibt-136).",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:InvoiceLine",
+        "Test": "(exists(cac:Price/cbc:BaseQuantity) and        ((exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) and exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()]) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount div cac:Price/cbc:BaseQuantity) + cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount - cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount ))       or       (not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()])) and exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()]) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount div cac:Price/cbc:BaseQuantity) + cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount))       or       (exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) and not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount div cac:Price/cbc:BaseQuantity) - cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount))       or       (not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()])) and not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount div cac:Price/cbc:BaseQuantity)))))     or     (not(exists(cac:Price/cbc:BaseQuantity)) and        ((exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) and exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()]) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * cac:Price/cbc:PriceAmount + cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount - cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount ))       or       (not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()])) and exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()]) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount  + cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cbc:Amount)))       or       (exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()]) and not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount  - cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount)))       or       (not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=false()])) and not(exists(cac:AllowanceCharge[cbc:ChargeIndicator=true()])) and (cbc:LineExtensionAmount = cbc:InvoicedQuantity * (cac:Price/cbc:PriceAmount)))))"
+    },
+    {
+        "Identifier": "jp-br-10",
+        "Message": "[jp-br-10]-Specification identifier MUST start with the value 'urn:peppol:pint:billing-3.0@jp:peppol-1'.",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]",
+        "Test": "starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:peppol:pint:billing-3.0@jp:peppol-1')"
+    },
+    {
+        "Identifier": "jp-br-11",
+        "Message": "[jp-br-11]-Business process MUST be in the format 'urn:peppol:bis:billing'.",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]",
+        "Test": "/*/cbc:ProfileID and matches(normalize-space(/*/cbc:ProfileID), 'urn:peppol:bis:billing')"
+    },
+    {
+        "Identifier": "jp-br-32",
+        "Message": "[jp-br-32]-Each Document level allowance (ibg-20) shall be categorized by Document level allowance tax category code\uff08ibt-095\uff09and Document level allowance tax rate\uff08ibt-096).",
+        "Flag": "fatal",
+        "Context": "/cac:AllowanceCharge[cbc:ChargeIndicator=true()]",
+        "Test": "exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID) and exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent)"
+    },
+    {
+        "Identifier": "jp-br-37",
+        "Message": "[jp-br-37]-Each Document level charge (ibg-21) shall be categorized by Document level charge tax category code\uff08ibt-102\uff09and Document level charge tax rate (ibt-103).",
+        "Flag": "fatal",
+        "Context": "/cac:AllowanceCharge[cbc:ChargeIndicator=false()]",
+        "Test": "exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID) and exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent)"
+    },
+    {
+        "Identifier": "jp-br-45",
+        "Message": "[jp-br-45]-Each Tax breakdown (ibg-23) shall have a Tax category taxable amount (ibt-116).",
+        "Flag": "fatal",
+        "Context": "cac:TaxTotal[cbc:TaxAmount/@currencyID=../cbc:DocumentCurrencyCode]/cac:TaxSubtotal",
+        "Test": "exists(cbc:TaxableAmount)"
+    },
+    {
+        "Identifier": "jp-br-46",
+        "Message": "[jp-br-46]-Each Tax breakdown (ibg-23) shall have a Tax category tax amount (ibt-117).",
+        "Flag": "fatal",
+        "Context": "cac:TaxTotal[cbc:TaxAmount/@currencyID=../cbc:DocumentCurrencyCode]/cac:TaxSubtotal",
+        "Test": "exists(cbc:TaxAmount)"
+    },
+    {
+        "Identifier": "jp-br-47",
+        "Message": "[jp-br-47]-Tax breakdown (ibg-23) shall be categorized by Tax category code (ibt-118).",
+        "Flag": "fatal",
+        "Context": "cac:TaxTotal[cbc:TaxAmount/@currencyID=../cbc:DocumentCurrencyCode]/cac:TaxSubtotal",
+        "Test": "exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID) and exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent)"
+    },
+    {
+        "Identifier": "jp-br-48",
+        "Message": "[jp-br-48]-Tax breakdown (ibg-23) shall be categorized by Tax category rate (ibt-119), except if the Invoice is not subject to tax.",
+        "Flag": "fatal",
+        "Context": "cac:TaxTotal[cbc:TaxAmount/@currencyID=../cbc:DocumentCurrencyCode]/cac:TaxSubtotal",
+        "Test": "(exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID) and exists(cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent)) or (cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/normalize-space(cbc:ID)='O')"
+    },
+    {
+        "Identifier": "jp-br-co-01",
+        "Message": "[jp-br-co-01]-Tax category tax amount (ibt-117) = Tax category taxable amount (ibt-116) X Tax category rate (ibt-119) \u00f7 100, rounded to integer. The rounded result amount shall be between the floor and the ceiling.",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]",
+        "Test": "(     round(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent)) != 0      and (     xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) >= floor(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))     and (     xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount) <= ceiling(xs:decimal(cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount) * (cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/xs:decimal(cbc:Percent) div 100)))     )"
+    },
+    {
+        "Identifier": "jp-br-co-03",
+        "Message": "[jp-br-co-03]-If Tax accounting currency (ibt-006) is present, it shall be coded using JPY in ISO code list of 4217 a-3.",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]",
+        "Test": "not(exists(cbc:TaxCurrencyCode)) or cbc:TaxCurrencyCode/@schemeID = 'JPY'"
+    },
+    {
+        "Identifier": "jp-br-co-04",
+        "Message": "[jp-br-co-04]-Invoice line (ibg-25), Invoice line charge (ibg-28) and Invoice line allowance (ibg-27) shall be categorized by both Invoiced item tax category code (ibt-151) and Invoiced item tax rate (ibt-152).",
+        "Flag": "fatal",
+        "Context": "/ubl:Invoice[cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode = 'JP' ]/cac:InvoiceLine",
+        "Test": "(//cac:ClassifiedTaxCategory[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:ID) and (//cac:ClassifiedTaxCategory[cac:TaxScheme/(normalize-space(upper-case(cbc:ID))='VAT')]/cbc:Percent)"
+    },
+    {
+        "Identifier": "jp-br-co-05",
+        "Message": "[jp-br-co-05]-Tax category taxable amount (ibt-116) = \u03a3 Invoice line net amount (ibt-131) \u2013 Document level allowance amount (ibt-092) + Document level charge amount (ibt-099).",
+        "Flag": "fatal",
+        "Context": "cac:TaxTotal[cbc:TaxAmount/@currencyID=../cbc:DocumentCurrencyCode]/cac:TaxSubtotal",
+        "Test": "every $category in cac:TaxCategory/cbc:ID satisfies     ((count(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID = $category]) > 0 and      count(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID = $category]) > 0 and      (cbc:TaxableAmount =      sum(//cbc:LineExtensionAmount[../cac:Item/cac:ClassifiedTaxCategory/cbc:ID = $category]) +      sum(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID = $category]/cbc:Amount) -     sum(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID = $category]/cbc:Amount)))     or     (count(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID = $category]) > 0 and      count(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID = $category]) = 0 and      (cbc:TaxableAmount =      sum(//cbc:LineExtensionAmount[../cac:Item/cac:ClassifiedTaxCategory/cbc:ID = $category]) +      sum(//cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID = $category]/cbc:Amount)))     or     (count(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID = $category]) = 0 and      count(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID = $category]) > 0 and      (cbc:TaxableAmount =      sum(//cbc:LineExtensionAmount[../cac:Item/cac:ClassifiedTaxCategory/cbc:ID = $category]) -     sum(//cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID = $category]/cbc:Amount)))     or     (count(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID = $category]) = 0 and      count(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID = $category]) = 0 and      (cbc:TaxableAmount =      sum(//cbc:LineExtensionAmount[../cac:Item/cac:ClassifiedTaxCategory/cbc:ID = $category]))))"
+    },
+    {
+        "Identifier": "jp-cl-01",
+        "Message": "[jp-cl-01]-The document type code MUST be coded by the Japanese invoice related code lists of UNTDID 1001.",
+        "Flag": "fatal",
+        "Context": "cbc:InvoiceTypeCode | cbc:CreditNoteTypeCode",
+        "Test": "(self::cbc:InvoiceTypeCode and ((not(contains(normalize-space(.), ' ')) and contains(' 80 82 84 380 383 386 393 395 575 623 780 ', concat(' ', normalize-space(.), ' '))))) or (self::cbc:CreditNoteTypeCode and ((not(contains(normalize-space(.), ' ')) and contains(' 81 83 381 396 532 ', concat(' ', normalize-space(.), ' ')))))",
+        "Syntax binding": "\nubl:Invoice / cbc:InvoiceTypeCode\n",
+        "Codelist": "\nDocument name code (Subset: Invoice type code)\n"
+    },
+    {
+        "Identifier": "jp-cl-03",
+        "Message": "[jp-cl-03]- Japanese invoice tax categories MUST be coded using UNCL5305 code list",
+        "Flag": "fatal",
+        "Context": "cac:TaxCategory/cbc:ID | cac:ClassifiedTaxCategory/cbc:ID",
+        "Test": "( ( not(contains(normalize-space(.),' ')) and contains( ' AA S Z G O E ',concat(' ',normalize-space(.),' ') ) ) )"
+    },
+    {
+        "Identifier": "jp-e-01",
+        "Message": "[jp-e-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) or a Document level charge (ibg-21) where the Tax category code (ibt-151, ibt-095, ibt-102) is \u201cE (Exempt from tax)\u201d shall contain exactly one Tax breakdown (ibg-23) with Tax category code (ibt-118) equal to \u201cE\u201d.",
+        "Flag": "fatal",
+        "Context": "/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "((exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'E']) or exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'E'])) and (count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'E']) = 1)) or (not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'E']) and not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'E']))"
+    },
+    {
+        "Identifier": "jp-e-05",
+        "Message": "[jp-e-05]-In an Invoice line (ibg-25) where the Invoiced item tax category code (ibt-151) is Exempt from tax, the Invoiced item tax rate (ibt-152) shall be 0 (zero).",
+        "Flag": "fatal",
+        "Context": "cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(cbc:Percent) = 0)"
+    },
+    {
+        "Identifier": "jp-e-06",
+        "Message": "[jp-e-06]-In a Document level allowance (ibg-20) where the Document level allowance tax category code (ibt-95) is Exempt from tax, the Document level allowance tax rate (ibt-96) shall be 0 (zero).",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(cbc:Percent) = 0)"
+    },
+    {
+        "Identifier": "jp-e-07",
+        "Message": "[jp-e-07]-In a Document level charge (ibg-21) where the Document level charge tax category code (ibt-102) is Exempt from tax, the Document level charge tax rate (ibt-103) shall be 0 (zero).",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='E'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(cbc:Percent) = 0)"
+    },
+    {
+        "Identifier": "jp-e-09",
+        "Message": "[jp-e-09]-Tax category tax amount (ibt-117) shall be 0 (zero) if Tax category code (ibt-118) equals to E (Exempt from tax).",
+        "Flag": "fatal",
+        "Context": "/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(../cbc:TaxAmount) = 0)"
+    },
+    {
+        "Identifier": "jp-g-01",
+        "Message": "[jp-g-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) or a Document level charge (ibg-21) where the Tax category code (ibt-151) is \u201cG (Free export item, tax not charged)\u201d shall contain exactly one Tax breakdown (ibg-23) with Tax category code (ibt-118) equals to \u201cG\u201d.",
+        "Flag": "fatal",
+        "Context": "/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "((exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'G']) or exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'G'])) and (count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'G']) = 1)) or (not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'G']) and not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'G']))"
+    },
+    {
+        "Identifier": "jp-g-05",
+        "Message": "[jp-g-05]-In an Invoice line (ibg-25) where the invoiced Item tax category code (ibt-151) is \u201cG (Free export item, tax not charged)\u201d the invoiced Item tax rate (ibt-152) shall be 0 (zero).",
+        "Flag": "fatal",
+        "Context": "cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(cbc:Percent) = 0)"
+    },
+    {
+        "Identifier": "jp-g-06",
+        "Message": "[jp-g-06]-In a Document level allowance (ibg-20) where the Document level allowance tax category code (ibt-95) is \u201cG (Free export item, tax not charged)\u201d the Document level allowance tax rate (ibt-96) shall be 0 (zero).",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(cbc:Percent) = 0)"
+    },
+    {
+        "Identifier": "jp-g-07",
+        "Message": "[jp-g-07]-In a Document level charge (ibg-21) where the Document level charge tax category code (ibt-102) is \u201cG (Free export item, tax not charged)\u201d the Document level charge tax rate (ibt-103) shall be 0 (zero).",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(cbc:Percent) = 0)"
+    },
+    {
+        "Identifier": "jp-g-09",
+        "Message": "[jp-g-09]-Tax category tax amount (ibt-117) shall be 0 (zero) if Tax category code (ibt-118) equals to \u201cG (Free export item, tax not charged)\u201d.",
+        "Flag": "fatal",
+        "Context": "/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(../cbc:TaxAmount) = 0)"
+    },
+    {
+        "Identifier": "jp-o-01",
+        "Message": "[jp-o-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) or a Document level charge (ibg-21) where the Tax category code (ibt-151, ibt-095, ibt-102) is \u201cO (Outside of scope of tax)\u201d shall contain exactly one Tax breakdown (ibg-23) with Tax category code(ibt-118) equal to \u201cO\u201d.",
+        "Flag": "fatal",
+        "Context": "/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "((exists(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']) or exists(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O'])) and (count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']) = 1)) or (not(//cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']) and not(//cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']))"
+    },
+    {
+        "Identifier": "jp-o-05",
+        "Message": "[jp-o-05]-In an Invoice line (ibg-25) where the Tax category code (ibt-151) is \"O (Outside of scope of tax)\" shall not contain an Invoiced item tax rate (ibt-152).",
+        "Flag": "fatal",
+        "Context": "cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT'] | cac:CreditNoteLine/cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(not(cbc:Percent))"
+    },
+    {
+        "Identifier": "jp-o-06",
+        "Message": "[jp-o-06]-In a Document level allowance (ibg-20) where Tax category code (ibt-95) is \"O (Outside of scope of tax)\" shall not contain a Document level allowance tax rate (ibt-96).",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cac:TaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(not(cbc:Percent))"
+    },
+    {
+        "Identifier": "jp-o-07",
+        "Message": "[jp-o-07]-In a Document level charge (ibg-21) where the Tax category code (ibt-102) is \"O (Outside of scope of tax)\" shall not contain a Document level charge tax rate (ibt-103).",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator=true()]/cac:TaxCategory[normalize-space(cbc:ID)='O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(not(cbc:Percent))"
+    },
+    {
+        "Identifier": "jp-o-09",
+        "Message": "[jp-o-09]-Tax category tax amount (ibt-117) shall be 0 (zero) if Tax category code (ibt-118) equals to \u201cO (Outside of scope of tax)\u201d.",
+        "Flag": "fatal",
+        "Context": "/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']",
+        "Test": "(xs:decimal(../cbc:TaxAmount) = 0)"
+    },
+    {
+        "Identifier": "PEPPOL-COMMON-R040",
+        "Message": "GLN must have a valid format according to GS1 rules.",
+        "Flag": "fatal",
+        "Context": "cbc:EndpointID[@schemeID = '0088'] | cac:PartyIdentification/cbc:ID[@schemeID = '0088'] | cbc:CompanyID[@schemeID = '0088']",
+        "Test": "matches(normalize-space(), '^[0-9]+$') and u:gln(normalize-space())"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-CL001",
+        "Message": "Mime code must be according to subset of IANA code list.",
+        "Flag": "fatal",
+        "Context": "cbc:EmbeddedDocumentBinaryObject[@mimeCode]",
+        "Test": "some $code in $MIMECODE                     satisfies @mimeCode = $code"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-CL002",
+        "Message": "Reason code MUST be according to subset of UNCL 5189 D.16B.",
+        "Flag": "fatal",
+        "Context": "cac:AllowanceCharge[cbc:ChargeIndicator = 'false']/cbc:AllowanceChargeReasonCode",
+        "Test": "some $code in $UNCL5189                     satisfies normalize-space(text()) = $code"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-CL006",
+        "Message": "Invoice period description code must be according to UNCL 2005 D.16B.",
+        "Flag": "fatal",
+        "Context": "cac:InvoicePeriod/cbc:DescriptionCode",
+        "Test": "some $code in $UNCL2005                     satisfies normalize-space(text()) = $code"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-CL008",
+        "Message": "Electronic address identifier scheme must be from the codelist \"Electronic Address Identifier Scheme\"",
+        "Flag": "fatal",
+        "Context": "cbc:EndpointID[@schemeID]",
+        "Test": "some $code in $eaid                     satisfies @schemeID = $code"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-F001",
+        "Message": "A date MUST be formatted YYYY-MM-DD.",
+        "Flag": "fatal",
+        "Context": "cbc:IssueDate | cbc:DueDate | cbc:TaxPointDate | cbc:StartDate | cbc:EndDate | cbc:ActualDeliveryDate",
+        "Test": "string-length(text()) = 10 and (string(.) castable as xs:date)"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-P0100",
+        "Message": "Invoice type code MUST be set according to the profile.",
+        "Flag": "fatal",
+        "Context": "cbc:InvoiceTypeCode",
+        "Test": "$profile != '01' or (some $code in tokenize('380 383 386 393 82 80 84 395 575 623 780', '\\s')                     satisfies normalize-space(text()) = $code)"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-P0101",
+        "Message": "Credit note type code MUST be set according to the profile.",
+        "Flag": "fatal",
+        "Context": "cbc:CreditNoteTypeCode",
+        "Test": "$profile != '01' or (some $code in tokenize('381 396 81 83 532', '\\s')                     satisfies normalize-space(text()) = $code)"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R001",
+        "Message": "Business process MUST be provided.",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice",
+        "Test": "cbc:ProfileID"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R005",
+        "Message": "Tax accounting currency code MUST be different from invoice currency code when provided.",
+        "Flag": "fatal",
+        "Context": "cbc:TaxCurrencyCode",
+        "Test": "not(normalize-space(text()) = normalize-space(../cbc:DocumentCurrencyCode/text()))"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R010",
+        "Message": "Buyer electronic address MUST be provided",
+        "Flag": "fatal",
+        "Context": "cac:AccountingCustomerParty/cac:Party",
+        "Test": "cbc:EndpointID"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R020",
+        "Message": "Seller electronic address MUST be provided",
+        "Flag": "fatal",
+        "Context": "cac:AccountingSupplierParty/cac:Party",
+        "Test": "cbc:EndpointID"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R043",
+        "Message": "Allowance/charge ChargeIndicator value MUST equal 'true' or 'false'",
+        "Flag": "fatal",
+        "Context": "ubl:Invoice/cac:AllowanceCharge | ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge | cn:CreditNote/cac:AllowanceCharge | cn:CreditNote/cac:CreditNoteLine/cac:AllowanceCharge",
+        "Test": "normalize-space(cbc:ChargeIndicator/text()) = 'true' or normalize-space(cbc:ChargeIndicator/text()) = 'false'"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R044",
+        "Message": "Charge on price level is NOT allowed. Only value 'false' allowed.",
+        "Flag": "fatal",
+        "Context": "cac:Price/cac:AllowanceCharge",
+        "Test": "normalize-space(cbc:ChargeIndicator) = 'false'"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R046",
+        "Message": "Item net price MUST equal (Gross price - item price discount) when gross price is provided.",
+        "Flag": "fatal",
+        "Context": "cac:Price/cac:AllowanceCharge",
+        "Test": "not(cbc:BaseAmount) or xs:decimal(../cbc:PriceAmount) = xs:decimal(cbc:BaseAmount) - xs:decimal(cbc:Amount)"
+    },
+    {
+        "Identifier": "PEPPOL-EN16931-R121",
+        "Message": "Base quantity MUST be a positive number above zero.",
+        "Flag": "fatal",
+        "Context": "cac:InvoiceLine | cac:CreditNoteLine",
+        "Test": "not(cac:Price/cbc:BaseQuantity) or xs:decimal(cac:Price/cbc:BaseQuantity) > 0"
+    }
+]
