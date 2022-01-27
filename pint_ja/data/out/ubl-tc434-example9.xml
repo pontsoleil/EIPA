@@ -1,15 +1,13 @@
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
-  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+<?xml version='1.0' encoding='utf-8'?>
+<ubl-invoice:Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
+  xmlns:ubl-invoice="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
   <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
   <cbc:ID>20150483</cbc:ID>
   <cbc:IssueDate>2015-04-01</cbc:IssueDate>
   <cbc:DueDate>2015-04-14</cbc:DueDate>
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-  <cbc:Note>Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van
-        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen
-        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden.</cbc:Note>
+  <cbc:Note>Vriendelijk verzoeken wij u ervoor te zorgen dat het bedrag voor de vervaldatum op onze rekening staat onder vermelding van\n        het factuurnummer. Het bankrekeningnummer is 37.78.15.500, Rabobank, t.n.v. Bluem te Amersfoort. Reclames gaarne binnen\n        10 dagen. Gelieve bij navraag en correspondentie uw firma naam en factuurnummer vermelden.</cbc:Note>
   <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
   <cac:InvoicePeriod>
     <cbc:StartDate>2016-04-01</cbc:StartDate>
@@ -112,4 +110,4 @@
       <cbc:BaseQuantity unitCode="MON">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
-</Invoice>
+</ubl-invoice:Invoice>

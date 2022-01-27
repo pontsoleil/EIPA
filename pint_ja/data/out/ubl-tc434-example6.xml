@@ -1,7 +1,7 @@
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
-  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+<?xml version='1.0' encoding='utf-8'?>
+<ubl-invoice:Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
+  xmlns:ubl-invoice="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
   <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
   <cbc:ID>TOSL110</cbc:ID>
   <cbc:IssueDate>2013-04-10</cbc:IssueDate>
@@ -92,7 +92,7 @@
     <cbc:InvoicedQuantity unitCode="EA">100</cbc:InvoicedQuantity>
     <cbc:LineExtensionAmount currencyID="DKK">500.00</cbc:LineExtensionAmount>
     <cac:Item>
-      <cbc:Name>Parker Pen</cbc:Name>
+      <cbc:Name>Fountain Pen</cbc:Name>
       <cac:ClassifiedTaxCategory>
         <cbc:ID>S</cbc:ID>
         <cbc:Percent>25</cbc:Percent>
@@ -123,4 +123,4 @@
       <cbc:PriceAmount currencyID="DKK">5.00</cbc:PriceAmount>
     </cac:Price>
   </cac:InvoiceLine>
-</Invoice>
+</ubl-invoice:Invoice>

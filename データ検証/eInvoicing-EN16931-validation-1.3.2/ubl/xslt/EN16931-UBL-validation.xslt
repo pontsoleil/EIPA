@@ -15233,9 +15233,9 @@
 
 		<!--ASSERT -->
 <xsl:choose>
-      <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" />
+      <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" />
       <xsl:otherwise>
-        <svrl:failed-assert test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )">
+        <svrl:failed-assert test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )">
           <xsl:attribute name="id">BR-CL-17</xsl:attribute>
           <xsl:attribute name="flag">fatal</xsl:attribute>
           <xsl:attribute name="location">
@@ -15254,9 +15254,9 @@
 
 		<!--ASSERT -->
 <xsl:choose>
-      <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" />
+      <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )" />
       <xsl:otherwise>
-        <svrl:failed-assert test="( ( not(contains(normalize-space(.),' ')) and contains( ' AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )">
+        <svrl:failed-assert test="( ( not(contains(normalize-space(.),' ')) and contains( ' AA AE L M E S Z G O K ',concat(' ',normalize-space(.),' ') ) ) )">
           <xsl:attribute name="id">BR-CL-18</xsl:attribute>
           <xsl:attribute name="flag">fatal</xsl:attribute>
           <xsl:attribute name="location">

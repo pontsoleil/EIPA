@@ -31,8 +31,6 @@
         <artifactId>ph-schematron-maven-plugin</artifactId>
         <version>5.2.0</version>
         <executions>
-<!--
--->
           <execution>
             <id>cii</id>
             <goals>
@@ -43,8 +41,6 @@
               <xsltDirectory>${basedir}/cii/xslt</xsltDirectory>
             </configuration>
           </execution>
-<!--
--->
           <execution>
             <id>edifact</id>
             <goals>
@@ -55,8 +51,6 @@
               <xsltDirectory>${basedir}/edifact/xslt</xsltDirectory>
             </configuration>
           </execution>
-<!--
--->
           <execution>
             <id>ubl</id>
             <goals>
