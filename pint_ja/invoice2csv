@@ -425,16 +425,26 @@ if __name__=='__main__':
     "{"+ns['cac']+"}Party/{"+ns['cac']+"}PartyTaxScheme/{"+ns['cac']+"}TaxScheme/{"+ns['cbc']+"}ID")
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,Definition,Card,DataType,Section,SyntSort,XPath,Path,selectors,CodeList,
-  # 0       1  2     3  4          5    6        7       8        9     10   11        12
+  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Attributes,Codelist,Occurrence,CardinalityAlignment
+  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17         18       19         20
   COL_SemanticSort = 0
   COL_ID = 1
   COL_level = 2
   COL_BT = 3
-  COL_card = 5
-  COL_datatype = 6
-  COL_SyntaxSort = 8
-  COL_xpath = 9
+  COL_card = 10
+  COL_datatype = 11
+  COL_SyntaxSort = 14
+  COL_xpath = 15
+  # # SemSort,ID,Level,BT,Definition,Card,DataType,Section,SyntSort,XPath,Path,selectors,CodeList,
+  # # 0       1  2     3  4          5    6        7       8        9     10   11        12
+  # COL_SemanticSort = 0
+  # COL_ID = 1
+  # COL_level = 2
+  # COL_BT = 3
+  # COL_card = 5
+  # COL_datatype = 6
+  # COL_SyntaxSort = 8
+  # COL_xpath = 9
   if verbose: print(f'*** XPath file {pint_file}')
   with open(pint_file,encoding='utf-8',newline='') as f0:
     reader = csv.reader(f0) #,delimiter='\t')

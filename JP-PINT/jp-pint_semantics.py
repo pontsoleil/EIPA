@@ -272,7 +272,7 @@ info_item_modal_ja = '''
           </dl>
 '''
 from jp_pint_constants import item_navbar
-
+from jp_pint_constants import item_info_modal
 rule_table_head = '''
 					<table class="table table-borderless table-sm table-hover">
 						<colgroup>
@@ -317,39 +317,39 @@ def setupTr(data,lang):
 	id = data['PINT_ID']
 	ID = id.upper()
 	html = ''
-	if re.match(r'^ibg-[0-9]*$',id):
+	if re.match(r'(IBG|ibg)-[0-9]*$',id):
 		html += '<tr class="group"'+ \
 						' data-seq="'+data['SemSort']+'"'+ \
 						' data-pint_id="'+data['PINT_ID']+'"'+ \
 						' data-level="'+data['Level']+'"'+ \
 						' data-card="'+data['Card']+'"'+ \
-						' data-path="'+data['Path']+'">'
+						' data-path="'+data['XPath']+'">'
 		html += '<td class="expand-control" align="center"></td>'
-	elif re.match(r'^ibt-[0-9a-z\-]*$',id):
+	elif re.match(r'(IBT|ibt)-[0-9]+(-[0-9]+)?$',id):
 		html += '<tr'+ \
 						' data-seq="'+data['SemSort']+'"'+ \
 						' data-pint_id="'+data['PINT_ID']+'"'+ \
 						' data-level="'+data['Level']+'"'+ \
 						' data-card="'+data['Card']+'"'+ \
-						' data-path="'+data['Path']+'">'
+						' data-path="'+data['XPath']+'">'
 		html += '<td>&nbsp;</td>'
 	else:
 		return html
-	html += '<td><span>'+data['Card']+'</span></td>'
 	html += '<td>'+id+'</td>'
 	level = ''
-	if re.match(r'^ib[tg]-[0-9]*$',id):
+	if re.match(r'^ib[tg]-[0-9]+(-[0-9]+)?$',id):
 		# item_dir = semantic_root+id+'/'+lang+'/'
 		item_dir = APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/'
-		if 'ja' == lang:
-			html += '<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT_ja']+'</a></td>'
-		else:
-			html += '<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT']+'</a></td>'
+		# if 'ja' == lang:
+		# 	html += '<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT_ja']+'</a></td>'
+		# else:
+		html += '<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT']+'<br>'+data['BT_ja']+'</a></td>'
 	else:
-		if 'ja' == lang:
-			html += '<td><span>'+level+data['BT_ja']+'</span></td>'
-		else:
-			html += '<td><span>'+level+data['BT']+'</span></td>'
+		# if 'ja' == lang:
+		# 	html += '<td><span>'+level+data['BT_ja']+'</span></td>'
+		# else:
+		html += '<td><span>'+level+data['BT']+'<br>'+data['BT_ja']+'</span></td>'
+	html += '<td><span>'+data['Card']+'</span></td>'
 	# html += '<td><span>'+data['DT']+'</span></td>'
 	desc = ''
 	if 'ja' == lang:
@@ -366,105 +366,101 @@ def setupTr(data,lang):
 	# html += example+'</td>'
 	return html
 
-def writeTr_en(f,data):
-	lang = 'en'
-	tabs = '\t\t\t\t\t\t'
+def writeTr(f,data,lang):
+	# lang = 'en'
 	id = data['PINT_ID']
-	# ID = id.upper()
-	if re.match(r'^ibg-[0-9]*$',id):
-		f.write(tabs+'<tr class="group"'+ \
-										' data-seq="'+data['SemSort']+'"'+ \
-										' data-pint_id="'+data['PINT_ID']+'"'+ \
-										' data-level="'+data['Level']+'"'+ \
-										' data-card="'+data['Card']+'"'+ \
-										' data-path="'+data['Path']+'">\n')
-		f.write(tabs+'\t<td class="expand-control" align="center"><i class="expand fa fa-plus-circle"></i>'+ 
-										'<i class="fold fa fa-minus-circle" style="display:none"></i></td>\n')
-	elif re.match(r'^ibt-[0-9a-z]*$',id):
-		f.write(tabs+'<tr'+ \
-										' data-seq="'+data['SemSort']+'"'+ \
-										' data-pint_id="'+data['PINT_ID']+'"'+ \
-										' data-level="'+data['Level']+'"'+ \
-										' data-card="'+data['Card']+'"'+ \
-										' data-path="'+data['Path']+'">\n')
-		f.write(tabs+'\t<td>&nbsp;</td>\n')
+	if re.match(r'(IBG|ibg)-[0-9]+(-[0-9]+)?$',id):
+		f.write('<tr class="group" data-seq="{0}" data-pint_id="{1}" data-level="{2}" data-card="{3}" data-path="{4}">'.format(
+			data['SemSort'],data['PINT_ID'],data['Level'],data['Card'],data['XPath']
+		))
+		f.write('<td class="expand-control" align="center">'+
+							'<i class="expand fa fa-plus-circle"></i>'+ 
+							'<i class="fold fa fa-minus-circle" style="display:none"></i></td>\n')
+	elif re.match(r'(IBT|ibt)-[0-9]+(-[0-9]+)?$',id):
+		f.write('<tr data-seq="{0}" data-pint_id="{1}" data-level="{2}" data-card="{3}" data-path="{4}">'.format(
+			data['SemSort'],data['PINT_ID'],data['Level'],data['Card'],data['XPath']
+		))
+		f.write('<td>&nbsp;</td>\n')
 	else:
 		return
-	f.write(tabs+'\t<td>'+id+'</td>\n')
+	f.write('<td>'+id+'</td>\n')
 	try:
 		level = '&bullet;&nbsp;'*int(data['Level'])
 	except TypeError as e:
 		level = ''
-	item_dir = APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/'
-	f.write(tabs+'\t<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT']+'</a></td>\n')
-	f.write(tabs+'\t<td><span>'+data['Card']+'</span></td>\n')
+	if 'ibg-00' == id:
+		item_dir = '#'
+	else:
+		item_dir = APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/'
+	f.write('<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT']+'<br>'+data['BT_ja']+'</a></td>\n')
+	f.write('<td><span>'+data['Card']+'</span></td>\n')
 	if data['Desc']:
-		desc = tabs+'\t\t<p><em>'+('<br />'.join(data['Desc'].split('\\n')))+'</em></p>\n'
+		desc = '\t\t<p><em>'+('<br />'.join(data['Desc'].split('\\n')))+'</em></p>\n'
 	else:
 		desc = ''
-	f.write(tabs+'\t<td>\n'+desc)
-	f.write(tabs+'\t</td>\n')
-	f.write(tabs+'</tr>\n')
+	f.write('<td>\n'+desc)
+	f.write('</td>\n')
+	f.write('</tr>\n')
 
-def writeTr_ja(f,data):
-	lang = 'ja'
-	tabs = '\t\t\t\t\t\t'
-	id = data['PINT_ID']
-	ID = id.upper()
-	if re.match(r'^ibg-[0-9]*$',id):
-		f.write(tabs+'<tr class="group"'+ \
-										' data-seq="'+data['SemSort']+'"'+ \
-										' data-en_id="'+data['EN_ID']+'"'+ \
-										' data-pint_id="'+data['PINT_ID']+'"'+ \
-										' data-level="'+data['Level']+'"'+ \
-										' data-card="'+data['Card']+'"'+ \
-										' data-path="'+data['Path']+'">\n')
-		f.write(tabs+'\t<td class="expand-control" align="center"><i class="expand fa fa-plus-circle"></i>'+ 
-										'<i class="fold fa fa-minus-circle" style="display:none"></i></td>\n')
-	elif re.match(r'^ibt-[0-9a-z]*$',id):
-		f.write(tabs+'<tr'+ \
-										' data-seq="'+data['SemSort']+'"'+ \
-										' data-en_id="'+data['EN_ID']+'"'+ \
-										' data-pint_id="'+data['PINT_ID']+'"'+ \
-										' data-level="'+data['Level']+'"'+ \
-										' data-card="'+data['Card']+'"'+ \
-										' data-path="'+data['Path']+'">\n')
-		f.write(tabs+'\t<td>&nbsp;</td>')
-	else:
-		return
-	f.write(tabs+'\t<td>'+id+'</td>\n')
-	try:
-		level = '&bullet;&nbsp;'*int(data['Level'])
-	except TypeError as e:
-		level = ''
-	item_dir0 = semantic_root+id+'/'+lang
+# def writeTr_ja(f,data):
+# 	lang = 'ja'
+# 	tabs = '\t\t\t\t\t\t'
+# 	id = data['PINT_ID']
+# 	ID = id.upper()
+# 	if re.match(r'(IBG|ibg)-[0-9]+(-[0-9]+)?$',id):
+# 		f.write('<tr class="group"'+ \
+# 										' data-seq="'+data['SemSort']+'"'+ \
+# 										' data-en_id="'+data['EN_ID']+'"'+ \
+# 										' data-pint_id="'+data['PINT_ID']+'"'+ \
+# 										' data-level="'+data['Level']+'"'+ \
+# 										' data-card="'+data['Card']+'"'+ \
+# 										' data-path="'+data['XPath']+'">\n')
+# 		f.write('<td class="expand-control" align="center"><i class="expand fa fa-plus-circle"></i>'+ 
+# 										'<i class="fold fa fa-minus-circle" style="display:none"></i></td>\n')
+# 	elif re.match(r'(IBT|ibt)-[0-9]+(-[0-9]+)?$',id):
+# 		f.write('<tr'+ \
+# 										' data-seq="'+data['SemSort']+'"'+ \
+# 										' data-en_id="'+data['EN_ID']+'"'+ \
+# 										' data-pint_id="'+data['PINT_ID']+'"'+ \
+# 										' data-level="'+data['Level']+'"'+ \
+# 										' data-card="'+data['Card']+'"'+ \
+# 										' data-path="'+data['XPath']+'">\n')
+# 		f.write('<td>&nbsp;</td>')
+# 	else:
+# 		return
+# 	f.write('<td>'+id+'</td>\n')
+# 	try:
+# 		level = '&bullet;&nbsp;'*int(data['Level'])
+# 	except TypeError as e:
+# 		level = ''
+# 	item_dir0 = semantic_root+id+'/'+lang
 
-	os.makedirs(item_dir0,exist_ok=True)
+# 	os.makedirs(item_dir0,exist_ok=True)
 
-	item_dir = APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/'
-	f.write(tabs+'\t<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT_ja']+'</a></td>\n')
-	f.write(tabs+'\t<td><span>'+data['Card']+'</span></td>\n')
-	if data['Desc_ja']:
-		desc = tabs+'\t\t<p><em>'+('<br />'.join(data['Desc_ja'].split('\\n')))+'</em></p>\n'
-	else:
-		desc = ''
-	f.write(tabs+'\t<td>\n'+desc)
-	f.write(tabs+'\t</td>\n')
-	f.write(tabs+'</tr>\n')
+# 	item_dir = APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/'
+# 	f.write('<td class="info-link">'+level+'<a href="'+item_dir+'">'+data['BT_ja']+'</a></td>\n')
+# 	f.write('<td><span>'+data['Card']+'</span></td>\n')
+# 	if data['Desc_ja']:
+# 		desc = '\t\t<p><em>'+('<br />'.join(data['Desc_ja'].split('\\n')))+'</em></p>\n'
+# 	else:
+# 		desc = ''
+# 	f.write('<td>\n'+desc)
+# 	f.write('</td>\n')
+# 	f.write('</tr>\n')
 
 def writeBreadcrumb(f,num,lang):
 	nums = num.split(' ')
 	# home_dir = APP_BASE
 	tabs = '\t\t\t'
-	f.write(tabs+'<ol class="breadcrumb pt-1 pb-1">')
+	f.write('<ol class="breadcrumb pt-1 pb-1">')
 	if 'ja' == lang:
 		home_str = HOME_ja
 		name = SEMANTICS_MESSAGE_TITLE_ja
 	else:
 		home_str = HOME_en
 		name = SEMANTICS_MESSAGE_TITLE_en	
-	f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+OP_BASE+'">'+home_str+'</a></li>')
-	f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+APP_BASE+'semantic/'+MESSAGE+'/tree/'+lang+'/">'+name+'</a></li>')
+	f.write('<li class="breadcrumb-item"><a href="'+OP_BASE+'">'+home_str+'</a></li>')
+	f.write('<li class="breadcrumb-item"><a href="'+APP_BASE+'semantic/'+MESSAGE+'/tree/'+lang+'/">'+name+'</a></li>')
 	for id in nums:
 		item_dir = APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/'
 		if 'ja' == lang:
@@ -472,10 +468,10 @@ def writeBreadcrumb(f,num,lang):
 		else:
 			name = [x['BT'] for x in pint_list if id==x['PINT_ID']][0]
 		if not id in nums[-1:]:
-			f.write(tabs+'\t<li class="breadcrumb-item"><a href="'+item_dir+'/">'+name+'</a></li>')
+			f.write('<li class="breadcrumb-item"><a href="'+item_dir+'/">'+name+'</a></li>')
 		else:
-			f.write(tabs+'\t<li class="breadcrumb-item active">'+name+'</li>')
-	f.write(tabs+'</ol>')
+			f.write('<li class="breadcrumb-item active">'+name+'</li>')
+	f.write('</ol>')
 
 if __name__ == '__main__':
 	# Create the parser
@@ -549,11 +545,11 @@ if __name__ == '__main__':
 		f.write(table_html.format('ID','Business Term','Card','Description','10','30','7'))
 		for data in pint_list:
 			id = data['PINT_ID']
-			if re.match(r'^ib[tg]-[0-9]*$',id):
+			if re.match(r'^ib[tg]-[0-9]+(-[0-9]+)?$',id):
 
-				writeTr_en(f,data)
+				writeTr(f,data,lang)
 
-			else:
+			if re.match(r'^ib[tg]-[0-9]+-[0-9]+$',id):
 				m = re.search(r'^ib[tg]-[0-9]*.+',id)
 				if m:
 					child_id = m.group()
@@ -563,10 +559,6 @@ if __name__ == '__main__':
 					children[_id].add(json.dumps(data))
 		f.write(trailer.format('Go to top'))
 
-		# f.write('<div class="bg-white m-3">')
-		# f.write('<p>This site is provided by <a href="https://www.sambuichi.jp/?page_id=670&lang=en">Sambuichi Profssional Engineers Office</a> for verification.</p>')
-		# f.write('<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> CC BY-SA 4.0 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>')
-		# f.write('</div>')
 		f.write('</div>')
 		f.write(javascript_html)
 		f.write('</body></html>')
@@ -579,7 +571,7 @@ if __name__ == '__main__':
 			continue
 		lang = 'en'
 		id = data['PINT_ID']
-		if re.match(r'^ib[tg]-[0-9]*$',id):
+		if re.match(r'^ib[tg]-[0-9]+(-[0-9]+)?$',id):
 			item_dir0 = semantic_root+id+'/'+lang
 
 			os.makedirs(item_dir0,exist_ok=True)
@@ -590,14 +582,15 @@ if __name__ == '__main__':
 				ID = id.upper()
 				# name = id+'&nbsp;'+data['BT']
 				BT = data['BT']
+				BT_ja = data['BT_ja']
 				Desc = '<br />'.join(data['Desc'].split('\\n'))
 				f.write('<header class="sticky-top bg-white px-0 py-2">')
-				# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.lang 4.APP_BASE 5.'Legend' 6.info_item_modal_en 7.dropdown_menu_en 8.tooltipText 9.gobacktext 10.warning
-				f.write(item_navbar.format(SPEC_TITLE_en,'selected','',OP_BASE,'',
-																	'Legend',info_item_modal_en,dropdown_menu_en,
-																	'Show Legend','modal-lg','Go Back',warning_en))
+				# 0.SPEC_TITLE_en 1.APP_BASE 2.lang 3.dropdown_menu 4.tooltipText 5.warning
+				f.write(item_navbar.format(SPEC_TITLE_en,OP_BASE,'',dropdown_menu_en,'Show Legend',warning_en))
+				f.write('<div class="item-semantics">\n')
 				writeBreadcrumb(f,data['num'],lang)
 				f.write('</header>')
+
 				DT = data['DT']
 				Section = blank2fa_minus(data['Section'])
 				Card = blank2fa_minus(data['Card'])
@@ -608,15 +601,16 @@ if __name__ == '__main__':
 						_path = Path[9:].replace(':','-')
 						if '' == _path:
 							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
-						elif not '@' in _path:
-							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
 						else:
-							m = re.match(r'^.*(\/@.*)$',xpath)
-							if m:
-								attr = m.groups()[0]
-								_path = _path[:-(len(attr))]
-								Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
-							else: Path = '<h5>'+xpath+'</h5>'
+						# elif not '@' in _path:
+							Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
+						# else:
+						# 	m = re.match(r'^.*(\/@.*)$',xpath)
+						# 	if m:
+						# 		attr = m.groups()[0]
+						# 		_path = _path[:-(len(attr))]
+						# 		Path = '<a href="'+APP_BASE+'syntax/ubl-'+MESSAGE+'/'+_path+'/'+lang+'/"><h5>'+xpath+'</h5></a>'
+						# 	else: Path = '<h5>'+xpath+'</h5>'
 					else:
 						Path = '<i class="fa fa-minus" aria-hidden="true"></i>'
 				else:
@@ -650,11 +644,14 @@ if __name__ == '__main__':
 				# 												'UBL definition',Definition
 				# 												)
 				# f.write(item_header.format(name,Desc))
+
 				html = '<div class="container">'
+				html += item_info_modal.format('Legend',info_item_modal_en,'modal-lg')
 				html += f'<div class="page-header"><h1>{BT}</h1></div>'
-				# html += f'<div class="page-header"><h2>{}</h2></div>'
+				html += f'<div class="page-header"><h3>{BT_ja}</h3></div>'
 				html += f'<p class="lead">{Desc}</p>'
 				f.write(html)
+
 				html = '<hr>'
 				html += '<h4>About</h4>'
 				html += '<dl class="row">'
@@ -693,7 +690,7 @@ if __name__ == '__main__':
 						html = '<h4>Basic Rule(s)</h4>'
 						html += '<dl class="row">'
 						for rule in Basic:
-							html += f'<dt class="col-md-2">{rule} ( {Basic_Dict[rule]["Flag"]} )</dt><dd class="col-md-10 mb-3">{Basic_Dict[rule]["Message"]}</dd>'
+							html += f'<dt class="col-md-2">{rule}({Basic_Dict[rule]["Flag"]})</dt><dd class="col-md-10 mb-3">{Basic_Dict[rule]["Message"]}</dd>'
 						html += '</dl>'
 						f.write(html)
 					if id in Shared_rule:
@@ -705,7 +702,7 @@ if __name__ == '__main__':
 								rule_id = re.findall(r'\[(.*)\]',message)
 								if len(rule_id) > 0:
 									rule_id = rule_id[0]
-								html += f'<dt class="col-md-2">{rule_id} ( {rule["Flag"]} )</dt><dd class="col-md-10 mb-3">{message}</dd>'
+								html += f'<dt class="col-md-2">{rule_id}({rule["Flag"]})</dt><dd class="col-md-10 mb-3">{message}</dd>'
 						html += '</dl>'
 						f.write(html)
 					if id in Aligned_rule:
@@ -717,11 +714,11 @@ if __name__ == '__main__':
 								rule_id = re.findall(r'\[(.*)\]',message)
 								if len(rule_id) > 0:
 									rule_id = rule_id[0]
-								html += f'<dt class="col-md-2">{rule_id} ( {rule["Flag"]} )</dt><dd class="col-md-10 mb-3">{message}</dd>'
+								html += f'<dt class="col-md-2">{rule_id}({rule["Flag"]})</dt><dd class="col-md-10 mb-3">{message}</dd>'
 						html += '</dl>'
 						f.write(html)
 
-				if re.match(r'^IBG-[0-9]+$',ID):
+				if re.match(r'^(IBG|ibg)-[0-9]+$',ID):
 					html = ''
 					for child in [x for x in pint_list]:
 						if re.match(r'^'+data['num']+' ib[gt]-[\-0-9]+$',child['num']):
@@ -730,7 +727,7 @@ if __name__ == '__main__':
 						# f.write(childelements_dt.format('Child elements'))
 						f.write('<hr>')
 						f.write('<h4>Child element(s)</h4>')
-						f.write(table_html.format('Card','ID','Business Term','Description','7','10','30'))
+						f.write(table_html.format('ID','Business Term','Card','Description','10','30','7'))
 						f.write(html)
 						f.write(table_trailer)
 				else:
@@ -738,7 +735,7 @@ if __name__ == '__main__':
 						# f.write(childelements_dt.format('Child elements'))
 						f.write('<hr>')
 						f.write('<h4>Child element(s)</h4>')
-						f.write(table_html.format('Card','ID','Business Term','Description','7','10','30'))
+						f.write(table_html.format('ID','Business Term','Card','Description','10','30','7'))
 						html = ''
 						for child in children[id]:
 							data = json.loads(child)
@@ -746,10 +743,7 @@ if __name__ == '__main__':
 						f.write(html)
 						f.write(table_trailer)
 				f.write(item_trailer.format('Go to top'))
-				f.write('<div class="bg-white m-3">')
-				f.write('<p>This site is provided by <a href="https://www.sambuichi.jp/?page_id=670&lang=en">Sambuichi Profssional Engineers Office</a> for verification.</p>')
-				f.write('<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> CC BY-SA 4.0 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>')
-				f.write('</div>')
+
 				f.write(javascript_html)
 				f.write('</body></html>')
 

@@ -52,6 +52,11 @@ ET.register_namespace('ubl-invoice', ns['ubl-invoice'])
 
 TaxAccounting = ['ibg-37','ibt-111','ibg-38','ibt-190','ibt-192','ibt-193','ibt-194','ibt-195']
 
+index_AllowanceCharge = -1
+allowance_exist = False
+charge_exist = False
+new_AllowanceCharge = False
+
 def file_path(pathname):
   if '/' == pathname[0:1]:
     return pathname
@@ -62,20 +67,23 @@ def file_path(pathname):
 
 def set_path_value(base, path, value, datatype):
   global CurrencyCode
+  if DEBUG:
+    tag = re.sub(r'{.*}','',str(base.tag))
+    if len(path) > 1:
+      print(f' {tag} / {"/".join(path)}')
+    else:
+      print(f' {tag} / {"/".join(path)}  {value}')
   if len(path) > 1 and path[1].isdigit():
     n = int(path[1])
     path = path[:1]+path[2:]
   else:
     n = 0
-  if len(path) > 1 and '@currencyID'==path[1]:
-    _attr = path[1][1:]
-    base.set(_attr, value)
-  elif len(path) > 1 and '@unitCode'==path[1]:
+  if len(path) > 1 and '@'==path[1][:1]:
     _attr = path[1][1:]
     p = path[0].split(':')
     el = ET.QName(ns[p[0]], p[1])
     elements = base.findall(str(el))
-    elements[0].set('unitCode', value)  
+    elements[0].set(_attr, value)
   else:
     if path[0] == 'Invoice':
       p = path[1].split(':')
@@ -83,8 +91,9 @@ def set_path_value(base, path, value, datatype):
       p = path[0].split(':')
     if not p[0] in ns:
       print (p)
-    el = ET.QName(ns[p[0]], p[1])
-    elements = base.findall(str(el))
+    else:
+      el = ET.QName(ns[p[0]], p[1])
+      elements = base.findall(str(el))
     if len(elements) > 0:
       if len(elements) > n:
         element = elements[n]
@@ -109,6 +118,10 @@ def set_record(record):
   global root
   global header
   global CurrencyCode
+  global index_AllowanceCharge
+  global allowance_exist
+  global charge_exist
+  global new_AllowanceCharge
   seq = None
   head_id = record[0]
   if head_id and 'xpath' in pintDict[head_id]:
@@ -123,9 +136,10 @@ def set_record(record):
     head_pathList = head_xpath[1:].split('/')[1:]
   seq0 = record[2]
   seq1 = record[5]
+  line_num = None
+  if 'ibg-25' == record[0]:
+    line_num = record[2]
   if ''!= seq0:
-  #   base_path = head_pathList[:-1]
-  # else:
     if 'ibt'==head_id[:3]:
       head_pathList = head_pathList[:-1]+[seq0]+head_pathList[-1:]
       base_path = head_pathList[:-1]
@@ -137,13 +151,19 @@ def set_record(record):
   else:
     base = ''
     base_path = []
-  N = boughLvl*3-1
+  N = 0 #boughLvl*3-1
   for n in range(len(record)):  # traverse field in a record
     cell = record[n]
     if n > N and cell:
       id = header[n]
       if not id in pintDict:
         continue
+      if 'ibt-126'==id:
+        index_AllowanceCharge = -1
+        allowance_exist = False
+        charge_exist = False
+        new_AllowanceCharge = False
+        if DEBUG: print(f'- id:{id} index_AllowanceCharge:{index_AllowanceCharge} allowance_exist:{allowance_exist}')
       data = pintDict[id]
       datatype = data['datatype']
       xpath = data['xpath']
@@ -153,8 +173,7 @@ def set_record(record):
         pathList = xpath_[1:].split('/')
       else:
         pathList = xpath[1:].split('/')
-      if DEBUG:
-        print(xpath+' '+cell)
+      if DEBUG: print(xpath+' '+cell)
       if "[cbc:DocumentTypeCode='130']" in xpath:
         xpath = xpath.replace("[cbc:DocumentTypeCode='130']",'')
         if 'cac:InvoiceLine' in pathList:
@@ -249,18 +268,51 @@ def set_record(record):
           CurrencyCode = DocumentCurrencyCode
           set_path_value(root, path, cell, datatype)
         else:
-          if 'true'==chargeIndicator:
-            seq = '1'
-          else:
-            seq = '0'
-          path = pathList+[seq]
-          path.append('cbc:ChargeIndicator')
-          if 'Invoice' == path[0]:
-            path = path[1:]
-          set_path_value(root, path, chargeIndicator, 'Indicator')
+          # if 'ibt-146'==id:
+          if id in [v['id'] for k,v in semDict.items() if 'ibg-29'==v['parent']]: # PRICE DETAILS
+            index_AllowanceCharge = 0
+            new_AllowanceCharge = True
+          elif id in [v['id'] for k,v in semDict.items() if 'ibg-20'==v['parent']] and not allowance_exist:
+            # children of DOCUMENT LEVEL ALLOWANCES
+            index_AllowanceCharge = 0
+            allowance_exist = True
+            new_AllowanceCharge = True
+          elif id in [v['id'] for k,v in semDict.items() if 'ibg-27'==v['parent']] and not allowance_exist:
+            # children of INVOICE LINE ALLOWANCES
+            index_AllowanceCharge = 0
+            allowance_exist = True
+            new_AllowanceCharge = True
+          elif id in [v['id'] for k,v in semDict.items() if 'ibg-21'==v['parent']] and not charge_exist:
+            # children of DOCUMENT LEVEL CHARGES
+            if allowance_exist:
+              index_AllowanceCharge = 1
+            else:
+              index_AllowanceCharge = 0
+            charge_exist = True
+            new_AllowanceCharge = True
+          elif id in [v['id'] for k,v in semDict.items() if 'ibg-28'==v['parent']] and not charge_exist:
+            #  children of INVOICE LINE CHARGES
+            if allowance_exist:
+              index_AllowanceCharge = 1
+            else:
+              index_AllowanceCharge = 0
+            charge_exist = True
+            new_AllowanceCharge = True
+          if DEBUG: print(f'- id:{id} index_AllowanceCharge:{index_AllowanceCharge} allowance_exist:{allowance_exist}')
+          seq_ = str(index_AllowanceCharge)
+          if new_AllowanceCharge:
+            path = pathList+[seq_]
+            path.append('cbc:ChargeIndicator')
+            if 'Invoice' == path[0]:
+              path = path[1:]
+            set_path_value(root, path, chargeIndicator, 'Indicator')
+            new_AllowanceCharge = False
           xpath = re.sub(r'(.*)\[cbc:ChargeIndicator=(true|false)\(\)\](.*)',r'\1\3',xpath)
           pathList = xpath[1:].split('/')
-          path = pathList[:2]+[seq]+pathList[2:]
+          if 'cac:InvoiceLine' in pathList:
+            path = pathList[:2]+[line_num]+pathList[2:3]+[seq_]+pathList[3:]
+          else:
+            path = pathList[:2]+[seq_]+pathList[2:]
           path = path[1:]
           CurrencyCode = DocumentCurrencyCode
           set_path_value(root, path, cell, datatype)
@@ -279,7 +331,7 @@ def set_record(record):
 
 if __name__ == '__main__':
   # Create the parser
-  parser = argparse.ArgumentParser(prog='genInvoice',
+  parser = argparse.ArgumentParser(prog='csv2invoice',
                                   usage='%(prog)s [options] infile -o outfile',
                                   description='CSVファイルから電子インボイスXMLを作成')
   # Add the arguments
@@ -315,6 +367,7 @@ if __name__ == '__main__':
 
   # # initialize globals
   pintDict = {}
+  semDict = {}
   header_id = None
   header_count = 0
   DocumentCurrencyCode = None
@@ -329,16 +382,16 @@ if __name__ == '__main__':
   multipleBG = []
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,Definition,Card,DataType,Section,SyntSort,XPath,Path,selectors,CodeList,
-  # 0       1  2     3  4          5    6        7       8        9     10   11        12
+  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Attributes,Codelist,Cardinality,CardinalityAlignment
+  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17         18       19          20
   COL_SemanticSort = 0
   COL_ID = 1
   COL_level = 2
   COL_BT = 3
-  COL_card = 5
-  COL_datatype = 6
-  COL_SyntaxSort = 8
-  COL_xpath = 9
+  COL_card = 10
+  COL_datatype = 11
+  COL_SyntaxSort = 14
+  COL_xpath = 15
   if VERBOSE:
     print(f'*** XPath file {pint_file}')
   with open(pint_file, encoding='utf-8', newline='') as f0:
@@ -347,6 +400,7 @@ if __name__ == '__main__':
     for v in reader:
       id = v[COL_ID].strip()
       if id:
+        semSort = v[COL_SemanticSort]
         xpath = v[COL_xpath]
         syntaxSort = v[COL_SyntaxSort]
         if not syntaxSort:
@@ -361,6 +415,28 @@ if __name__ == '__main__':
           datatype = ''+v[COL_datatype].strip()
           data = {'syntaxSort':syntaxSort,'id':id,'level':level,'BT':BT,'card':card,'datatype':datatype,'xpath':xpath}
           pintDict[id] = data
+          semDict[semSort] = {'id':id,'level':int(level)}
+
+  sorted_semDict = sorted(semDict.items(), key=lambda x:x[0])
+  level = 0
+  parent = ['ibg-00']
+  for k,v in dict(sorted_semDict).items():
+    if v['level'] == level:
+      semDict[k]['parent'] = parent[level-1]
+      parent[level] = v['id']
+    elif v['level'] == level+1:
+      semDict[k]['parent'] = parent[level]
+      level = v['level']
+      if level == len(parent):
+        parent.append(None)
+      parent[level] = v['id']
+    else:
+      level = v['level']
+      semDict[k]['parent'] = parent[level-1]
+      parent[level] = v['id']
+      for i in range(len(parent)):
+        if i > level:
+          parent[i] = None
 
   if VERBOSE:
     print(f'*** Input file {in_file}')

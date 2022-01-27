@@ -10,18 +10,6 @@ profiles = {
 		'ProfileID':'urn:peppol:bis:billing',
 		'CustomizationID':'urn:peppol:pint:billing-3.0@jp:peppol-1'
 	}
-	# 'debitnote': {
-	# 	'title_en':'Japanese Debit Note',
-	# 	'title_ja':'納品書',
-	# 	'ProfileID':'urn:peppol:bis:debitnote',
-	# 	'CustomizationID':'urn:peppol:pint:debitnote-3.0@jp:peppol-1'
-	# },
-	# 'summarised': {
-	# 	'title_en':'Japanese Summary Invoice, pattern 1',
-	# 	'title_ja':'合算請求書パターン１',
-	# 	'ProfileID':'urn:peppol:bis:billing',
-	# 	'CustomizationID':'urn:peppol:pint:billing-3.0@jp:peppol-1@jp:suminvpt1-1'
-	# }
 }
 
 SEMANTIC_BASE = APP_BASE+'semantic/'+MESSAGE+'/'
@@ -93,7 +81,6 @@ javascript_html = '''
 					expands[i].style.display = 'none';
 				}
 			}
-
 			initModule();
 		});
 	</script>
@@ -131,23 +118,14 @@ navbar_html = '''
 		</div>
 	</div>
 	<header class="sticky-top bg-white px-0 py-2">
-		<form id="nav-menu" class="form-inline flex-nowrap">
-	<!--
-			<button class="search btn btn-outline-info my-2 my-sm-0 mr-0 border-0"><i class="fa fa-search" aria-hidden="true"></i></button>
-			<input type="search" onsearch="lookupTerm(this)" class="search form-control mr-0" placeholder="{16}" aria-label="Search" data-toggle="tooltip" title="{9}">
-			<select id="language" class="form-control mr-0 border-0">
-				<option value="en" {1}>English</option>
-				<option value="ja" {2}>日本語</option>
-			</select>
-			<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{15}"></i></button>
-	-->
-			<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
-				<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{7}"></i>
-			</button>
-			{8}
-		</form>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light p-0 mb-1">
 			<a class="navbar-brand col-8 mr-auto" href="{12}{13}">{0}</a>
+			<form id="nav-menu" class="form-inline flex-nowrap">
+				<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#infoModal">
+					<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{7}"></i>
+				</button>
+				{8}
+			</form>			
 		</nav>
 		<ol class="breadcrumb pt-1 pb-1">
 			<li class="breadcrumb-item"><a href="{12}{13}">{3}</a></li>
@@ -155,7 +133,7 @@ navbar_html = '''
 		</ol>
 	</header>
 	<div class="container">
-		<div class="syntax">
+		<div class="semantics syntax">
 
 			<div class="page-header">
 				<h1>{4}</h1>
@@ -206,21 +184,33 @@ item_head = '''
 	<link rel="stylesheet" href="{1}css/main.css" crossorigin="anonymous">
 	<script src="{1}js/main.js" crossorigin="anonymous"></script>
 '''
-# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.APP_BASE 4.lang 5.'Legend' 6.info_item_modal_en 7.dropdown_menu 8.tooltipText 9.size 10.gobcckText 11.warning
+# 0.SPEC_TITLE_en 1.'selected' 2.'' 3.APP_BASE 4.lang 5.dropdown_menu 6.tooltipText 7.gobcckText 8.warning
+# 0.SPEC_TITLE_en 1.APP_BASE 2.lang 3.dropdown_menu 4.tooltipText 5.warning
 item_navbar = '''
 	<div id="ie-warning" class="container h-100" style="display:none">
-	{11}
+	{5}
 	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light p-0 mb-1">
+		<a class="navbar-brand col-8 mr-auto" href="{1}{2}">{0}</a>
+		<form id="nav-menu" class="form-inline flex-nowrap">
+			<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
+				<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{4}"></i>
+			</button>
+			{3}
+		</form>
+	</nav>
+'''
+item_info_modal = '''
 	<div id="itemInfoModal" class="modal fade" tabindex="-1" role="dialog">
-		<div class="modal-dialog {9}" role="document">
+		<div class="modal-dialog {2}" role="document">
 			<div class="modal-content">
-				<div class="modal-header">{5}</h5>
+				<div class="modal-header">{0}</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					{6}
+					{1}
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -228,23 +218,6 @@ item_navbar = '''
 			</div>
 		</div>
 	</div>
-	<form id="nav-menu" class="form-inline flex-nowrap">
-<!--
-		<select id="language" class="form-control mr-0 border-0">
-			<option value="en" {1}>English</option>
-			<option value="ja" {2}>日本語</option>
-		</select>
-		<button class="back btn btn-outline-info my-2 my-sm-0 mr-0 border-0" onclick="goBack()"><i class="fa fa-history" aria-hidden="true" data-toggle="tooltip" title="{10}"></i></button>
--->
-		<button type="button" class="info btn btn-outline-info my-2 my-sm-0 mr-0 border-0" data-toggle="modal" data-target="#itemInfoModal">
-			<i class="fa fa-info" aria-hidden="true" data-toggle="tooltip" title="{8}"></i>
-		</button>
-		{7}
-	</form>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light p-0 mb-1">
-		<a class="navbar-brand col-8 mr-auto" href="{3}{4}">{0}</a>
-	</nav>
-	<div class="item-syntax">
 '''
 # item_header = '''
 # 			<div class="page-header">
@@ -305,40 +278,8 @@ dropdown_menu_en = '''
 			<a class="nav-link dropdown-toggle fa fa-list" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			</a>
 			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-<!--
-				<a class="dropdown-item" href="{0}en"><i class="fa fa-square mr-2" aria-hidden="true"> Home</i></a>
-				<div class="dropdown-divider"></div>
-				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
-					Standard Commercial Invoice <i class="fa fa-external-link" aria-hidden="true"></i>
-				</a>
-				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-debnt/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
-					Debit note <i class="fa fa-external-link" aria-hidden="true"></i>
-				</a>
-				<a href="https://test-docs.peppol.eu/poacc/billing-japan/bis-sum1/bis/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
-					Summary invoice pattern 1 <i class="fa fa-external-link" aria-hidden="true"></i>
-				</a>
-				<a href="https://test-docs.peppol.eu/poacc/billing-japan/compliance/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
-					BIS compliance <i class="fa fa-external-link" aria-hidden="true"></i>
-				</a>
-				<a href="https://test-docs.peppol.eu/poacc/billing-japan/release-notes/" onClick="return confirm('Do you want to leave? This link is being provided by OpenPeppol for testing.')" class="external dropdown-item" target="_blank">
-					Release notes <i class="fa fa-external-link" aria-hidden="true"></i>
-				</a>
-				<div class="dropdown-divider"></div>
--->
 				<a class="dropdown-item" href="{0}semantic/invoice/tree/en/">Standard Commercial Invoice, Semantic Model</a>
-<!--
-				<a class="dropdown-item" href="{0}semantic/summarised/tree/en/">Summary Invoice, pattern 1, Semantic Data Model</a>
-				<a class="dropdown-item" href="{0}semantic/debitnote/tree/en/">Debit Note, Semantic Data Model</a>
-				<div class="dropdown-divider"></div>
--->
 				<a class="dropdown-item" href="{0}syntax/ubl-invoice/tree/en/">Standard Commercial Invoice, Syntax Binding</a>
-<!--
-				<a class="dropdown-item" href="{0}syntax/ubl-summarised/tree/en/">Summary Invoice, pattern 1, UBL Syntax</a>
-				<a class="dropdown-item" href="{0}syntax/ubl-debitnote/tree/en/">Debit Note, UBL Syntax</a>
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="{0}rules/ubl-pint/en/">Rules for PEPPOL PINT</a>
-				<a class="dropdown-item" href="{0}rules/ubl-japan/en/">rules for Commercial Invoice</a>
--->
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="https://www.eipa.jp/">E-Invoice Promotion Association</a>
 				<div class="dropdown-divider"></div>

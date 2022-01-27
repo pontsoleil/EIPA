@@ -65,7 +65,7 @@ def path2element(path):
 
 # Read CSV file
 keys = (
-  'SemSort','PINT_ID','Level','BT','Desc','Card','DT','Section','SynSort','XPath','Path','selectors','Codelist'
+  'SemSort','PINT_ID','Level','BT','Desc','BT_ja','Card','DT','Section','SynSort','XPath','selectors','Codelist','CAR'
 )
 csv_item = OrderedDict([
   ('SemSort','0000'),
@@ -73,75 +73,87 @@ csv_item = OrderedDict([
   ('Level','0'),
   ('BT','Invoice'),
   ('Desc','Commercial invoice'),
+  ('BT_ja','請求書'),
   ('Card','1..n'),
   ('DT','Group'),
   ('Section',''),
   ('Extension',''),
   ('SynSort','0000'),
-  ('XPath','/ubl:Invoice'),
-  ('Path','/ubl:Invoice'),
+  ('XPath','/Invoice'),
+  ('dirPath','/Invoice'),
+  ('Path','/Invoice'),
   ('selectors',''),
   ('element','Invoice'),
   ('Definition','A document used to request payment.'),
   ('Datatype','InvoiceType'),
   ('Occ','1..n'),
-  ('Codelist','')
+  ('Codelist',''),
+  ('CAR','')
 ])
 csv_list = [csv_item]
 
 def syntax_read_CSV_file(in_file):
   with open(in_file,'r',encoding='utf-8') as f:
     reader = csv.DictReader(f,keys)
-    header = next(reader)
-    # header = next(reader)
+    next(reader)
     for row in reader:
-      path = row['XPath']
-      if path:
-        if 'TaxTotal[' in path:
-          if 'cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()' in path:
-            path = path.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()','DocumentCurrencyCode')
-          elif 'cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()' in path:
-            path = path.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()','TaxCurrencyCode')
-          row['Path'] = path
-        else:
-          row['Path'] = path
-        element = path2element(path)
-        row['element'] = element
+      xPath = row['XPath']
+      if not xPath:
+        continue
+      if 'TaxTotal[' in xPath:
+        if 'cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()' in xPath:
+          dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()','DocumentCurrencyCode')
+        elif 'cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()' in xPath:
+          dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()','TaxCurrencyCode')
+      elif "[cbc:DocumentTypeCode='130']" in xPath:
+        dirPath = xPath.replace("[cbc:DocumentTypeCode='130']","[DocumentTypeCode='130']")
+      elif "[not(cbc:DocumentTypeCode='130')]" in xPath:
+        dirPath = xPath.replace("[not(cbc:DocumentTypeCode='130')]","[not(DocumentTypeCode='130')]")
+      elif '[cbc:ChargeIndicator=false()]' in xPath:
+        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=false]')
+      elif '[cbc:ChargeIndicator=true()]' in xPath:
+        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=true]')
+      else:
+        dirPath = xPath
+      row['dirPath'] = dirPath
+      element = path2element(dirPath)
+      if re.match(r'\[.*\]',element):
         element = re.sub(r'\[.*\]','',element)
-        level = str(path[1:].count('/'))
-        row['Level'] = level
-        if element in InvoiceType['element']:
-          elementType = InvoiceType['element'][element]
-          if 'cac' == element[:3] and 'DictionaryEntryName' in elementType:
-            if element[4:] in CAC['element'] and 'type' in CAC['element'][element[4:]]:
-              datatype = CAC['element'][element[4:]]['type']
-            else:
-              datatype = elementType['DictionaryEntryName'][9:]
-            datatype = datatype.replace('udt:','')
-            datatype = datatype.replace('. ','')
-            datatype = datatype.replace(' ','')
-            row['Datatype'] = datatype
-            row['Occ'] = str(elementType['Cardinality'])
-            row['Definition'] = elementType['Definition']
-          elif 'cbc' == element[:3] and element[4:] in CBC['element']:
-            dtype = CBC['element'][element[4:]]['type']
-            if dtype in CBC['complexType']:
-              if 'base' in CBC['complexType'][dtype]:
-                datatype = CBC['complexType'][dtype]['base']
-                datatype = datatype.replace('udt:','')
-                datatype = datatype.replace('. ','')
-                row['Datatype'] = datatype
-                row['Occ'] = str(elementType['Cardinality'])
-                row['Definition'] = elementType['Definition']
-        elif 'cac' == element[:3] and element[4:] in CAC['element']:
-          dtype = CAC['element'][element[4:]]['type']
-          if dtype in CAC['complexType']:
-            row['Datatype'] = dtype
-            datatype = CAC['complexType'][dtype]
-            row['Definition'] = datatype['Definition']
-        else:
-          row['Datatype'] = ''
-        if int(row['Level']) > 1:
+      row['element'] = element
+      path = re.sub(r'\[[^\]]+\]','',dirPath)
+      row['Path'] = path
+      level = str(path[1:].count('/'))
+      row['Level'] = level
+      if element in InvoiceType['element']:
+        elementType = InvoiceType['element'][element]
+        if 'cac' == element[:3] and 'DictionaryEntryName' in elementType:
+          if element[4:] in CAC['element'] and 'type' in CAC['element'][element[4:]]:
+            datatype = CAC['element'][element[4:]]['type']
+          else:
+            datatype = elementType['DictionaryEntryName'][9:]
+          datatype = datatype.replace('udt:','')
+          datatype = datatype.replace('. ','')
+          datatype = datatype.replace(' ','')
+          row['Datatype'] = datatype
+          row['Occ'] = str(elementType['Cardinality'])
+          row['Definition'] = elementType['Definition']
+        elif 'cbc' == element[:3] and element[4:] in CBC['element']:
+          dtype = CBC['element'][element[4:]]['type']
+          if dtype in CBC['complexType']:
+            if 'base' in CBC['complexType'][dtype]:
+              datatype = CBC['complexType'][dtype]['base']
+              datatype = datatype.replace('udt:','')
+              datatype = datatype.replace('. ','')
+              row['Datatype'] = datatype
+              row['Occ'] = str(elementType['Cardinality'])
+              row['Definition'] = elementType['Definition']
+      elif 'cac' == element[:3] and element[4:] in CAC['element']:
+        dtype = CAC['element'][element[4:]]['type']
+        if dtype in CAC['complexType']:
+          row['Datatype'] = dtype
+          datatype = CAC['complexType'][dtype]
+          row['Definition'] = datatype['Definition']
+      if int(row['Level']) > 1:
           pathList = path[9:].split('/')
           parent = pathList[-2]
           parent = re.sub(r'\[.*\]','',parent)
@@ -162,86 +174,102 @@ def syntax_read_CSV_file(in_file):
                     row['Occ'] = str(el['Cardinality'])
                   if 'Definition' in el:
                     row['Definition'] = el['Definition']
+      if not 'Definition' in row:
+        row['Definition'] = ''
+      if not 'Datatype' in row:
+        row['Datatype'] = ''
       csv_list.append(row)
   return csv_list
 
 def semantic_read_CSV_file(in_file):
   with open(in_file,'r',encoding='utf-8') as f:
     reader = csv.DictReader(f,keys)
-    header = next(reader)
-    # header = next(reader)
+    next(reader)
     for row in reader:
-      path = row['XPath']
-      if path:
-        if 'TaxTotal[' in path:
-          if 'cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()' in path:
-            path = path.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()','DocumentCurrencyCode')
-          elif 'cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()' in path:
-            path = path.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()','TaxCurrencyCode')
-          row['Path'] = path
-        else:
-          row['Path'] = path
-        element = path2element(path)
-        row['element'] = element
+      if not row['SemSort']:
+        continue
+      xPath = row['XPath']
+      if not xPath:
+        xPath = '#'
+      if 'TaxTotal[' in xPath:
+        if 'cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()' in xPath:
+          dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()','DocumentCurrencyCode')
+        elif 'cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()' in xPath:
+          dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()','TaxCurrencyCode')
+      elif "[cbc:DocumentTypeCode='130']" in xPath:
+        dirPath = xPath.replace("[cbc:DocumentTypeCode='130']","[DocumentTypeCode='130']")
+      elif "[not(cbc:DocumentTypeCode='130')]" in xPath:
+        dirPath = xPath.replace("[not(cbc:DocumentTypeCode='130')]","[not(DocumentTypeCode='130')]")
+      elif '[cbc:ChargeIndicator=false()]' in xPath:
+        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=false]')
+      elif '[cbc:ChargeIndicator=true()]' in xPath:
+        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=true]')
+      else:
+        dirPath = xPath
+      row['dirPath'] = dirPath
+      element = path2element(dirPath)
+      if re.match(r'\[.*\]',element):
         element = re.sub(r'\[.*\]','',element)
-        # row['Path'] = path
-        level = str(path[1:].count('/'))
-        if element in InvoiceType['element']:
-          elementType = InvoiceType['element'][element]
-          if 'cac' == element[:3] and 'DictionaryEntryName' in elementType:
-            if element[4:] in CAC['element'] and 'type' in CAC['element'][element[4:]]:
-              datatype = CAC['element'][element[4:]]['type']
-            else:
-              datatype = elementType['DictionaryEntryName'][9:]
-            datatype = datatype.replace('udt:','')
-            datatype = datatype.replace('. ','')
-            datatype = datatype.replace(' ','')
-            row['Datatype'] = datatype
-            row['Occ'] = str(elementType['Cardinality'])
-            row['Definition'] = elementType['Definition']
-          elif 'cbc' == element[:3] and element[4:] in CBC['element']:
-            dtype = CBC['element'][element[4:]]['type']
-            if dtype in CBC['complexType']:
-              if 'base' in CBC['complexType'][dtype]:
-                datatype = CBC['complexType'][dtype]['base']
-                datatype = datatype.replace('udt:','')
-                datatype = datatype.replace('. ','')
-                row['Datatype'] = datatype
-                row['Occ'] = str(elementType['Cardinality'])
-                row['Definition'] = elementType['Definition']
-        elif 'cac' == element[:3] and element[4:] in CAC['element']:
-          dtype = CAC['element'][element[4:]]['type']
-          if dtype in CAC['complexType']:
-            row['Datatype'] = dtype
-            datatype = CAC['complexType'][dtype]
-            row['Definition'] = datatype['Definition']
-        else:
-          row['Datatype'] = ''
-        if int(level) > 1:
-          pathList = path[9:].split('/')
-          parent = pathList[-2]
-          parent = re.sub(r'\[.*\]','',parent)
-          if 'cac'==parent[:3]:
-            if parent[4:] in CAC['element'] and 'type' in CAC['element'][parent[4:]]:
-              elementType = CAC['element'][parent[4:]]['type']
-              if elementType in CAC['complexType']:
-                elmts = CAC['complexType'][elementType]['element']
-                if element in elmts:
-                  el = elmts[element]
-                  if 'DataType' in el:
-                    datatype = el['DataType'].replace('. ','')
-                    datatype = datatype.replace('udt:','')
-                    datatype = datatype.replace('. ','')
-                    datatype = datatype.replace(' ','')
-                    row['Datatype'] = datatype
-                  if 'Cardinality' in el:
-                    row['Occ'] = str(el['Cardinality'])
-                  if 'Definition' in el:
-                    row['Definition'] = el['Definition']
+      row['element'] = element
+      path = re.sub(r'\[[^\]]+\]','',dirPath)
+      row['Path'] = path
+      level = str(path[1:].count('/'))
+      if element in InvoiceType['element']:
+        elementType = InvoiceType['element'][element]
+        if 'cac' == element[:3] and 'DictionaryEntryName' in elementType:
+          if element[4:] in CAC['element'] and 'type' in CAC['element'][element[4:]]:
+            datatype = CAC['element'][element[4:]]['type']
+          else:
+            datatype = elementType['DictionaryEntryName'][9:]
+          datatype = datatype.replace('udt:','')
+          datatype = datatype.replace('. ','')
+          datatype = datatype.replace(' ','')
+          row['Datatype'] = datatype
+          row['Occ'] = str(elementType['Cardinality'])
+          row['Definition'] = elementType['Definition']
+        elif 'cbc' == element[:3] and element[4:] in CBC['element']:
+          dtype = CBC['element'][element[4:]]['type']
+          if dtype in CBC['complexType']:
+            if 'base' in CBC['complexType'][dtype]:
+              datatype = CBC['complexType'][dtype]['base']
+              datatype = datatype.replace('udt:','')
+              datatype = datatype.replace('. ','')
+              row['Datatype'] = datatype
+              row['Occ'] = str(elementType['Cardinality'])
+              row['Definition'] = elementType['Definition']
+      elif 'cac' == element[:3] and element[4:] in CAC['element']:
+        dtype = CAC['element'][element[4:]]['type']
+        if dtype in CAC['complexType']:
+          row['Datatype'] = dtype
+          datatype = CAC['complexType'][dtype]
+          row['Definition'] = datatype['Definition']
+      else:
+        row['Datatype'] = ''
+      if int(level) > 1:
+        pathList = path[9:].split('/')
+        parent = pathList[-2]
+        parent = re.sub(r'\[.*\]','',parent)
+        if 'cac'==parent[:3]:
+          if parent[4:] in CAC['element'] and 'type' in CAC['element'][parent[4:]]:
+            elementType = CAC['element'][parent[4:]]['type']
+            if elementType in CAC['complexType']:
+              elmts = CAC['complexType'][elementType]['element']
+              if element in elmts:
+                el = elmts[element]
+                if 'DataType' in el:
+                  datatype = el['DataType'].replace('. ','')
+                  datatype = datatype.replace('udt:','')
+                  datatype = datatype.replace('. ','')
+                  datatype = datatype.replace(' ','')
+                  row['Datatype'] = datatype
+                if 'Cardinality' in el:
+                  row['Occ'] = str(el['Cardinality'])
+                if 'Definition' in el:
+                  row['Definition'] = el['Definition']
       csv_list.append(row)
   return csv_list
 
-def basic_rule(rule_file): # 'data/Rules_Basic.json'
+def basic_rule(rule_file): # data/Rules_Basic.json
   dir = os.path.dirname(__file__)
   basic_path = os.path.join(dir,rule_file)
   f = open(basic_path)
@@ -250,6 +278,7 @@ def basic_rule(rule_file): # 'data/Rules_Basic.json'
   for rule in Rules_Basic:
     if 'Identifier' in rule:
       Basic_dict[rule['Identifier']] = rule
+  Basic_message = {}
   Basic_test = {}
   Basic_binding = {}
   for rule in Rules_Basic:
@@ -258,6 +287,15 @@ def basic_rule(rule_file): # 'data/Rules_Basic.json'
     context = re.sub(r'\[[^\]]+\]','',context)
     if 'ubl:Invoice' ==  context[:11]:
       context = f'/{context}'
+    # Message
+    message = rule['Message']
+    for element in re.findall(r"c[ab]c:[a-zA-Z]*", message):
+      element = f'{context}/{element}'
+      if element in Basic_message:
+        Basic_message[element] += id
+      else:
+        Basic_message[element] = id
+    # Test
     test = rule['Test']
     test = re.sub(r'\[[^\]]+\]','',test)
     test = re.sub(r'not\(([^\)]+)\)','\\1',test)
@@ -287,8 +325,10 @@ def basic_rule(rule_file): # 'data/Rules_Basic.json'
       test = context
     if test in Basic_test:
       Basic_test[test] += id
-    Basic_test[test] = id
-    # print(f'{test} {Basic_test[test]}')
+    if test in Basic_test:
+      Basic_test[test] += id
+    else:
+      Basic_test[test] = id
     # Syntax binding
     if 'Syntax binding' in rule:
       binding = rule['Syntax binding']
@@ -299,10 +339,11 @@ def basic_rule(rule_file): # 'data/Rules_Basic.json'
         binding = f'/{binding}'
       if binding in Basic_binding:
         Basic_binding[binding] += id
-      Basic_binding[binding] = id
-  return {'dict':Basic_dict,'test':Basic_test,'binding':Basic_binding}
+      else:
+        Basic_binding[binding] = id
+  return {'dict':Basic_dict,'message':Basic_message,'test':Basic_test,'binding':Basic_binding}
 
-def shared_rule(rule_file): # 'data/Rules_Shared.json'
+def shared_rule(rule_file): # data/Rules_Shared.json
   dir = os.path.dirname(__file__)
   shared_path = os.path.join(dir,rule_file)
   f = open(shared_path)
@@ -321,7 +362,7 @@ def shared_rule(rule_file): # 'data/Rules_Shared.json'
         Shared_rule[id] = [rule]
   return Shared_rule
 
-def aligned_rule(rule_file): #'data/Rules_Aligned.json'
+def aligned_rule(rule_file): # data/Rules_Aligned.json
   dir = os.path.dirname(__file__)
   aligned_path = os.path.join(dir,rule_file)
   f = open(aligned_path)
@@ -339,3 +380,10 @@ def aligned_rule(rule_file): #'data/Rules_Aligned.json'
       else:
         Aligned_rule[id] = [rule]
   return Aligned_rule
+
+def get_codelist(codelist_file): # data/Codelists.json
+  dir = os.path.dirname(__file__)
+  codelist_path = os.path.join(dir,codelist_file)
+  f = open(codelist_path)
+  Codelist = json.load(f)
+  return Codelist

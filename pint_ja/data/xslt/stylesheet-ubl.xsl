@@ -24,7 +24,7 @@
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="cn:CreditNote[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0')]" mode="document" priority="1000">
+	<xsl:template match="cn:CreditNote[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:peppol:pint:billing-3.0@jp:peppol-1')]" mode="document" priority="1000">
 		<html lang="{$language}">
 			<head>
 				<xsl:call-template name="doc-head"/>
@@ -100,7 +100,7 @@
 			</body>
 		</html>
 	</xsl:template>
-	<xsl:template match="in:Invoice[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0')]" mode="document" priority="1000">
+	<xsl:template match="in:Invoice[starts-with(normalize-space(cbc:CustomizationID/text()), 'urn:peppol:pint:billing-3.0@jp:peppol-1')]" mode="document" priority="1000">
 		<html lang="{$language}">
 			<head>
 				<xsl:call-template name="doc-head"/>
@@ -1689,6 +1689,7 @@
 		<xsl:value-of select="text()"/>
 	</xsl:template>
 	<xsl:template match="cbc:*[ends-with(local-name(), 'Amount')]" mode="common">
+		<!-- <xsl:value-of select="format-number(text(), '###,##0')"/> <small> -->
 		<xsl:value-of select="format-number(text(), '###,##0.00')"/> <small>
 			<xsl:value-of select="@currencyID"/>
 		</small>
@@ -1977,7 +1978,7 @@
 	<xsl:template match="cac:Price" mode="line">
 		<div class="linesupport">
 			<div class="row">
-				<div class="col-sm-9">Price á <xsl:apply-templates select="cbc:BaseQuantity" mode="common"/>
+				<div class="col-sm-9">Price @ <xsl:apply-templates select="cbc:BaseQuantity" mode="common"/>
 				</div>
 				<div class="col-sm-3 text-right">
 					<xsl:apply-templates select="cbc:PriceAmount" mode="common"/>

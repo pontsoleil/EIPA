@@ -5,7 +5,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cbc:CustomizationID[1] and not(cbc:CustomizationID[2])",
-        "Syntax binding": "ubl:Invoice/cbc:CustomizationID"
+        "Syntax binding": "\nubl:Invoice / cbc:CustomizationID\n"
     },
     {
         "Identifier": "BASIC-00002",
@@ -13,7 +13,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cbc:ProfileID[1] and not(cbc:ProfileID[4])",
-        "Syntax binding": "ubl:Invoice/cbc:ProfileID"
+        "Syntax binding": "\nubl:Invoice / cbc:ProfileID\n"
     },
     {
         "Identifier": "BASIC-00003",
@@ -21,7 +21,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00004",
@@ -29,7 +29,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cbc:IssueDate[1] and not(cbc:IssueDate[2])",
-        "Syntax binding": "ubl:Invoice/cbc:IssueDate"
+        "Syntax binding": "\nubl:Invoice / cbc:IssueDate\n"
     },
     {
         "Identifier": "BASIC-00005",
@@ -37,7 +37,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:IssueTime[2])",
-        "Syntax binding": "ubl:Invoice/cbc:IssueTime"
+        "Syntax binding": "\nubl:Invoice / cbc:IssueTime\n"
     },
     {
         "Identifier": "BASIC-00006",
@@ -45,7 +45,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:DueDate[2])",
-        "Syntax binding": "ubl:Invoice/cbc:DueDate"
+        "Syntax binding": "\nubl:Invoice / cbc:DueDate\n"
     },
     {
         "Identifier": "BASIC-00007",
@@ -53,7 +53,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cbc:InvoiceTypeCode[1] and not(cbc:InvoiceTypeCode[2])",
-        "Syntax binding": "ubl:Invoice/cbc:InvoiceTypeCode"
+        "Syntax binding": "\nubl:Invoice / cbc:InvoiceTypeCode\n"
     },
     {
         "Identifier": "BASIC-00008",
@@ -68,7 +68,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:Note[2])",
-        "Syntax binding": "ubl:Invoice/cbc:Note"
+        "Syntax binding": "\nubl:Invoice / cbc:Note\n"
     },
     {
         "Identifier": "BASIC-00010",
@@ -76,7 +76,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:TaxPointDate[2])",
-        "Syntax binding": "ubl:Invoice/cbc:TaxPointDate"
+        "Syntax binding": "\nubl:Invoice / cbc:TaxPointDate\n"
     },
     {
         "Identifier": "BASIC-00011",
@@ -84,7 +84,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cbc:DocumentCurrencyCode[1] and not(cbc:DocumentCurrencyCode[2])",
-        "Syntax binding": "ubl:Invoice/cbc:DocumentCurrencyCode"
+        "Syntax binding": "\nubl:Invoice / cbc:DocumentCurrencyCode\n"
     },
     {
         "Identifier": "BASIC-00012",
@@ -92,7 +92,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:TaxCurrencyCode[2])",
-        "Syntax binding": "ubl:Invoice/cbc:TaxCurrencyCode"
+        "Syntax binding": "\nubl:Invoice / cbc:TaxCurrencyCode\n"
     },
     {
         "Identifier": "BASIC-00013",
@@ -100,7 +100,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:AccountingCost[2])",
-        "Syntax binding": "ubl:Invoice/cbc:AccountingCost"
+        "Syntax binding": "\nubl:Invoice / cbc:AccountingCost\n"
     },
     {
         "Identifier": "BASIC-00014",
@@ -108,7 +108,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cbc:BuyerReference[2])",
-        "Syntax binding": "ubl:Invoice/cbc:BuyerReference"
+        "Syntax binding": "\nubl:Invoice / cbc:BuyerReference\n"
     },
     {
         "Identifier": "BASIC-00015",
@@ -116,7 +116,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:InvoicePeriod[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod"
+        "Syntax binding": "\nubl:Invoice / cac:InvoicePeriod\n"
     },
     {
         "Identifier": "BASIC-00016",
@@ -124,7 +124,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:OrderReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:OrderReference"
+        "Syntax binding": "\nubl:Invoice / cac:OrderReference\n"
     },
     {
         "Identifier": "BASIC-00017",
@@ -132,7 +132,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:ReceiptDocumentReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:ReceiptDocumentReference"
+        "Syntax binding": "\nubl:Invoice / cac:ReceiptDocumentReference\n"
     },
     {
         "Identifier": "BASIC-00018",
@@ -140,7 +140,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:OriginatorDocumentReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:OriginatorDocumentReference"
+        "Syntax binding": "\nubl:Invoice / cac:OriginatorDocumentReference\n"
     },
     {
         "Identifier": "BASIC-00019",
@@ -148,7 +148,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:ContractDocumentReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:ContractDocumentReference"
+        "Syntax binding": "\nubl:Invoice / cac:ContractDocumentReference\n"
     },
     {
         "Identifier": "BASIC-00020",
@@ -156,7 +156,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:ProjectReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:ProjectReference"
+        "Syntax binding": "\nubl:Invoice / cac:ProjectReference\n"
     },
     {
         "Identifier": "BASIC-00021",
@@ -164,7 +164,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cac:AccountingSupplierParty[1] and not(cac:AccountingSupplierParty[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty\n"
     },
     {
         "Identifier": "BASIC-00022",
@@ -172,7 +172,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cac:AccountingCustomerParty[1] and not(cac:AccountingCustomerParty[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty\n"
     },
     {
         "Identifier": "BASIC-00023",
@@ -180,7 +180,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:PayeeParty[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty\n"
     },
     {
         "Identifier": "BASIC-00024",
@@ -188,7 +188,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cac:TaxRepresentativeParty[1] and not(cac:TaxRepresentativeParty[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty\n"
     },
     {
         "Identifier": "BASIC-00025",
@@ -196,7 +196,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "not(cac:Delivery[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery\n"
     },
     {
         "Identifier": "BASIC-00026",
@@ -211,7 +211,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cac:TaxTotal[1] and not(cac:TaxTotal[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal\n"
     },
     {
         "Identifier": "BASIC-00028",
@@ -219,7 +219,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cac:LegalMonetaryTotal[1] and not(cac:LegalMonetaryTotal[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal\n"
     },
     {
         "Identifier": "BASIC-00029",
@@ -227,7 +227,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice",
         "Test": "cac:InvoiceLine[1]",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine\n"
     },
     {
         "Identifier": "BASIC-00030",
@@ -235,7 +235,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cbc:ID",
         "Test": "string-length(normalize-space()) >= 3",
-        "Syntax binding": "ubl:Invoice/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00031",
@@ -243,7 +243,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cbc:ID",
         "Test": "matches(normalize-space(), '\\w+')",
-        "Syntax binding": "ubl:Invoice/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00032",
@@ -251,8 +251,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cbc:InvoiceTypeCode",
         "Test": "(some $code in $clUNCL1001-inv satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cbc:InvoiceTypeCode",
-        "Codelist": "Document name code (Subset: Invoice type code)"
+        "Syntax binding": "\nubl:Invoice / cbc:InvoiceTypeCode\n",
+        "Codelist": "\nDocument name code (Subset: Invoice type code)\n"
     },
     {
         "Identifier": "BASIC-00033",
@@ -260,8 +260,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cbc:DocumentCurrencyCode",
         "Test": "(some $code in $clISO4217 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cbc:DocumentCurrencyCode",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cbc:DocumentCurrencyCode\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00034",
@@ -269,8 +269,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cbc:TaxCurrencyCode",
         "Test": "(some $code in $clISO4217 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cbc:TaxCurrencyCode",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cbc:TaxCurrencyCode\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00035",
@@ -278,7 +278,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoicePeriod",
         "Test": "not(cbc:StartDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:StartDate"
+        "Syntax binding": "\nubl:Invoice / cac:InvoicePeriod / cbc:StartDate\n"
     },
     {
         "Identifier": "BASIC-00036",
@@ -286,7 +286,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoicePeriod",
         "Test": "not(cbc:EndDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:EndDate"
+        "Syntax binding": "\nubl:Invoice / cac:InvoicePeriod / cbc:EndDate\n"
     },
     {
         "Identifier": "BASIC-00037",
@@ -294,7 +294,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoicePeriod",
         "Test": "not(cbc:DescriptionCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:DescriptionCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoicePeriod / cbc:DescriptionCode\n"
     },
     {
         "Identifier": "BASIC-00038",
@@ -302,8 +302,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoicePeriod/cbc:DescriptionCode",
         "Test": "(some $code in $clUNCL2005 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:InvoicePeriod/cbc:DescriptionCode",
-        "Codelist": "Date or time or period function code qualifier (Subset: Peppol)"
+        "Syntax binding": "\nubl:Invoice / cac:InvoicePeriod / cbc:DescriptionCode\n",
+        "Codelist": "\nDate or time or period function code qualifier (Subset: Peppol)\n"
     },
     {
         "Identifier": "BASIC-00039",
@@ -311,7 +311,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:OrderReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:OrderReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:OrderReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00040",
@@ -319,7 +319,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:OrderReference",
         "Test": "not(cbc:SalesOrderID[2])",
-        "Syntax binding": "ubl:Invoice/cac:OrderReference/cbc:SalesOrderID"
+        "Syntax binding": "\nubl:Invoice / cac:OrderReference / cbc:SalesOrderID\n"
     },
     {
         "Identifier": "BASIC-00041",
@@ -327,7 +327,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:BillingReference",
         "Test": "cac:InvoiceDocumentReference[1] and not(cac:InvoiceDocumentReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference"
+        "Syntax binding": "\nubl:Invoice / cac:BillingReference / cac:InvoiceDocumentReference\n"
     },
     {
         "Identifier": "BASIC-00042",
@@ -335,7 +335,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:BillingReference / cac:InvoiceDocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00043",
@@ -343,7 +343,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference",
         "Test": "not(cbc:IssueDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate"
+        "Syntax binding": "\nubl:Invoice / cac:BillingReference / cac:InvoiceDocumentReference / cbc:IssueDate\n"
     },
     {
         "Identifier": "BASIC-00044",
@@ -351,7 +351,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:DespatchDocumentReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:DespatchDocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:DespatchDocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00045",
@@ -359,7 +359,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:ReceiptDocumentReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:ReceiptDocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:ReceiptDocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00046",
@@ -367,7 +367,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:OriginatorDocumentReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:OriginatorDocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:OriginatorDocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00047",
@@ -375,7 +375,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:ContractDocumentReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:ContractDocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:ContractDocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00048",
@@ -390,7 +390,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
         "Test": "not(cbc:DocumentTypeCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentTypeCode"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cbc:DocumentTypeCode\n"
     },
     {
         "Identifier": "BASIC-00050",
@@ -398,8 +398,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clUNCL1153 satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID/@schemeID",
-        "Codelist": "Invoiced object identifier scheme"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cbc:ID / @schemeID\n",
+        "Codelist": "\nInvoiced object identifier scheme\n"
     },
     {
         "Identifier": "BASIC-00051",
@@ -407,7 +407,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00052",
@@ -415,7 +415,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
         "Test": "not(cbc:DocumentDescription[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cbc:DocumentDescription"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cbc:DocumentDescription\n"
     },
     {
         "Identifier": "BASIC-00053",
@@ -423,7 +423,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference",
         "Test": "not(cac:Attachment[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cac:Attachment\n"
     },
     {
         "Identifier": "BASIC-00054",
@@ -431,7 +431,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment",
         "Test": "not(cbc:EmbeddedDocumentBinaryObject[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cac:Attachment / cbc:EmbeddedDocumentBinaryObject\n"
     },
     {
         "Identifier": "BASIC-00055",
@@ -439,7 +439,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment",
         "Test": "not(cac:ExternalReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cac:Attachment / cac:ExternalReference\n"
     },
     {
         "Identifier": "BASIC-00056",
@@ -447,8 +447,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject",
         "Test": "not(@mimeCode) or (some $code in $clMimeCode satisfies $code = normalize-space(@mimeCode))",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/@mimeCode",
-        "Codelist": "Media Types (Subset: Peppol)"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cac:Attachment / cbc:EmbeddedDocumentBinaryObject / @mimeCode\n",
+        "Codelist": "\nMedia Types (Subset: Peppol)\n"
     },
     {
         "Identifier": "BASIC-00057",
@@ -456,7 +456,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference",
         "Test": "cbc:URI[1] and not(cbc:URI[2])",
-        "Syntax binding": "ubl:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"
+        "Syntax binding": "\nubl:Invoice / cac:AdditionalDocumentReference / cac:Attachment / cac:ExternalReference / cbc:URI\n"
     },
     {
         "Identifier": "BASIC-00058",
@@ -464,7 +464,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:ProjectReference",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:ProjectReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:ProjectReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00059",
@@ -472,7 +472,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty",
         "Test": "cac:Party[1] and not(cac:Party[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party\n"
     },
     {
         "Identifier": "BASIC-00060",
@@ -480,7 +480,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "cbc:EndpointID[1] and not(cbc:EndpointID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cbc:EndpointID\n"
     },
     {
         "Identifier": "BASIC-00061",
@@ -488,7 +488,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "not(cac:PartyIdentification[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyIdentification\n"
     },
     {
         "Identifier": "BASIC-00062",
@@ -496,7 +496,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "not(cac:PartyName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyName\n"
     },
     {
         "Identifier": "BASIC-00063",
@@ -504,7 +504,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress\n"
     },
     {
         "Identifier": "BASIC-00064",
@@ -519,7 +519,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "not(cac:PartyTaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyTaxScheme\n"
     },
     {
         "Identifier": "BASIC-00066",
@@ -527,7 +527,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "cac:PartyLegalEntity[1] and not(cac:PartyLegalEntity[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyLegalEntity\n"
     },
     {
         "Identifier": "BASIC-00067",
@@ -535,7 +535,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party",
         "Test": "not(cac:Contact[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:Contact\n"
     },
     {
         "Identifier": "BASIC-00068",
@@ -543,7 +543,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID",
         "Test": "@schemeID",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cbc:EndpointID / @schemeID\n"
     },
     {
         "Identifier": "BASIC-00069",
@@ -551,8 +551,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID",
         "Test": "not(@schemeID) or (some $code in $cleas satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cbc:EndpointID/@schemeID",
-        "Codelist": "Electronic Address Scheme (EAS)"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cbc:EndpointID / @schemeID\n",
+        "Codelist": "\nElectronic Address Scheme (EAS)\n"
     },
     {
         "Identifier": "BASIC-00070",
@@ -567,7 +567,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Codelist": "ISO 6523 ICD list"
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00072",
@@ -575,7 +575,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyIdentification / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00073",
@@ -583,8 +583,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clSEPA satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID",
-        "Codelist": "SEPA indicator"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyIdentification / cbc:ID / @schemeID\n",
+        "Codelist": "\nSEPA indicator\n"
     },
     {
         "Identifier": "BASIC-00074",
@@ -592,7 +592,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyName/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyName / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00075",
@@ -600,7 +600,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:StreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:StreetName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cbc:StreetName\n"
     },
     {
         "Identifier": "BASIC-00076",
@@ -608,7 +608,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:AdditionalStreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cbc:AdditionalStreetName\n"
     },
     {
         "Identifier": "BASIC-00077",
@@ -616,7 +616,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:CityName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cbc:CityName\n"
     },
     {
         "Identifier": "BASIC-00078",
@@ -624,7 +624,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:PostalZone[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cbc:PostalZone\n"
     },
     {
         "Identifier": "BASIC-00079",
@@ -632,7 +632,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:CountrySubentity[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cbc:CountrySubentity\n"
     },
     {
         "Identifier": "BASIC-00080",
@@ -640,7 +640,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "not(cac:AddressLine[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cac:AddressLine\n"
     },
     {
         "Identifier": "BASIC-00081",
@@ -648,7 +648,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress",
         "Test": "cac:Country[1] and not(cac:Country[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cac:Country\n"
     },
     {
         "Identifier": "BASIC-00082",
@@ -656,7 +656,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine",
         "Test": "cbc:Line[1] and not(cbc:Line[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cac:AddressLine / cbc:Line\n"
     },
     {
         "Identifier": "BASIC-00083",
@@ -664,7 +664,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country",
         "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n"
     },
     {
         "Identifier": "BASIC-00084",
@@ -672,8 +672,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
         "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
-        "Codelist": "Country codes"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n",
+        "Codelist": "\nCountry codes\n"
     },
     {
         "Identifier": "BASIC-00085",
@@ -702,7 +702,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme",
         "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyTaxScheme / cbc:CompanyID\n"
     },
     {
         "Identifier": "BASIC-00089",
@@ -710,7 +710,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme",
         "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyTaxScheme / cac:TaxScheme\n"
     },
     {
         "Identifier": "BASIC-00090",
@@ -718,7 +718,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyTaxScheme / cac:TaxScheme / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00091",
@@ -726,7 +726,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity",
         "Test": "cbc:RegistrationName[1] and not(cbc:RegistrationName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyLegalEntity / cbc:RegistrationName\n"
     },
     {
         "Identifier": "BASIC-00092",
@@ -734,7 +734,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity",
         "Test": "not(cbc:CompanyID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyLegalEntity / cbc:CompanyID\n"
     },
     {
         "Identifier": "BASIC-00093",
@@ -742,7 +742,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity",
         "Test": "not(cbc:CompanyLegalForm[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyLegalForm"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyLegalEntity / cbc:CompanyLegalForm\n"
     },
     {
         "Identifier": "BASIC-00094",
@@ -750,8 +750,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID",
-        "Codelist": "ISO 6523 ICD list"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:PartyLegalEntity / cbc:CompanyID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00095",
@@ -759,7 +759,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact",
         "Test": "not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:Contact / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00096",
@@ -767,7 +767,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact",
         "Test": "not(cbc:Telephone[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:Telephone"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:Contact / cbc:Telephone\n"
     },
     {
         "Identifier": "BASIC-00097",
@@ -775,7 +775,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact",
         "Test": "not(cbc:ElectronicMail[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingSupplierParty / cac:Party / cac:Contact / cbc:ElectronicMail\n"
     },
     {
         "Identifier": "BASIC-00098",
@@ -783,7 +783,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty",
         "Test": "cac:Party[1] and not(cac:Party[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party\n"
     },
     {
         "Identifier": "BASIC-00099",
@@ -791,7 +791,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
         "Test": "cbc:EndpointID[1] and not(cbc:EndpointID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cbc:EndpointID\n"
     },
     {
         "Identifier": "BASIC-00100",
@@ -799,7 +799,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
         "Test": "not(cac:PartyName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyName\n"
     },
     {
         "Identifier": "BASIC-00101",
@@ -807,7 +807,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
         "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress\n"
     },
     {
         "Identifier": "BASIC-00102",
@@ -815,7 +815,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
         "Test": "not(cac:PartyTaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyTaxScheme\n"
     },
     {
         "Identifier": "BASIC-00103",
@@ -823,7 +823,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party",
         "Test": "cac:PartyLegalEntity[1] and not(cac:PartyLegalEntity[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity\n"
     },
     {
         "Identifier": "BASIC-00104",
@@ -831,7 +831,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID",
         "Test": "@schemeID",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cbc:EndpointID / @schemeID\n"
     },
     {
         "Identifier": "BASIC-00105",
@@ -839,8 +839,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID",
         "Test": "not(@schemeID) or (some $code in $cleas satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID/@schemeID",
-        "Codelist": "Electronic Address Scheme (EAS)"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cbc:EndpointID / @schemeID\n",
+        "Codelist": "\nElectronic Address Scheme (EAS)\n"
     },
     {
         "Identifier": "BASIC-00106",
@@ -848,7 +848,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyIdentification / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00107",
@@ -856,8 +856,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeID",
-        "Codelist": "ISO 6523 ICD list"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyIdentification / cbc:ID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00108",
@@ -865,7 +865,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyName/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyName / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00109",
@@ -873,7 +873,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:StreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:StreetName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cbc:StreetName\n"
     },
     {
         "Identifier": "BASIC-00110",
@@ -881,7 +881,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:AdditionalStreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:AdditionalStreetName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cbc:AdditionalStreetName\n"
     },
     {
         "Identifier": "BASIC-00111",
@@ -889,7 +889,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:CityName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CityName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cbc:CityName\n"
     },
     {
         "Identifier": "BASIC-00112",
@@ -897,7 +897,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:PostalZone[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:PostalZone"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cbc:PostalZone\n"
     },
     {
         "Identifier": "BASIC-00113",
@@ -905,7 +905,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "not(cbc:CountrySubentity[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cbc:CountrySubentity"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cbc:CountrySubentity\n"
     },
     {
         "Identifier": "BASIC-00114",
@@ -913,7 +913,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "not(cac:AddressLine[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cac:AddressLine\n"
     },
     {
         "Identifier": "BASIC-00115",
@@ -921,7 +921,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress",
         "Test": "cac:Country[1] and not(cac:Country[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cac:Country\n"
     },
     {
         "Identifier": "BASIC-00116",
@@ -929,7 +929,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine",
         "Test": "cbc:Line[1] and not(cbc:Line[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:AddressLine/cbc:Line"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cac:AddressLine / cbc:Line\n"
     },
     {
         "Identifier": "BASIC-00117",
@@ -937,7 +937,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country",
         "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n"
     },
     {
         "Identifier": "BASIC-00118",
@@ -945,8 +945,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
         "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
-        "Codelist": "Country codes"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n",
+        "Codelist": "\nCountry codes\n"
     },
     {
         "Identifier": "BASIC-00119",
@@ -954,7 +954,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme",
         "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyTaxScheme / cbc:CompanyID\n"
     },
     {
         "Identifier": "BASIC-00120",
@@ -962,7 +962,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme",
         "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyTaxScheme / cac:TaxScheme\n"
     },
     {
         "Identifier": "BASIC-00121",
@@ -970,7 +970,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyTaxScheme / cac:TaxScheme / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00122",
@@ -978,7 +978,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity",
         "Test": "cbc:RegistrationName[1] and not(cbc:RegistrationName[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:RegistrationName"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cbc:RegistrationName\n"
     },
     {
         "Identifier": "BASIC-00123",
@@ -986,7 +986,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity",
         "Test": "not(cbc:CompanyID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cbc:CompanyID\n"
     },
     {
         "Identifier": "BASIC-00124",
@@ -994,7 +994,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity",
         "Test": "not(cac:Contact[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cac:Contact\n"
     },
     {
         "Identifier": "BASIC-00125",
@@ -1002,8 +1002,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cbc:CompanyID/@schemeID",
-        "Codelist": "ISO 6523 ICD list"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cbc:CompanyID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00126",
@@ -1011,7 +1011,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact",
         "Test": "not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cac:Contact / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00127",
@@ -1019,7 +1019,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact",
         "Test": "not(cbc:Telephone[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact/cbc:Telephone"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cac:Contact / cbc:Telephone\n"
     },
     {
         "Identifier": "BASIC-00128",
@@ -1027,7 +1027,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact",
         "Test": "not(cbc:ElectronicMail[2])",
-        "Syntax binding": "ubl:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:Contact/cbc:ElectronicMail"
+        "Syntax binding": "\nubl:Invoice / cac:AccountingCustomerParty / cac:Party / cac:PartyLegalEntity / cac:Contact / cbc:ElectronicMail\n"
     },
     {
         "Identifier": "BASIC-00129",
@@ -1042,7 +1042,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty",
         "Test": "not(cac:PartyIdentification[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyIdentification\n"
     },
     {
         "Identifier": "BASIC-00131",
@@ -1050,7 +1050,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty",
         "Test": "cac:PartyName[1] and not(cac:PartyName[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyName"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyName\n"
     },
     {
         "Identifier": "BASIC-00132",
@@ -1058,7 +1058,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty",
         "Test": "not(cac:PartyLegalEntity[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyLegalEntity\n"
     },
     {
         "Identifier": "BASIC-00133",
@@ -1073,7 +1073,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Codelist": "ISO 6523 ICD list"
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00135",
@@ -1081,7 +1081,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyIdentification / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00136",
@@ -1089,8 +1089,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID)) or (some $code in $clSEPA satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyIdentification/cbc:ID/@schemeID",
-        "Codelist": "ISO 6523 ICD list\nSEPA indicator"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyIdentification / cbc:ID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\nSEPA indicator\n"
     },
     {
         "Identifier": "BASIC-00137",
@@ -1098,7 +1098,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyName",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyName/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyName / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00138",
@@ -1106,7 +1106,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity",
         "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyLegalEntity / cbc:CompanyID\n"
     },
     {
         "Identifier": "BASIC-00139",
@@ -1114,8 +1114,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:PayeeParty/cac:PartyLegalEntity/cbc:CompanyID/@schemeID",
-        "Codelist": "ISO 6523 ICD list"
+        "Syntax binding": "\nubl:Invoice / cac:PayeeParty / cac:PartyLegalEntity / cbc:CompanyID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00140",
@@ -1123,7 +1123,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty",
         "Test": "cac:PartyName[1] and not(cac:PartyName[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PartyName\n"
     },
     {
         "Identifier": "BASIC-00141",
@@ -1131,7 +1131,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty",
         "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress\n"
     },
     {
         "Identifier": "BASIC-00142",
@@ -1139,7 +1139,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty",
         "Test": "cac:PartyTaxScheme[1] and not(cac:PartyTaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PartyTaxScheme\n"
     },
     {
         "Identifier": "BASIC-00143",
@@ -1147,7 +1147,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PartyName / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00144",
@@ -1155,7 +1155,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "not(cbc:StreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:StreetName"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cbc:StreetName\n"
     },
     {
         "Identifier": "BASIC-00145",
@@ -1163,7 +1163,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "not(cbc:AdditionalStreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:AdditionalStreetName"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cbc:AdditionalStreetName\n"
     },
     {
         "Identifier": "BASIC-00146",
@@ -1171,7 +1171,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "not(cbc:CityName[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CityName"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cbc:CityName\n"
     },
     {
         "Identifier": "BASIC-00147",
@@ -1179,7 +1179,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "not(cbc:PostalZone[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:PostalZone"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cbc:PostalZone\n"
     },
     {
         "Identifier": "BASIC-00148",
@@ -1187,7 +1187,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "not(cbc:CountrySubentity[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cbc:CountrySubentity"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cbc:CountrySubentity\n"
     },
     {
         "Identifier": "BASIC-00149",
@@ -1195,7 +1195,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "not(cac:AddressLine[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cac:AddressLine\n"
     },
     {
         "Identifier": "BASIC-00150",
@@ -1203,7 +1203,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress",
         "Test": "cac:Country[1] and not(cac:Country[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cac:Country\n"
     },
     {
         "Identifier": "BASIC-00151",
@@ -1211,7 +1211,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine",
         "Test": "cbc:Line[1] and not(cbc:Line[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:AddressLine/cbc:Line"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cac:AddressLine / cbc:Line\n"
     },
     {
         "Identifier": "BASIC-00152",
@@ -1219,7 +1219,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country",
         "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n"
     },
     {
         "Identifier": "BASIC-00153",
@@ -1227,8 +1227,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
         "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
-        "Codelist": "Country codes"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n",
+        "Codelist": "\nCountry codes\n"
     },
     {
         "Identifier": "BASIC-00154",
@@ -1236,7 +1236,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme",
         "Test": "cbc:CompanyID[1] and not(cbc:CompanyID[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cbc:CompanyID"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PartyTaxScheme / cbc:CompanyID\n"
     },
     {
         "Identifier": "BASIC-00155",
@@ -1244,7 +1244,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme",
         "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PartyTaxScheme / cac:TaxScheme\n"
     },
     {
         "Identifier": "BASIC-00156",
@@ -1252,7 +1252,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxRepresentativeParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:TaxRepresentativeParty / cac:PartyTaxScheme / cac:TaxScheme / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00157",
@@ -1260,7 +1260,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery",
         "Test": "not(cbc:ActualDeliveryDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cbc:ActualDeliveryDate"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cbc:ActualDeliveryDate\n"
     },
     {
         "Identifier": "BASIC-00158",
@@ -1268,7 +1268,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery",
         "Test": "not(cac:DeliveryLocation[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation\n"
     },
     {
         "Identifier": "BASIC-00159",
@@ -1276,7 +1276,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery",
         "Test": "not(cac:DeliveryParty[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryParty"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryParty\n"
     },
     {
         "Identifier": "BASIC-00160",
@@ -1284,7 +1284,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation",
         "Test": "not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00161",
@@ -1292,7 +1292,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation",
         "Test": "not(cac:Address[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address\n"
     },
     {
         "Identifier": "BASIC-00162",
@@ -1300,8 +1300,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cbc:ID/@schemeID",
-        "Codelist": "ISO 6523 ICD list"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cbc:ID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00163",
@@ -1309,7 +1309,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "not(cbc:StreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:StreetName"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cbc:StreetName\n"
     },
     {
         "Identifier": "BASIC-00164",
@@ -1317,7 +1317,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "not(cbc:AdditionalStreetName[../cbc:StreetName][2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:AdditionalStreetName"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cbc:AdditionalStreetName\n"
     },
     {
         "Identifier": "BASIC-00165",
@@ -1325,7 +1325,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "not(cbc:CityName[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CityName"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cbc:CityName\n"
     },
     {
         "Identifier": "BASIC-00166",
@@ -1333,7 +1333,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "not(cbc:PostalZone[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:PostalZone"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cbc:PostalZone\n"
     },
     {
         "Identifier": "BASIC-00167",
@@ -1341,7 +1341,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "not(cbc:CountrySubentity[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cbc:CountrySubentity"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cbc:CountrySubentity\n"
     },
     {
         "Identifier": "BASIC-00168",
@@ -1349,7 +1349,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "not(cac:AddressLine[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cac:AddressLine\n"
     },
     {
         "Identifier": "BASIC-00169",
@@ -1357,7 +1357,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address",
         "Test": "cac:Country[1] and not(cac:Country[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cac:Country\n"
     },
     {
         "Identifier": "BASIC-00170",
@@ -1365,7 +1365,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine",
         "Test": "cbc:Line[1] and not(cbc:Line[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:AddressLine/cbc:Line"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cac:AddressLine / cbc:Line\n"
     },
     {
         "Identifier": "BASIC-00171",
@@ -1373,7 +1373,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country",
         "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cac:Country / cbc:IdentificationCode\n"
     },
     {
         "Identifier": "BASIC-00172",
@@ -1381,8 +1381,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode",
         "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryLocation/cac:Address/cac:Country/cbc:IdentificationCode",
-        "Codelist": "Country codes"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryLocation / cac:Address / cac:Country / cbc:IdentificationCode\n",
+        "Codelist": "\nCountry codes\n"
     },
     {
         "Identifier": "BASIC-00173",
@@ -1390,7 +1390,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryParty",
         "Test": "cac:PartyName[1] and not(cac:PartyName[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryParty / cac:PartyName\n"
     },
     {
         "Identifier": "BASIC-00174",
@@ -1398,7 +1398,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:Delivery/cac:DeliveryParty/cac:PartyName/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:Delivery / cac:DeliveryParty / cac:PartyName / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00175",
@@ -1406,7 +1406,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans",
         "Test": "not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00176",
@@ -1414,7 +1414,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans",
         "Test": "cbc:PaymentMeansCode[1] and not(cbc:PaymentMeansCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cbc:PaymentMeansCode\n"
     },
     {
         "Identifier": "BASIC-00177",
@@ -1422,7 +1422,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans",
         "Test": "not(cbc:PaymentID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cbc:PaymentID\n"
     },
     {
         "Identifier": "BASIC-00178",
@@ -1430,7 +1430,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans",
         "Test": "not(cac:CardAccount[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:CardAccount\n"
     },
     {
         "Identifier": "BASIC-00179",
@@ -1438,7 +1438,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans",
         "Test": "not(cac:PayeeFinancialAccount[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount\n"
     },
     {
         "Identifier": "BASIC-00180",
@@ -1446,7 +1446,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans",
         "Test": "cac:PaymentMandate[1] and not(cac:PaymentMandate[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PaymentMandate\n"
     },
     {
         "Identifier": "BASIC-00181",
@@ -1454,8 +1454,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode",
         "Test": "(some $code in $clUNCL4461 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cbc:PaymentMeansCode",
-        "Codelist": "Payment means code"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cbc:PaymentMeansCode\n",
+        "Codelist": "\nPayment means code\n"
     },
     {
         "Identifier": "BASIC-00182",
@@ -1463,7 +1463,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount",
         "Test": "cbc:PrimaryAccountNumberID[1] and not(cbc:PrimaryAccountNumberID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:PrimaryAccountNumberID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:CardAccount / cbc:PrimaryAccountNumberID\n"
     },
     {
         "Identifier": "BASIC-00183",
@@ -1471,7 +1471,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount",
         "Test": "cbc:NetworkID[1] and not(cbc:NetworkID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:NetworkID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:CardAccount / cbc:NetworkID\n"
     },
     {
         "Identifier": "BASIC-00184",
@@ -1479,7 +1479,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount",
         "Test": "not(cbc:HolderName[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:CardAccount/cbc:HolderName"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:CardAccount / cbc:HolderName\n"
     },
     {
         "Identifier": "BASIC-00185",
@@ -1487,7 +1487,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00186",
@@ -1495,7 +1495,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount",
         "Test": "not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00187",
@@ -1503,7 +1503,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount",
         "Test": "not(cac:FinancialInstitutionBranch[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch\n"
     },
     {
         "Identifier": "BASIC-00188",
@@ -1511,7 +1511,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00189",
@@ -1519,7 +1519,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch",
         "Test": "cac:PostalAddress[1] and not(cac:PostalAddress[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress\n"
     },
     {
         "Identifier": "BASIC-00190",
@@ -1527,7 +1527,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "not(cbc:StreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:StreetName"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cbc:StreetName\n"
     },
     {
         "Identifier": "BASIC-00191",
@@ -1535,7 +1535,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "not(cbc:AdditionalStreetName[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:AdditionalStreetName"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cbc:AdditionalStreetName\n"
     },
     {
         "Identifier": "BASIC-00192",
@@ -1543,7 +1543,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "not(cbc:CityName[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:CityName"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cbc:CityName\n"
     },
     {
         "Identifier": "BASIC-00193",
@@ -1551,7 +1551,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "not(cbc:PostalZone[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:PostalZone"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cbc:PostalZone\n"
     },
     {
         "Identifier": "BASIC-00194",
@@ -1559,7 +1559,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "not(cbc:CountrySubentity[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cbc:CountrySubentity"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cbc:CountrySubentity\n"
     },
     {
         "Identifier": "BASIC-00195",
@@ -1567,7 +1567,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "not(cac:AddressLine[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:AddressLine"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cac:AddressLine\n"
     },
     {
         "Identifier": "BASIC-00196",
@@ -1575,7 +1575,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress",
         "Test": "cac:Country[1] and not(cac:Country[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cac:Country\n"
     },
     {
         "Identifier": "BASIC-00197",
@@ -1583,7 +1583,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:AddressLine",
         "Test": "cbc:Line[1] and not(cbc:Line[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:AddressLine/cbc:Line"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cac:AddressLine / cbc:Line\n"
     },
     {
         "Identifier": "BASIC-00198",
@@ -1591,7 +1591,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country",
         "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n"
     },
     {
         "Identifier": "BASIC-00199",
@@ -1599,8 +1599,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
         "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:PostalAddress/cac:Country/cbc:IdentificationCode",
-        "Codelist": "Country codes"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PayeeFinancialAccount / cac:FinancialInstitutionBranch / cac:PostalAddress / cac:Country / cbc:IdentificationCode\n",
+        "Codelist": "\nCountry codes\n"
     },
     {
         "Identifier": "BASIC-00200",
@@ -1608,7 +1608,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate",
         "Test": "not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PaymentMandate / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00201",
@@ -1616,7 +1616,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate",
         "Test": "not(cac:PayerFinancialAccount[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PaymentMandate / cac:PayerFinancialAccount\n"
     },
     {
         "Identifier": "BASIC-00202",
@@ -1624,7 +1624,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentMeans/cac:PaymentMandate/cac:PayerFinancialAccount/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentMeans / cac:PaymentMandate / cac:PayerFinancialAccount / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00203",
@@ -1632,7 +1632,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentTerms",
         "Test": "not(cbc:PaymentMeansID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:PaymentMeansID"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentTerms / cbc:PaymentMeansID\n"
     },
     {
         "Identifier": "BASIC-00204",
@@ -1640,7 +1640,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentTerms",
         "Test": "not(cbc:Note[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:Note"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentTerms / cbc:Note\n"
     },
     {
         "Identifier": "BASIC-00205",
@@ -1648,7 +1648,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentTerms",
         "Test": "not(cbc:Amount[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:Amount"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentTerms / cbc:Amount\n"
     },
     {
         "Identifier": "BASIC-00206",
@@ -1656,7 +1656,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PaymentTerms",
         "Test": "not(cbc:InstallmentDueDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:PaymentTerms/cbc:InstallmentDueDate"
+        "Syntax binding": "\nubl:Invoice / cac:PaymentTerms / cbc:InstallmentDueDate\n"
     },
     {
         "Identifier": "BASIC-00207",
@@ -1664,7 +1664,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PrepaidPayment",
         "Test": "not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:PrepaidPayment / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00208",
@@ -1672,7 +1672,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PrepaidPayment",
         "Test": "not(cbc:PaidAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:PaidAmount"
+        "Syntax binding": "\nubl:Invoice / cac:PrepaidPayment / cbc:PaidAmount\n"
     },
     {
         "Identifier": "BASIC-00209",
@@ -1680,7 +1680,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PrepaidPayment",
         "Test": "not(cbc:ReceivedDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:ReceivedDate"
+        "Syntax binding": "\nubl:Invoice / cac:PrepaidPayment / cbc:ReceivedDate\n"
     },
     {
         "Identifier": "BASIC-00210",
@@ -1688,7 +1688,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:PrepaidPayment",
         "Test": "not(cbc:InstructionID[2])",
-        "Syntax binding": "ubl:Invoice/cac:PrepaidPayment/cbc:InstructionID"
+        "Syntax binding": "\nubl:Invoice / cac:PrepaidPayment / cbc:InstructionID\n"
     },
     {
         "Identifier": "BASIC-00211",
@@ -1696,7 +1696,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "cbc:ChargeIndicator[1] and not(cbc:ChargeIndicator[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:ChargeIndicator"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:ChargeIndicator\n"
     },
     {
         "Identifier": "BASIC-00212",
@@ -1704,7 +1704,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "not(cbc:AllowanceChargeReasonCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:AllowanceChargeReasonCode\n"
     },
     {
         "Identifier": "BASIC-00213",
@@ -1712,7 +1712,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "not(cbc:AllowanceChargeReason[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReason"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:AllowanceChargeReason\n"
     },
     {
         "Identifier": "BASIC-00214",
@@ -1720,7 +1720,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "not(cbc:MultiplierFactorNumeric[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:MultiplierFactorNumeric"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:MultiplierFactorNumeric\n"
     },
     {
         "Identifier": "BASIC-00215",
@@ -1728,7 +1728,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "cbc:Amount[1] and not(cbc:Amount[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:Amount"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:Amount\n"
     },
     {
         "Identifier": "BASIC-00216",
@@ -1736,7 +1736,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "not(cbc:BaseAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:BaseAmount\n"
     },
     {
         "Identifier": "BASIC-00217",
@@ -1744,7 +1744,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge",
         "Test": "cac:TaxCategory[1] and not(cac:TaxCategory[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cac:TaxCategory\n"
     },
     {
         "Identifier": "BASIC-00218",
@@ -1752,8 +1752,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
         "Test": "(some $code in $clUNCL5189 satisfies $code = normalize-space()) or (some $code in $clUNCL7161 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
-        "Codelist": "Allowance or charge identification code (Subset: Peppol)\nCharge reason code"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:AllowanceChargeReasonCode\n",
+        "Codelist": "\nAllowance or charge identification code (Subset: Peppol)\nCharge reason code\n"
     },
     {
         "Identifier": "BASIC-00219",
@@ -1761,8 +1761,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cbc:Amount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:Amount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:Amount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00220",
@@ -1770,8 +1770,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cbc:BaseAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cbc:BaseAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00221",
@@ -1779,7 +1779,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cac:TaxCategory / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00222",
@@ -1787,7 +1787,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory",
         "Test": "not(cbc:Percent[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:Percent"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cac:TaxCategory / cbc:Percent\n"
     },
     {
         "Identifier": "BASIC-00223",
@@ -1795,7 +1795,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory",
         "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cac:TaxCategory / cac:TaxScheme\n"
     },
     {
         "Identifier": "BASIC-00224",
@@ -1803,8 +1803,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID",
         "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cbc:ID",
-        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cac:TaxCategory / cbc:ID\n",
+        "Codelist": "\nDuty or tax or fee category code (Subset: Codes used in Japan)\n"
     },
     {
         "Identifier": "BASIC-00225",
@@ -1812,7 +1812,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:AllowanceCharge/cac:TaxCategory/cac:TaxScheme/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:AllowanceCharge / cac:TaxCategory / cac:TaxScheme / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00226",
@@ -1827,7 +1827,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Codelist": "Currency codes"
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00228",
@@ -1835,7 +1835,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
         "Test": "cbc:TaxableAmount[1] and not(cbc:TaxableAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cbc:TaxableAmount\n"
     },
     {
         "Identifier": "BASIC-00229",
@@ -1857,8 +1857,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxableAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cbc:TaxableAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00232",
@@ -1866,7 +1866,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Codelist": "Currency codes"
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00233",
@@ -1888,7 +1888,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
         "Test": "not(cbc:TaxExemptionReasonCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cbc:TaxExemptionReasonCode\n"
     },
     {
         "Identifier": "BASIC-00236",
@@ -1896,7 +1896,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
         "Test": "not(cbc:TaxExemptionReason[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cbc:TaxExemptionReason\n"
     },
     {
         "Identifier": "BASIC-00237",
@@ -1911,7 +1911,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID",
         "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
-        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+        "Codelist": "\nDuty or tax or fee category code (Subset: Codes used in Japan)\n"
     },
     {
         "Identifier": "BASIC-00239",
@@ -1926,7 +1926,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal",
         "Test": "cbc:TaxAmount[1] and not(cbc:TaxAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cbc:TaxAmount\n"
     },
     {
         "Identifier": "BASIC-00241",
@@ -1934,8 +1934,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cbc:TaxAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cbc:TaxAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00242",
@@ -1943,7 +1943,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
         "Test": "cbc:TaxAmount[1] and not(cbc:TaxAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cbc:TaxAmount\n"
     },
     {
         "Identifier": "BASIC-00243",
@@ -1951,7 +1951,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal",
         "Test": "cac:TaxCategory[1] and not(cac:TaxCategory[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory\n"
     },
     {
         "Identifier": "BASIC-00244",
@@ -1959,8 +1959,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cbc:TaxAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cbc:TaxAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00245",
@@ -1968,7 +1968,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00246",
@@ -1976,7 +1976,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
         "Test": "not(cbc:Percent[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Percent"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cbc:Percent\n"
     },
     {
         "Identifier": "BASIC-00247",
@@ -1984,7 +1984,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory",
         "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cac:TaxScheme\n"
     },
     {
         "Identifier": "BASIC-00248",
@@ -1992,8 +1992,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID",
         "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID",
-        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cbc:ID\n",
+        "Codelist": "\nDuty or tax or fee category code (Subset: Codes used in Japan)\n"
     },
     {
         "Identifier": "BASIC-00249",
@@ -2001,7 +2001,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:TaxTotal / cac:TaxSubtotal / cac:TaxCategory / cac:TaxScheme / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00250",
@@ -2009,7 +2009,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "cbc:LineExtensionAmount[1] and not(cbc:LineExtensionAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:LineExtensionAmount\n"
     },
     {
         "Identifier": "BASIC-00251",
@@ -2017,7 +2017,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "cbc:TaxExclusiveAmount[1] and not(cbc:TaxExclusiveAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:TaxExclusiveAmount\n"
     },
     {
         "Identifier": "BASIC-00252",
@@ -2025,7 +2025,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "cbc:TaxInclusiveAmount[1] and not(cbc:TaxInclusiveAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:TaxInclusiveAmount\n"
     },
     {
         "Identifier": "BASIC-00253",
@@ -2033,7 +2033,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "not(cbc:AllowanceTotalAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:AllowanceTotalAmount\n"
     },
     {
         "Identifier": "BASIC-00254",
@@ -2041,7 +2041,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "not(cbc:ChargeTotalAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:ChargeTotalAmount\n"
     },
     {
         "Identifier": "BASIC-00255",
@@ -2049,7 +2049,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "not(cbc:PrepaidAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:PrepaidAmount\n"
     },
     {
         "Identifier": "BASIC-00256",
@@ -2057,7 +2057,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "not(cbc:PayableRoundingAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:PayableRoundingAmount\n"
     },
     {
         "Identifier": "BASIC-00257",
@@ -2065,7 +2065,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal",
         "Test": "cbc:PayableAmount[1] and not(cbc:PayableAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:PayableAmount\n"
     },
     {
         "Identifier": "BASIC-00258",
@@ -2073,8 +2073,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:LineExtensionAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:LineExtensionAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00259",
@@ -2082,8 +2082,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:TaxExclusiveAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00260",
@@ -2091,8 +2091,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:TaxInclusiveAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00261",
@@ -2100,8 +2100,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:AllowanceTotalAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00262",
@@ -2109,8 +2109,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:ChargeTotalAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00263",
@@ -2118,8 +2118,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PrepaidAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:PrepaidAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00264",
@@ -2127,8 +2127,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:PayableRoundingAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00265",
@@ -2136,8 +2136,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:LegalMonetaryTotal / cbc:PayableAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00266",
@@ -2145,7 +2145,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00267",
@@ -2153,7 +2153,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "not(cbc:Note[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:Note"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:Note\n"
     },
     {
         "Identifier": "BASIC-00268",
@@ -2161,7 +2161,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "cbc:InvoicedQuantity[1] and not(cbc:InvoicedQuantity[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:InvoicedQuantity\n"
     },
     {
         "Identifier": "BASIC-00269",
@@ -2169,7 +2169,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "cbc:LineExtensionAmount[1] and not(cbc:LineExtensionAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:LineExtensionAmount\n"
     },
     {
         "Identifier": "BASIC-00270",
@@ -2177,7 +2177,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "not(cbc:AccountingCost[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:AccountingCost"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:AccountingCost\n"
     },
     {
         "Identifier": "BASIC-00271",
@@ -2185,7 +2185,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "not(cac:InvoicePeriod[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:InvoicePeriod\n"
     },
     {
         "Identifier": "BASIC-00272",
@@ -2193,7 +2193,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "not(cac:OrderLineReference[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:OrderLineReference\n"
     },
     {
         "Identifier": "BASIC-00273",
@@ -2201,7 +2201,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "not(cac:DocumentReference[cbc:DocumentTypeCode != 130][2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference\n"
     },
     {
         "Identifier": "BASIC-00274",
@@ -2209,7 +2209,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "not(cac:DocumentReference[cbc:DocumentTypeCode = 130][2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference\n"
     },
     {
         "Identifier": "BASIC-00275",
@@ -2217,7 +2217,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "cac:Item[1] and not(cac:Item[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item\n"
     },
     {
         "Identifier": "BASIC-00276",
@@ -2225,7 +2225,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine",
         "Test": "cac:Price[1] and not(cac:Price[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price\n"
     },
     {
         "Identifier": "BASIC-00277",
@@ -2233,8 +2233,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity",
         "Test": "not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = normalize-space(@unitCode))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:InvoicedQuantity/@unitCode",
-        "Codelist": "Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:InvoicedQuantity / @unitCode\n",
+        "Codelist": "\nRecommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)\n"
     },
     {
         "Identifier": "BASIC-00278",
@@ -2242,8 +2242,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cbc:LineExtensionAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cbc:LineExtensionAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00279",
@@ -2251,7 +2251,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod",
         "Test": "not(cbc:StartDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:StartDate"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:InvoicePeriod / cbc:StartDate\n"
     },
     {
         "Identifier": "BASIC-00280",
@@ -2259,7 +2259,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod",
         "Test": "not(cbc:EndDate[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:InvoicePeriod/cbc:EndDate"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:InvoicePeriod / cbc:EndDate\n"
     },
     {
         "Identifier": "BASIC-00281",
@@ -2267,7 +2267,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference",
         "Test": "cbc:LineID[1] and not(cbc:LineID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:OrderLineReference/cbc:LineID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:OrderLineReference / cbc:LineID\n"
     },
     {
         "Identifier": "BASIC-00282",
@@ -2275,7 +2275,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode != 130]",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00283",
@@ -2283,7 +2283,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode != 130]",
         "Test": "cbc:DocumentTypeCode[1] and not(cbc:DocumentTypeCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference / cbc:DocumentTypeCode\n"
     },
     {
         "Identifier": "BASIC-00284",
@@ -2291,8 +2291,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode != 130]/cbc:DocumentTypeCode",
         "Test": "(some $code in $clUNCL1001 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode",
-        "Codelist": "Document name code"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference / cbc:DocumentTypeCode\n",
+        "Codelist": "\nDocument name code\n"
     },
     {
         "Identifier": "BASIC-00285",
@@ -2300,7 +2300,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode = 130]",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00286",
@@ -2308,7 +2308,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode = 130]",
         "Test": "cbc:DocumentTypeCode[1] and not(cbc:DocumentTypeCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:DocumentTypeCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference / cbc:DocumentTypeCode\n"
     },
     {
         "Identifier": "BASIC-00287",
@@ -2316,8 +2316,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference[cbc:DocumentTypeCode = 130]/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clUNCL1153 satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:DocumentReference/cbc:ID/@schemeID",
-        "Codelist": "Invoiced object identifier scheme"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:DocumentReference / cbc:ID / @schemeID\n",
+        "Codelist": "\nInvoiced object identifier scheme\n"
     },
     {
         "Identifier": "BASIC-00288",
@@ -2325,7 +2325,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
         "Test": "cbc:ChargeIndicator[1] and not(cbc:ChargeIndicator[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:ChargeIndicator"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:ChargeIndicator\n"
     },
     {
         "Identifier": "BASIC-00289",
@@ -2333,7 +2333,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
         "Test": "not(cbc:AllowanceChargeReasonCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:AllowanceChargeReasonCode\n"
     },
     {
         "Identifier": "BASIC-00290",
@@ -2341,7 +2341,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
         "Test": "not(cbc:AllowanceChargeReason[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReason"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:AllowanceChargeReason\n"
     },
     {
         "Identifier": "BASIC-00291",
@@ -2349,7 +2349,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
         "Test": "not(cbc:MultiplierFactorNumeric[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:MultiplierFactorNumeric"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:MultiplierFactorNumeric\n"
     },
     {
         "Identifier": "BASIC-00292",
@@ -2357,7 +2357,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
         "Test": "cbc:Amount[1] and not(cbc:Amount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:Amount\n"
     },
     {
         "Identifier": "BASIC-00293",
@@ -2365,7 +2365,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge",
         "Test": "not(cbc:BaseAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:BaseAmount\n"
     },
     {
         "Identifier": "BASIC-00294",
@@ -2373,8 +2373,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
         "Test": "(some $code in $clUNCL5189 satisfies $code = normalize-space()) or (some $code in $clUNCL7161 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:AllowanceChargeReasonCode",
-        "Codelist": "Allowance or charge identification code (Subset: Peppol)\nCharge reason code"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:AllowanceChargeReasonCode\n",
+        "Codelist": "\nAllowance or charge identification code (Subset: Peppol)\nCharge reason code\n"
     },
     {
         "Identifier": "BASIC-00295",
@@ -2382,8 +2382,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:Amount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:Amount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00296",
@@ -2391,8 +2391,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:AllowanceCharge/cbc:BaseAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:AllowanceCharge / cbc:BaseAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00297",
@@ -2400,7 +2400,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "not(cbc:Description[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Description"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cbc:Description\n"
     },
     {
         "Identifier": "BASIC-00298",
@@ -2408,7 +2408,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00299",
@@ -2416,7 +2416,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "not(cac:BuyersItemIdentification[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:BuyersItemIdentification\n"
     },
     {
         "Identifier": "BASIC-00300",
@@ -2424,7 +2424,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "not(cac:SellersItemIdentification[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:SellersItemIdentification\n"
     },
     {
         "Identifier": "BASIC-00301",
@@ -2432,7 +2432,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "not(cac:StandardItemIdentification[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:StandardItemIdentification\n"
     },
     {
         "Identifier": "BASIC-00302",
@@ -2440,7 +2440,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "not(cac:OriginCountry[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:OriginCountry\n"
     },
     {
         "Identifier": "BASIC-00303",
@@ -2448,7 +2448,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item",
         "Test": "cac:ClassifiedTaxCategory[1] and not(cac:ClassifiedTaxCategory[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory\n"
     },
     {
         "Identifier": "BASIC-00304",
@@ -2456,7 +2456,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:BuyersItemIdentification/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:BuyersItemIdentification / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00305",
@@ -2464,7 +2464,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:SellersItemIdentification/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:SellersItemIdentification / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00306",
@@ -2472,7 +2472,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:StandardItemIdentification / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00307",
@@ -2480,8 +2480,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID",
         "Test": "not(@schemeID) or (some $code in $clICD satisfies $code = normalize-space(@schemeID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID",
-        "Codelist": "ISO 6523 ICD list"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:StandardItemIdentification / cbc:ID / @schemeID\n",
+        "Codelist": "\nISO 6523 ICD list\n"
     },
     {
         "Identifier": "BASIC-00308",
@@ -2489,7 +2489,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry",
         "Test": "cbc:IdentificationCode[1] and not(cbc:IdentificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:OriginCountry / cbc:IdentificationCode\n"
     },
     {
         "Identifier": "BASIC-00309",
@@ -2497,8 +2497,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode",
         "Test": "(some $code in $clISO3166 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:OriginCountry/cbc:IdentificationCode",
-        "Codelist": "Country codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:OriginCountry / cbc:IdentificationCode\n",
+        "Codelist": "\nCountry codes\n"
     },
     {
         "Identifier": "BASIC-00310",
@@ -2506,7 +2506,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification",
         "Test": "cbc:ItemClassificationCode[1] and not(cbc:ItemClassificationCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:CommodityClassification / cbc:ItemClassificationCode\n"
     },
     {
         "Identifier": "BASIC-00311",
@@ -2514,8 +2514,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode",
         "Test": "not(@listID) or (some $code in $clUNCL7143 satisfies $code = normalize-space(@listID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/@listID",
-        "Codelist": "Item type identification code"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:CommodityClassification / cbc:ItemClassificationCode / @listID\n",
+        "Codelist": "\nItem type identification code\n"
     },
     {
         "Identifier": "BASIC-00312",
@@ -2523,7 +2523,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00313",
@@ -2531,7 +2531,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
         "Test": "not(cbc:Percent[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:Percent"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cbc:Percent\n"
     },
     {
         "Identifier": "BASIC-00314",
@@ -2539,7 +2539,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
         "Test": "not(cbc:PerUnitAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:PerUnitAmount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cbc:PerUnitAmount\n"
     },
     {
         "Identifier": "BASIC-00315",
@@ -2547,7 +2547,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
         "Test": "not(cbc:TaxExemptionReasonCode[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReasonCode"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cbc:TaxExemptionReasonCode\n"
     },
     {
         "Identifier": "BASIC-00316",
@@ -2555,7 +2555,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
         "Test": "not(cbc:TaxExemptionReason[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:TaxExemptionReason"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cbc:TaxExemptionReason\n"
     },
     {
         "Identifier": "BASIC-00317",
@@ -2563,7 +2563,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory",
         "Test": "cac:TaxScheme[1] and not(cac:TaxScheme[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cac:TaxScheme\n"
     },
     {
         "Identifier": "BASIC-00318",
@@ -2571,8 +2571,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID",
         "Test": "(some $code in $clUNCL5305 satisfies $code = normalize-space())",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cbc:ID",
-        "Codelist": "Duty or tax or fee category code (Subset: Codes used in Japan)"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cbc:ID\n",
+        "Codelist": "\nDuty or tax or fee category code (Subset: Codes used in Japan)\n"
     },
     {
         "Identifier": "BASIC-00319",
@@ -2580,7 +2580,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme",
         "Test": "cbc:ID[1] and not(cbc:ID[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:ClassifiedTaxCategory/cac:TaxScheme/cbc:ID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:ClassifiedTaxCategory / cac:TaxScheme / cbc:ID\n"
     },
     {
         "Identifier": "BASIC-00320",
@@ -2588,7 +2588,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty",
         "Test": "cbc:Name[1] and not(cbc:Name[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:AdditionalItemProperty / cbc:Name\n"
     },
     {
         "Identifier": "BASIC-00321",
@@ -2596,7 +2596,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty",
         "Test": "cbc:Value[1] and not(cbc:Value[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Value"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Item / cac:AdditionalItemProperty / cbc:Value\n"
     },
     {
         "Identifier": "BASIC-00322",
@@ -2604,7 +2604,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price",
         "Test": "cbc:PriceAmount[1] and not(cbc:PriceAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cbc:PriceAmount\n"
     },
     {
         "Identifier": "BASIC-00323",
@@ -2612,7 +2612,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price",
         "Test": "not(cbc:BaseQuantity[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cbc:BaseQuantity\n"
     },
     {
         "Identifier": "BASIC-00324",
@@ -2620,7 +2620,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price",
         "Test": "not(cac:AllowanceCharge[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge\n"
     },
     {
         "Identifier": "BASIC-00325",
@@ -2628,7 +2628,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount",
         "Test": "@currencyID",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount/@currencyID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cbc:PriceAmount / @currencyID\n"
     },
     {
         "Identifier": "BASIC-00326",
@@ -2636,8 +2636,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cbc:PriceAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00327",
@@ -2645,8 +2645,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity",
         "Test": "not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = normalize-space(@unitCode))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cbc:BaseQuantity/@unitCode",
-        "Codelist": "Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cbc:BaseQuantity / @unitCode\n",
+        "Codelist": "\nRecommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)\n"
     },
     {
         "Identifier": "BASIC-00328",
@@ -2654,7 +2654,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge",
         "Test": "cbc:ChargeIndicator[1] and not(cbc:ChargeIndicator[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:ChargeIndicator\n"
     },
     {
         "Identifier": "BASIC-00329",
@@ -2662,7 +2662,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge",
         "Test": "cbc:Amount[1] and not(cbc:Amount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:Amount\n"
     },
     {
         "Identifier": "BASIC-00330",
@@ -2670,7 +2670,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge",
         "Test": "not(cbc:BaseAmount[2])",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:BaseAmount\n"
     },
     {
         "Identifier": "BASIC-00331",
@@ -2678,7 +2678,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator",
         "Test": "normalize-space() = 'false'",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:ChargeIndicator"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:ChargeIndicator\n"
     },
     {
         "Identifier": "BASIC-00332",
@@ -2686,7 +2686,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount",
         "Test": "@currencyID",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount/@currencyID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:Amount / @currencyID\n"
     },
     {
         "Identifier": "BASIC-00333",
@@ -2694,8 +2694,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:Amount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:Amount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00334",
@@ -2703,7 +2703,7 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount",
         "Test": "@currencyID",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount/@currencyID"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:BaseAmount / @currencyID\n"
     },
     {
         "Identifier": "BASIC-00335",
@@ -2711,8 +2711,8 @@
         "Flag": "fatal",
         "Context": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount",
         "Test": "not(@currencyID) or (some $code in $clISO4217 satisfies $code = normalize-space(@currencyID))",
-        "Syntax binding": "ubl:Invoice/cac:InvoiceLine/cac:Price/cac:AllowanceCharge/cbc:BaseAmount/@currencyID",
-        "Codelist": "Currency codes"
+        "Syntax binding": "\nubl:Invoice / cac:InvoiceLine / cac:Price / cac:AllowanceCharge / cbc:BaseAmount / @currencyID\n",
+        "Codelist": "\nCurrency codes\n"
     },
     {
         "Identifier": "BASIC-00336",
