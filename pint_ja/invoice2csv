@@ -252,8 +252,8 @@ def fillData(parent,parentXPath,i,count):
       text = ''
     text = text.strip().replace('\n','\\n')
     rows[n][semSort] = {'id':id,'level':level,'BT':BT,'text':text}
-    # if DEBUG:
-    #   print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={i:03d} * {rows[n][semSort]}')
+    if DEBUG:
+      print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={i:03d} * {rows[n][semSort]}')
   return i + 1
 
 def fillGroup(parent,parentPath,i,parentCount):
@@ -266,8 +266,8 @@ def fillGroup(parent,parentPath,i,parentCount):
   level = data['level']
   BT = data['BT']
   xpath = data['xpath']
-  # if DEBUG:
-  #   print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={i:03d} - fillGroup {BT}({id})')
+  if DEBUG:
+    print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={i:03d} - fillGroup {BT}({id})')
   if not xpath or len(xpath) < 9:
     return i + 1
   while i < len(pintList):
@@ -329,8 +329,8 @@ def fillGroup(parent,parentPath,i,parentCount):
           _id = _data['id']
           _level = _data['level']
           _BT = _data['BT']
-          # if DEBUG:
-          #   print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={_i:03d} - fillGroup -check- {BT}({id})[{count}] -> {_BT}({_id})')
+          if DEBUG:
+            print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={_i:03d} - fillGroup -check- {BT}({id})[{count}] -> {_BT}({_id})')
           while _level > level and _i < len(pintList):
             next_i = None
             if re.match(r'^ibg-',_id):
@@ -356,7 +356,7 @@ def fillGroup(parent,parentPath,i,parentCount):
         next_i = None
       else:
         i = _i + 1
-  return i
+      return i
 
 if __name__=='__main__':
   # Create the parser
@@ -435,16 +435,6 @@ if __name__=='__main__':
   COL_datatype = 11
   COL_SyntaxSort = 14
   COL_xpath = 15
-  # # SemSort,ID,Level,BT,Definition,Card,DataType,Section,SyntSort,XPath,Path,selectors,CodeList,
-  # # 0       1  2     3  4          5    6        7       8        9     10   11        12
-  # COL_SemanticSort = 0
-  # COL_ID = 1
-  # COL_level = 2
-  # COL_BT = 3
-  # COL_card = 5
-  # COL_datatype = 6
-  # COL_SyntaxSort = 8
-  # COL_xpath = 9
   if verbose: print(f'*** XPath file {pint_file}')
   with open(pint_file,encoding='utf-8',newline='') as f0:
     reader = csv.reader(f0) #,delimiter='\t')
