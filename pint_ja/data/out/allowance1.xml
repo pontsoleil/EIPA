@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ubl-invoice:Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+<ubl:Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-  xmlns:ubl-invoice="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
-  <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+  xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+  <cbc:CustomizationID>urn:peppol:pint:billing-3.0@jp:peppol-1</cbc:CustomizationID>
   <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
   <cbc:ID>000016</cbc:ID>
   <cbc:IssueDate>2003-03-04</cbc:IssueDate>
@@ -10,6 +10,8 @@
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>JPY</cbc:DocumentCurrencyCode>
   <cac:InvoicePeriod>
+    <cbc:StartDate>2003-03-01</cbc:StartDate>
+    <cbc:EndDate>2003-03-31</cbc:EndDate>
     <cbc:DescriptionCode>3</cbc:DescriptionCode>
   </cac:InvoicePeriod>
   <cac:OrderReference>
@@ -17,9 +19,9 @@
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:EndpointID>0188</cbc:EndpointID>
+      <cbc:EndpointID schemeID="0188">JP8700110005901</cbc:EndpointID>
       <cac:PartyIdentification>
-        <cbc:ID>123456:000123:0147:1</cbc:ID>
+        <cbc:ID schemeID="0147">123456:000123:0147:1</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>株式会社 ○○商事</cbc:Name>
@@ -35,10 +37,7 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>T1234567890123</cbc:CompanyID>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
+        <cbc:CompanyID>T8700110005901</cbc:CompanyID>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
         <cbc:RegistrationName>株式会社 ○○商事</cbc:RegistrationName>
@@ -111,10 +110,7 @@
   </cac:PaymentMeans>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-  </cac:AllowanceCharge>
-  <cac:AllowanceCharge>
     <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
-    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:Amount currencyID="JPY">17700</cbc:Amount>
     <cac:TaxCategory>
       <cbc:ID>S</cbc:ID>
@@ -128,10 +124,10 @@
       <cbc:TaxAmount currencyID="JPY">8770</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>S</cbc:ID>
-        <cbc:Percent>10</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
+        <cbc:Percent>10</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
@@ -139,10 +135,10 @@
       <cbc:TaxAmount currencyID="JPY">3200</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID>AA</cbc:ID>
-        <cbc:Percent>8</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
+        <cbc:Percent>8</cbc:Percent>
       </cac:TaxCategory>
     </cac:TaxSubtotal>
   </cac:TaxTotal>
@@ -175,12 +171,6 @@
       <cbc:PriceAmount currencyID="JPY">30</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
-    <cac:AllowanceCharge>
-      <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
-      <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
-      <cbc:Amount currencyID="JPY">10000</cbc:Amount>
-      <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>
-    </cac:AllowanceCharge>
   </cac:InvoiceLine>
   <cac:InvoiceLine>
     <cbc:ID>20</cbc:ID>
@@ -211,6 +201,10 @@
     <cbc:LineExtensionAmount currencyID="JPY">40000</cbc:LineExtensionAmount>
     <cac:AllowanceCharge>
       <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>値引き</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="JPY">10000</cbc:Amount>
+      <cbc:BaseAmount currencyID="JPY">500000</cbc:BaseAmount>
     </cac:AllowanceCharge>
     <cac:Item>
       <cbc:Name>回転椅子　K</cbc:Name>
@@ -231,4 +225,4 @@
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
     </cac:Price>
   </cac:InvoiceLine>
-</ubl-invoice:Invoice>
+</ubl:Invoice>

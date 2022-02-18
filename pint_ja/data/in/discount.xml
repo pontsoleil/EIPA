@@ -1,7 +1,10 @@
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+<?xml version='1.0' encoding='utf-8'?>
+<Invoice 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
+  xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+  xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
   <cbc:CustomizationID>urn:peppol:pint:billing-3.0@jp:peppol-1</cbc:CustomizationID>
   <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
   <cbc:ID>000016</cbc:ID>
@@ -10,6 +13,8 @@
   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode>JPY</cbc:DocumentCurrencyCode>
   <cac:InvoicePeriod>
+    <cbc:StartDate>2003-03-01</cbc:StartDate>
+    <cbc:EndDate>2003-03-31</cbc:EndDate>
     <cbc:DescriptionCode>3</cbc:DescriptionCode>
   </cac:InvoicePeriod>
   <cac:OrderReference>
@@ -17,9 +22,9 @@
   </cac:OrderReference>
   <cac:AccountingSupplierParty>
     <cac:Party>
-      <cbc:EndpointID schemeID="0188">JP1234567890123</cbc:EndpointID>
+      <cbc:EndpointID schemeID="0188">JP8700110005901</cbc:EndpointID>
       <cac:PartyIdentification>
-        <cbc:ID>123456:000123:0147:1</cbc:ID>
+        <cbc:ID schemeID="0147">123456:000123:0147:1</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
         <cbc:Name>株式会社 ○○商事</cbc:Name>
@@ -35,7 +40,7 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
-        <cbc:CompanyID>T1234567890123</cbc:CompanyID>
+        <cbc:CompanyID>T8700110005901</cbc:CompanyID>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>
@@ -105,14 +110,6 @@
       </cac:PartyName>
     </cac:DeliveryParty>
   </cac:Delivery>
-  <cac:PaymentMeans>
-    <cbc:PaymentMeansCode name="Credit transfer">30</cbc:PaymentMeansCode>
-    <cbc:PaymentID>Snippet1</cbc:PaymentID>
-    <cac:PayeeFinancialAccount>
-      <cbc:ID>1234:12:1:123456789</cbc:ID>
-      <cbc:Name>株式会社 ○○商事</cbc:Name>
-    </cac:PayeeFinancialAccount>
-  </cac:PaymentMeans>
   <cac:AllowanceCharge>
     <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
     <cbc:AllowanceChargeReason>諸掛</cbc:AllowanceChargeReason>
@@ -225,8 +222,7 @@
       <cbc:PriceAmount currencyID="JPY">40000</cbc:PriceAmount>
       <cbc:BaseQuantity unitCode="EA">1</cbc:BaseQuantity>
       <cac:AllowanceCharge>
-        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>        <!-- discount -->
-        <cbc:MultiplierFactorNumeric>20</cbc:MultiplierFactorNumeric>
+        <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
         <cbc:Amount currencyID="JPY">10000</cbc:Amount>
         <cbc:BaseAmount currencyID="JPY">50000</cbc:BaseAmount>
       </cac:AllowanceCharge>

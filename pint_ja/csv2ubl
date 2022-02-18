@@ -1,0 +1,368 @@
+#!/usr/bin/env python3
+#coding: utf-8
+#
+# generate UBL 2.1 instance fron CSV file
+# 
+# designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+# written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+#
+# MIT License
+# 
+# Copyright (c) 2021 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+import csv
+import re
+import json
+import sys 
+import os
+import argparse
+import math
+
+from dic2etree import *
+
+ET.register_namespace('', ns[''])
+ET.register_namespace('xsd', ns['xsd'])
+ET.register_namespace('xsi', ns['xsi'])
+ET.register_namespace('cac', ns['cac'])
+ET.register_namespace('cbc', ns['cbc'])
+ET.register_namespace('qdt', ns['qdt'])
+ET.register_namespace('udt', ns['udt'])
+ET.register_namespace('ccts', ns['ccts'])
+# ET.register_namespace('cn', ns['cn'])
+ET.register_namespace('ubl', ns['ubl'])
+
+def file_path(pathname):
+  if '/' == pathname[0:1]:
+    return pathname
+  else:
+    dir = os.path.dirname(__file__)
+    new_path = os.path.join(dir, pathname)
+    return new_path
+
+def set_path_value(base, path, value, datatype):
+  global CurrencyCode
+  if DEBUG:
+    tag = re.sub(r'{.*}','',str(base.tag))
+    if len(path) > 1:
+      print(f'- {tag} {"/".join(path)}')
+    else:
+      print(f'- {tag} {"/".join(path)}  {value}')
+  if len(path) > 1 and path[1].isdigit():
+    n = int(path[1])
+    path = path[:1]+path[2:]
+  else:
+    n = 0
+  if len(path) > 1 and '@'==path[1][:1]:
+    _attr = path[1][1:]
+    p = path[0].split(':')
+    el = ET.QName(ns[p[0]], p[1])
+    elements = base.findall(str(el))
+    if DEBUG:
+      print(f'  set @{_attr} {value}')
+    elements[0].set(_attr, value)
+  else:
+    if path[0] == 'Invoice':
+      p = path[1].split(':')
+    else:
+      p = path[0].split(':')
+    if not p[0] in ns:
+      print (p)
+    else:
+      if tag==p[1]:
+        p = path[1].split(':')
+      el = ET.QName(ns[p[0]], p[1])
+      elements = base.findall(str(el))
+    if len(elements) > 0:
+      if len(elements) > n:
+        element = elements[n]
+      else:
+        element = ET.SubElement(base, el)
+      if 'cbc'==p[0]:
+        if DEBUG:
+          print(f'  set value{value}')
+        element.text = value
+      else:
+        _path = path[1:]
+        set_path_value(element, _path, value, datatype)
+    else:
+      element = ET.SubElement(base, el)
+      if 'cbc'==p[0]:
+        if DEBUG:
+          print(f'  set value{value}')
+        if datatype in ['Numerictype','QuantityType','AmountType']:
+          element.text = str(value[0])
+        else:
+          element.text = value[0]
+        if (len(value)>1):
+          for i in range(len(value))[1:]:
+            v = value[i]
+            attr = [k for k in v.keys()][0]
+            val = v[attr]
+            _attr = attr[1:]
+            if DEBUG:
+              print(f'  set @{_attr} {val}')
+            element.set(_attr, val)
+      else:
+        _path = path[1:]
+        set_path_value(element, _path, value, datatype)
+
+def set_element(base,path,v):
+  name = v['name']
+  datatype = v['datatype']
+  if 'BinaryObjectType'==datatype:
+    return
+  example = v['example']
+  if 'cbc'==name[:3]:
+    if not example:
+      example = exampleValue[datatype]
+    set_path_value(base, path, example, datatype)
+
+def set_associated(base,path,v,op,depth):
+  uniq = list(set(path))
+  if len(path) > len(uniq):
+    return
+  if depth > MAX_DEPTH and '1'!=v['card'][:1]:
+    return
+  depth += 1
+  name = v['name']
+  associated = v['associated']
+  card = v['card']
+  if 'cbc'==name[:3]:
+    return
+  if 'cac'==name[:3]:
+    pass
+  if associated:
+    name = associated
+  children = commonDict[name]
+  for child in children:
+    childName = child['name']
+    childCard = child['card']
+    basePath = path+[childName]
+    if 'min'==op:
+      if '1'==childCard[:1]:
+        if 'cbc'==childName[:3]:
+          set_element(base,basePath,child)
+        elif 'cac'==childName[:3]:
+          set_associated(base,basePath,child,op,depth)
+    elif 'max'==op:
+      if 'cbc'==childName[:3]:
+        set_element(base,basePath,child)
+      elif 'cac'==childName[:3]:
+        if depth>1 and child['name'] in ['cac:SellerContact','cac:ServiceProviderParty']:
+          continue
+        set_associated(base,basePath,child,op,depth)
+
+if __name__ == '__main__':
+  # Create the parser
+  parser = argparse.ArgumentParser(prog='csv2invoice',
+                                  usage='%(prog)s [options] ubl common -o outfile',
+                                  description='CSVファイルから電子インボイスXMLを作成')
+  # Add the arguments
+  parser.add_argument('ublFile', metavar='ubl', type=str, help='UBL CSVファイル')
+  parser.add_argument('commonFile', metavar='common', type=str, help='Common CSVファイル')
+  parser.add_argument('-o', '--out')
+  parser.add_argument('-e', '--encoding')  # 'Shift_JIS' 'cp932'
+  parser.add_argument('-v', '--verbose', action='store_true')
+  parser.add_argument('-d', '--debug', action='store_true')
+
+  args = parser.parse_args()
+  ubl_file = file_path(args.ublFile)
+  common_file = file_path(args.commonFile)
+  pre, ext = os.path.splitext(ubl_file)
+  if args.out:
+    out_file = args.out.lstrip()
+    out_file = file_path(out_file)
+  else:
+    out_file = pre+'.xml'
+  ncdng = args.encoding
+  if ncdng:
+    ncdng = ncdng.lstrip()
+  if not ncdng:
+    ncdng = 'UTF-8'
+  VERBOSE = args.verbose
+  DEBUG = args.debug
+
+  # Check if infile exists
+  if not os.path.isfile(ubl_file) or not os.path.isfile(common_file):
+    print('入力ファイルがありません')
+    sys.exit()
+  if VERBOSE:
+    print('** START ** ', __file__)
+
+  # # initialize globals
+  ublDict = {}
+  ublList = None
+  commonDict = {}
+  commonList = None
+  CurrencyCode = 'JPY'
+  exampleValue = {
+    'IdentifierType':['abc-123'],
+    'IndicatorType':['true'],
+    'CodeType':['9876543'],
+    'NameType':['名前/name'],
+    'TextType':['例/text'],
+    'NumericType':['7'],
+    'QuantityType':['56.78',{'@unitCode':'EA'}],
+    'AmountType':['90.12', {'@currencyID':'JPY'}],
+    'MeasureType':['123',{'@unitCode':'XYZ'}],
+    'PercentType':['76.54'],
+    'RateType':['34.56'],
+    'DateType':['2021-05-14'],
+    'TimeType':['12:34:56']
+  }
+  MAX_DEPTH = 4
+
+  ubl_file = file_path(ubl_file)
+  # name Cardinality DataType AssociatedObjectClass Definition Examples
+  # 0    1           2        3                     4          5
+  COL_name = 0
+  COL_card = 1
+  COL_datatype = 2
+  COL_associated = 3
+  COL_definition = 4
+  COL_example = 5
+  if VERBOSE:
+    print(f'*** UBL file {ubl_file}')
+  with open(ubl_file, encoding=ncdng, newline='') as f:
+    reader = csv.reader(f) #, delimiter='\t')
+    header = next(reader)
+    abie = None
+    for v in reader:
+      name = ''+v[COL_name].strip()
+      if name:
+        card = ''+v[COL_card].strip()
+        datatype = ''+v[COL_datatype].strip()
+        associated = v[COL_associated].strip()
+        if associated:
+          associated = 'cac:'+associated
+        else:
+          associated = ''
+        definition = ''+v[COL_definition].strip()
+        example = v[COL_example].strip()
+        if example:
+          example = [example]
+        if ''==card and 'Invoice'==name:
+          abie = name
+          ublList = []
+        data = {'name':name,'card':card,'datatype':datatype,'associated':associated,'definition':definition,'example':example}
+        ublList.append(data)
+    ublDict['Invoice'] = ublList
+
+  if VERBOSE:
+    print(f'***Common file {common_file}')
+  # name Cardinality DataType AssociatedObjectClass Cyclic Definition Examples
+  # 0    1           2        3                     4      5          6
+  COL_name = 0
+  COL_card = 1
+  COL_datatype = 2
+  COL_associated = 3
+  COL_cyclic = 4
+  COL_definition = 5
+  COL_example = 6
+  with open(common_file, encoding=ncdng, newline='') as f:
+    reader = csv.reader(f) #, delimiter='\t')
+    header = next(reader)
+    abie = None
+    # pathList = []
+    for v in reader:
+      name = ''+v[COL_name].strip()
+      if name:
+        card = ''+v[COL_card].strip()
+        datatype = ''+v[COL_datatype].strip()
+        associated = v[COL_associated].strip()
+        if associated:
+          associated = 'cac:'+associated
+        else:
+          associated = ''
+        cyclic = ''+v[COL_cyclic].strip()
+        definition = ''+v[COL_definition].strip()
+        example = v[COL_example].strip()
+        if 'IndicatorType'==datatype:
+          if '1'==example:
+            example = 'true'
+          elif '0'==example:
+            example = 'false'
+        if example:
+          if datatype in ['QuantityType','MeasureType','AmountType']:
+            example = [example,exampleValue[datatype][1]]
+          else:
+            example = [example]
+        elif 'cbc:'==name[:4] and 'BinaryObjectType'!=datatype:
+          example = exampleValue[datatype]
+        if ''==card and 'cac'==name[:3]:
+          abie = name
+          commonDict[abie] = []
+        else:
+          if 'cac:ServiceProviderParty' != abie and \
+              (abie == associated or 'x'==cyclic):
+            continue
+          data = {'name':name,'card':card,'datatype':datatype,'associated':associated,'definition':definition,'example':example}
+          commonDict[abie].append(data)
+
+  invoiceText = '''
+  <ubl:Invoice 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+    xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
+  '''  # this step adds xsi:schemaLocation attribute
+  root = ET.XML(invoiceText)
+  # root = ET.Element(ET.QName(ns[''], 'Invoice'))
+  path = ['Invoice']
+  children = None
+  for k,d in ublDict.items():
+    for v in d:
+      base = path
+      name = v['name']
+      associated = v['associated']
+      card = v['card']
+      if '1'==card[:1]:
+        basePath = path+[name]
+        if 'cbc'==name[:3]:
+          set_element(root,basePath,v)
+        elif 'cac'==name[:3]:
+          set_associated(root,basePath,v,'min',0)
+  min_out_file = out_file.replace('.xml','_min.xml')
+  ET.ElementTree(root).write(min_out_file, xml_declaration=True, encoding='utf-8')
+
+  root = ET.XML(invoiceText)
+  # root = ET.Element(ET.QName(ns[''], 'Invoice'))
+  path = ['Invoice']
+  children = None
+  for k,d in ublDict.items():
+    for v in d:
+      base = path
+      name = v['name']
+      associated = v['associated']
+      card = v['card']
+      basePath = path+[name]
+      if 'cbc'==name[:3]:
+        set_element(root,basePath,v)
+      elif 'cac'==name[:3]:
+        set_associated(root,basePath,v,'max',0)
+  max_out_file = out_file.replace('.xml','_max.xml')
+  ET.ElementTree(root).write(max_out_file, xml_declaration=True, encoding='utf-8')
+
+  if VERBOSE:
+    print(f'** END ** {out_file}')

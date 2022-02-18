@@ -72,7 +72,7 @@ def formatXPath(xpath):
     else:
       xpath = xpath.replace('/Invoice/cbc:DocumentCurrencyCode/text()','"'+DocumentCurrencyCode+'"')
     # if DEBUG: print(f'{getframeinfo(currentframe()).lineno:03d}: xpath={xpath}')
-  xpath = re.sub(r'/Invoice','/{'+ns['ubl-invoice']+'}Invoice',xpath)
+  xpath = re.sub(r'/Invoice','/{'+ns['ubl']+'}Invoice',xpath)
   xpath = re.sub(r'cac:','{'+ns['cac']+'}',xpath)
   xpath = re.sub(r'cbc:','{'+ns['cbc']+'}',xpath)
   if re.match(r'^.*/@[a-zA-Z]*$',xpath):
@@ -157,7 +157,10 @@ def fillData(parent,parentXPath,i,count):
         # e.g. .*[not({urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2}DocumentTypeCode='130')]
         xpath_ = re.sub(r'^(.*)\[not\(.*\)\]',r'\1',_xpath)
         __xpath = re.sub(r'^(.*)\[not\((.*)\)\]',r'\1[\2]',_xpath)
-        elements_ = root.findall(xpath_)
+        if parentXPath:
+          elements_ = parent.findall(xpath_)
+        else:
+          elements_ = root.findall(xpath_)
         if len(elements_) > 0:
           _elements = root.findall(__xpath)
           elements = list(set(elements_)-set(_elements))
@@ -173,19 +176,30 @@ def fillData(parent,parentXPath,i,count):
           else:
             text = element.findtext('.')
     else:
-      if re.match(r'^.*\[not\(.*\)\]',xpath): 
+      if re.match(r'^.*\[not\(.*\)\]',xpath):# and re.match(r''): 
+        element = None
         text = None
         # e.g. .*[not({urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2}DocumentTypeCode='130')]
         xpath = formatXPath(xpath)
-
-        xpath_ = re.sub(r'^(.*)\[not\(.*\)\]',r'\1',xpath)
-        _xpath = re.sub(r'^(.*)\[not\((.*)\)\]',r'\1[\2]',xpath)
-        elements_ = root.findall(xpath_)
+        if parentXPath:
+          _xpath = xpath.replace(parentXPath,'')[1:]
+        else:
+          _xpath = xpath
+        xpath_ = re.sub(r'^(.*)\[not\(.*\)\]',r'\1',_xpath)
+        __xpath = re.sub(r'^(.*)\[not\((.*)\)\]',r'\1[\2]',_xpath)
+        if parentXPath:
+          elements_ = parent.findall(xpath_)
+        else:
+          elements_ = root.findall(xpath_)
         if len(elements_) > 0:
-          _elements = root.findall(_xpath)
+          _elements = root.findall(__xpath)
           elements = list(set(elements_)-set(_elements))
           if len(elements) > 0:
             text = elements[0].text
+          else:
+            element = parent.find(_xpath)
+            if None != element:
+              text = element.text
       else:
         if parentXPath and not 'TaxTotal' in xpath:
           _xpath = xpath.replace(parentXPath+'/','')
@@ -235,10 +249,10 @@ def fillData(parent,parentXPath,i,count):
                 if attr_i:
                   i = attr_i
               i += 1
-            else:
-              i += 1
+            # else:
+            #   i += 1
   except SyntaxError:
-    print (f'-- SyntaxError .//{_xpath}')
+    print (f'-- SyntaxError {_xpath}')
   if text:
     if re.match(r'ibg-',id):
       text = ''
@@ -278,12 +292,10 @@ def fillGroup(parent,parentPath,i,parentCount):
     xpath = data['xpath']
     xpath = xpath[9:]
     xpath = formatXPath(xpath)
-
     if parentPath:
       _xpath = xpath.replace(parentPath+'/', '')
     else:
       _xpath = xpath
-    
     if re.match(r'ibt-',id):
       return None
     elif re.match(r'ibg-',id):
@@ -291,8 +303,12 @@ def fillGroup(parent,parentPath,i,parentCount):
         # e.g. .*[not({urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2}DocumentTypeCode='130')]
         xpath_ = re.sub(r'^(.*)\[not\(.*\)\]',r'\1',_xpath)
         __xpath = re.sub(r'^(.*)\[not\((.*)\)\]',r'\1[\2]',_xpath)
-        elements_ = root.findall(xpath_)
-        _elements = root.findall(__xpath)
+        if parentPath:
+          elements_ = parent.findall(xpath_)
+          _elements = parent.findall(__xpath)
+        else:
+          elements_ = root.findall(xpath_)
+          _elements = root.findall(__xpath)
         elements = list(set(elements_)-set(_elements))
       else:
         if 'InvoicePeriod' in xpath:
@@ -330,6 +346,7 @@ def fillGroup(parent,parentPath,i,parentCount):
           _level = _data['level']
           _BT = _data['BT']
           if DEBUG:
+            id = pintList[i]['id']
             print(f'{getframeinfo(currentframe()).lineno:03d}: n={n:02d} i={_i:03d} - fillGroup -check- {BT}({id})[{count}] -> {_BT}({_id})')
           while _level > level and _i < len(pintList):
             next_i = None
@@ -425,8 +442,8 @@ if __name__=='__main__':
     "{"+ns['cac']+"}Party/{"+ns['cac']+"}PartyTaxScheme/{"+ns['cac']+"}TaxScheme/{"+ns['cbc']+"}ID")
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Attributes,Codelist,Occurrence,CardinalityAlignment
-  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17         18       19         20
+  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Codelist,Occurrence,CardinalityAlignment
+  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17       18         19
   COL_SemanticSort = 0
   COL_ID = 1
   COL_level = 2
@@ -441,8 +458,10 @@ if __name__=='__main__':
     header = next(reader)
     for v in reader:
       id = v[COL_ID].strip()
-      if id:
+      if id:# and 'ibt-032'!=id:
         xpath = v[COL_xpath]
+        if re.match(r'^\/Invoice\/ext:UBLExtensions',xpath):
+          continue
         syntaxSort = v[COL_SyntaxSort]
         if not syntaxSort:
           syntaxSort = '9999'

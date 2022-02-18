@@ -6,13 +6,42 @@ validate = ( function () {
 
   function validate(form) {
     var html, htmls;
-    $('#validateModal').on('shown.bs.modal', function (e) {
+    var basic, pint, jp;
+    basic = $('input:checkbox[name="basicChecked"]:checked').val();
+    if (basic) {
+      basic=$('input:checkbox[name="basicChecked"]').closest('div').data('basename');
+      $('<input />')
+      .attr('type', 'hidden')
+      .attr('name', 'basic')
+      .attr('value', basic)
+      .appendTo('#validateForm');      
+    }
+    pint = $('input:checkbox[name="pintChecked"]:checked').val();
+    if (pint) {
+      pint=$('input:checkbox[name="pintChecked"]').closest('div').data('basename');
+      $('<input />')
+      .attr('type', 'hidden')
+      .attr('name', 'pint')
+      .attr('value', basic)
+      .appendTo('#validateForm');      
+    }
+    jp = $('input:radio[name="jpChecked"]:checked').val();
+    $('<input />')
+    .attr('type', 'hidden')
+    .attr('name', 'jp')
+    .attr('value', jp)
+    .appendTo('#validateForm'); 
+
+    $('#validateModal')
+    .on('shown.bs.modal', function (e) {
       progressbar.move(0);
       $('#spin').addClass('d-none')
       $('#log').html('')
     });
+
     progressbar.open();
-    $('#spin').removeClass('d-none')
+    $('#spin').removeClass('d-none');
+
     AjaxSubmit(form)
     .then(response => {
       $('#spin').addClass('d-none')
@@ -64,7 +93,10 @@ validate = ( function () {
     });
   }
 
+  function initModule() {  }
+
   return {
+    initModule: initModule,
     validate: validate
   };
 })();

@@ -53,17 +53,27 @@ filename=${file_dir}/${name}
 cp $Tmp-uploadfile ${filename}
 basename=${filename:0:-4}
 encode=$(mime-read encode $Tmp-cgivars)
+basic=$(mime-read basic $Tmp-cgivars)
+pint=$(mime-read pint $Tmp-cgivars)
+jp=$(mime-read jp $Tmp-cgivars)
 # === Validate Invoice ===============================================
-cat validate/Basic-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/Basic-validate.$$.xml
-cat validate/pint-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/pint-validate.$$.xml
-cat validate/jp-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/jp-validate.$$.xml
-
-mvn -f validate/Basic-validate.$$.xml validate
-mvn -f validate/pint-validate.$$.xml validate
+if [ -n basic ]; then
+  cat validate/Basic-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/Basic-validate.$$.xml
+  mvn -f validate/Basic-validate.$$.xml validate
+fi
+if [ -n pint ]; then
+  cat validate/pint-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/pint-validate.$$.xml
+  mvn -f validate/pint-validate.$$.xml validate
+fi
+if [[ "$jp" =~ .*"-R".* ]]; then
+  cat validate/jp-R-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/jp-validate.$$.xml
+else
+  cat validate/jp-validate.xml | sed -e "s/_examples_/$escaped_dir/g" > validate/jp-validate.$$.xml
+fi
 mvn -f validate/jp-validate.$$.xml validate
 
 rm -f $Tmp-*
-rm validate/jp-pint-validate.$$.xml
+rm validate/*-validate.$$.xml
 rm log/${0##*/}.$$.*
 exit 0
 # validate.cgi

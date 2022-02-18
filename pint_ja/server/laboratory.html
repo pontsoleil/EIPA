@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<html lang="ja">
 <head>
-  <title>Japanese PEPPOL BIS Invoice Convert</title>
+  <title>Peppol BIS Billing JP Laboratory</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -28,31 +29,31 @@
   <script src="server/snackbar.js" crossorigin="anonymous"></script>
   <script src="server/upload.js" crossorigin="anonymous"></script>
   <script src="server/validate.js" crossorigin="anonymous"></script>
+  <script src="server/convert.js" crossorigin="anonymous"></script>
   <script src="https://www.wuwei.space/jp_pint/billing-japan/js/main.js" crossorigin="anonymous"></script>
   <script type="text/javascript" class="init">
     $(document).ready(function () {
       $('[data-toggle="tooltip"]').tooltip()
-      // initModule();
+      validate.initModule();
     });
   </script>
 </head>
 <body>
   <div class="container">
 
-    <div class="page-header">
+    <div class="page-header p-3 bg-info text-white">
       <h1><i class="fa fa-square mr-2" aria-hidden="true"></i>Peppol Specifications for Japan (Candidate)</h1>
       <h2>Peppol BIS Billing JP 0.9</h2>
       <h4>Nobu's Laboratory</h4>
     </div>
 
-    <div class="card" style="width:48em; margin:16px auto;">
+    <div class="card p-3">
       <div class="card-body">
         <a href="https://www.wuwei.space/jp_pint/billing-japan/semantic/invoice/tree/en" class="list-group-item">
           <h4 class="list-group-item-heading">コアインボイス　セマンティックモデル</h4>
           <h5 class="list-group-item-heading">Standard Commercial Invoice, semantic data model</h5>
         </a>
       </div>
-
       <div class="card-body">
         <a href="https://www.wuwei.space/jp_pint/billing-japan/syntax/ubl-invoice/tree/en" class="list-group-item">
           <h4 class="list-group-item-heading">コアインボイス　シンタックス　バインディング</h4>
@@ -61,32 +62,387 @@
       </div>
     </div>
 
-    <div class="card" style="width:48em; margin:16px auto;">
+    <div class="card p-3 bg-light">      
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#validate" role="tab" aria-controls="validate" aria-selected="true">Validate</a>
+        <li class="nav-item bg-white">
+          <a class="nav-link active" id="examples-tab" data-toggle="tab" href="#examples" role="tab" aria-controls="examples" aria-selected="true">Examples</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#invoice2csv" role="tab" aria-controls="invoice2csv" aria-selected="false">Invoice->CSV</a>
+        <li class="nav-item bg-white">
+          <a class="nav-link" id="validate-tab" data-toggle="tab" href="#validate" role="tab" aria-controls="validate" aria-selected="false">Validate</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#csv2invoice" role="tab" aria-controls="csv2invoice" aria-selected="false">CSV->Invoice</a>
+        <li class="nav-item bg-white">
+          <a class="nav-link" id="csv2invoice-tab" data-toggle="tab" href="#csv2invoice" role="tab" aria-controls="csv2invoice" aria-selected="false">CSV->Invoice</a>
+        </li>
+        <li class="nav-item bg-white">
+          <a class="nav-link" id="invoice2csv-tab" data-toggle="tab" href="#invoice2csv" role="tab" aria-controls="invoice2csv" aria-selected="false">Invoice->CSV</a>
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="validate" role="tabpanel" aria-labelledby="home-tab">
-          <!-- validate -->
-          <div class="card" style="width:48em; margin:16px auto;">
+        <div class="tab-pane fade show active" id="examples" role="tabpanel" aria-labelledby="examples-tab">
+        <div class="card">
+          <div class="card-body">
+            <dl class="row">
+              <dt class="col-3">
+                <h5 class="m-3">インボイス（例）</h5>
+              </dt>
+              <dd class="col-9">
+                <table class="table">
+                  <colgroup>
+                    <col width="55%">
+                    <col width="15%">
+                    <col width="15%">
+                    <col width="15%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">&nbsp;</th>
+                      <th scope="col">XML(UBL2.1)</th>
+                      <th scope="col">XSLT変換</th>
+                      <th scope="col">CSV</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-basename="examples/Snippet-full">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">全ての要素を使用した例(UTF-8)<br>Peppol BIS Billing JP 0.9 [Download resources]から</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/Snippet-full.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/Snippet-full.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr data-basename="examples/Snippet-full-EIPA">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">全ての要素を使用した例(請求書通貨が外貨)(Shift_JIS)</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/Snippet-full-EIPA.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/Snippet-full-EIPA.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr data-basename="examples/Minimal-PINT">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">ルールで必須とされる最小項目(Shift_JIS)</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/Minimal-PINT.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/Minimal-PINT.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr data-basename="examples/discount">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">品目の値引(Shift_JIS)</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/discount.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/discount.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr data-basename="examples/allowance1">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">明細行での値引(Shift_JIS)</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/allowance1.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/allowance1.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr data-basename="examples/allowance2">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">文書全体での値引(Shift_JIS)</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/allowance2.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/allowance2.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr data-basename="examples/round">
+                      <td scope="row" data-toggle="tooltip" data-placement="left">丸め計算(Shift_JIS)</td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/round.xml" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowHTML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                      <td>
+                        <a href="#" onclick="convert.openWindowTABLE(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                          <i class="fa fa-window-restore" aria-hidden="true"></i>
+                        </a>
+                        <a href="examples/round.csv" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                          <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </dd>
+            </dl>
+          </div>
+        </div>          
+        </div>
+        <div class="tab-pane fade" id="validate" role="tabpanel" aria-labelledby="validate-tab">
+          <div class="card">
             <div class="card-body">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#validateModal" style="width:100%">
                 オープンペポル電子インボイスをルール検証（スキーマトロン）<br/>Validate Open Peppol eInvoice with Schematron
               </button>
+              <h3>Rules</h3>
+              <div data-basename="examples/BASIC-UBL-validation-preprocessed" class="input-group-text bg-white border-0">
+                <input type="checkbox" name="basicChecked" id="basicChecked" aria-label="Checkbox for Basic Rule" checked>
+                <label for="basicRule" class="col-sm-4 col-form-label">Basic rules</label>
+                <input type="text" readonly class="form-control-plaintext px-3" id="basicRule" value="BASIC-UBL-validation-preprocessed.sch">
+                <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                  <i class="fa fa-window-restore" aria-hidden="true"></i>
+                </a>
+                <a href="validation/ubl/schematron/preprocessed/BASIC-UBL-validation-preprocessed.sch" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+              </div>
+              <hr>
+              <div data-basename="examples/PINT-UBL-validation-preprocessed" class="input-group-text bg-white border-0">
+                <input type="checkbox" name="pintChecked" id="pintChecked" aria-label="Checkbox for PINT Rulle" checked>
+                <label for="pintRule" class="col-sm-4 col-form-label">Shared PINT rules</label>
+                <input type="text" readonly class="form-control-plaintext px-3" id="pintRule" value="PINT-UBL-validation-preprocessed.sch">
+                <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                  <i class="fa fa-window-restore" aria-hidden="true"></i>
+                </a>
+              </div>
+              <hr>
+              <div data-basename="examples/Japan-UBL-validation-preprocessed" class="input-group-text bg-white border-0">
+                <input type="radio" name="jpChecked" id="jpChecked" aria-label="Checkbox for JP Rule" value="Japan-UBL-validation-preprocessed" checked>
+                <label for="jpRule" class="col-sm-4 col-form-label">Aligned validation rules for Japan</label>
+                <input type="text" readonly class="form-control-plaintext px-3" id="jpRule" value="Japan-UBL-validation-preprocessed.sch">
+                <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                  <i class="fa fa-window-restore" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div data-basename="examples/Japan-UBL-validation-preprocessed-R1" class="input-group-text bg-white border-0">
+                <input type="radio" name="jpChecked" id="jpCheckedR" aria-label="Checkbox for JP Rule (revised)" value="Japan-UBL-validation-preprocessed-R1">
+                <label for="jpRuleR" class="col-sm-4 col-form-label">Aligned validation rules for Japan (revised)</label>
+                <input type="text" readonly class="form-control-plaintext px-3" id="jpRuleR" value="Japan-UBL-validation-preprocessed-R1.sch">
+                <a href="#" onclick="convert.openWindowXML(event)" data-toggle="tooltip" data-placement="left" title="サブウィンドウで表示">
+                  <i class="fa fa-window-restore" aria-hidden="true"></i>
+                </a>
+                <a href="validation/ubl/schematron/preprocessed/Japan-UBL-validation-preprocessedーR1.sch" download data-toggle="tooltip" data-placement="right" title="ファイルをダウンロード">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+              </div>
+              <h4>Basic rule</h4>
+              <p>
+                <a href="https://test-docs.peppol.eu/japan/master/billing-1.0/">Peppol BIS Billing JP 0.9</a> does not cantain schematron file for Basic rule in the zip file dounloaded from <a href="https://test-docs.peppol.eu/japan/master/billing-1.0/resources.zip">[Download resources]</a>
+                This page uses excerpts from <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931/blob/master/ubl/schematron/preprocessed/EN16931-UBL-validation-preprocessed.sch">EN16931-UBL-validation-preprocessed.sch</a>. 
+              </p>
+              <h4>Known issues</h4>
+              <h5>1.</h5>
+              <p></p>
+                0188 is Japanese Tax Agency code listed as a designator of ISO/IEC 6523-2:1998(en)
+                Information technology — Structure for the identification of organizations and organization parts — Part 2: Registration of organization identification schemes
+                [ibr-cl-25]-Endpoint identifier scheme identifier MUST belong to the CEF EAS code list
+              </p>
+              <h5>2.</h5>
+              <p>
+                When I tested it with the software Oxygen XML Editor, I got the error "A sequence of more than one item is not allowed as the first argument of fn: round () (10, 8)".
+                The relevant part is [jp-br-co-01]. Since there are multiple cac: TaxSubtotal/cac: TaxCategory/cbc: Percent, it is interpreted that multiple elements are specified in the round () function, resulting in an error.
+              </p>
+              Errata<br>
+                <pre><code class="bg-white">
+&lt;rule context="/ubl:Invoice/cac:TaxTotal[cbc:TaxAmount/@currencyID=../cbc:DocumentCurrencyCode]/cac:TaxSubtotal">
+  &lt;let name="category" value="cac:TaxCategory/cbc:ID"/>
+  &lt;let name="rate" value="cac:TaxCategory/xs:decimal(cbc:Percent)"/>
+  &lt;let name="taxableAmount" value="xs:decimal(cbc:TaxableAmount)"/>
+  &lt;let name="taxAmount" value="xs:decimal(cbc:TaxAmount)"/>
+  &lt;assert id="jp-br-co-01" flag="fatal" test="
+  (
+    $taxAmount >= floor($taxableAmount * ($rate div 100)) and 
+    $taxAmount &lt;= ceiling($taxableAmount * ($rate div 100))
+  )">[jp-br-co-01]-Tax category tax amount (ibt-117) = Tax category taxable amount (ibt-116) X Tax category rate (ibt-119) ÷ 100, rounded to integer. The rounded result amount shall be between the floor and the ceiling.&lt;/assert>
+&lt;/rule>
+                </code></pre>
+                <h5>3.</h5>
+                <p>Both jp-e-01 and jp-e-09 are defined under following.</p>
+                &lt;rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'G'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+                [normalize-space(cbc:ID) = 'G'] shall be [normalize-space(cbc:ID) = 'E']
+                <h5>4.</h5>
+                <p>When using ibt-111 ibt-110 is in foreign currency. Japanese rule regarding taxable amounts (jp-br-co-05) does not apply to foreign currencies. We may need to add [BR-S-08] and/or related rules in BIS Billing 3.0 to support tax total in foreign currency.</p>
+                <pre><code class="bg-white">
+&lt;rule context="cac:TaxTotal/cac:TaxSubtotal">
+  &lt;let name="category" value="cac:TaxCategory/cbc:ID"/>
+  &lt;let name="rate" value="cac:TaxCategory/xs:decimal(cbc:Percent)"/>
+  &lt;let name="taxableAmount" value="xs:decimal(cbc:TaxableAmount)"/>
+  &lt;let name="taxAmount" value="xs:decimal(cbc:TaxAmount)"/>
+  &lt;let name="lineExtensionTotal" value="
+    if (//cbc:LineExtensionAmount[../cac:Item/cac:ClassifiedTaxCategory/cbc:ID=$category][../cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]) 
+    then sum(//cbc:LineExtensionAmount[../cac:Item/cac:ClassifiedTaxCategory/cbc:ID=$category][../cac:Item/cac:ClassifiedTaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(.))
+    else 0"/>
+  &lt;let name="documentAllowancesTotal" value="
+    if (count(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID=$category][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]) &gt; 0)
+    then sum(../../cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/cbc:ID=$category][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+    else 0"/>
+  &lt;let name="documentChargesTotal" value="
+    if (count(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID=$category][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]) > 0)
+    then sum(../../cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/cbc:ID=$category][cac:TaxCategory/xs:decimal(cbc:Percent)=$rate]/xs:decimal(cbc:Amount))
+    else 0"/>
+  &lt;assert id="jp-br-co-05" flag="fatal" test="
+    not(cbc:TaxAmount/@currencyID='JPY') or 
+    (
+      not($taxableAmount) or
+      $taxableAmount = $lineExtensionTotal - $documentAllowancesTotal + $documentChargesTotal
+    )">[jp-br-co-05]-Tax category taxable amount (ibt-116) = Σ Invoice line net amount (ibt-131) - Document level allowance amount (ibt-092) + Document level charge amount (ibt-099).&lt;/assert>
+  &lt;assert id="BR-S-08" flag="fatal" test="
+  cbc:TaxAmount/@currencyID='JPY' or (
+    (
+      $taxableAmount - 1 &lt; $lineExtensionTotal - $documentAllowancesTotal + $documentChargesTotal
+    ) and (
+      $taxableAmount + 1 > $lineExtensionTotal - $documentAllowancesTotal + $documentChargesTotal
+    )
+  )">[BR-S-08]-For each different value of VAT category rate (BT-119) (where the VAT category code (BT-118) is "Standard rated"), the VAT category taxable amount (BT-116) in a VAT breakdown (BG-23) shall equal the sum of Invoice line net amounts (BT-131) plus the sum of document level charge amounts (BT-99) minus the sum of document level allowance amounts (BT-92) where the VAT category code (BT-151, BT-102, BT-95) is "Standard rated" and the VAT rate (BT-152, BT-103, BT-96) equals the VAT category rate (BT-119).&lt;/assert>
+&lt;/rule>
+                </code></pre>
+                <h5>5.</h5>
+                <p>jp-o-01, jp-o-05, jp-o-07, jp-o-07 doesn't declare correct location in @context of &lt;rule></p>
+                An Invoice
+                <pre><code class="bg-white">
+&lt;rule context="/ubl:Invoice">
+  &lt;assert id="jp-o-01" flag="fatal" test="
+  (
+    (
+      exists(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']) or
+      exists(cac:InvoiceLine/cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O'])
+    ) and (
+      count(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']) = 1
+    )
+  ) or (
+    not(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O']) and 
+    not(cac:InvoiceLine/cac:ClassifiedTaxCategory[cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:ID[normalize-space(.) = 'O'])
+  )">[jp-o-01]-An Invoice that contains an Invoice line (ibg-25), a Document level allowance (ibg-20) or a Document level charge (ibg-21) where the Tax category code (ibt-151, ibt-095, ibt-102) is “O (Outside of scope of tax)” shall contain exactly one Tax breakdown (ibg-23) with Tax category code(ibt-118) equal to “O”.&lt;/assert>
+                </code></pre>
+                Tax category (CORRECT)
+                <pre><code class="bg-white">
+&lt;rule context="/*/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory[normalize-space(cbc:ID) = 'O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+  &lt;assert id="jp-o-09" flag="fatal" test="(xs:decimal(../cbc:TaxAmount) = 0)">[jp-o-09]-Tax category tax amount (ibt-117) shall be 0 (zero) if Tax category code (ibt-118) equals to “O (Outside of scope of tax)”.&lt;/assert>
+&lt;/rule>
+                </code></pre>
+                In an Invoice line (ibg-25)
+                <pre><code class="bg-white">
+&lt;rule context="/*/cac:InvoiceLine">
+  &lt;assert id="jp-o-05" flag="fatal" test="(not(cac:Item/cac:ClassifiedTaxCategory[normalize-space(cbc:ID) = 'O'][cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']/cbc:Percent))">[jp-o-05]-In an Invoice line (ibg-25) where the Tax category code (ibt-151) is "O (Outside of scope of tax)" shall not contain an Invoiced item tax rate (ibt-152).&lt;/assert>
+&lt;/rule>
+                </code></pre>
+                In a Document level allowance (ibg-20)
+                <pre><code class="bg-white">
+&lt;rule context="/*/cac:AllowanceCharge[cbc:ChargeIndicator=false()][cac:TaxCategory/normalize-space(cbc:ID)='O'][cac:TaxCategory/cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+  &lt;assert id="jp-o-06" flag="fatal" test="(not(cbc:Percent))">[jp-o-06]-In a Document level allowance (ibg-20) where Tax category code (ibt-95) is "O (Outside of scope of tax)" shall not contain a Document level allowance tax rate (ibt-96).&lt;/assert>
+&lt;/rule>
+                </code></pre>
+                In a Document level charge (ibg-21)
+                <pre><code class="bg-white">
+&lt;rule context="cac:AllowanceCharge[cbc:ChargeIndicator=true()][cac:TaxCategory/normalize-space(cbc:ID)='O'][cac:TaxCategory/cac:TaxScheme/normalize-space(upper-case(cbc:ID))='VAT']">
+  &lt;assert id="jp-o-07" flag="fatal" test="(not(cbc:Percent))">[jp-o-07]-In a Document level charge (ibg-21) where the Tax category code (ibt-102) is "O (Outside of scope of tax)" shall not contain a Document level charge tax rate (ibt-103).&lt;/assert>
+&lt;/rule>
+                </code></pre>
+              </p>
             </div>
-          </div>        
+          </div>          
         </div>
-        <div class="tab-pane fade" id="invoice2csv" role="tabpanel" aria-labelledby="profile-tab">
-          <!-- invoice2csv -->
-          <div class="card" style="width:48em; margin:16px auto;">
+        <div class="tab-pane fade" id="invoice2csv" role="tabpanel" aria-labelledby="invoice2csv-tab">
+          <div class="card">
             <div class="card-body">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invoice2csvModal" style="width:100%">
                 電子インボイスをCSVファイルに変換
@@ -110,86 +466,12 @@
                   <input type="text" readonly class="form-control-plaintext" value="XMLを変換したHTML">
                 </p>
               </div>
-              <div class="row">
-                <dt class="col-4">
-                  <h5 class="m-3">サンプルインボイス（UBL2.1)</h5>
-                </dt>
-                <dd class="col-8">
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/discount.xml" download>
-                      discount.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/allowance1.xml" download>
-                      allowance1.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/allowance2.xml" download>
-                      allowance2.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/Snippet-full-EIPA.xml" download>
-                      Snippet-full-EIPA.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div>以下は、<br>ConnectingEurope/eInvoicing-EN16931<a href="https://github.com/ConnectingEurope/eInvoicing-EN16931"><i class="fa fa-external-link" aria-hidden="true"></i></a>のサンプルです。</div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example1.xml" download>
-                      ubl-tc434-example1.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example2.xml" download>
-                      ubl-tc434-example2.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example3.xml" download>
-                      ubl-tc434-example3.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example4.xml" download>
-                      ubl-tc434-example4.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example5.xml" download>
-                      ubl-tc434-example5.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example6.xml" download>
-                      ubl-tc434-example6.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example7.xml" download>
-                      ubl-tc434-example7.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example8.xml" download>
-                      ubl-tc434-example8.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example9.xml" download>
-                      ubl-tc434-example9.xml<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </dd>
-              </div>
             </div>
-          </div>        
+          </div>               
         </div>
-        <div class="tab-pane fade" id="csv2invoice" role="tabpanel" aria-labelledby="contact-tab">
-          <!-- csv2invoice -->
-          <div class="card" style="width:48em; margin:16px auto;">      
-            <div class="card-body">
+        <div class="tab-pane fade" id="csv2invoice" role="tabpanel" aria-labelledby="csv2invoice-tab">
+          <div class="card">      
+            <div class="card-body"> 
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#csv2invoiceModal" style="width:100%">
                 CSVファイルを電子インボイスに変換
               </button>
@@ -212,86 +494,13 @@
                   <input type="text" readonly class="form-control-plaintext" id="tablefile" value="CSVを表形式で表示">
                 </div>
               </div>
-              <dl class="row">
-                <dt class="col-4">
-                  <h5 class="m-3">サンプルCSV</h5>
-                </dt>
-                <dd class="col-8">
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/discount.csv" download>
-                      discount.csv(Shift_JIS)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/allowance1.csv" download>
-                      allowance1.csv(Shift_JIS)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/allowance2.csv" download>
-                      allowance2.csv(Shift_JIS)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/Snippet-full-EIPA.csv" download>
-                      Snippet-full-EIPA.csv(Shift_JIS)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div>以下は、<br>ConnectingEurope/eInvoicing-EN16931<a href="https://github.com/ConnectingEurope/eInvoicing-EN16931"><i class="fa fa-external-link" aria-hidden="true"></i></a>のサンプルを変換したCSVです。</div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example1.csv" download>
-                      ubl-tc434-example1.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example2.csv" download>
-                      ubl-tc434-example2.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example3.csv" download>
-                      ubl-tc434-example3.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example4.csv" download>
-                      ubl-tc434-example4.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example5.csv" download>
-                      ubl-tc434-example5.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example6.csv" download>
-                      ubl-tc434-example6.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example7.csv" download>
-                      ubl-tc434-example7.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example8.csv" download>
-                      ubl-tc434-example8.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                  <div class="list-group-item-heading" data-toggle="tooltip" data-placement="right" title="リンク先のファイルをダウンロードしてください">
-                    <a href="/jp_pint/data/csv/ubl-tc434-example9.csv" download>
-                      ubl-tc434-example9.csv(UTF-8)<i class="fa fa-download" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </dd>
-              </dl>
             </div>
-          </div>        
+          </div>             
         </div>
-      </div>
+      </div>      
     </div>
 
-    <div class="card copylight" style="width:48em; margin:16px auto;">
+    <div class="card copylight">
       <div style="margin: 0 1rem">
         <p>検証を目的として三分一技術士事務所<a href="https://www.sambuichi.jp/?p=5618"><i class="fa fa-external-link" aria-hidden="true"></i></a>が提供しています。<br>このサービスは保証なしで提供されています。</p>
         <p>This page is provided by Sambuichi Professional Engineers Office <a href="https://www.sambuichi.jp/?p=5618"><i class="fa fa-external-link" aria-hidden="true"></i></a>for the purpose of verification.<br>This service is provided without any warranty.</p>
@@ -306,7 +515,58 @@
       </div>
     </div>
   </div>
-  
+
+  <!-- Validate Modal -->
+  <div class="modal fade" id="validateModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">ルール検証</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="validateForm" onsubmit="validate.validate(this); return false;" action="server/validate.cgi" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="File">File</label>
+              <input type="file" name="file" class="form-control-file btn btn-primary" id="File">
+            </div>
+<!--            <hr>
+            <h3>Target invoice</h3>
+            <div class="input-group-text bg-white border-0">
+              <input type="radio" name="targetFile" id="targetFile" aria-label="Checkbox for JP Rule" value="targetFile" checked>
+              <label for="jpRule" class="col-sm-4 col-form-label">Dounload resource example</label>
+              <input type="text" readonly class="form-control-plaintext px-3" id="jpRule" value="Snippet-full.xml">
+            </div>
+            <div class="input-group-text bg-white border-0">
+              <input type="radio" name="targetFile" id="targetFileR" aria-label="Checkbox for JP Rule (revised)" value="targetFile">
+              <label for="jpRuleR" class="col-sm-4 col-form-label">Revised invoice</label>
+              <input type="text" readonly class="form-control-plaintext px-3" id="jpRuleR" value="Snippet-full-EIPA.xml">
+            </div>
+            <hr>
+            <hr>-->
+            <div id="progressbar"></div>
+            <button type="submit" class="btn btn-primary" value="Submit">ルール検証</button>
+          </form>
+          <div>
+            <p id="spin" class="d-none">
+              <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <span class="sr-only">検証中...</span>
+              <span>It is being verified. Please wait for a while until it is finished.</span>
+              <span>検証中です。終わるまで暫くお待ちください（３０秒近くかかることがあります）。</span>
+            </p>
+            <p id="log">
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
   <!-- invoice2csv Modal -->
   <div class="modal fade" id="invoice2csvModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -318,7 +578,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form onsubmit="invoice2csv.upload(this); return false;" action="server/invoice2csv.cgi" method="post" enctype="multipart/form-data">
+          <form onsubmit="convert.invoice2csv(this); return false;" action="server/invoice2csv.cgi" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="File">File</label>
               <input type="file" name="file" class="form-control-file" id="File">
@@ -357,7 +617,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form onsubmit="csv2invoice.upload(this); return false;" action="server/csv2invoice.cgi" method="post" enctype="multipart/form-data">
+          <form onsubmit="convert.csv2invoice(this); return false;" action="server/csv2invoice.cgi" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="File">File</label>
               <input type="file" name="file" class="form-control-file" id="File">
@@ -386,42 +646,7 @@
     </div>
   </div>
 
-  <!-- Validate Modal -->
-  <div class="modal fade" id="validateModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle">ルール検証</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form onsubmit="validate.validate(this); return false;" action="server/validate.cgi" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="File">File</label>
-              <input type="file" name="file" class="form-control-file" id="File">
-            </div>
-            <div id="progressbar"></div>
-            <button type="submit" value="Submit">ルール検証</button>
-          </form>
-          <div>
-            <p id="spin" class="d-none">
-              <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
-              <span class="sr-only">検証中...</span>
-              <span>It is being verified. Please wait for a while until it is finished.</span>
-              <span>検証中です。終わるまで暫くお待ちください（３０秒近くかかることがあります）。</span>
-            </p>
-            <p id="log">
-            </p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <button id="gotoTopButton" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top"
     title="Go to top">
@@ -430,3 +655,4 @@
 
   <div id="snackbar"></div>
 </body>
+</html>

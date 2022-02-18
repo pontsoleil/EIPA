@@ -105,12 +105,16 @@ filename=${file_dir}/${name}
 cp $Tmp-uploadfile ${filename}
 basename=${filename:0:-4}
 encode=$(mime-read encode $Tmp-cgivars)
-# === Generate Invoice ===============================================
+# === Escape XML ===============================================
+escapedfile=${basename}_xml.html
+cat ${basename}.xml |
+sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;<br>/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g' > ${escapedfile}
+# === Generate CSV ===============================================
 csvfile=${basename}.csv
 ./invoice2csv ${filename} -o ${csvfile} -e ${encode}
 # === XSLT ===========================================================
 htmlfile=${basename}.html
-java -jar saxon-he-10.6.jar -o:${htmlfile} ${filename} stylesheet-ubl.xslt
+java -jar saxon/saxon-he-10.6.jar -o:${htmlfile} ${filename} stylesheet-ubl.xslt
 # === Generate <table> ===============================================
 tablefile=${basename}_table.html
 ./csv2html ${csvfile} -o ${tablefile} -e ${encode}
@@ -118,7 +122,7 @@ tablefile=${basename}_table.html
 cat <<HTML_CONTENT
 Content-Type: application/json
 
-{"html":"${htmlfile}","csv":"${csvfile}","table":"${tablefile}","name":"${name:0:-4}"}
+{"escaped":"${escapedfile}","html":"${htmlfile}","csv":"${csvfile}","table":"${tablefile}","name":"${name:0:-4}"}
 HTML_CONTENT
 rm -f $Tmp-*
 exit 0

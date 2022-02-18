@@ -11,7 +11,7 @@ invoice2csv = ( function () {
   }
 
   function upload(form) {
-    $('#csv2invoiceModal').on('shown.bs.modal', function (e) {
+    $('#invoice2csvModal').on('shown.bs.modal', function (e) {
       progressbar.open();
       progressbar.move(0);
     });

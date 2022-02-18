@@ -47,8 +47,8 @@ ET.register_namespace('cbc', ns['cbc'])
 ET.register_namespace('qdt', ns['qdt'])
 ET.register_namespace('udt', ns['udt'])
 ET.register_namespace('ccts', ns['ccts'])
-ET.register_namespace('ubl-creditnote', ns['ubl-creditnote'])
-ET.register_namespace('ubl-invoice', ns['ubl-invoice'])
+ET.register_namespace('cn', ns['cn'])
+ET.register_namespace('ubl', ns['ubl'])
 
 TaxAccounting = ['ibg-37','ibt-111','ibg-38','ibt-190','ibt-192','ibt-193','ibt-194','ibt-195']
 
@@ -83,7 +83,12 @@ def set_path_value(base, path, value, datatype):
     p = path[0].split(':')
     el = ET.QName(ns[p[0]], p[1])
     elements = base.findall(str(el))
-    elements[0].set(_attr, value)
+    # elements[0].set(_attr, value)
+    if len(elements) > 0:
+      element = elements[0]
+    else:
+      element = ET.SubElement(base, el)
+    element.set(_attr, value)
   else:
     if path[0] == 'Invoice':
       p = path[1].split(':')
@@ -382,8 +387,8 @@ if __name__ == '__main__':
   multipleBG = []
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Attributes,Codelist,Cardinality,CardinalityAlignment
-  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17         18       19          20
+  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Codelist,Occurrence,CardinalityAlignment
+  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17       18         19
   COL_SemanticSort = 0
   COL_ID = 1
   COL_level = 2
@@ -399,7 +404,7 @@ if __name__ == '__main__':
     header = next(reader)
     for v in reader:
       id = v[COL_ID].strip()
-      if id:
+      if id: # and 'ibt-032' != id:
         semSort = v[COL_SemanticSort]
         xpath = v[COL_xpath]
         syntaxSort = v[COL_SyntaxSort]
@@ -514,8 +519,17 @@ if __name__ == '__main__':
     for j in range(col_count):
       transposed_rows[j][i] = sorted_rows[i][j]
 
-  root = ET.Element(ET.QName(ns[''], 'Invoice'))
-
+  invoiceText = '''
+  <ubl:Invoice 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" 
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
+    xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd" /> 
+  '''  # this step adds xsi:schemaLocation attribute
+  root = ET.XML(invoiceText)
+  # root = ET.Element(ET.QName(ns[''], 'Invoice'))
   header = transposed_rows[0]
   for i in range(1,len(transposed_rows)):
     record = transposed_rows[i]
