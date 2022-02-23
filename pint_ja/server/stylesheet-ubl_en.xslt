@@ -163,7 +163,7 @@
 					</div>
 					<hr/>
 					<div id="details">
-						<h3>詳細</h3>
+						<h3>Details</h3>
 						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator='true']" mode="line"/>
 						<xsl:apply-templates select="cac:LegalMonetaryTotal/cbc:ChargeTotalAmount" mode="line"/>
 						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator='false']" mode="line"/>
@@ -176,74 +176,6 @@
 			</body>
 		</html>
 	</xsl:template>
-	<!-- function -->
-	<xsl:function name="u:taxcategory">
-		<xsl:param name="code"/>
-		<xsl:choose>
-			<xsl:when test="$category/c[@id=$code]/t[@id=$language]">
-				<xsl:value-of select="$category/c[@id=$code]/t[@id=$language]/text()"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<span class="mtr"><xsl:value-of select="$code"/></span>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:function>
-	<xsl:variable name="category">
-		<c id="AA">
-			<t id="en">Lower rate</t>
-			<t id="ja">軽減税率</t>
-		</c>
-		<c id="E">
-			<t id="en">Exempt from tax</t>
-			<t id="ja">非課税</t>
-		</c>
-		<c id="G">
-			<t id="en">Free export item, tax not charged</t>
-			<t id="ja">輸出</t>
-		</c>
-		<c id="O">
-			<t id="en">Services outside scope of tax</t>
-			<t id="ja">対象外</t>
-		</c>
-		<c id="S">
-			<t id="en">Standard rate</t>
-			<t id="ja">標準税率</t>
-		</c>
-		<c id="Z">
-			<t id="en">Zero rated goods</t>
-			<t id="ja">ゼロレート</t>
-		</c>
-		<c id="A">
-			<t id="en">Mixed tax rate</t>
-		</c>
-		<c id="AB">
-			<t id="en">Exempt for resale</t>
-		</c>
-		<c id="AC">
-			<t id="en">Value Added Tax (VAT) not now due for payment</t>
-		</c>
-		<c id="AD">
-			<t id="en">Value Added Tax (VAT) due from a previous invoice</t>
-		</c>
-		<c id="AE">
-			<t id="en">VAT Reverse Charge</t>
-		</c>
-		<c id="B">
-			<t id="en">Transferred (VAT)</t>
-		</c>
-		<c id="C">
-			<t id="en">Duty paid by supplier</t>
-		</c>
-		<c id="D">
-			<t id="en">Value Added Tax (VAT) margin scheme - travel agents</t>
-		</c>
-		<c id="F">
-			<t id="en">Value Added Tax (VAT) margin scheme - second-hand goods</t>
-		</c>
-		<c id="H">
-			<t id="en">Higher rate</t>
-		</c>
-	</xsl:variable>
 	<xsl:function name="u:codelist">
 		<xsl:param name="codelist"/>
 		<xsl:param name="code"/>
@@ -261,127 +193,102 @@
 			<c id="AD">
 				<t id="en">Andorra</t>
 				<t id="no">Andorra</t>
-				<t id="ja">アンドラ</t>
 			</c>
 			<c id="AE">
 				<t id="en">United Arab Emirates</t>
 				<t id="no">De forente arabiske emirater</t>
-				<t id="ja">United Arab Emirates</t>
 			</c>
 			<c id="AF">
 				<t id="en">Afghanistan</t>
 				<t id="no">Afghanistan</t>
-				<t id="ja">アフガニスタン</t>
 			</c>
 			<c id="AG">
 				<t id="en">Antigua and Barbuda</t>
 				<t id="no">Antigua og Barbuda</t>
-				<t id="ja">アンティグア　バーブーダ</t>
 			</c>
 			<c id="AI">
 				<t id="en">Anguilla</t>
 				<t id="no">Anguilla</t>
-				<t id="ja">アンギラ</t>
 			</c>
 			<c id="AL">
 				<t id="en">Albania</t>
 				<t id="no">Albania</t>
-				<t id="ja">アルバニア</t>
 			</c>
 			<c id="AM">
 				<t id="en">Armenia</t>
 				<t id="no">Armenia</t>
-				<t id="ja">アルメニア</t>
 			</c>
 			<c id="AO">
 				<t id="en">Angola</t>
 				<t id="no">Angola</t>
-				<t id="ja">アンゴラ</t>
 			</c>
 			<c id="AQ">
 				<t id="en">Antarctica</t>
 				<t id="no">Antarktis</t>
-				<t id="ja">南極</t>
 			</c>
 			<c id="AR">
 				<t id="en">Argentina</t>
 				<t id="no">Argentina</t>
-				<t id="ja">アルゼンチン</t>
 			</c>
 			<c id="AS">
 				<t id="en">American Samoa</t>
 				<t id="no">Amerikansk Samoa</t>
-				<t id="ja">米国領サモア</t>
 			</c>
 			<c id="AT">
 				<t id="en">Austria</t>
 				<t id="no">Østerrike</t>
-				<t id="ja">オーストリア</t>
 			</c>
 			<c id="AU">
 				<t id="en">Australia</t>
 				<t id="no">Australia</t>
-				<t id="ja">オーストラリア</t>
 			</c>
 			<c id="AW">
 				<t id="en">Aruba</t>
 				<t id="no">Aruba</t>
-				<t id="ja">アルバ</t>
 			</c>
 			<c id="AX">
 				<t id="en">Åland Islands</t>
 				<t id="no">Åland</t>
-				<t id="ja">Åland Islands</t>
 			</c>
 			<c id="AZ">
 				<t id="en">Azerbaijan</t>
 				<t id="no">Aserbajdsjan</t>
-				<t id="ja">アゼルバイジャン</t>
 			</c>
 			<c id="BA">
 				<t id="en">Bosnia and Herzegovina</t>
 				<t id="no">Bosnia-Hercegovina</t>
-				<t id="ja">ボスニアヘルツェゴビナ</t>
 			</c>
 			<c id="BB">
 				<t id="en">Barbados</t>
 				<t id="no">Barbados</t>
-				<t id="ja">バルバドス</t>
 			</c>
 			<c id="BD">
 				<t id="en">Bangladesh</t>
 				<t id="no">Bangladesh</t>
-				<t id="ja">バングラデシュ</t>
 			</c>
 			<c id="BE">
 				<t id="en">Belgium</t>
 				<t id="no">Belgia</t>
-				<t id="ja">ベルギー</t>
 			</c>
 			<c id="BF">
 				<t id="en">Burkina Faso</t>
 				<t id="no">Burkina Faso</t>
-				<t id="ja">ブルキナ　ファソ</t>
 			</c>
 			<c id="BG">
 				<t id="en">Bulgaria</t>
 				<t id="no">Bulgaria</t>
-				<t id="ja">ブルガリア</t>
 			</c>
 			<c id="BH">
 				<t id="en">Bahrain</t>
 				<t id="no">Bahrain</t>
-				<t id="ja">バーレーン</t>
 			</c>
 			<c id="BI">
 				<t id="en">Burundi</t>
 				<t id="no">Burundi</t>
-				<t id="ja">ブルンジ</t>
 			</c>
 			<c id="BJ">
 				<t id="en">Benin</t>
 				<t id="no">Benin</t>
-				<t id="ja">ベナン</t>
 			</c>
 			<c id="BL">
 				<t id="en">Saint Barthélemy</t>
@@ -390,17 +297,14 @@
 			<c id="BM">
 				<t id="en">Bermuda</t>
 				<t id="no">Bermuda</t>
-				<t id="ja">バミューダ諸島</t>
 			</c>
 			<c id="BN">
 				<t id="en">Brunei Darussalam</t>
 				<t id="no">Brunei</t>
-				<t id="ja">ブルネイ　ダルサラーム</t>
 			</c>
 			<c id="BO">
 				<t id="en">Bolivia, Plurinational State of</t>
 				<t id="no">Bolivia</t>
-				<t id="ja">ボリビア</t>
 			</c>
 			<c id="BQ">
 				<t id="en">Bonaire, Sint Eustatius and Saba</t>
@@ -409,1104 +313,884 @@
 			<c id="BR">
 				<t id="en">Brazil</t>
 				<t id="no">Brasil</t>
-				<t id="ja">ブラジル</t>
 			</c>
 			<c id="BS">
 				<t id="en">Bahamas</t>
 				<t id="no">Bahamas</t>
-				<t id="ja">バハマ</t>
 			</c>
 			<c id="BT">
 				<t id="en">Bhutan</t>
 				<t id="no">Bhutan</t>
-				<t id="ja">ブータン</t>
 			</c>
 			<c id="BV">
 				<t id="en">Bouvet Island</t>
 				<t id="no">Bouvetøya</t>
-				<t id="ja">ブーベ島</t>
 			</c>
 			<c id="BW">
 				<t id="en">Botswana</t>
 				<t id="no">Botswana</t>
-				<t id="ja">ボツワナ</t>
 			</c>
 			<c id="BY">
 				<t id="en">Belarus</t>
 				<t id="no">Hviterussland</t>
-				<t id="ja">ベラルーシ</t>
 			</c>
 			<c id="BZ">
 				<t id="en">Belize</t>
 				<t id="no">Belize</t>
-				<t id="ja">ベリーズ</t>
 			</c>
 			<c id="CA">
 				<t id="en">Canada</t>
 				<t id="no">Canada</t>
-				<t id="ja">カナダ</t>
 			</c>
 			<c id="CC">
 				<t id="en">Cocos (Keeling) Islands</t>
 				<t id="no">Kokosøyene</t>
-				<t id="ja">ココス（キーリング）諸島</t>
 			</c>
 			<c id="CD">
 				<t id="en">Congo, the Democratic Republic of the</t>
 				<t id="no">Den demokratiske republikken Kongo</t>
-				<t id="ja">コンゴ民主共和国</t>
 			</c>
 			<c id="CF">
 				<t id="en">Central African Republic</t>
 				<t id="no">Den sentralafrikanske republikk</t>
-				<t id="ja">中央アフリカ共和国</t>
 			</c>
 			<c id="CG">
 				<t id="en">Congo</t>
 				<t id="no">Republikken Kongo</t>
-				<t id="ja">コンゴ</t>
 			</c>
 			<c id="CH">
 				<t id="en">Switzerland</t>
 				<t id="no">Sveits</t>
-				<t id="ja">スイス</t>
 			</c>
 			<c id="CI">
 				<t id="en">Côte d'Ivoire</t>
 				<t id="no">Elfenbenskysten</t>
-				<t id="ja">コートジボワール</t>
 			</c>
 			<c id="CK">
 				<t id="en">Cook Islands</t>
 				<t id="no">Cookøyene</t>
-				<t id="ja">クック諸島</t>
 			</c>
 			<c id="CL">
 				<t id="en">Chile</t>
 				<t id="no">Chile</t>
-				<t id="ja">チリ共和国</t>
 			</c>
 			<c id="CM">
 				<t id="en">Cameroon</t>
 				<t id="no">Kamerun</t>
-				<t id="ja">カメルーン共和国</t>
 			</c>
 			<c id="CN">
 				<t id="en">China</t>
 				<t id="no">Kina</t>
-				<t id="ja">中華人民共和国</t>
 			</c>
 			<c id="CO">
 				<t id="en">Colombia</t>
 				<t id="no">Colombia</t>
-				<t id="ja">コロンビア共和国</t>
 			</c>
 			<c id="CR">
 				<t id="en">Costa Rica</t>
 				<t id="no">Costa Rica</t>
-				<t id="ja">コスタリカ共和国</t>
 			</c>
 			<c id="CU">
 				<t id="en">Cuba</t>
 				<t id="no">Cuba</t>
-				<t id="ja">キューバ共和国</t>
 			</c>
 			<c id="CV">
 				<t id="en">Cabo Verde</t>
 				<t id="no">Kapp Verde</t>
-				<t id="ja">カーボベルデ共和国</t>
 			</c>
 			<c id="CW">
 				<t id="en">Curaçao</t>
 				<t id="no">Curaçao</t>
-				<t id="ja">キュラソー</t>
 			</c>
 			<c id="CX">
 				<t id="en">Christmas Island</t>
 				<t id="no">Christmasøya</t>
-				<t id="ja">クリスマス島</t>
 			</c>
 			<c id="CY">
 				<t id="en">Cyprus</t>
 				<t id="no">Kypros</t>
-				<t id="ja">キプロス共和国</t>
 			</c>
 			<c id="CZ">
 				<t id="en">Czechia</t>
 				<t id="no">Tsjekkia</t>
-				<t id="ja">チェコ共和国</t>
 			</c>
 			<c id="DE">
 				<t id="en">Germany</t>
 				<t id="no">Tyskland</t>
-				<t id="ja">ドイツ連邦共和国</t>
 			</c>
 			<c id="DJ">
 				<t id="en">Djibouti</t>
 				<t id="no">Djibouti</t>
-				<t id="ja">ジブチ共和国</t>
 			</c>
 			<c id="DK">
 				<t id="en">Denmark</t>
 				<t id="no">Danmark</t>
-				<t id="ja">デンマーク王国</t>
 			</c>
 			<c id="DM">
 				<t id="en">Dominica</t>
 				<t id="no">Dominica</t>
-				<t id="ja">ドミニカ国</t>
 			</c>
 			<c id="DO">
 				<t id="en">Dominican Republic</t>
 				<t id="no">Den dominikanske republikk</t>
-				<t id="ja">ドミニカ共和国</t>
 			</c>
 			<c id="DZ">
 				<t id="en">Algeria</t>
 				<t id="no">Algerie</t>
-				<t id="ja">アルジェリア民主人民共和国</t>
 			</c>
 			<c id="EC">
 				<t id="en">Ecuador</t>
 				<t id="no">Ecuador</t>
-				<t id="ja">エクアドル共和国</t>
 			</c>
 			<c id="EE">
 				<t id="en">Estonia</t>
 				<t id="no">Estland</t>
-				<t id="ja">エストニア共和国</t>
 			</c>
 			<c id="EG">
 				<t id="en">Egypt</t>
 				<t id="no">Egypt</t>
-				<t id="ja">エジプト・アラブ共和国</t>
 			</c>
 			<c id="EH">
 				<t id="en">Western Sahara</t>
 				<t id="no">Vest-Sahara</t>
-				<t id="ja">西サハラ</t>
 			</c>
 			<c id="ER">
 				<t id="en">Eritrea</t>
 				<t id="no">Eritrea</t>
-				<t id="ja">エリトリア国</t>
 			</c>
 			<c id="ES">
 				<t id="en">Spain</t>
 				<t id="no">Spania</t>
-				<t id="ja">スペイン</t>
 			</c>
 			<c id="ET">
 				<t id="en">Ethiopia</t>
 				<t id="no">Etiopia</t>
-				<t id="ja">エチオピア連邦民主共和国</t>
 			</c>
 			<c id="FI">
 				<t id="en">Finland</t>
 				<t id="no">Finland</t>
-				<t id="ja">フィンランド共和国</t>
 			</c>
 			<c id="FJ">
 				<t id="en">Fiji</t>
 				<t id="no">Fiji</t>
-				<t id="ja">フィジー諸島共和国</t>
 			</c>
 			<c id="FK">
 				<t id="en">Falkland Islands (Malvinas)</t>
 				<t id="no">Falklandsøyene</t>
-				<t id="ja">フォークランド（マルビナス）諸島</t>
 			</c>
 			<c id="FM">
 				<t id="en">Micronesia, Federated States of</t>
 				<t id="no">Mikronesiaføderasjonen</t>
-				<t id="ja">ミクロネシア連邦</t>
 			</c>
 			<c id="FO">
 				<t id="en">Faroe Islands</t>
 				<t id="no">Færøyene</t>
-				<t id="ja">フェロー諸島</t>
 			</c>
 			<c id="FR">
 				<t id="en">France</t>
 				<t id="no">Frankrike</t>
-				<t id="ja">フランス共和国</t>
 			</c>
 			<c id="GA">
 				<t id="en">Gabon</t>
 				<t id="no">Gabon</t>
-				<t id="ja">ガボン共和国</t>
 			</c>
 			<c id="GB">
 				<t id="en">United Kingdom of Great Britain and Northern Ireland</t>
 				<t id="no">Storbritannia</t>
-				<t id="ja">英国（グレートブリテン北アイルランド連合王国）</t>
 			</c>
 			<c id="GD">
 				<t id="en">Grenada</t>
 				<t id="no">Grenada</t>
-				<t id="ja">グレナダ</t>
 			</c>
 			<c id="GE">
 				<t id="en">Georgia</t>
 				<t id="no">Georgia</t>
-				<t id="ja">グルジア</t>
 			</c>
 			<c id="GF">
 				<t id="en">French Guiana</t>
 				<t id="no">Fransk Guyana</t>
-				<t id="ja">フランス領ギアナ</t>
 			</c>
 			<c id="GG">
 				<t id="en">Guernsey</t>
 				<t id="no">Guernsey</t>
-				<t id="ja">ガーンジー島</t>
 			</c>
 			<c id="GH">
 				<t id="en">Ghana</t>
 				<t id="no">Ghana</t>
-				<t id="ja">ガーナ共和国</t>
 			</c>
 			<c id="GI">
 				<t id="en">Gibraltar</t>
 				<t id="no">Gibraltar</t>
-				<t id="ja">ジブラルタル</t>
 			</c>
 			<c id="GL">
 				<t id="en">Greenland</t>
 				<t id="no">Grønland</t>
-				<t id="ja">グリーンランド</t>
 			</c>
 			<c id="GM">
 				<t id="en">Gambia</t>
 				<t id="no">Gambia</t>
-				<t id="ja">ガンビア共和国</t>
 			</c>
 			<c id="GN">
 				<t id="en">Guinea</t>
 				<t id="no">Guinea</t>
-				<t id="ja">ギニア共和国</t>
 			</c>
 			<c id="GP">
 				<t id="en">Guadeloupe</t>
 				<t id="no">Guadeloupe</t>
-				<t id="ja">グアドループ島</t>
 			</c>
 			<c id="GQ">
 				<t id="en">Equatorial Guinea</t>
 				<t id="no">Ekvatorial-Guinea</t>
-				<t id="ja">赤道ギニア共和国</t>
 			</c>
 			<c id="GR">
 				<t id="en">Greece</t>
 				<t id="no">Hellas</t>
-				<t id="ja">ギリシャ共和国</t>
 			</c>
 			<c id="GS">
 				<t id="en">South Georgia and the South Sandwich Islands</t>
 				<t id="no">Sør-Georgia og Sør-Sandwichøyene</t>
-				<t id="ja">南ジョージア島・南サンドイッチ諸島</t>
 			</c>
 			<c id="GT">
 				<t id="en">Guatemala</t>
 				<t id="no">Guatemala</t>
-				<t id="ja">グアテマラ共和国</t>
 			</c>
 			<c id="GU">
 				<t id="en">Guam</t>
 				<t id="no">Guam</t>
-				<t id="ja">グアム</t>
 			</c>
 			<c id="GW">
 				<t id="en">Guinea-Bissau</t>
 				<t id="no">Guinea-Bissau</t>
-				<t id="ja">ギニアビサウ共和国</t>
 			</c>
 			<c id="GY">
 				<t id="en">Guyana</t>
 				<t id="no">Guyana</t>
-				<t id="ja">ガイアナ共和国</t>
 			</c>
 			<c id="HK">
 				<t id="en">Hong Kong</t>
 				<t id="no">Hongkong</t>
-				<t id="ja">香港特別行政府</t>
 			</c>
 			<c id="HM">
 				<t id="en">Heard Island and McDonald Islands</t>
 				<t id="no">Heard- og McDonaldøyene</t>
-				<t id="ja">ハード島・マクドナルド諸島</t>
 			</c>
 			<c id="HN">
 				<t id="en">Honduras</t>
 				<t id="no">Honduras</t>
-				<t id="ja">ホンジュラス共和国</t>
 			</c>
 			<c id="HR">
 				<t id="en">Croatia</t>
 				<t id="no">Kroatia</t>
-				<t id="ja">クロアチア共和国</t>
 			</c>
 			<c id="HT">
 				<t id="en">Haiti</t>
 				<t id="no">Haiti</t>
-				<t id="ja">ハイチ共和国</t>
 			</c>
 			<c id="HU">
 				<t id="en">Hungary</t>
 				<t id="no">Ungarn</t>
-				<t id="ja">ハンガリー共和国</t>
 			</c>
 			<c id="ID">
 				<t id="en">Indonesia</t>
 				<t id="no">Indonesia</t>
-				<t id="ja">インドネシア共和国</t>
 			</c>
 			<c id="IE">
 				<t id="en">Ireland</t>
 				<t id="no">Irland</t>
-				<t id="ja">アイルランド</t>
 			</c>
 			<c id="IL">
 				<t id="en">Israel</t>
 				<t id="no">Israel</t>
-				<t id="ja">イスラエル国</t>
 			</c>
 			<c id="IM">
 				<t id="en">Isle of Man</t>
 				<t id="no">Man</t>
-				<t id="ja">マン島</t>
 			</c>
 			<c id="IN">
 				<t id="en">India</t>
 				<t id="no">India</t>
-				<t id="ja">インド</t>
 			</c>
 			<c id="IO">
 				<t id="en">British Indian Ocean Territory</t>
 				<t id="no">Det britiske territoriet i Indiahavet</t>
-				<t id="ja">英領インド洋地域</t>
 			</c>
 			<c id="IQ">
 				<t id="en">Iraq</t>
 				<t id="no">Irak</t>
-				<t id="ja">イラク共和国</t>
 			</c>
 			<c id="IR">
 				<t id="en">Iran, Islamic Republic of</t>
 				<t id="no">Iran</t>
-				<t id="ja">イラン・イスラム共和国</t>
 			</c>
 			<c id="IS">
 				<t id="en">Iceland</t>
 				<t id="no">Island</t>
-				<t id="ja">アイスランド共和国</t>
 			</c>
 			<c id="IT">
 				<t id="en">Italy</t>
 				<t id="no">Italia</t>
-				<t id="ja">イタリア共和国</t>
 			</c>
 			<c id="JE">
 				<t id="en">Jersey</t>
 				<t id="no">Jersey</t>
-				<t id="ja">ジャージー島</t>
 			</c>
 			<c id="JM">
 				<t id="en">Jamaica</t>
 				<t id="no">Jamaica</t>
-				<t id="ja">ジャマイカ</t>
 			</c>
 			<c id="JO">
 				<t id="en">Jordan</t>
 				<t id="no">Jordan</t>
-				<t id="ja">ヨルダン・ハシミテ王国</t>
 			</c>
 			<c id="JP">
 				<t id="en">Japan</t>
 				<t id="no">Japan</t>
-				<t id="ja">日本国</t>
 			</c>
 			<c id="KE">
 				<t id="en">Kenya</t>
 				<t id="no">Kenya</t>
-				<t id="ja">ケニア共和国</t>
 			</c>
 			<c id="KG">
 				<t id="en">Kyrgyzstan</t>
 				<t id="no">Kirgisistan</t>
-				<t id="ja">キルギス共和国</t>
 			</c>
 			<c id="KH">
 				<t id="en">Cambodia</t>
 				<t id="no">Kambodsja</t>
-				<t id="ja">カンボジア王国</t>
 			</c>
 			<c id="KI">
 				<t id="en">Kiribati</t>
 				<t id="no">Kiribati</t>
-				<t id="ja">キリバス共和国</t>
 			</c>
 			<c id="KM">
 				<t id="en">Comoros</t>
 				<t id="no">Komorene</t>
-				<t id="ja">コモロ連合</t>
 			</c>
 			<c id="KN">
 				<t id="en">Saint Kitts and Nevis</t>
 				<t id="no">Saint Kitts og Nevis</t>
-				<t id="ja">セントキッツ・ネービス</t>
 			</c>
 			<c id="KP">
 				<t id="en">Korea, Democratic People's Republic of</t>
 				<t id="no">Nord-Korea</t>
-				<t id="ja">朝鮮民主主義人民共和国</t>
 			</c>
 			<c id="KR">
 				<t id="en">Korea, Republic of</t>
 				<t id="no">Sør-Korea</t>
-				<t id="ja">大韓民国</t>
 			</c>
 			<c id="KW">
 				<t id="en">Kuwait</t>
 				<t id="no">Kuwait</t>
-				<t id="ja">クウェート国</t>
 			</c>
 			<c id="KY">
 				<t id="en">Cayman Islands</t>
 				<t id="no">Caymanøyene</t>
-				<t id="ja">ケイマン諸島</t>
 			</c>
 			<c id="KZ">
 				<t id="en">Kazakhstan</t>
 				<t id="no">Kasakhstan</t>
-				<t id="ja">カザフスタン共和国</t>
 			</c>
 			<c id="LA">
 				<t id="en">Lao People's Democratic Republic</t>
 				<t id="no">Laos</t>
-				<t id="ja">ラオス人民民主共和国</t>
 			</c>
 			<c id="LB">
 				<t id="en">Lebanon</t>
 				<t id="no">Libanon</t>
-				<t id="ja">レバノン共和国</t>
 			</c>
 			<c id="LC">
 				<t id="en">Saint Lucia</t>
 				<t id="no">Saint Lucia</t>
-				<t id="ja">セントルシア</t>
 			</c>
 			<c id="LI">
 				<t id="en">Liechtenstein</t>
 				<t id="no">Liechtenstein</t>
-				<t id="ja">リヒテンシュタイン公国</t>
 			</c>
 			<c id="LK">
 				<t id="en">Sri Lanka</t>
 				<t id="no">Sri Lanka</t>
-				<t id="ja">スリランカ民主社会主義共和国</t>
 			</c>
 			<c id="LR">
 				<t id="en">Liberia</t>
 				<t id="no">Liberia</t>
-				<t id="ja">リベリア共和国</t>
 			</c>
 			<c id="LS">
 				<t id="en">Lesotho</t>
 				<t id="no">Lesotho</t>
-				<t id="ja">レソト王国</t>
 			</c>
 			<c id="LT">
 				<t id="en">Lithuania</t>
 				<t id="no">Litauen</t>
-				<t id="ja">リトアニア共和国</t>
 			</c>
 			<c id="LU">
 				<t id="en">Luxembourg</t>
 				<t id="no">Luxembourg</t>
-				<t id="ja">ルクセンブルク大公国</t>
 			</c>
 			<c id="LV">
 				<t id="en">Latvia</t>
 				<t id="no">Latvia</t>
-				<t id="ja">ラトビア共和国</t>
 			</c>
 			<c id="LY">
 				<t id="en">Libya</t>
 				<t id="no">Libya</t>
-				<t id="ja">リビア</t>
 			</c>
 			<c id="MA">
 				<t id="en">Morocco</t>
 				<t id="no">Marokko</t>
-				<t id="ja">モロッコ王国</t>
 			</c>
 			<c id="MC">
 				<t id="en">Monaco</t>
 				<t id="no">Monaco</t>
-				<t id="ja">モナコ公国</t>
 			</c>
 			<c id="MD">
 				<t id="en">Moldova, Republic of</t>
 				<t id="no">Moldova</t>
-				<t id="ja">モルドバ共和国</t>
 			</c>
 			<c id="ME">
 				<t id="en">Montenegro</t>
 				<t id="no">Montenegro</t>
-				<t id="ja">モンテネグロ</t>
 			</c>
 			<c id="MF">
 				<t id="en">Saint Martin (French part)</t>
 				<t id="no">Saint-Martin</t>
-				<t id="ja">サンマルタン</t>
 			</c>
 			<c id="MG">
 				<t id="en">Madagascar</t>
 				<t id="no">Madagaskar</t>
-				<t id="ja">マダガスカル共和国</t>
 			</c>
 			<c id="MH">
 				<t id="en">Marshall Islands</t>
 				<t id="no">Marshalløyene</t>
-				<t id="ja">マーシャル諸島共和国</t>
 			</c>
 			<c id="MK">
 				<t id="en">Macedonia, the former Yugoslav Republic of</t>
 				<t id="no">Makedonia</t>
-				<t id="ja">マケドニア旧ユーゴスラビア共和国</t>
 			</c>
 			<c id="ML">
 				<t id="en">Mali</t>
 				<t id="no">Mali</t>
-				<t id="ja">マリ共和国</t>
 			</c>
 			<c id="MM">
 				<t id="en">Myanmar</t>
 				<t id="no">Myanmar</t>
-				<t id="ja">ミャンマー連邦</t>
 			</c>
 			<c id="MN">
 				<t id="en">Mongolia</t>
 				<t id="no">Mongolia</t>
-				<t id="ja">モンゴル国</t>
 			</c>
 			<c id="MO">
 				<t id="en">Macao</t>
 				<t id="no">Macao</t>
-				<t id="ja">マカオ特別行政区</t>
 			</c>
 			<c id="MP">
 				<t id="en">Northern Mariana Islands</t>
 				<t id="no">Nord-Marianene</t>
-				<t id="ja">北マリアナ諸島</t>
 			</c>
 			<c id="MQ">
 				<t id="en">Martinique</t>
 				<t id="no">Martinique</t>
-				<t id="ja">マルチニーク島</t>
 			</c>
 			<c id="MR">
 				<t id="en">Mauritania</t>
 				<t id="no">Mauritania</t>
-				<t id="ja">モーリタニア・イスラム共和国</t>
 			</c>
 			<c id="MS">
 				<t id="en">Montserrat</t>
 				<t id="no">Montserrat</t>
-				<t id="ja">モントセラト</t>
 			</c>
 			<c id="MT">
 				<t id="en">Malta</t>
 				<t id="no">Malta</t>
-				<t id="ja">マルタ共和国</t>
 			</c>
 			<c id="MU">
 				<t id="en">Mauritius</t>
 				<t id="no">Mauritius</t>
-				<t id="ja">モーリシャス共和国</t>
 			</c>
 			<c id="MV">
 				<t id="en">Maldives</t>
 				<t id="no">Maldivene</t>
-				<t id="ja">モルディブ共和国</t>
 			</c>
 			<c id="MW">
 				<t id="en">Malawi</t>
 				<t id="no">Malawi</t>
-				<t id="ja">マラウイ共和国</t>
 			</c>
 			<c id="MX">
 				<t id="en">Mexico</t>
 				<t id="no">Mexico</t>
-				<t id="ja">メキシコ合衆国</t>
 			</c>
 			<c id="MY">
 				<t id="en">Malaysia</t>
 				<t id="no">Malaysia</t>
-				<t id="ja">マレーシア</t>
 			</c>
 			<c id="MZ">
 				<t id="en">Mozambique</t>
 				<t id="no">Mosambik</t>
-				<t id="ja">モザンビーク共和国</t>
 			</c>
 			<c id="NA">
 				<t id="en">Namibia</t>
 				<t id="no">Namibia</t>
-				<t id="ja">ナミビア共和国</t>
 			</c>
 			<c id="NC">
 				<t id="en">New Caledonia</t>
 				<t id="no">Ny-Caledonia</t>
-				<t id="ja">ニューカレドニア</t>
 			</c>
 			<c id="NE">
 				<t id="en">Niger</t>
 				<t id="no">Niger</t>
-				<t id="ja">ニジェール共和国</t>
 			</c>
 			<c id="NF">
 				<t id="en">Norfolk Island</t>
 				<t id="no">Norfolkøya</t>
-				<t id="ja">ノーフォーク島</t>
 			</c>
 			<c id="NG">
 				<t id="en">Nigeria</t>
 				<t id="no">Nigeria</t>
-				<t id="ja">ナイジェリア連邦共和国</t>
 			</c>
 			<c id="NI">
 				<t id="en">Nicaragua</t>
 				<t id="no">Nicaragua</t>
-				<t id="ja">ニカラグア共和国</t>
 			</c>
 			<c id="NL">
 				<t id="en">Netherlands</t>
 				<t id="no">Nederland</t>
-				<t id="ja">オランダ王国</t>
 			</c>
 			<c id="NO">
 				<t id="en">Norway</t>
 				<t id="no">Norge</t>
-				<t id="ja">ノルウェー王国</t>
 			</c>
 			<c id="NP">
 				<t id="en">Nepal</t>
 				<t id="no">Nepal</t>
-				<t id="ja">ネパール連邦民主共和国</t>
 			</c>
 			<c id="NR">
 				<t id="en">Nauru</t>
 				<t id="no">Nauru</t>
-				<t id="ja">ナウル共和国</t>
 			</c>
 			<c id="NU">
 				<t id="en">Niue</t>
 				<t id="no">Niue</t>
-				<t id="ja">ニウエ</t>
 			</c>
 			<c id="NZ">
 				<t id="en">New Zealand</t>
 				<t id="no">New Zealand</t>
-				<t id="ja">ニュージーランド</t>
 			</c>
 			<c id="OM">
 				<t id="en">Oman</t>
 				<t id="no">Oman</t>
-				<t id="ja">オマーン国</t>
 			</c>
 			<c id="PA">
 				<t id="en">Panama</t>
 				<t id="no">Panama</t>
-				<t id="ja">パナマ共和国</t>
 			</c>
 			<c id="PE">
 				<t id="en">Peru</t>
 				<t id="no">Peru</t>
-				<t id="ja">ペルー共和国</t>
 			</c>
 			<c id="PF">
 				<t id="en">French Polynesia</t>
 				<t id="no">Fransk Polynesia</t>
-				<t id="ja">フランス領ポリネシア</t>
 			</c>
 			<c id="PG">
 				<t id="en">Papua New Guinea</t>
 				<t id="no">Papua Ny-Guinea</t>
-				<t id="ja">パプアニューギニア独立国</t>
 			</c>
 			<c id="PH">
 				<t id="en">Philippines</t>
 				<t id="no">Filippinene</t>
-				<t id="ja">フィリピン共和国</t>
 			</c>
 			<c id="PK">
 				<t id="en">Pakistan</t>
 				<t id="no">Pakistan</t>
-				<t id="ja">パキスタン・イスラム共和国</t>
 			</c>
 			<c id="PL">
 				<t id="en">Poland</t>
 				<t id="no">Polen</t>
-				<t id="ja">ポーランド共和国</t>
 			</c>
 			<c id="PM">
 				<t id="en">Saint Pierre and Miquelon</t>
 				<t id="no">Saint-Pierre og Miquelon</t>
-				<t id="ja">サンピエール島・ミクロン島</t>
 			</c>
 			<c id="PN">
 				<t id="en">Pitcairn</t>
 				<t id="no">Pitcairnøyene</t>
-				<t id="ja">ピトケアン諸島</t>
 			</c>
 			<c id="PR">
 				<t id="en">Puerto Rico</t>
 				<t id="no">Puerto Rico</t>
-				<t id="ja">プエルトリコ</t>
 			</c>
 			<c id="PS">
 				<t id="en">Palestine, State of</t>
 				<t id="no">Palestina</t>
-				<t id="ja">西岸・ガザ（パレスチナ自治区）</t>
 			</c>
 			<c id="PT">
 				<t id="en">Portugal</t>
 				<t id="no">Portugal</t>
-				<t id="ja">ポルトガル共和国</t>
 			</c>
 			<c id="PW">
 				<t id="en">Palau</t>
 				<t id="no">Palau</t>
-				<t id="ja">パラオ共和国</t>
 			</c>
 			<c id="PY">
 				<t id="en">Paraguay</t>
 				<t id="no">Paraguay</t>
-				<t id="ja">パラグアイ共和国</t>
 			</c>
 			<c id="QA">
 				<t id="en">Qatar</t>
 				<t id="no">Qatar</t>
-				<t id="ja">カタール国</t>
 			</c>
 			<c id="RE">
 				<t id="en">Réunion</t>
 				<t id="no">Réunion</t>
-				<t id="ja">レユニオン</t>
 			</c>
 			<c id="RO">
 				<t id="en">Romania</t>
 				<t id="no">Romania</t>
-				<t id="ja">ルーマニア</t>
 			</c>
 			<c id="RS">
 				<t id="en">Serbia</t>
 				<t id="no">Serbia</t>
-				<t id="ja">セルビア共和国</t>
 			</c>
 			<c id="RU">
 				<t id="en">Russian Federation</t>
 				<t id="no">Russland</t>
-				<t id="ja">ロシア連邦</t>
 			</c>
 			<c id="RW">
 				<t id="en">Rwanda</t>
 				<t id="no">Rwanda</t>
-				<t id="ja">ルワンダ共和国</t>
 			</c>
 			<c id="SA">
 				<t id="en">Saudi Arabia</t>
 				<t id="no">Saudi-Arabia</t>
-				<t id="ja">サウジアラビア王国</t>
 			</c>
 			<c id="SB">
 				<t id="en">Solomon Islands</t>
 				<t id="no">Salomonøyene</t>
-				<t id="ja">ソロモン諸島</t>
 			</c>
 			<c id="SC">
 				<t id="en">Seychelles</t>
 				<t id="no">Seychellene</t>
-				<t id="ja">セーシェル共和国</t>
 			</c>
 			<c id="SD">
 				<t id="en">Sudan</t>
 				<t id="no">Sudan</t>
-				<t id="ja">スーダン共和国</t>
 			</c>
 			<c id="SE">
 				<t id="en">Sweden</t>
 				<t id="no">Sverige</t>
-				<t id="ja">スウェーデン王国</t>
 			</c>
 			<c id="SG">
 				<t id="en">Singapore</t>
 				<t id="no">Singapore</t>
-				<t id="ja">シンガポール共和国</t>
 			</c>
 			<c id="SH">
 				<t id="en">Saint Helena, Ascension and Tristan da Cunha</t>
 				<t id="no">St. Helena, Ascension og Tristan da Cunha</t>
-				<t id="ja">セントヘレナ・アセンション・トリスタンダクーニャ</t>
 			</c>
 			<c id="SI">
 				<t id="en">Slovenia</t>
 				<t id="no">Slovenia</t>
-				<t id="ja">スロベニア共和国</t>
 			</c>
 			<c id="SJ">
 				<t id="en">Svalbard and Jan Mayen</t>
 				<t id="no">Svalbard og Jan Mayen</t>
-				<t id="ja">スバールバル諸島・ヤンマイエン島</t>
 			</c>
 			<c id="SK">
 				<t id="en">Slovakia</t>
 				<t id="no">Slovakia</t>
-				<t id="ja">スロバキア共和国</t>
 			</c>
 			<c id="SL">
 				<t id="en">Sierra Leone</t>
 				<t id="no">Sierra Leone</t>
-				<t id="ja">シエラレオネ共和国</t>
 			</c>
 			<c id="SM">
 				<t id="en">San Marino</t>
 				<t id="no">San Marino</t>
-				<t id="ja">サンマリノ共和国</t>
 			</c>
 			<c id="SN">
 				<t id="en">Senegal</t>
 				<t id="no">Senegal</t>
-				<t id="ja">セネガル共和国</t>
 			</c>
 			<c id="SO">
 				<t id="en">Somalia</t>
 				<t id="no">Somalia</t>
-				<t id="ja">ソマリア民主共和国</t>
 			</c>
 			<c id="SR">
 				<t id="en">Suriname</t>
 				<t id="no">Surinam</t>
-				<t id="ja">スリナム共和国</t>
 			</c>
 			<c id="SS">
 				<t id="en">South Sudan</t>
 				<t id="no">Sør-Sudan</t>
-				<t id="ja">南スーダン</t>
 			</c>
 			<c id="ST">
 				<t id="en">Sao Tome and Principe</t>
 				<t id="no">São Tomé og Príncipe</t>
-				<t id="ja">サントメ・プリンシペ民主共和国</t>
 			</c>
 			<c id="SV">
 				<t id="en">El Salvador</t>
 				<t id="no">El Salvador</t>
-				<t id="ja">エルサルバドル共和国</t>
 			</c>
 			<c id="SX">
 				<t id="en">Sint Maarten (Dutch part)</t>
 				<t id="no">Sint Maarten</t>
-				<t id="ja">シント・マールテン（オランダ領）</t>
 			</c>
 			<c id="SY">
 				<t id="en">Syrian Arab Republic</t>
 				<t id="no">Syria</t>
-				<t id="ja">シリア・アラブ共和国</t>
 			</c>
 			<c id="SZ">
 				<t id="en">Swaziland</t>
 				<t id="no">Swaziland</t>
-				<t id="ja">スワジランド王国</t>
 			</c>
 			<c id="TC">
 				<t id="en">Turks and Caicos Islands</t>
 				<t id="no">Turks- og Caicosøyene</t>
-				<t id="ja">タークス・カイコス諸島</t>
 			</c>
 			<c id="TD">
 				<t id="en">Chad</t>
 				<t id="no">Tsjad</t>
-				<t id="ja">チャド共和国</t>
 			</c>
 			<c id="TF">
 				<t id="en">French Southern Territories</t>
 				<t id="no">De franske sørterritorier</t>
-				<t id="ja">フランス領南極諸島</t>
 			</c>
 			<c id="TG">
 				<t id="en">Togo</t>
 				<t id="no">Togo</t>
-				<t id="ja">トーゴ共和国</t>
 			</c>
 			<c id="TH">
 				<t id="en">Thailand</t>
 				<t id="no">Thailand</t>
-				<t id="ja">タイ王国</t>
 			</c>
 			<c id="TJ">
 				<t id="en">Tajikistan</t>
 				<t id="no">Tadsjikistan</t>
-				<t id="ja">タジキスタン共和国</t>
 			</c>
 			<c id="TK">
 				<t id="en">Tokelau</t>
 				<t id="no">Tokelau</t>
-				<t id="ja">トケラウ諸島</t>
 			</c>
 			<c id="TL">
 				<t id="en">Timor-Leste</t>
 				<t id="no">Øst-Timor</t>
-				<t id="ja">東ティモール民主共和国</t>
 			</c>
 			<c id="TM">
 				<t id="en">Turkmenistan</t>
 				<t id="no">Turkmenistan</t>
-				<t id="ja">トルクメニスタン</t>
 			</c>
 			<c id="TN">
 				<t id="en">Tunisia</t>
 				<t id="no">Tunisia</t>
-				<t id="ja">チュニジア共和国</t>
 			</c>
 			<c id="TO">
 				<t id="en">Tonga</t>
 				<t id="no">Tonga</t>
-				<t id="ja">トンガ王国</t>
 			</c>
 			<c id="TR">
 				<t id="en">Turkey</t>
 				<t id="no">Tyrkia</t>
-				<t id="ja">トルコ共和国</t>
 			</c>
 			<c id="TT">
 				<t id="en">Trinidad and Tobago</t>
 				<t id="no">Trinidad og Tobago</t>
-				<t id="ja">トリニダード・トバゴ共和国</t>
 			</c>
 			<c id="TV">
 				<t id="en">Tuvalu</t>
 				<t id="no">Tuvalu</t>
-				<t id="ja">ツバル</t>
 			</c>
 			<c id="TW">
 				<t id="en">Taiwan, Province of China</t>
 				<t id="no">Taiwan</t>
-				<t id="ja">台湾</t>
 			</c>
 			<c id="TZ">
 				<t id="en">Tanzania, United Republic of</t>
 				<t id="no">Tanzania</t>
-				<t id="ja">タンザニア連合共和国</t>
 			</c>
 			<c id="UA">
 				<t id="en">Ukraine</t>
 				<t id="no">Ukraina</t>
-				<t id="ja">ウクライナ</t>
 			</c>
 			<c id="UG">
 				<t id="en">Uganda</t>
 				<t id="no">Uganda</t>
-				<t id="ja">ウガンダ共和国</t>
 			</c>
 			<c id="UM">
 				<t id="en">United States Minor Outlying Islands</t>
 				<t id="no">USAs ytre småøyer</t>
-				<t id="ja">米領小離島</t>
 			</c>
 			<c id="US">
 				<t id="en">United States of America</t>
 				<t id="no">USA</t>
-				<t id="ja">アメリカ合衆国</t>
 			</c>
 			<c id="UY">
 				<t id="en">Uruguay</t>
 				<t id="no">Uruguay</t>
-				<t id="ja">ウルグアイ東方共和国</t>
 			</c>
 			<c id="UZ">
 				<t id="en">Uzbekistan</t>
 				<t id="no">Usbekistan</t>
-				<t id="ja">ウズベキスタン共和国</t>
 			</c>
 			<c id="VA">
 				<t id="en">Holy See</t>
 				<t id="no">Vatikanstaten</t>
-				<t id="ja">バチカン市国</t>
 			</c>
 			<c id="VC">
 				<t id="en">Saint Vincent and the Grenadines</t>
 				<t id="no">Saint Vincent og Grenadinene</t>
-				<t id="ja">セントビンセント・グレナディーン諸島</t>
 			</c>
 			<c id="VE">
 				<t id="en">Venezuela, Bolivarian Republic of</t>
 				<t id="no">Venezuela</t>
-				<t id="ja">ベネズエラ・ボリバル共和国</t>
 			</c>
 			<c id="VG">
 				<t id="en">Virgin Islands, British</t>
 				<t id="no">De britiske Jomfruøyer</t>
-				<t id="ja">英領バージン諸島</t>
 			</c>
 			<c id="VI">
 				<t id="en">Virgin Islands, U.S.</t>
 				<t id="no">De amerikanske Jomfruøyer</t>
-				<t id="ja">米領バージン諸島</t>
 			</c>
 			<c id="VN">
 				<t id="en">Viet Nam</t>
 				<t id="no">Vietnam</t>
-				<t id="ja">ベトナム社会主義共和国</t>
 			</c>
 			<c id="VU">
 				<t id="en">Vanuatu</t>
 				<t id="no">Vanuatu</t>
-				<t id="ja">バヌアツ共和国</t>
 			</c>
 			<c id="WF">
 				<t id="en">Wallis and Futuna</t>
 				<t id="no">Wallis og Futuna</t>
-				<t id="ja">ワリス・フテュナ諸島</t>
 			</c>
 			<c id="WS">
 				<t id="en">Samoa</t>
 				<t id="no">Samoa</t>
-				<t id="ja">サモア独立国</t>
 			</c>
 			<c id="YE">
 				<t id="en">Yemen</t>
 				<t id="no">Jemen</t>
-				<t id="ja">イエメン共和国</t>
 			</c>
 			<c id="YT">
 				<t id="en">Mayotte</t>
 				<t id="no">Mayotte</t>
-				<t id="ja">マイヨット島</t>
 			</c>
 			<c id="ZA">
 				<t id="en">South Africa</t>
 				<t id="no">Sør-Afrika</t>
-				<t id="ja">南アフリカ共和国</t>
 			</c>
 			<c id="ZM">
 				<t id="en">Zambia</t>
 				<t id="no">Zambia</t>
-				<t id="ja">ザンビア共和国</t>
 			</c>
 			<c id="ZW">
 				<t id="en">Zimbabwe</t>
 				<t id="no">Zimbabwe</t>
-				<t id="ja">ジンバブエ共和国</t>
 			</c>
 		</cl>
 		<cl id="uncl1001invoice">
 			<c id="380">
 				<t id="en">Commercial invoice</t>
 				<t id="no">Kommersiell faktura</t>
-				<t id="no">インボイス</t>
 			</c>
 			<c id="393">
 				<t id="en">Factored invoice</t>
@@ -1529,8 +1213,8 @@
 				<t id="no">Consignment invoice</t>
 			</c>
 			<c id="575">
-				<t id="en">Forwarder's invoice</t>
-				<t id="no">Forwarder's invoice</t>
+				<t id="en">Forwarder’s invoice</t>
+				<t id="no">Forwarder’s invoice</t>
 			</c>
 			<c id="780">
 				<t id="en">Freight invoice</t>
@@ -1577,328 +1261,267 @@
 			<f id="Attachments">
 				<t id="en">Attachments</t>
 				<t id="no">Vedlegg</t>
-				<t id="ja">添付書類</t>	
 			</f>
 			<f id="Download">
 				<t id="en">Download</t>
 				<t id="no">Last ned</t>
-				<t id="ja">ダウンロード</t>
 			</f>
 			<f id="Embedded">
 				<t id="en">Embedded</t>
 				<t id="no">Innebygd</t>
-				<t id="ja">添付</t>
 			</f>
 		</g>
 		<g id="delivery">
 			<f id="Address">
 				<t id="en">Address</t>
 				<t id="no">Adresse</t>
-				<t id="ja">住所</t>
 			</f>
 			<f id="Delivery">
 				<t id="en">Delivery</t>
 				<t id="no">Leveringssted</t>
-				<t id="ja">納品</t>
 			</f>
 			<f id="DeliveryDate">
 				<t id="en">Date</t>
 				<t id="no">Dato</t>
-				<t id="ja">納品日</t>
 			</f>
 			<f id="DeliveryID">
 				<t id="en">Location</t>
 				<t id="no">Identifikator</t>
-				<t id="ja">納品場所</t>
 			</f>
 		</g>
 		<g id="document">
 			<f id="CreditNote">
 				<t id="en">Credit Note</t>
 				<t id="no">Kreditnota</t>
-				<t id="ja">クレジットノート</t>
 			</f>
 			<f id="Invoice">
 				<t id="en">Invoice</t>
 				<t id="no">Faktura</t>
-				<t id="ja">インボイス</t>
 			</f>
 		</g>
 		<g id="item">
 			<f id="BuyersItemIdentification">
 				<t id="en">Buyers Item Identification</t>
 				<t id="no">Kjøpers vareidentifikator</t>
-				<t id="ja">買い手の品番</t>
 			</f>
 			<f id="CommodityClassification">
 				<t id="en">Commodity Classification</t>
 				<t id="no">Klassifisering</t>
-				<t id="ja">一般分類</t>
 			</f>
 			<f id="OriginCountry">
 				<t id="en">Origin Country</t>
 				<t id="no">Opprinnelseland</t>
-				<t id="ja">生産国</t>
 			</f>
 			<f id="SellersItemIdentification">
 				<t id="en">Sellers Item Identification</t>
 				<t id="no">Selgers vareidentifikator</t>
-				<t id="ja">売り手の品番</t>
 			</f>
 			<f id="StandardItemIdentification">
 				<t id="en">Standard Item Identification</t>
 				<t id="no">Registrert vareidentifikator</t>
-				<t id="ja">標準品番</t>
 			</f>
 		</g>
 		<g id="line">
 			<f id="Allowance">
 				<t id="en">Allowance</t>
 				<t id="no">Rabatt</t>
-				<t id="ja">ibt-136 返金</t>
 			</f>
 			<f id="AllowanceIncluded">
 				<t id="en">Included allowance</t>
 				<t id="no">Inkludert rabatt</t>
-				<t id="ja">明細行の返金</t>
 			</f>
 			<f id="AllowanceTotalAmount">
 				<t id="en">Allowance Total</t>
 				<t id="no">Rabattotal</t>
-				<t id="ja">返金合計金額</t>
 			</f>
 			<f id="Charge">
 				<t id="en">Charge</t>
 				<t id="no">Gebyr</t>
-				<t id="ja">ibt-141 追加請求</t>
 			</f>
 			<f id="ChargeIncluded">
 				<t id="en">Included charge</t>
 				<t id="no">Inkludert gebyr</t>
-				<t id="ja">明細行の追加請求</t>
 			</f>
 			<f id="ChargeTotalAmount">
 				<t id="en">Charge Total</t>
 				<t id="no">Gebyrtotal</t>
-				<t id="ja">追加請求合計金額</t>
 			</f>
 			<f id="DocumentReference">
 				<t id="en">Document Reference</t>
 				<t id="no">Dokumentreferanse</t>
-				<t id="ja">参照文書番号</t>
 			</f>
 			<f id="InvoicePeriod">
 				<t id="en">Invoice Period</t>
 				<t id="no">Fakturaperiode</t>
-				<t id="ja">ibg-26* 請求期間</t>
 			</f>
 			<f id="LineExtensionAmount">
 				<t id="en">Line Total</t>
 				<t id="no">Linjetotal</t>
-				<t id="ja">明細行合計金額</t>
 			</f>
 			<f id="OrderLineReference">
 				<t id="en">Order Line</t>
 				<t id="no">Ordrelinje</t>
-				<t id="ja">参照文書明細行番号</t>
 			</f>
 		</g>
 		<g id="metadata">
 			<f id="AccountingCost">
 				<t id="en">Accounting Cost</t>
 				<t id="no">Kontering</t>
-				<t id="ja">ibt-019 買い手会計参照</t>
 			</f>
 			<f id="BuyerReference">
 				<t id="en">Buyer Reference</t>
 				<t id="no">Kjøpers referanse</t>
-				<t id="ja">ibt-010 買い手参照</t>
 			</f>
 			<f id="ContractDocumentReference">
 				<t id="en">Contract Reference</t>
 				<t id="no">Kontraktsnummer</t>
-				<t id="ja">ibt-012 参照契約書番号</t>
 			</f>
 			<f id="DespatchDocumentReference">
 				<t id="en">Despatch Reference</t>
 				<t id="no">Pakkseddel</t>
-				<t id="ja">ibt-016 参照出荷案内書番号</t>
 			</f>
 			<f id="DocumentCurrencyCode">
 				<t id="en">Currency</t>
 				<t id="no">Valuta</t>
-				<t id="ja">ibt-005 文書通貨</t>
 			</f>
 			<f id="DueDate">
 				<t id="en">Due Date</t>
 				<t id="no">Betalingsfrist</t>
-				<t id="ja">ibt-009 支払期日</t>
 			</f>
 			<f id="ID">
 				<t id="en">Identifier</t>
 				<t id="no">Identifikator</t>
-				<t id="ja">ibt-001 請求書番号</t>
 			</f>
 			<f id="InvoiceDocumentReference">
 				<t id="en">Preceding Invoice Reference</t>
 				<t id="no">Fakturareferanse</t>
-				<t id="ja">ibt-025 先行する請求書番号</t>
 			</f>
 			<f id="InvoicePeriod">
 				<t id="en">Invoice Period</t>
 				<t id="no">Fakturaperiode</t>
-				<t id="ja">ibg-14* 請求書対象期間</t>
 			</f>
 			<f id="IssueDate">
 				<t id="en">Issue Date</t>
 				<t id="no">Utstedt</t>
-				<t id="ja">ibt-002 発行日</t>
 			</f>
 			<f id="Metadata">
 				<t id="en">Metadata</t>
 				<t id="no">Metadata</t>
-				<t id="ja">メタデータ</t>
 			</f>
 			<f id="ObjectIdentifier">
 				<t id="en">Call for Tender/Lot</t>
 				<t id="no">Objektidentifikator</t>
-				<t id="ja">ibt-017 入札・ロット参照番号</t>
 			</f>
 			<f id="OrderReference">
 				<t id="en">Order Reference</t>
 				<t id="no">Ordrenummer</t>
-				<t id="ja">ibt-013 参照発注書番号</t>
 			</f>
 			<f id="OriginatorDocumentReference">
 				<t id="en">Originator Reference</t>
 				<t id="no">Kildeidentifikator</t>
-				<t id="ja">ibt-017 参照根拠文書番号</t>
 			</f>
 			<f id="ProjectReference">
 				<t id="en">Project Reference</t>
 				<t id="no">Prosjektreferanse</t>
-				<t id="ja">ibt-011 参照プロジェクト番号</t>
 			</f>
 			<f id="ReceiptDocumentReference">
 				<t id="en">Receipt Reference</t>
 				<t id="no">Kvitteringsreferanse</t>
-				<t id="ja">ibt-015 参照領収書番号</t>
 			</f>
 			<f id="TaxCurrencyCode">
 				<t id="en">Tax Currency</t>
 				<t id="no">MVA-valuta</t>
-				<t id="ja">ibt-006 税通貨</t>
 			</f>
 			<f id="TaxPointDate">
 				<t id="en">Tax Date</t>
 				<t id="no">MVA-dato</t>
-				<t id="ja">ibt-007 課税日</t>
 			</f>
 		</g>
 		<g id="party">
 			<f id="BankingReference">
 				<t id="en">Banking Reference</t>
 				<t id="no">Bankidentifikator</t>
-				<t id="ja">ibt-090 銀行参照番号</t>
 			</f>
 			<f id="Customer">
 				<t id="en">Customer</t>
 				<t id="no">Kunde</t>
-				<t id="ja">買い手</t>
 			</f>
 			<f id="EndpointID">
 				<t id="en">Technical Address</t>
 				<t id="no">Teknisk adresse</t>
-				<t id="ja">オープンペポル利用者番号</t>
 			</f>
 			<f id="PartyIdentification">
 				<t id="en">Party Identification</t>
 				<t id="no">Aktøridentifikator</t>
-				<t id="ja">法人番号</t>
 			</f>
 			<f id="PartyTaxScheme">
 				<t id="en">Tax Identification</t>
 				<t id="no">MVA-identifikator</t>
-				<t id="ja">登録番号</t>
 			</f>
 			<f id="Supplier">
 				<t id="en">Supplier</t>
 				<t id="no">Leverandør</t>
-				<t id="ja">売り手</t>
 			</f>
 		</g>
 		<g id="payment">
 			<f id="Payment">
 				<t id="en">Payment</t>
 				<t id="no">Betaling</t>
-				<t id="ja">支払い</t>
 			</f>
 		</g>
 		<g id="tax">
 			<f id="Category">
 				<t id="en">Category</t>
 				<t id="no">Kategori</t>
-				<t id="ja">税区分</t>
 			</f>
 			<f id="Tax">
 				<t id="en">Tax</t>
 				<t id="no">Merverdiavgift</t>
-				<t id="ja">税</t>
 			</f>
 			<f id="TaxableAmount">
 				<t id="en">Taxable</t>
 				<t id="no">Grunnlag</t>
-				<t id="ja">課税対象金額</t>
 			</f>
 			<f id="TaxAmount">
 				<t id="en">Tax</t>
 				<t id="no">MVA</t>
-				<t id="ja">税額</t>
 			</f>
 			<f id="Total">
 				<t id="en">Total</t>
 				<t id="no">Total</t>
-				<t id="ja">合計金額</t>
 			</f>
 		</g>
 		<g id="total">
 			<f id="PayableAmount">
 				<t id="en">Payable</t>
 				<t id="no">Payable</t>
-				<t id="ja">ibt-115 請求金額</t>
 			</f>
 			<f id="PayableRoundingAmount">
 				<t id="en">Rounding Amount</t>
 				<t id="no">Avrunding</t>
-				<t id="ja">ibt-114 丸め金額</t>
 			</f>
 			<f id="PrepaidAmount">
 				<t id="en">Prepaid</t>
 				<t id="no">Forhåndsbetalt</t>
-				<t id="ja">ibt-113 前払い金額</t>
 			</f>
 			<f id="TaxExclusiveAmount">
 				<t id="en">Tax Exclusive</t>
 				<t id="no">Før MVA</t>
-				<t id="ja">ibt-109 税抜き金額</t>
 			</f>
 			<f id="TaxInclusiveAmount">
 				<t id="en">Tax Inclusive</t>
 				<t id="no">Etter MVA</t>
-				<t id="ja">ibt-112 税込み金額</t>
 			</f>
 			<f id="Totals">
 				<t id="en">Totals</t>
 				<t id="no">Totaler</t>
-				<t id="ja">合計金額</t>
 			</f>
 		</g>
 	</xsl:variable>
-	<xsl:param name="language" select="'ja'"/>
+	<xsl:param name="language" select="'en'"/>
 	<xsl:function name="u:lang">
 		<xsl:value-of select="$language"/>
 	</xsl:function>
-	<!-- template -->
 	<xsl:template name="mode_document">
 		<xsl:apply-templates select="*" mode="document"/>
 	</xsl:template>
@@ -1994,17 +1617,17 @@
 		</html>
 	</xsl:template>
 	<xsl:template name="mode_unknown">
-		<html lang="ja">
+		<html lang="en">
 			<head>
 				<xsl:call-template name="doc-head"/>
-				<title>処理モード不明</title>
+				<title>Unknown mode</title>
 			</head>
 			<body>
 				<div id="document">
-					<h1>処理モード不明</h1>
-					<p type="lead">指定されたモード <code>
+					<h1>Unknown mode</h1>
+					<p type="lead">Provided mode <code>
 							<xsl:value-of select="$mode"/>
-						</code> は不明です.  <code>help</code>モード指定すると詳細情報を表示します.</p>
+						</code> is unknown. Please use mode <code>help</code> for more information.</p>
 				</div>
 			</body>
 		</html>
@@ -2021,7 +1644,7 @@
 				</ul>
 			</xsl:when>
 			<xsl:otherwise>
-				<em>添付書類なし.</em>
+				<em>No attachments provided.</em>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -2066,9 +1689,12 @@
 		<xsl:value-of select="text()"/>
 	</xsl:template>
 	<xsl:template match="cbc:*[ends-with(local-name(), 'Amount')]" mode="common">
-		<!--<xsl:value-of select="format-number(text(), '###,##0')"/>-->
-		<xsl:value-of select="format-number(text(), '###,##0.00')"/>
-		<small><xsl:value-of select="@currencyID"/></small>
+		<!--<xsl:value-of select="format-number(text(), '###,##0')"/> <small>
+		-->
+                <xsl:value-of select="format-number(text(), '###,##0.00')"/> 
+                <small>
+			<xsl:value-of select="@currencyID"/>
+		</small>
 	</xsl:template>
 	<xsl:template match="cac:*[ends-with(local-name(), 'Period')]" mode="common">
 		<xsl:apply-templates select="cbc:StartDate" mode="common"/> - <xsl:apply-templates select="cbc:EndDate" mode="common"/>
@@ -2079,8 +1705,7 @@
 	<xsl:template match="cac:*[ends-with(local-name(), 'TaxCategory')]" mode="common">
 		<small>
 			<xsl:value-of select="cac:TaxScheme/cbc:ID"/>:</small>
-		<xsl:copy-of select="u:taxcategory(cbc:ID)"/>
-		<!-- (<xsl:value-of select="cbc:ID"/>) -->
+		<xsl:value-of select="cbc:ID"/>
 		<small> (<xsl:value-of select="cbc:Percent"/>%)</small>
 		<xsl:if test="cbc:TaxExemptionReason">
 			<br/>
@@ -2354,26 +1979,8 @@
 	</xsl:template>
 	<xsl:template match="cac:Price" mode="line">
 		<div class="linesupport">
-			<xsl:if test="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:BaseAmount">
-				<div class="row">
-					<div class="col-sm-9"><small>ibt-148</small> 定価</div>
-					<div class="col-sm-3 text-right">
-						<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:BaseAmount" mode="common"/>
-					</div>
-				</div>
-			</xsl:if>
-			<xsl:if test="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount">
-				<div class="row">
-					<div class="col-sm-9"><small>ibt-147</small> 値引き</div>
-					<div class="col-sm-3 text-right">
-						-<xsl:apply-templates select="cac:AllowanceCharge[cbc:ChargeIndicator=false()]/cbc:Amount" mode="common"/>
-					</div>
-				</div>
-			</xsl:if>
 			<div class="row">
-				<div class="col-sm-9"><small>ibt-146</small> 単価  @ 
-				<xsl:apply-templates select="cbc:BaseQuantity" mode="common"/>
-				 <small> (ibt-149)</small>
+				<div class="col-sm-9">Price @ <xsl:apply-templates select="cbc:BaseQuantity" mode="common"/>
 				</div>
 				<div class="col-sm-3 text-right">
 					<xsl:apply-templates select="cbc:PriceAmount" mode="common"/>
@@ -2404,25 +2011,11 @@
 			</div>
 		</div>
 	</xsl:template>
-	<xsl:template match="cbc:LineExtensionAmount" mode="line">
+	<xsl:template match="cbc:LineExtensionAmount | cbc:ChargeTotalAmount" mode="line">
 		<div class="total">
 			<div class="row">
 				<div class="col-xs-6 col-sm-8 col-sm-offset-1">
 					<xsl:copy-of select="u:label('line', local-name())"/>
-					<small> (ibt-106 Sum of invoice line net amount)</small>
-				</div>
-				<div class="col-xs-6 col-sm-2 col-sm-offset-1 text-right">
-					<xsl:apply-templates select="current()" mode="common"/>
-				</div>
-			</div>
-		</div>
-	</xsl:template>
-	<xsl:template match="cbc:ChargeTotalAmount" mode="line">
-		<div class="total">
-			<div class="row">
-				<div class="col-xs-6 col-sm-8 col-sm-offset-1">
-					<xsl:copy-of select="u:label('line', local-name())"/>
-					<small> (ibt-108 Sum of charges on document level)</small>
 				</div>
 				<div class="col-xs-6 col-sm-2 col-sm-offset-1 text-right">
 					<xsl:apply-templates select="current()" mode="common"/>
@@ -2435,7 +2028,6 @@
 			<div class="row">
 				<div class="col-xs-6 col-sm-8 col-sm-offset-1">
 					<xsl:copy-of select="u:label('line', local-name())"/>
-					<small> (ibt-107 Sum of allowances on document level)</small>
 				</div>
 				<div class="col-xs-6 col-sm-2 col-sm-offset-1 text-right">-<xsl:apply-templates select="current()" mode="common"/>
 				</div>
@@ -2573,9 +2165,6 @@
 			<strong>
 				<xsl:value-of select="cbc:Name"/>
 			</strong>
-			<br/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty"><small> (ibt-028 Seller trading name)</small></xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty"><small> (ibt-045 Buyer trading name)</small></xsl:if>
 		</div>
 	</xsl:template>
 	<xsl:template match="cac:PostalAddress" mode="party">
@@ -2619,65 +2208,41 @@
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="cac:PartyIdentification[cbc:ID[@schemeID]]" mode="party">
-	<!-- <xsl:template match="cac:PartyIdentification" mode="party"> -->
 		<dt>
 			<xsl:copy-of select="u:label('party', local-name())"/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty">
-				<small> (ibt-029 Seller identifier)</small>
-			</xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty">
-				<small> (ibt-046 Buyer identifier)</small>
-			</xsl:if>
 		</dt>
 		<dd>
-			<small><xsl:apply-templates select="@schemeID" mode="common"/>: </small>
 			<xsl:apply-templates select="cbc:ID" mode="common"/>
 		</dd>
 	</xsl:template>
 	<xsl:template match="cac:PartyIdentification[cbc:ID[not(@schemeID)]]" mode="party">
 		<dt>
-			<xsl:copy-of select="u:label('party', local-name())"/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty"><small> (ibt-029 Seller identifier)</small></xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty"><small> (ibt-046 Buyer identifier)</small></xsl:if>
-		</dt>
-		<dd>
-			<!-- <small><xsl:apply-templates select="@schemeID" mode="common"/>: </small> -->
-			<xsl:apply-templates select="cbc:ID" mode="common"/>
-		</dd>
-		<!-- <dt>
 			<xsl:copy-of select="u:label('party', 'BankingReference')"/>
 		</dt>
 		<dd>
-			<xsl:value-of select="cbc:ID"/> 
-		</dd>-->
+			<xsl:value-of select="cbc:ID"/>
+		</dd>
 	</xsl:template>
 	<xsl:template match="cac:PartyLegalEntity" mode="party">
 		<div>
-			<strong><xsl:value-of select="cbc:RegistrationName"/></strong>
-			<xsl:if test="cbc:CompanyLegalForm"> (<xsl:value-of select="cbc:CompanyLegalForm"/>)</xsl:if>
-			<br/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty"><small> (ibt-027* Seller name)</small></xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty"><small> (ibt-044* Buyer name)</small></xsl:if>
-		</div>
+			<strong>
+				<xsl:value-of select="cbc:RegistrationName"/>
+			</strong> (<xsl:value-of select="cbc:CompanyLegalForm"/>)</div>
 		<div>
-			<xsl:apply-templates select="cbc:CompanyID" mode="party"/>
-			<!-- <small>
+			<small>
 				<xsl:value-of select="cbc:CompanyID/@schemeID"/>:</small>
-			<xsl:value-of select="cbc:CompanyID"/> -->
+			<xsl:value-of select="cbc:CompanyID"/>
 		</div>
 	</xsl:template>
 	<xsl:template match="cac:PartyLegalEntity/cbc:CompanyID" mode="party">
-			<small>法人番号 <xsl:value-of select="@schemeID"/>:</small>
+		<dt>Legal Company Identifier</dt>
+		<dd>
 			<xsl:value-of select="text()"/>
-			<br/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty"><small> (ibt-030 Seller legal registration identifier)</small></xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty"><small> (ibt-061 Buyer legal registration identifier)</small></xsl:if>
+		</dd>
 	</xsl:template>
 	<xsl:template match="cac:PartyTaxScheme" mode="party">
 		<dt>
 			<xsl:copy-of select="u:label('party', local-name())"/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty"><small> (ibt-031* Seller TAX identifier)</small></xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty"><small> (ibt-048 Buyer TAX identifier)</small></xsl:if>
 		</dt>
 		<dd>
 			<small>
@@ -2688,9 +2253,6 @@
 	<xsl:template match="cbc:EndpointID" mode="party">
 		<dt>
 			<xsl:copy-of select="u:label('party', local-name())"/>
-			<br/>
-			<xsl:if test="ancestor::cac:AccountingSupplierParty"><small>(ibt-034 Seller electonic address)</small></xsl:if>
-			<xsl:if test="ancestor::cac:AccountingCustomerParty"><small>(ibt-049 Buyer electonic address)</small></xsl:if>
 		</dt>
 		<dd>
 			<small>
@@ -2703,20 +2265,13 @@
 			<div>
 				<xsl:value-of select="cbc:Name"/>
 			</div>
-			<xsl:if test="cbc:Telephone">
-				<div>
-					<small>電話 </small>
-					<xsl:value-of select="cbc:Telephone"/>
-				</div>
-			</xsl:if>
-			<xsl:if test="cbc:ElectronicMail">
-				<div>
-					<small>メール </small>
-					<a href="mailto:{cbc:ElectronicMail}">
-						<xsl:value-of select="cbc:ElectronicMail"/>
-					</a>
-				</div>
-			</xsl:if>
+			<div>tlf: <xsl:value-of select="cbc:Telephone"/>
+			</div>
+			<div>
+				<a href="mailto:{cbc:ElectronicMail}">
+					<xsl:value-of select="cbc:ElectronicMail"/>
+				</a>
+			</div>
 		</div>
 	</xsl:template>
 	<xsl:template match="cac:PaymentMeans" mode="payment">
@@ -2726,11 +2281,11 @@
 			</div>
 			<div class="col-sm-10">
 				<dl class="row">
-					<dt class="col-sm-4">支払い番号</dt>
+					<dt class="col-sm-4">PaymentID</dt>
 					<dd class="col-sm-8">
 						<xsl:value-of select="cbc:PaymentID"/>
 					</dd>
-					<dt class="col-sm-4">口座番号</dt>
+					<dt class="col-sm-4">Account</dt>
 					<dd class="col-sm-8">
 						<xsl:value-of select="cac:PayeeFinancialAccount/cbc:ID"/> (<xsl:value-of select="cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID"/>)</dd>
 				</dl>
@@ -2745,13 +2300,13 @@
 			<thead>
 				<tr>
 					<th>
-						ibt-118*<br/><xsl:copy-of select="u:label('tax', 'Category')"/>
+						<xsl:copy-of select="u:label('tax', 'Category')"/>
 					</th>
 					<th style="width: 20%;">
-						ibt-116*<br/><xsl:copy-of select="u:label('tax', 'TaxableAmount')"/>
+						<xsl:copy-of select="u:label('tax', 'TaxableAmount')"/>
 					</th>
 					<th style="width: 20%;">
-						int-117*<br/><xsl:copy-of select="u:label('tax', 'TaxAmount')"/>
+						<xsl:copy-of select="u:label('tax', 'TaxAmount')"/>
 					</th>
 				</tr>
 			</thead>
@@ -2760,14 +2315,14 @@
 			</tbody>
 			<tfoot>
 				<xsl:apply-templates select="cbc:TaxAmount" mode="tax"/>
-				<!-- <xsl:apply-templates select="../cac:TaxTotal[not(cac:TaxSubtotal)]/cbc:TaxAmount" mode="tax"/> -->
+				<xsl:apply-templates select="../cac:TaxTotal[not(cac:TaxSubtotal)]/cbc:TaxAmount" mode="tax"/>
 			</tfoot>
 		</table>
 	</xsl:template>
 	<xsl:template match="cac:TaxSubtotal" mode="tax">
 		<tr>
 			<td>
-				<xsl:apply-templates select="cac:TaxCategory" mode="tax"/> 
+				<xsl:apply-templates select="cac:TaxCategory" mode="common"/>
 			</td>
 			<td class="text-right">
 				<xsl:apply-templates select="cbc:TaxableAmount" mode="common"/>
@@ -2786,19 +2341,6 @@
 				<xsl:apply-templates select="." mode="common"/>
 			</td>
 		</tr>
-	</xsl:template>
-	<xsl:template match="cac:TaxCategory" mode="tax">
-		<small>
-			<xsl:value-of select="cac:TaxScheme/cbc:ID"/>:</small>
-		<xsl:copy-of select="u:taxcategory(cbc:ID)"/>
-		<!-- (<xsl:value-of select="cbc:ID"/>) -->
-		<small> (<xsl:value-of select="cbc:Percent"/>%)</small>
-		<xsl:if test="cbc:TaxExemptionReason">
-			<br/>
-			<small>
-				<xsl:value-of select="cbc:TaxExemptionReason"/>
-			</small>
-		</xsl:if>
 	</xsl:template>
 	<xsl:template match="cac:LegalMonetaryTotal" mode="total">
 		<h3>
@@ -2830,14 +2372,15 @@
 		<html lang="{$language}">
 			<head>
 				<xsl:call-template name="doc-head"/>
-				<title>文書タイプが不明</title>
+				<title>Unknown document type</title>
 			</head>
 			<body>
 				<div id="document">
-					<h1>文書タイプが不明</h1>
-					<p class="lead">指定された文書タイプは処理できません.</p>
+					<h1>Unknown document type</h1>
+					<p class="lead">The document you tried to render were not recognized.</p>
 				</div>
 			</body>
 		</html>
 	</xsl:template>
 </xsl:stylesheet>
+

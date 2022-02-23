@@ -6,13 +6,14 @@ ns = {
   '': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
   'xsd': 'http://www.w3.org/2001/XMLSchema',
   'xsi': 'http://www.w3.org/2001/XMLSchema-instance',
+  'ext': 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2',
   'cac': 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2',
   'cbc': 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2',
   'qdt': 'urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2',
   'udt': 'urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2',
   'ccts': 'urn:un:unece:uncefact:documentation:2',
-  'ubl-creditnote': 'urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2',
-  'ubl-invoice': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
+  'cn': 'urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2',
+  'ubl': 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2',
   'sch': 'http://purl.oclc.org/dsdl/schematron'
 }
 

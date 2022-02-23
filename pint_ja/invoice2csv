@@ -152,7 +152,6 @@ def fillData(parent,parentXPath,i,count):
         _xpath = xpath[0].replace(parentXPath+'/','')
       else:
         _xpath = xpath[0]
-
       if re.match(r'^.*\[not\(.*\)\]',_xpath): 
         # e.g. .*[not({urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2}DocumentTypeCode='130')]
         xpath_ = re.sub(r'^(.*)\[not\(.*\)\]',r'\1',_xpath)
@@ -414,7 +413,7 @@ if __name__=='__main__':
     print(f'** START ** {__file__}')
     print(f'*** Input file {in_file}')
 
-  L12_single_BTG = ['ibt-006','ibt-007','ibt-008','ibt-009','ibt-010','ibt-011','ibt-012','ibt-013','ibt-014','ibt-015','ibt-016','ibt-017','ibt-018','ibt-018-1','ibt-019','ibg-02','ibt-023','ibt-024','ibg-04','ibt-027','ibt-028','ibt-029','ibt-029-1','ibt-090','ibt-090-1','ibt-030','ibt-030-1','ibt-031','ibt-032','ibt-032-1','ibt-033','ibt-034','ibt-034-1','ibg-05','ibt-035','ibt-036','ibt-162','ibt-037','ibt-038','ibt-039','ibt-040','ibg-06','ibt-041','ibt-042','ibt-043','ibg-07','ibt-044','ibt-045','ibt-046','ibt-046-1','ibt-047','ibt-047-1','ibt-048','ibt-048-1','ibt-049','ibt-049-1','ibg-08','ibt-050','ibt-051','ibt-163','ibt-052','ibt-053','ibt-054','ibt-055','ibg-09','ibt-056','ibt-057','ibt-058','ibg-10','ibt-059','ibt-060','ibt-060-1','ibt-061','ibt-061-1','ibg-11','ibt-062','ibt-063','ibt-063-1','ibg-12','ibt-064','ibt-065','ibt-164','ibt-066','ibt-067','ibt-068','ibt-069','ibg-13','ibt-070','ibt-071','ibt-071-1','ibt-072','ibg-14','ibt-073','ibt-074','ibg-15','ibt-075','ibt-076','ibt-165','ibt-077','ibt-078','ibt-079','ibt-080','ibg-22','ibt-106','ibt-107','ibt-108','ibt-109','ibt-110','ibt-112','ibt-113','ibt-114','ibt-115']
+  L12_single_BTG = ['ibt-006','ibt-007','ibt-008','ibt-009','ibt-010','ibt-011','ibt-012','ibt-013','ibt-014','ibt-015','ibt-016','ibt-017','ibt-018','ibt-018-1','ibt-019','ibg-02','ibt-023','ibt-024','ibg-04','ibt-027','ibt-028','ibt-029','ibt-029-1','ibt-090','ibt-090-1','ibt-030','ibt-030-1','ibt-031','ibt-032','ibt-032-1','ibt-033','ibt-034','ibt-034-1','ibg-05','ibt-035','ibt-036','ibt-162','ibt-037','ibt-038','ibt-039','ibt-040','ibg-06','ibt-041','ibt-042','ibt-043','ibg-07','ibt-044','ibt-045','ibt-046','ibt-046-1','ibt-047','ibt-047-1','ibt-048','ibt-048-1','ibt-049','ibt-049-1','ibg-08','ibt-050','ibt-051','ibt-163','ibt-052','ibt-053','ibt-054','ibt-055','ibg-09','ibt-056','ibt-057','ibt-058','ibg-10','ibt-059','ibt-060','ibt-060-1','ibt-061','ibt-061-1','ibg-11','ibt-062','ibt-063','ibt-063-1','ibg-12','ibt-064','ibt-065','ibt-164','ibt-066','ibt-067','ibt-068','ibt-069','ibg-13','ibt-070','ibt-071','ibt-071-1','ibt-072','ibg-14','ibt-073','ibt-074','ibg-15','ibt-075','ibt-076','ibt-165','ibt-077','ibt-078','ibt-079','ibt-080','ibg-22','ibt-106','ibt-107','ibt-108','ibt-109','ibt-110','ibt-111','ibt-112','ibt-113','ibt-114','ibt-115']
   L2_multiple_BG = ['ibg-17','ibt-084','ibt-085','ibt-086']
 
   # Cardinality alignment for Party tax scheme, Party identification, and Commodity classification
@@ -442,8 +441,8 @@ if __name__=='__main__':
     "{"+ns['cac']+"}Party/{"+ns['cac']+"}PartyTaxScheme/{"+ns['cac']+"}TaxScheme/{"+ns['cbc']+"}ID")
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Codelist,Occurrence,CardinalityAlignment
-  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17       18         19
+  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Codelist,ModCard,Occurrence,CardinalityAlignment
+  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17       18      19         20
   COL_SemanticSort = 0
   COL_ID = 1
   COL_level = 2

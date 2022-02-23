@@ -203,16 +203,22 @@ CAR_Button = '''
 table_html = '''
 				<table class="syntax table table-sm table-hover" style="table-layout: fixed; width: 100%;">
 					<colgroup>
-						<col span="1" style="width: 3%;">
-						<col span="1" style="width: {3}%;">
-						<col span="1" style="width: {4}%;">
-						<col span="1" style="width: 50%;">
+						<col span="1" style="width: 3%;"> <!-- control -->
+						<col span="1" style="width: 7%;"> <!-- ID -->
+						<col span="1" style="width: 5%;"> <!-- Card -->
+						<col span="1" style="width: 25%;"> <!-- BT -->
+						<col span="1" style="width: 5%;"> <!-- Restricted syntax card -->
+						<col span="1" style="width: 40%;"> <!-- Syntax element -->
+						<col span="1" style="width: 15%;"> <!-- Binding note -->
 					</colgroup>
 					<thead class="bg-light text-dark">
 						<th>&nbsp;</th>
 						<th>{0}</th>
 						<th>{1}</th>
 						<th>{2}</th>
+						<th>{3}</th>
+						<th>{4}</th>
+						<th>{5}</th>
 					</thead>
 					<tbody>
 '''
@@ -287,6 +293,9 @@ def setupTr(data,lang):
 	html = ''
 	if not 'XPath' in data or not 'element' in data:
 		return ''
+	id = data['PINT_ID']
+	BT = data['BT']
+	BT_ja = data['BT_ja']
 	xPath = data['XPath']
 	dirPath = data['dirPath']
 	path = data['Path']
@@ -299,17 +308,21 @@ def setupTr(data,lang):
 		card = data['Card']
 	else:
 		card = ''
-	if 'Occ' in data:
-		occ = data['Occ']
+	if 'ModCard' in data:
+		modCard = data['ModCard']
+	else:
+		modCard = ''
+	if 'selectors' in data:
+		selectors = data['selectors']
 	else: 
-		occ = ''
+		selectors = ''
 	if 'Invoice' == element or re.match(r'^cac:.*$',element):
 		html += '<tr class="group"'+ \
 							' data-seq="'+data['SynSort']+'"'+ \
 							' data-pint_id="'+data['PINT_ID']+'"'+ \
 							' data-level="'+data['Level']+'"'+ \
 							' data-card="'+card+'"'+ \
-							' data-occ="'+occ+'"'+ \
+							' data-occ="'+modCard+'"'+ \
 							' data-path="'+data['dirPath']+'">'
 		html += '<td class="expand-control" align="center"></td>'
 	elif re.match(r'^cbc:.*$',element) or re.match(r'^@.+',element):
@@ -321,37 +334,42 @@ def setupTr(data,lang):
 		html += '<td>&nbsp;</td>'
 	else:
 		return ''
+
 	if re.match(r'^@[a-zA-Z]+',element):
-		html += '<td><span>'+element+'</span></td>\n'
+		html += '<td><span>'+id+'</span></td>\n'
 		html += '<td><span>'+card+'</span></td>\n'
-		html += '<td><p>'
-		if 'BT' in data and len(data['BT']) > 0:
-			html += '<strong>'+data['BT']+'</strong><br/>'
-		if 'Definition' in data and len(data['Definition']) >  0:
-			definition = '<em>'+('<br/>'.join(data['Definition'].split('\\n')))+'</em>'
-		else:
-			definition = ''
-		html += definition
-		if 'Codelist' in data and len(data['Codelist']) >  0:
-			codes = data['Codelist'].split(',')
-			for code in codes:
-				c = Code_lists[code]
-				val = f'Identifier: {c["Identifier"]}<br><em>{c["name"]}</em>'
-				if 'Agency' in c:
-					agency = c['Agency']
-					val += f'<br>Agency: {agency}'
-				if 'Version' in c:
-					version = c['Version']
-					if version:
-						val += f' {version}'
-				if 'Subset' in c:
-					subset = c['Subset']
-					if subset:
-						val += f' Subset: {subset}'
-			codelist = val
-		else:
-			codelist = ''
-		html += codelist
+		html += '<td><span>'+BT+'<br/>'+BT_ja+'</span></td>\n'
+		html += '<td><span>'+modCard+'</span></td>\n'
+		html += '<td><span>'+element+'</span></td>\n'
+		html += '<td><span>'+selectors+'</span></td>\n'
+		# html += '<td><p>'
+		# if 'BT' in data and len(data['BT']) > 0:
+		# 	html += '<strong>'+data['BT']+'</strong><br/>'
+		# if 'Definition' in data and len(data['Definition']) >  0:
+		# 	definition = '<em>'+('<br/>'.join(data['Definition'].split('\\n')))+'</em>'
+		# else:
+		# 	definition = ''
+		# html += definition
+		# if 'Codelist' in data and len(data['Codelist']) >  0:
+		# 	codes = data['Codelist'].split(',')
+		# 	for code in codes:
+		# 		c = Code_lists[code]
+		# 		val = f'Identifier: {c["Identifier"]}<br><em>{c["name"]}</em>'
+		# 		if 'Agency' in c:
+		# 			agency = c['Agency']
+		# 			val += f'<br>Agency: {agency}'
+		# 		if 'Version' in c:
+		# 			version = c['Version']
+		# 			if version:
+		# 				val += f' {version}'
+		# 		if 'Subset' in c:
+		# 			subset = c['Subset']
+		# 			if subset:
+		# 				val += f' Subset: {subset}'
+		# 	codelist = val
+		# else:
+		# 	codelist = ''
+		# html += codelist
 	else:
 		if 0 == len(path[9:]):
 			item_dir = APP_BASE+'syntax/ubl-'+MESSAGE+'/'+lang+'/'
@@ -360,19 +378,24 @@ def setupTr(data,lang):
 				item_dir = APP_BASE+'syntax/ubl-'+MESSAGE+'/'+dirPath[9:].replace(':','-')+'/'+lang+'/'
 			else:
 				item_dir = APP_BASE+'syntax/ubl-'+MESSAGE+'/'+path[9:].replace(':','-')+'/'+lang+'/'
-		html += '<td class="info-link"><a href="'+item_dir+'">'+name+'</a></td>'
+		html += '<td><span>'+id+'</span></td>\n'
 		html += '<td><span>'+card+'</span></td>\n'
-		html += '<td><p>'
-		if 'BT' in data and len(data['BT']) > 0:
-			html += '<strong>'+data['BT']+'</strong>'
-		if 'BT_ja' in data and len(data['BT_ja']) > 0:
-			html += f'<br>{data["BT_ja"]}'
-		if 'Definition' in data and len(data['Definition']) >  0:
-			definition = '<br><em>'+('<br/>'.join(data['Definition'].split('\\n')))+'</em>'
-		else:
-			definition = ''
-		html += definition
-	html += '</p></td></tr>\n'
+		html += '<td><span>'+BT+'<br/>'+BT_ja+'</span></td>\n'
+		html += '<td><span>'+modCard+'</span></td>\n'
+		html += '<td class="info-link"><a href="'+item_dir+'">'+name+'</a></td>'
+		html += '<td><span>'+selectors+'</span></td>\n'
+	# 	html += '<td><p>'
+	# 	if 'BT' in data and len(data['BT']) > 0:
+	# 		html += '<strong>'+data['BT']+'</strong>'
+	# 	if 'BT_ja' in data and len(data['BT_ja']) > 0:
+	# 		html += f'<br>{data["BT_ja"]}'
+	# 	if 'Definition' in data and len(data['Definition']) >  0:
+	# 		definition = '<br><em>'+('<br/>'.join(data['Definition'].split('\\n')))+'</em>'
+	# 	else:
+	# 		definition = ''
+	# 	html += definition
+	# html += '</p></td><\n'
+	html += '</tr>\n'
 	return html
 
 def writeTr(f,data,lang):
@@ -380,6 +403,9 @@ def writeTr(f,data,lang):
 		return
 	if not 'XPath' in data:
 		return
+	id = data['PINT_ID']
+	BT = data['BT']
+	BT_ja = data['BT_ja']
 	xPath = data['XPath']
 	dirPath = data['dirPath']
 	path = data['Path']
@@ -393,12 +419,13 @@ def writeTr(f,data,lang):
 	name = name.replace(']',' ]')
 	if 'Card' in data:
 		card = data['Card']
-	else:
-		card = ''
-	if 'Occ' in data:
-		occ = data['Occ']
-	else:
-		occ = ''
+	else: card = ''
+	if 'ModCard' in data:
+		modCard = data['ModCard']
+	else: modCard = ''
+	if 'selectors' in data:
+		selectors = data['selectors']
+	else: selectors = ''
 	if 'Invoice' == element or re.match(r'^cac:.*$',element):
 		f.write('<tr class="group"'+ \
 									' data-seq="'+data['SynSort']+'"'+ \
@@ -431,33 +458,37 @@ def writeTr(f,data,lang):
 		item_dir = APP_BASE+'syntax/ubl-'+MESSAGE+'/'+lang+'/'
 	else:
 		item_dir = APP_BASE+'syntax/ubl-'+MESSAGE+'/'+dirPath[9:].replace(':','-')+'/'+lang+'/'
+	f.write('<td><span>'+id+'</span></td>\n')
+	f.write('<td><span>'+card+'</span></td>\n')
+	f.write('<td><span>'+BT+'<br/>'+BT_ja+'</span></td>\n')
+	f.write('<td><span>'+modCard+'</span></td>\n')
 	f.write('<td class="info-link">'+level+'<a href="'+item_dir+'">'+name+'</a></td>\n')
-	f.write('<td><span>'+occ+'</span></td>\n')
-	f.write('<td>\n')
-	f.write('<p>\n')
-	if 'ja' == lang:
-		pass
-		# if 'BT_ja' in data and len(data['BT_ja']) > 0:
-		# 	f.write(tabs+'<strong>'+data['BT_ja']+'</strong><br/>\n')
-		# if 'Desc_ja' in data and len(data['Desc_ja']) > 0:
-		# 	desc = tabs+'<em>'+('<br/>'.join(data['Desc_ja'].split('\\n')))+'</em>\n'
-		# else:
-		# 	if datatype in complexType:
-		# 		definition = complexType[datatype]['Definition']
-		# 		desc = '(UBL2.1タイプ定義: '+definition+')'
-		# 	else: desc = ''
-	else:
-		if 'BT' in data and len(data['BT']) > 0:
-			f.write('<strong>'+data['BT']+'</strong><br/>\n')
-		if 'BT_ja' in data and len(data['BT_ja']) > 0:
-			f.write(data['BT_ja']+'<br/>\n')
-		if 'Definition' in data and len(data['Definition']) > 0:
-			definition = '<em>'+('<br/>'.join(data['Definition'].split('\\n')))+'</em>\n'
-		else:
-			definition = ''
-	f.write(definition+'</p>\n')
-	example = ''		
-	f.write(example+'</td>\n')
+	f.write('<td><span>'+selectors+'</span></td>\n')
+	# f.write('<td>\n')
+	# f.write('<p>\n')
+	# if 'ja' == lang:
+	# 	pass
+	# 	# if 'BT_ja' in data and len(data['BT_ja']) > 0:
+	# 	# 	f.write(tabs+'<strong>'+data['BT_ja']+'</strong><br/>\n')
+	# 	# if 'Desc_ja' in data and len(data['Desc_ja']) > 0:
+	# 	# 	desc = tabs+'<em>'+('<br/>'.join(data['Desc_ja'].split('\\n')))+'</em>\n'
+	# 	# else:
+	# 	# 	if datatype in complexType:
+	# 	# 		definition = complexType[datatype]['Definition']
+	# 	# 		desc = '(UBL2.1タイプ定義: '+definition+')'
+	# 	# 	else: desc = ''
+	# else:
+	# 	if 'BT' in data and len(data['BT']) > 0:
+	# 		f.write('<strong>'+data['BT']+'</strong><br/>\n')
+	# 	if 'BT_ja' in data and len(data['BT_ja']) > 0:
+	# 		f.write(data['BT_ja']+'<br/>\n')
+	# 	if 'Definition' in data and len(data['Definition']) > 0:
+	# 		definition = '<em>'+('<br/>'.join(data['Definition'].split('\\n')))+'</em>\n'
+	# 	else:
+	# 		definition = ''
+	# f.write(definition+'</p>\n')
+	# example = ''		
+	# f.write(example+'</td>\n')
 	f.write('</tr>\n')
 
 def writeBreadcrumb(f,dirPath,lang):
@@ -623,7 +654,7 @@ if __name__ == '__main__':
 															NOT_SUPPORTED_en,'Return to previous page.','Search')
 		f.write(html)
 
-		f.write(table_html.format('XML Element','Card','Business Term / Description','40','7'))
+		f.write(table_html.format('ID','Card','Business term','Restricted Stntax Card','Syntax Element','Binding note'))
 		dirPath = None
 		for data in pint_list:
 			if not 'Path' in data or not 'element' in data:
@@ -712,35 +743,56 @@ if __name__ == '__main__':
 				f.write('</header>\n')
 				name = element.replace('-',':')
 				name = name.replace('_','/')
-				definition = data['Definition']
-				if definition:
+				if 'Definition' in data and data['Definition']:
+					definition = data['Definition']
 					Definition = '<br/>'.join(definition.split('\\n'))
 					Definition += ' (UBL 2.1)'
 				else: Definition = ''
-				if 'Datatype' in data:
+				if 'Datatype' in data and data['Datatype']:
 					datatype = data['Datatype']
 				else: datatype = ''
 				NS = getNamespace(element)
-				if 'selectors' in data:
+				if 'selectors' in data and  data['selectors']:
 					selectors = data['selectors']
 				else: selectors = ''
 				Selectors = blank2fa_minus(selectors)
-				if 'Datatype' in data:
+				if 'Datatype' in data and data['Datatype']:
 					datatype = data['Datatype']
 				else: datatype = ''
 				Datatype = blank2fa_minus(datatype)
-				if 'Card' in data:
+				if 'Card' in data and data['Card']:
 					card = data['Card']
 				else: card = ''
 				Card = blank2fa_minus(card)
-				if 'Occ' in data:
-					occ = data['Occ']
-				else: occ = ''
-				Occ = blank2fa_minus(occ)
-				if 'Desc' in data:
+				if 'ModCard' in data and data['ModCard']:
+					modcard = data['ModCard']
+				else: modcard = ''
+				ModCard = blank2fa_minus(modcard)
+				if 'UBLCard' in data and data['UBLCard']:
+					ublcard = data['UBLCard']
+				UBLCard = blank2fa_minus(ublcard)
+				if 'CAR' in data and data['CAR']:
+					car = data['CAR']
+				else: car = ''
+				# CAR = blank2fa_minus(car)
+				CAR_ALIGN = {
+					'CAR-1':'Semantic Optional(0..x) / Syntax Mandatory(1..x)<br/>ISSUE: If the value is not present, the UBL schema validation reports an error RESOLUTION: Agree on “default value if missing” (e.g. 0, 1-1-1970, AAA)',
+					'CAR-2':'Semantic Mandatory(1..x) / Syntax Optional(0..x)<br/>ISSUE: None. RESOLUTION: Add a rule in the schematron that the element shall be present.',
+					'CAR-3':'Semantic Single(x..1) / Syntax Multiple(x..n)<br/>ISSUE:None. RESOLUTION: Add a rule in the schematron that the element shall not be repeated.',
+					'CAR-4':'Semantic Multiple(x..n) / Syntax Ssingle(x..1)<br/>ISSUE:Repeating elements cannot be handled. RESOLUTION:1) If possible, repeat a higher level in the structure. 2) In the case of text elements, concatenate the repeating elements.',
+					'CAR-5':'Semantic element missing / Syntax element mandatory<br/>ISSUE:Yes.	RESOLUTION:Agree on “default value if missing” (e.g. 0, 1-1-1970, AAA)'
+				}
+				if 'Codelist' in data and data['Codelist']:
+					codelist = data['Codelist']
+				else: codelist = ''
+				if 'Desc' in data and data['Desc']:
 					desc = data['Desc']
 				else: desc = ''
 				Desc = blank2fa_minus(desc)
+				if 'Desc_ja' in data and data['Desc_ja']:
+					desc_ja = data['Desc_ja']
+				else: desc_ja = ''
+
 				id = data['PINT_ID']
 				if id:
 					BT = '<a href="'+APP_BASE+'semantic/'+MESSAGE+'/'+id+'/'+lang+'/"><h4>'+data['BT']+'</h4><h6>'+data['BT_ja']+'</h6></a>'
@@ -754,17 +806,36 @@ if __name__ == '__main__':
 				else:
 					DT = '<i class="fa fa-minus" aria-hidden="true"></i>'
 				xPath = data['XPath']
+				if 'Example' in data and data['Example']:
+					example = data['Example']
+				else: example = ''
+				if 'Codelist' in data and data['Codelist']:
+					codelist = data['Codelist']
+				else: codelist = ''
+
 				f.write('<div class="container">\n')
 
 				html = ''
 				html += f'<div class="page-header"><h1>{name}</h1></div>\n'
 				html += f'<p class="lead">{Definition}</p>\n'
-				html += '<h4>UBL 2.1</h4>\n'
+				html += '<h4>About</h4>\n'
+				html += '<dl class="row">\n'
+				html += f'<dt class="col-md-2">XPath</dt><dd class="col-md-10 mb-3">{xPath}</dd>\n'
+				if selectors:
+					html += f'<dt class="col-md-2">Selectors</dt><dd class="col-md-10 mb-3">{Selectors}</dd>\n'
+				html += f'<dt class="col-md-2">Restricted Syntax Cardinality</dt><dd class="col-md-10 mb-3">{ModCard}</dd>\n'
+				if car:
+					for c in car.split(' '):
+						html += f'<dt class="col-md-2">Cardinality Alignment {c}</dt><dd class="col-md-10 mb-3">{CAR_ALIGN[c]}</dd>\n'
+				if codelist:
+					html += f'<dt class="col-md-2">Code list</dt><dd class="col-md-10 mb-3">{codelist}</dd>\n'
+				if example:
+					html += f'<dt class="col-md-2">Example</dt><dd class="col-md-10 mb-3">{example}</dd>\n'
+				html += '</dl>'
+				html += '<h5>UBL 2.1</h5>\n'
 				html += '<dl class="row">\n'
 				html += f'<dt class="col-md-2">Datatype</dt><dd class="col-md-10 mb-3">{Datatype}</dd>\n'
-				html += f'<dt class="col-md-2">Cardinality</dt><dd class="col-md-10 mb-3">{Occ}</dd>\n'
-				html += f'<dt class="col-md-2">XPath</dt><dd class="col-md-10 mb-3">{xPath}</dd>\n'
-				html += f'<dt class="col-md-2">Selectors</dt><dd class="col-md-10 mb-3">{Selectors}</dd>\n'
+				html += f'<dt class="col-md-2">Cardinality</dt><dd class="col-md-10 mb-3">{UBLCard}</dd>\n'
 				html += f'<dt class="col-md-2">Namespace</dt><dd class="col-md-10 mb-3">{NS}</dd>\n'
 				html += '</dl>'
 				f.write(html)
@@ -772,11 +843,18 @@ if __name__ == '__main__':
 				html = '<hr>\n'
 				html += '<h4>Semantic</h4>\n'
 				html += '<dl class="row">\n'
-				html += f'<dt class="col-md-2">Business Term</dt><dd class="col-md-10 mb-3">{BT}</dd>\n'
-				html += f'<dt class="col-md-2">ID</dt><dd class="col-md-10 mb-3">{id}</dd>\n'
-				html += f'<dt class="col-md-2">Semantic datatype</dt><dd class="col-md-10 mb-3">{DT}</dd>\n'
-				html += f'<dt class="col-md-2">Cardinality</dt><dd class="col-md-10 mb-3">{Card}</dd>\n'
-				html += f'<dt class="col-md-2">Description</dt><dd class="col-md-10 mb-3">{Desc}</dd>\n'
+				if id:
+					html += f'<dt class="col-md-2">ID</dt><dd class="col-md-10 mb-3">{id}</dd>\n'
+				if BT:
+					html += f'<dt class="col-md-2">Business Term</dt><dd class="col-md-10 mb-3">{BT}</dd>\n'
+				if desc:
+					html += f'<dt class="col-md-2">Description</dt><dd class="col-md-10 mb-3">{Desc}</dd>\n'
+				if desc_ja:
+					html += f'<dt class="col-md-2">&nbsp;</dt><dd class="col-md-10 mb-3">{desc_ja}</dd>\n'
+				if 'DT' in data and data['DT']:
+					html += f'<dt class="col-md-2">Semantic datatype</dt><dd class="col-md-10 mb-3">{DT}</dd>\n'
+				if card:
+					html += f'<dt class="col-md-2">Cardinality</dt><dd class="col-md-10 mb-3">{Card}</dd>\n'
 				html += '</dl>\n'
 				f.write(html)
 
@@ -878,7 +956,7 @@ if __name__ == '__main__':
 				if html:
 					f.write('<hr>\n')
 					f.write('<h4>Child element(s) / attribute(s)</h4>\n')
-					f.write(table_html.format('XML Element','Card','Business Term / Description','40','7'))
+					f.write(table_html.format('ID','Card','Business term','Restricred Syntax Card','Syntax Element','Binding note'))
 					f.write(html)
 					f.write('</table>')
 

@@ -65,15 +65,20 @@ def path2element(path):
 
 # Read CSV file
 keys = (
-  'SemSort','PINT_ID','Level','BT','Desc','BT_ja','Card','DT','Section','SynSort','XPath','selectors','Codelist','CAR'
+# 'SemSort','PINT_ID','Level','BT','Desc','BT_ja','Card','DT','Section','SynSort','XPath','selectors','Codelist','CAR'
+  'SemSort','PINT_ID','Level','BT','BT_ja','Desc','Desc_ja','Explanation','Explanation_ja','Example','Card','DT','Section','Extension','SynSort','XPath','selectors','Codelist','ModCard','UBLCard','CAR'
 )
 csv_item = OrderedDict([
   ('SemSort','0000'),
   ('PINT_ID','ibg-00'),
   ('Level','0'),
   ('BT','Invoice'),
-  ('Desc','Commercial invoice'),
   ('BT_ja','請求書'),
+  ('Desc','Commercial invoice'),
+  ('Desc_ja',''),
+  ('Explanation',''),
+  ('Explanation_ja',''),
+  ('Example',''),
   ('Card','1..n'),
   ('DT','Group'),
   ('Section',''),
@@ -88,6 +93,8 @@ csv_item = OrderedDict([
   ('Datatype','InvoiceType'),
   ('Occ','1..n'),
   ('Codelist',''),
+  ('ModCard','1..n'),
+  ('UBLCard','1..n'),
   ('CAR','')
 ])
 csv_list = [csv_item]
@@ -98,21 +105,24 @@ def syntax_read_CSV_file(in_file):
     next(reader)
     for row in reader:
       xPath = row['XPath']
-      if not xPath:
+      id = row['PINT_ID']
+      if not xPath or id in ['ibt-251','ibt-252']: # /Invoice/ext:UBLExtensions/op-cac:AlternativeCurrencyMonetaryTotals
         continue
       if 'TaxTotal[' in xPath:
         if 'cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()' in xPath:
           dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()','DocumentCurrencyCode')
         elif 'cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()' in xPath:
           dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()','TaxCurrencyCode')
-      elif "[cbc:DocumentTypeCode='130']" in xPath:
-        dirPath = xPath.replace("[cbc:DocumentTypeCode='130']","[DocumentTypeCode='130']")
-      elif "[not(cbc:DocumentTypeCode='130')]" in xPath:
-        dirPath = xPath.replace("[not(cbc:DocumentTypeCode='130')]","[not(DocumentTypeCode='130')]")
-      elif '[cbc:ChargeIndicator=false()]' in xPath:
-        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=false]')
-      elif '[cbc:ChargeIndicator=true()]' in xPath:
-        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=true]')
+      # elif "[cbc:DocumentTypeCode='130']" in xPath:
+      #   dirPath = xPath.replace("[cbc:DocumentTypeCode='130']","[DocumentTypeCode='130']")
+      # elif "[cbc:DocumentTypeCode!='130']" in xPath:
+      #   dirPath = xPath.replace("[cbc:DocumentTypeCode!='130']","[DocumentTypeCode!='130']")
+      # elif "[not(cbc:DocumentTypeCode='130')]" in xPath:
+      #   dirPath = xPath.replace("[not(cbc:DocumentTypeCode='130')]","[not(DocumentTypeCode='130')]")
+      # elif '[cbc:ChargeIndicator=false()]' in xPath:
+      #   dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=false]')
+      # elif '[cbc:ChargeIndicator=true()]' in xPath:
+      #   dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=true]')
       else:
         dirPath = xPath
       row['dirPath'] = dirPath
@@ -174,10 +184,16 @@ def syntax_read_CSV_file(in_file):
                     row['Occ'] = str(el['Cardinality'])
                   if 'Definition' in el:
                     row['Definition'] = el['Definition']
-      if not 'Definition' in row:
-        row['Definition'] = ''
-      if not 'Datatype' in row:
-        row['Datatype'] = ''
+      # if not 'Definition' in row:
+      #   row['Definition'] = ''
+      # if not 'Datatype' in row:
+      #   row['Datatype'] = ''
+      # if 'Example' in row and row['Example']:
+      #   pass
+      # else:
+      #   pass
+      # if not 'Codelist' in row:
+      #   row['Codelist'] = ''
       csv_list.append(row)
   return csv_list
 
@@ -196,14 +212,14 @@ def semantic_read_CSV_file(in_file):
           dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:DocumentCurrencyCode/text()','DocumentCurrencyCode')
         elif 'cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()' in xPath:
           dirPath = xPath.replace('cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()','TaxCurrencyCode')
-      elif "[cbc:DocumentTypeCode='130']" in xPath:
-        dirPath = xPath.replace("[cbc:DocumentTypeCode='130']","[DocumentTypeCode='130']")
-      elif "[not(cbc:DocumentTypeCode='130')]" in xPath:
-        dirPath = xPath.replace("[not(cbc:DocumentTypeCode='130')]","[not(DocumentTypeCode='130')]")
-      elif '[cbc:ChargeIndicator=false()]' in xPath:
-        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=false]')
-      elif '[cbc:ChargeIndicator=true()]' in xPath:
-        dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=true]')
+      # elif "[cbc:DocumentTypeCode='130']" in xPath:
+      #   dirPath = xPath.replace("[cbc:DocumentTypeCode='130']","[DocumentTypeCode='130']")
+      # elif "[not(cbc:DocumentTypeCode='130')]" in xPath:
+      #   dirPath = xPath.replace("[not(cbc:DocumentTypeCode='130')]","[not(DocumentTypeCode='130')]")
+      # elif '[cbc:ChargeIndicator=false()]' in xPath:
+      #   dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=false]')
+      # elif '[cbc:ChargeIndicator=true()]' in xPath:
+      #   dirPath = xPath.replace('[cbc:ChargeIndicator=false()]','[ChargeIndicator=true]')
       else:
         dirPath = xPath
       row['dirPath'] = dirPath

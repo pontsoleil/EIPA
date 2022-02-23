@@ -96,9 +96,11 @@ def set_path_value(base, path, value, datatype):
       p = path[0].split(':')
     if not p[0] in ns:
       print (p)
-    else:
+    elif 2==len(p):
       el = ET.QName(ns[p[0]], p[1])
       elements = base.findall(str(el))
+    else:
+      return
     if len(elements) > 0:
       if len(elements) > n:
         element = elements[n]
@@ -115,6 +117,12 @@ def set_path_value(base, path, value, datatype):
         element.text = value
         if 'Amount'==datatype or 'Unit Price Amount'==datatype:
           element.set('currencyID',CurrencyCode)
+        if 'PartyTaxScheme'==str(base.tag)[-14:] and 'CompanyID'==p[1]:
+          el1 = ET.QName(ns['cac'], 'TaxScheme')
+          element1 = ET.SubElement(base, el1)
+          el2 = ET.QName(ns['cbc'], 'ID')
+          element2 = ET.SubElement(element1, el2)
+          element2.text = 'VAT'
       else:
         _path = path[1:]
         set_path_value(element, _path, value, datatype)
@@ -193,15 +201,15 @@ def set_record(record):
           set_path_value(root, path, '130', datatype)
       elif "[not(cbc:DocumentTypeCode='130')]" in xpath:
         xpath = xpath.replace("[not(cbc:DocumentTypeCode='130')]",'')
-        base = base.replace("[not(cbc:DocumentTypeCode='130')]",'')
+        # _base = base.replace("[not(cbc:DocumentTypeCode='130')]",'')
         base_path = base[1:].split('/')[1:]
-        pathList = re.sub(base,'', xpath)[1:].split('/')
+        # pathList = re.sub(_base,'', xpath)[1:].split('/')
         if not seq0:
           seq0 = 0
         if base_path:
           seq = str(int(seq0)+1)
           path = base_path+[seq]+pathList
-        elif 'cac:InvoiceLine' in pathList:
+        elif 'cac:InvoiceLine' in xpath:# pathList:
           pathList = pathList[:2]+[seq0]+pathList[2:]
           path = pathList
         else:
@@ -225,7 +233,7 @@ def set_record(record):
           _xpath = xpath.replace('[cbc:TaxAmount/@currencyID=/Invoice/cbc:TaxCurrencyCode/text()]','')
           path = _xpath[1:].split('/')
           if 'cac:TaxSubtotal' in path:
-            path = ['cac:TaxTotal','1','cac:TaxSubtotal']+[str(seq1)]+path[3:]
+            path = ['cac:TaxTotal','1','cac:TaxSubtotal']+[str(seq0)]+path[3:]
             CurrencyCode = TaxCurrencyCode
             set_path_value(root, path, cell, datatype)
           else:
@@ -387,8 +395,8 @@ if __name__ == '__main__':
   multipleBG = []
 
   pint_file = file_path('data/common/xpath.csv')
-  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Codelist,Occurrence,CardinalityAlignment
-  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17       18         19
+  # SemSort,ID,Level,BT,BT_ja,Desc,Desc_ja,Expl,Expl_ja,Example,Card,DataType,Section,Extension,SyntaxSort,XPath,selectors,Codelist,ModCard,Occurrence,CardinalityAlignment
+  # 0       1  2     3  4     5    6       7    8       9       10   11       12      13        14         15    16        17       18      19         20
   COL_SemanticSort = 0
   COL_ID = 1
   COL_level = 2

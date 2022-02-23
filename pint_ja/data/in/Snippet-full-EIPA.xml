@@ -81,7 +81,7 @@
                 <!--2-->
             </cac:PartyIdentification>
             <cac:PartyName>
-                <cbc:Name>SupplierTradingName Ltd.</cbc:Name>
+                <cbc:Name>売り手商会</cbc:Name>
             </cac:PartyName>
             <cac:PostalAddress>
                 <cbc:StreetName>Main street 1</cbc:StreetName>
@@ -104,9 +104,9 @@
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
-                <cbc:RegistrationName>SupplierOfficialName Ltd</cbc:RegistrationName>
-                <cbc:CompanyID>GB983294</cbc:CompanyID>
-                <cbc:CompanyLegalForm>Private Limited Company</cbc:CompanyLegalForm>
+                <cbc:RegistrationName>売り手商事有限会社</cbc:RegistrationName>
+                <cbc:CompanyID schemeID="0002">GB983294</cbc:CompanyID>
+                <cbc:CompanyLegalForm>有限会社</cbc:CompanyLegalForm>
             </cac:PartyLegalEntity>
             <cac:Contact>
                 <cbc:Name>John Doe</cbc:Name>
@@ -387,8 +387,8 @@
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
             <cac:AdditionalItemProperty>
-                <cbc:Name>AdditionalItemName</cbc:Name>
-                <cbc:Value>AdditionalItemValue</cbc:Value>
+                <cbc:Name>Additional Item Name</cbc:Name>
+                <cbc:Value>Additional Item Value</cbc:Value>
             </cac:AdditionalItemProperty>
         </cac:Item>
         <!-- tag::price[] -->
@@ -418,7 +418,7 @@
         </cac:OrderLineReference>
         <cac:Item>
             <cbc:Description>Description of item 2</cbc:Description>
-            <cbc:Name>item name</cbc:Name>
+            <cbc:Name>item 2 name</cbc:Name>
             <cac:ClassifiedTaxCategory>
                 <cbc:ID>S</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
@@ -427,8 +427,8 @@
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
             <cac:AdditionalItemProperty>
-                <cbc:Name>AdditionalItemName</cbc:Name>
-                <cbc:Value>AdditionalItemValue</cbc:Value>
+                <cbc:Name>Additional Item Name</cbc:Name>
+                <cbc:Value>Additional Item Value</cbc:Value>
             </cac:AdditionalItemProperty>
         </cac:Item>
         <!-- tag::price[] -->
